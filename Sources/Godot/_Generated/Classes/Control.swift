@@ -357,6 +357,18 @@ open class Control: CanvasItem {
         }
     }()
 
+    public static let notificationResized: Notification = .init(rawValue: 40)
+    public static let notificationMouseEnter: Notification = .init(rawValue: 41)
+    public static let notificationMouseExit: Notification = .init(rawValue: 42)
+    public static let notificationMouseEnterSelf: Notification = .init(rawValue: 60)
+    public static let notificationMouseExitSelf: Notification = .init(rawValue: 61)
+    public static let notificationFocusEnter: Notification = .init(rawValue: 43)
+    public static let notificationFocusExit: Notification = .init(rawValue: 44)
+    public static let notificationThemeChanged: Notification = .init(rawValue: 45)
+    public static let notificationScrollBegin: Notification = .init(rawValue: 47)
+    public static let notificationScrollEnd: Notification = .init(rawValue: 48)
+    public static let notificationLayoutDirectionChanged: Notification = .init(rawValue: 49)
+
     open func _hasPoint(_ point: Godot.Vector2) -> Bool {
         Bool()
     }

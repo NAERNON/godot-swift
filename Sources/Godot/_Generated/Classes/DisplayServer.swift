@@ -262,6 +262,13 @@ open class DisplayServer: Object {
         }
     }
 
+    public static let screenWithMouseFocus: Int = -4
+    public static let screenWithKeyboardFocus: Int = -3
+    public static let screenPrimary: Int = -2
+    public static let screenOfMainWindow: Int = -1
+    public static let mainWindowId: Int = 0
+    public static let invalidWindowId: Int = -1
+
     internal static var __method_binding_has_feature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_feature").withGodotUnsafeRawPointer { __ptr__method_name in

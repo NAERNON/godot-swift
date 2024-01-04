@@ -1275,6 +1275,22 @@ open class RenderingServer: Object {
         }
     }()
 
+    public static let noIndexArray: Int = -1
+    public static let arrayWeightsSize: Int = 4
+    public static let canvasItemZMin: Int = -4096
+    public static let canvasItemZMax: Int = 4096
+    public static let maxGlowLevels: Int = 7
+    public static let maxCursors: Int = 8
+    public static let max2DDirectionalLights: Int = 8
+    public static let materialRenderPriorityMin: Int = -128
+    public static let materialRenderPriorityMax: Int = 127
+    public static let arrayCustomCount: Int = 4
+    public static let particlesEmitFlagPosition: Int = 1
+    public static let particlesEmitFlagRotationScale: Int = 2
+    public static let particlesEmitFlagVelocity: Int = 4
+    public static let particlesEmitFlagColor: Int = 8
+    public static let particlesEmitFlagCustom: Int = 16
+
     internal static var __method_binding_texture_2d_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_2d_create").withGodotUnsafeRawPointer { __ptr__method_name in

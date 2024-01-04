@@ -82,6 +82,9 @@ open class MultiplayerPeer: PacketPeer {
         }
     }()
 
+    public static let targetPeerBroadcast: Int = 0
+    public static let targetPeerServer: Int = 1
+
     internal static var __method_binding_set_transfer_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transfer_channel").withGodotUnsafeRawPointer { __ptr__method_name in

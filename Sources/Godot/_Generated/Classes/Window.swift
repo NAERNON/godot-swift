@@ -361,6 +361,9 @@ open class Window: Viewport {
         }
     }()
 
+    public static let notificationVisibilityChanged: Notification = .init(rawValue: 30)
+    public static let notificationThemeChanged: Notification = .init(rawValue: 32)
+
     open func _getContentsMinimumSize() -> Godot.Vector2 {
         Godot.Vector2()
     }

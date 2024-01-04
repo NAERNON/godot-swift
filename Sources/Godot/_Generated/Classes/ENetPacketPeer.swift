@@ -64,6 +64,12 @@ open class ENetPacketPeer: PacketPeer {
         }
     }
 
+    public static let packetLossScale: Int = 65536
+    public static let packetThrottleScale: Int = 32
+    public static let flagReliable: Int = 1
+    public static let flagUnsequenced: Int = 2
+    public static let flagUnreliableFragment: Int = 8
+
     internal static var __method_binding_peer_disconnect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "peer_disconnect").withGodotUnsafeRawPointer { __ptr__method_name in

@@ -95,6 +95,8 @@ open class Skeleton3D: Node3D {
         }
     }()
 
+    public static let notificationUpdateSkeleton: Notification = .init(rawValue: 50)
+
     internal static var __method_binding_add_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_bone").withGodotUnsafeRawPointer { __ptr__method_name in

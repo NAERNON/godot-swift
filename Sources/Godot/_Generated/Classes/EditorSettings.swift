@@ -23,6 +23,8 @@ open class EditorSettings: Resource {
         }
     }()
 
+    public static let notificationEditorSettingsChanged: Notification = .init(rawValue: 10000)
+
     internal static var __method_binding_has_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_setting").withGodotUnsafeRawPointer { __ptr__method_name in

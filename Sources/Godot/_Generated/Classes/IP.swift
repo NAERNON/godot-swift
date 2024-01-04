@@ -32,6 +32,9 @@ open class IP: Object {
         }
     }
 
+    public static let resolverMaxQueries: Int = 256
+    public static let resolverInvalidId: Int = -1
+
     internal static var __method_binding_resolve_hostname: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "resolve_hostname").withGodotUnsafeRawPointer { __ptr__method_name in

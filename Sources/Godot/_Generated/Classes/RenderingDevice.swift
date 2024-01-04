@@ -1117,6 +1117,9 @@ open class RenderingDevice: Object {
         }
     }
 
+    public static let invalidId: Int = -1
+    public static let invalidFormatId: Int = -1
+
     internal static var __method_binding_texture_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_create").withGodotUnsafeRawPointer { __ptr__method_name in

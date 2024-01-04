@@ -5,6 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EditorSceneFormatImporter: RefCounted {
+    public static let importScene: Int = 1
+    public static let importAnimation: Int = 2
+    public static let importFailOnMissingDependencies: Int = 4
+    public static let importGenerateTangentArrays: Int = 8
+    public static let importUseNamedSkinBinds: Int = 16
+    public static let importDiscardMeshesAndMaterials: Int = 32
+    public static let importForceDisableMeshCompression: Int = 64
+
     open func _getImportFlags() -> UInt32 {
         UInt32()
     }

@@ -5,6 +5,8 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourceUID: Object {
+    public static let invalidId: Int = -1
+
     internal static var __method_binding_id_to_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "id_to_text").withGodotUnsafeRawPointer { __ptr__method_name in

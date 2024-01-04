@@ -50,6 +50,8 @@ open class GridMap: Node3D {
         }
     }()
 
+    public static let invalidCellItem: Int = -1
+
     internal static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in

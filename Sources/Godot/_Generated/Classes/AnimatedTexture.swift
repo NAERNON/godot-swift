@@ -5,6 +5,8 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimatedTexture: Texture2D {
+    public static let maxFrames: Int = 256
+
     internal static var __method_binding_set_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frames").withGodotUnsafeRawPointer { __ptr__method_name in

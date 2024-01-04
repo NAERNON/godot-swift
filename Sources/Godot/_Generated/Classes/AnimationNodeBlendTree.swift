@@ -32,6 +32,13 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
     }()
 
+    public static let connectionOk: Int = 0
+    public static let connectionErrorNoInput: Int = 1
+    public static let connectionErrorNoInputIndex: Int = 2
+    public static let connectionErrorNoOutput: Int = 3
+    public static let connectionErrorSameNode: Int = 4
+    public static let connectionErrorConnectionExists: Int = 5
+
     internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_node").withGodotUnsafeRawPointer { __ptr__method_name in

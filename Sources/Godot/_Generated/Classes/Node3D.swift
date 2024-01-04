@@ -35,6 +35,12 @@ open class Node3D: Node {
         }
     }()
 
+    public static let notificationTransformChanged: Notification = .init(rawValue: 2000)
+    public static let notificationEnterWorld: Notification = .init(rawValue: 41)
+    public static let notificationExitWorld: Notification = .init(rawValue: 42)
+    public static let notificationVisibilityChanged: Notification = .init(rawValue: 43)
+    public static let notificationLocalTransformChanged: Notification = .init(rawValue: 44)
+
     internal static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transform").withGodotUnsafeRawPointer { __ptr__method_name in

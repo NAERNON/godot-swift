@@ -171,6 +171,9 @@ open class Image: Resource {
         }
     }
 
+    public static let maxWidth: Int = 16777216
+    public static let maxHeight: Int = 16777216
+
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_width").withGodotUnsafeRawPointer { __ptr__method_name in

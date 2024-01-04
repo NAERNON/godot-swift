@@ -5,6 +5,11 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFState: Resource {
+    public static let handleBinaryDiscardTextures: Int = 0
+    public static let handleBinaryExtractTextures: Int = 1
+    public static let handleBinaryEmbedAsBasisu: Int = 2
+    public static let handleBinaryEmbedAsUncompressed: Int = 3
+
     internal static var __method_binding_add_used_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_used_extension").withGodotUnsafeRawPointer { __ptr__method_name in

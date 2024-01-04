@@ -16,6 +16,9 @@ extension GeneratedFile {
                 try `class`.signalsSyntax()
                     .with(\.trailingTrivia, .newlines(2))
                 
+                `class`.constantsSyntax()
+                    .with(\.trailingTrivia, .newlines(2))
+                
                 try `class`.methodsSyntax()
                     .with(\.trailingTrivia, .newlines(2))
                 

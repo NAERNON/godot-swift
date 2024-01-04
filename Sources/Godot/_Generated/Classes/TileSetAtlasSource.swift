@@ -17,6 +17,10 @@ open class TileSetAtlasSource: TileSetSource {
         }
     }
 
+    public static let transformFlipH: Int = 4096
+    public static let transformFlipV: Int = 8192
+    public static let transformTranspose: Int = 16384
+
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in

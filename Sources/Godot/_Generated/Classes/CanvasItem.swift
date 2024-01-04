@@ -127,6 +127,14 @@ open class CanvasItem: Node {
         }
     }()
 
+    public static let notificationTransformChanged: Notification = .init(rawValue: 2000)
+    public static let notificationLocalTransformChanged: Notification = .init(rawValue: 35)
+    public static let notificationDraw: Notification = .init(rawValue: 30)
+    public static let notificationVisibilityChanged: Notification = .init(rawValue: 31)
+    public static let notificationEnterCanvas: Notification = .init(rawValue: 32)
+    public static let notificationExitCanvas: Notification = .init(rawValue: 33)
+    public static let notificationWorld2DChanged: Notification = .init(rawValue: 36)
+
     open func _draw() {
     }
 

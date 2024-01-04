@@ -5,6 +5,9 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Material: Resource {
+    public static let renderPriorityMax: Int = 127
+    public static let renderPriorityMin: Int = -128
+
     open func _getShaderRid() -> Godot.RID {
         Godot.RID()
     }

@@ -36,6 +36,17 @@ open class MainLoop: Object {
         }
     }()
 
+    public static let notificationOsMemoryWarning: Notification = .init(rawValue: 2009)
+    public static let notificationTranslationChanged: Notification = .init(rawValue: 2010)
+    public static let notificationWmAbout: Notification = .init(rawValue: 2011)
+    public static let notificationCrash: Notification = .init(rawValue: 2012)
+    public static let notificationOsImeUpdate: Notification = .init(rawValue: 2013)
+    public static let notificationApplicationResumed: Notification = .init(rawValue: 2014)
+    public static let notificationApplicationPaused: Notification = .init(rawValue: 2015)
+    public static let notificationApplicationFocusIn: Notification = .init(rawValue: 2016)
+    public static let notificationApplicationFocusOut: Notification = .init(rawValue: 2017)
+    public static let notificationTextServerChanged: Notification = .init(rawValue: 2018)
+
     open func _initialize() {
     }
 

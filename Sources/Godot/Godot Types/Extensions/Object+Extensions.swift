@@ -10,6 +10,13 @@ public extension Object {
         }
     }
     
+    func sendNotification(
+        _ notification: Notification,
+        reversed: Bool = false
+    ) {
+        __notification(what: notification.rawValue, reversed: reversed)
+    }
+    
     func meta(for entry: GodotStringName, `default`: Variant = nil) -> Variant {
         __getMeta(name: entry, default: `default`)
     }

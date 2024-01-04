@@ -41,6 +41,9 @@ open class Container: Control {
         }
     }()
 
+    public static let notificationPreSortChildren: Notification = .init(rawValue: 50)
+    public static let notificationSortChildren: Notification = .init(rawValue: 51)
+
     open func _getAllowedSizeFlagsHorizontal() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }

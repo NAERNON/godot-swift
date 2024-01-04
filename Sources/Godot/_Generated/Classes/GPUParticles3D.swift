@@ -65,6 +65,8 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }()
 
+    public static let maxDrawPasses: Int = 4
+
     internal static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emitting").withGodotUnsafeRawPointer { __ptr__method_name in

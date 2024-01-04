@@ -5,6 +5,8 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDFramebufferPass: RefCounted {
+    public static let attachmentUnused: Int = -1
+
     internal static var __method_binding_set_color_attachments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_attachments").withGodotUnsafeRawPointer { __ptr__method_name in

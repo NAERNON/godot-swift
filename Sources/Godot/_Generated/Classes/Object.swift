@@ -55,6 +55,9 @@ open class Object {
         }
     }()
 
+    public static let notificationPostinitialize: Notification = .init(rawValue: 0)
+    public static let notificationPredelete: Notification = .init(rawValue: 1)
+
     internal static var __method_binding_get_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_class").withGodotUnsafeRawPointer { __ptr__method_name in

@@ -67,6 +67,9 @@ open class VisualShader: Shader {
         }
     }
 
+    public static let nodeIdInvalid: Int = -1
+    public static let nodeIdOutput: Int = 0
+
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
