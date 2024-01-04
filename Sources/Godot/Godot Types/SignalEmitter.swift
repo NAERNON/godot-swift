@@ -78,7 +78,9 @@ public struct SignalEmitter<Input> {
             }
             
             continuation.onTermination = { @Sendable _ in
-                connection.disconnect()
+                if connection.isConnected {
+                    connection.disconnect()
+                }
             }
         }
     }
