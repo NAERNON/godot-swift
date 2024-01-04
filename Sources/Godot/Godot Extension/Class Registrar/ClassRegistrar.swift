@@ -744,4 +744,49 @@ public final class ClassRegistrar {
         
         return signalBinding
     }
+    
+    // MARK: Callable registration
+    
+    /// Registers a given custom callable.
+    ///
+    /// >important: The `userdata` object is retained and should be
+    /// released in the `freeFunc` function.
+    ///
+    /// - Parameters:
+    ///   - object: The object to which the callable is attached to.
+    ///   - userData: The user data instance usable in the
+    ///   `callFunc`, `freeFunc` and `toStringFunc` functions.
+    ///   - callFunc: The function being called when the callable is called.
+    ///   - freeFunc: The function being called when the callable is freed.
+    ///   - toStringFunc: A function providing a description of the callable.
+    /// - Returns: The newly created callable.
+    public func registerCustomCallable<UserData>(
+        on object: Object?,
+        userData: UserData,
+        callFunc: GDExtensionCallableCustomCall,
+        freeFunc: GDExtensionCallableCustomFree,
+        toStringFunc: GDExtensionCallableCustomToString
+    ) -> Callable where UserData : AnyObject {
+        var callableInfo = GDExtensionCallableCustomInfo(
+            callable_userdata: Unmanaged.passRetained(userData).toOpaque(),
+            token: GodotExtension.token,
+            object_id: object?.instanceId() ?? 0,
+            call_func: callFunc,
+            is_valid_func: nil,
+            free_func: freeFunc,
+            hash_func: nil,
+            equal_func: nil,
+            less_than_func: nil,
+            to_string_func: toStringFunc
+        )
+        
+        return Callable.fromMutatingGodotUnsafePointer { callablePtr in
+            withUnsafeMutablePointer(to: &callableInfo) { callableInfoPtr in
+                GodotExtension.Interface.callableCustomCreate(
+                    callablePtr,
+                    callableInfoPtr
+                )
+            }
+        }
+    }
 }

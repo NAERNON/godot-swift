@@ -52,9 +52,9 @@ public struct SignalEmitter<Input> {
     ) -> SignalConnection {
         let receiver = SignalReceiver(call: body)
         
-        let callable = registerCustomCallable(
+        let callable = GodotExtension.classRegistrar.registerCustomCallable(
             on: object,
-            receiver: receiver,
+            userData: receiver,
             callFunc: callFunc,
             freeFunc: freeFunc,
             toStringFunc: toStringFunc
@@ -106,36 +106,6 @@ public extension SignalEmitter where Input : SignalInput {
 public extension SignalEmitter where Input == Void {
     func emit() -> ErrorType {
         sourceObject.emitSignal(signalName)
-    }
-}
-
-private func registerCustomCallable<Receiver>(
-    on object: Object?,
-    receiver: Receiver,
-    callFunc: GDExtensionCallableCustomCall,
-    freeFunc: GDExtensionCallableCustomFree,
-    toStringFunc: GDExtensionCallableCustomToString
-) -> Callable where Receiver : AnyObject {
-    var callableInfo = GDExtensionCallableCustomInfo(
-        callable_userdata: Unmanaged.passRetained(receiver).toOpaque(),
-        token: GodotExtension.token,
-        object_id: object?.instanceId() ?? 0,
-        call_func: callFunc,
-        is_valid_func: nil,
-        free_func: freeFunc,
-        hash_func: nil,
-        equal_func: nil,
-        less_than_func: nil,
-        to_string_func: toStringFunc
-    )
-    
-    return Callable.fromMutatingGodotUnsafePointer { callablePtr in
-        withUnsafeMutablePointer(to: &callableInfo) { callableInfoPtr in
-            GodotExtension.Interface.callableCustomCreate(
-                callablePtr,
-                callableInfoPtr
-            )
-        }
     }
 }
 
