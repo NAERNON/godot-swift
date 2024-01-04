@@ -34,10 +34,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func isTaskCompleted(taskId: Int64) -> Bool {
+    public func isTaskCompleted(taskID: Int64) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        taskId.withGodotUnsafeRawPointer { __ptr_taskId in
-        withUnsafeArgumentPackPointer(__ptr_taskId) { __accessPtr in
+        taskID.withGodotUnsafeRawPointer { __ptr_taskID in
+        withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_task_completed,
@@ -54,10 +54,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func waitForTaskCompletion(taskId: Int64) -> Godot.ErrorType {
+    public func waitForTaskCompletion(taskID: Int64) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
-        taskId.withGodotUnsafeRawPointer { __ptr_taskId in
-        withUnsafeArgumentPackPointer(__ptr_taskId) { __accessPtr in
+        taskID.withGodotUnsafeRawPointer { __ptr_taskID in
+        withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_wait_for_task_completion,
@@ -98,10 +98,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func isGroupTaskCompleted(groupId: Int64) -> Bool {
+    public func isGroupTaskCompleted(groupID: Int64) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        groupId.withGodotUnsafeRawPointer { __ptr_groupId in
-        withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
+        groupID.withGodotUnsafeRawPointer { __ptr_groupID in
+        withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_group_task_completed,
@@ -118,10 +118,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func groupProcessedElementCount(groupId: Int64) -> UInt32 {
+    public func groupProcessedElementCount(groupID: Int64) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
-        groupId.withGodotUnsafeRawPointer { __ptr_groupId in
-        withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
+        groupID.withGodotUnsafeRawPointer { __ptr_groupID in
+        withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_group_processed_element_count,
@@ -138,9 +138,9 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func waitForGroupTaskCompletion(groupId: Int64) {
-        groupId.withGodotUnsafeRawPointer { __ptr_groupId in
-        withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
+    public func waitForGroupTaskCompletion(groupID: Int64) {
+        groupID.withGodotUnsafeRawPointer { __ptr_groupID in
+        withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_wait_for_group_task_completion,

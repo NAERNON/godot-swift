@@ -31,7 +31,7 @@ extension Signal {
     }
     
     public var objectID: Int {
-        _objectId()
+        _objectID()
     }
     
     public var name: GodotStringName {

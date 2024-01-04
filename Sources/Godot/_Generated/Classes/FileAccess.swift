@@ -49,8 +49,8 @@ open class FileAccess: RefCounted {
         public static let readOther: Self = .init(rawValue: 4)
         public static let writeOther: Self = .init(rawValue: 2)
         public static let executeOther: Self = .init(rawValue: 1)
-        public static let setUserId: Self = .init(rawValue: 2048)
-        public static let setGroupId: Self = .init(rawValue: 1024)
+        public static let setUserID: Self = .init(rawValue: 2048)
+        public static let setGroupID: Self = .init(rawValue: 1024)
         public static let restrictedDelete: Self = .init(rawValue: 512)
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
@@ -64,8 +64,8 @@ open class FileAccess: RefCounted {
             ("Write Owner", 128),
             ("Read Owner", 256),
             ("Restricted Delete", 512),
-            ("Set Group Id", 1024),
-            ("Set User Id", 2048),]
+            ("Set Group ID", 1024),
+            ("Set User ID", 2048),]
         }
     }
 

@@ -660,11 +660,11 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func createAlternativeTile(atlasCoords: Godot.Vector2i, alternativeIdOverride: Int32 = -1) -> Int32 {
+    public func createAlternativeTile(atlasCoords: Godot.Vector2i, alternativeIDOverride: Int32 = -1) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
-        alternativeIdOverride.withGodotUnsafeRawPointer { __ptr_alternativeIdOverride in
-        withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_alternativeIdOverride) { __accessPtr in
+        alternativeIDOverride.withGodotUnsafeRawPointer { __ptr_alternativeIDOverride in
+        withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_alternativeIDOverride) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_alternative_tile,
@@ -701,11 +701,11 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setAlternativeTileId(atlasCoords: Godot.Vector2i, alternativeTile: Int32, newId: Int32) {
+    public func setAlternativeTileID(atlasCoords: Godot.Vector2i, alternativeTile: Int32, newID: Int32) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
-        newId.withGodotUnsafeRawPointer { __ptr_newId in
-        withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_alternativeTile, __ptr_newId) { __accessPtr in
+        newID.withGodotUnsafeRawPointer { __ptr_newID in
+        withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_alternativeTile, __ptr_newID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_alternative_tile_id,
@@ -722,7 +722,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func nextAlternativeTileId(atlasCoords: Godot.Vector2i) -> Int32 {
+    public func nextAlternativeTileID(atlasCoords: Godot.Vector2i) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in

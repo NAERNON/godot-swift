@@ -48,7 +48,7 @@ extension Callable {
     }
     
     public var objectID: Int {
-        _objectId()
+        _objectID()
     }
     
     public var method: GodotStringName {
@@ -90,11 +90,11 @@ extension Callable {
         _rpc(repeat each rest)
     }
     
-    public func rpcId<each VariantRest : VariantStorableIn>(
-        peerId: Int,
+    public func rpcID<each VariantRest : VariantStorableIn>(
+        peerID: Int,
         _ rest: repeat each VariantRest
     ) {
-        _rpcId(peerId: peerId, repeat each rest)
+        _rpcID(peerID: peerID, repeat each rest)
     }
     
     internal func bind<each VariantRest : VariantStorableIn>(

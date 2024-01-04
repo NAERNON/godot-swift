@@ -311,7 +311,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    public func uniqueId() -> Int32 {
+    public func uniqueID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -329,7 +329,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    public func generateUniqueId() -> UInt32 {
+    public func generateUniqueID() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

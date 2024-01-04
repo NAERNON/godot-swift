@@ -100,7 +100,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func nextSourceId() -> Int32 {
+    public func nextSourceID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -118,12 +118,12 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func addSource(_ source: Godot.TileSetSource?, atlasSourceIdOverride: Int32 = -1) -> Int32 {
+    public func addSource(_ source: Godot.TileSetSource?, atlasSourceIDOverride: Int32 = -1) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafePointer(to: __ptr_source) { _ptr___ptr_source in
-        atlasSourceIdOverride.withGodotUnsafeRawPointer { __ptr_atlasSourceIdOverride in
-        withUnsafeArgumentPackPointer(_ptr___ptr_source, __ptr_atlasSourceIdOverride) { __accessPtr in
+        atlasSourceIDOverride.withGodotUnsafeRawPointer { __ptr_atlasSourceIDOverride in
+        withUnsafeArgumentPackPointer(_ptr___ptr_source, __ptr_atlasSourceIDOverride) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_source,
@@ -140,9 +140,9 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func removeSource(sourceId: Int32) {
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
-        withUnsafeArgumentPackPointer(__ptr_sourceId) { __accessPtr in
+    public func removeSource(sourceID: Int32) {
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
+        withUnsafeArgumentPackPointer(__ptr_sourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_source,
@@ -159,10 +159,10 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func setSourceId(_ sourceId: Int32, newSourceId: Int32) {
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
-        newSourceId.withGodotUnsafeRawPointer { __ptr_newSourceId in
-        withUnsafeArgumentPackPointer(__ptr_sourceId, __ptr_newSourceId) { __accessPtr in
+    public func setSourceID(_ sourceID: Int32, newSourceID: Int32) {
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
+        newSourceID.withGodotUnsafeRawPointer { __ptr_newSourceID in
+        withUnsafeArgumentPackPointer(__ptr_sourceID, __ptr_newSourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_source_id,
@@ -197,7 +197,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func sourceId(index: Int32) -> Int32 {
+    public func sourceID(index: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -217,10 +217,10 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func hasSource(sourceId: Int32) -> Bool {
+    public func hasSource(sourceID: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
-        withUnsafeArgumentPackPointer(__ptr_sourceId) { __accessPtr in
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
+        withUnsafeArgumentPackPointer(__ptr_sourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_source,
@@ -237,10 +237,10 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func source(sourceId: Int32) -> Godot.TileSetSource? {
+    public func source(sourceID: Int32) -> Godot.TileSetSource? {
         Godot.TileSetSource?.fromMutatingGodotUnsafePointer { __temporary in
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
-        withUnsafeArgumentPackPointer(__ptr_sourceId) { __accessPtr in
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
+        withUnsafeArgumentPackPointer(__ptr_sourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source,

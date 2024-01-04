@@ -297,7 +297,7 @@ open class Object {
         }
         }
     }()
-    internal func __getInstanceId() -> UInt64 {
+    internal func __getInstanceID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

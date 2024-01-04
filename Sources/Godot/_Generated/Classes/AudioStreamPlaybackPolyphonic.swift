@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
-    public static let invalidId: Int = -1
+    public static let invalidID: Int = -1
 
     internal static var __method_binding_play_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

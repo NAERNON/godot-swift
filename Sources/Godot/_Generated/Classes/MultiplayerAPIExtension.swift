@@ -16,7 +16,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         nil
     }
 
-    open func _getUniqueId() -> Int32 {
+    open func _getUniqueID() -> Int32 {
         Int32()
     }
 
@@ -28,7 +28,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getRemoteSenderId() -> Int32 {
+    open func _getRemoteSenderID() -> Int32 {
         Int32()
     }
 
@@ -72,7 +72,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
                 return
             }
             Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getUniqueId()
+        ._getUniqueID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_peer_ids_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -98,7 +98,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
                 return
             }
             Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getRemoteSenderId()
+        ._getRemoteSenderID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _object_configuration_add_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -124,10 +124,10 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             "_poll" : ("_poll", _poll_call),
             "_setMultiplayerPeer" : ("_set_multiplayer_peer", _set_multiplayer_peer_call),
             "_getMultiplayerPeer" : ("_get_multiplayer_peer", _get_multiplayer_peer_call),
-            "_getUniqueId" : ("_get_unique_id", _get_unique_id_call),
+            "_getUniqueID" : ("_get_unique_id", _get_unique_id_call),
             "_getPeerIds" : ("_get_peer_ids", _get_peer_ids_call),
             "_rpc" : ("_rpc", _rpc_call),
-            "_getRemoteSenderId" : ("_get_remote_sender_id", _get_remote_sender_id_call),
+            "_getRemoteSenderID" : ("_get_remote_sender_id", _get_remote_sender_id_call),
             "_objectConfigurationAdd" : ("_object_configuration_add", _object_configuration_add_call),
             "_objectConfigurationRemove" : ("_object_configuration_remove", _object_configuration_remove_call)
         ]

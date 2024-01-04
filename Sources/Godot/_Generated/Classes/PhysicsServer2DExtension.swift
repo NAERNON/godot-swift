@@ -133,17 +133,17 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     open func _areaClearShapes(area: Godot.RID) {
     }
 
-    open func _areaAttachObjectInstanceId(area: Godot.RID, id: UInt64) {
+    open func _areaAttachObjectInstanceID(area: Godot.RID, id: UInt64) {
     }
 
-    open func _areaGetObjectInstanceId(area: Godot.RID) -> UInt64 {
+    open func _areaGetObjectInstanceID(area: Godot.RID) -> UInt64 {
         UInt64()
     }
 
-    open func _areaAttachCanvasInstanceId(area: Godot.RID, id: UInt64) {
+    open func _areaAttachCanvasInstanceID(area: Godot.RID, id: UInt64) {
     }
 
-    open func _areaGetCanvasInstanceId(area: Godot.RID) -> UInt64 {
+    open func _areaGetCanvasInstanceID(area: Godot.RID) -> UInt64 {
         UInt64()
     }
 
@@ -238,17 +238,17 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     open func _bodyClearShapes(body: Godot.RID) {
     }
 
-    open func _bodyAttachObjectInstanceId(body: Godot.RID, id: UInt64) {
+    open func _bodyAttachObjectInstanceID(body: Godot.RID, id: UInt64) {
     }
 
-    open func _bodyGetObjectInstanceId(body: Godot.RID) -> UInt64 {
+    open func _bodyGetObjectInstanceID(body: Godot.RID) -> UInt64 {
         UInt64()
     }
 
-    open func _bodyAttachCanvasInstanceId(body: Godot.RID, id: UInt64) {
+    open func _bodyAttachCanvasInstanceID(body: Godot.RID, id: UInt64) {
     }
 
-    open func _bodyGetCanvasInstanceId(body: Godot.RID) -> UInt64 {
+    open func _bodyGetCanvasInstanceID(body: Godot.RID) -> UInt64 {
         UInt64()
     }
 
@@ -841,7 +841,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaAttachObjectInstanceId(
+        ._areaAttachObjectInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -850,7 +850,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaGetObjectInstanceId(
+        ._areaGetObjectInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -859,7 +859,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaAttachCanvasInstanceId(
+        ._areaAttachCanvasInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -868,7 +868,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaGetCanvasInstanceId(
+        ._areaGetCanvasInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1128,7 +1128,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyAttachObjectInstanceId(
+        ._bodyAttachObjectInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -1137,7 +1137,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyGetObjectInstanceId(
+        ._bodyGetObjectInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1146,7 +1146,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyAttachCanvasInstanceId(
+        ._bodyAttachCanvasInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -1155,7 +1155,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyGetCanvasInstanceId(
+        ._bodyGetCanvasInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1821,10 +1821,10 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
             "_areaGetShapeTransform" : ("_area_get_shape_transform", _area_get_shape_transform_call),
             "_areaRemoveShape" : ("_area_remove_shape", _area_remove_shape_call),
             "_areaClearShapes" : ("_area_clear_shapes", _area_clear_shapes_call),
-            "_areaAttachObjectInstanceId" : ("_area_attach_object_instance_id", _area_attach_object_instance_id_call),
-            "_areaGetObjectInstanceId" : ("_area_get_object_instance_id", _area_get_object_instance_id_call),
-            "_areaAttachCanvasInstanceId" : ("_area_attach_canvas_instance_id", _area_attach_canvas_instance_id_call),
-            "_areaGetCanvasInstanceId" : ("_area_get_canvas_instance_id", _area_get_canvas_instance_id_call),
+            "_areaAttachObjectInstanceID" : ("_area_attach_object_instance_id", _area_attach_object_instance_id_call),
+            "_areaGetObjectInstanceID" : ("_area_get_object_instance_id", _area_get_object_instance_id_call),
+            "_areaAttachCanvasInstanceID" : ("_area_attach_canvas_instance_id", _area_attach_canvas_instance_id_call),
+            "_areaGetCanvasInstanceID" : ("_area_get_canvas_instance_id", _area_get_canvas_instance_id_call),
             "_areaSetParam" : ("_area_set_param", _area_set_param_call),
             "_areaSetTransform" : ("_area_set_transform", _area_set_transform_call),
             "_areaGetParam" : ("_area_get_param", _area_get_param_call),
@@ -1852,10 +1852,10 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
             "_bodySetShapeAsOneWayCollision" : ("_body_set_shape_as_one_way_collision", _body_set_shape_as_one_way_collision_call),
             "_bodyRemoveShape" : ("_body_remove_shape", _body_remove_shape_call),
             "_bodyClearShapes" : ("_body_clear_shapes", _body_clear_shapes_call),
-            "_bodyAttachObjectInstanceId" : ("_body_attach_object_instance_id", _body_attach_object_instance_id_call),
-            "_bodyGetObjectInstanceId" : ("_body_get_object_instance_id", _body_get_object_instance_id_call),
-            "_bodyAttachCanvasInstanceId" : ("_body_attach_canvas_instance_id", _body_attach_canvas_instance_id_call),
-            "_bodyGetCanvasInstanceId" : ("_body_get_canvas_instance_id", _body_get_canvas_instance_id_call),
+            "_bodyAttachObjectInstanceID" : ("_body_attach_object_instance_id", _body_attach_object_instance_id_call),
+            "_bodyGetObjectInstanceID" : ("_body_get_object_instance_id", _body_get_object_instance_id_call),
+            "_bodyAttachCanvasInstanceID" : ("_body_attach_canvas_instance_id", _body_attach_canvas_instance_id_call),
+            "_bodyGetCanvasInstanceID" : ("_body_get_canvas_instance_id", _body_get_canvas_instance_id_call),
             "_bodySetContinuousCollisionDetectionMode" : ("_body_set_continuous_collision_detection_mode", _body_set_continuous_collision_detection_mode_call),
             "_bodyGetContinuousCollisionDetectionMode" : ("_body_get_continuous_collision_detection_mode", _body_get_continuous_collision_detection_mode_call),
             "_bodySetCollisionLayer" : ("_body_set_collision_layer", _body_set_collision_layer_call),

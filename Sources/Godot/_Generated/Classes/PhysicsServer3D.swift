@@ -1150,7 +1150,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func areaAttachObjectInstanceId(area: Godot.RID, id: UInt64) {
+    public func areaAttachObjectInstanceID(area: Godot.RID, id: UInt64) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_id) { __accessPtr in
@@ -1170,7 +1170,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func areaGetObjectInstanceId(area: Godot.RID) -> UInt64 {
+    public func areaGetObjectInstanceID(area: Godot.RID) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -1674,7 +1674,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func bodyAttachObjectInstanceId(body: Godot.RID, id: UInt64) {
+    public func bodyAttachObjectInstanceID(body: Godot.RID, id: UInt64) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_id) { __accessPtr in
@@ -1694,7 +1694,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func bodyGetObjectInstanceId(body: Godot.RID) -> UInt64 {
+    public func bodyGetObjectInstanceID(body: Godot.RID) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in

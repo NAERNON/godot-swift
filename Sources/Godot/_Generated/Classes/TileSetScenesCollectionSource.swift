@@ -30,7 +30,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func sceneTileId(index: Int32) -> Int32 {
+    public func sceneTileID(index: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -50,7 +50,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func hasSceneTileId(_ id: Int32) -> Bool {
+    public func hasSceneTileID(_ id: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -92,10 +92,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func setSceneTileId(_ id: Int32, newId: Int32) {
+    public func setSceneTileID(_ id: Int32, newID: Int32) {
         id.withGodotUnsafeRawPointer { __ptr_id in
-        newId.withGodotUnsafeRawPointer { __ptr_newId in
-        withUnsafeArgumentPackPointer(__ptr_id, __ptr_newId) { __accessPtr in
+        newID.withGodotUnsafeRawPointer { __ptr_newID in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_newID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_scene_tile_id,
@@ -212,7 +212,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func nextSceneTileId() -> Int32 {
+    public func nextSceneTileID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

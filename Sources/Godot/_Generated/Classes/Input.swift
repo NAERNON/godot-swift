@@ -507,11 +507,11 @@ open class Input: Object {
         }
         }
     }()
-    public func shouldIgnoreDevice(vendorId: Int32, productId: Int32) -> Bool {
+    public func shouldIgnoreDevice(vendorID: Int32, productID: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        vendorId.withGodotUnsafeRawPointer { __ptr_vendorId in
-        productId.withGodotUnsafeRawPointer { __ptr_productId in
-        withUnsafeArgumentPackPointer(__ptr_vendorId, __ptr_productId) { __accessPtr in
+        vendorID.withGodotUnsafeRawPointer { __ptr_vendorID in
+        productID.withGodotUnsafeRawPointer { __ptr_productID in
+        withUnsafeArgumentPackPointer(__ptr_vendorID, __ptr_productID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_should_ignore_device,

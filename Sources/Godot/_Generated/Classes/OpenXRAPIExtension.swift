@@ -30,7 +30,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func systemId() -> UInt64 {
+    public func systemID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

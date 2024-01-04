@@ -114,21 +114,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectstartSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func selectstart(inputSourceId: Int) {
-        _ = selectstartSignal.emit(.init(inputSourceId: inputSourceId))
+    public func selectstart(inputSourceID: Int) {
+        _ = selectstartSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var selectstartSignal: Godot.SignalEmitter<SelectstartSignalInput> = {
         .init(object: self, signalName: "selectstart") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectstartSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectstartSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -141,21 +141,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func select(inputSourceId: Int) {
-        _ = selectSignal.emit(.init(inputSourceId: inputSourceId))
+    public func select(inputSourceID: Int) {
+        _ = selectSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var selectSignal: Godot.SignalEmitter<SelectSignalInput> = {
         .init(object: self, signalName: "select") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -168,21 +168,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectendSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func selectend(inputSourceId: Int) {
-        _ = selectendSignal.emit(.init(inputSourceId: inputSourceId))
+    public func selectend(inputSourceID: Int) {
+        _ = selectendSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var selectendSignal: Godot.SignalEmitter<SelectendSignalInput> = {
         .init(object: self, signalName: "selectend") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectendSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectendSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -195,21 +195,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezestartSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func squeezestart(inputSourceId: Int) {
-        _ = squeezestartSignal.emit(.init(inputSourceId: inputSourceId))
+    public func squeezestart(inputSourceID: Int) {
+        _ = squeezestartSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var squeezestartSignal: Godot.SignalEmitter<SqueezestartSignalInput> = {
         .init(object: self, signalName: "squeezestart") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezestartSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezestartSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -222,21 +222,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezeSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func squeeze(inputSourceId: Int) {
-        _ = squeezeSignal.emit(.init(inputSourceId: inputSourceId))
+    public func squeeze(inputSourceID: Int) {
+        _ = squeezeSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var squeezeSignal: Godot.SignalEmitter<SqueezeSignalInput> = {
         .init(object: self, signalName: "squeeze") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezeSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -249,21 +249,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezeendSignalInput: Godot.SignalInput {
-        public let inputSourceId: Int
-        fileprivate init(inputSourceId: Int) {
-            self.inputSourceId = inputSourceId
+        public let inputSourceID: Int
+        fileprivate init(inputSourceID: Int) {
+            self.inputSourceID = inputSourceID
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.inputSourceId)]
+            [Variant(input.inputSourceID)]
         }
     }
-    public func squeezeend(inputSourceId: Int) {
-        _ = squeezeendSignal.emit(.init(inputSourceId: inputSourceId))
+    public func squeezeend(inputSourceID: Int) {
+        _ = squeezeendSignal.emit(.init(inputSourceID: inputSourceID))
     }
     public lazy var squeezeendSignal: Godot.SignalEmitter<SqueezeendSignalInput> = {
         .init(object: self, signalName: "squeezeend") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezeendSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezeendSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -521,10 +521,10 @@ open class WebXRInterface: XRInterface {
         }
         }
     }()
-    public func isInputSourceActive(inputSourceId: Int32) -> Bool {
+    public func isInputSourceActive(inputSourceID: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        inputSourceId.withGodotUnsafeRawPointer { __ptr_inputSourceId in
-        withUnsafeArgumentPackPointer(__ptr_inputSourceId) { __accessPtr in
+        inputSourceID.withGodotUnsafeRawPointer { __ptr_inputSourceID in
+        withUnsafeArgumentPackPointer(__ptr_inputSourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_input_source_active,
@@ -541,10 +541,10 @@ open class WebXRInterface: XRInterface {
         }
         }
     }()
-    public func inputSourceTracker(inputSourceId: Int32) -> Godot.XRPositionalTracker? {
+    public func inputSourceTracker(inputSourceID: Int32) -> Godot.XRPositionalTracker? {
         Godot.XRPositionalTracker?.fromMutatingGodotUnsafePointer { __temporary in
-        inputSourceId.withGodotUnsafeRawPointer { __ptr_inputSourceId in
-        withUnsafeArgumentPackPointer(__ptr_inputSourceId) { __accessPtr in
+        inputSourceID.withGodotUnsafeRawPointer { __ptr_inputSourceID in
+        withUnsafeArgumentPackPointer(__ptr_inputSourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_source_tracker,
@@ -561,10 +561,10 @@ open class WebXRInterface: XRInterface {
         }
         }
     }()
-    public func inputSourceTargetRayMode(inputSourceId: Int32) -> Godot.WebXRInterface.TargetRayMode {
+    public func inputSourceTargetRayMode(inputSourceID: Int32) -> Godot.WebXRInterface.TargetRayMode {
         Godot.WebXRInterface.TargetRayMode.fromMutatingGodotUnsafePointer { __temporary in
-        inputSourceId.withGodotUnsafeRawPointer { __ptr_inputSourceId in
-        withUnsafeArgumentPackPointer(__ptr_inputSourceId) { __accessPtr in
+        inputSourceID.withGodotUnsafeRawPointer { __ptr_inputSourceID in
+        withUnsafeArgumentPackPointer(__ptr_inputSourceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_source_target_ray_mode,

@@ -5,14 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EditorDebuggerPlugin: RefCounted {
-    open func _setupSession(sessionId: Int32) {
+    open func _setupSession(sessionID: Int32) {
     }
 
     open func _hasCapture(_ capture: Godot.GodotString) -> Bool {
         Bool()
     }
 
-    open func _capture(message: Godot.GodotString, data: Godot.AnyGodotArray, sessionId: Int32) -> Bool {
+    open func _capture(message: Godot.GodotString, data: Godot.AnyGodotArray, sessionID: Int32) -> Bool {
         Bool()
     }
 
@@ -65,7 +65,7 @@ open class EditorDebuggerPlugin: RefCounted {
             }
             Unmanaged<EditorDebuggerPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setupSession(
-            sessionId: Int32.fromGodotUnsafePointer(args[0]!)
+            sessionID: Int32.fromGodotUnsafePointer(args[0]!)
         )}
         let _has_capture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -84,7 +84,7 @@ open class EditorDebuggerPlugin: RefCounted {
         ._capture(
             message: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!),
-            sessionId: Int32.fromGodotUnsafePointer(args[2]!)
+            sessionID: Int32.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

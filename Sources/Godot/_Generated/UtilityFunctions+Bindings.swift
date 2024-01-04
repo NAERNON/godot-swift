@@ -1369,10 +1369,10 @@ private var __function_binding_instance_from_id: GDExtensionPtrUtilityFunction =
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1156694636)!
     }
 }()
-internal func _instanceFromId(instanceId: Int) -> Object? {
+internal func _instanceFromID(instanceID: Int) -> Object? {
     Object?.fromMutatingGodotUnsafePointer { __temporary in
-    instanceId.withGodotUnsafeRawPointer { __ptr_instanceId in
-    withUnsafeArgumentPackPointer(__ptr_instanceId) { __accessPtr in
+    instanceID.withGodotUnsafeRawPointer { __ptr_instanceID in
+    withUnsafeArgumentPackPointer(__ptr_instanceID) { __accessPtr in
     __function_binding_instance_from_id(__temporary, __accessPtr, 1)}}}
 }
 
@@ -1381,7 +1381,7 @@ private var __function_binding_is_instance_id_valid: GDExtensionPtrUtilityFuncti
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2232439758)!
     }
 }()
-internal func _isInstanceIdValid(id: Int) -> Bool {
+internal func _isInstanceIDValid(id: Int) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     id.withGodotUnsafeRawPointer { __ptr_id in
     withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -1405,7 +1405,7 @@ private var __function_binding_rid_allocate_id: GDExtensionPtrUtilityFunction = 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 701202648)!
     }
 }()
-internal func _ridAllocateId() -> Int {
+internal func _ridAllocateID() -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     __function_binding_rid_allocate_id(__temporary, nil, 0)}
 }

@@ -185,7 +185,7 @@ open class KinematicCollision3D: RefCounted {
         }
         }
     }()
-    public func colliderId(collisionIndex: Int32 = 0) -> UInt64 {
+    public func colliderID(collisionIndex: Int32 = 0) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in

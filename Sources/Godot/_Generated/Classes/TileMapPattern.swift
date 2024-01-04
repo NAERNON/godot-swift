@@ -12,12 +12,12 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func setCell(coords: Godot.Vector2i, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) {
+    public func setCell(coords: Godot.Vector2i, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
-        withUnsafeArgumentPackPointer(__ptr_coords, __ptr_sourceId, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_coords, __ptr_sourceID, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_cell,
@@ -74,7 +74,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellSourceId(coords: Godot.Vector2i) -> Int32 {
+    public func cellSourceID(coords: Godot.Vector2i) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in

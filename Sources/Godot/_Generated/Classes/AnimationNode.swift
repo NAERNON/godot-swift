@@ -38,27 +38,27 @@ open class AnimationNode: Resource {
     }()
 
     public struct AnimationNodeRenamedSignalInput: Godot.SignalInput {
-        public let objectId: Int
+        public let objectID: Int
         public let oldName: Godot.GodotString
         public let newName: Godot.GodotString
-        fileprivate init(objectId: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
-            self.objectId = objectId
+        fileprivate init(objectID: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
+            self.objectID = objectID
             self.oldName = oldName
             self.newName = newName
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.objectId), Variant(input.oldName), Variant(input.newName)]
+            [Variant(input.objectID), Variant(input.oldName), Variant(input.newName)]
         }
     }
-    public func animationNodeRenamed(objectId: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
-        _ = animationNodeRenamedSignal.emit(.init(objectId: objectId,
+    public func animationNodeRenamed(objectID: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
+        _ = animationNodeRenamedSignal.emit(.init(objectID: objectID,
                 oldName: oldName,
                 newName: newName))
     }
     public lazy var animationNodeRenamedSignal: Godot.SignalEmitter<AnimationNodeRenamedSignalInput> = {
         .init(object: self, signalName: "animation_node_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(objectId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     oldName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     newName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
@@ -73,24 +73,24 @@ open class AnimationNode: Resource {
     }()
 
     public struct AnimationNodeRemovedSignalInput: Godot.SignalInput {
-        public let objectId: Int
+        public let objectID: Int
         public let name: Godot.GodotString
-        fileprivate init(objectId: Int, name: Godot.GodotString) {
-            self.objectId = objectId
+        fileprivate init(objectID: Int, name: Godot.GodotString) {
+            self.objectID = objectID
             self.name = name
         }
         public static func arguments(from input: Self) -> [Variant] {
-            [Variant(input.objectId), Variant(input.name)]
+            [Variant(input.objectID), Variant(input.name)]
         }
     }
-    public func animationNodeRemoved(objectId: Int, name: Godot.GodotString) {
-        _ = animationNodeRemovedSignal.emit(.init(objectId: objectId,
+    public func animationNodeRemoved(objectID: Int, name: Godot.GodotString) {
+        _ = animationNodeRemovedSignal.emit(.init(objectID: objectID,
                 name: name))
     }
     public lazy var animationNodeRemovedSignal: Godot.SignalEmitter<AnimationNodeRemovedSignalInput> = {
         .init(object: self, signalName: "animation_node_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(objectId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!).release()

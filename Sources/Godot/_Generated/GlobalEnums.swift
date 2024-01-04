@@ -844,7 +844,7 @@ public enum PropertyHint: UInt32, GodotEnum {
     case expression = 19
     case placeholderText = 20
     case colorNoAlpha = 21
-    case objectId = 22
+    case objectID = 22
     case typeString = 23
     case nodePathToEditedNode = 24
     case objectTooBig = 25
@@ -854,7 +854,7 @@ public enum PropertyHint: UInt32, GodotEnum {
     case intIsObjectid = 29
     case intIsPointer = 30
     case arrayType = 31
-    case localeId = 32
+    case localeID = 32
     case localizableString = 33
     case nodeType = 34
     case hideQuaternionEdit = 35
@@ -884,7 +884,7 @@ public enum PropertyHint: UInt32, GodotEnum {
         ("Expression", 19),
         ("Placeholder Text", 20),
         ("Color No Alpha", 21),
-        ("Object Id", 22),
+        ("Object ID", 22),
         ("Type String", 23),
         ("Node Path To Edited Node", 24),
         ("Object Too Big", 25),
@@ -894,7 +894,7 @@ public enum PropertyHint: UInt32, GodotEnum {
         ("Int Is Objectid", 29),
         ("Int Is Pointer", 30),
         ("Array Type", 31),
-        ("Locale Id", 32),
+        ("Locale ID", 32),
         ("Localizable String", 33),
         ("Node Type", 34),
         ("Hide Quaternion Edit", 35),

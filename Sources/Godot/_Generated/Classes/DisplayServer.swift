@@ -266,8 +266,8 @@ open class DisplayServer: Object {
     public static let screenWithKeyboardFocus: Int = -3
     public static let screenPrimary: Int = -2
     public static let screenOfMainWindow: Int = -1
-    public static let mainWindowId: Int = 0
-    public static let invalidWindowId: Int = -1
+    public static let mainWindowID: Int = 0
+    public static let invalidWindowID: Int = -1
 
     internal static var __method_binding_has_feature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
@@ -1438,15 +1438,15 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func ttsSpeak(text: Godot.GodotString, voice: Godot.GodotString, volume: Int32 = 50, pitch: Double = 1.0, rate: Double = 1.0, utteranceId: Int32 = 0, interrupt: Bool = false) {
+    public func ttsSpeak(text: Godot.GodotString, voice: Godot.GodotString, volume: Int32 = 50, pitch: Double = 1.0, rate: Double = 1.0, utteranceID: Int32 = 0, interrupt: Bool = false) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         voice.withGodotUnsafeRawPointer { __ptr_voice in
         volume.withGodotUnsafeRawPointer { __ptr_volume in
         pitch.withGodotUnsafeRawPointer { __ptr_pitch in
         rate.withGodotUnsafeRawPointer { __ptr_rate in
-        utteranceId.withGodotUnsafeRawPointer { __ptr_utteranceId in
+        utteranceID.withGodotUnsafeRawPointer { __ptr_utteranceID in
         interrupt.withGodotUnsafeRawPointer { __ptr_interrupt in
-        withUnsafeArgumentPackPointer(__ptr_text, __ptr_voice, __ptr_volume, __ptr_pitch, __ptr_rate, __ptr_utteranceId, __ptr_interrupt) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_text, __ptr_voice, __ptr_volume, __ptr_pitch, __ptr_rate, __ptr_utteranceID, __ptr_interrupt) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tts_speak,
@@ -2229,11 +2229,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetNativeHandle(handleType: Godot.DisplayServer.HandleType, windowId: Int32 = 0) -> Int64 {
+    public func windowGetNativeHandle(handleType: Godot.DisplayServer.HandleType, windowID: Int32 = 0) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         handleType.withGodotUnsafeRawPointer { __ptr_handleType in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_handleType, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_handleType, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_native_handle,
@@ -2308,10 +2308,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetTitle(_ title: Godot.GodotString, windowId: Int32 = 0) {
+    public func windowSetTitle(_ title: Godot.GodotString, windowID: Int32 = 0) {
         title.withGodotUnsafeRawPointer { __ptr_title in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_title,
@@ -2328,11 +2328,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetTitleSize(title: Godot.GodotString, windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetTitleSize(title: Godot.GodotString, windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_title_size,
@@ -2349,10 +2349,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMousePassthrough(region: Godot.PackedVector2Array, windowId: Int32 = 0) {
+    public func windowSetMousePassthrough(region: Godot.PackedVector2Array, windowID: Int32 = 0) {
         region.withGodotUnsafeRawPointer { __ptr_region in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_region, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_region, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_mouse_passthrough,
@@ -2369,10 +2369,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetCurrentScreen(windowId: Int32 = 0) -> Int32 {
+    public func windowGetCurrentScreen(windowID: Int32 = 0) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_current_screen,
@@ -2389,10 +2389,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetCurrentScreen(_ screen: Int32, windowId: Int32 = 0) {
+    public func windowSetCurrentScreen(_ screen: Int32, windowID: Int32 = 0) {
         screen.withGodotUnsafeRawPointer { __ptr_screen in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_screen, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_screen, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_current_screen,
@@ -2409,10 +2409,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetPosition(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetPosition(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_position,
@@ -2429,10 +2429,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetPositionWithDecorations(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetPositionWithDecorations(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_position_with_decorations,
@@ -2449,10 +2449,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetPosition(_ position: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetPosition(_ position: Godot.Vector2i, windowID: Int32 = 0) {
         position.withGodotUnsafeRawPointer { __ptr_position in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_position,
@@ -2469,10 +2469,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSize(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetSize(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_size,
@@ -2489,10 +2489,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetSize(_ size: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetSize(_ size: Godot.Vector2i, windowID: Int32 = 0) {
         size.withGodotUnsafeRawPointer { __ptr_size in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_size, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_size, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_size,
@@ -2509,10 +2509,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetRectChangedCallback(_ callback: Godot.Callable, windowId: Int32 = 0) {
+    public func windowSetRectChangedCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_rect_changed_callback,
@@ -2529,10 +2529,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetWindowEventCallback(_ callback: Godot.Callable, windowId: Int32 = 0) {
+    public func windowSetWindowEventCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_window_event_callback,
@@ -2549,10 +2549,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetInputEventCallback(_ callback: Godot.Callable, windowId: Int32 = 0) {
+    public func windowSetInputEventCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_input_event_callback,
@@ -2569,10 +2569,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetInputTextCallback(_ callback: Godot.Callable, windowId: Int32 = 0) {
+    public func windowSetInputTextCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_input_text_callback,
@@ -2589,10 +2589,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetDropFilesCallback(_ callback: Godot.Callable, windowId: Int32 = 0) {
+    public func windowSetDropFilesCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_drop_files_callback,
@@ -2609,10 +2609,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetAttachedInstanceId(windowId: Int32 = 0) -> UInt64 {
+    public func windowGetAttachedInstanceID(windowID: Int32 = 0) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_attached_instance_id,
@@ -2629,10 +2629,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMaxSize(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetMaxSize(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_max_size,
@@ -2649,10 +2649,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMaxSize(_ maxSize: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetMaxSize(_ maxSize: Godot.Vector2i, windowID: Int32 = 0) {
         maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_maxSize, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_maxSize, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_max_size,
@@ -2669,10 +2669,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMinSize(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetMinSize(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_min_size,
@@ -2689,10 +2689,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMinSize(_ minSize: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetMinSize(_ minSize: Godot.Vector2i, windowID: Int32 = 0) {
         minSize.withGodotUnsafeRawPointer { __ptr_minSize in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_minSize, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_minSize, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_min_size,
@@ -2709,10 +2709,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSizeWithDecorations(windowId: Int32 = 0) -> Godot.Vector2i {
+    public func windowGetSizeWithDecorations(windowID: Int32 = 0) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_size_with_decorations,
@@ -2729,10 +2729,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMode(windowId: Int32 = 0) -> Godot.DisplayServer.WindowMode {
+    public func windowGetMode(windowID: Int32 = 0) -> Godot.DisplayServer.WindowMode {
         Godot.DisplayServer.WindowMode.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_mode,
@@ -2749,10 +2749,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMode(_ mode: Godot.DisplayServer.WindowMode, windowId: Int32 = 0) {
+    public func windowSetMode(_ mode: Godot.DisplayServer.WindowMode, windowID: Int32 = 0) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_mode, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_mode, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_mode,
@@ -2769,11 +2769,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetFlag(_ flag: Godot.DisplayServer.WindowFlags, enabled: Bool, windowId: Int32 = 0) {
+    public func windowSetFlag(_ flag: Godot.DisplayServer.WindowFlags, enabled: Bool, windowID: Int32 = 0) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_flag,
@@ -2790,11 +2790,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetFlag(_ flag: Godot.DisplayServer.WindowFlags, windowId: Int32 = 0) -> Bool {
+    public func windowGetFlag(_ flag: Godot.DisplayServer.WindowFlags, windowID: Int32 = 0) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_flag, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_flag, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_flag,
@@ -2811,10 +2811,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetWindowButtonsOffset(_ offset: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetWindowButtonsOffset(_ offset: Godot.Vector2i, windowID: Int32 = 0) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_offset, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_offset, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_window_buttons_offset,
@@ -2831,10 +2831,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSafeTitleMargins(windowId: Int32 = 0) -> Godot.Vector3i {
+    public func windowGetSafeTitleMargins(windowID: Int32 = 0) -> Godot.Vector3i {
         Godot.Vector3i.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_safe_title_margins,
@@ -2851,9 +2851,9 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowRequestAttention(windowId: Int32 = 0) {
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+    public func windowRequestAttention(windowID: Int32 = 0) {
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_request_attention,
@@ -2870,9 +2870,9 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowMoveToForeground(windowId: Int32 = 0) {
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+    public func windowMoveToForeground(windowID: Int32 = 0) {
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_move_to_foreground,
@@ -2889,10 +2889,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowIsFocused(windowId: Int32 = 0) -> Bool {
+    public func windowIsFocused(windowID: Int32 = 0) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_is_focused,
@@ -2909,10 +2909,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowCanDraw(windowId: Int32 = 0) -> Bool {
+    public func windowCanDraw(windowID: Int32 = 0) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_can_draw,
@@ -2929,10 +2929,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetTransient(windowId: Int32, parentWindowId: Int32) {
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        parentWindowId.withGodotUnsafeRawPointer { __ptr_parentWindowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId, __ptr_parentWindowId) { __accessPtr in
+    public func windowSetTransient(windowID: Int32, parentWindowID: Int32) {
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        parentWindowID.withGodotUnsafeRawPointer { __ptr_parentWindowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID, __ptr_parentWindowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_transient,
@@ -2949,10 +2949,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetExclusive(windowId: Int32, exclusive: Bool) {
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
+    public func windowSetExclusive(windowID: Int32, exclusive: Bool) {
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         exclusive.withGodotUnsafeRawPointer { __ptr_exclusive in
-        withUnsafeArgumentPackPointer(__ptr_windowId, __ptr_exclusive) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_windowID, __ptr_exclusive) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_exclusive,
@@ -2969,10 +2969,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetImeActive(_ active: Bool, windowId: Int32 = 0) {
+    public func windowSetImeActive(_ active: Bool, windowID: Int32 = 0) {
         active.withGodotUnsafeRawPointer { __ptr_active in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_active, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_active, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_ime_active,
@@ -2989,10 +2989,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetImePosition(_ position: Godot.Vector2i, windowId: Int32 = 0) {
+    public func windowSetImePosition(_ position: Godot.Vector2i, windowID: Int32 = 0) {
         position.withGodotUnsafeRawPointer { __ptr_position in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_ime_position,
@@ -3009,10 +3009,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetVsyncMode(_ vsyncMode: Godot.DisplayServer.VSyncMode, windowId: Int32 = 0) {
+    public func windowSetVsyncMode(_ vsyncMode: Godot.DisplayServer.VSyncMode, windowID: Int32 = 0) {
         vsyncMode.withGodotUnsafeRawPointer { __ptr_vsyncMode in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_vsyncMode, __ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_vsyncMode, __ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_set_vsync_mode,
@@ -3029,10 +3029,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetVsyncMode(windowId: Int32 = 0) -> Godot.DisplayServer.VSyncMode {
+    public func windowGetVsyncMode(windowID: Int32 = 0) -> Godot.DisplayServer.VSyncMode {
         Godot.DisplayServer.VSyncMode.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_vsync_mode,
@@ -3049,10 +3049,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowIsMaximizeAllowed(windowId: Int32 = 0) -> Bool {
+    public func windowIsMaximizeAllowed(windowID: Int32 = 0) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
-        withUnsafeArgumentPackPointer(__ptr_windowId) { __accessPtr in
+        windowID.withGodotUnsafeRawPointer { __ptr_windowID in
+        withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_is_maximize_allowed,
@@ -3277,9 +3277,9 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func enableForStealingFocus(processId: Int64) {
-        processId.withGodotUnsafeRawPointer { __ptr_processId in
-        withUnsafeArgumentPackPointer(__ptr_processId) { __accessPtr in
+    public func enableForStealingFocus(processID: Int64) {
+        processID.withGodotUnsafeRawPointer { __ptr_processID in
+        withUnsafeArgumentPackPointer(__ptr_processID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_enable_for_stealing_focus,

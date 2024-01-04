@@ -58,5 +58,5 @@ public extension NamingConvention {
 
 /// Some components should always be capitalized on camel or pascal case.
 private let componentsToCapitalizeForCamelOrPascalCase: Set<String> = [
-    "2d", "3d"
+    "2d", "3d", "id"
 ]

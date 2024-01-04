@@ -468,9 +468,9 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func removeShapeOwner(ownerId: UInt32) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+    public func removeShapeOwner(ownerID: UInt32) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_shape_owner,
@@ -505,10 +505,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerSetTransform(ownerId: UInt32, transform: Godot.Transform2D) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
+    public func shapeOwnerSetTransform(ownerID: UInt32, transform: Godot.Transform2D) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_transform) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_set_transform,
@@ -525,10 +525,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerGetTransform(ownerId: UInt32) -> Godot.Transform2D {
+    public func shapeOwnerGetTransform(ownerID: UInt32) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_get_transform,
@@ -545,10 +545,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerGetOwner(ownerId: UInt32) -> Godot.Object? {
+    public func shapeOwnerGetOwner(ownerID: UInt32) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_get_owner,
@@ -565,10 +565,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerSetDisabled(ownerId: UInt32, disabled: Bool) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
+    public func shapeOwnerSetDisabled(ownerID: UInt32, disabled: Bool) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_disabled) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_set_disabled,
@@ -585,10 +585,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func isShapeOwnerDisabled(ownerId: UInt32) -> Bool {
+    public func isShapeOwnerDisabled(ownerID: UInt32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shape_owner_disabled,
@@ -605,10 +605,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerSetOneWayCollision(ownerId: UInt32, enable: Bool) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
+    public func shapeOwnerSetOneWayCollision(ownerID: UInt32, enable: Bool) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_enable) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_set_one_way_collision,
@@ -625,10 +625,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func isShapeOwnerOneWayCollisionEnabled(ownerId: UInt32) -> Bool {
+    public func isShapeOwnerOneWayCollisionEnabled(ownerID: UInt32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shape_owner_one_way_collision_enabled,
@@ -645,10 +645,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerSetOneWayCollisionMargin(ownerId: UInt32, margin: Double) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
+    public func shapeOwnerSetOneWayCollisionMargin(ownerID: UInt32, margin: Double) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_margin) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_set_one_way_collision_margin,
@@ -665,10 +665,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerOneWayCollisionMargin(ownerId: UInt32) -> Double {
+    public func shapeOwnerOneWayCollisionMargin(ownerID: UInt32) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape_owner_one_way_collision_margin,
@@ -685,11 +685,11 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerAddShape(ownerId: UInt32, shape: Godot.Shape2D?) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
+    public func shapeOwnerAddShape(ownerID: UInt32, shape: Godot.Shape2D?) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, _ptr___ptr_shape) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, _ptr___ptr_shape) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_add_shape,
@@ -706,10 +706,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerGetShapeCount(ownerId: UInt32) -> Int32 {
+    public func shapeOwnerGetShapeCount(ownerID: UInt32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_get_shape_count,
@@ -726,11 +726,11 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerGetShape(ownerId: UInt32, shapeId: Int32) -> Godot.Shape2D? {
+    public func shapeOwnerGetShape(ownerID: UInt32, shapeID: Int32) -> Godot.Shape2D? {
         Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        shapeId.withGodotUnsafeRawPointer { __ptr_shapeId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_shapeId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_get_shape,
@@ -747,11 +747,11 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerGetShapeIndex(ownerId: UInt32, shapeId: Int32) -> Int32 {
+    public func shapeOwnerGetShapeIndex(ownerID: UInt32, shapeID: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        shapeId.withGodotUnsafeRawPointer { __ptr_shapeId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_shapeId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_get_shape_index,
@@ -768,10 +768,10 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerRemoveShape(ownerId: UInt32, shapeId: Int32) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        shapeId.withGodotUnsafeRawPointer { __ptr_shapeId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId, __ptr_shapeId) { __accessPtr in
+    public func shapeOwnerRemoveShape(ownerID: UInt32, shapeID: Int32) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_remove_shape,
@@ -788,9 +788,9 @@ open class CollisionObject2D: Node2D {
         }
         }
     }()
-    public func shapeOwnerClearShapes(ownerId: UInt32) {
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_ownerId) { __accessPtr in
+    public func shapeOwnerClearShapes(ownerID: UInt32) {
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shape_owner_clear_shapes,

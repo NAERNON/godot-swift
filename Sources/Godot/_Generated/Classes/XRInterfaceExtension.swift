@@ -106,7 +106,7 @@ open class XRInterfaceExtension: XRInterface {
     open func _setAnchorDetectionIsEnabled(_ enabled: Bool) {
     }
 
-    open func _getCameraFeedId() -> Int32 {
+    open func _getCameraFeedID() -> Int32 {
         Int32()
     }
 
@@ -445,7 +445,7 @@ open class XRInterfaceExtension: XRInterface {
                 return
             }
             Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getCameraFeedId()
+        ._getCameraFeedID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_color_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -496,7 +496,7 @@ open class XRInterfaceExtension: XRInterface {
             "_triggerHapticPulse" : ("_trigger_haptic_pulse", _trigger_haptic_pulse_call),
             "_getAnchorDetectionIsEnabled" : ("_get_anchor_detection_is_enabled", _get_anchor_detection_is_enabled_call),
             "_setAnchorDetectionIsEnabled" : ("_set_anchor_detection_is_enabled", _set_anchor_detection_is_enabled_call),
-            "_getCameraFeedId" : ("_get_camera_feed_id", _get_camera_feed_id_call),
+            "_getCameraFeedID" : ("_get_camera_feed_id", _get_camera_feed_id_call),
             "_getColorTexture" : ("_get_color_texture", _get_color_texture_call),
             "_getDepthTexture" : ("_get_depth_texture", _get_depth_texture_call),
             "_getVelocityTexture" : ("_get_velocity_texture", _get_velocity_texture_call)

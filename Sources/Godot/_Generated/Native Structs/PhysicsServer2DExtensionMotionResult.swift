@@ -12,7 +12,7 @@ public struct PhysicsServer2DExtensionMotionResult {
     public var collisionSafeFraction: Real
     public var collisionUnsafeFraction: Real
     public var collisionLocalShape: Int
-    public var colliderId: ObjectID
+    public var colliderID: ObjectID
     public var collider: RID
     public var colliderShape: Int
 }

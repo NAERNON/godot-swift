@@ -284,7 +284,7 @@ open class EditorProperty: Container {
         }
     }()
 
-    public struct ObjectIdSelectedSignalInput: Godot.SignalInput {
+    public struct ObjectIDSelectedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotStringName
         public let id: Int
         fileprivate init(property: Godot.GodotStringName, id: Int) {
@@ -295,21 +295,21 @@ open class EditorProperty: Container {
             [Variant(input.property), Variant(input.id)]
         }
     }
-    public func objectIdSelected(property: Godot.GodotStringName, id: Int) {
-        _ = objectIdSelectedSignal.emit(.init(property: property,
+    public func objectIDSelected(property: Godot.GodotStringName, id: Int) {
+        _ = objectIDSelectedSignal.emit(.init(property: property,
                 id: id))
     }
-    public lazy var objectIdSelectedSignal: Godot.SignalEmitter<ObjectIdSelectedSignalInput> = {
+    public lazy var objectIDSelectedSignal: Godot.SignalEmitter<ObjectIDSelectedSignalInput> = {
         .init(object: self, signalName: "object_id_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

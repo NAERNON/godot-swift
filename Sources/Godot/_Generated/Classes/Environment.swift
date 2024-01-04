@@ -392,7 +392,7 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setCameraFeedId(_ id: Int32) {
+    private func __setCameraFeedID(_ id: Int32) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,7 +411,7 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __getCameraFeedId() -> Int32 {
+    private func __getCameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3405,12 +3405,12 @@ open class Environment: Resource {
         }
     }
 
-    public var cameraFeedId: Int32 {
+    public var cameraFeedID: Int32 {
         get {
-            __getCameraFeedId()
+            __getCameraFeedID()
         }
         set {
-            __setCameraFeedId(
+            __setCameraFeedID(
                 newValue
             )
         }

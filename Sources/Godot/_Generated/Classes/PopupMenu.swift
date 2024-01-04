@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PopupMenu: Popup {
-    public struct IdPressedSignalInput: Godot.SignalInput {
+    public struct IDPressedSignalInput: Godot.SignalInput {
         public let id: Int
         fileprivate init(id: Int) {
             self.id = id
@@ -17,22 +17,22 @@ open class PopupMenu: Popup {
     public func idPressed(id: Int) {
         _ = idPressedSignal.emit(.init(id: id))
     }
-    public lazy var idPressedSignal: Godot.SignalEmitter<IdPressedSignalInput> = {
+    public lazy var idPressedSignal: Godot.SignalEmitter<IDPressedSignalInput> = {
         .init(object: self, signalName: "id_pressed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<IDPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<IDPressedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<IDPressedSignalInput>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct IdFocusedSignalInput: Godot.SignalInput {
+    public struct IDFocusedSignalInput: Godot.SignalInput {
         public let id: Int
         fileprivate init(id: Int) {
             self.id = id
@@ -44,16 +44,16 @@ open class PopupMenu: Popup {
     public func idFocused(id: Int) {
         _ = idFocusedSignal.emit(.init(id: id))
     }
-    public lazy var idFocusedSignal: Godot.SignalEmitter<IdFocusedSignalInput> = {
+    public lazy var idFocusedSignal: Godot.SignalEmitter<IDFocusedSignalInput> = {
         .init(object: self, signalName: "id_focused") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<IDFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<IDFocusedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<IDFocusedSignalInput>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -590,7 +590,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemId(index: Int32, id: Int32) {
+    public func setItemID(index: Int32, id: Int32) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_id) { __accessPtr in
@@ -1030,7 +1030,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemId(index: Int32) -> Int32 {
+    public func itemID(index: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in

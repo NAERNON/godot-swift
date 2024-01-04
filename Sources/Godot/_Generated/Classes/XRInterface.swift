@@ -435,7 +435,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func cameraFeedId() -> Int32 {
+    public func cameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

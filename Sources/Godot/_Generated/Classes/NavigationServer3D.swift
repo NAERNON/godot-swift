@@ -824,10 +824,10 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func regionSetOwnerId(region: Godot.RID, ownerId: UInt64) {
+    public func regionSetOwnerID(region: Godot.RID, ownerID: UInt64) {
         region.withGodotUnsafeRawPointer { __ptr_region in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_region, __ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_region, __ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_region_set_owner_id,
@@ -844,7 +844,7 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func regionGetOwnerId(region: Godot.RID) -> UInt64 {
+    public func regionGetOwnerID(region: Godot.RID) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -1428,10 +1428,10 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func linkSetOwnerId(link: Godot.RID, ownerId: UInt64) {
+    public func linkSetOwnerID(link: Godot.RID, ownerID: UInt64) {
         link.withGodotUnsafeRawPointer { __ptr_link in
-        ownerId.withGodotUnsafeRawPointer { __ptr_ownerId in
-        withUnsafeArgumentPackPointer(__ptr_link, __ptr_ownerId) { __accessPtr in
+        ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
+        withUnsafeArgumentPackPointer(__ptr_link, __ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_link_set_owner_id,
@@ -1448,7 +1448,7 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func linkGetOwnerId(link: Godot.RID) -> UInt64 {
+    public func linkGetOwnerID(link: Godot.RID) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in

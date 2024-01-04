@@ -61,10 +61,10 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createMesh(uniqueId: Int32) -> Godot.ErrorType {
+    public func createMesh(uniqueID: Int32) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
-        uniqueId.withGodotUnsafeRawPointer { __ptr_uniqueId in
-        withUnsafeArgumentPackPointer(__ptr_uniqueId) { __accessPtr in
+        uniqueID.withGodotUnsafeRawPointer { __ptr_uniqueID in
+        withUnsafeArgumentPackPointer(__ptr_uniqueID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_mesh,
@@ -81,12 +81,12 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func addMeshPeer(peerId: Int32, host: Godot.ENetConnection?) -> Godot.ErrorType {
+    public func addMeshPeer(peerID: Int32, host: Godot.ENetConnection?) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
-        peerId.withGodotUnsafeRawPointer { __ptr_peerId in
+        peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         host.withGodotUnsafeRawPointer { __ptr_host in
         withUnsafePointer(to: __ptr_host) { _ptr___ptr_host in
-        withUnsafeArgumentPackPointer(__ptr_peerId, _ptr___ptr_host) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_peerID, _ptr___ptr_host) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_mesh_peer,

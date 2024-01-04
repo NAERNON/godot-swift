@@ -276,7 +276,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func objectHistoryId(object: Godot.Object?) -> Int32 {
+    public func objectHistoryID(object: Godot.Object?) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in

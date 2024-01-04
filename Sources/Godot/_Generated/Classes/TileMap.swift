@@ -690,13 +690,13 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCell(layer: Int32, coords: Godot.Vector2i, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = 0) {
+    public func setCell(layer: Int32, coords: Godot.Vector2i, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = 0) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
-        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_coords, __ptr_sourceId, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_coords, __ptr_sourceID, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_cell,
@@ -733,7 +733,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func cellSourceId(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Int32 {
+    public func cellSourceID(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
@@ -1102,13 +1102,13 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedCellsById(layer: Int32, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2i> {
+    public func usedCellsByID(layer: Int32, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2i> {
         Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
-        sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
+        sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
-        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_sourceId, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_sourceID, __ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells_by_id,

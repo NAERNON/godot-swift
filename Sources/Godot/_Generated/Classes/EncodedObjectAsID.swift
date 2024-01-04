@@ -12,7 +12,7 @@ open class EncodedObjectAsID: RefCounted {
         }
         }
     }()
-    private func __setObjectId(_ id: UInt64) {
+    private func __setObjectID(_ id: UInt64) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +31,7 @@ open class EncodedObjectAsID: RefCounted {
         }
         }
     }()
-    private func __getObjectId() -> UInt64 {
+    private func __getObjectID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -42,12 +42,12 @@ open class EncodedObjectAsID: RefCounted {
         )}}
     }
 
-    public var objectId: UInt64 {
+    public var objectID: UInt64 {
         get {
-            __getObjectId()
+            __getObjectID()
         }
         set {
-            __setObjectId(
+            __setObjectID(
                 newValue
             )
         }

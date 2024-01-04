@@ -144,10 +144,10 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     open func _areaClearShapes(area: Godot.RID) {
     }
 
-    open func _areaAttachObjectInstanceId(area: Godot.RID, id: UInt64) {
+    open func _areaAttachObjectInstanceID(area: Godot.RID, id: UInt64) {
     }
 
-    open func _areaGetObjectInstanceId(area: Godot.RID) -> UInt64 {
+    open func _areaGetObjectInstanceID(area: Godot.RID) -> UInt64 {
         UInt64()
     }
 
@@ -239,10 +239,10 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     open func _bodyClearShapes(body: Godot.RID) {
     }
 
-    open func _bodyAttachObjectInstanceId(body: Godot.RID, id: UInt64) {
+    open func _bodyAttachObjectInstanceID(body: Godot.RID, id: UInt64) {
     }
 
-    open func _bodyGetObjectInstanceId(body: Godot.RID) -> UInt64 {
+    open func _bodyGetObjectInstanceID(body: Godot.RID) -> UInt64 {
         UInt64()
     }
 
@@ -1028,7 +1028,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
                 return
             }
             Unmanaged<PhysicsServer3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaAttachObjectInstanceId(
+        ._areaAttachObjectInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -1037,7 +1037,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
                 return
             }
             Unmanaged<PhysicsServer3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._areaGetObjectInstanceId(
+        ._areaGetObjectInstanceID(
             area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1286,7 +1286,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
                 return
             }
             Unmanaged<PhysicsServer3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyAttachObjectInstanceId(
+        ._bodyAttachObjectInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!),
             id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
@@ -1295,7 +1295,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
                 return
             }
             Unmanaged<PhysicsServer3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._bodyGetObjectInstanceId(
+        ._bodyGetObjectInstanceID(
             body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -2452,8 +2452,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
             "_areaGetShapeTransform" : ("_area_get_shape_transform", _area_get_shape_transform_call),
             "_areaRemoveShape" : ("_area_remove_shape", _area_remove_shape_call),
             "_areaClearShapes" : ("_area_clear_shapes", _area_clear_shapes_call),
-            "_areaAttachObjectInstanceId" : ("_area_attach_object_instance_id", _area_attach_object_instance_id_call),
-            "_areaGetObjectInstanceId" : ("_area_get_object_instance_id", _area_get_object_instance_id_call),
+            "_areaAttachObjectInstanceID" : ("_area_attach_object_instance_id", _area_attach_object_instance_id_call),
+            "_areaGetObjectInstanceID" : ("_area_get_object_instance_id", _area_get_object_instance_id_call),
             "_areaSetParam" : ("_area_set_param", _area_set_param_call),
             "_areaSetTransform" : ("_area_set_transform", _area_set_transform_call),
             "_areaGetParam" : ("_area_get_param", _area_get_param_call),
@@ -2480,8 +2480,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
             "_bodyGetShapeTransform" : ("_body_get_shape_transform", _body_get_shape_transform_call),
             "_bodyRemoveShape" : ("_body_remove_shape", _body_remove_shape_call),
             "_bodyClearShapes" : ("_body_clear_shapes", _body_clear_shapes_call),
-            "_bodyAttachObjectInstanceId" : ("_body_attach_object_instance_id", _body_attach_object_instance_id_call),
-            "_bodyGetObjectInstanceId" : ("_body_get_object_instance_id", _body_get_object_instance_id_call),
+            "_bodyAttachObjectInstanceID" : ("_body_attach_object_instance_id", _body_attach_object_instance_id_call),
+            "_bodyGetObjectInstanceID" : ("_body_get_object_instance_id", _body_get_object_instance_id_call),
             "_bodySetEnableContinuousCollisionDetection" : ("_body_set_enable_continuous_collision_detection", _body_set_enable_continuous_collision_detection_call),
             "_bodyIsContinuousCollisionDetectionEnabled" : ("_body_is_continuous_collision_detection_enabled", _body_is_continuous_collision_detection_enabled_call),
             "_bodySetCollisionLayer" : ("_body_set_collision_layer", _body_set_collision_layer_call),

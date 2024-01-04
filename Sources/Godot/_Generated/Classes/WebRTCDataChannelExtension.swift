@@ -51,7 +51,7 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
         Bool()
     }
 
-    open func _getId() -> Int32 {
+    open func _getID() -> Int32 {
         Int32()
     }
 
@@ -175,7 +175,7 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
                 return
             }
             Unmanaged<WebRTCDataChannelExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getId()
+        ._getID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_packet_life_time_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -225,7 +225,7 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
             "_getReadyState" : ("_get_ready_state", _get_ready_state_call),
             "_getLabel" : ("_get_label", _get_label_call),
             "_isOrdered" : ("_is_ordered", _is_ordered_call),
-            "_getId" : ("_get_id", _get_id_call),
+            "_getID" : ("_get_id", _get_id_call),
             "_getMaxPacketLifeTime" : ("_get_max_packet_life_time", _get_max_packet_life_time_call),
             "_getMaxRetransmits" : ("_get_max_retransmits", _get_max_retransmits_call),
             "_getProtocol" : ("_get_protocol", _get_protocol_call),

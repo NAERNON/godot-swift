@@ -271,7 +271,7 @@ extension Callable {
         __method_binding_get_object(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _objectId() -> Int {
+    internal func _objectID() -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_object_id(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
@@ -337,9 +337,9 @@ extension Callable {
         __method_binding_rpc(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))}}
     }
 
-    internal func _rpcId<each VariantRest : VariantStorableIn>(peerId: Int, _ rest: repeat each VariantRest) {
-        peerId.withGodotUnsafeRawPointer { __ptr_peerId in
-        withUnsafeArgumentPackPointer(__ptr_peerId, varargs: repeat each rest) { packCount, __accessPtr in
+    internal func _rpcID<each VariantRest : VariantStorableIn>(peerID: Int, _ rest: repeat each VariantRest) {
+        peerID.withGodotUnsafeRawPointer { __ptr_peerID in
+        withUnsafeArgumentPackPointer(__ptr_peerID, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_rpc_id(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))}}}
     }

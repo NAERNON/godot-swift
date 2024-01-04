@@ -146,7 +146,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
         Godot.Vector3()
     }
 
-    open func _getContactColliderId(contactIdx: Int32) -> UInt64 {
+    open func _getContactColliderID(contactIdx: Int32) -> UInt64 {
         UInt64()
     }
 
@@ -490,7 +490,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
                 return
             }
             Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderId(
+        ._getContactColliderID(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -581,7 +581,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             "_getContactLocalVelocityAtPosition" : ("_get_contact_local_velocity_at_position", _get_contact_local_velocity_at_position_call),
             "_getContactCollider" : ("_get_contact_collider", _get_contact_collider_call),
             "_getContactColliderPosition" : ("_get_contact_collider_position", _get_contact_collider_position_call),
-            "_getContactColliderId" : ("_get_contact_collider_id", _get_contact_collider_id_call),
+            "_getContactColliderID" : ("_get_contact_collider_id", _get_contact_collider_id_call),
             "_getContactColliderObject" : ("_get_contact_collider_object", _get_contact_collider_object_call),
             "_getContactColliderShape" : ("_get_contact_collider_shape", _get_contact_collider_shape_call),
             "_getContactColliderVelocityAtPosition" : ("_get_contact_collider_velocity_at_position", _get_contact_collider_velocity_at_position_call),

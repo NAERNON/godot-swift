@@ -36,11 +36,11 @@ open class AStarGrid2D: RefCounted {
         }
     }
 
-    open func _estimateCost(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Double {
+    open func _estimateCost(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Double {
         Double()
     }
 
-    open func _computeCost(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Double {
+    open func _computeCost(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Double {
         Double()
     }
 
@@ -580,11 +580,11 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func pointPath(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Godot.PackedVector2Array {
+    public func pointPath(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
-        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
-        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        fromID.withGodotUnsafeRawPointer { __ptr_fromID in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
+        withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_path,
@@ -601,11 +601,11 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func idPath(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
+    public func idPath(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
         Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
-        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
-        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        fromID.withGodotUnsafeRawPointer { __ptr_fromID in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
+        withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_id_path,
@@ -714,8 +714,8 @@ open class AStarGrid2D: RefCounted {
             }
             Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
-            fromId: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
-            toId: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
+            toID: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -724,8 +724,8 @@ open class AStarGrid2D: RefCounted {
             }
             Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
-            fromId: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
-            toId: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
+            toID: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

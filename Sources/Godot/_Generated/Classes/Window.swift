@@ -412,7 +412,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func windowId() -> Int32 {
+    public func windowID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

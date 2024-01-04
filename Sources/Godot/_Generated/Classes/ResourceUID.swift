@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourceUID: Object {
-    public static let invalidId: Int = -1
+    public static let invalidID: Int = -1
 
     internal static var __method_binding_id_to_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
@@ -34,10 +34,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func textToId(textId: Godot.GodotString) -> Int64 {
+    public func textToID(textID: Godot.GodotString) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
-        textId.withGodotUnsafeRawPointer { __ptr_textId in
-        withUnsafeArgumentPackPointer(__ptr_textId) { __accessPtr in
+        textID.withGodotUnsafeRawPointer { __ptr_textID in
+        withUnsafeArgumentPackPointer(__ptr_textID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_text_to_id,
@@ -54,7 +54,7 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func createId() -> Int64 {
+    public func createID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -72,7 +72,7 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func hasId(_ id: Int64) -> Bool {
+    public func hasID(_ id: Int64) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -92,7 +92,7 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func addId(_ id: Int64, path: Godot.GodotString) {
+    public func addID(_ id: Int64, path: Godot.GodotString) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_path) { __accessPtr in
@@ -112,7 +112,7 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func setId(_ id: Int64, path: Godot.GodotString) {
+    public func setID(_ id: Int64, path: Godot.GodotString) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_path) { __accessPtr in
@@ -152,7 +152,7 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func removeId(_ id: Int64) {
+    public func removeID(_ id: Int64) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

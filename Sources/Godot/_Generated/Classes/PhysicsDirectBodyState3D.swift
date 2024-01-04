@@ -748,7 +748,7 @@ open class PhysicsDirectBodyState3D: Object {
         }
         }
     }()
-    public func contactColliderId(contactIdx: Int32) -> UInt64 {
+    public func contactColliderID(contactIdx: Int32) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in

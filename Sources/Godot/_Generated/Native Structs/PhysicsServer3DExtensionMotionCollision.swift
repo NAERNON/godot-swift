@@ -9,7 +9,7 @@ public struct PhysicsServer3DExtensionMotionCollision {
     public var colliderAngularVelocity: Vector3
     public var depth: Real
     public var localShape: Int
-    public var colliderId: ObjectID
+    public var colliderID: ObjectID
     public var collider: RID
     public var colliderShape: Int
 }

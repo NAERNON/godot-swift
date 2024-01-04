@@ -12,9 +12,9 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
-    private func __setCameraFeedId(_ feedId: Int32) {
-        feedId.withGodotUnsafeRawPointer { __ptr_feedId in
-        withUnsafeArgumentPackPointer(__ptr_feedId) { __accessPtr in
+    private func __setCameraFeedID(_ feedID: Int32) {
+        feedID.withGodotUnsafeRawPointer { __ptr_feedID in
+        withUnsafeArgumentPackPointer(__ptr_feedID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_camera_feed_id,
@@ -31,7 +31,7 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
-    private func __getCameraFeedId() -> Int32 {
+    private func __getCameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -116,12 +116,12 @@ open class CameraTexture: Texture2D {
         )}}
     }
 
-    public var cameraFeedId: Int32 {
+    public var cameraFeedID: Int32 {
         get {
-            __getCameraFeedId()
+            __getCameraFeedID()
         }
         set {
-            __setCameraFeedId(
+            __setCameraFeedID(
                 newValue
             )
         }

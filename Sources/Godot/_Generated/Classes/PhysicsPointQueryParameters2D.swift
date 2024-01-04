@@ -49,9 +49,9 @@ open class PhysicsPointQueryParameters2D: RefCounted {
         }
         }
     }()
-    private func __setCanvasInstanceId(_ canvasInstanceId: UInt64) {
-        canvasInstanceId.withGodotUnsafeRawPointer { __ptr_canvasInstanceId in
-        withUnsafeArgumentPackPointer(__ptr_canvasInstanceId) { __accessPtr in
+    private func __setCanvasInstanceID(_ canvasInstanceID: UInt64) {
+        canvasInstanceID.withGodotUnsafeRawPointer { __ptr_canvasInstanceID in
+        withUnsafeArgumentPackPointer(__ptr_canvasInstanceID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_canvas_instance_id,
@@ -68,7 +68,7 @@ open class PhysicsPointQueryParameters2D: RefCounted {
         }
         }
     }()
-    private func __getCanvasInstanceId() -> UInt64 {
+    private func __getCanvasInstanceID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -238,12 +238,12 @@ open class PhysicsPointQueryParameters2D: RefCounted {
         }
     }
 
-    public var canvasInstanceId: UInt64 {
+    public var canvasInstanceID: UInt64 {
         get {
-            __getCanvasInstanceId()
+            __getCanvasInstanceID()
         }
         set {
-            __setCanvasInstanceId(
+            __setCanvasInstanceID(
                 newValue
             )
         }

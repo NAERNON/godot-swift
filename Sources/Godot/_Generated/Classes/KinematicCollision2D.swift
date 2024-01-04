@@ -158,7 +158,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
-    public func colliderId() -> UInt64 {
+    public func colliderID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

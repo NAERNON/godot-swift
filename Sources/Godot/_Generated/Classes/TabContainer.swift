@@ -863,9 +863,9 @@ open class TabContainer: Container {
         }
         }
     }()
-    private func __setTabsRearrangeGroup(groupId: Int32) {
-        groupId.withGodotUnsafeRawPointer { __ptr_groupId in
-        withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
+    private func __setTabsRearrangeGroup(groupID: Int32) {
+        groupID.withGodotUnsafeRawPointer { __ptr_groupID in
+        withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_tabs_rearrange_group,
@@ -1039,7 +1039,7 @@ open class TabContainer: Container {
         }
         set {
             __setTabsRearrangeGroup(
-                groupId: newValue
+                groupID: newValue
             )
         }
     }

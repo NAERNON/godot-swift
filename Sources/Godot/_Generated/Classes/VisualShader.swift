@@ -67,8 +67,8 @@ open class VisualShader: Shader {
         }
     }
 
-    public static let nodeIdInvalid: Int = -1
-    public static let nodeIdOutput: Int = 0
+    public static let nodeIDInvalid: Int = -1
+    public static let nodeIDOutput: Int = 0
 
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
@@ -202,7 +202,7 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func validNodeId(type: Godot.VisualShader.GodotType) -> Int32 {
+    public func validNodeID(type: Godot.VisualShader.GodotType) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in

@@ -188,7 +188,7 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func uniqueId() -> Int32 {
+    public func uniqueID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -224,7 +224,7 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func remoteSenderId() -> Int32 {
+    public func remoteSenderID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

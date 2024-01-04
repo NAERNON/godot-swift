@@ -125,7 +125,7 @@ open class EditorInspector: ScrollContainer {
         }
     }()
 
-    public struct ObjectIdSelectedSignalInput: Godot.SignalInput {
+    public struct ObjectIDSelectedSignalInput: Godot.SignalInput {
         public let id: Int
         fileprivate init(id: Int) {
             self.id = id
@@ -134,19 +134,19 @@ open class EditorInspector: ScrollContainer {
             [Variant(input.id)]
         }
     }
-    public func objectIdSelected(id: Int) {
-        _ = objectIdSelectedSignal.emit(.init(id: id))
+    public func objectIDSelected(id: Int) {
+        _ = objectIDSelectedSignal.emit(.init(id: id))
     }
-    public lazy var objectIdSelectedSignal: Godot.SignalEmitter<ObjectIdSelectedSignalInput> = {
+    public lazy var objectIDSelectedSignal: Godot.SignalEmitter<ObjectIDSelectedSignalInput> = {
         .init(object: self, signalName: "object_id_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

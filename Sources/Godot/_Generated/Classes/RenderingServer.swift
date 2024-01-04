@@ -7978,7 +7978,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceAttachObjectInstanceId(instance: Godot.RID, id: UInt64) {
+    public func instanceAttachObjectInstanceID(instance: Godot.RID, id: UInt64) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_id) { __accessPtr in

@@ -9,7 +9,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
         Bool()
     }
 
-    open func _intersectPoint(position: Godot.Vector2, canvasInstanceId: UInt64, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, results: UnsafeMutablePointer<PhysicsServer2DExtensionShapeResult>, maxResults: Int32) -> Int32 {
+    open func _intersectPoint(position: Godot.Vector2, canvasInstanceID: UInt64, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, results: UnsafeMutablePointer<PhysicsServer2DExtensionShapeResult>, maxResults: Int32) -> Int32 {
         Int32()
     }
 
@@ -76,7 +76,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
             Unmanaged<PhysicsDirectSpaceState2DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectPoint(
             position: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
-            canvasInstanceId: UInt64.fromGodotUnsafePointer(args[1]!),
+            canvasInstanceID: UInt64.fromGodotUnsafePointer(args[1]!),
             collisionMask: UInt32.fromGodotUnsafePointer(args[2]!),
             collideWithBodies: Bool.fromGodotUnsafePointer(args[3]!),
             collideWithAreas: Bool.fromGodotUnsafePointer(args[4]!),

@@ -71,7 +71,7 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
     open func _disconnectPeer(pPeer: Int32, pForce: Bool) {
     }
 
-    open func _getUniqueId() -> Int32 {
+    open func _getUniqueID() -> Int32 {
         Int32()
     }
 
@@ -237,7 +237,7 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
                 return
             }
             Unmanaged<MultiplayerPeerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
-        ._getUniqueId()
+        ._getUniqueID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_refuse_new_connections_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -287,7 +287,7 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
             "_poll" : ("_poll", _poll_call),
             "_close" : ("_close", _close_call),
             "_disconnectPeer" : ("_disconnect_peer", _disconnect_peer_call),
-            "_getUniqueId" : ("_get_unique_id", _get_unique_id_call),
+            "_getUniqueID" : ("_get_unique_id", _get_unique_id_call),
             "_setRefuseNewConnections" : ("_set_refuse_new_connections", _set_refuse_new_connections_call),
             "_isRefusingNewConnections" : ("_is_refusing_new_connections", _is_refusing_new_connections_call),
             "_isServerRelaySupported" : ("_is_server_relay_supported", _is_server_relay_supported_call),

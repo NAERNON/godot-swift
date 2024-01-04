@@ -327,11 +327,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func setOccluder(layerId: Int32, occluderPolygon: Godot.OccluderPolygon2D?) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setOccluder(layerID: Int32, occluderPolygon: Godot.OccluderPolygon2D?) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         occluderPolygon.withGodotUnsafeRawPointer { __ptr_occluderPolygon in
         withUnsafePointer(to: __ptr_occluderPolygon) { _ptr___ptr_occluderPolygon in
-        withUnsafeArgumentPackPointer(__ptr_layerId, _ptr___ptr_occluderPolygon) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, _ptr___ptr_occluderPolygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_occluder,
@@ -348,10 +348,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func occluder(layerId: Int32) -> Godot.OccluderPolygon2D? {
+    public func occluder(layerID: Int32) -> Godot.OccluderPolygon2D? {
         Godot.OccluderPolygon2D?.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_occluder,
@@ -368,10 +368,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func setConstantLinearVelocity(layerId: Int32, velocity: Godot.Vector2) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setConstantLinearVelocity(layerID: Int32, velocity: Godot.Vector2) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_velocity) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_constant_linear_velocity,
@@ -388,10 +388,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func constantLinearVelocity(layerId: Int32) -> Godot.Vector2 {
+    public func constantLinearVelocity(layerID: Int32) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_linear_velocity,
@@ -408,10 +408,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func setConstantAngularVelocity(layerId: Int32, velocity: Double) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setConstantAngularVelocity(layerID: Int32, velocity: Double) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_velocity) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_constant_angular_velocity,
@@ -428,10 +428,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func constantAngularVelocity(layerId: Int32) -> Double {
+    public func constantAngularVelocity(layerID: Int32) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_angular_velocity,
@@ -448,10 +448,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func setCollisionPolygonsCount(layerId: Int32, polygonsCount: Int32) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setCollisionPolygonsCount(layerID: Int32, polygonsCount: Int32) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonsCount.withGodotUnsafeRawPointer { __ptr_polygonsCount in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonsCount) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonsCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_collision_polygons_count,
@@ -468,10 +468,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func collisionPolygonsCount(layerId: Int32) -> Int32 {
+    public func collisionPolygonsCount(layerID: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_polygons_count,
@@ -488,9 +488,9 @@ open class TileData: Object {
         }
         }
     }()
-    public func addCollisionPolygon(layerId: Int32) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+    public func addCollisionPolygon(layerID: Int32) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_collision_polygon,
@@ -507,10 +507,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func removeCollisionPolygon(layerId: Int32, polygonIndex: Int32) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func removeCollisionPolygon(layerID: Int32, polygonIndex: Int32) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_collision_polygon,
@@ -527,11 +527,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func setCollisionPolygonPoints(layerId: Int32, polygonIndex: Int32, polygon: Godot.PackedVector2Array) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setCollisionPolygonPoints(layerID: Int32, polygonIndex: Int32, polygon: Godot.PackedVector2Array) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex, __ptr_polygon) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex, __ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_collision_polygon_points,
@@ -548,11 +548,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func collisionPolygonPoints(layerId: Int32, polygonIndex: Int32) -> Godot.PackedVector2Array {
+    public func collisionPolygonPoints(layerID: Int32, polygonIndex: Int32) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_polygon_points,
@@ -569,11 +569,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func setCollisionPolygonOneWay(layerId: Int32, polygonIndex: Int32, oneWay: Bool) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setCollisionPolygonOneWay(layerID: Int32, polygonIndex: Int32, oneWay: Bool) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         oneWay.withGodotUnsafeRawPointer { __ptr_oneWay in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex, __ptr_oneWay) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex, __ptr_oneWay) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_collision_polygon_one_way,
@@ -590,11 +590,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func isCollisionPolygonOneWay(layerId: Int32, polygonIndex: Int32) -> Bool {
+    public func isCollisionPolygonOneWay(layerID: Int32, polygonIndex: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_collision_polygon_one_way,
@@ -611,11 +611,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func setCollisionPolygonOneWayMargin(layerId: Int32, polygonIndex: Int32, oneWayMargin: Double) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setCollisionPolygonOneWayMargin(layerID: Int32, polygonIndex: Int32, oneWayMargin: Double) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         oneWayMargin.withGodotUnsafeRawPointer { __ptr_oneWayMargin in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex, __ptr_oneWayMargin) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex, __ptr_oneWayMargin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_collision_polygon_one_way_margin,
@@ -632,11 +632,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func collisionPolygonOneWayMargin(layerId: Int32, polygonIndex: Int32) -> Double {
+    public func collisionPolygonOneWayMargin(layerID: Int32, polygonIndex: Int32) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_polygonIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_polygon_one_way_margin,
@@ -767,11 +767,11 @@ open class TileData: Object {
         }
         }
     }()
-    public func setNavigationPolygon(layerId: Int32, navigationPolygon: Godot.NavigationPolygon?) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setNavigationPolygon(layerID: Int32, navigationPolygon: Godot.NavigationPolygon?) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
-        withUnsafeArgumentPackPointer(__ptr_layerId, _ptr___ptr_navigationPolygon) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, _ptr___ptr_navigationPolygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_navigation_polygon,
@@ -788,10 +788,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func navigationPolygon(layerId: Int32) -> Godot.NavigationPolygon? {
+    public func navigationPolygon(layerID: Int32) -> Godot.NavigationPolygon? {
         Godot.NavigationPolygon?.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_polygon,
@@ -885,10 +885,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func setCustomDataByLayerId<Value: VariantStorableIn>(_ layerId: Int32, value: Value) {
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
+    public func setCustomDataByLayerID<Value: VariantStorableIn>(_ layerID: Int32, value: Value) {
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_value) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_custom_data_by_layer_id,
@@ -905,10 +905,10 @@ open class TileData: Object {
         }
         }
     }()
-    public func customDataByLayerId(_ layerId: Int32) -> Godot.Variant {
+    public func customDataByLayerID(_ layerID: Int32) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
-        layerId.withGodotUnsafeRawPointer { __ptr_layerId in
-        withUnsafeArgumentPackPointer(__ptr_layerId) { __accessPtr in
+        layerID.withGodotUnsafeRawPointer { __ptr_layerID in
+        withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_data_by_layer_id,

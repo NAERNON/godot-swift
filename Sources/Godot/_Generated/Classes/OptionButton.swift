@@ -169,7 +169,7 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemId(idx: Int32, id: Int32) {
+    public func setItemID(idx: Int32, id: Int32) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_id) { __accessPtr in
@@ -269,7 +269,7 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemId(idx: Int32) -> Int32 {
+    public func itemID(idx: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -462,7 +462,7 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func selectedId() -> Int32 {
+    public func selectedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

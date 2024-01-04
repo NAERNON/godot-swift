@@ -30,7 +30,7 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func tileId(index: Int32) -> Godot.Vector2i {
+    public func tileID(index: Int32) -> Godot.Vector2i {
         Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -90,7 +90,7 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func alternativeTileId(atlasCoords: Godot.Vector2i, index: Int32) -> Int32 {
+    public func alternativeTileID(atlasCoords: Godot.Vector2i, index: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         index.withGodotUnsafeRawPointer { __ptr_index in

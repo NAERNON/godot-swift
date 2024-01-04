@@ -1020,7 +1020,7 @@ open class Tree: Control {
         }
         }
     }()
-    public func buttonIdAtPosition(_ position: Godot.Vector2) -> Int32 {
+    public func buttonIDAtPosition(_ position: Godot.Vector2) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in

@@ -531,7 +531,7 @@ open class OS: Object {
         }
         }
     }()
-    public func processId() -> Int32 {
+    public func processID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1105,7 +1105,7 @@ open class OS: Object {
         }
         }
     }()
-    public func uniqueId() -> Godot.GodotString {
+    public func uniqueID() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1222,7 +1222,7 @@ open class OS: Object {
         }
         }
     }()
-    public func threadCallerId() -> UInt64 {
+    public func threadCallerID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1240,7 +1240,7 @@ open class OS: Object {
         }
         }
     }()
-    public func mainThreadId() -> UInt64 {
+    public func mainThreadID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

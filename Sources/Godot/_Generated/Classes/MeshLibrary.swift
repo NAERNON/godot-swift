@@ -428,7 +428,7 @@ open class MeshLibrary: Resource {
         }
         }
     }()
-    public func lastUnusedItemId() -> Int32 {
+    public func lastUnusedItemID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

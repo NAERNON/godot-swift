@@ -5,11 +5,11 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AStar2D: RefCounted {
-    open func _estimateCost(fromId: Int64, toId: Int64) -> Double {
+    open func _estimateCost(fromID: Int64, toID: Int64) -> Double {
         Double()
     }
 
-    open func _computeCost(fromId: Int64, toId: Int64) -> Double {
+    open func _computeCost(fromID: Int64, toID: Int64) -> Double {
         Double()
     }
 
@@ -20,7 +20,7 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func availablePointId() -> Int64 {
+    public func availablePointID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -256,11 +256,11 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func connectPoints(id: Int64, toId: Int64, bidirectional: Bool = true) {
+    public func connectPoints(id: Int64, toID: Int64, bidirectional: Bool = true) {
         id.withGodotUnsafeRawPointer { __ptr_id in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
-        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toID, __ptr_bidirectional) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_connect_points,
@@ -277,11 +277,11 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func disconnectPoints(id: Int64, toId: Int64, bidirectional: Bool = true) {
+    public func disconnectPoints(id: Int64, toID: Int64, bidirectional: Bool = true) {
         id.withGodotUnsafeRawPointer { __ptr_id in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
-        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toID, __ptr_bidirectional) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_disconnect_points,
@@ -298,12 +298,12 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func arePointsConnected(id: Int64, toId: Int64, bidirectional: Bool = true) -> Bool {
+    public func arePointsConnected(id: Int64, toID: Int64, bidirectional: Bool = true) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
-        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toID, __ptr_bidirectional) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_points_connected,
@@ -433,11 +433,11 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func pointPath(fromId: Int64, toId: Int64) -> Godot.PackedVector2Array {
+    public func pointPath(fromID: Int64, toID: Int64) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
-        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
-        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        fromID.withGodotUnsafeRawPointer { __ptr_fromID in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
+        withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_path,
@@ -454,11 +454,11 @@ open class AStar2D: RefCounted {
         }
         }
     }()
-    public func idPath(fromId: Int64, toId: Int64) -> Godot.PackedInt64Array {
+    public func idPath(fromID: Int64, toID: Int64) -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
-        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
-        toId.withGodotUnsafeRawPointer { __ptr_toId in
-        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        fromID.withGodotUnsafeRawPointer { __ptr_fromID in
+        toID.withGodotUnsafeRawPointer { __ptr_toID in
+        withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_id_path,
@@ -479,8 +479,8 @@ open class AStar2D: RefCounted {
             }
             Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
-            fromId: Int64.fromGodotUnsafePointer(args[0]!),
-            toId: Int64.fromGodotUnsafePointer(args[1]!)
+            fromID: Int64.fromGodotUnsafePointer(args[0]!),
+            toID: Int64.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -489,8 +489,8 @@ open class AStar2D: RefCounted {
             }
             Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
-            fromId: Int64.fromGodotUnsafePointer(args[0]!),
-            toId: Int64.fromGodotUnsafePointer(args[1]!)
+            fromID: Int64.fromGodotUnsafePointer(args[0]!),
+            toID: Int64.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

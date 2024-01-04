@@ -12,7 +12,7 @@ open class InputEventFromWindow: InputEvent {
         }
         }
     }()
-    private func __setWindowId(_ id: Int64) {
+    private func __setWindowID(_ id: Int64) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +31,7 @@ open class InputEventFromWindow: InputEvent {
         }
         }
     }()
-    private func __getWindowId() -> Int64 {
+    private func __getWindowID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -42,12 +42,12 @@ open class InputEventFromWindow: InputEvent {
         )}}
     }
 
-    public var windowId: Int64 {
+    public var windowID: Int64 {
         get {
-            __getWindowId()
+            __getWindowID()
         }
         set {
-            __setWindowId(
+            __setWindowID(
                 newValue
             )
         }

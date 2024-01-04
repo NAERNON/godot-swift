@@ -49,9 +49,9 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
-    private func __setConstantId(_ constantId: UInt32) {
-        constantId.withGodotUnsafeRawPointer { __ptr_constantId in
-        withUnsafeArgumentPackPointer(__ptr_constantId) { __accessPtr in
+    private func __setConstantID(_ constantID: UInt32) {
+        constantID.withGodotUnsafeRawPointer { __ptr_constantID in
+        withUnsafeArgumentPackPointer(__ptr_constantID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_constant_id,
@@ -68,7 +68,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
-    private func __getConstantId() -> UInt32 {
+    private func __getConstantID() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -90,12 +90,12 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
     }
 
-    public var constantId: UInt32 {
+    public var constantID: UInt32 {
         get {
-            __getConstantId()
+            __getConstantID()
         }
         set {
-            __setConstantId(
+            __setConstantID(
                 newValue
             )
         }

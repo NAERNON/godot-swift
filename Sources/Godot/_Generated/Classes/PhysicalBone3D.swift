@@ -265,7 +265,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    public func boneId() -> Int32 {
+    public func boneID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

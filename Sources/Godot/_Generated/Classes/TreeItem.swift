@@ -1444,7 +1444,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonId(column: Int32, buttonIndex: Int32) -> Int32 {
+    public func buttonID(column: Int32, buttonIndex: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
@@ -1465,7 +1465,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonById(column: Int32, id: Int32) -> Int32 {
+    public func buttonByID(column: Int32, id: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         id.withGodotUnsafeRawPointer { __ptr_id in

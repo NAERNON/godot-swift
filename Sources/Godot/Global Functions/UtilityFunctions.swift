@@ -132,11 +132,11 @@ public func bytesToVarWithObjects(_ bytes: PackedByteArray) -> Variant {
 }
 
 public func instance(fromID instanceID: Int) -> Object? {
-    _instanceFromId(instanceId: instanceID)
+    _instanceFromID(instanceID: instanceID)
 }
 
 public func isInstanceIDValid(_ id: Int) -> Bool {
-    _isInstanceIdValid(id: id)
+    _isInstanceIDValid(id: id)
 }
 
 public func isInstanceValid<Value : VariantStorableIn>(_ instance: Value) -> Bool {
@@ -144,7 +144,7 @@ public func isInstanceValid<Value : VariantStorableIn>(_ instance: Value) -> Boo
 }
 
 public func ridAllocateID() -> Int {
-    _ridAllocateId()
+    _ridAllocateID()
 }
 
 public func ridFromInt64(_ base: Int) -> RID {

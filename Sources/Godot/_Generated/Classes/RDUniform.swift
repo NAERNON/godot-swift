@@ -86,7 +86,7 @@ open class RDUniform: RefCounted {
         }
         }
     }()
-    public func addId(_ id: Godot.RID) {
+    public func addID(_ id: Godot.RID) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

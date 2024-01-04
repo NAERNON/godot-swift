@@ -2202,11 +2202,11 @@ open class Node: Object {
         }
         }
     }()
-    public func rpcId<each VariantRest : VariantStorableIn>(peerId: Int, method: Godot.GodotStringName, _ rest: repeat each VariantRest) -> Godot.ErrorType {
+    public func rpcID<each VariantRest : VariantStorableIn>(peerID: Int, method: Godot.GodotStringName, _ rest: repeat each VariantRest) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
-        Godot.Variant.withStorageUnsafeRawPointer(to: peerId) { __ptr_peerId in
+        Godot.Variant.withStorageUnsafeRawPointer(to: peerID) { __ptr_peerID in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-        withUnsafeArgumentPackPointer(__ptr_peerId, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_rpc_id,
@@ -2217,11 +2217,11 @@ open class Node: Object {
             nil
         )}}}}}
     }
-    public func rpcId(peerId: Int, method: Godot.GodotStringName) -> Godot.ErrorType {
+    public func rpcID(peerID: Int, method: Godot.GodotStringName) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
-        Godot.Variant.withStorageUnsafeRawPointer(to: peerId) { __ptr_peerId in
+        Godot.Variant.withStorageUnsafeRawPointer(to: peerID) { __ptr_peerID in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-        withUnsafeArgumentPackPointer(__ptr_peerId, __ptr_method) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_rpc_id,

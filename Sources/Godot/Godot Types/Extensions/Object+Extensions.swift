@@ -114,7 +114,7 @@ extension Object: Identifiable {
     /// and can be used to retrieve this object instance
     /// with ``instance(fromID:)``.
     public var id: UInt64 {
-        __getInstanceId()
+        __getInstanceID()
     }
 }
 

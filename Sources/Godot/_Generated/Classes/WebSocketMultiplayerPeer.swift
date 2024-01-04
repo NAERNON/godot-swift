@@ -57,10 +57,10 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func peer(peerId: Int32) -> Godot.WebSocketPeer? {
+    public func peer(peerID: Int32) -> Godot.WebSocketPeer? {
         Godot.WebSocketPeer?.fromMutatingGodotUnsafePointer { __temporary in
-        peerId.withGodotUnsafeRawPointer { __ptr_peerId in
-        withUnsafeArgumentPackPointer(__ptr_peerId) { __accessPtr in
+        peerID.withGodotUnsafeRawPointer { __ptr_peerID in
+        withUnsafeArgumentPackPointer(__ptr_peerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peer,
