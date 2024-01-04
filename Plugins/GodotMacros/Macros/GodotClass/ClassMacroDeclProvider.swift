@@ -126,7 +126,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             private static let _$exposedClassName: GodotStringName = \(literal: exposedClassName)
             private static var _$isClassRegistered: Bool = false
             
-            open \(raw: overrideKeyword) class var _exposedClassType: Object.Type { Object.self }
+            open \(raw: overrideKeyword) class var _exposedClassType: Object.Type { \(raw: className).self }
             open \(raw: overrideKeyword) class var _exposedClassName: GodotStringName { _$exposedClassName }
             open \(raw: overrideKeyword) class var _isClassRegistered: Bool { _$isClassRegistered }
             
