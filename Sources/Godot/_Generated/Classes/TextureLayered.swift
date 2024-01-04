@@ -45,7 +45,7 @@ open class TextureLayered: Texture {
         nil
     }
 
-    private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3847873762)!
@@ -63,7 +63,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_get_layered_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_layered_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_layered_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 518123893)!
@@ -81,7 +81,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_get_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -99,7 +99,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_get_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -117,7 +117,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_get_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -135,7 +135,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_has_mipmaps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class TextureLayered: Texture {
         )}}
     }
 
-    private static var __method_binding_get_layer_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_layer_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_layer_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3655284255)!

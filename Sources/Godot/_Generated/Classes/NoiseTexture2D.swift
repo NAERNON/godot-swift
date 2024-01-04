@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NoiseTexture2D: Texture2D {
-    private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_set_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -43,7 +43,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_set_invert: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_invert: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_invert").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -62,7 +62,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_invert: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_invert: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_invert").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -80,7 +80,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_in_3d_space: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_in_3d_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_in_3d_space").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -99,7 +99,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_is_in_3d_space: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_in_3d_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_in_3d_space").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -117,7 +117,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_generate_mipmaps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_generate_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -136,7 +136,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_is_generating_mipmaps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_generating_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_generating_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -154,7 +154,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_seamless: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_seamless: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_seamless").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -173,7 +173,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_seamless: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_seamless: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_seamless").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -191,7 +191,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_seamless_blend_skirt: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_seamless_blend_skirt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_seamless_blend_skirt").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -210,7 +210,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_seamless_blend_skirt: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_seamless_blend_skirt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_seamless_blend_skirt").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -228,7 +228,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_as_normal_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_as_normal_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_as_normal_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -247,7 +247,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_is_normal_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_normal_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_normal_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -265,7 +265,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_bump_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bump_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bump_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -284,7 +284,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_bump_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bump_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bump_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -302,7 +302,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_normalize: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_normalize: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_normalize").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -321,7 +321,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_is_normalized: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_normalized: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_normalized").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -339,7 +339,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
@@ -359,7 +359,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
@@ -377,7 +377,7 @@ open class NoiseTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_noise: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_noise: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_noise").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4135492439)!
@@ -397,7 +397,7 @@ open class NoiseTexture2D: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_noise: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_noise: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_noise").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 185851837)!

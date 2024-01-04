@@ -15,7 +15,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
     }
 
-    private static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -34,7 +34,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         )}}}
     }
 
-    private static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -52,7 +52,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         )}}
     }
 
-    private static var __method_binding_set_play_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_play_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_play_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3347718873)!
@@ -71,7 +71,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         )}}}
     }
 
-    private static var __method_binding_get_play_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_play_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_play_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2061244637)!

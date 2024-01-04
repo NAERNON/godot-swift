@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Node2D: CanvasItem {
-    private static var __method_binding_set_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -24,7 +24,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -43,7 +43,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_rotation_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rotation_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -62,7 +62,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_skew: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_skew").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -81,7 +81,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -100,7 +100,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -118,7 +118,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_get_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -136,7 +136,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_get_rotation_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rotation_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -154,7 +154,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_get_skew: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skew").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -172,7 +172,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_get_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -190,7 +190,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_rotate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rotate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rotate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -209,7 +209,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_move_local_x: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_local_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_local_x").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2087892650)!
@@ -229,7 +229,7 @@ open class Node2D: CanvasItem {
         )}}}}
     }
 
-    private static var __method_binding_move_local_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_local_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_local_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2087892650)!
@@ -249,7 +249,7 @@ open class Node2D: CanvasItem {
         )}}}}
     }
 
-    private static var __method_binding_translate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_translate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "translate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -268,7 +268,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_global_translate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_global_translate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_translate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -287,7 +287,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_apply_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -306,7 +306,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_global_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -325,7 +325,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_global_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_global_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_global_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -343,7 +343,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_set_global_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -362,7 +362,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_global_rotation_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_rotation_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -381,7 +381,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_global_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_global_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_global_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -399,7 +399,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_get_global_rotation_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_global_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_global_rotation_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -417,7 +417,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_set_global_skew: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_skew").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -436,7 +436,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_global_skew: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_global_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_global_skew").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -454,7 +454,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_set_global_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -473,7 +473,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_global_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_global_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_global_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -491,7 +491,7 @@ open class Node2D: CanvasItem {
         )}}
     }
 
-    private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
@@ -510,7 +510,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_set_global_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_global_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
@@ -529,7 +529,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_look_at: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_look_at: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "look_at").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -548,7 +548,7 @@ open class Node2D: CanvasItem {
         )}}}
     }
 
-    private static var __method_binding_get_angle_to: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angle_to: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angle_to").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2276447920)!
@@ -568,7 +568,7 @@ open class Node2D: CanvasItem {
         )}}}}
     }
 
-    private static var __method_binding_to_local: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_to_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "to_local").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
@@ -588,7 +588,7 @@ open class Node2D: CanvasItem {
         )}}}}
     }
 
-    private static var __method_binding_to_global: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_to_global: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "to_global").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
@@ -608,7 +608,7 @@ open class Node2D: CanvasItem {
         )}}}}
     }
 
-    private static var __method_binding_get_relative_transform_to_parent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_relative_transform_to_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_relative_transform_to_parent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 904556875)!

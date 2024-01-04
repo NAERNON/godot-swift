@@ -51,7 +51,7 @@ open class VideoStreamPlayback: Resource {
         Int32()
     }
 
-    private static var __method_binding_mix_audio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_mix_audio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "mix_audio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 93876830)!

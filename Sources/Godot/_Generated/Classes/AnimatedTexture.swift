@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimatedTexture: Texture2D {
-    private static var __method_binding_set_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class AnimatedTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -42,7 +42,7 @@ open class AnimatedTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_current_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -61,7 +61,7 @@ open class AnimatedTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_current_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -79,7 +79,7 @@ open class AnimatedTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_pause: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pause").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -98,7 +98,7 @@ open class AnimatedTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_pause: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pause").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -116,7 +116,7 @@ open class AnimatedTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_one_shot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -135,7 +135,7 @@ open class AnimatedTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_one_shot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_one_shot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class AnimatedTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_speed_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -172,7 +172,7 @@ open class AnimatedTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_speed_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -190,7 +190,7 @@ open class AnimatedTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_frame_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
@@ -211,7 +211,7 @@ open class AnimatedTexture: Texture2D {
         )}}}}}
     }
 
-    private static var __method_binding_get_frame_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
@@ -231,7 +231,7 @@ open class AnimatedTexture: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_set_frame_duration: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame_duration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame_duration").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -251,7 +251,7 @@ open class AnimatedTexture: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_frame_duration: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_duration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_duration").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!

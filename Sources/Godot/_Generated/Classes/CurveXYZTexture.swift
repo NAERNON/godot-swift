@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CurveXYZTexture: Texture2D {
-    private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class CurveXYZTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_set_curve_x: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve_x").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -44,7 +44,7 @@ open class CurveXYZTexture: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_curve_x: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve_x").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -62,7 +62,7 @@ open class CurveXYZTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_curve_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -82,7 +82,7 @@ open class CurveXYZTexture: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_curve_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -100,7 +100,7 @@ open class CurveXYZTexture: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_curve_z: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve_z").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -120,7 +120,7 @@ open class CurveXYZTexture: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_curve_z: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve_z").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PointLight2D: Light2D {
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -25,7 +25,7 @@ open class PointLight2D: Light2D {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -43,7 +43,7 @@ open class PointLight2D: Light2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -62,7 +62,7 @@ open class PointLight2D: Light2D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -80,7 +80,7 @@ open class PointLight2D: Light2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -99,7 +99,7 @@ open class PointLight2D: Light2D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

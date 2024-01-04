@@ -13,7 +13,7 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
         Double()
     }
 
-    private static var __method_binding_begin_resample: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_begin_resample: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "begin_resample").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NavigationMeshSourceGeometryData3D: Resource {
-    private static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
@@ -24,7 +24,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
@@ -42,7 +42,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_indices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -61,7 +61,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_indices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_indices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1930428628)!
@@ -79,7 +79,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -96,7 +96,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}
     }
 
-    private static var __method_binding_has_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -114,7 +114,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}
     }
 
-    private static var __method_binding_add_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 975462459)!
@@ -135,7 +135,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_add_mesh_array: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_mesh_array: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_mesh_array").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4235710913)!
@@ -155,7 +155,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         )}}}}
     }
 
-    private static var __method_binding_add_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440358797)!

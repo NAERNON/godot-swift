@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImageTexture3D: Texture3D {
-    private static var __method_binding_create: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130379827)!
@@ -30,7 +30,7 @@ open class ImageTexture3D: Texture3D {
         )}}}}}}}}}
     }
 
-    private static var __method_binding_update: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!

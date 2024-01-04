@@ -46,11 +46,8 @@ open class NavigationAgent2D: Node {
         fileprivate init(details: Godot.AnyGodotDictionary) {
             self.details = details
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, details)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.details)]
         }
     }
     public func waypointReached(details: Godot.AnyGodotDictionary) {
@@ -76,11 +73,8 @@ open class NavigationAgent2D: Node {
         fileprivate init(details: Godot.AnyGodotDictionary) {
             self.details = details
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, details)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.details)]
         }
     }
     public func linkReached(details: Godot.AnyGodotDictionary) {
@@ -120,24 +114,21 @@ open class NavigationAgent2D: Node {
     }()
 
     public struct VelocityComputedSignalInput: Godot.SignalInput {
-        public let safe_velocity: Godot.Vector2
-        fileprivate init(safe_velocity: Godot.Vector2) {
-            self.safe_velocity = safe_velocity
+        public let safeVelocity: Godot.Vector2
+        fileprivate init(safeVelocity: Godot.Vector2) {
+            self.safeVelocity = safeVelocity
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, safe_velocity)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.safeVelocity)]
         }
     }
-    public func velocityComputed(safe_velocity: Godot.Vector2) {
-        _ = velocityComputedSignal.emit(.init(safe_velocity: safe_velocity))
+    public func velocityComputed(safeVelocity: Godot.Vector2) {
+        _ = velocityComputedSignal.emit(.init(safeVelocity: safeVelocity))
     }
     public lazy var velocityComputedSignal: Godot.SignalEmitter<VelocityComputedSignalInput> = {
         .init(object: self, signalName: "velocity_computed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(safe_velocity: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(safeVelocity: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -149,7 +140,7 @@ open class NavigationAgent2D: Node {
         }
     }()
 
-    private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -167,7 +158,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -186,7 +177,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_avoidance_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -204,7 +195,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_path_desired_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_desired_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_desired_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -223,7 +214,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_path_desired_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_desired_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_desired_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -241,7 +232,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_target_desired_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_desired_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_desired_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -260,7 +251,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_target_desired_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_desired_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_desired_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -278,7 +269,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -297,7 +288,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -315,7 +306,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_neighbor_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_neighbor_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_neighbor_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -334,7 +325,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_neighbor_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_neighbor_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_neighbor_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -352,7 +343,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_max_neighbors: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_neighbors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_neighbors").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -371,7 +362,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_max_neighbors: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_neighbors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_neighbors").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -389,7 +380,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_time_horizon_agents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_time_horizon_agents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_time_horizon_agents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -408,7 +399,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_time_horizon_agents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_time_horizon_agents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_time_horizon_agents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -426,7 +417,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_time_horizon_obstacles: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_time_horizon_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_time_horizon_obstacles").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -445,7 +436,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_time_horizon_obstacles: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_time_horizon_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_time_horizon_obstacles").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -463,7 +454,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_max_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -482,7 +473,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_max_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -500,7 +491,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_path_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -519,7 +510,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_path_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -537,7 +528,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -556,7 +547,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -574,7 +565,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_navigation_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -594,7 +585,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_navigation_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -614,7 +605,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pathfinding_algorithm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783519915)!
@@ -633,7 +624,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_pathfinding_algorithm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pathfinding_algorithm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3000421146)!
@@ -651,7 +642,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_path_postprocessing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_postprocessing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2864409082)!
@@ -670,7 +661,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_path_postprocessing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_postprocessing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3798118993)!
@@ -688,7 +679,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_path_metadata_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_metadata_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 24274129)!
@@ -707,7 +698,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_path_metadata_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_metadata_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 488152976)!
@@ -725,7 +716,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -744,7 +735,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -762,7 +753,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -781,7 +772,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -799,7 +790,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_get_next_path_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_next_path_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_next_path_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1497962370)!
@@ -817,7 +808,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_velocity_forced: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_velocity_forced: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_velocity_forced").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -836,7 +827,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -855,7 +846,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1497962370)!
@@ -873,7 +864,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_distance_to_target: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_distance_to_target: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "distance_to_target").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -891,7 +882,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_get_current_navigation_result: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_navigation_result: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_navigation_result").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166799483)!
@@ -909,7 +900,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_get_current_navigation_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_navigation_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_navigation_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -927,7 +918,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_get_current_navigation_path_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_navigation_path_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_navigation_path_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -945,7 +936,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_is_target_reached: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_target_reached: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_target_reached").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -963,7 +954,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_is_target_reachable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_target_reachable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_target_reachable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -981,7 +972,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_is_navigation_finished: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_navigation_finished: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_navigation_finished").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -999,7 +990,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_get_final_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_final_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_final_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1497962370)!
@@ -1017,7 +1008,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1036,7 +1027,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_avoidance_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1054,7 +1045,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1073,7 +1064,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_avoidance_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1091,7 +1082,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -1111,7 +1102,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_avoidance_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -1131,7 +1122,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_set_avoidance_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -1151,7 +1142,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_avoidance_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -1171,7 +1162,7 @@ open class NavigationAgent2D: Node {
         )}}}}
     }
 
-    private static var __method_binding_set_avoidance_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1190,7 +1181,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_avoidance_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1208,7 +1199,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_debug_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_debug_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1227,7 +1218,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_debug_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_debug_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_debug_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1245,7 +1236,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_debug_use_custom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_debug_use_custom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_use_custom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1264,7 +1255,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_debug_use_custom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_debug_use_custom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_debug_use_custom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1282,7 +1273,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_debug_path_custom_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_debug_path_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_path_custom_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -1301,7 +1292,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_debug_path_custom_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_debug_path_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_debug_path_custom_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -1319,7 +1310,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_debug_path_custom_point_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_debug_path_custom_point_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_path_custom_point_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1338,7 +1329,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_debug_path_custom_point_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_debug_path_custom_point_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_debug_path_custom_point_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1356,7 +1347,7 @@ open class NavigationAgent2D: Node {
         )}}
     }
 
-    private static var __method_binding_set_debug_path_custom_line_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_debug_path_custom_line_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_path_custom_line_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1375,7 +1366,7 @@ open class NavigationAgent2D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_debug_path_custom_line_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_debug_path_custom_line_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_debug_path_custom_line_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

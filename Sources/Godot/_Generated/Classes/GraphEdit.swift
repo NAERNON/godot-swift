@@ -16,36 +16,33 @@ open class GraphEdit: Control {
     }
 
     public struct ConnectionRequestSignalInput: Godot.SignalInput {
-        public let from_node: Godot.GodotStringName
-        public let from_port: Int
-        public let to_node: Godot.GodotStringName
-        public let to_port: Int
-        fileprivate init(from_node: Godot.GodotStringName, from_port: Int, to_node: Godot.GodotStringName, to_port: Int) {
-            self.from_node = from_node
-            self.from_port = from_port
-            self.to_node = to_node
-            self.to_port = to_port
+        public let fromNode: Godot.GodotStringName
+        public let fromPort: Int
+        public let toNode: Godot.GodotStringName
+        public let toPort: Int
+        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+            self.fromNode = fromNode
+            self.fromPort = fromPort
+            self.toNode = toNode
+            self.toPort = toPort
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, from_node, from_port, to_node, to_port)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.fromNode), Variant(input.fromPort), Variant(input.toNode), Variant(input.toPort)]
         }
     }
-    public func connectionRequest(from_node: Godot.GodotStringName, from_port: Int, to_node: Godot.GodotStringName, to_port: Int) {
-        _ = connectionRequestSignal.emit(.init(from_node: from_node,
-                from_port: from_port,
-                to_node: to_node,
-                to_port: to_port))
+    public func connectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+        _ = connectionRequestSignal.emit(.init(fromNode: fromNode,
+                fromPort: fromPort,
+                toNode: toNode,
+                toPort: toPort))
     }
     public lazy var connectionRequestSignal: Godot.SignalEmitter<ConnectionRequestSignalInput> = {
         .init(object: self, signalName: "connection_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(from_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    from_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    to_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    to_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -58,36 +55,33 @@ open class GraphEdit: Control {
     }()
 
     public struct DisconnectionRequestSignalInput: Godot.SignalInput {
-        public let from_node: Godot.GodotStringName
-        public let from_port: Int
-        public let to_node: Godot.GodotStringName
-        public let to_port: Int
-        fileprivate init(from_node: Godot.GodotStringName, from_port: Int, to_node: Godot.GodotStringName, to_port: Int) {
-            self.from_node = from_node
-            self.from_port = from_port
-            self.to_node = to_node
-            self.to_port = to_port
+        public let fromNode: Godot.GodotStringName
+        public let fromPort: Int
+        public let toNode: Godot.GodotStringName
+        public let toPort: Int
+        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+            self.fromNode = fromNode
+            self.fromPort = fromPort
+            self.toNode = toNode
+            self.toPort = toPort
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, from_node, from_port, to_node, to_port)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.fromNode), Variant(input.fromPort), Variant(input.toNode), Variant(input.toPort)]
         }
     }
-    public func disconnectionRequest(from_node: Godot.GodotStringName, from_port: Int, to_node: Godot.GodotStringName, to_port: Int) {
-        _ = disconnectionRequestSignal.emit(.init(from_node: from_node,
-                from_port: from_port,
-                to_node: to_node,
-                to_port: to_port))
+    public func disconnectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+        _ = disconnectionRequestSignal.emit(.init(fromNode: fromNode,
+                fromPort: fromPort,
+                toNode: toNode,
+                toPort: toPort))
     }
     public lazy var disconnectionRequestSignal: Godot.SignalEmitter<DisconnectionRequestSignalInput> = {
         .init(object: self, signalName: "disconnection_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(from_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    from_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    to_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    to_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -100,32 +94,29 @@ open class GraphEdit: Control {
     }()
 
     public struct ConnectionToEmptySignalInput: Godot.SignalInput {
-        public let from_node: Godot.GodotStringName
-        public let from_port: Int
-        public let release_position: Godot.Vector2
-        fileprivate init(from_node: Godot.GodotStringName, from_port: Int, release_position: Godot.Vector2) {
-            self.from_node = from_node
-            self.from_port = from_port
-            self.release_position = release_position
+        public let fromNode: Godot.GodotStringName
+        public let fromPort: Int
+        public let releasePosition: Godot.Vector2
+        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, releasePosition: Godot.Vector2) {
+            self.fromNode = fromNode
+            self.fromPort = fromPort
+            self.releasePosition = releasePosition
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, from_node, from_port, release_position)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.fromNode), Variant(input.fromPort), Variant(input.releasePosition)]
         }
     }
-    public func connectionToEmpty(from_node: Godot.GodotStringName, from_port: Int, release_position: Godot.Vector2) {
-        _ = connectionToEmptySignal.emit(.init(from_node: from_node,
-                from_port: from_port,
-                release_position: release_position))
+    public func connectionToEmpty(fromNode: Godot.GodotStringName, fromPort: Int, releasePosition: Godot.Vector2) {
+        _ = connectionToEmptySignal.emit(.init(fromNode: fromNode,
+                fromPort: fromPort,
+                releasePosition: releasePosition))
     }
     public lazy var connectionToEmptySignal: Godot.SignalEmitter<ConnectionToEmptySignalInput> = {
         .init(object: self, signalName: "connection_to_empty") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(from_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    from_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    release_position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    releasePosition: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -138,32 +129,29 @@ open class GraphEdit: Control {
     }()
 
     public struct ConnectionFromEmptySignalInput: Godot.SignalInput {
-        public let to_node: Godot.GodotStringName
-        public let to_port: Int
-        public let release_position: Godot.Vector2
-        fileprivate init(to_node: Godot.GodotStringName, to_port: Int, release_position: Godot.Vector2) {
-            self.to_node = to_node
-            self.to_port = to_port
-            self.release_position = release_position
+        public let toNode: Godot.GodotStringName
+        public let toPort: Int
+        public let releasePosition: Godot.Vector2
+        fileprivate init(toNode: Godot.GodotStringName, toPort: Int, releasePosition: Godot.Vector2) {
+            self.toNode = toNode
+            self.toPort = toPort
+            self.releasePosition = releasePosition
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, to_node, to_port, release_position)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.toNode), Variant(input.toPort), Variant(input.releasePosition)]
         }
     }
-    public func connectionFromEmpty(to_node: Godot.GodotStringName, to_port: Int, release_position: Godot.Vector2) {
-        _ = connectionFromEmptySignal.emit(.init(to_node: to_node,
-                to_port: to_port,
-                release_position: release_position))
+    public func connectionFromEmpty(toNode: Godot.GodotStringName, toPort: Int, releasePosition: Godot.Vector2) {
+        _ = connectionFromEmptySignal.emit(.init(toNode: toNode,
+                toPort: toPort,
+                releasePosition: releasePosition))
     }
     public lazy var connectionFromEmptySignal: Godot.SignalEmitter<ConnectionFromEmptySignalInput> = {
         .init(object: self, signalName: "connection_from_empty") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(to_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    to_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    release_position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    releasePosition: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -176,32 +164,29 @@ open class GraphEdit: Control {
     }()
 
     public struct ConnectionDragStartedSignalInput: Godot.SignalInput {
-        public let from_node: Godot.GodotStringName
-        public let from_port: Int
-        public let is_output: Bool
-        fileprivate init(from_node: Godot.GodotStringName, from_port: Int, is_output: Bool) {
-            self.from_node = from_node
-            self.from_port = from_port
-            self.is_output = is_output
+        public let fromNode: Godot.GodotStringName
+        public let fromPort: Int
+        public let isOutput: Bool
+        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, isOutput: Bool) {
+            self.fromNode = fromNode
+            self.fromPort = fromPort
+            self.isOutput = isOutput
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, from_node, from_port, is_output)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.fromNode), Variant(input.fromPort), Variant(input.isOutput)]
         }
     }
-    public func connectionDragStarted(from_node: Godot.GodotStringName, from_port: Int, is_output: Bool) {
-        _ = connectionDragStartedSignal.emit(.init(from_node: from_node,
-                from_port: from_port,
-                is_output: is_output))
+    public func connectionDragStarted(fromNode: Godot.GodotStringName, fromPort: Int, isOutput: Bool) {
+        _ = connectionDragStartedSignal.emit(.init(fromNode: fromNode,
+                fromPort: fromPort,
+                isOutput: isOutput))
     }
     public lazy var connectionDragStartedSignal: Godot.SignalEmitter<ConnectionDragStartedSignalInput> = {
         .init(object: self, signalName: "connection_drag_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(from_node: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    from_port: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    is_output: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    isOutput: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -290,11 +275,8 @@ open class GraphEdit: Control {
         fileprivate init(nodes: Godot.GodotArray<Godot.GodotStringName>) {
             self.nodes = nodes
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, nodes)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.nodes)]
         }
     }
     public func deleteNodesRequest(nodes: Godot.GodotArray<Godot.GodotStringName>) {
@@ -320,11 +302,8 @@ open class GraphEdit: Control {
         fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.node)]
         }
     }
     public func nodeSelected(node: Godot.Node?) {
@@ -350,11 +329,8 @@ open class GraphEdit: Control {
         fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.node)]
         }
     }
     public func nodeDeselected(node: Godot.Node?) {
@@ -380,11 +356,8 @@ open class GraphEdit: Control {
         fileprivate init(position: Godot.Vector2) {
             self.position = position
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, position)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.position)]
         }
     }
     public func popupRequest(position: Godot.Vector2) {
@@ -446,11 +419,8 @@ open class GraphEdit: Control {
         fileprivate init(offset: Godot.Vector2) {
             self.offset = offset
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, offset)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.offset)]
         }
     }
     public func scrollOffsetChanged(offset: Godot.Vector2) {
@@ -487,7 +457,7 @@ open class GraphEdit: Control {
         Bool()
     }
 
-    private static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 195065850)!
@@ -510,7 +480,7 @@ open class GraphEdit: Control {
         )}}}}}}}
     }
 
-    private static var __method_binding_is_node_connected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_node_connected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_node_connected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4216241294)!
@@ -533,7 +503,7 @@ open class GraphEdit: Control {
         )}}}}}}}
     }
 
-    private static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1933654315)!
@@ -555,7 +525,7 @@ open class GraphEdit: Control {
         )}}}}}}
     }
 
-    private static var __method_binding_set_connection_activity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_connection_activity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_connection_activity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1141899943)!
@@ -578,7 +548,7 @@ open class GraphEdit: Control {
         )}}}}}}}
     }
 
-    private static var __method_binding_get_connection_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -596,7 +566,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_clear_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -613,7 +583,7 @@ open class GraphEdit: Control {
         )}
     }
 
-    private static var __method_binding_force_connection_drag_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_force_connection_drag_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "force_connection_drag_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -630,7 +600,7 @@ open class GraphEdit: Control {
         )}
     }
 
-    private static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -648,7 +618,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -667,7 +637,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_add_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_valid_right_disconnect_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -686,7 +656,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_remove_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_valid_right_disconnect_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -705,7 +675,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_add_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_valid_left_disconnect_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -724,7 +694,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_remove_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_valid_left_disconnect_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -743,7 +713,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_add_valid_connection_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_valid_connection_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_valid_connection_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -763,7 +733,7 @@ open class GraphEdit: Control {
         )}}}}
     }
 
-    private static var __method_binding_remove_valid_connection_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_valid_connection_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_valid_connection_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -783,7 +753,7 @@ open class GraphEdit: Control {
         )}}}}
     }
 
-    private static var __method_binding_is_valid_connection_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_valid_connection_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_valid_connection_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
@@ -804,7 +774,7 @@ open class GraphEdit: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_connection_line: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_line").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562168077)!
@@ -825,7 +795,7 @@ open class GraphEdit: Control {
         )}}}}}
     }
 
-    private static var __method_binding_set_panning_scheme: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_panning_scheme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_panning_scheme").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 18893313)!
@@ -844,7 +814,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_panning_scheme: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_panning_scheme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_panning_scheme").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 549924446)!
@@ -862,7 +832,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -881,7 +851,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -899,7 +869,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_zoom_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zoom_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zoom_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -918,7 +888,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_zoom_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zoom_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zoom_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -936,7 +906,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_zoom_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zoom_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zoom_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -955,7 +925,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_zoom_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zoom_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zoom_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -973,7 +943,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_zoom_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zoom_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zoom_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -992,7 +962,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_zoom_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zoom_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zoom_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1010,7 +980,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_grid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_grid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_grid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1029,7 +999,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_grid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_grid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_grid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1047,7 +1017,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_snapping_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_snapping_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_snapping_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1066,7 +1036,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_snapping_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_snapping_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_snapping_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1084,7 +1054,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_snapping_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_snapping_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_snapping_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1103,7 +1073,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_snapping_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_snapping_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_snapping_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1121,7 +1091,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_connection_lines_curvature: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_connection_lines_curvature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_connection_lines_curvature").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1140,7 +1110,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_connection_lines_curvature: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_lines_curvature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_lines_curvature").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1158,7 +1128,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_connection_lines_thickness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_connection_lines_thickness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_connection_lines_thickness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1177,7 +1147,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_connection_lines_thickness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_lines_thickness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_lines_thickness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1195,7 +1165,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_connection_lines_antialiased: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_connection_lines_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_connection_lines_antialiased").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1214,7 +1184,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_connection_lines_antialiased: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_connection_lines_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_connection_lines_antialiased").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1232,7 +1202,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_minimap_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_minimap_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_minimap_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -1251,7 +1221,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_minimap_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_minimap_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_minimap_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -1269,7 +1239,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_minimap_opacity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_minimap_opacity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_minimap_opacity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1288,7 +1258,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_minimap_opacity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_minimap_opacity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_minimap_opacity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1306,7 +1276,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_minimap_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_minimap_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_minimap_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1325,7 +1295,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_minimap_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_minimap_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_minimap_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1343,7 +1313,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_menu: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1362,7 +1332,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_menu: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1380,7 +1350,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_zoom_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_zoom_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1399,7 +1369,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_zoom_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_zoom_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1417,7 +1387,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_grid_buttons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_grid_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_grid_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1436,7 +1406,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_grid_buttons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_grid_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_grid_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1454,7 +1424,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_zoom_buttons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_zoom_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_zoom_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1473,7 +1443,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_zoom_buttons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_zoom_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_zoom_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1491,7 +1461,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_minimap_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_minimap_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_minimap_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1510,7 +1480,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_minimap_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_minimap_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_minimap_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1528,7 +1498,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_arrange_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_arrange_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_arrange_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1547,7 +1517,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_showing_arrange_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_arrange_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_arrange_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1565,7 +1535,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_right_disconnects: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_right_disconnects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_right_disconnects").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1584,7 +1554,7 @@ open class GraphEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_right_disconnects_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_right_disconnects_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_right_disconnects_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1602,7 +1572,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_menu_hbox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_menu_hbox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_menu_hbox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3590609951)!
@@ -1620,7 +1590,7 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_arrange_nodes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_arrange_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "arrange_nodes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1637,7 +1607,7 @@ open class GraphEdit: Control {
         )}
     }
 
-    private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!

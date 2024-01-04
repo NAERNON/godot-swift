@@ -6,24 +6,21 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeBlendTree: AnimationRootNode {
     public struct NodeChangedSignalInput: Godot.SignalInput {
-        public let node_name: Godot.GodotStringName
-        fileprivate init(node_name: Godot.GodotStringName) {
-            self.node_name = node_name
+        public let nodeName: Godot.GodotStringName
+        fileprivate init(nodeName: Godot.GodotStringName) {
+            self.nodeName = nodeName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.nodeName)]
         }
     }
-    public func nodeChanged(node_name: Godot.GodotStringName) {
-        _ = nodeChangedSignal.emit(.init(node_name: node_name))
+    public func nodeChanged(nodeName: Godot.GodotStringName) {
+        _ = nodeChangedSignal.emit(.init(nodeName: nodeName))
     }
     public lazy var nodeChangedSignal: Godot.SignalEmitter<NodeChangedSignalInput> = {
         .init(object: self, signalName: "node_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(nodeName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -35,7 +32,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
     }()
 
-    private static var __method_binding_add_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1980270704)!
@@ -57,7 +54,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}}}
     }
 
-    private static var __method_binding_get_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 625644256)!
@@ -77,7 +74,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -96,7 +93,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}
     }
 
-    private static var __method_binding_rename_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rename_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rename_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
@@ -116,7 +113,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_has_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -136,7 +133,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168001410)!
@@ -157,7 +154,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}}
     }
 
-    private static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
@@ -177,7 +174,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_node_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1999414630)!
@@ -197,7 +194,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3100822709)!
@@ -217,7 +214,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}}
     }
 
-    private static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_graph_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -236,7 +233,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         )}}}
     }
 
-    private static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_graph_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

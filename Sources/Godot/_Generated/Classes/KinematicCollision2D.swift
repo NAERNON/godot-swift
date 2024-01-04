@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class KinematicCollision2D: RefCounted {
-    private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -23,7 +23,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -41,7 +41,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_travel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_travel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_travel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -59,7 +59,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_remainder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_remainder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_remainder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -77,7 +77,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841063350)!
@@ -97,7 +97,7 @@ open class KinematicCollision2D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -115,7 +115,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_local_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_local_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_local_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1981248198)!
@@ -133,7 +133,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1981248198)!
@@ -151,7 +151,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -169,7 +169,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -187,7 +187,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1981248198)!
@@ -205,7 +205,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider_shape_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_shape_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_shape_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -223,7 +223,7 @@ open class KinematicCollision2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_collider_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

@@ -78,24 +78,21 @@ open class GraphElement: Container {
     }()
 
     public struct ResizeRequestSignalInput: Godot.SignalInput {
-        public let new_minsize: Godot.Vector2
-        fileprivate init(new_minsize: Godot.Vector2) {
-            self.new_minsize = new_minsize
+        public let newMinsize: Godot.Vector2
+        fileprivate init(newMinsize: Godot.Vector2) {
+            self.newMinsize = newMinsize
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, new_minsize)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.newMinsize)]
         }
     }
-    public func resizeRequest(new_minsize: Godot.Vector2) {
-        _ = resizeRequestSignal.emit(.init(new_minsize: new_minsize))
+    public func resizeRequest(newMinsize: Godot.Vector2) {
+        _ = resizeRequestSignal.emit(.init(newMinsize: newMinsize))
     }
     public lazy var resizeRequestSignal: Godot.SignalEmitter<ResizeRequestSignalInput> = {
         .init(object: self, signalName: "resize_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResizeRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(new_minsize: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(newMinsize: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResizeRequestSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -114,11 +111,8 @@ open class GraphElement: Container {
             self.from = from
             self.to = to
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, from, to)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.from), Variant(input.to)]
         }
     }
     public func dragged(from: Godot.Vector2, to: Godot.Vector2) {
@@ -159,7 +153,7 @@ open class GraphElement: Container {
         }
     }()
 
-    private static var __method_binding_set_resizable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_resizable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_resizable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -178,7 +172,7 @@ open class GraphElement: Container {
         )}}}
     }
 
-    private static var __method_binding_is_resizable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_resizable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_resizable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -196,7 +190,7 @@ open class GraphElement: Container {
         )}}
     }
 
-    private static var __method_binding_set_draggable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draggable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draggable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -215,7 +209,7 @@ open class GraphElement: Container {
         )}}}
     }
 
-    private static var __method_binding_is_draggable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_draggable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_draggable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -233,7 +227,7 @@ open class GraphElement: Container {
         )}}
     }
 
-    private static var __method_binding_set_selectable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_selectable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selectable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -252,7 +246,7 @@ open class GraphElement: Container {
         )}}}
     }
 
-    private static var __method_binding_is_selectable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_selectable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_selectable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -270,7 +264,7 @@ open class GraphElement: Container {
         )}}
     }
 
-    private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -289,7 +283,7 @@ open class GraphElement: Container {
         )}}}
     }
 
-    private static var __method_binding_is_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -307,7 +301,7 @@ open class GraphElement: Container {
         )}}
     }
 
-    private static var __method_binding_set_position_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -326,7 +320,7 @@ open class GraphElement: Container {
         )}}}
     }
 
-    private static var __method_binding_get_position_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDShaderSource: RefCounted {
-    private static var __method_binding_set_stage_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stage_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stage_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
@@ -25,7 +25,7 @@ open class RDShaderSource: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_stage_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_stage_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stage_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
@@ -45,7 +45,7 @@ open class RDShaderSource: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3422186742)!
@@ -64,7 +64,7 @@ open class RDShaderSource: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1063538261)!

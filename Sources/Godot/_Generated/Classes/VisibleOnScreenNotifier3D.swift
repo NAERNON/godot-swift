@@ -41,7 +41,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         }
     }()
 
-    private static var __method_binding_set_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
@@ -60,7 +60,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_on_screen: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_screen: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_screen").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

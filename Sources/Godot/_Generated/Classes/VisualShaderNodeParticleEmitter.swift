@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeParticleEmitter: VisualShaderNode {
-    private static var __method_binding_set_mode_2d: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mode_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode_2d").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class VisualShaderNodeParticleEmitter: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_is_mode_2d: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_mode_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_mode_2d").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

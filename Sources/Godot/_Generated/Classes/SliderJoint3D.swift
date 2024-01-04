@@ -57,7 +57,7 @@ open class SliderJoint3D: Joint3D {
         }
     }
 
-    private static var __method_binding_set_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 918243683)!
@@ -77,7 +77,7 @@ open class SliderJoint3D: Joint3D {
         )}}}}
     }
 
-    private static var __method_binding_get_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 959925627)!

@@ -23,7 +23,7 @@ open class EditorSelection: Object {
         }
     }()
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -40,7 +40,7 @@ open class EditorSelection: Object {
         )}
     }
 
-    private static var __method_binding_add_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -60,7 +60,7 @@ open class EditorSelection: Object {
         )}}}}
     }
 
-    private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -80,7 +80,7 @@ open class EditorSelection: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_selected_nodes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selected_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selected_nodes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -98,7 +98,7 @@ open class EditorSelection: Object {
         )}}
     }
 
-    private static var __method_binding_get_transformable_selected_nodes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_transformable_selected_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_transformable_selected_nodes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!

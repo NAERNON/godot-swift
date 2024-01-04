@@ -15,7 +15,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }
 
-    private static var __method_binding_set_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -34,7 +34,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -52,7 +52,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_path_types: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_types: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_types").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -71,7 +71,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_path_types: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_types: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_types").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1930428628)!
@@ -89,7 +89,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_path_rids: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_rids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_rids").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -108,7 +108,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_path_rids: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_rids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_rids").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -126,7 +126,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_path_owner_ids: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_owner_ids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_owner_ids").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3709968205)!
@@ -145,7 +145,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_path_owner_ids: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_owner_ids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_owner_ids").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 235988956)!
@@ -163,7 +163,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_reset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

@@ -16,11 +16,8 @@ open class EditorProperty: Container {
             self.field = field
             self.changing = changing
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, value, field, changing)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.value), Variant(input.field), Variant(input.changing)]
         }
     }
     public func propertyChanged(property: Godot.GodotStringName, value: Godot.Variant, field: Godot.GodotStringName, changing: Bool) {
@@ -54,11 +51,8 @@ open class EditorProperty: Container {
             self.properties = properties
             self.value = value
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, properties, value)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.properties), Variant(input.value)]
         }
     }
     public func multiplePropertiesChanged(properties: Godot.PackedStringArray, value: Godot.AnyGodotArray) {
@@ -86,11 +80,8 @@ open class EditorProperty: Container {
         fileprivate init(property: Godot.GodotStringName) {
             self.property = property
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property)]
         }
     }
     public func propertyKeyed(property: Godot.GodotStringName) {
@@ -116,11 +107,8 @@ open class EditorProperty: Container {
         fileprivate init(property: Godot.GodotStringName) {
             self.property = property
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property)]
         }
     }
     public func propertyDeleted(property: Godot.GodotStringName) {
@@ -148,11 +136,8 @@ open class EditorProperty: Container {
             self.property = property
             self.value = value
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, value)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.value)]
         }
     }
     public func propertyKeyedWithValue(property: Godot.GodotStringName, value: Godot.Variant) {
@@ -182,11 +167,8 @@ open class EditorProperty: Container {
             self.property = property
             self.checked = checked
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, checked)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.checked)]
         }
     }
     public func propertyChecked(property: Godot.GodotStringName, checked: Bool) {
@@ -216,11 +198,8 @@ open class EditorProperty: Container {
             self.property = property
             self.pinned = pinned
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, pinned)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.pinned)]
         }
     }
     public func propertyPinned(property: Godot.GodotStringName, pinned: Bool) {
@@ -245,27 +224,24 @@ open class EditorProperty: Container {
 
     public struct PropertyCanRevertChangedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotStringName
-        public let can_revert: Bool
-        fileprivate init(property: Godot.GodotStringName, can_revert: Bool) {
+        public let canRevert: Bool
+        fileprivate init(property: Godot.GodotStringName, canRevert: Bool) {
             self.property = property
-            self.can_revert = can_revert
+            self.canRevert = canRevert
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, can_revert)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.canRevert)]
         }
     }
-    public func propertyCanRevertChanged(property: Godot.GodotStringName, can_revert: Bool) {
+    public func propertyCanRevertChanged(property: Godot.GodotStringName, canRevert: Bool) {
         _ = propertyCanRevertChangedSignal.emit(.init(property: property,
-                can_revert: can_revert))
+                canRevert: canRevert))
     }
     public lazy var propertyCanRevertChangedSignal: Godot.SignalEmitter<PropertyCanRevertChangedSignalInput> = {
         .init(object: self, signalName: "property_can_revert_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyCanRevertChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    can_revert: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                    canRevert: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertyCanRevertChangedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -284,11 +260,8 @@ open class EditorProperty: Container {
             self.path = path
             self.resource = resource
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, path, resource)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.path), Variant(input.resource)]
         }
     }
     public func resourceSelected(path: Godot.GodotString, resource: Godot.Resource?) {
@@ -318,11 +291,8 @@ open class EditorProperty: Container {
             self.property = property
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.id)]
         }
     }
     public func objectIdSelected(property: Godot.GodotStringName, id: Int) {
@@ -347,27 +317,24 @@ open class EditorProperty: Container {
 
     public struct SelectedSignalInput: Godot.SignalInput {
         public let path: Godot.GodotString
-        public let focusable_idx: Int
-        fileprivate init(path: Godot.GodotString, focusable_idx: Int) {
+        public let focusableIdx: Int
+        fileprivate init(path: Godot.GodotString, focusableIdx: Int) {
             self.path = path
-            self.focusable_idx = focusable_idx
+            self.focusableIdx = focusableIdx
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, path, focusable_idx)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.path), Variant(input.focusableIdx)]
         }
     }
-    public func selected(path: Godot.GodotString, focusable_idx: Int) {
+    public func selected(path: Godot.GodotString, focusableIdx: Int) {
         _ = selectedSignal.emit(.init(path: path,
-                focusable_idx: focusable_idx))
+                focusableIdx: focusableIdx))
     }
     public lazy var selectedSignal: Godot.SignalEmitter<SelectedSignalInput> = {
         .init(object: self, signalName: "selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    focusable_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                    focusableIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -385,7 +352,7 @@ open class EditorProperty: Container {
     open func _setReadOnly(_ readOnly: Bool) {
     }
 
-    private static var __method_binding_set_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -404,7 +371,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -422,7 +389,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_read_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_read_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_read_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -441,7 +408,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_read_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_read_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_read_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -459,7 +426,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_checkable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_checkable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_checkable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -478,7 +445,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_checkable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_checkable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_checkable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -496,7 +463,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_checked: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_checked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_checked").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -515,7 +482,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_checked: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_checked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_checked").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -533,7 +500,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_draw_warning: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draw_warning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draw_warning").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -552,7 +519,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_draw_warning: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_draw_warning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_draw_warning").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -570,7 +537,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_keying: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keying: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keying").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -589,7 +556,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_keying: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_keying: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_keying").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -607,7 +574,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_set_deletable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_deletable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_deletable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -626,7 +593,7 @@ open class EditorProperty: Container {
         )}}}
     }
 
-    private static var __method_binding_is_deletable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_deletable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_deletable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -644,7 +611,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_get_edited_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edited_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edited_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -662,7 +629,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_get_edited_object: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edited_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edited_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2050059866)!
@@ -680,7 +647,7 @@ open class EditorProperty: Container {
         )}}
     }
 
-    private static var __method_binding_update_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -697,7 +664,7 @@ open class EditorProperty: Container {
         )}
     }
 
-    private static var __method_binding_add_focusable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_focusable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_focusable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -717,7 +684,7 @@ open class EditorProperty: Container {
         )}}}}
     }
 
-    private static var __method_binding_set_bottom_editor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bottom_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bottom_editor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -737,7 +704,7 @@ open class EditorProperty: Container {
         )}}}}
     }
 
-    private static var __method_binding_emit_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_emit_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "emit_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3069422438)!

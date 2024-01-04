@@ -15,7 +15,7 @@ open class OmniLight3D: Light3D {
         }
     }
 
-    private static var __method_binding_set_shadow_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121862228)!
@@ -34,7 +34,7 @@ open class OmniLight3D: Light3D {
         )}}}
     }
 
-    private static var __method_binding_get_shadow_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4181586331)!

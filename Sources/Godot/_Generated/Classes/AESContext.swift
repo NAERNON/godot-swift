@@ -21,7 +21,7 @@ open class AESContext: RefCounted {
         }
     }
 
-    private static var __method_binding_start: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3122411423)!
@@ -43,7 +43,7 @@ open class AESContext: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_update: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 527836100)!
@@ -63,7 +63,7 @@ open class AESContext: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_iv_state: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_iv_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_iv_state").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
@@ -81,7 +81,7 @@ open class AESContext: RefCounted {
         )}}
     }
 
-    private static var __method_binding_finish: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "finish").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

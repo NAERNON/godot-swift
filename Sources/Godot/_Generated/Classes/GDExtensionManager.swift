@@ -39,7 +39,7 @@ open class GDExtensionManager: Object {
         }
     }()
 
-    private static var __method_binding_load_extension: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_extension").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
@@ -59,7 +59,7 @@ open class GDExtensionManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_reload_extension: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reload_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reload_extension").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
@@ -79,7 +79,7 @@ open class GDExtensionManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_unload_extension: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_unload_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "unload_extension").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
@@ -99,7 +99,7 @@ open class GDExtensionManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_is_extension_loaded: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_extension_loaded: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_extension_loaded").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
@@ -119,7 +119,7 @@ open class GDExtensionManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_loaded_extensions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loaded_extensions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loaded_extensions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -137,7 +137,7 @@ open class GDExtensionManager: Object {
         )}}
     }
 
-    private static var __method_binding_get_extension: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_extension").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 49743343)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RenderSceneBuffersConfiguration: RefCounted {
-    private static var __method_binding_get_render_target: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_render_target: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_render_target").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -23,7 +23,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_render_target: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_render_target: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_render_target").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -42,7 +42,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_internal_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_internal_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_internal_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -60,7 +60,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_internal_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_internal_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_internal_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -79,7 +79,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_target_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -97,7 +97,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_target_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -116,7 +116,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_view_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_view_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_view_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -134,7 +134,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_view_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_view_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_view_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -153,7 +153,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_scaling_3d_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scaling_3d_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scaling_3d_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 976778074)!
@@ -171,7 +171,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_scaling_3d_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scaling_3d_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scaling_3d_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 447477857)!
@@ -190,7 +190,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_msaa_3d: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_msaa_3d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_msaa_3d").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3109158617)!
@@ -208,7 +208,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_msaa_3d: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_msaa_3d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_msaa_3d").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3952630748)!
@@ -227,7 +227,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_screen_space_aa: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_screen_space_aa: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_screen_space_aa").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 641513172)!
@@ -245,7 +245,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_screen_space_aa: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_screen_space_aa: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_screen_space_aa").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 139543108)!
@@ -264,7 +264,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_fsr_sharpness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fsr_sharpness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fsr_sharpness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -282,7 +282,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_fsr_sharpness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fsr_sharpness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fsr_sharpness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -301,7 +301,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_texture_mipmap_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_mipmap_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_mipmap_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -319,7 +319,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_texture_mipmap_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_mipmap_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_mipmap_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!

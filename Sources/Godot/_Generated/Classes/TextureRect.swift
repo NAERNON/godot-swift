@@ -42,7 +42,7 @@ open class TextureRect: Control {
         }
     }
 
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -62,7 +62,7 @@ open class TextureRect: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -80,7 +80,7 @@ open class TextureRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_expand_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_expand_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_expand_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1870766882)!
@@ -99,7 +99,7 @@ open class TextureRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_expand_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_expand_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_expand_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3863824733)!
@@ -117,7 +117,7 @@ open class TextureRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -136,7 +136,7 @@ open class TextureRect: Control {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -154,7 +154,7 @@ open class TextureRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -173,7 +173,7 @@ open class TextureRect: Control {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -191,7 +191,7 @@ open class TextureRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 58788729)!
@@ -210,7 +210,7 @@ open class TextureRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 346396079)!

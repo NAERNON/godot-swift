@@ -113,7 +113,7 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
-    private static var __method_binding_set_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -132,7 +132,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -150,7 +150,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_inherit_velocity_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -169,7 +169,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inherit_velocity_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -187,7 +187,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_spread: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_spread: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_spread").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -206,7 +206,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_spread: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_spread: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_spread").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -224,7 +224,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_flatness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flatness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flatness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -243,7 +243,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_flatness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_flatness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_flatness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -261,7 +261,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_param_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2295964248)!
@@ -281,7 +281,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_param_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3903786503)!
@@ -301,7 +301,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_set_param_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2295964248)!
@@ -321,7 +321,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_param_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3903786503)!
@@ -341,7 +341,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_set_param_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 526976089)!
@@ -362,7 +362,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}}
     }
 
-    private static var __method_binding_get_param_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3489372978)!
@@ -382,7 +382,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -401,7 +401,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -419,7 +419,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -439,7 +439,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -457,7 +457,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_alpha_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -477,7 +477,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_alpha_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -495,7 +495,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -515,7 +515,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_emission_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -533,7 +533,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_initial_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -553,7 +553,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_color_initial_ramp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_initial_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_initial_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -571,7 +571,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_velocity_limit_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_velocity_limit_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_velocity_limit_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -591,7 +591,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_velocity_limit_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity_limit_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity_limit_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -609,7 +609,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_particle_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_particle_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_particle_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1711815571)!
@@ -629,7 +629,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_particle_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_particle_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_particle_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3895316907)!
@@ -649,7 +649,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_set_velocity_pivot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_velocity_pivot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_velocity_pivot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -668,7 +668,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_velocity_pivot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity_pivot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity_pivot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3783033775)!
@@ -686,7 +686,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 461501442)!
@@ -705,7 +705,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3719733018)!
@@ -723,7 +723,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_sphere_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_sphere_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_sphere_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -742,7 +742,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_sphere_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_sphere_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_sphere_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -760,7 +760,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_box_extents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_box_extents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_box_extents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -779,7 +779,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_box_extents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_box_extents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_box_extents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -797,7 +797,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_point_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_point_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_point_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -817,7 +817,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_emission_point_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_point_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_point_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -835,7 +835,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_normal_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_normal_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_normal_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -855,7 +855,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_emission_normal_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_normal_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_normal_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -873,7 +873,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_color_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_color_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_color_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -893,7 +893,7 @@ open class ParticleProcessMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_emission_color_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_color_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_color_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -911,7 +911,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_point_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_point_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -930,7 +930,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_point_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_point_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -948,7 +948,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_ring_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_ring_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_ring_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -967,7 +967,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_ring_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_ring_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_ring_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -985,7 +985,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_ring_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_ring_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_ring_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1004,7 +1004,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_ring_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_ring_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_ring_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1022,7 +1022,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_ring_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_ring_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_ring_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1041,7 +1041,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_ring_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_ring_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_ring_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1059,7 +1059,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_ring_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_ring_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_ring_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1078,7 +1078,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_ring_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_ring_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_ring_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1096,7 +1096,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_shape_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_shape_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_shape_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -1115,7 +1115,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_shape_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_shape_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_shape_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -1133,7 +1133,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission_shape_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission_shape_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission_shape_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -1152,7 +1152,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission_shape_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission_shape_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission_shape_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -1170,7 +1170,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_get_turbulence_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbulence_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbulence_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1188,7 +1188,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbulence_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbulence_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbulence_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1207,7 +1207,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_turbulence_noise_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbulence_noise_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbulence_noise_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1225,7 +1225,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbulence_noise_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbulence_noise_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbulence_noise_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1244,7 +1244,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_turbulence_noise_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbulence_noise_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbulence_noise_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1262,7 +1262,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbulence_noise_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbulence_noise_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbulence_noise_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1281,7 +1281,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_turbulence_noise_speed_random: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbulence_noise_speed_random: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbulence_noise_speed_random").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1299,7 +1299,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbulence_noise_speed_random: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbulence_noise_speed_random: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbulence_noise_speed_random").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1318,7 +1318,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_turbulence_noise_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbulence_noise_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbulence_noise_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -1336,7 +1336,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbulence_noise_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbulence_noise_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbulence_noise_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -1355,7 +1355,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -1373,7 +1373,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -1392,7 +1392,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_set_lifetime_randomness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_lifetime_randomness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_lifetime_randomness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1411,7 +1411,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_lifetime_randomness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_lifetime_randomness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_lifetime_randomness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1429,7 +1429,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_get_sub_emitter_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sub_emitter_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sub_emitter_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2399052877)!
@@ -1447,7 +1447,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sub_emitter_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sub_emitter_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sub_emitter_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2161806672)!
@@ -1466,7 +1466,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_sub_emitter_frequency: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sub_emitter_frequency: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sub_emitter_frequency").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1484,7 +1484,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sub_emitter_frequency: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sub_emitter_frequency: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sub_emitter_frequency").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1503,7 +1503,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_sub_emitter_amount_at_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sub_emitter_amount_at_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sub_emitter_amount_at_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1521,7 +1521,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sub_emitter_amount_at_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sub_emitter_amount_at_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sub_emitter_amount_at_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1540,7 +1540,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_sub_emitter_amount_at_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sub_emitter_amount_at_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sub_emitter_amount_at_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1558,7 +1558,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sub_emitter_amount_at_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sub_emitter_amount_at_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sub_emitter_amount_at_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1577,7 +1577,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_sub_emitter_keep_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sub_emitter_keep_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sub_emitter_keep_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1595,7 +1595,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sub_emitter_keep_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sub_emitter_keep_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sub_emitter_keep_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1614,7 +1614,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_set_attractor_interaction_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_attractor_interaction_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_attractor_interaction_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1633,7 +1633,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_is_attractor_interaction_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_attractor_interaction_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_attractor_interaction_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1651,7 +1651,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_collision_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 653804659)!
@@ -1670,7 +1670,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 139371864)!
@@ -1688,7 +1688,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_collision_use_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_use_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_use_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1707,7 +1707,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_is_collision_using_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collision_using_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collision_using_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1725,7 +1725,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_collision_friction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_friction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_friction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1744,7 +1744,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_collision_friction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_friction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_friction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1762,7 +1762,7 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_collision_bounce: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_bounce: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_bounce").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1781,7 +1781,7 @@ open class ParticleProcessMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_collision_bounce: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_bounce: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_bounce").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

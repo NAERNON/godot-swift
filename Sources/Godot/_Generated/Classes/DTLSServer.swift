@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class DTLSServer: RefCounted {
-    private static var __method_binding_setup: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "setup").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262296096)!
@@ -26,7 +26,7 @@ open class DTLSServer: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "take_connection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3946580474)!

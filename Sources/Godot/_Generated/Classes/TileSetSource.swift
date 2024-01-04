@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TileSetSource: Resource {
-    private static var __method_binding_get_tiles_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tiles_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tiles_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -23,7 +23,7 @@ open class TileSetSource: Resource {
         )}}
     }
 
-    private static var __method_binding_get_tile_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tile_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 880721226)!
@@ -43,7 +43,7 @@ open class TileSetSource: Resource {
         )}}}}
     }
 
-    private static var __method_binding_has_tile: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_tile").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
@@ -63,7 +63,7 @@ open class TileSetSource: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_alternative_tiles_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alternative_tiles_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alternative_tiles_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2485466453)!
@@ -83,7 +83,7 @@ open class TileSetSource: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_alternative_tile_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alternative_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alternative_tile_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 89881719)!
@@ -104,7 +104,7 @@ open class TileSetSource: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_has_alternative_tile: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_alternative_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_alternative_tile").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1073731340)!

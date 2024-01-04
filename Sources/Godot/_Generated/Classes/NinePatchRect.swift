@@ -35,7 +35,7 @@ open class NinePatchRect: Control {
         }
     }()
 
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -55,7 +55,7 @@ open class NinePatchRect: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -73,7 +73,7 @@ open class NinePatchRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_patch_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_patch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_patch_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
@@ -93,7 +93,7 @@ open class NinePatchRect: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_patch_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_patch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_patch_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
@@ -113,7 +113,7 @@ open class NinePatchRect: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_region_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_region_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
@@ -132,7 +132,7 @@ open class NinePatchRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_region_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_region_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
@@ -150,7 +150,7 @@ open class NinePatchRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draw_center").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -169,7 +169,7 @@ open class NinePatchRect: Control {
         )}}}
     }
 
-    private static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_draw_center_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -187,7 +187,7 @@ open class NinePatchRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
@@ -206,7 +206,7 @@ open class NinePatchRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_h_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!
@@ -224,7 +224,7 @@ open class NinePatchRect: Control {
         )}}
     }
 
-    private static var __method_binding_set_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_v_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
@@ -243,7 +243,7 @@ open class NinePatchRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_v_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!

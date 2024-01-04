@@ -22,11 +22,8 @@ open class MultiplayerAPI: RefCounted {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func peerConnected(id: Int) {
@@ -52,11 +49,8 @@ open class MultiplayerAPI: RefCounted {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func peerDisconnected(id: Int) {
@@ -131,7 +125,7 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    private static var __method_binding_has_multiplayer_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_multiplayer_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -149,7 +143,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_multiplayer_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_multiplayer_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3223692825)!
@@ -167,7 +161,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_multiplayer_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_multiplayer_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3694835298)!
@@ -187,7 +181,7 @@ open class MultiplayerAPI: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_unique_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -205,7 +199,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_server: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_server: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_server").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -223,7 +217,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_remote_sender_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_remote_sender_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_remote_sender_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -241,7 +235,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -259,7 +253,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_rpc: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rpc: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rpc").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2077486355)!
@@ -283,7 +277,7 @@ open class MultiplayerAPI: RefCounted {
         )}}}}}}}}
     }
 
-    private static var __method_binding_object_configuration_add: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_object_configuration_add: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "object_configuration_add").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
@@ -305,7 +299,7 @@ open class MultiplayerAPI: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_object_configuration_remove: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_object_configuration_remove: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "object_configuration_remove").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
@@ -327,7 +321,7 @@ open class MultiplayerAPI: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_get_peers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_peers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_peers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -345,7 +339,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_default_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -363,7 +357,7 @@ open class MultiplayerAPI: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_default_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_default_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2737447660)!
@@ -380,7 +374,7 @@ open class MultiplayerAPI: RefCounted {
         )}
     }
 
-    private static var __method_binding_create_default_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_default_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3294156723)!

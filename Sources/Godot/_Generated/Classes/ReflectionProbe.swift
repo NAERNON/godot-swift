@@ -26,7 +26,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
     }
 
-    private static var __method_binding_set_intensity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_intensity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_intensity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -45,7 +45,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_intensity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_intensity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_intensity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -63,7 +63,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_ambient_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ambient_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ambient_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1748981278)!
@@ -82,7 +82,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_ambient_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ambient_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ambient_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1014607621)!
@@ -100,7 +100,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_ambient_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ambient_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ambient_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -119,7 +119,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_ambient_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ambient_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ambient_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -137,7 +137,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_ambient_color_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ambient_color_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ambient_color_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -156,7 +156,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_ambient_color_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ambient_color_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ambient_color_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -174,7 +174,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -193,7 +193,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -211,7 +211,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_mesh_lod_threshold: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mesh_lod_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mesh_lod_threshold").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -230,7 +230,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_mesh_lod_threshold: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mesh_lod_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mesh_lod_threshold").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -248,7 +248,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -267,7 +267,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -285,7 +285,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_origin_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_origin_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_origin_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -304,7 +304,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_origin_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_origin_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_origin_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -322,7 +322,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_as_interior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_as_interior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_as_interior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -341,7 +341,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_set_as_interior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_set_as_interior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_set_as_interior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -359,7 +359,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_enable_box_projection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_box_projection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_box_projection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -378,7 +378,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_box_projection_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_box_projection_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_box_projection_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -396,7 +396,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_enable_shadows: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_shadows: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_shadows").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -415,7 +415,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_are_shadows_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_shadows_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_shadows_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -433,7 +433,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -452,7 +452,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -470,7 +470,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4090221187)!
@@ -489,7 +489,7 @@ open class ReflectionProbe: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2367550552)!

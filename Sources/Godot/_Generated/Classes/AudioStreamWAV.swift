@@ -30,7 +30,7 @@ open class AudioStreamWAV: AudioStream {
         }
     }
 
-    private static var __method_binding_set_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2971499966)!
@@ -49,7 +49,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2362200018)!
@@ -67,7 +67,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 60648488)!
@@ -86,7 +86,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3151724922)!
@@ -104,7 +104,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_loop_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2444882972)!
@@ -123,7 +123,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_loop_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loop_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 393560655)!
@@ -141,7 +141,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_loop_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -160,7 +160,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_loop_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loop_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loop_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -178,7 +178,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_loop_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -197,7 +197,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_loop_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loop_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loop_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -215,7 +215,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_mix_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mix_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mix_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -234,7 +234,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_mix_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mix_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mix_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -252,7 +252,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_stereo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stereo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stereo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -271,7 +271,7 @@ open class AudioStreamWAV: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_is_stereo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_stereo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_stereo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -289,7 +289,7 @@ open class AudioStreamWAV: AudioStream {
         )}}
     }
 
-    private static var __method_binding_save_to_wav: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save_to_wav: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_to_wav").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!

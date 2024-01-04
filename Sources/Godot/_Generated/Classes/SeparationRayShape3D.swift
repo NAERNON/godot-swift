@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SeparationRayShape3D: Shape3D {
-    private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class SeparationRayShape3D: Shape3D {
         )}}}
     }
 
-    private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class SeparationRayShape3D: Shape3D {
         )}}
     }
 
-    private static var __method_binding_set_slide_on_slope: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slide_on_slope: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slide_on_slope").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class SeparationRayShape3D: Shape3D {
         )}}}
     }
 
-    private static var __method_binding_get_slide_on_slope: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slide_on_slope: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slide_on_slope").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

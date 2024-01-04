@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PolygonPathFinder: Resource {
-    private static var __method_binding_setup: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "setup").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3251786936)!
@@ -25,7 +25,7 @@ open class PolygonPathFinder: Resource {
         )}}}}
     }
 
-    private static var __method_binding_find_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562168077)!
@@ -46,7 +46,7 @@ open class PolygonPathFinder: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_intersections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_intersections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_intersections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3932192302)!
@@ -67,7 +67,7 @@ open class PolygonPathFinder: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
@@ -87,7 +87,7 @@ open class PolygonPathFinder: Resource {
         )}}}}
     }
 
-    private static var __method_binding_is_point_inside: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_point_inside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_point_inside").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 556197845)!
@@ -107,7 +107,7 @@ open class PolygonPathFinder: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_point_penalty: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_penalty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_penalty").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -127,7 +127,7 @@ open class PolygonPathFinder: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_point_penalty: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_penalty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_penalty").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
@@ -147,7 +147,7 @@ open class PolygonPathFinder: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_bounds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bounds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bounds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!

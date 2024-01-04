@@ -770,7 +770,7 @@ public final class ClassRegistrar {
         var callableInfo = GDExtensionCallableCustomInfo(
             callable_userdata: Unmanaged.passRetained(userData).toOpaque(),
             token: GodotExtension.token,
-            object_id: object?.instanceId() ?? 0,
+            object_id: object?.id ?? 0,
             call_func: callFunc,
             is_valid_func: nil,
             free_func: freeFunc,

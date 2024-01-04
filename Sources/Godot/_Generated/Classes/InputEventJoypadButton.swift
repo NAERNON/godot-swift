@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class InputEventJoypadButton: InputEvent {
-    private static var __method_binding_set_button_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_button_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_button_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1466368136)!
@@ -24,7 +24,7 @@ open class InputEventJoypadButton: InputEvent {
         )}}}
     }
 
-    private static var __method_binding_get_button_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_button_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_button_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 595588182)!
@@ -42,7 +42,7 @@ open class InputEventJoypadButton: InputEvent {
         )}}
     }
 
-    private static var __method_binding_set_pressure: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressure: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressure").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class InputEventJoypadButton: InputEvent {
         )}}}
     }
 
-    private static var __method_binding_get_pressure: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pressure: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pressure").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class InputEventJoypadButton: InputEvent {
         )}}
     }
 
-    private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!

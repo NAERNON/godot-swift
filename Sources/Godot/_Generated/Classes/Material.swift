@@ -21,7 +21,7 @@ open class Material: Resource {
         Bool()
     }
 
-    private static var __method_binding_set_next_pass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_next_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_next_pass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
@@ -41,7 +41,7 @@ open class Material: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_next_pass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_next_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_next_pass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
@@ -59,7 +59,7 @@ open class Material: Resource {
         )}}
     }
 
-    private static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_render_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -78,7 +78,7 @@ open class Material: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_render_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -96,7 +96,7 @@ open class Material: Resource {
         )}}
     }
 
-    private static var __method_binding_inspect_native_shader_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_inspect_native_shader_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "inspect_native_shader_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -113,7 +113,7 @@ open class Material: Resource {
         )}
     }
 
-    private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!

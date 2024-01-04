@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectLimiter: AudioEffect {
-    private static var __method_binding_set_ceiling_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ceiling_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ceiling_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_ceiling_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ceiling_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ceiling_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_set_threshold_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_threshold_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_threshold_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_threshold_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_threshold_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_threshold_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_set_soft_clip_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_soft_clip_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_soft_clip_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_soft_clip_db: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_soft_clip_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_soft_clip_db").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_set_soft_clip_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_soft_clip_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_soft_clip_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class AudioEffectLimiter: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_soft_clip_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_soft_clip_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_soft_clip_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

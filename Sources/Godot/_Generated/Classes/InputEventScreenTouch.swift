@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class InputEventScreenTouch: InputEventFromWindow {
-    private static var __method_binding_set_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}}
     }
 
-    private static var __method_binding_get_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -42,7 +42,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}
     }
 
-    private static var __method_binding_set_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -61,7 +61,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}}
     }
 
-    private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -79,7 +79,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}
     }
 
-    private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -98,7 +98,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}}
     }
 
-    private static var __method_binding_set_canceled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_canceled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_canceled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -117,7 +117,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}}
     }
 
-    private static var __method_binding_set_double_tap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_double_tap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_double_tap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -136,7 +136,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         )}}}
     }
 
-    private static var __method_binding_is_double_tap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_double_tap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_double_tap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

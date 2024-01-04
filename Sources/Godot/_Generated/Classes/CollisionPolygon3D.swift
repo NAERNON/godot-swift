@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CollisionPolygon3D: Node3D {
-    private static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class CollisionPolygon3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class CollisionPolygon3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -61,7 +61,7 @@ open class CollisionPolygon3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -79,7 +79,7 @@ open class CollisionPolygon3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -98,7 +98,7 @@ open class CollisionPolygon3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -116,7 +116,7 @@ open class CollisionPolygon3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class CollisionPolygon3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

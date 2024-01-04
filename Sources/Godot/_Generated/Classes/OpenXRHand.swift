@@ -28,7 +28,7 @@ open class OpenXRHand: Node3D {
         }
     }
 
-    private static var __method_binding_set_hand: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hand: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hand").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1849328560)!
@@ -47,7 +47,7 @@ open class OpenXRHand: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_hand: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_hand: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_hand").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2850644561)!
@@ -65,7 +65,7 @@ open class OpenXRHand: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_hand_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hand_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hand_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -84,7 +84,7 @@ open class OpenXRHand: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_hand_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_hand_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_hand_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -102,7 +102,7 @@ open class OpenXRHand: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_motion_range: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motion_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motion_range").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3326516003)!
@@ -121,7 +121,7 @@ open class OpenXRHand: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_motion_range: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motion_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motion_range").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2191822314)!

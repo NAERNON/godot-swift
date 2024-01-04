@@ -23,7 +23,7 @@ open class Path3D: Node3D {
         }
     }()
 
-    private static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408955118)!
@@ -43,7 +43,7 @@ open class Path3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4244715212)!

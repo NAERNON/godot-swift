@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicalBone2D: RigidBody2D {
-    private static var __method_binding_get_joint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3582132112)!
@@ -23,7 +23,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_get_auto_configure_joint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_auto_configure_joint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_auto_configure_joint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -41,7 +41,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_set_auto_configure_joint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_configure_joint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_configure_joint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -60,7 +60,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}}
     }
 
-    private static var __method_binding_set_simulate_physics: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_simulate_physics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_simulate_physics").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -79,7 +79,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_simulate_physics: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_simulate_physics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_simulate_physics").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -97,7 +97,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_is_simulating_physics: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_simulating_physics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_simulating_physics").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -115,7 +115,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_set_bone2d_nodepath: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone2d_nodepath: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone2d_nodepath").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -134,7 +134,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_bone2d_nodepath: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone2d_nodepath: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone2d_nodepath").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -152,7 +152,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_set_bone2d_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone2d_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone2d_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -171,7 +171,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_bone2d_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone2d_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone2d_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -189,7 +189,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}
     }
 
-    private static var __method_binding_set_follow_bone_when_simulating: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_follow_bone_when_simulating: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_follow_bone_when_simulating").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -208,7 +208,7 @@ open class PhysicalBone2D: RigidBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_follow_bone_when_simulating: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_follow_bone_when_simulating: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_follow_bone_when_simulating").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 181872837)!
@@ -25,7 +25,7 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2800800579)!

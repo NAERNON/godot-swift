@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFSkin: Resource {
-    private static var __method_binding_get_skin_root: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skin_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skin_root").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -23,7 +23,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_skin_root: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_skin_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_skin_root").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -42,7 +42,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_joints_original: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joints_original: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joints_original").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -60,7 +60,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_joints_original: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_joints_original: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_joints_original").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -79,7 +79,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_inverse_binds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inverse_binds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inverse_binds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -97,7 +97,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_inverse_binds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_inverse_binds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_inverse_binds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -116,7 +116,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -134,7 +134,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -153,7 +153,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_non_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_non_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_non_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -171,7 +171,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_non_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_non_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_non_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -190,7 +190,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_roots").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -208,7 +208,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_roots").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -227,7 +227,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -245,7 +245,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -264,7 +264,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joint_i_to_bone_i").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
@@ -282,7 +282,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_joint_i_to_bone_i").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
@@ -301,7 +301,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_joint_i_to_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joint_i_to_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joint_i_to_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
@@ -319,7 +319,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_joint_i_to_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_joint_i_to_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_joint_i_to_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
@@ -338,7 +338,7 @@ open class GLTFSkin: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_godot_skin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_godot_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_godot_skin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1032037385)!
@@ -356,7 +356,7 @@ open class GLTFSkin: Resource {
         )}}
     }
 
-    private static var __method_binding_set_godot_skin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_godot_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_godot_skin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!

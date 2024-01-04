@@ -32,7 +32,7 @@ open class NavigationPolygon: Resource {
         }
     }
 
-    private static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -51,7 +51,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -69,7 +69,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_add_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -88,7 +88,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_polygon_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -106,7 +106,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3668444399)!
@@ -126,7 +126,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_clear_polygons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -143,7 +143,7 @@ open class NavigationPolygon: Resource {
         )}
     }
 
-    private static var __method_binding_get_navigation_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 330232164)!
@@ -161,7 +161,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_add_outline: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_outline").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -180,7 +180,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_add_outline_at_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_outline_at_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_outline_at_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1569738947)!
@@ -200,7 +200,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_outline_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outline_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outline_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -218,7 +218,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_outline: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outline").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1201971903)!
@@ -238,7 +238,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_outline: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outline").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3946907486)!
@@ -258,7 +258,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_outline: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_outline").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -277,7 +277,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_clear_outlines: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_outlines").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -294,7 +294,7 @@ open class NavigationPolygon: Resource {
         )}
     }
 
-    private static var __method_binding_make_polygons_from_outlines: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_polygons_from_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_polygons_from_outlines").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -311,7 +311,7 @@ open class NavigationPolygon: Resource {
         )}
     }
 
-    private static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -330,7 +330,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -348,7 +348,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_parsed_geometry_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parsed_geometry_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2507971764)!
@@ -367,7 +367,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_parsed_geometry_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parsed_geometry_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1073219508)!
@@ -385,7 +385,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_parsed_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parsed_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parsed_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -404,7 +404,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_parsed_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parsed_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parsed_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -422,7 +422,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parsed_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -442,7 +442,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parsed_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -462,7 +462,7 @@ open class NavigationPolygon: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_source_geometry_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_geometry_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4002316705)!
@@ -481,7 +481,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_source_geometry_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_geometry_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 459686762)!
@@ -499,7 +499,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_source_geometry_group_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_geometry_group_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_geometry_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -518,7 +518,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_source_geometry_group_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_geometry_group_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_geometry_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -536,7 +536,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_set_agent_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_agent_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -555,7 +555,7 @@ open class NavigationPolygon: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_agent_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_agent_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -573,7 +573,7 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

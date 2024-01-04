@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeColorParameter: VisualShaderNodeParameter {
-    private static var __method_binding_set_default_value_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_default_value_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_value_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class VisualShaderNodeColorParameter: VisualShaderNodeParameter {
         )}}}
     }
 
-    private static var __method_binding_is_default_value_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_default_value_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_default_value_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -42,7 +42,7 @@ open class VisualShaderNodeColorParameter: VisualShaderNodeParameter {
         )}}
     }
 
-    private static var __method_binding_set_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -61,7 +61,7 @@ open class VisualShaderNodeColorParameter: VisualShaderNodeParameter {
         )}}}
     }
 
-    private static var __method_binding_get_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!

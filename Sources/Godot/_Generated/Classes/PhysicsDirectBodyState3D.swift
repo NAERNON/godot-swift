@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicsDirectBodyState3D: Object {
-    private static var __method_binding_get_total_gravity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_gravity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -23,7 +23,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_total_linear_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_linear_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_linear_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -41,7 +41,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_total_angular_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_angular_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_angular_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -59,7 +59,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_center_of_mass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_center_of_mass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_center_of_mass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -77,7 +77,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_center_of_mass_local: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_center_of_mass_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_center_of_mass_local").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -95,7 +95,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_principal_inertia_axes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_principal_inertia_axes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_principal_inertia_axes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2716978435)!
@@ -113,7 +113,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_inverse_mass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inverse_mass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inverse_mass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -131,7 +131,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_inverse_inertia: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inverse_inertia: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inverse_inertia").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -149,7 +149,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_inverse_inertia_tensor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inverse_inertia_tensor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inverse_inertia_tensor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2716978435)!
@@ -167,7 +167,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_set_linear_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_linear_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -186,7 +186,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_get_linear_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_linear_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -204,7 +204,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_set_angular_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -223,7 +223,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_get_angular_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angular_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -241,7 +241,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2952846383)!
@@ -260,7 +260,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
@@ -278,7 +278,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_velocity_at_local_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity_at_local_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity_at_local_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 192990374)!
@@ -298,7 +298,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_apply_central_impulse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_central_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_central_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2007698547)!
@@ -317,7 +317,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2754756483)!
@@ -337,7 +337,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_apply_torque_impulse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_torque_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_torque_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -356,7 +356,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_apply_central_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_central_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_central_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2007698547)!
@@ -375,7 +375,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_apply_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2754756483)!
@@ -395,7 +395,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_apply_torque: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_torque").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -414,7 +414,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_add_constant_central_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_constant_central_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_constant_central_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2007698547)!
@@ -433,7 +433,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_add_constant_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2754756483)!
@@ -453,7 +453,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_add_constant_torque: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_constant_torque").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -472,7 +472,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_set_constant_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -491,7 +491,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_get_constant_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -509,7 +509,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_set_constant_torque: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_constant_torque").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -528,7 +528,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_get_constant_torque: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_constant_torque").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -546,7 +546,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_set_sleep_state: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sleep_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sleep_state").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -565,7 +565,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}
     }
 
-    private static var __method_binding_is_sleeping: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_sleeping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_sleeping").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -583,7 +583,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_contact_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -601,7 +601,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_get_contact_local_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_local_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_local_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -621,7 +621,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_local_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_local_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_local_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -641,7 +641,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_impulse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -661,7 +661,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_local_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_local_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_local_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -681,7 +681,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_local_velocity_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_local_velocity_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_local_velocity_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -701,7 +701,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 495598643)!
@@ -721,7 +721,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -741,7 +741,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -761,7 +761,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider_object: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3332903315)!
@@ -781,7 +781,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -801,7 +801,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_contact_collider_velocity_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_collider_velocity_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_collider_velocity_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -821,7 +821,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -839,7 +839,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}}
     }
 
-    private static var __method_binding_integrate_forces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_integrate_forces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "integrate_forces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -856,7 +856,7 @@ open class PhysicsDirectBodyState3D: Object {
         )}
     }
 
-    private static var __method_binding_get_space_state: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_space_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_space_state").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2069328350)!

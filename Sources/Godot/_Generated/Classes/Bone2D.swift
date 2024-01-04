@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Bone2D: Node2D {
-    private static var __method_binding_set_rest: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rest: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rest").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
@@ -24,7 +24,7 @@ open class Bone2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_rest: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rest: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rest").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
@@ -42,7 +42,7 @@ open class Bone2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_apply_rest: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_rest: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_rest").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -59,7 +59,7 @@ open class Bone2D: Node2D {
         )}
     }
 
-    private static var __method_binding_get_skeleton_rest: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skeleton_rest: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skeleton_rest").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
@@ -77,7 +77,7 @@ open class Bone2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_index_in_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_index_in_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_index_in_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -95,7 +95,7 @@ open class Bone2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autocalculate_length_and_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -114,7 +114,7 @@ open class Bone2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autocalculate_length_and_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -132,7 +132,7 @@ open class Bone2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -151,7 +151,7 @@ open class Bone2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -169,7 +169,7 @@ open class Bone2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_bone_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -188,7 +188,7 @@ open class Bone2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_bone_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

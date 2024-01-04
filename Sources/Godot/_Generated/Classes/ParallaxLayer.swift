@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ParallaxLayer: Node2D {
-    private static var __method_binding_set_motion_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motion_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motion_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -24,7 +24,7 @@ open class ParallaxLayer: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_motion_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motion_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motion_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -42,7 +42,7 @@ open class ParallaxLayer: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_motion_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motion_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motion_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -61,7 +61,7 @@ open class ParallaxLayer: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_motion_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motion_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motion_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -79,7 +79,7 @@ open class ParallaxLayer: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_mirroring: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mirroring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mirroring").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -98,7 +98,7 @@ open class ParallaxLayer: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_mirroring: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mirroring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mirroring").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

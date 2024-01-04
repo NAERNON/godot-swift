@@ -19,7 +19,7 @@ open class StreamPeerTCP: StreamPeer {
         }
     }
 
-    private static var __method_binding_bind: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bind: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bind").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3167955072)!
@@ -40,7 +40,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}}}}
     }
 
-    private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_host").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 993915709)!
@@ -61,7 +61,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}}}}
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -79,7 +79,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_get_status: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_status").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 859471121)!
@@ -97,7 +97,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_get_connected_host: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connected_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connected_host").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -115,7 +115,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_get_connected_port: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connected_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connected_port").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -133,7 +133,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_get_local_port: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_local_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_local_port").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -151,7 +151,7 @@ open class StreamPeerTCP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_disconnect_from_host: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_from_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_from_host").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -168,7 +168,7 @@ open class StreamPeerTCP: StreamPeer {
         )}
     }
 
-    private static var __method_binding_set_no_delay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_no_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_no_delay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!

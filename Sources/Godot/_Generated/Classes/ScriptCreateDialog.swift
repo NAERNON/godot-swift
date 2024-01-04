@@ -10,11 +10,8 @@ open class ScriptCreateDialog: ConfirmationDialog {
         fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, script)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.script)]
         }
     }
     public func scriptCreated(script: Godot.Script?) {
@@ -35,7 +32,7 @@ open class ScriptCreateDialog: ConfirmationDialog {
         }
     }()
 
-    private static var __method_binding_config: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "config").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 869314288)!

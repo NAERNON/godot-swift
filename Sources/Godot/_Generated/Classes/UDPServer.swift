@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class UDPServer: RefCounted {
-    private static var __method_binding_listen: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_listen: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "listen").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3167955072)!
@@ -26,7 +26,7 @@ open class UDPServer: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -44,7 +44,7 @@ open class UDPServer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_connection_available: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_connection_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_connection_available").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -62,7 +62,7 @@ open class UDPServer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_local_port: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_local_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_local_port").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -80,7 +80,7 @@ open class UDPServer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_listening: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_listening: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_listening").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -98,7 +98,7 @@ open class UDPServer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "take_connection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808734560)!
@@ -116,7 +116,7 @@ open class UDPServer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_stop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -133,7 +133,7 @@ open class UDPServer: RefCounted {
         )}
     }
 
-    private static var __method_binding_set_max_pending_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_pending_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_pending_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -152,7 +152,7 @@ open class UDPServer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_max_pending_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_pending_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_pending_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

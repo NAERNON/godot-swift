@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class DirectionalLight2D: Light2D {
-    private static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class DirectionalLight2D: Light2D {
         )}}}
     }
 
-    private static var __method_binding_get_max_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

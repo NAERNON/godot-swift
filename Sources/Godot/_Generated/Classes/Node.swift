@@ -168,11 +168,8 @@ open class Node: Object {
         fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.node)]
         }
     }
     public func childEnteredTree(node: Godot.Node?) {
@@ -198,11 +195,8 @@ open class Node: Object {
         fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.node)]
         }
     }
     public func childExitingTree(node: Godot.Node?) {
@@ -246,11 +240,8 @@ open class Node: Object {
         fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, node)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.node)]
         }
     }
     public func replacingBy(node: Godot.Node?) {
@@ -302,7 +293,7 @@ open class Node: Object {
     open func _unhandledKeyInput(event: Godot.InputEvent?) {
     }
 
-    private static var __method_binding_print_orphan_nodes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_print_orphan_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "print_orphan_nodes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -318,7 +309,7 @@ open class Node: Object {
         )
     }
 
-    private static var __method_binding_add_sibling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_sibling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_sibling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2570952461)!
@@ -339,7 +330,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_set_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -358,7 +349,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -376,7 +367,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_add_child: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_child").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3863233950)!
@@ -398,7 +389,7 @@ open class Node: Object {
         )}}}}}}
     }
 
-    private static var __method_binding_remove_child: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_child").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -418,7 +409,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_reparent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reparent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reparent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3685795103)!
@@ -439,7 +430,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_get_child_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_child_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_child_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 894402480)!
@@ -459,7 +450,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_children: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_children: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_children").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 873284517)!
@@ -479,7 +470,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_child: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_child").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 541253412)!
@@ -500,7 +491,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_has_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 861721659)!
@@ -520,7 +511,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2734337346)!
@@ -540,7 +531,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_node_or_null: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_or_null: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_or_null").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2734337346)!
@@ -560,7 +551,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
@@ -578,7 +569,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_find_child: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_child").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2008217037)!
@@ -600,7 +591,7 @@ open class Node: Object {
         )}}}}}}
     }
 
-    private static var __method_binding_find_children: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_children: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_children").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2560337219)!
@@ -623,7 +614,7 @@ open class Node: Object {
         )}}}}}}}
     }
 
-    private static var __method_binding_find_parent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_parent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1140089439)!
@@ -643,7 +634,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_has_node_and_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_node_and_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_node_and_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 861721659)!
@@ -663,7 +654,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_node_and_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_and_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_and_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 502563882)!
@@ -683,7 +674,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_is_inside_tree: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_inside_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_inside_tree").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -701,7 +692,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_is_ancestor_of: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_ancestor_of: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_ancestor_of").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3093956946)!
@@ -722,7 +713,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_is_greater_than: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_greater_than: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_greater_than").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3093956946)!
@@ -743,7 +734,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_get_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -761,7 +752,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_path_to: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_to: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_to").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 498846349)!
@@ -783,7 +774,7 @@ open class Node: Object {
         )}}}}}}
     }
 
-    private static var __method_binding_add_to_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_to_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_to_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3683006648)!
@@ -803,7 +794,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_remove_from_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_from_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_from_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -822,7 +813,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_in_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_in_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_in_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -842,7 +833,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_move_child: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_child").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3315886247)!
@@ -863,7 +854,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_get_groups: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_groups: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_groups").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -881,7 +872,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -901,7 +892,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
@@ -919,7 +910,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 894402480)!
@@ -939,7 +930,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_print_tree: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_print_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "print_tree").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -956,7 +947,7 @@ open class Node: Object {
         )}
     }
 
-    private static var __method_binding_print_tree_pretty: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_print_tree_pretty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "print_tree_pretty").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -973,7 +964,7 @@ open class Node: Object {
         )}
     }
 
-    private static var __method_binding_get_tree_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tree_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tree_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
@@ -991,7 +982,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_tree_string_pretty: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tree_string_pretty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tree_string_pretty").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
@@ -1009,7 +1000,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_scene_file_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scene_file_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scene_file_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -1028,7 +1019,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_scene_file_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scene_file_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scene_file_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -1046,7 +1037,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_propagate_notification: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_propagate_notification: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "propagate_notification").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1065,7 +1056,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_propagate_call: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_propagate_call: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "propagate_call").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1871007965)!
@@ -1086,7 +1077,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_set_physics_process: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_process: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_process").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1105,7 +1096,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_physics_process_delta_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_process_delta_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_process_delta_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1123,7 +1114,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_is_physics_processing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_physics_processing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_physics_processing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1141,7 +1132,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_process_delta_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_delta_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_delta_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1159,7 +1150,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1178,7 +1169,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_set_process_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1197,7 +1188,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_process_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1215,7 +1206,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_physics_process_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_process_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_process_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1234,7 +1225,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_physics_process_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_process_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_process_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1252,7 +1243,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_is_processing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1270,7 +1261,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1289,7 +1280,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_processing_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1307,7 +1298,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_shortcut_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_shortcut_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_shortcut_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1326,7 +1317,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_processing_shortcut_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing_shortcut_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing_shortcut_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1344,7 +1335,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_unhandled_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_unhandled_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_unhandled_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1363,7 +1354,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_processing_unhandled_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing_unhandled_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing_unhandled_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1381,7 +1372,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_unhandled_key_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_unhandled_key_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_unhandled_key_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1400,7 +1391,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_processing_unhandled_key_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing_unhandled_key_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing_unhandled_key_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1418,7 +1409,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1841290486)!
@@ -1437,7 +1428,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_process_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 739966102)!
@@ -1455,7 +1446,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_can_process: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_can_process: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "can_process").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1473,7 +1464,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_thread_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_thread_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_thread_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2275442745)!
@@ -1492,7 +1483,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_process_thread_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_thread_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_thread_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1866404740)!
@@ -1510,7 +1501,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_thread_messages: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_thread_messages: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_thread_messages").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1357280998)!
@@ -1529,7 +1520,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_process_thread_messages: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_thread_messages: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_thread_messages").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4228993612)!
@@ -1547,7 +1538,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_thread_group_order: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_thread_group_order: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_thread_group_order").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1566,7 +1557,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_process_thread_group_order: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_thread_group_order: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_thread_group_order").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1584,7 +1575,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_display_folded: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_display_folded: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_display_folded").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1603,7 +1594,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_displayed_folded: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_displayed_folded: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_displayed_folded").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1621,7 +1612,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_process_internal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_internal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_internal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1640,7 +1631,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_processing_internal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_processing_internal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_processing_internal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1658,7 +1649,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_physics_process_internal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_process_internal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_process_internal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1677,7 +1668,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_physics_processing_internal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_physics_processing_internal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_physics_processing_internal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1695,7 +1686,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_window: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_window: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_window").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1757182445)!
@@ -1713,7 +1704,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_last_exclusive_window: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_last_exclusive_window: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_last_exclusive_window").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1757182445)!
@@ -1731,7 +1722,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_tree: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tree").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2958820483)!
@@ -1749,7 +1740,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_tween").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426978995)!
@@ -1767,7 +1758,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_duplicate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_duplicate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "duplicate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3511555459)!
@@ -1787,7 +1778,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_replace_by: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_replace_by: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "replace_by").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2570952461)!
@@ -1808,7 +1799,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_set_scene_instance_load_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scene_instance_load_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scene_instance_load_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1827,7 +1818,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_scene_instance_load_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scene_instance_load_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scene_instance_load_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1845,7 +1836,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_editable_instance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editable_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editable_instance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2731852923)!
@@ -1866,7 +1857,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_is_editable_instance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editable_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editable_instance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3093956946)!
@@ -1887,7 +1878,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_get_viewport: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_viewport: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_viewport").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3596683776)!
@@ -1905,7 +1896,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_queue_free: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_queue_free: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "queue_free").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1922,7 +1913,7 @@ open class Node: Object {
         )}
     }
 
-    private static var __method_binding_request_ready: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_request_ready: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_ready").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1939,7 +1930,7 @@ open class Node: Object {
         )}
     }
 
-    private static var __method_binding_is_node_ready: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_node_ready: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_node_ready").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1957,7 +1948,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_multiplayer_authority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_multiplayer_authority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_multiplayer_authority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
@@ -1977,7 +1968,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_multiplayer_authority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_multiplayer_authority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_multiplayer_authority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1995,7 +1986,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_is_multiplayer_authority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_multiplayer_authority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_multiplayer_authority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -2013,7 +2004,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_get_multiplayer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_multiplayer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_multiplayer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 406750475)!
@@ -2031,7 +2022,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_rpc_config: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rpc_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rpc_config").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3776071444)!
@@ -2051,7 +2042,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_set_editor_description: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editor_description: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editor_description").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -2070,7 +2061,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_get_editor_description: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_editor_description: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_editor_description").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -2088,7 +2079,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_set_unique_name_in_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_unique_name_in_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_unique_name_in_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -2107,7 +2098,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_is_unique_name_in_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_unique_name_in_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_unique_name_in_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -2125,7 +2116,7 @@ open class Node: Object {
         )}}
     }
 
-    private static var __method_binding_rpc: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rpc: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rpc").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4047867050)!
@@ -2161,7 +2152,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_rpc_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rpc_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rpc_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 361499283)!
@@ -2199,7 +2190,7 @@ open class Node: Object {
         )}}}}}
     }
 
-    private static var __method_binding_update_configuration_warnings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update_configuration_warnings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_configuration_warnings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -2216,7 +2207,7 @@ open class Node: Object {
         )}
     }
 
-    private static var __method_binding_call_deferred_thread_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_call_deferred_thread_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "call_deferred_thread_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3400424181)!
@@ -2252,7 +2243,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_set_deferred_thread_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_deferred_thread_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_deferred_thread_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3776071444)!
@@ -2272,7 +2263,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_notify_deferred_thread_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_notify_deferred_thread_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "notify_deferred_thread_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -2291,7 +2282,7 @@ open class Node: Object {
         )}}}
     }
 
-    private static var __method_binding_call_thread_safe: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_call_thread_safe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "call_thread_safe").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3400424181)!
@@ -2327,7 +2318,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_set_thread_safe: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_thread_safe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_thread_safe").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3776071444)!
@@ -2347,7 +2338,7 @@ open class Node: Object {
         )}}}}
     }
 
-    private static var __method_binding_notify_thread_safe: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_notify_thread_safe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "notify_thread_safe").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!

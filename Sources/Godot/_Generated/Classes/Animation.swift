@@ -88,7 +88,7 @@ open class Animation: Resource {
         }
     }
 
-    private static var __method_binding_add_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3843682357)!
@@ -109,7 +109,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_remove_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -128,7 +128,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_track_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_track_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_track_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -146,7 +146,7 @@ open class Animation: Resource {
         )}}
     }
 
-    private static var __method_binding_track_get_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3445944217)!
@@ -166,7 +166,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_get_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -186,7 +186,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_set_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
@@ -206,7 +206,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_find_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 245376003)!
@@ -227,7 +227,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_move_up: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_move_up: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_move_up").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -246,7 +246,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_track_move_down: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_move_down: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_move_down").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -265,7 +265,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_track_move_to: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_move_to: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_move_to").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -285,7 +285,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_swap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_swap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_swap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -305,7 +305,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_set_imported: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_imported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_imported").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -325,7 +325,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_is_imported: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_is_imported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_is_imported").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -345,7 +345,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_set_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -365,7 +365,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_is_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_is_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_is_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -385,7 +385,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_position_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_position_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "position_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
@@ -407,7 +407,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_rotation_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rotation_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rotation_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4165004800)!
@@ -429,7 +429,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_scale_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_scale_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "scale_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
@@ -451,7 +451,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_blend_shape_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_blend_shape_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "blend_shape_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1534913637)!
@@ -473,7 +473,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_position_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_position_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "position_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
@@ -494,7 +494,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_rotation_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rotation_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rotation_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988711975)!
@@ -515,7 +515,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_scale_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_scale_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "scale_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
@@ -536,7 +536,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_blend_shape_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_blend_shape_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "blend_shape_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
@@ -557,7 +557,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808952278)!
@@ -580,7 +580,7 @@ open class Animation: Resource {
         )}}}}}}}
     }
 
-    private static var __method_binding_track_remove_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_remove_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_remove_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -600,7 +600,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_remove_key_at_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_remove_key_at_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_remove_key_at_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -620,7 +620,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_set_key_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_key_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2060538656)!
@@ -641,7 +641,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_set_key_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_key_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_key_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
@@ -662,7 +662,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_set_key_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_key_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_key_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
@@ -683,7 +683,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_get_key_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_key_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_key_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -704,7 +704,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_get_key_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_key_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_key_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -724,7 +724,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_get_key_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_key_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 678354945)!
@@ -745,7 +745,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_get_key_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_key_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_key_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -766,7 +766,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_track_find_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_find_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_find_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245197284)!
@@ -788,7 +788,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_track_set_interpolation_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_interpolation_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_interpolation_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4112932513)!
@@ -808,7 +808,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_get_interpolation_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_interpolation_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_interpolation_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530756894)!
@@ -828,7 +828,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_set_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_set_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_set_interpolation_loop_wrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -848,7 +848,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_get_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_get_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_get_interpolation_loop_wrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -868,7 +868,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_track_is_compressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_track_is_compressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_is_compressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -888,7 +888,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_value_track_set_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_value_track_set_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "value_track_set_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2854058312)!
@@ -908,7 +908,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_value_track_get_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_value_track_get_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "value_track_get_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440326473)!
@@ -928,7 +928,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_value_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_value_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "value_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 491147702)!
@@ -949,7 +949,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_method_track_get_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_method_track_get_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "method_track_get_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
@@ -970,7 +970,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_method_track_get_params: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_method_track_get_params: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "method_track_get_params").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2345056839)!
@@ -991,7 +991,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_bezier_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3656773645)!
@@ -1015,7 +1015,7 @@ open class Animation: Resource {
         )}}}}}}}}
     }
 
-    private static var __method_binding_bezier_track_set_key_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_set_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_set_key_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
@@ -1036,7 +1036,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_bezier_track_set_key_in_handle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_set_key_in_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_set_key_in_handle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
@@ -1058,7 +1058,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_bezier_track_set_key_out_handle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_set_key_out_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_set_key_out_handle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
@@ -1080,7 +1080,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_bezier_track_get_key_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_get_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_get_key_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -1101,7 +1101,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_bezier_track_get_key_in_handle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_get_key_in_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_get_key_in_handle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
@@ -1122,7 +1122,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_bezier_track_get_key_out_handle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_get_key_out_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_get_key_out_handle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
@@ -1143,7 +1143,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_bezier_track_interpolate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bezier_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_interpolate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
@@ -1164,7 +1164,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4021027286)!
@@ -1189,7 +1189,7 @@ open class Animation: Resource {
         )}}}}}}}}}
     }
 
-    private static var __method_binding_audio_track_set_key_stream: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_set_key_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_set_key_stream").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886397084)!
@@ -1211,7 +1211,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_audio_track_set_key_start_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_set_key_start_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_set_key_start_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
@@ -1232,7 +1232,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_set_key_end_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_set_key_end_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_set_key_end_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
@@ -1253,7 +1253,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_get_key_stream: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_get_key_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_get_key_stream").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 635277205)!
@@ -1274,7 +1274,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_get_key_start_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_get_key_start_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_get_key_start_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -1295,7 +1295,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_get_key_end_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_get_key_end_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_get_key_end_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -1316,7 +1316,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_audio_track_set_use_blend: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_set_use_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_set_use_blend").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -1336,7 +1336,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_audio_track_is_use_blend: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_audio_track_is_use_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_is_use_blend").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -1356,7 +1356,7 @@ open class Animation: Resource {
         )}}}}
     }
 
-    private static var __method_binding_animation_track_insert_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_animation_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "animation_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 158676774)!
@@ -1378,7 +1378,7 @@ open class Animation: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_animation_track_set_key_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_animation_track_set_key_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "animation_track_set_key_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 117615382)!
@@ -1399,7 +1399,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_animation_track_get_key_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_animation_track_get_key_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "animation_track_get_key_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
@@ -1420,7 +1420,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1439,7 +1439,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1457,7 +1457,7 @@ open class Animation: Resource {
         )}}
     }
 
-    private static var __method_binding_set_loop_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3155355575)!
@@ -1476,7 +1476,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_loop_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loop_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988889481)!
@@ -1494,7 +1494,7 @@ open class Animation: Resource {
         )}}
     }
 
-    private static var __method_binding_set_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1513,7 +1513,7 @@ open class Animation: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1531,7 +1531,7 @@ open class Animation: Resource {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1548,7 +1548,7 @@ open class Animation: Resource {
         )}
     }
 
-    private static var __method_binding_copy_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_copy_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "copy_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 148001024)!
@@ -1569,7 +1569,7 @@ open class Animation: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_compress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_compress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3608408117)!

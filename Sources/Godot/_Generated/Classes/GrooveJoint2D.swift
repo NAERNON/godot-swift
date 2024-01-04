@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GrooveJoint2D: Joint2D {
-    private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class GrooveJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class GrooveJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_initial_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_initial_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_initial_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class GrooveJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_initial_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_initial_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_initial_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

@@ -49,7 +49,7 @@ open class Container: Control {
         Godot.PackedInt32Array()
     }
 
-    private static var __method_binding_queue_sort: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_queue_sort: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "queue_sort").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -66,7 +66,7 @@ open class Container: Control {
         )}
     }
 
-    private static var __method_binding_fit_child_in_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_fit_child_in_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "fit_child_in_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1993438598)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CameraAttributesPractical: CameraAttributes {
-    private static var __method_binding_set_dof_blur_far_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_far_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_far_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_is_dof_blur_far_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_dof_blur_far_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_dof_blur_far_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -42,7 +42,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_far_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_far_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_far_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_dof_blur_far_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dof_blur_far_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dof_blur_far_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_far_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_far_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_far_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_dof_blur_far_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dof_blur_far_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dof_blur_far_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_near_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_near_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_near_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -135,7 +135,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_is_dof_blur_near_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_dof_blur_near_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_dof_blur_near_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_near_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_near_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_near_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -172,7 +172,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_dof_blur_near_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dof_blur_near_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dof_blur_near_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -190,7 +190,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_near_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_near_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_near_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -209,7 +209,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_dof_blur_near_transition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dof_blur_near_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dof_blur_near_transition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -227,7 +227,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_dof_blur_amount: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dof_blur_amount: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dof_blur_amount").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -246,7 +246,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_dof_blur_amount: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dof_blur_amount: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dof_blur_amount").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -264,7 +264,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_auto_exposure_max_sensitivity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_exposure_max_sensitivity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_exposure_max_sensitivity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -283,7 +283,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_auto_exposure_max_sensitivity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_auto_exposure_max_sensitivity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_auto_exposure_max_sensitivity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -301,7 +301,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_auto_exposure_min_sensitivity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_exposure_min_sensitivity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_exposure_min_sensitivity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -320,7 +320,7 @@ open class CameraAttributesPractical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_auto_exposure_min_sensitivity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_auto_exposure_min_sensitivity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_auto_exposure_min_sensitivity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

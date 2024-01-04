@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OpenXRInteractionProfileMetadata: Object {
-    private static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_profile_rename").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
@@ -25,7 +25,7 @@ open class OpenXRInteractionProfileMetadata: Object {
         )}}}}
     }
 
-    private static var __method_binding_register_top_level_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_top_level_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_top_level_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
@@ -46,7 +46,7 @@ open class OpenXRInteractionProfileMetadata: Object {
         )}}}}}
     }
 
-    private static var __method_binding_register_interaction_profile: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_interaction_profile").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
@@ -67,7 +67,7 @@ open class OpenXRInteractionProfileMetadata: Object {
         )}}}}}
     }
 
-    private static var __method_binding_register_io_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_io_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_io_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3443511926)!

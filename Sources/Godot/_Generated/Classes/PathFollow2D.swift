@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PathFollow2D: Node2D {
-    private static var __method_binding_set_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_h_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_h_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_h_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_h_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_h_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_v_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_v_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_v_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_v_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_v_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_v_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_progress_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_progress_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_progress_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_progress_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_progress_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_progress_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_rotates: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rotates: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rotates").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -172,7 +172,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_rotating: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_rotating: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_rotating").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -190,7 +190,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_cubic_interpolation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cubic_interpolation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cubic_interpolation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_cubic_interpolation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cubic_interpolation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cubic_interpolation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -227,7 +227,7 @@ open class PathFollow2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -246,7 +246,7 @@ open class PathFollow2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

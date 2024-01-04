@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Script: Resource {
-    private static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "can_instantiate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -23,7 +23,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_instance_has: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_instance_has: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "instance_has").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 397768994)!
@@ -44,7 +44,7 @@ open class Script: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_has_source_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_source_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_source_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -62,7 +62,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_source_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -80,7 +80,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_set_source_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -99,7 +99,7 @@ open class Script: Resource {
         )}}}
     }
 
-    private static var __method_binding_reload: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reload: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reload").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1633102583)!
@@ -119,7 +119,7 @@ open class Script: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_base_script: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_base_script: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_base_script").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 278624046)!
@@ -137,7 +137,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_instance_base_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_instance_base_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_instance_base_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -155,7 +155,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_has_script_signal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_script_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_script_signal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -175,7 +175,7 @@ open class Script: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_script_property_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_script_property_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_property_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -193,7 +193,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_script_method_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_script_method_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_method_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -211,7 +211,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_script_signal_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_script_signal_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_signal_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -229,7 +229,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_script_constant_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_script_constant_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_constant_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
@@ -247,7 +247,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_get_property_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_property_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_property_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2138907829)!
@@ -267,7 +267,7 @@ open class Script: Resource {
         )}}}}
     }
 
-    private static var __method_binding_is_tool: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_tool: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_tool").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -285,7 +285,7 @@ open class Script: Resource {
         )}}
     }
 
-    private static var __method_binding_is_abstract: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_abstract: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_abstract").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

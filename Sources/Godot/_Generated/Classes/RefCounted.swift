@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedRootClass
 open class RefCounted: Object {
-    private static var __method_binding_init_ref: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_init_ref: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "init_ref").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -23,7 +23,7 @@ open class RefCounted: Object {
         )}}
     }
 
-    private static var __method_binding_reference: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reference").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -41,7 +41,7 @@ open class RefCounted: Object {
         )}}
     }
 
-    private static var __method_binding_unreference: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_unreference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "unreference").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -59,7 +59,7 @@ open class RefCounted: Object {
         )}}
     }
 
-    private static var __method_binding_get_reference_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_reference_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_reference_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

@@ -19,7 +19,7 @@ open class SceneState: RefCounted {
         }
     }
 
-    private static var __method_binding_get_node_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -37,7 +37,7 @@ open class SceneState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_node_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
@@ -57,7 +57,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
@@ -77,7 +77,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2272487792)!
@@ -98,7 +98,7 @@ open class SceneState: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_node_owner_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_owner_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_owner_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -118,7 +118,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_is_node_instance_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_node_instance_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_node_instance_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -138,7 +138,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_instance_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_instance_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_instance_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -158,7 +158,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_instance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_instance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 511017218)!
@@ -178,7 +178,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_groups: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_groups: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_groups").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 647634434)!
@@ -198,7 +198,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -218,7 +218,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_property_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_property_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_property_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -238,7 +238,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_node_property_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_property_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_property_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
@@ -259,7 +259,7 @@ open class SceneState: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_node_property_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_property_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_property_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 678354945)!
@@ -280,7 +280,7 @@ open class SceneState: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_connection_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -298,7 +298,7 @@ open class SceneState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_connection_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -318,7 +318,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_signal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_signal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
@@ -338,7 +338,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_target: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_target: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_target").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -358,7 +358,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_method: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_method").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
@@ -378,7 +378,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -398,7 +398,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_binds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_binds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_binds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 663333327)!
@@ -418,7 +418,7 @@ open class SceneState: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_unbinds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_unbinds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_unbinds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!

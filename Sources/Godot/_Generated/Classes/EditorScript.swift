@@ -8,7 +8,7 @@ open class EditorScript: RefCounted {
     open func _run() {
     }
 
-    private static var __method_binding_add_root_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_root_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_root_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -28,7 +28,7 @@ open class EditorScript: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_scene: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scene").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
@@ -46,7 +46,7 @@ open class EditorScript: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_editor_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1976662476)!

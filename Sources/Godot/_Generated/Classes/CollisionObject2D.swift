@@ -20,30 +20,27 @@ open class CollisionObject2D: Node2D {
     public struct InputEventSignalInput: Godot.SignalInput {
         public let viewport: Godot.Node?
         public let event: Godot.InputEvent?
-        public let shape_idx: Int
-        fileprivate init(viewport: Godot.Node?, event: Godot.InputEvent?, shape_idx: Int) {
+        public let shapeIdx: Int
+        fileprivate init(viewport: Godot.Node?, event: Godot.InputEvent?, shapeIdx: Int) {
             self.viewport = viewport
             self.event = event
-            self.shape_idx = shape_idx
+            self.shapeIdx = shapeIdx
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, viewport, event, shape_idx)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.viewport), Variant(input.event), Variant(input.shapeIdx)]
         }
     }
-    public func inputEvent(viewport: Godot.Node?, event: Godot.InputEvent?, shape_idx: Int) {
+    public func inputEvent(viewport: Godot.Node?, event: Godot.InputEvent?, shapeIdx: Int) {
         _ = inputEventSignal.emit(.init(viewport: viewport,
                 event: event,
-                shape_idx: shape_idx))
+                shapeIdx: shapeIdx))
     }
     public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
         .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(viewport: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                    shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -92,24 +89,21 @@ open class CollisionObject2D: Node2D {
     }()
 
     public struct MouseShapeEnteredSignalInput: Godot.SignalInput {
-        public let shape_idx: Int
-        fileprivate init(shape_idx: Int) {
-            self.shape_idx = shape_idx
+        public let shapeIdx: Int
+        fileprivate init(shapeIdx: Int) {
+            self.shapeIdx = shapeIdx
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, shape_idx)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.shapeIdx)]
         }
     }
-    public func mouseShapeEntered(shape_idx: Int) {
-        _ = mouseShapeEnteredSignal.emit(.init(shape_idx: shape_idx))
+    public func mouseShapeEntered(shapeIdx: Int) {
+        _ = mouseShapeEnteredSignal.emit(.init(shapeIdx: shapeIdx))
     }
     public lazy var mouseShapeEnteredSignal: Godot.SignalEmitter<MouseShapeEnteredSignalInput> = {
         .init(object: self, signalName: "mouse_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -122,24 +116,21 @@ open class CollisionObject2D: Node2D {
     }()
 
     public struct MouseShapeExitedSignalInput: Godot.SignalInput {
-        public let shape_idx: Int
-        fileprivate init(shape_idx: Int) {
-            self.shape_idx = shape_idx
+        public let shapeIdx: Int
+        fileprivate init(shapeIdx: Int) {
+            self.shapeIdx = shapeIdx
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, shape_idx)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.shapeIdx)]
         }
     }
-    public func mouseShapeExited(shape_idx: Int) {
-        _ = mouseShapeExitedSignal.emit(.init(shape_idx: shape_idx))
+    public func mouseShapeExited(shapeIdx: Int) {
+        _ = mouseShapeExitedSignal.emit(.init(shapeIdx: shapeIdx))
     }
     public lazy var mouseShapeExitedSignal: Godot.SignalEmitter<MouseShapeExitedSignalInput> = {
         .init(object: self, signalName: "mouse_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -166,7 +157,7 @@ open class CollisionObject2D: Node2D {
     open func _mouseShapeExit(shapeIdx: Int32) {
     }
 
-    private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -184,7 +175,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -203,7 +194,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -221,7 +212,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -240,7 +231,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -258,7 +249,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -278,7 +269,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -298,7 +289,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -318,7 +309,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -338,7 +329,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -357,7 +348,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -375,7 +366,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_disable_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disable_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1919204045)!
@@ -394,7 +385,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_disable_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_disable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_disable_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3172846349)!
@@ -412,7 +403,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_pickable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pickable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -431,7 +422,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_pickable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_pickable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -449,7 +440,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_create_shape_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_shape_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_shape_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3429307534)!
@@ -470,7 +461,7 @@ open class CollisionObject2D: Node2D {
         )}}}}}
     }
 
-    private static var __method_binding_remove_shape_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_shape_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_shape_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -489,7 +480,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_shape_owners: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape_owners: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape_owners").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -507,7 +498,7 @@ open class CollisionObject2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_shape_owner_set_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 30160968)!
@@ -527,7 +518,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_get_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_get_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_get_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3836996910)!
@@ -547,7 +538,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_get_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_get_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_get_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3332903315)!
@@ -567,7 +558,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_set_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_set_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -587,7 +578,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_is_shape_owner_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shape_owner_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shape_owner_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -607,7 +598,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_set_one_way_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_set_one_way_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_set_one_way_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -627,7 +618,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_is_shape_owner_one_way_collision_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shape_owner_one_way_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shape_owner_one_way_collision_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -647,7 +638,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_set_one_way_collision_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_set_one_way_collision_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_set_one_way_collision_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -667,7 +658,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_shape_owner_one_way_collision_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape_owner_one_way_collision_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape_owner_one_way_collision_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
@@ -687,7 +678,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_add_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_add_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_add_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2077425081)!
@@ -708,7 +699,7 @@ open class CollisionObject2D: Node2D {
         )}}}}}
     }
 
-    private static var __method_binding_shape_owner_get_shape_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_get_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_get_shape_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -728,7 +719,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_get_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_get_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3106725749)!
@@ -749,7 +740,7 @@ open class CollisionObject2D: Node2D {
         )}}}}}
     }
 
-    private static var __method_binding_shape_owner_get_shape_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_get_shape_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_get_shape_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
@@ -770,7 +761,7 @@ open class CollisionObject2D: Node2D {
         )}}}}}
     }
 
-    private static var __method_binding_shape_owner_remove_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_remove_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_remove_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -790,7 +781,7 @@ open class CollisionObject2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_shape_owner_clear_shapes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_owner_clear_shapes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_owner_clear_shapes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -809,7 +800,7 @@ open class CollisionObject2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_shape_find_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_shape_find_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shape_find_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!

@@ -24,7 +24,7 @@ open class Camera2D: Node2D {
         }
     }
 
-    private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -43,7 +43,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -61,7 +61,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_anchor_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_anchor_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_anchor_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2050398218)!
@@ -80,7 +80,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_anchor_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_anchor_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_anchor_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 155978067)!
@@ -98,7 +98,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_ignore_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ignore_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ignore_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -117,7 +117,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_ignoring_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_ignoring_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_ignoring_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -135,7 +135,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_callback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4201947462)!
@@ -154,7 +154,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_process_callback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_process_callback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2325344499)!
@@ -172,7 +172,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -191,7 +191,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -209,7 +209,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_make_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -226,7 +226,7 @@ open class Camera2D: Node2D {
         )}
     }
 
-    private static var __method_binding_is_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -244,7 +244,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_limit: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_limit").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
@@ -264,7 +264,7 @@ open class Camera2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_limit: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_limit").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
@@ -284,7 +284,7 @@ open class Camera2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_limit_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_limit_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_limit_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -303,7 +303,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_limit_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_limit_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_limit_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -321,7 +321,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_drag_vertical_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_vertical_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_vertical_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -340,7 +340,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_drag_vertical_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_drag_vertical_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_drag_vertical_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -358,7 +358,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_drag_horizontal_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_horizontal_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_horizontal_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -377,7 +377,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_drag_horizontal_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_drag_horizontal_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_drag_horizontal_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -395,7 +395,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_drag_vertical_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_vertical_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_vertical_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -414,7 +414,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_drag_vertical_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drag_vertical_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drag_vertical_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -432,7 +432,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_drag_horizontal_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_horizontal_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_horizontal_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -451,7 +451,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_drag_horizontal_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drag_horizontal_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drag_horizontal_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -469,7 +469,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_drag_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
@@ -489,7 +489,7 @@ open class Camera2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_drag_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drag_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drag_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
@@ -509,7 +509,7 @@ open class Camera2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -527,7 +527,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_screen_center_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_screen_center_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_screen_center_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -545,7 +545,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -564,7 +564,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -582,7 +582,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_custom_viewport: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_viewport: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_viewport").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -602,7 +602,7 @@ open class Camera2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_custom_viewport: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_viewport: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_viewport").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
@@ -620,7 +620,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_position_smoothing_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position_smoothing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position_smoothing_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -639,7 +639,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_position_smoothing_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position_smoothing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position_smoothing_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -657,7 +657,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_position_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -676,7 +676,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_position_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_position_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_position_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -694,7 +694,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_rotation_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rotation_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rotation_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -713,7 +713,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_rotation_smoothing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_rotation_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_rotation_smoothing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -731,7 +731,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_rotation_smoothing_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rotation_smoothing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rotation_smoothing_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -750,7 +750,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_rotation_smoothing_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rotation_smoothing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rotation_smoothing_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -768,7 +768,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_force_update_scroll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_force_update_scroll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "force_update_scroll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -785,7 +785,7 @@ open class Camera2D: Node2D {
         )}
     }
 
-    private static var __method_binding_reset_smoothing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reset_smoothing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reset_smoothing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -802,7 +802,7 @@ open class Camera2D: Node2D {
         )}
     }
 
-    private static var __method_binding_align: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_align: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "align").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -819,7 +819,7 @@ open class Camera2D: Node2D {
         )}
     }
 
-    private static var __method_binding_set_screen_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_screen_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_screen_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -838,7 +838,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_screen_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_screen_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_screen_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -856,7 +856,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_limit_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_limit_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_limit_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -875,7 +875,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_limit_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_limit_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_limit_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -893,7 +893,7 @@ open class Camera2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_margin_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_margin_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_margin_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -912,7 +912,7 @@ open class Camera2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_margin_drawing_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_margin_drawing_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_margin_drawing_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

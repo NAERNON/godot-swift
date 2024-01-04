@@ -46,11 +46,8 @@ open class EditorFileSystem: Node {
         fileprivate init(exist: Bool) {
             self.exist = exist
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, exist)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.exist)]
         }
     }
     public func sourcesChanged(exist: Bool) {
@@ -76,11 +73,8 @@ open class EditorFileSystem: Node {
         fileprivate init(resources: Godot.PackedStringArray) {
             self.resources = resources
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, resources)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.resources)]
         }
     }
     public func resourcesReimported(resources: Godot.PackedStringArray) {
@@ -106,11 +100,8 @@ open class EditorFileSystem: Node {
         fileprivate init(resources: Godot.PackedStringArray) {
             self.resources = resources
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, resources)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.resources)]
         }
     }
     public func resourcesReload(resources: Godot.PackedStringArray) {
@@ -131,7 +122,7 @@ open class EditorFileSystem: Node {
         }
     }()
 
-    private static var __method_binding_get_filesystem: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filesystem: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filesystem").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 842323275)!
@@ -149,7 +140,7 @@ open class EditorFileSystem: Node {
         )}}
     }
 
-    private static var __method_binding_is_scanning: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_scanning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_scanning").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -167,7 +158,7 @@ open class EditorFileSystem: Node {
         )}}
     }
 
-    private static var __method_binding_get_scanning_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scanning_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scanning_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -185,7 +176,7 @@ open class EditorFileSystem: Node {
         )}}
     }
 
-    private static var __method_binding_scan: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_scan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "scan").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -202,7 +193,7 @@ open class EditorFileSystem: Node {
         )}
     }
 
-    private static var __method_binding_scan_sources: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_scan_sources: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "scan_sources").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -219,7 +210,7 @@ open class EditorFileSystem: Node {
         )}
     }
 
-    private static var __method_binding_update_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -238,7 +229,7 @@ open class EditorFileSystem: Node {
         )}}}
     }
 
-    private static var __method_binding_get_filesystem_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filesystem_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filesystem_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3188521125)!
@@ -258,7 +249,7 @@ open class EditorFileSystem: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_file_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_file_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_file_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3135753539)!
@@ -278,7 +269,7 @@ open class EditorFileSystem: Node {
         )}}}}
     }
 
-    private static var __method_binding_reimport_files: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reimport_files: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reimport_files").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!

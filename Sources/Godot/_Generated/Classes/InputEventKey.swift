@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class InputEventKey: InputEventWithModifiers {
-    private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_set_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 888074362)!
@@ -43,7 +43,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_get_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -61,7 +61,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_set_physical_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physical_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physical_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 888074362)!
@@ -80,7 +80,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_get_physical_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physical_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -98,7 +98,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_set_key_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_key_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_key_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 888074362)!
@@ -117,7 +117,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_get_key_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_key_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_key_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -135,7 +135,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_set_unicode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_unicode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_unicode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -154,7 +154,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_get_unicode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_unicode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_unicode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -172,7 +172,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_set_echo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_echo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_echo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -191,7 +191,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}}
     }
 
-    private static var __method_binding_get_keycode_with_modifiers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_keycode_with_modifiers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_keycode_with_modifiers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -209,7 +209,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_get_physical_keycode_with_modifiers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physical_keycode_with_modifiers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_keycode_with_modifiers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -227,7 +227,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_get_key_label_with_modifiers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_key_label_with_modifiers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_key_label_with_modifiers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1585896689)!
@@ -245,7 +245,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_as_text_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_as_text_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "as_text_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -263,7 +263,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_as_text_physical_keycode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_as_text_physical_keycode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "as_text_physical_keycode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -281,7 +281,7 @@ open class InputEventKey: InputEventWithModifiers {
         )}}
     }
 
-    private static var __method_binding_as_text_key_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_as_text_key_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "as_text_key_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class StreamPeerGZIP: StreamPeer {
-    private static var __method_binding_start_compression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start_compression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start_compression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 781582770)!
@@ -26,7 +26,7 @@ open class StreamPeerGZIP: StreamPeer {
         )}}}}}
     }
 
-    private static var __method_binding_start_decompression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start_decompression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start_decompression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 781582770)!
@@ -47,7 +47,7 @@ open class StreamPeerGZIP: StreamPeer {
         )}}}}}
     }
 
-    private static var __method_binding_finish: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "finish").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -65,7 +65,7 @@ open class StreamPeerGZIP: StreamPeer {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

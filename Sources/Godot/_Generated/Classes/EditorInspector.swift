@@ -10,11 +10,8 @@ open class EditorInspector: ScrollContainer {
         fileprivate init(property: Godot.GodotString) {
             self.property = property
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property)]
         }
     }
     public func propertySelected(property: Godot.GodotString) {
@@ -44,11 +41,8 @@ open class EditorInspector: ScrollContainer {
             self.value = value
             self.advance = advance
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, value, advance)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.value), Variant(input.advance)]
         }
     }
     public func propertyKeyed(property: Godot.GodotString, value: Godot.Variant, advance: Bool) {
@@ -78,11 +72,8 @@ open class EditorInspector: ScrollContainer {
         fileprivate init(property: Godot.GodotString) {
             self.property = property
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property)]
         }
     }
     public func propertyDeleted(property: Godot.GodotString) {
@@ -110,11 +101,8 @@ open class EditorInspector: ScrollContainer {
             self.resource = resource
             self.path = path
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, resource, path)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.resource), Variant(input.path)]
         }
     }
     public func resourceSelected(resource: Godot.Resource?, path: Godot.GodotString) {
@@ -142,11 +130,8 @@ open class EditorInspector: ScrollContainer {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func objectIdSelected(id: Int) {
@@ -172,11 +157,8 @@ open class EditorInspector: ScrollContainer {
         fileprivate init(property: Godot.GodotString) {
             self.property = property
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property)]
         }
     }
     public func propertyEdited(property: Godot.GodotString) {
@@ -204,11 +186,8 @@ open class EditorInspector: ScrollContainer {
             self.property = property
             self.checked = checked
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, property, checked)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.property), Variant(input.checked)]
         }
     }
     public func propertyToggled(property: Godot.GodotString, checked: Bool) {
@@ -267,7 +246,7 @@ open class EditorInspector: ScrollContainer {
         }
     }()
 
-    private static var __method_binding_get_selected_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selected_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selected_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -285,7 +264,7 @@ open class EditorInspector: ScrollContainer {
         )}}
     }
 
-    private static var __method_binding_get_edited_object: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edited_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edited_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2050059866)!

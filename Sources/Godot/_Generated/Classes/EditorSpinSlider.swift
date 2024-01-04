@@ -77,7 +77,7 @@ open class EditorSpinSlider: Range {
         }
     }()
 
-    private static var __method_binding_set_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -96,7 +96,7 @@ open class EditorSpinSlider: Range {
         )}}}
     }
 
-    private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -114,7 +114,7 @@ open class EditorSpinSlider: Range {
         )}}
     }
 
-    private static var __method_binding_set_suffix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suffix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -133,7 +133,7 @@ open class EditorSpinSlider: Range {
         )}}}
     }
 
-    private static var __method_binding_get_suffix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suffix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -151,7 +151,7 @@ open class EditorSpinSlider: Range {
         )}}
     }
 
-    private static var __method_binding_set_read_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_read_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_read_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -170,7 +170,7 @@ open class EditorSpinSlider: Range {
         )}}}
     }
 
-    private static var __method_binding_is_read_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_read_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_read_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -188,7 +188,7 @@ open class EditorSpinSlider: Range {
         )}}
     }
 
-    private static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flat").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -207,7 +207,7 @@ open class EditorSpinSlider: Range {
         )}}}
     }
 
-    private static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flat").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -225,7 +225,7 @@ open class EditorSpinSlider: Range {
         )}}
     }
 
-    private static var __method_binding_set_hide_slider: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hide_slider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hide_slider").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -244,7 +244,7 @@ open class EditorSpinSlider: Range {
         )}}}
     }
 
-    private static var __method_binding_is_hiding_slider: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_hiding_slider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_hiding_slider").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

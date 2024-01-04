@@ -183,7 +183,7 @@ open class HTTPClient: RefCounted {
         }
     }
 
-    private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_host").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 504540374)!
@@ -206,7 +206,7 @@ open class HTTPClient: RefCounted {
         )}}}}}}}
     }
 
-    private static var __method_binding_set_connection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_connection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281897016)!
@@ -226,7 +226,7 @@ open class HTTPClient: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_connection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
@@ -244,7 +244,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_request_raw: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_request_raw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_raw").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 540161961)!
@@ -267,7 +267,7 @@ open class HTTPClient: RefCounted {
         )}}}}}}}
     }
 
-    private static var __method_binding_request: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3778990155)!
@@ -290,7 +290,7 @@ open class HTTPClient: RefCounted {
         )}}}}}}}
     }
 
-    private static var __method_binding_close: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "close").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -307,7 +307,7 @@ open class HTTPClient: RefCounted {
         )}
     }
 
-    private static var __method_binding_has_response: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_response: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_response").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -325,7 +325,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_response_chunked: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_response_chunked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_response_chunked").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -343,7 +343,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_response_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_response_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_response_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -361,7 +361,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_response_headers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_response_headers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_response_headers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
@@ -379,7 +379,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_response_headers_as_dictionary: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_response_headers_as_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_response_headers_as_dictionary").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
@@ -397,7 +397,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_response_body_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_response_body_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_response_body_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -415,7 +415,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_read_response_body_chunk: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_read_response_body_chunk: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "read_response_body_chunk").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
@@ -433,7 +433,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_read_chunk_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_read_chunk_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_read_chunk_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -452,7 +452,7 @@ open class HTTPClient: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_read_chunk_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_read_chunk_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_read_chunk_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -470,7 +470,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_blocking_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blocking_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blocking_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -489,7 +489,7 @@ open class HTTPClient: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_is_blocking_mode_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_blocking_mode_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_blocking_mode_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -507,7 +507,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_status: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_status").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1426656811)!
@@ -525,7 +525,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -543,7 +543,7 @@ open class HTTPClient: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_http_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_http_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_http_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
@@ -563,7 +563,7 @@ open class HTTPClient: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_https_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_https_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_https_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
@@ -583,7 +583,7 @@ open class HTTPClient: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_query_string_from_dict: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_query_string_from_dict: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "query_string_from_dict").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2538086567)!

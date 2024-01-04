@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SpinBox: Range {
-    private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
@@ -24,7 +24,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
@@ -42,7 +42,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_set_suffix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suffix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -61,7 +61,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_get_suffix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suffix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -79,7 +79,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_set_prefix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_prefix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_prefix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -98,7 +98,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_get_prefix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_prefix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_prefix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -116,7 +116,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -135,7 +135,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_set_custom_arrow_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_arrow_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_arrow_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -154,7 +154,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_get_custom_arrow_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_arrow_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_arrow_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -172,7 +172,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -190,7 +190,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_set_update_on_text_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_update_on_text_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_update_on_text_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_get_update_on_text_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_update_on_text_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_update_on_text_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -227,7 +227,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_set_select_all_on_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_select_all_on_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_select_all_on_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -246,7 +246,7 @@ open class SpinBox: Range {
         )}}}
     }
 
-    private static var __method_binding_is_select_all_on_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_select_all_on_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_select_all_on_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -264,7 +264,7 @@ open class SpinBox: Range {
         )}}
     }
 
-    private static var __method_binding_apply: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -281,7 +281,7 @@ open class SpinBox: Range {
         )}
     }
 
-    private static var __method_binding_get_line_edit: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_edit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_edit").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4071694264)!

@@ -33,7 +33,7 @@ open class VisualShaderNodeFloatOp: VisualShaderNode {
         }
     }
 
-    private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_operator").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2488468047)!
@@ -52,7 +52,7 @@ open class VisualShaderNodeFloatOp: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_operator: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_operator").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1867979390)!

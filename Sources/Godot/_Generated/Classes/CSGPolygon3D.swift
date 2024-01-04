@@ -37,7 +37,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
     }
 
-    private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -56,7 +56,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -74,7 +74,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3158377035)!
@@ -93,7 +93,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1201612222)!
@@ -111,7 +111,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -130,7 +130,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -148,7 +148,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_spin_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_spin_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_spin_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -167,7 +167,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_spin_degrees: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_spin_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_spin_degrees").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -185,7 +185,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_spin_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_spin_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_spin_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -204,7 +204,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_spin_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_spin_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_spin_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -222,7 +222,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -241,7 +241,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -259,7 +259,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_interval_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_interval_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_interval_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744240707)!
@@ -278,7 +278,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_interval_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_interval_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_interval_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3434618397)!
@@ -296,7 +296,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_interval: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_interval").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -315,7 +315,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_interval: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_interval").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -333,7 +333,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_simplify_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_simplify_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_simplify_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -352,7 +352,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_simplify_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_simplify_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_simplify_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -370,7 +370,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1412947288)!
@@ -389,7 +389,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 647219346)!
@@ -407,7 +407,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_local: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_local").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -426,7 +426,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_is_path_local: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_path_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_path_local").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -444,7 +444,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_continuous_u: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_continuous_u: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_continuous_u").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -463,7 +463,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_is_path_continuous_u: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_path_continuous_u: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_path_continuous_u").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -481,7 +481,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_u_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_u_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_u_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -500,7 +500,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_path_u_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_u_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_u_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -518,7 +518,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_path_joined: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_joined: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_joined").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -537,7 +537,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_is_path_joined: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_path_joined: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_path_joined").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -555,7 +555,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
@@ -575,7 +575,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}}
     }
 
-    private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
@@ -593,7 +593,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_smooth_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -612,7 +612,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_smooth_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_smooth_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_smooth_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

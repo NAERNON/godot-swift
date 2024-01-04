@@ -21,7 +21,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         }
     }
 
-    private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3973396138)!
@@ -40,7 +40,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 554863321)!

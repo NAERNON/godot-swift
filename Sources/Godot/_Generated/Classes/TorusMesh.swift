@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TorusMesh: PrimitiveMesh {
-    private static var __method_binding_set_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_outer_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outer_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outer_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_outer_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outer_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outer_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_rings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_rings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -116,7 +116,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_ring_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ring_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ring_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -135,7 +135,7 @@ open class TorusMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_ring_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ring_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ring_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

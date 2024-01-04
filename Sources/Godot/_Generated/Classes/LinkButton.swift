@@ -17,7 +17,7 @@ open class LinkButton: BaseButton {
         }
     }
 
-    private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -36,7 +36,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -54,7 +54,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 119160795)!
@@ -73,7 +73,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797257663)!
@@ -91,7 +91,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -110,7 +110,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -128,7 +128,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_uri: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uri: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uri").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -147,7 +147,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_uri: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_uri: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_uri").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -165,7 +165,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_underline_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_underline_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_underline_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4032947085)!
@@ -184,7 +184,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_underline_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_underline_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_underline_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 568343738)!
@@ -202,7 +202,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
@@ -221,7 +221,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
@@ -239,7 +239,7 @@ open class LinkButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -258,7 +258,7 @@ open class LinkButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

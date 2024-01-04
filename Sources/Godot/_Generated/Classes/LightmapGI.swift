@@ -72,7 +72,7 @@ open class LightmapGI: VisualInstance3D {
         }
     }
 
-    private static var __method_binding_set_light_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_light_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_light_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1790597277)!
@@ -92,7 +92,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_light_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_light_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_light_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 290354153)!
@@ -110,7 +110,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_bake_quality: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_quality: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_quality").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1192215803)!
@@ -129,7 +129,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_bake_quality: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_quality: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_quality").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 688832735)!
@@ -147,7 +147,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_bounces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bounces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -166,7 +166,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_bounces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bounces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -184,7 +184,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_bounce_indirect_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bounce_indirect_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bounce_indirect_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -203,7 +203,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_bounce_indirect_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bounce_indirect_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bounce_indirect_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -221,7 +221,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_generate_probes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_generate_probes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_generate_probes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 549981046)!
@@ -240,7 +240,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_generate_probes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_generate_probes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_generate_probes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3930596226)!
@@ -258,7 +258,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -277,7 +277,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -295,7 +295,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_environment_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2282650285)!
@@ -314,7 +314,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_environment_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4128646479)!
@@ -332,7 +332,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_environment_custom_sky: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment_custom_sky: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment_custom_sky").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3336722921)!
@@ -352,7 +352,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_environment_custom_sky: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment_custom_sky: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment_custom_sky").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1177136966)!
@@ -370,7 +370,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_environment_custom_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment_custom_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -389,7 +389,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_environment_custom_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment_custom_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -407,7 +407,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_environment_custom_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment_custom_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment_custom_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -426,7 +426,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_environment_custom_energy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment_custom_energy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment_custom_energy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -444,7 +444,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_max_texture_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_texture_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -463,7 +463,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_max_texture_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_texture_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -481,7 +481,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_use_denoiser: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_denoiser: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_denoiser").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -500,7 +500,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_using_denoiser: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_denoiser: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_denoiser").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -518,7 +518,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_denoiser_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_denoiser_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_denoiser_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -537,7 +537,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_denoiser_strength: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_denoiser_strength: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_denoiser_strength").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -555,7 +555,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_interior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_interior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_interior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -574,7 +574,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_interior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_interior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_interior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -592,7 +592,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_directional: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_directional: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_directional").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -611,7 +611,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_directional: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_directional: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_directional").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -629,7 +629,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_use_texture_for_bounces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_texture_for_bounces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_texture_for_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -648,7 +648,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_using_texture_for_bounces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_texture_for_bounces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_texture_for_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -666,7 +666,7 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_camera_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
@@ -686,7 +686,7 @@ open class LightmapGI: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_camera_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!

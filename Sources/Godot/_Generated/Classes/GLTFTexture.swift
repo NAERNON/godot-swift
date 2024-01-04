@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFTexture: Resource {
-    private static var __method_binding_get_src_image: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_src_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_src_image").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -23,7 +23,7 @@ open class GLTFTexture: Resource {
         )}}
     }
 
-    private static var __method_binding_set_src_image: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_src_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_src_image").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -42,7 +42,7 @@ open class GLTFTexture: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_sampler: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sampler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sampler").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -60,7 +60,7 @@ open class GLTFTexture: Resource {
         )}}
     }
 
-    private static var __method_binding_set_sampler: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sampler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sampler").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!

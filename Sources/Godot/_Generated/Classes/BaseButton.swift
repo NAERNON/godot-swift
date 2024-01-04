@@ -85,24 +85,21 @@ open class BaseButton: Control {
     }()
 
     public struct ToggledSignalInput: Godot.SignalInput {
-        public let toggled_on: Bool
-        fileprivate init(toggled_on: Bool) {
-            self.toggled_on = toggled_on
+        public let toggledOn: Bool
+        fileprivate init(toggledOn: Bool) {
+            self.toggledOn = toggledOn
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, toggled_on)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.toggledOn)]
         }
     }
-    public func toggled(toggled_on: Bool) {
-        _ = toggledSignal.emit(.init(toggled_on: toggled_on))
+    public func toggled(toggledOn: Bool) {
+        _ = toggledSignal.emit(.init(toggledOn: toggledOn))
     }
     public lazy var toggledSignal: Godot.SignalEmitter<ToggledSignalInput> = {
         .init(object: self, signalName: "toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(toggled_on: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(toggledOn: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -120,7 +117,7 @@ open class BaseButton: Control {
     open func _toggled(toggledOn: Bool) {
     }
 
-    private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -139,7 +136,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -157,7 +154,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_pressed_no_signal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressed_no_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressed_no_signal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -176,7 +173,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_hovered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_hovered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_hovered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -194,7 +191,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_toggle_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -213,7 +210,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_toggle_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_toggle_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -231,7 +228,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_shortcut_in_tooltip: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shortcut_in_tooltip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shortcut_in_tooltip").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -250,7 +247,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_shortcut_in_tooltip_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shortcut_in_tooltip_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shortcut_in_tooltip_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -268,7 +265,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -287,7 +284,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -305,7 +302,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_action_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_action_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_action_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1985162088)!
@@ -324,7 +321,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_get_action_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_action_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_action_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2589712189)!
@@ -342,7 +339,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_button_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_button_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_button_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950145251)!
@@ -361,7 +358,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_get_button_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_button_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_button_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2512161324)!
@@ -379,7 +376,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_get_draw_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_draw_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_draw_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2492721305)!
@@ -397,7 +394,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_keep_pressed_outside: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_pressed_outside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_pressed_outside").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -416,7 +413,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_keep_pressed_outside: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_keep_pressed_outside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_keep_pressed_outside").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -434,7 +431,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_shortcut_feedback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shortcut_feedback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shortcut_feedback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -453,7 +450,7 @@ open class BaseButton: Control {
         )}}}
     }
 
-    private static var __method_binding_is_shortcut_feedback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shortcut_feedback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shortcut_feedback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -471,7 +468,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 857163497)!
@@ -491,7 +488,7 @@ open class BaseButton: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_shortcut: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3415666916)!
@@ -509,7 +506,7 @@ open class BaseButton: Control {
         )}}
     }
 
-    private static var __method_binding_set_button_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_button_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_button_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794463739)!
@@ -529,7 +526,7 @@ open class BaseButton: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_button_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_button_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_button_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281644053)!

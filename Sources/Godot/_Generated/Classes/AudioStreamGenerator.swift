@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamGenerator: AudioStream {
-    private static var __method_binding_set_mix_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mix_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mix_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class AudioStreamGenerator: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_mix_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mix_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mix_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class AudioStreamGenerator: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class AudioStreamGenerator: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

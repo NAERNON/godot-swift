@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TextMesh: PrimitiveMesh {
-    private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
@@ -24,7 +24,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
@@ -42,7 +42,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_vertical_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertical_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
@@ -61,7 +61,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_vertical_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertical_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
@@ -79,7 +79,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -98,7 +98,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -116,7 +116,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
@@ -136,7 +136,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}}
     }
 
-    private static var __method_binding_get_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
@@ -154,7 +154,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -173,7 +173,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -191,7 +191,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -210,7 +210,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_line_spacing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -228,7 +228,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autowrap_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289138044)!
@@ -247,7 +247,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autowrap_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1549071663)!
@@ -265,7 +265,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_justification_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_justification_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2877345813)!
@@ -284,7 +284,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_justification_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_justification_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1583363614)!
@@ -302,7 +302,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -321,7 +321,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -339,7 +339,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -358,7 +358,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -376,7 +376,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_pixel_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pixel_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -395,7 +395,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_pixel_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pixel_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -413,7 +413,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -432,7 +432,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -450,7 +450,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_curve_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -469,7 +469,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_curve_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -487,7 +487,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1418190634)!
@@ -506,7 +506,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2516697328)!
@@ -524,7 +524,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -543,7 +543,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -561,7 +561,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
@@ -580,7 +580,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
@@ -598,7 +598,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -617,7 +617,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -635,7 +635,7 @@ open class TextMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_uppercase: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uppercase").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -654,7 +654,7 @@ open class TextMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_is_uppercase: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_uppercase").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

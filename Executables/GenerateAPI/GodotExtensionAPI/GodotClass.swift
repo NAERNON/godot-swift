@@ -2,6 +2,23 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import Utils
 
+private enum Accessibility {
+    case `public`
+    case `internal`
+    case `private`
+    
+    var keyword: Keyword {
+        switch self {
+        case .public:
+            .public
+        case .internal:
+            .internal
+        case .private:
+            .private
+        }
+    }
+}
+
 /// A representation of a Godot class.
 ///
 /// It can be decoded from the `extension_api.json` file.
@@ -153,7 +170,7 @@ struct GodotClass: Decodable {
     // MARK: - Syntax
     
     /// A Boolean value indicating whether the class
-    /// is the root of the hierachy tree.
+    /// is the root of the hierarchy tree.
     var isRootClass: Bool {
         name == "Object"
     }
@@ -206,7 +223,10 @@ struct GodotClass: Decodable {
         let signalInspector = SignalInspector(
             functionName: signal.name.translated(from: .snake, to: .camel),
             signalCName: signal.name,
-            arguments: (signal.arguments ?? []).map { ($0.name, $0.type.syntax(options: syntaxOptions)) },
+            arguments: (signal.arguments ?? []).map { (
+                $0.name.translated(from: .snake, to: .camel),
+                $0.type.syntax(options: syntaxOptions)
+            ) },
             isPublic: true
         )
         
@@ -239,35 +259,38 @@ struct GodotClass: Decodable {
         }
     }
     
-    private func methodIsPrivate(_ method: Method) -> Bool {
-        if isRefCountedRootClass {
-            return true
+    private func methodAccessibility(_ method: Method) -> Accessibility {
+        if isRootClass {
+            return .internal
+        } else if isRefCountedRootClass {
+            return .private
         } else if method.isStatic {
-            return false
+            return .public
         } else {
             for property in properties ?? [] {
                 if let getter = property.getterMethod(in: methods) {
                     if getter.name == method.name {
-                        return true
+                        return .private
                     }
                     
                     if let setter = property.setterMethod(in: methods, forGetter: getter) {
                         if setter.name == method.name {
-                            return true
+                            return .private
                         }
                     }
                 }
             }
             
-            return false
+            return .public
         }
     }
     
     private func methodPrefix(_ method: Method) -> String {
-        if methodIsPrivate(method) {
-            methodPrefixIfPrivate
-        } else {
+        switch methodAccessibility(method) {
+        case .public:
             ""
+        case .internal, .private:
+            methodPrefixIfPrivate
         }
     }
     
@@ -278,7 +301,7 @@ struct GodotClass: Decodable {
     ) throws -> MemberBlockItemListSyntax {
         if generateBinding {
             """
-            private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
+            internal static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
                 _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
                 GodotStringName(swiftStaticString: \(literal: method.name)).withGodotUnsafeRawPointer { __ptr__method_name in
                 return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
@@ -293,7 +316,7 @@ struct GodotClass: Decodable {
             .translated(typeName: name.syntax())
             .declSyntax(
             options: syntaxOptions,
-            keywords: methodIsPrivate(method) ? .private : .public
+            keywords: methodAccessibility(method).keyword
         ) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instancePtr in

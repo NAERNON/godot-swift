@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFSkeleton: Resource {
-    private static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -23,7 +23,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_joints").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -42,7 +42,7 @@ open class GLTFSkeleton: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_roots").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
@@ -60,7 +60,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_roots").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -79,7 +79,7 @@ open class GLTFSkeleton: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_godot_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_godot_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_godot_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1814733083)!
@@ -97,7 +97,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_unique_names").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -115,7 +115,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_set_unique_names: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_unique_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_unique_names").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -134,7 +134,7 @@ open class GLTFSkeleton: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_godot_bone_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_godot_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_godot_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
@@ -152,7 +152,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_set_godot_bone_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_godot_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_godot_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
@@ -171,7 +171,7 @@ open class GLTFSkeleton: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_bone_attachment_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_attachment_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_attachment_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -189,7 +189,7 @@ open class GLTFSkeleton: Resource {
         )}}
     }
 
-    private static var __method_binding_get_bone_attachment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_attachment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_attachment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 945440495)!

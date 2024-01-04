@@ -9,7 +9,7 @@ open class SubViewportContainer: Container {
         Bool()
     }
 
-    private static var __method_binding_set_stretch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -28,7 +28,7 @@ open class SubViewportContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_is_stretch_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_stretch_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_stretch_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -46,7 +46,7 @@ open class SubViewportContainer: Container {
         )}}
     }
 
-    private static var __method_binding_set_stretch_shrink: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stretch_shrink: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch_shrink").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -65,7 +65,7 @@ open class SubViewportContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_get_stretch_shrink: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_stretch_shrink: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stretch_shrink").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

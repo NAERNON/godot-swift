@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ParallaxBackground: CanvasLayer {
-    private static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -24,7 +24,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -42,7 +42,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}
     }
 
-    private static var __method_binding_set_scroll_base_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scroll_base_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scroll_base_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -61,7 +61,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_get_scroll_base_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_base_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_base_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -79,7 +79,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}
     }
 
-    private static var __method_binding_set_scroll_base_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scroll_base_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scroll_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -98,7 +98,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_get_scroll_base_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_base_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -116,7 +116,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}
     }
 
-    private static var __method_binding_set_limit_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_limit_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_limit_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -135,7 +135,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_get_limit_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_limit_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_limit_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -153,7 +153,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}
     }
 
-    private static var __method_binding_set_limit_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_limit_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_limit_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -172,7 +172,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_get_limit_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_limit_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_limit_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -190,7 +190,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}
     }
 
-    private static var __method_binding_set_ignore_camera_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ignore_camera_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ignore_camera_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class ParallaxBackground: CanvasLayer {
         )}}}
     }
 
-    private static var __method_binding_is_ignore_camera_zoom: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_ignore_camera_zoom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_ignore_camera_zoom").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!

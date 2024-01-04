@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Expression: RefCounted {
-    private static var __method_binding_parse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_parse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3069722906)!
@@ -26,7 +26,7 @@ open class Expression: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_execute: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_execute: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "execute").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3712471238)!
@@ -50,7 +50,7 @@ open class Expression: RefCounted {
         )}}}}}}}}
     }
 
-    private static var __method_binding_has_execute_failed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_execute_failed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_execute_failed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -68,7 +68,7 @@ open class Expression: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_error_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_error_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_error_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

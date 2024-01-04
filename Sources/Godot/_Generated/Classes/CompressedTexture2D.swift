@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CompressedTexture2D: Texture2D {
-    private static var __method_binding_load: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -25,7 +25,7 @@ open class CompressedTexture2D: Texture2D {
         )}}}}
     }
 
-    private static var __method_binding_get_load_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_load_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_load_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

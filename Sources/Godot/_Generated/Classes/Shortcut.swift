@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Shortcut: Resource {
-    private static var __method_binding_set_events: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_events").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -24,7 +24,7 @@ open class Shortcut: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_events: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_events").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -42,7 +42,7 @@ open class Shortcut: Resource {
         )}}
     }
 
-    private static var __method_binding_has_valid_event: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_valid_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_valid_event").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -60,7 +60,7 @@ open class Shortcut: Resource {
         )}}
     }
 
-    private static var __method_binding_matches_event: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_matches_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "matches_event").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3738334489)!
@@ -81,7 +81,7 @@ open class Shortcut: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_as_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_as_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_as_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

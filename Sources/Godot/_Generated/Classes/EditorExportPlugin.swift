@@ -88,7 +88,7 @@ open class EditorExportPlugin: RefCounted {
         Godot.GodotString()
     }
 
-    private static var __method_binding_add_shared_object: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_shared_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_shared_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3098291045)!
@@ -109,7 +109,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_add_ios_project_static_lib: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_project_static_lib: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_project_static_lib").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -128,7 +128,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 527928637)!
@@ -149,7 +149,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_add_ios_framework: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_framework: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_framework").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -168,7 +168,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_ios_embedded_framework: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_embedded_framework: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_embedded_framework").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -187,7 +187,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_ios_plist_content: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_plist_content: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_plist_content").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -206,7 +206,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_ios_linker_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_linker_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_linker_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -225,7 +225,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_ios_bundle_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_bundle_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_bundle_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -244,7 +244,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_ios_cpp_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_ios_cpp_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ios_cpp_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -263,7 +263,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_add_macos_plugin_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_macos_plugin_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_macos_plugin_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -282,7 +282,7 @@ open class EditorExportPlugin: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_skip: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_skip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "skip").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -299,7 +299,7 @@ open class EditorExportPlugin: RefCounted {
         )}
     }
 
-    private static var __method_binding_get_option: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_option: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_option").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!

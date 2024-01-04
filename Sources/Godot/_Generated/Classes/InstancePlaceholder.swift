@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class InstancePlaceholder: Node {
-    private static var __method_binding_get_stored_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_stored_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stored_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2230153369)!
@@ -25,7 +25,7 @@ open class InstancePlaceholder: Node {
         )}}}}
     }
 
-    private static var __method_binding_create_instance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_instance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3794612210)!
@@ -47,7 +47,7 @@ open class InstancePlaceholder: Node {
         )}}}}}}
     }
 
-    private static var __method_binding_get_instance_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_instance_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_instance_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

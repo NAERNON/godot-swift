@@ -9,7 +9,7 @@ open class PrimitiveMesh: Mesh {
         Godot.AnyGodotArray()
     }
 
-    private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
@@ -29,7 +29,7 @@ open class PrimitiveMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
@@ -47,7 +47,7 @@ open class PrimitiveMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_get_mesh_arrays: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mesh_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mesh_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -65,7 +65,7 @@ open class PrimitiveMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
@@ -84,7 +84,7 @@ open class PrimitiveMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
@@ -102,7 +102,7 @@ open class PrimitiveMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_set_flip_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -121,7 +121,7 @@ open class PrimitiveMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_flip_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_flip_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_flip_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -139,7 +139,7 @@ open class PrimitiveMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_set_add_uv2: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_add_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_add_uv2").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -158,7 +158,7 @@ open class PrimitiveMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_add_uv2: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_add_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_add_uv2").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -176,7 +176,7 @@ open class PrimitiveMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_set_uv2_padding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uv2_padding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uv2_padding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -195,7 +195,7 @@ open class PrimitiveMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_uv2_padding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_uv2_padding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_uv2_padding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

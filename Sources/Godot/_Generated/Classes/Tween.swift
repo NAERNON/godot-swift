@@ -73,11 +73,8 @@ open class Tween: RefCounted {
         fileprivate init(idx: Int) {
             self.idx = idx
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, idx)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.idx)]
         }
     }
     public func stepFinished(idx: Int) {
@@ -99,24 +96,21 @@ open class Tween: RefCounted {
     }()
 
     public struct LoopFinishedSignalInput: Godot.SignalInput {
-        public let loop_count: Int
-        fileprivate init(loop_count: Int) {
-            self.loop_count = loop_count
+        public let loopCount: Int
+        fileprivate init(loopCount: Int) {
+            self.loopCount = loopCount
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, loop_count)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.loopCount)]
         }
     }
-    public func loopFinished(loop_count: Int) {
-        _ = loopFinishedSignal.emit(.init(loop_count: loop_count))
+    public func loopFinished(loopCount: Int) {
+        _ = loopFinishedSignal.emit(.init(loopCount: loopCount))
     }
     public lazy var loopFinishedSignal: Godot.SignalEmitter<LoopFinishedSignalInput> = {
         .init(object: self, signalName: "loop_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(loop_count: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(loopCount: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -146,7 +140,7 @@ open class Tween: RefCounted {
         }
     }()
 
-    private static var __method_binding_tween_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_tween_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "tween_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4049770449)!
@@ -170,7 +164,7 @@ open class Tween: RefCounted {
         )}}}}}}}}
     }
 
-    private static var __method_binding_tween_interval: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_tween_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "tween_interval").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 413360199)!
@@ -190,7 +184,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_tween_callback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_tween_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "tween_callback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1540176488)!
@@ -210,7 +204,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_tween_method: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_tween_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "tween_method").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2337877153)!
@@ -233,7 +227,7 @@ open class Tween: RefCounted {
         )}}}}}}}
     }
 
-    private static var __method_binding_custom_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_custom_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "custom_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 330693286)!
@@ -253,7 +247,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_stop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -270,7 +264,7 @@ open class Tween: RefCounted {
         )}
     }
 
-    private static var __method_binding_pause: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "pause").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -287,7 +281,7 @@ open class Tween: RefCounted {
         )}
     }
 
-    private static var __method_binding_play: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "play").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -304,7 +298,7 @@ open class Tween: RefCounted {
         )}
     }
 
-    private static var __method_binding_kill: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_kill: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "kill").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -321,7 +315,7 @@ open class Tween: RefCounted {
         )}
     }
 
-    private static var __method_binding_get_total_elapsed_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_elapsed_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_elapsed_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -339,7 +333,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_running: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_running: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_running").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -357,7 +351,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_valid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_valid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_valid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -375,7 +369,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_bind_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bind_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bind_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2946786331)!
@@ -396,7 +390,7 @@ open class Tween: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_set_process_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_process_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_process_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 855258840)!
@@ -416,7 +410,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_pause_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pause_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pause_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3363368837)!
@@ -436,7 +430,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_parallel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parallel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parallel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1942052223)!
@@ -456,7 +450,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_loops: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loops: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loops").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2670836414)!
@@ -476,7 +470,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_loops_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loops_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loops_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -494,7 +488,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_speed_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3961971106)!
@@ -514,7 +508,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_trans").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3965963875)!
@@ -534,7 +528,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ease").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1208117252)!
@@ -554,7 +548,7 @@ open class Tween: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_parallel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_parallel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parallel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426978995)!
@@ -572,7 +566,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_chain: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_chain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "chain").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426978995)!
@@ -590,7 +584,7 @@ open class Tween: RefCounted {
         )}}
     }
 
-    private static var __method_binding_interpolate_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_interpolate_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "interpolate_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3452526450)!

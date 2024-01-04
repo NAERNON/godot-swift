@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PhysicsShapeQueryParameters2D: RefCounted {
-    private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 968641751)!
@@ -25,7 +25,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
@@ -43,7 +43,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_shape_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -62,7 +62,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_shape_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -80,7 +80,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
@@ -99,7 +99,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
@@ -117,7 +117,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_motion: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motion").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -136,7 +136,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_motion: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motion").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -154,7 +154,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -173,7 +173,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -191,7 +191,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -210,7 +210,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -228,7 +228,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_exclude: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_exclude: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_exclude").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -247,7 +247,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_exclude: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_exclude: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_exclude").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -265,7 +265,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collide_with_bodies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -284,7 +284,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collide_with_bodies_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -302,7 +302,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collide_with_areas").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -321,7 +321,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collide_with_areas_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

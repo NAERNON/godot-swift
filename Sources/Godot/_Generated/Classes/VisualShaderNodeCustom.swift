@@ -89,7 +89,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Bool()
     }
 
-    private static var __method_binding_get_option_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_option_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_option_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!

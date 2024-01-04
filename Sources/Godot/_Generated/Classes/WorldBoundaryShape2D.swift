@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class WorldBoundaryShape2D: Shape2D {
-    private static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -24,7 +24,7 @@ open class WorldBoundaryShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -42,7 +42,7 @@ open class WorldBoundaryShape2D: Shape2D {
         )}}
     }
 
-    private static var __method_binding_set_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class WorldBoundaryShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

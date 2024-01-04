@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class BoneAttachment3D: Node3D {
-    private static var __method_binding_set_bone_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -24,7 +24,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_bone_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -42,7 +42,7 @@ open class BoneAttachment3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_bone_idx: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone_idx: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone_idx").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -61,7 +61,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_bone_idx: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_idx: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_idx").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -79,7 +79,7 @@ open class BoneAttachment3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_on_bone_pose_update: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_on_bone_pose_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "on_bone_pose_update").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_override_pose: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_override_pose: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_override_pose").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -117,7 +117,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_override_pose: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_override_pose: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_override_pose").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -135,7 +135,7 @@ open class BoneAttachment3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_use_external_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_external_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_external_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -154,7 +154,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_use_external_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_use_external_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_use_external_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -172,7 +172,7 @@ open class BoneAttachment3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_external_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_external_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_external_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -191,7 +191,7 @@ open class BoneAttachment3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_external_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_external_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_external_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!

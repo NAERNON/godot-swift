@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SpriteFrames: Resource {
-    private static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -24,7 +24,7 @@ open class SpriteFrames: Resource {
         )}}}
     }
 
-    private static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -44,7 +44,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -63,7 +63,7 @@ open class SpriteFrames: Resource {
         )}}}
     }
 
-    private static var __method_binding_rename_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rename_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rename_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
@@ -83,7 +83,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_names: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_names").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -101,7 +101,7 @@ open class SpriteFrames: Resource {
         )}}
     }
 
-    private static var __method_binding_set_animation_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_animation_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_animation_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4135858297)!
@@ -121,7 +121,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2349060816)!
@@ -141,7 +141,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_animation_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_animation_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_animation_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2524380260)!
@@ -161,7 +161,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -181,7 +181,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_add_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1351332740)!
@@ -204,7 +204,7 @@ open class SpriteFrames: Resource {
         )}}}}}}}
     }
 
-    private static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 56804795)!
@@ -227,7 +227,7 @@ open class SpriteFrames: Resource {
         )}}}}}}}
     }
 
-    private static var __method_binding_remove_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
@@ -247,7 +247,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_frame_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2458036349)!
@@ -267,7 +267,7 @@ open class SpriteFrames: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_frame_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2900517879)!
@@ -288,7 +288,7 @@ open class SpriteFrames: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_frame_duration: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_duration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_duration").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1129309260)!
@@ -309,7 +309,7 @@ open class SpriteFrames: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -328,7 +328,7 @@ open class SpriteFrames: Resource {
         )}}}
     }
 
-    private static var __method_binding_clear_all: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

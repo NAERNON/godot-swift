@@ -10,11 +10,8 @@ open class ButtonGroup: Resource {
         fileprivate init(button: Godot.BaseButton?) {
             self.button = button
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, button)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.button)]
         }
     }
     public func pressed(button: Godot.BaseButton?) {
@@ -35,7 +32,7 @@ open class ButtonGroup: Resource {
         }
     }()
 
-    private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pressed_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886434893)!
@@ -53,7 +50,7 @@ open class ButtonGroup: Resource {
         )}}
     }
 
-    private static var __method_binding_get_buttons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -71,7 +68,7 @@ open class ButtonGroup: Resource {
         )}}
     }
 
-    private static var __method_binding_set_allow_unpress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_unpress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_unpress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -90,7 +87,7 @@ open class ButtonGroup: Resource {
         )}}}
     }
 
-    private static var __method_binding_is_allow_unpress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_allow_unpress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_allow_unpress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!

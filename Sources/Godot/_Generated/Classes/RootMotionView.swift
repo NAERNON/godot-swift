@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RootMotionView: VisualInstance3D {
-    private static var __method_binding_set_animation_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_animation_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_animation_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -24,7 +24,7 @@ open class RootMotionView: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_animation_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -42,7 +42,7 @@ open class RootMotionView: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -61,7 +61,7 @@ open class RootMotionView: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -79,7 +79,7 @@ open class RootMotionView: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class RootMotionView: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class RootMotionView: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class RootMotionView: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class RootMotionView: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_zero_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_zero_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_zero_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -172,7 +172,7 @@ open class RootMotionView: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_zero_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_zero_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_zero_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

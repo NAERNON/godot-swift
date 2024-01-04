@@ -21,7 +21,7 @@ open class PacketPeerDTLS: PacketPeer {
         }
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -38,7 +38,7 @@ open class PacketPeerDTLS: PacketPeer {
         )}
     }
 
-    private static var __method_binding_connect_to_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_to_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2880188099)!
@@ -62,7 +62,7 @@ open class PacketPeerDTLS: PacketPeer {
         )}}}}}}}}
     }
 
-    private static var __method_binding_get_status: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_status").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3248654679)!
@@ -80,7 +80,7 @@ open class PacketPeerDTLS: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_disconnect_from_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_from_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_from_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

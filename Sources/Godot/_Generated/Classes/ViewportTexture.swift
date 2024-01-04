@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ViewportTexture: Texture2D {
-    private static var __method_binding_set_viewport_path_in_scene: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_viewport_path_in_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_viewport_path_in_scene").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -24,7 +24,7 @@ open class ViewportTexture: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_viewport_path_in_scene: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_viewport_path_in_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_viewport_path_in_scene").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!

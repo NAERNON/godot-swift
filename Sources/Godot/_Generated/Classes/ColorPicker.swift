@@ -39,11 +39,8 @@ open class ColorPicker: VBoxContainer {
         fileprivate init(color: Godot.Color) {
             self.color = color
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, color)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.color)]
         }
     }
     public func colorChanged(color: Godot.Color) {
@@ -69,11 +66,8 @@ open class ColorPicker: VBoxContainer {
         fileprivate init(color: Godot.Color) {
             self.color = color
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, color)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.color)]
         }
     }
     public func presetAdded(color: Godot.Color) {
@@ -99,11 +93,8 @@ open class ColorPicker: VBoxContainer {
         fileprivate init(color: Godot.Color) {
             self.color = color
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, color)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.color)]
         }
     }
     public func presetRemoved(color: Godot.Color) {
@@ -124,7 +115,7 @@ open class ColorPicker: VBoxContainer {
         }
     }()
 
-    private static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pick_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -143,7 +134,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_get_pick_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pick_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -161,7 +152,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_deferred_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_deferred_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_deferred_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -180,7 +171,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_is_deferred_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_deferred_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_deferred_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -198,7 +189,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_color_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1579114136)!
@@ -217,7 +208,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_get_color_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 392907674)!
@@ -235,7 +226,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_edit_alpha: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_edit_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_edit_alpha").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -254,7 +245,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_is_editing_alpha: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editing_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editing_alpha").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -272,7 +263,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_can_add_swatches: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_can_add_swatches: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_can_add_swatches").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -291,7 +282,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_are_swatches_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_swatches_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_swatches_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -309,7 +300,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_presets_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_presets_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_presets_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -328,7 +319,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_are_presets_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_presets_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_presets_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -346,7 +337,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_modes_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_modes_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_modes_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -365,7 +356,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_are_modes_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_modes_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_modes_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -383,7 +374,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_sampler_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sampler_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sampler_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -402,7 +393,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_is_sampler_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_sampler_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_sampler_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -420,7 +411,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_sliders_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sliders_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sliders_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -439,7 +430,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_are_sliders_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_sliders_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_sliders_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -457,7 +448,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_hex_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hex_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hex_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -476,7 +467,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_is_hex_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_hex_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_hex_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -494,7 +485,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_add_preset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_preset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -513,7 +504,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_erase_preset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_erase_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase_preset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -532,7 +523,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_get_presets: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_presets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_presets").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
@@ -550,7 +541,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_add_recent_preset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_recent_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_recent_preset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -569,7 +560,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_erase_recent_preset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_erase_recent_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase_recent_preset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -588,7 +579,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_get_recent_presets: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_recent_presets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_recent_presets").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
@@ -606,7 +597,7 @@ open class ColorPicker: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_set_picker_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_picker_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_picker_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3981373861)!
@@ -625,7 +616,7 @@ open class ColorPicker: VBoxContainer {
         )}}}
     }
 
-    private static var __method_binding_get_picker_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_picker_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_picker_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1143229889)!

@@ -28,7 +28,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
     }
 
-    private static var __method_binding_set_fadein_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fadein_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fadein_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -47,7 +47,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_fadein_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fadein_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fadein_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -65,7 +65,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_fadein_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fadein_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fadein_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -85,7 +85,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_get_fadein_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fadein_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fadein_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -103,7 +103,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_fadeout_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fadeout_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fadeout_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -122,7 +122,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_fadeout_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fadeout_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fadeout_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -140,7 +140,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_fadeout_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fadeout_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fadeout_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -160,7 +160,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_get_fadeout_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fadeout_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fadeout_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -178,7 +178,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_autorestart: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autorestart: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autorestart").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -197,7 +197,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_has_autorestart: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_autorestart: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_autorestart").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -215,7 +215,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_autorestart_delay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autorestart_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autorestart_delay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -234,7 +234,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_autorestart_delay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autorestart_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autorestart_delay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -252,7 +252,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_autorestart_random_delay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autorestart_random_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autorestart_random_delay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -271,7 +271,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_autorestart_random_delay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autorestart_random_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autorestart_random_delay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -289,7 +289,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_mix_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mix_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mix_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1018899799)!
@@ -308,7 +308,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_mix_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mix_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mix_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3076550526)!

@@ -114,11 +114,8 @@ open class Window: Viewport {
         fileprivate init(event: Godot.InputEvent?) {
             self.event = event
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, event)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.event)]
         }
     }
     public func windowInput(event: Godot.InputEvent?) {
@@ -144,11 +141,8 @@ open class Window: Viewport {
         fileprivate init(files: Godot.PackedStringArray) {
             self.files = files
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, files)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.files)]
         }
     }
     public func filesDropped(files: Godot.PackedStringArray) {
@@ -371,7 +365,7 @@ open class Window: Viewport {
         Godot.Vector2()
     }
 
-    private static var __method_binding_set_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -390,7 +384,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -408,7 +402,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_get_window_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_window_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_window_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -426,7 +420,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_initial_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_initial_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_initial_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4084468099)!
@@ -445,7 +439,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_initial_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_initial_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_initial_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4294066647)!
@@ -463,7 +457,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_current_screen: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_screen: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_screen").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -482,7 +476,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_current_screen: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_screen: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_screen").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -500,7 +494,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -519,7 +513,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -537,7 +531,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_move_to_center: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_to_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_to_center").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -554,7 +548,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -573,7 +567,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -591,7 +585,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_reset_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reset_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reset_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -608,7 +602,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_get_position_with_decorations: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position_with_decorations: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position_with_decorations").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -626,7 +620,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_get_size_with_decorations: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size_with_decorations: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size_with_decorations").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -644,7 +638,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_max_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -663,7 +657,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_max_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -681,7 +675,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_min_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -700,7 +694,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_min_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -718,7 +712,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3095236531)!
@@ -737,7 +731,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2566346114)!
@@ -755,7 +749,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426449779)!
@@ -775,7 +769,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3062752289)!
@@ -795,7 +789,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_is_maximize_allowed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_maximize_allowed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_maximize_allowed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -813,7 +807,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_request_attention: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_request_attention: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_attention").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -830,7 +824,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_move_to_foreground: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_to_foreground: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_to_foreground").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -847,7 +841,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_set_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -866,7 +860,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -884,7 +878,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_hide: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_hide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "hide").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -901,7 +895,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_show: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_show: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "show").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -918,7 +912,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_set_transient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -937,7 +931,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_transient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_transient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_transient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -955,7 +949,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_exclusive: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_exclusive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -974,7 +968,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_exclusive: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_exclusive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -992,7 +986,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_unparent_when_invisible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_unparent_when_invisible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_unparent_when_invisible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1011,7 +1005,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_can_draw: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_can_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "can_draw").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1029,7 +1023,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_has_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1047,7 +1041,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_grab_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_grab_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "grab_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1064,7 +1058,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_set_ime_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ime_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ime_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1083,7 +1077,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_set_ime_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ime_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ime_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -1102,7 +1096,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_embedded: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_embedded: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_embedded").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1120,7 +1114,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_get_contents_minimum_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contents_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contents_minimum_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -1138,7 +1132,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_content_scale_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_content_scale_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_content_scale_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -1157,7 +1151,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_content_scale_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_content_scale_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_content_scale_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -1175,7 +1169,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_content_scale_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_content_scale_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_content_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2937716473)!
@@ -1194,7 +1188,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_content_scale_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_content_scale_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_content_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 161585230)!
@@ -1212,7 +1206,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_content_scale_aspect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_content_scale_aspect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_content_scale_aspect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370399418)!
@@ -1231,7 +1225,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_content_scale_aspect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_content_scale_aspect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_content_scale_aspect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4158790715)!
@@ -1249,7 +1243,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_content_scale_stretch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_content_scale_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_content_scale_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 349355940)!
@@ -1268,7 +1262,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_content_scale_stretch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_content_scale_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_content_scale_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 536857316)!
@@ -1286,7 +1280,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_keep_title_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_title_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_title_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1305,7 +1299,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_keep_title_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_keep_title_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_keep_title_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1323,7 +1317,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_content_scale_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_content_scale_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_content_scale_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -1342,7 +1336,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_content_scale_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_content_scale_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_content_scale_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -1360,7 +1354,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_use_font_oversampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_font_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_font_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1379,7 +1373,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_using_font_oversampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_font_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_font_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1397,7 +1391,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mouse_passthrough_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -1416,7 +1410,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mouse_passthrough_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -1434,7 +1428,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_wrap_controls: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_wrap_controls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_wrap_controls").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1453,7 +1447,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_wrapping_controls: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_wrapping_controls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_wrapping_controls").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1471,7 +1465,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_child_controls_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_child_controls_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "child_controls_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1488,7 +1482,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_set_theme: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_theme").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2326690814)!
@@ -1508,7 +1502,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_get_theme: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3846893731)!
@@ -1526,7 +1520,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_theme_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1545,7 +1539,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_theme_type_variation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_type_variation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -1563,7 +1557,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_begin_bulk_theme_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_begin_bulk_theme_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "begin_bulk_theme_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1580,7 +1574,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_end_bulk_theme_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_end_bulk_theme_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "end_bulk_theme_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1597,7 +1591,7 @@ open class Window: Viewport {
         )}
     }
 
-    private static var __method_binding_add_theme_icon_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1373065600)!
@@ -1618,7 +1612,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_add_theme_stylebox_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4188838905)!
@@ -1639,7 +1633,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_add_theme_font_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3518018674)!
@@ -1660,7 +1654,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_add_theme_font_size_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
@@ -1680,7 +1674,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_add_theme_color_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4260178595)!
@@ -1700,7 +1694,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_add_theme_constant_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
@@ -1720,7 +1714,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_remove_theme_icon_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1739,7 +1733,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_remove_theme_stylebox_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1758,7 +1752,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_remove_theme_font_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1777,7 +1771,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_remove_theme_font_size_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1796,7 +1790,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_remove_theme_color_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1815,7 +1809,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_remove_theme_constant_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -1834,7 +1828,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_theme_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3163973443)!
@@ -1855,7 +1849,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604739069)!
@@ -1876,7 +1870,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2826986490)!
@@ -1897,7 +1891,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
@@ -1918,7 +1912,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2798751242)!
@@ -1939,7 +1933,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
@@ -1960,7 +1954,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_icon_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -1980,7 +1974,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_stylebox_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -2000,7 +1994,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_font_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -2020,7 +2014,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_font_size_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -2040,7 +2034,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_color_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -2060,7 +2054,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_constant_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -2080,7 +2074,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_has_theme_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2101,7 +2095,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_stylebox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2122,7 +2116,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2143,7 +2137,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2164,7 +2158,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2185,7 +2179,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_has_theme_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
@@ -2206,7 +2200,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_get_theme_default_base_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_default_base_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_default_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -2224,7 +2218,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_get_theme_default_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_default_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_default_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
@@ -2242,7 +2236,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_default_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -2260,7 +2254,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_layout_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_layout_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_layout_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3094704184)!
@@ -2279,7 +2273,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_layout_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_layout_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_layout_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3909617982)!
@@ -2297,7 +2291,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_is_layout_rtl: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_layout_rtl: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_layout_rtl").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -2315,7 +2309,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_auto_translate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_translate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_translate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -2334,7 +2328,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_auto_translating: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_auto_translating: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_auto_translating").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -2352,7 +2346,7 @@ open class Window: Viewport {
         )}}
     }
 
-    private static var __method_binding_popup: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1680304321)!
@@ -2371,7 +2365,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_popup_on_parent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_on_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_on_parent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1763793166)!
@@ -2390,7 +2384,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_popup_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3447975422)!
@@ -2409,7 +2403,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_popup_centered_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_centered_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_centered_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1014814997)!
@@ -2428,7 +2422,7 @@ open class Window: Viewport {
         )}}}
     }
 
-    private static var __method_binding_popup_centered_clamped: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_centered_clamped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_centered_clamped").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2613752477)!
@@ -2448,7 +2442,7 @@ open class Window: Viewport {
         )}}}}
     }
 
-    private static var __method_binding_popup_exclusive: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_exclusive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2134721627)!
@@ -2469,7 +2463,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_popup_exclusive_on_parent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_exclusive_on_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_exclusive_on_parent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2344671043)!
@@ -2490,7 +2484,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_popup_exclusive_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_exclusive_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_exclusive_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3357594017)!
@@ -2511,7 +2505,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_popup_exclusive_centered_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_exclusive_centered_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_exclusive_centered_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2284776287)!
@@ -2532,7 +2526,7 @@ open class Window: Viewport {
         )}}}}}
     }
 
-    private static var __method_binding_popup_exclusive_centered_clamped: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_popup_exclusive_centered_clamped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_exclusive_centered_clamped").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2612708785)!

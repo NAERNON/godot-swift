@@ -37,6 +37,18 @@ func withUnsafeArgumentPackPointer<each VariantRest : VariantStorableIn>(
 
 /// Calls the given closure with the number of arguments and a pointer
 /// to the contiguous given pointers and variants.
+func withUnsafeArgumentPackPointer(
+    _ pointers: GDExtensionConstTypePtr?...,
+    varargsArray: [Variant],
+    body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
+) {
+    withUnsafeVarargArgumentPointers(to: varargsArray) { variantPointers in
+        withUnsafeArgumentPackPointer(pointers, varargsPointers: variantPointers, body: body)
+    }
+}
+
+/// Calls the given closure with the number of arguments and a pointer
+/// to the contiguous given pointers and variants.
 private func withUnsafeArgumentPackPointer(
     _ pointers: GDExtensionConstTypePtr?...,
     varargsPointers: [GDExtensionVariantPtr],

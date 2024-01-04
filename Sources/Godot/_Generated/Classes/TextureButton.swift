@@ -25,7 +25,7 @@ open class TextureButton: BaseButton {
         }
     }
 
-    private static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -45,7 +45,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -65,7 +65,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_texture_hover: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_hover").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -85,7 +85,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_texture_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -105,7 +105,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_texture_focused: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_focused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_focused").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -125,7 +125,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_click_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_click_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_click_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
@@ -145,7 +145,7 @@ open class TextureButton: BaseButton {
         )}}}}
     }
 
-    private static var __method_binding_set_ignore_texture_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ignore_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ignore_texture_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -164,7 +164,7 @@ open class TextureButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 252530840)!
@@ -183,7 +183,7 @@ open class TextureButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -202,7 +202,7 @@ open class TextureButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -220,7 +220,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -239,7 +239,7 @@ open class TextureButton: BaseButton {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -257,7 +257,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -275,7 +275,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -293,7 +293,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_texture_hover: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_hover").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -311,7 +311,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_texture_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -329,7 +329,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_texture_focused: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_focused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_focused").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -347,7 +347,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_click_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_click_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_click_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
@@ -365,7 +365,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_ignore_texture_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ignore_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ignore_texture_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -383,7 +383,7 @@ open class TextureButton: BaseButton {
         )}}
     }
 
-    private static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33815122)!

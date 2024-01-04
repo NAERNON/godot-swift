@@ -22,36 +22,33 @@ open class Area2D: CollisionObject2D {
     }
 
     public struct BodyShapeEnteredSignalInput: Godot.SignalInput {
-        public let body_rid: Godot.RID
+        public let bodyRid: Godot.RID
         public let body: Godot.Node2D?
-        public let body_shape_index: Int
-        public let local_shape_index: Int
-        fileprivate init(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
-            self.body_rid = body_rid
+        public let bodyShapeIndex: Int
+        public let localShapeIndex: Int
+        fileprivate init(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+            self.bodyRid = bodyRid
             self.body = body
-            self.body_shape_index = body_shape_index
-            self.local_shape_index = local_shape_index
+            self.bodyShapeIndex = bodyShapeIndex
+            self.localShapeIndex = localShapeIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, body_rid, body, body_shape_index, local_shape_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func bodyShapeEntered(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
-        _ = bodyShapeEnteredSignal.emit(.init(body_rid: body_rid,
+    public func bodyShapeEntered(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        _ = bodyShapeEnteredSignal.emit(.init(bodyRid: bodyRid,
                 body: body,
-                body_shape_index: body_shape_index,
-                local_shape_index: local_shape_index))
+                bodyShapeIndex: bodyShapeIndex,
+                localShapeIndex: localShapeIndex))
     }
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    body_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -64,36 +61,33 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct BodyShapeExitedSignalInput: Godot.SignalInput {
-        public let body_rid: Godot.RID
+        public let bodyRid: Godot.RID
         public let body: Godot.Node2D?
-        public let body_shape_index: Int
-        public let local_shape_index: Int
-        fileprivate init(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
-            self.body_rid = body_rid
+        public let bodyShapeIndex: Int
+        public let localShapeIndex: Int
+        fileprivate init(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+            self.bodyRid = bodyRid
             self.body = body
-            self.body_shape_index = body_shape_index
-            self.local_shape_index = local_shape_index
+            self.bodyShapeIndex = bodyShapeIndex
+            self.localShapeIndex = localShapeIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, body_rid, body, body_shape_index, local_shape_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func bodyShapeExited(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
-        _ = bodyShapeExitedSignal.emit(.init(body_rid: body_rid,
+    public func bodyShapeExited(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        _ = bodyShapeExitedSignal.emit(.init(bodyRid: bodyRid,
                 body: body,
-                body_shape_index: body_shape_index,
-                local_shape_index: local_shape_index))
+                bodyShapeIndex: bodyShapeIndex,
+                localShapeIndex: localShapeIndex))
     }
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    body_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -110,11 +104,8 @@ open class Area2D: CollisionObject2D {
         fileprivate init(body: Godot.Node2D?) {
             self.body = body
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, body)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.body)]
         }
     }
     public func bodyEntered(body: Godot.Node2D?) {
@@ -140,11 +131,8 @@ open class Area2D: CollisionObject2D {
         fileprivate init(body: Godot.Node2D?) {
             self.body = body
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, body)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.body)]
         }
     }
     public func bodyExited(body: Godot.Node2D?) {
@@ -166,36 +154,33 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct AreaShapeEnteredSignalInput: Godot.SignalInput {
-        public let area_rid: Godot.RID
+        public let areaRid: Godot.RID
         public let area: Godot.Area2D?
-        public let area_shape_index: Int
-        public let local_shape_index: Int
-        fileprivate init(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
-            self.area_rid = area_rid
+        public let areaShapeIndex: Int
+        public let localShapeIndex: Int
+        fileprivate init(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+            self.areaRid = areaRid
             self.area = area
-            self.area_shape_index = area_shape_index
-            self.local_shape_index = local_shape_index
+            self.areaShapeIndex = areaShapeIndex
+            self.localShapeIndex = localShapeIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, area_rid, area, area_shape_index, local_shape_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func areaShapeEntered(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
-        _ = areaShapeEnteredSignal.emit(.init(area_rid: area_rid,
+    public func areaShapeEntered(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+        _ = areaShapeEnteredSignal.emit(.init(areaRid: areaRid,
                 area: area,
-                area_shape_index: area_shape_index,
-                local_shape_index: local_shape_index))
+                areaShapeIndex: areaShapeIndex,
+                localShapeIndex: localShapeIndex))
     }
     public lazy var areaShapeEnteredSignal: Godot.SignalEmitter<AreaShapeEnteredSignalInput> = {
         .init(object: self, signalName: "area_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(area_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(areaRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    area_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                    areaShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -208,36 +193,33 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct AreaShapeExitedSignalInput: Godot.SignalInput {
-        public let area_rid: Godot.RID
+        public let areaRid: Godot.RID
         public let area: Godot.Area2D?
-        public let area_shape_index: Int
-        public let local_shape_index: Int
-        fileprivate init(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
-            self.area_rid = area_rid
+        public let areaShapeIndex: Int
+        public let localShapeIndex: Int
+        fileprivate init(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+            self.areaRid = areaRid
             self.area = area
-            self.area_shape_index = area_shape_index
-            self.local_shape_index = local_shape_index
+            self.areaShapeIndex = areaShapeIndex
+            self.localShapeIndex = localShapeIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, area_rid, area, area_shape_index, local_shape_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func areaShapeExited(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
-        _ = areaShapeExitedSignal.emit(.init(area_rid: area_rid,
+    public func areaShapeExited(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+        _ = areaShapeExitedSignal.emit(.init(areaRid: areaRid,
                 area: area,
-                area_shape_index: area_shape_index,
-                local_shape_index: local_shape_index))
+                areaShapeIndex: areaShapeIndex,
+                localShapeIndex: localShapeIndex))
     }
     public lazy var areaShapeExitedSignal: Godot.SignalEmitter<AreaShapeExitedSignalInput> = {
         .init(object: self, signalName: "area_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(area_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(areaRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    area_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                    areaShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -254,11 +236,8 @@ open class Area2D: CollisionObject2D {
         fileprivate init(area: Godot.Area2D?) {
             self.area = area
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, area)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.area)]
         }
     }
     public func areaEntered(area: Godot.Area2D?) {
@@ -284,11 +263,8 @@ open class Area2D: CollisionObject2D {
         fileprivate init(area: Godot.Area2D?) {
             self.area = area
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, area)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.area)]
         }
     }
     public func areaExited(area: Godot.Area2D?) {
@@ -309,7 +285,7 @@ open class Area2D: CollisionObject2D {
         }
     }()
 
-    private static var __method_binding_set_gravity_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2879900038)!
@@ -328,7 +304,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_gravity_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3990256304)!
@@ -346,7 +322,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_gravity_is_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity_is_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity_is_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -365,7 +341,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_is_gravity_a_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_gravity_a_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_gravity_a_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -383,7 +359,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity_point_unit_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -402,7 +378,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity_point_unit_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -420,7 +396,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_gravity_point_center: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity_point_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity_point_center").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -439,7 +415,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_gravity_point_center: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity_point_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity_point_center").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -457,7 +433,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_gravity_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -476,7 +452,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_gravity_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -494,7 +470,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_gravity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -513,7 +489,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gravity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -531,7 +507,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_linear_damp_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2879900038)!
@@ -550,7 +526,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_linear_damp_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3990256304)!
@@ -568,7 +544,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_damp_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2879900038)!
@@ -587,7 +563,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angular_damp_space_override_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3990256304)!
@@ -605,7 +581,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_linear_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_linear_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_linear_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -624,7 +600,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_linear_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_linear_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_linear_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -642,7 +618,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_angular_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -661,7 +637,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_angular_damp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angular_damp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angular_damp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -679,7 +655,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -698,7 +674,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -716,7 +692,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_monitoring: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_monitoring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_monitoring").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -735,7 +711,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_is_monitoring: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_monitoring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_monitoring").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -753,7 +729,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_monitorable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_monitorable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_monitorable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -772,7 +748,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_is_monitorable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_monitorable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_monitorable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -790,7 +766,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_get_overlapping_bodies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_overlapping_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_overlapping_bodies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -808,7 +784,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_get_overlapping_areas: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_overlapping_areas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_overlapping_areas").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -826,7 +802,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_has_overlapping_bodies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_overlapping_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_overlapping_bodies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -844,7 +820,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_has_overlapping_areas: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_overlapping_areas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_overlapping_areas").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -862,7 +838,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_overlaps_body: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_overlaps_body: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "overlaps_body").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3093956946)!
@@ -883,7 +859,7 @@ open class Area2D: CollisionObject2D {
         )}}}}}
     }
 
-    private static var __method_binding_overlaps_area: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_overlaps_area: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "overlaps_area").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3093956946)!
@@ -904,7 +880,7 @@ open class Area2D: CollisionObject2D {
         )}}}}}
     }
 
-    private static var __method_binding_set_audio_bus_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_audio_bus_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_audio_bus_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -923,7 +899,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_get_audio_bus_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_audio_bus_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_audio_bus_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -941,7 +917,7 @@ open class Area2D: CollisionObject2D {
         )}}
     }
 
-    private static var __method_binding_set_audio_bus_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_audio_bus_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_audio_bus_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -960,7 +936,7 @@ open class Area2D: CollisionObject2D {
         )}}}
     }
 
-    private static var __method_binding_is_overriding_audio_bus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_overriding_audio_bus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_overriding_audio_bus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

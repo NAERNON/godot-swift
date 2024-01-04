@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImmediateMesh: Mesh {
-    private static var __method_binding_surface_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2794442543)!
@@ -26,7 +26,7 @@ open class ImmediateMesh: Mesh {
         )}}}}}
     }
 
-    private static var __method_binding_surface_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -45,7 +45,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_set_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -64,7 +64,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_set_tangent: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_tangent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_tangent").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3505987427)!
@@ -83,7 +83,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_set_uv: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_uv").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -102,7 +102,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_set_uv2: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_uv2").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -121,7 +121,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_add_vertex: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_add_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_add_vertex").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -140,7 +140,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_add_vertex_2d: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_add_vertex_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_add_vertex_2d").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -159,7 +159,7 @@ open class ImmediateMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_surface_end: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_end").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -176,7 +176,7 @@ open class ImmediateMesh: Mesh {
         )}
     }
 
-    private static var __method_binding_clear_surfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_surfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_surfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

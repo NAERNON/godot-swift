@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MissingNode: Node {
-    private static var __method_binding_set_original_class: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_original_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_original_class").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -24,7 +24,7 @@ open class MissingNode: Node {
         )}}}
     }
 
-    private static var __method_binding_get_original_class: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_original_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_original_class").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -42,7 +42,7 @@ open class MissingNode: Node {
         )}}
     }
 
-    private static var __method_binding_set_recording_properties: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_recording_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_recording_properties").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class MissingNode: Node {
         )}}}
     }
 
-    private static var __method_binding_is_recording_properties: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_recording_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_recording_properties").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

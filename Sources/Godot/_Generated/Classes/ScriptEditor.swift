@@ -10,11 +10,8 @@ open class ScriptEditor: PanelContainer {
         fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, script)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.script)]
         }
     }
     public func editorScriptChanged(script: Godot.Script?) {
@@ -40,11 +37,8 @@ open class ScriptEditor: PanelContainer {
         fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, script)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.script)]
         }
     }
     public func scriptClose(script: Godot.Script?) {
@@ -65,7 +59,7 @@ open class ScriptEditor: PanelContainer {
         }
     }()
 
-    private static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_editor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1906266726)!
@@ -83,7 +77,7 @@ open class ScriptEditor: PanelContainer {
         )}}
     }
 
-    private static var __method_binding_get_open_script_editors: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_open_script_editors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_open_script_editors").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -101,7 +95,7 @@ open class ScriptEditor: PanelContainer {
         )}}
     }
 
-    private static var __method_binding_register_syntax_highlighter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_syntax_highlighter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
@@ -121,7 +115,7 @@ open class ScriptEditor: PanelContainer {
         )}}}}
     }
 
-    private static var __method_binding_unregister_syntax_highlighter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_unregister_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "unregister_syntax_highlighter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
@@ -141,7 +135,7 @@ open class ScriptEditor: PanelContainer {
         )}}}}
     }
 
-    private static var __method_binding_goto_line: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_goto_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "goto_line").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -160,7 +154,7 @@ open class ScriptEditor: PanelContainer {
         )}}}
     }
 
-    private static var __method_binding_get_current_script: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_script: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_script").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2146468882)!
@@ -178,7 +172,7 @@ open class ScriptEditor: PanelContainer {
         )}}
     }
 
-    private static var __method_binding_get_open_scripts: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_open_scripts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_open_scripts").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -196,7 +190,7 @@ open class ScriptEditor: PanelContainer {
         )}}
     }
 
-    private static var __method_binding_open_script_create_dialog: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_open_script_create_dialog: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "open_script_create_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!

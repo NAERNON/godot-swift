@@ -40,7 +40,7 @@ open class HingeJoint3D: Joint3D {
         }
     }
 
-    private static var __method_binding_set_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082977519)!
@@ -60,7 +60,7 @@ open class HingeJoint3D: Joint3D {
         )}}}}
     }
 
-    private static var __method_binding_get_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4066002676)!
@@ -80,7 +80,7 @@ open class HingeJoint3D: Joint3D {
         )}}}}
     }
 
-    private static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1083494620)!
@@ -100,7 +100,7 @@ open class HingeJoint3D: Joint3D {
         )}}}}
     }
 
-    private static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841369610)!

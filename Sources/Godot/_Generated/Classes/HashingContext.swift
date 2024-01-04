@@ -17,7 +17,7 @@ open class HashingContext: RefCounted {
         }
     }
 
-    private static var __method_binding_start: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3940338335)!
@@ -37,7 +37,7 @@ open class HashingContext: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_update: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 680677267)!
@@ -57,7 +57,7 @@ open class HashingContext: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_finish: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "finish").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!

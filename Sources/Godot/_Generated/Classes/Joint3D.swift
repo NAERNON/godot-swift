@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Joint3D: Node3D {
-    private static var __method_binding_set_node_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_node_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_node_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -24,7 +24,7 @@ open class Joint3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_node_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -42,7 +42,7 @@ open class Joint3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_node_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_node_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_node_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -61,7 +61,7 @@ open class Joint3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_node_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_node_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_node_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -79,7 +79,7 @@ open class Joint3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_solver_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_solver_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_solver_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class Joint3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_solver_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_solver_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_solver_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -116,7 +116,7 @@ open class Joint3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_exclude_nodes_from_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -135,7 +135,7 @@ open class Joint3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_exclude_nodes_from_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class Joint3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!

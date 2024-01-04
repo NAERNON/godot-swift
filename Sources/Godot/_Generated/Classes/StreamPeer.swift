@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class StreamPeer: RefCounted {
-    private static var __method_binding_put_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 680677267)!
@@ -25,7 +25,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_put_partial_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_partial_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_partial_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2934048347)!
@@ -45,7 +45,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171824711)!
@@ -65,7 +65,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_partial_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_partial_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_partial_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171824711)!
@@ -85,7 +85,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_available_bytes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_available_bytes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_available_bytes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -103,7 +103,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_big_endian: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_big_endian: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_big_endian").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -122,7 +122,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_is_big_endian_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_big_endian_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_big_endian_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -140,7 +140,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_put_8: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_8").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -159,7 +159,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_u8: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_u8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_u8").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -178,7 +178,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_16: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_16: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_16").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -197,7 +197,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_u16: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_u16: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_u16").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -216,7 +216,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_32: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_32: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_32").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -235,7 +235,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_u32: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_u32: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_u32").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -254,7 +254,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_64: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_64").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -273,7 +273,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_u64: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_u64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_u64").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -292,7 +292,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_float: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_float: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_float").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -311,7 +311,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_double: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_double: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_double").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -330,7 +330,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -349,7 +349,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_utf8_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_utf8_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_utf8_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -368,7 +368,7 @@ open class StreamPeer: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_put_var: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_put_var: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "put_var").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 738511890)!
@@ -388,7 +388,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_8: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_8").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -406,7 +406,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_u8: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_u8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_u8").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -424,7 +424,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_16: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_16: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_16").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -442,7 +442,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_u16: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_u16: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_u16").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -460,7 +460,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_32: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_32: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_32").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -478,7 +478,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_u32: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_u32: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_u32").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -496,7 +496,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_64: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_64").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -514,7 +514,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_u64: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_u64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_u64").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -532,7 +532,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_float: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_float: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_float").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -550,7 +550,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_double: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_double: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_double").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -568,7 +568,7 @@ open class StreamPeer: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2309358862)!
@@ -588,7 +588,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_utf8_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_utf8_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_utf8_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2309358862)!
@@ -608,7 +608,7 @@ open class StreamPeer: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_var: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_var: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_var").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3442865206)!

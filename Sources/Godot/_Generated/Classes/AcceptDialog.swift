@@ -46,11 +46,8 @@ open class AcceptDialog: Window {
         fileprivate init(action: Godot.GodotStringName) {
             self.action = action
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, action)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.action)]
         }
     }
     public func customAction(action: Godot.GodotStringName) {
@@ -71,7 +68,7 @@ open class AcceptDialog: Window {
         }
     }()
 
-    private static var __method_binding_get_ok_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ok_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ok_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1856205918)!
@@ -89,7 +86,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_label").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 566733104)!
@@ -107,7 +104,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_set_hide_on_ok: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hide_on_ok: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hide_on_ok").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -126,7 +123,7 @@ open class AcceptDialog: Window {
         )}}}
     }
 
-    private static var __method_binding_get_hide_on_ok: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_hide_on_ok: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_hide_on_ok").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -144,7 +141,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_set_close_on_escape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_close_on_escape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_close_on_escape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -163,7 +160,7 @@ open class AcceptDialog: Window {
         )}}}
     }
 
-    private static var __method_binding_get_close_on_escape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_close_on_escape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_close_on_escape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -181,7 +178,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_add_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3328440682)!
@@ -203,7 +200,7 @@ open class AcceptDialog: Window {
         )}}}}}}
     }
 
-    private static var __method_binding_add_cancel_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_cancel_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_cancel_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 242045556)!
@@ -223,7 +220,7 @@ open class AcceptDialog: Window {
         )}}}}
     }
 
-    private static var __method_binding_remove_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -243,7 +240,7 @@ open class AcceptDialog: Window {
         )}}}}
     }
 
-    private static var __method_binding_register_text_enter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_register_text_enter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_text_enter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -263,7 +260,7 @@ open class AcceptDialog: Window {
         )}}}}
     }
 
-    private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -282,7 +279,7 @@ open class AcceptDialog: Window {
         )}}}
     }
 
-    private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -300,7 +297,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_set_autowrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autowrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autowrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -319,7 +316,7 @@ open class AcceptDialog: Window {
         )}}}
     }
 
-    private static var __method_binding_has_autowrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_autowrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_autowrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -337,7 +334,7 @@ open class AcceptDialog: Window {
         )}}
     }
 
-    private static var __method_binding_set_ok_button_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ok_button_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ok_button_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -356,7 +353,7 @@ open class AcceptDialog: Window {
         )}}}
     }
 
-    private static var __method_binding_get_ok_button_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ok_button_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ok_button_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

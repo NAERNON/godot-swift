@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class JavaClassWrapper: Object {
-    private static var __method_binding_wrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_wrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "wrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1124367868)!

@@ -6,24 +6,21 @@ import GodotExtensionHeaders
 @GodotClass
 open class TextServerManager: Object {
     public struct InterfaceAddedSignalInput: Godot.SignalInput {
-        public let interface_name: Godot.GodotStringName
-        fileprivate init(interface_name: Godot.GodotStringName) {
-            self.interface_name = interface_name
+        public let interfaceName: Godot.GodotStringName
+        fileprivate init(interfaceName: Godot.GodotStringName) {
+            self.interfaceName = interfaceName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, interface_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.interfaceName)]
         }
     }
-    public func interfaceAdded(interface_name: Godot.GodotStringName) {
-        _ = interfaceAddedSignal.emit(.init(interface_name: interface_name))
+    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
+        _ = interfaceAddedSignal.emit(.init(interfaceName: interfaceName))
     }
     public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
         .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -36,24 +33,21 @@ open class TextServerManager: Object {
     }()
 
     public struct InterfaceRemovedSignalInput: Godot.SignalInput {
-        public let interface_name: Godot.GodotStringName
-        fileprivate init(interface_name: Godot.GodotStringName) {
-            self.interface_name = interface_name
+        public let interfaceName: Godot.GodotStringName
+        fileprivate init(interfaceName: Godot.GodotStringName) {
+            self.interfaceName = interfaceName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, interface_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.interfaceName)]
         }
     }
-    public func interfaceRemoved(interface_name: Godot.GodotStringName) {
-        _ = interfaceRemovedSignal.emit(.init(interface_name: interface_name))
+    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
+        _ = interfaceRemovedSignal.emit(.init(interfaceName: interfaceName))
     }
     public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
         .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -65,7 +59,7 @@ open class TextServerManager: Object {
         }
     }()
 
-    private static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1799689403)!
@@ -85,7 +79,7 @@ open class TextServerManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interface_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interface_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interface_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -103,7 +97,7 @@ open class TextServerManager: Object {
         )}}
     }
 
-    private static var __method_binding_remove_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1799689403)!
@@ -123,7 +117,7 @@ open class TextServerManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1672475555)!
@@ -143,7 +137,7 @@ open class TextServerManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -161,7 +155,7 @@ open class TextServerManager: Object {
         )}}
     }
 
-    private static var __method_binding_find_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240905781)!
@@ -181,7 +175,7 @@ open class TextServerManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_primary_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1799689403)!
@@ -201,7 +195,7 @@ open class TextServerManager: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_primary_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 905850878)!

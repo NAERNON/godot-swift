@@ -37,7 +37,7 @@ open class Camera3D: Node3D {
         }
     }
 
-    private static var __method_binding_project_ray_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_project_ray_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "project_ray_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718073306)!
@@ -57,7 +57,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_project_local_ray_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_project_local_ray_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "project_local_ray_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718073306)!
@@ -77,7 +77,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_project_ray_origin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_project_ray_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "project_ray_origin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718073306)!
@@ -97,7 +97,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_unproject_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_unproject_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "unproject_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3758901831)!
@@ -117,7 +117,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_is_position_behind: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_position_behind: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_position_behind").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3108956480)!
@@ -137,7 +137,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_project_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_project_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "project_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2171975744)!
@@ -158,7 +158,7 @@ open class Camera3D: Node3D {
         )}}}}}
     }
 
-    private static var __method_binding_set_perspective: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_perspective: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_perspective").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2385087082)!
@@ -179,7 +179,7 @@ open class Camera3D: Node3D {
         )}}}}}
     }
 
-    private static var __method_binding_set_orthogonal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_orthogonal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_orthogonal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2385087082)!
@@ -200,7 +200,7 @@ open class Camera3D: Node3D {
         )}}}}}
     }
 
-    private static var __method_binding_set_frustum: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frustum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frustum").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354890663)!
@@ -222,7 +222,7 @@ open class Camera3D: Node3D {
         )}}}}}}
     }
 
-    private static var __method_binding_make_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -239,7 +239,7 @@ open class Camera3D: Node3D {
         )}
     }
 
-    private static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3216645846)!
@@ -258,7 +258,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -277,7 +277,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -295,7 +295,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_camera_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_camera_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_camera_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
@@ -313,7 +313,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_camera_projection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_camera_projection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_camera_projection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2910717950)!
@@ -331,7 +331,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fov").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -349,7 +349,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_frustum_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frustum_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frustum_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -367,7 +367,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -385,7 +385,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -403,7 +403,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -421,7 +421,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_fov: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fov: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fov").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -440,7 +440,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_frustum_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frustum_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frustum_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -459,7 +459,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -478,7 +478,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -497,7 +497,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -516,7 +516,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_projection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_projection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_projection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2624185235)!
@@ -534,7 +534,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_projection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_projection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_projection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4218540108)!
@@ -553,7 +553,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_set_h_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_h_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -572,7 +572,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_h_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_h_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_h_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -590,7 +590,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_v_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_v_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_v_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -609,7 +609,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_v_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_v_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_v_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -627,7 +627,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -646,7 +646,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -664,7 +664,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4143518816)!
@@ -684,7 +684,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082064660)!
@@ -702,7 +702,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
@@ -722,7 +722,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
@@ -740,7 +740,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_keep_aspect_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_aspect_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_aspect_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740651252)!
@@ -759,7 +759,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_keep_aspect_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_keep_aspect_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_keep_aspect_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2790278316)!
@@ -777,7 +777,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_doppler_tracking: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_doppler_tracking: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_doppler_tracking").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3109431270)!
@@ -796,7 +796,7 @@ open class Camera3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_doppler_tracking: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_doppler_tracking: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_doppler_tracking").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1584483649)!
@@ -814,7 +814,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_frustum: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frustum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frustum").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -832,7 +832,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_is_position_in_frustum: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_position_in_frustum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_position_in_frustum").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3108956480)!
@@ -852,7 +852,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_camera_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_camera_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_camera_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -870,7 +870,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_pyramid_shape_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pyramid_shape_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pyramid_shape_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
@@ -888,7 +888,7 @@ open class Camera3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_cull_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -908,7 +908,7 @@ open class Camera3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_cull_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!

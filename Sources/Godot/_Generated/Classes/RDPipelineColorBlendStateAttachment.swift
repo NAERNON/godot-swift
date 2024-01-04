@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDPipelineColorBlendStateAttachment: RefCounted {
-    private static var __method_binding_set_as_mix: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_as_mix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_as_mix").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -22,7 +22,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}
     }
 
-    private static var __method_binding_set_enable_blend: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_blend").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -41,7 +41,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_blend: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_blend").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -59,7 +59,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_src_color_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_src_color_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_src_color_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2251019273)!
@@ -78,7 +78,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_src_color_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_src_color_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_src_color_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3691288359)!
@@ -96,7 +96,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_dst_color_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dst_color_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dst_color_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2251019273)!
@@ -115,7 +115,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_dst_color_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dst_color_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dst_color_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3691288359)!
@@ -133,7 +133,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_color_blend_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color_blend_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_blend_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3073022720)!
@@ -152,7 +152,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_color_blend_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_blend_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_blend_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385093561)!
@@ -170,7 +170,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_src_alpha_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_src_alpha_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_src_alpha_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2251019273)!
@@ -189,7 +189,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_src_alpha_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_src_alpha_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_src_alpha_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3691288359)!
@@ -207,7 +207,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_dst_alpha_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dst_alpha_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dst_alpha_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2251019273)!
@@ -226,7 +226,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_dst_alpha_blend_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dst_alpha_blend_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dst_alpha_blend_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3691288359)!
@@ -244,7 +244,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_alpha_blend_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_blend_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_blend_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3073022720)!
@@ -263,7 +263,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_blend_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_blend_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_blend_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385093561)!
@@ -281,7 +281,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_write_r: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_write_r: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_write_r").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -300,7 +300,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_write_r: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_write_r: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_write_r").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -318,7 +318,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_write_g: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_write_g: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_write_g").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -337,7 +337,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_write_g: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_write_g: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_write_g").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -355,7 +355,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_write_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_write_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_write_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -374,7 +374,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_write_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_write_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_write_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -392,7 +392,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_write_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_write_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_write_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -411,7 +411,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_write_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_write_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_write_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

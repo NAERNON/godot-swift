@@ -41,7 +41,7 @@ open class NavigationRegion2D: Node2D {
         }
     }()
 
-    private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -59,7 +59,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1515040758)!
@@ -79,7 +79,7 @@ open class NavigationRegion2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_navigation_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1046532237)!
@@ -97,7 +97,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -116,7 +116,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -134,7 +134,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -153,7 +153,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -171,7 +171,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_use_edge_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_edge_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -190,7 +190,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_use_edge_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_use_edge_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -208,7 +208,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -227,7 +227,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -245,7 +245,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -265,7 +265,7 @@ open class NavigationRegion2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_navigation_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -285,7 +285,7 @@ open class NavigationRegion2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_constrain_avoidance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_constrain_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_constrain_avoidance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -304,7 +304,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_constrain_avoidance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_constrain_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_constrain_avoidance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -322,7 +322,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -341,7 +341,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_avoidance_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -359,7 +359,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_avoidance_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_avoidance_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_avoidance_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -379,7 +379,7 @@ open class NavigationRegion2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_avoidance_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_avoidance_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_avoidance_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -399,7 +399,7 @@ open class NavigationRegion2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_region_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_region_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_region_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -417,7 +417,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_enter_cost: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enter_cost").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -436,7 +436,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_enter_cost: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enter_cost").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -454,7 +454,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_travel_cost: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_travel_cost").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -473,7 +473,7 @@ open class NavigationRegion2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_travel_cost: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_travel_cost").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -491,7 +491,7 @@ open class NavigationRegion2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_bake_navigation_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_bake_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bake_navigation_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3216645846)!

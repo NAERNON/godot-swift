@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
-    private static var __method_binding_set_texture_array: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_array: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_array").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2206200446)!
@@ -25,7 +25,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
         )}}}}
     }
 
-    private static var __method_binding_get_texture_array: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_array: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_array").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 146117123)!

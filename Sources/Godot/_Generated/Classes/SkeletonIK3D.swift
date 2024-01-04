@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SkeletonIK3D: Node {
-    private static var __method_binding_set_root_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_root_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_root_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -24,7 +24,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_root_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -42,7 +42,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_tip_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tip_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tip_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -61,7 +61,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_tip_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tip_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tip_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -79,7 +79,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_interpolation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_interpolation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_interpolation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_interpolation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interpolation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interpolation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_target_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2952846383)!
@@ -135,7 +135,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_target_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
@@ -153,7 +153,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -172,7 +172,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 277076166)!
@@ -190,7 +190,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_override_tip_basis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_override_tip_basis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_override_tip_basis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_is_override_tip_basis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_override_tip_basis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_override_tip_basis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -227,7 +227,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_use_magnet: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_magnet: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_magnet").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -246,7 +246,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_is_using_magnet: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_magnet: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_magnet").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -264,7 +264,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_magnet_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_magnet_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -283,7 +283,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_magnet_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_magnet_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -301,7 +301,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_get_parent_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parent_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parent_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1488626673)!
@@ -319,7 +319,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_is_running: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_running: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_running").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -337,7 +337,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_min_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -356,7 +356,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_min_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -374,7 +374,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_set_max_iterations: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_iterations: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_iterations").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -393,7 +393,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_get_max_iterations: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_iterations: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_iterations").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -411,7 +411,7 @@ open class SkeletonIK3D: Node {
         )}}
     }
 
-    private static var __method_binding_start: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107499316)!
@@ -430,7 +430,7 @@ open class SkeletonIK3D: Node {
         )}}}
     }
 
-    private static var __method_binding_stop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

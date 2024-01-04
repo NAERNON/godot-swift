@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeStateMachinePlayback: Resource {
-    private static var __method_binding_travel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_travel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "travel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3823612587)!
@@ -25,7 +25,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}}}
     }
 
-    private static var __method_binding_start: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3823612587)!
@@ -45,7 +45,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}}}
     }
 
-    private static var __method_binding_next: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "next").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -62,7 +62,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}
     }
 
-    private static var __method_binding_stop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -79,7 +79,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}
     }
 
-    private static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_playing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -97,7 +97,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}
     }
 
-    private static var __method_binding_get_current_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -115,7 +115,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}
     }
 
-    private static var __method_binding_get_current_play_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_play_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_play_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -133,7 +133,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}
     }
 
-    private static var __method_binding_get_current_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -151,7 +151,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}
     }
 
-    private static var __method_binding_get_fading_from_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fading_from_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fading_from_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -169,7 +169,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         )}}
     }
 
-    private static var __method_binding_get_travel_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_travel_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_travel_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

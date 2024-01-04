@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDPipelineRasterizationState: RefCounted {
-    private static var __method_binding_set_enable_depth_clamp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_depth_clamp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_depth_clamp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_depth_clamp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_depth_clamp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_depth_clamp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -42,7 +42,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_discard_primitives: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_discard_primitives: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_discard_primitives").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_discard_primitives: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_discard_primitives: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_discard_primitives").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -79,7 +79,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_wireframe: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_wireframe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_wireframe").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -98,7 +98,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_wireframe: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_wireframe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_wireframe").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -116,7 +116,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_cull_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2662586502)!
@@ -135,7 +135,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2192484313)!
@@ -153,7 +153,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_front_face: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_front_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_front_face").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637251213)!
@@ -172,7 +172,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_front_face: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_front_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_front_face").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 708793786)!
@@ -190,7 +190,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_depth_bias_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_bias_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_bias_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_depth_bias_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_bias_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_bias_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -227,7 +227,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_depth_bias_constant_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_bias_constant_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_bias_constant_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -246,7 +246,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_depth_bias_constant_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_bias_constant_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_bias_constant_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -264,7 +264,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_depth_bias_clamp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_bias_clamp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_bias_clamp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -283,7 +283,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_depth_bias_clamp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_bias_clamp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_bias_clamp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -301,7 +301,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_depth_bias_slope_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_bias_slope_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_bias_slope_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -320,7 +320,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_depth_bias_slope_factor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_bias_slope_factor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_bias_slope_factor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -338,7 +338,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_line_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_line_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -357,7 +357,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_line_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -375,7 +375,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_patch_control_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_patch_control_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_patch_control_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -394,7 +394,7 @@ open class RDPipelineRasterizationState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_patch_control_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_patch_control_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_patch_control_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

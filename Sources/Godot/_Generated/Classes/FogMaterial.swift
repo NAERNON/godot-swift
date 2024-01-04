@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class FogMaterial: Material {
-    private static var __method_binding_set_density: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_density: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_density").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class FogMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_density: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_density: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_density").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class FogMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_albedo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_albedo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_albedo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -61,7 +61,7 @@ open class FogMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_albedo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_albedo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_albedo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -79,7 +79,7 @@ open class FogMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_emission: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_emission: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emission").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -98,7 +98,7 @@ open class FogMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_emission: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_emission: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_emission").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -116,7 +116,7 @@ open class FogMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_height_falloff: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_height_falloff: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_height_falloff").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class FogMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_height_falloff: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_height_falloff: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_height_falloff").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class FogMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_edge_fade: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_edge_fade: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_edge_fade").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -172,7 +172,7 @@ open class FogMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_edge_fade: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edge_fade: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edge_fade").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -190,7 +190,7 @@ open class FogMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_density_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_density_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_density_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1188404210)!
@@ -210,7 +210,7 @@ open class FogMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_density_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_density_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_density_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373985333)!

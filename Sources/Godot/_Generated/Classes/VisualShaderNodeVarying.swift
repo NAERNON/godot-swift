@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeVarying: VisualShaderNode {
-    private static var __method_binding_set_varying_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_varying_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_varying_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -24,7 +24,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_varying_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_varying_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_varying_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -42,7 +42,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         )}}
     }
 
-    private static var __method_binding_set_varying_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_varying_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_varying_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565867981)!
@@ -61,7 +61,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_varying_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_varying_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_varying_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 523183580)!

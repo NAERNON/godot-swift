@@ -15,7 +15,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
     }
 
-    private static var __method_binding_set_max_concavity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_concavity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_concavity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -34,7 +34,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_max_concavity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_concavity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_concavity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -52,7 +52,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_symmetry_planes_clipping_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -71,7 +71,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_symmetry_planes_clipping_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -89,7 +89,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_revolution_axes_clipping_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -108,7 +108,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_revolution_axes_clipping_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -126,7 +126,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_volume_per_convex_hull").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -145,7 +145,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_volume_per_convex_hull").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -163,7 +163,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_resolution: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_resolution").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -182,7 +182,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_resolution: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_resolution").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -200,7 +200,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_num_vertices_per_convex_hull").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -219,7 +219,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_num_vertices_per_convex_hull").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -237,7 +237,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_plane_downsampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_plane_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_plane_downsampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -256,7 +256,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_plane_downsampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_plane_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_plane_downsampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -274,7 +274,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_convex_hull_downsampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_convex_hull_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_convex_hull_downsampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -293,7 +293,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_convex_hull_downsampling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_convex_hull_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_convex_hull_downsampling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -311,7 +311,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_normalize_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_normalize_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_normalize_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -330,7 +330,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_normalize_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_normalize_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_normalize_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -348,7 +348,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1668072869)!
@@ -367,7 +367,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 23479454)!
@@ -385,7 +385,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_convex_hull_approximation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_convex_hull_approximation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_convex_hull_approximation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -404,7 +404,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_convex_hull_approximation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_convex_hull_approximation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_convex_hull_approximation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -422,7 +422,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_max_convex_hulls: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_convex_hulls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_convex_hulls").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -441,7 +441,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_max_convex_hulls: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_convex_hulls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_convex_hulls").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -459,7 +459,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_project_hull_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_project_hull_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_project_hull_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -478,7 +478,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_project_hull_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_project_hull_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_project_hull_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

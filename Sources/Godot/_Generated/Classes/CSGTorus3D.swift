@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CSGTorus3D: CSGPrimitive3D {
-    private static var __method_binding_set_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_inner_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inner_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_outer_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outer_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outer_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_outer_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outer_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outer_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -116,7 +116,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_ring_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ring_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ring_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -135,7 +135,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_ring_sides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ring_sides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ring_sides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -153,7 +153,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
@@ -173,7 +173,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}}
     }
 
-    private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
@@ -191,7 +191,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}
     }
 
-    private static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_smooth_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -210,7 +210,7 @@ open class CSGTorus3D: CSGPrimitive3D {
         )}}}
     }
 
-    private static var __method_binding_get_smooth_faces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_smooth_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_smooth_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

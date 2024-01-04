@@ -23,7 +23,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
     }
 
-    private static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_from_image").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3679243433)!
@@ -46,7 +46,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}}}}}}
     }
 
-    private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3847873762)!
@@ -64,7 +64,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_get_compression_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_compression_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_compression_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3265612739)!
@@ -82,7 +82,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_size_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -101,7 +101,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_get_size_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -119,7 +119,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_keep_compressed_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_compressed_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_compressed_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -138,7 +138,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}}
     }
 
-    private static var __method_binding_is_keeping_compressed_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_keeping_compressed_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_keeping_compressed_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -156,7 +156,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_set_keep_all_compressed_buffers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_all_compressed_buffers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_all_compressed_buffers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -174,7 +174,7 @@ open class PortableCompressedTexture2D: Texture2D {
         )}}
     }
 
-    private static var __method_binding_is_keeping_all_compressed_buffers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_keeping_all_compressed_buffers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_keeping_all_compressed_buffers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!

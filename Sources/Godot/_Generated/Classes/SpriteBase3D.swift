@@ -36,7 +36,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
     }
 
-    private static var __method_binding_set_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -55,7 +55,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -73,7 +73,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -92,7 +92,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -110,7 +110,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -129,7 +129,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -147,7 +147,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -166,7 +166,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -184,7 +184,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_modulate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -203,7 +203,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_modulate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -221,7 +221,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_render_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -240,7 +240,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_render_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -258,7 +258,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_pixel_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pixel_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -277,7 +277,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_pixel_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pixel_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -295,7 +295,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1144690656)!
@@ -314,7 +314,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3050976882)!
@@ -332,7 +332,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_draw_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draw_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draw_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1135633219)!
@@ -352,7 +352,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_draw_flag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_draw_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_draw_flag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1733036628)!
@@ -372,7 +372,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_alpha_cut_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_cut_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_cut_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 227561226)!
@@ -391,7 +391,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_cut_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_cut_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_cut_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 336003791)!
@@ -409,7 +409,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_scissor_threshold").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -428,7 +428,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_scissor_threshold").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -446,7 +446,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_alpha_hash_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_hash_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_hash_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -465,7 +465,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_hash_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_hash_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_hash_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -483,7 +483,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_alpha_antialiasing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_antialiasing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3212649852)!
@@ -502,7 +502,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_antialiasing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_antialiasing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2889939400)!
@@ -520,7 +520,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alpha_antialiasing_edge").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -539,7 +539,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alpha_antialiasing_edge").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -557,7 +557,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_billboard_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_billboard_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_billboard_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4202036497)!
@@ -576,7 +576,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_billboard_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_billboard_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_billboard_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1283840139)!
@@ -594,7 +594,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 22904437)!
@@ -613,7 +613,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289213076)!
@@ -631,7 +631,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_get_item_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_item_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
@@ -649,7 +649,7 @@ open class SpriteBase3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_generate_triangle_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_generate_triangle_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_triangle_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3476533166)!

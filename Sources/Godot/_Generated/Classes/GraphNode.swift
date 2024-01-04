@@ -6,24 +6,21 @@ import GodotExtensionHeaders
 @GodotClass
 open class GraphNode: GraphElement {
     public struct SlotUpdatedSignalInput: Godot.SignalInput {
-        public let slot_index: Int
-        fileprivate init(slot_index: Int) {
-            self.slot_index = slot_index
+        public let slotIndex: Int
+        fileprivate init(slotIndex: Int) {
+            self.slotIndex = slotIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, slot_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.slotIndex)]
         }
     }
-    public func slotUpdated(slot_index: Int) {
-        _ = slotUpdatedSignal.emit(.init(slot_index: slot_index))
+    public func slotUpdated(slotIndex: Int) {
+        _ = slotUpdatedSignal.emit(.init(slotIndex: slotIndex))
     }
     public lazy var slotUpdatedSignal: Godot.SignalEmitter<SlotUpdatedSignalInput> = {
         .init(object: self, signalName: "slot_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(slot_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(slotIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -38,7 +35,7 @@ open class GraphNode: GraphElement {
     open func _drawPort(slotIndex: Int32, position: Godot.Vector2i, left: Bool, color: Godot.Color) {
     }
 
-    private static var __method_binding_set_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -57,7 +54,7 @@ open class GraphNode: GraphElement {
         )}}}
     }
 
-    private static var __method_binding_get_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -75,7 +72,7 @@ open class GraphNode: GraphElement {
         )}}
     }
 
-    private static var __method_binding_get_titlebar_hbox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_titlebar_hbox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_titlebar_hbox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3590609951)!
@@ -93,7 +90,7 @@ open class GraphNode: GraphElement {
         )}}
     }
 
-    private static var __method_binding_set_slot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2873310869)!
@@ -123,7 +120,7 @@ open class GraphNode: GraphElement {
         )}}}}}}}}}}}}}}
     }
 
-    private static var __method_binding_clear_slot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -142,7 +139,7 @@ open class GraphNode: GraphElement {
         )}}}
     }
 
-    private static var __method_binding_clear_all_slots: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_all_slots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_all_slots").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -159,7 +156,7 @@ open class GraphNode: GraphElement {
         )}
     }
 
-    private static var __method_binding_is_slot_enabled_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_slot_enabled_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slot_enabled_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -179,7 +176,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_enabled_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_enabled_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_enabled_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -199,7 +196,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_type_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_type_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_type_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -219,7 +216,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_slot_type_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slot_type_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slot_type_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -239,7 +236,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_color_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_color_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_color_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
@@ -259,7 +256,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_slot_color_left: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slot_color_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slot_color_left").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
@@ -279,7 +276,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_is_slot_enabled_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_slot_enabled_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slot_enabled_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -299,7 +296,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_enabled_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_enabled_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_enabled_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -319,7 +316,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_type_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_type_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_type_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -339,7 +336,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_slot_type_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slot_type_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slot_type_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -359,7 +356,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_color_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_color_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_color_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
@@ -379,7 +376,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_slot_color_right: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slot_color_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slot_color_right").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
@@ -399,7 +396,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_is_slot_draw_stylebox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_slot_draw_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slot_draw_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -419,7 +416,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_draw_stylebox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slot_draw_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot_draw_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -439,7 +436,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_input_port_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -457,7 +454,7 @@ open class GraphNode: GraphElement {
         )}}
     }
 
-    private static var __method_binding_get_input_port_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3114997196)!
@@ -477,7 +474,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_input_port_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
@@ -497,7 +494,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_input_port_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2624840992)!
@@ -517,7 +514,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_input_port_slot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
@@ -537,7 +534,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_output_port_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -555,7 +552,7 @@ open class GraphNode: GraphElement {
         )}}
     }
 
-    private static var __method_binding_get_output_port_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3114997196)!
@@ -575,7 +572,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_output_port_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
@@ -595,7 +592,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_output_port_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2624840992)!
@@ -615,7 +612,7 @@ open class GraphNode: GraphElement {
         )}}}}
     }
 
-    private static var __method_binding_get_output_port_slot: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!

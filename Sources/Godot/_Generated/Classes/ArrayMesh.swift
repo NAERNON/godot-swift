@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ArrayMesh: Mesh {
-    private static var __method_binding_add_blend_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_blend_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_blend_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -24,7 +24,7 @@ open class ArrayMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_blend_shape_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -42,7 +42,7 @@ open class ArrayMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_get_blend_shape_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
@@ -62,7 +62,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_set_blend_shape_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blend_shape_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blend_shape_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3780747571)!
@@ -82,7 +82,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_clear_blend_shapes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_blend_shapes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_blend_shapes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -99,7 +99,7 @@ open class ArrayMesh: Mesh {
         )}
     }
 
-    private static var __method_binding_set_blend_shape_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blend_shape_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blend_shape_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 227983991)!
@@ -118,7 +118,7 @@ open class ArrayMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_blend_shape_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 836485024)!
@@ -136,7 +136,7 @@ open class ArrayMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_add_surface_from_arrays: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_surface_from_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_surface_from_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796411378)!
@@ -159,7 +159,7 @@ open class ArrayMesh: Mesh {
         )}}}}}}}
     }
 
-    private static var __method_binding_clear_surfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_surfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_surfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -176,7 +176,7 @@ open class ArrayMesh: Mesh {
         )}
     }
 
-    private static var __method_binding_surface_update_vertex_region: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_update_vertex_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_update_vertex_region").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837166854)!
@@ -197,7 +197,7 @@ open class ArrayMesh: Mesh {
         )}}}}}
     }
 
-    private static var __method_binding_surface_update_attribute_region: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_update_attribute_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_update_attribute_region").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837166854)!
@@ -218,7 +218,7 @@ open class ArrayMesh: Mesh {
         )}}}}}
     }
 
-    private static var __method_binding_surface_update_skin_region: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_update_skin_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_update_skin_region").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837166854)!
@@ -239,7 +239,7 @@ open class ArrayMesh: Mesh {
         )}}}}}
     }
 
-    private static var __method_binding_surface_get_array_len: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_get_array_len: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_get_array_len").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -259,7 +259,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_get_array_index_len: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_get_array_index_len: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_get_array_index_len").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -279,7 +279,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_get_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_get_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3718287884)!
@@ -299,7 +299,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_get_primitive_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_get_primitive_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_get_primitive_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4141943888)!
@@ -319,7 +319,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_find_by_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_find_by_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_find_by_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
@@ -339,7 +339,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_set_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_set_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_set_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -359,7 +359,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_surface_get_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_surface_get_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "surface_get_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -379,7 +379,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_regen_normal_maps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_regen_normal_maps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "regen_normal_maps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -396,7 +396,7 @@ open class ArrayMesh: Mesh {
         )}
     }
 
-    private static var __method_binding_lightmap_unwrap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_lightmap_unwrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "lightmap_unwrap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1476641071)!
@@ -417,7 +417,7 @@ open class ArrayMesh: Mesh {
         )}}}}}
     }
 
-    private static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
@@ -436,7 +436,7 @@ open class ArrayMesh: Mesh {
         )}}}
     }
 
-    private static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
@@ -454,7 +454,7 @@ open class ArrayMesh: Mesh {
         )}}
     }
 
-    private static var __method_binding_set_shadow_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3377897901)!
@@ -474,7 +474,7 @@ open class ArrayMesh: Mesh {
         )}}}}
     }
 
-    private static var __method_binding_get_shadow_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3206942465)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PinJoint2D: Joint2D {
-    private static var __method_binding_set_softness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_softness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_softness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_softness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_softness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_softness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class PinJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_angular_limit_lower: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_limit_lower: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_limit_lower").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_angular_limit_lower: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angular_limit_lower: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angular_limit_lower").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class PinJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_angular_limit_upper: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_limit_upper: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_limit_upper").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_angular_limit_upper: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_angular_limit_upper: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_angular_limit_upper").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class PinJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_motor_target_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motor_target_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motor_target_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_get_motor_target_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motor_target_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motor_target_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class PinJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_motor_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motor_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motor_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -172,7 +172,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_is_motor_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_motor_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_motor_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -190,7 +190,7 @@ open class PinJoint2D: Joint2D {
         )}}
     }
 
-    private static var __method_binding_set_angular_limit_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_angular_limit_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_angular_limit_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -209,7 +209,7 @@ open class PinJoint2D: Joint2D {
         )}}}
     }
 
-    private static var __method_binding_is_angular_limit_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_angular_limit_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_angular_limit_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

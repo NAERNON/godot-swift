@@ -46,11 +46,8 @@ open class EditorFileDialog: ConfirmationDialog {
         fileprivate init(path: Godot.GodotString) {
             self.path = path
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, path)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.path)]
         }
     }
     public func fileSelected(path: Godot.GodotString) {
@@ -76,11 +73,8 @@ open class EditorFileDialog: ConfirmationDialog {
         fileprivate init(paths: Godot.PackedStringArray) {
             self.paths = paths
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, paths)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.paths)]
         }
     }
     public func filesSelected(paths: Godot.PackedStringArray) {
@@ -106,11 +100,8 @@ open class EditorFileDialog: ConfirmationDialog {
         fileprivate init(dir: Godot.GodotString) {
             self.dir = dir
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, dir)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.dir)]
         }
     }
     public func dirSelected(dir: Godot.GodotString) {
@@ -131,7 +122,7 @@ open class EditorFileDialog: ConfirmationDialog {
         }
     }()
 
-    private static var __method_binding_clear_filters: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_filters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_filters").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -148,7 +139,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}
     }
 
-    private static var __method_binding_add_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3388804757)!
@@ -168,7 +159,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}}
     }
 
-    private static var __method_binding_set_filters: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filters").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
@@ -187,7 +178,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_get_filters: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filters").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -205,7 +196,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_get_current_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -223,7 +214,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_get_current_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -241,7 +232,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_get_current_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -259,7 +250,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_set_current_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -278,7 +269,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_set_current_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -297,7 +288,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_set_current_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -316,7 +307,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_set_file_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_file_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_file_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 274150415)!
@@ -335,7 +326,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_get_file_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_file_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_file_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2681044145)!
@@ -353,7 +344,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_get_vbox: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vbox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vbox").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 915758477)!
@@ -371,7 +362,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_get_line_edit: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_edit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_edit").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4071694264)!
@@ -389,7 +380,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_set_access: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_access: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_access").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3882893764)!
@@ -408,7 +399,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_get_access: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_access: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_access").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 778734016)!
@@ -426,7 +417,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_set_show_hidden_files: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_show_hidden_files: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_show_hidden_files").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -445,7 +436,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_is_showing_hidden_files: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_showing_hidden_files: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_showing_hidden_files").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -463,7 +454,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_set_display_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_display_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_display_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3049004050)!
@@ -482,7 +473,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_get_display_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_display_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_display_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3517174669)!
@@ -500,7 +491,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_set_disable_overwrite_warning: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disable_overwrite_warning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disable_overwrite_warning").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -519,7 +510,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}
     }
 
-    private static var __method_binding_is_overwrite_warning_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_overwrite_warning_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_overwrite_warning_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -537,7 +528,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}
     }
 
-    private static var __method_binding_add_side_menu: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_side_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_side_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402368861)!
@@ -558,7 +549,7 @@ open class EditorFileDialog: ConfirmationDialog {
         )}}}}}
     }
 
-    private static var __method_binding_invalidate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_invalidate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "invalidate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

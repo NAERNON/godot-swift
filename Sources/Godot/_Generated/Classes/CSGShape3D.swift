@@ -17,7 +17,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
     }
 
-    private static var __method_binding_is_root_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_root_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_root_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -35,7 +35,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_operation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_operation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_operation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 811425055)!
@@ -54,7 +54,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_operation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_operation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_operation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2662425879)!
@@ -72,7 +72,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_snap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_snap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_snap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -91,7 +91,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_snap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_snap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_snap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -109,7 +109,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_use_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -128,7 +128,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_using_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -146,7 +146,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -165,7 +165,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -183,7 +183,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -202,7 +202,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -220,7 +220,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -240,7 +240,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -260,7 +260,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -280,7 +280,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -300,7 +300,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -319,7 +319,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -337,7 +337,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_calculate_tangents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_calculate_tangents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_calculate_tangents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -356,7 +356,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_calculating_tangents: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_calculating_tangents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_calculating_tangents").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -374,7 +374,7 @@ open class CSGShape3D: GeometryInstance3D {
         )}}
     }
 
-    private static var __method_binding_get_meshes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_meshes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_meshes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

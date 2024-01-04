@@ -93,7 +93,7 @@ open class TileSet: Resource {
         }
     }
 
-    private static var __method_binding_get_next_source_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_next_source_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_next_source_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -111,7 +111,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1059186179)!
@@ -133,7 +133,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_remove_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -152,7 +152,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_source_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -172,7 +172,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_source_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -190,7 +190,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_get_source_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -210,7 +210,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_has_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -230,7 +230,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_source: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1763540252)!
@@ -250,7 +250,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_tile_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tile_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tile_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2131427112)!
@@ -269,7 +269,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_tile_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tile_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tile_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 716918169)!
@@ -287,7 +287,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_tile_layout: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tile_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tile_layout").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1071216679)!
@@ -306,7 +306,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_tile_layout: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tile_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tile_layout").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194628839)!
@@ -324,7 +324,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_tile_offset_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tile_offset_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tile_offset_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3300198521)!
@@ -343,7 +343,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_tile_offset_axis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tile_offset_axis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tile_offset_axis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 762494114)!
@@ -361,7 +361,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_tile_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tile_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tile_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -380,7 +380,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_tile_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tile_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tile_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -398,7 +398,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_uv_clipping: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uv_clipping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uv_clipping").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -417,7 +417,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_is_uv_clipping: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_uv_clipping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_uv_clipping").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -435,7 +435,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_get_occlusion_layers_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_occlusion_layers_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_occlusion_layers_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -453,7 +453,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_occlusion_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_occlusion_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_occlusion_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
@@ -472,7 +472,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_move_occlusion_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_occlusion_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_occlusion_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -492,7 +492,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_occlusion_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_occlusion_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_occlusion_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -511,7 +511,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_occlusion_layer_light_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_occlusion_layer_light_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_occlusion_layer_light_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -531,7 +531,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_occlusion_layer_light_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_occlusion_layer_light_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_occlusion_layer_light_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -551,7 +551,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_occlusion_layer_sdf_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_occlusion_layer_sdf_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_occlusion_layer_sdf_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -571,7 +571,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_occlusion_layer_sdf_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_occlusion_layer_sdf_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_occlusion_layer_sdf_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -591,7 +591,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_physics_layers_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_layers_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_layers_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -609,7 +609,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_physics_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_physics_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_physics_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
@@ -628,7 +628,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_move_physics_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_physics_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_physics_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -648,7 +648,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_physics_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_physics_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_physics_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -667,7 +667,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_physics_layer_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_layer_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_layer_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -687,7 +687,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_physics_layer_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_layer_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_layer_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -707,7 +707,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_physics_layer_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_layer_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_layer_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -727,7 +727,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_physics_layer_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_layer_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_layer_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -747,7 +747,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_physics_layer_physics_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_layer_physics_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_layer_physics_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1018687357)!
@@ -768,7 +768,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_physics_layer_physics_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_layer_physics_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_layer_physics_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 788318639)!
@@ -788,7 +788,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_terrain_sets_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_terrain_sets_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_terrain_sets_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -806,7 +806,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_terrain_set: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_terrain_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_terrain_set").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
@@ -825,7 +825,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_move_terrain_set: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_terrain_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_terrain_set").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -845,7 +845,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_terrain_set: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_terrain_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_terrain_set").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -864,7 +864,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_terrain_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_terrain_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_terrain_set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3943003916)!
@@ -884,7 +884,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_terrain_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_terrain_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_terrain_set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2084469411)!
@@ -904,7 +904,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_terrains_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_terrains_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_terrains_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -924,7 +924,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_add_terrain: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_terrain").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1230568737)!
@@ -944,7 +944,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_move_terrain: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_terrain").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1649997291)!
@@ -965,7 +965,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_remove_terrain: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_terrain").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -985,7 +985,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_terrain_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_terrain_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_terrain_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2285447957)!
@@ -1006,7 +1006,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_terrain_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_terrain_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_terrain_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1391810591)!
@@ -1027,7 +1027,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_set_terrain_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_terrain_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_terrain_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3733378741)!
@@ -1048,7 +1048,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_terrain_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_terrain_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_terrain_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2165839948)!
@@ -1069,7 +1069,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_navigation_layers_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layers_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layers_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1087,7 +1087,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_navigation_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_navigation_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_navigation_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
@@ -1106,7 +1106,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_move_navigation_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_navigation_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_navigation_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -1126,7 +1126,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_navigation_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_navigation_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_navigation_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1145,7 +1145,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_navigation_layer_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layer_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layer_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -1165,7 +1165,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_navigation_layer_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layer_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layer_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -1185,7 +1185,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_navigation_layer_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layer_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layer_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
@@ -1206,7 +1206,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_navigation_layer_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layer_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layer_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
@@ -1227,7 +1227,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_custom_data_layers_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_data_layers_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_data_layers_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1245,7 +1245,7 @@ open class TileSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_custom_data_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_custom_data_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_custom_data_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
@@ -1264,7 +1264,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_move_custom_data_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_custom_data_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_custom_data_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -1284,7 +1284,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_custom_data_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_custom_data_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_custom_data_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1303,7 +1303,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_custom_data_layer_by_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_data_layer_by_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_data_layer_by_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
@@ -1323,7 +1323,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_custom_data_layer_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_data_layer_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_data_layer_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -1343,7 +1343,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_custom_data_layer_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_data_layer_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_data_layer_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -1363,7 +1363,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_custom_data_layer_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_custom_data_layer_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_data_layer_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3492912874)!
@@ -1383,7 +1383,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_custom_data_layer_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_data_layer_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_data_layer_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2990820875)!
@@ -1403,7 +1403,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_source_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -1423,7 +1423,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_source_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
@@ -1443,7 +1443,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_has_source_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_source_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_source_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
@@ -1463,7 +1463,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_source_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_source_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_source_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1482,7 +1482,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_set_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_coords_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1769939278)!
@@ -1504,7 +1504,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_get_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_coords_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2856536371)!
@@ -1525,7 +1525,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_has_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_coords_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3957903770)!
@@ -1546,7 +1546,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_remove_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_coords_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_coords_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2311374912)!
@@ -1566,7 +1566,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alternative_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3862385460)!
@@ -1590,7 +1590,7 @@ open class TileSet: Resource {
         )}}}}}}}}
     }
 
-    private static var __method_binding_get_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alternative_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2303761075)!
@@ -1612,7 +1612,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_has_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_alternative_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 180086755)!
@@ -1634,7 +1634,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_remove_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_alternative_level_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_alternative_level_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2328951467)!
@@ -1655,7 +1655,7 @@ open class TileSet: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_map_tile_proxy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_map_tile_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "map_tile_proxy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4267935328)!
@@ -1677,7 +1677,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_cleanup_invalid_tile_proxies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_cleanup_invalid_tile_proxies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "cleanup_invalid_tile_proxies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1694,7 +1694,7 @@ open class TileSet: Resource {
         )}
     }
 
-    private static var __method_binding_clear_tile_proxies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_tile_proxies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_tile_proxies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1711,7 +1711,7 @@ open class TileSet: Resource {
         )}
     }
 
-    private static var __method_binding_add_pattern: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_pattern: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_pattern").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 763712015)!
@@ -1733,7 +1733,7 @@ open class TileSet: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_get_pattern: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pattern: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pattern").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4207737510)!
@@ -1753,7 +1753,7 @@ open class TileSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_pattern: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_pattern: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_pattern").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1772,7 +1772,7 @@ open class TileSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_patterns_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_patterns_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_patterns_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!

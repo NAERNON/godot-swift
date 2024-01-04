@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Label: Control {
-    private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
@@ -24,7 +24,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
@@ -42,7 +42,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_vertical_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertical_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
@@ -61,7 +61,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_vertical_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertical_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
@@ -79,7 +79,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -98,7 +98,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -116,7 +116,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_label_settings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_label_settings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_label_settings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1030653839)!
@@ -136,7 +136,7 @@ open class Label: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_label_settings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_label_settings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_label_settings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 826676056)!
@@ -154,7 +154,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 119160795)!
@@ -173,7 +173,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797257663)!
@@ -191,7 +191,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -210,7 +210,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -228,7 +228,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autowrap_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289138044)!
@@ -247,7 +247,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autowrap_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1549071663)!
@@ -265,7 +265,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_justification_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_justification_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2877345813)!
@@ -284,7 +284,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_justification_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_justification_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1583363614)!
@@ -302,7 +302,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_clip_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_clip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_clip_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -321,7 +321,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_is_clipping_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_clipping_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_clipping_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -339,7 +339,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_tab_stops: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_stops: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_stops").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
@@ -358,7 +358,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tab_stops: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_stops: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_stops").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
@@ -376,7 +376,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text_overrun_behavior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1008890932)!
@@ -395,7 +395,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_overrun_behavior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3779142101)!
@@ -413,7 +413,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_uppercase: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uppercase").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -432,7 +432,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_is_uppercase: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_uppercase").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -450,7 +450,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_get_line_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 181039630)!
@@ -470,7 +470,7 @@ open class Label: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_line_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -488,7 +488,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_get_visible_line_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visible_line_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visible_line_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -506,7 +506,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_get_total_character_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_character_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_character_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -524,7 +524,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_visible_characters: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_visible_characters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_visible_characters").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -543,7 +543,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_visible_characters: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visible_characters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visible_characters").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -561,7 +561,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_get_visible_characters_behavior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visible_characters_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visible_characters_behavior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 258789322)!
@@ -579,7 +579,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_visible_characters_behavior: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_visible_characters_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_visible_characters_behavior").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3383839701)!
@@ -598,7 +598,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_set_visible_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_visible_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_visible_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -617,7 +617,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_visible_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visible_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visible_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -635,7 +635,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_lines_skipped: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_lines_skipped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_lines_skipped").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -654,7 +654,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_lines_skipped: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_lines_skipped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_lines_skipped").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -672,7 +672,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_max_lines_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_lines_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_lines_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -691,7 +691,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_max_lines_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_lines_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_lines_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -709,7 +709,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
@@ -728,7 +728,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
@@ -746,7 +746,7 @@ open class Label: Control {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -765,7 +765,7 @@ open class Label: Control {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

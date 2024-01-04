@@ -22,11 +22,8 @@ open class CameraServer: Object {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func cameraFeedAdded(id: Int) {
@@ -52,11 +49,8 @@ open class CameraServer: Object {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func cameraFeedRemoved(id: Int) {
@@ -77,7 +71,7 @@ open class CameraServer: Object {
         }
     }()
 
-    private static var __method_binding_get_feed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_feed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 361927068)!
@@ -97,7 +91,7 @@ open class CameraServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_feed_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_feed_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_feed_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -115,7 +109,7 @@ open class CameraServer: Object {
         )}}
     }
 
-    private static var __method_binding_feeds: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_feeds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "feeds").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -133,7 +127,7 @@ open class CameraServer: Object {
         )}}
     }
 
-    private static var __method_binding_add_feed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_feed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!
@@ -153,7 +147,7 @@ open class CameraServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_remove_feed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_feed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!

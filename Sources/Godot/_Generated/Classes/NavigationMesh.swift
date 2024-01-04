@@ -45,7 +45,7 @@ open class NavigationMesh: Resource {
         }
     }
 
-    private static var __method_binding_set_sample_partition_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sample_partition_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sample_partition_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2472437533)!
@@ -64,7 +64,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_sample_partition_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sample_partition_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sample_partition_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 833513918)!
@@ -82,7 +82,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_parsed_geometry_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parsed_geometry_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3064713163)!
@@ -101,7 +101,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_parsed_geometry_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parsed_geometry_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3928011953)!
@@ -119,7 +119,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -138,7 +138,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -156,7 +156,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -176,7 +176,7 @@ open class NavigationMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -196,7 +196,7 @@ open class NavigationMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_source_geometry_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_geometry_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2700825194)!
@@ -215,7 +215,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_source_geometry_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_geometry_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2770484141)!
@@ -233,7 +233,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_source_group_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_source_group_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -252,7 +252,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_source_group_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_source_group_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -270,7 +270,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -289,7 +289,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -307,7 +307,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_cell_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -326,7 +326,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_cell_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -344,7 +344,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_agent_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_agent_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_agent_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -363,7 +363,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_agent_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_agent_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_agent_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -381,7 +381,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_agent_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_agent_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -400,7 +400,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_agent_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_agent_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -418,7 +418,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_agent_max_climb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_agent_max_climb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_agent_max_climb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -437,7 +437,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_agent_max_climb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_agent_max_climb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_agent_max_climb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -455,7 +455,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_agent_max_slope: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_agent_max_slope: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_agent_max_slope").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -474,7 +474,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_agent_max_slope: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_agent_max_slope: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_agent_max_slope").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -492,7 +492,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_region_min_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_region_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_region_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -511,7 +511,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_region_min_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_region_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_region_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -529,7 +529,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_region_merge_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_region_merge_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_region_merge_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -548,7 +548,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_region_merge_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_region_merge_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_region_merge_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -566,7 +566,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_edge_max_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_edge_max_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_edge_max_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -585,7 +585,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_edge_max_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edge_max_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edge_max_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -603,7 +603,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_edge_max_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_edge_max_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_edge_max_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -622,7 +622,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_edge_max_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edge_max_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edge_max_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -640,7 +640,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_vertices_per_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertices_per_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertices_per_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -659,7 +659,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_vertices_per_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertices_per_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertices_per_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -677,7 +677,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_detail_sample_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_detail_sample_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_detail_sample_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -696,7 +696,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_detail_sample_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_detail_sample_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_detail_sample_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -714,7 +714,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_detail_sample_max_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_detail_sample_max_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_detail_sample_max_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -733,7 +733,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_detail_sample_max_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_detail_sample_max_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_detail_sample_max_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -751,7 +751,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_filter_low_hanging_obstacles: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filter_low_hanging_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filter_low_hanging_obstacles").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -770,7 +770,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_filter_low_hanging_obstacles: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filter_low_hanging_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filter_low_hanging_obstacles").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -788,7 +788,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_filter_ledge_spans: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filter_ledge_spans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filter_ledge_spans").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -807,7 +807,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_filter_ledge_spans: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filter_ledge_spans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filter_ledge_spans").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -825,7 +825,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_filter_walkable_low_height_spans: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filter_walkable_low_height_spans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filter_walkable_low_height_spans").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -844,7 +844,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_filter_walkable_low_height_spans: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filter_walkable_low_height_spans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filter_walkable_low_height_spans").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -862,7 +862,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_filter_baking_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filter_baking_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filter_baking_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
@@ -881,7 +881,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_filter_baking_aabb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filter_baking_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filter_baking_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
@@ -899,7 +899,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_filter_baking_aabb_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filter_baking_aabb_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filter_baking_aabb_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -918,7 +918,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_filter_baking_aabb_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_filter_baking_aabb_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_filter_baking_aabb_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -936,7 +936,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
@@ -955,7 +955,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
@@ -973,7 +973,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_add_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
@@ -992,7 +992,7 @@ open class NavigationMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_polygon_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1010,7 +1010,7 @@ open class NavigationMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3668444399)!
@@ -1030,7 +1030,7 @@ open class NavigationMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_clear_polygons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1047,7 +1047,7 @@ open class NavigationMesh: Resource {
         )}
     }
 
-    private static var __method_binding_create_from_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_from_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_from_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
@@ -1067,7 +1067,7 @@ open class NavigationMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

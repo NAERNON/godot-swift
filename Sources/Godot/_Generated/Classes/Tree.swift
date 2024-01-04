@@ -73,11 +73,8 @@ open class Tree: Control {
             self.column = column
             self.selected = selected
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, item, column, selected)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.item), Variant(input.column), Variant(input.selected)]
         }
     }
     public func multiSelected(item: Godot.TreeItem?, column: Int, selected: Bool) {
@@ -104,27 +101,24 @@ open class Tree: Control {
 
     public struct ItemMouseSelectedSignalInput: Godot.SignalInput {
         public let position: Godot.Vector2
-        public let mouse_button_index: Int
-        fileprivate init(position: Godot.Vector2, mouse_button_index: Int) {
+        public let mouseButtonIndex: Int
+        fileprivate init(position: Godot.Vector2, mouseButtonIndex: Int) {
             self.position = position
-            self.mouse_button_index = mouse_button_index
+            self.mouseButtonIndex = mouseButtonIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, position, mouse_button_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.position), Variant(input.mouseButtonIndex)]
         }
     }
-    public func itemMouseSelected(position: Godot.Vector2, mouse_button_index: Int) {
+    public func itemMouseSelected(position: Godot.Vector2, mouseButtonIndex: Int) {
         _ = itemMouseSelectedSignal.emit(.init(position: position,
-                mouse_button_index: mouse_button_index))
+                mouseButtonIndex: mouseButtonIndex))
     }
     public lazy var itemMouseSelectedSignal: Godot.SignalEmitter<ItemMouseSelectedSignalInput> = {
         .init(object: self, signalName: "item_mouse_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -138,27 +132,24 @@ open class Tree: Control {
 
     public struct EmptyClickedSignalInput: Godot.SignalInput {
         public let position: Godot.Vector2
-        public let mouse_button_index: Int
-        fileprivate init(position: Godot.Vector2, mouse_button_index: Int) {
+        public let mouseButtonIndex: Int
+        fileprivate init(position: Godot.Vector2, mouseButtonIndex: Int) {
             self.position = position
-            self.mouse_button_index = mouse_button_index
+            self.mouseButtonIndex = mouseButtonIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, position, mouse_button_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.position), Variant(input.mouseButtonIndex)]
         }
     }
-    public func emptyClicked(position: Godot.Vector2, mouse_button_index: Int) {
+    public func emptyClicked(position: Godot.Vector2, mouseButtonIndex: Int) {
         _ = emptyClickedSignal.emit(.init(position: position,
-                mouse_button_index: mouse_button_index))
+                mouseButtonIndex: mouseButtonIndex))
     }
     public lazy var emptyClickedSignal: Godot.SignalEmitter<EmptyClickedSignalInput> = {
         .init(object: self, signalName: "empty_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -189,24 +180,21 @@ open class Tree: Control {
     }()
 
     public struct CustomItemClickedSignalInput: Godot.SignalInput {
-        public let mouse_button_index: Int
-        fileprivate init(mouse_button_index: Int) {
-            self.mouse_button_index = mouse_button_index
+        public let mouseButtonIndex: Int
+        fileprivate init(mouseButtonIndex: Int) {
+            self.mouseButtonIndex = mouseButtonIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, mouse_button_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.mouseButtonIndex)]
         }
     }
-    public func customItemClicked(mouse_button_index: Int) {
-        _ = customItemClickedSignal.emit(.init(mouse_button_index: mouse_button_index))
+    public func customItemClicked(mouseButtonIndex: Int) {
+        _ = customItemClickedSignal.emit(.init(mouseButtonIndex: mouseButtonIndex))
     }
     public lazy var customItemClickedSignal: Godot.SignalEmitter<CustomItemClickedSignalInput> = {
         .init(object: self, signalName: "custom_item_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -241,11 +229,8 @@ open class Tree: Control {
         fileprivate init(item: Godot.TreeItem?) {
             self.item = item
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, item)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.item)]
         }
     }
     public func itemCollapsed(item: Godot.TreeItem?) {
@@ -273,11 +258,8 @@ open class Tree: Control {
             self.item = item
             self.column = column
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, item, column)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.item), Variant(input.column)]
         }
     }
     public func checkPropagatedToItem(item: Godot.TreeItem?, column: Int) {
@@ -304,25 +286,22 @@ open class Tree: Control {
         public let item: Godot.TreeItem?
         public let column: Int
         public let id: Int
-        public let mouse_button_index: Int
-        fileprivate init(item: Godot.TreeItem?, column: Int, id: Int, mouse_button_index: Int) {
+        public let mouseButtonIndex: Int
+        fileprivate init(item: Godot.TreeItem?, column: Int, id: Int, mouseButtonIndex: Int) {
             self.item = item
             self.column = column
             self.id = id
-            self.mouse_button_index = mouse_button_index
+            self.mouseButtonIndex = mouseButtonIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, item, column, id, mouse_button_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.item), Variant(input.column), Variant(input.id), Variant(input.mouseButtonIndex)]
         }
     }
-    public func buttonClicked(item: Godot.TreeItem?, column: Int, id: Int, mouse_button_index: Int) {
+    public func buttonClicked(item: Godot.TreeItem?, column: Int, id: Int, mouseButtonIndex: Int) {
         _ = buttonClickedSignal.emit(.init(item: item,
                 column: column,
                 id: id,
-                mouse_button_index: mouse_button_index))
+                mouseButtonIndex: mouseButtonIndex))
     }
     public lazy var buttonClickedSignal: Godot.SignalEmitter<ButtonClickedSignalInput> = {
         .init(object: self, signalName: "button_clicked") { callablePtr, args, _, _, _ in
@@ -330,7 +309,7 @@ open class Tree: Control {
                 .call(with: .init(item: Godot.TreeItem?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ButtonClickedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -343,24 +322,21 @@ open class Tree: Control {
     }()
 
     public struct CustomPopupEditedSignalInput: Godot.SignalInput {
-        public let arrow_clicked: Bool
-        fileprivate init(arrow_clicked: Bool) {
-            self.arrow_clicked = arrow_clicked
+        public let arrowClicked: Bool
+        fileprivate init(arrowClicked: Bool) {
+            self.arrowClicked = arrowClicked
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, arrow_clicked)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.arrowClicked)]
         }
     }
-    public func customPopupEdited(arrow_clicked: Bool) {
-        _ = customPopupEditedSignal.emit(.init(arrow_clicked: arrow_clicked))
+    public func customPopupEdited(arrowClicked: Bool) {
+        _ = customPopupEditedSignal.emit(.init(arrowClicked: arrowClicked))
     }
     public lazy var customPopupEditedSignal: Godot.SignalEmitter<CustomPopupEditedSignalInput> = {
         .init(object: self, signalName: "custom_popup_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(arrow_clicked: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(arrowClicked: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -392,27 +368,24 @@ open class Tree: Control {
 
     public struct ColumnTitleClickedSignalInput: Godot.SignalInput {
         public let column: Int
-        public let mouse_button_index: Int
-        fileprivate init(column: Int, mouse_button_index: Int) {
+        public let mouseButtonIndex: Int
+        fileprivate init(column: Int, mouseButtonIndex: Int) {
             self.column = column
-            self.mouse_button_index = mouse_button_index
+            self.mouseButtonIndex = mouseButtonIndex
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, column, mouse_button_index)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.column), Variant(input.mouseButtonIndex)]
         }
     }
-    public func columnTitleClicked(column: Int, mouse_button_index: Int) {
+    public func columnTitleClicked(column: Int, mouseButtonIndex: Int) {
         _ = columnTitleClickedSignal.emit(.init(column: column,
-                mouse_button_index: mouse_button_index))
+                mouseButtonIndex: mouseButtonIndex))
     }
     public lazy var columnTitleClickedSignal: Godot.SignalEmitter<ColumnTitleClickedSignalInput> = {
         .init(object: self, signalName: "column_title_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -442,7 +415,7 @@ open class Tree: Control {
         }
     }()
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -459,7 +432,7 @@ open class Tree: Control {
         )}
     }
 
-    private static var __method_binding_create_item: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_item").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 528467046)!
@@ -481,7 +454,7 @@ open class Tree: Control {
         )}}}}}}
     }
 
-    private static var __method_binding_get_root: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
@@ -499,7 +472,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_column_custom_minimum_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_custom_minimum_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_custom_minimum_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -519,7 +492,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_expand: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_expand: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_expand").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -539,7 +512,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_expand_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_expand_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_expand_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -559,7 +532,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_clip_content: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_clip_content: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_clip_content").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -579,7 +552,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_is_column_expanding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_column_expanding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_column_expanding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -599,7 +572,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_is_column_clipping_content: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_column_clipping_content: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_column_clipping_content").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -619,7 +592,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_expand_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_expand_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_expand_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -639,7 +612,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -659,7 +632,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_hide_root: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hide_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hide_root").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -678,7 +651,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_is_root_hidden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_root_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_root_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -696,7 +669,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_get_next_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_next_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_next_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 873446299)!
@@ -717,7 +690,7 @@ open class Tree: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
@@ -735,7 +708,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2662547442)!
@@ -756,7 +729,7 @@ open class Tree: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_selected_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selected_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selected_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -774,7 +747,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pressed_button").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -792,7 +765,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_select_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_select_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_select_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3223887270)!
@@ -811,7 +784,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_select_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_select_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_select_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 100748571)!
@@ -829,7 +802,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_deselect_all: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_deselect_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "deselect_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -846,7 +819,7 @@ open class Tree: Control {
         )}
     }
 
-    private static var __method_binding_set_columns: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_columns: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_columns").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -865,7 +838,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_columns: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_columns: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_columns").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -883,7 +856,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_get_edited: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edited: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edited").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
@@ -901,7 +874,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_get_edited_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_edited_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_edited_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -919,7 +892,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_edit_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_edit_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "edit_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2595650253)!
@@ -939,7 +912,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_custom_popup_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_custom_popup_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_popup_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
@@ -957,7 +930,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_get_item_area_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_item_area_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_area_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 47968679)!
@@ -980,7 +953,7 @@ open class Tree: Control {
         )}}}}}}}
     }
 
-    private static var __method_binding_get_item_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_item_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4193340126)!
@@ -1000,7 +973,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
@@ -1020,7 +993,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_drop_section_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drop_section_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drop_section_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
@@ -1040,7 +1013,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_button_id_at_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_button_id_at_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_button_id_at_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
@@ -1060,7 +1033,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_ensure_cursor_is_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_ensure_cursor_is_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "ensure_cursor_is_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -1077,7 +1050,7 @@ open class Tree: Control {
         )}
     }
 
-    private static var __method_binding_set_column_titles_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_titles_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_titles_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1096,7 +1069,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_are_column_titles_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_column_titles_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_column_titles_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1114,7 +1087,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_column_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -1134,7 +1107,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -1154,7 +1127,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_title_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_title_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_title_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3276431499)!
@@ -1174,7 +1147,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_title_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_title_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_title_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4171562184)!
@@ -1194,7 +1167,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_title_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_title_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_title_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1707680378)!
@@ -1214,7 +1187,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_title_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_title_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_title_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4235602388)!
@@ -1234,7 +1207,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_column_title_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_column_title_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_column_title_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -1254,7 +1227,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_column_title_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_column_title_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_column_title_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -1274,7 +1247,7 @@ open class Tree: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_scroll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -1292,7 +1265,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_scroll_to_item: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_scroll_to_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "scroll_to_item").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1314737213)!
@@ -1313,7 +1286,7 @@ open class Tree: Control {
         )}}}}}
     }
 
-    private static var __method_binding_set_h_scroll_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_h_scroll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_scroll_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1332,7 +1305,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_is_h_scroll_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_h_scroll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_h_scroll_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1350,7 +1323,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_v_scroll_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_v_scroll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_v_scroll_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1369,7 +1342,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_is_v_scroll_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_v_scroll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_v_scroll_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1387,7 +1360,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_hide_folding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hide_folding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hide_folding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1406,7 +1379,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_is_folding_hidden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_folding_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_folding_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1424,7 +1397,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_enable_recursive_folding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_recursive_folding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_recursive_folding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1443,7 +1416,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_is_recursive_folding_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_recursive_folding_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_recursive_folding_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1461,7 +1434,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_drop_mode_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drop_mode_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drop_mode_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1480,7 +1453,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_drop_mode_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drop_mode_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drop_mode_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1498,7 +1471,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_allow_rmb_select: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_rmb_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_rmb_select").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1517,7 +1490,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_allow_rmb_select: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_allow_rmb_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_allow_rmb_select").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1535,7 +1508,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_allow_reselect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_reselect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_reselect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1554,7 +1527,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_allow_reselect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_allow_reselect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_allow_reselect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1572,7 +1545,7 @@ open class Tree: Control {
         )}}
     }
 
-    private static var __method_binding_set_allow_search: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_search: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_search").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1591,7 +1564,7 @@ open class Tree: Control {
         )}}}
     }
 
-    private static var __method_binding_get_allow_search: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_allow_search: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_allow_search").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

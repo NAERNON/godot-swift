@@ -1,4 +1,5 @@
 
+// TODO: Add connection flags
 public struct SignalConnection {
     private(set) weak var sourceObject: Object?
     public let signalName: GodotStringName
@@ -7,7 +8,7 @@ public struct SignalConnection {
     let callable: Callable
     
     init(
-        sourceObject: Object,
+        sourceObject: Object?,
         signalName: GodotStringName,
         errorType: ErrorType,
         callable: Callable
@@ -18,12 +19,37 @@ public struct SignalConnection {
         self.callable = callable
     }
     
+    static func fromEmitter<Input>(
+        emitter: SignalEmitter<Input>,
+        infoDictionary: AnyGodotDictionary
+    ) -> SignalConnection {
+        SignalConnection(
+            sourceObject: emitter.sourceObject,
+            signalName: emitter.signalName,
+            errorType: .ok,
+            callable: infoDictionary["callable"]!.unwrap(assuming: Callable.self)
+        )
+    }
+    
+    static func fromInfoDictionary(
+        _ infoDictionary: AnyGodotDictionary
+    ) -> SignalConnection {
+        let signal = infoDictionary["signal"]!.unwrap(assuming: Signal.self)
+        
+        return SignalConnection(
+            sourceObject: signal.object,
+            signalName: signal.name,
+            errorType: .ok,
+            callable: infoDictionary["callable"]!.unwrap(assuming: Callable.self)
+        )
+    }
+    
     public func disconnect() {
-        sourceObject?.disconnect(signal: signalName, callable: callable)
+        sourceObject?.__disconnect(signal: signalName, callable: callable)
     }
     
     public var isConnected: Bool {
-        sourceObject?.isConnected(signal: signalName, callable: callable) == true
+        sourceObject?.__isConnected(signal: signalName, callable: callable) == true
     }
 }
 

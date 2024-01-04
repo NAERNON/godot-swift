@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourceUID: Object {
-    private static var __method_binding_id_to_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_id_to_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "id_to_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -25,7 +25,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_text_to_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_text_to_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "text_to_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
@@ -45,7 +45,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_create_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -63,7 +63,7 @@ open class ResourceUID: Object {
         )}}
     }
 
-    private static var __method_binding_has_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -83,7 +83,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_add_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -103,7 +103,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_set_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -123,7 +123,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_id_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -143,7 +143,7 @@ open class ResourceUID: Object {
         )}}}}
     }
 
-    private static var __method_binding_remove_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!

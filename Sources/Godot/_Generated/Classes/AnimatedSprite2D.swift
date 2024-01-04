@@ -95,7 +95,7 @@ open class AnimatedSprite2D: Node2D {
         }
     }()
 
-    private static var __method_binding_set_sprite_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sprite_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sprite_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 905781144)!
@@ -115,7 +115,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_sprite_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sprite_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sprite_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3804851214)!
@@ -133,7 +133,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -152,7 +152,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -170,7 +170,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_autoplay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -189,7 +189,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_autoplay: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_autoplay").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -207,7 +207,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_playing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -225,7 +225,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_play: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "play").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2372066587)!
@@ -246,7 +246,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}}}
     }
 
-    private static var __method_binding_play_backwards: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_play_backwards: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "play_backwards").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1421762485)!
@@ -265,7 +265,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_pause: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "pause").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -282,7 +282,7 @@ open class AnimatedSprite2D: Node2D {
         )}
     }
 
-    private static var __method_binding_stop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -299,7 +299,7 @@ open class AnimatedSprite2D: Node2D {
         )}
     }
 
-    private static var __method_binding_set_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -318,7 +318,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -336,7 +336,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -355,7 +355,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -373,7 +373,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -392,7 +392,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_h").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -410,7 +410,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flip_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -429,7 +429,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flipped_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -447,7 +447,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -466,7 +466,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -484,7 +484,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_frame_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -503,7 +503,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_frame_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frame_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frame_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -521,7 +521,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_frame_and_progress: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_frame_and_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame_and_progress").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -541,7 +541,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_speed_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -560,7 +560,7 @@ open class AnimatedSprite2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_speed_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -578,7 +578,7 @@ open class AnimatedSprite2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_playing_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_playing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_playing_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

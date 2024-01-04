@@ -3,7 +3,7 @@ import GodotExtensionHeaders
 // MARK: - Input
 
 public protocol SignalInput {
-    func _emit(_ signalName: GodotStringName, on object: Object) -> ErrorType
+    static func arguments(from input: Self) -> [Variant]
 }
 
 // MARK: - Receiver
@@ -60,7 +60,7 @@ public struct SignalEmitter<Input> {
             toStringFunc: toStringFunc
         )
         
-        let errorType = sourceObject.connect(signal: signalName, callable: callable)
+        let errorType = sourceObject.__connect(signal: signalName, callable: callable)
         
         return SignalConnection(
             sourceObject: sourceObject,
@@ -85,13 +85,9 @@ public struct SignalEmitter<Input> {
     
     public func connections() -> [SignalConnection] {
         Signal(object: sourceObject, signal: signalName).connections().map { info in
-            let infoDictionary = info.unwrap(assuming: AnyGodotDictionary.self)
-            
-            return SignalConnection(
-                sourceObject: sourceObject,
-                signalName: signalName,
-                errorType: .ok,
-                callable: infoDictionary["callable"]!.unwrap(assuming: Callable.self)
+            SignalConnection.fromEmitter(
+                emitter: self,
+                infoDictionary: info.unwrap(assuming: AnyGodotDictionary.self)
             )
         }
     }
@@ -99,13 +95,16 @@ public struct SignalEmitter<Input> {
 
 public extension SignalEmitter where Input : SignalInput {
     func emit(_ input: Input) -> ErrorType {
-        input._emit(signalName, on: sourceObject)
+        sourceObject.__emitSignalWithArgumentsArray(
+            signalName,
+            arguments: Input.arguments(from: input)
+        )
     }
 }
 
 public extension SignalEmitter where Input == Void {
     func emit() -> ErrorType {
-        sourceObject.emitSignal(signalName)
+        sourceObject.__emitSignal(signalName)
     }
 }
 

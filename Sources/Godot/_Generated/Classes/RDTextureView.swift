@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDTextureView: RefCounted {
-    private static var __method_binding_set_format_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_format_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_format_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!
@@ -24,7 +24,7 @@ open class RDTextureView: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_format_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_format_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_format_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235804183)!
@@ -42,7 +42,7 @@ open class RDTextureView: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_swizzle_r: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_swizzle_r: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_swizzle_r").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3833362581)!
@@ -61,7 +61,7 @@ open class RDTextureView: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_swizzle_r: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_swizzle_r: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_swizzle_r").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150792614)!
@@ -79,7 +79,7 @@ open class RDTextureView: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_swizzle_g: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_swizzle_g: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_swizzle_g").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3833362581)!
@@ -98,7 +98,7 @@ open class RDTextureView: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_swizzle_g: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_swizzle_g: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_swizzle_g").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150792614)!
@@ -116,7 +116,7 @@ open class RDTextureView: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_swizzle_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_swizzle_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_swizzle_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3833362581)!
@@ -135,7 +135,7 @@ open class RDTextureView: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_swizzle_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_swizzle_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_swizzle_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150792614)!
@@ -153,7 +153,7 @@ open class RDTextureView: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_swizzle_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_swizzle_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_swizzle_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3833362581)!
@@ -172,7 +172,7 @@ open class RDTextureView: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_swizzle_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_swizzle_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_swizzle_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150792614)!

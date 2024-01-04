@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class InputEventShortcut: InputEvent {
-    private static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 857163497)!
@@ -25,7 +25,7 @@ open class InputEventShortcut: InputEvent {
         )}}}}
     }
 
-    private static var __method_binding_get_shortcut: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3766804753)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class LightmapGIData: Resource {
-    private static var __method_binding_set_lightmap_textures: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_lightmap_textures").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -24,7 +24,7 @@ open class LightmapGIData: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_lightmap_textures: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_lightmap_textures").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -42,7 +42,7 @@ open class LightmapGIData: Resource {
         )}}
     }
 
-    private static var __method_binding_set_uses_spherical_harmonics: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uses_spherical_harmonics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uses_spherical_harmonics").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class LightmapGIData: Resource {
         )}}}
     }
 
-    private static var __method_binding_is_using_spherical_harmonics: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_spherical_harmonics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_spherical_harmonics").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -79,7 +79,7 @@ open class LightmapGIData: Resource {
         )}}
     }
 
-    private static var __method_binding_add_user: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_user: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_user").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4272570515)!
@@ -101,7 +101,7 @@ open class LightmapGIData: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_get_user_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_user_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_user_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -119,7 +119,7 @@ open class LightmapGIData: Resource {
         )}}
     }
 
-    private static var __method_binding_get_user_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_user_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_user_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -139,7 +139,7 @@ open class LightmapGIData: Resource {
         )}}}}
     }
 
-    private static var __method_binding_clear_users: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_users: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_users").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -156,7 +156,7 @@ open class LightmapGIData: Resource {
         )}
     }
 
-    private static var __method_binding_set_light_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_light_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1278366092)!
@@ -176,7 +176,7 @@ open class LightmapGIData: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_light_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_light_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3984243839)!

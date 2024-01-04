@@ -81,24 +81,21 @@ open class AnimationMixer: Node {
     }()
 
     public struct AnimationFinishedSignalInput: Godot.SignalInput {
-        public let anim_name: Godot.GodotStringName
-        fileprivate init(anim_name: Godot.GodotStringName) {
-            self.anim_name = anim_name
+        public let animName: Godot.GodotStringName
+        fileprivate init(animName: Godot.GodotStringName) {
+            self.animName = animName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, anim_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.animName)]
         }
     }
-    public func animationFinished(anim_name: Godot.GodotStringName) {
-        _ = animationFinishedSignal.emit(.init(anim_name: anim_name))
+    public func animationFinished(animName: Godot.GodotStringName) {
+        _ = animationFinishedSignal.emit(.init(animName: animName))
     }
     public lazy var animationFinishedSignal: Godot.SignalEmitter<AnimationFinishedSignalInput> = {
         .init(object: self, signalName: "animation_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(anim_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(animName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationFinishedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -111,24 +108,21 @@ open class AnimationMixer: Node {
     }()
 
     public struct AnimationStartedSignalInput: Godot.SignalInput {
-        public let anim_name: Godot.GodotStringName
-        fileprivate init(anim_name: Godot.GodotStringName) {
-            self.anim_name = anim_name
+        public let animName: Godot.GodotStringName
+        fileprivate init(animName: Godot.GodotStringName) {
+            self.animName = animName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, anim_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.animName)]
         }
     }
-    public func animationStarted(anim_name: Godot.GodotStringName) {
-        _ = animationStartedSignal.emit(.init(anim_name: anim_name))
+    public func animationStarted(animName: Godot.GodotStringName) {
+        _ = animationStartedSignal.emit(.init(animName: animName))
     }
     public lazy var animationStartedSignal: Godot.SignalEmitter<AnimationStartedSignalInput> = {
         .init(object: self, signalName: "animation_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(anim_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(animName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationStartedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -162,7 +156,7 @@ open class AnimationMixer: Node {
         Variant()
     }
 
-    private static var __method_binding_add_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 618909818)!
@@ -184,7 +178,7 @@ open class AnimationMixer: Node {
         )}}}}}}
     }
 
-    private static var __method_binding_remove_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -203,7 +197,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_rename_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rename_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rename_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
@@ -223,7 +217,7 @@ open class AnimationMixer: Node {
         )}}}}
     }
 
-    private static var __method_binding_has_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -243,7 +237,7 @@ open class AnimationMixer: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 147342321)!
@@ -263,7 +257,7 @@ open class AnimationMixer: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_library_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_library_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_library_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -281,7 +275,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -301,7 +295,7 @@ open class AnimationMixer: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2933122410)!
@@ -321,7 +315,7 @@ open class AnimationMixer: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_animation_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -339,7 +333,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -358,7 +352,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -376,7 +370,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_deterministic: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_deterministic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_deterministic").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -395,7 +389,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_is_deterministic: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_deterministic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_deterministic").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -413,7 +407,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_root_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_root_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_root_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -432,7 +426,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_get_root_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -450,7 +444,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_callback_mode_process: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_callback_mode_process: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_callback_mode_process").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2153733086)!
@@ -469,7 +463,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_get_callback_mode_process: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_callback_mode_process: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_callback_mode_process").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1394468472)!
@@ -487,7 +481,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_callback_mode_method: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_callback_mode_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_callback_mode_method").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 742218271)!
@@ -506,7 +500,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_get_callback_mode_method: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_callback_mode_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_callback_mode_method").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 489449656)!
@@ -524,7 +518,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_audio_max_polyphony: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_audio_max_polyphony: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_audio_max_polyphony").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -543,7 +537,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_get_audio_max_polyphony: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_audio_max_polyphony: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_audio_max_polyphony").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -561,7 +555,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_set_root_motion_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_root_motion_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_root_motion_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -580,7 +574,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_get_root_motion_track: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_track").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -598,7 +592,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -616,7 +610,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1222331677)!
@@ -634,7 +628,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -652,7 +646,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_position_accumulator: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_position_accumulator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_position_accumulator").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -670,7 +664,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_rotation_accumulator: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_rotation_accumulator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_rotation_accumulator").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1222331677)!
@@ -688,7 +682,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_get_root_motion_scale_accumulator: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_root_motion_scale_accumulator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_root_motion_scale_accumulator").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -706,7 +700,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_clear_caches: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_caches: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_caches").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -723,7 +717,7 @@ open class AnimationMixer: Node {
         )}
     }
 
-    private static var __method_binding_advance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_advance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "advance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -742,7 +736,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_set_reset_on_save_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_reset_on_save_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_reset_on_save_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -761,7 +755,7 @@ open class AnimationMixer: Node {
         )}}}
     }
 
-    private static var __method_binding_is_reset_on_save_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_reset_on_save_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_reset_on_save_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -779,7 +773,7 @@ open class AnimationMixer: Node {
         )}}
     }
 
-    private static var __method_binding_find_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1559484580)!
@@ -800,7 +794,7 @@ open class AnimationMixer: Node {
         )}}}}}
     }
 
-    private static var __method_binding_find_animation_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_animation_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_animation_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1559484580)!

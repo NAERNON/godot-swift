@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDPipelineColorBlendState: RefCounted {
-    private static var __method_binding_set_enable_logic_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_logic_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_logic_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_logic_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_logic_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_logic_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -42,7 +42,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_logic_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_logic_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_logic_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3610841058)!
@@ -61,7 +61,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_logic_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_logic_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_logic_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 988254690)!
@@ -79,7 +79,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_blend_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blend_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blend_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -98,7 +98,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_blend_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -116,7 +116,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_attachments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_attachments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_attachments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -135,7 +135,7 @@ open class RDPipelineColorBlendState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_attachments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_attachments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_attachments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

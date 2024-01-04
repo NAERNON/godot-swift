@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImageTextureLayered: TextureLayered {
-    private static var __method_binding_create_from_images: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_from_images: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_from_images").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2785773503)!
@@ -25,7 +25,7 @@ open class ImageTextureLayered: TextureLayered {
         )}}}}
     }
 
-    private static var __method_binding_update_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_update_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3331733361)!

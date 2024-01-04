@@ -10,11 +10,8 @@ open class XRNode3D: Node3D {
         fileprivate init(tracking: Bool) {
             self.tracking = tracking
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tracking)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tracking)]
         }
     }
     public func trackingChanged(tracking: Bool) {
@@ -35,7 +32,7 @@ open class XRNode3D: Node3D {
         }
     }()
 
-    private static var __method_binding_set_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -54,7 +51,7 @@ open class XRNode3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -72,7 +69,7 @@ open class XRNode3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_pose_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pose_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pose_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -91,7 +88,7 @@ open class XRNode3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_pose_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pose_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pose_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -109,7 +106,7 @@ open class XRNode3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_is_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_is_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -127,7 +124,7 @@ open class XRNode3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_has_tracking_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_has_tracking_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_has_tracking_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -145,7 +142,7 @@ open class XRNode3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_pose: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pose: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pose").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2806551826)!
@@ -163,7 +160,7 @@ open class XRNode3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_trigger_haptic_pulse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_trigger_haptic_pulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "trigger_haptic_pulse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 508576839)!

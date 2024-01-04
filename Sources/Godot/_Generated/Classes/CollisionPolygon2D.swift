@@ -15,7 +15,7 @@ open class CollisionPolygon2D: Node2D {
         }
     }
 
-    private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -34,7 +34,7 @@ open class CollisionPolygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -52,7 +52,7 @@ open class CollisionPolygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_build_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_build_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_build_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2780803135)!
@@ -71,7 +71,7 @@ open class CollisionPolygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_build_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_build_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_build_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3044948800)!
@@ -89,7 +89,7 @@ open class CollisionPolygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -108,7 +108,7 @@ open class CollisionPolygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -126,7 +126,7 @@ open class CollisionPolygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_one_way_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_one_way_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_one_way_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -145,7 +145,7 @@ open class CollisionPolygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_one_way_collision_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_one_way_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_one_way_collision_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -163,7 +163,7 @@ open class CollisionPolygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_one_way_collision_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_one_way_collision_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_one_way_collision_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -182,7 +182,7 @@ open class CollisionPolygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_one_way_collision_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_one_way_collision_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_one_way_collision_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

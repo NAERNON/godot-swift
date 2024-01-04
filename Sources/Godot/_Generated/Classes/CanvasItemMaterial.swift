@@ -32,7 +32,7 @@ open class CanvasItemMaterial: Material {
         }
     }
 
-    private static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blend_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1786054936)!
@@ -51,7 +51,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_blend_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3318684035)!
@@ -69,7 +69,7 @@ open class CanvasItemMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_light_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_light_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_light_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 628074070)!
@@ -88,7 +88,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_light_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_light_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_light_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3863292382)!
@@ -106,7 +106,7 @@ open class CanvasItemMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_particles_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_particles_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_particles_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -125,7 +125,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_particles_animation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_particles_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_particles_animation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -143,7 +143,7 @@ open class CanvasItemMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_particles_anim_h_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_particles_anim_h_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -162,7 +162,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_particles_anim_h_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_particles_anim_h_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -180,7 +180,7 @@ open class CanvasItemMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_particles_anim_v_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_particles_anim_v_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -199,7 +199,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_particles_anim_v_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_particles_anim_v_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -217,7 +217,7 @@ open class CanvasItemMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_particles_anim_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_particles_anim_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -236,7 +236,7 @@ open class CanvasItemMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_particles_anim_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_particles_anim_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

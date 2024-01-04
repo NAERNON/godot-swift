@@ -22,11 +22,8 @@ open class SplitContainer: Container {
         fileprivate init(offset: Int) {
             self.offset = offset
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, offset)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.offset)]
         }
     }
     public func dragged(offset: Int) {
@@ -47,7 +44,7 @@ open class SplitContainer: Container {
         }
     }()
 
-    private static var __method_binding_set_split_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_split_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -66,7 +63,7 @@ open class SplitContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_get_split_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_split_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -84,7 +81,7 @@ open class SplitContainer: Container {
         )}}
     }
 
-    private static var __method_binding_clamp_split_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clamp_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clamp_split_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -101,7 +98,7 @@ open class SplitContainer: Container {
         )}
     }
 
-    private static var __method_binding_set_collapsed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collapsed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -120,7 +117,7 @@ open class SplitContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_is_collapsed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collapsed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -138,7 +135,7 @@ open class SplitContainer: Container {
         )}}
     }
 
-    private static var __method_binding_set_dragger_visibility: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_dragger_visibility: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dragger_visibility").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1168273952)!
@@ -157,7 +154,7 @@ open class SplitContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_get_dragger_visibility: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_dragger_visibility: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dragger_visibility").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 967297479)!
@@ -175,7 +172,7 @@ open class SplitContainer: Container {
         )}}
     }
 
-    private static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertical").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -194,7 +191,7 @@ open class SplitContainer: Container {
         )}}}
     }
 
-    private static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_vertical").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

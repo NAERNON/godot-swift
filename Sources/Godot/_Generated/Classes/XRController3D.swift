@@ -10,11 +10,8 @@ open class XRController3D: XRNode3D {
         fileprivate init(name: Godot.GodotString) {
             self.name = name
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.name)]
         }
     }
     public func buttonPressed(name: Godot.GodotString) {
@@ -40,11 +37,8 @@ open class XRController3D: XRNode3D {
         fileprivate init(name: Godot.GodotString) {
             self.name = name
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.name)]
         }
     }
     public func buttonReleased(name: Godot.GodotString) {
@@ -72,11 +66,8 @@ open class XRController3D: XRNode3D {
             self.name = name
             self.value = value
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, name, value)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.name), Variant(input.value)]
         }
     }
     public func inputFloatChanged(name: Godot.GodotString, value: Double) {
@@ -106,11 +97,8 @@ open class XRController3D: XRNode3D {
             self.name = name
             self.value = value
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, name, value)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.name), Variant(input.value)]
         }
     }
     public func inputVector2Changed(name: Godot.GodotString, value: Godot.Vector2) {
@@ -133,7 +121,7 @@ open class XRController3D: XRNode3D {
         }
     }()
 
-    private static var __method_binding_is_button_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_button_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_button_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -153,7 +141,7 @@ open class XRController3D: XRNode3D {
         )}}}}
     }
 
-    private static var __method_binding_get_input: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
@@ -173,7 +161,7 @@ open class XRController3D: XRNode3D {
         )}}}}
     }
 
-    private static var __method_binding_get_float: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_float: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_float").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2349060816)!
@@ -193,7 +181,7 @@ open class XRController3D: XRNode3D {
         )}}}}
     }
 
-    private static var __method_binding_get_vector2: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vector2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vector2").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3100822709)!
@@ -213,7 +201,7 @@ open class XRController3D: XRNode3D {
         )}}}}
     }
 
-    private static var __method_binding_get_tracker_hand: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tracker_hand: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tracker_hand").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4181770860)!

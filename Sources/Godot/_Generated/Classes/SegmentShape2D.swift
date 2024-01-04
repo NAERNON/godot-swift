@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SegmentShape2D: Shape2D {
-    private static var __method_binding_set_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -24,7 +24,7 @@ open class SegmentShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_a: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_a").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -42,7 +42,7 @@ open class SegmentShape2D: Shape2D {
         )}}
     }
 
-    private static var __method_binding_set_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -61,7 +61,7 @@ open class SegmentShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_b: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_b").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class FontVariation: Font {
-    private static var __method_binding_set_base_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_base_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_base_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
@@ -25,7 +25,7 @@ open class FontVariation: Font {
         )}}}}
     }
 
-    private static var __method_binding_get_base_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_base_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_base_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
@@ -43,7 +43,7 @@ open class FontVariation: Font {
         )}}
     }
 
-    private static var __method_binding_set_variation_opentype: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_variation_opentype: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_variation_opentype").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
@@ -62,7 +62,7 @@ open class FontVariation: Font {
         )}}}
     }
 
-    private static var __method_binding_get_variation_opentype: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_variation_opentype: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_variation_opentype").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
@@ -80,7 +80,7 @@ open class FontVariation: Font {
         )}}
     }
 
-    private static var __method_binding_set_variation_embolden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_variation_embolden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_variation_embolden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -99,7 +99,7 @@ open class FontVariation: Font {
         )}}}
     }
 
-    private static var __method_binding_get_variation_embolden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_variation_embolden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_variation_embolden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -117,7 +117,7 @@ open class FontVariation: Font {
         )}}
     }
 
-    private static var __method_binding_set_variation_face_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_variation_face_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_variation_face_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -136,7 +136,7 @@ open class FontVariation: Font {
         )}}}
     }
 
-    private static var __method_binding_get_variation_face_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_variation_face_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_variation_face_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -154,7 +154,7 @@ open class FontVariation: Font {
         )}}
     }
 
-    private static var __method_binding_set_variation_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_variation_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_variation_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
@@ -173,7 +173,7 @@ open class FontVariation: Font {
         )}}}
     }
 
-    private static var __method_binding_get_variation_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_variation_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_variation_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
@@ -191,7 +191,7 @@ open class FontVariation: Font {
         )}}
     }
 
-    private static var __method_binding_set_opentype_features: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_opentype_features: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_opentype_features").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
@@ -210,7 +210,7 @@ open class FontVariation: Font {
         )}}}
     }
 
-    private static var __method_binding_set_spacing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3122339690)!

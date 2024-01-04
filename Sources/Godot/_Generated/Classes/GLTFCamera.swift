@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFCamera: Resource {
-    private static var __method_binding_from_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_from_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "from_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 237784)!
@@ -25,7 +25,7 @@ open class GLTFCamera: Resource {
         )}}}}
     }
 
-    private static var __method_binding_to_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_to_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "to_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2285090890)!
@@ -43,7 +43,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "from_dictionary").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2495512509)!
@@ -62,7 +62,7 @@ open class GLTFCamera: Resource {
         )}}}
     }
 
-    private static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "to_dictionary").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
@@ -80,7 +80,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_get_perspective: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_perspective: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_perspective").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -98,7 +98,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_set_perspective: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_perspective: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_perspective").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -117,7 +117,7 @@ open class GLTFCamera: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fov").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -135,7 +135,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_set_fov: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fov: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fov").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -154,7 +154,7 @@ open class GLTFCamera: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_size_mag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size_mag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size_mag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -172,7 +172,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_set_size_mag: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size_mag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size_mag").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -191,7 +191,7 @@ open class GLTFCamera: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_depth_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -209,7 +209,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_set_depth_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -228,7 +228,7 @@ open class GLTFCamera: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_depth_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -246,7 +246,7 @@ open class GLTFCamera: Resource {
         )}}
     }
 
-    private static var __method_binding_set_depth_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!

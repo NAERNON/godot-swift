@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFBufferView: Resource {
-    private static var __method_binding_get_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -23,7 +23,7 @@ open class GLTFBufferView: Resource {
         )}}
     }
 
-    private static var __method_binding_set_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -42,7 +42,7 @@ open class GLTFBufferView: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_byte_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_byte_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_byte_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -60,7 +60,7 @@ open class GLTFBufferView: Resource {
         )}}
     }
 
-    private static var __method_binding_set_byte_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_byte_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_byte_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -79,7 +79,7 @@ open class GLTFBufferView: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_byte_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_byte_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_byte_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -97,7 +97,7 @@ open class GLTFBufferView: Resource {
         )}}
     }
 
-    private static var __method_binding_set_byte_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_byte_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_byte_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -116,7 +116,7 @@ open class GLTFBufferView: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_byte_stride: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_byte_stride: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_byte_stride").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -134,7 +134,7 @@ open class GLTFBufferView: Resource {
         )}}
     }
 
-    private static var __method_binding_set_byte_stride: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_byte_stride: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_byte_stride").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -153,7 +153,7 @@ open class GLTFBufferView: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_indices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_indices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -171,7 +171,7 @@ open class GLTFBufferView: Resource {
         )}}
     }
 
-    private static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_indices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!

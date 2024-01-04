@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GPUParticlesCollision3D: VisualInstance3D {
-    private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class GPUParticlesCollision3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

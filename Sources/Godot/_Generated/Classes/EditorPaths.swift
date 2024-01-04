@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorPaths: Object {
-    private static var __method_binding_get_data_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_data_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_data_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -23,7 +23,7 @@ open class EditorPaths: Object {
         )}}
     }
 
-    private static var __method_binding_get_config_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_config_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_config_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -41,7 +41,7 @@ open class EditorPaths: Object {
         )}}
     }
 
-    private static var __method_binding_get_cache_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cache_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cache_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -59,7 +59,7 @@ open class EditorPaths: Object {
         )}}
     }
 
-    private static var __method_binding_is_self_contained: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_self_contained: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_self_contained").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -77,7 +77,7 @@ open class EditorPaths: Object {
         )}}
     }
 
-    private static var __method_binding_get_self_contained_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_self_contained_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_self_contained_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -95,7 +95,7 @@ open class EditorPaths: Object {
         )}}
     }
 
-    private static var __method_binding_get_project_settings_dir: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_project_settings_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_project_settings_dir").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

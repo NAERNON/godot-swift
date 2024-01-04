@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Texture3DRD: Texture3D {
-    private static var __method_binding_set_texture_rd_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_rd_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_rd_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -24,7 +24,7 @@ open class Texture3DRD: Texture3D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_rd_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_rd_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_rd_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!

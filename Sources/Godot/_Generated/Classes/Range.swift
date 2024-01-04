@@ -10,11 +10,8 @@ open class Range: Control {
         fileprivate init(value: Double) {
             self.value = value
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, value)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.value)]
         }
     }
     public func valueChanged(value: Double) {
@@ -56,7 +53,7 @@ open class Range: Control {
     open func _valueChanged(newValue: Double) {
     }
 
-    private static var __method_binding_get_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -74,7 +71,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_get_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -92,7 +89,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_get_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -110,7 +107,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_get_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -128,7 +125,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_get_page: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_page: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_page").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -146,7 +143,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_get_as_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_as_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_as_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -164,7 +161,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_set_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -183,7 +180,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_value_no_signal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_value_no_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_value_no_signal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -202,7 +199,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -221,7 +218,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -240,7 +237,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_step: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_step").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -259,7 +256,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_page: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_page: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_page").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -278,7 +275,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_as_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_as_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_as_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -297,7 +294,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_set_use_rounded_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_rounded_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_rounded_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -316,7 +313,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_is_using_rounded_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_using_rounded_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_using_rounded_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -334,7 +331,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_set_exp_ratio: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_exp_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_exp_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -353,7 +350,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_is_ratio_exp: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_ratio_exp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_ratio_exp").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -371,7 +368,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_set_allow_greater: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_greater: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_greater").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -390,7 +387,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_is_greater_allowed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_greater_allowed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_greater_allowed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -408,7 +405,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_set_allow_lesser: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_lesser: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_lesser").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -427,7 +424,7 @@ open class Range: Control {
         )}}}
     }
 
-    private static var __method_binding_is_lesser_allowed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_lesser_allowed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_lesser_allowed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -445,7 +442,7 @@ open class Range: Control {
         )}}
     }
 
-    private static var __method_binding_share: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_share: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "share").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -465,7 +462,7 @@ open class Range: Control {
         )}}}}
     }
 
-    private static var __method_binding_unshare: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_unshare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "unshare").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

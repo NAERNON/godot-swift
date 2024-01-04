@@ -24,24 +24,21 @@ open class Slider: Range {
     }()
 
     public struct DragEndedSignalInput: Godot.SignalInput {
-        public let value_changed: Bool
-        fileprivate init(value_changed: Bool) {
-            self.value_changed = value_changed
+        public let valueChanged: Bool
+        fileprivate init(valueChanged: Bool) {
+            self.valueChanged = valueChanged
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, value_changed)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.valueChanged)]
         }
     }
-    public func dragEnded(value_changed: Bool) {
-        _ = dragEndedSignal.emit(.init(value_changed: value_changed))
+    public func dragEnded(valueChanged: Bool) {
+        _ = dragEndedSignal.emit(.init(valueChanged: valueChanged))
     }
     public lazy var dragEndedSignal: Godot.SignalEmitter<DragEndedSignalInput> = {
         .init(object: self, signalName: "drag_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(value_changed: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(valueChanged: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -53,7 +50,7 @@ open class Slider: Range {
         }
     }()
 
-    private static var __method_binding_set_ticks: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ticks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ticks").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -72,7 +69,7 @@ open class Slider: Range {
         )}}}
     }
 
-    private static var __method_binding_get_ticks: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ticks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ticks").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -90,7 +87,7 @@ open class Slider: Range {
         )}}
     }
 
-    private static var __method_binding_get_ticks_on_borders: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ticks_on_borders: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ticks_on_borders").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -108,7 +105,7 @@ open class Slider: Range {
         )}}
     }
 
-    private static var __method_binding_set_ticks_on_borders: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ticks_on_borders: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ticks_on_borders").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -127,7 +124,7 @@ open class Slider: Range {
         )}}}
     }
 
-    private static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -146,7 +143,7 @@ open class Slider: Range {
         )}}}
     }
 
-    private static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -164,7 +161,7 @@ open class Slider: Range {
         )}}
     }
 
-    private static var __method_binding_set_scrollable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scrollable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scrollable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -183,7 +180,7 @@ open class Slider: Range {
         )}}}
     }
 
-    private static var __method_binding_is_scrollable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_scrollable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_scrollable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

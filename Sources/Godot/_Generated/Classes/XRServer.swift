@@ -37,24 +37,21 @@ open class XRServer: Object {
     }
 
     public struct InterfaceAddedSignalInput: Godot.SignalInput {
-        public let interface_name: Godot.GodotStringName
-        fileprivate init(interface_name: Godot.GodotStringName) {
-            self.interface_name = interface_name
+        public let interfaceName: Godot.GodotStringName
+        fileprivate init(interfaceName: Godot.GodotStringName) {
+            self.interfaceName = interfaceName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, interface_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.interfaceName)]
         }
     }
-    public func interfaceAdded(interface_name: Godot.GodotStringName) {
-        _ = interfaceAddedSignal.emit(.init(interface_name: interface_name))
+    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
+        _ = interfaceAddedSignal.emit(.init(interfaceName: interfaceName))
     }
     public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
         .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -67,24 +64,21 @@ open class XRServer: Object {
     }()
 
     public struct InterfaceRemovedSignalInput: Godot.SignalInput {
-        public let interface_name: Godot.GodotStringName
-        fileprivate init(interface_name: Godot.GodotStringName) {
-            self.interface_name = interface_name
+        public let interfaceName: Godot.GodotStringName
+        fileprivate init(interfaceName: Godot.GodotStringName) {
+            self.interfaceName = interfaceName
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, interface_name)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.interfaceName)]
         }
     }
-    public func interfaceRemoved(interface_name: Godot.GodotStringName) {
-        _ = interfaceRemovedSignal.emit(.init(interface_name: interface_name))
+    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
+        _ = interfaceRemovedSignal.emit(.init(interfaceName: interfaceName))
     }
     public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
         .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -97,27 +91,24 @@ open class XRServer: Object {
     }()
 
     public struct TrackerAddedSignalInput: Godot.SignalInput {
-        public let tracker_name: Godot.GodotStringName
+        public let trackerName: Godot.GodotStringName
         public let type: Int
-        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
-            self.tracker_name = tracker_name
+        fileprivate init(trackerName: Godot.GodotStringName, type: Int) {
+            self.trackerName = trackerName
             self.type = type
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tracker_name, type)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.trackerName), Variant(input.type)]
         }
     }
-    public func trackerAdded(tracker_name: Godot.GodotStringName, type: Int) {
-        _ = trackerAddedSignal.emit(.init(tracker_name: tracker_name,
+    public func trackerAdded(trackerName: Godot.GodotStringName, type: Int) {
+        _ = trackerAddedSignal.emit(.init(trackerName: trackerName,
                 type: type))
     }
     public lazy var trackerAddedSignal: Godot.SignalEmitter<TrackerAddedSignalInput> = {
         .init(object: self, signalName: "tracker_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>>.fromOpaque(callablePtr!).release()
@@ -131,27 +122,24 @@ open class XRServer: Object {
     }()
 
     public struct TrackerUpdatedSignalInput: Godot.SignalInput {
-        public let tracker_name: Godot.GodotStringName
+        public let trackerName: Godot.GodotStringName
         public let type: Int
-        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
-            self.tracker_name = tracker_name
+        fileprivate init(trackerName: Godot.GodotStringName, type: Int) {
+            self.trackerName = trackerName
             self.type = type
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tracker_name, type)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.trackerName), Variant(input.type)]
         }
     }
-    public func trackerUpdated(tracker_name: Godot.GodotStringName, type: Int) {
-        _ = trackerUpdatedSignal.emit(.init(tracker_name: tracker_name,
+    public func trackerUpdated(trackerName: Godot.GodotStringName, type: Int) {
+        _ = trackerUpdatedSignal.emit(.init(trackerName: trackerName,
                 type: type))
     }
     public lazy var trackerUpdatedSignal: Godot.SignalEmitter<TrackerUpdatedSignalInput> = {
         .init(object: self, signalName: "tracker_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
@@ -165,27 +153,24 @@ open class XRServer: Object {
     }()
 
     public struct TrackerRemovedSignalInput: Godot.SignalInput {
-        public let tracker_name: Godot.GodotStringName
+        public let trackerName: Godot.GodotStringName
         public let type: Int
-        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
-            self.tracker_name = tracker_name
+        fileprivate init(trackerName: Godot.GodotStringName, type: Int) {
+            self.trackerName = trackerName
             self.type = type
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tracker_name, type)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.trackerName), Variant(input.type)]
         }
     }
-    public func trackerRemoved(tracker_name: Godot.GodotStringName, type: Int) {
-        _ = trackerRemovedSignal.emit(.init(tracker_name: tracker_name,
+    public func trackerRemoved(trackerName: Godot.GodotStringName, type: Int) {
+        _ = trackerRemovedSignal.emit(.init(trackerName: trackerName,
                 type: type))
     }
     public lazy var trackerRemovedSignal: Godot.SignalEmitter<TrackerRemovedSignalInput> = {
         .init(object: self, signalName: "tracker_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>>.fromOpaque(callablePtr!).release()
@@ -198,7 +183,7 @@ open class XRServer: Object {
         }
     }()
 
-    private static var __method_binding_get_world_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_world_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_world_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -216,7 +201,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_set_world_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_world_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_world_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -235,7 +220,7 @@ open class XRServer: Object {
         )}}}
     }
 
-    private static var __method_binding_get_world_origin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_world_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_world_origin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
@@ -253,7 +238,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_set_world_origin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_world_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_world_origin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2952846383)!
@@ -272,7 +257,7 @@ open class XRServer: Object {
         )}}}
     }
 
-    private static var __method_binding_get_reference_frame: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_reference_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_reference_frame").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
@@ -290,7 +275,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_center_on_hmd: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_center_on_hmd: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "center_on_hmd").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1450904707)!
@@ -310,7 +295,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_hmd_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_hmd_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_hmd_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4183770049)!
@@ -328,7 +313,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1898711491)!
@@ -348,7 +333,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interface_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interface_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interface_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -366,7 +351,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_remove_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1898711491)!
@@ -386,7 +371,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4237347919)!
@@ -406,7 +391,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_interfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -424,7 +409,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_find_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_find_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1395192955)!
@@ -444,7 +429,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_add_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2692800323)!
@@ -464,7 +449,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_remove_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2692800323)!
@@ -484,7 +469,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_trackers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_trackers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_trackers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3554694381)!
@@ -504,7 +489,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2742084544)!
@@ -524,7 +509,7 @@ open class XRServer: Object {
         )}}}}
     }
 
-    private static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_primary_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2143545064)!
@@ -542,7 +527,7 @@ open class XRServer: Object {
         )}}
     }
 
-    private static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_primary_interface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1898711491)!

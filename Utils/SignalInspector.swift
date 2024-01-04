@@ -63,11 +63,8 @@ public struct SignalInspector {
             """
             
             """
-            \(raw: accessModifier) func _emit(
-                _ signalName: Godot.GodotStringName,
-                on object: Godot.Object
-            ) -> Godot.ErrorType {
-                object.emitSignal(signalName\(raw: arguments.map { ", " + $0.name }.joined()))
+            \(raw: accessModifier) static func arguments(from input: Self) -> [Variant] {
+                [\(raw: arguments.map { "Variant(input.\($0.name))" }.joined(separator: ", "))]
             }
             """
         }

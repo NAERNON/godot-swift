@@ -15,7 +15,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
     }
 
-    private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -34,7 +34,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -52,7 +52,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_sections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -71,7 +71,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_sections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -89,7 +89,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_section_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_section_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_section_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -108,7 +108,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_section_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_section_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_section_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -126,7 +126,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_section_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_section_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_section_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -145,7 +145,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_section_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_section_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_section_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -163,7 +163,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -183,7 +183,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}}
     }
 
-    private static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -201,7 +201,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}
     }
 
-    private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684440262)!
@@ -220,7 +220,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         )}}}
     }
 
-    private static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1317484155)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRAnchor3D: XRNode3D {
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -23,7 +23,7 @@ open class XRAnchor3D: XRNode3D {
         )}}
     }
 
-    private static var __method_binding_get_plane: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_plane: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_plane").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2753500971)!

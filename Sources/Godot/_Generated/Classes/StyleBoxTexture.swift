@@ -17,7 +17,7 @@ open class StyleBoxTexture: StyleBox {
         }
     }
 
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -37,7 +37,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -55,7 +55,7 @@ open class StyleBoxTexture: StyleBox {
         )}}
     }
 
-    private static var __method_binding_set_texture_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
@@ -75,7 +75,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}}
     }
 
-    private static var __method_binding_set_texture_margin_all: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_margin_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_margin_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -94,7 +94,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_texture_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
@@ -114,7 +114,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}}
     }
 
-    private static var __method_binding_set_expand_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_expand_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_expand_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
@@ -134,7 +134,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}}
     }
 
-    private static var __method_binding_set_expand_margin_all: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_expand_margin_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_expand_margin_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -153,7 +153,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_expand_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_expand_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_expand_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
@@ -173,7 +173,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}}
     }
 
-    private static var __method_binding_set_region_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_region_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
@@ -192,7 +192,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_region_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_region_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
@@ -210,7 +210,7 @@ open class StyleBoxTexture: StyleBox {
         )}}
     }
 
-    private static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draw_center").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -229,7 +229,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_draw_center_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -247,7 +247,7 @@ open class StyleBoxTexture: StyleBox {
         )}}
     }
 
-    private static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_modulate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -266,7 +266,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_modulate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -284,7 +284,7 @@ open class StyleBoxTexture: StyleBox {
         )}}
     }
 
-    private static var __method_binding_set_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2965538783)!
@@ -303,7 +303,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_h_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3807744063)!
@@ -321,7 +321,7 @@ open class StyleBoxTexture: StyleBox {
         )}}
     }
 
-    private static var __method_binding_set_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_v_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2965538783)!
@@ -340,7 +340,7 @@ open class StyleBoxTexture: StyleBox {
         )}}}
     }
 
-    private static var __method_binding_get_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_v_axis_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3807744063)!

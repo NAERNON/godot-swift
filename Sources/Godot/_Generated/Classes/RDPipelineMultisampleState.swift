@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDPipelineMultisampleState: RefCounted {
-    private static var __method_binding_set_sample_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sample_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sample_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
@@ -24,7 +24,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_sample_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sample_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sample_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
@@ -42,7 +42,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_enable_sample_shading: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_sample_shading").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_sample_shading: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_sample_shading").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -79,7 +79,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_min_sample_shading: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_sample_shading").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_min_sample_shading: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_sample_shading").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_alpha_to_coverage").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -135,7 +135,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_alpha_to_coverage").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_enable_alpha_to_one: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_alpha_to_one: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_alpha_to_one").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -172,7 +172,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_alpha_to_one: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_alpha_to_one: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_alpha_to_one").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -190,7 +190,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_sample_masks: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sample_masks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sample_masks").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -209,7 +209,7 @@ open class RDPipelineMultisampleState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_sample_masks: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sample_masks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sample_masks").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

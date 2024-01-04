@@ -43,7 +43,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
     }
 
-    private static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pathfinding_algorithm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394560454)!
@@ -62,7 +62,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_pathfinding_algorithm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pathfinding_algorithm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3398491350)!
@@ -80,7 +80,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_path_postprocessing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path_postprocessing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2267362344)!
@@ -99,7 +99,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_path_postprocessing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_path_postprocessing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3883858360)!
@@ -117,7 +117,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -136,7 +136,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -154,7 +154,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_start_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_start_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -173,7 +173,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_start_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_start_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -191,7 +191,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -210,7 +210,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -228,7 +228,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -247,7 +247,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -265,7 +265,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_metadata_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_metadata_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2713846708)!
@@ -284,7 +284,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_metadata_flags: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_metadata_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1582332802)!

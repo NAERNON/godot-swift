@@ -17,7 +17,7 @@ open class SceneReplicationConfig: Resource {
         }
     }
 
-    private static var __method_binding_get_properties: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_properties").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -35,7 +35,7 @@ open class SceneReplicationConfig: Resource {
         )}}
     }
 
-    private static var __method_binding_add_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4094619021)!
@@ -55,7 +55,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_has_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 861721659)!
@@ -75,7 +75,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_property: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_property").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -94,7 +94,7 @@ open class SceneReplicationConfig: Resource {
         )}}}
     }
 
-    private static var __method_binding_property_get_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_get_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_get_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1382022557)!
@@ -114,7 +114,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_get_spawn: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_get_spawn: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_get_spawn").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3456846888)!
@@ -134,7 +134,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_set_spawn: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_set_spawn: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_set_spawn").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3868023870)!
@@ -154,7 +154,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_get_replication_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_get_replication_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_get_replication_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2870606336)!
@@ -174,7 +174,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_set_replication_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_set_replication_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_set_replication_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3200083865)!
@@ -194,7 +194,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_get_sync: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_get_sync: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_get_sync").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3456846888)!
@@ -214,7 +214,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_set_sync: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_set_sync: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_set_sync").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3868023870)!
@@ -234,7 +234,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_get_watch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_get_watch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_get_watch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3456846888)!
@@ -254,7 +254,7 @@ open class SceneReplicationConfig: Resource {
         )}}}}
     }
 
-    private static var __method_binding_property_set_watch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_property_set_watch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "property_set_watch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3868023870)!

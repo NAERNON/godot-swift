@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImporterMesh: Resource {
-    private static var __method_binding_add_blend_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_blend_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_blend_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -24,7 +24,7 @@ open class ImporterMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_blend_shape_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -42,7 +42,7 @@ open class ImporterMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_get_blend_shape_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -62,7 +62,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_blend_shape_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_blend_shape_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_blend_shape_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 227983991)!
@@ -81,7 +81,7 @@ open class ImporterMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_blend_shape_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_blend_shape_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_blend_shape_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 836485024)!
@@ -99,7 +99,7 @@ open class ImporterMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_add_surface: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_surface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_surface").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740448849)!
@@ -125,7 +125,7 @@ open class ImporterMesh: Resource {
         )}}}}}}}}}}
     }
 
-    private static var __method_binding_get_surface_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -143,7 +143,7 @@ open class ImporterMesh: Resource {
         )}}
     }
 
-    private static var __method_binding_get_surface_primitive_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_primitive_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_primitive_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3552571330)!
@@ -163,7 +163,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_surface_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -183,7 +183,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_surface_arrays: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 663333327)!
@@ -203,7 +203,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_surface_blend_shape_arrays: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_blend_shape_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_blend_shape_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2345056839)!
@@ -224,7 +224,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_surface_lod_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_lod_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_lod_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -244,7 +244,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_surface_lod_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_lod_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_lod_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
@@ -265,7 +265,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_surface_lod_indices: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_lod_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_lod_indices").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265128013)!
@@ -286,7 +286,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_surface_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2897466400)!
@@ -306,7 +306,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_surface_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -326,7 +326,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_surface_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_surface_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_surface_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -346,7 +346,7 @@ open class ImporterMesh: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_surface_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_surface_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_surface_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3671737478)!
@@ -367,7 +367,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_generate_lods: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_generate_lods: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_lods").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2491878677)!
@@ -388,7 +388,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1457573577)!
@@ -409,7 +409,7 @@ open class ImporterMesh: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -426,7 +426,7 @@ open class ImporterMesh: Resource {
         )}
     }
 
-    private static var __method_binding_set_lightmap_size_hint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_lightmap_size_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_lightmap_size_hint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -445,7 +445,7 @@ open class ImporterMesh: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_lightmap_size_hint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_lightmap_size_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_lightmap_size_hint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!

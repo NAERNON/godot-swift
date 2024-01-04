@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OccluderInstance3D: Node3D {
-    private static var __method_binding_set_bake_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class OccluderInstance3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_bake_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -42,7 +42,7 @@ open class OccluderInstance3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_bake_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -62,7 +62,7 @@ open class OccluderInstance3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_bake_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -82,7 +82,7 @@ open class OccluderInstance3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_set_bake_simplification_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_simplification_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_simplification_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -101,7 +101,7 @@ open class OccluderInstance3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_bake_simplification_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_simplification_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_simplification_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -119,7 +119,7 @@ open class OccluderInstance3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_occluder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_occluder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_occluder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1664878165)!
@@ -139,7 +139,7 @@ open class OccluderInstance3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_occluder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_occluder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_occluder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1696836198)!

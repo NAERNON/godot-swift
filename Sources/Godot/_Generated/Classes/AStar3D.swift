@@ -13,7 +13,7 @@ open class AStar3D: RefCounted {
         Double()
     }
 
-    private static var __method_binding_get_available_point_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_available_point_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_available_point_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -31,7 +31,7 @@ open class AStar3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1038703438)!
@@ -52,7 +52,7 @@ open class AStar3D: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
@@ -72,7 +72,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
@@ -92,7 +92,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_point_weight_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_weight_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
@@ -112,7 +112,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_set_point_weight_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_weight_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -132,7 +132,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -151,7 +151,7 @@ open class AStar3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_has_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -171,7 +171,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_point_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2865087369)!
@@ -191,7 +191,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_point_ids: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_ids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_ids").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3851388692)!
@@ -209,7 +209,7 @@ open class AStar3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_point_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
@@ -229,7 +229,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_is_point_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_point_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_point_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -249,7 +249,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_connect_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_connect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
@@ -270,7 +270,7 @@ open class AStar3D: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_disconnect_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
@@ -291,7 +291,7 @@ open class AStar3D: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_are_points_connected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_are_points_connected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_points_connected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2288175859)!
@@ -313,7 +313,7 @@ open class AStar3D: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -331,7 +331,7 @@ open class AStar3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_point_capacity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_capacity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_capacity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -349,7 +349,7 @@ open class AStar3D: RefCounted {
         )}}
     }
 
-    private static var __method_binding_reserve_space: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_reserve_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reserve_space").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -368,7 +368,7 @@ open class AStar3D: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -385,7 +385,7 @@ open class AStar3D: RefCounted {
         )}
     }
 
-    private static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3241074317)!
@@ -406,7 +406,7 @@ open class AStar3D: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_closest_position_in_segment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_closest_position_in_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_position_in_segment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 192990374)!
@@ -426,7 +426,7 @@ open class AStar3D: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_point_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 880819742)!
@@ -447,7 +447,7 @@ open class AStar3D: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_id_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3404614526)!

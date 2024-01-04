@@ -32,7 +32,7 @@ open class SubViewport: Viewport {
         }
     }
 
-    private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -51,7 +51,7 @@ open class SubViewport: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -69,7 +69,7 @@ open class SubViewport: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_size_2d_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size_2d_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size_2d_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
@@ -88,7 +88,7 @@ open class SubViewport: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_size_2d_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_size_2d_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_size_2d_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
@@ -106,7 +106,7 @@ open class SubViewport: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_size_2d_override_stretch: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_size_2d_override_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_size_2d_override_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -125,7 +125,7 @@ open class SubViewport: Viewport {
         )}}}
     }
 
-    private static var __method_binding_is_size_2d_override_stretch_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_size_2d_override_stretch_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_size_2d_override_stretch_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -143,7 +143,7 @@ open class SubViewport: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1295690030)!
@@ -162,7 +162,7 @@ open class SubViewport: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_update_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2980171553)!
@@ -180,7 +180,7 @@ open class SubViewport: Viewport {
         )}}
     }
 
-    private static var __method_binding_set_clear_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_clear_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_clear_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2834454712)!
@@ -199,7 +199,7 @@ open class SubViewport: Viewport {
         )}}}
     }
 
-    private static var __method_binding_get_clear_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_clear_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_clear_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 331324495)!

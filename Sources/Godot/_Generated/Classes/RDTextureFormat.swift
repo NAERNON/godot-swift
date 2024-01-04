@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDTextureFormat: RefCounted {
-    private static var __method_binding_set_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!
@@ -24,7 +24,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235804183)!
@@ -42,7 +42,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -61,7 +61,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -79,7 +79,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_height: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_height").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -116,7 +116,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -135,7 +135,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -153,7 +153,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_array_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_array_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_array_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -172,7 +172,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_array_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_array_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_array_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -190,7 +190,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_mipmaps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -209,7 +209,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_mipmaps: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -227,7 +227,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 652343381)!
@@ -246,7 +246,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4036357416)!
@@ -264,7 +264,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_samples: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_samples: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_samples").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
@@ -283,7 +283,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_samples: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_samples: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_samples").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
@@ -301,7 +301,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_usage_bits: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_usage_bits: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_usage_bits").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 245642367)!
@@ -320,7 +320,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_usage_bits: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_usage_bits: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_usage_bits").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1313398998)!
@@ -338,7 +338,7 @@ open class RDTextureFormat: RefCounted {
         )}}
     }
 
-    private static var __method_binding_add_shareable_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_shareable_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_shareable_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!
@@ -357,7 +357,7 @@ open class RDTextureFormat: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_remove_shareable_format: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_shareable_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_shareable_format").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!

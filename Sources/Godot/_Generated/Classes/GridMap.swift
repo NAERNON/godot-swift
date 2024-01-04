@@ -6,24 +6,21 @@ import GodotExtensionHeaders
 @GodotClass
 open class GridMap: Node3D {
     public struct CellSizeChangedSignalInput: Godot.SignalInput {
-        public let cell_size: Godot.Vector3
-        fileprivate init(cell_size: Godot.Vector3) {
-            self.cell_size = cell_size
+        public let cellSize: Godot.Vector3
+        fileprivate init(cellSize: Godot.Vector3) {
+            self.cellSize = cellSize
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, cell_size)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.cellSize)]
         }
     }
-    public func cellSizeChanged(cell_size: Godot.Vector3) {
-        _ = cellSizeChangedSignal.emit(.init(cell_size: cell_size))
+    public func cellSizeChanged(cellSize: Godot.Vector3) {
+        _ = cellSizeChangedSignal.emit(.init(cellSize: cellSize))
     }
     public lazy var cellSizeChangedSignal: Godot.SignalEmitter<CellSizeChangedSignalInput> = {
         .init(object: self, signalName: "cell_size_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(cell_size: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(cellSize: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -53,7 +50,7 @@ open class GridMap: Node3D {
         }
     }()
 
-    private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -72,7 +69,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -90,7 +87,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -109,7 +106,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -127,7 +124,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -147,7 +144,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -167,7 +164,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -187,7 +184,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -207,7 +204,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -226,7 +223,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -244,7 +241,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_physics_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physics_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physics_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1784508650)!
@@ -264,7 +261,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_physics_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2521850424)!
@@ -282,7 +279,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_bake_navigation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_navigation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_navigation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -301,7 +298,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_baking_navigation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_baking_navigation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_baking_navigation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -319,7 +316,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -338,7 +335,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -356,7 +353,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_mesh_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mesh_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mesh_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1488083439)!
@@ -376,7 +373,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_mesh_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mesh_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mesh_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3350993772)!
@@ -394,7 +391,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
@@ -413,7 +410,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
@@ -431,7 +428,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_cell_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -450,7 +447,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_cell_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -468,7 +465,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_octant_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_octant_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_octant_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -487,7 +484,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_octant_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_octant_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_octant_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -505,7 +502,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_cell_item: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cell_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_item").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3449088946)!
@@ -526,7 +523,7 @@ open class GridMap: Node3D {
         )}}}}}
     }
 
-    private static var __method_binding_get_cell_item: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_item").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724960147)!
@@ -546,7 +543,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_cell_item_orientation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_item_orientation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_item_orientation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724960147)!
@@ -566,7 +563,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_cell_item_basis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cell_item_basis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cell_item_basis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3493604918)!
@@ -586,7 +583,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_basis_with_orthogonal_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_basis_with_orthogonal_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_basis_with_orthogonal_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2816196998)!
@@ -606,7 +603,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_orthogonal_index_from_basis: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_orthogonal_index_from_basis: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_orthogonal_index_from_basis").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4210359952)!
@@ -626,7 +623,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_local_to_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_local_to_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "local_to_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1257687843)!
@@ -646,7 +643,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_map_to_local: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_map_to_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "map_to_local").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1088329196)!
@@ -666,7 +663,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "resource_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 968641751)!
@@ -686,7 +683,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_set_center_x: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_center_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_center_x").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -705,7 +702,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_center_x: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_center_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_center_x").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -723,7 +720,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_center_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_center_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_center_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -742,7 +739,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_center_y: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_center_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_center_y").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -760,7 +757,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_center_z: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_center_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_center_z").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -779,7 +776,7 @@ open class GridMap: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_center_z: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_center_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_center_z").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -797,7 +794,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -814,7 +811,7 @@ open class GridMap: Node3D {
         )}
     }
 
-    private static var __method_binding_get_used_cells: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_used_cells: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_used_cells").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -832,7 +829,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_used_cells_by_item: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_used_cells_by_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_used_cells_by_item").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 663333327)!
@@ -852,7 +849,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_meshes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_meshes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_meshes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -870,7 +867,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_bake_meshes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_meshes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_meshes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -888,7 +885,7 @@ open class GridMap: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_bake_mesh_instance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_mesh_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_mesh_instance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
@@ -908,7 +905,7 @@ open class GridMap: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_clear_baked_meshes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_baked_meshes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_baked_meshes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -925,7 +922,7 @@ open class GridMap: Node3D {
         )}
     }
 
-    private static var __method_binding_make_baked_meshes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_baked_meshes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_baked_meshes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3609286057)!

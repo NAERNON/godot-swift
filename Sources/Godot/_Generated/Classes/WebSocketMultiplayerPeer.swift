@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class WebSocketMultiplayerPeer: MultiplayerPeer {
-    private static var __method_binding_create_client: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_client: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_client").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1966198364)!
@@ -27,7 +27,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}}}}
     }
 
-    private static var __method_binding_create_server: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_server: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_server").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2400822951)!
@@ -50,7 +50,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}}}}}
     }
 
-    private static var __method_binding_get_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1381378851)!
@@ -70,7 +70,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}}
     }
 
-    private static var __method_binding_get_peer_address: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_peer_address: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_peer_address").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -90,7 +90,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}}
     }
 
-    private static var __method_binding_get_peer_port: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_peer_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_peer_port").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -110,7 +110,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}}
     }
 
-    private static var __method_binding_get_supported_protocols: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_supported_protocols: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_supported_protocols").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -128,7 +128,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}
     }
 
-    private static var __method_binding_set_supported_protocols: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_supported_protocols: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_supported_protocols").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
@@ -147,7 +147,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_get_handshake_headers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_handshake_headers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_handshake_headers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -165,7 +165,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}
     }
 
-    private static var __method_binding_set_handshake_headers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_handshake_headers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_handshake_headers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
@@ -184,7 +184,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_get_inbound_buffer_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_inbound_buffer_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inbound_buffer_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -202,7 +202,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}
     }
 
-    private static var __method_binding_set_inbound_buffer_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_inbound_buffer_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_inbound_buffer_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -221,7 +221,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_get_outbound_buffer_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outbound_buffer_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outbound_buffer_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -239,7 +239,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}
     }
 
-    private static var __method_binding_set_outbound_buffer_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outbound_buffer_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outbound_buffer_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -258,7 +258,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_get_handshake_timeout: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_handshake_timeout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_handshake_timeout").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -276,7 +276,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}
     }
 
-    private static var __method_binding_set_handshake_timeout: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_handshake_timeout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_handshake_timeout").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -295,7 +295,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_set_max_queued_packets: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_queued_packets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_queued_packets").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -314,7 +314,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         )}}}
     }
 
-    private static var __method_binding_get_max_queued_packets: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_queued_packets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_queued_packets").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

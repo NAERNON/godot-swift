@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ColorRect: Control {
-    private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -24,7 +24,7 @@ open class ColorRect: Control {
         )}}}
     }
 
-    private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!

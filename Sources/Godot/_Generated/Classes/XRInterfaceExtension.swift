@@ -122,7 +122,7 @@ open class XRInterfaceExtension: XRInterface {
         Godot.RID()
     }
 
-    private static var __method_binding_get_color_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
@@ -140,7 +140,7 @@ open class XRInterfaceExtension: XRInterface {
         )}}
     }
 
-    private static var __method_binding_get_depth_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_depth_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_depth_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
@@ -158,7 +158,7 @@ open class XRInterfaceExtension: XRInterface {
         )}}
     }
 
-    private static var __method_binding_get_velocity_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
@@ -176,7 +176,7 @@ open class XRInterfaceExtension: XRInterface {
         )}}
     }
 
-    private static var __method_binding_add_blit: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_blit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_blit").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 258596971)!
@@ -205,7 +205,7 @@ open class XRInterfaceExtension: XRInterface {
         )}}}}}}}}}}}}}
     }
 
-    private static var __method_binding_get_render_target_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_render_target_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_render_target_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 41030802)!

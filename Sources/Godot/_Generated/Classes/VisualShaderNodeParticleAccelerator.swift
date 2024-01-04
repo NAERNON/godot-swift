@@ -19,7 +19,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         }
     }
 
-    private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457585749)!
@@ -38,7 +38,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2660365633)!

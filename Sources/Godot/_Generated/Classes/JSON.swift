@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class JSON: Resource {
-    private static var __method_binding_stringify: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stringify: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stringify").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 462733549)!
@@ -27,7 +27,7 @@ open class JSON: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_parse_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_parse_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 309047738)!
@@ -46,7 +46,7 @@ open class JSON: Resource {
         )}}}
     }
 
-    private static var __method_binding_parse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_parse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 885841341)!
@@ -67,7 +67,7 @@ open class JSON: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1214101251)!
@@ -85,7 +85,7 @@ open class JSON: Resource {
         )}}
     }
 
-    private static var __method_binding_set_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1114965689)!
@@ -104,7 +104,7 @@ open class JSON: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_parsed_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parsed_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parsed_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -122,7 +122,7 @@ open class JSON: Resource {
         )}}
     }
 
-    private static var __method_binding_get_error_line: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_error_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_error_line").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -140,7 +140,7 @@ open class JSON: Resource {
         )}}
     }
 
-    private static var __method_binding_get_error_message: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_error_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_error_message").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

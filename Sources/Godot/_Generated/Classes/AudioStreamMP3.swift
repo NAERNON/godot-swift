@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamMP3: AudioStream {
-    private static var __method_binding_set_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2971499966)!
@@ -24,7 +24,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_data: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_data").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2362200018)!
@@ -42,7 +42,7 @@ open class AudioStreamMP3: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -61,7 +61,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_loop").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -79,7 +79,7 @@ open class AudioStreamMP3: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_loop_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_loop_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_loop_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_loop_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_loop_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_loop_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class AudioStreamMP3: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_bpm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bpm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bpm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_bpm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bpm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bpm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class AudioStreamMP3: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_beat_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_beat_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_beat_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -172,7 +172,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_beat_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_beat_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_beat_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -190,7 +190,7 @@ open class AudioStreamMP3: AudioStream {
         )}}
     }
 
-    private static var __method_binding_set_bar_beats: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bar_beats: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bar_beats").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -209,7 +209,7 @@ open class AudioStreamMP3: AudioStream {
         )}}}
     }
 
-    private static var __method_binding_get_bar_beats: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bar_beats: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bar_beats").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

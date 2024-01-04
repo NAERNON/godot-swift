@@ -46,7 +46,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
     }()
 
-    private static var __method_binding_set_switch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_switch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_switch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074906633)!
@@ -65,7 +65,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_switch_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_switch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_switch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2138562085)!
@@ -83,7 +83,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_advance_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_advance_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_advance_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1210869868)!
@@ -102,7 +102,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_advance_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_advance_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_advance_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 61101689)!
@@ -120,7 +120,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_advance_condition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_advance_condition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_advance_condition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -139,7 +139,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_advance_condition: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_advance_condition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_advance_condition").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
@@ -157,7 +157,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_xfade_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_xfade_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -176,7 +176,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_xfade_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_xfade_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -194,7 +194,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_xfade_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_xfade_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -214,7 +214,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_xfade_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_xfade_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -232,7 +232,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_reset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_reset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -251,7 +251,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_is_reset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_reset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -269,7 +269,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -288,7 +288,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -306,7 +306,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}
     }
 
-    private static var __method_binding_set_advance_expression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_advance_expression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_advance_expression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -325,7 +325,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_advance_expression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_advance_expression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_advance_expression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

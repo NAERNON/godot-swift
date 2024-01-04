@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourcePreloader: Node {
-    private static var __method_binding_add_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1168801743)!
@@ -26,7 +26,7 @@ open class ResourcePreloader: Node {
         )}}}}}
     }
 
-    private static var __method_binding_remove_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
@@ -45,7 +45,7 @@ open class ResourcePreloader: Node {
         )}}}
     }
 
-    private static var __method_binding_rename_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_rename_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "rename_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
@@ -65,7 +65,7 @@ open class ResourcePreloader: Node {
         )}}}}
     }
 
-    private static var __method_binding_has_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
@@ -85,7 +85,7 @@ open class ResourcePreloader: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_resource: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3742749261)!
@@ -105,7 +105,7 @@ open class ResourcePreloader: Node {
         )}}}}
     }
 
-    private static var __method_binding_get_resource_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_resource_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_resource_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!

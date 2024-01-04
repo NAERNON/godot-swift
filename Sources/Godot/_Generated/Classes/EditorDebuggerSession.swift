@@ -42,24 +42,21 @@ open class EditorDebuggerSession: RefCounted {
     }()
 
     public struct BreakedSignalInput: Godot.SignalInput {
-        public let can_debug: Bool
-        fileprivate init(can_debug: Bool) {
-            self.can_debug = can_debug
+        public let canDebug: Bool
+        fileprivate init(canDebug: Bool) {
+            self.canDebug = canDebug
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, can_debug)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.canDebug)]
         }
     }
-    public func breaked(can_debug: Bool) {
-        _ = breakedSignal.emit(.init(can_debug: can_debug))
+    public func breaked(canDebug: Bool) {
+        _ = breakedSignal.emit(.init(canDebug: canDebug))
     }
     public lazy var breakedSignal: Godot.SignalEmitter<BreakedSignalInput> = {
         .init(object: self, signalName: "breaked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BreakedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(can_debug: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(canDebug: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BreakedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -89,7 +86,7 @@ open class EditorDebuggerSession: RefCounted {
         }
     }()
 
-    private static var __method_binding_send_message: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "send_message").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 85656714)!
@@ -109,7 +106,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_toggle_profiler: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_toggle_profiler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "toggle_profiler").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1198443697)!
@@ -130,7 +127,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_is_breaked: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_breaked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_breaked").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -148,7 +145,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_debuggable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_debuggable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_debuggable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -166,7 +163,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}
     }
 
-    private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -184,7 +181,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}
     }
 
-    private static var __method_binding_add_session_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_session_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_session_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -204,7 +201,7 @@ open class EditorDebuggerSession: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_remove_session_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_session_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_session_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!

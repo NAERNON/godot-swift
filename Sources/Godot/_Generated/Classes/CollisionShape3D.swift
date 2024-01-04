@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CollisionShape3D: Node3D {
-    private static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "resource_changed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 968641751)!
@@ -25,7 +25,7 @@ open class CollisionShape3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1549710052)!
@@ -45,7 +45,7 @@ open class CollisionShape3D: Node3D {
         )}}}}
     }
 
-    private static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3214262478)!
@@ -63,7 +63,7 @@ open class CollisionShape3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -82,7 +82,7 @@ open class CollisionShape3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -100,7 +100,7 @@ open class CollisionShape3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_make_convex_from_siblings: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_convex_from_siblings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_convex_from_siblings").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

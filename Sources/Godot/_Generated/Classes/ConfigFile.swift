@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ConfigFile: RefCounted {
-    private static var __method_binding_set_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2504492430)!
@@ -26,7 +26,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 89809366)!
@@ -48,7 +48,7 @@ open class ConfigFile: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_has_section: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_section: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_section").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
@@ -68,7 +68,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_has_section_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_section_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_section_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 820780508)!
@@ -89,7 +89,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_get_sections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
@@ -107,7 +107,7 @@ open class ConfigFile: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_section_keys: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_section_keys: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_section_keys").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
@@ -127,7 +127,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_erase_section: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_erase_section: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase_section").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -146,7 +146,7 @@ open class ConfigFile: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_erase_section_key: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_erase_section_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase_section_key").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
@@ -166,7 +166,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_load: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -186,7 +186,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_parse: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_parse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -206,7 +206,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_save: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -226,7 +226,7 @@ open class ConfigFile: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_encode_to_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_encode_to_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "encode_to_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -244,7 +244,7 @@ open class ConfigFile: RefCounted {
         )}}
     }
 
-    private static var __method_binding_load_encrypted: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_encrypted: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_encrypted").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 887037711)!
@@ -265,7 +265,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_load_encrypted_pass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_encrypted_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_encrypted_pass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
@@ -286,7 +286,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_save_encrypted: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save_encrypted: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_encrypted").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 887037711)!
@@ -307,7 +307,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_save_encrypted_pass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save_encrypted_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_encrypted_pass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
@@ -328,7 +328,7 @@ open class ConfigFile: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

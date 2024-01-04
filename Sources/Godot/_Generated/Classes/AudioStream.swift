@@ -29,7 +29,7 @@ open class AudioStream: Resource {
         Int32()
     }
 
-    private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -47,7 +47,7 @@ open class AudioStream: Resource {
         )}}
     }
 
-    private static var __method_binding_is_monophonic: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_monophonic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_monophonic").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -65,7 +65,7 @@ open class AudioStream: Resource {
         )}}
     }
 
-    private static var __method_binding_instantiate_playback: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_instantiate_playback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "instantiate_playback").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 210135309)!

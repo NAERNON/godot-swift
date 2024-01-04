@@ -26,7 +26,7 @@ open class CharacterBody2D: PhysicsBody2D {
         }
     }
 
-    private static var __method_binding_move_and_slide: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_and_slide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_and_slide").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -44,7 +44,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_apply_floor_snap: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_apply_floor_snap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_floor_snap").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -61,7 +61,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}
     }
 
-    private static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -80,7 +80,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -98,7 +98,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_safe_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_safe_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_safe_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -117,7 +117,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_safe_margin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_safe_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_safe_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -135,7 +135,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_floor_stop_on_slope_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -153,7 +153,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_floor_stop_on_slope_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -172,7 +172,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_set_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_floor_constant_speed_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -191,7 +191,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_is_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_floor_constant_speed_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -209,7 +209,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_floor_block_on_wall_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -228,7 +228,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_is_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_floor_block_on_wall_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -246,7 +246,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slide_on_ceiling_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -265,7 +265,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_is_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slide_on_ceiling_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -283,7 +283,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_platform_floor_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_platform_floor_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_platform_floor_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -302,7 +302,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_platform_floor_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_platform_floor_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_platform_floor_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -320,7 +320,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_platform_wall_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_platform_wall_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_platform_wall_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -339,7 +339,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_platform_wall_layers: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_platform_wall_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_platform_wall_layers").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -357,7 +357,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_max_slides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_slides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_slides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -375,7 +375,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_max_slides: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_slides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_slides").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -394,7 +394,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_floor_max_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_floor_max_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_floor_max_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -412,7 +412,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_floor_max_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_floor_max_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_floor_max_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -431,7 +431,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_floor_snap_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_floor_snap_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_floor_snap_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -449,7 +449,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_floor_snap_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_floor_snap_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_floor_snap_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -468,7 +468,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_wall_min_slide_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_wall_min_slide_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_wall_min_slide_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -486,7 +486,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_wall_min_slide_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_wall_min_slide_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_wall_min_slide_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -505,7 +505,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_up_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_up_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_up_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -523,7 +523,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_up_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_up_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_up_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -542,7 +542,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_set_motion_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_motion_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_motion_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1224392233)!
@@ -561,7 +561,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_motion_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_motion_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_motion_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1160151236)!
@@ -579,7 +579,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_set_platform_on_leave: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_platform_on_leave: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_platform_on_leave").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2423324375)!
@@ -598,7 +598,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}
     }
 
-    private static var __method_binding_get_platform_on_leave: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_platform_on_leave: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_platform_on_leave").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4054324341)!
@@ -616,7 +616,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_floor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_floor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_floor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -634,7 +634,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_floor_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_floor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_floor_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -652,7 +652,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_ceiling: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_ceiling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_ceiling").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -670,7 +670,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_ceiling_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_ceiling_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_ceiling_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -688,7 +688,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_wall: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_wall: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_wall").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -706,7 +706,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_is_on_wall_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_on_wall_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_on_wall_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -724,7 +724,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_floor_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_floor_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_floor_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -742,7 +742,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_wall_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_wall_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_wall_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -760,7 +760,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_last_motion: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_last_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_last_motion").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -778,7 +778,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_position_delta: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_position_delta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_position_delta").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -796,7 +796,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_real_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_real_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_real_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -814,7 +814,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_floor_angle: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_floor_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_floor_angle").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841063350)!
@@ -834,7 +834,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}}
     }
 
-    private static var __method_binding_get_platform_velocity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_platform_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_platform_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -852,7 +852,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_slide_collision_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slide_collision_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slide_collision_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -870,7 +870,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}
     }
 
-    private static var __method_binding_get_slide_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_slide_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_slide_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 860659811)!
@@ -890,7 +890,7 @@ open class CharacterBody2D: PhysicsBody2D {
         )}}}}
     }
 
-    private static var __method_binding_get_last_slide_collision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_last_slide_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_last_slide_collision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2161834755)!

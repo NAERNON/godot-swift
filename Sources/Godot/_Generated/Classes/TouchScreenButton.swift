@@ -51,7 +51,7 @@ open class TouchScreenButton: Node2D {
         }
     }()
 
-    private static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -71,7 +71,7 @@ open class TouchScreenButton: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -89,7 +89,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -109,7 +109,7 @@ open class TouchScreenButton: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -127,7 +127,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_bitmask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bitmask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bitmask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
@@ -147,7 +147,7 @@ open class TouchScreenButton: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_bitmask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bitmask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bitmask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
@@ -165,7 +165,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 771364740)!
@@ -185,7 +185,7 @@ open class TouchScreenButton: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 522005891)!
@@ -203,7 +203,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_shape_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -222,7 +222,7 @@ open class TouchScreenButton: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_shape_centered: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shape_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shape_centered").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -240,7 +240,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_shape_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shape_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shape_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -259,7 +259,7 @@ open class TouchScreenButton: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_shape_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shape_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shape_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -277,7 +277,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_action: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_action").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -296,7 +296,7 @@ open class TouchScreenButton: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_action: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_action").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -314,7 +314,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_visibility_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_visibility_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_visibility_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031128463)!
@@ -333,7 +333,7 @@ open class TouchScreenButton: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_visibility_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visibility_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visibility_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2558996468)!
@@ -351,7 +351,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_passby_press: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_passby_press: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_passby_press").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -370,7 +370,7 @@ open class TouchScreenButton: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_passby_press_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_passby_press_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_passby_press_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -388,7 +388,7 @@ open class TouchScreenButton: Node2D {
         )}}
     }
 
-    private static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_pressed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

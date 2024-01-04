@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeBooleanConstant: VisualShaderNodeConstant {
-    private static var __method_binding_set_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class VisualShaderNodeBooleanConstant: VisualShaderNodeConstant {
         )}}}
     }
 
-    private static var __method_binding_get_constant: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_constant").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

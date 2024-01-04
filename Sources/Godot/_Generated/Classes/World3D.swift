@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class World3D: Resource {
-    private static var __method_binding_get_space: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_space").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -23,7 +23,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -41,7 +41,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_get_scenario: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scenario: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scenario").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -59,7 +59,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4143518816)!
@@ -79,7 +79,7 @@ open class World3D: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082064660)!
@@ -97,7 +97,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_fallback_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fallback_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fallback_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4143518816)!
@@ -117,7 +117,7 @@ open class World3D: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_fallback_environment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fallback_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fallback_environment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082064660)!
@@ -135,7 +135,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_camera_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
@@ -155,7 +155,7 @@ open class World3D: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_camera_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
@@ -173,7 +173,7 @@ open class World3D: Resource {
         )}}
     }
 
-    private static var __method_binding_get_direct_space_state: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_direct_space_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_direct_space_state").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2069328350)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorScriptPicker: EditorResourcePicker {
-    private static var __method_binding_set_script_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_script_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_script_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -25,7 +25,7 @@ open class EditorScriptPicker: EditorResourcePicker {
         )}}}}
     }
 
-    private static var __method_binding_get_script_owner: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_script_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_owner").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!

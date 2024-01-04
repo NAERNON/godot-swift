@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectCapture: AudioEffect {
-    private static var __method_binding_can_get_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_can_get_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "can_get_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -25,7 +25,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}}}
     }
 
-    private static var __method_binding_get_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2649534757)!
@@ -45,7 +45,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}}}
     }
 
-    private static var __method_binding_clear_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -62,7 +62,7 @@ open class AudioEffectCapture: AudioEffect {
         )}
     }
 
-    private static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -81,7 +81,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -99,7 +99,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_get_frames_available: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_frames_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_frames_available").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -117,7 +117,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_get_discarded_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_discarded_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_discarded_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -135,7 +135,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_get_buffer_length_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer_length_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer_length_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -153,7 +153,7 @@ open class AudioEffectCapture: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_get_pushed_frames: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pushed_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pushed_frames").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

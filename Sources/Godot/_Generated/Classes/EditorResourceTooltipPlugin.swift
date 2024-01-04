@@ -13,7 +13,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
         nil
     }
 
-    private static var __method_binding_request_thumbnail: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_request_thumbnail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_thumbnail").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245519720)!

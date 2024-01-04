@@ -21,7 +21,7 @@ open class Shader: Resource {
         }
     }
 
-    private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3392948163)!
@@ -39,7 +39,7 @@ open class Shader: Resource {
         )}}
     }
 
-    private static var __method_binding_set_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -58,7 +58,7 @@ open class Shader: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_code: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -76,7 +76,7 @@ open class Shader: Resource {
         )}}
     }
 
-    private static var __method_binding_set_default_texture_parameter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_default_texture_parameter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_texture_parameter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2750740428)!
@@ -98,7 +98,7 @@ open class Shader: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_get_default_texture_parameter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_default_texture_parameter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_default_texture_parameter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3090538643)!
@@ -119,7 +119,7 @@ open class Shader: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_shader_uniform_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shader_uniform_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shader_uniform_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1230511656)!

@@ -19,7 +19,7 @@ open class GDExtension: Resource {
         }
     }
 
-    private static var __method_binding_open_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_open_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "open_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
@@ -40,7 +40,7 @@ open class GDExtension: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_close_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_close_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "close_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -57,7 +57,7 @@ open class GDExtension: Resource {
         )}
     }
 
-    private static var __method_binding_is_library_open: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_library_open: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_library_open").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -75,7 +75,7 @@ open class GDExtension: Resource {
         )}}
     }
 
-    private static var __method_binding_get_minimum_library_initialization_level: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_minimum_library_initialization_level: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_minimum_library_initialization_level").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 964858755)!
@@ -93,7 +93,7 @@ open class GDExtension: Resource {
         )}}
     }
 
-    private static var __method_binding_initialize_library: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_initialize_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "initialize_library").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3409922941)!

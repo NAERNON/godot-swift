@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RayCast2D: Node2D {
-    private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -24,7 +24,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -42,7 +42,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -61,7 +61,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -79,7 +79,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_is_colliding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_colliding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_colliding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -97,7 +97,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_force_raycast_update: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_force_raycast_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "force_raycast_update").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -114,7 +114,7 @@ open class RayCast2D: Node2D {
         )}
     }
 
-    private static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1981248198)!
@@ -132,7 +132,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -150,7 +150,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collider_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -168,7 +168,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_collision_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -186,7 +186,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_collision_normal: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_normal").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -204,7 +204,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_add_exception_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_exception_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_exception_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -223,7 +223,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_add_exception: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_exception: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_exception").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3090941106)!
@@ -243,7 +243,7 @@ open class RayCast2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_remove_exception_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_exception_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_exception_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
@@ -262,7 +262,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_remove_exception: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_exception: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_exception").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3090941106)!
@@ -282,7 +282,7 @@ open class RayCast2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_clear_exceptions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_exceptions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_exceptions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -299,7 +299,7 @@ open class RayCast2D: Node2D {
         )}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -318,7 +318,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -336,7 +336,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -356,7 +356,7 @@ open class RayCast2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -376,7 +376,7 @@ open class RayCast2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_exclude_parent_body: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_exclude_parent_body: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_exclude_parent_body").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -395,7 +395,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_exclude_parent_body: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_exclude_parent_body: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_exclude_parent_body").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -413,7 +413,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collide_with_areas").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -432,7 +432,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collide_with_areas_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -450,7 +450,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collide_with_bodies").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -469,7 +469,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_collide_with_bodies_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -487,7 +487,7 @@ open class RayCast2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_hit_from_inside: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_hit_from_inside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_hit_from_inside").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -506,7 +506,7 @@ open class RayCast2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_is_hit_from_inside_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_hit_from_inside_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_hit_from_inside_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

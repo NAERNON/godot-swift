@@ -33,11 +33,8 @@ open class MultiplayerPeer: PacketPeer {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func peerConnected(id: Int) {
@@ -63,11 +60,8 @@ open class MultiplayerPeer: PacketPeer {
         fileprivate init(id: Int) {
             self.id = id
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.id)]
         }
     }
     public func peerDisconnected(id: Int) {
@@ -88,7 +82,7 @@ open class MultiplayerPeer: PacketPeer {
         }
     }()
 
-    private static var __method_binding_set_transfer_channel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transfer_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transfer_channel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -107,7 +101,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}}
     }
 
-    private static var __method_binding_get_transfer_channel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_transfer_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_transfer_channel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -125,7 +119,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_set_transfer_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_transfer_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_transfer_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 950411049)!
@@ -144,7 +138,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}}
     }
 
-    private static var __method_binding_get_transfer_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_transfer_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_transfer_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3369852622)!
@@ -162,7 +156,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_set_target_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -181,7 +175,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}}
     }
 
-    private static var __method_binding_get_packet_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_packet_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_packet_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -199,7 +193,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_get_packet_channel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_packet_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_packet_channel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -217,7 +211,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_get_packet_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_packet_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_packet_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3369852622)!
@@ -235,7 +229,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_poll: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -252,7 +246,7 @@ open class MultiplayerPeer: PacketPeer {
         )}
     }
 
-    private static var __method_binding_close: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "close").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -269,7 +263,7 @@ open class MultiplayerPeer: PacketPeer {
         )}
     }
 
-    private static var __method_binding_disconnect_peer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_disconnect_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_peer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4023243586)!
@@ -289,7 +283,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}}}
     }
 
-    private static var __method_binding_get_connection_status: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_connection_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_status").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147374275)!
@@ -307,7 +301,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_unique_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -325,7 +319,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_generate_unique_id: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_generate_unique_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_unique_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -343,7 +337,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_set_refuse_new_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_refuse_new_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_refuse_new_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -362,7 +356,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}}
     }
 
-    private static var __method_binding_is_refusing_new_connections: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_refusing_new_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_refusing_new_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -380,7 +374,7 @@ open class MultiplayerPeer: PacketPeer {
         )}}
     }
 
-    private static var __method_binding_is_server_relay_supported: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_server_relay_supported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_server_relay_supported").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

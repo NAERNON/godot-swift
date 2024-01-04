@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDSamplerState: RefCounted {
-    private static var __method_binding_set_mag_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mag_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mag_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1493420382)!
@@ -24,7 +24,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_mag_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mag_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mag_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2209202801)!
@@ -42,7 +42,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_min_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1493420382)!
@@ -61,7 +61,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_min_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2209202801)!
@@ -79,7 +79,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_mip_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mip_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mip_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1493420382)!
@@ -98,7 +98,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_mip_filter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mip_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mip_filter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2209202801)!
@@ -116,7 +116,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_repeat_u: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_repeat_u: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_repeat_u").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 246127626)!
@@ -135,7 +135,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_repeat_u: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_repeat_u: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_repeat_u").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227895872)!
@@ -153,7 +153,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_repeat_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_repeat_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_repeat_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 246127626)!
@@ -172,7 +172,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_repeat_v: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_repeat_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_repeat_v").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227895872)!
@@ -190,7 +190,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_repeat_w: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_repeat_w: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_repeat_w").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 246127626)!
@@ -209,7 +209,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_repeat_w: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_repeat_w: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_repeat_w").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227895872)!
@@ -227,7 +227,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_lod_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_lod_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_lod_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -246,7 +246,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_lod_bias: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_lod_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_lod_bias").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -264,7 +264,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_use_anisotropy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_anisotropy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_anisotropy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -283,7 +283,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_use_anisotropy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_use_anisotropy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_use_anisotropy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -301,7 +301,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_anisotropy_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_anisotropy_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_anisotropy_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -320,7 +320,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_anisotropy_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_anisotropy_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_anisotropy_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -338,7 +338,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_enable_compare: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_compare").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -357,7 +357,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_enable_compare: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_enable_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_enable_compare").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -375,7 +375,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_compare_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_compare_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_compare_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
@@ -394,7 +394,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_compare_op: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_compare_op: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_compare_op").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
@@ -412,7 +412,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_min_lod: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_min_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_min_lod").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -431,7 +431,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_min_lod: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_min_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_min_lod").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -449,7 +449,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_max_lod: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_lod").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -468,7 +468,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_max_lod: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_lod").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -486,7 +486,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_border_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_border_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_border_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1115869595)!
@@ -505,7 +505,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_border_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_border_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_border_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3514246478)!
@@ -523,7 +523,7 @@ open class RDSamplerState: RefCounted {
         )}}
     }
 
-    private static var __method_binding_set_unnormalized_uvw: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_unnormalized_uvw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_unnormalized_uvw").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -542,7 +542,7 @@ open class RDSamplerState: RefCounted {
         )}}}
     }
 
-    private static var __method_binding_get_unnormalized_uvw: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_unnormalized_uvw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_unnormalized_uvw").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

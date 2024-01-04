@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ZIPReader: RefCounted {
-    private static var __method_binding_open: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "open").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -25,7 +25,7 @@ open class ZIPReader: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_close: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "close").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
@@ -43,7 +43,7 @@ open class ZIPReader: RefCounted {
         )}}
     }
 
-    private static var __method_binding_get_files: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_files: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_files").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
@@ -61,7 +61,7 @@ open class ZIPReader: RefCounted {
         )}}
     }
 
-    private static var __method_binding_read_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_read_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "read_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 740857591)!
@@ -82,7 +82,7 @@ open class ZIPReader: RefCounted {
         )}}}}}
     }
 
-    private static var __method_binding_file_exists: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_file_exists: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "file_exists").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 35364943)!

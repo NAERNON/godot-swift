@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter {
-    private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
@@ -25,7 +25,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         )}}}}
     }
 
-    private static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1808005922)!
@@ -43,7 +43,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         )}}
     }
 
-    private static var __method_binding_set_use_all_surfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_all_surfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_all_surfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -62,7 +62,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         )}}}
     }
 
-    private static var __method_binding_is_use_all_surfaces: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_use_all_surfaces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_use_all_surfaces").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -80,7 +80,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         )}}
     }
 
-    private static var __method_binding_set_surface_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_surface_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_surface_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -99,7 +99,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         )}}}
     }
 
-    private static var __method_binding_get_surface_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_surface_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_surface_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

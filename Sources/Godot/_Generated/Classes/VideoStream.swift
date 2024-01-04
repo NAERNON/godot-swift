@@ -9,7 +9,7 @@ open class VideoStream: Resource {
         nil
     }
 
-    private static var __method_binding_set_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -28,7 +28,7 @@ open class VideoStream: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!

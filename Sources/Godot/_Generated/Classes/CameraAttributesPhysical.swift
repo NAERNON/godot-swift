@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CameraAttributesPhysical: CameraAttributes {
-    private static var __method_binding_set_aperture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_aperture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_aperture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_aperture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_aperture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_aperture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_shutter_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shutter_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shutter_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_shutter_speed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shutter_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shutter_speed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_focal_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_focal_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_focal_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_focal_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_focal_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_focal_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_focus_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_focus_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_focus_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_focus_distance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_focus_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_focus_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -172,7 +172,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_near: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_near: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_near").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -190,7 +190,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -209,7 +209,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_far: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_far: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_far").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -227,7 +227,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fov").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -245,7 +245,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_auto_exposure_max_exposure_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_exposure_max_exposure_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_exposure_max_exposure_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -264,7 +264,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_auto_exposure_max_exposure_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_auto_exposure_max_exposure_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_auto_exposure_max_exposure_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -282,7 +282,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}
     }
 
-    private static var __method_binding_set_auto_exposure_min_exposure_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_auto_exposure_min_exposure_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_auto_exposure_min_exposure_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -301,7 +301,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         )}}}
     }
 
-    private static var __method_binding_get_auto_exposure_min_exposure_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_auto_exposure_min_exposure_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_auto_exposure_min_exposure_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

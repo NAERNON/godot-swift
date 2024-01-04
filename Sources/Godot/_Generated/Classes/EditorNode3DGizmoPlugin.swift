@@ -68,7 +68,7 @@ open class EditorNode3DGizmoPlugin: Resource {
     open func _commitSubgizmos(gizmo: Godot.EditorNode3DGizmo?, ids: Godot.PackedInt32Array, restores: Godot.GodotArray<Godot.Transform3D>, cancel: Bool) {
     }
 
-    private static var __method_binding_create_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3486012546)!
@@ -91,7 +91,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         )}}}}}}}
     }
 
-    private static var __method_binding_create_icon_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_icon_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_icon_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3804976916)!
@@ -114,7 +114,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         )}}}}}}}
     }
 
-    private static var __method_binding_create_handle_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_create_handle_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_handle_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2486475223)!
@@ -136,7 +136,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         )}}}}}}
     }
 
-    private static var __method_binding_add_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1374068695)!
@@ -157,7 +157,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 974464017)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
-    private static var __method_binding_set_physical_bone_chain_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physical_bone_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physical_bone_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}}}
     }
 
-    private static var __method_binding_get_physical_bone_chain_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physical_bone_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_bone_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -42,7 +42,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}}
     }
 
-    private static var __method_binding_set_physical_bone_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_physical_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physical_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
@@ -62,7 +62,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_physical_bone_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physical_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -82,7 +82,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_fetch_physical_bones: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_fetch_physical_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "fetch_physical_bones").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -99,7 +99,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}
     }
 
-    private static var __method_binding_start_simulation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_start_simulation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start_simulation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787316981)!
@@ -118,7 +118,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         )}}}
     }
 
-    private static var __method_binding_stop_simulation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_stop_simulation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop_simulation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787316981)!

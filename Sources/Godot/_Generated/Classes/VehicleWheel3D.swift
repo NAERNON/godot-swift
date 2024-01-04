@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class VehicleWheel3D: Node3D {
-    private static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_radius").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_suspension_rest_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suspension_rest_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suspension_rest_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -61,7 +61,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_suspension_rest_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suspension_rest_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suspension_rest_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -79,7 +79,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_suspension_travel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suspension_travel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suspension_travel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_suspension_travel: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suspension_travel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suspension_travel").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_suspension_stiffness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suspension_stiffness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suspension_stiffness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_suspension_stiffness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suspension_stiffness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suspension_stiffness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_suspension_max_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_suspension_max_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_suspension_max_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -172,7 +172,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_suspension_max_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_suspension_max_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_suspension_max_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -190,7 +190,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_damping_compression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_damping_compression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_damping_compression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -209,7 +209,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_damping_compression: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_damping_compression: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_damping_compression").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -227,7 +227,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_damping_relaxation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_damping_relaxation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_damping_relaxation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -246,7 +246,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_damping_relaxation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_damping_relaxation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_damping_relaxation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -264,7 +264,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_use_as_traction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_as_traction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_as_traction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -283,7 +283,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_used_as_traction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_used_as_traction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_used_as_traction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -301,7 +301,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_use_as_steering: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_as_steering: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_as_steering").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -320,7 +320,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_is_used_as_steering: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_used_as_steering: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_used_as_steering").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -338,7 +338,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_friction_slip: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_friction_slip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_friction_slip").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -357,7 +357,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_friction_slip: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_friction_slip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_friction_slip").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -375,7 +375,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_is_in_contact: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_in_contact: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_in_contact").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -393,7 +393,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_contact_body: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_contact_body: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_contact_body").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 151077316)!
@@ -411,7 +411,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_roll_influence: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_roll_influence: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_roll_influence").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -430,7 +430,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_roll_influence: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_roll_influence: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_roll_influence").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -448,7 +448,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_skidinfo: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skidinfo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skidinfo").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -466,7 +466,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_rpm: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rpm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rpm").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -484,7 +484,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_engine_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_engine_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_engine_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -503,7 +503,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_engine_force: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_engine_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_engine_force").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -521,7 +521,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_brake: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_brake: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_brake").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -540,7 +540,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_brake: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_brake: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_brake").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -558,7 +558,7 @@ open class VehicleWheel3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_set_steering: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_steering: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_steering").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -577,7 +577,7 @@ open class VehicleWheel3D: Node3D {
         )}}}
     }
 
-    private static var __method_binding_get_steering: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_steering: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_steering").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!

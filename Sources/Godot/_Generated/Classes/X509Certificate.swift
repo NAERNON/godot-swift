@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class X509Certificate: Resource {
-    private static var __method_binding_save: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -25,7 +25,7 @@ open class X509Certificate: Resource {
         )}}}}
     }
 
-    private static var __method_binding_load: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
@@ -45,7 +45,7 @@ open class X509Certificate: Resource {
         )}}}}
     }
 
-    private static var __method_binding_save_to_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_save_to_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_to_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
@@ -63,7 +63,7 @@ open class X509Certificate: Resource {
         )}}
     }
 
-    private static var __method_binding_load_from_string: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_from_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_from_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!

@@ -46,11 +46,8 @@ open class ScriptEditorBase: VBoxContainer {
         fileprivate init(topic: Godot.GodotString) {
             self.topic = topic
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, topic)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.topic)]
         }
     }
     public func requestHelp(topic: Godot.GodotString) {
@@ -78,11 +75,8 @@ open class ScriptEditorBase: VBoxContainer {
             self.script = script
             self.line = line
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, script, line)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.script), Variant(input.line)]
         }
     }
     public func requestOpenScriptAtLine(script: Godot.Object?, line: Int) {
@@ -128,11 +122,8 @@ open class ScriptEditorBase: VBoxContainer {
         fileprivate init(what: Godot.GodotString) {
             self.what = what
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, what)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.what)]
         }
     }
     public func goToHelp(what: Godot.GodotString) {
@@ -158,11 +149,8 @@ open class ScriptEditorBase: VBoxContainer {
         fileprivate init(text: Godot.GodotString) {
             self.text = text
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, text)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.text)]
         }
     }
     public func searchInFilesRequested(text: Godot.GodotString) {
@@ -188,11 +176,8 @@ open class ScriptEditorBase: VBoxContainer {
         fileprivate init(text: Godot.GodotString) {
             self.text = text
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, text)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.text)]
         }
     }
     public func replaceInFilesRequested(text: Godot.GodotString) {
@@ -220,11 +205,8 @@ open class ScriptEditorBase: VBoxContainer {
             self.script = script
             self.method = method
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, script, method)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.script), Variant(input.method)]
         }
     }
     public func goToMethod(script: Godot.Object?, method: Godot.GodotString) {
@@ -247,7 +229,7 @@ open class ScriptEditorBase: VBoxContainer {
         }
     }()
 
-    private static var __method_binding_get_base_editor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_base_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_base_editor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
@@ -265,7 +247,7 @@ open class ScriptEditorBase: VBoxContainer {
         )}}
     }
 
-    private static var __method_binding_add_syntax_highlighter: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_syntax_highlighter").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!

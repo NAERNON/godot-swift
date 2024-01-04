@@ -23,7 +23,7 @@ open class MenuButton: Button {
         }
     }()
 
-    private static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_popup").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 229722558)!
@@ -41,7 +41,7 @@ open class MenuButton: Button {
         )}}
     }
 
-    private static var __method_binding_show_popup: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_show_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "show_popup").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -58,7 +58,7 @@ open class MenuButton: Button {
         )}
     }
 
-    private static var __method_binding_set_switch_on_hover: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_switch_on_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_switch_on_hover").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -77,7 +77,7 @@ open class MenuButton: Button {
         )}}}
     }
 
-    private static var __method_binding_is_switch_on_hover: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_switch_on_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_switch_on_hover").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -95,7 +95,7 @@ open class MenuButton: Button {
         )}}
     }
 
-    private static var __method_binding_set_disable_shortcuts: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disable_shortcuts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disable_shortcuts").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -114,7 +114,7 @@ open class MenuButton: Button {
         )}}}
     }
 
-    private static var __method_binding_set_item_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_item_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_item_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -133,7 +133,7 @@ open class MenuButton: Button {
         )}}}
     }
 
-    private static var __method_binding_get_item_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_item_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

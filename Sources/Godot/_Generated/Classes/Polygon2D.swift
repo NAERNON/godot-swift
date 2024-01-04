@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Polygon2D: Node2D {
-    private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -24,7 +24,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -42,7 +42,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_uv: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_uv").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -61,7 +61,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_uv: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_uv").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
@@ -79,7 +79,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -98,7 +98,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -116,7 +116,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_polygons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -135,7 +135,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_polygons: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -153,7 +153,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_vertex_colors: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_vertex_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertex_colors").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3546319833)!
@@ -172,7 +172,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_vertex_colors: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_vertex_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vertex_colors").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
@@ -190,7 +190,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -210,7 +210,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -228,7 +228,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -247,7 +247,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -265,7 +265,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -284,7 +284,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_rotation: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -302,7 +302,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_texture_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_texture_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -321,7 +321,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_texture_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_texture_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -339,7 +339,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_invert_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_invert_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_invert_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -358,7 +358,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_invert_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_invert_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_invert_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -376,7 +376,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_antialiased: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_antialiased").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -395,7 +395,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_antialiased: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_antialiased").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -413,7 +413,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_invert_border: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_invert_border: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_invert_border").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -432,7 +432,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_invert_border: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_invert_border: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_invert_border").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -450,7 +450,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -469,7 +469,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
@@ -487,7 +487,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_add_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 703042815)!
@@ -507,7 +507,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_bone_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -525,7 +525,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_get_bone_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -545,7 +545,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_get_bone_weights: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bone_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bone_weights").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1542882410)!
@@ -565,7 +565,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_erase_bone: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_erase_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase_bone").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -584,7 +584,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_clear_bones: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_bones").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -601,7 +601,7 @@ open class Polygon2D: Node2D {
         )}
     }
 
-    private static var __method_binding_set_bone_path: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
@@ -621,7 +621,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_bone_weights: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bone_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bone_weights").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1345852415)!
@@ -641,7 +641,7 @@ open class Polygon2D: Node2D {
         )}}}}
     }
 
-    private static var __method_binding_set_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -660,7 +660,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_skeleton").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -678,7 +678,7 @@ open class Polygon2D: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_internal_vertex_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_internal_vertex_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_internal_vertex_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -697,7 +697,7 @@ open class Polygon2D: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_internal_vertex_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_internal_vertex_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_internal_vertex_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!

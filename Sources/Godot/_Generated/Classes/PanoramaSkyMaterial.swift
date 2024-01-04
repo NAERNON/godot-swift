@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PanoramaSkyMaterial: Material {
-    private static var __method_binding_set_panorama: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_panorama: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_panorama").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -25,7 +25,7 @@ open class PanoramaSkyMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_panorama: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_panorama: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_panorama").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -43,7 +43,7 @@ open class PanoramaSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_filtering_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_filtering_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_filtering_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -62,7 +62,7 @@ open class PanoramaSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_is_filtering_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_filtering_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_filtering_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

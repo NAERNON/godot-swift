@@ -17,7 +17,7 @@ open class OccluderPolygon2D: Resource {
         }
     }
 
-    private static var __method_binding_set_closed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_closed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -36,7 +36,7 @@ open class OccluderPolygon2D: Resource {
         )}}}
     }
 
-    private static var __method_binding_is_closed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_closed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -54,7 +54,7 @@ open class OccluderPolygon2D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_cull_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3500863002)!
@@ -73,7 +73,7 @@ open class OccluderPolygon2D: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33931036)!
@@ -91,7 +91,7 @@ open class OccluderPolygon2D: Resource {
         )}}
     }
 
-    private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -110,7 +110,7 @@ open class OccluderPolygon2D: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!

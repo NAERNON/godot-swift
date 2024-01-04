@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeTransition: AnimationNodeSync {
-    private static var __method_binding_set_input_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_input_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_input_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -24,7 +24,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_set_input_as_auto_advance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_input_as_auto_advance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_input_as_auto_advance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -44,7 +44,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_is_input_set_as_auto_advance: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_input_set_as_auto_advance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_input_set_as_auto_advance").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -64,7 +64,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_set_input_reset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_input_reset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_input_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -84,7 +84,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_is_input_reset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_input_reset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_input_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -104,7 +104,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_set_xfade_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_xfade_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -123,7 +123,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_get_xfade_time: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_xfade_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -141,7 +141,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_xfade_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_xfade_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
@@ -161,7 +161,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}}
     }
 
-    private static var __method_binding_get_xfade_curve: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_xfade_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
@@ -179,7 +179,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}
     }
 
-    private static var __method_binding_set_allow_transition_to_self: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_allow_transition_to_self: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_transition_to_self").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -198,7 +198,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         )}}}
     }
 
-    private static var __method_binding_is_allow_transition_to_self: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_allow_transition_to_self: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_allow_transition_to_self").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

@@ -12,11 +12,8 @@ open class MainLoop: Object {
             self.permission = permission
             self.granted = granted
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, permission, granted)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.permission), Variant(input.granted)]
         }
     }
     public func onRequestPermissionsResult(permission: Godot.GodotString, granted: Bool) {

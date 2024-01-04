@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class OpenXRActionSet: Resource {
-    private static var __method_binding_set_localized_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_localized_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_localized_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -24,7 +24,7 @@ open class OpenXRActionSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_localized_name: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_localized_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_localized_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -42,7 +42,7 @@ open class OpenXRActionSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -61,7 +61,7 @@ open class OpenXRActionSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_priority").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -79,7 +79,7 @@ open class OpenXRActionSet: Resource {
         )}}
     }
 
-    private static var __method_binding_get_action_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_action_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_action_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -97,7 +97,7 @@ open class OpenXRActionSet: Resource {
         )}}
     }
 
-    private static var __method_binding_set_actions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_actions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_actions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -116,7 +116,7 @@ open class OpenXRActionSet: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_actions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_actions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_actions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -134,7 +134,7 @@ open class OpenXRActionSet: Resource {
         )}}
     }
 
-    private static var __method_binding_add_action: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_action").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 349361333)!
@@ -154,7 +154,7 @@ open class OpenXRActionSet: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_action: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_action").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 349361333)!

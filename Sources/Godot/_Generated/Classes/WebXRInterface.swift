@@ -20,27 +20,24 @@ open class WebXRInterface: XRInterface {
     }
 
     public struct SessionSupportedSignalInput: Godot.SignalInput {
-        public let session_mode: Godot.GodotString
+        public let sessionMode: Godot.GodotString
         public let supported: Bool
-        fileprivate init(session_mode: Godot.GodotString, supported: Bool) {
-            self.session_mode = session_mode
+        fileprivate init(sessionMode: Godot.GodotString, supported: Bool) {
+            self.sessionMode = sessionMode
             self.supported = supported
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, session_mode, supported)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.sessionMode), Variant(input.supported)]
         }
     }
-    public func sessionSupported(session_mode: Godot.GodotString, supported: Bool) {
-        _ = sessionSupportedSignal.emit(.init(session_mode: session_mode,
+    public func sessionSupported(sessionMode: Godot.GodotString, supported: Bool) {
+        _ = sessionSupportedSignal.emit(.init(sessionMode: sessionMode,
                 supported: supported))
     }
     public lazy var sessionSupportedSignal: Godot.SignalEmitter<SessionSupportedSignalInput> = {
         .init(object: self, signalName: "session_supported") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SessionSupportedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(session_mode: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                .call(with: .init(sessionMode: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     supported: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SessionSupportedSignalInput>>.fromOpaque(callablePtr!).release()
@@ -94,11 +91,8 @@ open class WebXRInterface: XRInterface {
         fileprivate init(message: Godot.GodotString) {
             self.message = message
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, message)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.message)]
         }
     }
     public func sessionFailed(message: Godot.GodotString) {
@@ -120,24 +114,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectstartSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func selectstart(input_source_id: Int) {
-        _ = selectstartSignal.emit(.init(input_source_id: input_source_id))
+    public func selectstart(inputSourceId: Int) {
+        _ = selectstartSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var selectstartSignal: Godot.SignalEmitter<SelectstartSignalInput> = {
         .init(object: self, signalName: "selectstart") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectstartSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectstartSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -150,24 +141,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func select(input_source_id: Int) {
-        _ = selectSignal.emit(.init(input_source_id: input_source_id))
+    public func select(inputSourceId: Int) {
+        _ = selectSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var selectSignal: Godot.SignalEmitter<SelectSignalInput> = {
         .init(object: self, signalName: "select") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -180,24 +168,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SelectendSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func selectend(input_source_id: Int) {
-        _ = selectendSignal.emit(.init(input_source_id: input_source_id))
+    public func selectend(inputSourceId: Int) {
+        _ = selectendSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var selectendSignal: Godot.SignalEmitter<SelectendSignalInput> = {
         .init(object: self, signalName: "selectend") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SelectendSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SelectendSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -210,24 +195,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezestartSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func squeezestart(input_source_id: Int) {
-        _ = squeezestartSignal.emit(.init(input_source_id: input_source_id))
+    public func squeezestart(inputSourceId: Int) {
+        _ = squeezestartSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var squeezestartSignal: Godot.SignalEmitter<SqueezestartSignalInput> = {
         .init(object: self, signalName: "squeezestart") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezestartSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezestartSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -240,24 +222,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezeSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func squeeze(input_source_id: Int) {
-        _ = squeezeSignal.emit(.init(input_source_id: input_source_id))
+    public func squeeze(inputSourceId: Int) {
+        _ = squeezeSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var squeezeSignal: Godot.SignalEmitter<SqueezeSignalInput> = {
         .init(object: self, signalName: "squeeze") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezeSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -270,24 +249,21 @@ open class WebXRInterface: XRInterface {
     }()
 
     public struct SqueezeendSignalInput: Godot.SignalInput {
-        public let input_source_id: Int
-        fileprivate init(input_source_id: Int) {
-            self.input_source_id = input_source_id
+        public let inputSourceId: Int
+        fileprivate init(inputSourceId: Int) {
+            self.inputSourceId = inputSourceId
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, input_source_id)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.inputSourceId)]
         }
     }
-    public func squeezeend(input_source_id: Int) {
-        _ = squeezeendSignal.emit(.init(input_source_id: input_source_id))
+    public func squeezeend(inputSourceId: Int) {
+        _ = squeezeendSignal.emit(.init(inputSourceId: inputSourceId))
     }
     public lazy var squeezeendSignal: Godot.SignalEmitter<SqueezeendSignalInput> = {
         .init(object: self, signalName: "squeezeend") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SqueezeendSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(input_source_id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(inputSourceId: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SqueezeendSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -353,7 +329,7 @@ open class WebXRInterface: XRInterface {
         }
     }()
 
-    private static var __method_binding_is_session_supported: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_session_supported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_session_supported").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -372,7 +348,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_set_session_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_session_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_session_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -391,7 +367,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_get_session_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_session_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_session_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -409,7 +385,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_set_required_features: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_required_features: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_required_features").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -428,7 +404,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_get_required_features: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_required_features: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_required_features").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -446,7 +422,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_set_optional_features: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_optional_features: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_optional_features").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -465,7 +441,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_get_optional_features: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_optional_features: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_optional_features").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -483,7 +459,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_get_reference_space_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_reference_space_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_reference_space_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -501,7 +477,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_set_requested_reference_space_types: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_requested_reference_space_types: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_requested_reference_space_types").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -520,7 +496,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_get_requested_reference_space_types: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_requested_reference_space_types: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_requested_reference_space_types").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -538,7 +514,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_is_input_source_active: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_input_source_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_input_source_active").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -558,7 +534,7 @@ open class WebXRInterface: XRInterface {
         )}}}}
     }
 
-    private static var __method_binding_get_input_source_tracker: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_source_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_source_tracker").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 636011756)!
@@ -578,7 +554,7 @@ open class WebXRInterface: XRInterface {
         )}}}}
     }
 
-    private static var __method_binding_get_input_source_target_ray_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_source_target_ray_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_source_target_ray_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2852387453)!
@@ -598,7 +574,7 @@ open class WebXRInterface: XRInterface {
         )}}}}
     }
 
-    private static var __method_binding_get_visibility_state: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_visibility_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_visibility_state").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -616,7 +592,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_display_refresh_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -634,7 +610,7 @@ open class WebXRInterface: XRInterface {
         )}}
     }
 
-    private static var __method_binding_set_display_refresh_rate: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_display_refresh_rate").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -653,7 +629,7 @@ open class WebXRInterface: XRInterface {
         )}}}
     }
 
-    private static var __method_binding_get_available_display_refresh_rates: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_available_display_refresh_rates: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_available_display_refresh_rates").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

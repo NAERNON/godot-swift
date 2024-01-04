@@ -17,7 +17,7 @@ open class BackBufferCopy: Node2D {
         }
     }
 
-    private static var __method_binding_set_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
@@ -36,7 +36,7 @@ open class BackBufferCopy: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
@@ -54,7 +54,7 @@ open class BackBufferCopy: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_copy_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_copy_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_copy_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1713538590)!
@@ -73,7 +73,7 @@ open class BackBufferCopy: Node2D {
         )}}}
     }
 
-    private static var __method_binding_get_copy_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_copy_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_copy_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3271169440)!

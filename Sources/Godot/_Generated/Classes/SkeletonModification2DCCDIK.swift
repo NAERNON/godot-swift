@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SkeletonModification2DCCDIK: SkeletonModification2D {
-    private static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -24,7 +24,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}
     }
 
-    private static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -42,7 +42,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}
     }
 
-    private static var __method_binding_set_tip_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tip_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tip_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -61,7 +61,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}
     }
 
-    private static var __method_binding_get_tip_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tip_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tip_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -79,7 +79,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}
     }
 
-    private static var __method_binding_set_ccdik_data_chain_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_data_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -98,7 +98,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}
     }
 
-    private static var __method_binding_get_ccdik_data_chain_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_data_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -116,7 +116,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}
     }
 
-    private static var __method_binding_set_ccdik_joint_bone2d_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_bone2d_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
@@ -136,7 +136,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_bone2d_node: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_bone2d_node").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
@@ -156,7 +156,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_bone_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_bone_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -176,7 +176,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_bone_index: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_bone_index").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -196,7 +196,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_rotate_from_joint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_rotate_from_joint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_rotate_from_joint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -216,7 +216,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_rotate_from_joint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_rotate_from_joint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_rotate_from_joint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -236,7 +236,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_enable_constraint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_enable_constraint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_enable_constraint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -256,7 +256,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_enable_constraint: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_enable_constraint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_enable_constraint").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -276,7 +276,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_constraint_angle_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_constraint_angle_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_constraint_angle_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -296,7 +296,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_constraint_angle_min: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_constraint_angle_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_constraint_angle_min").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
@@ -316,7 +316,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_constraint_angle_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_constraint_angle_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_constraint_angle_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
@@ -336,7 +336,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_constraint_angle_max: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_constraint_angle_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_constraint_angle_max").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
@@ -356,7 +356,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_set_ccdik_joint_constraint_angle_invert: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ccdik_joint_constraint_angle_invert: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ccdik_joint_constraint_angle_invert").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -376,7 +376,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         )}}}}
     }
 
-    private static var __method_binding_get_ccdik_joint_constraint_angle_invert: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ccdik_joint_constraint_angle_invert: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ccdik_joint_constraint_angle_invert").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!

@@ -21,7 +21,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
     }
 
-    private static var __method_binding_set_billboard_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_billboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_billboard_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1227463289)!
@@ -40,7 +40,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_billboard_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_billboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_billboard_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724188517)!
@@ -58,7 +58,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         )}}
     }
 
-    private static var __method_binding_set_keep_scale_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_keep_scale_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_keep_scale_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -77,7 +77,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_is_keep_scale_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_keep_scale_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_keep_scale_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

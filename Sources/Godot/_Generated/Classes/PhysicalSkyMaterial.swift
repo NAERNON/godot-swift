@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PhysicalSkyMaterial: Material {
-    private static var __method_binding_set_rayleigh_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rayleigh_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rayleigh_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_rayleigh_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rayleigh_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rayleigh_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_rayleigh_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_rayleigh_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_rayleigh_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -61,7 +61,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_rayleigh_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_rayleigh_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rayleigh_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -79,7 +79,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_mie_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mie_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mie_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -98,7 +98,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_mie_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mie_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mie_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -116,7 +116,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_mie_eccentricity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mie_eccentricity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mie_eccentricity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -135,7 +135,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_mie_eccentricity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mie_eccentricity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mie_eccentricity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -153,7 +153,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_mie_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_mie_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_mie_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -172,7 +172,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_mie_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_mie_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mie_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -190,7 +190,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_turbidity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_turbidity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_turbidity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -209,7 +209,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_turbidity: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_turbidity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_turbidity").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -227,7 +227,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_sun_disk_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_sun_disk_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_sun_disk_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -246,7 +246,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_sun_disk_scale: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sun_disk_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sun_disk_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -264,7 +264,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_ground_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ground_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ground_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -283,7 +283,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_ground_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_ground_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ground_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -301,7 +301,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_energy_multiplier: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_energy_multiplier: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_energy_multiplier").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -320,7 +320,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_energy_multiplier: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_energy_multiplier: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_energy_multiplier").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -338,7 +338,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_use_debanding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_use_debanding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_use_debanding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -357,7 +357,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}
     }
 
-    private static var __method_binding_get_use_debanding: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_use_debanding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_use_debanding").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -375,7 +375,7 @@ open class PhysicalSkyMaterial: Material {
         )}}
     }
 
-    private static var __method_binding_set_night_sky: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_night_sky: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_night_sky").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -395,7 +395,7 @@ open class PhysicalSkyMaterial: Material {
         )}}}}
     }
 
-    private static var __method_binding_get_night_sky: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_night_sky: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_night_sky").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class LabelSettings: Resource {
-    private static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -24,7 +24,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_line_spacing: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -42,7 +42,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
@@ -62,7 +62,7 @@ open class LabelSettings: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_font: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_font").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
@@ -80,7 +80,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -99,7 +99,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -117,7 +117,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_font_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_font_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_font_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -136,7 +136,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_font_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_font_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_font_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -154,7 +154,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_outline_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outline_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outline_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -173,7 +173,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_outline_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outline_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outline_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -191,7 +191,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_outline_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_outline_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_outline_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -210,7 +210,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_outline_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_outline_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_outline_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -228,7 +228,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_shadow_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -247,7 +247,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_shadow_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -265,7 +265,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_shadow_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -284,7 +284,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_shadow_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -302,7 +302,7 @@ open class LabelSettings: Resource {
         )}}
     }
 
-    private static var __method_binding_set_shadow_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
@@ -321,7 +321,7 @@ open class LabelSettings: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_shadow_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!

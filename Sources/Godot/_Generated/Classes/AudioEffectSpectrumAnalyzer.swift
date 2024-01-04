@@ -23,7 +23,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
     }
 
-    private static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -42,7 +42,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_buffer_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -60,7 +60,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_set_tap_back_pos: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tap_back_pos: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tap_back_pos").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -79,7 +79,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_tap_back_pos: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tap_back_pos: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tap_back_pos").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -97,7 +97,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         )}}
     }
 
-    private static var __method_binding_set_fft_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fft_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1202879215)!
@@ -116,7 +116,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         )}}}
     }
 
-    private static var __method_binding_get_fft_size: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fft_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3925405343)!

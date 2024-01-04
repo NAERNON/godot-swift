@@ -54,7 +54,7 @@ open class EditorScenePostImportPlugin: RefCounted {
     open func _postProcess(scene: Godot.Node?) {
     }
 
-    private static var __method_binding_get_option_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_option_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_option_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
@@ -74,7 +74,7 @@ open class EditorScenePostImportPlugin: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_add_import_option: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_import_option: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_import_option").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
@@ -94,7 +94,7 @@ open class EditorScenePostImportPlugin: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_add_import_option_advanced: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_import_option_advanced: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_import_option_advanced").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674075649)!

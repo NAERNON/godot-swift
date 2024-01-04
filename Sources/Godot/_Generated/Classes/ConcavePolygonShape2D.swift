@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ConcavePolygonShape2D: Shape2D {
-    private static var __method_binding_set_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -24,7 +24,7 @@ open class ConcavePolygonShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_segments: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!

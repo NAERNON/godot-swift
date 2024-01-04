@@ -95,24 +95,21 @@ open class LineEdit: Control {
     }
 
     public struct TextChangedSignalInput: Godot.SignalInput {
-        public let new_text: Godot.GodotString
-        fileprivate init(new_text: Godot.GodotString) {
-            self.new_text = new_text
+        public let newText: Godot.GodotString
+        fileprivate init(newText: Godot.GodotString) {
+            self.newText = newText
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, new_text)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.newText)]
         }
     }
-    public func textChanged(new_text: Godot.GodotString) {
-        _ = textChangedSignal.emit(.init(new_text: new_text))
+    public func textChanged(newText: Godot.GodotString) {
+        _ = textChangedSignal.emit(.init(newText: newText))
     }
     public lazy var textChangedSignal: Godot.SignalEmitter<TextChangedSignalInput> = {
         .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(new_text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(newText: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -125,24 +122,21 @@ open class LineEdit: Control {
     }()
 
     public struct TextChangeRejectedSignalInput: Godot.SignalInput {
-        public let rejected_substring: Godot.GodotString
-        fileprivate init(rejected_substring: Godot.GodotString) {
-            self.rejected_substring = rejected_substring
+        public let rejectedSubstring: Godot.GodotString
+        fileprivate init(rejectedSubstring: Godot.GodotString) {
+            self.rejectedSubstring = rejectedSubstring
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, rejected_substring)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.rejectedSubstring)]
         }
     }
-    public func textChangeRejected(rejected_substring: Godot.GodotString) {
-        _ = textChangeRejectedSignal.emit(.init(rejected_substring: rejected_substring))
+    public func textChangeRejected(rejectedSubstring: Godot.GodotString) {
+        _ = textChangeRejectedSignal.emit(.init(rejectedSubstring: rejectedSubstring))
     }
     public lazy var textChangeRejectedSignal: Godot.SignalEmitter<TextChangeRejectedSignalInput> = {
         .init(object: self, signalName: "text_change_rejected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(rejected_substring: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(rejectedSubstring: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -155,24 +149,21 @@ open class LineEdit: Control {
     }()
 
     public struct TextSubmittedSignalInput: Godot.SignalInput {
-        public let new_text: Godot.GodotString
-        fileprivate init(new_text: Godot.GodotString) {
-            self.new_text = new_text
+        public let newText: Godot.GodotString
+        fileprivate init(newText: Godot.GodotString) {
+            self.newText = newText
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, new_text)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.newText)]
         }
     }
-    public func textSubmitted(new_text: Godot.GodotString) {
-        _ = textSubmittedSignal.emit(.init(new_text: new_text))
+    public func textSubmitted(newText: Godot.GodotString) {
+        _ = textSubmittedSignal.emit(.init(newText: newText))
     }
     public lazy var textSubmittedSignal: Godot.SignalEmitter<TextSubmittedSignalInput> = {
         .init(object: self, signalName: "text_submitted") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(new_text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(newText: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -184,7 +175,7 @@ open class LineEdit: Control {
         }
     }()
 
-    private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
@@ -203,7 +194,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_horizontal_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
@@ -221,7 +212,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -238,7 +229,7 @@ open class LineEdit: Control {
         )}
     }
 
-    private static var __method_binding_select: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1328111411)!
@@ -258,7 +249,7 @@ open class LineEdit: Control {
         )}}}}
     }
 
-    private static var __method_binding_select_all: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_select_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -275,7 +266,7 @@ open class LineEdit: Control {
         )}
     }
 
-    private static var __method_binding_deselect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_deselect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "deselect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -292,7 +283,7 @@ open class LineEdit: Control {
         )}
     }
 
-    private static var __method_binding_has_selection: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_selection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_selection").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -310,7 +301,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_selected_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selected_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selected_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
@@ -328,7 +319,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_selection_from_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selection_from_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selection_from_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -346,7 +337,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_selection_to_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_selection_to_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_selection_to_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -364,7 +355,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -383,7 +374,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -401,7 +392,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_draw_control_chars: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_draw_control_chars: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_draw_control_chars").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -419,7 +410,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_draw_control_chars: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_draw_control_chars: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_draw_control_chars").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -438,7 +429,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 119160795)!
@@ -457,7 +448,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797257663)!
@@ -475,7 +466,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -494,7 +485,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -512,7 +503,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
@@ -531,7 +522,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
@@ -549,7 +540,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -568,7 +559,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -586,7 +577,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -605,7 +596,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_placeholder: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -623,7 +614,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_caret_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_caret_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -642,7 +633,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_caret_column: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_caret_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_caret_column").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -660,7 +651,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -678,7 +669,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_expand_to_text_length_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_expand_to_text_length_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_expand_to_text_length_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -697,7 +688,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_expand_to_text_length_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_expand_to_text_length_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_expand_to_text_length_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -715,7 +706,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_caret_blink_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_caret_blink_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_blink_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -734,7 +725,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_caret_blink_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_caret_blink_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_caret_blink_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -752,7 +743,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_caret_mid_grapheme_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_caret_mid_grapheme_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_mid_grapheme_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -771,7 +762,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_caret_mid_grapheme_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_caret_mid_grapheme_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_caret_mid_grapheme_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -789,7 +780,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_caret_force_displayed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_caret_force_displayed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_force_displayed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -808,7 +799,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_caret_force_displayed: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_caret_force_displayed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_caret_force_displayed").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -826,7 +817,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_caret_blink_interval: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_caret_blink_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_blink_interval").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -845,7 +836,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_caret_blink_interval: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_caret_blink_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_caret_blink_interval").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -863,7 +854,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_max_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -882,7 +873,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_max_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -900,7 +891,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_insert_text_at_caret: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_insert_text_at_caret: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "insert_text_at_caret").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -919,7 +910,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_delete_char_at_caret: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_delete_char_at_caret: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "delete_char_at_caret").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -936,7 +927,7 @@ open class LineEdit: Control {
         )}
     }
 
-    private static var __method_binding_delete_text: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_delete_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "delete_text").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -956,7 +947,7 @@ open class LineEdit: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -975,7 +966,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -993,7 +984,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_secret: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_secret: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_secret").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1012,7 +1003,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_secret: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_secret: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_secret").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1030,7 +1021,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_secret_character: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_secret_character: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_secret_character").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -1049,7 +1040,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_secret_character: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_secret_character: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_secret_character").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
@@ -1067,7 +1058,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_menu_option: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_menu_option: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "menu_option").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1086,7 +1077,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_menu: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 229722558)!
@@ -1104,7 +1095,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_is_menu_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_menu_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_menu_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1122,7 +1113,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_context_menu_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_context_menu_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_context_menu_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1141,7 +1132,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_context_menu_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_context_menu_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_context_menu_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -1159,7 +1150,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_virtual_keyboard_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_virtual_keyboard_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_virtual_keyboard_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1178,7 +1169,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_virtual_keyboard_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_virtual_keyboard_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_virtual_keyboard_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1196,7 +1187,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_virtual_keyboard_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_virtual_keyboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_virtual_keyboard_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2696893573)!
@@ -1215,7 +1206,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_get_virtual_keyboard_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_virtual_keyboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_virtual_keyboard_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1928699316)!
@@ -1233,7 +1224,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_clear_button_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_clear_button_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_clear_button_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1252,7 +1243,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_clear_button_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_clear_button_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_clear_button_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1270,7 +1261,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_shortcut_keys_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shortcut_keys_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shortcut_keys_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1289,7 +1280,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_shortcut_keys_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_shortcut_keys_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_shortcut_keys_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1307,7 +1298,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_middle_mouse_paste_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_middle_mouse_paste_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_middle_mouse_paste_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1326,7 +1317,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_middle_mouse_paste_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_middle_mouse_paste_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_middle_mouse_paste_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1344,7 +1335,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_selecting_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_selecting_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selecting_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1363,7 +1354,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_selecting_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_selecting_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_selecting_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1381,7 +1372,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_deselect_on_focus_loss_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_deselect_on_focus_loss_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_deselect_on_focus_loss_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1400,7 +1391,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_deselect_on_focus_loss_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_deselect_on_focus_loss_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_deselect_on_focus_loss_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1418,7 +1409,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_and_drop_selection_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1437,7 +1428,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_drag_and_drop_selection_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1455,7 +1446,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_right_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_right_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_right_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -1475,7 +1466,7 @@ open class LineEdit: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_right_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_right_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_right_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 255860311)!
@@ -1493,7 +1484,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_flat").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1512,7 +1503,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_flat").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1530,7 +1521,7 @@ open class LineEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_select_all_on_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_select_all_on_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_select_all_on_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1549,7 +1540,7 @@ open class LineEdit: Control {
         )}}}
     }
 
-    private static var __method_binding_is_select_all_on_focus: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_select_all_on_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_select_all_on_focus").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

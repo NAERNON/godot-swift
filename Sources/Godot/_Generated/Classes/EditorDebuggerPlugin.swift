@@ -16,7 +16,7 @@ open class EditorDebuggerPlugin: RefCounted {
         Bool()
     }
 
-    private static var __method_binding_get_session: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_session: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_session").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3061968499)!
@@ -36,7 +36,7 @@ open class EditorDebuggerPlugin: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_get_sessions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_sessions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_sessions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!

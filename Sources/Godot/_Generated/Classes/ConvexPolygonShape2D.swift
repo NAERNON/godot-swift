@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ConvexPolygonShape2D: Shape2D {
-    private static var __method_binding_set_point_cloud: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_cloud: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_cloud").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -24,7 +24,7 @@ open class ConvexPolygonShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_set_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
@@ -43,7 +43,7 @@ open class ConvexPolygonShape2D: Shape2D {
         )}}}
     }
 
-    private static var __method_binding_get_points: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!

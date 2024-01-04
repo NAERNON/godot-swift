@@ -15,7 +15,7 @@ open class SoftBody3D: MeshInstance3D {
         }
     }
 
-    private static var __method_binding_get_physics_rid: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_physics_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physics_rid").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
@@ -33,7 +33,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -52,7 +52,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -70,7 +70,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -89,7 +89,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -107,7 +107,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -127,7 +127,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -147,7 +147,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -167,7 +167,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_layer_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_layer_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -187,7 +187,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_parent_collision_ignore: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_parent_collision_ignore: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_parent_collision_ignore").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
@@ -206,7 +206,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_parent_collision_ignore: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_parent_collision_ignore: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parent_collision_ignore").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
@@ -224,7 +224,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_disable_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_disable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_disable_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1104158384)!
@@ -243,7 +243,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_disable_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_disable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_disable_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4135042476)!
@@ -261,7 +261,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_exceptions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -279,7 +279,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_collision_exception_with").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -299,7 +299,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_collision_exception_with").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -319,7 +319,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_simulation_precision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_simulation_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_simulation_precision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -338,7 +338,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_simulation_precision: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_simulation_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_simulation_precision").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
@@ -356,7 +356,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_total_mass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_total_mass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_total_mass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -375,7 +375,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_total_mass: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_total_mass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_total_mass").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -393,7 +393,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_linear_stiffness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_linear_stiffness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_linear_stiffness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -412,7 +412,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_linear_stiffness: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_linear_stiffness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_linear_stiffness").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -430,7 +430,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_pressure_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_pressure_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_pressure_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -449,7 +449,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_pressure_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_pressure_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_pressure_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -467,7 +467,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_damping_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_damping_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_damping_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -486,7 +486,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_damping_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_damping_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_damping_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -504,7 +504,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_drag_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -523,7 +523,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_drag_coefficient: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drag_coefficient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drag_coefficient").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
@@ -541,7 +541,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}
     }
 
-    private static var __method_binding_get_point_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_point_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_point_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 871989493)!
@@ -561,7 +561,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_point_pinned: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_point_pinned: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_pinned").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814935226)!
@@ -582,7 +582,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}}
     }
 
-    private static var __method_binding_is_point_pinned: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_point_pinned: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_point_pinned").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -602,7 +602,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_ray_pickable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_ray_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ray_pickable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -621,7 +621,7 @@ open class SoftBody3D: MeshInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_ray_pickable: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_ray_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_ray_pickable").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!

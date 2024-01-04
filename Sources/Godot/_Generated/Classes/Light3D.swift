@@ -66,7 +66,7 @@ open class Light3D: VisualInstance3D {
         }
     }
 
-    private static var __method_binding_set_editor_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_editor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_editor_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -85,7 +85,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_editor_only: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_editor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_editor_only").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -103,7 +103,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1722734213)!
@@ -123,7 +123,7 @@ open class Light3D: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_param: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_param").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1844084987)!
@@ -143,7 +143,7 @@ open class Light3D: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_set_shadow: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -162,7 +162,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_has_shadow: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_has_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_shadow").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -180,7 +180,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_negative: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_negative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_negative").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -199,7 +199,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_negative: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_negative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_negative").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -217,7 +217,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -236,7 +236,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -254,7 +254,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_enable_distance_fade: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_enable_distance_fade: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_enable_distance_fade").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -273,7 +273,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_is_distance_fade_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_distance_fade_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_distance_fade_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -291,7 +291,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_distance_fade_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_distance_fade_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -310,7 +310,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_distance_fade_begin: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_distance_fade_begin").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -328,7 +328,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_distance_fade_shadow: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_distance_fade_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_distance_fade_shadow").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -347,7 +347,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_distance_fade_shadow: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_distance_fade_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_distance_fade_shadow").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -365,7 +365,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_distance_fade_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_distance_fade_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_distance_fade_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -384,7 +384,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_distance_fade_length: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_distance_fade_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_distance_fade_length").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -402,7 +402,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
@@ -421,7 +421,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
@@ -439,7 +439,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_shadow_reverse_cull_face").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -458,7 +458,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_shadow_reverse_cull_face").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -476,7 +476,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_bake_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bake_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bake_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 37739303)!
@@ -495,7 +495,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_bake_mode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_bake_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bake_mode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 371737608)!
@@ -513,7 +513,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_projector: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_projector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_projector").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
@@ -533,7 +533,7 @@ open class Light3D: VisualInstance3D {
         )}}}}
     }
 
-    private static var __method_binding_get_projector: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_projector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_projector").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
@@ -551,7 +551,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_set_temperature: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_temperature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_temperature").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
@@ -570,7 +570,7 @@ open class Light3D: VisualInstance3D {
         )}}}
     }
 
-    private static var __method_binding_get_temperature: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_temperature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_temperature").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
@@ -588,7 +588,7 @@ open class Light3D: VisualInstance3D {
         )}}
     }
 
-    private static var __method_binding_get_correlated_color: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_correlated_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_correlated_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!

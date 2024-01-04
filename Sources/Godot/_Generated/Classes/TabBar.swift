@@ -37,11 +37,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabSelected(tab: Int) {
@@ -67,11 +64,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabChanged(tab: Int) {
@@ -97,11 +91,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabClicked(tab: Int) {
@@ -127,11 +118,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabRmbClicked(tab: Int) {
@@ -157,11 +145,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabClosePressed(tab: Int) {
@@ -187,11 +172,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabButtonPressed(tab: Int) {
@@ -217,11 +199,8 @@ open class TabBar: Control {
         fileprivate init(tab: Int) {
             self.tab = tab
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, tab)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.tab)]
         }
     }
     public func tabHovered(tab: Int) {
@@ -243,24 +222,21 @@ open class TabBar: Control {
     }()
 
     public struct ActiveTabRearrangedSignalInput: Godot.SignalInput {
-        public let idx_to: Int
-        fileprivate init(idx_to: Int) {
-            self.idx_to = idx_to
+        public let idxTo: Int
+        fileprivate init(idxTo: Int) {
+            self.idxTo = idxTo
         }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName, idx_to)
+        public static func arguments(from input: Self) -> [Variant] {
+            [Variant(input.idxTo)]
         }
     }
-    public func activeTabRearranged(idx_to: Int) {
-        _ = activeTabRearrangedSignal.emit(.init(idx_to: idx_to))
+    public func activeTabRearranged(idxTo: Int) {
+        _ = activeTabRearrangedSignal.emit(.init(idxTo: idxTo))
     }
     public lazy var activeTabRearrangedSignal: Godot.SignalEmitter<ActiveTabRearrangedSignalInput> = {
         .init(object: self, signalName: "active_tab_rearranged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(idx_to: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(idxTo: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -272,7 +248,7 @@ open class TabBar: Control {
         }
     }()
 
-    private static var __method_binding_set_tab_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -291,7 +267,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -309,7 +285,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_current_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_current_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_current_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -328,7 +304,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_current_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_current_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -346,7 +322,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_get_previous_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_previous_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_previous_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -364,7 +340,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_select_previous_available: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_select_previous_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select_previous_available").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -382,7 +358,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_select_next_available: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_select_next_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select_next_available").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
@@ -400,7 +376,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_tab_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -420,7 +396,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_tab_title: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_title").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -440,7 +416,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1707680378)!
@@ -460,7 +436,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_tab_text_direction: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4235602388)!
@@ -480,7 +456,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
@@ -500,7 +476,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_tab_language: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_language").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
@@ -520,7 +496,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
@@ -541,7 +517,7 @@ open class TabBar: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_tab_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
@@ -561,7 +537,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_icon_max_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_icon_max_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_icon_max_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -581,7 +557,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_tab_icon_max_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_icon_max_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_icon_max_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
@@ -601,7 +577,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_button_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_button_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
@@ -622,7 +598,7 @@ open class TabBar: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_tab_button_icon: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_button_icon").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
@@ -642,7 +618,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -662,7 +638,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_is_tab_disabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_tab_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_tab_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -682,7 +658,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_hidden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
@@ -702,7 +678,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_is_tab_hidden: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_tab_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_tab_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
@@ -722,7 +698,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_metadata: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_metadata").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
@@ -742,7 +718,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_get_tab_metadata: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_metadata").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
@@ -762,7 +738,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_remove_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -781,7 +757,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_add_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1465444425)!
@@ -802,7 +778,7 @@ open class TabBar: Control {
         )}}}}}
     }
 
-    private static var __method_binding_get_tab_idx_at_point: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_idx_at_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_idx_at_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
@@ -822,7 +798,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2413632353)!
@@ -841,7 +817,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tab_alignment: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_alignment").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2178122193)!
@@ -859,7 +835,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_clip_tabs: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_clip_tabs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_clip_tabs").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -878,7 +854,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_clip_tabs: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_clip_tabs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_clip_tabs").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -896,7 +872,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_get_tab_offset: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -914,7 +890,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_get_offset_buttons_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_offset_buttons_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_offset_buttons_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -932,7 +908,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_ensure_tab_visible: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_ensure_tab_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "ensure_tab_visible").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -951,7 +927,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tab_rect: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_rect").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3327874267)!
@@ -971,7 +947,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_move_tab: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_tab").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
@@ -991,7 +967,7 @@ open class TabBar: Control {
         )}}}}
     }
 
-    private static var __method_binding_set_tab_close_display_policy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tab_close_display_policy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_close_display_policy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2212906737)!
@@ -1010,7 +986,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tab_close_display_policy: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tab_close_display_policy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tab_close_display_policy").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956568028)!
@@ -1028,7 +1004,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_max_tab_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_max_tab_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_max_tab_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1047,7 +1023,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_max_tab_width: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_max_tab_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_tab_width").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1065,7 +1041,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_scrolling_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scrolling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scrolling_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1084,7 +1060,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_scrolling_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scrolling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scrolling_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1102,7 +1078,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_drag_to_rearrange_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1121,7 +1097,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_drag_to_rearrange_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1139,7 +1115,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_tabs_rearrange_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tabs_rearrange_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -1158,7 +1134,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_tabs_rearrange_group: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_tabs_rearrange_group").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -1176,7 +1152,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_scroll_to_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_scroll_to_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scroll_to_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1195,7 +1171,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_scroll_to_selected: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_scroll_to_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_to_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1213,7 +1189,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_set_select_with_rmb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_select_with_rmb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_select_with_rmb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
@@ -1232,7 +1208,7 @@ open class TabBar: Control {
         )}}}
     }
 
-    private static var __method_binding_get_select_with_rmb: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_select_with_rmb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_select_with_rmb").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -1250,7 +1226,7 @@ open class TabBar: Control {
         )}}
     }
 
-    private static var __method_binding_clear_tabs: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_tabs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_tabs").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!

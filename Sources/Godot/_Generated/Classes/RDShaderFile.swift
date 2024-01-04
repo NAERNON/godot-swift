@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RDShaderFile: Resource {
-    private static var __method_binding_set_bytecode: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bytecode").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1558064255)!
@@ -26,7 +26,7 @@ open class RDShaderFile: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_spirv: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_spirv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_spirv").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3340165340)!
@@ -46,7 +46,7 @@ open class RDShaderFile: Resource {
         )}}}}
     }
 
-    private static var __method_binding_get_version_list: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_version_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_version_list").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
@@ -64,7 +64,7 @@ open class RDShaderFile: Resource {
         )}}
     }
 
-    private static var __method_binding_set_base_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_base_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_base_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
@@ -83,7 +83,7 @@ open class RDShaderFile: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_base_error: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_base_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_base_error").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!

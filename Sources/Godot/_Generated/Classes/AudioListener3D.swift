@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AudioListener3D: Node3D {
-    private static var __method_binding_make_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_make_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -22,7 +22,7 @@ open class AudioListener3D: Node3D {
         )}
     }
 
-    private static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -39,7 +39,7 @@ open class AudioListener3D: Node3D {
         )}
     }
 
-    private static var __method_binding_is_current: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_is_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_current").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
@@ -57,7 +57,7 @@ open class AudioListener3D: Node3D {
         )}}
     }
 
-    private static var __method_binding_get_listener_transform: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_listener_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_listener_transform").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!

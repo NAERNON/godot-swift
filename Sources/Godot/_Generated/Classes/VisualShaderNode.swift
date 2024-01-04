@@ -31,7 +31,7 @@ open class VisualShaderNode: Resource {
         }
     }
 
-    private static var __method_binding_get_default_input_port: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_default_input_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_default_input_port").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1894493699)!
@@ -51,7 +51,7 @@ open class VisualShaderNode: Resource {
         )}}}}
     }
 
-    private static var __method_binding_set_output_port_for_preview: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_output_port_for_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_output_port_for_preview").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -70,7 +70,7 @@ open class VisualShaderNode: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_output_port_for_preview: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_output_port_for_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_output_port_for_preview").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
@@ -88,7 +88,7 @@ open class VisualShaderNode: Resource {
         )}}
     }
 
-    private static var __method_binding_set_input_port_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_input_port_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 150923387)!
@@ -109,7 +109,7 @@ open class VisualShaderNode: Resource {
         )}}}}}
     }
 
-    private static var __method_binding_get_input_port_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_input_port_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
@@ -129,7 +129,7 @@ open class VisualShaderNode: Resource {
         )}}}}
     }
 
-    private static var __method_binding_remove_input_port_default_value: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_input_port_default_value").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
@@ -148,7 +148,7 @@ open class VisualShaderNode: Resource {
         )}}}
     }
 
-    private static var __method_binding_clear_default_input_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_clear_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_default_input_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
@@ -165,7 +165,7 @@ open class VisualShaderNode: Resource {
         )}
     }
 
-    private static var __method_binding_set_default_input_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_input_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
@@ -184,7 +184,7 @@ open class VisualShaderNode: Resource {
         )}}}
     }
 
-    private static var __method_binding_get_default_input_values: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_default_input_values").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!

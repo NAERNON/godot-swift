@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicsBody3D: CollisionObject3D {
-    private static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_and_collide").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3208792678)!
@@ -29,7 +29,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}}}}}}}
     }
 
-    private static var __method_binding_test_move: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_test_move: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "test_move").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2481691619)!
@@ -55,7 +55,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}}}}}}}}}
     }
 
-    private static var __method_binding_set_axis_lock: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_axis_lock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_axis_lock").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1787895195)!
@@ -75,7 +75,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}}}
     }
 
-    private static var __method_binding_get_axis_lock: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_axis_lock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_axis_lock").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2264617709)!
@@ -95,7 +95,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}}}
     }
 
-    private static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_collision_exceptions").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
@@ -113,7 +113,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}
     }
 
-    private static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_collision_exception_with").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
@@ -133,7 +133,7 @@ open class PhysicsBody3D: CollisionObject3D {
         )}}}}
     }
 
-    private static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_collision_exception_with").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!

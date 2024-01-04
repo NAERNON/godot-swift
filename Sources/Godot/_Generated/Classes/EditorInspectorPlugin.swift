@@ -25,7 +25,7 @@ open class EditorInspectorPlugin: RefCounted {
     open func _parseEnd(object: Godot.Object?) {
     }
 
-    private static var __method_binding_add_custom_control: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_custom_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_custom_control").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
@@ -45,7 +45,7 @@ open class EditorInspectorPlugin: RefCounted {
         )}}}}
     }
 
-    private static var __method_binding_add_property_editor: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_property_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_property_editor").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3406284123)!
@@ -67,7 +67,7 @@ open class EditorInspectorPlugin: RefCounted {
         )}}}}}}
     }
 
-    private static var __method_binding_add_property_editor_for_multiple_properties: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_add_property_editor_for_multiple_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_property_editor_for_multiple_properties").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 788598683)!

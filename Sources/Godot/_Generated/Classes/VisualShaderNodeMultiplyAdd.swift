@@ -21,7 +21,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         }
     }
 
-    private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1409862380)!
@@ -40,7 +40,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         )}}}
     }
 
-    private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2823201991)!

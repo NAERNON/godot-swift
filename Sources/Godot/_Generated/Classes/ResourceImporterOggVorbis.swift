@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ResourceImporterOggVorbis: ResourceImporter {
-    private static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_from_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354904730)!
@@ -24,7 +24,7 @@ open class ResourceImporterOggVorbis: ResourceImporter {
         )}}}
     }
 
-    private static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
+    internal static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_from_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797568536)!
