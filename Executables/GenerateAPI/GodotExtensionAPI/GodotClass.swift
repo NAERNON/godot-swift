@@ -173,6 +173,10 @@ struct GodotClass: Decodable {
     struct Constant: Decodable {
         let name: String
         let value: Int
+        
+        var isNotification: Bool {
+            name.starts(with: "NOTIFICATION")
+        }
     }
     
     // MARK: - Syntax
@@ -247,10 +251,9 @@ struct GodotClass: Decodable {
     func constantsSyntax() -> MemberBlockItemListSyntax {
         if let constants {
             for constant in constants {
-                let isNotification = constant.name.starts(with: "NOTIFICATION")
                 let propertyName = constant.name.lowercased().translated(from: .snake, to: .camel)
                 
-                if isNotification {
+                if constant.isNotification {
                     "public static let \(raw: propertyName): Notification = .init(rawValue: \(literal: constant.value))"
                 } else {
                     "public static let \(raw: propertyName): Int = \(literal: constant.value)"
