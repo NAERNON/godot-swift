@@ -73,7 +73,7 @@ where Value : FixedWidthInteger,
             case .caseValue(let value):
                 // We cannot have two successive values
                 guard !previousCaseIsValue else {
-                    gdPrintError("Enum hint is ignored (unexpected case value found).")
+                    godotPrintError("Enum hint is ignored (unexpected case value found).")
                     return .none
                 }
                 previousCaseIsValue = true
@@ -131,7 +131,7 @@ where Value : FloatingPoint,
             case .caseValue(let value):
                 // We cannot have two successive values
                 guard !previousCaseIsValue else {
-                    gdPrintError("Enum hint is ignored (unexpected case value found).")
+                    godotPrintError("Enum hint is ignored (unexpected case value found).")
                     return .none
                 }
                 previousCaseIsValue = true

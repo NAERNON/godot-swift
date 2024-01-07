@@ -15,7 +15,7 @@ extension Hint where Value : Collection<Character> {
         let swiftString = filters
             .filter { filter in
                 guard isFileFilterValid(filter) else {
-                    gdPrintError("File filter hint is ignored (filter \"\(filter)\" is not a valid filter).")
+                    godotPrintError("File filter hint is ignored (filter \"\(filter)\" is not a valid filter).")
                     return false
                 }
                 
@@ -43,7 +43,7 @@ extension Hint where Value : Collection<Character> {
         let swiftString = filters
             .filter { filter in
                 guard isFileFilterValid(filter) else {
-                    gdPrintError("File filter hint is ignored (filter \"\(filter)\" is not a valid filter).")
+                    godotPrintError("File filter hint is ignored (filter \"\(filter)\" is not a valid filter).")
                     return false
                 }
                 

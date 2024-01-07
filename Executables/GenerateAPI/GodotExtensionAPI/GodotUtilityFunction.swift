@@ -12,12 +12,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     var hash: Int
     var arguments: [GodotArgument]?
     
-    var name: String {
-        switch baseName {
-        case "print": "print_variant"
-        default: baseName
-        }
-    }
+    var name: String { baseName }
     
     var usesVariantGeneric: Bool { true }
     

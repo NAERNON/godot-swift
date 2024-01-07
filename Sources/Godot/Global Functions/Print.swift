@@ -10,7 +10,7 @@ import GodotExtensionHeaders
 ///   - function: The function name where the error occurred.
 ///   - file: The file where the error occurred.
 ///   - line: The line where the error occurred.
-public func gdDebugPrintError(
+public func godotLogError(
     _ message: String,
     notifyEditor: Bool = false,
     function: String = #function,
@@ -28,7 +28,7 @@ public func gdDebugPrintError(
 ///   - function: The function name where the warning occurred.
 ///   - file: The file where the warning occurred.
 ///   - line: The line where the warning occurred.
-public func gdDebugPrintWarning(
+public func godotLogWarning(
     _ message: String,
     notifyEditor: Bool = false,
     function: String = #function,
@@ -40,7 +40,7 @@ public func gdDebugPrintWarning(
 
 // MARK: Print
 
-private func printDescription(_ items: [Any], separator: String) -> String {
+private func makePrintDescription(_ items: [Any], separator: String) -> String {
     var string: String = ""
     for (index, item) in items.enumerated() {
         string += String(describing: item)
@@ -51,59 +51,34 @@ private func printDescription(_ items: [Any], separator: String) -> String {
     return string
 }
 
-/// Writes the textual representations of the given items into the Godot
-/// output.
-///
-/// You can pass zero or more items to the `gdPrint(_:separator:)`
-/// function. The textual representation for each item is the same as that
-/// obtained by calling `String(describing: item)`. The following example prints a string,
-/// a closed range of integers, and a group of floating-point values to
-/// Godot output:
-///
-/// ```swift
-/// gdPrint("One two three four five")
-/// // Prints "One two three four five"
-///
-/// gdPrint(1...5)
-/// // Prints "1...5"
-///
-/// gdPrint(1.0, 2.0, 3.0, 4.0, 5.0)
-/// // Prints "1.0 2.0 3.0 4.0 5.0"
-/// ```
-///
-/// To print the items separated by something other than a space, pass a string
-/// as `separator`.
-///
-/// ```swift
-/// gdPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
-/// // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
-/// ```
-///
-/// - Parameters:
-///   - items: Zero or more items to print.
-///   - separator: A string to print between each item. The default is a single
-///     space (`" "`).
-public func gdPrint(_ items: Any..., separator: String = " ") {
-    _printVariant(arg1: printDescription(items, separator: separator))
+private func makeDebugPrintDescription(_ items: [Any], separator: String) -> String {
+    var string: String = ""
+    for (index, item) in items.enumerated() {
+        string += String(reflecting: item)
+        if index < items.count-1 {
+            string += separator
+        }
+    }
+    return string
 }
 
 /// Writes the textual representations of the given items into the Godot
-/// output as error.
+/// output and into the OS terminal.
 ///
-/// You can pass zero or more items to the `gdPrintError(_:separator:)`
+/// You can pass zero or more items to the `godotPrint(_:separator:)`
 /// function. The textual representation for each item is the same as that
 /// obtained by calling `String(describing: item)`. The following example prints a string,
 /// a closed range of integers, and a group of floating-point values to
 /// Godot output:
 ///
 /// ```swift
-/// gdPrintError("One two three four five")
+/// godotPrint("One two three four five")
 /// // Prints "One two three four five"
 ///
-/// gdPrintError(1...5)
+/// godotPrint(1...5)
 /// // Prints "1...5"
 ///
-/// gdPrintError(1.0, 2.0, 3.0, 4.0, 5.0)
+/// godotPrint(1.0, 2.0, 3.0, 4.0, 5.0)
 /// // Prints "1.0 2.0 3.0 4.0 5.0"
 /// ```
 ///
@@ -111,7 +86,7 @@ public func gdPrint(_ items: Any..., separator: String = " ") {
 /// as `separator`.
 ///
 /// ```swift
-/// gdPrintError(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
+/// godotPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
 /// // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
 /// ```
 ///
@@ -119,6 +94,78 @@ public func gdPrint(_ items: Any..., separator: String = " ") {
 ///   - items: Zero or more items to print.
 ///   - separator: A string to print between each item. The default is a single
 ///     space (`" "`).
-public func gdPrintError(_ items: Any..., separator: String = " ") {
-    _printerr(arg1: printDescription(items, separator: separator))
+public func godotPrint(_ items: Any..., separator: String = " ") {
+    _print(arg1: makePrintDescription(items, separator: separator))
+}
+
+/// Writes the textual representations of the given items most suitable for
+/// debugging into the Godot output and into the OS terminal.
+///
+/// You can pass zero or more items to the `godotPrint(_:separator:)`
+/// function. The textual representation for each item is the same as that
+/// obtained by calling `String(reflecting: item)`. The following example prints a string,
+/// a closed range of integers, and a group of floating-point values to
+/// Godot output:
+///
+/// ```swift
+/// godotDebugPrint("One two three four five")
+/// // Prints "One two three four five"
+///
+/// godotDebugPrint(1...5)
+/// // Prints "1...5"
+///
+/// godotDebugPrint(1.0, 2.0, 3.0, 4.0, 5.0)
+/// // Prints "1.0 2.0 3.0 4.0 5.0"
+/// ```
+///
+/// To print the items separated by something other than a space, pass a string
+/// as `separator`.
+///
+/// ```swift
+/// godotDebugPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
+/// // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
+/// ```
+///
+/// - Parameters:
+///   - items: Zero or more items to print.
+///   - separator: A string to print between each item. The default is a single
+///     space (`" "`).
+public func godotDebugPrint(_ items: Any..., separator: String = " ") {
+    _print(arg1: makeDebugPrintDescription(items, separator: separator))
+}
+
+/// Writes the textual representations of the given items into the Godot
+/// output as error and into the OS terminal.
+///
+/// You can pass zero or more items to the `godotPrintError(_:separator:)`
+/// function. The textual representation for each item is the same as that
+/// obtained by calling `String(describing: item)`. The following example prints a string,
+/// a closed range of integers, and a group of floating-point values to
+/// Godot output:
+///
+/// ```swift
+/// godotPrintError("One two three four five")
+/// // Prints "One two three four five"
+///
+/// godotPrintError(1...5)
+/// // Prints "1...5"
+///
+/// godotPrintError(1.0, 2.0, 3.0, 4.0, 5.0)
+/// // Prints "1.0 2.0 3.0 4.0 5.0"
+/// ```
+///
+/// To print the items separated by something other than a space, pass a string
+/// as `separator`.
+///
+/// ```swift
+/// godotPrintError(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
+/// // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
+/// ```
+///
+/// - Parameters:
+///   - items: Zero or more items to print.
+///   - separator: A string to print between each item. The default is a single
+///     space (`" "`).
+public func godotPrintError(_ items: Any..., separator: String = " ") {
+    _printerr(arg1: makePrintDescription(items, separator: separator))
 }

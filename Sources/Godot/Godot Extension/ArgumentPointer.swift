@@ -27,6 +27,7 @@ func withUnsafeArgumentPackPointer<each VariantRest : VariantStorableIn>(
     varargs: repeat each VariantRest,
     body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
 ) {
+    // TODO: Do not create Variants, but keep using Variant.Storage
     var varargsArray = [Variant]()
     repeat varargsArray.append(Variant(each varargs))
     

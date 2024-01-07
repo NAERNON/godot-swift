@@ -95,7 +95,7 @@ public final class ClassRegistrar {
     @discardableResult
     internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> ClassBinding? where Class : Object {
         guard let currentLevel else {
-            gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
+            godotLogError("Cannot register class \(classType) because no initialization level was provided.")
             return nil
         }
         
@@ -130,7 +130,7 @@ public final class ClassRegistrar {
           Superclass : Object
     {
         guard let currentLevel else {
-            gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
+            godotLogError("Cannot register class \(classType) because no initialization level was provided.")
             return nil
         }
         
@@ -147,14 +147,14 @@ public final class ClassRegistrar {
         let superclassName = classBinding.superclassName
         
         guard !classIsAlreadyRegistered(withName: className) else {
-            gdDebugPrintError("Cannot register class \(classType) because a class with the same name is already registered.")
+            godotLogError("Cannot register class \(classType) because a class with the same name is already registered.")
             return nil
         }
         
         guard self.classType(named: superclassName) == superclassType,
               let superclassBinding = binding(forClassNamed: superclassName)
         else {
-            gdDebugPrintError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
+            godotLogError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
             return nil
         }
         
@@ -233,12 +233,12 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) is not registered.")
+            godotLogError("Cannot register function \(functionName) because the class \(className) is not registered.")
             return nil
         }
         
         guard classBinding.function(named: functionName) == nil else {
-            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) already registered a function with the same name.")
+            godotLogError("Cannot register function \(functionName) because the class \(className) already registered a function with the same name.")
             return nil
         }
         
@@ -309,7 +309,7 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register function override \(swiftFunctionName) because the class \(className) is not registered.")
+            godotLogError("Cannot register function override \(swiftFunctionName) because the class \(className) is not registered.")
             return nil
         }
         
@@ -332,12 +332,12 @@ public final class ClassRegistrar {
         methodNamePtr: GDExtensionConstStringNamePtr?
     ) -> GDExtensionClassCallVirtual? {
         guard let userDataPtr else {
-            gdDebugPrintError("No class data pointer provided.")
+            godotLogError("No class data pointer provided.")
             return nil
         }
         
         guard let methodNamePtr else {
-            gdDebugPrintError("No virtual func name given.")
+            godotLogError("No virtual func name given.")
             return nil
         }
         
@@ -345,7 +345,7 @@ public final class ClassRegistrar {
         let methodName = GodotStringName.fromGodotUnsafePointer(methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
-            gdDebugPrintError("Class \(classBinding.name) doesn't exist.")
+            godotLogError("Class \(classBinding.name) doesn't exist.")
             return nil
         }
         
@@ -480,12 +480,12 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) is not registered.")
+            godotLogError("Cannot register variable \(variableName) because the class \(className) is not registered.")
             return nil
         }
         
         guard classBinding.variable(named: variableName) == nil else {
-            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) already registered a variable with the same name.")
+            godotLogError("Cannot register variable \(variableName) because the class \(className) already registered a variable with the same name.")
             return nil
         }
         
@@ -575,7 +575,7 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register group \(groupName) because the class \(className) is not registered.")
+            godotLogError("Cannot register group \(groupName) because the class \(className) is not registered.")
             return false
         }
         
@@ -613,7 +613,7 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register subgroup \(subgroupName) because the class \(className) is not registered.")
+            godotLogError("Cannot register subgroup \(subgroupName) because the class \(className) is not registered.")
             return false
         }
         
@@ -655,12 +655,12 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register enum or option set \(enumName) because the class \(className) is not registered.")
+            godotLogError("Cannot register enum or option set \(enumName) because the class \(className) is not registered.")
             return nil
         }
         
         guard classBinding.enum(named: enumName) == nil else {
-            gdDebugPrintError("Cannot register enum or option set \(enumName) because the class \(className) already registered an enum or option set with the same name.")
+            godotLogError("Cannot register enum or option set \(enumName) because the class \(className) already registered an enum or option set with the same name.")
             return nil
         }
         
@@ -711,12 +711,12 @@ public final class ClassRegistrar {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register signal \(signalName) because the class \(className) is not registered.")
+            godotLogError("Cannot register signal \(signalName) because the class \(className) is not registered.")
             return nil
         }
         
         guard classBinding.signal(named: signalName) == nil else {
-            gdDebugPrintError("Cannot register signal \(signalName) because the class \(className) already registered a signal with the same name.")
+            godotLogError("Cannot register signal \(signalName) because the class \(className) already registered a signal with the same name.")
             return nil
         }
         

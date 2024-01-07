@@ -49,7 +49,7 @@ improves the process of exposing classes to Godot:
     }
 
     public override _process(delta: Double) {
-        gdPrint("Delta :", delta)
+        godotPrint("Delta :", delta)
     }
 
     public func sleep(for duration: Double) {

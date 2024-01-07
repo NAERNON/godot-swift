@@ -44,8 +44,8 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 - <doc:UsingBuiltinTypes>
 - <doc:UsingRandomNumberGenerator>
 
-- ``gdPrint(_:separator:)``
-- ``gdPrintError(_:separator:)``
+- ``godotPrint(_:separator:)``
+- ``godotPrintError(_:separator:)``
 
 - ``Resource/load(_:)``
 

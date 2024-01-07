@@ -1186,7 +1186,7 @@ private var __function_binding_print: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printVariant<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+internal func _print<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_print(nil, __accessPtr, Int32(packCount))}}

@@ -64,7 +64,7 @@ Exposed functions cannot be async, throw, be generic or have variadic parameters
     // The function `super_jump` is exposed with
     // one parameter `direction`
     public func superJump(to direction: Vector2) {
-        gdPrint("SUUUUPER JUMP")
+        godotPrint("SUUUUPER JUMP")
     }
 }
 ```

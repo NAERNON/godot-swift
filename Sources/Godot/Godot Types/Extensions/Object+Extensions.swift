@@ -151,12 +151,12 @@ extension Object {
         }
         
         guard let className = GodotStringName.className(forObjectPointer: instancePtr) else {
-            gdDebugPrintError("Cannot retrieve class name of an instance")
+            godotLogError("Cannot retrieve class name of an instance")
             return nil
         }
         
         guard let binding = GodotExtension.classRegistrar.binding(forClassNamed: className) else {
-            gdDebugPrintError("No class binding found for class \(className)")
+            godotLogError("No class binding found for class \(className)")
             return nil
         }
         
