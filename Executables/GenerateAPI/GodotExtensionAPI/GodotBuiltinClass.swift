@@ -297,7 +297,11 @@ struct GodotBuiltinClass: Decodable {
             for constant in constants {
                 let name = constant.name.lowercased().translated(from: .snake, to: .camel)
                 
-                "public static let \(raw: name): \(raw: constant.type.syntax()) = \(raw: constant.value.syntax(forType: constant.type))"
+                """
+                public static var \(raw: name): \(raw: constant.type.syntax()) {
+                    \(raw: constant.value.syntax(forType: constant.type))
+                }
+                """
             }
         }
     }

@@ -154,29 +154,43 @@ extension Vector3 {
     // MARK: Constants
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector3 = Vector3(x: 0, y: 0, z: 0)
+    public static var zero: Vector3 {
+        Vector3(x: 0, y: 0, z: 0)
+    }
     
     /// A vector with all components set to `1`.
-    public static let one: Vector3 = Vector3(x: 1, y: 1, z: 1)
+    public static var one: Vector3 {
+        Vector3(x: 1, y: 1, z: 1)
+    }
     
     /// A vector with all components set to positive infinity.
-    public static let infinity: Vector3 = Vector3(x: .infinity, y: .infinity, z: .infinity)
+    public static var infinity: Vector3 {
+        Vector3(x: .infinity, y: .infinity, z: .infinity)
+    }
     
     /// The left unit vector.
     ///
     /// Represents the local direction of left, and the global direction of west.
-    public static let left: Vector3 = Vector3(x: -1, y: 0, z: 0)
+    public static var left: Vector3 {
+        Vector3(x: -1, y: 0, z: 0)
+    }
     
     /// The right unit vector.
     ///
     /// Represents the local direction of right, and the global direction of east.
-    public static let right: Vector3 = Vector3(x: 1, y: 0, z: 0)
+    public static var right: Vector3 {
+        Vector3(x: 1, y: 0, z: 0)
+    }
     
     /// The up unit vector.
-    public static let up: Vector3 = Vector3(x: 0, y: 1, z: 0)
+    public static var up: Vector3 {
+        Vector3(x: 0, y: 1, z: 0)
+    }
     
     /// The down unit vector.
-    public static let down: Vector3 = Vector3(x: 0, y: -1, z: 0)
+    public static var down: Vector3 {
+        Vector3(x: 0, y: -1, z: 0)
+    }
     
     /// The forward unit vector.
     ///
@@ -185,30 +199,46 @@ extension Vector3 {
     /// Keep in mind that the forward direction for lights, cameras, etc is different
     /// from 3D assets like characters, which face towards the camera by convention.
     /// Use ``modelFront`` and similar constants when working in 3D asset space.
-    public static let forward: Vector3 = Vector3(x: 0, y: 0, z: -1)
+    public static var forward: Vector3 {
+        Vector3(x: 0, y: 0, z: -1)
+    }
     
     /// The back unit vector.
     ///
     /// Represents the local direction of back, and the global direction of south.
-    public static let back: Vector3 = Vector3(x: 0, y: 0, z: 1)
+    public static var back: Vector3 {
+        Vector3(x: 0, y: 0, z: 1)
+    }
     
     /// The unit vector pointing towards the left side of imported 3D assets.
-    public static let modelLeft: Vector3 = Vector3(x: 1, y: 0, z: 0)
+    public static var modelLeft: Vector3 {
+        Vector3(x: 1, y: 0, z: 0)
+    }
     
     /// The unit vector pointing towards the right side of imported 3D assets.
-    public static let modelRight: Vector3 = Vector3(x: -1, y: 0, z: 0)
+    public static var modelRight: Vector3 {
+        Vector3(x: -1, y: 0, z: 0)
+    }
     
     /// The unit vector pointing towards the top side (up) of imported 3D assets.
-    public static let modelTop: Vector3 = Vector3(x: 0, y: 1, z: 0)
+    public static var modelTop: Vector3 {
+        Vector3(x: 0, y: 1, z: 0)
+    }
     
     /// The unit vector pointing towards the bottom side (down) of imported 3D assets.
-    public static let modelBottom: Vector3 = Vector3(x: 0, y: -1, z: 0)
+    public static var modelBottom: Vector3 {
+        Vector3(x: 0, y: -1, z: 0)
+    }
     
     /// The unit vector pointing towards the front side (facing forward) of imported 3D assets.
-    public static let modelFront: Vector3 = Vector3(x: 0, y: 0, z: 1)
+    public static var modelFront: Vector3 {
+        Vector3(x: 0, y: 0, z: 1)
+    }
     
     /// The unit vector pointing towards the rear side (back) of imported 3D assets.
-    public static let modelRear: Vector3 = Vector3(x: 0, y: 0, z: -1)
+    public static var modelRear: Vector3 {
+        Vector3(x: 0, y: 0, z: -1)
+    }
     
     // MARK: Operators
     

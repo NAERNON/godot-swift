@@ -169,13 +169,19 @@ extension Plane {
     // MARK: Constant
     
     /// A plane that extends in the Y and Z axes (normal vector points +X).
-    public static let planeYZ: Plane = Plane(a: 1, b: 0, c: 0, d: 0)
+    public static var planeYZ: Plane {
+        Plane(a: 1, b: 0, c: 0, d: 0)
+    }
     
     /// A plane that extends in the X and Z axes (normal vector points +Y).
-    public static let planeXZ: Plane = Plane(a: 0, b: 1, c: 0, d: 0)
+    public static var planeXZ: Plane {
+        Plane(a: 0, b: 1, c: 0, d: 0)
+    }
     
     /// A plane that extends in the X and Y axes (normal vector points +Z).
-    public static let planeXY: Plane = Plane(a: 0, b: 0, c: 1, d: 0)
+    public static var planeXY: Plane {
+        Plane(a: 0, b: 0, c: 1, d: 0)
+    }
     
     // MARK: Operators
     

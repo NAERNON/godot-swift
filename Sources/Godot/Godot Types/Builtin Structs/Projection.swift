@@ -116,12 +116,16 @@ extension Projection {
     /// A `Projection` with no transformation defined.
     ///
     /// When applied to other data structures, no transformation is performed.
-    public static let identity: Projection = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+    public static var identity: Projection {
+        Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+    }
     
     /// A `Projection` with all values initialized to 0.
     ///
     /// When applied to other data structures, they will be zeroed.
-    public static let zero: Projection = Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    public static var zero: Projection {
+        Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    }
     
     // MARK: Operators
     

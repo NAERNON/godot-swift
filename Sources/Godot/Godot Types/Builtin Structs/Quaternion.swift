@@ -156,7 +156,9 @@ extension Quaternion {
     ///
     /// Equivalent to an identity ``Basis`` matrix.
     /// If a vector is transformed by an identity quaternion, it will not change.
-    public static let identity: Quaternion = Quaternion(x: 0, y: 0, z: 0, w: 1)
+    public static var identity: Quaternion {
+        Quaternion(x: 0, y: 0, z: 0, w: 1)
+    }
     
     // MARK: Operators
     

@@ -126,13 +126,19 @@ extension Vector4 {
     // MARK: Constants
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector4 = Vector4(x: 0, y: 0, z: 0, w: 0)
+    public static var zero: Vector4 {
+        Vector4(x: 0, y: 0, z: 0, w: 0)
+    }
     
     /// A vector with all components set to `1`.
-    public static let one: Vector4 = Vector4(x: 1, y: 1, z: 1, w: 1)
+    public static var one: Vector4 {
+        Vector4(x: 1, y: 1, z: 1, w: 1)
+    }
     
     /// A vector with all components set to positive infinity.
-    public static let infinity: Vector4 = Vector4(x: .infinity, y: .infinity, z: .infinity, w: .infinity)
+    public static var infinity: Vector4 {
+        Vector4(x: .infinity, y: .infinity, z: .infinity, w: .infinity)
+    }
     
     // MARK: Operators
     

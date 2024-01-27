@@ -113,48 +113,68 @@ extension Vector3I {
     // MARK: Constants
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector3I = Vector3I(x: 0, y: 0, z: 0)
+    public static var zero: Vector3I {
+        Vector3I(x: 0, y: 0, z: 0)
+    }
     
     /// A vector with all components set to `1`.
-    public static let one: Vector3I = Vector3I(x: 1, y: 1, z: 1)
+    public static var one: Vector3I {
+        Vector3I(x: 1, y: 1, z: 1)
+    }
     
     /// A vector with all components equal to `Int32.min`.
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector3`'s ``Vector3/infinity``.
-    public static let min: Vector3I = Vector3I(x: .min, y: .min, z: .min)
+    public static var min: Vector3I {
+        Vector3I(x: .min, y: .min, z: .min)
+    }
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector3`'s ``Vector3/infinity``.
-    public static let max: Vector3I = Vector3I(x: .max, y: .max, z: .max)
+    public static var max: Vector3I {
+        Vector3I(x: .max, y: .max, z: .max)
+    }
     
     /// The left unit vector.
     ///
     /// Represents the local direction of left, and the global direction of west.
-    public static let left: Vector3I = Vector3I(x: -1, y: 0, z: 0)
+    public static var left: Vector3I {
+        Vector3I(x: -1, y: 0, z: 0)
+    }
     
     /// The right unit vector.
     ///
     /// Represents the local direction of right, and the global direction of east.
-    public static let right: Vector3I = Vector3I(x: 1, y: 0, z: 0)
+    public static var right: Vector3I {
+        Vector3I(x: 1, y: 0, z: 0)
+    }
     
     /// The up unit vector.
-    public static let up: Vector3I = Vector3I(x: 0, y: 1, z: 0)
+    public static var up: Vector3I {
+        Vector3I(x: 0, y: 1, z: 0)
+    }
     
     /// The down unit vector.
-    public static let down: Vector3I = Vector3I(x: 0, y: -1, z: 0)
+    public static var down: Vector3I {
+        Vector3I(x: 0, y: -1, z: 0)
+    }
     
     /// The forward unit vector.
     ///
     /// Represents the local direction of forward, and the global direction of north.
-    public static let forward: Vector3I = Vector3I(x: 0, y: 0, z: -1)
+    public static var forward: Vector3I {
+        Vector3I(x: 0, y: 0, z: -1)
+    }
     
     /// The back unit vector.
     ///
     /// Represents the local direction of back, and the global direction of south.
-    public static let back: Vector3I = Vector3I(x: 0, y: 0, z: 1)
+    public static var back: Vector3I {
+        Vector3I(x: 0, y: 0, z: 1)
+    }
     
     // MARK: Operators
     

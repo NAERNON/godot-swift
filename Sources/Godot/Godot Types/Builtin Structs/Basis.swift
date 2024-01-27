@@ -117,16 +117,24 @@ extension Basis {
     // MARK: Constants
     
     /// The identity basis, with no rotation or scaling applied.
-    public static let identity: Basis = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
+    public static var identity: Basis {
+        Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
+    }
     
     /// The basis that will flip something along the X axis when used in a transformation.
-    public static let flipX: Basis = Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1)
+    public static var flipX: Basis {
+        Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1)
+    }
     
     /// The basis that will flip something along the Y axis when used in a transformation.
-    public static let flipY: Basis = Basis(1, 0, 0, 0, -1, 0, 0, 0, 1)
+    public static var flipY: Basis {
+        Basis(1, 0, 0, 0, -1, 0, 0, 0, 1)
+    }
     
     /// The basis that will flip something along the Z axis when used in a transformation.
-    public static let flipZ: Basis = Basis(1, 0, 0, 0, 1, 0, 0, 0, -1)
+    public static var flipZ: Basis {
+        Basis(1, 0, 0, 0, 1, 0, 0, 0, -1)
+    }
     
     // MARK: Operators
     

@@ -112,22 +112,30 @@ extension Vector4I {
     // MARK: Constants
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector4I = Vector4I(x: 0, y: 0, z: 0, w: 0)
+    public static var zero: Vector4I {
+        Vector4I(x: 0, y: 0, z: 0, w: 0)
+    }
     
     /// A vector with all components set to `1`.
-    public static let one: Vector4I = Vector4I(x: 1, y: 1, z: 1, w: 1)
+    public static var one: Vector4I {
+        Vector4I(x: 1, y: 1, z: 1, w: 1)
+    }
     
     /// A vector with all components equal to `Int32.min`.
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let min: Vector4I = Vector4I(x: .min, y: .min, z: .min, w: .min)
+    public static var min: Vector4I {
+        Vector4I(x: .min, y: .min, z: .min, w: .min)
+    }
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let max: Vector4I = Vector4I(x: .max, y: .max, z: .max, w: .max)
+    public static var max: Vector4I {
+        Vector4I(x: .max, y: .max, z: .max, w: .max)
+    }
     
     // MARK: Operators
     

@@ -172,13 +172,19 @@ extension Transform2D {
     /// The identity `Transform2D` with no translation, rotation or scaling applied.
     ///
     /// When applied to other data structures, `identity` performs no transformation.
-    public static let identity: Transform2D = Transform2D(1, 0, 0, 1, 0, 0)
+    public static var identity: Transform2D {
+        Transform2D(1, 0, 0, 1, 0, 0)
+    }
     
     /// The `Transform2D` that will flip something along the X axis.
-    public static let flipX: Transform2D = Transform2D(-1, 0, 0, 1, 0, 0)
+    public static var flipX: Transform2D {
+        Transform2D(-1, 0, 0, 1, 0, 0)
+    }
     
     /// The `Transform2D` that will flip something along the Y axis.
-    public static let flipY: Transform2D = Transform2D(1, 0, 0, -1, 0, 0)
+    public static var flipY: Transform2D {
+        Transform2D(1, 0, 0, -1, 0, 0)
+    }
     
     // MARK: Operators
     

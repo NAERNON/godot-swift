@@ -107,42 +107,58 @@ extension Vector2I {
     // MARK: Constant
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector2I = Vector2I(x: 0, y: 0)
+    public static var zero: Vector2I {
+        Vector2I(x: 0, y: 0)
+    }
     
     /// A vector with all components set to `1`.
-    public static let one: Vector2I = Vector2I(x: 1, y: 1)
+    public static var one: Vector2I {
+        Vector2I(x: 1, y: 1)
+    }
     
     /// A vector with all components equal to `Int32.min`.
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let min: Vector2I = Vector2I(x: .min, y: .min)
+    public static var min: Vector2I {
+        Vector2I(x: .min, y: .min)
+    }
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let max: Vector2I = Vector2I(x: .max, y: .max)
+    public static var max: Vector2I {
+        Vector2I(x: .max, y: .max)
+    }
     
     /// The left unit vector.
     ///
     /// Represents the direction of left.
-    public static let left: Vector2I = Vector2I(x: -1, y: 0)
+    public static var left: Vector2I {
+        Vector2I(x: -1, y: 0)
+    }
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
-    public static let right: Vector2I = Vector2I(x: 1, y: 0)
+    public static var right: Vector2I {
+        Vector2I(x: 1, y: 0)
+    }
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
-    public static let up: Vector2I = Vector2I(x: 0, y: -1)
+    public static var up: Vector2I {
+        Vector2I(x: 0, y: -1)
+    }
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
-    public static let down: Vector2I = Vector2I(x: 0, y: 1)
+    public static var down: Vector2I {
+        Vector2I(x: 0, y: 1)
+    }
     
     // MARK: Operators
     

@@ -103,16 +103,24 @@ extension Transform3D {
     /// The identity `Transform3D` with no translation, rotation or scaling applied.
     ///
     /// When applied to other data structures, `identity` performs no transformation.
-    public static let identity: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+    public static var identity: Transform3D {
+        Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+    }
     
     /// The `Transform3D` with mirroring applied perpendicular to the YZ plane.
-    public static let flipX: Transform3D = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+    public static var flipX: Transform3D {
+        Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+    }
     
     /// The `Transform3D` with mirroring applied perpendicular to the XZ plane.
-    public static let flipY: Transform3D = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)
+    public static var flipY: Transform3D {
+        Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)
+    }
     
     /// The `Transform3D` with mirroring applied perpendicular to the XY plane.
-    public static let flipZ: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+    public static var flipZ: Transform3D {
+        Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+    }
     
     // MARK: Operators
     
