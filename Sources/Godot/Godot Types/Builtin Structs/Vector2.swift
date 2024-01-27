@@ -699,9 +699,8 @@ extension Vector2: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Scalar.self)
-        let y = try container.decode(Scalar.self)
-        self.init(x: x, y: y)
+        x = try container.decode(Scalar.self)
+        y = try container.decode(Scalar.self)
     }
 }
 

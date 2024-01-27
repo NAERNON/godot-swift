@@ -20,7 +20,7 @@
 ///
 /// ### Creating Vector2i
 ///
-/// - ``init(x:y:)-765ct``
+/// - ``init(x:y:)-4czd5``
 /// - ``init(x:y:)-74dwz``
 /// - ``init(x:y:)-25y4k``
 /// - ``init(_:)``
@@ -66,15 +66,15 @@ public struct Vector2i {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
-    public var x: Int
+    public var x: Int32
     
     /// The vector's Y component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `1`.
-    public var y: Int
+    public var y: Int32
     
     /// Creates a new `Vector2i` from the given `x` and `y`.
-    public init(x: Int, y: Int) {
+    public init(x: Int32, y: Int32) {
         self.x = x
         self.y = y
     }
@@ -85,12 +85,12 @@ extension Vector2i {
     
     /// Creates a new `Vector2i` from the given `x` and `y`.
     public init<T>(x: T, y: T) where T : BinaryFloatingPoint {
-        self.init(x: Int(x), y: Int(y))
+        self.init(x: Int32(x), y: Int32(y))
     }
     
     /// Creates a new `Vector2i` from the given `x` and `y`.
     public init<T>(x: T, y: T) where T : BinaryInteger {
-        self.init(x: Int(x), y: Int(y))
+        self.init(x: Int32(x), y: Int32(y))
     }
     
     /// Creates a new `Vector2i` from the given `Vector2`
@@ -120,13 +120,13 @@ extension Vector2i {
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let min: Vector2i = Vector2i(x: -2147483648, y: -2147483648)
+    public static let min: Vector2i = Vector2i(x: .min, y: .min)
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let max: Vector2i = Vector2i(x: 2147483647, y: 2147483647)
+    public static let max: Vector2i = Vector2i(x: .max, y: .max)
     
     /// The left unit vector.
     ///
@@ -347,7 +347,7 @@ extension Vector2i {
     /// Accesses vector component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`.
-    public subscript(index: Int) -> Int {
+    public subscript(index: Int) -> Int32 {
         get {
             switch index {
             case 0: x
@@ -378,8 +378,8 @@ extension Vector2i: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(Int.self)
-        y = try container.decode(Int.self)
+        x = try container.decode(Int32.self)
+        y = try container.decode(Int32.self)
     }
 }
 

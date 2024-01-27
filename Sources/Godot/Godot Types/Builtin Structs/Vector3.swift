@@ -766,10 +766,9 @@ extension Vector3: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Scalar.self)
-        let y = try container.decode(Scalar.self)
-        let z = try container.decode(Scalar.self)
-        self.init(x: x, y: y, z: z)
+        x = try container.decode(Scalar.self)
+        y = try container.decode(Scalar.self)
+        z = try container.decode(Scalar.self)
     }
 }
 

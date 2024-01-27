@@ -20,7 +20,7 @@
 ///
 /// ### Creating Vector4i
 ///
-/// - ``init(x:y:z:w:)-j9d8``
+/// - ``init(x:y:z:w:)-185qb``
 /// - ``init(x:y:z:w:)-8kqw9``
 /// - ``init(x:y:z:w:)-3omp3``
 /// - ``init(_:)``
@@ -63,25 +63,25 @@ public struct Vector4i {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
-    public var x: Int
+    public var x: Int32
     
     /// The vector's Y component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `1`.
-    public var y: Int
+    public var y: Int32
     
     /// The vector's Z component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `2`.
-    public var z: Int
+    public var z: Int32
     
     /// The vector's W component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `3`.
-    public var w: Int
+    public var w: Int32
     
     /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
-    public init(x: Int, y: Int, z: Int, w: Int) {
+    public init(x: Int32, y: Int32, z: Int32, w: Int32) {
         self.x = x
         self.y = y
         self.z = z
@@ -94,12 +94,12 @@ extension Vector4i {
     
     /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
-        self.init(x: Int(x), y: Int(y), z: Int(z), w: Int(w))
+        self.init(x: Int32(x), y: Int32(y), z: Int32(z), w: Int32(w))
     }
     
     /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
-        self.init(x: Int(x), y: Int(y), z: Int(z), w: Int(w))
+        self.init(x: Int32(x), y: Int32(y), z: Int32(z), w: Int32(w))
     }
     
     /// Creates a new `Vector4i` from the given `Vector4`
@@ -129,13 +129,13 @@ extension Vector4i {
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let min: Vector4i = Vector4i(x: -2147483648, y: -2147483648, z: -2147483648, w: -2147483648)
+    public static let min: Vector4i = Vector4i(x: .min, y: .min, z: .min, w: .min)
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let max: Vector4i = Vector4i(x: 2147483647, y: 2147483647, z: 2147483647, w: 2147483647)
+    public static let max: Vector4i = Vector4i(x: .max, y: .max, z: .max, w: .max)
     
     // MARK: Operators
     
@@ -340,7 +340,7 @@ extension Vector4i {
     /// Accesses vector component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`, `w`.
-    public subscript(index: Int) -> Int {
+    public subscript(index: Int) -> Int32 {
         get {
             switch index {
             case 0: x
@@ -377,11 +377,10 @@ extension Vector4i: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Int.self)
-        let y = try container.decode(Int.self)
-        let z = try container.decode(Int.self)
-        let w = try container.decode(Int.self)
-        self.init(x: x, y: y, z: z, w: w)
+        x = try container.decode(Int32.self)
+        y = try container.decode(Int32.self)
+        z = try container.decode(Int32.self)
+        w = try container.decode(Int32.self)
     }
 }
 

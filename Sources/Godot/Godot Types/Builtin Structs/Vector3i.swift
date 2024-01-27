@@ -20,7 +20,7 @@
 ///
 /// ### Creating Vector3i
 ///
-/// - ``init(x:y:z:)-4iefc``
+/// - ``init(x:y:z:)-77qnd``
 /// - ``init(x:y:z:)-2bk18``
 /// - ``init(x:y:z:)-79zqj``
 /// - ``init(_:)``
@@ -68,20 +68,20 @@ public struct Vector3i {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
-    public var x: Int
+    public var x: Int32
     
     /// The vector's Y component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `1`.
-    public var y: Int
+    public var y: Int32
     
     /// The vector's Z component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `2`.
-    public var z: Int
+    public var z: Int32
     
     /// Creates a new `Vector3i` from the given `x`,`y` and `z`.
-    public init(x: Int, y: Int, z: Int) {
+    public init(x: Int32, y: Int32, z: Int32) {
         self.x = x
         self.y = y
         self.z = z
@@ -93,12 +93,12 @@ extension Vector3i {
     
     /// Creates a new `Vector3i` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
-        self.init(x: Int(x), y: Int(y), z: Int(z))
+        self.init(x: Int32(x), y: Int32(y), z: Int32(z))
     }
     
     /// Creates a new `Vector3i` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryInteger {
-        self.init(x: Int(x), y: Int(y), z: Int(z))
+        self.init(x: Int32(x), y: Int32(y), z: Int32(z))
     }
     
     /// Creates a new `Vector3i` from the given `Vector3`
@@ -128,13 +128,13 @@ extension Vector3i {
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector3`'s ``Vector3/infinity``.
-    public static let min: Vector3i = Vector3i(x: -2147483648, y: -2147483648, z: -2147483648)
+    public static let min: Vector3i = Vector3i(x: .min, y: .min, z: .min)
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector3`'s ``Vector3/infinity``.
-    public static let max: Vector3i = Vector3i(x: 2147483647, y: 2147483647, z: 2147483647)
+    public static let max: Vector3i = Vector3i(x: .max, y: .max, z: .max)
     
     /// The left unit vector.
     ///
@@ -365,7 +365,7 @@ extension Vector3i {
     /// Accesses vector component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`.
-    public subscript(index: Int) -> Int {
+    public subscript(index: Int) -> Int32 {
         get {
             switch index {
             case 0: x
@@ -399,10 +399,9 @@ extension Vector3i: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Int.self)
-        let y = try container.decode(Int.self)
-        let z = try container.decode(Int.self)
-        self.init(x: x, y: y, z: z)
+        x = try container.decode(Int32.self)
+        y = try container.decode(Int32.self)
+        z = try container.decode(Int32.self)
     }
 }
 
