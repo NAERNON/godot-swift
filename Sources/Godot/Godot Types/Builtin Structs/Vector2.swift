@@ -101,13 +101,9 @@
 /// - ``>=(_:_:)``
 public struct Vector2 {
     /// The vector's X component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `0`.
     public var x: Scalar
     
     /// The vector's Y component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `1`.
     public var y: Scalar
     
     /// Creates a new `Vector2` from the given `x` and `y`.
@@ -521,15 +517,15 @@ extension Vector2 {
     
     /// The axis of the vector's highest value.
     ///
-    /// If all components are equal, this method returns ``Axis/x``.
-    public var maxAxis: Axis {
+    /// If all components are equal, this method returns ``Axis2D/x``.
+    public var maxAxis: Axis2D {
         .init(rawValue: UInt32(_maxAxisIndex()))!
     }
     
     /// The axis of the vector's lowest value.
     ///
-    /// If all components are equal, this method returns ``Axis/y``.
-    public var minAxis: Axis {
+    /// If all components are equal, this method returns ``Axis2D/y``.
+    public var minAxis: Axis2D {
         .init(rawValue: UInt32(_minAxisIndex()))!
     }
     
@@ -665,22 +661,18 @@ extension Vector2 {
         _fromAngle(angle)
     }
     
-    /// Accesses vector component at the given index.
-    ///
-    /// Indices are in the following order: `x`, `y`.
-    public subscript(index: Int) -> Scalar {
+    /// Accesses the vector component on the given axis.
+    public subscript(axis: Axis2D) -> Scalar {
         get {
-            switch index {
-            case 0: x
-            case 1: y
-            default: fatalError("Attempting to retrieve value at index \(index) from 2D vector.")
+            switch axis {
+            case .x: x
+            case .y: y
             }
         }
         set(newValue) {
-            switch index {
-            case 0: x = newValue
-            case 1: y = newValue
-            default: fatalError("Attempting to set value at index \(index) from 2D vector.")
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
             }
         }
     }

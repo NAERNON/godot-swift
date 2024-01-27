@@ -66,18 +66,12 @@
 /// - ``>=(_:_:)``
 public struct Vector3I {
     /// The vector's X component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `0`.
     public var x: Int32
     
     /// The vector's Y component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `1`.
     public var y: Int32
     
     /// The vector's Z component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `2`.
     public var z: Int32
     
     /// Creates a new `Vector3I` from the given `x`,`y` and `z`.
@@ -314,15 +308,15 @@ extension Vector3I {
     
     /// The axis of the vector's highest value.
     ///
-    /// If all components are equal, this method returns ``Axis/x``.
-    public var maxAxis: Axis {
+    /// If all components are equal, this method returns ``Axis3D/x``.
+    public var maxAxis: Axis3D {
         .init(rawValue: UInt32(_maxAxisIndex()))!
     }
     
     /// The axis of the vector's lowest value.
     ///
-    /// If all components are equal, this method returns ``Axis/z``.
-    public var minAxis: Axis {
+    /// If all components are equal, this method returns ``Axis3D/z``.
+    public var minAxis: Axis3D {
         .init(rawValue: UInt32(_minAxisIndex()))!
     }
     
@@ -362,24 +356,20 @@ extension Vector3I {
         _snapped(step: step)
     }
     
-    /// Accesses vector component at the given index.
-    ///
-    /// Indices are in the following order: `x`, `y`, `z`.
-    public subscript(index: Int) -> Int32 {
+    /// Accesses the vector component on the given axis.
+    public subscript(axis: Axis3D) -> Int32 {
         get {
-            switch index {
-            case 0: x
-            case 1: y
-            case 2: z
-            default: fatalError("Attempting to retrieve value at index \(index) from 3D vector.")
+            switch axis {
+            case .x: x
+            case .y: y
+            case .z: z
             }
         }
         set(newValue) {
-            switch index {
-            case 0: x = newValue
-            case 1: y = newValue
-            case 2: z = newValue
-            default: fatalError("Attempting to set value at index \(index) from 3D vector.")
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
+            case .z: z = newValue
             }
         }
     }

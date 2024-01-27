@@ -61,23 +61,15 @@
 /// - ``>=(_:_:)``
 public struct Vector4I {
     /// The vector's X component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `0`.
     public var x: Int32
     
     /// The vector's Y component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `1`.
     public var y: Int32
     
     /// The vector's Z component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `2`.
     public var z: Int32
     
     /// The vector's W component.
-    ///
-    /// Also accessible by using ``subscript(_:)`` with index `3`.
     public var w: Int32
     
     /// Creates a new `Vector4I` from the given `x`,`y`, `z` and `w`.
@@ -289,15 +281,15 @@ extension Vector4I {
     
     /// The axis of the vector's highest value.
     ///
-    /// If all components are equal, this method returns ``Axis/x``.
-    public var maxAxis: Axis {
+    /// If all components are equal, this method returns ``Axis4D/x``.
+    public var maxAxis: Axis4D {
         .init(rawValue: UInt32(_maxAxisIndex()))!
     }
     
     /// The axis of the vector's lowest value.
     ///
-    /// If all components are equal, this method returns ``Axis/w``.
-    public var minAxis: Axis {
+    /// If all components are equal, this method returns ``Axis4D/w``.
+    public var minAxis: Axis4D {
         .init(rawValue: UInt32(_minAxisIndex()))!
     }
     
@@ -337,26 +329,22 @@ extension Vector4I {
         _snapped(step: step)
     }
     
-    /// Accesses vector component at the given index.
-    ///
-    /// Indices are in the following order: `x`, `y`, `z`, `w`.
-    public subscript(index: Int) -> Int32 {
+    /// Accesses the vector component on the given axis.
+    public subscript(axis: Axis4D) -> Int32 {
         get {
-            switch index {
-            case 0: x
-            case 1: y
-            case 2: z
-            case 3: w
-            default: fatalError("Attempting to retrieve value at index \(index) from 4D vector.")
+            switch axis {
+            case .x: x
+            case .y: y
+            case .z: z
+            case .w: w
             }
         }
         set(newValue) {
-            switch index {
-            case 0: x = newValue
-            case 1: y = newValue
-            case 2: z = newValue
-            case 3: w = newValue
-            default: fatalError("Attempting to set value at index \(index) from 4D vector.")
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
+            case .z: z = newValue
+            case .w: w = newValue
             }
         }
     }

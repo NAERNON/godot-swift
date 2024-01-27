@@ -185,6 +185,14 @@ struct GodotBuiltinClass: Decodable {
     
     // MARK: - Syntax
     
+    var generatesConstants: Bool {
+        name == "Color"
+    }
+    
+    var generatesEnums: Bool {
+        !name.syntax().starts(with: "Vector")
+    }
+    
     var useOpaque: Bool {
         name.isBuiltinGodotClassWithOpaque
     }
@@ -285,7 +293,7 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberBlockItemListBuilder
     func constantsSyntax() -> MemberBlockItemListSyntax {
-        if let constants {
+        if let constants, generatesConstants {
             for constant in constants {
                 let name = constant.name.lowercased().translated(from: .snake, to: .camel)
                 
@@ -296,7 +304,7 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberBlockItemListBuilder
     func enumSyntax() throws -> MemberBlockItemListSyntax {
-        if let enums {
+        if let enums, generatesEnums {
             for `enum` in enums {
                 try `enum`.syntax()
             }

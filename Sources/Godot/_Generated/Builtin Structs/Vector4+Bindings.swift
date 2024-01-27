@@ -218,20 +218,6 @@ private var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector4 {
-    public enum Axis: UInt32, GodotEnum {
-        case x = 0
-        case y = 1
-        case z = 2
-        case w = 3
-        public static func hintValues() -> [(name: String, value: RawValue)] {
-            [
-            ("X", 0),
-            ("Y", 1),
-            ("Z", 2),
-            ("W", 3),]
-        }
-    }
-
     static internal func _constructor() -> Self {
         var __temporary = Vector4()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in

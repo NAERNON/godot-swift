@@ -136,16 +136,6 @@ private var __method_binding_snapped: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector2I {
-    public enum Axis: UInt32, GodotEnum {
-        case x = 0
-        case y = 1
-        public static func hintValues() -> [(name: String, value: RawValue)] {
-            [
-            ("X", 0),
-            ("Y", 1),]
-        }
-    }
-
     static internal func _constructor() -> Self {
         var __temporary = Vector2I()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
