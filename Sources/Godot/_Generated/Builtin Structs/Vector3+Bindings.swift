@@ -307,25 +307,6 @@ private var __method_binding_octahedron_decode: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector3 {
-    public static let axisX: Int = 0
-    public static let axisY: Int = 1
-    public static let axisZ: Int = 2
-    public static let zero: Vector3 = Vector3(x: 0, y: 0, z: 0)
-    public static let one: Vector3 = Vector3(x: 1, y: 1, z: 1)
-    public static let inf: Vector3 = Vector3(x: .infinity, y: .infinity, z: .infinity)
-    public static let left: Vector3 = Vector3(x: -1, y: 0, z: 0)
-    public static let right: Vector3 = Vector3(x: 1, y: 0, z: 0)
-    public static let up: Vector3 = Vector3(x: 0, y: 1, z: 0)
-    public static let down: Vector3 = Vector3(x: 0, y: -1, z: 0)
-    public static let forward: Vector3 = Vector3(x: 0, y: 0, z: -1)
-    public static let back: Vector3 = Vector3(x: 0, y: 0, z: 1)
-    public static let modelLeft: Vector3 = Vector3(x: 1, y: 0, z: 0)
-    public static let modelRight: Vector3 = Vector3(x: -1, y: 0, z: 0)
-    public static let modelTop: Vector3 = Vector3(x: 0, y: 1, z: 0)
-    public static let modelBottom: Vector3 = Vector3(x: 0, y: -1, z: 0)
-    public static let modelFront: Vector3 = Vector3(x: 0, y: 0, z: 1)
-    public static let modelRear: Vector3 = Vector3(x: 0, y: 0, z: -1)
-
     public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1

@@ -126,11 +126,6 @@ private var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Transform3D {
-    public static let identity: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
-    public static let flipX: Transform3D = Transform3D(xAxisX: -1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
-    public static let flipY: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: -1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
-    public static let flipZ: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: -1, originX: 0, originY: 0, originZ: 0)
-
     static internal func _constructor() -> Self {
         var __temporary = Transform3D()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in

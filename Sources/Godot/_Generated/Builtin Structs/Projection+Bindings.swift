@@ -179,15 +179,6 @@ private var __method_binding_get_lod_multiplier: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Projection {
-    public static let planeNear: Int = 0
-    public static let planeFar: Int = 1
-    public static let planeLeft: Int = 2
-    public static let planeTop: Int = 3
-    public static let planeRight: Int = 4
-    public static let planeBottom: Int = 5
-    public static let identity: Projection = Projection(xAxisX: 1, xAxisY: 0, xAxisZ: 0, xAxisW: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, yAxisW: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, zAxisW: 0, wAxisX: 0, wAxisY: 0, wAxisZ: 0, wAxisW: 1)
-    public static let zero: Projection = Projection(xAxisX: 0, xAxisY: 0, xAxisZ: 0, xAxisW: 0, yAxisX: 0, yAxisY: 0, yAxisZ: 0, yAxisW: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 0, zAxisW: 0, wAxisX: 0, wAxisY: 0, wAxisZ: 0, wAxisW: 0)
-
     public enum Planes: UInt32, GodotEnum {
         case near = 0
         case far = 1

@@ -301,16 +301,6 @@ private var __method_binding_from_angle: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector2 {
-    public static let axisX: Int = 0
-    public static let axisY: Int = 1
-    public static let zero: Vector2 = Vector2(x: 0, y: 0)
-    public static let one: Vector2 = Vector2(x: 1, y: 1)
-    public static let inf: Vector2 = Vector2(x: .infinity, y: .infinity)
-    public static let left: Vector2 = Vector2(x: -1, y: 0)
-    public static let right: Vector2 = Vector2(x: 1, y: 0)
-    public static let up: Vector2 = Vector2(x: 0, y: -1)
-    public static let down: Vector2 = Vector2(x: 0, y: 1)
-
     public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1

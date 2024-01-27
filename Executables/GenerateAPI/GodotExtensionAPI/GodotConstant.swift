@@ -64,76 +64,64 @@ struct GodotConstant: Decodable, Equatable {
         let (decomposedType, parameters) = decomposeInitParameters()
         switch decomposedType {
         case "Basis":
-            return recomposeInitParameters(
-                forType: decomposedType,
-                parameters: parameters,
-                labels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ"
-            )
-            
-            case "Projection":
-            return recomposeInitParameters(
-                forType: decomposedType,
-                parameters: parameters,
-                labels: "xAxisX", "xAxisY", "xAxisZ", "xAxisW", "yAxisX", "yAxisY", "yAxisZ", "yAxisW", "zAxisX", "zAxisY", "zAxisZ", "zAxisW", "wAxisX", "wAxisY", "wAxisZ", "wAxisW"
-            )
-            
-            case "Transform2D":
-            return recomposeInitParameters(
-                forType: decomposedType,
-                parameters: parameters,
-                labels: "xAxisX", "xAxisY", "yAxisX", "yAxisY", "originX", "originY"
-            )
-            
-            case "Transform3D":
-            return recomposeInitParameters(
-                forType: decomposedType,
-                parameters: parameters,
-                labels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ", "originX", "originY", "originZ"
-            )
-            
-            case "Color":
+            let xVector = vectorInit(with: parameters[0..<3])
+            let yVector = vectorInit(with: parameters[3..<6])
+            let zVector = vectorInit(with: parameters[6..<9])
+            return "Basis(x: \(xVector), y: \(yVector), z: \(zVector))"
+        case "Projection":
+            let xVector = vectorInit(with: parameters[0..<4])
+            let yVector = vectorInit(with: parameters[4..<8])
+            let zVector = vectorInit(with: parameters[8..<12])
+            let wVector = vectorInit(with: parameters[12..<16])
+            return "Projection(x: \(xVector), y: \(yVector), z: \(zVector), w: \(wVector))"
+        case "Transform2D":
+            let xVector = vectorInit(with: parameters[0..<2])
+            let yVector = vectorInit(with: parameters[2..<4])
+            let originVector = vectorInit(with: parameters[4..<6])
+            return "Transform2D(x: \(xVector), y: \(yVector), origin: \(originVector))"
+        case "Transform3D":
+            let xVector = vectorInit(with: parameters[0..<3])
+            let yVector = vectorInit(with: parameters[3..<6])
+            let zVector = vectorInit(with: parameters[6..<9])
+            let originVector = vectorInit(with: parameters[9..<12])
+            return "Transform3D(x: \(xVector), y: \(yVector), z: \(zVector), origin: \(originVector))"
+        case "Color":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "r", "g", "b", "a"
             )
-            
-            case "Plane":
+        case "Plane":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "x", "y", "z", "d"
             )
-            
-            case "Vector2", "Vector2i":
+        case "Vector2", "Vector2i":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "x", "y"
             )
-            
-            case "Vector3", "Vector3i":
+        case "Vector3", "Vector3i":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "x", "y", "z"
             )
-            
-            case "Vector4", "Vector4i", "Quaternion":
+        case "Vector4", "Vector4i", "Quaternion":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "x", "y", "z", "w"
             )
-            
-            case "Rect2", "Rect2i":
+        case "Rect2", "Rect2i":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
                 labels: "x", "y", "width", "height"
             )
-            
-            case "NodePath":
+        case "NodePath":
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
@@ -187,5 +175,18 @@ struct GodotConstant: Decodable, Equatable {
         string += ")"
         
         return string
+    }
+    
+    private func vectorInit<Parameters>(with parameters: Parameters) -> String
+    where Parameters : RandomAccessCollection<String>,
+          Parameters.Index == Int
+    {
+        let startIndex = parameters.startIndex
+        return switch parameters.count {
+        case 2: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]))"
+        case 3: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]))"
+        case 4: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]), w: \(parameters[startIndex + 3]))"
+        default: fatalError()
+        }
     }
 }

@@ -153,11 +153,6 @@ private var __method_binding_from_euler: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Basis {
-    public static let identity: Basis = Basis(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1)
-    public static let flipX: Basis = Basis(xAxisX: -1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1)
-    public static let flipY: Basis = Basis(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: -1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1)
-    public static let flipZ: Basis = Basis(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: -1)
-
     static internal func _constructor() -> Self {
         var __temporary = Basis()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in

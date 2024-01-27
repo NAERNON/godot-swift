@@ -174,8 +174,6 @@ private var __method_binding_get_angle: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Quaternion {
-    public static let identity: Quaternion = Quaternion(x: 0, y: 0, z: 0, w: 1)
-
     static internal func _constructor() -> Self {
         var __temporary = Quaternion()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in

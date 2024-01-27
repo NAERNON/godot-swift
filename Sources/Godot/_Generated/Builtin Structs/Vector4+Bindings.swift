@@ -218,14 +218,6 @@ private var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector4 {
-    public static let axisX: Int = 0
-    public static let axisY: Int = 1
-    public static let axisZ: Int = 2
-    public static let axisW: Int = 3
-    public static let zero: Vector4 = Vector4(x: 0, y: 0, z: 0, w: 0)
-    public static let one: Vector4 = Vector4(x: 1, y: 1, z: 1, w: 1)
-    public static let inf: Vector4 = Vector4(x: .infinity, y: .infinity, z: .infinity, w: .infinity)
-
     public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1

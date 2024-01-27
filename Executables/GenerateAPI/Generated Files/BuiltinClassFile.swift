@@ -15,8 +15,10 @@ extension GeneratedFile {
             builtinClass.lazyVariablesSyntax()
             
             try ExtensionDeclSyntax("extension \(raw: builtinClass.identifier)") {
-                builtinClass.constantsSyntax()
-                    .with(\.trailingTrivia, .newlines(2))
+                if builtinClass.name == "Color" {
+                    builtinClass.constantsSyntax()
+                        .with(\.trailingTrivia, .newlines(2))
+                }
                 
                 try builtinClass.enumSyntax()
                     .with(\.trailingTrivia, .newlines(2))

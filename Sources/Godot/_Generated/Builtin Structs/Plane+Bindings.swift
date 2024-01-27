@@ -110,10 +110,6 @@ private var __method_binding_intersects_segment: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Plane {
-    public static let planeYz: Plane = Plane(x: 1, y: 0, z: 0, d: 0)
-    public static let planeXz: Plane = Plane(x: 0, y: 1, z: 0, d: 0)
-    public static let planeXy: Plane = Plane(x: 0, y: 0, z: 1, d: 0)
-
     static internal func _constructor() -> Self {
         var __temporary = Plane()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in

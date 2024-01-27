@@ -131,15 +131,6 @@ private var __method_binding_snapped: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Vector4i {
-    public static let axisX: Int = 0
-    public static let axisY: Int = 1
-    public static let axisZ: Int = 2
-    public static let axisW: Int = 3
-    public static let zero: Vector4i = Vector4i(x: 0, y: 0, z: 0, w: 0)
-    public static let one: Vector4i = Vector4i(x: 1, y: 1, z: 1, w: 1)
-    public static let min: Vector4i = Vector4i(x: -2147483648, y: -2147483648, z: -2147483648, w: -2147483648)
-    public static let max: Vector4i = Vector4i(x: 2147483647, y: 2147483647, z: 2147483647, w: 2147483647)
-
     public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1

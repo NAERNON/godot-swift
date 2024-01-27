@@ -169,10 +169,6 @@ private var __method_binding_looking_at: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension Transform2D {
-    public static let identity: Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0)
-    public static let flipX: Transform2D = Transform2D(xAxisX: -1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0)
-    public static let flipY: Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: -1, originX: 0, originY: 0)
-
     static internal func _constructor() -> Self {
         var __temporary = Transform2D()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
