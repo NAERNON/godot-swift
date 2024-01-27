@@ -163,12 +163,12 @@ extension Vector4i {
     }
     
     /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Vector4i, rhs: Real) -> Vector4 {
+    public static func * (lhs: Vector4i, rhs: Scalar) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Real, rhs: Vector4i) -> Vector4 {
+    public static func * (lhs: Scalar, rhs: Vector4i) -> Vector4 {
         rhs * lhs
     }
     
@@ -178,7 +178,7 @@ extension Vector4i {
     }
     
     /// Divides each component of a `Vector4i` by a value.
-    public static func / (lhs: Vector4i, rhs: Real) -> Vector4 {
+    public static func / (lhs: Vector4i, rhs: Scalar) -> Vector4 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -302,7 +302,7 @@ extension Vector4i {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Real {
+    public var length: Scalar {
         _length()
     }
     

@@ -204,7 +204,7 @@ extension Basis {
         return __temporary
     }
 
-    static internal func _constructor_vector3_float(axis: Godot.Vector3, angle: Real) -> Self {
+    static internal func _constructor_vector3_float(axis: Godot.Vector3, angle: Scalar) -> Self {
         var __temporary = Basis()
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
@@ -270,7 +270,7 @@ extension Basis {
         __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Basis, _ rhs: Real) -> Godot.Basis {
+    static internal func _operatorMultiply(_ lhs: Godot.Basis, _ rhs: Scalar) -> Godot.Basis {
         Basis.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -348,13 +348,13 @@ extension Basis {
         __method_binding_orthonormalized(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _determinant() -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _determinant() -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_determinant(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _rotated(axis: Godot.Vector3, angle: Real) -> Godot.Basis {
+    internal func _rotated(axis: Godot.Vector3, angle: Scalar) -> Godot.Basis {
         return Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
@@ -385,31 +385,31 @@ extension Basis {
         __method_binding_get_euler(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _tdotx(with: Godot.Vector3) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _tdotx(with: Godot.Vector3) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_tdotx(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _tdoty(with: Godot.Vector3) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _tdoty(with: Godot.Vector3) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_tdoty(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _tdotz(with: Godot.Vector3) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _tdotz(with: Godot.Vector3) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_tdotz(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _slerp(to: Godot.Basis, weight: Real) -> Godot.Basis {
+    internal func _slerp(to: Godot.Basis, weight: Scalar) -> Godot.Basis {
         return Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         weight.withGodotUnsafeRawPointer { __ptr_weight in

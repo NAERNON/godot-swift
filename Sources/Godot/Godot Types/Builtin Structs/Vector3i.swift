@@ -188,12 +188,12 @@ extension Vector3i {
     }
     
     /// Multiplies each component of a `Vector3i` by a value.
-    public static func * (lhs: Vector3i, rhs: Real) -> Vector3 {
+    public static func * (lhs: Vector3i, rhs: Scalar) -> Vector3 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector3i` by a value.
-    public static func * (lhs: Real, rhs: Vector3i) -> Vector3 {
+    public static func * (lhs: Scalar, rhs: Vector3i) -> Vector3 {
         rhs * lhs
     }
     
@@ -203,7 +203,7 @@ extension Vector3i {
     }
     
     /// Divides each component of a `Vector3i` by a value.
-    public static func / (lhs: Vector3i, rhs: Real) -> Vector3 {
+    public static func / (lhs: Vector3i, rhs: Scalar) -> Vector3 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -327,7 +327,7 @@ extension Vector3i {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Real {
+    public var length: Scalar {
         _length()
     }
     

@@ -84,9 +84,9 @@ extension Basis {
     }
     
     internal init(
-        _ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real,
-        _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real,
-        _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real
+        _ xAxisX: Scalar, _ xAxisY: Scalar, _ xAxisZ: Scalar,
+        _ yAxisX: Scalar, _ yAxisY: Scalar, _ yAxisZ: Scalar,
+        _ zAxisX: Scalar, _ zAxisY: Scalar, _ zAxisZ: Scalar
     ) {
         self.init(
             x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
@@ -103,7 +103,7 @@ extension Basis {
     /// Creates a pure rotation basis matrix, rotated around the given axis by angle (in radians).
     ///
     /// The axis must be a normalized vector.
-    public init(axis: Vector3, angle: Real) {
+    public init(axis: Vector3, angle: Scalar) {
         self = Self._constructor_vector3_float(axis: axis, angle: angle)
     }
     
@@ -111,7 +111,7 @@ extension Basis {
     ///
     /// The axis must be a normalized vector.
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self.init(axis: axis, angle: Real(angle))
+        self.init(axis: axis, angle: Scalar(angle))
     }
     
     // MARK: Constants
@@ -136,7 +136,7 @@ extension Basis {
     }
     
     /// Multiplies all components of the Basis, which scales it uniformly.
-    public static func * (lhs: Basis, rhs: Real) -> Basis {
+    public static func * (lhs: Basis, rhs: Scalar) -> Basis {
         Self._operatorMultiply(lhs, rhs)
     }
     
@@ -146,7 +146,7 @@ extension Basis {
     }
     
     /// Multiplies all components of the Basis, which scales it uniformly.
-    public static func * (lhs: Real, rhs: Basis) -> Basis {
+    public static func * (lhs: Scalar, rhs: Basis) -> Basis {
         rhs * lhs
     }
     
@@ -189,7 +189,7 @@ extension Basis {
     ///
     /// A negative determinant means the basis has a negative scale.
     /// A zero determinant means the basis isn't invertible, and is usually considered invalid
-    public var determinant: Real {
+    public var determinant: Scalar {
         _determinant()
     }
     
@@ -198,7 +198,7 @@ extension Basis {
     /// - Parameters:
     ///   - angle: The rotation angle in radians.
     ///   - axis: A normalized vector.
-    public func rotated(by angle: Real, around axis: Vector3) -> Basis {
+    public func rotated(by angle: Scalar, around axis: Vector3) -> Basis {
         _rotated(axis: axis, angle: angle)
     }
     
@@ -246,7 +246,7 @@ extension Basis {
     ///
     /// - ``tdoty(_:)``
     /// - ``tdotz(_:)``
-    public func tdotx(_ vector: Vector3) -> Real {
+    public func tdotx(_ vector: Vector3) -> Scalar {
         _tdotx(with: vector)
     }
     
@@ -256,7 +256,7 @@ extension Basis {
     ///
     /// - ``tdotx(_:)``
     /// - ``tdotz(_:)``
-    public func tdoty(_ vector: Vector3) -> Real {
+    public func tdoty(_ vector: Vector3) -> Scalar {
         _tdoty(with: vector)
     }
     
@@ -266,14 +266,14 @@ extension Basis {
     ///
     /// - ``tdotx(_:)``
     /// - ``tdoty(_:)``
-    public func tdotz(_ vector: Vector3) -> Real {
+    public func tdotz(_ vector: Vector3) -> Scalar {
         _tdotz(with: vector)
     }
     
     /// Performs a spherical-linear interpolation with another rotation matrix.
     ///
     /// This function assumes that the matrix is a proper rotation matrix
-    public func slerp(to other: Basis, weight: Real) -> Basis {
+    public func slerp(to other: Basis, weight: Scalar) -> Basis {
         _slerp(to: other, weight: weight)
     }
     

@@ -137,7 +137,7 @@ extension AABB {
     }
     
     /// The volume of the AABB.
-    public var volume: Real {
+    public var volume: Scalar {
         _volume()
     }
     
@@ -221,7 +221,7 @@ extension AABB {
     }
     
     /// Returns the AABB grown a given number of units towards all the sides.
-    public func grow(by amount: Real) -> AABB {
+    public func grow(by amount: Scalar) -> AABB {
         _grow(by: amount)
     }
     
@@ -244,7 +244,7 @@ extension AABB {
     }
     
     /// The scalar length of the longest axis of the `AABB`.
-    public var longestAxisSize: Real {
+    public var longestAxisSize: Scalar {
         _longestAxisSize()
     }
     
@@ -259,7 +259,7 @@ extension AABB {
     }
     
     /// The scalar length of the shortest axis of the `AABB`.
-    public var shortestAxisSize: Real {
+    public var shortestAxisSize: Scalar {
         _shortestAxisSize()
     }
     
@@ -300,12 +300,12 @@ extension AABB: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let positionX = try container.decode(Real.self)
-        let positionY = try container.decode(Real.self)
-        let positionZ = try container.decode(Real.self)
-        let sizeX = try container.decode(Real.self)
-        let sizeY = try container.decode(Real.self)
-        let sizeZ = try container.decode(Real.self)
+        let positionX = try container.decode(Scalar.self)
+        let positionY = try container.decode(Scalar.self)
+        let positionZ = try container.decode(Scalar.self)
+        let sizeX = try container.decode(Scalar.self)
+        let sizeY = try container.decode(Scalar.self)
+        let sizeZ = try container.decode(Scalar.self)
         
         self.init(
             position: Vector3(x: positionX, y: positionY, z: positionZ),

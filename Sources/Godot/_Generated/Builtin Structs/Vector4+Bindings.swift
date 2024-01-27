@@ -283,7 +283,7 @@ extension Vector4 {
         return __temporary
     }
 
-    static internal func _constructor_float_float_float_float(x: Real, y: Real, z: Real, w: Real) -> Self {
+    static internal func _constructor_float_float_float_float(x: Scalar, y: Scalar, z: Scalar, w: Scalar) -> Self {
         var __temporary = Vector4()
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -350,14 +350,14 @@ extension Vector4 {
         __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector4, _ rhs: Real) -> Godot.Vector4 {
+    static internal func _operatorMultiply(_ lhs: Godot.Vector4, _ rhs: Scalar) -> Godot.Vector4 {
         Vector4.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector4, _ rhs: Real) -> Godot.Vector4 {
+    static internal func _operatorDivide(_ lhs: Godot.Vector4, _ rhs: Scalar) -> Godot.Vector4 {
         Vector4.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -455,12 +455,12 @@ extension Vector4 {
         __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    internal func _getValue(at index: GDExtensionInt) -> Real {
-        Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _getValue(at index: GDExtensionInt) -> Scalar {
+        Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __indexed_getter(__ptr_self, index, __temporary)}}
     }
-    mutating internal func _setValue(_ value: Real, at index: GDExtensionInt) {
+    mutating internal func _setValue(_ value: Scalar, at index: GDExtensionInt) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         __indexed_setter(__ptr_self, index, __ptr_value)}}
@@ -478,14 +478,14 @@ extension Vector4 {
         __method_binding_max_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _length() -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _length() -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _lengthSquared() -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _lengthSquared() -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length_squared(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -520,7 +520,7 @@ extension Vector4 {
         __method_binding_round(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _lerp(to: Godot.Vector4, weight: Real) -> Godot.Vector4 {
+    internal func _lerp(to: Godot.Vector4, weight: Scalar) -> Godot.Vector4 {
         return Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
@@ -529,7 +529,7 @@ extension Vector4 {
         __method_binding_lerp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _cubicInterpolate(b: Godot.Vector4, preA: Godot.Vector4, postB: Godot.Vector4, weight: Real) -> Godot.Vector4 {
+    internal func _cubicInterpolate(b: Godot.Vector4, preA: Godot.Vector4, postB: Godot.Vector4, weight: Scalar) -> Godot.Vector4 {
         return Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
         b.withGodotUnsafeRawPointer { __ptr_b in
         preA.withGodotUnsafeRawPointer { __ptr_preA in
@@ -540,7 +540,7 @@ extension Vector4 {
         __method_binding_cubic_interpolate(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 4)}}}}}}}
     }
 
-    internal func _cubicInterpolateInTime(b: Godot.Vector4, preA: Godot.Vector4, postB: Godot.Vector4, weight: Real, bT: Real, preAT: Real, postBT: Real) -> Godot.Vector4 {
+    internal func _cubicInterpolateInTime(b: Godot.Vector4, preA: Godot.Vector4, postB: Godot.Vector4, weight: Scalar, bT: Scalar, preAT: Scalar, postBT: Scalar) -> Godot.Vector4 {
         return Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
         b.withGodotUnsafeRawPointer { __ptr_b in
         preA.withGodotUnsafeRawPointer { __ptr_preA in
@@ -554,7 +554,7 @@ extension Vector4 {
         __method_binding_cubic_interpolate_in_time(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 7)}}}}}}}}}}
     }
 
-    internal func _posmod(mod: Real) -> Godot.Vector4 {
+    internal func _posmod(mod: Scalar) -> Godot.Vector4 {
         return Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
         mod.withGodotUnsafeRawPointer { __ptr_mod in
         withUnsafeArgumentPackPointer(__ptr_mod) { __accessPtr in
@@ -607,24 +607,24 @@ extension Vector4 {
         __method_binding_direction_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distance(to: Godot.Vector4) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _distance(to: Godot.Vector4) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_distance_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceSquared(to: Godot.Vector4) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _distanceSquared(to: Godot.Vector4) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_distance_squared_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _dot(with: Godot.Vector4) -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _dot(with: Godot.Vector4) -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in

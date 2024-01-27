@@ -269,14 +269,14 @@ extension Vector2i {
         __operator_binding_module_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector2i, _ rhs: Real) -> Godot.Vector2 {
+    static internal func _operatorMultiply(_ lhs: Godot.Vector2i, _ rhs: Scalar) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector2i, _ rhs: Real) -> Godot.Vector2 {
+    static internal func _operatorDivide(_ lhs: Godot.Vector2i, _ rhs: Scalar) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -385,8 +385,8 @@ extension Vector2i {
         __indexed_setter(__ptr_self, index, __ptr_value)}}
     }
 
-    internal func _aspect() -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _aspect() -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_aspect(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -403,8 +403,8 @@ extension Vector2i {
         __method_binding_min_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _length() -> Real {
-        return Real.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _length() -> Scalar {
+        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

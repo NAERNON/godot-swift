@@ -82,25 +82,25 @@ public struct Vector4 {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
-    public var x: Real
+    public var x: Scalar
     
     /// The vector's Y component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `1`.
-    public var y: Real
+    public var y: Scalar
     
     /// The vector's Z component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `2`.
-    public var z: Real
+    public var z: Scalar
     
     /// The vector's W component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `3`.
-    public var w: Real
+    public var w: Scalar
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
-    public init(x: Real, y: Real, z: Real, w: Real) {
+    public init(x: Scalar, y: Scalar, z: Scalar, w: Scalar) {
         self.x = x
         self.y = y
         self.z = z
@@ -113,12 +113,12 @@ extension Vector4 {
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
-        self.init(x: Real(x), y: Real(y), z: Real(z), w: Real(w))
+        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
     }
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
-        self.init(x: Real(x), y: Real(y), z: Real(z), w: Real(w))
+        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
     }
     
     /// Creates a new `Vector4` from `Vector4i`.
@@ -169,12 +169,12 @@ extension Vector4 {
     }
     
     /// Multiplies each component of a `Vector4` by a value.
-    public static func * (lhs: Vector4, rhs: Real) -> Vector4 {
+    public static func * (lhs: Vector4, rhs: Scalar) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector4` by a value.
-    public static func * (lhs: Real, rhs: Vector4) -> Vector4 {
+    public static func * (lhs: Scalar, rhs: Vector4) -> Vector4 {
         rhs * lhs
     }
     
@@ -184,7 +184,7 @@ extension Vector4 {
     }
     
     /// Divides each component of a `Vector4` by a value.
-    public static func / (lhs: Vector4, rhs: Real) -> Vector4 {
+    public static func / (lhs: Vector4, rhs: Scalar) -> Vector4 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -311,7 +311,7 @@ extension Vector4 {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Real {
+    public var length: Scalar {
         _length()
     }
     
@@ -319,7 +319,7 @@ extension Vector4 {
     ///
     /// This property runs faster than ``length``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var lengthSquared: Real {
+    public var lengthSquared: Scalar {
         _lengthSquared()
     }
     
@@ -356,7 +356,7 @@ extension Vector4 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func lerp(to other: Vector4, weight: Real) -> Vector4 {
+    public func lerp(to other: Vector4, weight: Scalar) -> Vector4 {
         _lerp(to: other, weight: weight)
     }
     
@@ -371,7 +371,7 @@ extension Vector4 {
         b: Vector4,
         preA: Vector4,
         postB: Vector4,
-        weight: Real
+        weight: Scalar
     ) -> Vector4 {
         _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -389,17 +389,17 @@ extension Vector4 {
         b: Vector4,
         preA: Vector4,
         postB: Vector4,
-        weight: Real,
-        bT: Real,
-        preAT: Real,
-        postBT: Real
+        weight: Scalar,
+        bT: Scalar,
+        preAT: Scalar,
+        postBT: Scalar
     ) -> Vector4 {
         _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
     }
     
     /// Returns a vector composed of the ``fposmod(x:y:)``
     /// of the vector's components and `mod`.
-    public func posmod(_ mod: Real) -> Vector4 {
+    public func posmod(_ mod: Scalar) -> Vector4 {
         _posmod(mod: mod)
     }
     
@@ -452,7 +452,7 @@ extension Vector4 {
     }
     
     /// Returns the distance between the vector and another one.
-    public func distance(to other: Vector4) -> Real {
+    public func distance(to other: Vector4) -> Scalar {
         _distance(to: other)
     }
     
@@ -460,12 +460,12 @@ extension Vector4 {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector4) -> Real {
+    public func distanceSquared(to other: Vector4) -> Scalar {
         _distanceSquared(to: other)
     }
     
     /// Returns the dot product of the vector and another one.
-    public func dot(_ other: Vector4) -> Real {
+    public func dot(_ other: Vector4) -> Scalar {
         _dot(with: other)
     }
     
@@ -497,7 +497,7 @@ extension Vector4 {
     /// Accesses vector component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`, `w`.
-    public subscript(index: Int) -> Real {
+    public subscript(index: Int) -> Scalar {
         get {
             switch index {
             case 0: x
@@ -534,10 +534,10 @@ extension Vector4: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Real.self)
-        let y = try container.decode(Real.self)
-        let z = try container.decode(Real.self)
-        let w = try container.decode(Real.self)
+        let x = try container.decode(Scalar.self)
+        let y = try container.decode(Scalar.self)
+        let z = try container.decode(Scalar.self)
+        let w = try container.decode(Scalar.self)
         self.init(x: x, y: y, z: z, w: w)
     }
 }

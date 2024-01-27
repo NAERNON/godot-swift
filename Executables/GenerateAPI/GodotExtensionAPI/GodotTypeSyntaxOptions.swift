@@ -8,8 +8,8 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let floatAsDouble =
         GodotTypeSyntaxOptions(rawValue: 1 << 0)
     
-    /// A `float` is translated to `Real`.
-    static let floatAsReal =
+    /// A `float` is translated to `Scalar`.
+    static let floatAsScalar =
         GodotTypeSyntaxOptions(rawValue: 1 << 1)
     
     /// All types are immutable.

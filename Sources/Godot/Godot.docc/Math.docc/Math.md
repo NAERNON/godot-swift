@@ -10,7 +10,7 @@ Godot provides several math types and functions to perform 2D and 3D calculation
 
 ### Scalar
 
-- ``Real``
+- ``Scalar``
 
 ### 2D Geometry
 

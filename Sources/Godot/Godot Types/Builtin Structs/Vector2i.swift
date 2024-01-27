@@ -174,12 +174,12 @@ extension Vector2i {
     }
     
     /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Vector2i, rhs: Real) -> Vector2 {
+    public static func * (lhs: Vector2i, rhs: Scalar) -> Vector2 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Real, rhs: Vector2i) -> Vector2 {
+    public static func * (lhs: Scalar, rhs: Vector2i) -> Vector2 {
         rhs * lhs
     }
     
@@ -189,7 +189,7 @@ extension Vector2i {
     }
     
     /// Divides each component of a `Vector2i` by a value.
-    public static func / (lhs: Vector2i, rhs: Real) -> Vector2 {
+    public static func / (lhs: Vector2i, rhs: Scalar) -> Vector2 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -290,7 +290,7 @@ extension Vector2i {
     // MARK: Methods & variables
     
     /// The aspect ratio of this vector, the ratio of `x` to `y`.
-    public var aspect: Real {
+    public var aspect: Scalar {
         _aspect()
     }
     
@@ -309,7 +309,7 @@ extension Vector2i {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Real {
+    public var length: Scalar {
         _length()
     }
     

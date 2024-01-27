@@ -88,10 +88,10 @@ extension Projection {
     // MARK: Constructors
     
     internal init(
-        _ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real, _ xAxisW: Real,
-        _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real, _ yAxisW: Real,
-        _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real, _ zAxisW: Real,
-        _ wAxisX: Real, _ wAxisY: Real, _ wAxisZ: Real, _ wAxisW: Real
+        _ xAxisX: Scalar, _ xAxisY: Scalar, _ xAxisZ: Scalar, _ xAxisW: Scalar,
+        _ yAxisX: Scalar, _ yAxisY: Scalar, _ yAxisZ: Scalar, _ yAxisW: Scalar,
+        _ zAxisX: Scalar, _ zAxisY: Scalar, _ zAxisZ: Scalar, _ zAxisW: Scalar,
+        _ wAxisX: Scalar, _ wAxisY: Scalar, _ wAxisZ: Scalar, _ wAxisW: Scalar
     ) {
         self.init(
             x: Vector4(x: xAxisX, y: xAxisY, z: xAxisZ, w: xAxisW),
@@ -162,10 +162,10 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func perspective(
-        fovy: Real,
-        aspect: Real,
-        zNear: Real,
-        zFar: Real,
+        fovy: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         _createPerspective(fovy: fovy, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov)
@@ -184,14 +184,14 @@ extension Projection {
     ///   - intraocularDist: The distance between eyes.
     ///   - convergenceDist: The distance to a point that can be focused on.
     public static func perspectiveForHMD(
-        fovy: Real,
-        aspect: Real,
-        zNear: Real,
-        zFar: Real,
+        fovy: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool,
         eye: Int,
-        intraocularDist: Real,
-        convergenceDist: Real
+        intraocularDist: Scalar,
+        convergenceDist: Scalar
     ) -> Projection {
         _createPerspectiveHmd(fovy: fovy, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov, eye: eye, intraocularDist: intraocularDist, convergenceDist: convergenceDist)
     }
@@ -209,13 +209,13 @@ extension Projection {
     ///   - zFar: The far depth clipping plane.
     public static func forHMD(
         eye: Int,
-        aspect: Real,
-        intraocularDist: Real,
-        displayWidth: Real,
-        displayToLens: Real,
-        oversample: Real,
-        zNear: Real,
-        zFar: Real
+        aspect: Scalar,
+        intraocularDist: Scalar,
+        displayWidth: Scalar,
+        displayToLens: Scalar,
+        oversample: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         _createForHmd(eye: eye, aspect: aspect, intraocularDist: intraocularDist, displayWidth: displayWidth, displayToLens: displayToLens, oversample: oversample, zNear: zNear, zFar: zFar)
     }
@@ -223,12 +223,12 @@ extension Projection {
     /// Creates a new `Projection` that projects positions using
     /// an orthogonal projection with the given clipping planes.
     public static func orthogonal(
-        left: Real,
-        right: Real,
-        bottom: Real,
-        top: Real,
-        zNear: Real,
-        zFar: Real
+        left: Scalar,
+        right: Scalar,
+        bottom: Scalar,
+        top: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         _createOrthogonal(left: left, right: right, bottom: bottom, top: top, zNear: zNear, zFar: zFar)
     }
@@ -244,10 +244,10 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func orthogonalAspect(
-        size: Real,
-        aspect: Real,
-        zNear: Real,
-        zFar: Real,
+        size: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         _createOrthogonalAspect(size: size, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov)
@@ -256,12 +256,12 @@ extension Projection {
     /// Creates a new `Projection` that projects
     /// positions in a frustum with the given clipping planes.
     public static func frustum(
-        left: Real,
-        right: Real,
-        bottom: Real,
-        top: Real,
-        zNear: Real,
-        zFar: Real
+        left: Scalar,
+        right: Scalar,
+        bottom: Scalar,
+        top: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         _createFrustum(left: left, right: right, bottom: bottom, top: top, zNear: zNear, zFar: zFar)
     }
@@ -277,11 +277,11 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func frustumAspect(
-        size: Real,
-        aspect: Real,
+        size: Scalar,
+        aspect: Scalar,
         offset: Vector2,
-        zNear: Real,
-        zFar: Real,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         _createFrustumAspect(size: size, aspect: aspect, offset: offset, zNear: zNear, zFar: zFar, flipFov: flipFov)
@@ -300,14 +300,14 @@ extension Projection {
     /// The determinant can be used to calculate the invertibility
     /// of a matrix or solve linear systems of equations
     /// involving the matrix, among other applications.
-    public var determinant: Real {
+    public var determinant: Scalar {
         _determinant()
     }
     
     /// Returns a `Projection` with the near clipping distance adjusted to a given distance.
     ///
     /// >note: The original `Projection` must be a perspective projection.
-    public func perspectiveZNearAdjusted(_ zNear: Real) -> Projection {
+    public func perspectiveZNearAdjusted(_ zNear: Scalar) -> Projection {
         _perspectiveZnearAdjusted(newZnear: zNear)
     }
     
@@ -334,27 +334,27 @@ extension Projection {
     /// - Parameters:
     ///   - fovX: The horizontal field of view in degrees.
     ///   - aspect: The aspect ratio in degrees.
-    public static func fovY(fovX: Real, aspect: Real) -> Real {
+    public static func fovY(fovX: Scalar, aspect: Scalar) -> Scalar {
         _fovy(fovx: fovX, aspect: aspect)
     }
     
     /// The distance for the `Projection` beyond which positions are clipped.
-    public var zFar: Real {
+    public var zFar: Scalar {
         _zFar()
     }
     
     /// The distance for the Projection before which positions are clipped.
-    public var zNear: Real {
+    public var zNear: Scalar {
         _zNear()
     }
     
     /// The X:Y aspect ratio of the `Projection`'s viewport.
-    public var aspect: Real {
+    public var aspect: Scalar {
         _aspect()
     }
     
     /// The horizontal field of view of the projection (in degrees).
-    public var fov: Real {
+    public var fov: Scalar {
         _fov()
     }
     
@@ -387,7 +387,7 @@ extension Projection {
     }
     
     /// The factor by which the visible level of detail is scaled by the `Projection`.
-    public var lodMultiplier: Real {
+    public var lodMultiplier: Scalar {
         _lodMultiplier()
     }
     

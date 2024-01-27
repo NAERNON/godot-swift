@@ -71,14 +71,14 @@ public struct Plane {
     ///
     /// In the scalar equation of the plane `ax + by + cz = d`, this is `d`,
     /// while the `(a, b, c)` coordinates are represented by the ``normal`` property.
-    public var d: Real
+    public var d: Scalar
     
     /// Creates a plane from the normal vector and the plane's distance from the origin.
     ///
     /// - Parameters:
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
-    public init(normal: Vector3, d: Real) {
+    public init(normal: Vector3, d: Scalar) {
         self.normal = normal
         self.d = d
     }
@@ -93,7 +93,7 @@ extension Plane {
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
     public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
-        self.init(normal: normal, d: Real(d))
+        self.init(normal: normal, d: Scalar(d))
     }
     
     /// Creates a plane from the normal vector and the plane's distance from the origin.
@@ -102,7 +102,7 @@ extension Plane {
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
     public init<T>(normal: Vector3, d: T) where T : BinaryInteger {
-        self.init(normal: normal, d: Real(d))
+        self.init(normal: normal, d: Scalar(d))
     }
     
     /// Creates a plane from the four parameters.
@@ -112,7 +112,7 @@ extension Plane {
     ///   - b: The plane's normal `y` value.
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
-    public init(a: Real, b: Real, c: Real, d: Real) {
+    public init(a: Scalar, b: Scalar, c: Scalar, d: Scalar) {
         self.init(normal: Vector3(x: a, y: b, z: c), d: d)
     }
     
@@ -124,7 +124,7 @@ extension Plane {
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
     public init<T>(a: T, b: T, c: T, d: T) where T : BinaryFloatingPoint {
-        self.init(a: Real(a), b: Real(b), c: Real(c), d: Real(d))
+        self.init(a: Scalar(a), b: Scalar(b), c: Scalar(c), d: Scalar(d))
     }
     
     /// Creates a plane from the four parameters.
@@ -135,7 +135,7 @@ extension Plane {
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
     public init<T>(a: T, b: T, c: T, d: T) where T : BinaryInteger {
-        self.init(a: Real(a), b: Real(b), c: Real(c), d: Real(d))
+        self.init(a: Scalar(a), b: Scalar(b), c: Scalar(c), d: Scalar(d))
     }
     
     /// Creates a plane from the normal vector.
@@ -205,7 +205,7 @@ extension Plane {
     // MARK: Methods & variables
     
     /// The X component of the plane's normal vector.
-    public var x: Real {
+    public var x: Scalar {
         get {
             normal.x
         }
@@ -215,7 +215,7 @@ extension Plane {
     }
     
     /// The Y component of the plane's normal vector.
-    public var y: Real {
+    public var y: Scalar {
         get {
             normal.y
         }
@@ -225,7 +225,7 @@ extension Plane {
     }
     
     /// The Z component of the plane's normal vector.
-    public var z: Real {
+    public var z: Scalar {
         get {
             normal.z
         }
@@ -268,14 +268,14 @@ extension Plane {
     ///
     /// If the point is above the plane, the distance will be positive.
     /// If below, the distance will be negative.
-    public func distance(to point: Vector3) -> Real {
+    public func distance(to point: Vector3) -> Scalar {
         _distanceTo(point: point)
     }
     
     /// Returns `true` if the given point is inside the plane.
     ///
     /// Comparison uses a custom minimum tolerance threshold.
-    public func hasPoint(_ point: Vector3, tolerance: Real = 1e-05) -> Bool {
+    public func hasPoint(_ point: Vector3, tolerance: Scalar = 1e-05) -> Bool {
         _hasPoint(point, tolerance: tolerance)
     }
     
@@ -325,10 +325,10 @@ extension Plane: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Real.self)
-        let y = try container.decode(Real.self)
-        let z = try container.decode(Real.self)
-        let d = try container.decode(Real.self)
+        let x = try container.decode(Scalar.self)
+        let y = try container.decode(Scalar.self)
+        let z = try container.decode(Scalar.self)
+        let d = try container.decode(Scalar.self)
         self.init(a: x, b: y, c: z, d: d)
     }
 }

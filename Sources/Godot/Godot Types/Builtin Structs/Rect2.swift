@@ -154,7 +154,7 @@ extension Rect2 {
     /// ## See Also
     ///
     /// - ``hasArea``
-    public var area: Real {
+    public var area: Scalar {
         _area()
     }
     
@@ -259,21 +259,21 @@ extension Rect2 {
     /// print(Rect2(x: 0, y: 0, width: 8, height: 4).grow(by: 2))
     /// // Prints (-2, -2, 12, 8)
     /// ```
-    public func grow(by amount: Real) -> Rect2 {
+    public func grow(by amount: Scalar) -> Rect2 {
         _grow(amount: amount)
     }
     
     /// The rectangle with its side extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grow(by amount: Real, side: Side) -> Rect2 {
+    public func grow(by amount: Scalar, side: Side) -> Rect2 {
         _growSide(Int(side.rawValue), amount: amount)
     }
     
     /// The rectangle with its sides extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grow(by amount: Real, sides: Side.Set) -> Rect2 {
+    public func grow(by amount: Scalar, sides: Side.Set) -> Rect2 {
         var copy = self
         
         if sides.contains(.top) {
@@ -295,7 +295,7 @@ extension Rect2 {
     /// The rectangle with its left, top, right, and bottom sides extended by the given amounts.
     ///
     /// Negative values shrink the sides, instead.
-    public func grow(left: Real, top: Real, right: Real, bottom: Real) -> Rect2 {
+    public func grow(left: Scalar, top: Scalar, right: Scalar, bottom: Scalar) -> Rect2 {
         _growIndividual(left: left, top: top, right: right, bottom: bottom)
     }
     

@@ -114,20 +114,20 @@ public struct Vector3 {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
-    public var x: Real
+    public var x: Scalar
     
     /// The vector's Y component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `1`.
-    public var y: Real
+    public var y: Scalar
     
     /// The vector's Z component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `2`.
-    public var z: Real
+    public var z: Scalar
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
-    public init(x: Real, y: Real, z: Real) {
+    public init(x: Scalar, y: Scalar, z: Scalar) {
         self.x = x
         self.y = y
         self.z = z
@@ -139,12 +139,12 @@ extension Vector3 {
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
-        self.init(x: Real(x), y: Real(y), z: Real(z))
+        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z))
     }
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryInteger {
-        self.init(x: Real(x), y: Real(y), z: Real(z))
+        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z))
     }
     
     /// Creates a new `Vector3` from `Vector3i`.
@@ -243,12 +243,12 @@ extension Vector3 {
     }
     
     /// Multiplies each component of a `Vector3` by a value.
-    public static func * (lhs: Vector3, rhs: Real) -> Vector3 {
+    public static func * (lhs: Vector3, rhs: Scalar) -> Vector3 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector3` by a value.
-    public static func * (lhs: Real, rhs: Vector3) -> Vector3 {
+    public static func * (lhs: Scalar, rhs: Vector3) -> Vector3 {
         rhs * lhs
     }
     
@@ -258,7 +258,7 @@ extension Vector3 {
     }
     
     /// Divides each component of a `Vector3` by a value.
-    public static func / (lhs: Vector3, rhs: Real) -> Vector3 {
+    public static func / (lhs: Vector3, rhs: Scalar) -> Vector3 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -413,7 +413,7 @@ extension Vector3 {
     }
     
     /// Returns the unsigned minimum angle to the given vector, in radians.
-    public func angle(to other: Vector3) -> Real {
+    public func angle(to other: Vector3) -> Scalar {
         _angle(to: other)
     }
     
@@ -421,7 +421,7 @@ extension Vector3 {
     ///
     /// The sign of the angle is positive in a counter-clockwise direction
     /// and negative in a clockwise direction when viewed from the side specified by the axis.
-    public func signedAngle(to other: Vector3, around axis: Vector3) -> Real {
+    public func signedAngle(to other: Vector3, around axis: Vector3) -> Scalar {
         _signedAngle(to: other, axis: axis)
     }
     
@@ -433,7 +433,7 @@ extension Vector3 {
     }
     
     /// Returns the distance between the vector and another one.
-    public func distance(to other: Vector3) -> Real {
+    public func distance(to other: Vector3) -> Scalar {
         _distance(to: other)
     }
     
@@ -441,12 +441,12 @@ extension Vector3 {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector3) -> Real {
+    public func distanceSquared(to other: Vector3) -> Scalar {
         _distanceSquared(to: other)
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Real {
+    public var length: Scalar {
         _length()
     }
     
@@ -454,12 +454,12 @@ extension Vector3 {
     ///
     /// This property runs faster than ``length``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var lengthSquared: Real {
+    public var lengthSquared: Scalar {
         _lengthSquared()
     }
     
     /// Returns the vector with a maximum length by limiting its length.
-    public func limitLength(_ length: Real = 1.0) -> Vector3 {
+    public func limitLength(_ length: Scalar = 1.0) -> Vector3 {
         _limitLength(length)
     }
     
@@ -529,7 +529,7 @@ extension Vector3 {
     ///   - angle: The rotation angle, in radians.
     ///   - axis: The vector around which the rotation is done.
     ///   Must be a normalized vector.
-    public func rotated(by angle: Real, around axis: Vector3) -> Vector3 {
+    public func rotated(by angle: Scalar, around axis: Vector3) -> Vector3 {
         _rotated(axis: axis, angle: angle)
     }
     
@@ -539,7 +539,7 @@ extension Vector3 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func lerp(to other: Vector3, weight: Real) -> Vector3 {
+    public func lerp(to other: Vector3, weight: Scalar) -> Vector3 {
         _lerp(to: other, weight: weight)
     }
     
@@ -553,7 +553,7 @@ extension Vector3 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func slerp(to other: Vector3, weight: Real) -> Vector3 {
+    public func slerp(to other: Vector3, weight: Scalar) -> Vector3 {
         _slerp(to: other, weight: weight)
     }
     
@@ -568,7 +568,7 @@ extension Vector3 {
         b: Vector3,
         preA: Vector3,
         postB: Vector3,
-        weight: Real
+        weight: Scalar
     ) -> Vector3 {
         _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -586,30 +586,30 @@ extension Vector3 {
         b: Vector3,
         preA: Vector3,
         postB: Vector3,
-        weight: Real,
-        bT: Real,
-        preAT: Real,
-        postBT: Real
+        weight: Scalar,
+        bT: Scalar,
+        preAT: Scalar,
+        postBT: Scalar
     ) -> Vector3 {
         _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
     }
     
     /// Returns the point at the given `t` on the Bézier curve
     /// defined by the vector and the given control points.
-    public func bezierInterpolation(control1: Vector3, control2: Vector3, end: Vector3, t: Real) -> Vector3 {
+    public func bezierInterpolation(control1: Vector3, control2: Vector3, end: Vector3, t: Scalar) -> Vector3 {
         _bezierInterpolate(control1: control1, control2: control2, end: end, t: t)
     }
     
     /// Returns the derivative at the given `t` on the Bézier curve
     /// defined by the vector and the given control points.
-    public func bezierDerivative(control1: Vector3, control2: Vector3, end: Vector3, t: Real) -> Vector3 {
+    public func bezierDerivative(control1: Vector3, control2: Vector3, end: Vector3, t: Scalar) -> Vector3 {
         _bezierDerivative(control1: control1, control2: control2, end: end, t: t)
     }
     
     /// Returns a new vector moved toward to by a fixed amount.
     ///
     /// Will not go past the final value.
-    public func moved(toward other: Vector3, delta: Real) -> Vector3 {
+    public func moved(toward other: Vector3, delta: Scalar) -> Vector3 {
         _moveToward(to: other, delta: delta)
     }
     
@@ -629,7 +629,7 @@ extension Vector3 {
     /// and `1.0` (0 degree angle) when the vectors are aligned.
     ///
     /// >note: `a.dot(b)` is equivalent to `b.dot(a)`.
-    public func dot(_ other: Vector3) -> Real {
+    public func dot(_ other: Vector3) -> Scalar {
         _dot(with: other)
     }
     
@@ -666,7 +666,7 @@ extension Vector3 {
     
     /// Returns a vector composed of the ``fposmod(x:y:)``
     /// of the vector's components and `mod`.
-    public func posmod(_ mod: Real) -> Vector3 {
+    public func posmod(_ mod: Scalar) -> Vector3 {
         _posmod(mod: mod)
     }
     
@@ -732,7 +732,7 @@ extension Vector3 {
     /// Accesses vector component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`.
-    public subscript(index: Int) -> Real {
+    public subscript(index: Int) -> Scalar {
         get {
             switch index {
             case 0: x
@@ -766,9 +766,9 @@ extension Vector3: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Real.self)
-        let y = try container.decode(Real.self)
-        let z = try container.decode(Real.self)
+        let x = try container.decode(Scalar.self)
+        let y = try container.decode(Scalar.self)
+        let z = try container.decode(Scalar.self)
         self.init(x: x, y: y, z: z)
     }
 }
