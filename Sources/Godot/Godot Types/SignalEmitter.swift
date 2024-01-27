@@ -48,7 +48,7 @@ public struct SignalEmitter<Input> {
     @discardableResult
     public func connect(
         to object: Object? = nil,
-        body: @escaping (Input) -> Void
+        body: @escaping (_ input: Input) -> Void
     ) -> SignalConnection {
         let receiver = SignalReceiver(call: body)
         
