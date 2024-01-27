@@ -22,8 +22,8 @@
 /// ### Creating Rect2I
 ///
 /// - ``init(position:size:)``
-/// - ``init(x:y:width:height:)-3weud``
-/// - ``init(x:y:width:height:)-2bbn1``
+/// - ``init(x:y:width:height:)-2z1e0``
+/// - ``init(x:y:width:height:)-7jvbw``
 /// - ``init(_:)``
 /// - ``init()``
 ///

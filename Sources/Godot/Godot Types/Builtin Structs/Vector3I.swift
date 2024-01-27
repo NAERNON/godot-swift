@@ -20,9 +20,9 @@
 ///
 /// ### Creating Vector3I
 ///
-/// - ``init(x:y:z:)-77qnd``
-/// - ``init(x:y:z:)-2bk18``
-/// - ``init(x:y:z:)-79zqj``
+/// - ``init(x:y:z:)-1hlq5``
+/// - ``init(x:y:z:)-47vxz``
+/// - ``init(x:y:z:)-806pt``
 /// - ``init(_:)``
 ///
 /// ### Special Values

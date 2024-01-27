@@ -20,9 +20,9 @@
 ///
 /// ### Creating Vector2I
 ///
-/// - ``init(x:y:)-4czd5``
-/// - ``init(x:y:)-74dwz``
-/// - ``init(x:y:)-25y4k``
+/// - ``init(x:y:)-4lgo2``
+/// - ``init(x:y:)-4sw9a``
+/// - ``init(x:y:)-10lok``
 /// - ``init(_:)``
 ///
 /// ### Special Values
