@@ -6,7 +6,7 @@
 /// Although `Rect2` itself is axis-aligned, it can be combined
 /// with ``Transform2D`` to represent a rotated or skewed rectangle.
 ///
-/// For integer coordinates, use ``Rect2i``.
+/// For integer coordinates, use ``Rect2I``.
 /// The 3D equivalent to `Rect2` is ``AABB``.
 ///
 /// >note: Negative values for size are not supported. With negative size,
@@ -96,8 +96,8 @@ extension Rect2 {
                   size: Vector2(x: width, y: height))
     }
     
-    /// Creates a `Rect2` from a `Rect2i`.
-    public init(_ other: Rect2i) {
+    /// Creates a `Rect2` from a `Rect2I`.
+    public init(_ other: Rect2I) {
         self.init(position: Vector2(other.position), size: Vector2(other.size))
     }
     

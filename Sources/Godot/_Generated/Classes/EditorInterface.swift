@@ -384,7 +384,7 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialog(_ dialog: Godot.Window?, rect: Godot.Rect2i = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+    public func popupDialog(_ dialog: Godot.Window?, rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -405,7 +405,7 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialogCentered(dialog: Godot.Window?, minsize: Godot.Vector2i = Vector2i(x: 0, y: 0)) {
+    public func popupDialogCentered(dialog: Godot.Window?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -447,7 +447,7 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialogCenteredClamped(dialog: Godot.Window?, minsize: Godot.Vector2i = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+    public func popupDialogCenteredClamped(dialog: Godot.Window?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in

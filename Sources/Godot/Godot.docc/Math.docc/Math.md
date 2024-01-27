@@ -15,9 +15,9 @@ Godot provides several math types and functions to perform 2D and 3D calculation
 ### 2D Geometry
 
 - ``Vector2``
-- ``Vector2i``
+- ``Vector2I``
 - ``Rect2``
-- ``Rect2i``
+- ``Rect2I``
 - ``Transform2D``
 - ``Axis2D``
 - ``Side``
@@ -25,7 +25,7 @@ Godot provides several math types and functions to perform 2D and 3D calculation
 ### 3D Geometry
 
 - ``Vector3``
-- ``Vector3i``
+- ``Vector3I``
 - ``AABB``
 - ``Plane``
 - ``Basis``
@@ -33,7 +33,7 @@ Godot provides several math types and functions to perform 2D and 3D calculation
 - ``Quaternion``
 - ``Projection``
 - ``Vector4``
-- ``Vector4i``
+- ``Vector4I``
 - ``EulerOrder``
 - ``Axis3D``
 - ``Axis4D``

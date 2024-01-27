@@ -17,7 +17,7 @@ open class MovieWriter: Object {
         Bool()
     }
 
-    open func _writeBegin(movieSize: Godot.Vector2i, fps: UInt32, basePath: Godot.GodotString) -> Godot.ErrorType {
+    open func _writeBegin(movieSize: Godot.Vector2I, fps: UInt32, basePath: Godot.GodotString) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -81,7 +81,7 @@ open class MovieWriter: Object {
             }
             Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._writeBegin(
-            movieSize: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
+            movieSize: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
             fps: UInt32.fromGodotUnsafePointer(args[1]!),
             basePath: Godot.GodotString.fromGodotUnsafePointer(args[2]!)
         )

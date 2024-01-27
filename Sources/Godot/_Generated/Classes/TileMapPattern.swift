@@ -12,7 +12,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func setCell(coords: Godot.Vector2i, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) {
+    public func setCell(coords: Godot.Vector2I, sourceID: Int32 = -1, atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
@@ -34,7 +34,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func hasCell(coords: Godot.Vector2i) -> Bool {
+    public func hasCell(coords: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -54,7 +54,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func removeCell(coords: Godot.Vector2i, updateSize: Bool) {
+    public func removeCell(coords: Godot.Vector2I, updateSize: Bool) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         updateSize.withGodotUnsafeRawPointer { __ptr_updateSize in
         withUnsafeArgumentPackPointer(__ptr_coords, __ptr_updateSize) { __accessPtr in
@@ -74,7 +74,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellSourceID(coords: Godot.Vector2i) -> Int32 {
+    public func cellSourceID(coords: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -94,8 +94,8 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellAtlasCoords(_ coords: Godot.Vector2i) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func cellAtlasCoords(_ coords: Godot.Vector2I) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,7 +114,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellAlternativeTile(coords: Godot.Vector2i) -> Int32 {
+    public func cellAlternativeTile(coords: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -134,8 +134,8 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func usedCells() -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedCells() -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells,
@@ -152,8 +152,8 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func size() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func size() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -170,7 +170,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func setSize(_ size: Godot.Vector2i) {
+    public func setSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

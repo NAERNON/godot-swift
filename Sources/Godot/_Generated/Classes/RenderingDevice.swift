@@ -1578,7 +1578,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreateEmpty(size: Godot.Vector2i, samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!, validateWithFormat: Int64 = -1) -> Godot.RID {
+    public func framebufferCreateEmpty(size: Godot.Vector2I, samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!, validateWithFormat: Int64 = -1) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         samples.withGodotUnsafeRawPointer { __ptr_samples in

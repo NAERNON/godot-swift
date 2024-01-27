@@ -820,7 +820,7 @@ extension GodotStringName {
         __operator_binding_module_vector2(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector2i) -> Godot.GodotString {
+    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector2I) -> Godot.GodotString {
         GodotString.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -834,7 +834,7 @@ extension GodotStringName {
         __operator_binding_module_rect2(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Rect2i) -> Godot.GodotString {
+    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Rect2I) -> Godot.GodotString {
         GodotString.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -848,7 +848,7 @@ extension GodotStringName {
         __operator_binding_module_vector3(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector3i) -> Godot.GodotString {
+    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector3I) -> Godot.GodotString {
         GodotString.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -869,7 +869,7 @@ extension GodotStringName {
         __operator_binding_module_vector4(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector4i) -> Godot.GodotString {
+    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.Vector4I) -> Godot.GodotString {
         GodotString.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in

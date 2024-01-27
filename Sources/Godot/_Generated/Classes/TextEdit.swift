@@ -1092,8 +1092,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func nextVisibleLineIndexOffsetFrom(line: Int32, wrapIndex: Int32, visibleAmount: Int32) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func nextVisibleLineIndexOffsetFrom(line: Int32, wrapIndex: Int32, visibleAmount: Int32) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
         visibleAmount.withGodotUnsafeRawPointer { __ptr_visibleAmount in
@@ -1457,8 +1457,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func search(text: Godot.GodotString, flags: UInt32, fromLine line: Int32, fromColum colum: Int32) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func search(text: Godot.GodotString, flags: UInt32, fromLine line: Int32, fromColum colum: Int32) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -1537,8 +1537,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineColumnAtPos(position: Godot.Vector2i, allowOutOfBounds: Bool = true) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func lineColumnAtPos(position: Godot.Vector2I, allowOutOfBounds: Bool = true) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         allowOutOfBounds.withGodotUnsafeRawPointer { __ptr_allowOutOfBounds in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_allowOutOfBounds) { __accessPtr in
@@ -1558,8 +1558,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func posAtLineColumn(line: Int32, column: Int32) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func posAtLineColumn(line: Int32, column: Int32) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1579,8 +1579,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func rectAtLineColumn(line: Int32, column: Int32) -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func rectAtLineColumn(line: Int32, column: Int32) -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1600,7 +1600,7 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func minimapLineAtPos(position: Godot.Vector2i) -> Int32 {
+    public func minimapLineAtPos(position: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in

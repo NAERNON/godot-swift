@@ -90,7 +90,7 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
-    public func setSizeOverride(size: Godot.Vector2i) {
+    public func setSizeOverride(size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

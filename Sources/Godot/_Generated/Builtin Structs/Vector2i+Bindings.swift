@@ -135,7 +135,7 @@ private var __method_binding_snapped: GDExtensionPtrBuiltInMethod = {
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_VECTOR2I, __ptr__method_name, 1735278196)!
     }
 }()
-extension Vector2i {
+extension Vector2I {
     public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1
@@ -147,22 +147,22 @@ extension Vector2i {
     }
 
     static internal func _constructor() -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
             __constructor(__ptr___temporary, nil)
         }
         return __temporary
     }
     static internal func _ptr_constructor() -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
             __constructor(__ptr___temporary, nil)
         }
         return __temporary
     }
 
-    static internal func _constructor_vector2i(from: Godot.Vector2i) -> Self {
-        var __temporary = Vector2i()
+    static internal func _constructor_vector2i(from: Godot.Vector2I) -> Self {
+        var __temporary = Vector2I()
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
@@ -171,7 +171,7 @@ extension Vector2i {
         return __temporary
     }
     static internal func _ptr_constructor_vector2i(from: UnsafeRawPointer) -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
             __constructor_vector2i(__ptr___temporary, __accessPtr)
@@ -180,7 +180,7 @@ extension Vector2i {
     }
 
     static internal func _constructor_vector2(from: Godot.Vector2) -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
@@ -189,7 +189,7 @@ extension Vector2i {
         return __temporary
     }
     static internal func _ptr_constructor_vector2(from: UnsafeRawPointer) -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
             __constructor_vector2(__ptr___temporary, __accessPtr)
@@ -198,7 +198,7 @@ extension Vector2i {
     }
 
     static internal func _constructor_int_int(x: Int, y: Int) -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         withUnsafeArgumentPackPointer(__ptr_x, __ptr_y) { __accessPtr in
@@ -208,7 +208,7 @@ extension Vector2i {
         return __temporary
     }
     static internal func _ptr_constructor_int_int(x: UnsafeRawPointer, y: UnsafeRawPointer) -> Self {
-        var __temporary = Vector2i()
+        var __temporary = Vector2I()
         withUnsafeArgumentPackPointer(x, y) { __accessPtr in
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
             __constructor_int_int(__ptr___temporary, __accessPtr)
@@ -216,158 +216,158 @@ extension Vector2i {
         return __temporary
     }
 
-    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Vector2i, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Vector2I, _ rhs: Value) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Vector2i, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Vector2I, _ rhs: Value) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNegate(_ lhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorNegate(_ lhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_negate(__ptr_lhs, nil, __temporary)}}
     }
 
-    static internal func _operatorPositive(_ lhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorPositive(_ lhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_positive(__ptr_lhs, nil, __temporary)}}
     }
 
-    static internal func _operatorNot(_ lhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorNot(_ lhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector2i, _ rhs: Int) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorMultiply(_ lhs: Godot.Vector2I, _ rhs: Int) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector2i, _ rhs: Int) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorDivide(_ lhs: Godot.Vector2I, _ rhs: Int) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.Vector2i, _ rhs: Int) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorModule(_ lhs: Godot.Vector2I, _ rhs: Int) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector2i, _ rhs: Scalar) -> Godot.Vector2 {
+    static internal func _operatorMultiply(_ lhs: Godot.Vector2I, _ rhs: Scalar) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector2i, _ rhs: Scalar) -> Godot.Vector2 {
+    static internal func _operatorDivide(_ lhs: Godot.Vector2I, _ rhs: Scalar) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_divide_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorEqual(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorEqual(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorNotEqual(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorLess(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorLess(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorLessEqual(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorLessEqual(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_equal_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorGreater(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorGreater(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorGreaterEqual(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Bool {
+    static internal func _operatorGreaterEqual(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_equal_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorAdd(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorAdd(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_add_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorSubtract(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorSubtract(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_subtract_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorMultiply(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorDivide(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_divide_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule(_ lhs: Godot.Vector2i, _ rhs: Godot.Vector2i) -> Godot.Vector2i {
-        Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _operatorModule(_ lhs: Godot.Vector2I, _ rhs: Godot.Vector2I) -> Godot.Vector2I {
+        Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.Vector2i, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
+    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.Vector2I, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Vector2i, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Vector2I, _ rhs: Godot.GodotArray<Value>) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -415,20 +415,20 @@ extension Vector2i {
         __method_binding_length_squared(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _sign() -> Godot.Vector2i {
-        return Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _sign() -> Godot.Vector2I {
+        return Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_sign(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _abs() -> Godot.Vector2i {
-        return Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _abs() -> Godot.Vector2I {
+        return Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_abs(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _clamp(min: Godot.Vector2i, max: Godot.Vector2i) -> Godot.Vector2i {
-        return Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _clamp(min: Godot.Vector2I, max: Godot.Vector2I) -> Godot.Vector2I {
+        return Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         min.withGodotUnsafeRawPointer { __ptr_min in
         max.withGodotUnsafeRawPointer { __ptr_max in
         withUnsafeArgumentPackPointer(__ptr_min, __ptr_max) { __accessPtr in
@@ -436,8 +436,8 @@ extension Vector2i {
         __method_binding_clamp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _snapped(step: Godot.Vector2i) -> Godot.Vector2i {
-        return Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _snapped(step: Godot.Vector2I) -> Godot.Vector2I {
+        return Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         step.withGodotUnsafeRawPointer { __ptr_step in
         withUnsafeArgumentPackPointer(__ptr_step) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in

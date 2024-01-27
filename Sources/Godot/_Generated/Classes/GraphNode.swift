@@ -32,7 +32,7 @@ open class GraphNode: GraphElement {
         }
     }()
 
-    open func _drawPort(slotIndex: Int32, position: Godot.Vector2i, left: Bool, color: Godot.Color) {
+    open func _drawPort(slotIndex: Int32, position: Godot.Vector2I, left: Bool, color: Godot.Color) {
     }
 
     internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
@@ -655,7 +655,7 @@ open class GraphNode: GraphElement {
             Unmanaged<GraphNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._drawPort(
             slotIndex: Int32.fromGodotUnsafePointer(args[0]!),
-            position: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            position: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             left: Bool.fromGodotUnsafePointer(args[2]!),
             color: Godot.Color.fromGodotUnsafePointer(args[3]!)
         )}

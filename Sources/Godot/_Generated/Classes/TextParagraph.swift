@@ -759,8 +759,8 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineRange(line: Int32) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func lineRange(line: Int32) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

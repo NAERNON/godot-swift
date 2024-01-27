@@ -12,7 +12,7 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2i) {
+    private func __setSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,8 +31,8 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         }
     }()
-    private func __getSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -61,7 +61,7 @@ open class PlaceholderTextureLayered: TextureLayered {
         )}}}
     }
 
-    public var size: Godot.Vector2i {
+    public var size: Godot.Vector2I {
         get {
             __getSize()
         }

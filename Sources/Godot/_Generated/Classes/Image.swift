@@ -217,8 +217,8 @@ open class Image: Resource {
         }
         }
     }()
-    public func size() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func size() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -1082,7 +1082,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func blitRect(src: Godot.Image?, srcRect: Godot.Rect2i, dst: Godot.Vector2i) {
+    public func blitRect(src: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
@@ -1104,7 +1104,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func blitRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2i, dst: Godot.Vector2i) {
+    public func blitRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
@@ -1128,7 +1128,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func blendRect(src: Godot.Image?, srcRect: Godot.Rect2i, dst: Godot.Vector2i) {
+    public func blendRect(src: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
@@ -1150,7 +1150,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func blendRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2i, dst: Godot.Vector2i) {
+    public func blendRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
@@ -1193,7 +1193,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func fillRect(_ rect: Godot.Rect2i, color: Godot.Color) {
+    public func fillRect(_ rect: Godot.Rect2I, color: Godot.Color) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_rect, __ptr_color) { __accessPtr in
@@ -1213,8 +1213,8 @@ open class Image: Resource {
         }
         }
     }()
-    public func usedRect() -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedRect() -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_rect,
@@ -1231,7 +1231,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func region(_ region: Godot.Rect2i) -> Godot.Image? {
+    public func region(_ region: Godot.Rect2I) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -1271,7 +1271,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func pixelv(point: Godot.Vector2i) -> Godot.Color {
+    public func pixelv(point: Godot.Vector2I) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -1312,7 +1312,7 @@ open class Image: Resource {
         }
         }
     }()
-    public func setPixelv(point: Godot.Vector2i, color: Godot.Color) {
+    public func setPixelv(point: Godot.Vector2I, color: Godot.Color) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_color) { __accessPtr in

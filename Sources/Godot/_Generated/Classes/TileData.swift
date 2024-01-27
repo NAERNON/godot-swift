@@ -179,7 +179,7 @@ open class TileData: Object {
         }
         }
     }()
-    private func __setTextureOrigin(_ textureOrigin: Godot.Vector2i) {
+    private func __setTextureOrigin(_ textureOrigin: Godot.Vector2I) {
         textureOrigin.withGodotUnsafeRawPointer { __ptr_textureOrigin in
         withUnsafeArgumentPackPointer(__ptr_textureOrigin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,8 +198,8 @@ open class TileData: Object {
         }
         }
     }()
-    private func __getTextureOrigin() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getTextureOrigin() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_origin,
@@ -951,7 +951,7 @@ open class TileData: Object {
         }
     }
 
-    public var textureOrigin: Godot.Vector2i {
+    public var textureOrigin: Godot.Vector2I {
         get {
             __getTextureOrigin()
         }

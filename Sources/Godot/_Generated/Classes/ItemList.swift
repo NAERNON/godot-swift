@@ -1235,7 +1235,7 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setFixedIconSize(_ size: Godot.Vector2i) {
+    private func __setFixedIconSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1254,8 +1254,8 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __getFixedIconSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getFixedIconSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fixed_icon_size,
@@ -1721,7 +1721,7 @@ open class ItemList: Control {
         }
     }
 
-    public var fixedIconSize: Godot.Vector2i {
+    public var fixedIconSize: Godot.Vector2I {
         get {
             __getFixedIconSize()
         }

@@ -66,7 +66,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __setMargins(_ margins: Godot.Vector2i) {
+    private func __setMargins(_ margins: Godot.Vector2I) {
         margins.withGodotUnsafeRawPointer { __ptr_margins in
         withUnsafeArgumentPackPointer(__ptr_margins) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,8 +85,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __getMargins() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getMargins() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_margins,
@@ -103,7 +103,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __setSeparation(_ separation: Godot.Vector2i) {
+    private func __setSeparation(_ separation: Godot.Vector2I) {
         separation.withGodotUnsafeRawPointer { __ptr_separation in
         withUnsafeArgumentPackPointer(__ptr_separation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,8 +122,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __getSeparation() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getSeparation() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_separation,
@@ -140,7 +140,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __setTextureRegionSize(_ textureRegionSize: Godot.Vector2i) {
+    private func __setTextureRegionSize(_ textureRegionSize: Godot.Vector2I) {
         textureRegionSize.withGodotUnsafeRawPointer { __ptr_textureRegionSize in
         withUnsafeArgumentPackPointer(__ptr_textureRegionSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,8 +159,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    private func __getTextureRegionSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getTextureRegionSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_region_size,
@@ -214,7 +214,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func createTile(atlasCoords: Godot.Vector2i, size: Godot.Vector2i = Vector2i(x: 1, y: 1)) {
+    public func createTile(atlasCoords: Godot.Vector2I, size: Godot.Vector2I = Vector2i(x: 1, y: 1)) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_size) { __accessPtr in
@@ -234,7 +234,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func removeTile(atlasCoords: Godot.Vector2i) {
+    public func removeTile(atlasCoords: Godot.Vector2I) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +253,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func moveTileInAtlas(atlasCoords: Godot.Vector2i, newAtlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), newSize: Godot.Vector2i = Vector2i(x: -1, y: -1)) {
+    public func moveTileInAtlas(atlasCoords: Godot.Vector2I, newAtlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1), newSize: Godot.Vector2I = Vector2i(x: -1, y: -1)) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         newAtlasCoords.withGodotUnsafeRawPointer { __ptr_newAtlasCoords in
         newSize.withGodotUnsafeRawPointer { __ptr_newSize in
@@ -274,8 +274,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileSizeInAtlas(atlasCoords: Godot.Vector2i) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func tileSizeInAtlas(atlasCoords: Godot.Vector2I) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,7 +294,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func hasRoomForTile(atlasCoords: Godot.Vector2i, size: Godot.Vector2i, animationColumns: Int32, animationSeparation: Godot.Vector2i, framesCount: Int32, ignoredTile: Godot.Vector2i = Vector2i(x: -1, y: -1)) -> Bool {
+    public func hasRoomForTile(atlasCoords: Godot.Vector2I, size: Godot.Vector2I, animationColumns: Int32, animationSeparation: Godot.Vector2I, framesCount: Int32, ignoredTile: Godot.Vector2I = Vector2i(x: -1, y: -1)) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -319,7 +319,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tilesToBeRemovedOnChange(texture: Godot.Texture2D?, margins: Godot.Vector2i, separation: Godot.Vector2i, textureRegionSize: Godot.Vector2i) -> Godot.PackedVector2Array {
+    public func tilesToBeRemovedOnChange(texture: Godot.Texture2D?, margins: Godot.Vector2I, separation: Godot.Vector2I, textureRegionSize: Godot.Vector2I) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -343,8 +343,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAtCoords(atlasCoords: Godot.Vector2i) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func tileAtCoords(atlasCoords: Godot.Vector2I) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,7 +398,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationColumns(atlasCoords: Godot.Vector2i, frameColumns: Int32) {
+    public func setTileAnimationColumns(atlasCoords: Godot.Vector2I, frameColumns: Int32) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         frameColumns.withGodotUnsafeRawPointer { __ptr_frameColumns in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_frameColumns) { __accessPtr in
@@ -418,7 +418,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationColumns(atlasCoords: Godot.Vector2i) -> Int32 {
+    public func tileAnimationColumns(atlasCoords: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -438,7 +438,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationSeparation(atlasCoords: Godot.Vector2i, separation: Godot.Vector2i) {
+    public func setTileAnimationSeparation(atlasCoords: Godot.Vector2I, separation: Godot.Vector2I) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         separation.withGodotUnsafeRawPointer { __ptr_separation in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_separation) { __accessPtr in
@@ -458,8 +458,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationSeparation(atlasCoords: Godot.Vector2i) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func tileAnimationSeparation(atlasCoords: Godot.Vector2I) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -478,7 +478,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationSpeed(atlasCoords: Godot.Vector2i, speed: Double) {
+    public func setTileAnimationSpeed(atlasCoords: Godot.Vector2I, speed: Double) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         speed.withGodotUnsafeRawPointer { __ptr_speed in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_speed) { __accessPtr in
@@ -498,7 +498,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationSpeed(atlasCoords: Godot.Vector2i) -> Double {
+    public func tileAnimationSpeed(atlasCoords: Godot.Vector2I) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -518,7 +518,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationMode(atlasCoords: Godot.Vector2i, mode: Godot.TileSetAtlasSource.TileAnimationMode) {
+    public func setTileAnimationMode(atlasCoords: Godot.Vector2I, mode: Godot.TileSetAtlasSource.TileAnimationMode) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_mode) { __accessPtr in
@@ -538,7 +538,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationMode(atlasCoords: Godot.Vector2i) -> Godot.TileSetAtlasSource.TileAnimationMode {
+    public func tileAnimationMode(atlasCoords: Godot.Vector2I) -> Godot.TileSetAtlasSource.TileAnimationMode {
         Godot.TileSetAtlasSource.TileAnimationMode.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -558,7 +558,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationFramesCount(atlasCoords: Godot.Vector2i, framesCount: Int32) {
+    public func setTileAnimationFramesCount(atlasCoords: Godot.Vector2I, framesCount: Int32) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         framesCount.withGodotUnsafeRawPointer { __ptr_framesCount in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_framesCount) { __accessPtr in
@@ -578,7 +578,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationFramesCount(atlasCoords: Godot.Vector2i) -> Int32 {
+    public func tileAnimationFramesCount(atlasCoords: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -598,7 +598,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setTileAnimationFrameDuration(atlasCoords: Godot.Vector2i, frameIndex: Int32, duration: Double) {
+    public func setTileAnimationFrameDuration(atlasCoords: Godot.Vector2I, frameIndex: Int32, duration: Double) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         frameIndex.withGodotUnsafeRawPointer { __ptr_frameIndex in
         duration.withGodotUnsafeRawPointer { __ptr_duration in
@@ -619,7 +619,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationFrameDuration(atlasCoords: Godot.Vector2i, frameIndex: Int32) -> Double {
+    public func tileAnimationFrameDuration(atlasCoords: Godot.Vector2I, frameIndex: Int32) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         frameIndex.withGodotUnsafeRawPointer { __ptr_frameIndex in
@@ -640,7 +640,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileAnimationTotalDuration(atlasCoords: Godot.Vector2i) -> Double {
+    public func tileAnimationTotalDuration(atlasCoords: Godot.Vector2I) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -660,7 +660,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func createAlternativeTile(atlasCoords: Godot.Vector2i, alternativeIDOverride: Int32 = -1) -> Int32 {
+    public func createAlternativeTile(atlasCoords: Godot.Vector2I, alternativeIDOverride: Int32 = -1) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeIDOverride.withGodotUnsafeRawPointer { __ptr_alternativeIDOverride in
@@ -681,7 +681,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func removeAlternativeTile(atlasCoords: Godot.Vector2i, alternativeTile: Int32) {
+    public func removeAlternativeTile(atlasCoords: Godot.Vector2I, alternativeTile: Int32) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_alternativeTile) { __accessPtr in
@@ -701,7 +701,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func setAlternativeTileID(atlasCoords: Godot.Vector2i, alternativeTile: Int32, newID: Int32) {
+    public func setAlternativeTileID(atlasCoords: Godot.Vector2I, alternativeTile: Int32, newID: Int32) {
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
         newID.withGodotUnsafeRawPointer { __ptr_newID in
@@ -722,7 +722,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func nextAlternativeTileID(atlasCoords: Godot.Vector2i) -> Int32 {
+    public func nextAlternativeTileID(atlasCoords: Godot.Vector2I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -742,7 +742,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileData(atlasCoords: Godot.Vector2i, alternativeTile: Int32) -> Godot.TileData? {
+    public func tileData(atlasCoords: Godot.Vector2I, alternativeTile: Int32) -> Godot.TileData? {
         Godot.TileData?.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
@@ -763,8 +763,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func atlasGridSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func atlasGridSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_atlas_grid_size,
@@ -781,8 +781,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func tileTextureRegion(atlasCoords: Godot.Vector2i, frame: Int32 = 0) -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func tileTextureRegion(atlasCoords: Godot.Vector2I, frame: Int32 = 0) -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_frame) { __accessPtr in
@@ -820,8 +820,8 @@ open class TileSetAtlasSource: TileSetSource {
         }
         }
     }()
-    public func runtimeTileTextureRegion(atlasCoords: Godot.Vector2i, frame: Int32) -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func runtimeTileTextureRegion(atlasCoords: Godot.Vector2I, frame: Int32) -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords, __ptr_frame) { __accessPtr in
@@ -845,7 +845,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
     }
 
-    public var margins: Godot.Vector2i {
+    public var margins: Godot.Vector2I {
         get {
             __getMargins()
         }
@@ -856,7 +856,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
     }
 
-    public var separation: Godot.Vector2i {
+    public var separation: Godot.Vector2I {
         get {
             __getSeparation()
         }
@@ -867,7 +867,7 @@ open class TileSetAtlasSource: TileSetSource {
         }
     }
 
-    public var textureRegionSize: Godot.Vector2i {
+    public var textureRegionSize: Godot.Vector2I {
         get {
             __getTextureRegionSize()
         }

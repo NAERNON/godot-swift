@@ -16,14 +16,14 @@ extension Variant {
         case string
         
         case vector2
-        case vector2i
+        case vector2I
         case rect2
-        case rect2i
+        case rect2I
         case vector3
-        case vector3i
+        case vector3I
         case transform2D
         case vector4
-        case vector4i
+        case vector4I
         case plane
         case quaternion
         case aabb
@@ -91,14 +91,14 @@ extension Variant {
         case double
         case string
         case vector2
-        case vector2i
+        case vector2I
         case rect2
-        case rect2i
+        case rect2I
         case vector3
-        case vector3i
+        case vector3I
         case transform2D
         case vector4
-        case vector4i
+        case vector4I
         case plane
         case quaternion
         case aabb
@@ -141,14 +141,14 @@ extension Variant {
             case .double: .float
             case .string: .string
             case .vector2: .vector2
-            case .vector2i: .vector2i
+            case .vector2I: .vector2I
             case .rect2: .rect2
-            case .rect2i: .rect2i
+            case .rect2I: .rect2I
             case .vector3: .vector3
-            case .vector3i: .vector3i
+            case .vector3I: .vector3I
             case .transform2D: .transform2D
             case .vector4: .vector4
-            case .vector4i: .vector4i
+            case .vector4I: .vector4I
             case .plane: .plane
             case .quaternion: .quaternion
             case .aabb: .aabb

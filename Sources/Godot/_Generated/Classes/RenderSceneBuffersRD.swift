@@ -33,7 +33,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         }
         }
     }()
-    public func createTexture(context: Godot.GodotStringName, name: Godot.GodotStringName, dataFormat: Godot.RenderingDevice.DataFormat, usageBits: UInt32, textureSamples: Godot.RenderingDevice.TextureSamples, size: Godot.Vector2i, layers: UInt32, mipmaps: UInt32, unique: Bool) -> Godot.RID {
+    public func createTexture(context: Godot.GodotStringName, name: Godot.GodotStringName, dataFormat: Godot.RenderingDevice.DataFormat, usageBits: UInt32, textureSamples: Godot.RenderingDevice.TextureSamples, size: Godot.Vector2I, layers: UInt32, mipmaps: UInt32, unique: Bool) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -205,8 +205,8 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         }
         }
     }()
-    public func textureSliceSize(context: Godot.GodotStringName, name: Godot.GodotStringName, mipmap: UInt32) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func textureSliceSize(context: Godot.GodotStringName, name: Godot.GodotStringName, mipmap: UInt32) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         mipmap.withGodotUnsafeRawPointer { __ptr_mipmap in
@@ -396,8 +396,8 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         }
         }
     }()
-    public func internalSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func internalSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_internal_size,

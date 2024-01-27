@@ -151,7 +151,7 @@ extension Rect2 {
         return __temporary
     }
 
-    static internal func _constructor_rect2i(from: Godot.Rect2i) -> Self {
+    static internal func _constructor_rect2i(from: Godot.Rect2I) -> Self {
         var __temporary = Rect2()
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in

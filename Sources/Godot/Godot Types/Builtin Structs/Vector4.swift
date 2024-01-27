@@ -5,7 +5,7 @@
 ///
 /// It uses floating-point coordinates.
 ///
-/// See ``Vector4i`` for its integer counterpart.
+/// See ``Vector4I`` for its integer counterpart.
 ///
 /// >note: If double precision is needed, compile the engine and generate
 /// the Godot Swift APIs with the `double` option.
@@ -121,9 +121,9 @@ extension Vector4 {
         self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
     }
     
-    /// Creates a new `Vector4` from `Vector4i`.
-    public init(_ vector4i: Vector4i) {
-        self.init(x: vector4i.x, y: vector4i.y, z: vector4i.z, w: vector4i.w)
+    /// Creates a new `Vector4` from `Vector4I`.
+    public init(_ vector4I: Vector4I) {
+        self.init(x: vector4I.x, y: vector4I.y, z: vector4I.z, w: vector4I.w)
     }
     
     /// Creates a default-initialized `Vector4` with all components set to `0`.

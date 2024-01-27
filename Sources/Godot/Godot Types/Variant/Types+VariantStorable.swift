@@ -639,12 +639,12 @@ extension Vector2: VariantStorable {
     }
 }
 
-// MARK: - Vector2i
+// MARK: - Vector2I
 
 private var fromTypeConstructor_vector2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 private var toTypeConstructor_vector2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 
-extension Vector2i: VariantStorable {
+extension Vector2I: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -656,7 +656,7 @@ extension Vector2i: VariantStorable {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector2i()
+        var newValue = Vector2I()
         
         storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
@@ -733,12 +733,12 @@ extension Rect2: VariantStorable {
     }
 }
 
-// MARK: - Rect2i
+// MARK: - Rect2I
 
 private var fromTypeConstructor_rect2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 private var toTypeConstructor_rect2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 
-extension Rect2i: VariantStorable {
+extension Rect2I: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -750,7 +750,7 @@ extension Rect2i: VariantStorable {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Rect2i()
+        var newValue = Rect2I()
         
         storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
@@ -827,12 +827,12 @@ extension Vector3: VariantStorable {
     }
 }
 
-// MARK: - Vector3i
+// MARK: - Vector3I
 
 private var fromTypeConstructor_vector3i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 private var toTypeConstructor_vector3i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 
-extension Vector3i: VariantStorable {
+extension Vector3I: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -844,7 +844,7 @@ extension Vector3i: VariantStorable {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector3i()
+        var newValue = Vector3I()
         
         storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
@@ -968,12 +968,12 @@ extension Vector4: VariantStorable {
     }
 }
 
-// MARK: - Vector4i
+// MARK: - Vector4I
 
 private var fromTypeConstructor_vector4i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 private var toTypeConstructor_vector4i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 
-extension Vector4i: VariantStorable {
+extension Vector4I: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -985,7 +985,7 @@ extension Vector4i: VariantStorable {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector4i()
+        var newValue = Vector4I()
         
         storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in

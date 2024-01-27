@@ -49,8 +49,8 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __getInternalSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getInternalSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_internal_size,
@@ -67,7 +67,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setInternalSize(_ internalSize: Godot.Vector2i) {
+    private func __setInternalSize(_ internalSize: Godot.Vector2I) {
         internalSize.withGodotUnsafeRawPointer { __ptr_internalSize in
         withUnsafeArgumentPackPointer(__ptr_internalSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,8 +86,8 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __getTargetSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getTargetSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_size,
@@ -104,7 +104,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setTargetSize(_ targetSize: Godot.Vector2i) {
+    private func __setTargetSize(_ targetSize: Godot.Vector2I) {
         targetSize.withGodotUnsafeRawPointer { __ptr_targetSize in
         withUnsafeArgumentPackPointer(__ptr_targetSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,7 +349,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
     }
 
-    public var internalSize: Godot.Vector2i {
+    public var internalSize: Godot.Vector2I {
         get {
             __getInternalSize()
         }
@@ -360,7 +360,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
     }
 
-    public var targetSize: Godot.Vector2i {
+    public var targetSize: Godot.Vector2I {
         get {
             __getTargetSize()
         }

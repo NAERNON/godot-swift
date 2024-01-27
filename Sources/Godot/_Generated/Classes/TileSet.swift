@@ -368,7 +368,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    private func __setTileSize(_ size: Godot.Vector2i) {
+    private func __setTileSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -387,8 +387,8 @@ open class TileSet: Resource {
         }
         }
     }()
-    private func __getTileSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getTileSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tile_size,
@@ -1489,7 +1489,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func setCoordsLevelTileProxy(pSourceFrom: Int32, coordsFrom: Godot.Vector2i, sourceTo: Int32, coordsTo: Godot.Vector2i) {
+    public func setCoordsLevelTileProxy(pSourceFrom: Int32, coordsFrom: Godot.Vector2I, sourceTo: Int32, coordsTo: Godot.Vector2I) {
         pSourceFrom.withGodotUnsafeRawPointer { __ptr_pSourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
         sourceTo.withGodotUnsafeRawPointer { __ptr_sourceTo in
@@ -1511,7 +1511,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func coordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i) -> Godot.AnyGodotArray {
+    public func coordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
@@ -1532,7 +1532,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func hasCoordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i) -> Bool {
+    public func hasCoordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
@@ -1553,7 +1553,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func removeCoordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i) {
+    public func removeCoordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I) {
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
         withUnsafeArgumentPackPointer(__ptr_sourceFrom, __ptr_coordsFrom) { __accessPtr in
@@ -1573,7 +1573,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func setAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32, sourceTo: Int32, coordsTo: Godot.Vector2i, alternativeTo: Int32) {
+    public func setAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I, alternativeFrom: Int32, sourceTo: Int32, coordsTo: Godot.Vector2I, alternativeTo: Int32) {
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
         alternativeFrom.withGodotUnsafeRawPointer { __ptr_alternativeFrom in
@@ -1597,7 +1597,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func alternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.AnyGodotArray {
+    public func alternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I, alternativeFrom: Int32) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
@@ -1619,7 +1619,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func hasAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Bool {
+    public func hasAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I, alternativeFrom: Int32) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
@@ -1641,7 +1641,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func removeAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) {
+    public func removeAlternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I, alternativeFrom: Int32) {
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
         alternativeFrom.withGodotUnsafeRawPointer { __ptr_alternativeFrom in
@@ -1662,7 +1662,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func mapTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.AnyGodotArray {
+    public func mapTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2I, alternativeFrom: Int32) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         sourceFrom.withGodotUnsafeRawPointer { __ptr_sourceFrom in
         coordsFrom.withGodotUnsafeRawPointer { __ptr_coordsFrom in
@@ -1823,7 +1823,7 @@ open class TileSet: Resource {
         }
     }
 
-    public var tileSize: Godot.Vector2i {
+    public var tileSize: Godot.Vector2I {
         get {
             __getTileSize()
         }

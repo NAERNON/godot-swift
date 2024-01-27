@@ -184,10 +184,10 @@ extension Vector2: ExposableValue {
     }
 }
 
-// MARK: - Vector2i
+// MARK: - Vector2I
 
-extension Vector2i: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector2i
+extension Vector2I: ExposableValue {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector2I
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
@@ -212,10 +212,10 @@ extension Rect2: ExposableValue {
     }
 }
 
-// MARK: - Rect2i
+// MARK: - Rect2I
 
-extension Rect2i: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .rect2i
+extension Rect2I: ExposableValue {
+    public static let variantRepresentationType: Variant.RepresentationType = .rect2I
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
@@ -240,10 +240,10 @@ extension Vector3: ExposableValue {
     }
 }
 
-// MARK: - Vector3i
+// MARK: - Vector3I
 
-extension Vector3i: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector3i
+extension Vector3I: ExposableValue {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector3I
         
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
@@ -282,10 +282,10 @@ extension Vector4: ExposableValue {
     }
 }
 
-// MARK: - Vector4i
+// MARK: - Vector4I
 
-extension Vector4i: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector4i
+extension Vector4I: ExposableValue {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector4I
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)

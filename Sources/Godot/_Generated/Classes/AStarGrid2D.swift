@@ -36,11 +36,11 @@ open class AStarGrid2D: RefCounted {
         }
     }
 
-    open func _estimateCost(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Double {
+    open func _estimateCost(fromID: Godot.Vector2I, toID: Godot.Vector2I) -> Double {
         Double()
     }
 
-    open func _computeCost(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Double {
+    open func _computeCost(fromID: Godot.Vector2I, toID: Godot.Vector2I) -> Double {
         Double()
     }
 
@@ -51,7 +51,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    private func __setRegion(_ region: Godot.Rect2i) {
+    private func __setRegion(_ region: Godot.Rect2I) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,8 +70,8 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    private func __getRegion() -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getRegion() -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region,
@@ -88,7 +88,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2i) {
+    private func __setSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,8 +107,8 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    private func __getSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -220,7 +220,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func isInBoundsv(id: Godot.Vector2i) -> Bool {
+    public func isInBoundsv(id: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -423,7 +423,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func setPointSolid(id: Godot.Vector2i, solid: Bool = true) {
+    public func setPointSolid(id: Godot.Vector2I, solid: Bool = true) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         solid.withGodotUnsafeRawPointer { __ptr_solid in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_solid) { __accessPtr in
@@ -443,7 +443,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func isPointSolid(id: Godot.Vector2i) -> Bool {
+    public func isPointSolid(id: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -463,7 +463,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func setPointWeightScale(id: Godot.Vector2i, weightScale: Double) {
+    public func setPointWeightScale(id: Godot.Vector2I, weightScale: Double) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_weightScale) { __accessPtr in
@@ -483,7 +483,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func pointWeightScale(id: Godot.Vector2i) -> Double {
+    public func pointWeightScale(id: Godot.Vector2I) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -503,7 +503,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func fillSolidRegion(_ region: Godot.Rect2i, solid: Bool = true) {
+    public func fillSolidRegion(_ region: Godot.Rect2I, solid: Bool = true) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         solid.withGodotUnsafeRawPointer { __ptr_solid in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_solid) { __accessPtr in
@@ -523,7 +523,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func fillWeightScaleRegion(_ region: Godot.Rect2i, weightScale: Double) {
+    public func fillWeightScaleRegion(_ region: Godot.Rect2I, weightScale: Double) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_weightScale) { __accessPtr in
@@ -560,7 +560,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func pointPosition(id: Godot.Vector2i) -> Godot.Vector2 {
+    public func pointPosition(id: Godot.Vector2I) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -580,7 +580,7 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func pointPath(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Godot.PackedVector2Array {
+    public func pointPath(fromID: Godot.Vector2I, toID: Godot.Vector2I) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
@@ -601,8 +601,8 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func idPath(fromID: Godot.Vector2i, toID: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func idPath(fromID: Godot.Vector2I, toID: Godot.Vector2I) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
@@ -615,7 +615,7 @@ open class AStarGrid2D: RefCounted {
         )}}}}}
     }
 
-    public var region: Godot.Rect2i {
+    public var region: Godot.Rect2I {
         get {
             __getRegion()
         }
@@ -626,7 +626,7 @@ open class AStarGrid2D: RefCounted {
         }
     }
 
-    public var size: Godot.Vector2i {
+    public var size: Godot.Vector2I {
         get {
             __getSize()
         }
@@ -714,8 +714,8 @@ open class AStarGrid2D: RefCounted {
             }
             Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
-            fromID: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
-            toID: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
+            toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -724,8 +724,8 @@ open class AStarGrid2D: RefCounted {
             }
             Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
-            fromID: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
-            toID: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
+            toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

@@ -228,14 +228,14 @@ open class TextServerExtension: TextServer {
         Double()
     }
 
-    open func _fontGetSizeCacheList(fontRid: Godot.RID) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>()
+    open func _fontGetSizeCacheList(fontRid: Godot.RID) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>()
     }
 
     open func _fontClearSizeCache(fontRid: Godot.RID) {
     }
 
-    open func _fontRemoveSizeCache(fontRid: Godot.RID, size: Godot.Vector2i) {
+    open func _fontRemoveSizeCache(fontRid: Godot.RID, size: Godot.Vector2I) {
     }
 
     open func _fontSetAscent(fontRid: Godot.RID, size: Int64, ascent: Double) {
@@ -273,38 +273,38 @@ open class TextServerExtension: TextServer {
         Double()
     }
 
-    open func _fontGetTextureCount(fontRid: Godot.RID, size: Godot.Vector2i) -> Int64 {
+    open func _fontGetTextureCount(fontRid: Godot.RID, size: Godot.Vector2I) -> Int64 {
         Int64()
     }
 
-    open func _fontClearTextures(fontRid: Godot.RID, size: Godot.Vector2i) {
+    open func _fontClearTextures(fontRid: Godot.RID, size: Godot.Vector2I) {
     }
 
-    open func _fontRemoveTexture(fontRid: Godot.RID, size: Godot.Vector2i, textureIndex: Int64) {
+    open func _fontRemoveTexture(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) {
     }
 
-    open func _fontSetTextureImage(fontRid: Godot.RID, size: Godot.Vector2i, textureIndex: Int64, image: Godot.Image?) {
+    open func _fontSetTextureImage(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64, image: Godot.Image?) {
     }
 
-    open func _fontGetTextureImage(fontRid: Godot.RID, size: Godot.Vector2i, textureIndex: Int64) -> Godot.Image? {
+    open func _fontGetTextureImage(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) -> Godot.Image? {
         nil
     }
 
-    open func _fontSetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2i, textureIndex: Int64, offset: Godot.PackedInt32Array) {
+    open func _fontSetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64, offset: Godot.PackedInt32Array) {
     }
 
-    open func _fontGetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2i, textureIndex: Int64) -> Godot.PackedInt32Array {
+    open func _fontGetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _fontGetGlyphList(fontRid: Godot.RID, size: Godot.Vector2i) -> Godot.PackedInt32Array {
+    open func _fontGetGlyphList(fontRid: Godot.RID, size: Godot.Vector2I) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _fontClearGlyphs(fontRid: Godot.RID, size: Godot.Vector2i) {
+    open func _fontClearGlyphs(fontRid: Godot.RID, size: Godot.Vector2I) {
     }
 
-    open func _fontRemoveGlyph(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) {
+    open func _fontRemoveGlyph(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) {
     }
 
     open func _fontGetGlyphAdvance(fontRid: Godot.RID, size: Int64, glyph: Int64) -> Godot.Vector2 {
@@ -314,39 +314,39 @@ open class TextServerExtension: TextServer {
     open func _fontSetGlyphAdvance(fontRid: Godot.RID, size: Int64, glyph: Int64, advance: Godot.Vector2) {
     }
 
-    open func _fontGetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontSetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64, offset: Godot.Vector2) {
+    open func _fontSetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, offset: Godot.Vector2) {
     }
 
-    open func _fontGetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontSetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64, glSize: Godot.Vector2) {
+    open func _fontSetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, glSize: Godot.Vector2) {
     }
 
-    open func _fontGetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Godot.Rect2 {
+    open func _fontGetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Rect2 {
         Godot.Rect2()
     }
 
-    open func _fontSetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64, uvRect: Godot.Rect2) {
+    open func _fontSetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, uvRect: Godot.Rect2) {
     }
 
-    open func _fontGetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Int64 {
+    open func _fontGetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Int64 {
         Int64()
     }
 
-    open func _fontSetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64, textureIdx: Int64) {
+    open func _fontSetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, textureIdx: Int64) {
     }
 
-    open func _fontGetGlyphTextureRid(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Godot.RID {
+    open func _fontGetGlyphTextureRid(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _fontGetGlyphTextureSize(fontRid: Godot.RID, size: Godot.Vector2i, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphTextureSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
@@ -354,20 +354,20 @@ open class TextServerExtension: TextServer {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontGetKerningList(fontRid: Godot.RID, size: Int64) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>()
+    open func _fontGetKerningList(fontRid: Godot.RID, size: Int64) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>()
     }
 
     open func _fontClearKerningMap(fontRid: Godot.RID, size: Int64) {
     }
 
-    open func _fontRemoveKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2i) {
+    open func _fontRemoveKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I) {
     }
 
-    open func _fontSetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2i, kerning: Godot.Vector2) {
+    open func _fontSetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I, kerning: Godot.Vector2) {
     }
 
-    open func _fontGetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2i) -> Godot.Vector2 {
+    open func _fontGetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
@@ -387,10 +387,10 @@ open class TextServerExtension: TextServer {
         Godot.GodotString()
     }
 
-    open func _fontRenderRange(fontRid: Godot.RID, size: Godot.Vector2i, start: Int64, end: Int64) {
+    open func _fontRenderRange(fontRid: Godot.RID, size: Godot.Vector2I, start: Int64, end: Int64) {
     }
 
-    open func _fontRenderGlyph(fontRid: Godot.RID, size: Godot.Vector2i, index: Int64) {
+    open func _fontRenderGlyph(fontRid: Godot.RID, size: Godot.Vector2I, index: Int64) {
     }
 
     open func _fontDrawGlyph(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color) {
@@ -587,8 +587,8 @@ open class TextServerExtension: TextServer {
         Int64()
     }
 
-    open func _shapedTextGetRange(shaped: Godot.RID) -> Godot.Vector2i {
-        Godot.Vector2i()
+    open func _shapedTextGetRange(shaped: Godot.RID) -> Godot.Vector2I {
+        Godot.Vector2I()
     }
 
     open func _shapedTextGetLineBreaksAdv(shaped: Godot.RID, width: Godot.PackedFloat32Array, start: Int64, once: Bool, breakFlags: Godot.TextServer.LineBreakFlag) -> Godot.PackedInt32Array {
@@ -751,8 +751,8 @@ open class TextServerExtension: TextServer {
         Godot.GodotString()
     }
 
-    open func _parseStructuredText(parserType: Godot.TextServer.StructuredTextParser, args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i>()
+    open func _parseStructuredText(parserType: Godot.TextServer.StructuredTextParser, args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3I> {
+        Godot.GodotArray<Godot.Vector3I>()
     }
 
     open func _cleanup() {
@@ -1337,7 +1337,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveSizeCache(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )}
         let _font_set_ascent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1446,7 +1446,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureCount(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_clear_textures_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1456,7 +1456,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearTextures(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )}
         let _font_remove_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1465,7 +1465,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveTexture(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             textureIndex: Int64.fromGodotUnsafePointer(args[2]!)
         )}
         let _font_set_texture_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1475,7 +1475,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetTextureImage(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             textureIndex: Int64.fromGodotUnsafePointer(args[2]!),
             image: Godot.Image?.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1486,7 +1486,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureImage(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             textureIndex: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1497,7 +1497,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetTextureOffsets(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             textureIndex: Int64.fromGodotUnsafePointer(args[2]!),
             offset: Godot.PackedInt32Array.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1508,7 +1508,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureOffsets(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             textureIndex: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1519,7 +1519,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_clear_glyphs_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1529,7 +1529,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearGlyphs(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )}
         let _font_remove_glyph_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1538,7 +1538,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveGlyph(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )}
         let _font_get_glyph_advance_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1570,7 +1570,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphOffset(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1581,7 +1581,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphOffset(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!),
             offset: Godot.Vector2.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1592,7 +1592,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1603,7 +1603,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!),
             glSize: Godot.Vector2.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1614,7 +1614,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphUvRect(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1625,7 +1625,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphUvRect(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!),
             uvRect: Godot.Rect2.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1636,7 +1636,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureIdx(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1647,7 +1647,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphTextureIdx(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!),
             textureIdx: Int64.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1658,7 +1658,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureRid(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1669,7 +1669,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             glyph: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1711,7 +1711,7 @@ open class TextServerExtension: TextServer {
         ._fontRemoveKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
-            glyphPair: Godot.Vector2i.fromGodotUnsafePointer(args[2]!)
+            glyphPair: Godot.Vector2I.fromGodotUnsafePointer(args[2]!)
         )}
         let _font_set_kerning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1721,7 +1721,7 @@ open class TextServerExtension: TextServer {
         ._fontSetKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
-            glyphPair: Godot.Vector2i.fromGodotUnsafePointer(args[2]!),
+            glyphPair: Godot.Vector2I.fromGodotUnsafePointer(args[2]!),
             kerning: Godot.Vector2.fromGodotUnsafePointer(args[3]!)
         )}
         let _font_get_kerning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1732,7 +1732,7 @@ open class TextServerExtension: TextServer {
         ._fontGetKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
-            glyphPair: Godot.Vector2i.fromGodotUnsafePointer(args[2]!)
+            glyphPair: Godot.Vector2I.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_get_glyph_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1784,7 +1784,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRenderRange(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             start: Int64.fromGodotUnsafePointer(args[2]!),
             end: Int64.fromGodotUnsafePointer(args[3]!)
         )}
@@ -1795,7 +1795,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRenderGlyph(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             index: Int64.fromGodotUnsafePointer(args[2]!)
         )}
         let _font_draw_glyph_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

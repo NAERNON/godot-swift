@@ -12,13 +12,13 @@
 ///
 /// ### Use as Boolean
 ///
-/// In a boolean context, a `Vector2i` evaluates to `false` if
+/// In a boolean context, a `Vector2I` evaluates to `false` if
 /// it's equal to `(0, 0)`.
 /// Otherwise, it always evaluates to `true`.
 ///
 /// ## Topics
 ///
-/// ### Creating Vector2i
+/// ### Creating Vector2I
 ///
 /// - ``init(x:y:)-4czd5``
 /// - ``init(x:y:)-74dwz``
@@ -62,7 +62,7 @@
 /// - ``<=(_:_:)``
 /// - ``>(_:_:)``
 /// - ``>=(_:_:)``
-public struct Vector2i {
+public struct Vector2I {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
@@ -73,27 +73,27 @@ public struct Vector2i {
     /// Also accessible by using ``subscript(_:)`` with index `1`.
     public var y: Int32
     
-    /// Creates a new `Vector2i` from the given `x` and `y`.
+    /// Creates a new `Vector2I` from the given `x` and `y`.
     public init(x: Int32, y: Int32) {
         self.x = x
         self.y = y
     }
 }
 
-extension Vector2i {
+extension Vector2I {
     // MARK: Constructors
     
-    /// Creates a new `Vector2i` from the given `x` and `y`.
+    /// Creates a new `Vector2I` from the given `x` and `y`.
     public init<T>(x: T, y: T) where T : BinaryFloatingPoint {
         self.init(x: Int32(x), y: Int32(y))
     }
     
-    /// Creates a new `Vector2i` from the given `x` and `y`.
+    /// Creates a new `Vector2I` from the given `x` and `y`.
     public init<T>(x: T, y: T) where T : BinaryInteger {
         self.init(x: Int32(x), y: Int32(y))
     }
     
-    /// Creates a new `Vector2i` from the given `Vector2`
+    /// Creates a new `Vector2I` from the given `Vector2`
     /// by truncating components' fractional parts (rounding towards zero).
     ///
     /// For a different behavior consider passing the result of
@@ -103,7 +103,7 @@ extension Vector2i {
         self.init(x: vector2.x, y: vector2.y)
     }
     
-    /// Creates a default-initialized `Vector2i` with all components set to `0`.
+    /// Creates a default-initialized `Vector2I` with all components set to `0`.
     public init() {
         self.init(x: 0, y: 0)
     }
@@ -111,94 +111,94 @@ extension Vector2i {
     // MARK: Constant
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector2i = Vector2i(x: 0, y: 0)
+    public static let zero: Vector2I = Vector2I(x: 0, y: 0)
     
     /// A vector with all components set to `1`.
-    public static let one: Vector2i = Vector2i(x: 1, y: 1)
+    public static let one: Vector2I = Vector2I(x: 1, y: 1)
     
     /// A vector with all components equal to `Int32.min`.
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let min: Vector2i = Vector2i(x: .min, y: .min)
+    public static let min: Vector2I = Vector2I(x: .min, y: .min)
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector2`'s ``Vector2/infinity``.
-    public static let max: Vector2i = Vector2i(x: .max, y: .max)
+    public static let max: Vector2I = Vector2I(x: .max, y: .max)
     
     /// The left unit vector.
     ///
     /// Represents the direction of left.
-    public static let left: Vector2i = Vector2i(x: -1, y: 0)
+    public static let left: Vector2I = Vector2I(x: -1, y: 0)
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
-    public static let right: Vector2i = Vector2i(x: 1, y: 0)
+    public static let right: Vector2I = Vector2I(x: 1, y: 0)
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
-    public static let up: Vector2i = Vector2i(x: 0, y: -1)
+    public static let up: Vector2I = Vector2I(x: 0, y: -1)
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
-    public static let down: Vector2i = Vector2i(x: 0, y: 1)
+    public static let down: Vector2I = Vector2I(x: 0, y: 1)
     
     // MARK: Operators
     
-    /// Returns the negative value of the `Vector2i`.
+    /// Returns the negative value of the `Vector2I`.
     ///
-    /// This is the same as writing `Vector2i(x: -v.x, y: -v.y)`.
+    /// This is the same as writing `Vector2I(x: -v.x, y: -v.y)`.
     /// This operation flips the direction of the vector while keeping the same magnitude.
-    public static prefix func - (vector2i: Vector2i) -> Vector2i {
-        Self._operatorNegate(vector2i)
+    public static prefix func - (vector2I: Vector2I) -> Vector2I {
+        Self._operatorNegate(vector2I)
     }
     
     /// Returns the same value as if the `+` was not there.
-    public static prefix func + (vector2i: Vector2i) -> Vector2i {
-        Self._operatorPositive(vector2i)
+    public static prefix func + (vector2I: Vector2I) -> Vector2I {
+        Self._operatorPositive(vector2I)
     }
     
-    /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Vector2i, rhs: Int) -> Vector2i {
+    /// Multiplies each component of a `Vector2I` by a value.
+    public static func * (lhs: Vector2I, rhs: Int) -> Vector2I {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Int, rhs: Vector2i) -> Vector2i {
+    /// Multiplies each component of a `Vector2I` by a value.
+    public static func * (lhs: Int, rhs: Vector2I) -> Vector2I {
         rhs * lhs
     }
     
-    /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Vector2i, rhs: Scalar) -> Vector2 {
+    /// Multiplies each component of a `Vector2I` by a value.
+    public static func * (lhs: Vector2I, rhs: Scalar) -> Vector2 {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    /// Multiplies each component of a `Vector2i` by a value.
-    public static func * (lhs: Scalar, rhs: Vector2i) -> Vector2 {
+    /// Multiplies each component of a `Vector2I` by a value.
+    public static func * (lhs: Scalar, rhs: Vector2I) -> Vector2 {
         rhs * lhs
     }
     
-    /// Divides each component of a `Vector2i` by a value.
-    public static func / (lhs: Vector2i, rhs: Int) -> Vector2i {
+    /// Divides each component of a `Vector2I` by a value.
+    public static func / (lhs: Vector2I, rhs: Int) -> Vector2I {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Divides each component of a `Vector2i` by a value.
-    public static func / (lhs: Vector2i, rhs: Scalar) -> Vector2 {
+    /// Divides each component of a `Vector2I` by a value.
+    public static func / (lhs: Vector2I, rhs: Scalar) -> Vector2 {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Gets the remainder of each component a `Vector2i` with a given `Int`.
+    /// Gets the remainder of each component a `Vector2I` with a given `Int`.
     ///
     /// This operation uses truncated division, which is often not desired as it
     /// does not work well with negative numbers.
     /// Consider using ``posmod`` instead if you want to handle negative numbers.
-    public static func % (lhs: Vector2i, rhs: Int) -> Vector2i {
+    public static func % (lhs: Vector2I, rhs: Int) -> Vector2I {
         Self._operatorModule(lhs, rhs)
     }
     
@@ -208,7 +208,7 @@ extension Vector2i {
     /// of the left vector is less than the X value of the right vector.
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors. This operator is useful for sorting vectors.
-    public static func < (lhs: Vector2i, rhs: Vector2i) -> Bool {
+    public static func < (lhs: Vector2I, rhs: Vector2I) -> Bool {
         Self._operatorLess(lhs, rhs)
     }
     
@@ -218,7 +218,7 @@ extension Vector2i {
     /// of the left vector is less than or equal to the X value of the right vector.
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors. This operator is useful for sorting vectors.
-    public static func <= (lhs: Vector2i, rhs: Vector2i) -> Bool {
+    public static func <= (lhs: Vector2I, rhs: Vector2I) -> Bool {
         Self._operatorLessEqual(lhs, rhs)
     }
     
@@ -228,7 +228,7 @@ extension Vector2i {
     /// of the left vector is greater than the X value of the right vector.
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors. This operator is useful for sorting vectors.
-    public static func > (lhs: Vector2i, rhs: Vector2i) -> Bool {
+    public static func > (lhs: Vector2I, rhs: Vector2I) -> Bool {
         Self._operatorGreater(lhs, rhs)
     }
     
@@ -238,52 +238,52 @@ extension Vector2i {
     /// of the left vector is greater than or equal to the X value of the right vector.
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors. This operator is useful for sorting vectors.
-    public static func >= (lhs: Vector2i, rhs: Vector2i) -> Bool {
+    public static func >= (lhs: Vector2I, rhs: Vector2I) -> Bool {
         Self._operatorGreaterEqual(lhs, rhs)
     }
     
-    /// Adds each component of a `Vector2i` by the components of another `Vector2i`.
+    /// Adds each component of a `Vector2I` by the components of another `Vector2I`.
     ///
     /// ```swift
-    /// print(Vector2i(x: 10, y: 20) + Vector2i(x: 3, y: 4))
+    /// print(Vector2I(x: 10, y: 20) + Vector2I(x: 3, y: 4))
     /// // Prints "(13, 24)"
     /// ```
-    public static func + (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
+    public static func + (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
         Self._operatorAdd(lhs, rhs)
     }
     
-    /// Subtracts each component of a `Vector2i` by the components of another `Vector2i`.
+    /// Subtracts each component of a `Vector2I` by the components of another `Vector2I`.
     ///
     /// ```swift
-    /// print(Vector2i(x: 10, y: 20) - Vector2i(x: 3, y: 4))
+    /// print(Vector2I(x: 10, y: 20) - Vector2I(x: 3, y: 4))
     /// // Prints "(7, 16)"
     /// ```
-    public static func - (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
+    public static func - (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
         Self._operatorSubtract(lhs, rhs)
     }
     
-    /// Multiplies each component a `Vector2i` by the components of a given `Vector2i`.
-    public static func * (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
+    /// Multiplies each component a `Vector2I` by the components of a given `Vector2I`.
+    public static func * (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    /// Divides each component of a `Vector2i` by the components of another `Vector2i`.
+    /// Divides each component of a `Vector2I` by the components of another `Vector2I`.
     ///
     /// ```swift
-    /// print(Vector2i(x: 10, y: 20) / Vector2i(x: 2, y: 5))
+    /// print(Vector2I(x: 10, y: 20) / Vector2I(x: 2, y: 5))
     /// // Prints "(5, 4)"
     /// ```
-    public static func / (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
+    public static func / (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Gets the remainder of each component of a `Vector2i` with the
-    /// components of another `Vector2i`.
+    /// Gets the remainder of each component of a `Vector2I` with the
+    /// components of another `Vector2I`.
     ///
     /// This operation uses truncated division, which is often not desired as
     /// it does not work well with negative numbers.
     /// Consider using``posmod`` instead if you want to handle negative numbers.
-    public static func % (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
+    public static func % (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
         Self._operatorModule(lhs, rhs)
     }
     
@@ -323,24 +323,24 @@ extension Vector2i {
     
     /// A vector with each component set to `1` if it's positive,
     /// `-1` if it's negative, and `0` if it's zero.
-    public var sign: Vector2i {
+    public var sign: Vector2I {
         _sign()
     }
     
     /// A new vector with all components in absolute values (i.e. positive).
-    public var abs: Vector2i {
+    public var abs: Vector2I {
         _abs()
     }
     
     /// Returns a new vector with all components clamped
     /// between the given values.
-    public func clamped(min: Vector2i, max: Vector2i) -> Vector2i {
+    public func clamped(min: Vector2I, max: Vector2I) -> Vector2I {
         _clamp(min: min, max: max)
     }
     
     /// Returns a new vector with each component snapped
     /// to the closest multiple of the corresponding component in a given vector.
-    public func snapped(step: Vector2i) -> Vector2i {
+    public func snapped(step: Vector2I) -> Vector2I {
         _snapped(step: step)
     }
     
@@ -365,11 +365,11 @@ extension Vector2i {
     }
 }
 
-extension Vector2i: Equatable, Hashable {}
+extension Vector2I: Equatable, Hashable {}
 
-extension Vector2i: AdditiveArithmetic, Comparable {}
+extension Vector2I: AdditiveArithmetic, Comparable {}
 
-extension Vector2i: Codable {
+extension Vector2I: Codable {
     public func encode(to encoder: Encoder) throws {
         var unkeyedContainer = encoder.unkeyedContainer()
         try unkeyedContainer.encode(x)
@@ -383,14 +383,14 @@ extension Vector2i: Codable {
     }
 }
 
-extension Vector2i: CustomStringConvertible {
+extension Vector2I: CustomStringConvertible {
     public var description: String {
         "(\(x), \(y))"
     }
 }
 
-extension Vector2i: CustomDebugStringConvertible {
+extension Vector2I: CustomDebugStringConvertible {
     public var debugDescription: String {
-        "Vector2i(x: \(x), y: \(y))"
+        "Vector2I(x: \(x), y: \(y))"
     }
 }

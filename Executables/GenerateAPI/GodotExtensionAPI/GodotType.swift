@@ -482,6 +482,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 }
             case "String": return "GodotString"
             case "StringName": return "GodotStringName"
+            case "Rect2i": return "Rect2I"
+            case "Vector2i": return "Vector2I"
+            case "Vector3i": return "Vector3I"
+            case "Vector4i": return "Vector4I"
             case "Error": return "ErrorType"
             case "Type": return options.contains(.typeIsStorageType) ?
                 "StorageType" : "GodotType"
@@ -662,14 +666,14 @@ private let typeToGodotVariantType: [String : String] = [
     "Double": "GDEXTENSION_VARIANT_TYPE_FLOAT",
     "GodotString": "GDEXTENSION_VARIANT_TYPE_STRING",
     "Vector2": "GDEXTENSION_VARIANT_TYPE_VECTOR2",
-    "Vector2i": "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
+    "Vector2I": "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
     "Rect2": "GDEXTENSION_VARIANT_TYPE_RECT2",
-    "Rect2i": "GDEXTENSION_VARIANT_TYPE_RECT2I",
+    "Rect2I": "GDEXTENSION_VARIANT_TYPE_RECT2I",
     "Vector3": "GDEXTENSION_VARIANT_TYPE_VECTOR3",
-    "Vector3i": "GDEXTENSION_VARIANT_TYPE_VECTOR3I",
+    "Vector3I": "GDEXTENSION_VARIANT_TYPE_VECTOR3I",
     "Transform2D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM2D",
     "Vector4": "GDEXTENSION_VARIANT_TYPE_VECTOR4",
-    "Vector4i": "GDEXTENSION_VARIANT_TYPE_VECTOR4I",
+    "Vector4I": "GDEXTENSION_VARIANT_TYPE_VECTOR4I",
     "Plane": "GDEXTENSION_VARIANT_TYPE_PLANE",
     "Quaternion": "GDEXTENSION_VARIANT_TYPE_QUATERNION",
     "AABB": "GDEXTENSION_VARIANT_TYPE_AABB",

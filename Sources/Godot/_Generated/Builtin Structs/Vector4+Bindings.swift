@@ -265,7 +265,7 @@ extension Vector4 {
         return __temporary
     }
 
-    static internal func _constructor_vector4i(from: Godot.Vector4i) -> Self {
+    static internal func _constructor_vector4i(from: Godot.Vector4I) -> Self {
         var __temporary = Vector4()
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in

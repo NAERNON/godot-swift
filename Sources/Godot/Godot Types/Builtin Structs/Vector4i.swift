@@ -12,13 +12,13 @@
 ///
 /// ### Use as Boolean
 ///
-/// In a boolean context, a `Vector4i` evaluates to `false` if
+/// In a boolean context, a `Vector4I` evaluates to `false` if
 /// it's equal to `(0, 0, 0, 0)`.
 /// Otherwise, it always evaluates to `true`.
 ///
 /// ## Topics
 ///
-/// ### Creating Vector4i
+/// ### Creating Vector4I
 ///
 /// - ``init(x:y:z:w:)-185qb``
 /// - ``init(x:y:z:w:)-8kqw9``
@@ -59,7 +59,7 @@
 /// - ``<=(_:_:)``
 /// - ``>(_:_:)``
 /// - ``>=(_:_:)``
-public struct Vector4i {
+public struct Vector4I {
     /// The vector's X component.
     ///
     /// Also accessible by using ``subscript(_:)`` with index `0`.
@@ -80,7 +80,7 @@ public struct Vector4i {
     /// Also accessible by using ``subscript(_:)`` with index `3`.
     public var w: Int32
     
-    /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
+    /// Creates a new `Vector4I` from the given `x`,`y`, `z` and `w`.
     public init(x: Int32, y: Int32, z: Int32, w: Int32) {
         self.x = x
         self.y = y
@@ -89,20 +89,20 @@ public struct Vector4i {
     }
 }
 
-extension Vector4i {
+extension Vector4I {
     // MARK: Constructors
     
-    /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
+    /// Creates a new `Vector4I` from the given `x`,`y`, `z` and `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
         self.init(x: Int32(x), y: Int32(y), z: Int32(z), w: Int32(w))
     }
     
-    /// Creates a new `Vector4i` from the given `x`,`y`, `z` and `w`.
+    /// Creates a new `Vector4I` from the given `x`,`y`, `z` and `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
         self.init(x: Int32(x), y: Int32(y), z: Int32(z), w: Int32(w))
     }
     
-    /// Creates a new `Vector4i` from the given `Vector4`
+    /// Creates a new `Vector4I` from the given `Vector4`
     /// by truncating components' fractional parts (rounding towards zero).
     ///
     /// For a different behavior consider passing the result of
@@ -112,7 +112,7 @@ extension Vector4i {
         self.init(x: vector4.x, y: vector4.y, z: vector4.z, w: vector4.w)
     }
     
-    /// Creates a default-initialized `Vector4i` with all components set to `0`.
+    /// Creates a default-initialized `Vector4I` with all components set to `0`.
     public init() {
         self.init(x: 0, y: 0, z: 0, w: 0)
     }
@@ -120,74 +120,74 @@ extension Vector4i {
     // MARK: Constants
     
     /// A vector with all components set to `0`.
-    public static let zero: Vector4i = Vector4i(x: 0, y: 0, z: 0, w: 0)
+    public static let zero: Vector4I = Vector4I(x: 0, y: 0, z: 0, w: 0)
     
     /// A vector with all components set to `1`.
-    public static let one: Vector4i = Vector4i(x: 1, y: 1, z: 1, w: 1)
+    public static let one: Vector4I = Vector4I(x: 1, y: 1, z: 1, w: 1)
     
     /// A vector with all components equal to `Int32.min`.
     ///
     /// Can be used as a negative integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let min: Vector4i = Vector4i(x: .min, y: .min, z: .min, w: .min)
+    public static let min: Vector4I = Vector4I(x: .min, y: .min, z: .min, w: .min)
     
     /// A vector with all components equal to `Int32.max`.
     ///
     /// Can be used as an integer equivalent
     /// of `Vector4`'s ``Vector4/infinity``.
-    public static let max: Vector4i = Vector4i(x: .max, y: .max, z: .max, w: .max)
+    public static let max: Vector4I = Vector4I(x: .max, y: .max, z: .max, w: .max)
     
     // MARK: Operators
     
-    /// Returns the negative value of the `Vector4i`.
+    /// Returns the negative value of the `Vector4I`.
     ///
-    /// This is the same as writing `Vector4i(x: -v.x, y: -v.y, z: -v.z, w: -v.w)`.
+    /// This is the same as writing `Vector4I(x: -v.x, y: -v.y, z: -v.z, w: -v.w)`.
     /// This operation flips the direction of the vector while keeping the same magnitude.
-    public static prefix func - (vector4i: Vector4i) -> Vector4i {
-        Self._operatorNegate(vector4i)
+    public static prefix func - (vector4I: Vector4I) -> Vector4I {
+        Self._operatorNegate(vector4I)
     }
     
     /// Returns the same value as if the `+` was not there.
-    public static prefix func + (vector4i: Vector4i) -> Vector4i {
-        Self._operatorPositive(vector4i)
+    public static prefix func + (vector4I: Vector4I) -> Vector4I {
+        Self._operatorPositive(vector4I)
     }
     
-    /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Vector4i, rhs: Int) -> Vector4i {
+    /// Multiplies each component of a `Vector4I` by a value.
+    public static func * (lhs: Vector4I, rhs: Int) -> Vector4I {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Int, rhs: Vector4i) -> Vector4i {
+    /// Multiplies each component of a `Vector4I` by a value.
+    public static func * (lhs: Int, rhs: Vector4I) -> Vector4I {
         rhs * lhs
     }
     
-    /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Vector4i, rhs: Scalar) -> Vector4 {
+    /// Multiplies each component of a `Vector4I` by a value.
+    public static func * (lhs: Vector4I, rhs: Scalar) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    /// Multiplies each component of a `Vector4i` by a value.
-    public static func * (lhs: Scalar, rhs: Vector4i) -> Vector4 {
+    /// Multiplies each component of a `Vector4I` by a value.
+    public static func * (lhs: Scalar, rhs: Vector4I) -> Vector4 {
         rhs * lhs
     }
     
-    /// Divides each component of a `Vector4i` by a value.
-    public static func / (lhs: Vector4i, rhs: Int) -> Vector4i {
+    /// Divides each component of a `Vector4I` by a value.
+    public static func / (lhs: Vector4I, rhs: Int) -> Vector4I {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Divides each component of a `Vector4i` by a value.
-    public static func / (lhs: Vector4i, rhs: Scalar) -> Vector4 {
+    /// Divides each component of a `Vector4I` by a value.
+    public static func / (lhs: Vector4I, rhs: Scalar) -> Vector4 {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Gets the remainder of each component a `Vector4i` with a given `Int`.
+    /// Gets the remainder of each component a `Vector4I` with a given `Int`.
     ///
     /// This operation uses truncated division, which is often not desired as it
     /// does not work well with negative numbers.
     /// Consider using ``posmod`` instead if you want to handle negative numbers.
-    public static func % (lhs: Vector4i, rhs: Int) -> Vector4i {
+    public static func % (lhs: Vector4I, rhs: Int) -> Vector4I {
         Self._operatorModule(lhs, rhs)
     }
     
@@ -198,7 +198,7 @@ extension Vector4i {
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors, Z values of the two vectors, and then with the W values.
     /// This operator is useful for sorting vectors.
-    public static func < (lhs: Vector4i, rhs: Vector4i) -> Bool {
+    public static func < (lhs: Vector4I, rhs: Vector4I) -> Bool {
         Self._operatorLess(lhs, rhs)
     }
     
@@ -209,7 +209,7 @@ extension Vector4i {
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors, Z values of the two vectors, and then with the W values.
     /// This operator is useful for sorting vectors.
-    public static func <= (lhs: Vector4i, rhs: Vector4i) -> Bool {
+    public static func <= (lhs: Vector4I, rhs: Vector4I) -> Bool {
         Self._operatorLessEqual(lhs, rhs)
     }
     
@@ -220,7 +220,7 @@ extension Vector4i {
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors, Z values of the two vectors, and then with the W values.
     /// This operator is useful for sorting vectors.
-    public static func > (lhs: Vector4i, rhs: Vector4i) -> Bool {
+    public static func > (lhs: Vector4I, rhs: Vector4I) -> Bool {
         Self._operatorGreater(lhs, rhs)
     }
     
@@ -231,37 +231,37 @@ extension Vector4i {
     /// If the X values are exactly equal, then it repeats this check with the Y
     /// values of the two vectors, Z values of the two vectors, and then with the W values.
     /// This operator is useful for sorting vectors.
-    public static func >= (lhs: Vector4i, rhs: Vector4i) -> Bool {
+    public static func >= (lhs: Vector4I, rhs: Vector4I) -> Bool {
         Self._operatorGreaterEqual(lhs, rhs)
     }
     
-    /// Adds each component of a `Vector4i` by the components of another `Vector4i`.
+    /// Adds each component of a `Vector4I` by the components of another `Vector4I`.
     ///
     /// ```swift
-    /// print(Vector4i(x: 10, y: 20, z: 30, w: 40) + Vector4i(x: 3, y: 4, z: 5, w: 6))
+    /// print(Vector4I(x: 10, y: 20, z: 30, w: 40) + Vector4I(x: 3, y: 4, z: 5, w: 6))
     /// // Prints "(13, 24, 35, 46)"
     /// ```
-    public static func + (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+    public static func + (lhs: Vector4I, rhs: Vector4I) -> Vector4I {
         Self._operatorAdd(lhs, rhs)
     }
     
-    /// Subtracts each component of a `Vector4i` by the components of another `Vector4i`.
+    /// Subtracts each component of a `Vector4I` by the components of another `Vector4I`.
     ///
     /// ```swift
-    /// print(Vector4i(x: 10, y: 20, z: 30, w: 40) - Vector4i(x: 3, y: 4, z: 5, w: 6))
+    /// print(Vector4I(x: 10, y: 20, z: 30, w: 40) - Vector4I(x: 3, y: 4, z: 5, w: 6))
     /// // Prints "(7, 16, 25, 34)"
     /// ```
-    public static func - (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+    public static func - (lhs: Vector4I, rhs: Vector4I) -> Vector4I {
         Self._operatorSubtract(lhs, rhs)
     }
     
-    /// Multiplies each component of a `Vector4i` by the components of another `Vector4i`.
+    /// Multiplies each component of a `Vector4I` by the components of another `Vector4I`.
     ///
     /// ```swift
-    /// print(Vector4i(x: 10, y: 20, z: 30, w: 40) * Vector4i(x: 3, y: 4, z: 5, w: 6))
+    /// print(Vector4I(x: 10, y: 20, z: 30, w: 40) * Vector4I(x: 3, y: 4, z: 5, w: 6))
     /// // Prints "(30, 80, 150, 240)"
     /// ```
-    public static func * (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+    public static func * (lhs: Vector4I, rhs: Vector4I) -> Vector4I {
         Self._operatorMultiply(lhs, rhs)
     }
     
@@ -271,17 +271,17 @@ extension Vector4i {
     /// print(Vector4(x: 10, y: 20, z: 30, w: 40) / Vector4(x: 2, y: 5, z: 3, w: 4))
     /// // Prints "(5, 4, 10, 10)"
     /// ```
-    public static func / (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+    public static func / (lhs: Vector4I, rhs: Vector4I) -> Vector4I {
         Self._operatorDivide(lhs, rhs)
     }
     
-    /// Gets the remainder of each component of a `Vector4i` with the
-    /// components of another `Vector4i`.
+    /// Gets the remainder of each component of a `Vector4I` with the
+    /// components of another `Vector4I`.
     ///
     /// This operation uses truncated division, which is often not desired as
     /// it does not work well with negative numbers.
     /// Consider using``posmod`` instead if you want to handle negative numbers.
-    public static func % (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+    public static func % (lhs: Vector4I, rhs: Vector4I) -> Vector4I {
         Self._operatorModule(lhs, rhs)
     }
     
@@ -316,24 +316,24 @@ extension Vector4i {
     
     /// A vector with each component set to `1` if it's positive,
     /// `-1` if it's negative, and `0` if it's zero.
-    public var sign: Vector4i {
+    public var sign: Vector4I {
         _sign()
     }
     
     /// A new vector with all components in absolute values (i.e. positive).
-    public var abs: Vector4i {
+    public var abs: Vector4I {
         _abs()
     }
     
     /// Returns a new vector with all components clamped
     /// between the given values.
-    public func clamped(min: Vector4i, max: Vector4i) -> Vector4i {
+    public func clamped(min: Vector4I, max: Vector4I) -> Vector4I {
         _clamp(min: min, max: max)
     }
     
     /// Returns a new vector with each component snapped
     /// to the closest multiple of the corresponding component in a given vector.
-    public func snapped(step: Vector4i) -> Vector4i {
+    public func snapped(step: Vector4I) -> Vector4I {
         _snapped(step: step)
     }
     
@@ -362,11 +362,11 @@ extension Vector4i {
     }
 }
 
-extension Vector4i: Equatable, Hashable {}
+extension Vector4I: Equatable, Hashable {}
 
-extension Vector4i: AdditiveArithmetic, Comparable {}
+extension Vector4I: AdditiveArithmetic, Comparable {}
 
-extension Vector4i: Codable {
+extension Vector4I: Codable {
     public func encode(to encoder: Encoder) throws {
         var unkeyedContainer = encoder.unkeyedContainer()
         try unkeyedContainer.encode(x)
@@ -384,14 +384,14 @@ extension Vector4i: Codable {
     }
 }
 
-extension Vector4i: CustomStringConvertible {
+extension Vector4I: CustomStringConvertible {
     public var description: String {
         "(\(x), \(y), \(z), \(w))"
     }
 }
 
-extension Vector4i: CustomDebugStringConvertible {
+extension Vector4I: CustomDebugStringConvertible {
     public var debugDescription: String {
-        "Vector4i(x: \(x), y: \(y), z: \(z), w: \(w))"
+        "Vector4I(x: \(x), y: \(y), z: \(z), w: \(w))"
     }
 }

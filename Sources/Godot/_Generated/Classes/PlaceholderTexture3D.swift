@@ -12,7 +12,7 @@ open class PlaceholderTexture3D: Texture3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3i) {
+    private func __setSize(_ size: Godot.Vector3I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,8 +31,8 @@ open class PlaceholderTexture3D: Texture3D {
         }
         }
     }()
-    private func __getSize() -> Godot.Vector3i {
-        Godot.Vector3i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getSize() -> Godot.Vector3I {
+        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -42,7 +42,7 @@ open class PlaceholderTexture3D: Texture3D {
         )}}
     }
 
-    public var size: Godot.Vector3i {
+    public var size: Godot.Vector3I {
         get {
             __getSize()
         }

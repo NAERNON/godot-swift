@@ -402,7 +402,7 @@ open class Sprite2D: Node2D {
         }
         }
     }()
-    private func __setFrameCoords(_ coords: Godot.Vector2i) {
+    private func __setFrameCoords(_ coords: Godot.Vector2I) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -421,8 +421,8 @@ open class Sprite2D: Node2D {
         }
         }
     }()
-    private func __getFrameCoords() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getFrameCoords() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frame_coords,
@@ -612,7 +612,7 @@ open class Sprite2D: Node2D {
         }
     }
 
-    public var frameCoords: Godot.Vector2i {
+    public var frameCoords: Godot.Vector2I {
         get {
             __getFrameCoords()
         }

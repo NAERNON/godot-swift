@@ -352,7 +352,7 @@ extension Vector3 {
         return __temporary
     }
 
-    static internal func _constructor_vector3i(from: Godot.Vector3i) -> Self {
+    static internal func _constructor_vector3i(from: Godot.Vector3I) -> Self {
         var __temporary = Vector3()
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in

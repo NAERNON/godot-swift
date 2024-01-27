@@ -49,8 +49,8 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __getRange() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getRange() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_range,
@@ -67,7 +67,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setRange(_ range: Godot.Vector2i) {
+    private func __setRange(_ range: Godot.Vector2I) {
         range.withGodotUnsafeRawPointer { __ptr_range in
         withUnsafeArgumentPackPointer(__ptr_range) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -497,7 +497,7 @@ open class CharFXTransform: RefCounted {
         }
     }
 
-    public var range: Godot.Vector2i {
+    public var range: Godot.Vector2I {
         get {
             __getRange()
         }

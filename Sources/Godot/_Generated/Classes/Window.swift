@@ -504,7 +504,7 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2i) {
+    private func __setPosition(_ position: Godot.Vector2I) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -523,8 +523,8 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getPosition() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getPosition() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position,
@@ -558,7 +558,7 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2i) {
+    private func __setSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,8 +577,8 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -612,8 +612,8 @@ open class Window: Viewport {
         }
         }
     }()
-    public func positionWithDecorations() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func positionWithDecorations() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position_with_decorations,
@@ -630,8 +630,8 @@ open class Window: Viewport {
         }
         }
     }()
-    public func sizeWithDecorations() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func sizeWithDecorations() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size_with_decorations,
@@ -648,7 +648,7 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMaxSize(_ maxSize: Godot.Vector2i) {
+    private func __setMaxSize(_ maxSize: Godot.Vector2I) {
         maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
         withUnsafeArgumentPackPointer(__ptr_maxSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -667,8 +667,8 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getMaxSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getMaxSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_size,
@@ -685,7 +685,7 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMinSize(_ minSize: Godot.Vector2i) {
+    private func __setMinSize(_ minSize: Godot.Vector2I) {
         minSize.withGodotUnsafeRawPointer { __ptr_minSize in
         withUnsafeArgumentPackPointer(__ptr_minSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -704,8 +704,8 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getMinSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getMinSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_size,
@@ -1087,7 +1087,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setImePosition(_ position: Godot.Vector2i) {
+    public func setImePosition(_ position: Godot.Vector2I) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1142,7 +1142,7 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleSize(_ size: Godot.Vector2i) {
+    private func __setContentScaleSize(_ size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1161,8 +1161,8 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getContentScaleSize() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getContentScaleSize() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_content_scale_size,
@@ -2356,7 +2356,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popup(rect: Godot.Rect2i = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+    public func popup(rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2375,7 +2375,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupOnParent(parentRect: Godot.Rect2i) {
+    public func popupOnParent(parentRect: Godot.Rect2I) {
         parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
         withUnsafeArgumentPackPointer(__ptr_parentRect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2394,7 +2394,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupCentered(minsize: Godot.Vector2i = Vector2i(x: 0, y: 0)) {
+    public func popupCentered(minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
         withUnsafeArgumentPackPointer(__ptr_minsize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2432,7 +2432,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupCenteredClamped(minsize: Godot.Vector2i = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+    public func popupCenteredClamped(minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
         fallbackRatio.withGodotUnsafeRawPointer { __ptr_fallbackRatio in
         withUnsafeArgumentPackPointer(__ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
@@ -2452,7 +2452,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusive(fromNode node: Godot.Node?, rect: Godot.Rect2i = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+    public func popupExclusive(fromNode node: Godot.Node?, rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -2473,7 +2473,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveOnParent(fromNode node: Godot.Node?, parentRect: Godot.Rect2i) {
+    public func popupExclusiveOnParent(fromNode node: Godot.Node?, parentRect: Godot.Rect2I) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
@@ -2494,7 +2494,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveCentered(fromNode node: Godot.Node?, minsize: Godot.Vector2i = Vector2i(x: 0, y: 0)) {
+    public func popupExclusiveCentered(fromNode node: Godot.Node?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -2536,7 +2536,7 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveCenteredClamped(fromNode node: Godot.Node?, minsize: Godot.Vector2i = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+    public func popupExclusiveCenteredClamped(fromNode node: Godot.Node?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -2584,7 +2584,7 @@ open class Window: Viewport {
         }
     }
 
-    public var position: Godot.Vector2i {
+    public var position: Godot.Vector2I {
         get {
             __getPosition()
         }
@@ -2595,7 +2595,7 @@ open class Window: Viewport {
         }
     }
 
-    public var size: Godot.Vector2i {
+    public var size: Godot.Vector2I {
         get {
             __getSize()
         }
@@ -2736,7 +2736,7 @@ open class Window: Viewport {
         }
     }
 
-    public var minSize: Godot.Vector2i {
+    public var minSize: Godot.Vector2I {
         get {
             __getMinSize()
         }
@@ -2747,7 +2747,7 @@ open class Window: Viewport {
         }
     }
 
-    public var maxSize: Godot.Vector2i {
+    public var maxSize: Godot.Vector2I {
         get {
             __getMaxSize()
         }
@@ -2769,7 +2769,7 @@ open class Window: Viewport {
         }
     }
 
-    public var contentScaleSize: Godot.Vector2i {
+    public var contentScaleSize: Godot.Vector2I {
         get {
             __getContentScaleSize()
         }

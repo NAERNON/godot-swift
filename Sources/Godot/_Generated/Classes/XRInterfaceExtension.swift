@@ -183,7 +183,7 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
-    public func addBlit(renderTarget: Godot.RID, srcRect: Godot.Rect2, dstRect: Godot.Rect2i, useLayer: Bool, layer: UInt32, applyLensDistortion: Bool, eyeCenter: Godot.Vector2, k1: Double, k2: Double, upscale: Double, aspectRatio: Double) {
+    public func addBlit(renderTarget: Godot.RID, srcRect: Godot.Rect2, dstRect: Godot.Rect2I, useLayer: Bool, layer: UInt32, applyLensDistortion: Bool, eyeCenter: Godot.Vector2, k1: Double, k2: Double, upscale: Double, aspectRatio: Double) {
         renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
         dstRect.withGodotUnsafeRawPointer { __ptr_dstRect in

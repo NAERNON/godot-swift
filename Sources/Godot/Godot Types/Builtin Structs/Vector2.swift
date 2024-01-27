@@ -5,7 +5,7 @@
 ///
 /// It uses floating-point coordinates.
 ///
-/// See ``Vector2i`` for its integer counterpart.
+/// See ``Vector2I`` for its integer counterpart.
 ///
 /// >note: If double precision is needed, compile the engine and generate
 /// the Godot Swift APIs with the `double` option.
@@ -130,9 +130,9 @@ extension Vector2 {
         self.init(x: Scalar(x), y: Scalar(y))
     }
     
-    /// Creates a new `Vector2` from `Vector2i`.
-    public init(_ vector2i: Vector2i) {
-        self.init(x: vector2i.x, y: vector2i.y)
+    /// Creates a new `Vector2` from `Vector2I`.
+    public init(_ vector2I: Vector2I) {
+        self.init(x: vector2I.x, y: vector2I.y)
     }
     
     /// Creates a default-initialized `Vector2` with all components set to `0`.

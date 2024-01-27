@@ -4053,7 +4053,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func voxelGiAllocateData(voxelGi: Godot.RID, toCellXform cellXform: Godot.Transform3D, aabb: Godot.AABB, octreeSize: Godot.Vector3i, octreeCells: Godot.PackedByteArray, dataCells: Godot.PackedByteArray, distanceField: Godot.PackedByteArray, levelCounts: Godot.PackedInt32Array) {
+    public func voxelGiAllocateData(voxelGi: Godot.RID, toCellXform cellXform: Godot.Transform3D, aabb: Godot.AABB, octreeSize: Godot.Vector3I, octreeCells: Godot.PackedByteArray, dataCells: Godot.PackedByteArray, distanceField: Godot.PackedByteArray, levelCounts: Godot.PackedInt32Array) {
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         cellXform.withGodotUnsafeRawPointer { __ptr_cellXform in
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
@@ -4079,8 +4079,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func voxelGiGetOctreeSize(voxelGi: Godot.RID) -> Godot.Vector3i {
-        Godot.Vector3i.fromMutatingGodotUnsafePointer { __temporary in
+    public func voxelGiGetOctreeSize(voxelGi: Godot.RID) -> Godot.Vector3I {
+        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -6943,7 +6943,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func skyBakePanorama(sky: Godot.RID, energy: Double, bakeIrradiance: Bool, size: Godot.Vector2i) -> Godot.Image? {
+    public func skyBakePanorama(sky: Godot.RID, energy: Double, bakeIrradiance: Bool, size: Godot.Vector2I) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         sky.withGodotUnsafeRawPointer { __ptr_sky in
         energy.withGodotUnsafeRawPointer { __ptr_energy in
@@ -7550,7 +7550,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func environmentBakePanorama(environment: Godot.RID, bakeIrradiance: Bool, size: Godot.Vector2i) -> Godot.Image? {
+    public func environmentBakePanorama(environment: Godot.RID, bakeIrradiance: Bool, size: Godot.Vector2I) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         environment.withGodotUnsafeRawPointer { __ptr_environment in
         bakeIrradiance.withGodotUnsafeRawPointer { __ptr_bakeIrradiance in
@@ -8474,7 +8474,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func bakeRenderUv2(base: Godot.RID, materialOverrides: Godot.GodotArray<Godot.RID>, imageSize: Godot.Vector2i) -> Godot.GodotArray<Godot.Image?> {
+    public func bakeRenderUv2(base: Godot.RID, materialOverrides: Godot.GodotArray<Godot.RID>, imageSize: Godot.Vector2I) -> Godot.GodotArray<Godot.Image?> {
         Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
         base.withGodotUnsafeRawPointer { __ptr_base in
         materialOverrides.withGodotUnsafeRawPointer { __ptr_materialOverrides in

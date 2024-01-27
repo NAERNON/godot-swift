@@ -373,8 +373,8 @@ open class Control: CanvasItem {
         Bool()
     }
 
-    open func _structuredTextParser(args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i>()
+    open func _structuredTextParser(args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3I> {
+        Godot.GodotArray<Godot.Vector3I>()
     }
 
     open func _getMinimumSize() -> Godot.Vector2 {

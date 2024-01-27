@@ -9,11 +9,11 @@ open class EditorResourcePreviewGenerator: RefCounted {
         Bool()
     }
 
-    open func _generate(resource: Godot.Resource?, size: Godot.Vector2i, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
+    open func _generate(resource: Godot.Resource?, size: Godot.Vector2I, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
         nil
     }
 
-    open func _generateFromPath(_ path: Godot.GodotString, size: Godot.Vector2i, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
+    open func _generateFromPath(_ path: Godot.GodotString, size: Godot.Vector2I, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
         nil
     }
 
@@ -46,7 +46,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._generate(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -57,7 +57,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._generateFromPath(
             Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            size: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}

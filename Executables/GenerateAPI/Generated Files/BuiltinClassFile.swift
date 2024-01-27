@@ -7,7 +7,7 @@ extension GeneratedFile {
         for builtinClass: GodotBuiltinClass,
         with configuration: BuildConfiguration
     ) -> GeneratedFile {
-        .init(path: "Builtin Structs/" + builtinClass.identifier + "+Bindings.swift") {
+        .init(path: "Builtin Structs/" + builtinClass.name.syntax() + "+Bindings.swift") {
             let classSize = extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!
             
             "import GodotExtensionHeaders"

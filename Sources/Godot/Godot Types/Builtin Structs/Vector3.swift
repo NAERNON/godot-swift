@@ -5,7 +5,7 @@
 ///
 /// It uses floating-point coordinates.
 ///
-/// See ``Vector3i`` for its integer counterpart.
+/// See ``Vector3I`` for its integer counterpart.
 ///
 /// >note: If double precision is needed, compile the engine and generate
 /// the Godot Swift APIs with the `double` option.
@@ -147,9 +147,9 @@ extension Vector3 {
         self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z))
     }
     
-    /// Creates a new `Vector3` from `Vector3i`.
-    public init(_ vector3i: Vector3i) {
-        self.init(x: vector3i.x, y: vector3i.y, z: vector3i.z)
+    /// Creates a new `Vector3` from `Vector3I`.
+    public init(_ vector3I: Vector3I) {
+        self.init(x: vector3I.x, y: vector3I.y, z: vector3I.z)
     }
     
     /// Creates a default-initialized `Vector3` with all components set to `0`.

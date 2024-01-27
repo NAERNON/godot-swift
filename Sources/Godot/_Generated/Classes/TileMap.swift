@@ -35,11 +35,11 @@ open class TileMap: Node2D {
         }
     }()
 
-    open func _useTileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2i) -> Bool {
+    open func _useTileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2I) -> Bool {
         Bool()
     }
 
-    open func _tileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2i, tileData: Godot.TileData?) {
+    open func _tileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2I, tileData: Godot.TileData?) {
     }
 
     internal static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
@@ -690,7 +690,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCell(layer: Int32, coords: Godot.Vector2i, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = 0) {
+    public func setCell(layer: Int32, coords: Godot.Vector2I, sourceID: Int32 = -1, atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1), alternativeTile: Int32 = 0) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
@@ -713,7 +713,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func eraseCell(layer: Int32, coords: Godot.Vector2i) {
+    public func eraseCell(layer: Int32, coords: Godot.Vector2I) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_layer, __ptr_coords) { __accessPtr in
@@ -733,7 +733,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func cellSourceID(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Int32 {
+    public func cellSourceID(layer: Int32, coords: Godot.Vector2I, useProxies: Bool = false) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
@@ -755,8 +755,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func cellAtlasCoords(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func cellAtlasCoords(layer: Int32, coords: Godot.Vector2I, useProxies: Bool = false) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         useProxies.withGodotUnsafeRawPointer { __ptr_useProxies in
@@ -777,7 +777,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func cellAlternativeTile(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Int32 {
+    public func cellAlternativeTile(layer: Int32, coords: Godot.Vector2I, useProxies: Bool = false) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
@@ -799,7 +799,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func cellTileData(layer: Int32, coords: Godot.Vector2i, useProxies: Bool = false) -> Godot.TileData? {
+    public func cellTileData(layer: Int32, coords: Godot.Vector2I, useProxies: Bool = false) -> Godot.TileData? {
         Godot.TileData?.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
@@ -821,8 +821,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func coordsForBodyRid(body: Godot.RID) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func coordsForBodyRid(body: Godot.RID) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -861,7 +861,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func pattern(layer: Int32, coordsArray: Godot.GodotArray<Godot.Vector2i>) -> Godot.TileMapPattern? {
+    public func pattern(layer: Int32, coordsArray: Godot.GodotArray<Godot.Vector2I>) -> Godot.TileMapPattern? {
         Godot.TileMapPattern?.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         coordsArray.withGodotUnsafeRawPointer { __ptr_coordsArray in
@@ -882,8 +882,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func mapPattern(positionInTilemap: Godot.Vector2i, coordsInPattern: Godot.Vector2i, pattern: Godot.TileMapPattern?) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func mapPattern(positionInTilemap: Godot.Vector2I, coordsInPattern: Godot.Vector2I, pattern: Godot.TileMapPattern?) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         positionInTilemap.withGodotUnsafeRawPointer { __ptr_positionInTilemap in
         coordsInPattern.withGodotUnsafeRawPointer { __ptr_coordsInPattern in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
@@ -905,7 +905,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setPattern(layer: Int32, position: Godot.Vector2i, pattern: Godot.TileMapPattern?) {
+    public func setPattern(layer: Int32, position: Godot.Vector2I, pattern: Godot.TileMapPattern?) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         position.withGodotUnsafeRawPointer { __ptr_position in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
@@ -927,7 +927,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCellsTerrainConnect(layer: Int32, cells: Godot.GodotArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
+    public func setCellsTerrainConnect(layer: Int32, cells: Godot.GodotArray<Godot.Vector2I>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         cells.withGodotUnsafeRawPointer { __ptr_cells in
         terrainSet.withGodotUnsafeRawPointer { __ptr_terrainSet in
@@ -950,7 +950,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCellsTerrainPath(layer: Int32, path: Godot.GodotArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
+    public func setCellsTerrainPath(layer: Int32, path: Godot.GodotArray<Godot.Vector2I>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         path.withGodotUnsafeRawPointer { __ptr_path in
         terrainSet.withGodotUnsafeRawPointer { __ptr_terrainSet in
@@ -1062,8 +1062,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func surroundingCells(coords: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func surroundingCells(coords: Godot.Vector2I) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1082,8 +1082,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedCells(layer: Int32) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedCells(layer: Int32) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1102,8 +1102,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedCellsByID(layer: Int32, sourceID: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedCellsByID(layer: Int32, sourceID: Int32 = -1, atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2I> {
+        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
@@ -1125,8 +1125,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedRect() -> Godot.Rect2i {
-        Godot.Rect2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedRect() -> Godot.Rect2I {
+        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_rect,
@@ -1143,7 +1143,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func mapToLocal(mapPosition: Godot.Vector2i) -> Godot.Vector2 {
+    public func mapToLocal(mapPosition: Godot.Vector2I) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         mapPosition.withGodotUnsafeRawPointer { __ptr_mapPosition in
         withUnsafeArgumentPackPointer(__ptr_mapPosition) { __accessPtr in
@@ -1163,8 +1163,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func localToMap(localPosition: Godot.Vector2) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func localToMap(localPosition: Godot.Vector2) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         localPosition.withGodotUnsafeRawPointer { __ptr_localPosition in
         withUnsafeArgumentPackPointer(__ptr_localPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1183,8 +1183,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func neighborCell(coords: Godot.Vector2i, neighbor: Godot.TileSet.CellNeighbor) -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func neighborCell(coords: Godot.Vector2I, neighbor: Godot.TileSet.CellNeighbor) -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         neighbor.withGodotUnsafeRawPointer { __ptr_neighbor in
         withUnsafeArgumentPackPointer(__ptr_coords, __ptr_neighbor) { __accessPtr in
@@ -1264,7 +1264,7 @@ open class TileMap: Node2D {
             Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
         ._useTileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
-            coords: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
+            coords: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _tile_data_runtime_update_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1274,7 +1274,7 @@ open class TileMap: Node2D {
             Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
         ._tileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
-            coords: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            coords: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
             tileData: Godot.TileData?.fromGodotUnsafePointer(args[2]!)
         )}
         _virtualFunctions = [

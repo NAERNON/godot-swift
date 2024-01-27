@@ -433,7 +433,7 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func setLightmapSizeHint(size: Godot.Vector2i) {
+    public func setLightmapSizeHint(size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -452,8 +452,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func lightmapSizeHint() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func lightmapSizeHint() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lightmap_size_hint,

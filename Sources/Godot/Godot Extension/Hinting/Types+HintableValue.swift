@@ -86,9 +86,9 @@ extension Vector2: HintableValue {
     public static var defaultHint: Hint<Self> { .typed }
 }
 
-// MARK: - Vector2i
+// MARK: - Vector2I
 
-extension Vector2i: HintableValue {
+extension Vector2I: HintableValue {
     public typealias HintingValue = Self
     public static var defaultHint: Hint<Self> { .typed }
 }
@@ -100,9 +100,9 @@ extension Rect2: HintableValue {
     public static var defaultHint: Hint<Self> { .typed }
 }
 
-// MARK: - Rect2i
+// MARK: - Rect2I
 
-extension Rect2i: HintableValue {
+extension Rect2I: HintableValue {
     public typealias HintingValue = Self
     public static var defaultHint: Hint<Self> { .typed }
 }
@@ -114,9 +114,9 @@ extension Vector3: HintableValue {
     public static var defaultHint: Hint<Self> { .typed }
 }
 
-// MARK: - Vector3i
+// MARK: - Vector3I
 
-extension Vector3i: HintableValue {
+extension Vector3I: HintableValue {
     public typealias HintingValue = Self
     public static var defaultHint: Hint<Self> { .typed }
 }
@@ -135,9 +135,9 @@ extension Vector4: HintableValue {
     public static var defaultHint: Hint<Self> { .typed }
 }
 
-// MARK: - Vector4i
+// MARK: - Vector4I
 
-extension Vector4i: HintableValue {
+extension Vector4I: HintableValue {
     public typealias HintingValue = Self
     public static var defaultHint: Hint<Self> { .typed }
 }

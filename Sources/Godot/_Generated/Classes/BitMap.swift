@@ -12,7 +12,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func create(size: Godot.Vector2i) {
+    public func create(size: Godot.Vector2I) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -52,7 +52,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func setBitv(position: Godot.Vector2i, bit: Bool) {
+    public func setBitv(position: Godot.Vector2I, bit: Bool) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         bit.withGodotUnsafeRawPointer { __ptr_bit in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_bit) { __accessPtr in
@@ -93,7 +93,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func bitv(position: Godot.Vector2i) -> Bool {
+    public func bitv(position: Godot.Vector2I) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -134,7 +134,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func setBitRect(_ rect: Godot.Rect2i, bit: Bool) {
+    public func setBitRect(_ rect: Godot.Rect2I, bit: Bool) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         bit.withGodotUnsafeRawPointer { __ptr_bit in
         withUnsafeArgumentPackPointer(__ptr_rect, __ptr_bit) { __accessPtr in
@@ -172,8 +172,8 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func size() -> Godot.Vector2i {
-        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+    public func size() -> Godot.Vector2I {
+        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -190,7 +190,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func resize(newSize: Godot.Vector2i) {
+    public func resize(newSize: Godot.Vector2I) {
         newSize.withGodotUnsafeRawPointer { __ptr_newSize in
         withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,7 +209,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func growMask(pixels: Int32, rect: Godot.Rect2i) {
+    public func growMask(pixels: Int32, rect: Godot.Rect2I) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_pixels, __ptr_rect) { __accessPtr in
@@ -247,7 +247,7 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func opaqueToPolygons(rect: Godot.Rect2i, epsilon: Double = 2.0) -> Godot.GodotArray<Godot.PackedVector2Array> {
+    public func opaqueToPolygons(rect: Godot.Rect2I, epsilon: Double = 2.0) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         epsilon.withGodotUnsafeRawPointer { __ptr_epsilon in

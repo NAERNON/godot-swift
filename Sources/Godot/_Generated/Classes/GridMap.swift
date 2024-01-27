@@ -511,7 +511,7 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func setCellItem(position: Godot.Vector3i, item: Int32, orientation: Int32 = 0) {
+    public func setCellItem(position: Godot.Vector3I, item: Int32, orientation: Int32 = 0) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         item.withGodotUnsafeRawPointer { __ptr_item in
         orientation.withGodotUnsafeRawPointer { __ptr_orientation in
@@ -532,7 +532,7 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func cellItem(position: Godot.Vector3i) -> Int32 {
+    public func cellItem(position: Godot.Vector3I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -552,7 +552,7 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func cellItemOrientation(position: Godot.Vector3i) -> Int32 {
+    public func cellItemOrientation(position: Godot.Vector3I) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -572,7 +572,7 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func cellItemBasis(position: Godot.Vector3i) -> Godot.Basis {
+    public func cellItemBasis(position: Godot.Vector3I) -> Godot.Basis {
         Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -632,8 +632,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func localToMap(localPosition: Godot.Vector3) -> Godot.Vector3i {
-        Godot.Vector3i.fromMutatingGodotUnsafePointer { __temporary in
+    public func localToMap(localPosition: Godot.Vector3) -> Godot.Vector3I {
+        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
         localPosition.withGodotUnsafeRawPointer { __ptr_localPosition in
         withUnsafeArgumentPackPointer(__ptr_localPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -652,7 +652,7 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func mapToLocal(mapPosition: Godot.Vector3i) -> Godot.Vector3 {
+    public func mapToLocal(mapPosition: Godot.Vector3I) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         mapPosition.withGodotUnsafeRawPointer { __ptr_mapPosition in
         withUnsafeArgumentPackPointer(__ptr_mapPosition) { __accessPtr in
@@ -820,8 +820,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func usedCells() -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedCells() -> Godot.GodotArray<Godot.Vector3I> {
+        Godot.GodotArray<Godot.Vector3I>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells,
@@ -838,8 +838,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func usedCellsByItem(_ item: Int32) -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i>.fromMutatingGodotUnsafePointer { __temporary in
+    public func usedCellsByItem(_ item: Int32) -> Godot.GodotArray<Godot.Vector3I> {
+        Godot.GodotArray<Godot.Vector3I>.fromMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafeArgumentPackPointer(__ptr_item) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
