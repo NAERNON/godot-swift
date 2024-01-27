@@ -74,7 +74,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addMesh(_ mesh: Godot.Mesh?, material: Godot.Material? = nil, transform: Godot.Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0), skeleton: Godot.SkinReference? = nil) {
+    public func addMesh(_ mesh: Godot.Mesh?, material: Godot.Material? = nil, transform: Godot.Transform3D = .identity, skeleton: Godot.SkinReference? = nil) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         material.withGodotUnsafeRawPointer { __ptr_material in

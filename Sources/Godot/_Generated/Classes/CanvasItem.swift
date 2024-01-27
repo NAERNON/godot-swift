@@ -1165,7 +1165,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMesh(_ mesh: Godot.Mesh?, texture: Godot.Texture2D?, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0), modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawMesh(_ mesh: Godot.Mesh?, texture: Godot.Texture2D?, transform: Godot.Transform2D = .identity, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         texture.withGodotUnsafeRawPointer { __ptr_texture in

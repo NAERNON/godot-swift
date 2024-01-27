@@ -64,27 +64,39 @@ struct GodotConstant: Decodable, Equatable {
         let (decomposedType, parameters) = decomposeInitParameters()
         switch decomposedType {
         case "Basis":
+            if parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1"] {
+                return ".identity"
+            }
             let xVector = vectorInit(with: parameters[0..<3])
             let yVector = vectorInit(with: parameters[3..<6])
             let zVector = vectorInit(with: parameters[6..<9])
             return "Basis(x: \(xVector), y: \(yVector), z: \(zVector))"
         case "Projection":
+            if parameters == ["1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1"] {
+                return ".identity"
+            }
             let xVector = vectorInit(with: parameters[0..<4])
             let yVector = vectorInit(with: parameters[4..<8])
             let zVector = vectorInit(with: parameters[8..<12])
             let wVector = vectorInit(with: parameters[12..<16])
             return "Projection(x: \(xVector), y: \(yVector), z: \(zVector), w: \(wVector))"
         case "Transform2D":
+            if parameters == ["1", "0", "0", "1", "0", "0"] {
+                return ".identity"
+            }
             let xVector = vectorInit(with: parameters[0..<2])
             let yVector = vectorInit(with: parameters[2..<4])
             let originVector = vectorInit(with: parameters[4..<6])
-            return "Transform2D(x: \(xVector), y: \(yVector), origin: \(originVector))"
+            return "Transform2D(xAxis: \(xVector), yAxis: \(yVector), origin: \(originVector))"
         case "Transform3D":
+            if parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1", "0", "0", "0"] {
+                return ".identity"
+            }
             let xVector = vectorInit(with: parameters[0..<3])
             let yVector = vectorInit(with: parameters[3..<6])
             let zVector = vectorInit(with: parameters[6..<9])
             let originVector = vectorInit(with: parameters[9..<12])
-            return "Transform3D(x: \(xVector), y: \(yVector), z: \(zVector), origin: \(originVector))"
+            return "Transform3D(xAxis: \(xVector), yAxis: \(yVector), zAxis: \(zVector), origin: \(originVector))"
         case "Color":
             return recomposeInitParameters(
                 forType: decomposedType,
@@ -184,8 +196,8 @@ struct GodotConstant: Decodable, Equatable {
         let startIndex = parameters.startIndex
         return switch parameters.count {
         case 2: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]))"
-        case 3: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]))"
-        case 4: "Vector2(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]), w: \(parameters[startIndex + 3]))"
+        case 3: "Vector3(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]))"
+        case 4: "Vector4(x: \(parameters[startIndex + 0]), y: \(parameters[startIndex + 1]), z: \(parameters[startIndex + 2]), w: \(parameters[startIndex + 3]))"
         default: fatalError()
         }
     }

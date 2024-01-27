@@ -9264,7 +9264,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddMesh(item: Godot.RID, mesh: Godot.RID, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0), modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), texture: Godot.RID = RID()) {
+    public func canvasItemAddMesh(item: Godot.RID, mesh: Godot.RID, transform: Godot.Transform2D = .identity, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), texture: Godot.RID = RID()) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         transform.withGodotUnsafeRawPointer { __ptr_transform in

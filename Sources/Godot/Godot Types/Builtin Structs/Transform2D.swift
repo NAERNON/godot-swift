@@ -80,23 +80,11 @@ extension Transform2D {
         self = .identity
     }
     
-    internal init<T>(
-        _ xAxisX: T, _ xAxisY: T,
-        _ yAxisX: T, _ yAxisY: T,
-        _ originX: T, _ originY: T
-    ) where T : BinaryFloatingPoint {
-        self.init(
-            x: Vector2(x: xAxisX, y: xAxisY),
-            y: Vector2(x: yAxisX, y: yAxisY),
-            origin: Vector2(x: originX, y: originY)
-        )
-    }
-    
-    internal init<T>(
-        _ xAxisX: T, _ xAxisY: T,
-        _ yAxisX: T, _ yAxisY: T,
-        _ originX: T, _ originY: T
-    ) where T : BinaryInteger {
+    internal init(
+        _ xAxisX: Real, _ xAxisY: Real,
+        _ yAxisX: Real, _ yAxisY: Real,
+        _ originX: Real, _ originY: Real
+    ) {
         self.init(
             x: Vector2(x: xAxisX, y: xAxisY),
             y: Vector2(x: yAxisX, y: yAxisY),

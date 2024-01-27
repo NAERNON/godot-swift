@@ -49,7 +49,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func findVariation<Value1: VariantStorable, Value2: VariantStorable>(variationCoordinates: Godot.GodotDictionary<Value1, Value2>, faceIndex: Int32 = 0, strength: Double = 0.0, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0), spacingTop: Int32 = 0, spacingBottom: Int32 = 0, spacingSpace: Int32 = 0, spacingGlyph: Int32 = 0) -> Godot.RID {
+    public func findVariation<Value1: VariantStorable, Value2: VariantStorable>(variationCoordinates: Godot.GodotDictionary<Value1, Value2>, faceIndex: Int32 = 0, strength: Double = 0.0, transform: Godot.Transform2D = .identity, spacingTop: Int32 = 0, spacingBottom: Int32 = 0, spacingSpace: Int32 = 0, spacingGlyph: Int32 = 0) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         variationCoordinates.withGodotUnsafeRawPointer { __ptr_variationCoordinates in
         faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in

@@ -83,27 +83,12 @@ extension Transform3D {
         self = Self._constructor_projection(from: projection)
     }
     
-    internal init<T>(
-        _ xAxisX: T, _ xAxisY: T, _ xAxisZ: T,
-        _ yAxisX: T, _ yAxisY: T, _ yAxisZ: T,
-        _ zAxisX: T, _ zAxisY: T, _ zAxisZ: T,
-        _ originX: T, _ originY: T, _ originZ: T
-    ) where T : BinaryFloatingPoint {
-        self.init(
-            basis: Basis(
-                x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
-                y: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
-                z: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)
-            ),
-            origin: Vector3(x: originX, y: originY, z: originZ))
-    }
-    
-    internal init<T>(
-        xAxisX: T, xAxisY: T, xAxisZ: T,
-        yAxisX: T, yAxisY: T, yAxisZ: T,
-        zAxisX: T, zAxisY: T, zAxisZ: T,
-        originX: T, originY: T, originZ: T
-    ) where T : BinaryInteger {
+    internal init(
+        _ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real,
+        _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real,
+        _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real,
+        _ originX: Real, _ originY: Real, _ originZ: Real
+    ) {
         self.init(
             basis: Basis(
                 x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
@@ -118,16 +103,16 @@ extension Transform3D {
     /// The identity `Transform3D` with no translation, rotation or scaling applied.
     ///
     /// When applied to other data structures, `identity` performs no transformation.
-    public static let identity: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
+    public static let identity: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
     
     /// The `Transform3D` with mirroring applied perpendicular to the YZ plane.
-    public static let flipX: Transform3D = Transform3D(xAxisX: -1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
+    public static let flipX: Transform3D = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
     
     /// The `Transform3D` with mirroring applied perpendicular to the XZ plane.
-    public static let flipY: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: -1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0)
+    public static let flipY: Transform3D = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)
     
     /// The `Transform3D` with mirroring applied perpendicular to the XY plane.
-    public static let flipZ: Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: -1, originX: 0, originY: 0, originZ: 0)
+    public static let flipZ: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
     
     // MARK: Operators
     

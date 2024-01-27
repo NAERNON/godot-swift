@@ -633,7 +633,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaAddShape(area: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0), disabled: Bool = false) {
+    public func areaAddShape(area: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = .identity, disabled: Bool = false) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
@@ -1219,7 +1219,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddShape(body: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0), disabled: Bool = false) {
+    public func bodyAddShape(body: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = .identity, disabled: Bool = false) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
