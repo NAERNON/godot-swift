@@ -281,8 +281,8 @@ extension AABB {
         __method_binding_get_center(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _volume() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _volume() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_volume(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -369,7 +369,7 @@ extension AABB {
         __method_binding_expand(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _grow(by: Scalar) -> Godot.AABB {
+    internal func _grow(by: FloatingPointType) -> Godot.AABB {
         return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         by.withGodotUnsafeRawPointer { __ptr_by in
         withUnsafeArgumentPackPointer(__ptr_by) { __accessPtr in
@@ -397,8 +397,8 @@ extension AABB {
         __method_binding_get_longest_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _longestAxisSize() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _longestAxisSize() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_longest_axis_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -415,8 +415,8 @@ extension AABB {
         __method_binding_get_shortest_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _shortestAxisSize() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _shortestAxisSize() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_shortest_axis_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

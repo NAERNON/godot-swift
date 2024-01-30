@@ -65,25 +65,25 @@ public struct Quaternion {
     /// X component of the quaternion (imaginary `i` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var x: Scalar
+    public var x: FloatingPointType
     
     /// Y component of the quaternion (imaginary `j` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var y: Scalar
+    public var y: FloatingPointType
     
     /// Z component of the quaternion (imaginary `k` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var z: Scalar
+    public var z: FloatingPointType
     
     /// W component of the quaternion (real part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var w: Scalar
+    public var w: FloatingPointType
     
     /// Creates a quaternion defined by the given values.
-    public init(x: Scalar, y: Scalar, z: Scalar, w: Scalar) {
+    public init(x: FloatingPointType, y: FloatingPointType, z: FloatingPointType, w: FloatingPointType) {
         self.x = x
         self.y = y
         self.z = z
@@ -96,12 +96,12 @@ extension Quaternion {
     
     /// Creates a quaternion defined by the given values.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z), w: FloatingPointType(w))
     }
     
     /// Creates a quaternion defined by the given values.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z), w: FloatingPointType(w))
     }
     
     /// Creates a quaternion from the given `Basis`.
@@ -115,7 +115,7 @@ extension Quaternion {
     ///   - axis: The axis around which the quaternion will rotate.
     ///   Must be a normalized vector.
     ///   - angle: The rotation angle.
-    public init(axis: Vector3, angle: Scalar) {
+    public init(axis: Vector3, angle: FloatingPointType) {
         self = Self._constructor_vector3_float(axis: axis, angle: angle)
     }
     
@@ -126,7 +126,7 @@ extension Quaternion {
     ///   Must be a normalized vector.
     ///   - angle: The rotation angle.
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self.init(axis: axis, angle: Scalar(angle))
+        self.init(axis: axis, angle: FloatingPointType(angle))
     }
     
     /// Creates a quaternion that will rotate around the given axis by the specified angle.
@@ -136,7 +136,7 @@ extension Quaternion {
     ///   Must be a normalized vector.
     ///   - angle: The rotation angle.
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
-        self.init(axis: axis, angle: Scalar(angle))
+        self.init(axis: axis, angle: FloatingPointType(angle))
     }
     
     /// Creates a quaternion representing the shortest arc between
@@ -196,7 +196,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own,
     /// but it can be used as a part of a larger expression.
-    public static func * (lhs: Quaternion, rhs: Scalar) -> Quaternion {
+    public static func * (lhs: Quaternion, rhs: FloatingPointType) -> Quaternion {
         Self._operatorMultiply(lhs, rhs)
     }
     
@@ -204,7 +204,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own,
     /// but it can be used as a part of a larger expression.
-    public static func * (lhs: Scalar, rhs: Quaternion) -> Quaternion {
+    public static func * (lhs: FloatingPointType, rhs: Quaternion) -> Quaternion {
         rhs * lhs
     }
     
@@ -220,7 +220,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own
     ///  but it can be used as a part of a larger expression.
-    public static func / (lhs: Quaternion, rhs: Scalar) -> Quaternion {
+    public static func / (lhs: Quaternion, rhs: FloatingPointType) -> Quaternion {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -258,12 +258,12 @@ extension Quaternion {
     // MARK: Methods & variables
     
     /// The length of the quaternion.
-    public var length: Scalar {
+    public var length: FloatingPointType {
         _length()
     }
     
     /// The length of the quaternion, squared.
-    public var lengthSquared: Scalar {
+    public var lengthSquared: FloatingPointType {
         _lengthSquared()
     }
     
@@ -308,12 +308,12 @@ extension Quaternion {
     /// >important: The magnitude of the floating-point error for this
     /// method is abnormally high, so methods that use approximation
     /// will not work reliably.
-    public func angle(to other: Quaternion) -> Scalar {
+    public func angle(to other: Quaternion) -> FloatingPointType {
         _angle(to: other)
     }
     
     /// Returns the dot product of two quaternions.
-    public func dot(_ other: Quaternion) -> Scalar {
+    public func dot(_ other: Quaternion) -> FloatingPointType {
         _dot(with: other)
     }
     
@@ -329,7 +329,7 @@ extension Quaternion {
     /// ## See Also
     ///
     /// - ``slerpni(to:weight:)``
-    public func slerp(to other: Quaternion, weight: Scalar) -> Quaternion {
+    public func slerp(to other: Quaternion, weight: FloatingPointType) -> Quaternion {
         _slerp(to: other, weight: weight)
     }
     
@@ -346,7 +346,7 @@ extension Quaternion {
     /// ## See Also
     ///
     /// - ``slerp(to:weight:)``
-    public func slerpni(to other: Quaternion, weight: Scalar) -> Quaternion {
+    public func slerpni(to other: Quaternion, weight: FloatingPointType) -> Quaternion {
         _slerpni(to: other, weight: weight)
     }
     
@@ -362,7 +362,7 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: Scalar
+        weight: FloatingPointType
     ) -> Quaternion {
         _sphericalCubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -382,10 +382,10 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: Scalar,
-        bT: Scalar,
-        preAT: Scalar,
-        postBT: Scalar
+        weight: FloatingPointType,
+        bT: FloatingPointType,
+        preAT: FloatingPointType,
+        postBT: FloatingPointType
     ) -> Quaternion {
         _sphericalCubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
     }
@@ -409,14 +409,14 @@ extension Quaternion {
         _axis()
     }
     
-    public var angle: Scalar {
+    public var angle: FloatingPointType {
         _angle()
     }
     
     /// Accesses quaternion component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`, `w`.
-    public subscript(index: Int) -> Scalar {
+    public subscript(index: Int) -> FloatingPointType {
         get {
             switch index {
             case 0: x
@@ -451,10 +451,10 @@ extension Quaternion: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Scalar.self)
-        let y = try container.decode(Scalar.self)
-        let z = try container.decode(Scalar.self)
-        let w = try container.decode(Scalar.self)
+        let x = try container.decode(FloatingPointType.self)
+        let y = try container.decode(FloatingPointType.self)
+        let z = try container.decode(FloatingPointType.self)
+        let w = try container.decode(FloatingPointType.self)
         self.init(x: x, y: y, z: z, w: w)
     }
 }

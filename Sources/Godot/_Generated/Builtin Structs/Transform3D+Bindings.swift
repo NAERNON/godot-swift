@@ -244,7 +244,7 @@ extension Transform3D {
         __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Scalar) -> Godot.Transform3D {
+    static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: FloatingPointType) -> Godot.Transform3D {
         Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -332,7 +332,7 @@ extension Transform3D {
         __method_binding_orthonormalized(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _rotated(axis: Godot.Vector3, angle: Scalar) -> Godot.Transform3D {
+    internal func _rotated(axis: Godot.Vector3, angle: FloatingPointType) -> Godot.Transform3D {
         return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
@@ -341,7 +341,7 @@ extension Transform3D {
         __method_binding_rotated(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _rotatedLocal(axis: Godot.Vector3, angle: Scalar) -> Godot.Transform3D {
+    internal func _rotatedLocal(axis: Godot.Vector3, angle: FloatingPointType) -> Godot.Transform3D {
         return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
@@ -392,7 +392,7 @@ extension Transform3D {
         __method_binding_looking_at(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 3)}}}}}}
     }
 
-    internal func _interpolateWith(xform: Godot.Transform3D, weight: Scalar) -> Godot.Transform3D {
+    internal func _interpolateWith(xform: Godot.Transform3D, weight: FloatingPointType) -> Godot.Transform3D {
         return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         weight.withGodotUnsafeRawPointer { __ptr_weight in

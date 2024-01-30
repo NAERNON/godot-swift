@@ -161,7 +161,7 @@ extension Plane {
         return __temporary
     }
 
-    static internal func _constructor_vector3_float(normal: Godot.Vector3, d: Scalar) -> Self {
+    static internal func _constructor_vector3_float(normal: Godot.Vector3, d: FloatingPointType) -> Self {
         var __temporary = Plane()
         normal.withGodotUnsafeRawPointer { __ptr_normal in
         d.withGodotUnsafeRawPointer { __ptr_d in
@@ -219,7 +219,7 @@ extension Plane {
         return __temporary
     }
 
-    static internal func _constructor_float_float_float_float(a: Scalar, b: Scalar, c: Scalar, d: Scalar) -> Self {
+    static internal func _constructor_float_float_float_float(a: FloatingPointType, b: FloatingPointType, c: FloatingPointType, d: FloatingPointType) -> Self {
         var __temporary = Plane()
         a.withGodotUnsafeRawPointer { __ptr_a in
         b.withGodotUnsafeRawPointer { __ptr_b in
@@ -341,15 +341,15 @@ extension Plane {
         __method_binding_is_point_over(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceTo(point: Godot.Vector3) -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _distanceTo(point: Godot.Vector3) -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_distance_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _hasPoint(_ point: Godot.Vector3, tolerance: Scalar = 1e-05) -> Bool {
+    internal func _hasPoint(_ point: Godot.Vector3, tolerance: FloatingPointType = 1e-05) -> Bool {
         return Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         tolerance.withGodotUnsafeRawPointer { __ptr_tolerance in

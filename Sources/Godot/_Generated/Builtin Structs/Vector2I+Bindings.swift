@@ -259,14 +259,14 @@ extension Vector2I {
         __operator_binding_module_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Vector2I, _ rhs: Scalar) -> Godot.Vector2 {
+    static internal func _operatorMultiply(_ lhs: Godot.Vector2I, _ rhs: FloatingPointType) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Vector2I, _ rhs: Scalar) -> Godot.Vector2 {
+    static internal func _operatorDivide(_ lhs: Godot.Vector2I, _ rhs: FloatingPointType) -> Godot.Vector2 {
         Vector2.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -375,8 +375,8 @@ extension Vector2I {
         __indexed_setter(__ptr_self, index, __ptr_value)}}
     }
 
-    internal func _aspect() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _aspect() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_aspect(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -393,8 +393,8 @@ extension Vector2I {
         __method_binding_min_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _length() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _length() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

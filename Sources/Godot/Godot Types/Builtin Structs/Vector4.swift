@@ -80,19 +80,19 @@
 /// - ``>=(_:_:)``
 public struct Vector4 {
     /// The vector's X component.
-    public var x: Scalar
+    public var x: FloatingPointType
     
     /// The vector's Y component.
-    public var y: Scalar
+    public var y: FloatingPointType
     
     /// The vector's Z component.
-    public var z: Scalar
+    public var z: FloatingPointType
     
     /// The vector's W component.
-    public var w: Scalar
+    public var w: FloatingPointType
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
-    public init(x: Scalar, y: Scalar, z: Scalar, w: Scalar) {
+    public init(x: FloatingPointType, y: FloatingPointType, z: FloatingPointType, w: FloatingPointType) {
         self.x = x
         self.y = y
         self.z = z
@@ -105,12 +105,12 @@ extension Vector4 {
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z), w: FloatingPointType(w))
     }
     
     /// Creates a new `Vector4` from the given `x`,`y`,`z`, `w`.
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z), w: Scalar(w))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z), w: FloatingPointType(w))
     }
     
     /// Creates a new `Vector4` from `Vector4I`.
@@ -167,12 +167,12 @@ extension Vector4 {
     }
     
     /// Multiplies each component of a `Vector4` by a value.
-    public static func * (lhs: Vector4, rhs: Scalar) -> Vector4 {
+    public static func * (lhs: Vector4, rhs: FloatingPointType) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector4` by a value.
-    public static func * (lhs: Scalar, rhs: Vector4) -> Vector4 {
+    public static func * (lhs: FloatingPointType, rhs: Vector4) -> Vector4 {
         rhs * lhs
     }
     
@@ -182,7 +182,7 @@ extension Vector4 {
     }
     
     /// Divides each component of a `Vector4` by a value.
-    public static func / (lhs: Vector4, rhs: Scalar) -> Vector4 {
+    public static func / (lhs: Vector4, rhs: FloatingPointType) -> Vector4 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -309,7 +309,7 @@ extension Vector4 {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Scalar {
+    public var length: FloatingPointType {
         _length()
     }
     
@@ -317,7 +317,7 @@ extension Vector4 {
     ///
     /// This property runs faster than ``length``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var lengthSquared: Scalar {
+    public var lengthSquared: FloatingPointType {
         _lengthSquared()
     }
     
@@ -354,7 +354,7 @@ extension Vector4 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func lerp(to other: Vector4, weight: Scalar) -> Vector4 {
+    public func lerp(to other: Vector4, weight: FloatingPointType) -> Vector4 {
         _lerp(to: other, weight: weight)
     }
     
@@ -369,7 +369,7 @@ extension Vector4 {
         b: Vector4,
         preA: Vector4,
         postB: Vector4,
-        weight: Scalar
+        weight: FloatingPointType
     ) -> Vector4 {
         _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -387,17 +387,17 @@ extension Vector4 {
         b: Vector4,
         preA: Vector4,
         postB: Vector4,
-        weight: Scalar,
-        bT: Scalar,
-        preAT: Scalar,
-        postBT: Scalar
+        weight: FloatingPointType,
+        bT: FloatingPointType,
+        preAT: FloatingPointType,
+        postBT: FloatingPointType
     ) -> Vector4 {
         _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
     }
     
     /// Returns a vector composed of the ``fposmod(x:y:)``
     /// of the vector's components and `mod`.
-    public func posmod(_ mod: Scalar) -> Vector4 {
+    public func posmod(_ mod: FloatingPointType) -> Vector4 {
         _posmod(mod: mod)
     }
     
@@ -450,7 +450,7 @@ extension Vector4 {
     }
     
     /// Returns the distance between the vector and another one.
-    public func distance(to other: Vector4) -> Scalar {
+    public func distance(to other: Vector4) -> FloatingPointType {
         _distance(to: other)
     }
     
@@ -458,12 +458,12 @@ extension Vector4 {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector4) -> Scalar {
+    public func distanceSquared(to other: Vector4) -> FloatingPointType {
         _distanceSquared(to: other)
     }
     
     /// Returns the dot product of the vector and another one.
-    public func dot(_ other: Vector4) -> Scalar {
+    public func dot(_ other: Vector4) -> FloatingPointType {
         _dot(with: other)
     }
     
@@ -493,7 +493,7 @@ extension Vector4 {
     }
     
     /// Accesses the vector component on the given axis.
-    public subscript(axis: Axis4D) -> Scalar {
+    public subscript(axis: Axis4D) -> FloatingPointType {
         get {
             switch axis {
             case .x: x
@@ -528,10 +528,10 @@ extension Vector4: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(Scalar.self)
-        y = try container.decode(Scalar.self)
-        z = try container.decode(Scalar.self)
-        w = try container.decode(Scalar.self)
+        x = try container.decode(FloatingPointType.self)
+        y = try container.decode(FloatingPointType.self)
+        z = try container.decode(FloatingPointType.self)
+        w = try container.decode(FloatingPointType.self)
     }
 }
 

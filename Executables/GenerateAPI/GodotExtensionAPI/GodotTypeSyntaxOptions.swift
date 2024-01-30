@@ -8,8 +8,8 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let floatAsDouble =
         GodotTypeSyntaxOptions(rawValue: 1 << 0)
     
-    /// A `float` is translated to `Scalar`.
-    static let floatAsScalar =
+    /// A `float` is translated to the typealias dependent on the build configuration.
+    static let floatUseBuildConfiguration =
         GodotTypeSyntaxOptions(rawValue: 1 << 1)
     
     /// All types are immutable.

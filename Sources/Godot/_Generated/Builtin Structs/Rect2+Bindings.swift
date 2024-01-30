@@ -188,7 +188,7 @@ extension Rect2 {
         return __temporary
     }
 
-    static internal func _constructor_float_float_float_float(x: Scalar, y: Scalar, width: Scalar, height: Scalar) -> Self {
+    static internal func _constructor_float_float_float_float(x: FloatingPointType, y: FloatingPointType, width: FloatingPointType, height: FloatingPointType) -> Self {
         var __temporary = Rect2()
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -270,8 +270,8 @@ extension Rect2 {
         __method_binding_get_center(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _area() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _area() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_area(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -345,7 +345,7 @@ extension Rect2 {
         __method_binding_expand(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _grow(amount: Scalar) -> Godot.Rect2 {
+    internal func _grow(amount: FloatingPointType) -> Godot.Rect2 {
         return Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
@@ -353,7 +353,7 @@ extension Rect2 {
         __method_binding_grow(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _growSide(_ side: Int, amount: Scalar) -> Godot.Rect2 {
+    internal func _growSide(_ side: Int, amount: FloatingPointType) -> Godot.Rect2 {
         return Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         side.withGodotUnsafeRawPointer { __ptr_side in
         amount.withGodotUnsafeRawPointer { __ptr_amount in
@@ -362,7 +362,7 @@ extension Rect2 {
         __method_binding_grow_side(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _growIndividual(left: Scalar, top: Scalar, right: Scalar, bottom: Scalar) -> Godot.Rect2 {
+    internal func _growIndividual(left: FloatingPointType, top: FloatingPointType, right: FloatingPointType, bottom: FloatingPointType) -> Godot.Rect2 {
         return Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         left.withGodotUnsafeRawPointer { __ptr_left in
         top.withGodotUnsafeRawPointer { __ptr_top in

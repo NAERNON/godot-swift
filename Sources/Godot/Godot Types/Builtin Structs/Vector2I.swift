@@ -186,12 +186,12 @@ extension Vector2I {
     }
     
     /// Multiplies each component of a `Vector2I` by a value.
-    public static func * (lhs: Vector2I, rhs: Scalar) -> Vector2 {
+    public static func * (lhs: Vector2I, rhs: FloatingPointType) -> Vector2 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector2I` by a value.
-    public static func * (lhs: Scalar, rhs: Vector2I) -> Vector2 {
+    public static func * (lhs: FloatingPointType, rhs: Vector2I) -> Vector2 {
         rhs * lhs
     }
     
@@ -201,7 +201,7 @@ extension Vector2I {
     }
     
     /// Divides each component of a `Vector2I` by a value.
-    public static func / (lhs: Vector2I, rhs: Scalar) -> Vector2 {
+    public static func / (lhs: Vector2I, rhs: FloatingPointType) -> Vector2 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -302,7 +302,7 @@ extension Vector2I {
     // MARK: Methods & variables
     
     /// The aspect ratio of this vector, the ratio of `x` to `y`.
-    public var aspect: Scalar {
+    public var aspect: FloatingPointType {
         _aspect()
     }
     
@@ -321,7 +321,7 @@ extension Vector2I {
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Scalar {
+    public var length: FloatingPointType {
         _length()
     }
     

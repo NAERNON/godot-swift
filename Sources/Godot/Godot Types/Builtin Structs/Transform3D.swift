@@ -84,10 +84,10 @@ extension Transform3D {
     }
     
     internal init(
-        _ xAxisX: Scalar, _ xAxisY: Scalar, _ xAxisZ: Scalar,
-        _ yAxisX: Scalar, _ yAxisY: Scalar, _ yAxisZ: Scalar,
-        _ zAxisX: Scalar, _ zAxisY: Scalar, _ zAxisZ: Scalar,
-        _ originX: Scalar, _ originY: Scalar, _ originZ: Scalar
+        _ xAxisX: FloatingPointType, _ xAxisY: FloatingPointType, _ xAxisZ: FloatingPointType,
+        _ yAxisX: FloatingPointType, _ yAxisY: FloatingPointType, _ yAxisZ: FloatingPointType,
+        _ zAxisX: FloatingPointType, _ zAxisY: FloatingPointType, _ zAxisZ: FloatingPointType,
+        _ originX: FloatingPointType, _ originY: FloatingPointType, _ originZ: FloatingPointType
     ) {
         self.init(
             basis: Basis(
@@ -138,13 +138,13 @@ extension Transform3D {
     
     /// This operator multiplies all components of the `Transform3D`,
     /// including the origin vector, which scales it uniformly.
-    public static func * (lhs: Transform3D, rhs: Scalar) -> Transform3D {
+    public static func * (lhs: Transform3D, rhs: FloatingPointType) -> Transform3D {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// This operator multiplies all components of the `Transform3D`,
     /// including the origin vector, which scales it uniformly.
-    public static func * (lhs: Scalar, rhs: Transform3D) -> Transform3D {
+    public static func * (lhs: FloatingPointType, rhs: Transform3D) -> Transform3D {
         rhs * lhs
     }
     
@@ -213,7 +213,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public func rotated(by angle: Scalar, around axis: Vector3) -> Transform3D {
+    public func rotated(by angle: FloatingPointType, around axis: Vector3) -> Transform3D {
         _rotated(axis: axis, angle: angle)
     }
     
@@ -228,7 +228,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public func rotatedLocal(by angle: Scalar, around axis: Vector3) -> Transform3D {
+    public func rotatedLocal(by angle: FloatingPointType, around axis: Vector3) -> Transform3D {
         _rotatedLocal(axis: axis, angle: angle)
     }
     
@@ -306,7 +306,7 @@ extension Transform3D {
     /// - Parameters:
     ///   - other: The transform to interpolate with.
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
-    public func interpolation(with other: Transform3D, weight: Scalar) -> Transform3D {
+    public func interpolation(with other: Transform3D, weight: FloatingPointType) -> Transform3D {
         _interpolateWith(xform: other, weight: weight)
     }
     

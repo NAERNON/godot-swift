@@ -220,7 +220,7 @@ struct GodotBuiltinClass: Decodable {
         } else {
             [
                 .optionalClasses, .prefixByGodot,
-                .floatAsScalar,
+                .floatUseBuildConfiguration,
                 .genericArrayOnVariant,
                 .genericDictionaryOnVariant
             ]

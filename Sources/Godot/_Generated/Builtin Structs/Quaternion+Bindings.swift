@@ -225,7 +225,7 @@ extension Quaternion {
         return __temporary
     }
 
-    static internal func _constructor_vector3_float(axis: Godot.Vector3, angle: Scalar) -> Self {
+    static internal func _constructor_vector3_float(axis: Godot.Vector3, angle: FloatingPointType) -> Self {
         var __temporary = Quaternion()
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
@@ -263,7 +263,7 @@ extension Quaternion {
         return __temporary
     }
 
-    static internal func _constructor_float_float_float_float(x: Scalar, y: Scalar, z: Scalar, w: Scalar) -> Self {
+    static internal func _constructor_float_float_float_float(x: FloatingPointType, y: FloatingPointType, z: FloatingPointType, w: FloatingPointType) -> Self {
         var __temporary = Quaternion()
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -330,14 +330,14 @@ extension Quaternion {
         __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Quaternion, _ rhs: Scalar) -> Godot.Quaternion {
+    static internal func _operatorMultiply(_ lhs: Godot.Quaternion, _ rhs: FloatingPointType) -> Godot.Quaternion {
         Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorDivide(_ lhs: Godot.Quaternion, _ rhs: Scalar) -> Godot.Quaternion {
+    static internal func _operatorDivide(_ lhs: Godot.Quaternion, _ rhs: FloatingPointType) -> Godot.Quaternion {
         Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -400,25 +400,25 @@ extension Quaternion {
         __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    internal func _getValue(at index: GDExtensionInt) -> Scalar {
-        Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _getValue(at index: GDExtensionInt) -> FloatingPointType {
+        FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __indexed_getter(__ptr_self, index, __temporary)}}
     }
-    mutating internal func _setValue(_ value: Scalar, at index: GDExtensionInt) {
+    mutating internal func _setValue(_ value: FloatingPointType, at index: GDExtensionInt) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         __indexed_setter(__ptr_self, index, __ptr_value)}}
     }
 
-    internal func _length() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _length() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _lengthSquared() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _lengthSquared() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length_squared(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -467,23 +467,23 @@ extension Quaternion {
         __method_binding_exp(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _angle(to: Godot.Quaternion) -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _angle(to: Godot.Quaternion) -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_angle_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _dot(with: Godot.Quaternion) -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _dot(with: Godot.Quaternion) -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_dot(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _slerp(to: Godot.Quaternion, weight: Scalar) -> Godot.Quaternion {
+    internal func _slerp(to: Godot.Quaternion, weight: FloatingPointType) -> Godot.Quaternion {
         return Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
@@ -492,7 +492,7 @@ extension Quaternion {
         __method_binding_slerp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _slerpni(to: Godot.Quaternion, weight: Scalar) -> Godot.Quaternion {
+    internal func _slerpni(to: Godot.Quaternion, weight: FloatingPointType) -> Godot.Quaternion {
         return Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
@@ -501,7 +501,7 @@ extension Quaternion {
         __method_binding_slerpni(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _sphericalCubicInterpolate(b: Godot.Quaternion, preA: Godot.Quaternion, postB: Godot.Quaternion, weight: Scalar) -> Godot.Quaternion {
+    internal func _sphericalCubicInterpolate(b: Godot.Quaternion, preA: Godot.Quaternion, postB: Godot.Quaternion, weight: FloatingPointType) -> Godot.Quaternion {
         return Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         b.withGodotUnsafeRawPointer { __ptr_b in
         preA.withGodotUnsafeRawPointer { __ptr_preA in
@@ -512,7 +512,7 @@ extension Quaternion {
         __method_binding_spherical_cubic_interpolate(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 4)}}}}}}}
     }
 
-    internal func _sphericalCubicInterpolateInTime(b: Godot.Quaternion, preA: Godot.Quaternion, postB: Godot.Quaternion, weight: Scalar, bT: Scalar, preAT: Scalar, postBT: Scalar) -> Godot.Quaternion {
+    internal func _sphericalCubicInterpolateInTime(b: Godot.Quaternion, preA: Godot.Quaternion, postB: Godot.Quaternion, weight: FloatingPointType, bT: FloatingPointType, preAT: FloatingPointType, postBT: FloatingPointType) -> Godot.Quaternion {
         return Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         b.withGodotUnsafeRawPointer { __ptr_b in
         preA.withGodotUnsafeRawPointer { __ptr_preA in
@@ -547,8 +547,8 @@ extension Quaternion {
         __method_binding_get_axis(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _angle() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _angle() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_angle(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

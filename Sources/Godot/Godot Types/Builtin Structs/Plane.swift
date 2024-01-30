@@ -71,14 +71,14 @@ public struct Plane {
     ///
     /// In the scalar equation of the plane `ax + by + cz = d`, this is `d`,
     /// while the `(a, b, c)` coordinates are represented by the ``normal`` property.
-    public var d: Scalar
+    public var d: FloatingPointType
     
     /// Creates a plane from the normal vector and the plane's distance from the origin.
     ///
     /// - Parameters:
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
-    public init(normal: Vector3, d: Scalar) {
+    public init(normal: Vector3, d: FloatingPointType) {
         self.normal = normal
         self.d = d
     }
@@ -93,7 +93,7 @@ extension Plane {
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
     public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
-        self.init(normal: normal, d: Scalar(d))
+        self.init(normal: normal, d: FloatingPointType(d))
     }
     
     /// Creates a plane from the normal vector and the plane's distance from the origin.
@@ -102,7 +102,7 @@ extension Plane {
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
     public init<T>(normal: Vector3, d: T) where T : BinaryInteger {
-        self.init(normal: normal, d: Scalar(d))
+        self.init(normal: normal, d: FloatingPointType(d))
     }
     
     /// Creates a plane from the four parameters.
@@ -112,7 +112,7 @@ extension Plane {
     ///   - b: The plane's normal `y` value.
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
-    public init(a: Scalar, b: Scalar, c: Scalar, d: Scalar) {
+    public init(a: FloatingPointType, b: FloatingPointType, c: FloatingPointType, d: FloatingPointType) {
         self.init(normal: Vector3(x: a, y: b, z: c), d: d)
     }
     
@@ -124,7 +124,7 @@ extension Plane {
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
     public init<T>(a: T, b: T, c: T, d: T) where T : BinaryFloatingPoint {
-        self.init(a: Scalar(a), b: Scalar(b), c: Scalar(c), d: Scalar(d))
+        self.init(a: FloatingPointType(a), b: FloatingPointType(b), c: FloatingPointType(c), d: FloatingPointType(d))
     }
     
     /// Creates a plane from the four parameters.
@@ -135,7 +135,7 @@ extension Plane {
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
     public init<T>(a: T, b: T, c: T, d: T) where T : BinaryInteger {
-        self.init(a: Scalar(a), b: Scalar(b), c: Scalar(c), d: Scalar(d))
+        self.init(a: FloatingPointType(a), b: FloatingPointType(b), c: FloatingPointType(c), d: FloatingPointType(d))
     }
     
     /// Creates a plane from the normal vector.
@@ -211,7 +211,7 @@ extension Plane {
     // MARK: Methods & variables
     
     /// The X component of the plane's normal vector.
-    public var x: Scalar {
+    public var x: FloatingPointType {
         get {
             normal.x
         }
@@ -221,7 +221,7 @@ extension Plane {
     }
     
     /// The Y component of the plane's normal vector.
-    public var y: Scalar {
+    public var y: FloatingPointType {
         get {
             normal.y
         }
@@ -231,7 +231,7 @@ extension Plane {
     }
     
     /// The Z component of the plane's normal vector.
-    public var z: Scalar {
+    public var z: FloatingPointType {
         get {
             normal.z
         }
@@ -274,14 +274,14 @@ extension Plane {
     ///
     /// If the point is above the plane, the distance will be positive.
     /// If below, the distance will be negative.
-    public func distance(to point: Vector3) -> Scalar {
+    public func distance(to point: Vector3) -> FloatingPointType {
         _distanceTo(point: point)
     }
     
     /// Returns `true` if the given point is inside the plane.
     ///
     /// Comparison uses a custom minimum tolerance threshold.
-    public func hasPoint(_ point: Vector3, tolerance: Scalar = 1e-05) -> Bool {
+    public func hasPoint(_ point: Vector3, tolerance: FloatingPointType = 1e-05) -> Bool {
         _hasPoint(point, tolerance: tolerance)
     }
     
@@ -331,10 +331,10 @@ extension Plane: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(Scalar.self)
-        let y = try container.decode(Scalar.self)
-        let z = try container.decode(Scalar.self)
-        let d = try container.decode(Scalar.self)
+        let x = try container.decode(FloatingPointType.self)
+        let y = try container.decode(FloatingPointType.self)
+        let z = try container.decode(FloatingPointType.self)
+        let d = try container.decode(FloatingPointType.self)
         self.init(a: x, b: y, c: z, d: d)
     }
 }

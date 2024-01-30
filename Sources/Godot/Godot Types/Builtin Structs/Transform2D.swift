@@ -81,9 +81,9 @@ extension Transform2D {
     }
     
     internal init(
-        _ xAxisX: Scalar, _ xAxisY: Scalar,
-        _ yAxisX: Scalar, _ yAxisY: Scalar,
-        _ originX: Scalar, _ originY: Scalar
+        _ xAxisX: FloatingPointType, _ xAxisY: FloatingPointType,
+        _ yAxisX: FloatingPointType, _ yAxisY: FloatingPointType,
+        _ originX: FloatingPointType, _ originY: FloatingPointType
     ) {
         self.init(
             x: Vector2(x: xAxisX, y: xAxisY),
@@ -97,7 +97,7 @@ extension Transform2D {
     /// - Parameters:
     ///   - rotation: The transform angle, in radians.
     ///   - position: The transform position.
-    public init(rotation: Scalar, position: Vector2) {
+    public init(rotation: FloatingPointType, position: Vector2) {
         self = Self._constructor_float_vector2(rotation: rotation, position: position)
     }
     
@@ -107,7 +107,7 @@ extension Transform2D {
     ///   - rotation: The transform angle, in radians.
     ///   - position: The transform position.
     public init<T>(rotation: T, position: Vector2) where T : BinaryFloatingPoint {
-        self.init(rotation: Scalar(rotation), position: position)
+        self.init(rotation: FloatingPointType(rotation), position: position)
     }
     
     /// Creates a transform from a given angle and position.
@@ -116,7 +116,7 @@ extension Transform2D {
     ///   - rotation: The transform angle, in radians.
     ///   - position: The transform position.
     public init<T>(rotation: T, position: Vector2) where T : BinaryInteger {
-        self.init(rotation: Scalar(rotation), position: position)
+        self.init(rotation: FloatingPointType(rotation), position: position)
     }
     
     /// Creates a transform from a given angle, scale, skew and position.
@@ -126,7 +126,7 @@ extension Transform2D {
     ///   - scale: The transform scale.
     ///   - skew: The transform skew, in radians.
     ///   - position: The transform position.
-    public init(rotation: Scalar, scale: Vector2, skew: Scalar, position: Vector2) {
+    public init(rotation: FloatingPointType, scale: Vector2, skew: FloatingPointType, position: Vector2) {
         self = Self._constructor_float_vector2_float_vector2(
             rotation: rotation,
             scale: scale,
@@ -144,9 +144,9 @@ extension Transform2D {
     ///   - position: The transform position.
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryFloatingPoint {
         self.init(
-            rotation: Scalar(rotation),
+            rotation: FloatingPointType(rotation),
             scale: scale,
-            skew: Scalar(skew),
+            skew: FloatingPointType(skew),
             position: position
         )
     }
@@ -160,9 +160,9 @@ extension Transform2D {
     ///   - position: The transform position.
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryInteger {
         self.init(
-            rotation: Scalar(rotation),
+            rotation: FloatingPointType(rotation),
             scale: scale,
-            skew: Scalar(skew),
+            skew: FloatingPointType(skew),
             position: position
         )
     }
@@ -202,13 +202,13 @@ extension Transform2D {
     
     /// This operator multiplies all components of the `Transform2D`,
     /// including the origin vector, which scales it uniformly.
-    public static func * (lhs: Transform2D, rhs: Scalar) -> Transform2D {
+    public static func * (lhs: Transform2D, rhs: FloatingPointType) -> Transform2D {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// This operator multiplies all components of the `Transform2D`,
     /// including the origin vector, which scales it uniformly.
-    public static func * (lhs: Scalar, rhs: Transform2D) -> Transform2D {
+    public static func * (lhs: FloatingPointType, rhs: Transform2D) -> Transform2D {
         rhs * lhs
     }
     
@@ -256,7 +256,7 @@ extension Transform2D {
     }
     
     /// The transform's rotation (in radians).
-    public var rotation: Scalar {
+    public var rotation: FloatingPointType {
         _rotation()
     }
     
@@ -278,7 +278,7 @@ extension Transform2D {
     }
     
     /// The transform's skew (in radians).
-    public var skew: Scalar {
+    public var skew: FloatingPointType {
         _skew()
     }
     
@@ -297,7 +297,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the global/parent frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public func rotated(by angle: Scalar) -> Transform2D {
+    public func rotated(by angle: FloatingPointType) -> Transform2D {
         _rotated(angle: angle)
     }
     
@@ -310,7 +310,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the local frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public func rotatedLocal(by angle: Scalar) -> Transform2D {
+    public func rotatedLocal(by angle: FloatingPointType) -> Transform2D {
         _rotatedLocal(angle: angle)
     }
     
@@ -366,7 +366,7 @@ extension Transform2D {
     /// A negative determinant means the basis was flipped,
     /// so one part of the scale is negative. A zero determinant
     /// means the basis isn't invertible, and is usually considered invalid.
-    public var determinant: Scalar {
+    public var determinant: FloatingPointType {
         _determinant()
     }
     
@@ -401,7 +401,7 @@ extension Transform2D {
     /// - Parameters:
     ///   - other: The transform to interpolate with.
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
-    public func interpolation(with other: Transform2D, weight: Scalar) -> Transform2D {
+    public func interpolation(with other: Transform2D, weight: FloatingPointType) -> Transform2D {
         _interpolateWith(xform: other, weight: weight)
     }
     

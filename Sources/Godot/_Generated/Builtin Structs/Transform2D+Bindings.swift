@@ -202,7 +202,7 @@ extension Transform2D {
         return __temporary
     }
 
-    static internal func _constructor_float_vector2(rotation: Scalar, position: Godot.Vector2) -> Self {
+    static internal func _constructor_float_vector2(rotation: FloatingPointType, position: Godot.Vector2) -> Self {
         var __temporary = Transform2D()
         rotation.withGodotUnsafeRawPointer { __ptr_rotation in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -221,7 +221,7 @@ extension Transform2D {
         return __temporary
     }
 
-    static internal func _constructor_float_vector2_float_vector2(rotation: Scalar, scale: Godot.Vector2, skew: Scalar, position: Godot.Vector2) -> Self {
+    static internal func _constructor_float_vector2_float_vector2(rotation: FloatingPointType, scale: Godot.Vector2, skew: FloatingPointType, position: Godot.Vector2) -> Self {
         var __temporary = Transform2D()
         rotation.withGodotUnsafeRawPointer { __ptr_rotation in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
@@ -289,7 +289,7 @@ extension Transform2D {
         __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorMultiply(_ lhs: Godot.Transform2D, _ rhs: Scalar) -> Godot.Transform2D {
+    static internal func _operatorMultiply(_ lhs: Godot.Transform2D, _ rhs: FloatingPointType) -> Godot.Transform2D {
         Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
@@ -375,8 +375,8 @@ extension Transform2D {
         __method_binding_affine_inverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _rotation() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _rotation() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_rotation(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -393,8 +393,8 @@ extension Transform2D {
         __method_binding_get_scale(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _skew() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _skew() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_skew(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -405,7 +405,7 @@ extension Transform2D {
         __method_binding_orthonormalized(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _rotated(angle: Scalar) -> Godot.Transform2D {
+    internal func _rotated(angle: FloatingPointType) -> Godot.Transform2D {
         return Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
@@ -413,7 +413,7 @@ extension Transform2D {
         __method_binding_rotated(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _rotatedLocal(angle: Scalar) -> Godot.Transform2D {
+    internal func _rotatedLocal(angle: FloatingPointType) -> Godot.Transform2D {
         return Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
@@ -453,8 +453,8 @@ extension Transform2D {
         __method_binding_translated_local(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _determinant() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _determinant() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_determinant(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -475,7 +475,7 @@ extension Transform2D {
         __method_binding_basis_xform_inv(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _interpolateWith(xform: Godot.Transform2D, weight: Scalar) -> Godot.Transform2D {
+    internal func _interpolateWith(xform: Godot.Transform2D, weight: FloatingPointType) -> Godot.Transform2D {
         return Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         weight.withGodotUnsafeRawPointer { __ptr_weight in

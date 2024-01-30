@@ -137,7 +137,7 @@ extension AABB {
     }
     
     /// The volume of the AABB.
-    public var volume: Scalar {
+    public var volume: FloatingPointType {
         _volume()
     }
     
@@ -221,7 +221,7 @@ extension AABB {
     }
     
     /// Returns the AABB grown a given number of units towards all the sides.
-    public func grow(by amount: Scalar) -> AABB {
+    public func grow(by amount: FloatingPointType) -> AABB {
         _grow(by: amount)
     }
     
@@ -244,7 +244,7 @@ extension AABB {
     }
     
     /// The scalar length of the longest axis of the `AABB`.
-    public var longestAxisSize: Scalar {
+    public var longestAxisSize: FloatingPointType {
         _longestAxisSize()
     }
     
@@ -259,7 +259,7 @@ extension AABB {
     }
     
     /// The scalar length of the shortest axis of the `AABB`.
-    public var shortestAxisSize: Scalar {
+    public var shortestAxisSize: FloatingPointType {
         _shortestAxisSize()
     }
     
@@ -300,12 +300,12 @@ extension AABB: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let positionX = try container.decode(Scalar.self)
-        let positionY = try container.decode(Scalar.self)
-        let positionZ = try container.decode(Scalar.self)
-        let sizeX = try container.decode(Scalar.self)
-        let sizeY = try container.decode(Scalar.self)
-        let sizeZ = try container.decode(Scalar.self)
+        let positionX = try container.decode(FloatingPointType.self)
+        let positionY = try container.decode(FloatingPointType.self)
+        let positionZ = try container.decode(FloatingPointType.self)
+        let sizeX = try container.decode(FloatingPointType.self)
+        let sizeY = try container.decode(FloatingPointType.self)
+        let sizeZ = try container.decode(FloatingPointType.self)
         
         self.init(
             position: Vector3(x: positionX, y: positionY, z: positionZ),

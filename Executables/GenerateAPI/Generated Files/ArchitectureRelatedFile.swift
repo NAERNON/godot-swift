@@ -51,8 +51,8 @@ extension GeneratedFile {
             /// depending on the build configuration.
             ///
             /// > important: Generating the APIs with a different build configuration might
-            /// change the `Scalar` type and break related code.
-            public typealias Scalar = \(raw: floatingPointTypeString)
+            /// change the `FloatingPointType` type and break related code.
+            public typealias FloatingPointType = \(raw: floatingPointTypeString)
             """
     }
     

@@ -356,7 +356,7 @@ extension Projection {
         __method_binding_create_light_atlas_rect(nil, __accessPtr, __temporary, 1)}}}
     }
 
-    static internal func _createPerspective(fovy: Scalar, aspect: Scalar, zNear: Scalar, zFar: Scalar, flipFov: Bool = false) -> Godot.Projection {
+    static internal func _createPerspective(fovy: FloatingPointType, aspect: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType, flipFov: Bool = false) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         fovy.withGodotUnsafeRawPointer { __ptr_fovy in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -367,7 +367,7 @@ extension Projection {
         __method_binding_create_perspective(nil, __accessPtr, __temporary, 5)}}}}}}}
     }
 
-    static internal func _createPerspectiveHmd(fovy: Scalar, aspect: Scalar, zNear: Scalar, zFar: Scalar, flipFov: Bool, eye: Int, intraocularDist: Scalar, convergenceDist: Scalar) -> Godot.Projection {
+    static internal func _createPerspectiveHmd(fovy: FloatingPointType, aspect: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType, flipFov: Bool, eye: Int, intraocularDist: FloatingPointType, convergenceDist: FloatingPointType) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         fovy.withGodotUnsafeRawPointer { __ptr_fovy in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -381,7 +381,7 @@ extension Projection {
         __method_binding_create_perspective_hmd(nil, __accessPtr, __temporary, 8)}}}}}}}}}}
     }
 
-    static internal func _createForHmd(eye: Int, aspect: Scalar, intraocularDist: Scalar, displayWidth: Scalar, displayToLens: Scalar, oversample: Scalar, zNear: Scalar, zFar: Scalar) -> Godot.Projection {
+    static internal func _createForHmd(eye: Int, aspect: FloatingPointType, intraocularDist: FloatingPointType, displayWidth: FloatingPointType, displayToLens: FloatingPointType, oversample: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         eye.withGodotUnsafeRawPointer { __ptr_eye in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -395,7 +395,7 @@ extension Projection {
         __method_binding_create_for_hmd(nil, __accessPtr, __temporary, 8)}}}}}}}}}}
     }
 
-    static internal func _createOrthogonal(left: Scalar, right: Scalar, bottom: Scalar, top: Scalar, zNear: Scalar, zFar: Scalar) -> Godot.Projection {
+    static internal func _createOrthogonal(left: FloatingPointType, right: FloatingPointType, bottom: FloatingPointType, top: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         left.withGodotUnsafeRawPointer { __ptr_left in
         right.withGodotUnsafeRawPointer { __ptr_right in
@@ -407,7 +407,7 @@ extension Projection {
         __method_binding_create_orthogonal(nil, __accessPtr, __temporary, 6)}}}}}}}}
     }
 
-    static internal func _createOrthogonalAspect(size: Scalar, aspect: Scalar, zNear: Scalar, zFar: Scalar, flipFov: Bool = false) -> Godot.Projection {
+    static internal func _createOrthogonalAspect(size: FloatingPointType, aspect: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType, flipFov: Bool = false) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -418,7 +418,7 @@ extension Projection {
         __method_binding_create_orthogonal_aspect(nil, __accessPtr, __temporary, 5)}}}}}}}
     }
 
-    static internal func _createFrustum(left: Scalar, right: Scalar, bottom: Scalar, top: Scalar, zNear: Scalar, zFar: Scalar) -> Godot.Projection {
+    static internal func _createFrustum(left: FloatingPointType, right: FloatingPointType, bottom: FloatingPointType, top: FloatingPointType, zNear: FloatingPointType, zFar: FloatingPointType) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         left.withGodotUnsafeRawPointer { __ptr_left in
         right.withGodotUnsafeRawPointer { __ptr_right in
@@ -430,7 +430,7 @@ extension Projection {
         __method_binding_create_frustum(nil, __accessPtr, __temporary, 6)}}}}}}}}
     }
 
-    static internal func _createFrustumAspect(size: Scalar, aspect: Scalar, offset: Godot.Vector2, zNear: Scalar, zFar: Scalar, flipFov: Bool = false) -> Godot.Projection {
+    static internal func _createFrustumAspect(size: FloatingPointType, aspect: FloatingPointType, offset: Godot.Vector2, zNear: FloatingPointType, zFar: FloatingPointType, flipFov: Bool = false) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -449,13 +449,13 @@ extension Projection {
         __method_binding_create_fit_aabb(nil, __accessPtr, __temporary, 1)}}}
     }
 
-    internal func _determinant() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _determinant() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_determinant(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _perspectiveZnearAdjusted(newZnear: Scalar) -> Godot.Projection {
+    internal func _perspectiveZnearAdjusted(newZnear: FloatingPointType) -> Godot.Projection {
         return Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         newZnear.withGodotUnsafeRawPointer { __ptr_newZnear in
         withUnsafeArgumentPackPointer(__ptr_newZnear) { __accessPtr in
@@ -485,34 +485,34 @@ extension Projection {
         __method_binding_jitter_offseted(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    static internal func _fovy(fovx: Scalar, aspect: Scalar) -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    static internal func _fovy(fovx: FloatingPointType, aspect: FloatingPointType) -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         fovx.withGodotUnsafeRawPointer { __ptr_fovx in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
         withUnsafeArgumentPackPointer(__ptr_fovx, __ptr_aspect) { __accessPtr in
         __method_binding_get_fovy(nil, __accessPtr, __temporary, 2)}}}}
     }
 
-    internal func _zFar() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _zFar() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_z_far(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _zNear() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _zNear() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_z_near(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _aspect() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _aspect() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_aspect(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _fov() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _fov() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_fov(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -549,8 +549,8 @@ extension Projection {
         __method_binding_get_pixels_per_meter(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _lodMultiplier() -> Scalar {
-        return Scalar.fromMutatingGodotUnsafePointer { __temporary in
+    internal func _lodMultiplier() -> FloatingPointType {
+        return FloatingPointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_lod_multiplier(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

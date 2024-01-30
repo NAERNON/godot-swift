@@ -112,16 +112,16 @@
 /// - ``>=(_:_:)``
 public struct Vector3 {
     /// The vector's X component.
-    public var x: Scalar
+    public var x: FloatingPointType
     
     /// The vector's Y component.
-    public var y: Scalar
+    public var y: FloatingPointType
     
     /// The vector's Z component.
-    public var z: Scalar
+    public var z: FloatingPointType
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
-    public init(x: Scalar, y: Scalar, z: Scalar) {
+    public init(x: FloatingPointType, y: FloatingPointType, z: FloatingPointType) {
         self.x = x
         self.y = y
         self.z = z
@@ -133,12 +133,12 @@ extension Vector3 {
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z))
     }
     
     /// Creates a new `Vector3` from the given `x`,`y` and `z`.
     public init<T>(x: T, y: T, z: T) where T : BinaryInteger {
-        self.init(x: Scalar(x), y: Scalar(y), z: Scalar(z))
+        self.init(x: FloatingPointType(x), y: FloatingPointType(y), z: FloatingPointType(z))
     }
     
     /// Creates a new `Vector3` from `Vector3I`.
@@ -267,12 +267,12 @@ extension Vector3 {
     }
     
     /// Multiplies each component of a `Vector3` by a value.
-    public static func * (lhs: Vector3, rhs: Scalar) -> Vector3 {
+    public static func * (lhs: Vector3, rhs: FloatingPointType) -> Vector3 {
         Self._operatorMultiply(lhs, rhs)
     }
     
     /// Multiplies each component of a `Vector3` by a value.
-    public static func * (lhs: Scalar, rhs: Vector3) -> Vector3 {
+    public static func * (lhs: FloatingPointType, rhs: Vector3) -> Vector3 {
         rhs * lhs
     }
     
@@ -282,7 +282,7 @@ extension Vector3 {
     }
     
     /// Divides each component of a `Vector3` by a value.
-    public static func / (lhs: Vector3, rhs: Scalar) -> Vector3 {
+    public static func / (lhs: Vector3, rhs: FloatingPointType) -> Vector3 {
         Self._operatorDivide(lhs, rhs)
     }
     
@@ -437,7 +437,7 @@ extension Vector3 {
     }
     
     /// Returns the unsigned minimum angle to the given vector, in radians.
-    public func angle(to other: Vector3) -> Scalar {
+    public func angle(to other: Vector3) -> FloatingPointType {
         _angle(to: other)
     }
     
@@ -445,7 +445,7 @@ extension Vector3 {
     ///
     /// The sign of the angle is positive in a counter-clockwise direction
     /// and negative in a clockwise direction when viewed from the side specified by the axis.
-    public func signedAngle(to other: Vector3, around axis: Vector3) -> Scalar {
+    public func signedAngle(to other: Vector3, around axis: Vector3) -> FloatingPointType {
         _signedAngle(to: other, axis: axis)
     }
     
@@ -457,7 +457,7 @@ extension Vector3 {
     }
     
     /// Returns the distance between the vector and another one.
-    public func distance(to other: Vector3) -> Scalar {
+    public func distance(to other: Vector3) -> FloatingPointType {
         _distance(to: other)
     }
     
@@ -465,12 +465,12 @@ extension Vector3 {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector3) -> Scalar {
+    public func distanceSquared(to other: Vector3) -> FloatingPointType {
         _distanceSquared(to: other)
     }
     
     /// The length (magnitude) of the vector.
-    public var length: Scalar {
+    public var length: FloatingPointType {
         _length()
     }
     
@@ -478,12 +478,12 @@ extension Vector3 {
     ///
     /// This property runs faster than ``length``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var lengthSquared: Scalar {
+    public var lengthSquared: FloatingPointType {
         _lengthSquared()
     }
     
     /// Returns the vector with a maximum length by limiting its length.
-    public func limitLength(_ length: Scalar = 1.0) -> Vector3 {
+    public func limitLength(_ length: FloatingPointType = 1.0) -> Vector3 {
         _limitLength(length)
     }
     
@@ -553,7 +553,7 @@ extension Vector3 {
     ///   - angle: The rotation angle, in radians.
     ///   - axis: The vector around which the rotation is done.
     ///   Must be a normalized vector.
-    public func rotated(by angle: Scalar, around axis: Vector3) -> Vector3 {
+    public func rotated(by angle: FloatingPointType, around axis: Vector3) -> Vector3 {
         _rotated(axis: axis, angle: angle)
     }
     
@@ -563,7 +563,7 @@ extension Vector3 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func lerp(to other: Vector3, weight: Scalar) -> Vector3 {
+    public func lerp(to other: Vector3, weight: FloatingPointType) -> Vector3 {
         _lerp(to: other, weight: weight)
     }
     
@@ -577,7 +577,7 @@ extension Vector3 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func slerp(to other: Vector3, weight: Scalar) -> Vector3 {
+    public func slerp(to other: Vector3, weight: FloatingPointType) -> Vector3 {
         _slerp(to: other, weight: weight)
     }
     
@@ -592,7 +592,7 @@ extension Vector3 {
         b: Vector3,
         preA: Vector3,
         postB: Vector3,
-        weight: Scalar
+        weight: FloatingPointType
     ) -> Vector3 {
         _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -610,30 +610,30 @@ extension Vector3 {
         b: Vector3,
         preA: Vector3,
         postB: Vector3,
-        weight: Scalar,
-        bT: Scalar,
-        preAT: Scalar,
-        postBT: Scalar
+        weight: FloatingPointType,
+        bT: FloatingPointType,
+        preAT: FloatingPointType,
+        postBT: FloatingPointType
     ) -> Vector3 {
         _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
     }
     
     /// Returns the point at the given `t` on the Bézier curve
     /// defined by the vector and the given control points.
-    public func bezierInterpolation(control1: Vector3, control2: Vector3, end: Vector3, t: Scalar) -> Vector3 {
+    public func bezierInterpolation(control1: Vector3, control2: Vector3, end: Vector3, t: FloatingPointType) -> Vector3 {
         _bezierInterpolate(control1: control1, control2: control2, end: end, t: t)
     }
     
     /// Returns the derivative at the given `t` on the Bézier curve
     /// defined by the vector and the given control points.
-    public func bezierDerivative(control1: Vector3, control2: Vector3, end: Vector3, t: Scalar) -> Vector3 {
+    public func bezierDerivative(control1: Vector3, control2: Vector3, end: Vector3, t: FloatingPointType) -> Vector3 {
         _bezierDerivative(control1: control1, control2: control2, end: end, t: t)
     }
     
     /// Returns a new vector moved toward to by a fixed amount.
     ///
     /// Will not go past the final value.
-    public func moved(toward other: Vector3, delta: Scalar) -> Vector3 {
+    public func moved(toward other: Vector3, delta: FloatingPointType) -> Vector3 {
         _moveToward(to: other, delta: delta)
     }
     
@@ -653,7 +653,7 @@ extension Vector3 {
     /// and `1.0` (0 degree angle) when the vectors are aligned.
     ///
     /// >note: `a.dot(b)` is equivalent to `b.dot(a)`.
-    public func dot(_ other: Vector3) -> Scalar {
+    public func dot(_ other: Vector3) -> FloatingPointType {
         _dot(with: other)
     }
     
@@ -690,7 +690,7 @@ extension Vector3 {
     
     /// Returns a vector composed of the ``fposmod(x:y:)``
     /// of the vector's components and `mod`.
-    public func posmod(_ mod: Scalar) -> Vector3 {
+    public func posmod(_ mod: FloatingPointType) -> Vector3 {
         _posmod(mod: mod)
     }
     
@@ -754,7 +754,7 @@ extension Vector3 {
     }
     
     /// Accesses the vector component on the given axis.
-    public subscript(axis: Axis3D) -> Scalar {
+    public subscript(axis: Axis3D) -> FloatingPointType {
         get {
             switch axis {
             case .x: x
@@ -786,9 +786,9 @@ extension Vector3: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(Scalar.self)
-        y = try container.decode(Scalar.self)
-        z = try container.decode(Scalar.self)
+        x = try container.decode(FloatingPointType.self)
+        y = try container.decode(FloatingPointType.self)
+        z = try container.decode(FloatingPointType.self)
     }
 }
 

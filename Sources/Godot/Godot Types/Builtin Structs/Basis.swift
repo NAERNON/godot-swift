@@ -84,9 +84,9 @@ extension Basis {
     }
     
     internal init(
-        _ xAxisX: Scalar, _ xAxisY: Scalar, _ xAxisZ: Scalar,
-        _ yAxisX: Scalar, _ yAxisY: Scalar, _ yAxisZ: Scalar,
-        _ zAxisX: Scalar, _ zAxisY: Scalar, _ zAxisZ: Scalar
+        _ xAxisX: FloatingPointType, _ xAxisY: FloatingPointType, _ xAxisZ: FloatingPointType,
+        _ yAxisX: FloatingPointType, _ yAxisY: FloatingPointType, _ yAxisZ: FloatingPointType,
+        _ zAxisX: FloatingPointType, _ zAxisY: FloatingPointType, _ zAxisZ: FloatingPointType
     ) {
         self.init(
             x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
@@ -103,7 +103,7 @@ extension Basis {
     /// Creates a pure rotation basis matrix, rotated around the given axis by angle (in radians).
     ///
     /// The axis must be a normalized vector.
-    public init(axis: Vector3, angle: Scalar) {
+    public init(axis: Vector3, angle: FloatingPointType) {
         self = Self._constructor_vector3_float(axis: axis, angle: angle)
     }
     
@@ -111,7 +111,7 @@ extension Basis {
     ///
     /// The axis must be a normalized vector.
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self.init(axis: axis, angle: Scalar(angle))
+        self.init(axis: axis, angle: FloatingPointType(angle))
     }
     
     // MARK: Constants
@@ -144,7 +144,7 @@ extension Basis {
     }
     
     /// Multiplies all components of the Basis, which scales it uniformly.
-    public static func * (lhs: Basis, rhs: Scalar) -> Basis {
+    public static func * (lhs: Basis, rhs: FloatingPointType) -> Basis {
         Self._operatorMultiply(lhs, rhs)
     }
     
@@ -154,7 +154,7 @@ extension Basis {
     }
     
     /// Multiplies all components of the Basis, which scales it uniformly.
-    public static func * (lhs: Scalar, rhs: Basis) -> Basis {
+    public static func * (lhs: FloatingPointType, rhs: Basis) -> Basis {
         rhs * lhs
     }
     
@@ -197,7 +197,7 @@ extension Basis {
     ///
     /// A negative determinant means the basis has a negative scale.
     /// A zero determinant means the basis isn't invertible, and is usually considered invalid
-    public var determinant: Scalar {
+    public var determinant: FloatingPointType {
         _determinant()
     }
     
@@ -206,7 +206,7 @@ extension Basis {
     /// - Parameters:
     ///   - angle: The rotation angle in radians.
     ///   - axis: A normalized vector.
-    public func rotated(by angle: Scalar, around axis: Vector3) -> Basis {
+    public func rotated(by angle: FloatingPointType, around axis: Vector3) -> Basis {
         _rotated(axis: axis, angle: angle)
     }
     
@@ -254,7 +254,7 @@ extension Basis {
     ///
     /// - ``tdoty(_:)``
     /// - ``tdotz(_:)``
-    public func tdotx(_ vector: Vector3) -> Scalar {
+    public func tdotx(_ vector: Vector3) -> FloatingPointType {
         _tdotx(with: vector)
     }
     
@@ -264,7 +264,7 @@ extension Basis {
     ///
     /// - ``tdotx(_:)``
     /// - ``tdotz(_:)``
-    public func tdoty(_ vector: Vector3) -> Scalar {
+    public func tdoty(_ vector: Vector3) -> FloatingPointType {
         _tdoty(with: vector)
     }
     
@@ -274,14 +274,14 @@ extension Basis {
     ///
     /// - ``tdotx(_:)``
     /// - ``tdoty(_:)``
-    public func tdotz(_ vector: Vector3) -> Scalar {
+    public func tdotz(_ vector: Vector3) -> FloatingPointType {
         _tdotz(with: vector)
     }
     
     /// Performs a spherical-linear interpolation with another rotation matrix.
     ///
     /// This function assumes that the matrix is a proper rotation matrix
-    public func slerp(to other: Basis, weight: Scalar) -> Basis {
+    public func slerp(to other: Basis, weight: FloatingPointType) -> Basis {
         _slerp(to: other, weight: weight)
     }
     
