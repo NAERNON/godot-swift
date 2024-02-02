@@ -4,6 +4,15 @@ extension BinaryFloatingPoint {
     static var cmpEpsilon: Self {
         0.00001
     }
+    
+    /// This epsilon is for values related to a unit size (scalar or vector length).
+    static var unitEpsilon: Self {
+        #if PRECISE_MATH_CHECKS
+        0.00001
+        #else
+        0.001
+        #endif
+    }
 }
 
 extension BinaryFloatingPoint {
