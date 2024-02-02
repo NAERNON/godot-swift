@@ -1,10 +1,9 @@
 
 /// A 2D vector using floating point coordinates.
 ///
-/// This type that can be used to represent 2D coordinates or any other pair of numeric values.
+/// This type can be used to represent 2D coordinates or any other pair of numeric values.
 ///
 /// It uses floating-point coordinates.
-///
 /// See ``Vector2I`` for its integer counterpart.
 ///
 /// >note: If double precision is needed, compile the engine and generate
@@ -16,414 +15,292 @@
 /// it's equal to `(0, 0)`.
 /// Otherwise, it always evaluates to `true`.
 ///
+/// ### SIMD2 Type Alias
+///
+/// `Vector2` is a type alias to a `SIMD2`.
+/// This documentation only describes Godot extensions on `SIMD2`.
+/// Check the `SIMD2` documentation to see all properties and functions
+/// the Standard Library defines.
+///
+/// >note: Every property and method described here are extensions available for any
+/// `SIMD2` with `BinaryFloatingPoint` scalar type.
+///
 /// ## Topics
-///
-/// ### Creating Vector2
-///
-/// - ``init(x:y:)-3i03d``
-/// - ``init(x:y:)-9agc0``
-/// - ``init(x:y:)-2xcr``
-/// - ``init(_:)``
-/// - ``fromAngle(_:)``
 ///
 /// ### Special Values
 ///
-/// - ``zero``
-/// - ``init()``
-/// - ``one``
-/// - ``infinity``
-/// - ``left``
-/// - ``right``
-/// - ``up``
-/// - ``down``
+/// - ``Swift/SIMD2/left``
+/// - ``Swift/SIMD2/right``
+/// - ``Swift/SIMD2/up``
+/// - ``Swift/SIMD2/down``
 ///
 /// ### Geometric Properties
 ///
-/// - ``x``
-/// - ``y``
-/// - ``subscript(_:)``
+/// - ``Swift/SIMD2/width``
+/// - ``Swift/SIMD2/height``
+/// - ``Swift/SIMD2/isFinite``
+/// - ``Swift/SIMD2/aspect``
+/// - ``Swift/SIMD2/orthogonal``
+/// - ``Swift/SIMD2/abs``
+/// - ``Swift/SIMD2/formAbs()``
+/// - ``Swift/SIMD2/signUnitValue``
 ///
-/// - ``length``
-/// - ``lengthSquared``
-/// - ``distance(to:)``
-/// - ``distanceSquared(to:)``
-/// - ``angle``
-/// - ``angle(to:)``
-/// - ``angle(toPoint:)``
-/// - ``aspect``
-/// - ``maxAxis``
-/// - ``minAxis``
-/// - ``isFinite``
-/// - ``isApproximatelyZero``
-/// - ``isNormalized``
+/// ### Magnitude and Distance
 ///
-/// ### Transformation
+/// - ``Swift/SIMD2/magnitude``
+/// - ``Swift/SIMD2/magnitudeSquared``
+/// - ``Swift/SIMD2/limitedMagnitude(_:)``
+/// - ``Swift/SIMD2/limitMagnitude(_:)``
+/// - ``Swift/SIMD2/distance(to:)``
+/// - ``Swift/SIMD2/distanceSquared(to:)``
 ///
-/// - ``abs``
-/// - ``rounded``
-/// - ``ceil``
-/// - ``floor``
-/// - ``normalized``
-/// - ``orthogonal``
-/// - ``limitLength(_:)``
-/// - ``cross(_:)``
-/// - ``dot(_:)``
-/// - ``rotated(by:)``
-/// - ``direction(to:)``
-/// - ``moved(toward:delta:)``
-/// - ``sign``
-/// - ``bounce(_:)``
-/// - ``project(_:)``
-/// - ``reflect(_:)``
-/// - ``clamped(min:max:)``
-/// - ``slide(_:)``
-/// - ``snapped(step:)``
-/// - ``posmod(_:)``
-/// - ``posmodv(_:)``
-/// - ``lerp(to:weight:)``
-/// - ``lerp(_:_:weight:)``
-/// - ``lerpAngle(_:_:weight:)``
-/// - ``inverseLerp(_:_:weight:)``
-/// - ``slerp(to:weight:)``
+/// ### Products
+///
+/// - ``Swift/SIMD2/dot(_:)``
+/// - ``Swift/SIMD2/cross(_:)``
+///
+/// ### Normalization
+///
+/// - ``Swift/SIMD2/normalized``
+/// - ``Swift/SIMD2/normalize()``
+/// - ``Swift/SIMD2/isNormalized``
+///
+/// ### Angle
+///
+/// - ``Swift/SIMD2/angle``
+/// - ``Swift/SIMD2/angle(toVector:)``
+/// - ``Swift/SIMD2/angle(toPoint:)``
+/// - ``Swift/SIMD2/rotated(by:)``
+/// - ``Swift/SIMD2/rotate(by:)``
+/// - ``Swift/SIMD2/fromAngle(_:)``
+///
+/// ### Direction
+///
+/// - ``Swift/SIMD2/direction(to:)``
+/// - ``Swift/SIMD2/moved(toward:delta:)``
+/// - ``Swift/SIMD2/move(toward:delta:)``
+///
+/// ### 2D Transformations
+///
+/// - ``Swift/SIMD2/projected(onto:)``
+/// - ``Swift/SIMD2/project(onto:)``
+/// - ``Swift/SIMD2/slided(along:)``
+/// - ``Swift/SIMD2/slide(along:)``
+/// - ``Swift/SIMD2/bounced(off:)``
+/// - ``Swift/SIMD2/bounce(off:)``
+/// - ``Swift/SIMD2/reflected(from:)``
+/// - ``Swift/SIMD2/reflect(from:)``
 ///
 /// ### Interpolation
 ///
-/// - ``bezierInterpolation(control1:control2:end:t:)``
-/// - ``bezierDerivative(control1:control2:end:t:)``
-/// - ``cubicInterpolation(b:preA:postB:weight:)``
-/// - ``cubicInterpolationInTime(b:preA:postB:weight:bT:preAT:postBT:)``
+/// - ``Swift/SIMD2/lerp(to:weight:)``
+/// - ``Swift/SIMD2/formLerp(to:weight:)``
+/// - ``Swift/SIMD2/slerp(to:weight:)``
+/// - ``Swift/SIMD2/formSlerp(to:weight:)``
+/// - ``Swift/SIMD2/cubicInterpolation(to:pre:post:weight:)``
+/// - ``Swift/SIMD2/formCubicInterpolation(to:pre:post:weight:)``
+/// - ``Swift/SIMD2/cubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
+/// - ``Swift/SIMD2/formCubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
+/// - ``Swift/SIMD2/bezierInterpolation(to:control1:control2:t:)``
+/// - ``Swift/SIMD2/formBezierInterpolation(to:control1:control2:t:)``
+/// - ``Swift/SIMD2/bezierDerivative(to:control1:control2:t:)``
+/// - ``Swift/SIMD2/formBezierDerivative(to:control1:control2:t:)``
+///
+/// ### Axis
+///
+/// - ``Swift/SIMD2/minAxis``
+/// - ``Swift/SIMD2/maxAxis``
+/// - ``Swift/SIMD2/subscript(axis:)``
+///
+/// ### Rounding and Division
+///
+/// - ``Swift/SIMD2/snapped(step:)``
+/// - ``Swift/SIMD2/snap(step:)``
+/// - ``Swift/SIMD2/positiveTruncatingRemainder(dividingBy:)-5y5sb``
+/// - ``Swift/SIMD2/formPositiveTruncatingRemainder(dividingBy:)-14e22``
+/// - ``Swift/SIMD2/positiveTruncatingRemainder(dividingBy:)-3z356``
+/// - ``Swift/SIMD2/formPositiveTruncatingRemainder(dividingBy:)-6e5zr``
+///
+/// ### Approximate Equality
+///
+/// - ``Swift/SIMD2/isApproximatelyZero``
+/// - ``Swift/SIMD2/isApproximatelyEqual(to:)``
 ///
 /// ### Comparison
 ///
-/// - ``<(_:_:)``
-/// - ``<=(_:_:)``
-/// - ``>(_:_:)``
-/// - ``>=(_:_:)``
-public struct Vector2 {
-    /// The vector's X component.
-    public var x: FloatingPointType
+/// - ``Swift/SIMD2/<(_:_:)``
+/// - ``Swift/SIMD2/<=(_:_:)``
+/// - ``Swift/SIMD2/>(_:_:)``
+/// - ``Swift/SIMD2/>=(_:_:)``
+///
+/// ### Extension
+///
+/// - ``Swift/SIMD2``
+public typealias Vector2 = SIMD2<FloatingPointType>
+
+extension SIMD2 {
+    /// The vector's width. Equivalent to `x`.
+    public var width: Scalar {
+        get {
+            x
+        }
+        set(newValue) {
+            x = newValue
+        }
+    }
     
-    /// The vector's Y component.
-    public var y: FloatingPointType
-    
-    /// Creates a new `Vector2` from the given `x` and `y`.
-    public init(x: FloatingPointType, y: FloatingPointType) {
-        self.x = x
-        self.y = y
+    /// The vector's width. Equivalent to `y`.
+    public var height: Scalar {
+        get {
+            y
+        }
+        set(newValue) {
+            y = newValue
+        }
     }
 }
 
-extension Vector2 {
-    // MARK: Constructors
-    
-    /// Constructs a new `Vector2` from the given `x` and `y`.
-    public init<T>(x: T, y: T) where T : BinaryFloatingPoint {
-        self.init(x: FloatingPointType(x), y: FloatingPointType(y))
-    }
-    
-    /// Constructs a new `Vector2` from the given `x` and `y`.
-    public init<T>(x: T, y: T) where T : BinaryInteger {
-        self.init(x: FloatingPointType(x), y: FloatingPointType(y))
-    }
-    
-    /// Creates a new `Vector2` from `Vector2I`.
-    public init(_ vector2I: Vector2I) {
-        self.init(x: vector2I.x, y: vector2I.y)
-    }
-    
-    /// Creates a default-initialized `Vector2` with all components set to `0`.
-    public init() {
-        self.init(x: 0, y: 0)
-    }
-    
-    // MARK: Constants
-    
-    /// A vector with all components set to `0`.
-    public static var zero: Vector2 {
-        Vector2(x: 0, y: 0)
-    }
-    
-    /// A vector with all components set to `1`.
-    public static var one: Vector2 {
-        Vector2(x: 1, y: 1)
-    }
-    
-    /// A vector with all components set to positive infinity.
-    public static var infinity: Vector2 {
-        Vector2(x: .infinity, y: .infinity)
-    }
-    
+extension SIMD2 where Scalar : BinaryFloatingPoint {
     /// The left unit vector.
     ///
     /// Represents the direction of left.
-    public static var left: Vector2 {
-        Vector2(x: -1, y: 0)
+    public static var left: SIMD2 {
+        .init(x: -1, y: 0)
     }
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
-    public static var right: Vector2 {
-        Vector2(x: 1, y: 0)
+    public static var right: SIMD2 {
+        .init(x: 1, y: 0)
     }
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
-    public static var up: Vector2 {
-        Vector2(x: 0, y: -1)
+    public static var up: SIMD2 {
+        .init(x: 0, y: -1)
     }
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
-    public static var down: Vector2 {
-        Vector2(x: 0, y: 1)
+    public static var down: SIMD2 {
+        .init(x: 0, y: 1)
     }
-    
-    // MARK: Operators
-    
-    /// Returns the negative value of the `Vector2`.
-    ///
-    /// This is the same as writing `Vector2(x: -v.x, y: -v.y)`.
-    /// This operation flips the direction of the vector while keeping the same magnitude.
-    /// With floats, the number zero can be either positive or negative.
-    public static prefix func - (vector2: Vector2) -> Vector2 {
-        Self._operatorNegate(vector2)
-    }
-    
-    /// Returns the same value as if the `+` was not there.
-    public static prefix func + (vector2: Vector2) -> Vector2 {
-        Self._operatorPositive(vector2)
-    }
-    
-    /// Multiplies each component of a `Vector2` by a value.
-    public static func * (lhs: Vector2, rhs: Int) -> Vector2 {
-        Self._operatorMultiply(lhs, rhs)
-    }
-    
-    /// Multiplies each component of a `Vector2` by a value.
-    public static func * (lhs: Int, rhs: Vector2) -> Vector2 {
-        rhs * lhs
-    }
-    
-    /// Multiplies each component of a `Vector2` by a value.
-    public static func * (lhs: Vector2, rhs: FloatingPointType) -> Vector2 {
-        Self._operatorMultiply(lhs, rhs)
-    }
-    
-    /// Multiplies each component of a `Vector2` by a value.
-    public static func * (lhs: FloatingPointType, rhs: Vector2) -> Vector2 {
-        rhs * lhs
-    }
-    
-    /// Divides each component of a `Vector2` by a value.
-    public static func / (lhs: Vector2, rhs: Int) -> Vector2 {
-        Self._operatorDivide(lhs, rhs)
-    }
-    
-    /// Divides each component of a `Vector2` by a value.
-    public static func / (lhs: Vector2, rhs: FloatingPointType) -> Vector2 {
-        Self._operatorDivide(lhs, rhs)
-    }
-    
-    /// Compares two vectors.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is less than the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors. This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `NaN` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `NaN`s are included.
-    public static func < (lhs: Vector2, rhs: Vector2) -> Bool {
-        Self._operatorLess(lhs, rhs)
-    }
-    
-    /// Compares two vectors.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is less than or equal to the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors. This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `NaN` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `NaN`s are included.
-    public static func <= (lhs: Vector2, rhs: Vector2) -> Bool {
-        Self._operatorLessEqual(lhs, rhs)
-    }
-    
-    /// Compares two vectors.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is greater than the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors. This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `NaN` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `NaN`s are included.
-    public static func > (lhs: Vector2, rhs: Vector2) -> Bool {
-        Self._operatorGreater(lhs, rhs)
-    }
-    
-    /// Compares two vectors.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is greater than or equal to the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors. This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `NaN` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `NaN`s are included.
-    public static func >= (lhs: Vector2, rhs: Vector2) -> Bool {
-        Self._operatorGreaterEqual(lhs, rhs)
-    }
-    
-    /// Adds each component of a `Vector2` by the components of another `Vector2`.
-    ///
-    /// ```swift
-    /// print(Vector2(x: 10, y: 20) + Vector2(x: 3, y: 4))
-    /// // Prints "(13, 24)"
-    /// ```
-    public static func + (lhs: Vector2, rhs: Vector2) -> Vector2 {
-        Self._operatorAdd(lhs, rhs)
-    }
-    
-    /// Subtracts each component of a `Vector2` by the components of another `Vector2`.
-    ///
-    /// ```swift
-    /// print(Vector2(x: 10, y: 20) - Vector2(x: 3, y: 4))
-    /// // Prints "(7, 16)"
-    /// ```
-    public static func - (lhs: Vector2, rhs: Vector2) -> Vector2 {
-        Self._operatorSubtract(lhs, rhs)
-    }
-    
-    /// Multiplies each component of a `Vector2` by the components of another `Vector2`.
-    ///
-    /// ```swift
-    /// print(Vector2(x: 10, y: 20) * Vector2(x: 3, y: 4))
-    /// // Prints "(30, 80)"
-    /// ```
-    public static func * (lhs: Vector2, rhs: Vector2) -> Vector2 {
-        Self._operatorMultiply(lhs, rhs)
-    }
-    
-    /// Divides each component of a `Vector2` by the components of another `Vector2`.
-    ///
-    /// ```swift
-    /// print(Vector2(x: 10, y: 20) / Vector2(x: 2, y: 5))
-    /// // Prints "(5, 4)"
-    /// ```
-    public static func / (lhs: Vector2, rhs: Vector2) -> Vector2 {
-        Self._operatorDivide(lhs, rhs)
-    }
-    
-    /// Inversely transforms (multiplies) a `Vector2` by a 2D transformation matrix.
-    ///
-    /// This operator assumes that the transformation basis is
-    /// orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
-    ///
-    /// `vector * transform` is equivalent to `transform.inverted * vector`.
-    /// See `Transform2D`'s ``Transform2D/inverted``.
-    ///
-    /// For transforming by inverse of an affine transformation (e.g. with scaling)
-    /// `transform.affineInverted * vector` can be used instead.
-    /// See `Transform2D`'s ``Transform2D/affineInverted``.
-    public static func * (lhs: Vector2, rhs: Transform2D) -> Vector2 {
-        Self._operatorMultiply(lhs, rhs)
-    }
-    
-    // MARK: Methods & variables
     
     /// The vector's angle with respect to the positive X axis,
     /// or `(1, 0)` vector, in radians.
     ///
     /// For example, `Vector2.right.angle` will return zero,
-    /// `Vector2.down.angle` will return `pi/2` (a quarter turn, or 90 degrees),
+    /// `Vector2.down.angle` will return `pi/2` (a quarter turn, or `90` degrees),
     /// and `Vector2(x: 1, y: -1).angle` will return `-pi/4`
     /// (a negative eighth turn, or -45 degrees).
     ///
     /// Equivalent to the result of ``atan2(y:x:)`` when called with
-    /// the vector's ``y`` and ``x`` as parameters.
-    public var angle: FloatingPointType {
-        _angle()
+    /// the vector's `y` and `x` as parameters.
+    public var angle: Scalar {
+        atan2(y: y, x: x)
     }
     
     /// Returns the angle to the given vector, in radians.
-    public func angle(to other: Vector2) -> FloatingPointType {
-        _angle(to: other)
+    public func angle(toVector other: SIMD2) -> Scalar {
+        atan2(y: cross(other), x: dot(other))
     }
     
     /// Returns the angle between the line connecting the
     /// two points and the X axis, in radians.
     ///
     /// `a.angle(toPoint: b)` is equivalent of doing `(b - a).angle`.
-    public func angle(toPoint point: Vector2) -> FloatingPointType {
-        _angleToPoint(to: point)
+    public func angle(toPoint point: SIMD2) -> Scalar {
+        (point - self).angle
     }
     
     /// Returns the normalized vector pointing from the vector to another one.
     ///
     /// This is equivalent to using `(b - a).normalized`.
-    public func direction(to other: Vector2) -> Vector2 {
-        _direction(to: other)
+    public func direction(to other: SIMD2) -> SIMD2 {
+        (other - self).normalized
     }
     
-    /// Returns the distance between the vector and another one.
-    public func distance(to other: Vector2) -> FloatingPointType {
-        _distance(to: other)
+    /// Returns the distance between this vector and another one.
+    public func distance(to other: SIMD2) -> Scalar {
+        ((other - self) * (other - self)).sum().squareRoot()
     }
     
-    /// Returns the squared distance between the vector and another one.
+    /// Returns the squared distance between this vector and another one.
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector2) -> FloatingPointType {
-        _distanceSquared(to: other)
+    public func distanceSquared(to other: SIMD2) -> Scalar {
+        ((other - self) * (other - self)).sum()
     }
     
-    /// The length (magnitude) of the vector.
-    public var length: FloatingPointType {
-        _length()
+    /// The magnitude (length) of the vector.
+    public var magnitude: Scalar {
+        (self * self).sum().squareRoot()
     }
     
-    /// The squared length (squared magnitude) of this vector.
+    /// The squared magnitude of the vector.
     ///
-    /// This property runs faster than ``length``, so prefer it if you need
+    /// This property runs faster than ``magnitude``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var lengthSquared: FloatingPointType {
-        _lengthSquared()
+    public var magnitudeSquared: Scalar {
+        (self * self).sum()
     }
     
-    /// Returns the vector with a maximum length by limiting its length.
-    public func limitLength(_ length: FloatingPointType = 1.0) -> Vector2 {
-        _limitLength(length)
+    /// Returns this vector with a maximum magnitude.
+    public func limitedMagnitude(_ magnitude: Scalar = 1.0) -> SIMD2 {
+        let currentMagnitude = self.magnitude
+        var copy = self
+        if currentMagnitude > 0 && magnitude < currentMagnitude {
+            copy /= currentMagnitude
+            copy *= magnitude
+        }
+
+        return copy
     }
     
-    /// Returns the result of scaling the vector to unit length.
-    ///
-    /// Equivalent to `v / v.length`.
-    ///
-    /// >important: This function may return incorrect values
-    /// if the input vector length is near zero.
-    ///
-    /// ## See Also
-    ///
-    /// - ``isNormalized``
-    public var normalized: Vector2 {
-        _normalized()
+    /// Modifies the vector magnitude with a maximum given value.
+    public mutating func limitMagnitude(_ magnitude: Scalar = 1.0) {
+        self = limitedMagnitude(magnitude)
     }
     
-    /// A Boolean value indicating whether the vector is normalized,
-    /// i.e. its length is approximately equal to `1`.
+    /// Returns the result of scaling this vector to unit length.
+    ///
+    /// Equivalent to `v / v.magnitude`.
+    ///
+    /// >important: This property may return incorrect values
+    /// if the vector magnitude is near zero.
+    public var normalized: SIMD2 {
+        let length = (self * self).sum()
+        if length != 0 {
+            return self / length.squareRoot()
+        }
+        return self
+    }
+    
+    /// Scales this vector to have a unit length.
+    ///
+    /// Equivalent to `v /= v.magnitude`.
+    ///
+    /// >important: This function may result in incorrect values
+    /// if the vector magnitude is near zero.
+    public mutating func normalize() {
+        self = normalized
+    }
+    
+    /// A Boolean value indicating whether the vector is normalized.
+    ///
+    /// This property checks that the magnitude is approximately equal to `1`.
     public var isNormalized: Bool {
-        _isNormalized()
+        magnitudeSquared.isApproximatelyEqual(to: 1, tolerance: .unitEpsilon)
     }
     
     /// Returns `true` if the vector is approximately equal to another one.
-    public func isApproximatelyEqual(to other: Vector2) -> Bool {
-        _isEqualApprox(to: other)
+    public func isApproximatelyEqual(to other: SIMD2) -> Bool {
+        x.isApproximatelyEqual(to: other.x) &&
+        y.isApproximatelyEqual(to: other.y)
     }
     
     /// A Boolean value indicating whether the vector's values are approximately zero.
@@ -431,29 +308,68 @@ extension Vector2 {
     /// This method is faster than using ``isApproximatelyEqual(to:)``
     /// with value zero.
     public var isApproximatelyZero: Bool {
-        _isZeroApprox()
+        x.isApproximatelyZero &&
+        y.isApproximatelyZero
     }
     
     /// A Boolean value indicating whether the vector is finite.
     public var isFinite: Bool {
-        _isFinite()
+        x.isFinite &&
+        y.isFinite
     }
     
-    /// Returns a vector composed of the ``fposmod(x:y:)``
-    /// of the vector's components and `mod`.
-    public func posmod(_ mod: FloatingPointType) -> Vector2 {
-        _posmod(mod: mod)
+    /// Returns this vector with each scalar being the positive remainder
+    /// of the scalar divided by the given value using truncating division.
+    ///
+    /// This method applies ``Swift/BinaryFloatingPoint/positiveTruncatingRemainder(dividingBy:)``
+    /// on each scalar.
+    public func positiveTruncatingRemainder(dividingBy value: Scalar) -> SIMD2 {
+        SIMD2(
+            x: x.positiveTruncatingRemainder(dividingBy: value),
+            y: y.positiveTruncatingRemainder(dividingBy: value)
+        )
     }
     
-    /// Returns a vector composed of the ``fposmod(x:y:)``
-    /// of the vector's components and `modv`'s components.
-    public func posmodv(_ modv: Vector2) -> Vector2 {
-        _posmodv(modv: modv)
+    /// Replaces each scalar with the positive remainder of itself divided by the given
+    /// value using truncating division.
+    ///
+    /// This method applies ``Swift/BinaryFloatingPoint/formPositiveTruncatingRemainder(dividingBy:)``
+    /// on each scalar.
+    public mutating func formPositiveTruncatingRemainder(dividingBy value: Scalar) {
+        x.formPositiveTruncatingRemainder(dividingBy: value)
+        y.formPositiveTruncatingRemainder(dividingBy: value)
     }
     
-    /// Returns the result of projecting the vector onto a given vector.
-    public func project(_ other: Vector2) -> Vector2 {
-        _project(other)
+    /// Returns the vector composed of the positive remainder of each scalar
+    /// divided by the corresponding scalar of a given vector using truncating division.
+    ///
+    /// This method applies ``Swift/BinaryFloatingPoint/positiveTruncatingRemainder(dividingBy:)``
+    /// on each scalar.
+    public func positiveTruncatingRemainder(dividingBy other: SIMD2) -> SIMD2 {
+        SIMD2(
+            x: x.positiveTruncatingRemainder(dividingBy: other.x),
+            y: y.positiveTruncatingRemainder(dividingBy: other.y)
+        )
+    }
+    
+    /// Replaces each scalar by the positive remainder of itself divided by
+    /// the corresponding scalar of a given vector using truncating division.
+    ///
+    /// This method applies ``Swift/BinaryFloatingPoint/formPositiveTruncatingRemainder(dividingBy:)``
+    /// on each scalar.
+    public mutating func formPositiveTruncatingRemainder(dividingBy other: SIMD2) {
+        x.formPositiveTruncatingRemainder(dividingBy: other.x)
+        y.formPositiveTruncatingRemainder(dividingBy: other.y)
+    }
+    
+    /// Returns the result of projecting this vector onto a given vector.
+    public func projected(onto other: SIMD2) -> SIMD2 {
+        return other * (self.dot(other) / other.magnitudeSquared)
+    }
+    
+    /// Replaces this vector with the result of projecting this vector onto a given vector.
+    public mutating func project(onto other: SIMD2) {
+        self = projected(onto: other)
     }
     
     /// Returns the result of the linear interpolation between the vector
@@ -462,11 +378,21 @@ extension Vector2 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func lerp(to other: Vector2, weight: FloatingPointType) -> Vector2 {
-        _lerp(to: other, weight: weight)
+    public func lerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
+        self + weight * (other - self)
     }
     
-    /// Returns the result of spherical linear interpolation between the vector
+    /// Replaces this vector with the result of the linear interpolation between this vector
+    /// and another one by a given amount.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    public mutating func formLerp(to other: SIMD2, weight: Scalar) {
+        self = lerp(to: other, weight: weight)
+    }
+    
+    /// Returns the result of spherical linear interpolation between this vector
     /// and another one by a given amount.
     ///
     /// This method also handles interpolating the lengths if the input
@@ -476,113 +402,231 @@ extension Vector2 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func slerp(to other: Vector2, weight: FloatingPointType) -> Vector2 {
-        _slerp(to: other, weight: weight)
+    public func slerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
+        let startLengthSq = magnitudeSquared
+        let endLengthSq = other.magnitudeSquared
+        if startLengthSq == .zero || endLengthSq == .zero {
+            // Zero length vectors have no angle, so the best we can do is either lerp or throw an error.
+            return lerp(to: other, weight: weight)
+        }
+        let startLength = startLengthSq.squareRoot()
+        let resultLength = startLength.lerp(to: endLengthSq.squareRoot(), weight: weight)
+        let angle = angle(toVector: other)
+        return rotated(by: angle * weight) * (resultLength / startLength)
     }
     
-    /// Performs a cubic interpolation between the vector and another one.
+    /// Replaces this vector with the result of spherical linear interpolation between this vector
+    /// and another one by a given amount.
+    ///
+    /// This method also handles interpolating the lengths if the input
+    /// vectors have different lengths. For the special case of one
+    /// or both input vectors having zero length, this method behaves like ``lerp(to:weight:)``.
     ///
     /// - Parameters:
-    ///   - b: The interpolation destination.
-    ///   - preA: The first handle.
-    ///   - postB: The second handle.
+    ///   - other: The interpolation destination.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    public mutating  func formSlerp(to other: SIMD2, weight: Scalar) {
+        self = slerp(to: other, weight: weight)
+    }
+    
+    /// Performs a cubic interpolation between this vector and another one.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - pre: The first handle.
+    ///   - post: The second handle.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
     public func cubicInterpolation(
-        b: Vector2,
-        preA: Vector2,
-        postB: Vector2,
-        weight: FloatingPointType
-    ) -> Vector2 {
-        _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
+        to other: SIMD2,
+        pre: SIMD2,
+        post: SIMD2,
+        weight: Scalar
+    ) -> SIMD2 {
+        SIMD2(
+            x: self.x.cubicInterpolation(
+                to: other.x, pre: pre.x, post: post.x, weight: weight
+            ),
+            y: self.y.cubicInterpolation(
+                to: other.y, pre: pre.y, post: post.y, weight: weight
+            )
+        )
     }
     
-    /// Performs a cubic interpolation between the vector and another one.
+    /// Replaces this vector with the cubic interpolation between this vector and another one.
     ///
     /// - Parameters:
-    ///   - b: The interpolation destination.
-    ///   - preA: The first handle.
-    ///   - postB: The second handle.
+    ///   - other: The interpolation destination.
+    ///   - pre: The first handle.
+    ///   - post: The second handle.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    public mutating func formCubicInterpolation(
+        to other: SIMD2,
+        pre: SIMD2,
+        post: SIMD2,
+        weight: Scalar
+    ) {
+        self = cubicInterpolation(to: other, pre: pre, post: post, weight: weight)
+    }
+    
+    /// Performs a cubic interpolation between this vector and another one.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - pre: The first handle.
+    ///   - post: The second handle.
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
     ///
-    /// It can perform smoother interpolation than ``cubicInterpolation(b:preA:postB:weight:)`` by the time values.
+    /// It can perform smoother interpolation than ``cubicInterpolation(to:pre:post:weight:)`` by the time values.
     public func cubicInterpolationInTime(
-        b: Vector2,
-        preA: Vector2,
-        postB: Vector2,
-        weight: FloatingPointType,
-        bT: FloatingPointType,
-        preAT: FloatingPointType,
-        postBT: FloatingPointType
-    ) -> Vector2 {
-        _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
+        to other: SIMD2,
+        pre: SIMD2,
+        post: SIMD2,
+        weight: Scalar,
+        toT: Scalar,
+        preT: Scalar,
+        postT: Scalar
+    ) -> SIMD2 {
+        SIMD2(
+            x: self.x.cubicInterpolationInTime(
+                to: other.x, pre: pre.x, post: post.x, weight: weight, toT: toT, preT: preT, postT: postT
+            ),
+            y: self.y.cubicInterpolationInTime(
+                to: other.y, pre: pre.y, post: post.y, weight: weight, toT: toT, preT: preT, postT: postT
+            )
+        )
+    }
+    
+    /// Replaces this vector with the cubic interpolation between this vector and another one.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - pre: The first handle.
+    ///   - post: The second handle.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///
+    /// It can perform smoother interpolation than ``formCubicInterpolation(to:pre:post:weight:)`` by the time values.
+    public mutating func formCubicInterpolationInTime(
+        to other: SIMD2,
+        pre: SIMD2,
+        post: SIMD2,
+        weight: Scalar,
+        toT: Scalar,
+        preT: Scalar,
+        postT: Scalar
+    ) {
+        self = cubicInterpolationInTime(
+            to: other,
+            pre: pre,
+            post: post,
+            weight: weight,
+            toT: toT,
+            preT: preT,
+            postT: postT
+        )
     }
     
     /// Returns the point at the given `t` on the Bézier curve
-    /// defined by the vector and the given control points.
-    public func bezierInterpolation(control1: Vector2, control2: Vector2, end: Vector2, t: FloatingPointType) -> Vector2 {
-        _bezierInterpolate(control1: control1, control2: control2, end: end, t: t)
+    /// defined by this vector, the given control points and the destination.
+    public func bezierInterpolation(
+        to other: SIMD2,
+        control1: SIMD2,
+        control2: SIMD2,
+        t: Scalar
+    ) -> SIMD2 {
+        /* Formula from Wikipedia article on Bezier curves. */
+        let omt = 1.0 - t
+        let omt2 = omt * omt
+        let omt3 = omt2 * omt
+        let t2 = t * t
+        let t3 = t2 * t
+        let p1 = self * omt3
+        let p2 = control1 * omt2 * t * 3.0
+        let p3 = control2 * omt * t2 * 3.0
+
+        return p1 + p2 + p3 + other * t3
+    }
+    
+    /// Replaces this vector with the point at the given `t` on the Bézier curve
+    /// defined by this vector, the given control points and the destination.
+    public mutating func formBezierInterpolation(
+        to other: SIMD2,
+        control1: SIMD2,
+        control2: SIMD2,
+        t: Scalar
+    ) {
+        self = bezierInterpolation(to: other, control1: control1, control2: control2, t: t)
     }
     
     /// Returns the derivative at the given `t` on the Bézier curve
-    /// defined by the vector and the given control points.
-    public func bezierDerivative(control1: Vector2, control2: Vector2, end: Vector2, t: FloatingPointType) -> Vector2 {
-        _bezierDerivative(control1: control1, control2: control2, end: end, t: t)
+    /// defined by this vector, the given control points and the destination.
+    public func bezierDerivative(
+        to other: SIMD2,
+        control1: SIMD2,
+        control2: SIMD2,
+        t: Scalar
+    ) -> SIMD2 {
+        SIMD2(Vector2(self)._bezierDerivative(
+            control1: Vector2(control1),
+            control2: Vector2(control2),
+            end: Vector2(other),
+            t: Vector2.Scalar(t)
+        ))
     }
     
-    /// The axis of the vector's highest value.
+    /// Replaces this vector with the derivative at the given `t` on the Bézier curve
+    /// defined by this vector, the given control points and the destination.
+    public mutating func formBezierDerivative(
+        to other: SIMD2,
+        control1: SIMD2,
+        control2: SIMD2,
+        t: Scalar
+    ) {
+        self = bezierDerivative(to: other, control1: control1, control2: control2, t: t)
+    }
+    
+    /// Returns a new vector moved toward another vector by a fixed amount.
     ///
-    /// If all components are equal, this method returns ``Axis2D/x``.
-    public var maxAxis: Axis2D {
-        .init(rawValue: UInt32(_maxAxisIndex()))!
+    /// The returned value will not go past `other`.
+    public func moved(toward other: SIMD2, delta: Scalar) -> SIMD2 {
+        let vd = other - self
+        let len = vd.magnitude
+        return len <= delta || len < .cmpEpsilon ? other : self + vd / len * delta
     }
     
-    /// The axis of the vector's lowest value.
+    /// Moves this vector toward another vector by a fixed amount.
     ///
-    /// If all components are equal, this method returns ``Axis2D/y``.
-    public var minAxis: Axis2D {
-        .init(rawValue: UInt32(_minAxisIndex()))!
+    /// The returned value will not go past `other`.
+    public mutating func move(toward other: SIMD2, delta: Scalar) {
+        self = moved(toward: other, delta: delta)
     }
     
-    /// Returns a new vector moved toward to by a fixed amount.
-    ///
-    /// Will not go past the final value.
-    public func moved(toward other: Vector2, delta: FloatingPointType) -> Vector2 {
-        _moveToward(to: other, delta: delta)
+    /// Returns the result of rotating this vector by a given angle (in radians).
+    public func rotated(by angle: Scalar) -> SIMD2 {
+        let sine = sin(angle)
+        let cosi = cos(angle)
+        return SIMD2(
+            x: x * cosi - y * sine,
+            y: x * sine + y * cosi
+        )
     }
     
-    /// Returns the result of rotating the vector by angle (in radians).
-    public func rotated(by angle: FloatingPointType) -> Vector2 {
-        _rotated(angle: angle)
+    /// Rotates this vector by a given angle (in radians).
+    public mutating func rotate(by angle: Scalar) {
+        self = rotated(by: angle)
     }
     
     /// A perpendicular vector rotated 90 degrees counter-clockwise
-    /// compared to the original, with the same length.
-    public var orthogonal: Vector2 {
-        _orthogonal()
-    }
-    
-    /// A vector with all components rounded down (towards negative infinity).
-    public var floor: Vector2 {
-        _floor()
-    }
-    
-    /// A vector with all components rounded up (towards positive infinity).
-    public var ceil: Vector2 {
-        _ceil()
-    }
-    
-    /// A vector with all components rounded to the nearest integer,
-    /// with halfway cases rounded away from zero.
-    public var rounded: Vector2 {
-        _round()
+    /// compared to the original, with the same magnitude.
+    public var orthogonal: SIMD2 {
+        SIMD2(x: y, y: -x)
     }
     
     /// The aspect ratio of this vector, the ratio of `x` to `y`.
-    public var aspect: FloatingPointType {
-        _aspect()
+    public var aspect: Scalar {
+        x / y
     }
     
-    /// Returns the dot product of the vector and another one.
+    /// Returns the dot product of this vector and another one.
     ///
     /// This can be used to compare the angle between two vectors.
     /// For example, this can be used to determine whether
@@ -598,28 +642,56 @@ extension Vector2 {
     /// and `1.0` (0 degree angle) when the vectors are aligned.
     ///
     /// >note: `a.dot(b)` is equivalent to `b.dot(a)`.
-    public func dot(_ other: Vector2) -> FloatingPointType {
-        _dot(with: other)
+    public func dot(_ other: SIMD2) -> Scalar {
+        x * other.x + y * other.y
     }
     
-    /// Returns the result of sliding the vector along
-    /// a plane defined by a given normal.
-    public func slide(_ other: Vector2) -> Vector2 {
-        _slide(other)
+    /// Returns the component of this vector along the given plane,
+    /// specified by its normal vector.
+    public func slided(along normal: SIMD2) -> SIMD2 {
+        #if MATH_CHECKS
+        if !normal.isNormalized {
+            godotPrintError("The normal vector must be normalized, returning (0, 0).")
+            return SIMD2()
+        }
+        #endif
+        return self - normal * self.dot(normal)
     }
     
-    /// Returns a vector "bounced off" from a plane defined by the given normal.
-    public func bounce(_ other: Vector2) -> Vector2 {
-        _bounce(other)
+    /// Returns the component of this vector along the given plane,
+    /// specified by its normal vector.
+    public mutating func slide(along normal: SIMD2) {
+        self = slided(along: normal)
     }
     
-    /// Returns the result of reflecting the vector from a line
-    /// defined by a given direction vector.
-    public func reflect(_ other: Vector2) -> Vector2 {
-        _reflect(other)
+    /// Returns this vector bounced off a plane defined by the given normal.
+    public func bounced(off normal: SIMD2) -> SIMD2 {
+        -reflected(from: normal)
     }
     
-    /// Returns the 2D analog of the cross product for the vector and another one.
+    /// Bounces this vector off a plane defined by the given normal.
+    public mutating func bounce(off normal: SIMD2) {
+        self = bounced(off: normal)
+    }
+    
+    /// Returns the result of reflecting this vector from a plane
+    /// defined by the given normal.
+    public func reflected(from normal: SIMD2) -> SIMD2 {
+        #if MATH_CHECKS
+        if !normal.isNormalized {
+            godotPrintError("The normal vector must be normalized, returning (0, 0).")
+            return SIMD2()
+        }
+        #endif
+        return 2 * normal * self.dot(normal) - self
+    }
+    
+    /// Reflects this vector from a plane defined by the given normal.
+    public mutating func reflect(from normal: SIMD2) {
+        self = reflected(from: normal)
+    }
+    
+    /// Returns the 2D analog of the cross product for this vector and another one.
     ///
     /// This is the signed area of the parallelogram formed by the two vectors.
     /// If the second vector is clockwise from the first vector,
@@ -629,25 +701,25 @@ extension Vector2 {
     /// >note: Cross product is not defined in 2D mathematically.
     /// This method embeds the 2D vectors in the XY plane of 3D space
     /// and uses their cross product's Z component as the analog.
-    public func cross(_ other: Vector2) -> FloatingPointType {
-        _cross(with: other)
+    public func cross(_ other: SIMD2) -> Scalar {
+        x * other.y - y * other.x;
     }
     
     /// A new vector with all components in absolute values (i.e. positive).
-    public var abs: Vector2 {
-        _abs()
+    public var abs: SIMD2 {
+        SIMD2(x: Swift.abs(x), y: Swift.abs(y))
+    }
+    
+    /// Replaces this vector with a vector with all
+    /// components in absolute values (i.e. positive).
+    public mutating func formAbs() {
+        self = abs
     }
     
     /// A vector with each component set to `1.0` if it's positive,
     /// `-1.0` if it's negative, and `0.0` if it's zero.
-    public var sign: Vector2 {
-        _sign()
-    }
-    
-    /// Returns a new vector with all components clamped
-    /// between the given values.
-    public func clamped(min: Vector2, max: Vector2) -> Vector2 {
-        _clamp(min: min, max: max)
+    public var signUnitValue: SIMD2 {
+        SIMD2(x: x.signUnitValue, y: y.signUnitValue)
     }
     
     /// Returns a new vector with each component snapped to
@@ -655,11 +727,23 @@ extension Vector2 {
     ///
     /// This can also be used to round the components
     /// to an arbitrary number of decimals.
-    public func snapped(step: Vector2) -> Vector2 {
-        _snapped(step: step)
+    public func snapped(step: SIMD2) -> SIMD2 {
+        SIMD2(
+            x: x.snapped(step: step.x),
+            y: y.snapped(step: step.y)
+        )
     }
     
-    /// Creates a unit `Vector2` rotated to the given angle in radians.
+    /// Replaces this vector with a vector with each component snapped to
+    /// the nearest multiple of the corresponding component in a given vector.
+    ///
+    /// This can also be used to round the components
+    /// to an arbitrary number of decimals.
+    public mutating func snap(step: SIMD2) {
+        self = snapped(step: step)
+    }
+    
+    /// Creates a unit vector rotated to the given angle in radians.
     ///
     /// This is equivalent to doing `Vector2(x: cos(angle), y: sin(angle))` or `Vector2.right.rotated(angle)`.
     ///
@@ -671,12 +755,12 @@ extension Vector2 {
     /// print(Vector2.fromAngle(.pi / 2))
     /// // Prints "(0, 1)"
     /// ```
-    public static func fromAngle(_ angle: FloatingPointType) -> Vector2 {
-        _fromAngle(angle)
+    public static func fromAngle(_ angle: Scalar) -> SIMD2 {
+        SIMD2(x: cos(angle), y: sin(angle))
     }
     
     /// Accesses the vector component on the given axis.
-    public subscript(axis: Axis2D) -> FloatingPointType {
+    public subscript(axis axis: Axis2D) -> Scalar {
         get {
             switch axis {
             case .x: x
@@ -692,32 +776,70 @@ extension Vector2 {
     }
 }
 
-extension Vector2: Equatable, Hashable {}
-
-extension Vector2: AdditiveArithmetic, Comparable {}
-
-extension Vector2: Codable {
-    public func encode(to encoder: Encoder) throws {
-        var unkeyedContainer = encoder.unkeyedContainer()
-        try unkeyedContainer.encode(x)
-        try unkeyedContainer.encode(y)
+extension SIMD2: Comparable where Scalar : Comparable {
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func < (lhs: SIMD2<Scalar>, rhs: SIMD2<Scalar>) -> Bool {
+        lhs.x == rhs.x ? lhs.y < rhs.y : lhs.x < rhs.x
     }
     
-    public init(from decoder: Decoder) throws {
-        var container = try decoder.unkeyedContainer()
-        x = try container.decode(FloatingPointType.self)
-        y = try container.decode(FloatingPointType.self)
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func > (lhs: SIMD2<Scalar>, rhs: SIMD2<Scalar>) -> Bool {
+        lhs.x == rhs.x ? lhs.y > rhs.y : lhs.x > rhs.x
     }
-}
-
-extension Vector2: CustomStringConvertible {
-    public var description: String {
-        "(\(x), \(y))"
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func <= (lhs: SIMD2<Scalar>, rhs: SIMD2<Scalar>) -> Bool {
+        lhs.x == rhs.x ? lhs.y <= rhs.y : lhs.x < rhs.x
     }
-}
-
-extension Vector2: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        "Vector2(x: \(x), y: \(y))"
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func >= (lhs: SIMD2<Scalar>, rhs: SIMD2<Scalar>) -> Bool {
+        lhs.x == rhs.x ? lhs.y >= rhs.y : lhs.x > rhs.x
+    }
+    
+    /// The axis of the vector's highest value.
+    ///
+    /// If all components are equal, this method returns ``Axis2D/x``.
+    public var maxAxis: Axis2D {
+        return x < y ? .x : .y
+    }
+    
+    /// The axis of the vector's lowest value.
+    ///
+    /// If all components are equal, this method returns ``Axis2D/y``.
+    public var minAxis: Axis2D {
+        return x < y ? .y : .x
     }
 }

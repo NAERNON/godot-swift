@@ -1,6 +1,22 @@
 
 /// A dimension in a 3D coordinate system.
-public enum Axis3D: UInt32, GodotEnum {
+///
+/// The `rawValue` of this enum corresponds to the vector index:
+///
+/// ```swift
+/// let vector: Vector3 = Vector3(1, 3, 6)
+/// print(vector[Axis3D.x.rawValue])
+/// // Prints "1"
+/// ```
+///
+/// Axis subscripts are also available on all vectors:
+///
+/// ```swift
+/// let vector: Vector3 = Vector3(1, 3, 6)
+/// print(vector[axis: .x])
+/// // Prints "1"
+/// ```
+public enum Axis3D: Int, GodotEnum {
     case x = 0
     case y = 1
     case z = 2

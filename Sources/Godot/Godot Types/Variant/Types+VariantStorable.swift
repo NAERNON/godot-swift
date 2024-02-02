@@ -597,7 +597,7 @@ extension GodotString: VariantStorable {
 private var fromTypeConstructor_vector2 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 private var toTypeConstructor_vector2 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 
-extension Vector2: VariantStorable {
+extension Vector2: VariantStorableIn, VariantStorableOut, VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
