@@ -81,14 +81,7 @@ extension GodotString: HintableValue {
 
 // MARK: - Vector2
 
-extension Vector2: HintableValue {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
-}
-
-// MARK: - Vector2I
-
-extension Vector2I: HintableValue {
+extension SIMD2: HintableValue where Self.Scalar : VariantSIMDStorableScalar {
     public typealias HintingValue = Self
     public static var defaultHint: Hint<Self> { .typed }
 }

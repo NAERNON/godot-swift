@@ -592,79 +592,15 @@ extension GodotString: VariantStorable {
     }
 }
 
-// MARK: - Vector2
+// MARK: - SIMD2
 
-private var fromTypeConstructor_vector2 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
-private var toTypeConstructor_vector2 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
-
-extension Vector2: VariantStorableIn, VariantStorableOut, VariantStorable {
+extension SIMD2: VariantStorableIn, VariantStorableOut, VariantStorable where Scalar : VariantSIMDStorableScalar {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
+        Scalar.convertSIMD2ToStorage(value)
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector2()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
-    }
-    
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}
-
-// MARK: - Vector2I
-
-private var fromTypeConstructor_vector2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
-private var toTypeConstructor_vector2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
-
-extension Vector2I: VariantStorable {
-    public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector2I()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
+        Scalar.convertSIMD2FromCheckedStorage(storage)
     }
     
     func withGodotUnsafeRawPointer<Result>(

@@ -170,24 +170,12 @@ extension GodotString: ExposableValue {
     }
 }
 
-// MARK: - Vector2
+// MARK: - SIMD2
 
-extension Vector2: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector2
-    
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        unsafePointer!.load(as: Self.self)
+extension SIMD2: ExposableValue where Scalar : VariantSIMDStorableScalar {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        Scalar.variantSIMD2RepresentationType
     }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
-    }
-}
-
-// MARK: - Vector2I
-
-extension Vector2I: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector2I
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
