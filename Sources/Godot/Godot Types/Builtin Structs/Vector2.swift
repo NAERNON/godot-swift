@@ -1,3 +1,4 @@
+import Numerics
 
 /// A 2D vector using floating point coordinates.
 ///
@@ -22,33 +23,30 @@
 /// Check the `SIMD2` documentation to see all properties and functions
 /// the Standard Library defines.
 ///
-/// >note: Every property and method described here are extensions available for any
-/// `SIMD2` with `BinaryFloatingPoint` scalar type.
-///
 /// ## Topics
 ///
 /// ### Special Values
 ///
-/// - ``Swift/SIMD2/left``
-/// - ``Swift/SIMD2/right``
-/// - ``Swift/SIMD2/up``
-/// - ``Swift/SIMD2/down``
+/// - ``Swift/SIMD2/left-72tv6``
+/// - ``Swift/SIMD2/right-2j88a``
+/// - ``Swift/SIMD2/up-dwlf``
+/// - ``Swift/SIMD2/down-9dipr``
 ///
 /// ### Geometric Properties
 ///
 /// - ``Swift/SIMD2/width``
 /// - ``Swift/SIMD2/height``
 /// - ``Swift/SIMD2/isFinite``
-/// - ``Swift/SIMD2/aspect``
+/// - ``Swift/SIMD2/aspect-4mg9l``
 /// - ``Swift/SIMD2/orthogonal``
 /// - ``Swift/SIMD2/abs``
 /// - ``Swift/SIMD2/formAbs()``
-/// - ``Swift/SIMD2/signUnitValue``
+/// - ``Swift/SIMD2/signUnitValue-20tkd``
 ///
 /// ### Magnitude and Distance
 ///
-/// - ``Swift/SIMD2/magnitude``
-/// - ``Swift/SIMD2/magnitudeSquared``
+/// - ``Swift/SIMD2/magnitude-8meht``
+/// - ``Swift/SIMD2/magnitudeSquared-10r2h``
 /// - ``Swift/SIMD2/limitedMagnitude(_:)``
 /// - ``Swift/SIMD2/limitMagnitude(_:)``
 /// - ``Swift/SIMD2/distance(to:)``
@@ -114,8 +112,8 @@
 ///
 /// ### Rounding and Division
 ///
-/// - ``Swift/SIMD2/snapped(step:)``
-/// - ``Swift/SIMD2/snap(step:)``
+/// - ``Swift/SIMD2/snapped(step:)-3yle3``
+/// - ``Swift/SIMD2/snap(step:)-8m6kq``
 /// - ``Swift/SIMD2/positiveTruncatingRemainder(dividingBy:)-5y5sb``
 /// - ``Swift/SIMD2/formPositiveTruncatingRemainder(dividingBy:)-14e22``
 /// - ``Swift/SIMD2/positiveTruncatingRemainder(dividingBy:)-3z356``
@@ -189,33 +187,6 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         .init(x: 0, y: 1)
     }
     
-    /// The vector's angle with respect to the positive X axis,
-    /// or `(1, 0)` vector, in radians.
-    ///
-    /// For example, `Vector2.right.angle` will return zero,
-    /// `Vector2.down.angle` will return `pi/2` (a quarter turn, or `90` degrees),
-    /// and `Vector2(x: 1, y: -1).angle` will return `-pi/4`
-    /// (a negative eighth turn, or -45 degrees).
-    ///
-    /// Equivalent to the result of ``atan2(y:x:)`` when called with
-    /// the vector's `y` and `x` as parameters.
-    public var angle: Scalar {
-        atan2(y: y, x: x)
-    }
-    
-    /// Returns the angle to the given vector, in radians.
-    public func angle(toVector other: SIMD2) -> Scalar {
-        atan2(y: cross(other), x: dot(other))
-    }
-    
-    /// Returns the angle between the line connecting the
-    /// two points and the X axis, in radians.
-    ///
-    /// `a.angle(toPoint: b)` is equivalent of doing `(b - a).angle`.
-    public func angle(toPoint point: SIMD2) -> Scalar {
-        (point - self).angle
-    }
-    
     /// Returns the normalized vector pointing from the vector to another one.
     ///
     /// This is equivalent to using `(b - a).normalized`.
@@ -243,7 +214,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     
     /// The squared magnitude of the vector.
     ///
-    /// This property runs faster than ``magnitude``, so prefer it if you need
+    /// This property runs faster than ``magnitude-8meht``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
     public var magnitudeSquared: Scalar {
         (self * self).sum()
@@ -390,43 +361,6 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///   - weight: The interpolation amount. Must be between `0` and `1`.
     public mutating func formLerp(to other: SIMD2, weight: Scalar) {
         self = lerp(to: other, weight: weight)
-    }
-    
-    /// Returns the result of spherical linear interpolation between this vector
-    /// and another one by a given amount.
-    ///
-    /// This method also handles interpolating the lengths if the input
-    /// vectors have different lengths. For the special case of one
-    /// or both input vectors having zero length, this method behaves like ``lerp(to:weight:)``.
-    ///
-    /// - Parameters:
-    ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public func slerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
-        let startLengthSq = magnitudeSquared
-        let endLengthSq = other.magnitudeSquared
-        if startLengthSq == .zero || endLengthSq == .zero {
-            // Zero length vectors have no angle, so the best we can do is either lerp or throw an error.
-            return lerp(to: other, weight: weight)
-        }
-        let startLength = startLengthSq.squareRoot()
-        let resultLength = startLength.lerp(to: endLengthSq.squareRoot(), weight: weight)
-        let angle = angle(toVector: other)
-        return rotated(by: angle * weight) * (resultLength / startLength)
-    }
-    
-    /// Replaces this vector with the result of spherical linear interpolation between this vector
-    /// and another one by a given amount.
-    ///
-    /// This method also handles interpolating the lengths if the input
-    /// vectors have different lengths. For the special case of one
-    /// or both input vectors having zero length, this method behaves like ``lerp(to:weight:)``.
-    ///
-    /// - Parameters:
-    ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
-    public mutating  func formSlerp(to other: SIMD2, weight: Scalar) {
-        self = slerp(to: other, weight: weight)
     }
     
     /// Performs a cubic interpolation between this vector and another one.
@@ -600,21 +534,6 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         self = moved(toward: other, delta: delta)
     }
     
-    /// Returns the result of rotating this vector by a given angle (in radians).
-    public func rotated(by angle: Scalar) -> SIMD2 {
-        let sine = sin(angle)
-        let cosi = cos(angle)
-        return SIMD2(
-            x: x * cosi - y * sine,
-            y: x * sine + y * cosi
-        )
-    }
-    
-    /// Rotates this vector by a given angle (in radians).
-    public mutating func rotate(by angle: Scalar) {
-        self = rotated(by: angle)
-    }
-    
     /// A perpendicular vector rotated 90 degrees counter-clockwise
     /// compared to the original, with the same magnitude.
     public var orthogonal: SIMD2 {
@@ -705,17 +624,6 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         x * other.y - y * other.x;
     }
     
-    /// A new vector with all components in absolute values (i.e. positive).
-    public var abs: SIMD2 {
-        SIMD2(x: Swift.abs(x), y: Swift.abs(y))
-    }
-    
-    /// Replaces this vector with a vector with all
-    /// components in absolute values (i.e. positive).
-    public mutating func formAbs() {
-        self = abs
-    }
-    
     /// A vector with each component set to `1.0` if it's positive,
     /// `-1.0` if it's negative, and `0.0` if it's zero.
     public var signUnitValue: SIMD2 {
@@ -741,38 +649,6 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     /// to an arbitrary number of decimals.
     public mutating func snap(step: SIMD2) {
         self = snapped(step: step)
-    }
-    
-    /// Creates a unit vector rotated to the given angle in radians.
-    ///
-    /// This is equivalent to doing `Vector2(x: cos(angle), y: sin(angle))` or `Vector2.right.rotated(angle)`.
-    ///
-    /// ```swift
-    /// print(Vector2.fromAngle(0))
-    /// // Prints "(1, 0)"
-    /// print(Vector2(x: 1, y: 0).angle)
-    /// // Prints "0", which is the angle used above.
-    /// print(Vector2.fromAngle(.pi / 2))
-    /// // Prints "(0, 1)"
-    /// ```
-    public static func fromAngle(_ angle: Scalar) -> SIMD2 {
-        SIMD2(x: cos(angle), y: sin(angle))
-    }
-    
-    /// Accesses the vector component on the given axis.
-    public subscript(axis axis: Axis2D) -> Scalar {
-        get {
-            switch axis {
-            case .x: x
-            case .y: y
-            }
-        }
-        set(newValue) {
-            switch axis {
-            case .x: x = newValue
-            case .y: y = newValue
-            }
-        }
     }
 }
 
@@ -841,5 +717,133 @@ extension SIMD2: Comparable where Scalar : Comparable {
     /// If all components are equal, this method returns ``Axis2D/y``.
     public var minAxis: Axis2D {
         return x < y ? .y : .x
+    }
+}
+
+extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
+    /// Creates a unit vector rotated to the given angle in radians.
+    ///
+    /// This is equivalent to doing `Vector2(x: cos(angle), y: sin(angle))` or `Vector2.right.rotated(angle)`.
+    ///
+    /// ```swift
+    /// print(Vector2.fromAngle(0))
+    /// // Prints "(1, 0)"
+    /// print(Vector2(x: 1, y: 0).angle)
+    /// // Prints "0", which is the angle used above.
+    /// print(Vector2.fromAngle(.pi / 2))
+    /// // Prints "(0, 1)"
+    /// ```
+    public static func fromAngle(_ angle: Scalar) -> SIMD2 {
+        SIMD2(x: cos(angle), y: sin(angle))
+    }
+    
+    /// The vector's angle with respect to the positive X axis,
+    /// or `(1, 0)` vector, in radians.
+    ///
+    /// For example, `Vector2.right.angle` will return zero,
+    /// `Vector2.down.angle` will return `pi/2` (a quarter turn, or `90` degrees),
+    /// and `Vector2(x: 1, y: -1).angle` will return `-pi/4`
+    /// (a negative eighth turn, or -45 degrees).
+    ///
+    /// Equivalent to the result of ``atan2(y:x:)`` when called with
+    /// the vector's `y` and `x` as parameters.
+    public var angle: Scalar {
+        atan2(y: y, x: x)
+    }
+    
+    /// Returns the angle to the given vector, in radians.
+    public func angle(toVector other: SIMD2) -> Scalar {
+        atan2(y: cross(other), x: dot(other))
+    }
+    
+    /// Returns the angle between the line connecting the
+    /// two points and the X axis, in radians.
+    ///
+    /// `a.angle(toPoint: b)` is equivalent of doing `(b - a).angle`.
+    public func angle(toPoint point: SIMD2) -> Scalar {
+        (point - self).angle
+    }
+    
+    /// Returns the result of rotating this vector by a given angle (in radians).
+    public func rotated(by angle: Scalar) -> SIMD2 {
+        let sine = sin(angle)
+        let cosi = cos(angle)
+        return SIMD2(
+            x: x * cosi - y * sine,
+            y: x * sine + y * cosi
+        )
+    }
+    
+    /// Rotates this vector by a given angle (in radians).
+    public mutating func rotate(by angle: Scalar) {
+        self = rotated(by: angle)
+    }
+    
+    /// Returns the result of spherical linear interpolation between this vector
+    /// and another one by a given amount.
+    ///
+    /// This method also handles interpolating the lengths if the input
+    /// vectors have different lengths. For the special case of one
+    /// or both input vectors having zero length, this method behaves like ``lerp(to:weight:)``.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    public func slerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
+        let startLengthSq = magnitudeSquared
+        let endLengthSq = other.magnitudeSquared
+        if startLengthSq == .zero || endLengthSq == .zero {
+            // Zero length vectors have no angle, so the best we can do is either lerp or throw an error.
+            return lerp(to: other, weight: weight)
+        }
+        let startLength = startLengthSq.squareRoot()
+        let resultLength = startLength.lerp(to: endLengthSq.squareRoot(), weight: weight)
+        let angle = angle(toVector: other)
+        return rotated(by: angle * weight) * (resultLength / startLength)
+    }
+    
+    /// Replaces this vector with the result of spherical linear interpolation between this vector
+    /// and another one by a given amount.
+    ///
+    /// This method also handles interpolating the lengths if the input
+    /// vectors have different lengths. For the special case of one
+    /// or both input vectors having zero length, this method behaves like ``lerp(to:weight:)``.
+    ///
+    /// - Parameters:
+    ///   - other: The interpolation destination.
+    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    public mutating  func formSlerp(to other: SIMD2, weight: Scalar) {
+        self = slerp(to: other, weight: weight)
+    }
+}
+
+extension SIMD2 where Scalar : Comparable & SignedNumeric {
+    /// A new vector with all components in absolute values (i.e. positive).
+    public var abs: SIMD2 {
+        SIMD2(x: Swift.abs(x), y: Swift.abs(y))
+    }
+    
+    /// Replaces this vector with a vector with all
+    /// components in absolute values (i.e. positive).
+    public mutating func formAbs() {
+        self = abs
+    }
+}
+
+extension SIMD2 {
+    /// Accesses the vector component on the given axis.
+    public subscript(axis axis: Axis2D) -> Scalar {
+        get {
+            switch axis {
+            case .x: x
+            case .y: y
+            }
+        }
+        set(newValue) {
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
+            }
+        }
     }
 }
