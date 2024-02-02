@@ -1,11 +1,12 @@
+import Numerics
 
-extension BinaryFloatingPoint {
+extension BinaryFloatingPoint where Self : Real {
     /// Converts from decibels to linear energy (audio).
     ///
     /// >tip: This property can also be set, enabling streamlined conversions.
     public var dbToLinear: Self {
         get {
-            exp(self * 0.11512925464970228420089957273422)
+            Self.exp(self * 0.11512925464970228420089957273422)
         }
         set(newValue) {
             self = newValue.linearToDB
@@ -20,13 +21,15 @@ extension BinaryFloatingPoint {
     /// >tip: This property can also be set, enabling streamlined conversions.
     public var linearToDB: Self {
         get {
-            log(self) * 8.6858896380650365530225783783321
+            Self.log(self) * 8.6858896380650365530225783783321
         }
         set(newValue) {
             self = newValue.dbToLinear
         }
     }
-    
+}
+
+extension BinaryFloatingPoint {
     /// Converts an angle expressed in degrees to radians.
     ///
     /// >tip: This property can also be set, enabling streamlined conversions:

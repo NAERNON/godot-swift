@@ -930,28 +930,8 @@ extension BinaryInteger {
 ///
 /// [wiki]: https://en.wikipedia.org/wiki/Natural_logarithm
 /// [wiki_e]: https://en.wikipedia.org/wiki/E_(mathematical_constant)
-@_documentation(visibility: internal)
-public func log(_ x: Double) -> Double {
-    _log(x)
-}
-/// Returns the [natural logarithm][wiki] of a given value.
-///
-/// The base is [*e*][wiki_e], with *e* being approximately `2.71828`.
-/// This is the amount of time needed to reach a certain level of continuous growth.
-///
-/// This is not the same as the "log" function on most calculators,
-/// which uses a base `10` logarithm. To use base `10` logarithm, use `log(x)/log(10)`.
-///
-/// >note: The logarithm of `0` returns `-.inf`, while negative values return `-.nan`.
-///
-/// [wiki]: https://en.wikipedia.org/wiki/Natural_logarithm
-/// [wiki_e]: https://en.wikipedia.org/wiki/E_(mathematical_constant)
-///
-/// >note: This function is designed to work with `Double`.
-/// Using this function with another floating-point type
-/// might lose precision.
-public func log<T: BinaryFloatingPoint>(_ x: T) -> T {
-    T(_log(Double(x)))
+public func log<T: Real>(_ x: T) -> T {
+    T.log(x)
 }
 
 /// The natural exponential function.
@@ -961,21 +941,7 @@ public func log<T: BinaryFloatingPoint>(_ x: T) -> T {
 /// *e* has an approximate value of `2.71828`, and can be obtained with `exp(1)`.
 ///
 /// For exponents to other bases use the method `pow`.
-@_documentation(visibility: internal)
-public func exp(_ x: Double) -> Double {
-    _exp(x)
-}
-/// The natural exponential function.
 ///
-/// It raises the mathematical constant *e* to the power of `x` and returns it.
-///
-/// *e* has an approximate value of `2.71828`, and can be obtained with `exp(1)`.
-///
-/// For exponents to other bases use the method `pow`.
-///
-/// >note: This function is designed to work with `Double`.
-/// Using this function with another floating-point type
-/// might lose precision.
-public func exp<T: BinaryFloatingPoint>(_ x: T) -> T {
-    T(_exp(Double(x)))
+public func exp<T: Real>(_ x: T) -> T {
+    T.exp(x)
 }
