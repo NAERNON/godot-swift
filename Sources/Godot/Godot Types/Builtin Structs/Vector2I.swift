@@ -112,8 +112,8 @@ extension SIMD2 where Scalar : BinaryInteger {
     ///
     /// This property runs faster than ``magnitude-9nsez``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var magnitudeSquared: Int64 {
-        (Int64(x) * Int64(x)) + (Int64(y) * Int64(y))
+    public var magnitudeSquared: UInt64 {
+        (UInt64(x) * UInt64(x)) + (UInt64(y) * UInt64(y))
     }
     
     /// A vector with each component set to `1` if it's positive,
