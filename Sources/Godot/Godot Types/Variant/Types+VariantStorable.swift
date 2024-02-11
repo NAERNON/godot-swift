@@ -1,7 +1,5 @@
 import GodotExtensionHeaders
 
-// MARK: - Bool
-
 private var fromTypeConstructor_bool = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
 private var toTypeConstructor_bool = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
 
@@ -46,8 +44,6 @@ extension Bool: VariantStorable {
         return value
     }
 }
-
-// MARK: - Int
 
 private var fromTypeConstructor_int = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_INT)!
 private var toTypeConstructor_int = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_INT)!
@@ -262,7 +258,7 @@ extension Int64: VariantStorable {
     }
 }
 
-extension UInt8: VariantStorable {
+extension UInt: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -304,7 +300,7 @@ extension UInt8: VariantStorable {
     }
 }
 
-extension UInt: VariantStorable {
+extension UInt8: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
@@ -472,8 +468,6 @@ extension UInt64: VariantStorable {
     }
 }
 
-// MARK: - Double
-
 private var fromTypeConstructor_float = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 private var toTypeConstructor_float = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 
@@ -519,8 +513,6 @@ extension Double: VariantStorable {
     }
 }
 
-// MARK: - Float
-
 extension Float: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
@@ -563,8 +555,6 @@ extension Float: VariantStorable {
     }
 }
 
-// MARK: - GodotString
-
 private var fromTypeConstructor_string = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 private var toTypeConstructor_string = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 
@@ -591,8 +581,6 @@ extension GodotString: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - SIMD2
 
 extension SIMD2: VariantStorableIn, VariantStorableOut, VariantStorable where Scalar : VariantSIMDStorableScalar {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -622,7 +610,61 @@ extension SIMD2: VariantStorableIn, VariantStorableOut, VariantStorable where Sc
     }
 }
 
-// MARK: - Rect2
+extension SIMD3: VariantStorableIn, VariantStorableOut, VariantStorable where Scalar : VariantSIMDStorableScalar {
+    public static func convertToStorage(_ value: Self) -> Variant.Storage {
+        Scalar.convertSIMD3ToStorage(value)
+    }
+    
+    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
+        Scalar.convertSIMD3FromCheckedStorage(storage)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
+    }
+}
+
+extension SIMD4: VariantStorableIn, VariantStorableOut, VariantStorable where Scalar : VariantSIMDStorableScalar {
+    public static func convertToStorage(_ value: Self) -> Variant.Storage {
+        Scalar.convertSIMD4ToStorage(value)
+    }
+    
+    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
+        Scalar.convertSIMD4FromCheckedStorage(storage)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
+    }
+}
 
 private var fromTypeConstructor_rect2 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
 private var toTypeConstructor_rect2 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
@@ -669,8 +711,6 @@ extension Rect2: VariantStorable {
     }
 }
 
-// MARK: - Rect2I
-
 private var fromTypeConstructor_rect2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 private var toTypeConstructor_rect2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 
@@ -715,102 +755,6 @@ extension Rect2I: VariantStorable {
         return value
     }
 }
-
-// MARK: - Vector3
-
-private var fromTypeConstructor_vector3 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
-private var toTypeConstructor_vector3 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
-
-extension Vector3: VariantStorable {
-    public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector3()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
-    }
-    
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}
-
-// MARK: - Vector3I
-
-private var fromTypeConstructor_vector3i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
-private var toTypeConstructor_vector3i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
-
-extension Vector3I: VariantStorable {
-    public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector3I()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
-    }
-    
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}
-
-// MARK: - Transform2D
 
 private var fromTypeConstructor_transform2D = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
 private var toTypeConstructor_transform2D = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
@@ -857,102 +801,6 @@ extension Transform2D: VariantStorable {
     }
 }
 
-// MARK: - Vector4
-
-private var fromTypeConstructor_vector4 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
-private var toTypeConstructor_vector4 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
-
-extension Vector4: VariantStorable {
-    public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector4()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
-    }
-    
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}
-
-// MARK: - Vector4I
-
-private var fromTypeConstructor_vector4i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
-private var toTypeConstructor_vector4i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
-
-extension Vector4I: VariantStorable {
-    public static func convertToStorage(_ value: Self) -> Variant.Storage {
-        let variant = Variant.Storage()
-        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafePointer(to: value) { otherNativeTypePtr in
-                fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        var newValue = Vector4I()
-        
-        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return newValue
-    }
-    
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}
-
-// MARK: - Plane
-
 private var fromTypeConstructor_plane = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 private var toTypeConstructor_plane = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 
@@ -997,8 +845,6 @@ extension Plane: VariantStorable {
         return value
     }
 }
-
-// MARK: - Quaternion
 
 private var fromTypeConstructor_quaternion = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
 private var toTypeConstructor_quaternion = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
@@ -1045,8 +891,6 @@ extension Quaternion: VariantStorable {
     }
 }
 
-// MARK: - AABB
-
 private var fromTypeConstructor_aabb = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 private var toTypeConstructor_aabb = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 
@@ -1091,8 +935,6 @@ extension AABB: VariantStorable {
         return value
     }
 }
-
-// MARK: - Basis
 
 private var fromTypeConstructor_basis = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
 private var toTypeConstructor_basis = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
@@ -1139,8 +981,6 @@ extension Basis: VariantStorable {
     }
 }
 
-// MARK: - Transform3D
-
 private var fromTypeConstructor_transform3D = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 private var toTypeConstructor_transform3D = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 
@@ -1185,8 +1025,6 @@ extension Transform3D: VariantStorable {
         return value
     }
 }
-
-// MARK: - Projection
 
 private var fromTypeConstructor_projection = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
 private var toTypeConstructor_projection = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
@@ -1233,8 +1071,6 @@ extension Projection: VariantStorable {
     }
 }
 
-// MARK: - Color
-
 private var fromTypeConstructor_color = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 private var toTypeConstructor_color = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 
@@ -1280,8 +1116,6 @@ extension Color: VariantStorable {
     }
 }
 
-// MARK: - GodotStringName
-
 private var fromTypeConstructor_stringName = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 private var toTypeConstructor_stringName = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 
@@ -1308,8 +1142,6 @@ extension GodotStringName: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - NodePath
 
 private var fromTypeConstructor_nodePath = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
 private var toTypeConstructor_nodePath = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
@@ -1338,8 +1170,6 @@ extension NodePath: VariantStorable {
     }
 }
 
-// MARK: - RID
-
 private var fromTypeConstructor_rid = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RID)!
 private var toTypeConstructor_rid = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RID)!
 
@@ -1366,8 +1196,6 @@ extension RID: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - Object
 
 private var fromTypeConstructor_object = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 private var toTypeConstructor_object = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
@@ -1441,8 +1269,6 @@ extension Object: VariantStorable {
     }
 }
 
-// MARK: - Optional<Object>
-
 extension Optional: VariantStorable where Wrapped : Object {
     public static var variantStorageType: Variant.StorageType? { .object }
     
@@ -1477,8 +1303,6 @@ extension Optional: VariantStorable where Wrapped : Object {
     }
 }
 
-// MARK: - Callable
-
 private var fromTypeConstructor_callable = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 private var toTypeConstructor_callable = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 
@@ -1506,8 +1330,6 @@ extension Callable: VariantStorable {
     }
 }
 
-// MARK: - Signal
-
 private var fromTypeConstructor_signal = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 private var toTypeConstructor_signal = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 
@@ -1534,8 +1356,6 @@ extension Signal: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - GodotDictionary
 
 private var fromTypeConstructor_dictionary = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 private var toTypeConstructor_dictionary = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
@@ -1573,8 +1393,6 @@ where Key == Variant, AssociatedValue == Variant
 {
     public static var variantStorageType: Variant.StorageType? { .dictionary }
 }
-
-// MARK: - GodotArray
 
 private var fromTypeConstructor_array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 private var toTypeConstructor_array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
@@ -1665,8 +1483,6 @@ extension GodotArray: VariantStorable {
     }
 }
 
-// MARK: - PackedByteArray
-
 private var fromTypeConstructor_packedByteArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 private var toTypeConstructor_packedByteArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 
@@ -1693,8 +1509,6 @@ extension PackedByteArray: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - PackedInt32Array
 
 private var fromTypeConstructor_packedInt32Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 private var toTypeConstructor_packedInt32Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
@@ -1723,8 +1537,6 @@ extension PackedInt32Array: VariantStorable {
     }
 }
 
-// MARK: - PackedInt64Array
-
 private var fromTypeConstructor_packedInt64Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 private var toTypeConstructor_packedInt64Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 
@@ -1751,8 +1563,6 @@ extension PackedInt64Array: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - PackedFloat32Array
 
 private var fromTypeConstructor_packedFloat32Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
 private var toTypeConstructor_packedFloat32Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
@@ -1781,8 +1591,6 @@ extension PackedFloat32Array: VariantStorable {
     }
 }
 
-// MARK: - PackedFloat64Array
-
 private var fromTypeConstructor_packedFloat64Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 private var toTypeConstructor_packedFloat64Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 
@@ -1809,8 +1617,6 @@ extension PackedFloat64Array: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - PackedStringArray
 
 private var fromTypeConstructor_packedStringArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 private var toTypeConstructor_packedStringArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
@@ -1839,8 +1645,6 @@ extension PackedStringArray: VariantStorable {
     }
 }
 
-// MARK: - PackedVector2Array
-
 private var fromTypeConstructor_packedVector2Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 private var toTypeConstructor_packedVector2Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 
@@ -1867,8 +1671,6 @@ extension PackedVector2Array: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - PackedVector3Array
 
 private var fromTypeConstructor_packedVector3Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 private var toTypeConstructor_packedVector3Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
@@ -1897,8 +1699,6 @@ extension PackedVector3Array: VariantStorable {
     }
 }
 
-// MARK: - PackedColorArray
-
 private var fromTypeConstructor_packedColorArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 private var toTypeConstructor_packedColorArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 
@@ -1925,8 +1725,6 @@ extension PackedColorArray: VariantStorable {
         return newValue
     }
 }
-
-// MARK: - Optional
 
 extension Optional: VariantStorableIn where Wrapped : VariantStorableIn {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {

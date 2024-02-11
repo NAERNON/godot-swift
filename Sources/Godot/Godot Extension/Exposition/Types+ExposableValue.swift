@@ -1,7 +1,5 @@
 import GodotExtensionHeaders
 
-// MARK: - Bool
-
 extension Bool: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .bool
     
@@ -13,8 +11,6 @@ extension Bool: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Int
 
 extension Int: ExposableValue {
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
@@ -74,9 +70,7 @@ extension Int64: ExposableValue {
     }
 }
 
-extension UInt8: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .uint8
-    
+extension UInt: ExposableValue {
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
     }
@@ -86,7 +80,9 @@ extension UInt8: ExposableValue {
     }
 }
 
-extension UInt: ExposableValue {
+extension UInt8: ExposableValue {
+    public static let variantRepresentationType: Variant.RepresentationType = .uint8
+    
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         unsafePointer!.load(as: Self.self)
     }
@@ -132,8 +128,6 @@ extension UInt64: ExposableValue {
     }
 }
 
-// MARK: - Double
-
 extension Double: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .double
     
@@ -145,8 +139,6 @@ extension Double: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Float
 
 extension Float: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .float
@@ -160,8 +152,6 @@ extension Float: ExposableValue {
     }
 }
 
-// MARK: - GodotString
-
 extension GodotString: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .string
     
@@ -169,8 +159,6 @@ extension GodotString: ExposableValue {
         Self._ptr_constructor_godotstring(from: unsafePointer!)
     }
 }
-
-// MARK: - SIMD2
 
 extension SIMD2: ExposableValue where Scalar : VariantSIMDStorableScalar {
     public static var variantRepresentationType: Variant.RepresentationType {
@@ -186,7 +174,33 @@ extension SIMD2: ExposableValue where Scalar : VariantSIMDStorableScalar {
     }
 }
 
-// MARK: - Rect2
+extension SIMD3: ExposableValue where Scalar : VariantSIMDStorableScalar {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        Scalar.variantSIMD3RepresentationType
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+}
+
+extension SIMD4: ExposableValue where Scalar : VariantSIMDStorableScalar {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        Scalar.variantSIMD4RepresentationType
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+}
 
 extension Rect2: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .rect2
@@ -200,8 +214,6 @@ extension Rect2: ExposableValue {
     }
 }
 
-// MARK: - Rect2I
-
 extension Rect2I: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .rect2I
     
@@ -213,36 +225,6 @@ extension Rect2I: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Vector3
-
-extension Vector3: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector3
-    
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        unsafePointer!.load(as: Self.self)
-    }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
-    }
-}
-
-// MARK: - Vector3I
-
-extension Vector3I: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector3I
-        
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        unsafePointer!.load(as: Self.self)
-    }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
-    }
-}
-
-// MARK: - Transform2D
 
 extension Transform2D: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .transform2D
@@ -256,36 +238,6 @@ extension Transform2D: ExposableValue {
     }
 }
 
-// MARK: - Vector4
-
-extension Vector4: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector4
-    
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        unsafePointer!.load(as: Self.self)
-    }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
-    }
-}
-
-// MARK: - Vector4I
-
-extension Vector4I: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .vector4I
-    
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        unsafePointer!.load(as: Self.self)
-    }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
-    }
-}
-
-// MARK: - Plane
-
 extension Plane: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .plane
     
@@ -297,8 +249,6 @@ extension Plane: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Quaternion
 
 extension Quaternion: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .quaternion
@@ -312,8 +262,6 @@ extension Quaternion: ExposableValue {
     }
 }
 
-// MARK: - AABB
-
 extension AABB: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .aabb
     
@@ -325,8 +273,6 @@ extension AABB: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Basis
 
 extension Basis: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .basis
@@ -340,8 +286,6 @@ extension Basis: ExposableValue {
     }
 }
 
-// MARK: - Transform3D
-
 extension Transform3D: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .transform3D
     
@@ -353,8 +297,6 @@ extension Transform3D: ExposableValue {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-// MARK: - Projection
 
 extension Projection: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .projection
@@ -368,8 +310,6 @@ extension Projection: ExposableValue {
     }
 }
 
-// MARK: - Color
-
 extension Color: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .color
     
@@ -382,8 +322,6 @@ extension Color: ExposableValue {
     }
 }
 
-// MARK: - GodotStringName
-
 extension GodotStringName: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .stringName
     
@@ -391,8 +329,6 @@ extension GodotStringName: ExposableValue {
         Self._ptr_constructor_godotstringname(from: unsafePointer!)
     }
 }
-
-// MARK: - NodePath
 
 extension NodePath: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .nodePath
@@ -402,8 +338,6 @@ extension NodePath: ExposableValue {
     }
 }
 
-// MARK: - RID
-
 extension RID: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .rid
     
@@ -411,8 +345,6 @@ extension RID: ExposableValue {
         Self._ptr_constructor_rid(from: unsafePointer!)
     }
 }
-
-// MARK: - Object
 
 extension Optional: ExposableValue where Wrapped : Object {
     public static var variantRepresentationType: Variant.RepresentationType { .object }
@@ -438,8 +370,6 @@ extension Optional: ExposableValue where Wrapped : Object {
     }
 }
 
-// MARK: - Callable
-
 extension Callable: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .callable
     
@@ -448,8 +378,6 @@ extension Callable: ExposableValue {
     }
 }
 
-// MARK: - Signal
-
 extension Signal: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .signal
     
@@ -457,8 +385,6 @@ extension Signal: ExposableValue {
         Self._ptr_constructor_signal(from: unsafePointer!)
     }
 }
-
-// MARK: - GodotDictionary
 
 extension GodotDictionary: ExposableValue
 where Key == Variant, AssociatedValue == Variant
@@ -470,8 +396,6 @@ where Key == Variant, AssociatedValue == Variant
     }
 }
 
-// MARK: - GodotArray
-
 extension GodotArray: ExposableValue where Element : ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType { .array }
     
@@ -479,8 +403,6 @@ extension GodotArray: ExposableValue where Element : ExposableValue {
         Self._ptr_constructor_godotarray(from: unsafePointer!)
     }
 }
-
-// MARK: - PackedByteArray
 
 extension PackedByteArray: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedByteArray
@@ -490,8 +412,6 @@ extension PackedByteArray: ExposableValue {
     }
 }
 
-// MARK: - PackedInt32Array
-
 extension PackedInt32Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedInt32Array
     
@@ -499,8 +419,6 @@ extension PackedInt32Array: ExposableValue {
         Self._ptr_constructor_packedint32array(from: unsafePointer!)
     }
 }
-
-// MARK: - PackedInt64Array
 
 extension PackedInt64Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedInt64Array
@@ -510,8 +428,6 @@ extension PackedInt64Array: ExposableValue {
     }
 }
 
-// MARK: - PackedFloat32Array
-
 extension PackedFloat32Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedFloat32Array
     
@@ -519,8 +435,6 @@ extension PackedFloat32Array: ExposableValue {
         Self._ptr_constructor_packedfloat32array(from: unsafePointer!)
     }
 }
-
-// MARK: - PackedFloat64Array
 
 extension PackedFloat64Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedFloat64Array
@@ -530,8 +444,6 @@ extension PackedFloat64Array: ExposableValue {
     }
 }
 
-// MARK: - PackedStringArray
-
 extension PackedStringArray: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedStringArray
     
@@ -539,8 +451,6 @@ extension PackedStringArray: ExposableValue {
         Self._ptr_constructor_packedstringarray(from: unsafePointer!)
     }
 }
-
-// MARK: - PackedVector2Array
 
 extension PackedVector2Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedVector2Array
@@ -550,8 +460,6 @@ extension PackedVector2Array: ExposableValue {
     }
 }
 
-// MARK: - PackedVector3Array
-
 extension PackedVector3Array: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedVector3Array
     
@@ -559,8 +467,6 @@ extension PackedVector3Array: ExposableValue {
         Self._ptr_constructor_packedvector3array(from: unsafePointer!)
     }
 }
-
-// MARK: - PackedColorArray
 
 extension PackedColorArray: ExposableValue {
     public static let variantRepresentationType: Variant.RepresentationType = .packedColorArray

@@ -91,19 +91,3 @@ public protocol VariantStorable: VariantStorableIn, VariantStorableOut {
 public extension VariantStorable {
     static var _exposedClassName: GodotStringName { GodotStringName() }
 }
-
-// MARK: - VariantSIMDStorableScalar
-
-/// A type that enables its `SIMD` storage to be `VariantStorable`
-///
-/// Do not declare conformances to this protocol yourself.
-public protocol VariantSIMDStorableScalar: SIMDScalar, Codable, Hashable {
-    /// Returns a variant storage representing the given `SIMD2Storage`.
-    static func convertSIMD2ToStorage(_ value: consuming SIMD2<Self>) -> Variant.Storage
-    
-    /// Converts a variant storage into an instance of the `SIMD2Storage`.
-    static func convertSIMD2FromCheckedStorage(_ storage: borrowing Variant.Storage) -> SIMD2<Self>
-    
-    /// The variant representation type this `SIMD2Storage` type is converted to.
-    static var variantSIMD2RepresentationType: Variant.RepresentationType { get }
-}

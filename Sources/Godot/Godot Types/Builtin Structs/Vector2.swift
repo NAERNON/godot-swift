@@ -16,12 +16,15 @@ import Numerics
 /// it's equal to `(0, 0)`.
 /// Otherwise, it always evaluates to `true`.
 ///
-/// ### SIMD2 Type Alias
+/// ### Type Alias
 ///
-/// `Vector2` is a type alias to a `SIMD2`.
-/// This documentation only describes Godot extensions on `SIMD2`.
-/// Check the `SIMD2` documentation to see all properties and functions
-/// the Standard Library defines.
+/// `Vector2` is a type alias to `SIMD2<FloatingPointType>`.
+/// 
+/// `SIMD2` already comes with many functions that cannot be detailed here.
+/// Only added extensions are detailed in this documentation.
+///
+/// Check the corresponding documentation to learn more about the functions
+/// the Standard Library proposes.
 ///
 /// ## Topics
 ///
@@ -38,8 +41,8 @@ import Numerics
 /// - ``Swift/SIMD2/height``
 /// - ``Swift/SIMD2/isFinite``
 /// - ``Swift/SIMD2/aspect-4mg9l``
-/// - ``Swift/SIMD2/orthogonal``
-/// - ``Swift/SIMD2/abs``
+/// - ``Swift/SIMD2/orthogonal()``
+/// - ``Swift/SIMD2/abs()``
 /// - ``Swift/SIMD2/formAbs()``
 /// - ``Swift/SIMD2/signUnitValue-20tkd``
 ///
@@ -52,21 +55,16 @@ import Numerics
 /// - ``Swift/SIMD2/distance(to:)``
 /// - ``Swift/SIMD2/distanceSquared(to:)``
 ///
-/// ### Products
-///
-/// - ``Swift/SIMD2/dot(_:)``
-/// - ``Swift/SIMD2/cross(_:)``
-///
 /// ### Normalization
 ///
-/// - ``Swift/SIMD2/normalized``
+/// - ``Swift/SIMD2/normalized()``
 /// - ``Swift/SIMD2/normalize()``
 /// - ``Swift/SIMD2/isNormalized``
 ///
 /// ### Angle
 ///
 /// - ``Swift/SIMD2/angle``
-/// - ``Swift/SIMD2/angle(toVector:)``
+/// - ``Swift/SIMD2/angle(to:)``
 /// - ``Swift/SIMD2/angle(toPoint:)``
 /// - ``Swift/SIMD2/rotated(by:)``
 /// - ``Swift/SIMD2/rotate(by:)``
@@ -75,8 +73,14 @@ import Numerics
 /// ### Direction
 ///
 /// - ``Swift/SIMD2/direction(to:)``
+/// - ``Swift/SIMD2/formDirection(to:)``
 /// - ``Swift/SIMD2/moved(toward:delta:)``
 /// - ``Swift/SIMD2/move(toward:delta:)``
+///
+/// ### Products
+///
+/// - ``Swift/SIMD2/dot(_:)``
+/// - ``Swift/SIMD2/cross(_:)``
 ///
 /// ### 2D Transformations
 ///
@@ -147,7 +151,7 @@ extension SIMD2 {
         }
     }
     
-    /// The vector's width. Equivalent to `y`.
+    /// The vector's height. Equivalent to `y`.
     public var height: Scalar {
         get {
             y
@@ -163,35 +167,42 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///
     /// Represents the direction of left.
     public static var left: SIMD2 {
-        .init(x: -1, y: 0)
+        SIMD2(x: -1, y: 0)
     }
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
     public static var right: SIMD2 {
-        .init(x: 1, y: 0)
+        SIMD2(x: 1, y: 0)
     }
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
     public static var up: SIMD2 {
-        .init(x: 0, y: -1)
+        SIMD2(x: 0, y: -1)
     }
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
     public static var down: SIMD2 {
-        .init(x: 0, y: 1)
+        SIMD2(x: 0, y: 1)
     }
     
-    /// Returns the normalized vector pointing from the vector to another one.
+    /// Returns the normalized vector pointing from this vector to another one.
     ///
     /// This is equivalent to using `(b - a).normalized`.
     public func direction(to other: SIMD2) -> SIMD2 {
-        (other - self).normalized
+        (other - self).normalized()
+    }
+    
+    /// Replaces this vector with the normalized vector pointing from this vector to another one.
+    ///
+    /// This is equivalent to using `(b - a).normalized`.
+    public mutating func formDirection(to other: SIMD2) {
+        self = direction(to: other)
     }
     
     /// Returns the distance between this vector and another one.
@@ -220,7 +231,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         (self * self).sum()
     }
     
-    /// Returns this vector with a maximum magnitude.
+    /// Returns this vector with a magnitude not exceeding a given value.
     public func limitedMagnitude(_ magnitude: Scalar = 1.0) -> SIMD2 {
         let currentMagnitude = self.magnitude
         var copy = self
@@ -232,7 +243,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         return copy
     }
     
-    /// Modifies the vector magnitude with a maximum given value.
+    /// Modifies the vector magnitude to not exceed a given value.
     public mutating func limitMagnitude(_ magnitude: Scalar = 1.0) {
         self = limitedMagnitude(magnitude)
     }
@@ -241,9 +252,9 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///
     /// Equivalent to `v / v.magnitude`.
     ///
-    /// >important: This property may return incorrect values
+    /// >important: This function may return incorrect values
     /// if the vector magnitude is near zero.
-    public var normalized: SIMD2 {
+    public func normalized() -> SIMD2 {
         let length = (self * self).sum()
         if length != 0 {
             return self / length.squareRoot()
@@ -258,7 +269,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     /// >important: This function may result in incorrect values
     /// if the vector magnitude is near zero.
     public mutating func normalize() {
-        self = normalized
+        self = normalized()
     }
     
     /// A Boolean value indicating whether the vector is normalized.
@@ -268,13 +279,13 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         magnitudeSquared.isApproximatelyEqual(to: 1, tolerance: .unitEpsilon)
     }
     
-    /// Returns `true` if the vector is approximately equal to another one.
+    /// Returns `true` if this vector is approximately equal to another one.
     public func isApproximatelyEqual(to other: SIMD2) -> Bool {
         x.isApproximatelyEqual(to: other.x) &&
         y.isApproximatelyEqual(to: other.y)
     }
     
-    /// A Boolean value indicating whether the vector's values are approximately zero.
+    /// A Boolean value indicating whether this vector's values are approximately zero.
     ///
     /// This method is faster than using ``isApproximatelyEqual(to:)``
     /// with value zero.
@@ -343,12 +354,12 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         self = projected(onto: other)
     }
     
-    /// Returns the result of the linear interpolation between the vector
+    /// Returns the result of the linear interpolation between this vector
     /// and another one by a given amount.
     ///
     /// - Parameters:
     ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public func lerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
         self + weight * (other - self)
     }
@@ -358,7 +369,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///
     /// - Parameters:
     ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public mutating func formLerp(to other: SIMD2, weight: Scalar) {
         self = lerp(to: other, weight: weight)
     }
@@ -369,7 +380,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///   - other: The interpolation destination.
     ///   - pre: The first handle.
     ///   - post: The second handle.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public func cubicInterpolation(
         to other: SIMD2,
         pre: SIMD2,
@@ -377,12 +388,8 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         weight: Scalar
     ) -> SIMD2 {
         SIMD2(
-            x: self.x.cubicInterpolation(
-                to: other.x, pre: pre.x, post: post.x, weight: weight
-            ),
-            y: self.y.cubicInterpolation(
-                to: other.y, pre: pre.y, post: post.y, weight: weight
-            )
+            x: x.cubicInterpolation(to: other.x, pre: pre.x, post: post.x, weight: weight),
+            y: y.cubicInterpolation(to: other.y, pre: pre.y, post: post.y, weight: weight)
         )
     }
     
@@ -392,7 +399,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///   - other: The interpolation destination.
     ///   - pre: The first handle.
     ///   - post: The second handle.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public mutating func formCubicInterpolation(
         to other: SIMD2,
         pre: SIMD2,
@@ -408,7 +415,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///   - other: The interpolation destination.
     ///   - pre: The first handle.
     ///   - post: The second handle.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     ///
     /// It can perform smoother interpolation than ``cubicInterpolation(to:pre:post:weight:)`` by the time values.
     public func cubicInterpolationInTime(
@@ -422,11 +429,9 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ) -> SIMD2 {
         SIMD2(
             x: self.x.cubicInterpolationInTime(
-                to: other.x, pre: pre.x, post: post.x, weight: weight, toT: toT, preT: preT, postT: postT
-            ),
+                to: other.x, pre: pre.x, post: post.x, weight: weight, toT: toT, preT: preT, postT: postT),
             y: self.y.cubicInterpolationInTime(
-                to: other.y, pre: pre.y, post: post.y, weight: weight, toT: toT, preT: preT, postT: postT
-            )
+                to: other.y, pre: pre.y, post: post.y, weight: weight, toT: toT, preT: preT, postT: postT)
         )
     }
     
@@ -436,7 +441,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     ///   - other: The interpolation destination.
     ///   - pre: The first handle.
     ///   - post: The second handle.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     ///
     /// It can perform smoother interpolation than ``formCubicInterpolation(to:pre:post:weight:)`` by the time values.
     public mutating func formCubicInterpolationInTime(
@@ -499,12 +504,10 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         control2: SIMD2,
         t: Scalar
     ) -> SIMD2 {
-        SIMD2(Vector2(self)._bezierDerivative(
-            control1: Vector2(control1),
-            control2: Vector2(control2),
-            end: Vector2(other),
-            t: Vector2.Scalar(t)
-        ))
+        SIMD2(
+            x: x.bezierDerivative(to: other.x, control1: control1.x, control2: control2.x, t: t),
+            y: y.bezierDerivative(to: other.y, control1: control1.y, control2: control2.y, t: t)
+        )
     }
     
     /// Replaces this vector with the derivative at the given `t` on the Bézier curve
@@ -518,7 +521,7 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         self = bezierDerivative(to: other, control1: control1, control2: control2, t: t)
     }
     
-    /// Returns a new vector moved toward another vector by a fixed amount.
+    /// Returns this vector moved toward another vector by a fixed amount.
     ///
     /// The returned value will not go past `other`.
     public func moved(toward other: SIMD2, delta: Scalar) -> SIMD2 {
@@ -534,13 +537,15 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
         self = moved(toward: other, delta: delta)
     }
     
-    /// A perpendicular vector rotated 90 degrees counter-clockwise
+    /// Returns a perpendicular vector.
+    ///
+    /// The returned vector is rotated 90 degrees counter-clockwise
     /// compared to the original, with the same magnitude.
-    public var orthogonal: SIMD2 {
+    public func orthogonal() -> SIMD2 {
         SIMD2(x: y, y: -x)
     }
     
-    /// The aspect ratio of this vector, the ratio of `x` to `y`.
+    /// The aspect ratio of the vector, the ratio of `x` to `y`.
     public var aspect: Scalar {
         x / y
     }
@@ -709,14 +714,14 @@ extension SIMD2: Comparable where Scalar : Comparable {
     ///
     /// If all components are equal, this method returns ``Axis2D/x``.
     public var maxAxis: Axis2D {
-        return x < y ? .x : .y
+        x < y ? .x : .y
     }
     
     /// The axis of the vector's lowest value.
     ///
     /// If all components are equal, this method returns ``Axis2D/y``.
     public var minAxis: Axis2D {
-        return x < y ? .y : .x
+        x < y ? .y : .x
     }
 }
 
@@ -752,7 +757,7 @@ extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
     }
     
     /// Returns the angle to the given vector, in radians.
-    public func angle(toVector other: SIMD2) -> Scalar {
+    public func angle(to other: SIMD2) -> Scalar {
         atan2(y: cross(other), x: dot(other))
     }
     
@@ -788,7 +793,7 @@ extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
     ///
     /// - Parameters:
     ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public func slerp(to other: SIMD2, weight: Scalar) -> SIMD2 {
         let startLengthSq = magnitudeSquared
         let endLengthSq = other.magnitudeSquared
@@ -798,7 +803,7 @@ extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
         }
         let startLength = startLengthSq.squareRoot()
         let resultLength = startLength.lerp(to: endLengthSq.squareRoot(), weight: weight)
-        let angle = angle(toVector: other)
+        let angle = angle(to: other)
         return rotated(by: angle * weight) * (resultLength / startLength)
     }
     
@@ -811,22 +816,22 @@ extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
     ///
     /// - Parameters:
     ///   - other: The interpolation destination.
-    ///   - weight: The interpolation amount. Must be between `0` and `1`.
+    ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public mutating  func formSlerp(to other: SIMD2, weight: Scalar) {
         self = slerp(to: other, weight: weight)
     }
 }
 
 extension SIMD2 where Scalar : Comparable & SignedNumeric {
-    /// A new vector with all components in absolute values (i.e. positive).
-    public var abs: SIMD2 {
+    /// Returns this vector with all components in absolute values (i.e. positive).
+    public func abs() -> SIMD2 {
         SIMD2(x: Swift.abs(x), y: Swift.abs(y))
     }
     
     /// Replaces this vector with a vector with all
     /// components in absolute values (i.e. positive).
     public mutating func formAbs() {
-        self = abs
+        self = abs()
     }
 }
 

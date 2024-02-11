@@ -5,7 +5,6 @@
 ///
 /// It uses integer coordinates and is therefore preferable to ``Vector2``
 /// when exact precision is required.
-/// See ``Vector2I`` for its integer counterpart.
 ///
 /// >note: The values are limited to 32 bits, and unlike ``Vector2``
 /// this cannot be configured with an engine build option.
@@ -16,12 +15,15 @@
 /// it's equal to `(0, 0)`.
 /// Otherwise, it always evaluates to `true`.
 ///
-/// ### SIMD2 Type Alias
+/// ### Type Alias
 ///
-/// `Vector2I` is a type alias to a `SIMD2`.
-/// This documentation only describes Godot extensions on `SIMD2`.
-/// Check the `SIMD2` documentation to see all properties and functions
-/// the Standard Library defines.
+/// `Vector2I` is a type alias to `SIMD2<Int32>`.
+///
+/// `SIMD2` already comes with many functions that cannot be detailed here.
+/// Only added extensions are detailed in this documentation.
+///
+/// Check the corresponding documentation to learn more about the functions
+/// the Standard Library proposes.
 ///
 /// ## Topics
 ///
@@ -37,14 +39,14 @@
 /// - ``Swift/SIMD2/width``
 /// - ``Swift/SIMD2/height``
 /// - ``Swift/SIMD2/aspect-2zt2e``
-/// - ``Swift/SIMD2/abs``
+/// - ``Swift/SIMD2/abs()``
 /// - ``Swift/SIMD2/formAbs()``
 /// - ``Swift/SIMD2/signUnitValue-4z9me``
 ///
 /// ### Magnitude and Distance
 ///
-/// - ``Swift/SIMD2/magnitude-9nsez``
-/// - ``Swift/SIMD2/magnitudeSquared-2uekj``
+/// - ``Swift/SIMD2/magnitude-5rz9x``
+/// - ``Swift/SIMD2/magnitudeSquared-8sets``
 ///
 /// ### Axis
 ///
@@ -74,46 +76,33 @@ extension SIMD2 where Scalar : BinaryInteger {
     ///
     /// Represents the direction of left.
     public static var left: SIMD2 {
-        .init(x: -1, y: 0)
+        SIMD2(x: -1, y: 0)
     }
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
     public static var right: SIMD2 {
-        .init(x: 1, y: 0)
+        SIMD2(x: 1, y: 0)
     }
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
     public static var up: SIMD2 {
-        .init(x: 0, y: -1)
+        SIMD2(x: 0, y: -1)
     }
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
     public static var down: SIMD2 {
-        .init(x: 0, y: 1)
+        SIMD2(x: 0, y: 1)
     }
     
-    /// The aspect ratio of this vector, the ratio of `x` to `y`.
+    /// The aspect ratio of the vector, the ratio of `x` to `y`.
     public var aspect: FloatingPointType {
         FloatingPointType(x) / FloatingPointType(y)
-    }
-    
-    /// The magnitude (length) of the vector.
-    public var magnitude: FloatingPointType {
-        FloatingPointType(magnitudeSquared).squareRoot()
-    }
-    
-    /// The squared magnitude of the vector.
-    ///
-    /// This property runs faster than ``magnitude-9nsez``, so prefer it if you need
-    /// to compare vectors or need the squared distance for some formula.
-    public var magnitudeSquared: UInt64 {
-        (UInt64(x) * UInt64(x)) + (UInt64(y) * UInt64(y))
     }
     
     /// A vector with each component set to `1` if it's positive,
@@ -138,5 +127,20 @@ extension SIMD2 where Scalar : BinaryInteger {
     /// to an arbitrary number of decimals.
     public mutating func snap(step: SIMD2) {
         self = snapped(step: step)
+    }
+}
+
+extension SIMD2 where Scalar == Int32 {
+    /// The magnitude (length) of the vector.
+    public var magnitude: FloatingPointType {
+        FloatingPointType(magnitudeSquared).squareRoot()
+    }
+    
+    /// The squared magnitude of the vector.
+    ///
+    /// This property runs faster than ``magnitude-5rz9x``, so prefer it if you need
+    /// to compare vectors or need the squared distance for some formula.
+    public var magnitudeSquared: UInt64 {
+        (UInt64(x) * UInt64(x)) + (UInt64(y) * UInt64(y))
     }
 }
