@@ -7,11 +7,11 @@ extension BinaryFloatingPoint {
     
     /// This epsilon is for values related to a unit size (scalar or vector length).
     static var unitEpsilon: Self {
-        #if PRECISE_MATH_CHECKS
+#if PRECISE_MATH_CHECKS
         0.00001
-        #else
+#else
         0.001
-        #endif
+#endif
     }
 }
 

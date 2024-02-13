@@ -665,12 +665,12 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns the component of this vector along the given plane,
     /// specified by its normal vector.
     public func slided(along normal: SIMD3) -> SIMD3 {
-        #if MATH_CHECKS
+#if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0, 0).")
             return SIMD3()
         }
-        #endif
+#endif
         return self - normal * self.dot(normal)
     }
     
@@ -693,12 +693,12 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns the result of reflecting this vector from a plane
     /// defined by the given normal.
     public func reflected(from normal: SIMD3) -> SIMD3 {
-        #if MATH_CHECKS
+#if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0, 0).")
             return SIMD3()
         }
-        #endif
+#endif
         return 2 * normal * self.dot(normal) - self
     }
     

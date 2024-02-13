@@ -144,3 +144,9 @@ extension SIMD2 where Scalar == Int32 {
         (UInt64(x) * UInt64(x)) + (UInt64(y) * UInt64(y))
     }
 }
+
+/// A 2D integer point.
+public typealias Point2I = Vector2I
+
+/// A 2D integer size.
+public typealias Size2I = Vector2I

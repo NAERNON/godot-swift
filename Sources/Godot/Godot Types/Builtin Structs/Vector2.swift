@@ -573,12 +573,12 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     /// Returns the component of this vector along the given plane,
     /// specified by its normal vector.
     public func slided(along normal: SIMD2) -> SIMD2 {
-        #if MATH_CHECKS
+#if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0).")
             return SIMD2()
         }
-        #endif
+#endif
         return self - normal * self.dot(normal)
     }
     
@@ -601,12 +601,12 @@ extension SIMD2 where Scalar : BinaryFloatingPoint {
     /// Returns the result of reflecting this vector from a plane
     /// defined by the given normal.
     public func reflected(from normal: SIMD2) -> SIMD2 {
-        #if MATH_CHECKS
+#if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0).")
             return SIMD2()
         }
-        #endif
+#endif
         return 2 * normal * self.dot(normal) - self
     }
     
@@ -852,3 +852,9 @@ extension SIMD2 {
         }
     }
 }
+
+/// A 2D floating-point point.
+public typealias Point2 = Vector2
+
+/// A 2D floating-point size.
+public typealias Size2 = Vector2
