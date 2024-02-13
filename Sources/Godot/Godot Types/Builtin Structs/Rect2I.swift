@@ -9,55 +9,71 @@
 ///
 /// >note: Negative values for size are not supported. With negative size,
 /// most `Rect2I` methods do not work correctly.
-/// Use ``abs`` to get an equivalent `Rect2I` with a non-negative size.
+/// Use ``abs()`` to get an equivalent `Rect2I` with a non-negative size.
 ///
 /// ### Use as Boolean
 ///
 /// In a boolean context, a `Rect2I` evaluates to `false` if both position
-/// and size are zero (equal to `Vector2I`'s ``Vector2I/zero``).
+/// and size are zero (equal to `Vector2I`'s `zero`).
 /// Otherwise, it always evaluates to `true`.
+///
+/// ## Topics
 ///
 /// ## Topics
 ///
 /// ### Creating Rect2I
 ///
-/// - ``init(position:size:)``
-/// - ``init(x:y:width:height:)-2z1e0``
-/// - ``init(x:y:width:height:)-7jvbw``
-/// - ``init(_:)``
-/// - ``init()``
+/// - ``Rect2I/init(position:size:)``
+/// - ``Rect2I/init(x:y:width:height:)``
+/// - ``Rect2I/init(_:_:_:_:)``
+/// - ``Rect2I/init(_:)``
+/// - ``Rect2I/init(_:rounding:)``
+/// - ``Rect2I/init()``
 ///
 /// ### Geometric Properties
 ///
-/// - ``position``
-/// - ``size``
-/// - ``end``
+/// - ``Rect2I/position``
+/// - ``Rect2I/size``
+/// - ``Rect2I/end``
+/// - ``Rect2I/center``
+/// - ``Rect2I/abs()``
+/// - ``Rect2I/formAbs()``
 ///
-/// - ``center``
-/// - ``area``
-/// - ``hasArea``
-/// - ``hasPoint(_:)``
-/// - ``intersects(_:)``
-/// - ``intersection(with:)``
-/// - ``encloses(_:)``
+/// ### Area
 ///
-/// ### Transformation
+/// - ``Rect2I/area``
+/// - ``Rect2I/hasArea``
+/// - ``Rect2I/hasPoint(_:)``
 ///
-/// - ``abs``
-/// - ``expand(to:)``
-/// - ``merged(with:)``
+/// ### Intersection
 ///
-/// ### Growing Rect2I
+/// - ``Rect2I/intersects(_:)``
+/// - ``Rect2I/intersection(with:)``
+/// - ``Rect2I/formIntersection(with:)``
+/// - ``Rect2I/encloses(_:)``
 ///
-/// - ``grow(by:)``
-/// - ``grow(by:side:)``
-/// - ``grow(by:sides:)``
-/// - ``grow(left:top:right:bottom:)``
-public struct Rect2I {
+/// ### Growing
+///
+/// - ``Rect2I/grew(by:)``
+/// - ``Rect2I/grow(by:)``
+/// - ``Rect2I/grew(by:side:)``
+/// - ``Rect2I/grow(by:side:)``
+/// - ``Rect2I/grew(by:sides:)``
+/// - ``Rect2I/grow(by:sides:)``
+/// - ``Rect2I/grew(left:top:right:bottom:)``
+/// - ``Rect2I/grow(left:top:right:bottom:)``
+///
+/// ### Expanding & Merging
+///
+/// - ``Rect2I/merged(with:)``
+/// - ``Rect2I/merge(with:)``
+/// - ``Rect2I/expanded(to:)``
+/// - ``Rect2I/expand(to:)``
+public struct Rect2I: Equatable, Hashable {
     /// The origin point.
     ///
     /// This is usually the top-left corner of the rectangle.
-    public var position: Vector2I
+    public var position: Point2I
     
     /// The rectangle's width and height, starting from position.
     ///
@@ -67,11 +83,11 @@ public struct Rect2I {
     /// to non-negative values, as most methods in Godot assume
     /// that the position is the top-left corner, and the end is the
     /// bottom-right corner.
-    /// To get an equivalent rectangle with non-negative size, use ``abs``.
-    public var size: Vector2I
+    /// To get an equivalent rectangle with non-negative size, use ``abs()``.
+    public var size: Size2I
     
-    /// Creates a `Rect2I` by position and size.
-    public init(position: Vector2I, size: Vector2I) {
+    /// Creates a new 2D rectangle from the given position and size.
+    public init(position: Point2I, size: Size2I) {
         self.position = position
         self.size = size
     }
@@ -80,30 +96,46 @@ public struct Rect2I {
 extension Rect2I {
     // MARK: Constructors
     
-    /// Creates a `Rect2I` by setting its position to `(x, y)`,
-    /// and its size to `(width, height)`.
-    public init<T>(x: T, y: T, width: T, height: T) where T : BinaryFloatingPoint {
-        self.init(position: Vector2I(x: x, y: y),
-                  size: Vector2I(x: width, y: height))
+    /// Creates a new 2D rectangle from the given position coordinates
+    /// and size values.
+    public init(
+        x: Int32,
+        y: Int32,
+        width: Int32,
+        height: Int32
+    ) {
+        self.position = Vector2I(x, y)
+        self.size = Vector2I(width, height)
     }
     
-    /// Creates a `Rect2I` by setting its position to `(x, y)`,
-    /// and its size to `(width, height)`.
-    public init<T>(x: T, y: T, width: T, height: T) where T : BinaryInteger {
-        self.init(position: Vector2I(x: x, y: y),
-                  size: Vector2I(x: width, y: height))
+    /// Creates a new 2D rectangle from the given position coordinates
+    /// and size values.
+    public init(
+        _ x: Int32,
+        _ y: Int32,
+        _ width: Int32,
+        _ height: Int32
+    ) {
+        self.position = Vector2I(x, y)
+        self.size = Vector2I(width, height)
     }
     
-    /// Creates a `Rect2I` from a `Rect2`.
-    ///
-    /// The floating-point coordinates are truncated.
+    /// Creates a new 2D rectangle from a floating-point 2D rectangle.
     public init(_ other: Rect2) {
-        self.init(position: Vector2I(other.position), size: Vector2I(other.size))
+        self.position = Vector2I(other.position)
+        self.size = Vector2I(other.size)
     }
     
-    /// Creates a `Rect2I` with its position and size set to zero.
+    /// Creates a new 2D rectangle from a floating-point 2D rectangle.
+    public init(_ other: Rect2, rounding rule: FloatingPointRoundingRule) {
+        self.position = Vector2I(other.position, rounding: rule)
+        self.size = Vector2I(other.size, rounding: rule)
+    }
+    
+    /// Creates a new 2D rectangle with its position and size set to zero.
     public init() {
-        self.init(position: Vector2I(), size: Vector2I())
+        self.position = Vector2I()
+        self.size = Vector2I()
     }
     
     // MARK: Methods & variables
@@ -113,12 +145,12 @@ extension Rect2I {
     /// This is usually the bottom-right corner of the rectangle,
     /// and is equivalent to `position + size`.
     /// Setting this point affects the ``size``.
-    public var end: Vector2I {
+    public var end: Point2I {
         get {
-            position + size
+            Point2I(position.x + size.x, position.y + size.y)
         }
         set(newValue) {
-            size = newValue - position
+            size = Point2I(newValue.x - position.x, newValue.y - position.y)
         }
     }
     
@@ -127,57 +159,92 @@ extension Rect2I {
     /// This is the same as `position + (size / 2)`.
     ///
     /// >note: If the size is odd, the result will be rounded towards position.
-    public var center: Vector2I {
-        _center()
+    public var center: Point2I {
+        Point2I(
+            x: position.x + (size.x / 2),
+            y: position.y + (size.y / 2)
+        )
     }
     
     /// The rectangle's area.
     ///
     /// This is equivalent to `size.x * size.y`.
-    ///
-    /// ## See Also
-    ///
-    /// - ``hasArea``
-    public var area: Int {
-        _area()
+    public var area: UInt64 {
+        UInt64(size.width) * UInt64(size.height)
     }
     
     /// A Boolean value indicating whether the rectangle has positive width and height.
-    ///
-    /// ## See Also
-    ///
-    /// - ``area``
     public var hasArea: Bool {
-        _hasArea()
+        size.x > 0 && size.y > 0
     }
     
-    /// Returns `true` if the rectangle contains the given point.
+    /// Returns `true` if this rectangle contains the given point.
     ///
     /// By convention, points on the right and bottom edges are not included.
     ///
     /// >note: This method is not reliable for `Rect2I` with a negative size.
-    /// Use ``abs`` first to get a valid rectangle.
+    /// Use ``abs()`` first to get a valid rectangle.
     public func hasPoint(_ point: Vector2I) -> Bool {
-        _hasPoint(point)
+#if MATH_CHECKS
+        if size.x < 0 || size.y < 0 {
+            godotPrintError("Rect2I size is negative, this is not supported. Use Rect2I.abs() to get a Rect2I with a positive size.")
+        }
+#endif
+        if point.x < position.x {
+            return false
+        }
+        if point.y < position.y {
+            return false
+        }
+        
+        if point.x >= (position.x + size.x) {
+            return false
+        }
+        if point.y >= (position.y + size.y) {
+            return false
+        }
+        
+        return true
     }
     
-    /// Returns `true` if the rectangle overlaps with another one.
+    /// Returns `true` if this rectangle overlaps with another one.
     ///
     /// The edges of both rectangles are excluded.
-    ///
-    /// ## See Also
-    ///
-    /// - ``intersection(with:)``
     public func intersects(_ other: Rect2I) -> Bool {
-        _intersects(other)
+#if MATH_CHECKS
+        if size.x < 0 || size.y < 0 || other.size.x < 0 || other.size.y < 0 {
+            godotPrintError("Rect2I size is negative, this is not supported. Use Rect2I.abs() to get a Rect2I with a positive size.")
+        }
+#endif
+        if position.x >= (other.position.x + other.size.width) {
+            return false
+        }
+        if (position.x + size.width) <= other.position.x {
+            return false
+        }
+        if position.y >= (other.position.y + other.size.height) {
+            return false
+        }
+        if (position.y + size.height) <= other.position.y {
+            return false
+        }
+        
+        return true
     }
     
-    /// Returns `true` if the rectangle completely encloses another one.
+    /// Returns `true` if this rectangle completely encloses another one.
     public func encloses(_ other: Rect2I) -> Bool {
-        _encloses(other)
+#if MATH_CHECKS
+        if size.x < 0 || size.y < 0 || other.size.x < 0 || other.size.y < 0 {
+            godotPrintError("Rect2I size is negative, this is not supported. Use Rect2I.abs() to get a Rect2i with a positive size.")
+        }
+#endif
+        return (other.position.x >= position.x) && (other.position.y >= position.y) &&
+        ((other.position.x + other.size.x) <= (position.x + size.x)) &&
+        ((other.position.y + other.size.y) <= (position.y + size.y))
     }
     
-    /// Returns the intersection between the rectangle and another one.
+    /// Returns the intersection between this rectangle and another one.
     ///
     /// If the rectangles do not intersect, returns an empty `Rect2I`.
     ///
@@ -188,22 +255,68 @@ extension Rect2I {
     /// print(rect1.intersection(with: rect2))
     /// // Prints (2, 0, 3, 4)
     /// ```
-    ///
-    /// ## See Also
-    ///
-    /// - ``intersects(_:)``
     public func intersection(with other: Rect2I) -> Rect2I {
-        _intersection(other)
+        var newRect = other
+
+        if !intersects(newRect) {
+            return Rect2I()
+        }
+
+        newRect.position.x = max(other.position.x, position.x)
+        newRect.position.y = max(other.position.y, position.y)
+
+        let otherEndX = other.position.x + other.size.x
+        let otherEndY = other.position.y + other.size.y
+        let endX = position.x + size.x
+        let endY = position.y + size.y
+
+        newRect.size.x = min(otherEndX, endX) - newRect.position.x
+        newRect.size.y = min(otherEndY, endY) - newRect.position.y
+
+        return newRect
     }
     
-    /// Returns a `Rect2I` that encloses both the
+    /// Returns the intersection between this rectangle and another one.
+    ///
+    /// If the rectangles do not intersect, returns an empty `Rect2I`.
+    ///
+    /// ```swift
+    /// var rect1 = Rect2I(x: 0, y: 0, width: 5, height: 10)
+    /// let rect2 = Rect2I(x: 2, y: 0, width: 8, height: 4)
+    ///
+    /// rect1.formIntersection(with: rect2)
+    /// // rect1 is (2, 0, 3, 4)
+    /// ```
+    public mutating func formIntersection(with other: Rect2I) {
+        self = intersection(with: other)
+    }
+    
+    /// Returns a rectangle that encloses both this
     /// rectangle and another one around the edges.
-    ///
-    /// ## See Also
-    ///
-    /// - ``encloses(_:)``
     public func merged(with other: Rect2I) -> Rect2I {
-        _merge(other)
+#if MATH_CHECKS
+        if size.x < 0 || size.y < 0 || other.size.x < 0 || other.size.y < 0 {
+            godotPrintError("Rect2I size is negative, this is not supported. Use Rect2I.abs() to get a Rect2I with a positive size.")
+        }
+#endif
+        var newRect = Rect2I()
+        
+        newRect.position.x = min(other.position.x, position.x)
+        newRect.position.y = min(other.position.y, position.y)
+        
+        newRect.size.x = max(other.position.x + other.size.x, position.x + size.x)
+        newRect.size.y = max(other.position.y + other.size.y, position.y + size.y)
+        
+        // Make relative again.
+        newRect.size.x = newRect.size.x - newRect.position.x
+        newRect.size.y = newRect.size.y - newRect.position.y
+        
+        return newRect
+    }
+    
+    /// Merges this rectangle with another one around the edges.
+    public mutating func merge(with other: Rect2I) {
+        self = merged(with: other)
     }
     
     /// Returns the rectangle expanded to align the edges with the given point, if necessary.
@@ -211,83 +324,208 @@ extension Rect2I {
     /// ```swift
     /// let rect = Rect2I(x: 0, y: 0, width: 5, height: 2)
     ///
-    /// print(rect.expand(to: Vector2I(x: 10, y: 0)))
+    /// print(rect.expanded(to: Vector2I(x: 10, y: 0)))
     /// // Prints (0, 0, 10, 2)
-    /// print(rect.expand(to: Vector2I(x: -5, y: 5)))
+    /// print(rect.expanded(to: Vector2I(x: -5, y: 5)))
     /// // Prints (-5, 0, 10, 5)
     /// ```
-    public func expand(to point: Vector2I) -> Rect2I {
-        _expand(to: point)
+    public func expanded(to point: Vector2I) -> Rect2I {
+        var copy = self
+        copy.expand(to: point)
+        return copy
     }
     
-    /// The rectangle extended on all sides by the given amount.
+    /// Returns the rectangle expanded to align the edges with the given point, if necessary.
+    ///
+    /// ```swift
+    /// var rect = Rect2I(x: 0, y: 0, width: 5, height: 2)
+    /// rect.expand(to: Vector2I(x: 10, y: 0))
+    /// // rect is (0, 0, 10, 2)
+    ///
+    /// var rect2 = Rect2I(x: 0, y: 0, width: 5, height: 2)
+    /// rect2.expand(to: Vector2I(x: -5, y: 5))
+    /// // rect2 is (-5, 0, 10, 5)
+    /// ```
+    public mutating func expand(to point: Vector2I) {
+#if MATH_CHECKS
+        if size.x < 0 || size.y < 0 {
+            godotPrintError("Rect2I size is negative, this is not supported. Use Rect2I.abs() to get a Rect2I with a positive size.")
+        }
+#endif
+        var begin = position
+        var endX = position.x + size.x
+        var endY = position.y + size.y
+        
+        if point.x < begin.x {
+            begin.x = point.x
+        }
+        if point.y < begin.y {
+            begin.y = point.y
+        }
+        
+        if point.x > endX {
+            endX = point.x
+        }
+        if point.y > endY {
+            endY = point.y
+        }
+        
+        position = begin
+        size.x = endX - begin.x
+        size.y = endY - begin.y
+    }
+    
+    /// Returns this rectangle extended on all sides by the given amount.
     ///
     /// A negative amount shrinks the rectangle instead.
     ///
     /// ```swift
-    /// print(Rect2I(x: 4, y: 4, width: 8, height: 8).grow(by: 4))
+    /// print(Rect2I(x: 4, y: 4, width: 8, height: 8).grew(by: 4))
     /// // Prints (0, 0, 16, 16)
-    /// print(Rect2I(x: 0, y: 0, width: 8, height: 4).grow(by: 2))
+    /// print(Rect2I(x: 0, y: 0, width: 8, height: 4).grew(by: 2))
     /// // Prints (-2, -2, 12, 8)
     /// ```
-    public func grow(by amount: Int) -> Rect2I {
-        _grow(amount: amount)
-    }
-    
-    /// The rectangle with its side extended by the given amount.
-    ///
-    /// A negative amount shrinks the rectangle, instead.
-    public func grow(by amount: Int, side: Side) -> Rect2I {
-        _growSide(Int(side.rawValue), amount: amount)
-    }
-    
-    /// The rectangle with its sides extended by the given amount.
-    ///
-    /// A negative amount shrinks the rectangle, instead.
-    public func grow(by amount: Int, sides: Side.Set) -> Rect2I {
+    public func grew(by amount: Int32) -> Rect2I {
         var copy = self
-        
-        if sides.contains(.top) {
-            copy = _growSide(Int(Side.top.rawValue), amount: amount)
-        }
-        if sides.contains(.bottom) {
-            copy = _growSide(Int(Side.bottom.rawValue), amount: amount)
-        }
-        if sides.contains(.left) {
-            copy = _growSide(Int(Side.left.rawValue), amount: amount)
-        }
-        if sides.contains(.right) {
-            copy = _growSide(Int(Side.right.rawValue), amount: amount)
-        }
-        
+        copy.grow(by: amount)
         return copy
     }
     
-    /// The rectangle with its left, top, right, and bottom sides extended by the given amounts.
+    /// Extends this rectangle on all sides by the given amount.
     ///
-    /// Negative values shrink the sides, instead.
-    public func grow(left: Int, top: Int, right: Int, bottom: Int) -> Rect2I {
-        _growIndividual(left: left, top: top, right: right, bottom: bottom)
+    /// A negative amount shrinks the rectangle instead.
+    ///
+    /// ```swift
+    /// var rect = Rect2I(x: 4, y: 4, width: 8, height: 8)
+    /// rect.grow(by: 4)
+    /// // rect is (0, 0, 16, 16)
+    /// var rect2 = Rect2I(x: 0, y: 0, width: 8, height: 4)
+    /// rect2.grow(by: 2)
+    /// // rect2 is (-2, -2, 12, 8)
+    /// ```
+    public mutating func grow(by amount: Int32) {
+        position.x -= amount
+        position.y -= amount
+        size.width += amount * 2
+        size.height += amount * 2
     }
     
-    /// A `Rect2I` equivalent to the rectangle, with non-negative
+    /// Returns this rectangle with its side extended by the given amount.
+    ///
+    /// A negative amount shrinks the rectangle, instead.
+    public func grew(by amount: Int32, side: Side) -> Rect2I {
+        var copy = self
+        copy.grow(by: amount, side: side)
+        return copy
+    }
+    
+    /// Extends this rectangle's given side by the given amount.
+    ///
+    /// A negative amount shrinks the rectangle, instead.
+    public mutating func grow(by amount: Int32, side: Side) {
+        grow(
+            left: side == .left ? amount : 0,
+            top: side == .top ? amount : 0,
+            right: side == .right ? amount : 0,
+            bottom: side == .bottom ? amount : 0
+        )
+    }
+    
+    /// Returns this rectangle with the given sides extended by the given amount.
+    ///
+    /// A negative amount shrinks the rectangle, instead.
+    public func grew(by amount: Int32, sides: Side.Set) -> Rect2I {
+        var copy = self
+        copy.grow(by: amount, sides: sides)
+        return copy
+    }
+    
+    /// Extends this rectangle's given sides by the given amount.
+    ///
+    /// A negative amount shrinks the rectangle, instead.
+    public mutating func grow(by amount: Int32, sides: Side.Set) {
+        if sides.contains(.top) {
+            grow(by: amount, side: .top)
+        }
+        if sides.contains(.bottom) {
+            grow(by: amount, side: .bottom)
+        }
+        if sides.contains(.left) {
+            grow(by: amount, side: .left)
+        }
+        if sides.contains(.right) {
+            grow(by: amount, side: .right)
+        }
+    }
+    
+    /// Returns this rectangle with its left, top, right,
+    /// and bottom sides extended by the given amounts.
+    ///
+    /// Negative values shrink the sides, instead.
+    public mutating func grew(
+        left: Int32,
+        top: Int32,
+        right: Int32,
+        bottom: Int32
+    ) -> Rect2I {
+        var copy = self
+        copy.grow(left: left, top: top, right: right, bottom: bottom)
+        return copy
+    }
+    
+    /// Extend this rectangle's left, top, right, and bottom sides by the given amounts.
+    ///
+    /// Negative values shrink the sides, instead.
+    public mutating func grow(
+        left: Int32,
+        top: Int32,
+        right: Int32,
+        bottom: Int32
+    ) {
+        position.x -= left
+        position.y -= top
+        size.width += left + right
+        size.height += top + bottom
+    }
+    
+    /// Returns a rectangle equivalent to this rectangle, with non-negative
     /// width and height values, and position at the top-left corner.
     ///
     /// ```swift
     /// let rect = Rect2I(x: 25, y: 25, width: -100, height: -50)
-    /// print(rect.abs)
+    /// print(rect.abs())
     /// // prints (-75, -25, 100, 50).
     /// ```
     ///
     /// >note: It's recommended to use this method when size is negative,
     /// as most other methods in Godot assume that the position
     /// is the top-left corner, and the end is the bottom-right corner.
-    public var abs: Rect2I {
-        _abs()
+    public func abs() -> Rect2I {
+        Rect2I(
+            position: Point2I(
+                position.x + min(size.x, 0),
+                position.y + min(size.y, 0)
+            ),
+            size: size.abs()
+        )
+    }
+    
+    /// Replaces this rectangle with non-negative
+    /// width and height values, and position at the top-left corner.
+    ///
+    /// ```swift
+    /// var rect = Rect2I(x: 25, y: 25, width: -100, height: -50)
+    /// rect.formAbs()
+    /// // rect is (-75, -25, 100, 50).
+    /// ```
+    ///
+    /// >note: It's recommended to use this method when size is negative,
+    /// as most other methods in Godot assume that the position
+    /// is the top-left corner, and the end is the bottom-right corner.
+    public mutating func formAbs() {
+        self = abs()
     }
 }
-
-extension Rect2I: Equatable, Hashable {}
 
 extension Rect2I: Codable {
     public func encode(to encoder: Encoder) throws {
