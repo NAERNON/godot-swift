@@ -49,7 +49,7 @@ import Numerics
 /// - ``Swift/SIMD3/abs()``
 /// - ``Swift/SIMD3/formAbs()``
 /// - ``Swift/SIMD3/inverse()``
-/// - ``Swift/SIMD3/formInverse()``
+/// - ``Swift/SIMD3/invert()``
 /// - ``Swift/SIMD3/signUnitValue-2wuxt``
 ///
 /// ### Magnitude and Distance
@@ -354,7 +354,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Replaces this vector with its inverse.
     ///
     /// This is the same as `Vector3(x: 1.0 / v.x, y: 1.0 / v.y, z: 1.0 / v.z)`.
-    public mutating func formInverse() {
+    public mutating func invert() {
         self = inverse()
     }
     

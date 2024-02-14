@@ -33,7 +33,7 @@
 /// - ``Swift/SIMD4/abs()``
 /// - ``Swift/SIMD4/formAbs()``
 /// - ``Swift/SIMD4/inverse()``
-/// - ``Swift/SIMD4/formInverse()``
+/// - ``Swift/SIMD4/invert()``
 /// - ``Swift/SIMD4/signUnitValue-2l62b``
 ///
 /// ### Magnitude and Distance
@@ -392,7 +392,7 @@ extension SIMD4 where Scalar : BinaryFloatingPoint {
     /// Replaces this vector with its inverse.
     ///
     /// This is the same as `Vector4(x: 1.0 / v.x, y: 1.0 / v.y, z: 1.0 / v.z, w: 1.0 / v.w)`.
-    public mutating func formInverse() {
+    public mutating func invert() {
         self = inverse()
     }
     

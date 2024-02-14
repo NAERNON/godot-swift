@@ -817,7 +817,7 @@ extension SIMD2 where Scalar : Real & BinaryFloatingPoint {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public mutating  func formSlerp(to other: SIMD2, weight: Scalar) {
+    public mutating func formSlerp(to other: SIMD2, weight: Scalar) {
         self = slerp(to: other, weight: weight)
     }
 }
