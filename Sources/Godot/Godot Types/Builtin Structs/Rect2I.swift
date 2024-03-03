@@ -35,6 +35,10 @@
 /// - ``Rect2I/position``
 /// - ``Rect2I/size``
 /// - ``Rect2I/end``
+/// - ``Rect2I/x``
+/// - ``Rect2I/y``
+/// - ``Rect2I/width``
+/// - ``Rect2I/height``
 /// - ``Rect2I/center``
 /// - ``Rect2I/abs()``
 /// - ``Rect2I/formAbs()``
@@ -86,15 +90,13 @@ public struct Rect2I: Equatable, Hashable {
     /// To get an equivalent rectangle with non-negative size, use ``abs()``.
     public var size: Size2I
     
+    // MARK: - Initializers
+    
     /// Creates a new 2D rectangle from the given position and size.
     public init(position: Point2I, size: Size2I) {
         self.position = position
         self.size = size
     }
-}
-
-extension Rect2I {
-    // MARK: Constructors
     
     /// Creates a new 2D rectangle from the given position coordinates
     /// and size values.
@@ -137,8 +139,50 @@ extension Rect2I {
         self.position = Vector2I()
         self.size = Vector2I()
     }
+}
+
+// MARK: Functions and variables
+
+extension Rect2I {
+    /// The X coordinate of the origin point.
+    public var x: Int32 {
+        get {
+            position.x
+        }
+        set(newValue) {
+            position.x = newValue
+        }
+    }
     
-    // MARK: Methods & variables
+    /// The Y coordinate of the origin point.
+    public var y: Int32 {
+        get {
+            position.y
+        }
+        set(newValue) {
+            position.y = newValue
+        }
+    }
+    
+    /// The rectangle's width.
+    public var width: Int32 {
+        get {
+            size.x
+        }
+        set(newValue) {
+            size.x = newValue
+        }
+    }
+    
+    /// The rectangle's height.
+    public var height: Int32 {
+        get {
+            size.y
+        }
+        set(newValue) {
+            size.y = newValue
+        }
+    }
     
     /// The ending point.
     ///
@@ -527,6 +571,8 @@ extension Rect2I {
     }
 }
 
+// MARK: - Codable
+
 extension Rect2I: Codable {
     public func encode(to encoder: Encoder) throws {
         var unkeyedContainer = encoder.unkeyedContainer()
@@ -540,6 +586,8 @@ extension Rect2I: Codable {
         size = try container.decode(Vector2I.self)
     }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Rect2I: CustomStringConvertible {
     public var description: String {

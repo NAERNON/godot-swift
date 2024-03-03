@@ -34,6 +34,10 @@
 /// - ``Rect2/position``
 /// - ``Rect2/size``
 /// - ``Rect2/end``
+/// - ``Rect2/x``
+/// - ``Rect2/y``
+/// - ``Rect2/width``
+/// - ``Rect2/height``
 /// - ``Rect2/center``
 /// - ``Rect2/isFinite``
 /// - ``Rect2/abs()``
@@ -94,15 +98,13 @@ public struct Rect2: Equatable, Hashable {
     /// To get an equivalent rectangle with non-negative size, use ``abs()``.
     public var size: Size2
     
+    // MARK: - Initializers
+    
     /// Creates a new 2D rectangle from the given position and size.
     public init(position: Point2, size: Size2) {
         self.position = position
         self.size = size
     }
-}
-
-extension Rect2 {
-    // MARK: Constructors
     
     /// Creates a new 2D rectangle from the given position coordinates
     /// and size values.
@@ -139,8 +141,50 @@ extension Rect2 {
         self.position = Vector2()
         self.size = Vector2()
     }
+}
+
+// MARK: Functions and variables
+
+extension Rect2 {
+    /// The X coordinate of the origin point.
+    public var x: FloatingPointType {
+        get {
+            position.x
+        }
+        set(newValue) {
+            position.x = newValue
+        }
+    }
     
-    // MARK: Methods & variables
+    /// The Y coordinate of the origin point.
+    public var y: FloatingPointType {
+        get {
+            position.y
+        }
+        set(newValue) {
+            position.y = newValue
+        }
+    }
+    
+    /// The rectangle's width.
+    public var width: FloatingPointType {
+        get {
+            size.x
+        }
+        set(newValue) {
+            size.x = newValue
+        }
+    }
+    
+    /// The rectangle's height.
+    public var height: FloatingPointType {
+        get {
+            size.y
+        }
+        set(newValue) {
+            size.y = newValue
+        }
+    }
     
     /// The ending point.
     ///
@@ -564,6 +608,8 @@ extension Rect2 {
     }
 }
 
+// MARK: - Codable
+
 extension Rect2: Codable {
     public func encode(to encoder: Encoder) throws {
         var unkeyedContainer = encoder.unkeyedContainer()
@@ -577,6 +623,8 @@ extension Rect2: Codable {
         size = try container.decode(Vector2.self)
     }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Rect2: CustomStringConvertible {
     public var description: String {
