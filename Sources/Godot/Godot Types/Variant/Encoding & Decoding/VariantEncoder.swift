@@ -83,12 +83,12 @@ private class VariantRootEncoder {
 private final class VariantEncoder: VariantRootEncoder, Encoder {
     private var container: VariantRootEncoder? {
         willSet {
-            precondition(container == nil, "A container has already been created")
+            precondition(container == nil, "A container has already been created.")
         }
     }
     
     override func generateVariantStorage() -> Variant.Storage {
-        precondition(container != nil, "No container found")
+        precondition(container != nil, "No container found.")
         
         return container!.generateVariantStorage()
     }
@@ -395,7 +395,7 @@ private final class VariantSingleValueContainer: VariantRootEncoder, SingleValue
     private var isValueEncoded: Bool = false
     
     override func generateVariantStorage() -> Variant.Storage {
-        precondition(isValueEncoded, "No value was encoded")
+        precondition(isValueEncoded, "No value was encoded.")
         
         var resultVariantStorage = Variant.Storage()
         resultVariantStorage.swap(with: &variantStorage)
@@ -403,7 +403,7 @@ private final class VariantSingleValueContainer: VariantRootEncoder, SingleValue
     }
     
     private func encodeStorage(_ storage: consuming Variant.Storage) {
-        precondition(!isValueEncoded, "A value has already been encoded inside the container")
+        precondition(!isValueEncoded, "A value has already been encoded inside the container.")
         variantStorage = storage
         isValueEncoded = true
     }

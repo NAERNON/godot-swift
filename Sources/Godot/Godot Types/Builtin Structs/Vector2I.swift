@@ -192,14 +192,14 @@ extension Vector2I {
             switch index {
             case 0: x
             case 1: y
-            default: fatalError("Attempting to retrieve element \(index) from 2D vector.")
+            default: fatalError("Attempting to read component \(index) from 2D vector.")
             }
         }
         set(newValue) {
             switch index {
             case 0: x = newValue
             case 1: y = newValue
-            default: fatalError("Attempting to set element \(index) from 2D vector.")
+            default: fatalError("Attempting to set component \(index) on 2D vector.")
             }
         }
     }

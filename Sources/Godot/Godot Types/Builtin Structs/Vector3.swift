@@ -298,7 +298,7 @@ extension Vector3 {
             case 0: x
             case 1: y
             case 2: z
-            default: fatalError("Attempting to retrieve element \(index) from 3D vector.")
+            default: fatalError("Attempting to read component \(index) from 3D vector.")
             }
         }
         set(newValue) {
@@ -306,7 +306,7 @@ extension Vector3 {
             case 0: x = newValue
             case 1: y = newValue
             case 2: z = newValue
-            default: fatalError("Attempting to set element \(index) from 3D vector.")
+            default: fatalError("Attempting to set component \(index) on 3D vector.")
             }
         }
     }

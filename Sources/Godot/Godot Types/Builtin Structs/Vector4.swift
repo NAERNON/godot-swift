@@ -187,7 +187,7 @@ extension Vector4 {
             case 1: y
             case 2: z
             case 3: w
-            default: fatalError("Attempting to retrieve element \(index) from 4D vector.")
+            default: fatalError("Attempting to read component \(index) from 4D vector.")
             }
         }
         set(newValue) {
@@ -196,7 +196,7 @@ extension Vector4 {
             case 1: y = newValue
             case 2: z = newValue
             case 3: w = newValue
-            default: fatalError("Attempting to set element \(index) from 4D vector.")
+            default: fatalError("Attempting to set component \(index) on 4D vector.")
             }
         }
     }
