@@ -160,9 +160,9 @@ extension GodotString: ExposableValue {
     }
 }
 
-extension SIMD2: ExposableValue where Scalar : VariantSIMDStorableScalar {
+extension Vector2: ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
-        Scalar.variantSIMD2RepresentationType
+        .vector2
     }
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
@@ -174,9 +174,9 @@ extension SIMD2: ExposableValue where Scalar : VariantSIMDStorableScalar {
     }
 }
 
-extension SIMD3: ExposableValue where Scalar : VariantSIMDStorableScalar {
+extension Vector2I: ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
-        Scalar.variantSIMD3RepresentationType
+        .vector2I
     }
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
@@ -188,9 +188,51 @@ extension SIMD3: ExposableValue where Scalar : VariantSIMDStorableScalar {
     }
 }
 
-extension SIMD4: ExposableValue where Scalar : VariantSIMDStorableScalar {
+extension Vector3: ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
-        Scalar.variantSIMD4RepresentationType
+        .vector3
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+}
+
+extension Vector3I: ExposableValue {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        .vector3I
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+}
+
+extension Vector4: ExposableValue {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        .vector4
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+}
+
+extension Vector4I: ExposableValue {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        .vector4I
     }
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {

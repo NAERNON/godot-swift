@@ -10,170 +10,233 @@ import Numerics
 /// >note: If double precision is needed, compile the engine and generate
 /// the Godot Swift APIs with the `double` option.
 ///
-/// ### Use as Boolean
-///
-/// In a boolean context, a `Vector3` evaluates to `false` if
-/// it's equal to `(0, 0, 0)`.
-/// Otherwise, it always evaluates to `true`.
-///
-/// ### Type Alias
-///
-/// `Vector3` is a type alias to `SIMD3<FloatingPointType>`.
-///
-/// `SIMD3` already comes with many functions that cannot be detailed here.
-/// Only added extensions are detailed in this documentation.
-///
-/// Check the corresponding documentation to learn more about the functions
-/// the Standard Library proposes.
-///
 /// ## Topics
+///
+/// ### Creating 3D Vector
+///
+/// - ``Vector3/init(x:y:z:)``
+/// - ``Vector3/init(_:_:_:)``
+/// - ``Vector3/init(_:)``
+/// - ``Vector3/init(repeating:)``
 ///
 /// ### Special Values
 ///
-/// - ``Swift/SIMD3/left-wnv6``
-/// - ``Swift/SIMD3/right-a4c6``
-/// - ``Swift/SIMD3/up-3yzzm``
-/// - ``Swift/SIMD3/down-qdag``
-/// - ``Swift/SIMD3/forward-2rpd3``
-/// - ``Swift/SIMD3/back-1j2b7``
-/// - ``Swift/SIMD3/modelLeft``
-/// - ``Swift/SIMD3/modelRight``
-/// - ``Swift/SIMD3/modelTop``
-/// - ``Swift/SIMD3/modelBottom``
-/// - ``Swift/SIMD3/modelFront``
-/// - ``Swift/SIMD3/modelRear``
+/// - ``Vector3/zero``
+/// - ``Vector3/init()``
+/// - ``Vector3/one``
+/// - ``Vector3/left``
+/// - ``Vector3/right``
+/// - ``Vector3/up``
+/// - ``Vector3/down``
+/// - ``Vector3/forward``
+/// - ``Vector3/back``
+/// - ``Vector3/modelLeft``
+/// - ``Vector3/modelRight``
+/// - ``Vector3/modelTop``
+/// - ``Vector3/modelBottom``
+/// - ``Vector3/modelFront``
+/// - ``Vector3/modelRear``
 ///
 /// ### Geometric Properties
 ///
-/// - ``Swift/SIMD3/isFinite``
-/// - ``Swift/SIMD3/abs()``
-/// - ``Swift/SIMD3/formAbs()``
-/// - ``Swift/SIMD3/inverse()``
-/// - ``Swift/SIMD3/invert()``
-/// - ``Swift/SIMD3/signUnitValue-2wuxt``
+/// - ``Vector3/x``
+/// - ``Vector3/y``
+/// - ``Vector3/z``
+/// - ``Vector3/subscript(_:)``
+/// - ``Vector3/isFinite``
+/// - ``Vector3/abs()``
+/// - ``Vector3/formAbs()``
+/// - ``Vector3/squareRoot()``
+/// - ``Vector3/formSquareRoot()``
+/// - ``Vector3/clamped(lowerBound:upperBound:)``
+/// - ``Vector3/clamp(lowerBound:upperBound:)``
+/// - ``Vector3/inverse()``
+/// - ``Vector3/invert()``
+/// - ``Vector3/sum()``
+/// - ``Vector3/signUnitValue``
 ///
 /// ### Magnitude and Distance
 ///
-/// - ``Swift/SIMD3/magnitude-1hrar``
-/// - ``Swift/SIMD3/magnitudeSquared-4gxb0``
-/// - ``Swift/SIMD3/limitedMagnitude(_:)``
-/// - ``Swift/SIMD3/limitMagnitude(_:)``
-/// - ``Swift/SIMD3/distance(to:)``
-/// - ``Swift/SIMD3/distanceSquared(to:)``
+/// - ``Vector3/magnitude``
+/// - ``Vector3/magnitudeSquared``
+/// - ``Vector3/limitedMagnitude(_:)``
+/// - ``Vector3/limitMagnitude(_:)``
+/// - ``Vector3/distance(to:)``
+/// - ``Vector3/distanceSquared(to:)``
 ///
 /// ### Normalization
 ///
-/// - ``Swift/SIMD3/normalized()``
-/// - ``Swift/SIMD3/normalize()``
-/// - ``Swift/SIMD3/isNormalized``
+/// - ``Vector3/normalized()``
+/// - ``Vector3/normalize()``
+/// - ``Vector3/isNormalized``
 ///
 /// ### Angle
 ///
-/// - ``Swift/SIMD3/angle(to:)``
-/// - ``Swift/SIMD3/signedAngle(to:around:)``
-/// - ``Swift/SIMD3/rotated(by:around:)``
-/// - ``Swift/SIMD3/rotate(by:around:)``
+/// - ``Vector3/angle(to:)``
+/// - ``Vector3/signedAngle(to:around:)``
+/// - ``Vector3/rotated(by:around:)``
+/// - ``Vector3/rotate(by:around:)``
 ///
 /// ### Direction
 ///
-/// - ``Swift/SIMD3/direction(to:)``
-/// - ``Swift/SIMD3/formDirection(to:)``
-/// - ``Swift/SIMD3/moved(toward:delta:)``
-/// - ``Swift/SIMD3/move(toward:delta:)``
+/// - ``Vector3/direction(to:)``
+/// - ``Vector3/formDirection(to:)``
+/// - ``Vector3/moved(toward:delta:)``
+/// - ``Vector3/move(toward:delta:)``
 ///
 /// ### Products
 ///
-/// - ``Swift/SIMD3/dot(_:)``
-/// - ``Swift/SIMD3/cross(_:)``
-/// - ``Swift/SIMD3/formCross(_:)``
-/// - ``Swift/SIMD3/outer(_:)``
+/// - ``Vector3/dot(_:)``
+/// - ``Vector3/cross(_:)``
+/// - ``Vector3/formCross(_:)``
+/// - ``Vector3/outer(_:)``
 ///
 /// ### 3D Transformations
 ///
-/// - ``Swift/SIMD3/projected(onto:)``
-/// - ``Swift/SIMD3/project(onto:)``
-/// - ``Swift/SIMD3/slided(along:)``
-/// - ``Swift/SIMD3/slide(along:)``
-/// - ``Swift/SIMD3/bounced(off:)``
-/// - ``Swift/SIMD3/bounce(off:)``
-/// - ``Swift/SIMD3/reflected(from:)``
-/// - ``Swift/SIMD3/reflect(from:)``
+/// - ``Vector3/projected(onto:)``
+/// - ``Vector3/project(onto:)``
+/// - ``Vector3/slided(along:)``
+/// - ``Vector3/slide(along:)``
+/// - ``Vector3/bounced(off:)``
+/// - ``Vector3/bounce(off:)``
+/// - ``Vector3/reflected(from:)``
+/// - ``Vector3/reflect(from:)``
 ///
 /// ### Interpolation
 ///
-/// - ``Swift/SIMD3/lerp(to:weight:)``
-/// - ``Swift/SIMD3/formLerp(to:weight:)``
-/// - ``Swift/SIMD3/slerp(to:weight:)``
-/// - ``Swift/SIMD3/formSlerp(to:weight:)``
-/// - ``Swift/SIMD3/cubicInterpolation(to:pre:post:weight:)``
-/// - ``Swift/SIMD3/formCubicInterpolation(to:pre:post:weight:)``
-/// - ``Swift/SIMD3/cubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
-/// - ``Swift/SIMD3/formCubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
-/// - ``Swift/SIMD3/bezierInterpolation(to:control1:control2:t:)``
-/// - ``Swift/SIMD3/formBezierInterpolation(to:control1:control2:t:)``
-/// - ``Swift/SIMD3/bezierDerivative(to:control1:control2:t:)``
-/// - ``Swift/SIMD3/formBezierDerivative(to:control1:control2:t:)``
+/// - ``Vector3/lerp(to:weight:)``
+/// - ``Vector3/formLerp(to:weight:)``
+/// - ``Vector3/slerp(to:weight:)``
+/// - ``Vector3/formSlerp(to:weight:)``
+/// - ``Vector3/cubicInterpolation(to:pre:post:weight:)``
+/// - ``Vector3/formCubicInterpolation(to:pre:post:weight:)``
+/// - ``Vector3/cubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
+/// - ``Vector3/formCubicInterpolationInTime(to:pre:post:weight:toT:preT:postT:)``
+/// - ``Vector3/bezierInterpolation(to:control1:control2:t:)``
+/// - ``Vector3/formBezierInterpolation(to:control1:control2:t:)``
+/// - ``Vector3/bezierDerivative(to:control1:control2:t:)``
+/// - ``Vector3/formBezierDerivative(to:control1:control2:t:)``
 ///
 /// ### Axis
 ///
-/// - ``Swift/SIMD3/minAxis``
-/// - ``Swift/SIMD3/maxAxis``
-/// - ``Swift/SIMD3/subscript(axis:)``
+/// - ``Vector3/minAxis``
+/// - ``Vector3/maxAxis``
+/// - ``Vector3/subscript(axis:)``
 ///
 /// ### Rounding and Division
 ///
-/// - ``Swift/SIMD3/snapped(step:)-9ahda``
-/// - ``Swift/SIMD3/snap(step:)-1bw57``
-/// - ``Swift/SIMD3/positiveTruncatingRemainder(dividingBy:)-8g7s``
-/// - ``Swift/SIMD3/formPositiveTruncatingRemainder(dividingBy:)-8nr5n``
-/// - ``Swift/SIMD3/positiveTruncatingRemainder(dividingBy:)-salr``
-/// - ``Swift/SIMD3/formPositiveTruncatingRemainder(dividingBy:)-6l8v1``
+/// - ``Vector3/snapped(step:)``
+/// - ``Vector3/snap(step:)``
+/// - ``Vector3/rounded(_:)``
+/// - ``Vector3/round(_:)``
+/// - ``Vector3/positiveTruncatingRemainder(dividingBy:)-oog1``
+/// - ``Vector3/formPositiveTruncatingRemainder(dividingBy:)-4ve07``
+/// - ``Vector3/positiveTruncatingRemainder(dividingBy:)-1y0ky``
+/// - ``Vector3/formPositiveTruncatingRemainder(dividingBy:)-6zatb``
 ///
 /// ### Approximate Equality
 ///
-/// - ``Swift/SIMD3/isApproximatelyZero``
-/// - ``Swift/SIMD3/isApproximatelyEqual(to:)``
+/// - ``Vector3/isApproximatelyZero``
+/// - ``Vector3/isApproximatelyEqual(to:)``
 ///
 /// ### Comparison
 ///
-/// - ``Swift/SIMD3/<(_:_:)``
-/// - ``Swift/SIMD3/<=(_:_:)``
-/// - ``Swift/SIMD3/>(_:_:)``
-/// - ``Swift/SIMD3/>=(_:_:)``
+/// - ``Vector3/<(_:_:)``
+/// - ``Vector3/<=(_:_:)``
+/// - ``Vector3/>(_:_:)``
+/// - ``Vector3/>=(_:_:)``
 ///
 /// ### Octahedron Encoding
 ///
-/// - ``Swift/SIMD3/decodeOctahedron(_:)``
-/// - ``Swift/SIMD3/encodeOctahedron(_:)``
-///
-/// ### Extension
-///
-/// - ``Swift/SIMD3``
-public typealias Vector3 = SIMD3<FloatingPointType>
+/// - ``Vector3/decodeOctahedron(_:)``
+/// - ``Vector3/encodeOctahedron(_:)``
+public struct Vector3: Hashable, Equatable {
+    /// The first element of the vector.
+    public var x: FloatingPointType
+    /// The second element of the vector.
+    public var y: FloatingPointType
+    /// The third element of the vector.
+    public var z: FloatingPointType
+    
+    // MARK: - Initializers
+    
+    /// Creates a new vector from the given elements.
+    public init(
+        x: FloatingPointType,
+        y: FloatingPointType,
+        z: FloatingPointType
+    ) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+    
+    /// Creates a new vector from the given elements.
+    public init(
+        _ x: FloatingPointType,
+        _ y: FloatingPointType,
+        _ z: FloatingPointType
+    ) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+    
+    /// Creates a new vector with all elements set to `0`.
+    public init() {
+        self = .zero
+    }
+    
+    /// Creates a new vector from a given integer vector.
+    public init(_ other: Vector3I) {
+        self.x = FloatingPointType(other.x)
+        self.y = FloatingPointType(other.y)
+        self.z = FloatingPointType(other.z)
+    }
+    
+    /// Creates a new vector with all elements set to the specified value.
+    public init(repeating value: FloatingPointType) {
+        self.x = value
+        self.y = value
+        self.z = value
+    }
+}
 
-extension SIMD3 where Scalar : BinaryFloatingPoint {
+// MARK: - Special Values
+
+extension Vector3 {
+    /// A vector with all elements set to `0`.
+    public static var zero: Vector3 {
+        Vector3(0, 0, 0)
+    }
+    
+    /// A vector with all elements set to `1`.
+    public static var one: Vector3 {
+        Vector3(1, 1, 1)
+    }
+    
     /// The left unit vector.
     ///
     /// Represents the local direction of left, and the global direction of west.
-    public static var left: SIMD3 {
-        SIMD3(x: -1, y: 0, z: 0)
+    public static var left: Vector3 {
+        Vector3(x: -1, y: 0, z: 0)
     }
     
     /// The right unit vector.
     ///
     /// Represents the local direction of right, and the global direction of east.
-    public static var right: SIMD3 {
-        SIMD3(x: 1, y: 0, z: 0)
+    public static var right: Vector3 {
+        Vector3(x: 1, y: 0, z: 0)
     }
     
     /// The up unit vector.
-    public static var up: SIMD3 {
-        SIMD3(x: 0, y: 1, z: 0)
+    public static var up: Vector3 {
+        Vector3(x: 0, y: 1, z: 0)
     }
     
     /// The down unit vector.
-    public static var down: SIMD3 {
-        SIMD3(x: 0, y: -1, z: 0)
+    public static var down: Vector3 {
+        Vector3(x: 0, y: -1, z: 0)
     }
     
     /// The forward unit vector.
@@ -183,63 +246,109 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Keep in mind that the forward direction for lights, cameras, etc is different
     /// from 3D assets like characters, which face towards the camera by convention.
     /// Use ``modelFront`` and similar constants when working in 3D asset space.
-    public static var forward: SIMD3 {
-        SIMD3(x: 0, y: 0, z: -1)
+    public static var forward: Vector3 {
+        Vector3(x: 0, y: 0, z: -1)
     }
     
     /// The back unit vector.
     ///
     /// Represents the local direction of back, and the global direction of south.
-    public static var back: SIMD3 {
-        SIMD3(x: 0, y: 0, z: 1)
+    public static var back: Vector3 {
+        Vector3(x: 0, y: 0, z: 1)
     }
     
     /// The unit vector pointing towards the left side of imported 3D assets.
-    public static var modelLeft: SIMD3 {
-        SIMD3(x: 1, y: 0, z: 0)
+    public static var modelLeft: Vector3 {
+        Vector3(x: 1, y: 0, z: 0)
     }
     
     /// The unit vector pointing towards the right side of imported 3D assets.
-    public static var modelRight: SIMD3 {
-        SIMD3(x: -1, y: 0, z: 0)
+    public static var modelRight: Vector3 {
+        Vector3(x: -1, y: 0, z: 0)
     }
     
     /// The unit vector pointing towards the top side (up) of imported 3D assets.
-    public static var modelTop: SIMD3 {
-        SIMD3(x: 0, y: 1, z: 0)
+    public static var modelTop: Vector3 {
+        Vector3(x: 0, y: 1, z: 0)
     }
     
     /// The unit vector pointing towards the bottom side (down) of imported 3D assets.
-    public static var modelBottom: SIMD3 {
-        SIMD3(x: 0, y: -1, z: 0)
+    public static var modelBottom: Vector3 {
+        Vector3(x: 0, y: -1, z: 0)
     }
     
     /// The unit vector pointing towards the front side (facing forward) of imported 3D assets.
-    public static var modelFront: SIMD3 {
-        SIMD3(x: 0, y: 0, z: 1)
+    public static var modelFront: Vector3 {
+        Vector3(x: 0, y: 0, z: 1)
     }
     
     /// The unit vector pointing towards the rear side (back) of imported 3D assets.
-    public static var modelRear: SIMD3 {
-        SIMD3(x: 0, y: 0, z: -1)
+    public static var modelRear: Vector3 {
+        Vector3(x: 0, y: 0, z: -1)
+    }
+}
+
+// MARK: Subscripts
+
+extension Vector3 {
+    /// Accesses the vector component at the given index.
+    public subscript(index: Int) -> FloatingPointType {
+        get {
+            switch index {
+            case 0: x
+            case 1: y
+            case 2: z
+            default: fatalError("Attempting to retrieve element \(index) from 3D vector.")
+            }
+        }
+        set(newValue) {
+            switch index {
+            case 0: x = newValue
+            case 1: y = newValue
+            case 2: z = newValue
+            default: fatalError("Attempting to set element \(index) from 3D vector.")
+            }
+        }
     }
     
+    /// Accesses the vector component on the given axis.
+    public subscript(axis axis: Axis3D) -> FloatingPointType {
+        get {
+            switch axis {
+            case .x: x
+            case .y: y
+            case .z: z
+            }
+        }
+        set(newValue) {
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
+            case .z: z = newValue
+            }
+        }
+    }
+}
+
+// MARK: Functions and variables
+
+extension Vector3 {
     /// Returns the normalized vector pointing from this vector to another one.
     ///
     /// This is equivalent to using `(b - a).normalized`.
-    public func direction(to other: SIMD3) -> SIMD3 {
+    public func direction(to other: Vector3) -> Vector3 {
         (other - self).normalized()
     }
     
     /// Replaces this vector with the normalized vector pointing from this vector to another one.
     ///
     /// This is equivalent to using `(b - a).normalized`.
-    public mutating func formDirection(to other: SIMD3) {
+    public mutating func formDirection(to other: Vector3) {
         self = direction(to: other)
     }
     
     /// Returns the distance between this vector and another one.
-    public func distance(to other: SIMD3) -> Scalar {
+    public func distance(to other: Vector3) -> FloatingPointType {
         (other - self).magnitude
     }
     
@@ -247,25 +356,25 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: SIMD3) -> Scalar {
+    public func distanceSquared(to other: Vector3) -> FloatingPointType {
         (other - self).magnitudeSquared
     }
     
     /// The magnitude (length) of the vector.
-    public var magnitude: Scalar {
+    public var magnitude: FloatingPointType {
         (self * self).sum().squareRoot()
     }
     
     /// The squared magnitude of the vector.
     ///
-    /// This property runs faster than ``magnitude-1hrar``, so prefer it if you need
+    /// This property runs faster than ``magnitude``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var magnitudeSquared: Scalar {
+    public var magnitudeSquared: FloatingPointType {
         (self * self).sum()
     }
     
     /// Returns this vector with a magnitude not exceeding a given value.
-    public func limitedMagnitude(_ magnitude: Scalar = 1.0) -> SIMD3 {
+    public func limitedMagnitude(_ magnitude: FloatingPointType = 1.0) -> Vector3 {
         let currentMagnitude = self.magnitude
         var copy = self
         if currentMagnitude > 0 && magnitude < currentMagnitude {
@@ -277,7 +386,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     }
     
     /// Modifies the vector magnitude to not exceed a given value.
-    public mutating func limitMagnitude(_ magnitude: Scalar = 1.0) {
+    public mutating func limitMagnitude(_ magnitude: FloatingPointType = 1.0) {
         self = limitedMagnitude(magnitude)
     }
     
@@ -287,7 +396,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// >important: This function may return incorrect values
     /// if the vector magnitude is near zero.
-    public func normalized() -> SIMD3 {
+    public func normalized() -> Vector3 {
         var copy = self
         copy.normalize()
         return copy
@@ -321,7 +430,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     }
     
     /// Returns `true` if this vector is approximately equal to another one.
-    public func isApproximatelyEqual(to other: SIMD3) -> Bool {
+    public func isApproximatelyEqual(to other: Vector3) -> Bool {
         x.isApproximatelyEqual(to: other.x) &&
         y.isApproximatelyEqual(to: other.y) &&
         z.isApproximatelyEqual(to: other.z)
@@ -347,8 +456,8 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns the inverse of this vector.
     ///
     /// This is the same as `Vector3(x: 1.0 / v.x, y: 1.0 / v.y, z: 1.0 / v.z)`.
-    public func inverse() -> SIMD3 {
-        SIMD3(1 / x, 1 / y, 1 / z)
+    public func inverse() -> Vector3 {
+        Vector3(1 / x, 1 / y, 1 / z)
     }
     
     /// Replaces this vector with its inverse.
@@ -363,8 +472,8 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This can also be used to round the components
     /// to an arbitrary number of decimals.
-    public func snapped(step: SIMD3) -> SIMD3 {
-        SIMD3(
+    public func snapped(step: Vector3) -> Vector3 {
+        Vector3(
             x: x.snapped(step: step.x),
             y: y.snapped(step: step.y),
             z: z.snapped(step: step.z)
@@ -376,7 +485,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This can also be used to round the components
     /// to an arbitrary number of decimals.
-    public mutating func snap(step: SIMD3) {
+    public mutating func snap(step: Vector3) {
         self = snapped(step: step)
     }
     
@@ -386,7 +495,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public func lerp(to other: SIMD3, weight: Scalar) -> SIMD3 {
+    public func lerp(to other: Vector3, weight: FloatingPointType) -> Vector3 {
         self + weight * (other - self)
     }
     
@@ -396,7 +505,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public mutating func formLerp(to other: SIMD3, weight: Scalar) {
+    public mutating func formLerp(to other: Vector3, weight: FloatingPointType) {
         self = lerp(to: other, weight: weight)
     }
     
@@ -408,12 +517,12 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///   - post: The second handle.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public func cubicInterpolation(
-        to other: SIMD3,
-        pre: SIMD3,
-        post: SIMD3,
-        weight: Scalar
-    ) -> SIMD3 {
-        SIMD3(
+        to other: Vector3,
+        pre: Vector3,
+        post: Vector3,
+        weight: FloatingPointType
+    ) -> Vector3 {
+        Vector3(
             x: self.x.cubicInterpolation(
                 to: other.x, pre: pre.x, post: post.x, weight: weight),
             y: self.y.cubicInterpolation(
@@ -431,10 +540,10 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///   - post: The second handle.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
     public mutating func formCubicInterpolation(
-        to other: SIMD3,
-        pre: SIMD3,
-        post: SIMD3,
-        weight: Scalar
+        to other: Vector3,
+        pre: Vector3,
+        post: Vector3,
+        weight: FloatingPointType
     ) {
         self = cubicInterpolation(to: other, pre: pre, post: post, weight: weight)
     }
@@ -449,15 +558,15 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// It can perform smoother interpolation than ``cubicInterpolation(to:pre:post:weight:)`` by the time values.
     public func cubicInterpolationInTime(
-        to other: SIMD3,
-        pre: SIMD3,
-        post: SIMD3,
-        weight: Scalar,
-        toT: Scalar,
-        preT: Scalar,
-        postT: Scalar
-    ) -> SIMD3 {
-        SIMD3(
+        to other: Vector3,
+        pre: Vector3,
+        post: Vector3,
+        weight: FloatingPointType,
+        toT: FloatingPointType,
+        preT: FloatingPointType,
+        postT: FloatingPointType
+    ) -> Vector3 {
+        Vector3(
             x: self.x.cubicInterpolationInTime(
                 to: other.x, pre: pre.x, post: post.x, weight: weight, toT: toT, preT: preT, postT: postT),
             y: self.y.cubicInterpolationInTime(
@@ -477,13 +586,13 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// It can perform smoother interpolation than ``formCubicInterpolation(to:pre:post:weight:)`` by the time values.
     public mutating func formCubicInterpolationInTime(
-        to other: SIMD3,
-        pre: SIMD3,
-        post: SIMD3,
-        weight: Scalar,
-        toT: Scalar,
-        preT: Scalar,
-        postT: Scalar
+        to other: Vector3,
+        pre: Vector3,
+        post: Vector3,
+        weight: FloatingPointType,
+        toT: FloatingPointType,
+        preT: FloatingPointType,
+        postT: FloatingPointType
     ) {
         self = cubicInterpolationInTime(
             to: other,
@@ -499,11 +608,11 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns the point at the given `t` on the Bézier curve
     /// defined by this vector, the given control points and the destination.
     public func bezierInterpolation(
-        to other: SIMD3,
-        control1: SIMD3,
-        control2: SIMD3,
-        t: Scalar
-    ) -> SIMD3 {
+        to other: Vector3,
+        control1: Vector3,
+        control2: Vector3,
+        t: FloatingPointType
+    ) -> Vector3 {
         /* Formula from Wikipedia article on Bezier curves. */
         let omt = 1.0 - t
         let omt2 = omt * omt
@@ -520,10 +629,10 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Replaces this vector with the point at the given `t` on the Bézier curve
     /// defined by this vector, the given control points and the destination.
     public mutating func formBezierInterpolation(
-        to other: SIMD3,
-        control1: SIMD3,
-        control2: SIMD3,
-        t: Scalar
+        to other: Vector3,
+        control1: Vector3,
+        control2: Vector3,
+        t: FloatingPointType
     ) {
         self = bezierInterpolation(to: other, control1: control1, control2: control2, t: t)
     }
@@ -531,12 +640,12 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns the derivative at the given `t` on the Bézier curve
     /// defined by this vector, the given control points and the destination.
     public func bezierDerivative(
-        to other: SIMD3,
-        control1: SIMD3,
-        control2: SIMD3,
-        t: Scalar
-    ) -> SIMD3 {
-        SIMD3(
+        to other: Vector3,
+        control1: Vector3,
+        control2: Vector3,
+        t: FloatingPointType
+    ) -> Vector3 {
+        Vector3(
             x: x.bezierDerivative(to: other.x, control1: control1.x, control2: control2.x, t: t),
             y: y.bezierDerivative(to: other.y, control1: control1.y, control2: control2.y, t: t),
             z: z.bezierDerivative(to: other.z, control1: control1.z, control2: control2.z, t: t)
@@ -546,10 +655,10 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Replaces this vector with the derivative at the given `t` on the Bézier curve
     /// defined by this vector, the given control points and the destination.
     public mutating func formBezierDerivative(
-        to other: SIMD3,
-        control1: SIMD3,
-        control2: SIMD3,
-        t: Scalar
+        to other: Vector3,
+        control1: Vector3,
+        control2: Vector3,
+        t: FloatingPointType
     ) {
         self = bezierDerivative(to: other, control1: control1, control2: control2, t: t)
     }
@@ -557,7 +666,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Returns this vector moved toward another vector by a fixed amount.
     ///
     /// The returned value will not go past `other`.
-    public func moved(toward other: SIMD3, delta: Scalar) -> SIMD3 {
+    public func moved(toward other: Vector3, delta: FloatingPointType) -> Vector3 {
         let vd = other - self
         let len = vd.magnitude
         return len <= delta || len < .cmpEpsilon ? other : self + vd / len * delta
@@ -566,7 +675,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// Moves this vector toward another vector by a fixed amount.
     ///
     /// The returned value will not go past `other`.
-    public mutating func move(toward other: SIMD3, delta: Scalar) {
+    public mutating func move(toward other: Vector3, delta: FloatingPointType) {
         self = moved(toward: other, delta: delta)
     }
     
@@ -586,13 +695,13 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     /// and `1.0` (0 degree angle) when the vectors are aligned.
     ///
     /// >note: `a.dot(b)` is equivalent to `b.dot(a)`.
-    public func dot(_ other: SIMD3) -> Scalar {
+    public func dot(_ other: Vector3) -> FloatingPointType {
         x * other.x + y * other.y + z * other.z
     }
     
     /// Returns the cross product for this vector and another one.
-    public func cross(_ other: SIMD3) -> SIMD3 {
-        SIMD3(
+    public func cross(_ other: Vector3) -> Vector3 {
+        Vector3(
             x: (y * other.z) - (z * other.y),
             y: (z * other.x) - (x * other.z),
             z: (x * other.y) - (y * other.x)
@@ -600,7 +709,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     }
     
     /// Replaces this vector with the cross product for this vector and another one.
-    public mutating func formCross(_ other: SIMD3) {
+    public mutating func formCross(_ other: Vector3) {
         self = cross(other)
     }
     
@@ -609,8 +718,8 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/positiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public func positiveTruncatingRemainder(dividingBy value: Scalar) -> SIMD3 {
-        SIMD3(
+    public func positiveTruncatingRemainder(dividingBy value: FloatingPointType) -> Vector3 {
+        Vector3(
             x: x.positiveTruncatingRemainder(dividingBy: value),
             y: y.positiveTruncatingRemainder(dividingBy: value),
             z: z.positiveTruncatingRemainder(dividingBy: value)
@@ -622,7 +731,7 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/formPositiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public mutating func formPositiveTruncatingRemainder(dividingBy value: Scalar) {
+    public mutating func formPositiveTruncatingRemainder(dividingBy value: FloatingPointType) {
         x.formPositiveTruncatingRemainder(dividingBy: value)
         y.formPositiveTruncatingRemainder(dividingBy: value)
         z.formPositiveTruncatingRemainder(dividingBy: value)
@@ -633,8 +742,8 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/positiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public func positiveTruncatingRemainder(dividingBy other: SIMD3) -> SIMD3 {
-        SIMD3(
+    public func positiveTruncatingRemainder(dividingBy other: Vector3) -> Vector3 {
+        Vector3(
             x: x.positiveTruncatingRemainder(dividingBy: other.x),
             y: y.positiveTruncatingRemainder(dividingBy: other.y),
             z: z.positiveTruncatingRemainder(dividingBy: other.z)
@@ -646,29 +755,29 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/formPositiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public mutating func formPositiveTruncatingRemainder(dividingBy other: SIMD3) {
+    public mutating func formPositiveTruncatingRemainder(dividingBy other: Vector3) {
         x.formPositiveTruncatingRemainder(dividingBy: other.x)
         y.formPositiveTruncatingRemainder(dividingBy: other.y)
         z.formPositiveTruncatingRemainder(dividingBy: other.z)
     }
     
     /// Returns the result of projecting this vector onto a given vector.
-    public func projected(onto other: SIMD3) -> SIMD3 {
+    public func projected(onto other: Vector3) -> Vector3 {
         return other * (self.dot(other) / other.magnitudeSquared)
     }
     
     /// Replaces this vector with the result of projecting this vector onto a given vector.
-    public mutating func project(onto other: SIMD3) {
+    public mutating func project(onto other: Vector3) {
         self = projected(onto: other)
     }
     
     /// Returns the component of this vector along the given plane,
     /// specified by its normal vector.
-    public func slided(along normal: SIMD3) -> SIMD3 {
+    public func slided(along normal: Vector3) -> Vector3 {
 #if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0, 0).")
-            return SIMD3()
+            return Vector3()
         }
 #endif
         return self - normal * self.dot(normal)
@@ -676,41 +785,41 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     
     /// Returns the component of this vector along the given plane,
     /// specified by its normal vector.
-    public mutating func slide(along normal: SIMD3) {
+    public mutating func slide(along normal: Vector3) {
         self = slided(along: normal)
     }
     
     /// Returns this vector bounced off a plane defined by the given normal.
-    public func bounced(off normal: SIMD3) -> SIMD3 {
+    public func bounced(off normal: Vector3) -> Vector3 {
         -reflected(from: normal)
     }
     
     /// Bounces this vector off a plane defined by the given normal.
-    public mutating func bounce(off normal: SIMD3) {
+    public mutating func bounce(off normal: Vector3) {
         self = bounced(off: normal)
     }
     
     /// Returns the result of reflecting this vector from a plane
     /// defined by the given normal.
-    public func reflected(from normal: SIMD3) -> SIMD3 {
+    public func reflected(from normal: Vector3) -> Vector3 {
 #if MATH_CHECKS
         if !normal.isNormalized {
             godotPrintError("The normal vector must be normalized, returning (0, 0, 0).")
-            return SIMD3()
+            return Vector3()
         }
 #endif
         return 2 * normal * self.dot(normal) - self
     }
     
     /// Reflects this vector from a plane defined by the given normal.
-    public mutating func reflect(from normal: SIMD3) {
+    public mutating func reflect(from normal: Vector3) {
         self = reflected(from: normal)
     }
     
     /// A vector with each component set to `1.0` if it's positive,
     /// `-1.0` if it's negative, and `0.0` if it's zero.
-    public var signUnitValue: SIMD3 {
-        SIMD3(x: x.signUnitValue, y: y.signUnitValue, z: z.signUnitValue)
+    public var signUnitValue: Vector3 {
+        Vector3(x: x.signUnitValue, y: y.signUnitValue, z: z.signUnitValue)
     }
     
     /// Returns the octahedral-encoded (oct32) form of a given 3D vector as a 2D vector.
@@ -726,10 +835,10 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// >note: Octahedral compression is lossy, although visual differences
     /// are rarely perceptible in real world scenarios.
-    public static func encodeOctahedron(_ simd: SIMD3) -> SIMD2<Scalar> {
+    public static func encodeOctahedron(_ simd: Vector3) -> Vector2 {
         var n = simd
         n /= Swift.abs(n.x) + Swift.abs(n.y) + Swift.abs(n.z)
-        var o = SIMD2<Scalar>()
+        var o = Vector2()
         if n.z >= 0 {
             o.x = n.x
             o.y = n.y
@@ -746,126 +855,15 @@ extension SIMD3 where Scalar : BinaryFloatingPoint {
     ///
     /// This method can be used to decode vectors created
     /// using `encodeOctahedron(_:)` (stored as a 2D vector).
-    public static func decodeOctahedron(_ simd: SIMD2<Scalar>) -> SIMD3 {
-        let f = SIMD2<Scalar>(simd.x * 2 - 1, simd.y * 2 - 1)
-        var n = SIMD3<Scalar>(f.x, f.y, 1 - Swift.abs(f.x) - Swift.abs(f.y))
+    public static func decodeOctahedron(_ simd: Vector2) -> Vector3 {
+        let f = Vector2(simd.x * 2 - 1, simd.y * 2 - 1)
+        var n = Vector3(f.x, f.y, 1 - Swift.abs(f.x) - Swift.abs(f.y))
         let t = (-n.z).clamped(lowerBound: 0, upperBound: 1)
         n.x += n.x >= 0 ? -t : t
         n.y += n.y >= 0 ? -t : t
         return n.normalized()
     }
-}
-
-extension SIMD3: Comparable where Scalar : Comparable {
-    /// Compares two vectors scalar by scalar.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is less than the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors, and then with the Z values.
-    /// This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
-    public static func < (lhs: SIMD3<Scalar>, rhs: SIMD3<Scalar>) -> Bool {
-        if lhs.x == rhs.x {
-            if lhs.y == rhs.y {
-                return lhs.z < rhs.z
-            }
-            return lhs.y < rhs.y
-        }
-        return lhs.x < rhs.x
-    }
     
-    /// Compares two vectors scalar by scalar.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is less than or equal to the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors, and then with the Z values.
-    /// This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
-    public static func <= (lhs: SIMD3<Scalar>, rhs: SIMD3<Scalar>) -> Bool {
-        if lhs.x == rhs.x {
-            if lhs.y == rhs.y {
-                return lhs.z <= rhs.z
-            }
-            return lhs.y < rhs.y
-        }
-        return lhs.x < rhs.x
-    }
-    
-    /// Compares two vectors scalar by scalar.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is greater than the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors, and then with the Z values.
-    /// This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
-    public static func > (lhs: SIMD3<Scalar>, rhs: SIMD3<Scalar>) -> Bool {
-        if lhs.x == rhs.x {
-            if lhs.y == rhs.y {
-                return lhs.z > rhs.z
-            }
-            return lhs.y > rhs.y
-        }
-        return lhs.x > rhs.x
-    }
-    
-    /// Compares two vectors scalar by scalar.
-    ///
-    /// This operator compares the two vectors by first checking if the X value
-    /// of the left vector is greater than or equal to the X value of the right vector.
-    /// If the X values are exactly equal, then it repeats this check with the Y
-    /// values of the two vectors, and then with the Z values.
-    /// This operator is useful for sorting vectors.
-    ///
-    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
-    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
-    public static func >= (lhs: SIMD3<Scalar>, rhs: SIMD3<Scalar>) -> Bool {
-        if lhs.x == rhs.x {
-            if lhs.y == rhs.y {
-                return lhs.z >= rhs.z
-            }
-            return lhs.y > rhs.y
-        }
-        return lhs.x > rhs.x
-    }
-    
-    /// The axis of the vector's highest value.
-    ///
-    /// If all components are equal, this method returns ``Axis3D/x``.
-    public var maxAxis: Axis3D {
-        x < y ? (y < z ? .z : .y) : (x < z ? .z : .x)
-    }
-    
-    /// The axis of the vector's lowest value.
-    ///
-    /// If all components are equal, this method returns ``Axis3D/z``.
-    public var minAxis: Axis3D {
-        x < y ? (x < z ? .x : .z) : (y < z ? .y : .z)
-    }
-}
-
-extension SIMD3 where Scalar : Comparable & SignedNumeric {
-    /// Returns this vector with all components in absolute values (i.e. positive).
-    public func abs() -> SIMD3 {
-        SIMD3(x: Swift.abs(x), y: Swift.abs(y), z: Swift.abs(z))
-    }
-    
-    /// Replaces this vector with a vector with all
-    /// components in absolute values (i.e. positive).
-    public mutating func formAbs() {
-        self = abs()
-    }
-}
-
-extension SIMD3 where Scalar == FloatingPointType {
     /// Returns the result of rotating this vector by a given angle.
     ///
     /// - Parameters:
@@ -873,22 +871,22 @@ extension SIMD3 where Scalar == FloatingPointType {
     ///   - axis: The vector around which the rotation is done.
     ///   Must be a normalized vector.
     public func rotated(
-        by angle: Scalar,
-        around axis: SIMD3
-    ) -> SIMD3 {
+        by angle: FloatingPointType,
+        around axis: Vector3
+    ) -> Vector3 {
         Basis(axis: axis, angle: angle) * self
     }
     
     /// Rotates this vector by a given angle (in radians).
     public mutating func rotate(
-        by angle: Scalar,
-        around axis: SIMD3
+        by angle: FloatingPointType,
+        around axis: Vector3
     ) {
         self = rotated(by: angle, around: axis)
     }
     
     /// Returns the outer product with another vector.
-    public func outer(_ other: SIMD3) -> Basis {
+    public func outer(_ other: Vector3) -> Basis {
         Basis(
             x: Vector3(x * other.x, x * other.y, x * other.z),
             y: Vector3(y * other.x, y * other.y, y * other.z),
@@ -906,7 +904,7 @@ extension SIMD3 where Scalar == FloatingPointType {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public func slerp(to other: SIMD3, weight: Scalar) -> SIMD3 {
+    public func slerp(to other: Vector3, weight: FloatingPointType) -> Vector3 {
         // This method seems more complicated than it really is, since we write out
         // the internals of some methods for efficiency (mainly, checking length).
         let start_length_sq = magnitudeSquared
@@ -938,45 +936,302 @@ extension SIMD3 where Scalar == FloatingPointType {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public mutating func formSlerp(to other: SIMD3, weight: Scalar) {
+    public mutating func formSlerp(to other: Vector3, weight: FloatingPointType) {
         self = slerp(to: other, weight: weight)
     }
-}
-
-extension SIMD3 where Scalar : Real & BinaryFloatingPoint {
+    
     /// Returns the unsigned minimum angle to the given vector, in radians.
-    public func angle(to other: SIMD3) -> Scalar {
-        Scalar.atan2(y: self.cross(other).magnitude, x: self.dot(other))
+    public func angle(to other: Vector3) -> FloatingPointType {
+        FloatingPointType.atan2(y: self.cross(other).magnitude, x: self.dot(other))
     }
     
     /// Returns the signed angle to the given vector, in radians.
     ///
     /// The sign of the angle is positive in a counter-clockwise direction
     /// and negative in a clockwise direction when viewed from the side specified by the axis.
-    public func signedAngle(to other: SIMD3, around axis: SIMD3) -> Scalar {
+    public func signedAngle(to other: Vector3, around axis: Vector3) -> FloatingPointType {
         let crossTo = cross(other)
-        let unsignedAngle = Scalar.atan2(y: crossTo.magnitude, x: dot(other))
+        let unsignedAngle = FloatingPointType.atan2(y: crossTo.magnitude, x: dot(other))
         let sign = other.dot(axis)
         return (sign < 0) ? -unsignedAngle : unsignedAngle
     }
+    
+    /// Returns this vector with all components in absolute values (i.e. positive).
+    public func abs() -> Vector3 {
+        Vector3(x: Swift.abs(x), y: Swift.abs(y), z: Swift.abs(z))
+    }
+    
+    /// Replaces this vector with a vector with all
+    /// components in absolute values (i.e. positive).
+    public mutating func formAbs() {
+        self = abs()
+    }
+    
+    /// Returns a new vector with all components clamped between the components
+    /// of the two given bounds.
+    public func clamped(lowerBound: Vector3, upperBound: Vector3) -> Vector3 {
+        Vector3(
+            x.clamped(lowerBound: lowerBound.x, upperBound: upperBound.x),
+            y.clamped(lowerBound: lowerBound.y, upperBound: upperBound.y),
+            z.clamped(lowerBound: lowerBound.z, upperBound: upperBound.z)
+        )
+    }
+    
+    /// Clamps all components between the components
+    /// of the two given bounds.
+    public mutating func clamp(lowerBound: Vector3, upperBound: Vector3) {
+        self = clamped(lowerBound: lowerBound, upperBound: upperBound)
+    }
+    
+    /// Returns a new vector with all components as their square root,
+    /// rounded to a representable value.
+    public func squareRoot() -> Vector3 {
+        Vector3(x.squareRoot(), y.squareRoot(), z.squareRoot())
+    }
+    
+    /// Updates this vector with all components as their square root,
+    /// rounded to a representable value.
+    public mutating func formSquareRoot() {
+        self = self.squareRoot()
+    }
+    
+    /// Returns a new vector with all components rounded to
+    /// an integral value using the specified rounding rule.
+    public func rounded(_ rule: FloatingPointRoundingRule) -> Vector3 {
+        Vector3(
+            x.rounded(rule),
+            y.rounded(rule),
+            z.rounded(rule)
+        )
+    }
+    
+    /// Rounds all components to
+    /// an integral value using the specified rounding rule.
+    public mutating func round(_ rule: FloatingPointRoundingRule) {
+        self = self.rounded(rule)
+    }
+    
+    /// Returns the sum of the scalars in the vector.
+    public func sum() -> FloatingPointType {
+        x + y + z
+    }
 }
 
-extension SIMD3 {
-    /// Accesses the vector component on the given axis.
-    public subscript(axis axis: Axis3D) -> Scalar {
-        get {
-            switch axis {
-            case .x: x
-            case .y: y
-            case .z: z
+// MARK: - Operators
+
+extension Vector3 {
+    /// The multiplication of all components of a vector and a floating-point value.
+    public static func * (lhs: Vector3, rhs: FloatingPointType) -> Vector3 {
+        Vector3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
+    }
+    
+    /// The multiplication of all components of a vector and a floating-point value.
+    public static func * (lhs: FloatingPointType, rhs: Vector3) -> Vector3 {
+        rhs * lhs
+    }
+    
+    /// Updates the vector with the multiplication of
+    /// all components of a vector and a floating-point value.
+    public static func *= (lhs: inout Vector3, rhs: FloatingPointType) {
+        lhs = lhs * rhs
+    }
+    
+    /// The division of all components of a vector and a floating-point value.
+    public static func / (lhs: Vector3, rhs: FloatingPointType) -> Vector3 {
+        Vector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
+    }
+    
+    /// Updates the vector with the division of
+    /// all components of a vector and a floating-point value.
+    public static func /= (lhs: inout Vector3, rhs: FloatingPointType) {
+        lhs = lhs / rhs
+    }
+    
+    /// The opposite of a vector.
+    ///
+    /// This is the same as multiplying by `-1`.
+    public static prefix func - (lhs: Vector3) -> Vector3 {
+        var copy = lhs
+        copy.x = -copy.x
+        copy.y = -copy.y
+        copy.z = -copy.z
+        return copy
+    }
+    
+    /// The multiplication of two vectors, component by component.
+    public static func * (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Vector3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z)
+    }
+    
+    /// Updates the vector with the multiplication of two vectors,
+    /// component by component.
+    public static func *= (lhs: inout Vector3, rhs: Vector3) {
+        lhs = lhs * rhs
+    }
+    
+    /// The division of two vectors, component by component.
+    public static func / (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Vector3(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
+    }
+    
+    /// Updates the vector with the division of two vectors,
+    /// component by component.
+    public static func /= (lhs: inout Vector3, rhs: Vector3) {
+        lhs = lhs / rhs
+    }
+}
+
+// MARK: AdditiveArithmetic
+
+extension Vector3: AdditiveArithmetic {
+    public static func + (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Vector3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
+    }
+    
+    public static func - (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Vector3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z)
+    }
+}
+
+// MARK: - Comparable
+
+extension Vector3: Comparable {
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors, and then with the Z values.
+    /// This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func < (lhs: Vector3, rhs: Vector3) -> Bool {
+        if lhs.x == rhs.x {
+            if lhs.y == rhs.y {
+                return lhs.z < rhs.z
             }
+            return lhs.y < rhs.y
         }
-        set(newValue) {
-            switch axis {
-            case .x: x = newValue
-            case .y: y = newValue
-            case .z: z = newValue
+        return lhs.x < rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors, and then with the Z values.
+    /// This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func <= (lhs: Vector3, rhs: Vector3) -> Bool {
+        if lhs.x == rhs.x {
+            if lhs.y == rhs.y {
+                return lhs.z <= rhs.z
             }
+            return lhs.y < rhs.y
         }
+        return lhs.x < rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors, and then with the Z values.
+    /// This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func > (lhs: Vector3, rhs: Vector3) -> Bool {
+        if lhs.x == rhs.x {
+            if lhs.y == rhs.y {
+                return lhs.z > rhs.z
+            }
+            return lhs.y > rhs.y
+        }
+        return lhs.x > rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors, and then with the Z values.
+    /// This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func >= (lhs: Vector3, rhs: Vector3) -> Bool {
+        if lhs.x == rhs.x {
+            if lhs.y == rhs.y {
+                return lhs.z >= rhs.z
+            }
+            return lhs.y > rhs.y
+        }
+        return lhs.x > rhs.x
+    }
+    
+    /// The axis of the vector's highest value.
+    ///
+    /// If all components are equal, this method returns ``Axis3D/x``.
+    public var maxAxis: Axis3D {
+        x < y ? (y < z ? .z : .y) : (x < z ? .z : .x)
+    }
+    
+    /// The axis of the vector's lowest value.
+    ///
+    /// If all components are equal, this method returns ``Axis3D/z``.
+    public var minAxis: Axis3D {
+        x < y ? (x < z ? .x : .z) : (y < z ? .y : .z)
+    }
+}
+
+// MARK: - CustomStringConvertible
+
+extension Vector3: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        "(x: \(x), y: \(y), z: \(z))"
+    }
+    
+    public var debugDescription: String {
+        "Vector3(x: \(x), y: \(y), z: \(z))"
+    }
+}
+
+// MARK: - ExpressibleByArrayLiteral
+
+extension Vector3: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: FloatingPointType...) {
+        precondition(
+            elements.count == 3,
+            "Attempting to create a 3D vector from \(elements.count) elements."
+        )
+        
+        self.x = elements[0]
+        self.y = elements[1]
+        self.z = elements[2]
+    }
+}
+
+// MARK: - Codable
+
+extension Vector3: Codable {
+    public func encode(to encoder: Encoder) throws {
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(x)
+        try unkeyedContainer.encode(y)
+        try unkeyedContainer.encode(z)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        x = try container.decode(FloatingPointType.self)
+        y = try container.decode(FloatingPointType.self)
+        z = try container.decode(FloatingPointType.self)
     }
 }

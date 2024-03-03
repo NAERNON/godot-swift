@@ -9,97 +9,221 @@
 /// >note: The values are limited to 32 bits, and unlike ``Vector2``
 /// this cannot be configured with an engine build option.
 ///
-/// ### Use as Boolean
-///
-/// In a boolean context, a `Vector2I` evaluates to `false` if
-/// it's equal to `(0, 0)`.
-/// Otherwise, it always evaluates to `true`.
-///
-/// ### Type Alias
-///
-/// `Vector2I` is a type alias to `SIMD2<Int32>`.
-///
-/// `SIMD2` already comes with many functions that cannot be detailed here.
-/// Only added extensions are detailed in this documentation.
-///
-/// Check the corresponding documentation to learn more about the functions
-/// the Standard Library proposes.
-///
 /// ## Topics
+///
+/// ### Creating 2D Vector
+///
+/// - ``Vector2I/init(x:y:)``
+/// - ``Vector2I/init(_:_:)``
+/// - ``Vector2I/init(_:)``
+/// - ``Vector2I/init(_:rounding:)``
+/// - ``Vector2I/init(repeating:)``
 ///
 /// ### Special Values
 ///
-/// - ``Swift/SIMD2/left-4za5e``
-/// - ``Swift/SIMD2/right-56fkp``
-/// - ``Swift/SIMD2/up-3q2aq``
-/// - ``Swift/SIMD2/down-6ay1x``
+/// - ``Vector2I/zero``
+/// - ``Vector2I/init()``
+/// - ``Vector2I/one``
+/// - ``Vector2I/left``
+/// - ``Vector2I/right``
+/// - ``Vector2I/up``
+/// - ``Vector2I/down``
 ///
 /// ### Geometric Properties
 ///
-/// - ``Swift/SIMD2/width``
-/// - ``Swift/SIMD2/height``
-/// - ``Swift/SIMD2/aspect-2zt2e``
-/// - ``Swift/SIMD2/abs()``
-/// - ``Swift/SIMD2/formAbs()``
-/// - ``Swift/SIMD2/signUnitValue-4z9me``
+/// - ``Vector2I/x``
+/// - ``Vector2I/y``
+/// - ``Vector2I/subscript(_:)``
+/// - ``Vector2I/width``
+/// - ``Vector2I/height``
+/// - ``Vector2I/aspect``
+/// - ``Vector2I/abs()``
+/// - ``Vector2I/formAbs()``
+/// - ``Vector2I/clamped(lowerBound:upperBound:)``
+/// - ``Vector2I/clamp(lowerBound:upperBound:)``
+/// - ``Vector2I/sum()``
+/// - ``Vector2I/signUnitValue``
 ///
 /// ### Magnitude and Distance
 ///
-/// - ``Swift/SIMD2/magnitude-5rz9x``
-/// - ``Swift/SIMD2/magnitudeSquared-8sets``
+/// - ``Vector2I/magnitude``
+/// - ``Vector2I/magnitudeSquared``
 ///
 /// ### Axis
 ///
-/// - ``Swift/SIMD2/minAxis``
-/// - ``Swift/SIMD2/maxAxis``
-/// - ``Swift/SIMD2/subscript(axis:)``
+/// - ``Vector2I/minAxis``
+/// - ``Vector2I/maxAxis``
+/// - ``Vector2I/subscript(axis:)``
 ///
 /// ### Rounding and Division
 ///
-/// - ``Swift/SIMD2/snapped(step:)-5c3wk``
-/// - ``Swift/SIMD2/snap(step:)-749bj``
+/// - ``Vector2I/snapped(step:)``
+/// - ``Vector2I/snap(step:)``
 ///
 /// ### Comparison
 ///
-/// - ``Swift/SIMD2/<(_:_:)``
-/// - ``Swift/SIMD2/<=(_:_:)``
-/// - ``Swift/SIMD2/>(_:_:)``
-/// - ``Swift/SIMD2/>=(_:_:)``
-///
-/// ### Extension
-///
-/// - ``Swift/SIMD2``
-public typealias Vector2I = SIMD2<Int32>
+/// - ``Vector2I/<(_:_:)``
+/// - ``Vector2I/<=(_:_:)``
+/// - ``Vector2I/>(_:_:)``
+/// - ``Vector2I/>=(_:_:)``
+public struct Vector2I: Hashable, Equatable {
+    /// The first element of the vector.
+    public var x: Int32
+    /// The second element of the vector.
+    public var y: Int32
+    
+    // MARK: - Initializers
+    
+    /// Creates a new vector from the given elements.
+    public init(
+        x: Int32,
+        y: Int32
+    ) {
+        self.x = x
+        self.y = y
+    }
+    
+    /// Creates a new vector from the given elements.
+    public init(
+        _ x: Int32,
+        _ y: Int32
+    ) {
+        self.x = x
+        self.y = y
+    }
+    
+    /// Creates a new vector with all elements set to `0`.
+    public init() {
+        self = .zero
+    }
+    
+    /// Creates a new vector from a given floating-point vector,
+    /// rounded using a given rule.
+    public init(_ other: Vector2, rounding rule: FloatingPointRoundingRule) {
+        self.x = Int32(other.x.rounded(rule))
+        self.y = Int32(other.y.rounded(rule))
+    }
+    
+    /// Creates a new vector from a given floating-point vector.
+    public init(_ other: Vector2) {
+        self.x = Int32(other.x)
+        self.y = Int32(other.y)
+    }
+    
+    /// Creates a new vector with all elements set to the specified value.
+    public init(repeating value: Int32) {
+        self.x = value
+        self.y = value
+    }
+}
 
-extension SIMD2 where Scalar : BinaryInteger {
+// MARK: - Special Values
+
+extension Vector2I {
+    /// A vector with all elements set to `0`.
+    public static var zero: Vector2I {
+        Vector2I(0, 0)
+    }
+    
+    /// A vector with all elements set to `1`.
+    public static var one: Vector2I {
+        Vector2I(1, 1)
+    }
+    
     /// The left unit vector.
     ///
     /// Represents the direction of left.
-    public static var left: SIMD2 {
-        SIMD2(x: -1, y: 0)
+    public static var left: Vector2I {
+        Vector2I(x: -1, y: 0)
     }
     
     /// The right unit vector.
     ///
     /// Represents the direction of right.
-    public static var right: SIMD2 {
-        SIMD2(x: 1, y: 0)
+    public static var right: Vector2I {
+        Vector2I(x: 1, y: 0)
     }
     
     /// The up unit vector.
     ///
     /// Y is down in 2D, so this vector points -Y.
-    public static var up: SIMD2 {
-        SIMD2(x: 0, y: -1)
+    public static var up: Vector2I {
+        Vector2I(x: 0, y: -1)
     }
     
     /// The down unit vector.
     ///
     /// Y is down in 2D, so this vector points +Y.
-    public static var down: SIMD2 {
-        SIMD2(x: 0, y: 1)
+    public static var down: Vector2I {
+        Vector2I(x: 0, y: 1)
+    }
+}
+
+// MARK: - Properties
+
+extension Vector2I {
+    /// The vector's width. Equivalent to `x`.
+    public var width: Int32 {
+        get {
+            x
+        }
+        set(newValue) {
+            x = newValue
+        }
     }
     
+    /// The vector's height. Equivalent to `y`.
+    public var height: Int32 {
+        get {
+            y
+        }
+        set(newValue) {
+            y = newValue
+        }
+    }
+}
+
+// MARK: Subscripts
+
+extension Vector2I {
+    /// Accesses the vector component at the given index.
+    public subscript(index: Int) -> Int32 {
+        get {
+            switch index {
+            case 0: x
+            case 1: y
+            default: fatalError("Attempting to retrieve element \(index) from 2D vector.")
+            }
+        }
+        set(newValue) {
+            switch index {
+            case 0: x = newValue
+            case 1: y = newValue
+            default: fatalError("Attempting to set element \(index) from 2D vector.")
+            }
+        }
+    }
+    
+    /// Accesses the vector component on the given axis.
+    public subscript(axis axis: Axis2D) -> Int32 {
+        get {
+            switch axis {
+            case .x: x
+            case .y: y
+            }
+        }
+        set(newValue) {
+            switch axis {
+            case .x: x = newValue
+            case .y: y = newValue
+            }
+        }
+    }
+}
+
+// MARK: Functions and variables
+
+extension Vector2I {
     /// The aspect ratio of the vector, the ratio of `x` to `y`.
     public var aspect: FloatingPointType {
         FloatingPointType(x) / FloatingPointType(y)
@@ -107,14 +231,14 @@ extension SIMD2 where Scalar : BinaryInteger {
     
     /// A vector with each component set to `1` if it's positive,
     /// `-1` if it's negative, and `0` if it's zero.
-    public var signUnitValue: SIMD2 {
-        SIMD2(x: x.signUnitValue, y: y.signUnitValue)
+    public var signUnitValue: Vector2I {
+        Vector2I(x: x.signUnitValue, y: y.signUnitValue)
     }
     
     /// Returns a new vector with each component snapped to
     /// the closest multiple of the corresponding component in a given vector.
-    public func snapped(step: SIMD2) -> SIMD2 {
-        SIMD2(
+    public func snapped(step: Vector2I) -> Vector2I {
+        Vector2I(
             x: x.snapped(step: step.x),
             y: y.snapped(step: step.y)
         )
@@ -125,12 +249,10 @@ extension SIMD2 where Scalar : BinaryInteger {
     ///
     /// This can also be used to round the components
     /// to an arbitrary number of decimals.
-    public mutating func snap(step: SIMD2) {
+    public mutating func snap(step: Vector2I) {
         self = snapped(step: step)
     }
-}
-
-extension SIMD2 where Scalar == Int32 {
+    
     /// The magnitude (length) of the vector.
     public var magnitude: FloatingPointType {
         FloatingPointType(magnitudeSquared).squareRoot()
@@ -138,12 +260,232 @@ extension SIMD2 where Scalar == Int32 {
     
     /// The squared magnitude of the vector.
     ///
-    /// This property runs faster than ``magnitude-5rz9x``, so prefer it if you need
+    /// This property runs faster than ``magnitude``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
     public var magnitudeSquared: UInt64 {
         (UInt64(x) * UInt64(x)) + (UInt64(y) * UInt64(y))
     }
+    
+    /// Returns this vector with all components in absolute values (i.e. positive).
+    public func abs() -> Vector2I {
+        Vector2I(x: Swift.abs(x), y: Swift.abs(y))
+    }
+    
+    /// Replaces this vector with a vector with all
+    /// components in absolute values (i.e. positive).
+    public mutating func formAbs() {
+        self = abs()
+    }
+    
+    /// Returns a new vector with all components clamped between the components
+    /// of the two given bounds.
+    public func clamped(lowerBound: Vector2I, upperBound: Vector2I) -> Vector2I {
+        Vector2I(
+            x.clamped(lowerBound: lowerBound.x, upperBound: upperBound.x),
+            y.clamped(lowerBound: lowerBound.y, upperBound: upperBound.y)
+        )
+    }
+    
+    /// Clamps all components between the components
+    /// of the two given bounds.
+    public mutating func clamp(lowerBound: Vector2I, upperBound: Vector2I) {
+        self = clamped(lowerBound: lowerBound, upperBound: upperBound)
+    }
+    
+    /// Returns the sum of the scalars in the vector.
+    public func sum() -> Int64 {
+        Int64(x) + Int64(y)
+    }
 }
+
+// MARK: - Operators
+
+extension Vector2I {
+    /// The multiplication of all components of a vector and a floating-point value.
+    public static func * (lhs: Vector2I, rhs: Int32) -> Vector2I {
+        Vector2I(lhs.x * rhs, lhs.y * rhs)
+    }
+    
+    /// The multiplication of all components of a vector and a floating-point value.
+    public static func * (lhs: Int32, rhs: Vector2I) -> Vector2I {
+        rhs * lhs
+    }
+    
+    /// Updates the vector with the multiplication of
+    /// all components of a vector and a floating-point value.
+    public static func *= (lhs: inout Vector2I, rhs: Int32) {
+        lhs = lhs * rhs
+    }
+    
+    /// The division of all components of a vector and a floating-point value.
+    public static func / (lhs: Vector2I, rhs: Int32) -> Vector2I {
+        Vector2I(lhs.x / rhs, lhs.y / rhs)
+    }
+    
+    /// Updates the vector with the division of
+    /// all components of a vector and a floating-point value.
+    public static func /= (lhs: inout Vector2I, rhs: Int32) {
+        lhs = lhs / rhs
+    }
+    
+    /// The opposite of a vector.
+    ///
+    /// This is the same as multiplying by `-1`.
+    public static prefix func - (lhs: Vector2I) -> Vector2I {
+        var copy = lhs
+        copy.x = -copy.x
+        copy.y = -copy.y
+        return copy
+    }
+    
+    /// The multiplication of two vectors, component by component.
+    public static func * (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
+        Vector2I(lhs.x * rhs.x, lhs.y * rhs.y)
+    }
+    
+    /// Updates the vector with the multiplication of two vectors,
+    /// component by component.
+    public static func *= (lhs: inout Vector2I, rhs: Vector2I) {
+        lhs = lhs * rhs
+    }
+    
+    /// The division of two vectors, component by component.
+    public static func / (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
+        Vector2I(lhs.x / rhs.x, lhs.y / rhs.y)
+    }
+    
+    /// Updates the vector with the division of two vectors,
+    /// component by component.
+    public static func /= (lhs: inout Vector2I, rhs: Vector2I) {
+        lhs = lhs / rhs
+    }
+}
+
+// MARK: AdditiveArithmetic
+
+extension Vector2I: AdditiveArithmetic {
+    public static func + (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
+        Vector2I(lhs.x + rhs.x, lhs.y + rhs.y)
+    }
+    
+    public static func - (lhs: Vector2I, rhs: Vector2I) -> Vector2I {
+        Vector2I(lhs.x - rhs.x, lhs.y - rhs.y)
+    }
+}
+
+// MARK: - Comparable
+
+extension Vector2I: Comparable {
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func < (lhs: Vector2I, rhs: Vector2I) -> Bool {
+        lhs.x == rhs.x ? lhs.y < rhs.y : lhs.x < rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func > (lhs: Vector2I, rhs: Vector2I) -> Bool {
+        lhs.x == rhs.x ? lhs.y > rhs.y : lhs.x > rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is less than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func <= (lhs: Vector2I, rhs: Vector2I) -> Bool {
+        lhs.x == rhs.x ? lhs.y <= rhs.y : lhs.x < rhs.x
+    }
+    
+    /// Compares two vectors scalar by scalar.
+    ///
+    /// This operator compares the two vectors by first checking if the X value
+    /// of the left vector is greater than or equal to the X value of the right vector.
+    /// If the X values are exactly equal, then it repeats this check with the Y
+    /// values of the two vectors. This operator is useful for sorting vectors.
+    ///
+    /// >note: Vectors with `nan` elements don't behave the same as other vectors.
+    /// Therefore, the results from this operator may not be accurate if `nan`s are included.
+    public static func >= (lhs: Vector2I, rhs: Vector2I) -> Bool {
+        lhs.x == rhs.x ? lhs.y >= rhs.y : lhs.x > rhs.x
+    }
+    
+    /// The axis of the vector's highest value.
+    ///
+    /// If all components are equal, this method returns ``Axis2D/x``.
+    public var maxAxis: Axis2D {
+        x < y ? .x : .y
+    }
+    
+    /// The axis of the vector's lowest value.
+    ///
+    /// If all components are equal, this method returns ``Axis2D/y``.
+    public var minAxis: Axis2D {
+        x < y ? .y : .x
+    }
+}
+
+// MARK: - CustomStringConvertible
+
+extension Vector2I: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        "(x: \(x), y: \(y))"
+    }
+    
+    public var debugDescription: String {
+        "Vector2I(x: \(x), y: \(y))"
+    }
+}
+
+// MARK: - ExpressibleByArrayLiteral
+
+extension Vector2I: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Int32...) {
+        precondition(
+            elements.count == 2,
+            "Attempting to create a 2D vector from \(elements.count) elements."
+        )
+        
+        self.x = elements[0]
+        self.y = elements[1]
+    }
+}
+
+// MARK: - Codable
+
+extension Vector2I: Codable {
+    public func encode(to encoder: Encoder) throws {
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(x)
+        try unkeyedContainer.encode(y)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        x = try container.decode(Int32.self)
+        y = try container.decode(Int32.self)
+    }
+}
+
+// MARK: - Typealiases
 
 /// A 2D integer point.
 public typealias Point2I = Vector2I
