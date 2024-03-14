@@ -11,48 +11,52 @@
 ///
 /// ### Creating Plane
 ///
-/// - ``init(normal:d:)-4b0we``
-/// - ``init(normal:d:)-4fwyy``
-/// - ``init(normal:d:)-63rpz``
-/// - ``init(normal:)``
-/// - ``init(normal:point:)``
-/// - ``init(point1:point2:point3:)``
-/// - ``init(a:b:c:d:)-7m9r8``
-/// - ``init(a:b:c:d:)-6aiaw``
-/// - ``init(a:b:c:d:)-908jd``
+/// - ``Plane/init(normal:d:)``
+/// - ``Plane/init(normal:)``
+/// - ``Plane/init(normal:point:)``
+/// - ``Plane/init(point1:point2:point3:dir:)``
+/// - ``Plane/init(a:b:c:d:)``
 ///
 /// ### Special Values
 ///
-/// - ``init()``
-/// - ``planeYZ``
-/// - ``planeXZ``
-/// - ``planeXY``
+/// - ``Plane/init()``
+/// - ``Plane/yz``
+/// - ``Plane/xz``
+/// - ``Plane/xy``
 ///
 /// ### Geometric Properties
 ///
-/// - ``d``
-/// - ``normal``
-/// - ``x``
-/// - ``y``
-/// - ``z``
-/// 
-/// - ``center``
-/// - ``isFinite``
-/// - ``distance(to:)``
-/// - ``isPointOver(_:)``
+/// - ``Plane/normal``
+/// - ``Plane/d``
+/// - ``Plane/x``
+/// - ``Plane/y``
+/// - ``Plane/z``
 ///
-/// ### Transformation
+/// - ``Plane/center``
+/// - ``Plane/isFinite``
 ///
-/// - ``normalized``
+/// ### Normalization
+///
+/// - ``Plane/normalized()``
+/// - ``Plane/normalize()``
+///
+/// ### Distance and Points
+///
+/// - ``Plane/hasPoint(_:tolerance:)``
+/// - ``Plane/distance(to:)``
+/// - ``Plane/project(_:)``
+/// - ``Plane/isPointOver(_:)``
 ///
 /// ### Intersection
 ///
-/// - ``hasPoint(_:tolerance:)``
-/// - ``project(_:)``
-/// - ``intersection(with:and:)``
-/// - ``segmentIntersection(from:to:)``
-/// - ``rayIntersection(from:dir:)``
-public struct Plane {
+/// - ``Plane/intersection(with:and:)``
+/// - ``Plane/segmentIntersection(from:to:)``
+/// - ``Plane/rayIntersection(from:dir:)``
+///
+/// ### Approximate Equality
+///
+/// - ``Plane/isApproximatelyEqual(to:)``
+public struct Plane: Equatable, Hashable {
     /// The normal of the plane, typically a unit vector.
     ///
     /// Shouldn't be a zero vector as `Plane` with
@@ -73,7 +77,10 @@ public struct Plane {
     /// while the `(a, b, c)` coordinates are represented by the ``normal`` property.
     public var d: FloatingPointType
     
-    /// Creates a plane from the normal vector and the plane's distance from the origin.
+    // MARK: - Initializers
+    
+    /// Creates a new plane from the given normal vector and
+    /// the plane's distance from the origin.
     ///
     /// - Parameters:
     ///   - normal: The plane's normal vector. Must be a unit vector.
@@ -82,134 +89,110 @@ public struct Plane {
         self.normal = normal
         self.d = d
     }
-}
-
-extension Plane {
-    // MARK: Constructors
     
-    /// Creates a plane from the normal vector and the plane's distance from the origin.
-    ///
-    /// - Parameters:
-    ///   - normal: The plane's normal vector. Must be a unit vector.
-    ///   - point: The plane's distance from the origin.
-    public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
-        self.init(normal: normal, d: FloatingPointType(d))
-    }
-    
-    /// Creates a plane from the normal vector and the plane's distance from the origin.
-    ///
-    /// - Parameters:
-    ///   - normal: The plane's normal vector. Must be a unit vector.
-    ///   - point: The plane's distance from the origin.
-    public init<T>(normal: Vector3, d: T) where T : BinaryInteger {
-        self.init(normal: normal, d: FloatingPointType(d))
-    }
-    
-    /// Creates a plane from the four parameters.
+    /// Creates a new plane from the given four parameters.
     ///
     /// - Parameters:
     ///   - a: The plane's normal `x` value.
     ///   - b: The plane's normal `y` value.
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
-    public init(a: FloatingPointType, b: FloatingPointType, c: FloatingPointType, d: FloatingPointType) {
-        self.init(normal: Vector3(x: a, y: b, z: c), d: d)
+    public init(
+        a: FloatingPointType,
+        b: FloatingPointType,
+        c: FloatingPointType,
+        d: FloatingPointType
+    ) {
+        self.normal = Vector3(x: a, y: b, z: c)
+        self.d = d
     }
     
-    /// Creates a plane from the four parameters.
-    ///
-    /// - Parameters:
-    ///   - a: The plane's normal `x` value.
-    ///   - b: The plane's normal `y` value.
-    ///   - c: The plane's normal `z` value.
-    ///   - d: The plane's distance from the origin.
-    public init<T>(a: T, b: T, c: T, d: T) where T : BinaryFloatingPoint {
-        self.init(a: FloatingPointType(a), b: FloatingPointType(b), c: FloatingPointType(c), d: FloatingPointType(d))
-    }
-    
-    /// Creates a plane from the four parameters.
-    ///
-    /// - Parameters:
-    ///   - a: The plane's normal `x` value.
-    ///   - b: The plane's normal `y` value.
-    ///   - c: The plane's normal `z` value.
-    ///   - d: The plane's distance from the origin.
-    public init<T>(a: T, b: T, c: T, d: T) where T : BinaryInteger {
-        self.init(a: FloatingPointType(a), b: FloatingPointType(b), c: FloatingPointType(c), d: FloatingPointType(d))
-    }
-    
-    /// Creates a plane from the normal vector.
+    /// Creates a new plane from the given normal vector.
     ///
     /// The plane will intersect the origin.
     ///
     /// - Parameter normal: The plane's normal vector. Must be a unit vector.
     public init(normal: Vector3) {
-        self = Self._constructor_vector3(normal: normal)
+        self.normal = normal
+        self.d = 0.0
     }
     
-    /// Creates a plane from the normal vector and a point on the plane.
+    /// Creates a new plane from the given normal vector and a point on the plane.
     ///
     /// - Parameters:
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: A point on the plane.
     public init(normal: Vector3, point: Vector3) {
-        self = Self._constructor_vector3_vector3(normal: normal, point: point)
+        self.normal = normal
+        self.d = normal.dot(point)
     }
     
-    /// Creates a plane from the three points, given in clockwise order.
-    public init(point1: Vector3, point2: Vector3, point3: Vector3) {
-        self = Self._constructor_vector3_vector3_vector3(point1: point1, point2: point2, point3: point3)
+    /// Creates a new plane from the given three points.
+    ///
+    /// - Parameters:
+    ///   - point1: The first point on the plane.
+    ///   - point2: The second point on the plane.
+    ///   - point3: The third point on the plane.
+    ///   - dir: The order in which the points are given.
+    public init(
+        point1: Vector3,
+        point2: Vector3,
+        point3: Vector3,
+        dir: ClockDirection = .clockwise
+    ) {
+        if dir == .clockwise {
+            self.normal = (point1 - point3).cross(point1 - point2)
+        } else {
+            self.normal = (point1 - point2).cross(point1 - point3)
+        }
+
+        self.normal.normalize()
+        self.d = self.normal.dot(point1)
     }
     
-    /// Creates a default-initialized `Plane` with all components set to 0.
+    /// Creates a default-initialized `Plane` with all components set to `0`.
     public init() {
-        self.init(normal: Vector3(), d: 0)
+        self.normal = Vector3()
+        self.d = 0.0
     }
-    
-    // MARK: Constant
-    
+}
+
+// MARK: Special Values
+
+extension Plane {
     /// A plane that extends in the Y and Z axes (normal vector points +X).
-    public static var planeYZ: Plane {
+    public static var yz: Plane {
         Plane(a: 1, b: 0, c: 0, d: 0)
     }
     
     /// A plane that extends in the X and Z axes (normal vector points +Y).
-    public static var planeXZ: Plane {
+    public static var xz: Plane {
         Plane(a: 0, b: 1, c: 0, d: 0)
     }
     
     /// A plane that extends in the X and Y axes (normal vector points +Z).
-    public static var planeXY: Plane {
+    public static var xy: Plane {
         Plane(a: 0, b: 0, c: 1, d: 0)
     }
-    
-    // MARK: Operators
-    
-    /// Returns the negative value of the `Plane`.
+}
+
+// MARK: Operators
+
+extension Plane {
+    /// The opposite of a plane.
     ///
     /// This is the same as writing `Plane(normal: -p.normal, d: -p.d)`.
     /// This operation flips the direction of the normal vector and
     /// also flips the distance value, resulting in a `Plane` that
     /// is in the same place, but facing the opposite direction.
     public static prefix func - (plane: Plane) -> Plane {
-        Self._operatorNegate(plane)
+        Plane(normal: -plane.normal, d: -plane.d)
     }
-    
-    /// Returns the same value as if the + was not there.
-    public static prefix func + (plane: Plane) -> Plane {
-        Self._operatorPositive(plane)
-    }
-    
-    /// Inversely transforms (multiplies) the Plane by the given transformation matrix.
-    ///
-    /// `plane * transform` is equivalent to `transform.affineInverted * plane`.
-    /// See Transform3D's ``Transform3D/affineInverted``.
-    public static func * (lhs: Plane, rhs: Transform3D) -> Plane {
-        Self._operatorMultiply(lhs, rhs)
-    }
-    
-    // MARK: Methods & variables
-    
+}
+
+// MARK: - Properties
+
+extension Plane {
     /// The X component of the plane's normal vector.
     public var x: FloatingPointType {
         get {
@@ -239,86 +222,146 @@ extension Plane {
             normal.z = newValue
         }
     }
-    
-    /// The normalized version of the plane.
+}
+
+// MARK: Functions and variables
+
+extension Plane {
+    /// Returns the normalized version of the plane.
     ///
     /// The ``normal`` is normalized (so it's a unit vector).
     ///
-    /// This property returns `Plane(0, 0, 0, 0)` if `normal`
+    /// This function returns `Plane(0, 0, 0, 0)` if `normal`
     /// can't be normalized (it has zero length).
-    public var normalized: Plane {
-        _normalized()
+    public func normalized() -> Plane {
+        var copy = self
+        copy.normalize()
+        return copy
+    }
+    
+    /// Normalizes this plane.
+    ///
+    /// The ``normal`` is normalized (so it's a unit vector).
+    ///
+    /// This plane becomes `Plane(0, 0, 0, 0)` if `normal`
+    /// can't be normalized (it has zero length).
+    public mutating func normalize() {
+        let l = normal.magnitude
+        if l == 0 {
+            self = Plane(a: 0, b: 0, c: 0, d: 0)
+            return
+        }
+        normal /= l
+        d /= l
     }
     
     /// The center of the plane.
     public var center: Vector3 {
-        _center()
+        normal * d
     }
     
-    /// Returns `true` if the `Plane` is approximately equal to another one.
+    /// Returns `true` if this plane is approximately equal to another one.
     public func isApproximatelyEqual(to other: Plane) -> Bool {
-        _isEqualApprox(toPlane: other)
+        normal.isApproximatelyEqual(to: other.normal) &&
+        d.isApproximatelyEqual(to: other.d)
     }
     
     /// A Boolean value indicating whether the plane is finite.
     public var isFinite: Bool {
-        _isFinite()
+        normal.isFinite &&
+        d.isFinite
     }
     
     /// Returns `true` if a given point is located above the plane.
     public func isPointOver(_ point: Vector3) -> Bool {
-        _isPointOver(point: point)
+        normal.dot(point) > d
     }
     
-    /// Returns the shortest distance from the plane to the position point.
+    /// Returns the shortest distance from this plane to the given position point.
     ///
     /// If the point is above the plane, the distance will be positive.
     /// If below, the distance will be negative.
     public func distance(to point: Vector3) -> FloatingPointType {
-        _distanceTo(point: point)
+        normal.dot(point) - d
     }
     
-    /// Returns `true` if the given point is inside the plane.
+    /// Returns `true` if the given point is inside this plane.
     ///
     /// Comparison uses a custom minimum tolerance threshold.
     public func hasPoint(_ point: Vector3, tolerance: FloatingPointType = 1e-05) -> Bool {
-        _hasPoint(point, tolerance: tolerance)
+        let dist = abs(normal.dot(point) - d)
+        return dist <= tolerance
     }
     
     /// Returns the orthogonal projection of a given point into a point in the plane.
     public func project(_ point: Vector3) -> Vector3 {
-        _project(point: point)
+        point - normal * distance(to: point)
     }
     
-    /// Returns the intersection point of the plane and two other ones,
+    /// Returns the intersection point of this plane and two other ones,
     /// if exists.
     public func intersection(with planeB: Plane, and planeC: Plane) -> Vector3? {
-        try? Vector3.convertFromStorage(
-            _intersect3(b: planeB, c: planeC)
-        )
+        let planeA = self
+        let normal0 = planeA.normal
+        let normal1 = planeB.normal
+        let normal2 = planeC.normal
+
+        let denom = normal0.cross(normal1).dot(normal2)
+
+        if denom.isApproximatelyZero {
+            return nil
+        }
+        
+        return (
+            (normal1.cross(normal2) * planeA.d) +
+            (normal2.cross(normal0) * planeB.d) +
+            (normal0.cross(normal1) * planeC.d)
+        ) / denom
     }
     
     /// Returns the intersection point of a ray consisting of the position
-    /// and the direction normal with the plane, is exists.
+    /// and the direction normal with this plane, is exists.
     ///
     /// - Parameters:
     ///   - fromPoint: The ray position.
     ///   - dir: The ray direction.
     public func rayIntersection(from fromPoint: Vector3, dir: Vector3) -> Vector3? {
-        try? Vector3.convertFromStorage(
-            _intersectsRay(from: fromPoint, dir: dir)
-        )
+        let segment = dir
+        let den = normal.dot(segment)
+        
+        if den.isApproximatelyZero {
+            return nil
+        }
+
+        let dist = (normal.dot(fromPoint) - d) / den
+        
+        if dist > .cmpEpsilon { // this is a ray, before the emitting pos (fromPoint) doesn't exist
+            return nil
+        }
+        
+        return fromPoint + segment * -dist
     }
     
-    /// Returns the intersection point between two points with the plane, is exists.
+    /// Returns the intersection point between two points with this plane, is exists.
     public func segmentIntersection(from fromPoint: Vector3, to toPoint: Vector3) -> Vector3? {
-        try? Vector3.convertFromStorage(
-            _intersectsSegment(from: fromPoint, to: toPoint)
-        )
+        let segment = fromPoint - toPoint
+        let den = normal.dot(segment)
+        
+        if den.isApproximatelyZero {
+            return nil
+        }
+        
+        let dist = (normal.dot(fromPoint) - d) / den
+        
+        if dist < -.cmpEpsilon || dist > (1.0 + .cmpEpsilon) {
+            return nil
+        }
+        
+        return fromPoint + segment * -dist
     }
 }
 
-extension Plane: Equatable, Hashable {}
+// MARK: - Codable
 
 extension Plane: Codable {
     public func encode(to encoder: Encoder) throws {
@@ -338,6 +381,8 @@ extension Plane: Codable {
         self.init(a: x, b: y, c: z, d: d)
     }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Plane: CustomStringConvertible {
     public var description: String {
