@@ -179,7 +179,8 @@ where Key : CodingKey {
     }
     
     func decodeNil(forKey key: Key) throws -> Bool {
-        try variant(for: key).storage.isNil
+        let variant = try variant(for: key)
+        return variant.storage.isNil
     }
     
     func decode(_ type: Bool.Type, forKey key: Key) throws -> Bool {
@@ -315,7 +316,8 @@ private final class VariantUnkeyedContainer: VariantRootDecoder, UnkeyedDecoding
     }
     
     func decodeNil() throws -> Bool {
-        try currentVariantAndGoToNext(forType: Never.self).storage.isNil
+        let variant = try currentVariantAndGoToNext(forType: Never.self)
+        return variant.storage.isNil
     }
     
     func decode(_ type: Bool.Type) throws -> Bool {
