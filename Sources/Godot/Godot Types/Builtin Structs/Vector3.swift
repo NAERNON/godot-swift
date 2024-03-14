@@ -288,7 +288,7 @@ extension Vector3 {
     }
 }
 
-// MARK: Subscripts
+// MARK: - Subscripts
 
 extension Vector3 {
     /// Accesses the vector component at the given index.
@@ -330,7 +330,7 @@ extension Vector3 {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Vector3 {
     /// Returns the normalized vector pointing from this vector to another one.
@@ -1081,7 +1081,7 @@ extension Vector3 {
     }
 }
 
-// MARK: AdditiveArithmetic
+// MARK: - AdditiveArithmetic
 
 extension Vector3: AdditiveArithmetic {
     public static func + (lhs: Vector3, rhs: Vector3) -> Vector3 {

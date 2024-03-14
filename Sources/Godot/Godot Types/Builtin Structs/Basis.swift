@@ -174,7 +174,7 @@ public struct Basis: Equatable, Hashable {
     
     /// Creates a pure rotation basis matrix from the given quaternion.
     public init(quaternion: Quaternion) {
-        let d = quaternion.lengthSquared
+        let d = quaternion.magnitudeSquared
         let s: FloatingPointType = 2 / d
         let xs = quaternion.x * s
         let ys = quaternion.y * s
@@ -321,7 +321,7 @@ extension Basis {
     }
 }
 
-// MARK: Operators
+// MARK: - Operators
 
 extension Basis {
     /// The multiplication of all components of a basis and a floating-point value.
@@ -416,7 +416,7 @@ extension Basis {
     }
 }
  
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Basis {
     @inline(__always)

@@ -7,7 +7,7 @@
 /// It uses floating-point coordinates. The 2D counterpart to `AABB` is ``Rect2``.
 ///
 /// Negative values for size are not supported and will not work for most methods.
-/// Use ``abs`` to get an `AABB` with a positive size.
+/// Use ``AABB/abs()`` to get an `AABB` with a positive size.
 ///
 /// >note: Unlike ``Rect2``, `AABB` does not have a variant that uses integer coordinates.
 ///
@@ -108,7 +108,7 @@ extension AABB {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension AABB {
     /// Returns the AABB with equivalent position and size,

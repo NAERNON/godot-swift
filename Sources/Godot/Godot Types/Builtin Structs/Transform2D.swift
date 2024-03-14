@@ -93,16 +93,14 @@ public struct Transform2D: Equatable, Hashable {
     /// The origin vector represents translation.
     public var origin: Vector2
     
+    // MARK: - Initializers
+    
     /// Creates a new transform from the given `x`, `y` and `origin` vectors.
     public init(x: Vector2, y: Vector2, origin: Vector2) {
         self.x = x
         self.y = y
         self.origin = origin
     }
-}
-
-extension Transform2D {
-    // MARK: Constructors
     
     /// Creates a default-initialized `Transform2D` set to `identity`.
     public init() {
@@ -110,13 +108,13 @@ extension Transform2D {
     }
     
     internal init(
-        _ xAxisX: FloatingPointType, _ xAxisY: FloatingPointType,
-        _ yAxisX: FloatingPointType, _ yAxisY: FloatingPointType,
-        _ originX: FloatingPointType, _ originY: FloatingPointType
+        _ xx: FloatingPointType, _ xy: FloatingPointType,
+        _ yx: FloatingPointType, _ yy: FloatingPointType,
+        _ ox: FloatingPointType, _ oy: FloatingPointType
     ) {
-        self.x = Vector2(x: xAxisX, y: xAxisY)
-        self.y = Vector2(x: yAxisX, y: yAxisY)
-        self.origin = Vector2(x: originX, y: originY)
+        self.x = Vector2(x: xx, y: xy)
+        self.y = Vector2(x: yx, y: yy)
+        self.origin = Vector2(x: ox, y: oy)
     }
     
     /// Creates new a transform from the given angle and position.
@@ -155,9 +153,11 @@ extension Transform2D {
         )
         self.origin = position
     }
-    
-    // MARK: Constant
-    
+}
+
+// MARK: - Special Values
+
+extension Transform2D {
     /// The identity 2D transform with no translation, rotation or scaling applied.
     ///
     /// When applied to other data structures, `identity` performs no transformation.
@@ -174,9 +174,11 @@ extension Transform2D {
     public static var flipY: Transform2D {
         Transform2D(1, 0, 0, -1, 0, 0)
     }
-    
-    // MARK: Operators
-    
+}
+
+// MARK: - Operators
+
+extension Transform2D {
     @inline(__always)
     private func tDotX(_ vector: Vector2) -> FloatingPointType {
         x.x * vector.x + y.x * vector.y
@@ -206,6 +208,13 @@ extension Transform2D {
         lhs.origin *= rhs
     }
     
+    /// The multiplication of all components of a 2D transform and a floating-point value.
+    ///
+    /// This includes the origin vector, which scales uniformly.
+    public static func * (lhs: FloatingPointType, rhs: Transform2D) -> Transform2D {
+        rhs * lhs
+    }
+    
     /// The opposite of a 2D transform.
     ///
     /// This is the same as multiplying by `-1`.
@@ -216,13 +225,6 @@ extension Transform2D {
         copy.y = -lhs.y
         copy.origin = -lhs.origin
         return copy
-    }
-    
-    /// The multiplication of all components of a 2D transform and a floating-point value.
-    ///
-    /// This includes the origin vector, which scales uniformly.
-    public static func * (lhs: FloatingPointType, rhs: Transform2D) -> Transform2D {
-        rhs * lhs
     }
     
     /// The transformation of a 2D vector by a transformation matrix.
@@ -344,14 +346,17 @@ extension Transform2D {
         lhs.y.y = y1
     }
     
+    // TODO: THIS
     /// Transforms (multiplies) each element of the `PackedVector2Array`
     /// by the 2D transformation matrix.
-//    public static func * (lhs: Transform2D, rhs: PackedVector2Array) -> PackedVector2Array {
-//        Self._operatorMultiply(lhs, rhs)
-//    }
-    
-    // MARK: Methods & variables
-    
+    //    public static func * (lhs: Transform2D, rhs: PackedVector2Array) -> PackedVector2Array {
+    //        Self._operatorMultiply(lhs, rhs)
+    //    }
+}
+
+// MARK: - Functions and variables
+
+extension Transform2D {
     /// Returns the inverse of this transform.
     ///
     /// This function assumes that the transformation basis is
@@ -367,7 +372,7 @@ extension Transform2D {
     ///
     /// This function assumes that the transformation basis is
     /// orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
-    /// Use ``affineInverse()`` for non-orthonormal transforms (e.g. with scaling).
+    /// Use ``affineInvert()`` for non-orthonormal transforms (e.g. with scaling).
     public mutating func invert() {
         swap(&x.y, &y.x)
         origin = multipliedBasis(with: -origin)
@@ -375,7 +380,7 @@ extension Transform2D {
     
     /// Returns the inverse of this transform.
     ///
-    /// This property assumes that the basis is invertible
+    /// This function assumes that the basis is invertible
     /// (must have non-zero determinant).
     public func affineInverse() -> Transform2D {
         var copy = self
@@ -385,7 +390,7 @@ extension Transform2D {
     
     /// Inverts this transform.
     ///
-    /// This property assumes that the basis is invertible
+    /// This function assumes that the basis is invertible
     /// (must have non-zero determinant).
     public mutating func affineInvert() {
         let det = determinant
@@ -469,7 +474,7 @@ extension Transform2D {
     
     /// Returns the orthonormalized transform.
     ///
-    /// The transform with the basis orthogonal (90 degrees),
+    /// This function returns the transform with the basis orthogonal (90 degrees),
     /// and normalized axis vectors (scale of `1` or `-1`).
     public func orthonormalized() -> Transform2D {
         var copy = self
@@ -578,7 +583,7 @@ extension Transform2D {
     ///
     /// This method is an optimized version of multiplying the
     /// given transform `X` with a corresponding
-    /// scaling transform `S` from the left, i.e., `S * X`.
+    /// scaling transform `S` from the left, i.e., `X * S`.
     ///
     /// This can be seen as transforming with respect to the local frame.
     public func scaledLocal(by scale: Size2) -> Transform2D {
@@ -590,7 +595,7 @@ extension Transform2D {
     ///
     /// This method is an optimized version of multiplying the
     /// given transform `X` with a corresponding
-    /// scaling transform `S` from the left, i.e., `S * X`.
+    /// scaling transform `S` from the left, i.e., `X * S`.
     ///
     /// This can be seen as transforming with respect to the local frame.
     public mutating func scaleLocal(by scale: Size2) {
@@ -636,7 +641,7 @@ extension Transform2D {
     ///
     /// This method is an optimized version of multiplying the
     /// given transform `X` with a corresponding
-    /// translation transform `T` from the left, i.e., `T * X`.
+    /// translation transform `T` from the left, i.e., `X * T`.
     ///
     /// This can be seen as transforming with respect to the local frame.
     public func translatedLocal(by offset: Vector2) -> Transform2D {
@@ -648,7 +653,7 @@ extension Transform2D {
     ///
     /// This method is an optimized version of multiplying the
     /// given transform `X` with a corresponding
-    /// translation transform `T` from the left, i.e., `T * X`.
+    /// translation transform `T` from the left, i.e., `X * T`.
     ///
     /// This can be seen as transforming with respect to the local frame.
     public mutating func translateLocal(by offset: Vector2) {
@@ -683,11 +688,11 @@ extension Transform2D {
     ///
     /// `transform.multipliedBasisInv(with: vector)` is equivalent to
     /// `transform.inverse().multipliedBasis(with: vector)`.
-    /// See ``inverted``.
+    /// See ``inverse()``.
     ///
     /// For non-orthonormal transforms (e.g. with scaling)
     /// `transform.affineInverted.basisMultiplied(with: vector)`
-    /// can be used instead. See ``affineInverted``.
+    /// can be used instead. See ``affineInverse()``.
     public func multipliedBasisInv(with vector: Vector2) -> Vector2 {
         Vector2(x: x.dot(vector), y: y.dot(vector))
     }
@@ -705,7 +710,7 @@ extension Transform2D {
         y.y *= scale.y
     }
     
-    /// Returns a transform interpolated between the transform
+    /// Returns a transform interpolated between this transform
     /// and another one by a given weight.
     ///
     /// - Parameters:
@@ -776,7 +781,7 @@ extension Transform2D {
             case 0: x
             case 1: y
             case 2: origin
-            default: fatalError("Attempting to retrieve column \(columnIndex) from 2D transform.")
+            default: fatalError("Attempting to read column \(columnIndex) from 2D transform.")
             }
         }
         set(newValue) {
@@ -784,11 +789,13 @@ extension Transform2D {
             case 0: x = newValue
             case 1: y = newValue
             case 2: origin = newValue
-            default: fatalError("Attempting to set column \(columnIndex) from 2D transform.")
+            default: fatalError("Attempting to set column \(columnIndex) on 2D transform.")
             }
         }
     }
 }
+
+// MARK: - Codable
 
 extension Transform2D: Codable {
     public func encode(to encoder: Encoder) throws {
@@ -806,6 +813,8 @@ extension Transform2D: Codable {
         self.init(x: xAxis, y: yAxis, origin: origin)
     }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Transform2D: CustomStringConvertible {
     public var description: String {

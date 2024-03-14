@@ -160,7 +160,7 @@ extension Projection {
     }
 }
 
-// MARK: Operators
+// MARK: - Operators
 
 extension Projection {
     /// The projection of a 4D vector by a projection matrix.
@@ -231,7 +231,7 @@ extension Projection {
     }
 }
     
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Projection {
     /// Creates a new projection that projects positions

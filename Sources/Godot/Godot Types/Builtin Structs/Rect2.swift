@@ -58,13 +58,13 @@
 ///
 /// ### Growing
 ///
-/// - ``Rect2/grew(by:)``
+/// - ``Rect2/grown(by:)``
 /// - ``Rect2/grow(by:)``
-/// - ``Rect2/grew(by:side:)``
+/// - ``Rect2/grown(by:side:)``
 /// - ``Rect2/grow(by:side:)``
-/// - ``Rect2/grew(by:sides:)``
+/// - ``Rect2/grown(by:sides:)``
 /// - ``Rect2/grow(by:sides:)``
-/// - ``Rect2/grew(left:top:right:bottom:)``
+/// - ``Rect2/grown(left:top:right:bottom:)``
 /// - ``Rect2/grow(left:top:right:bottom:)``
 ///
 /// ### Expanding & Merging
@@ -143,7 +143,7 @@ public struct Rect2: Equatable, Hashable {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Rect2 {
     /// The X coordinate of the origin point.
@@ -446,12 +446,12 @@ extension Rect2 {
     /// A negative amount shrinks the rectangle instead.
     ///
     /// ```swift
-    /// print(Rect2(x: 4, y: 4, width: 8, height: 8).grew(by: 4))
+    /// print(Rect2(x: 4, y: 4, width: 8, height: 8).grown(by: 4))
     /// // Prints (0, 0, 16, 16)
-    /// print(Rect2(x: 0, y: 0, width: 8, height: 4).grew(by: 2))
+    /// print(Rect2(x: 0, y: 0, width: 8, height: 4).grown(by: 2))
     /// // Prints (-2, -2, 12, 8)
     /// ```
-    public func grew(by amount: FloatingPointType) -> Rect2 {
+    public func grown(by amount: FloatingPointType) -> Rect2 {
         var copy = self
         copy.grow(by: amount)
         return copy
@@ -479,7 +479,7 @@ extension Rect2 {
     /// Returns this rectangle with its side extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grew(by amount: FloatingPointType, side: Side) -> Rect2 {
+    public func grown(by amount: FloatingPointType, side: Side) -> Rect2 {
         var copy = self
         copy.grow(by: amount, side: side)
         return copy
@@ -500,7 +500,7 @@ extension Rect2 {
     /// Returns this rectangle with the given sides extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grew(by amount: FloatingPointType, sides: Side.Set) -> Rect2 {
+    public func grown(by amount: FloatingPointType, sides: Side.Set) -> Rect2 {
         var copy = self
         copy.grow(by: amount, sides: sides)
         return copy
@@ -528,7 +528,7 @@ extension Rect2 {
     /// and bottom sides extended by the given amounts.
     ///
     /// Negative values shrink the sides, instead.
-    public mutating func grew(
+    public mutating func grown(
         left: FloatingPointType,
         top: FloatingPointType,
         right: FloatingPointType,

@@ -222,7 +222,7 @@ extension Vector4 {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Vector4 {
     /// The magnitude (length) of the vector.
@@ -686,7 +686,7 @@ extension Vector4 {
     }
 }
 
-// MARK: AdditiveArithmetic
+// MARK: - AdditiveArithmetic
 
 extension Vector4: AdditiveArithmetic {
     public static func + (lhs: Vector4, rhs: Vector4) -> Vector4 {

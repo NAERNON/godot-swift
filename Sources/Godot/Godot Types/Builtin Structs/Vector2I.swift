@@ -183,7 +183,7 @@ extension Vector2I {
     }
 }
 
-// MARK: Subscripts
+// MARK: - Subscripts
 
 extension Vector2I {
     /// Accesses the vector component at the given index.
@@ -221,7 +221,7 @@ extension Vector2I {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Vector2I {
     /// The aspect ratio of the vector, the ratio of `x` to `y`.
@@ -361,7 +361,7 @@ extension Vector2I {
     }
 }
 
-// MARK: AdditiveArithmetic
+// MARK: - AdditiveArithmetic
 
 extension Vector2I: AdditiveArithmetic {
     public static func + (lhs: Vector2I, rhs: Vector2I) -> Vector2I {

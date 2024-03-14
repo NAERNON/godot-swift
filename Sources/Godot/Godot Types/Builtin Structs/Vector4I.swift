@@ -144,7 +144,7 @@ extension Vector4I {
     }
 }
 
-// MARK: Subscripts
+// MARK: - Subscripts
 
 extension Vector4I {
     /// Accesses the vector component at the given index.
@@ -190,7 +190,7 @@ extension Vector4I {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Vector4I {
     /// A vector with each component set to `1` if it's positive,
@@ -336,7 +336,7 @@ extension Vector4I {
     }
 }
 
-// MARK: AdditiveArithmetic
+// MARK: - AdditiveArithmetic
 
 extension Vector4I: AdditiveArithmetic {
     public static func + (lhs: Vector4I, rhs: Vector4I) -> Vector4I {

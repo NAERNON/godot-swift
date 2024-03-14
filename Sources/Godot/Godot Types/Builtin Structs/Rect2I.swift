@@ -58,13 +58,13 @@
 ///
 /// ### Growing
 ///
-/// - ``Rect2I/grew(by:)``
+/// - ``Rect2I/grown(by:)``
 /// - ``Rect2I/grow(by:)``
-/// - ``Rect2I/grew(by:side:)``
+/// - ``Rect2I/grown(by:side:)``
 /// - ``Rect2I/grow(by:side:)``
-/// - ``Rect2I/grew(by:sides:)``
+/// - ``Rect2I/grown(by:sides:)``
 /// - ``Rect2I/grow(by:sides:)``
-/// - ``Rect2I/grew(left:top:right:bottom:)``
+/// - ``Rect2I/grown(left:top:right:bottom:)``
 /// - ``Rect2I/grow(left:top:right:bottom:)``
 ///
 /// ### Expanding & Merging
@@ -141,7 +141,7 @@ public struct Rect2I: Equatable, Hashable {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Rect2I {
     /// The X coordinate of the origin point.
@@ -424,12 +424,12 @@ extension Rect2I {
     /// A negative amount shrinks the rectangle instead.
     ///
     /// ```swift
-    /// print(Rect2I(x: 4, y: 4, width: 8, height: 8).grew(by: 4))
+    /// print(Rect2I(x: 4, y: 4, width: 8, height: 8).grown(by: 4))
     /// // Prints (0, 0, 16, 16)
-    /// print(Rect2I(x: 0, y: 0, width: 8, height: 4).grew(by: 2))
+    /// print(Rect2I(x: 0, y: 0, width: 8, height: 4).grown(by: 2))
     /// // Prints (-2, -2, 12, 8)
     /// ```
-    public func grew(by amount: Int32) -> Rect2I {
+    public func grown(by amount: Int32) -> Rect2I {
         var copy = self
         copy.grow(by: amount)
         return copy
@@ -457,7 +457,7 @@ extension Rect2I {
     /// Returns this rectangle with its side extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grew(by amount: Int32, side: Side) -> Rect2I {
+    public func grown(by amount: Int32, side: Side) -> Rect2I {
         var copy = self
         copy.grow(by: amount, side: side)
         return copy
@@ -478,7 +478,7 @@ extension Rect2I {
     /// Returns this rectangle with the given sides extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grew(by amount: Int32, sides: Side.Set) -> Rect2I {
+    public func grown(by amount: Int32, sides: Side.Set) -> Rect2I {
         var copy = self
         copy.grow(by: amount, sides: sides)
         return copy
@@ -506,7 +506,7 @@ extension Rect2I {
     /// and bottom sides extended by the given amounts.
     ///
     /// Negative values shrink the sides, instead.
-    public mutating func grew(
+    public mutating func grown(
         left: Int32,
         top: Int32,
         right: Int32,

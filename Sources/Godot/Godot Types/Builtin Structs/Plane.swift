@@ -157,7 +157,7 @@ public struct Plane: Equatable, Hashable {
     }
 }
 
-// MARK: Special Values
+// MARK: - Special Values
 
 extension Plane {
     /// A plane that extends in the Y and Z axes (normal vector points +X).
@@ -176,7 +176,7 @@ extension Plane {
     }
 }
 
-// MARK: Operators
+// MARK: - Operators
 
 extension Plane {
     /// The opposite of a plane.
@@ -224,7 +224,7 @@ extension Plane {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Plane {
     /// Returns the normalized version of the plane.

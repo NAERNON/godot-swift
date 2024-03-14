@@ -179,7 +179,7 @@ extension Vector3I {
     }
 }
 
-// MARK: Subscripts
+// MARK: - Subscripts
 
 extension Vector3I {
     /// Accesses the vector component at the given index.
@@ -221,7 +221,7 @@ extension Vector3I {
     }
 }
 
-// MARK: Functions and variables
+// MARK: - Functions and variables
 
 extension Vector3I {
     /// A vector with each component set to `1` if it's positive,
@@ -360,7 +360,7 @@ extension Vector3I {
     }
 }
 
-// MARK: AdditiveArithmetic
+// MARK: - AdditiveArithmetic
 
 extension Vector3I: AdditiveArithmetic {
     public static func + (lhs: Vector3I, rhs: Vector3I) -> Vector3I {
