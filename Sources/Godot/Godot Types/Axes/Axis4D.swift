@@ -29,4 +29,18 @@ public enum Axis4D: Int, GodotEnum {
             ("W", 3),
         ]
     }
+    
+    /// The unit vector representing the axis.
+    public var unitVector: Vector4 {
+        switch self {
+        case .x:
+            Vector4(1, 0, 0, 0)
+        case .y:
+            Vector4(0, 1, 0, 0)
+        case .z:
+            Vector4(0, 0, 1, 0)
+        case .w:
+            Vector4(0, 0, 0, 1)
+        }
+    }
 }

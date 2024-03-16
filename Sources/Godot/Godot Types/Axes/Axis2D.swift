@@ -25,4 +25,14 @@ public enum Axis2D: Int, GodotEnum {
             ("Y", 1),
         ]
     }
+    
+    /// The unit vector representing the axis.
+    public var unitVector: Vector2 {
+        switch self {
+        case .x:
+            Vector2(1, 0)
+        case .y:
+            Vector2(0, 1)
+        }
+    }
 }

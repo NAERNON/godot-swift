@@ -27,4 +27,16 @@ public enum Axis3D: Int, GodotEnum {
             ("Z", 2),
         ]
     }
+    
+    /// The unit vector representing the axis.
+    public var unitVector: Vector3 {
+        switch self {
+        case .x:
+            Vector3(1, 0, 0)
+        case .y:
+            Vector3(0, 1, 0)
+        case .z:
+            Vector3(0, 0, 1)
+        }
+    }
 }
