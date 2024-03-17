@@ -101,7 +101,7 @@ struct GodotConstant: Decodable, Equatable {
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,
-                labels: "r", "g", "b", "a"
+                labels: "red", "green", "blue", "alpha"
             )
         case "Plane":
             return recomposeInitParameters(
