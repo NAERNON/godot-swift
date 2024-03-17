@@ -21,20 +21,22 @@ extension GeneratedFile {
                 try builtinClass.enumSyntax()
                     .with(\.trailingTrivia, .newlines(2))
                 
-                try builtinClass.constructorsSyntax(classSize: classSize)
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                try builtinClass.operatorsSyntax()
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                try builtinClass.getterSetterSyntax()
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                builtinClass.keyGetterSetterSyntax()
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                try builtinClass.methodsSyntax()
-                    .with(\.trailingTrivia, .newlines(2))
+                if builtinClass.useOpaque {
+                    try builtinClass.constructorsSyntax(classSize: classSize)
+                        .with(\.trailingTrivia, .newlines(2))
+                    
+                    try builtinClass.operatorsSyntax()
+                        .with(\.trailingTrivia, .newlines(2))
+                    
+                    try builtinClass.getterSetterSyntax()
+                        .with(\.trailingTrivia, .newlines(2))
+                    
+                    builtinClass.keyGetterSetterSyntax()
+                        .with(\.trailingTrivia, .newlines(2))
+                    
+                    try builtinClass.methodsSyntax()
+                        .with(\.trailingTrivia, .newlines(2))
+                }
             }
         }
     }
