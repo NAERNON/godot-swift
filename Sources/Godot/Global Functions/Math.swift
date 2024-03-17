@@ -530,7 +530,7 @@ extension BinaryFloatingPoint {
         self = wrapped(lowerBound: lowerBound, upperBound: upperBound)
     }
     
-    /// Returns the floating-point value not less than `min` and not more than `max`.
+    /// Returns the floating-point value not less than `lowerBound` and not more than `upperBound`.
     ///
     /// ```swift
     /// var speed = 42.1
@@ -551,7 +551,7 @@ extension BinaryFloatingPoint {
         return self
     }
     
-    /// Replaces this floating-point value with a value not less than `min` and not more than `max`.
+    /// Replaces this floating-point value with a value not less than `lowerBound` and not more than `upperBound`.
     ///
     /// ```swift
     /// var speed = 42.1

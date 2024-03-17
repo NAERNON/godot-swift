@@ -189,9 +189,9 @@ public struct Quaternion: Equatable, Hashable {
         }
     }
     
-    /// Creates a default-initialized quaternion with all components set to `0`.
+    /// Creates a default-initialized `Quaternion` set to `identity`.
     public init() {
-        self.init(x: 0, y: 0, z: 0, w: 0)
+        self.init(x: 0, y: 0, z: 0, w: 1)
     }
 }
 
