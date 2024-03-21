@@ -1,4 +1,3 @@
-import Numerics
 
 /// A 2D vector using floating point coordinates.
 ///

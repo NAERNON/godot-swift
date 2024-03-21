@@ -1,4 +1,4 @@
-import Numerics
+import RealModule
 
 extension BinaryFloatingPoint where Self : Real {
     /// Converts from decibels to linear energy (audio).

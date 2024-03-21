@@ -1,4 +1,4 @@
-import Numerics
+import RealModule
 
 extension BinaryFloatingPoint where Self : Real {
     /// Returns an "eased" value based on an easing function defined with a curve.
@@ -949,4 +949,9 @@ public func log<T: Real>(_ x: T) -> T {
 ///
 public func exp<T: Real>(_ x: T) -> T {
     T.exp(x)
+}
+
+/// The square root of a given value.
+public func sqrt<T: Real>(_ x: T) -> T {
+    T.sqrt(x)
 }

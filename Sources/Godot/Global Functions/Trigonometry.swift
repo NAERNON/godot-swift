@@ -1,5 +1,4 @@
-// TODO: Remove trigonometry functions once SE-0246 is implemented (https://github.com/apple/swift-evolution/blob/main/proposals/0246-mathable.md)
-import Numerics
+import RealModule
 
 /// Returns the sine of a given angle in radians.
 public func sin<T: Real>(_ x: T) -> T {

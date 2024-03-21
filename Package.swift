@@ -14,12 +14,24 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-numerics", from: "1.0.0"), // TODO: Remove once SE-0246 is implemented (https://github.com/apple/swift-evolution/blob/main/proposals/0246-mathable.md)
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
     ],
     targets: [
+        // TODO: Remove once SE-0246 is implemented (https://github.com/apple/swift-evolution/blob/main/proposals/0246-mathable.md)
+        // MARK: Numerics
+        .target(
+            name: "RealModule",
+            dependencies: ["_NumericsShims"],
+            path: "Sources/_Numerics/RealModule"
+        ),
+        .target(
+            name: "_NumericsShims",
+            dependencies: [],
+            path: "Sources/_Numerics/_NumericsShims"
+        ),
+        
         // MARK: Main targets
         
         .target(
@@ -32,7 +44,7 @@ let package = Package(
             dependencies: [
                 "GodotExtensionHeaders",
                 "GodotMacros",
-                .product(name: "Numerics", package: "swift-numerics"),
+                "RealModule",
             ]
         ),
         
