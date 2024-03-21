@@ -219,7 +219,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func addImage<Value: VariantStorableIn>(_ image: Godot.Texture2D?, width: Int32 = 0, height: Int32 = 0, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), key: Value = Variant(), pad: Bool = false, tooltip: Godot.GodotString = "", sizeInPercent: Bool = false) {
+    public func addImage<Value: VariantStorableIn>(_ image: Godot.Texture2D?, width: Int32 = 0, height: Int32 = 0, color: Godot.Color = .white, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), key: Value = Variant(), pad: Bool = false, tooltip: Godot.GodotString = "", sizeInPercent: Bool = false) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -248,7 +248,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func updateImage<Value: VariantStorableIn>(key: Value, mask: Godot.RichTextLabel.ImageUpdateMask, image: Godot.Texture2D?, width: Int32 = 0, height: Int32 = 0, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), pad: Bool = false, tooltip: Godot.GodotString = "", sizeInPercent: Bool = false) {
+    public func updateImage<Value: VariantStorableIn>(key: Value, mask: Godot.RichTextLabel.ImageUpdateMask, image: Godot.Texture2D?, width: Int32 = 0, height: Int32 = 0, color: Godot.Color = .white, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), pad: Bool = false, tooltip: Godot.GodotString = "", sizeInPercent: Bool = false) {
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         image.withGodotUnsafeRawPointer { __ptr_image in
@@ -674,7 +674,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func pushDropcap(string: Godot.GodotString, font: Godot.Font?, size: Int32, dropcapMargins: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), outlineSize: Int32 = 0, outlineColor: Godot.Color = Color(r: 0, g: 0, b: 0, a: 0)) {
+    public func pushDropcap(string: Godot.GodotString, font: Godot.Font?, size: Int32, dropcapMargins: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), color: Godot.Color = .white, outlineSize: Int32 = 0, outlineColor: Godot.Color = Color(red: 0, green: 0, blue: 0, alpha: 0)) {
         string.withGodotUnsafeRawPointer { __ptr_string in
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in

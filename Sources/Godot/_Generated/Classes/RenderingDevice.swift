@@ -2246,7 +2246,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBeginForScreen(_ screen: Int32 = 0, clearColor: Godot.Color = Color(r: 0, g: 0, b: 0, a: 1)) -> Int64 {
+    public func drawListBeginForScreen(_ screen: Int32 = 0, clearColor: Godot.Color = .black) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         clearColor.withGodotUnsafeRawPointer { __ptr_clearColor in

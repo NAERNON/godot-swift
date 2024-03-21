@@ -51,7 +51,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addLines(_ lines: Godot.PackedVector3Array, material: Godot.Material?, billboard: Bool = false, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func addLines(_ lines: Godot.PackedVector3Array, material: Godot.Material?, billboard: Bool = false, modulate: Godot.Color = .white) {
         lines.withGodotUnsafeRawPointer { __ptr_lines in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -138,7 +138,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addUnscaledBillboard(material: Godot.Material?, defaultScale: Double = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func addUnscaledBillboard(material: Godot.Material?, defaultScale: Double = 1, modulate: Godot.Color = .white) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         defaultScale.withGodotUnsafeRawPointer { __ptr_defaultScale in

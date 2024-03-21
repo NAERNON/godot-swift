@@ -784,7 +784,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTexture(_ texture: Godot.Texture2D?, position: Godot.Vector2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawTexture(_ texture: Godot.Texture2D?, position: Godot.Vector2, modulate: Godot.Color = .white) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -806,7 +806,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTextureRect(texture: Godot.Texture2D?, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false) {
+    public func drawTextureRect(texture: Godot.Texture2D?, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = .white, transpose: Bool = false) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -830,7 +830,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false, clipUv: Bool = true) {
+    public func drawTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, transpose: Bool = false, clipUv: Bool = true) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -855,7 +855,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMsdfTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), outline: Double = 0.0, pixelRange: Double = 4.0, scale: Double = 1.0) {
+    public func drawMsdfTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, outline: Double = 0.0, pixelRange: Double = 4.0, scale: Double = 1.0) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -881,7 +881,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawLcdTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawLcdTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -994,7 +994,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1023,7 +1023,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultilineString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawMultilineString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1054,7 +1054,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, size: Int32 = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, size: Int32 = 1, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1084,7 +1084,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultilineStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, size: Int32 = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawMultilineStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, size: Int32 = 1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1116,7 +1116,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawChar(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawChar(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, modulate: Godot.Color = .white) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1140,7 +1140,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawCharOutline(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, size: Int32 = -1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawCharOutline(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, size: Int32 = -1, modulate: Godot.Color = .white) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1165,7 +1165,7 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMesh(_ mesh: Godot.Mesh?, texture: Godot.Texture2D?, transform: Godot.Transform2D = .identity, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawMesh(_ mesh: Godot.Mesh?, texture: Godot.Texture2D?, transform: Godot.Transform2D = .identity, modulate: Godot.Color = .white) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         texture.withGodotUnsafeRawPointer { __ptr_texture in

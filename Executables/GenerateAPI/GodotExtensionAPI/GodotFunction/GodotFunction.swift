@@ -203,7 +203,10 @@ extension GodotFunction {
             
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")
-                parameterString.append(defaultValue.syntax(forType: argument.type))
+                parameterString.append(defaultValue.syntax(
+                    forType: argument.type,
+                    useStaticVariables: true
+                ))
             }
             
             return parameterString

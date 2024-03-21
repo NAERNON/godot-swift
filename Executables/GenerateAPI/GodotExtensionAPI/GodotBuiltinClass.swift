@@ -299,7 +299,7 @@ struct GodotBuiltinClass: Decodable {
                 
                 """
                 public static var \(raw: name): \(raw: constant.type.syntax()) {
-                    \(raw: constant.value.syntax(forType: constant.type))
+                    \(raw: constant.value.syntax(forType: constant.type, useStaticVariables: false))
                 }
                 """
             }

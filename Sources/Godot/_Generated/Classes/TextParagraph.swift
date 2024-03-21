@@ -915,7 +915,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func draw(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), dcColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func draw(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = .white, dcColor: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -937,7 +937,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), dcColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = .white, dcColor: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
@@ -960,7 +960,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawLine(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawLine(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -982,7 +982,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawLineOutline(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, outlineSize: Int32 = 1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawLineOutline(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, outlineSize: Int32 = 1, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -1005,7 +1005,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawDropcap(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawDropcap(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1026,7 +1026,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawDropcapOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawDropcapOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in

@@ -599,7 +599,7 @@ open class TextLine: RefCounted {
         }
         }
     }()
-    public func draw(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func draw(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -620,7 +620,7 @@ open class TextLine: RefCounted {
         }
         }
     }()
-    public func drawOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func drawOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = .white) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in

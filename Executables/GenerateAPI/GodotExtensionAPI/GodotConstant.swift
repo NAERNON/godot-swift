@@ -23,7 +23,7 @@ struct GodotConstant: Decodable, Equatable {
     
     // MARK: - Syntax
     
-    func syntax(forType type: GodotType) -> String {
+    func syntax(forType type: GodotType, useStaticVariables: Bool) -> String {
         if string.isEmpty {
             return type.syntax() + "()"
         }
@@ -64,7 +64,8 @@ struct GodotConstant: Decodable, Equatable {
         let (decomposedType, parameters) = decomposeInitParameters()
         switch decomposedType {
         case "Basis":
-            if parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1"] {
+            if useStaticVariables &&
+                parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1"] {
                 return ".identity"
             }
             let xVector = vectorInit(with: parameters[0..<3])
@@ -72,7 +73,8 @@ struct GodotConstant: Decodable, Equatable {
             let zVector = vectorInit(with: parameters[6..<9])
             return "Basis(x: \(xVector), y: \(yVector), z: \(zVector))"
         case "Projection":
-            if parameters == ["1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1"] {
+            if useStaticVariables &&
+                parameters == ["1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "1"] {
                 return ".identity"
             }
             let xVector = vectorInit(with: parameters[0..<4])
@@ -81,7 +83,8 @@ struct GodotConstant: Decodable, Equatable {
             let wVector = vectorInit(with: parameters[12..<16])
             return "Projection(x: \(xVector), y: \(yVector), z: \(zVector), w: \(wVector))"
         case "Transform2D":
-            if parameters == ["1", "0", "0", "1", "0", "0"] {
+            if useStaticVariables &&
+                parameters == ["1", "0", "0", "1", "0", "0"] {
                 return ".identity"
             }
             let xVector = vectorInit(with: parameters[0..<2])
@@ -89,7 +92,8 @@ struct GodotConstant: Decodable, Equatable {
             let originVector = vectorInit(with: parameters[4..<6])
             return "Transform2D(xAxis: \(xVector), yAxis: \(yVector), origin: \(originVector))"
         case "Transform3D":
-            if parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1", "0", "0", "0"] {
+            if useStaticVariables &&
+                parameters == ["1", "0", "0", "0", "1", "0", "0", "0", "1", "0", "0", "0"] {
                 return ".identity"
             }
             let xVector = vectorInit(with: parameters[0..<3])
@@ -98,6 +102,15 @@ struct GodotConstant: Decodable, Equatable {
             let originVector = vectorInit(with: parameters[9..<12])
             return "Transform3D(xAxis: \(xVector), yAxis: \(yVector), zAxis: \(zVector), origin: \(originVector))"
         case "Color":
+            if useStaticVariables &&
+                parameters == ["1", "1", "1", "1"] {
+                return ".white"
+            }
+            if useStaticVariables &&
+                parameters == ["0", "0", "0", "1"] {
+                return ".black"
+            }
+            
             return recomposeInitParameters(
                 forType: decomposedType,
                 parameters: parameters,

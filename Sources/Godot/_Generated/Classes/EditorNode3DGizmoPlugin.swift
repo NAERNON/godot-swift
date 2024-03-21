@@ -98,7 +98,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func createIconMaterial(name: Godot.GodotString, texture: Godot.Texture2D?, onTop: Bool = false, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func createIconMaterial(name: Godot.GodotString, texture: Godot.Texture2D?, onTop: Bool = false, color: Godot.Color = .white) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in

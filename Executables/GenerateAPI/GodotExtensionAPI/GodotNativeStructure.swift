@@ -60,7 +60,10 @@ extension GodotNativeStructure {
                 let translatedName = backticksKeyword(name.translated(from: .snake, to: .camel))
                 var varString = "public var \(translatedName): \(type.removeGodotClassPointers.syntax(options: .floatAsDouble))"
                 if let defaultValue {
-                    varString += " = " + defaultValue.syntax(forType: type)
+                    varString += " = " + defaultValue.syntax(
+                        forType: type,
+                        useStaticVariables: true
+                    )
                 }
                 
                 return "\(raw: varString)"

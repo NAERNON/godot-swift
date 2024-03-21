@@ -109,7 +109,7 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func draw(canvasItem: Godot.RID, position: Godot.Vector2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false) {
+    public func draw(canvasItem: Godot.RID, position: Godot.Vector2, modulate: Godot.Color = .white, transpose: Bool = false) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         position.withGodotUnsafeRawPointer { __ptr_position in
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
@@ -131,7 +131,7 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func drawRect(canvasItem: Godot.RID, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false) {
+    public func drawRect(canvasItem: Godot.RID, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = .white, transpose: Bool = false) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         tile.withGodotUnsafeRawPointer { __ptr_tile in
@@ -154,7 +154,7 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func drawRectRegion(canvasItem: Godot.RID, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false, clipUv: Bool = true) {
+    public func drawRectRegion(canvasItem: Godot.RID, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, transpose: Bool = false, clipUv: Bool = true) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in

@@ -9065,7 +9065,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddTextureRect(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, tile: Bool = false, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false) {
+    public func canvasItemAddTextureRect(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, tile: Bool = false, modulate: Godot.Color = .white, transpose: Bool = false) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -9089,7 +9089,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddMsdfTextureRectRegion(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), outlineSize: Int32 = 0, pxRange: Double = 1.0, scale: Double = 1.0) {
+    public func canvasItemAddMsdfTextureRectRegion(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, srcRect: Godot.Rect2, modulate: Godot.Color = .white, outlineSize: Int32 = 0, pxRange: Double = 1.0, scale: Double = 1.0) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -9138,7 +9138,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddTextureRectRegion(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, srcRect: Godot.Rect2, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), transpose: Bool = false, clipUv: Bool = true) {
+    public func canvasItemAddTextureRectRegion(item: Godot.RID, rect: Godot.Rect2, texture: Godot.RID, srcRect: Godot.Rect2, modulate: Godot.Color = .white, transpose: Bool = false, clipUv: Bool = true) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -9163,7 +9163,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddNinePatch(item: Godot.RID, rect: Godot.Rect2, source: Godot.Rect2, texture: Godot.RID, topleft: Godot.Vector2, bottomright: Godot.Vector2, xAxisMode: Godot.RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0)!, yAxisMode: Godot.RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0)!, drawCenter: Bool = true, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func canvasItemAddNinePatch(item: Godot.RID, rect: Godot.Rect2, source: Godot.Rect2, texture: Godot.RID, topleft: Godot.Vector2, bottomright: Godot.Vector2, xAxisMode: Godot.RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0)!, yAxisMode: Godot.RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0)!, drawCenter: Bool = true, modulate: Godot.Color = .white) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         source.withGodotUnsafeRawPointer { __ptr_source in
@@ -9264,7 +9264,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func canvasItemAddMesh(item: Godot.RID, mesh: Godot.RID, transform: Godot.Transform2D = .identity, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), texture: Godot.RID = RID()) {
+    public func canvasItemAddMesh(item: Godot.RID, mesh: Godot.RID, transform: Godot.Transform2D = .identity, modulate: Godot.Color = .white, texture: Godot.RID = RID()) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         transform.withGodotUnsafeRawPointer { __ptr_transform in

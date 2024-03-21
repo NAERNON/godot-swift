@@ -12,7 +12,9 @@ extension GeneratedFile {
             
             "import GodotExtensionHeaders"
             
-            builtinClass.lazyVariablesSyntax()
+            if builtinClass.useOpaque {
+                builtinClass.lazyVariablesSyntax()
+            }
             
             try ExtensionDeclSyntax("extension \(raw: builtinClass.identifier)") {
                 builtinClass.constantsSyntax()

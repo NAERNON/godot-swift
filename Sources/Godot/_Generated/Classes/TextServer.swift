@@ -2568,7 +2568,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontDrawGlyph(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func fontDrawGlyph(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color = .white) {
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -2592,7 +2592,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontDrawGlyphOutline(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, outlineSize: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func fontDrawGlyphOutline(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, outlineSize: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color = .white) {
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -4231,7 +4231,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextDraw(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double = -1, clipR: Double = -1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func shapedTextDraw(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double = -1, clipR: Double = -1, color: Godot.Color = .white) {
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -4255,7 +4255,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextDrawOutline(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double = -1, clipR: Double = -1, outlineSize: Int64 = 1, color: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
+    public func shapedTextDrawOutline(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double = -1, clipR: Double = -1, outlineSize: Int64 = 1, color: Godot.Color = .white) {
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in

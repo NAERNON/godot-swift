@@ -414,7 +414,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawString(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawString(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -442,7 +442,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawMultilineString(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawMultilineString(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -472,7 +472,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawStringOutline(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, size: Int32 = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawStringOutline(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, size: Int32 = 1, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -501,7 +501,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawMultilineStringOutline(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, size: Int32 = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+    public func drawMultilineStringOutline(canvasItem: Godot.RID, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, size: Int32 = 1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -553,7 +553,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawChar(canvasItem: Godot.RID, pos: Godot.Vector2, char: Int, fontSize: Int32, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) -> Double {
+    public func drawChar(canvasItem: Godot.RID, pos: Godot.Vector2, char: Int, fontSize: Int32, modulate: Godot.Color = .white) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -577,7 +577,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func drawCharOutline(canvasItem: Godot.RID, pos: Godot.Vector2, char: Int, fontSize: Int32, size: Int32 = -1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) -> Double {
+    public func drawCharOutline(canvasItem: Godot.RID, pos: Godot.Vector2, char: Int, fontSize: Int32, size: Int32 = -1, modulate: Godot.Color = .white) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in

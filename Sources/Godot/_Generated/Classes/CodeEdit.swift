@@ -1751,7 +1751,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func addCodeCompletionOption<Value: VariantStorableIn>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), icon: Godot.Resource? = nil, value: Value = 0, location: Int32 = 1024) {
+    public func addCodeCompletionOption<Value: VariantStorableIn>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = .white, icon: Godot.Resource? = nil, value: Value = 0, location: Int32 = 1024) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         displayText.withGodotUnsafeRawPointer { __ptr_displayText in
         insertText.withGodotUnsafeRawPointer { __ptr_insertText in
