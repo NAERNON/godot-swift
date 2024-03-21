@@ -161,9 +161,9 @@ public struct Basis: Equatable, Hashable {
     }
     
     internal init(
-        _ xx: FloatingPointType, _ xy: FloatingPointType, _ xz: FloatingPointType,
-        _ yx: FloatingPointType, _ yy: FloatingPointType, _ yz: FloatingPointType,
-        _ zx: FloatingPointType, _ zy: FloatingPointType, _ zz: FloatingPointType
+        _ xx: Scalar, _ xy: Scalar, _ xz: Scalar,
+        _ yx: Scalar, _ yy: Scalar, _ yz: Scalar,
+        _ zx: Scalar, _ zy: Scalar, _ zz: Scalar
     ) {
         self.rows = Rows(
             x: Vector3(xx, xy, xz),
@@ -175,7 +175,7 @@ public struct Basis: Equatable, Hashable {
     /// Creates a pure rotation basis matrix from the given quaternion.
     public init(quaternion: Quaternion) {
         let d = quaternion.magnitudeSquared
-        let s: FloatingPointType = 2 / d
+        let s: Scalar = 2 / d
         let xs = quaternion.x * s
         let ys = quaternion.y * s
         let zs = quaternion.z * s
@@ -207,7 +207,7 @@ public struct Basis: Equatable, Hashable {
     /// - Parameters:
     ///   - axis: A normalized vector.
     ///   - angle: The rotation angle in radians.
-    public init(axis: Vector3, angle: FloatingPointType) {
+    public init(axis: Vector3, angle: Scalar) {
         // Rotation matrix from axis and angle, see https://en.wikipedia.org/wiki/Rotation_matrix#Rotation_matrix_from_axis_angle
 #if MATH_CHECKS
         if !axis.isNormalized {
@@ -216,14 +216,14 @@ public struct Basis: Equatable, Hashable {
         }
 #endif
         let axisSq = axis * axis
-        let cosine = FloatingPointType.cos(angle)
+        let cosine = Scalar.cos(angle)
         
         var m = Basis()
         m.rows.x.x = axisSq.x + cosine * (1 - axisSq.x)
         m.rows.y.y = axisSq.y + cosine * (1 - axisSq.y)
         m.rows.z.z = axisSq.z + cosine * (1 - axisSq.z)
         
-        let sine = FloatingPointType.sin(angle)
+        let sine = Scalar.sin(angle)
         let t = 1 - cosine
         
         var xyzt = axis.x * axis.y * t
@@ -327,7 +327,7 @@ extension Basis {
     /// The multiplication of all components of a basis and a floating-point value.
     ///
     /// The basis scales uniformly.
-    public static func * (lhs: Basis, rhs: FloatingPointType) -> Basis {
+    public static func * (lhs: Basis, rhs: Scalar) -> Basis {
         var copy = lhs
         copy *= rhs
         return copy
@@ -337,7 +337,7 @@ extension Basis {
     /// basis and a floating-point value.
     ///
     /// The basis scales uniformly.
-    public static func *= (lhs: inout Basis, rhs: FloatingPointType) {
+    public static func *= (lhs: inout Basis, rhs: Scalar) {
         lhs.rows.x *= rhs
         lhs.rows.y *= rhs
         lhs.rows.z *= rhs
@@ -346,7 +346,7 @@ extension Basis {
     /// The multiplication of all components of a basis and a floating-point value.
     ///
     /// The basis scales uniformly.
-    public static func * (lhs: FloatingPointType, rhs: Basis) -> Basis {
+    public static func * (lhs: Scalar, rhs: Basis) -> Basis {
         rhs * lhs
     }
     
@@ -425,7 +425,7 @@ extension Basis {
         _ col1: Int,
         _ row2: Int,
         _ col2: Int
-    ) -> FloatingPointType {
+    ) -> Scalar {
         rows[row1][col1] * rows[row2][col2] - rows[row1][col2] * rows[row2][col1]
     }
     
@@ -507,7 +507,7 @@ extension Basis {
     ///
     /// A negative determinant means the basis has a negative scale.
     /// A zero determinant means the basis isn't invertible, and is usually considered invalid
-    public var determinant: FloatingPointType {
+    public var determinant: Scalar {
         rows[0][0] * (rows[1][1] * rows[2][2] - rows[2][1] * rows[1][2]) -
         rows[1][0] * (rows[0][1] * rows[2][2] - rows[2][1] * rows[0][2]) +
         rows[2][0] * (rows[0][1] * rows[1][2] - rows[1][1] * rows[0][2])
@@ -518,7 +518,7 @@ extension Basis {
     /// - Parameters:
     ///   - angle: The rotation angle in radians.
     ///   - axis: A normalized vector.
-    public func rotated(by angle: FloatingPointType, around axis: Vector3) -> Basis {
+    public func rotated(by angle: Scalar, around axis: Vector3) -> Basis {
         Basis(axis: axis, angle: angle) * self
     }
     
@@ -527,7 +527,7 @@ extension Basis {
     /// - Parameters:
     ///   - angle: The rotation angle in radians.
     ///   - axis: A normalized vector.
-    public mutating func rotate(by angle: FloatingPointType, around axis: Vector3) {
+    public mutating func rotate(by angle: Scalar, around axis: Vector3) {
         self = rotated(by: angle, around: axis)
     }
     
@@ -656,8 +656,8 @@ extension Basis {
             
             var euler = Vector3()
             let sy = rows[0][2]
-            if sy < (1 - FloatingPointType.cmpEpsilon) {
-                if sy > -(1 - FloatingPointType.cmpEpsilon) {
+            if sy < (1 - Scalar.cmpEpsilon) {
+                if sy > -(1 - Scalar.cmpEpsilon) {
                     // is this a pure Y rotation?
                     if (rows[1][0] == 0 && rows[0][1] == 0 && rows[1][2] == 0 && rows[2][1] == 0 && rows[1][1] == 1) {
                         // return the simplest form (human friendlier in editor and scripts)
@@ -671,12 +671,12 @@ extension Basis {
                     }
                 } else {
                     euler.x = atan2(y: rows[2][1], x: rows[1][1])
-                    euler.y = -FloatingPointType.pi / 2
+                    euler.y = -Scalar.pi / 2
                     euler.z = 0
                 }
             } else {
                 euler.x = atan2(y: rows[2][1], x: rows[1][1])
-                euler.y = FloatingPointType.pi / 2
+                euler.y = Scalar.pi / 2
                 euler.z = 0
             }
             return euler
@@ -690,8 +690,8 @@ extension Basis {
             
             var euler = Vector3()
             let sz = rows[0][1]
-            if sz < (1 - FloatingPointType.cmpEpsilon) {
-                if sz > -(1 - FloatingPointType.cmpEpsilon) {
+            if sz < (1 - Scalar.cmpEpsilon) {
+                if sz > -(1 - Scalar.cmpEpsilon) {
                     euler.x = atan2(y: rows[2][1], x: rows[1][1])
                     euler.y = atan2(y: rows[0][2], x: rows[0][0])
                     euler.z = asin(-sz)
@@ -699,13 +699,13 @@ extension Basis {
                     // It's -1
                     euler.x = -atan2(y: rows[1][2], x: rows[2][2])
                     euler.y = 0
-                    euler.z = FloatingPointType.pi / 2
+                    euler.z = Scalar.pi / 2
                 }
             } else {
                 // It's 1
                 euler.x = -atan2(y: rows[1][2], x: rows[2][2])
                 euler.y = 0
-                euler.z = -FloatingPointType.pi / 2
+                euler.z = -Scalar.pi / 2
             }
             return euler
         case .yxz:
@@ -719,8 +719,8 @@ extension Basis {
             var euler = Vector3()
             let m12 = rows[1][2]
     
-            if m12 < 1 - (FloatingPointType.cmpEpsilon) {
-                if m12 > -(1 - FloatingPointType.cmpEpsilon) {
+            if m12 < 1 - (Scalar.cmpEpsilon) {
+                if m12 > -(1 - Scalar.cmpEpsilon) {
                     // is this a pure X rotation?
                     if (rows[1][0] == 0 && rows[0][1] == 0 && rows[0][2] == 0 && rows[2][0] == 0 && rows[0][0] == 1) {
                         // return the simplest form (human friendlier in editor and scripts)
@@ -733,12 +733,12 @@ extension Basis {
                         euler.z = atan2(y: rows[1][0], x: rows[1][1])
                     }
                 } else { // m12 == -1
-                    euler.x = FloatingPointType.pi * 0.5
+                    euler.x = Scalar.pi * 0.5
                     euler.y = atan2(y: rows[0][1], x: rows[0][0])
                     euler.z = 0
                 }
             } else { // m12 == 1
-                euler.x = -FloatingPointType.pi * 0.5
+                euler.x = -Scalar.pi * 0.5
                 euler.y = -atan2(y: rows[0][1], x: rows[0][0])
                 euler.z = 0
             }
@@ -754,8 +754,8 @@ extension Basis {
             
             var euler = Vector3()
             let sz = rows[1][0]
-            if sz < (1 - FloatingPointType.cmpEpsilon) {
-                if sz > -(1 - FloatingPointType.cmpEpsilon) {
+            if sz < (1 - Scalar.cmpEpsilon) {
+                if sz > -(1 - Scalar.cmpEpsilon) {
                     euler.x = atan2(y: -rows[1][2], x: rows[1][1])
                     euler.y = atan2(y: -rows[2][0], x: rows[0][0])
                     euler.z = asin(sz)
@@ -763,13 +763,13 @@ extension Basis {
                     // It's -1
                     euler.x = atan2(y: rows[2][1], x: rows[2][2])
                     euler.y = 0
-                    euler.z = -FloatingPointType.pi / 2
+                    euler.z = -Scalar.pi / 2
                 }
             } else {
                 // It's 1
                 euler.x = atan2(y: rows[2][1], x: rows[2][2])
                 euler.y = 0
-                euler.z = FloatingPointType.pi / 2
+                euler.z = Scalar.pi / 2
             }
             return euler;
         case .zxy:
@@ -781,20 +781,20 @@ extension Basis {
             //        -cx*sy            sx                    cx*cy
             var euler = Vector3()
             let sx = rows[2][1]
-            if sx < (1 - FloatingPointType.cmpEpsilon) {
-                if sx > -(1 - FloatingPointType.cmpEpsilon) {
+            if sx < (1 - Scalar.cmpEpsilon) {
+                if sx > -(1 - Scalar.cmpEpsilon) {
                     euler.x = asin(sx)
                     euler.y = atan2(y: -rows[2][0], x: rows[2][2])
                     euler.z = atan2(y: -rows[0][1], x: rows[1][1])
                 } else {
                     // It's -1
-                    euler.x = -FloatingPointType.pi / 2
+                    euler.x = -Scalar.pi / 2
                     euler.y = atan2(y: rows[0][2], x: rows[0][0])
                     euler.z = 0
                 }
             } else {
                 // It's 1
-                euler.x = FloatingPointType.pi / 2
+                euler.x = Scalar.pi / 2
                 euler.y = atan2(y: rows[0][2], x: rows[0][0])
                 euler.z = 0
             }
@@ -808,21 +808,21 @@ extension Basis {
             //        -sy               cy*sx                 cy*cx
             var euler = Vector3()
             let sy = rows[2][0]
-            if sy < (1 - FloatingPointType.cmpEpsilon) {
-                if sy > -(1 - FloatingPointType.cmpEpsilon) {
+            if sy < (1 - Scalar.cmpEpsilon) {
+                if sy > -(1 - Scalar.cmpEpsilon) {
                     euler.x = atan2(y: rows[2][1], x: rows[2][2])
                     euler.y = asin(-sy)
                     euler.z = atan2(y: rows[1][0], x: rows[0][0])
                 } else {
                     // It's -1
                     euler.x = 0
-                    euler.y = FloatingPointType.pi / 2
+                    euler.y = Scalar.pi / 2
                     euler.z = -atan2(y: rows[0][1], x: rows[1][1])
                 }
             } else {
                 // It's 1
                 euler.x = 0
-                euler.y = -FloatingPointType.pi / 2
+                euler.y = -Scalar.pi / 2
                 euler.z = -atan2(y: rows[0][1], x: rows[1][1])
             }
             return euler
@@ -830,23 +830,23 @@ extension Basis {
     }
     
     /// Returns the transposed dot product with the X axis of this matrix.
-    public func tdotx(_ vector: Vector3) -> FloatingPointType {
+    public func tdotx(_ vector: Vector3) -> Scalar {
         rows[0][0] * vector[0] + rows[1][0] * vector[1] + rows[2][0] * vector[2]
     }
     
     /// Returns the transposed dot product with the Y axis of this matrix.
-    public func tdoty(_ vector: Vector3) -> FloatingPointType {
+    public func tdoty(_ vector: Vector3) -> Scalar {
         rows[0][1] * vector[0] + rows[1][1] * vector[1] + rows[2][1] * vector[2]
     }
     
     /// Returns the transposed dot product with the Y axis of this matrix.
-    public func tdotz(_ vector: Vector3) -> FloatingPointType {
+    public func tdotz(_ vector: Vector3) -> Scalar {
         rows[0][2] * vector[0] + rows[1][2] * vector[1] + rows[2][2] * vector[2]
     }
     
     /// Returns the result of the linear interpolation between this basis
     /// and another one by a given amount.
-    public func lerp(to other: Basis, weight: FloatingPointType) -> Basis {
+    public func lerp(to other: Basis, weight: Scalar) -> Basis {
         Basis(
             rowX: rows[0].lerp(to: other.rows[0], weight: weight),
             rowY: rows[1].lerp(to: other.rows[1], weight: weight),
@@ -856,14 +856,14 @@ extension Basis {
     
     /// Replaces this basis with the result of the linear interpolation between this basis
     /// and another one by a given amount.
-    public mutating func formLerp(to other: Basis, weight: FloatingPointType) {
+    public mutating func formLerp(to other: Basis, weight: Scalar) {
         self = lerp(to: other, weight: weight)
     }
     
     /// Returns the result of the spherical-linear interpolation with another rotation matrix.
     ///
     /// This function assumes that the two matrices are proper rotation matrices.
-    public func slerp(to other: Basis, weight: FloatingPointType) -> Basis {
+    public func slerp(to other: Basis, weight: Scalar) -> Basis {
         //consider scale
         let from = Quaternion(basis: self)
         let to = Quaternion(basis: other)
@@ -880,7 +880,7 @@ extension Basis {
     /// spherical-linear interpolation with another rotation matrix.
     ///
     /// This function assumes that the two matrices are proper rotation matrices.
-    public mutating func formSlerp(to other: Basis, weight: FloatingPointType) {
+    public mutating func formSlerp(to other: Basis, weight: Scalar) {
         self = slerp(to: other, weight: weight)
     }
     
@@ -914,10 +914,10 @@ extension Basis {
 #endif
         /* Allow getting a quaternion from an unnormalized transform */
         let trace = self.rows[0][0] + self.rows[1][1] + self.rows[2][2]
-        var temp = SIMD4<FloatingPointType>()
+        var temp = SIMD4<Scalar>()
         
         if trace > 0 {
-            var s = FloatingPointType.sqrt(trace + 1)
+            var s = Scalar.sqrt(trace + 1)
             temp[3] = s * 0.5
             s = 0.5 / s
             
@@ -931,7 +931,7 @@ extension Basis {
             let j = (i + 1) % 3
             let k = (i + 2) % 3
             
-            var s = FloatingPointType.sqrt(self.rows[i][i] - self.rows[j][j] - self.rows[k][k] + 1)
+            var s = Scalar.sqrt(self.rows[i][i] - self.rows[j][j] - self.rows[k][k] + 1)
             temp[i] = s * 0.5
             s = 0.5 / s;
             
@@ -1027,8 +1027,8 @@ extension Basis {
         _ euler: Vector3,
         order: EulerOrder = .yxz
     ) -> Basis {
-        var c = FloatingPointType()
-        var s = FloatingPointType()
+        var c = Scalar()
+        var s = Scalar()
 
         c = cos(euler.x);
         s = sin(euler.x);

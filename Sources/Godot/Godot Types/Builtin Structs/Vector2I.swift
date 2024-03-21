@@ -225,8 +225,8 @@ extension Vector2I {
 
 extension Vector2I {
     /// The aspect ratio of the vector, the ratio of `x` to `y`.
-    public var aspect: FloatingPointType {
-        FloatingPointType(x) / FloatingPointType(y)
+    public var aspect: Scalar {
+        Scalar(x) / Scalar(y)
     }
     
     /// A vector with each component set to `1` if it's positive,
@@ -254,8 +254,8 @@ extension Vector2I {
     }
     
     /// The magnitude (length) of the vector.
-    public var magnitude: FloatingPointType {
-        FloatingPointType(magnitudeSquared).squareRoot()
+    public var magnitude: Scalar {
+        Scalar(magnitudeSquared).squareRoot()
     }
     
     /// The squared magnitude of the vector.

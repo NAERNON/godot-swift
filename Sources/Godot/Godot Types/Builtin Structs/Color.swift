@@ -578,7 +578,7 @@ extension Color {
     /// and another one by a given amount.
     ///
     /// The `weight` should be between `0.0` and `1.0` (inclusive).
-    public func lerp(to other: Color, weight: FloatingPointType) -> Color {
+    public func lerp(to other: Color, weight: Scalar) -> Color {
         Color(
             red.lerp(to: other.red, weight: weight),
             green.lerp(to: other.green, weight: weight),
@@ -591,7 +591,7 @@ extension Color {
     /// and another one by a given amount.
     ///
     /// The `weight` should be between `0.0` and `1.0` (inclusive).
-    public mutating func formLerp(to other: Color, weight: FloatingPointType) {
+    public mutating func formLerp(to other: Color, weight: Scalar) {
         self = lerp(to: other, weight: weight)
     }
     

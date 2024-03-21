@@ -45,7 +45,7 @@ extension GeneratedFile {
         }
         
         return """
-            public typealias FloatingPointType = \(raw: floatingPointTypeString)
+            public typealias Scalar = \(raw: floatingPointTypeString)
             """
     }
     

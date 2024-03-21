@@ -6,7 +6,7 @@ extension Variant {
     internal static let opaqueSize: Int = 24
 }
 
-public typealias FloatingPointType = Float
+public typealias Scalar = Float
 
 extension Int {
     public static let variantRepresentationType: Variant.RepresentationType = .int64

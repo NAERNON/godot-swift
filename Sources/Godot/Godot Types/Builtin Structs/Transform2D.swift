@@ -108,9 +108,9 @@ public struct Transform2D: Equatable, Hashable {
     }
     
     internal init(
-        _ xx: FloatingPointType, _ xy: FloatingPointType,
-        _ yx: FloatingPointType, _ yy: FloatingPointType,
-        _ ox: FloatingPointType, _ oy: FloatingPointType
+        _ xx: Scalar, _ xy: Scalar,
+        _ yx: Scalar, _ yy: Scalar,
+        _ ox: Scalar, _ oy: Scalar
     ) {
         self.x = Vector2(x: xx, y: xy)
         self.y = Vector2(x: yx, y: yy)
@@ -122,9 +122,9 @@ public struct Transform2D: Equatable, Hashable {
     /// - Parameters:
     ///   - rotation: The transform angle, in radians.
     ///   - position: The transform position.
-    public init(rotation: FloatingPointType, position: Vector2) {
-        let cr = FloatingPointType.cos(rotation)
-        let sr = FloatingPointType.sin(rotation)
+    public init(rotation: Scalar, position: Vector2) {
+        let cr = Scalar.cos(rotation)
+        let sr = Scalar.sin(rotation)
         self.x = Vector2(x: cr, y: sr)
         self.y = Vector2(x: -sr, y: cr)
         self.origin = position
@@ -138,18 +138,18 @@ public struct Transform2D: Equatable, Hashable {
     ///   - skew: The transform skew, in radians.
     ///   - position: The transform position.
     public init(
-        rotation: FloatingPointType,
+        rotation: Scalar,
         scale: Vector2,
-        skew: FloatingPointType,
+        skew: Scalar,
         position: Vector2
     ) {
         self.x = Vector2(
-            x: FloatingPointType.cos(rotation) * scale.x,
-            y: FloatingPointType.sin(rotation) * scale.x
+            x: Scalar.cos(rotation) * scale.x,
+            y: Scalar.sin(rotation) * scale.x
         )
         self.y = Vector2(
-            x: -FloatingPointType.sin(rotation + skew) * scale.y,
-            y: FloatingPointType.cos(rotation + skew) * scale.y
+            x: -Scalar.sin(rotation + skew) * scale.y,
+            y: Scalar.cos(rotation + skew) * scale.y
         )
         self.origin = position
     }
@@ -180,19 +180,19 @@ extension Transform2D {
 
 extension Transform2D {
     @inline(__always)
-    private func tDotX(_ vector: Vector2) -> FloatingPointType {
+    private func tDotX(_ vector: Vector2) -> Scalar {
         x.x * vector.x + y.x * vector.y
     }
     
     @inline(__always)
-    private func tDotY(_ vector: Vector2) -> FloatingPointType {
+    private func tDotY(_ vector: Vector2) -> Scalar {
         x.y * vector.x + y.y * vector.y
     }
     
     /// The multiplication of all components of a 2D transform and a floating-point value.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func * (lhs: Transform2D, rhs: FloatingPointType) -> Transform2D {
+    public static func * (lhs: Transform2D, rhs: Scalar) -> Transform2D {
         var copy = lhs
         copy *= rhs
         return copy
@@ -202,7 +202,7 @@ extension Transform2D {
     /// and a floating-point value.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func *= (lhs: inout Transform2D, rhs: FloatingPointType) {
+    public static func *= (lhs: inout Transform2D, rhs: Scalar) {
         lhs.x *= rhs
         lhs.y *= rhs
         lhs.origin *= rhs
@@ -211,7 +211,7 @@ extension Transform2D {
     /// The multiplication of all components of a 2D transform and a floating-point value.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func * (lhs: FloatingPointType, rhs: Transform2D) -> Transform2D {
+    public static func * (lhs: Scalar, rhs: Transform2D) -> Transform2D {
         rhs * lhs
     }
     
@@ -410,14 +410,14 @@ extension Transform2D {
     }
     
     /// The transform's rotation (in radians).
-    public var rotation: FloatingPointType {
+    public var rotation: Scalar {
         get {
-            FloatingPointType.atan2(y: x.y, x: x.x)
+            Scalar.atan2(y: x.y, x: x.x)
         }
         set(newValue) {
             let scale = self.scale
-            let cr = FloatingPointType.cos(newValue)
-            let sr = FloatingPointType.sin(newValue)
+            let cr = Scalar.cos(newValue)
+            let sr = Scalar.sin(newValue)
             self.x.x = cr
             self.x.y = sr
             self.y.x = -sr
@@ -441,14 +441,14 @@ extension Transform2D {
     }
     
     /// The transform's skew (in radians).
-    public var skew: FloatingPointType {
+    public var skew: Scalar {
         get {
             let det = determinant
-            return FloatingPointType.acos(x.normalized().dot(det._sign * y.normalized())) - FloatingPointType.pi * 0.5
+            return Scalar.acos(x.normalized().dot(det._sign * y.normalized())) - Scalar.pi * 0.5
         }
         set(newValue) {
             let det = determinant
-            y = det._sign * x.rotated(by: FloatingPointType.pi * 0.5 + newValue).normalized() * y.magnitude
+            y = det._sign * x.rotated(by: Scalar.pi * 0.5 + newValue).normalized() * y.magnitude
         }
     }
     
@@ -509,7 +509,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the global/parent frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public func rotated(by angle: FloatingPointType) -> Transform2D {
+    public func rotated(by angle: Scalar) -> Transform2D {
         // Equivalent to left multiplication
         Transform2D(rotation: angle, position: Vector2()) * self
     }
@@ -523,7 +523,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the global/parent frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public mutating func rotate(by angle: FloatingPointType) {
+    public mutating func rotate(by angle: Scalar) {
         self = self.rotated(by: angle)
     }
     
@@ -536,7 +536,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the local frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public func rotatedLocal(by angle: FloatingPointType) -> Transform2D {
+    public func rotatedLocal(by angle: Scalar) -> Transform2D {
         // Equivalent to right multiplication
         self * Transform2D(rotation: angle, position: Vector2()) // Could be optimized, because origin transform can be skipped.
     }
@@ -550,7 +550,7 @@ extension Transform2D {
     /// This can be seen as transforming with respect to the local frame.
     ///
     /// - Parameter angle: The rotation angle, in radians.
-    public mutating func rotateLocal(by angle: FloatingPointType) {
+    public mutating func rotateLocal(by angle: Scalar) {
         self = self.rotatedLocal(by: angle)
     }
     
@@ -668,7 +668,7 @@ extension Transform2D {
     /// A negative determinant means the basis was flipped,
     /// so one part of the scale is negative. A zero determinant
     /// means the basis isn't invertible, and is usually considered invalid.
-    public var determinant: FloatingPointType {
+    public var determinant: Scalar {
         x.x * y.y - x.y * y.x
     }
     
@@ -718,7 +718,7 @@ extension Transform2D {
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
     public func interpolation(
         with other: Transform2D,
-        weight: FloatingPointType
+        weight: Scalar
     ) -> Transform2D {
         Transform2D(
             rotation: self.rotation.lerpAngle(to: other.rotation, weight: weight),
@@ -736,7 +736,7 @@ extension Transform2D {
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
     public mutating func formInterpolation(
         with other: Transform2D,
-        weight: FloatingPointType
+        weight: Scalar
     ) {
         self = self.interpolation(with: other, weight: weight)
     }

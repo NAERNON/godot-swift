@@ -97,10 +97,10 @@ public struct Projection: Equatable, Hashable {
     }
     
     internal init(
-        _ xx: FloatingPointType, _ xy: FloatingPointType, _ xz: FloatingPointType, _ xw: FloatingPointType,
-        _ yx: FloatingPointType, _ yy: FloatingPointType, _ yz: FloatingPointType, _ yw: FloatingPointType,
-        _ zx: FloatingPointType, _ zy: FloatingPointType, _ zz: FloatingPointType, _ zw: FloatingPointType,
-        _ wx: FloatingPointType, _ wy: FloatingPointType, _ wz: FloatingPointType, _ ww: FloatingPointType
+        _ xx: Scalar, _ xy: Scalar, _ xz: Scalar, _ xw: Scalar,
+        _ yx: Scalar, _ yy: Scalar, _ yz: Scalar, _ yw: Scalar,
+        _ zx: Scalar, _ zy: Scalar, _ zz: Scalar, _ zw: Scalar,
+        _ wx: Scalar, _ wy: Scalar, _ wz: Scalar, _ ww: Scalar
     ) {
         self.x = Vector4(x: xx, y: xy, z: xz, w: xw)
         self.y = Vector4(x: yx, y: yy, z: yz, w: yw)
@@ -209,7 +209,7 @@ extension Projection {
         while j < 4 {
             var i = 0
             while i < 4 {
-                var ab: FloatingPointType = 0
+                var ab: Scalar = 0
                 var k = 0
                 while k < 4 {
                     ab += lhs[k][i] * rhs[j][k]
@@ -308,10 +308,10 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func perspective(
-        fovy: FloatingPointType,
-        aspect: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType,
+        fovy: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         var fovy = fovy
@@ -353,14 +353,14 @@ extension Projection {
     ///   - intraocularDist: The distance between eyes.
     ///   - convergenceDist: The distance to a point that can be focused on.
     public static func perspectiveForHMD(
-        fovy: FloatingPointType,
-        aspect: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType,
+        fovy: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool,
         eye: Int,
-        intraocularDist: FloatingPointType,
-        convergenceDist: FloatingPointType
+        intraocularDist: Scalar,
+        convergenceDist: Scalar
     ) -> Projection {
         var fovy = fovy
         if flipFov {
@@ -371,9 +371,9 @@ extension Projection {
         let xmax = ymax * aspect
         let frustumshift = (intraocularDist / 2.0) * zNear / convergenceDist
 
-        let left: FloatingPointType
-        let right: FloatingPointType
-        let modeltranslation: FloatingPointType
+        let left: Scalar
+        let right: Scalar
+        let modeltranslation: Scalar
         switch eye {
             case 1: // left eye
                 left = -xmax + frustumshift;
@@ -417,13 +417,13 @@ extension Projection {
     ///   - zFar: The far depth clipping plane.
     public static func forHMD(
         eye: Int,
-        aspect: FloatingPointType,
-        intraocularDist: FloatingPointType,
-        displayWidth: FloatingPointType,
-        displayToLens: FloatingPointType,
-        oversample: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType
+        aspect: Scalar,
+        intraocularDist: Scalar,
+        displayWidth: Scalar,
+        displayToLens: Scalar,
+        oversample: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         // we first calculate our base frustum on our values without taking our lens magnification into account.
         var f1 = (intraocularDist * 0.5) / displayToLens
@@ -467,12 +467,12 @@ extension Projection {
     /// Creates a new projection that projects positions using
     /// an orthogonal projection with the given clipping planes.
     public static func orthogonal(
-        left: FloatingPointType,
-        right: FloatingPointType,
-        bottom: FloatingPointType,
-        top: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType
+        left: Scalar,
+        right: Scalar,
+        bottom: Scalar,
+        top: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         var projection = Projection.identity
 
@@ -498,10 +498,10 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func orthogonalAspect(
-        size: FloatingPointType,
-        aspect: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType,
+        size: Scalar,
+        aspect: Scalar,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         let size = flipFov ? size : size * aspect
@@ -519,12 +519,12 @@ extension Projection {
     /// Creates a new projection that projects
     /// positions in a frustum with the given clipping planes.
     public static func frustum(
-        left: FloatingPointType,
-        right: FloatingPointType,
-        bottom: FloatingPointType,
-        top: FloatingPointType,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType
+        left: Scalar,
+        right: Scalar,
+        bottom: Scalar,
+        top: Scalar,
+        zNear: Scalar,
+        zFar: Scalar
     ) -> Projection {
         if right <= left {
             godotPrintError("right <= left should not be true. Returning Projection zero.")
@@ -567,11 +567,11 @@ extension Projection {
     ///   - flipFov: A Boolean value indicating whether the
     ///   projection's field of view is flipped over its diagonal.
     public static func frustumAspect(
-        size: FloatingPointType,
-        aspect: FloatingPointType,
+        size: Scalar,
+        aspect: Scalar,
         offset: Vector2,
-        zNear: FloatingPointType,
-        zFar: FloatingPointType,
+        zNear: Scalar,
+        zFar: Scalar,
         flipFov: Bool = false
     ) -> Projection {
         let size = flipFov ? size : size * aspect
@@ -624,7 +624,7 @@ extension Projection {
     /// The determinant can be used to calculate the invertibility
     /// of a matrix or solve linear systems of equations
     /// involving the matrix, among other applications.
-    public var determinant: FloatingPointType {
+    public var determinant: Scalar {
         self[0][3] * self[1][2] * self[2][1] * self[3][0] - self[0][2] * self[1][3] * self[2][1] * self[3][0] -
         self[0][3] * self[1][1] * self[2][2] * self[3][0] + self[0][1] * self[1][3] * self[2][2] * self[3][0] +
         self[0][2] * self[1][1] * self[2][3] * self[3][0] - self[0][1] * self[1][2] * self[2][3] * self[3][0] -
@@ -642,7 +642,7 @@ extension Projection {
     /// Returns this projection with the near clipping distance adjusted to a given distance.
     ///
     /// >note: The original projection must be a perspective projection.
-    public func adjustedPerspective(zNear: FloatingPointType) -> Projection {
+    public func adjustedPerspective(zNear: Scalar) -> Projection {
         var copy = self
         copy.adjustPerspective(zNear: zNear)
         return copy
@@ -651,7 +651,7 @@ extension Projection {
     /// Adjusts the near clipping plane to a given distance.
     ///
     /// >note: The original projection must be a perspective projection.
-    public mutating func adjustPerspective(zNear: FloatingPointType) {
+    public mutating func adjustPerspective(zNear: Scalar) {
         let zfar = self.zFar
         let znear = zNear
 
@@ -771,14 +771,14 @@ extension Projection {
     ///   - fovX: The horizontal field of view in degrees.
     ///   - aspect: The aspect ratio in degrees.
     public static func fovY(
-        fovX: FloatingPointType,
-        aspect: FloatingPointType
-    ) -> FloatingPointType {
+        fovX: Scalar,
+        aspect: Scalar
+    ) -> Scalar {
         (atan(aspect * tan(fovX.degToRad * 0.5)) * 2.0).radToDeg
     }
     
     /// The distance for the projection beyond which positions are clipped.
-    public var zFar: FloatingPointType {
+    public var zFar: Scalar {
         var newPlane = Plane(
             a: self[adjacentIndex: 3] - self[adjacentIndex: 2],
             b: self[adjacentIndex: 7] - self[adjacentIndex: 6],
@@ -793,7 +793,7 @@ extension Projection {
     }
     
     /// The distance for the projection before which positions are clipped.
-    public var zNear: FloatingPointType {
+    public var zNear: Scalar {
         var newPlane = Plane(
             a: self[adjacentIndex: 3] + self[adjacentIndex: 2],
             b: self[adjacentIndex: 7] + self[adjacentIndex: 6],
@@ -807,13 +807,13 @@ extension Projection {
     }
     
     /// The X:Y aspect ratio of the projection's viewport.
-    public var aspect: FloatingPointType {
+    public var aspect: Scalar {
         let vpHe = viewportHalfExtents
         return vpHe.x / vpHe.y
     }
     
     /// The horizontal field of view of the projection (in degrees).
-    public var fov: FloatingPointType {
+    public var fov: Scalar {
         var rightPlane = Plane(
             a: self[adjacentIndex: 3] - self[adjacentIndex: 0],
             b: self[adjacentIndex: 7] - self[adjacentIndex: 4],
@@ -931,9 +931,9 @@ extension Projection {
         var j = 0
         var k = 0
         var pvt_i = SIMD4<Int>(), pvt_j = SIMD4<Int>() /* Locations of pivot matrix */
-        var pvt_val: FloatingPointType = 0.0 /* Value of current pivot element */
-        var hold: FloatingPointType = 0.0 /* Temporary storage */
-        var determinant: FloatingPointType = 1.0
+        var pvt_val: Scalar = 0.0 /* Value of current pivot element */
+        var hold: Scalar = 0.0 /* Temporary storage */
+        var determinant: Scalar = 1.0
         
         while k < 4 {
             /** Locate k'th pivot element **/
@@ -1068,11 +1068,11 @@ extension Projection {
     public func pixelsPerMetter(forPixelWidth pixelWidth: Int) -> Int {
         let result = self * Vector3(1, 0, -1)
 
-        return Int(result.x * 0.5 + 0.5 * FloatingPointType(pixelWidth))
+        return Int(result.x * 0.5 + 0.5 * Scalar(pixelWidth))
     }
     
     /// The factor by which the visible level of detail is scaled by the projection.
-    public var lodMultiplier: FloatingPointType {
+    public var lodMultiplier: Scalar {
         if isOrthogonal {
             return viewportHalfExtents.x
         } else {
@@ -1109,7 +1109,7 @@ extension Projection {
     }
     
     /// Accesses the element at the given index.
-    internal subscript(adjacentIndex index: Int) -> FloatingPointType {
+    internal subscript(adjacentIndex index: Int) -> Scalar {
         get {
             switch index {
             case 0: x.x

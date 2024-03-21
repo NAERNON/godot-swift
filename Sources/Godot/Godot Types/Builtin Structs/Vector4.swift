@@ -104,22 +104,22 @@
 /// - ``Vector4/>=(_:_:)``
 public struct Vector4: Hashable, Equatable {
     /// The first element of the vector.
-    public var x: FloatingPointType
+    public var x: Scalar
     /// The second element of the vector.
-    public var y: FloatingPointType
+    public var y: Scalar
     /// The third element of the vector.
-    public var z: FloatingPointType
+    public var z: Scalar
     /// The forth element of the vector.
-    public var w: FloatingPointType
+    public var w: Scalar
     
     // MARK: - Initializers
     
     /// Creates a new vector from the given elements.
     public init(
-        x: FloatingPointType,
-        y: FloatingPointType,
-        z: FloatingPointType,
-        w: FloatingPointType
+        x: Scalar,
+        y: Scalar,
+        z: Scalar,
+        w: Scalar
     ) {
         self.x = x
         self.y = y
@@ -129,10 +129,10 @@ public struct Vector4: Hashable, Equatable {
     
     /// Creates a new vector from the given elements.
     public init(
-        _ x: FloatingPointType,
-        _ y: FloatingPointType,
-        _ z: FloatingPointType,
-        _ w: FloatingPointType
+        _ x: Scalar,
+        _ y: Scalar,
+        _ z: Scalar,
+        _ w: Scalar
     ) {
         self.x = x
         self.y = y
@@ -147,14 +147,14 @@ public struct Vector4: Hashable, Equatable {
     
     /// Creates a new vector from a given integer vector.
     public init(_ other: Vector4I) {
-        self.x = FloatingPointType(other.x)
-        self.y = FloatingPointType(other.y)
-        self.z = FloatingPointType(other.z)
-        self.w = FloatingPointType(other.w)
+        self.x = Scalar(other.x)
+        self.y = Scalar(other.y)
+        self.z = Scalar(other.z)
+        self.w = Scalar(other.w)
     }
     
     /// Creates a new vector with all elements set to the specified value.
-    public init(repeating value: FloatingPointType) {
+    public init(repeating value: Scalar) {
         self.x = value
         self.y = value
         self.z = value
@@ -180,7 +180,7 @@ extension Vector4 {
 
 extension Vector4 {
     /// Accesses the vector component at the given index.
-    public subscript(index: Int) -> FloatingPointType {
+    public subscript(index: Int) -> Scalar {
         get {
             switch index {
             case 0: x
@@ -202,7 +202,7 @@ extension Vector4 {
     }
     
     /// Accesses the vector component on the given axis.
-    public subscript(axis axis: Axis4D) -> FloatingPointType {
+    public subscript(axis axis: Axis4D) -> Scalar {
         get {
             switch axis {
             case .x: x
@@ -226,7 +226,7 @@ extension Vector4 {
 
 extension Vector4 {
     /// The magnitude (length) of the vector.
-    public var magnitude: FloatingPointType {
+    public var magnitude: Scalar {
         (self * self).sum().squareRoot()
     }
     
@@ -234,7 +234,7 @@ extension Vector4 {
     ///
     /// This property runs faster than ``magnitude``, so prefer it if you need
     /// to compare vectors or need the squared distance for some formula.
-    public var magnitudeSquared: FloatingPointType {
+    public var magnitudeSquared: Scalar {
         (self * self).sum()
     }
     
@@ -255,7 +255,7 @@ extension Vector4 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public func lerp(to other: Vector4, weight: FloatingPointType) -> Vector4 {
+    public func lerp(to other: Vector4, weight: Scalar) -> Vector4 {
         self + weight * (other - self)
     }
     
@@ -265,7 +265,7 @@ extension Vector4 {
     /// - Parameters:
     ///   - other: The interpolation destination.
     ///   - weight: The interpolation amount. On the range of `0` to `1`.
-    public mutating func formLerp(to other: Vector4, weight: FloatingPointType) {
+    public mutating func formLerp(to other: Vector4, weight: Scalar) {
         self = lerp(to: other, weight: weight)
     }
     
@@ -280,7 +280,7 @@ extension Vector4 {
         to other: Vector4,
         pre: Vector4,
         post: Vector4,
-        weight: FloatingPointType
+        weight: Scalar
     ) -> Vector4 {
         Vector4(
             x: self.x.cubicInterpolation(
@@ -305,7 +305,7 @@ extension Vector4 {
         to other: Vector4,
         pre: Vector4,
         post: Vector4,
-        weight: FloatingPointType
+        weight: Scalar
     ) {
         self = cubicInterpolation(to: other, pre: pre, post: post, weight: weight)
     }
@@ -323,10 +323,10 @@ extension Vector4 {
         to other: Vector4,
         pre: Vector4,
         post: Vector4,
-        weight: FloatingPointType,
-        toT: FloatingPointType,
-        preT: FloatingPointType,
-        postT: FloatingPointType
+        weight: Scalar,
+        toT: Scalar,
+        preT: Scalar,
+        postT: Scalar
     ) -> Vector4 {
         Vector4(
             x: self.x.cubicInterpolationInTime(
@@ -353,10 +353,10 @@ extension Vector4 {
         to other: Vector4,
         pre: Vector4,
         post: Vector4,
-        weight: FloatingPointType,
-        toT: FloatingPointType,
-        preT: FloatingPointType,
-        postT: FloatingPointType
+        weight: Scalar,
+        toT: Scalar,
+        preT: Scalar,
+        postT: Scalar
     ) {
         self = cubicInterpolationInTime(
             to: other,
@@ -374,7 +374,7 @@ extension Vector4 {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/positiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public func positiveTruncatingRemainder(dividingBy value: FloatingPointType) -> Vector4 {
+    public func positiveTruncatingRemainder(dividingBy value: Scalar) -> Vector4 {
         Vector4(
             x: x.positiveTruncatingRemainder(dividingBy: value),
             y: y.positiveTruncatingRemainder(dividingBy: value),
@@ -388,7 +388,7 @@ extension Vector4 {
     ///
     /// This method applies ``Swift/BinaryFloatingPoint/formPositiveTruncatingRemainder(dividingBy:)``
     /// on each scalar.
-    public mutating func formPositiveTruncatingRemainder(dividingBy value: FloatingPointType) {
+    public mutating func formPositiveTruncatingRemainder(dividingBy value: Scalar) {
         x.formPositiveTruncatingRemainder(dividingBy: value)
         y.formPositiveTruncatingRemainder(dividingBy: value)
         z.formPositiveTruncatingRemainder(dividingBy: value)
@@ -490,7 +490,7 @@ extension Vector4 {
     }
     
     /// Returns the distance between this vector and another one.
-    public func distance(to other: Vector4) -> FloatingPointType {
+    public func distance(to other: Vector4) -> Scalar {
         ((other - self) * (other - self)).sum().squareRoot()
     }
     
@@ -498,12 +498,12 @@ extension Vector4 {
     ///
     /// This method runs faster than ``distance(to:)``, so prefer it if you
     /// need to compare vectors or need the squared distance for some formula.
-    public func distanceSquared(to other: Vector4) -> FloatingPointType {
+    public func distanceSquared(to other: Vector4) -> Scalar {
         ((other - self) * (other - self)).sum()
     }
     
     /// Returns the dot product of this vector and another one.
-    public func dot(_ other: Vector4) -> FloatingPointType {
+    public func dot(_ other: Vector4) -> Scalar {
         x * other.x + y * other.y + z * other.z + w * other.w
     }
     
@@ -616,7 +616,7 @@ extension Vector4 {
     }
     
     /// Returns the sum of the scalars in the vector.
-    public func sum() -> FloatingPointType {
+    public func sum() -> Scalar {
         x + y + z + w
     }
 }
@@ -625,29 +625,29 @@ extension Vector4 {
 
 extension Vector4 {
     /// The multiplication of all components of a vector and a floating-point value.
-    public static func * (lhs: Vector4, rhs: FloatingPointType) -> Vector4 {
+    public static func * (lhs: Vector4, rhs: Scalar) -> Vector4 {
         Vector4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs)
     }
     
     /// The multiplication of all components of a vector and a floating-point value.
-    public static func * (lhs: FloatingPointType, rhs: Vector4) -> Vector4 {
+    public static func * (lhs: Scalar, rhs: Vector4) -> Vector4 {
         rhs * lhs
     }
     
     /// Updates the vector with the multiplication of
     /// all components of a vector and a floating-point value.
-    public static func *= (lhs: inout Vector4, rhs: FloatingPointType) {
+    public static func *= (lhs: inout Vector4, rhs: Scalar) {
         lhs = lhs * rhs
     }
     
     /// The division of all components of a vector and a floating-point value.
-    public static func / (lhs: Vector4, rhs: FloatingPointType) -> Vector4 {
+    public static func / (lhs: Vector4, rhs: Scalar) -> Vector4 {
         Vector4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs)
     }
     
     /// Updates the vector with the division of
     /// all components of a vector and a floating-point value.
-    public static func /= (lhs: inout Vector4, rhs: FloatingPointType) {
+    public static func /= (lhs: inout Vector4, rhs: Scalar) {
         lhs = lhs / rhs
     }
     
@@ -843,7 +843,7 @@ extension Vector4: CustomStringConvertible, CustomDebugStringConvertible {
 // MARK: - ExpressibleByArrayLiteral
 
 extension Vector4: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: FloatingPointType...) {
+    public init(arrayLiteral elements: Scalar...) {
         precondition(
             elements.count == 4,
             "Attempting to create a 4D vector from \(elements.count) elements."
@@ -869,9 +869,9 @@ extension Vector4: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(FloatingPointType.self)
-        y = try container.decode(FloatingPointType.self)
-        z = try container.decode(FloatingPointType.self)
-        w = try container.decode(FloatingPointType.self)
+        x = try container.decode(Scalar.self)
+        y = try container.decode(Scalar.self)
+        z = try container.decode(Scalar.self)
+        w = try container.decode(Scalar.self)
     }
 }

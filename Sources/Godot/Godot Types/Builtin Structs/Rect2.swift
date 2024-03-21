@@ -109,10 +109,10 @@ public struct Rect2: Equatable, Hashable {
     /// Creates a new 2D rectangle from the given position coordinates
     /// and size values.
     public init(
-        x: FloatingPointType,
-        y: FloatingPointType,
-        width: FloatingPointType,
-        height: FloatingPointType
+        x: Scalar,
+        y: Scalar,
+        width: Scalar,
+        height: Scalar
     ) {
         self.position = Vector2(x, y)
         self.size = Vector2(width, height)
@@ -121,10 +121,10 @@ public struct Rect2: Equatable, Hashable {
     /// Creates a new 2D rectangle from the given position coordinates
     /// and size values.
     public init(
-        _ x: FloatingPointType,
-        _ y: FloatingPointType,
-        _ width: FloatingPointType,
-        _ height: FloatingPointType
+        _ x: Scalar,
+        _ y: Scalar,
+        _ width: Scalar,
+        _ height: Scalar
     ) {
         self.position = Vector2(x, y)
         self.size = Vector2(width, height)
@@ -147,7 +147,7 @@ public struct Rect2: Equatable, Hashable {
 
 extension Rect2 {
     /// The X coordinate of the origin point.
-    public var x: FloatingPointType {
+    public var x: Scalar {
         get {
             position.x
         }
@@ -157,7 +157,7 @@ extension Rect2 {
     }
     
     /// The Y coordinate of the origin point.
-    public var y: FloatingPointType {
+    public var y: Scalar {
         get {
             position.y
         }
@@ -167,7 +167,7 @@ extension Rect2 {
     }
     
     /// The rectangle's width.
-    public var width: FloatingPointType {
+    public var width: Scalar {
         get {
             size.x
         }
@@ -177,7 +177,7 @@ extension Rect2 {
     }
     
     /// The rectangle's height.
-    public var height: FloatingPointType {
+    public var height: Scalar {
         get {
             size.y
         }
@@ -211,7 +211,7 @@ extension Rect2 {
     /// The rectangle's area.
     ///
     /// This is equivalent to `size.x * size.y`.
-    public var area: FloatingPointType {
+    public var area: Scalar {
         size.x * size.y
     }
     
@@ -451,7 +451,7 @@ extension Rect2 {
     /// print(Rect2(x: 0, y: 0, width: 8, height: 4).grown(by: 2))
     /// // Prints (-2, -2, 12, 8)
     /// ```
-    public func grown(by amount: FloatingPointType) -> Rect2 {
+    public func grown(by amount: Scalar) -> Rect2 {
         var copy = self
         copy.grow(by: amount)
         return copy
@@ -469,7 +469,7 @@ extension Rect2 {
     /// rect2.grow(by: 2)
     /// // rect2 is (-2, -2, 12, 8)
     /// ```
-    public mutating func grow(by amount: FloatingPointType) {
+    public mutating func grow(by amount: Scalar) {
         position.x -= amount
         position.y -= amount
         size.width += amount * 2
@@ -479,7 +479,7 @@ extension Rect2 {
     /// Returns this rectangle with its side extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grown(by amount: FloatingPointType, side: Side) -> Rect2 {
+    public func grown(by amount: Scalar, side: Side) -> Rect2 {
         var copy = self
         copy.grow(by: amount, side: side)
         return copy
@@ -488,7 +488,7 @@ extension Rect2 {
     /// Extends this rectangle's given side by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public mutating func grow(by amount: FloatingPointType, side: Side) {
+    public mutating func grow(by amount: Scalar, side: Side) {
         grow(
             left: side == .left ? amount : 0,
             top: side == .top ? amount : 0,
@@ -500,7 +500,7 @@ extension Rect2 {
     /// Returns this rectangle with the given sides extended by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public func grown(by amount: FloatingPointType, sides: Side.Set) -> Rect2 {
+    public func grown(by amount: Scalar, sides: Side.Set) -> Rect2 {
         var copy = self
         copy.grow(by: amount, sides: sides)
         return copy
@@ -509,7 +509,7 @@ extension Rect2 {
     /// Extends this rectangle's given sides by the given amount.
     ///
     /// A negative amount shrinks the rectangle, instead.
-    public mutating func grow(by amount: FloatingPointType, sides: Side.Set) {
+    public mutating func grow(by amount: Scalar, sides: Side.Set) {
         if sides.contains(.top) {
             grow(by: amount, side: .top)
         }
@@ -529,10 +529,10 @@ extension Rect2 {
     ///
     /// Negative values shrink the sides, instead.
     public mutating func grown(
-        left: FloatingPointType,
-        top: FloatingPointType,
-        right: FloatingPointType,
-        bottom: FloatingPointType
+        left: Scalar,
+        top: Scalar,
+        right: Scalar,
+        bottom: Scalar
     ) -> Rect2 {
         var copy = self
         copy.grow(left: left, top: top, right: right, bottom: bottom)
@@ -543,10 +543,10 @@ extension Rect2 {
     ///
     /// Negative values shrink the sides, instead.
     public mutating func grow(
-        left: FloatingPointType,
-        top: FloatingPointType,
-        right: FloatingPointType,
-        bottom: FloatingPointType
+        left: Scalar,
+        top: Scalar,
+        right: Scalar,
+        bottom: Scalar
     ) {
         position.x -= left
         position.y -= top

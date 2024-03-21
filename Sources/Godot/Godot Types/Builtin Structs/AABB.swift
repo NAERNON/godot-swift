@@ -140,7 +140,7 @@ extension AABB {
     }
     
     /// The volume of the AABB.
-    public var volume: FloatingPointType {
+    public var volume: Scalar {
         size.x * size.y * size.z
     }
     
@@ -468,14 +468,14 @@ extension AABB {
     }
     
     /// Returns this `AABB` grown a given number of units towards all the sides.
-    public func grown(by amount: FloatingPointType) -> AABB {
+    public func grown(by amount: Scalar) -> AABB {
         var copy = self
         copy.grow(by: amount)
         return copy
     }
     
     /// Grows this `AABB` a given number of units towards all the sides.
-    public mutating func grow(by amount: FloatingPointType) {
+    public mutating func grow(by amount: Scalar) {
         position.x -= amount
         position.y -= amount
         position.z -= amount
@@ -517,7 +517,7 @@ extension AABB {
     }
     
     /// The scalar length of the longest axis of the `AABB`.
-    public var longestAxisSize: FloatingPointType {
+    public var longestAxisSize: Scalar {
         var maxSize = size.x
 
         if size.y > maxSize {
@@ -549,7 +549,7 @@ extension AABB {
     }
     
     /// The scalar length of the shortest axis of the `AABB`.
-    public var shortestAxisSize: FloatingPointType {
+    public var shortestAxisSize: Scalar {
         var maxSize = size.x
 
         if size.y < maxSize {
@@ -593,7 +593,7 @@ extension AABB {
             godotPrintError("AABB size is negative, this is not supported. Use .abs() to get an AABB with a positive size.")
         }
 #endif
-        var min: FloatingPointType = 0, max: FloatingPointType = 1
+        var min: Scalar = 0, max: Scalar = 1
         
         var i = 0
         while i < 3 {
@@ -601,7 +601,7 @@ extension AABB {
             let segTo = toPoint[i]
             let boxBegin = position[i]
             let boxEnd = boxBegin + size[i]
-            var cmin: FloatingPointType = 0, cmax: FloatingPointType = 0
+            var cmin: Scalar = 0, cmax: Scalar = 0
             
             if segFrom < segTo {
                 if segFrom > boxEnd || segTo < boxBegin {
@@ -648,8 +648,8 @@ extension AABB {
 #endif
         var c1 = Vector3(), c2 = Vector3()
         let end = position + size
-        var near: FloatingPointType = -1e20
-        var far: FloatingPointType = 1e20
+        var near: Scalar = -1e20
+        var far: Scalar = 1e20
         
         var i = 0
         while i < 3 {
@@ -697,12 +697,12 @@ extension AABB: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let positionX = try container.decode(FloatingPointType.self)
-        let positionY = try container.decode(FloatingPointType.self)
-        let positionZ = try container.decode(FloatingPointType.self)
-        let sizeX = try container.decode(FloatingPointType.self)
-        let sizeY = try container.decode(FloatingPointType.self)
-        let sizeZ = try container.decode(FloatingPointType.self)
+        let positionX = try container.decode(Scalar.self)
+        let positionY = try container.decode(Scalar.self)
+        let positionZ = try container.decode(Scalar.self)
+        let sizeX = try container.decode(Scalar.self)
+        let sizeY = try container.decode(Scalar.self)
+        let sizeZ = try container.decode(Scalar.self)
         
         self.init(
             position: Vector3(x: positionX, y: positionY, z: positionZ),

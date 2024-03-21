@@ -139,10 +139,10 @@ public struct Transform3D: Equatable, Hashable {
     }
     
     internal init(
-        _ xx: FloatingPointType, _ xy: FloatingPointType, _ xz: FloatingPointType,
-        _ yx: FloatingPointType, _ yy: FloatingPointType, _ yz: FloatingPointType,
-        _ zx: FloatingPointType, _ zy: FloatingPointType, _ zz: FloatingPointType,
-        _ ox: FloatingPointType, _ oy: FloatingPointType, _ oz: FloatingPointType
+        _ xx: Scalar, _ xy: Scalar, _ xz: Scalar,
+        _ yx: Scalar, _ yy: Scalar, _ yz: Scalar,
+        _ zx: Scalar, _ zy: Scalar, _ zz: Scalar,
+        _ ox: Scalar, _ oy: Scalar, _ oz: Scalar
     ) {
         self.basis = Basis(xx, xy, xz, yx, yy, yz, zx, zy, zz)
         self.origin = Vector3(ox, oy, oz)
@@ -181,7 +181,7 @@ extension Transform3D {
     /// This operator multiplies all components of the 3D transform.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func * (lhs: Transform3D, rhs: FloatingPointType) -> Transform3D {
+    public static func * (lhs: Transform3D, rhs: Scalar) -> Transform3D {
         var copy = lhs
         copy *= rhs
         return copy
@@ -191,7 +191,7 @@ extension Transform3D {
     /// and a floating-point value.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func *= (lhs: inout Transform3D, rhs: FloatingPointType) {
+    public static func *= (lhs: inout Transform3D, rhs: Scalar) {
         lhs.basis *= rhs
         lhs.origin *= rhs
     }
@@ -199,7 +199,7 @@ extension Transform3D {
     /// This operator multiplies all components of the 3D transform.
     ///
     /// This includes the origin vector, which scales uniformly.
-    public static func * (lhs: FloatingPointType, rhs: Transform3D) -> Transform3D {
+    public static func * (lhs: Scalar, rhs: Transform3D) -> Transform3D {
         rhs * lhs
     }
     
@@ -480,7 +480,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public func rotated(by angle: FloatingPointType, around axis: Vector3) -> Transform3D {
+    public func rotated(by angle: Scalar, around axis: Vector3) -> Transform3D {
         // Equivalent to left multiplication
         let basis = Basis(axis: axis, angle: angle)
         return Transform3D(
@@ -500,7 +500,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public mutating func rotate(by angle: FloatingPointType, around axis: Vector3) {
+    public mutating func rotate(by angle: Scalar, around axis: Vector3) {
         self = self.rotated(by: angle, around: axis)
     }
     
@@ -515,7 +515,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public func rotatedLocal(by angle: FloatingPointType, around axis: Vector3) -> Transform3D {
+    public func rotatedLocal(by angle: Scalar, around axis: Vector3) -> Transform3D {
         // Equivalent to right multiplication
         let basis = Basis(axis: axis, angle: angle)
         return Transform3D(
@@ -535,7 +535,7 @@ extension Transform3D {
     /// - Parameter angle: The rotation angle, in radians.
     /// - Parameter axis: The vector around which the rotation is performed.
     /// Must be a normalized vector.
-    public mutating func rotateLocal(by angle: FloatingPointType, around axis: Vector3) {
+    public mutating func rotateLocal(by angle: Scalar, around axis: Vector3) {
         self = self.rotatedLocal(by: angle, around: axis)
     }
     
@@ -699,7 +699,7 @@ extension Transform3D {
     /// - Parameters:
     ///   - other: The transform to interpolate with.
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
-    public func interpolation(with other: Transform3D, weight: FloatingPointType) -> Transform3D {
+    public func interpolation(with other: Transform3D, weight: Scalar) -> Transform3D {
         var interp = Transform3D()
 
         let srcScale = basis.scale
@@ -725,7 +725,7 @@ extension Transform3D {
     /// - Parameters:
     ///   - other: The transform to interpolate with.
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
-    public mutating func formInterpolation(with other: Transform3D, weight: FloatingPointType) {
+    public mutating func formInterpolation(with other: Transform3D, weight: Scalar) {
         self = self.interpolation(with: other, weight: weight)
     }
     

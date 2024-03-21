@@ -87,31 +87,31 @@ public struct Quaternion: Equatable, Hashable {
     /// X component of the quaternion (imaginary `i` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var x: FloatingPointType
+    public var x: Scalar
     
     /// Y component of the quaternion (imaginary `j` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var y: FloatingPointType
+    public var y: Scalar
     
     /// Z component of the quaternion (imaginary `k` axis part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var z: FloatingPointType
+    public var z: Scalar
     
     /// W component of the quaternion (real part).
     ///
     /// `Quaternion` components should usually not be manipulated directly.
-    public var w: FloatingPointType
+    public var w: Scalar
     
     // MARK: - Initializers
     
     /// Creates a new quaternion defined by the given values.
     public init(
-        x: FloatingPointType,
-        y: FloatingPointType,
-        z: FloatingPointType,
-        w: FloatingPointType
+        x: Scalar,
+        y: Scalar,
+        z: Scalar,
+        w: Scalar
     ) {
         self.x = x
         self.y = y
@@ -121,10 +121,10 @@ public struct Quaternion: Equatable, Hashable {
     
     /// Creates a new quaternion defined by the given values.
     public init(
-        _ x: FloatingPointType,
-        _ y: FloatingPointType,
-        _ z: FloatingPointType,
-        _ w: FloatingPointType
+        _ x: Scalar,
+        _ y: Scalar,
+        _ z: Scalar,
+        _ w: Scalar
     ) {
         self.x = x
         self.y = y
@@ -143,7 +143,7 @@ public struct Quaternion: Equatable, Hashable {
     ///   - axis: The axis around which the quaternion will rotate.
     ///   Must be a normalized vector.
     ///   - angle: The rotation angle.
-    public init(axis: Vector3, angle: FloatingPointType) {
+    public init(axis: Vector3, angle: Scalar) {
 #if MATH_CHECKS
         if !axis.isNormalized {
             godotPrintError("The axis Vector3 must be normalized.")
@@ -228,7 +228,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own,
     /// but it can be used as a part of a larger expression.
-    public static func * (lhs: Quaternion, rhs: FloatingPointType) -> Quaternion {
+    public static func * (lhs: Quaternion, rhs: Scalar) -> Quaternion {
         Quaternion(
             lhs.x * rhs,
             lhs.y * rhs,
@@ -242,7 +242,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own,
     /// but it can be used as a part of a larger expression.
-    public static func *= (lhs: inout Quaternion, rhs: FloatingPointType) {
+    public static func *= (lhs: inout Quaternion, rhs: Scalar) {
         lhs = lhs * rhs
     }
     
@@ -250,7 +250,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own,
     /// but it can be used as a part of a larger expression.
-    public static func * (lhs: FloatingPointType, rhs: Quaternion) -> Quaternion {
+    public static func * (lhs: Scalar, rhs: Quaternion) -> Quaternion {
         rhs * lhs
     }
     
@@ -258,7 +258,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own
     /// but it can be used as a part of a larger expression.
-    public static func / (lhs: Quaternion, rhs: FloatingPointType) -> Quaternion {
+    public static func / (lhs: Quaternion, rhs: Scalar) -> Quaternion {
         lhs * (1.0 / rhs)
     }
     
@@ -266,7 +266,7 @@ extension Quaternion {
     ///
     /// This operation is not meaningful on its own
     /// but it can be used as a part of a larger expression.
-    public static func /= (lhs: inout Quaternion, rhs: FloatingPointType) {
+    public static func /= (lhs: inout Quaternion, rhs: Scalar) {
         lhs = lhs / rhs
     }
     
@@ -375,12 +375,12 @@ extension Quaternion {
 
 extension Quaternion {
     /// The magnitude (length) of the quaternion.
-    public var magnitude: FloatingPointType {
+    public var magnitude: Scalar {
         magnitudeSquared.squareRoot()
     }
     
     /// The magnitude (length) of the quaternion, squared.
-    public var magnitudeSquared: FloatingPointType {
+    public var magnitudeSquared: Scalar {
         self.dot(self)
     }
     
@@ -456,14 +456,14 @@ extension Quaternion {
     /// >important: The magnitude of the floating-point error for this
     /// method is abnormally high, so methods that use approximation
     /// will not work reliably.
-    public func angle(to other: Quaternion) -> FloatingPointType {
+    public func angle(to other: Quaternion) -> Scalar {
         let d = self.dot(other)
         // acos does clamping.
         return acos(d * d * 2 - 1)
     }
     
     /// Returns the dot product of this quaternion and another one.
-    public func dot(_ other: Quaternion) -> FloatingPointType {
+    public func dot(_ other: Quaternion) -> Scalar {
         x * other.x + y * other.y + z * other.z + w * other.w
     }
     
@@ -475,7 +475,7 @@ extension Quaternion {
     ///   - weight: The interpolation amount.
     ///
     /// >note: Both quaternions must be normalized.
-    public func slerp(to other: Quaternion, weight: FloatingPointType) -> Quaternion {
+    public func slerp(to other: Quaternion, weight: Scalar) -> Quaternion {
 #if MATH_CHECKS
         if !isNormalized {
             godotPrintError("The start quaternion must be normalized.")
@@ -487,11 +487,11 @@ extension Quaternion {
         }
 #endif
         var to1 = Quaternion()
-        var omega: FloatingPointType = 0.0
-        var cosom: FloatingPointType = 0.0
-        var sinom: FloatingPointType = 0.0
-        var scale0: FloatingPointType = 0.0
-        var scale1: FloatingPointType = 0.0
+        var omega: Scalar = 0.0
+        var cosom: Scalar = 0.0
+        var sinom: Scalar = 0.0
+        var scale0: Scalar = 0.0
+        var scale1: Scalar = 0.0
         
         // calc cosine
         cosom = dot(other)
@@ -535,7 +535,7 @@ extension Quaternion {
     ///   - weight: The interpolation amount.
     ///
     /// >note: Both quaternions must be normalized.
-    public mutating func formSlerp(to other: Quaternion, weight: FloatingPointType) {
+    public mutating func formSlerp(to other: Quaternion, weight: Scalar) {
         self = self.slerp(to: other, weight: weight)
     }
     
@@ -548,7 +548,7 @@ extension Quaternion {
     ///
     /// Contrary to ``slerp(to:weight:)``, this method does
     /// not check if the rotation path is not bigger than 90 degrees.
-    public func slerpni(to other: Quaternion, weight: FloatingPointType) -> Quaternion {
+    public func slerpni(to other: Quaternion, weight: Scalar) -> Quaternion {
 #if MATH_CHECKS
         if !isNormalized {
             godotPrintError("The start quaternion must be normalized.")
@@ -587,7 +587,7 @@ extension Quaternion {
     ///
     /// Contrary to ``formSlerp(to:weight:)``, this method does
     /// not check if the rotation path is not bigger than 90 degrees.
-    public mutating func formSlerpni(to other: Quaternion, weight: FloatingPointType) {
+    public mutating func formSlerpni(to other: Quaternion, weight: Scalar) {
         self = self.slerpni(to: other, weight: weight)
     }
     
@@ -599,7 +599,7 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: FloatingPointType
+        weight: Scalar
     ) -> Quaternion {
 #if MATH_CHECKS
         if !isNormalized {
@@ -664,7 +664,7 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: FloatingPointType
+        weight: Scalar
     ) {
         self = self.sphericalCubicInterpolatation(b: b, preA: preA, postB: postB, weight: weight)
     }
@@ -680,10 +680,10 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: FloatingPointType,
-        bT: FloatingPointType,
-        preAT: FloatingPointType,
-        postBT: FloatingPointType
+        weight: Scalar,
+        bT: Scalar,
+        preAT: Scalar,
+        postBT: Scalar
     ) -> Quaternion {
 #if MATH_CHECKS
         if !isNormalized {
@@ -799,10 +799,10 @@ extension Quaternion {
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
-        weight: FloatingPointType,
-        bT: FloatingPointType,
-        preAT: FloatingPointType,
-        postBT: FloatingPointType
+        weight: Scalar,
+        bT: Scalar,
+        preAT: Scalar,
+        postBT: Scalar
     ) {
         self = self.sphericalCubicInterpolatationInTime(
             b: b,
@@ -857,21 +857,21 @@ extension Quaternion {
     }
     
     public var axis: Vector3 {
-        if abs(w) > 1 - FloatingPointType.cmpEpsilon {
+        if abs(w) > 1 - Scalar.cmpEpsilon {
             return Vector3(x, y, z)
         }
         let r = 1.0 / (1 - w * w).squareRoot()
         return Vector3(x * r, y * r, z * r)
     }
     
-    public var angle: FloatingPointType {
+    public var angle: Scalar {
         2 * acos(w)
     }
     
     /// Accesses the quaternion component at the given index.
     ///
     /// Indices are in the following order: `x`, `y`, `z`, `w`.
-    public subscript(index: Int) -> FloatingPointType {
+    public subscript(index: Int) -> Scalar {
         get {
             switch index {
             case 0: x
@@ -906,10 +906,10 @@ extension Quaternion: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(FloatingPointType.self)
-        let y = try container.decode(FloatingPointType.self)
-        let z = try container.decode(FloatingPointType.self)
-        let w = try container.decode(FloatingPointType.self)
+        let x = try container.decode(Scalar.self)
+        let y = try container.decode(Scalar.self)
+        let z = try container.decode(Scalar.self)
+        let w = try container.decode(Scalar.self)
         self.init(x: x, y: y, z: z, w: w)
     }
 }

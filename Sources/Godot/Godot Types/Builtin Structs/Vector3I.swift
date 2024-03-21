@@ -250,8 +250,8 @@ extension Vector3I {
     }
     
     /// The magnitude (length) of the vector.
-    public var magnitude: FloatingPointType {
-        FloatingPointType(magnitudeSquared).squareRoot()
+    public var magnitude: Scalar {
+        Scalar(magnitudeSquared).squareRoot()
     }
     
     /// The squared magnitude of the vector.

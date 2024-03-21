@@ -446,14 +446,14 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             switch string {
             case "float":
                 if options.contains(.floatUseBuildConfiguration) {
-                    return "FloatingPointType"
+                    return "Scalar"
                 } else if options.contains(.floatAsDouble) {
                     return "Double"
                 } else {
                     return "Float"
                 }
             case "double": return "Double"
-            case "real_t": return "FloatingPointType"
+            case "real_t": return "Scalar"
             case "int": return "Int"
             case "int8_t": return "Int8"
             case "int16_t": return "Int16"

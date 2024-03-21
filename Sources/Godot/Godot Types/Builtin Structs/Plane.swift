@@ -75,7 +75,7 @@ public struct Plane: Equatable, Hashable {
     ///
     /// In the scalar equation of the plane `ax + by + cz = d`, this is `d`,
     /// while the `(a, b, c)` coordinates are represented by the ``normal`` property.
-    public var d: FloatingPointType
+    public var d: Scalar
     
     // MARK: - Initializers
     
@@ -85,7 +85,7 @@ public struct Plane: Equatable, Hashable {
     /// - Parameters:
     ///   - normal: The plane's normal vector. Must be a unit vector.
     ///   - point: The plane's distance from the origin.
-    public init(normal: Vector3, d: FloatingPointType) {
+    public init(normal: Vector3, d: Scalar) {
         self.normal = normal
         self.d = d
     }
@@ -98,10 +98,10 @@ public struct Plane: Equatable, Hashable {
     ///   - c: The plane's normal `z` value.
     ///   - d: The plane's distance from the origin.
     public init(
-        a: FloatingPointType,
-        b: FloatingPointType,
-        c: FloatingPointType,
-        d: FloatingPointType
+        a: Scalar,
+        b: Scalar,
+        c: Scalar,
+        d: Scalar
     ) {
         self.normal = Vector3(x: a, y: b, z: c)
         self.d = d
@@ -194,7 +194,7 @@ extension Plane {
 
 extension Plane {
     /// The X component of the plane's normal vector.
-    public var x: FloatingPointType {
+    public var x: Scalar {
         get {
             normal.x
         }
@@ -204,7 +204,7 @@ extension Plane {
     }
     
     /// The Y component of the plane's normal vector.
-    public var y: FloatingPointType {
+    public var y: Scalar {
         get {
             normal.y
         }
@@ -214,7 +214,7 @@ extension Plane {
     }
     
     /// The Z component of the plane's normal vector.
-    public var z: FloatingPointType {
+    public var z: Scalar {
         get {
             normal.z
         }
@@ -281,14 +281,14 @@ extension Plane {
     ///
     /// If the point is above the plane, the distance will be positive.
     /// If below, the distance will be negative.
-    public func distance(to point: Vector3) -> FloatingPointType {
+    public func distance(to point: Vector3) -> Scalar {
         normal.dot(point) - d
     }
     
     /// Returns `true` if the given point is inside this plane.
     ///
     /// Comparison uses a custom minimum tolerance threshold.
-    public func hasPoint(_ point: Vector3, tolerance: FloatingPointType = 1e-05) -> Bool {
+    public func hasPoint(_ point: Vector3, tolerance: Scalar = 1e-05) -> Bool {
         let dist = abs(normal.dot(point) - d)
         return dist <= tolerance
     }
@@ -374,10 +374,10 @@ extension Plane: Codable {
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        let x = try container.decode(FloatingPointType.self)
-        let y = try container.decode(FloatingPointType.self)
-        let z = try container.decode(FloatingPointType.self)
-        let d = try container.decode(FloatingPointType.self)
+        let x = try container.decode(Scalar.self)
+        let y = try container.decode(Scalar.self)
+        let z = try container.decode(Scalar.self)
+        let d = try container.decode(Scalar.self)
         self.init(a: x, b: y, c: z, d: d)
     }
 }
