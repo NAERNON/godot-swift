@@ -76,7 +76,7 @@
 /// ### Interpolation
 ///
 /// - ``Transform2D/interpolation(with:weight:)``
-/// - ``Transform2D/formInterpolation(with:weight:)``
+/// - ``Transform2D/interpolate(with:weight:)``
 ///
 /// ### Approximate Equality
 ///
@@ -728,13 +728,12 @@ extension Transform2D {
         )
     }
     
-    /// Replaces this transform with the interpolation between this transform
-    /// and another one by a given weight.
+    /// Interpolates this transform with another one by a given weight.
     ///
     /// - Parameters:
     ///   - other: The transform to interpolate with.
     ///   - weight: The interpolation weight, on the range of `0.0` to `1.0`.
-    public mutating func formInterpolation(
+    public mutating func interpolate(
         with other: Transform2D,
         weight: Scalar
     ) {

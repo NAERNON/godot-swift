@@ -75,10 +75,10 @@
 /// - ``Quaternion/formSlerp(to:weight:)``
 /// - ``Quaternion/slerpni(to:weight:)``
 /// - ``Quaternion/formSlerpni(to:weight:)``
-/// - ``Quaternion/sphericalCubicInterpolatation(b:preA:postB:weight:)``
-/// - ``Quaternion/formSphericalCubicInterpolatation(b:preA:postB:weight:)``
-/// - ``Quaternion/sphericalCubicInterpolatationInTime(b:preA:postB:weight:bT:preAT:postBT:)``
-/// - ``Quaternion/formSphericalCubicInterpolatationInTime(b:preA:postB:weight:bT:preAT:postBT:)``
+/// - ``Quaternion/sphericalCubicInterpolation(b:preA:postB:weight:)``
+/// - ``Quaternion/formSphericalCubicInterpolation(b:preA:postB:weight:)``
+/// - ``Quaternion/sphericalCubicInterpolationInTime(b:preA:postB:weight:bT:preAT:postBT:)``
+/// - ``Quaternion/formSphericalCubicInterpolationInTime(b:preA:postB:weight:bT:preAT:postBT:)``
 ///
 /// ### Approximate Equality
 ///
@@ -595,7 +595,7 @@ extension Quaternion {
     ///
     /// The interpolation is performed between `preA`,
     /// this vector, `b`, and `postB`, by the given amount weight.
-    public func sphericalCubicInterpolatation(
+    public func sphericalCubicInterpolation(
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
@@ -660,13 +660,13 @@ extension Quaternion {
     ///
     /// The interpolation is performed between `preA`,
     /// this vector, `b`, and `postB`, by the given amount weight.
-    public mutating func formSphericalCubicInterpolatation(
+    public mutating func formSphericalCubicInterpolation(
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
         weight: Scalar
     ) {
-        self = self.sphericalCubicInterpolatation(b: b, preA: preA, postB: postB, weight: weight)
+        self = self.sphericalCubicInterpolation(b: b, preA: preA, postB: postB, weight: weight)
     }
     
     /// Returns a spherical cubic interpolation between quaternions.
@@ -675,8 +675,8 @@ extension Quaternion {
     /// this vector, `b`, and `postB`, by the given amount weight.
     ///
     /// It can perform smoother interpolation than
-    /// ``sphericalCubicInterpolatation(b:preA:postB:weight:)`` by the time values.
-    public func sphericalCubicInterpolatationInTime(
+    /// ``sphericalCubicInterpolation(b:preA:postB:weight:)`` by the time values.
+    public func sphericalCubicInterpolationInTime(
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
@@ -794,8 +794,8 @@ extension Quaternion {
     /// this vector, `b`, and `postB`, by the given amount weight.
     ///
     /// It can perform smoother interpolation than
-    /// ``formSphericalCubicInterpolatation(b:preA:postB:weight:)`` by the time values.
-    public mutating func formSphericalCubicInterpolatationInTime(
+    /// ``formSphericalCubicInterpolation(b:preA:postB:weight:)`` by the time values.
+    public mutating func formSphericalCubicInterpolationInTime(
         b: Quaternion,
         preA: Quaternion,
         postB: Quaternion,
@@ -804,7 +804,7 @@ extension Quaternion {
         preAT: Scalar,
         postBT: Scalar
     ) {
-        self = self.sphericalCubicInterpolatationInTime(
+        self = self.sphericalCubicInterpolationInTime(
             b: b,
             preA: preA,
             postB: postB,
