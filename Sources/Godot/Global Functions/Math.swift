@@ -721,6 +721,11 @@ extension BinaryFloatingPoint {
         return self < 0 ? -1 : 1
     }
     
+    /// Equivalent to the `SIGN()` function of Godot cpp.
+    internal var _sign: Self {
+        self > 0 ? 1 : (self < 0 ? -1 : 0)
+    }
+    
     /// Returns the value moved toward a given value by a given delta amount.
     ///
     /// The returned value will not go past `other`.
