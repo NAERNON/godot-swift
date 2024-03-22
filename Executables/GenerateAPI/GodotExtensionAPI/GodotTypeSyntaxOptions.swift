@@ -25,24 +25,24 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let optionalClasses =
         GodotTypeSyntaxOptions(rawValue: 1 << 4)
     
-    /// All types named "Typed" are named "StorageType"
+    /// All types named "Type" are named "StorageType"
     /// instead of "GodotType".
     static let typeIsStorageType =
         GodotTypeSyntaxOptions(rawValue: 1 << 5)
     
-    /// GodotArray is replaced by "AnyGodotArray".
+    /// `GodotArray` is replaced by "AnyGodotArray".
     static let genericArrayOnVariant =
         GodotTypeSyntaxOptions(rawValue: 1 << 6)
     
-    /// GodotArray is suffixed by `<Element>`.
+    /// `GodotArray` is suffixed by `<Element>`.
     static let genericArrayOnElement =
         GodotTypeSyntaxOptions(rawValue: 1 << 7)
     
-    /// GodotDictionary is replaced by "AnyGodotDictionary".
+    /// `GodotDictionary` is replaced by "AnyGodotDictionary".
     static let genericDictionaryOnVariant =
         GodotTypeSyntaxOptions(rawValue: 1 << 8)
     
-    /// GodotDictionary is suffixed by `<Key, AssociatedValue>`.
+    /// `GodotDictionary` is suffixed by `<Key, AssociatedValue>`.
     static let genericDictionaryOnKeyValue =
         GodotTypeSyntaxOptions(rawValue: 1 << 9)
 }

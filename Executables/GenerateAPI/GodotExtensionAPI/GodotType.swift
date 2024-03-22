@@ -51,9 +51,9 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// ```
     case generic(type: GodotType, genericType: GodotType)
     
-    /// An generic array.
+    /// A generic array.
     ///
-    /// In Godot, a generic array is a `TypedArray<Element>`.
+    /// In Godot, a generic array is a `GodotArray<Element>`.
     ///
     /// If `A` is a type:
     /// ```swift
@@ -62,7 +62,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// GodotType.typedArray(a)
     ///
     /// // Represents the type:
-    /// TypedArray<A>
+    /// GodotArray<A>
     /// ```
     case typedArray(GodotType)
     
