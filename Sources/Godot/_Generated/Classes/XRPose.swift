@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class XRPose: RefCounted {
     public enum TrackingConfidence: UInt32, GodotEnum {
         case none = 0
         case low = 1
         case high = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -24,7 +26,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setHasTrackingData(_ hasTrackingData: Bool) {
+
+    private func __setHasTrackingData(
+        _ hasTrackingData: Bool
+    ) {
         hasTrackingData.withGodotUnsafeRawPointer { __ptr_hasTrackingData in
         withUnsafeArgumentPackPointer(__ptr_hasTrackingData) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getHasTrackingData() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setName(_ name: Godot.GodotStringName) {
+
+    private func __setName(
+        _ name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,7 +108,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setTransform(_ transform: Godot.Transform3D) {
+
+    private func __setTransform(
+        _ transform: Godot.Transform3D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +130,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,6 +149,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     public func adjustedTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +168,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setLinearVelocity(_ velocity: Godot.Vector3) {
+
+    private func __setLinearVelocity(
+        _ velocity: Godot.Vector3
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,6 +190,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getLinearVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,7 +209,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setAngularVelocity(_ velocity: Godot.Vector3) {
+
+    private func __setAngularVelocity(
+        _ velocity: Godot.Vector3
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,6 +231,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getAngularVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,7 +250,10 @@ open class XRPose: RefCounted {
         }
         }
     }()
-    private func __setTrackingConfidence(_ trackingConfidence: Godot.XRPose.TrackingConfidence) {
+
+    private func __setTrackingConfidence(
+        _ trackingConfidence: Godot.XRPose.TrackingConfidence
+    ) {
         trackingConfidence.withGodotUnsafeRawPointer { __ptr_trackingConfidence in
         withUnsafeArgumentPackPointer(__ptr_trackingConfidence) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +272,7 @@ open class XRPose: RefCounted {
         }
         }
     }()
+
     private func __getTrackingConfidence() -> Godot.XRPose.TrackingConfidence {
         Godot.XRPose.TrackingConfidence.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -324,6 +351,7 @@ open class XRPose: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -336,5 +364,4 @@ open class XRPose: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

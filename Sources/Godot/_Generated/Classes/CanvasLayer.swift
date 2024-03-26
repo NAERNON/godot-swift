@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CanvasLayer: Node {
+
     public func visibilityChanged() {
         _ = visibilityChangedSignal.emit()
     }
+
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setLayer(_ layer: Int32) {
+
+    private func __setLayer(
+        _ layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +55,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getLayer() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +74,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setVisible(_ visible: Bool) {
+
+    private func __setVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +96,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +115,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     public func show() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -121,6 +133,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     public func hide() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -138,7 +151,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setTransform(_ transform: Godot.Transform2D) {
+
+    private func __setTransform(
+        _ transform: Godot.Transform2D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,6 +173,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,6 +192,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     public func finalTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -193,7 +211,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +233,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,7 +252,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setRotation(radians: Double) {
+
+    private func __setRotation(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,6 +274,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getRotation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -267,7 +293,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setScale(_ scale: Godot.Vector2) {
+
+    private func __setScale(
+        _ scale: Godot.Vector2
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -286,6 +315,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -304,7 +334,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setFollowViewport(enable: Bool) {
+
+    private func __setFollowViewport(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +356,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __isFollowingViewport() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -341,7 +375,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setFollowViewportScale(_ scale: Double) {
+
+    private func __setFollowViewportScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,6 +397,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getFollowViewportScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -378,7 +416,10 @@ open class CanvasLayer: Node {
         }
         }
     }()
-    private func __setCustomViewport(_ viewport: Godot.Node?) {
+
+    private func __setCustomViewport(
+        _ viewport: Godot.Node?
+    ) {
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         withUnsafePointer(to: __ptr_viewport) { _ptr___ptr_viewport in
         withUnsafeArgumentPackPointer(_ptr___ptr_viewport) { __accessPtr in
@@ -398,6 +439,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     private func __getCustomViewport() -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,6 +458,7 @@ open class CanvasLayer: Node {
         }
         }
     }()
+
     public func canvas() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -527,6 +570,7 @@ open class CanvasLayer: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -539,5 +583,4 @@ open class CanvasLayer: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

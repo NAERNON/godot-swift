@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsServer3DManager: Object {
     internal static var __method_binding_register_server: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class PhysicsServer3DManager: Object {
         }
         }
     }()
-    public func registerServer(name: Godot.GodotString, createCallback: Godot.Callable) {
+
+    public func registerServer(
+        name: Godot.GodotString,
+        createCallback: Godot.Callable
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         createCallback.withGodotUnsafeRawPointer { __ptr_createCallback in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_createCallback) { __accessPtr in
@@ -32,7 +37,11 @@ open class PhysicsServer3DManager: Object {
         }
         }
     }()
-    public func setDefaultServer(name: Godot.GodotString, priority: Int32) {
+
+    public func setDefaultServer(
+        name: Godot.GodotString,
+        priority: Int32
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_priority) { __accessPtr in
@@ -46,6 +55,7 @@ open class PhysicsServer3DManager: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -58,5 +68,4 @@ open class PhysicsServer3DManager: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class DirectionalLight2D: Light2D {
     internal static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class DirectionalLight2D: Light2D {
         }
         }
     }()
-    private func __setMaxDistance(pixels: Double) {
+
+    private func __setMaxDistance(
+        pixels: Double
+    ) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         withUnsafeArgumentPackPointer(__ptr_pixels) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class DirectionalLight2D: Light2D {
         }
         }
     }()
+
     private func __getMaxDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class DirectionalLight2D: Light2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class DirectionalLight2D: Light2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

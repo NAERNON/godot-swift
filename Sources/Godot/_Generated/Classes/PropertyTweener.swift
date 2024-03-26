@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PropertyTweener: Tweener {
     internal static var __method_binding_from: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
-    public func from<Value: VariantStorableIn>(value: Value) -> Godot.PropertyTweener? {
+
+    public func from<Value: VariantStorableIn>(
+        value: Value
+    ) -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
@@ -32,6 +36,7 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
+
     public func fromCurrent() -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +55,7 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
+
     public func asRelative() -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +74,10 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
-    public func setTrans(_ trans: Godot.Tween.TransitionType) -> Godot.PropertyTweener? {
+
+    public func setTrans(
+        _ trans: Godot.Tween.TransitionType
+    ) -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         trans.withGodotUnsafeRawPointer { __ptr_trans in
         withUnsafeArgumentPackPointer(__ptr_trans) { __accessPtr in
@@ -88,7 +97,10 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
-    public func setEase(_ ease: Godot.Tween.EaseType) -> Godot.PropertyTweener? {
+
+    public func setEase(
+        _ ease: Godot.Tween.EaseType
+    ) -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         ease.withGodotUnsafeRawPointer { __ptr_ease in
         withUnsafeArgumentPackPointer(__ptr_ease) { __accessPtr in
@@ -108,7 +120,10 @@ open class PropertyTweener: Tweener {
         }
         }
     }()
-    public func setDelay(_ delay: Double) -> Godot.PropertyTweener? {
+
+    public func setDelay(
+        _ delay: Double
+    ) -> Godot.PropertyTweener? {
         Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
@@ -122,6 +137,7 @@ open class PropertyTweener: Tweener {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -134,5 +150,4 @@ open class PropertyTweener: Tweener {
         }
         return _virtualFunctions!
     }
-
-    }
+}

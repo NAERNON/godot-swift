@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationMesh: Resource {
     public enum SamplePartitionType: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class NavigationMesh: Resource {
         case monotone = 1
         case layers = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Watershed", 0),
@@ -18,11 +20,13 @@ open class NavigationMesh: Resource {
             ("Max", 3),]
         }
     }
+
     public enum ParsedGeometryType: UInt32, GodotEnum {
         case meshInstances = 0
         case staticColliders = 1
         case both = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mesh Instances", 0),
@@ -31,11 +35,13 @@ open class NavigationMesh: Resource {
             ("Max", 3),]
         }
     }
+
     public enum SourceGeometryMode: UInt32, GodotEnum {
         case rootNodeChildren = 0
         case groupsWithChildren = 1
         case groupsExplicit = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Root Node Children", 0),
@@ -52,7 +58,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setSamplePartitionType(_ samplePartitionType: Godot.NavigationMesh.SamplePartitionType) {
+
+    private func __setSamplePartitionType(
+        _ samplePartitionType: Godot.NavigationMesh.SamplePartitionType
+    ) {
         samplePartitionType.withGodotUnsafeRawPointer { __ptr_samplePartitionType in
         withUnsafeArgumentPackPointer(__ptr_samplePartitionType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,6 +80,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getSamplePartitionType() -> Godot.NavigationMesh.SamplePartitionType {
         Godot.NavigationMesh.SamplePartitionType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,7 +99,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setParsedGeometryType(_ geometryType: Godot.NavigationMesh.ParsedGeometryType) {
+
+    private func __setParsedGeometryType(
+        _ geometryType: Godot.NavigationMesh.ParsedGeometryType
+    ) {
         geometryType.withGodotUnsafeRawPointer { __ptr_geometryType in
         withUnsafeArgumentPackPointer(__ptr_geometryType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,6 +121,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getParsedGeometryType() -> Godot.NavigationMesh.ParsedGeometryType {
         Godot.NavigationMesh.ParsedGeometryType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +140,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,6 +162,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +181,11 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -183,7 +205,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -203,7 +228,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setSourceGeometryMode(mask: Godot.NavigationMesh.SourceGeometryMode) {
+
+    private func __setSourceGeometryMode(
+        mask: Godot.NavigationMesh.SourceGeometryMode
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,6 +250,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getSourceGeometryMode() -> Godot.NavigationMesh.SourceGeometryMode {
         Godot.NavigationMesh.SourceGeometryMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,7 +269,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setSourceGroupName(mask: Godot.GodotStringName) {
+
+    private func __setSourceGroupName(
+        mask: Godot.GodotStringName
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,6 +291,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getSourceGroupName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -277,7 +310,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setCellSize(_ cellSize: Double) {
+
+    private func __setCellSize(
+        _ cellSize: Double
+    ) {
         cellSize.withGodotUnsafeRawPointer { __ptr_cellSize in
         withUnsafeArgumentPackPointer(__ptr_cellSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -296,6 +332,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getCellSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -314,7 +351,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setCellHeight(_ cellHeight: Double) {
+
+    private func __setCellHeight(
+        _ cellHeight: Double
+    ) {
         cellHeight.withGodotUnsafeRawPointer { __ptr_cellHeight in
         withUnsafeArgumentPackPointer(__ptr_cellHeight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -333,6 +373,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getCellHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -351,7 +392,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setAgentHeight(_ agentHeight: Double) {
+
+    private func __setAgentHeight(
+        _ agentHeight: Double
+    ) {
         agentHeight.withGodotUnsafeRawPointer { __ptr_agentHeight in
         withUnsafeArgumentPackPointer(__ptr_agentHeight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -370,6 +414,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getAgentHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -388,7 +433,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setAgentRadius(_ agentRadius: Double) {
+
+    private func __setAgentRadius(
+        _ agentRadius: Double
+    ) {
         agentRadius.withGodotUnsafeRawPointer { __ptr_agentRadius in
         withUnsafeArgumentPackPointer(__ptr_agentRadius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -407,6 +455,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getAgentRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -425,7 +474,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setAgentMaxClimb(_ agentMaxClimb: Double) {
+
+    private func __setAgentMaxClimb(
+        _ agentMaxClimb: Double
+    ) {
         agentMaxClimb.withGodotUnsafeRawPointer { __ptr_agentMaxClimb in
         withUnsafeArgumentPackPointer(__ptr_agentMaxClimb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -444,6 +496,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getAgentMaxClimb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,7 +515,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setAgentMaxSlope(_ agentMaxSlope: Double) {
+
+    private func __setAgentMaxSlope(
+        _ agentMaxSlope: Double
+    ) {
         agentMaxSlope.withGodotUnsafeRawPointer { __ptr_agentMaxSlope in
         withUnsafeArgumentPackPointer(__ptr_agentMaxSlope) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -481,6 +537,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getAgentMaxSlope() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -499,7 +556,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setRegionMinSize(_ regionMinSize: Double) {
+
+    private func __setRegionMinSize(
+        _ regionMinSize: Double
+    ) {
         regionMinSize.withGodotUnsafeRawPointer { __ptr_regionMinSize in
         withUnsafeArgumentPackPointer(__ptr_regionMinSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -518,6 +578,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getRegionMinSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,7 +597,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setRegionMergeSize(_ regionMergeSize: Double) {
+
+    private func __setRegionMergeSize(
+        _ regionMergeSize: Double
+    ) {
         regionMergeSize.withGodotUnsafeRawPointer { __ptr_regionMergeSize in
         withUnsafeArgumentPackPointer(__ptr_regionMergeSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -555,6 +619,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getRegionMergeSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -573,7 +638,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setEdgeMaxLength(_ edgeMaxLength: Double) {
+
+    private func __setEdgeMaxLength(
+        _ edgeMaxLength: Double
+    ) {
         edgeMaxLength.withGodotUnsafeRawPointer { __ptr_edgeMaxLength in
         withUnsafeArgumentPackPointer(__ptr_edgeMaxLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -592,6 +660,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getEdgeMaxLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -610,7 +679,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setEdgeMaxError(_ edgeMaxError: Double) {
+
+    private func __setEdgeMaxError(
+        _ edgeMaxError: Double
+    ) {
         edgeMaxError.withGodotUnsafeRawPointer { __ptr_edgeMaxError in
         withUnsafeArgumentPackPointer(__ptr_edgeMaxError) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -629,6 +701,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getEdgeMaxError() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -647,7 +720,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setVerticesPerPolygon(_ verticesPerPolygon: Double) {
+
+    private func __setVerticesPerPolygon(
+        _ verticesPerPolygon: Double
+    ) {
         verticesPerPolygon.withGodotUnsafeRawPointer { __ptr_verticesPerPolygon in
         withUnsafeArgumentPackPointer(__ptr_verticesPerPolygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -666,6 +742,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getVerticesPerPolygon() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -684,7 +761,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setDetailSampleDistance(detailSampleDist: Double) {
+
+    private func __setDetailSampleDistance(
+        detailSampleDist: Double
+    ) {
         detailSampleDist.withGodotUnsafeRawPointer { __ptr_detailSampleDist in
         withUnsafeArgumentPackPointer(__ptr_detailSampleDist) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -703,6 +783,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getDetailSampleDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -721,7 +802,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setDetailSampleMaxError(_ detailSampleMaxError: Double) {
+
+    private func __setDetailSampleMaxError(
+        _ detailSampleMaxError: Double
+    ) {
         detailSampleMaxError.withGodotUnsafeRawPointer { __ptr_detailSampleMaxError in
         withUnsafeArgumentPackPointer(__ptr_detailSampleMaxError) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -740,6 +824,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getDetailSampleMaxError() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -758,7 +843,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setFilterLowHangingObstacles(_ filterLowHangingObstacles: Bool) {
+
+    private func __setFilterLowHangingObstacles(
+        _ filterLowHangingObstacles: Bool
+    ) {
         filterLowHangingObstacles.withGodotUnsafeRawPointer { __ptr_filterLowHangingObstacles in
         withUnsafeArgumentPackPointer(__ptr_filterLowHangingObstacles) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -777,6 +865,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getFilterLowHangingObstacles() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -795,7 +884,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setFilterLedgeSpans(_ filterLedgeSpans: Bool) {
+
+    private func __setFilterLedgeSpans(
+        _ filterLedgeSpans: Bool
+    ) {
         filterLedgeSpans.withGodotUnsafeRawPointer { __ptr_filterLedgeSpans in
         withUnsafeArgumentPackPointer(__ptr_filterLedgeSpans) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -814,6 +906,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getFilterLedgeSpans() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -832,7 +925,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setFilterWalkableLowHeightSpans(_ filterWalkableLowHeightSpans: Bool) {
+
+    private func __setFilterWalkableLowHeightSpans(
+        _ filterWalkableLowHeightSpans: Bool
+    ) {
         filterWalkableLowHeightSpans.withGodotUnsafeRawPointer { __ptr_filterWalkableLowHeightSpans in
         withUnsafeArgumentPackPointer(__ptr_filterWalkableLowHeightSpans) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -851,6 +947,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getFilterWalkableLowHeightSpans() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -869,7 +966,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setFilterBakingAabb(_ bakingAabb: Godot.AABB) {
+
+    private func __setFilterBakingAabb(
+        _ bakingAabb: Godot.AABB
+    ) {
         bakingAabb.withGodotUnsafeRawPointer { __ptr_bakingAabb in
         withUnsafeArgumentPackPointer(__ptr_bakingAabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -888,6 +988,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getFilterBakingAabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -906,7 +1007,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setFilterBakingAabbOffset(_ bakingAabbOffset: Godot.Vector3) {
+
+    private func __setFilterBakingAabbOffset(
+        _ bakingAabbOffset: Godot.Vector3
+    ) {
         bakingAabbOffset.withGodotUnsafeRawPointer { __ptr_bakingAabbOffset in
         withUnsafeArgumentPackPointer(__ptr_bakingAabbOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -925,6 +1029,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getFilterBakingAabbOffset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -943,7 +1048,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    private func __setVertices(_ vertices: Godot.PackedVector3Array) {
+
+    private func __setVertices(
+        _ vertices: Godot.PackedVector3Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -962,6 +1070,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     private func __getVertices() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -980,7 +1089,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    public func addPolygon(_ polygon: Godot.PackedInt32Array) {
+
+    public func addPolygon(
+        _ polygon: Godot.PackedInt32Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -999,6 +1111,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     public func polygonCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1017,7 +1130,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    public func polygon(idx: Int32) -> Godot.PackedInt32Array {
+
+    public func polygon(
+        idx: Int32
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -1037,6 +1153,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     public func clearPolygons() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1054,7 +1171,10 @@ open class NavigationMesh: Resource {
         }
         }
     }()
-    public func createFromMesh(_ mesh: Godot.Mesh?) {
+
+    public func createFromMesh(
+        _ mesh: Godot.Mesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -1074,6 +1194,7 @@ open class NavigationMesh: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1349,6 +1470,7 @@ open class NavigationMesh: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1361,5 +1483,4 @@ open class NavigationMesh: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

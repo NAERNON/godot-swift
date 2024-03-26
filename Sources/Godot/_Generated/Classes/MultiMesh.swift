@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MultiMesh: Resource {
     public enum TransformFormat: UInt32, GodotEnum {
         case transform2D = 0
         case transform3D = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Transform2D", 0),
@@ -22,7 +24,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.Mesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.Mesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -42,6 +47,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __getMesh() -> Godot.Mesh? {
         Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -60,7 +66,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setUseColors(enable: Bool) {
+
+    private func __setUseColors(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,6 +88,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __isUsingColors() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,7 +107,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setUseCustomData(enable: Bool) {
+
+    private func __setUseCustomData(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,6 +129,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __isUsingCustomData() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,7 +148,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setTransformFormat(_ format: Godot.MultiMesh.TransformFormat) {
+
+    private func __setTransformFormat(
+        _ format: Godot.MultiMesh.TransformFormat
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,6 +170,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __getTransformFormat() -> Godot.MultiMesh.TransformFormat {
         Godot.MultiMesh.TransformFormat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -171,7 +189,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setInstanceCount(_ count: Int32) {
+
+    private func __setInstanceCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,6 +211,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __getInstanceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,7 +230,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setVisibleInstanceCount(_ count: Int32) {
+
+    private func __setVisibleInstanceCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,6 +252,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __getVisibleInstanceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,7 +271,11 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func setInstanceTransform(instance: Int32, transform: Godot.Transform3D) {
+
+    public func setInstanceTransform(
+        instance: Int32,
+        transform: Godot.Transform3D
+    ) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_transform) { __accessPtr in
@@ -265,7 +295,11 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func setInstanceTransform2D(instance: Int32, transform: Godot.Transform2D) {
+
+    public func setInstanceTransform2D(
+        instance: Int32,
+        transform: Godot.Transform2D
+    ) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_transform) { __accessPtr in
@@ -285,7 +319,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func instanceTransform(instance: Int32) -> Godot.Transform3D {
+
+    public func instanceTransform(
+        instance: Int32
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
@@ -305,7 +342,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func instanceTransform2D(instance: Int32) -> Godot.Transform2D {
+
+    public func instanceTransform2D(
+        instance: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
@@ -325,7 +365,11 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func setInstanceColor(instance: Int32, color: Godot.Color) {
+
+    public func setInstanceColor(
+        instance: Int32,
+        color: Godot.Color
+    ) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_color) { __accessPtr in
@@ -345,7 +389,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func instanceColor(instance: Int32) -> Godot.Color {
+
+    public func instanceColor(
+        instance: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
@@ -365,7 +412,11 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func setInstanceCustomData(instance: Int32, customData: Godot.Color) {
+
+    public func setInstanceCustomData(
+        instance: Int32,
+        customData: Godot.Color
+    ) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         customData.withGodotUnsafeRawPointer { __ptr_customData in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_customData) { __accessPtr in
@@ -385,7 +436,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    public func instanceCustomData(instance: Int32) -> Godot.Color {
+
+    public func instanceCustomData(
+        instance: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
@@ -405,6 +459,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     public func aabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -423,6 +478,7 @@ open class MultiMesh: Resource {
         }
         }
     }()
+
     private func __getBuffer() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -441,7 +497,10 @@ open class MultiMesh: Resource {
         }
         }
     }()
-    private func __setBuffer(_ buffer: Godot.PackedFloat32Array) {
+
+    private func __setBuffer(
+        _ buffer: Godot.PackedFloat32Array
+    ) {
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,6 +590,7 @@ open class MultiMesh: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -543,5 +603,4 @@ open class MultiMesh: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

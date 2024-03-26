@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TextEdit: Control {
     public enum MenuItems: UInt32, GodotEnum {
@@ -37,6 +38,7 @@ open class TextEdit: Control {
         case insertWj = 28
         case insertShy = 29
         case max = 30
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Cut", 0),
@@ -72,11 +74,13 @@ open class TextEdit: Control {
             ("Max", 30),]
         }
     }
+
     public enum EditAction: UInt32, GodotEnum {
         case none = 0
         case typing = 1
         case backspace = 2
         case delete = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -85,10 +89,12 @@ open class TextEdit: Control {
             ("Delete", 3),]
         }
     }
+
     public enum SearchFlags: UInt32, GodotEnum {
         case matchCase = 1
         case wholeWords = 2
         case backwards = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Match Case", 1),
@@ -96,21 +102,25 @@ open class TextEdit: Control {
             ("Backwards", 4),]
         }
     }
+
     public enum CaretType: UInt32, GodotEnum {
         case line = 0
         case block = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Line", 0),
             ("Block", 1),]
         }
     }
+
     public enum SelectionMode: UInt32, GodotEnum {
         case none = 0
         case shift = 1
         case pointer = 2
         case word = 3
         case line = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -120,19 +130,23 @@ open class TextEdit: Control {
             ("Line", 4),]
         }
     }
+
     public enum LineWrappingMode: UInt32, GodotEnum {
         case none = 0
         case boundary = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
             ("Boundary", 1),]
         }
     }
+
     public enum GutterType: UInt32, GodotEnum {
         case string = 0
         case icon = 1
         case custom = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("String", 0),
@@ -144,6 +158,7 @@ open class TextEdit: Control {
     public func textSet() {
         _ = textSetSignal.emit()
     }
+
     public lazy var textSetSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "text_set") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -162,6 +177,7 @@ open class TextEdit: Control {
     public func textChanged() {
         _ = textChangedSignal.emit()
     }
+
     public lazy var textChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -179,19 +195,32 @@ open class TextEdit: Control {
 
     public struct LinesEditedFromSignalInput: Godot.SignalInput {
         public let fromLine: Int
+
         public let toLine: Int
-        fileprivate init(fromLine: Int, toLine: Int) {
+
+        fileprivate init(
+            fromLine: Int,
+            toLine: Int
+        ) {
             self.fromLine = fromLine
             self.toLine = toLine
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.fromLine), Variant(input.toLine)]
         }
     }
-    public func linesEditedFrom(fromLine: Int, toLine: Int) {
+
+    public func linesEditedFrom(
+        fromLine: Int,
+        toLine: Int
+    ) {
         _ = linesEditedFromSignal.emit(.init(fromLine: fromLine,
                 toLine: toLine))
     }
+
     public lazy var linesEditedFromSignal: Godot.SignalEmitter<LinesEditedFromSignalInput> = {
         .init(object: self, signalName: "lines_edited_from") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -211,6 +240,7 @@ open class TextEdit: Control {
     public func caretChanged() {
         _ = caretChangedSignal.emit()
     }
+
     public lazy var caretChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "caret_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -228,19 +258,32 @@ open class TextEdit: Control {
 
     public struct GutterClickedSignalInput: Godot.SignalInput {
         public let line: Int
+
         public let gutter: Int
-        fileprivate init(line: Int, gutter: Int) {
+
+        fileprivate init(
+            line: Int,
+            gutter: Int
+        ) {
             self.line = line
             self.gutter = gutter
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.line), Variant(input.gutter)]
         }
     }
-    public func gutterClicked(line: Int, gutter: Int) {
+
+    public func gutterClicked(
+        line: Int,
+        gutter: Int
+    ) {
         _ = gutterClickedSignal.emit(.init(line: line,
                 gutter: gutter))
     }
+
     public lazy var gutterClickedSignal: Godot.SignalEmitter<GutterClickedSignalInput> = {
         .init(object: self, signalName: "gutter_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -260,6 +303,7 @@ open class TextEdit: Control {
     public func gutterAdded() {
         _ = gutterAddedSignal.emit()
     }
+
     public lazy var gutterAddedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "gutter_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -278,6 +322,7 @@ open class TextEdit: Control {
     public func gutterRemoved() {
         _ = gutterRemovedSignal.emit()
     }
+
     public lazy var gutterRemovedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "gutter_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -293,22 +338,35 @@ open class TextEdit: Control {
         }
     }()
 
-    open func _handleUnicodeInput(unicodeChar: Int32, caretIndex: Int32) {
+    open func _handleUnicodeInput(
+        unicodeChar: Int32,
+        caretIndex: Int32
+    ) {
     }
 
-    open func _backspace(caretIndex: Int32) {
+    open func _backspace(
+        caretIndex: Int32
+    ) {
     }
 
-    open func _cut(caretIndex: Int32) {
+    open func _cut(
+        caretIndex: Int32
+    ) {
     }
 
-    open func _copy(caretIndex: Int32) {
+    open func _copy(
+        caretIndex: Int32
+    ) {
     }
 
-    open func _paste(caretIndex: Int32) {
+    open func _paste(
+        caretIndex: Int32
+    ) {
     }
 
-    open func _pastePrimaryClipboard(caretIndex: Int32) {
+    open func _pastePrimaryClipboard(
+        caretIndex: Int32
+    ) {
     }
 
     internal static var __method_binding_has_ime_text: GDExtensionMethodBindPtr = {
@@ -318,6 +376,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func hasImeText() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -336,7 +395,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setEditable(enabled: Bool) {
+
+    private func __setEditable(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,6 +417,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isEditable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -373,7 +436,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
+
+    private func __setTextDirection(
+        _ direction: Godot.Control.TextDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,6 +458,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -410,7 +477,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,6 +499,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -447,7 +518,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverride(parser: Godot.TextServer.StructuredTextParser) {
+
+    private func __setStructuredTextBidiOverride(
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,6 +540,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -484,7 +559,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
+
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        args: Godot.GodotArray<Value>
+    ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_args) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -503,6 +581,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -521,7 +600,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setTabSize(_ size: Int32) {
+
+    public func setTabSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -540,6 +622,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func tabSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -558,7 +641,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setOvertypeModeEnabled(_ enabled: Bool) {
+
+    public func setOvertypeModeEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,6 +663,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func isOvertypeModeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -595,7 +682,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setContextMenuEnabled(_ enabled: Bool) {
+
+    private func __setContextMenuEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -614,6 +704,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isContextMenuEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -632,7 +723,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setShortcutKeysEnabled(_ enabled: Bool) {
+
+    private func __setShortcutKeysEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -651,6 +745,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isShortcutKeysEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -669,7 +764,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setVirtualKeyboardEnabled(_ enabled: Bool) {
+
+    private func __setVirtualKeyboardEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -688,6 +786,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isVirtualKeyboardEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -706,7 +805,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setMiddleMousePasteEnabled(_ enabled: Bool) {
+
+    private func __setMiddleMousePasteEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -725,6 +827,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isMiddleMousePasteEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -743,6 +846,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -760,7 +864,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -779,6 +886,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -797,6 +905,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func lineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -815,7 +924,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setPlaceholder(text: Godot.GodotString) {
+
+    private func __setPlaceholder(
+        text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -834,6 +946,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getPlaceholder() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -852,7 +965,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLine(_ line: Int32, newText: Godot.GodotString) {
+
+    public func setLine(
+        _ line: Int32,
+        newText: Godot.GodotString
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         newText.withGodotUnsafeRawPointer { __ptr_newText in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_newText) { __accessPtr in
@@ -872,7 +989,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func line(_ line: Int32) -> Godot.GodotString {
+
+    public func line(
+        _ line: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -892,7 +1012,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineWidth(line: Int32, wrapIndex: Int32 = -1) -> Int32 {
+
+    public func lineWidth(
+        line: Int32,
+        wrapIndex: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
@@ -913,6 +1037,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func lineHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -931,7 +1056,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func indentLevel(line: Int32) -> Int32 {
+
+    public func indentLevel(
+        line: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -951,7 +1079,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func firstNonWhitespaceColumn(line: Int32) -> Int32 {
+
+    public func firstNonWhitespaceColumn(
+        line: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -971,7 +1102,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func swapLines(fromLine: Int32, toLine: Int32) {
+
+    public func swapLines(
+        fromLine: Int32,
+        toLine: Int32
+    ) {
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         toLine.withGodotUnsafeRawPointer { __ptr_toLine in
         withUnsafeArgumentPackPointer(__ptr_fromLine, __ptr_toLine) { __accessPtr in
@@ -991,7 +1126,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func insertLineAt(line: Int32, text: Godot.GodotString) {
+
+    public func insertLineAt(
+        line: Int32,
+        text: Godot.GodotString
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_text) { __accessPtr in
@@ -1011,7 +1150,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func insertTextAtCaret(text: Godot.GodotString, caretIndex: Int32 = -1) {
+
+    public func insertTextAtCaret(
+        text: Godot.GodotString,
+        caretIndex: Int32 = -1
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_text, __ptr_caretIndex) { __accessPtr in
@@ -1031,7 +1174,13 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func removeText(fromLine: Int32, fromColumn: Int32, toLine: Int32, toColumn: Int32) {
+
+    public func removeText(
+        fromLine: Int32,
+        fromColumn: Int32,
+        toLine: Int32,
+        toColumn: Int32
+    ) {
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         fromColumn.withGodotUnsafeRawPointer { __ptr_fromColumn in
         toLine.withGodotUnsafeRawPointer { __ptr_toLine in
@@ -1053,6 +1202,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func lastUnhiddenLine() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1071,7 +1221,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func nextVisibleLineOffsetFrom(line: Int32, visibleAmount: Int32) -> Int32 {
+
+    public func nextVisibleLineOffsetFrom(
+        line: Int32,
+        visibleAmount: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         visibleAmount.withGodotUnsafeRawPointer { __ptr_visibleAmount in
@@ -1092,7 +1246,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func nextVisibleLineIndexOffsetFrom(line: Int32, wrapIndex: Int32, visibleAmount: Int32) -> Godot.Vector2I {
+
+    public func nextVisibleLineIndexOffsetFrom(
+        line: Int32,
+        wrapIndex: Int32,
+        visibleAmount: Int32
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
@@ -1114,7 +1273,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func backspace(caretIndex: Int32 = -1) {
+
+    public func backspace(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1133,7 +1295,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func cut(caretIndex: Int32 = -1) {
+
+    public func cut(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1152,7 +1317,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func copy(caretIndex: Int32 = -1) {
+
+    public func copy(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1171,7 +1339,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func paste(caretIndex: Int32 = -1) {
+
+    public func paste(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1190,7 +1361,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func pastePrimaryClipboard(caretIndex: Int32 = -1) {
+
+    public func pastePrimaryClipboard(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1209,7 +1383,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func startAction(_ action: Godot.TextEdit.EditAction) {
+
+    public func startAction(
+        _ action: Godot.TextEdit.EditAction
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1228,6 +1405,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func endAction() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1245,6 +1423,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func beginComplexOperation() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1262,6 +1441,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func endComplexOperation() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1279,6 +1459,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func hasUndo() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1297,6 +1478,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func hasRedo() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1315,6 +1497,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func undo() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1332,6 +1515,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func redo() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1349,6 +1533,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func clearUndoHistory() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1366,6 +1551,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func tagSavedVersion() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1383,6 +1569,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func version() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1401,6 +1588,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func savedVersion() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1419,7 +1607,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setSearchText(_ searchText: Godot.GodotString) {
+
+    public func setSearchText(
+        _ searchText: Godot.GodotString
+    ) {
         searchText.withGodotUnsafeRawPointer { __ptr_searchText in
         withUnsafeArgumentPackPointer(__ptr_searchText) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1438,7 +1629,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setSearchFlags(_ flags: UInt32) {
+
+    public func setSearchFlags(
+        _ flags: UInt32
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1457,7 +1651,13 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func search(text: Godot.GodotString, flags: UInt32, fromLine line: Int32, fromColum colum: Int32) -> Godot.Vector2I {
+
+    public func search(
+        text: Godot.GodotString,
+        flags: UInt32,
+        fromLine line: Int32,
+        fromColum colum: Int32
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
@@ -1480,7 +1680,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setTooltipRequestFunc(callback: Godot.Callable) {
+
+    public func setTooltipRequestFunc(
+        callback: Godot.Callable
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1499,6 +1702,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func localMousePos() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1517,7 +1721,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func wordAtPos(position: Godot.Vector2) -> Godot.GodotString {
+
+    public func wordAtPos(
+        position: Godot.Vector2
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -1537,7 +1744,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineColumnAtPos(position: Godot.Vector2I, allowOutOfBounds: Bool = true) -> Godot.Vector2I {
+
+    public func lineColumnAtPos(
+        position: Godot.Vector2I,
+        allowOutOfBounds: Bool = true
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         allowOutOfBounds.withGodotUnsafeRawPointer { __ptr_allowOutOfBounds in
@@ -1558,7 +1769,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func posAtLineColumn(line: Int32, column: Int32) -> Godot.Vector2I {
+
+    public func posAtLineColumn(
+        line: Int32,
+        column: Int32
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -1579,7 +1794,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func rectAtLineColumn(line: Int32, column: Int32) -> Godot.Rect2I {
+
+    public func rectAtLineColumn(
+        line: Int32,
+        column: Int32
+    ) -> Godot.Rect2I {
         Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -1600,7 +1819,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func minimapLineAtPos(position: Godot.Vector2I) -> Int32 {
+
+    public func minimapLineAtPos(
+        position: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -1620,6 +1842,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func isDraggingCursor() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1638,7 +1861,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isMouseOverSelection(edges: Bool, caretIndex: Int32 = -1) -> Bool {
+
+    public func isMouseOverSelection(
+        edges: Bool,
+        caretIndex: Int32 = -1
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         edges.withGodotUnsafeRawPointer { __ptr_edges in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
@@ -1659,7 +1886,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setCaretType(_ type: Godot.TextEdit.CaretType) {
+
+    private func __setCaretType(
+        _ type: Godot.TextEdit.CaretType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1678,6 +1908,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getCaretType() -> Godot.TextEdit.CaretType {
         Godot.TextEdit.CaretType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1696,7 +1927,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setCaretBlinkEnabled(enable: Bool) {
+
+    private func __setCaretBlinkEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1715,6 +1949,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isCaretBlinkEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1733,7 +1968,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setCaretBlinkInterval(_ interval: Double) {
+
+    private func __setCaretBlinkInterval(
+        _ interval: Double
+    ) {
         interval.withGodotUnsafeRawPointer { __ptr_interval in
         withUnsafeArgumentPackPointer(__ptr_interval) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1752,6 +1990,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getCaretBlinkInterval() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1770,7 +2009,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDrawCaretWhenEditableDisabled(enable: Bool) {
+
+    private func __setDrawCaretWhenEditableDisabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1789,6 +2031,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDrawingCaretWhenEditableDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1807,7 +2050,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setMoveCaretOnRightClickEnabled(enable: Bool) {
+
+    private func __setMoveCaretOnRightClickEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1826,6 +2072,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isMoveCaretOnRightClickEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1844,7 +2091,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setCaretMidGraphemeEnabled(_ enabled: Bool) {
+
+    private func __setCaretMidGraphemeEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1863,6 +2113,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isCaretMidGraphemeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1881,7 +2132,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setMultipleCaretsEnabled(_ enabled: Bool) {
+
+    private func __setMultipleCaretsEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1900,6 +2154,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isMultipleCaretsEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1918,7 +2173,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func addCaret(line: Int32, col: Int32) -> Int32 {
+
+    public func addCaret(
+        line: Int32,
+        col: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         col.withGodotUnsafeRawPointer { __ptr_col in
@@ -1939,7 +2198,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func removeCaret(_ caret: Int32) {
+
+    public func removeCaret(
+        _ caret: Int32
+    ) {
         caret.withGodotUnsafeRawPointer { __ptr_caret in
         withUnsafeArgumentPackPointer(__ptr_caret) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1958,6 +2220,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func removeSecondaryCarets() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1975,6 +2238,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func mergeOverlappingCarets() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1992,6 +2256,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func caretCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2010,7 +2275,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func addCaretAtCarets(below: Bool) {
+
+    public func addCaretAtCarets(
+        below: Bool
+    ) {
         below.withGodotUnsafeRawPointer { __ptr_below in
         withUnsafeArgumentPackPointer(__ptr_below) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2029,6 +2297,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func caretIndexEditOrder() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2047,7 +2316,14 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func adjustCaretsAfterEdit(caret: Int32, fromLine: Int32, fromCol: Int32, toLine: Int32, toCol: Int32) {
+
+    public func adjustCaretsAfterEdit(
+        caret: Int32,
+        fromLine: Int32,
+        fromCol: Int32,
+        toLine: Int32,
+        toCol: Int32
+    ) {
         caret.withGodotUnsafeRawPointer { __ptr_caret in
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         fromCol.withGodotUnsafeRawPointer { __ptr_fromCol in
@@ -2070,7 +2346,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isCaretVisible(caretIndex: Int32 = 0) -> Bool {
+
+    public func isCaretVisible(
+        caretIndex: Int32 = 0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2090,7 +2369,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func caretDrawPos(caretIndex: Int32 = 0) -> Godot.Vector2 {
+
+    public func caretDrawPos(
+        caretIndex: Int32 = 0
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2110,7 +2392,14 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setCaretLine(_ line: Int32, adjustViewport: Bool = true, canBeHidden: Bool = true, wrapIndex: Int32 = 0, caretIndex: Int32 = 0) {
+
+    public func setCaretLine(
+        _ line: Int32,
+        adjustViewport: Bool = true,
+        canBeHidden: Bool = true,
+        wrapIndex: Int32 = 0,
+        caretIndex: Int32 = 0
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         adjustViewport.withGodotUnsafeRawPointer { __ptr_adjustViewport in
         canBeHidden.withGodotUnsafeRawPointer { __ptr_canBeHidden in
@@ -2133,7 +2422,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func caretLine(caretIndex: Int32 = 0) -> Int32 {
+
+    public func caretLine(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2153,7 +2445,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setCaretColumn(_ column: Int32, adjustViewport: Bool = true, caretIndex: Int32 = 0) {
+
+    public func setCaretColumn(
+        _ column: Int32,
+        adjustViewport: Bool = true,
+        caretIndex: Int32 = 0
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         adjustViewport.withGodotUnsafeRawPointer { __ptr_adjustViewport in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
@@ -2174,7 +2471,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func caretColumn(caretIndex: Int32 = 0) -> Int32 {
+
+    public func caretColumn(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2194,7 +2494,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func caretWrapIndex(caretIndex: Int32 = 0) -> Int32 {
+
+    public func caretWrapIndex(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2214,7 +2517,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func wordUnderCaret(caretIndex: Int32 = -1) -> Godot.GodotString {
+
+    public func wordUnderCaret(
+        caretIndex: Int32 = -1
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2234,7 +2540,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setSelectingEnabled(enable: Bool) {
+
+    private func __setSelectingEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2253,6 +2562,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isSelectingEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2271,7 +2581,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDeselectOnFocusLossEnabled(enable: Bool) {
+
+    private func __setDeselectOnFocusLossEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2290,6 +2603,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDeselectOnFocusLossEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2308,7 +2622,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDragAndDropSelectionEnabled(enable: Bool) {
+
+    private func __setDragAndDropSelectionEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2327,6 +2644,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDragAndDropSelectionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2345,7 +2663,13 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setSelectionMode(_ mode: Godot.TextEdit.SelectionMode, line: Int32 = -1, column: Int32 = -1, caretIndex: Int32 = 0) {
+
+    public func setSelectionMode(
+        _ mode: Godot.TextEdit.SelectionMode,
+        line: Int32 = -1,
+        column: Int32 = -1,
+        caretIndex: Int32 = 0
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -2367,6 +2691,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func selectionMode() -> Godot.TextEdit.SelectionMode {
         Godot.TextEdit.SelectionMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2385,6 +2710,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func selectAll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2402,7 +2728,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectWordUnderCaret(caretIndex: Int32 = -1) {
+
+    public func selectWordUnderCaret(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2421,6 +2750,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func addSelectionForNextOccurrence() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2438,7 +2768,14 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func select(fromLine: Int32, fromColumn: Int32, toLine: Int32, toColumn: Int32, caretIndex: Int32 = 0) {
+
+    public func select(
+        fromLine: Int32,
+        fromColumn: Int32,
+        toLine: Int32,
+        toColumn: Int32,
+        caretIndex: Int32 = 0
+    ) {
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         fromColumn.withGodotUnsafeRawPointer { __ptr_fromColumn in
         toLine.withGodotUnsafeRawPointer { __ptr_toLine in
@@ -2461,7 +2798,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func hasSelection(caretIndex: Int32 = -1) -> Bool {
+
+    public func hasSelection(
+        caretIndex: Int32 = -1
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2481,7 +2821,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectedText(caretIndex: Int32 = -1) -> Godot.GodotString {
+
+    public func selectedText(
+        caretIndex: Int32 = -1
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2501,7 +2844,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionLine(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionLine(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2521,7 +2867,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionColumn(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionColumn(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2541,7 +2890,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionFromLine(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionFromLine(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2561,7 +2913,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionFromColumn(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionFromColumn(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2581,7 +2936,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionToLine(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionToLine(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2601,7 +2959,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func selectionToColumn(caretIndex: Int32 = 0) -> Int32 {
+
+    public func selectionToColumn(
+        caretIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
@@ -2621,7 +2982,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func deselect(caretIndex: Int32 = -1) {
+
+    public func deselect(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2640,7 +3004,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func deleteSelection(caretIndex: Int32 = -1) {
+
+    public func deleteSelection(
+        caretIndex: Int32 = -1
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2659,7 +3026,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setLineWrappingMode(_ mode: Godot.TextEdit.LineWrappingMode) {
+
+    private func __setLineWrappingMode(
+        _ mode: Godot.TextEdit.LineWrappingMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2678,6 +3048,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getLineWrappingMode() -> Godot.TextEdit.LineWrappingMode {
         Godot.TextEdit.LineWrappingMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2696,7 +3067,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setAutowrapMode(_ autowrapMode: Godot.TextServer.AutowrapMode) {
+
+    private func __setAutowrapMode(
+        _ autowrapMode: Godot.TextServer.AutowrapMode
+    ) {
         autowrapMode.withGodotUnsafeRawPointer { __ptr_autowrapMode in
         withUnsafeArgumentPackPointer(__ptr_autowrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2715,6 +3089,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
         Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2733,7 +3108,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isLineWrapped(line: Int32) -> Bool {
+
+    public func isLineWrapped(
+        line: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -2753,7 +3131,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineWrapCount(line: Int32) -> Int32 {
+
+    public func lineWrapCount(
+        line: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -2773,7 +3154,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineWrapIndexAtColumn(line: Int32, column: Int32) -> Int32 {
+
+    public func lineWrapIndexAtColumn(
+        line: Int32,
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -2794,7 +3179,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineWrappedText(line: Int32) -> Godot.PackedStringArray {
+
+    public func lineWrappedText(
+        line: Int32
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -2814,7 +3202,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setSmoothScrollEnabled(enable: Bool) {
+
+    private func __setSmoothScrollEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2833,6 +3224,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isSmoothScrollEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2851,6 +3243,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func vScrollBar() -> Godot.VScrollBar? {
         Godot.VScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2869,6 +3262,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func hScrollBar() -> Godot.HScrollBar? {
         Godot.HScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2887,7 +3281,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setVScroll(value: Double) {
+
+    private func __setVScroll(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2906,6 +3303,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getVScroll() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2924,7 +3322,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setHScroll(value: Int32) {
+
+    private func __setHScroll(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2943,6 +3344,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getHScroll() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2961,7 +3363,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setScrollPastEndOfFileEnabled(enable: Bool) {
+
+    private func __setScrollPastEndOfFileEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2980,6 +3385,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isScrollPastEndOfFileEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2998,7 +3404,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setVScrollSpeed(_ speed: Double) {
+
+    private func __setVScrollSpeed(
+        _ speed: Double
+    ) {
         speed.withGodotUnsafeRawPointer { __ptr_speed in
         withUnsafeArgumentPackPointer(__ptr_speed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3017,6 +3426,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getVScrollSpeed() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3035,7 +3445,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setFitContentHeightEnabled(_ enabled: Bool) {
+
+    private func __setFitContentHeightEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3054,6 +3467,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isFitContentHeightEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3072,7 +3486,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func scrollPosForLine(_ line: Int32, wrapIndex: Int32 = 0) -> Double {
+
+    public func scrollPosForLine(
+        _ line: Int32,
+        wrapIndex: Int32 = 0
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
@@ -3093,7 +3511,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineAsFirstVisible(line: Int32, wrapIndex: Int32 = 0) {
+
+    public func setLineAsFirstVisible(
+        line: Int32,
+        wrapIndex: Int32 = 0
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_wrapIndex) { __accessPtr in
@@ -3113,6 +3535,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func firstVisibleLine() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3131,7 +3554,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineAsCenterVisible(line: Int32, wrapIndex: Int32 = 0) {
+
+    public func setLineAsCenterVisible(
+        line: Int32,
+        wrapIndex: Int32 = 0
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_wrapIndex) { __accessPtr in
@@ -3151,7 +3578,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineAsLastVisible(line: Int32, wrapIndex: Int32 = 0) {
+
+    public func setLineAsLastVisible(
+        line: Int32,
+        wrapIndex: Int32 = 0
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         wrapIndex.withGodotUnsafeRawPointer { __ptr_wrapIndex in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_wrapIndex) { __accessPtr in
@@ -3171,6 +3602,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func lastFullVisibleLine() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3189,6 +3621,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func lastFullVisibleLineWrapIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3207,6 +3640,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func visibleLineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3225,7 +3659,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func visibleLineCountInRange(fromLine: Int32, toLine: Int32) -> Int32 {
+
+    public func visibleLineCountInRange(
+        fromLine: Int32,
+        toLine: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         toLine.withGodotUnsafeRawPointer { __ptr_toLine in
@@ -3246,6 +3684,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func totalVisibleLineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3264,7 +3703,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func adjustViewportToCaret(caretIndex: Int32 = 0) {
+
+    public func adjustViewportToCaret(
+        caretIndex: Int32 = 0
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3283,7 +3725,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func centerViewportToCaret(caretIndex: Int32 = 0) {
+
+    public func centerViewportToCaret(
+        caretIndex: Int32 = 0
+    ) {
         caretIndex.withGodotUnsafeRawPointer { __ptr_caretIndex in
         withUnsafeArgumentPackPointer(__ptr_caretIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3302,7 +3747,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDrawMinimap(enabled: Bool) {
+
+    private func __setDrawMinimap(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3321,6 +3769,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDrawingMinimap() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3339,7 +3788,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setMinimapWidth(_ width: Int32) {
+
+    private func __setMinimapWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3358,6 +3810,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getMinimapWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3376,6 +3829,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func minimapVisibleLines() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3394,7 +3848,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func addGutter(at: Int32 = -1) {
+
+    public func addGutter(
+        at: Int32 = -1
+    ) {
         at.withGodotUnsafeRawPointer { __ptr_at in
         withUnsafeArgumentPackPointer(__ptr_at) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3413,7 +3870,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func removeGutter(_ gutter: Int32) {
+
+    public func removeGutter(
+        _ gutter: Int32
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3432,6 +3892,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func gutterCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3450,7 +3911,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterName(gutter: Int32, name: Godot.GodotString) {
+
+    public func setGutterName(
+        gutter: Int32,
+        name: Godot.GodotString
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_name) { __accessPtr in
@@ -3470,7 +3935,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func gutterName(gutter: Int32) -> Godot.GodotString {
+
+    public func gutterName(
+        gutter: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3490,7 +3958,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterType(gutter: Int32, type: Godot.TextEdit.GutterType) {
+
+    public func setGutterType(
+        gutter: Int32,
+        type: Godot.TextEdit.GutterType
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_type) { __accessPtr in
@@ -3510,7 +3982,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func gutterType(gutter: Int32) -> Godot.TextEdit.GutterType {
+
+    public func gutterType(
+        gutter: Int32
+    ) -> Godot.TextEdit.GutterType {
         Godot.TextEdit.GutterType.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3530,7 +4005,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterWidth(gutter: Int32, width: Int32) {
+
+    public func setGutterWidth(
+        gutter: Int32,
+        width: Int32
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_width) { __accessPtr in
@@ -3550,7 +4029,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func gutterWidth(gutter: Int32) -> Int32 {
+
+    public func gutterWidth(
+        gutter: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3570,7 +4052,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterDraw(gutter: Int32, draw: Bool) {
+
+    public func setGutterDraw(
+        gutter: Int32,
+        draw: Bool
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         draw.withGodotUnsafeRawPointer { __ptr_draw in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_draw) { __accessPtr in
@@ -3590,7 +4076,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isGutterDrawn(gutter: Int32) -> Bool {
+
+    public func isGutterDrawn(
+        gutter: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3610,7 +4099,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterClickable(gutter: Int32, clickable: Bool) {
+
+    public func setGutterClickable(
+        gutter: Int32,
+        clickable: Bool
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         clickable.withGodotUnsafeRawPointer { __ptr_clickable in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_clickable) { __accessPtr in
@@ -3630,7 +4123,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isGutterClickable(gutter: Int32) -> Bool {
+
+    public func isGutterClickable(
+        gutter: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3650,7 +4146,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterOverwritable(gutter: Int32, overwritable: Bool) {
+
+    public func setGutterOverwritable(
+        gutter: Int32,
+        overwritable: Bool
+    ) {
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         overwritable.withGodotUnsafeRawPointer { __ptr_overwritable in
         withUnsafeArgumentPackPointer(__ptr_gutter, __ptr_overwritable) { __accessPtr in
@@ -3670,7 +4170,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isGutterOverwritable(gutter: Int32) -> Bool {
+
+    public func isGutterOverwritable(
+        gutter: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         withUnsafeArgumentPackPointer(__ptr_gutter) { __accessPtr in
@@ -3690,7 +4193,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func mergeGutters(fromLine: Int32, toLine: Int32) {
+
+    public func mergeGutters(
+        fromLine: Int32,
+        toLine: Int32
+    ) {
         fromLine.withGodotUnsafeRawPointer { __ptr_fromLine in
         toLine.withGodotUnsafeRawPointer { __ptr_toLine in
         withUnsafeArgumentPackPointer(__ptr_fromLine, __ptr_toLine) { __accessPtr in
@@ -3710,7 +4217,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setGutterCustomDraw(column: Int32, drawCallback: Godot.Callable) {
+
+    public func setGutterCustomDraw(
+        column: Int32,
+        drawCallback: Godot.Callable
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         drawCallback.withGodotUnsafeRawPointer { __ptr_drawCallback in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_drawCallback) { __accessPtr in
@@ -3730,6 +4241,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func totalGutterWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3748,7 +4260,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterMetadata<Value: VariantStorableIn>(line: Int32, gutter: Int32, metadata: Value) {
+
+    public func setLineGutterMetadata<Value: VariantStorableIn>(
+        line: Int32,
+        gutter: Int32,
+        metadata: Value
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { __ptr_metadata in
@@ -3769,7 +4286,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineGutterMetadata(line: Int32, gutter: Int32) -> Godot.Variant {
+
+    public func lineGutterMetadata(
+        line: Int32,
+        gutter: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
@@ -3790,7 +4311,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterText(line: Int32, gutter: Int32, text: Godot.GodotString) {
+
+    public func setLineGutterText(
+        line: Int32,
+        gutter: Int32,
+        text: Godot.GodotString
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -3811,7 +4337,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineGutterText(line: Int32, gutter: Int32) -> Godot.GodotString {
+
+    public func lineGutterText(
+        line: Int32,
+        gutter: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
@@ -3832,7 +4362,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterIcon(line: Int32, gutter: Int32, icon: Godot.Texture2D?) {
+
+    public func setLineGutterIcon(
+        line: Int32,
+        gutter: Int32,
+        icon: Godot.Texture2D?
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -3854,7 +4389,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineGutterIcon(line: Int32, gutter: Int32) -> Godot.Texture2D? {
+
+    public func lineGutterIcon(
+        line: Int32,
+        gutter: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
@@ -3875,7 +4414,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterItemColor(line: Int32, gutter: Int32, color: Godot.Color) {
+
+    public func setLineGutterItemColor(
+        line: Int32,
+        gutter: Int32,
+        color: Godot.Color
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -3896,7 +4440,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineGutterItemColor(line: Int32, gutter: Int32) -> Godot.Color {
+
+    public func lineGutterItemColor(
+        line: Int32,
+        gutter: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
@@ -3917,7 +4465,12 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterClickable(line: Int32, gutter: Int32, clickable: Bool) {
+
+    public func setLineGutterClickable(
+        line: Int32,
+        gutter: Int32,
+        clickable: Bool
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
         clickable.withGodotUnsafeRawPointer { __ptr_clickable in
@@ -3938,7 +4491,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func isLineGutterClickable(line: Int32, gutter: Int32) -> Bool {
+
+    public func isLineGutterClickable(
+        line: Int32,
+        gutter: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         gutter.withGodotUnsafeRawPointer { __ptr_gutter in
@@ -3959,7 +4516,11 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineBackgroundColor(line: Int32, color: Godot.Color) {
+
+    public func setLineBackgroundColor(
+        line: Int32,
+        color: Godot.Color
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_color) { __accessPtr in
@@ -3979,7 +4540,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func lineBackgroundColor(line: Int32) -> Godot.Color {
+
+    public func lineBackgroundColor(
+        line: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -3999,7 +4563,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setSyntaxHighlighter(_ syntaxHighlighter: Godot.SyntaxHighlighter?) {
+
+    private func __setSyntaxHighlighter(
+        _ syntaxHighlighter: Godot.SyntaxHighlighter?
+    ) {
         syntaxHighlighter.withGodotUnsafeRawPointer { __ptr_syntaxHighlighter in
         withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
         withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
@@ -4019,6 +4586,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getSyntaxHighlighter() -> Godot.SyntaxHighlighter? {
         Godot.SyntaxHighlighter?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4037,7 +4605,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setHighlightCurrentLine(enabled: Bool) {
+
+    private func __setHighlightCurrentLine(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4056,6 +4627,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isHighlightCurrentLineEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4074,7 +4646,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setHighlightAllOccurrences(enabled: Bool) {
+
+    private func __setHighlightAllOccurrences(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4093,6 +4668,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isHighlightAllOccurrencesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4111,6 +4687,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __getDrawControlChars() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4129,7 +4706,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDrawControlChars(enabled: Bool) {
+
+    private func __setDrawControlChars(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4148,7 +4728,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDrawTabs(enabled: Bool) {
+
+    private func __setDrawTabs(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4167,6 +4750,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDrawingTabs() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4185,7 +4769,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setDrawSpaces(enabled: Bool) {
+
+    private func __setDrawSpaces(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4204,6 +4791,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     private func __isDrawingSpaces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4222,6 +4810,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func menu() -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4240,6 +4829,7 @@ open class TextEdit: Control {
         }
         }
     }()
+
     public func isMenuVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4258,7 +4848,10 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func menuOption(_ option: Int32) {
+
+    public func menuOption(
+        _ option: Int32
+    ) {
         option.withGodotUnsafeRawPointer { __ptr_option in
         withUnsafeArgumentPackPointer(__ptr_option) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4678,6 +5271,7 @@ open class TextEdit: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -4744,5 +5338,4 @@ open class TextEdit: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

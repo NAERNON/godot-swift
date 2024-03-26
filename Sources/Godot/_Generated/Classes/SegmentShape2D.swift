@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SegmentShape2D: Shape2D {
     internal static var __method_binding_set_a: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SegmentShape2D: Shape2D {
         }
         }
     }()
-    private func __setA(_ a: Godot.Vector2) {
+
+    private func __setA(
+        _ a: Godot.Vector2
+    ) {
         a.withGodotUnsafeRawPointer { __ptr_a in
         withUnsafeArgumentPackPointer(__ptr_a) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SegmentShape2D: Shape2D {
         }
         }
     }()
+
     private func __getA() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SegmentShape2D: Shape2D {
         }
         }
     }()
-    private func __setB(_ b: Godot.Vector2) {
+
+    private func __setB(
+        _ b: Godot.Vector2
+    ) {
         b.withGodotUnsafeRawPointer { __ptr_b in
         withUnsafeArgumentPackPointer(__ptr_b) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SegmentShape2D: Shape2D {
         }
         }
     }()
+
     private func __getB() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class SegmentShape2D: Shape2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class SegmentShape2D: Shape2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventAction: InputEvent {
     internal static var __method_binding_set_action: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventAction: InputEvent {
         }
         }
     }()
-    private func __setAction(_ action: Godot.GodotStringName) {
+
+    private func __setAction(
+        _ action: Godot.GodotStringName
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventAction: InputEvent {
         }
         }
     }()
+
     private func __getAction() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventAction: InputEvent {
         }
         }
     }()
-    public func setPressed(_ pressed: Bool) {
+
+    public func setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +76,10 @@ open class InputEventAction: InputEvent {
         }
         }
     }()
-    private func __setStrength(_ strength: Double) {
+
+    private func __setStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +98,7 @@ open class InputEventAction: InputEvent {
         }
         }
     }()
+
     private func __getStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +133,7 @@ open class InputEventAction: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -133,5 +146,4 @@ open class InputEventAction: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

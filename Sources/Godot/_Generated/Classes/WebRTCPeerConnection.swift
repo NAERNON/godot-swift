@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WebRTCPeerConnection: RefCounted {
     public enum ConnectionState: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class WebRTCPeerConnection: RefCounted {
         case disconnected = 3
         case failed = 4
         case closed = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("New", 0),
@@ -22,10 +24,12 @@ open class WebRTCPeerConnection: RefCounted {
             ("Closed", 5),]
         }
     }
+
     public enum GatheringState: UInt32, GodotEnum {
         case new = 0
         case gathering = 1
         case complete = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("New", 0),
@@ -33,6 +37,7 @@ open class WebRTCPeerConnection: RefCounted {
             ("Complete", 2),]
         }
     }
+
     public enum SignalingState: UInt32, GodotEnum {
         case stable = 0
         case haveLocalOffer = 1
@@ -40,6 +45,7 @@ open class WebRTCPeerConnection: RefCounted {
         case haveLocalPranswer = 3
         case haveRemotePranswer = 4
         case closed = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Stable", 0),
@@ -53,19 +59,32 @@ open class WebRTCPeerConnection: RefCounted {
 
     public struct SessionDescriptionCreatedSignalInput: Godot.SignalInput {
         public let type: Godot.GodotString
+
         public let sdp: Godot.GodotString
-        fileprivate init(type: Godot.GodotString, sdp: Godot.GodotString) {
+
+        fileprivate init(
+            type: Godot.GodotString,
+            sdp: Godot.GodotString
+        ) {
             self.type = type
             self.sdp = sdp
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.type), Variant(input.sdp)]
         }
     }
-    public func sessionDescriptionCreated(type: Godot.GodotString, sdp: Godot.GodotString) {
+
+    public func sessionDescriptionCreated(
+        type: Godot.GodotString,
+        sdp: Godot.GodotString
+    ) {
         _ = sessionDescriptionCreatedSignal.emit(.init(type: type,
                 sdp: sdp))
     }
+
     public lazy var sessionDescriptionCreatedSignal: Godot.SignalEmitter<SessionDescriptionCreatedSignalInput> = {
         .init(object: self, signalName: "session_description_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -84,22 +103,38 @@ open class WebRTCPeerConnection: RefCounted {
 
     public struct IceCandidateCreatedSignalInput: Godot.SignalInput {
         public let media: Godot.GodotString
+
         public let index: Int
+
         public let name: Godot.GodotString
-        fileprivate init(media: Godot.GodotString, index: Int, name: Godot.GodotString) {
+
+        fileprivate init(
+            media: Godot.GodotString,
+            index: Int,
+            name: Godot.GodotString
+        ) {
             self.media = media
             self.index = index
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.media), Variant(input.index), Variant(input.name)]
         }
     }
-    public func iceCandidateCreated(media: Godot.GodotString, index: Int, name: Godot.GodotString) {
+
+    public func iceCandidateCreated(
+        media: Godot.GodotString,
+        index: Int,
+        name: Godot.GodotString
+    ) {
         _ = iceCandidateCreatedSignal.emit(.init(media: media,
                 index: index,
                 name: name))
     }
+
     public lazy var iceCandidateCreatedSignal: Godot.SignalEmitter<IceCandidateCreatedSignalInput> = {
         .init(object: self, signalName: "ice_candidate_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -119,16 +154,26 @@ open class WebRTCPeerConnection: RefCounted {
 
     public struct DataChannelReceivedSignalInput: Godot.SignalInput {
         public let channel: Godot.WebRTCDataChannel?
-        fileprivate init(channel: Godot.WebRTCDataChannel?) {
+
+        fileprivate init(
+            channel: Godot.WebRTCDataChannel?
+        ) {
             self.channel = channel
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.channel)]
         }
     }
-    public func dataChannelReceived(channel: Godot.WebRTCDataChannel?) {
+
+    public func dataChannelReceived(
+        channel: Godot.WebRTCDataChannel?
+    ) {
         _ = dataChannelReceivedSignal.emit(.init(channel: channel))
     }
+
     public lazy var dataChannelReceivedSignal: Godot.SignalEmitter<DataChannelReceivedSignalInput> = {
         .init(object: self, signalName: "data_channel_received") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -151,7 +196,10 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    static public func setDefaultExtension(extensionClass: Godot.GodotStringName) {
+
+    static public func setDefaultExtension(
+        extensionClass: Godot.GodotStringName
+    ) {
         extensionClass.withGodotUnsafeRawPointer { __ptr_extensionClass in
         withUnsafeArgumentPackPointer(__ptr_extensionClass) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -169,7 +217,10 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func initialize<Value1: VariantStorable, Value2: VariantStorable>(configuration: Godot.GodotDictionary<Value1, Value2> = [:]) -> Godot.ErrorType {
+
+    public func initialize<Value1: VariantStorable, Value2: VariantStorable>(
+        configuration: Godot.GodotDictionary<Value1, Value2> = [:]
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         configuration.withGodotUnsafeRawPointer { __ptr_configuration in
         withUnsafeArgumentPackPointer(__ptr_configuration) { __accessPtr in
@@ -189,7 +240,11 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func createDataChannel<Value1: VariantStorable, Value2: VariantStorable>(label: Godot.GodotString, options: Godot.GodotDictionary<Value1, Value2> = [:]) -> Godot.WebRTCDataChannel? {
+
+    public func createDataChannel<Value1: VariantStorable, Value2: VariantStorable>(
+        label: Godot.GodotString,
+        options: Godot.GodotDictionary<Value1, Value2> = [:]
+    ) -> Godot.WebRTCDataChannel? {
         Godot.WebRTCDataChannel?.fromMutatingGodotUnsafePointer { __temporary in
         label.withGodotUnsafeRawPointer { __ptr_label in
         options.withGodotUnsafeRawPointer { __ptr_options in
@@ -210,6 +265,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func createOffer() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,7 +284,11 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func setLocalDescription(type: Godot.GodotString, sdp: Godot.GodotString) -> Godot.ErrorType {
+
+    public func setLocalDescription(
+        type: Godot.GodotString,
+        sdp: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
@@ -249,7 +309,11 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func setRemoteDescription(type: Godot.GodotString, sdp: Godot.GodotString) -> Godot.ErrorType {
+
+    public func setRemoteDescription(
+        type: Godot.GodotString,
+        sdp: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
@@ -270,7 +334,12 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func addIceCandidate(media: Godot.GodotString, index: Int32, name: Godot.GodotString) -> Godot.ErrorType {
+
+    public func addIceCandidate(
+        media: Godot.GodotString,
+        index: Int32,
+        name: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         media.withGodotUnsafeRawPointer { __ptr_media in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -292,6 +361,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func poll() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -310,6 +380,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -327,6 +398,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func connectionState() -> Godot.WebRTCPeerConnection.ConnectionState {
         Godot.WebRTCPeerConnection.ConnectionState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +417,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func gatheringState() -> Godot.WebRTCPeerConnection.GatheringState {
         Godot.WebRTCPeerConnection.GatheringState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,6 +436,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
+
     public func signalingState() -> Godot.WebRTCPeerConnection.SignalingState {
         Godot.WebRTCPeerConnection.SignalingState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,6 +449,7 @@ open class WebRTCPeerConnection: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -387,5 +462,4 @@ open class WebRTCPeerConnection: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

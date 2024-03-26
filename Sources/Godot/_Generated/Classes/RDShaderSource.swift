@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDShaderSource: RefCounted {
     internal static var __method_binding_set_stage_source: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class RDShaderSource: RefCounted {
         }
         }
     }()
-    public func setStageSource(stage: Godot.RenderingDevice.ShaderStage, source: Godot.GodotString) {
+
+    public func setStageSource(
+        stage: Godot.RenderingDevice.ShaderStage,
+        source: Godot.GodotString
+    ) {
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_stage, __ptr_source) { __accessPtr in
@@ -32,7 +37,10 @@ open class RDShaderSource: RefCounted {
         }
         }
     }()
-    private func __getStageSource(stage: Godot.RenderingDevice.ShaderStage) -> Godot.GodotString {
+
+    private func __getStageSource(
+        stage: Godot.RenderingDevice.ShaderStage
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
@@ -52,7 +60,10 @@ open class RDShaderSource: RefCounted {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.RenderingDevice.ShaderLanguage) {
+
+    private func __setLanguage(
+        _ language: Godot.RenderingDevice.ShaderLanguage
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,6 +82,7 @@ open class RDShaderSource: RefCounted {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.RenderingDevice.ShaderLanguage {
         Godot.RenderingDevice.ShaderLanguage.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,6 +146,7 @@ open class RDShaderSource: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -146,5 +159,4 @@ open class RDShaderSource: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,13 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MultiplayerPeerExtension: MultiplayerPeer {
-    open func _getPacket(rBuffer: UnsafePointer<UnsafePointer<UInt8>>, rBufferSize: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _getPacket(
+        rBuffer: UnsafePointer<UnsafePointer<UInt8>>,
+        rBufferSize: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _putPacket(pBuffer: UnsafePointer<UInt8>, pBufferSize: Int32) -> Godot.ErrorType {
+    open func _putPacket(
+        pBuffer: UnsafePointer<UInt8>,
+        pBufferSize: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -25,7 +32,9 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
         Godot.PackedByteArray()
     }
 
-    open func _putPacketScript(pBuffer: Godot.PackedByteArray) -> Godot.ErrorType {
+    open func _putPacketScript(
+        pBuffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -37,21 +46,27 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
         Godot.MultiplayerPeer.TransferMode(rawValue: 0)!
     }
 
-    open func _setTransferChannel(pChannel: Int32) {
+    open func _setTransferChannel(
+        pChannel: Int32
+    ) {
     }
 
     open func _getTransferChannel() -> Int32 {
         Int32()
     }
 
-    open func _setTransferMode(pMode: Godot.MultiplayerPeer.TransferMode) {
+    open func _setTransferMode(
+        pMode: Godot.MultiplayerPeer.TransferMode
+    ) {
     }
 
     open func _getTransferMode() -> Godot.MultiplayerPeer.TransferMode {
         Godot.MultiplayerPeer.TransferMode(rawValue: 0)!
     }
 
-    open func _setTargetPeer(pPeer: Int32) {
+    open func _setTargetPeer(
+        pPeer: Int32
+    ) {
     }
 
     open func _getPacketPeer() -> Int32 {
@@ -68,14 +83,19 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
     open func _close() {
     }
 
-    open func _disconnectPeer(pPeer: Int32, pForce: Bool) {
+    open func _disconnectPeer(
+        pPeer: Int32,
+        pForce: Bool
+    ) {
     }
 
     open func _getUniqueID() -> Int32 {
         Int32()
     }
 
-    open func _setRefuseNewConnections(pEnable: Bool) {
+    open func _setRefuseNewConnections(
+        pEnable: Bool
+    ) {
     }
 
     open func _isRefusingNewConnections() -> Bool {
@@ -91,6 +111,7 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -298,5 +319,4 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

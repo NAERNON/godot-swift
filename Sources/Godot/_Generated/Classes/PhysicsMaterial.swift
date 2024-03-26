@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsMaterial: Resource {
     internal static var __method_binding_set_friction: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
-    private func __setFriction(_ friction: Double) {
+
+    private func __setFriction(
+        _ friction: Double
+    ) {
         friction.withGodotUnsafeRawPointer { __ptr_friction in
         withUnsafeArgumentPackPointer(__ptr_friction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
+
     private func __getFriction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
-    private func __setRough(_ rough: Bool) {
+
+    private func __setRough(
+        _ rough: Bool
+    ) {
         rough.withGodotUnsafeRawPointer { __ptr_rough in
         withUnsafeArgumentPackPointer(__ptr_rough) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
+
     private func __isRough() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
-    private func __setBounce(_ bounce: Double) {
+
+    private func __setBounce(
+        _ bounce: Double
+    ) {
         bounce.withGodotUnsafeRawPointer { __ptr_bounce in
         withUnsafeArgumentPackPointer(__ptr_bounce) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
+
     private func __getBounce() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
-    private func __setAbsorbent(_ absorbent: Bool) {
+
+    private func __setAbsorbent(
+        _ absorbent: Bool
+    ) {
         absorbent.withGodotUnsafeRawPointer { __ptr_absorbent in
         withUnsafeArgumentPackPointer(__ptr_absorbent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PhysicsMaterial: Resource {
         }
         }
     }()
+
     private func __isAbsorbent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class PhysicsMaterial: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class PhysicsMaterial: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SceneState: RefCounted {
     public enum GenEditState: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class SceneState: RefCounted {
         case instance = 1
         case main = 2
         case mainInherited = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -26,6 +28,7 @@ open class SceneState: RefCounted {
         }
         }
     }()
+
     public func nodeCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -44,7 +47,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeType(idx: Int32) -> Godot.GodotStringName {
+
+    public func nodeType(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -64,7 +70,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeName(idx: Int32) -> Godot.GodotStringName {
+
+    public func nodeName(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -84,7 +93,11 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodePath(idx: Int32, forParent parent: Bool = false) -> Godot.NodePath {
+
+    public func nodePath(
+        idx: Int32,
+        forParent parent: Bool = false
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         parent.withGodotUnsafeRawPointer { __ptr_parent in
@@ -105,7 +118,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeOwnerPath(idx: Int32) -> Godot.NodePath {
+
+    public func nodeOwnerPath(
+        idx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -125,7 +141,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func isNodeInstancePlaceholder(idx: Int32) -> Bool {
+
+    public func isNodeInstancePlaceholder(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -145,7 +164,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeInstancePlaceholder(idx: Int32) -> Godot.GodotString {
+
+    public func nodeInstancePlaceholder(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -165,7 +187,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeInstance(idx: Int32) -> Godot.PackedScene? {
+
+    public func nodeInstance(
+        idx: Int32
+    ) -> Godot.PackedScene? {
         Godot.PackedScene?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -185,7 +210,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeGroups(idx: Int32) -> Godot.PackedStringArray {
+
+    public func nodeGroups(
+        idx: Int32
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -205,7 +233,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodeIndex(idx: Int32) -> Int32 {
+
+    public func nodeIndex(
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -225,7 +256,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodePropertyCount(idx: Int32) -> Int32 {
+
+    public func nodePropertyCount(
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -245,7 +279,11 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodePropertyName(idx: Int32, propIdx: Int32) -> Godot.GodotStringName {
+
+    public func nodePropertyName(
+        idx: Int32,
+        propIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         propIdx.withGodotUnsafeRawPointer { __ptr_propIdx in
@@ -266,7 +304,11 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func nodePropertyValue(idx: Int32, propIdx: Int32) -> Godot.Variant {
+
+    public func nodePropertyValue(
+        idx: Int32,
+        propIdx: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         propIdx.withGodotUnsafeRawPointer { __ptr_propIdx in
@@ -287,6 +329,7 @@ open class SceneState: RefCounted {
         }
         }
     }()
+
     public func connectionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,7 +348,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionSource(idx: Int32) -> Godot.NodePath {
+
+    public func connectionSource(
+        idx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -325,7 +371,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionSignal(idx: Int32) -> Godot.GodotStringName {
+
+    public func connectionSignal(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -345,7 +394,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionTarget(idx: Int32) -> Godot.NodePath {
+
+    public func connectionTarget(
+        idx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -365,7 +417,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionMethod(idx: Int32) -> Godot.GodotStringName {
+
+    public func connectionMethod(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -385,7 +440,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionFlags(idx: Int32) -> Int32 {
+
+    public func connectionFlags(
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -405,7 +463,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionBinds(idx: Int32) -> Godot.AnyGodotArray {
+
+    public func connectionBinds(
+        idx: Int32
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -425,7 +486,10 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionUnbinds(idx: Int32) -> Int32 {
+
+    public func connectionUnbinds(
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -439,6 +503,7 @@ open class SceneState: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -451,5 +516,4 @@ open class SceneState: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

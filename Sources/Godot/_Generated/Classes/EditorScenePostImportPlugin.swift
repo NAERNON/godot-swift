@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorScenePostImportPlugin: RefCounted {
     public enum InternalImportCategory: UInt32, GodotEnum {
@@ -14,6 +15,7 @@ open class EditorScenePostImportPlugin: RefCounted {
         case animationNode = 5
         case skeleton3DNode = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Node", 0),
@@ -27,31 +29,55 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
     }
 
-    open func _getInternalImportOptions(category: Int32) {
+    open func _getInternalImportOptions(
+        category: Int32
+    ) {
     }
 
-    open func _getInternalOptionVisibility(category: Int32, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
+    open func _getInternalOptionVisibility(
+        category: Int32,
+        forAnimation animation: Bool,
+        option: Godot.GodotString
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _getInternalOptionUpdateViewRequired(category: Int32, option: Godot.GodotString) -> Godot.Variant {
+    open func _getInternalOptionUpdateViewRequired(
+        category: Int32,
+        option: Godot.GodotString
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _internalProcess(category: Int32, baseNode: Godot.Node?, node: Godot.Node?, resource: Godot.Resource?) {
+    open func _internalProcess(
+        category: Int32,
+        baseNode: Godot.Node?,
+        node: Godot.Node?,
+        resource: Godot.Resource?
+    ) {
     }
 
-    open func _getImportOptions(path: Godot.GodotString) {
+    open func _getImportOptions(
+        path: Godot.GodotString
+    ) {
     }
 
-    open func _getOptionVisibility(path: Godot.GodotString, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
+    open func _getOptionVisibility(
+        path: Godot.GodotString,
+        forAnimation animation: Bool,
+        option: Godot.GodotString
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _preProcess(scene: Godot.Node?) {
+    open func _preProcess(
+        scene: Godot.Node?
+    ) {
     }
 
-    open func _postProcess(scene: Godot.Node?) {
+    open func _postProcess(
+        scene: Godot.Node?
+    ) {
     }
 
     internal static var __method_binding_get_option_value: GDExtensionMethodBindPtr = {
@@ -61,7 +87,10 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func optionValue(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func optionValue(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -81,7 +110,11 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func addImportOption<Value: VariantStorableIn>(name: Godot.GodotString, value: Value) {
+
+    public func addImportOption<Value: VariantStorableIn>(
+        name: Godot.GodotString,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -101,7 +134,15 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func addImportOptionAdvanced<Value: VariantStorableIn>(type: Godot.Variant.StorageType, name: Godot.GodotString, defaultValue: Value, hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!, hintString: Godot.GodotString = "", usageFlags: Int32 = 6) {
+
+    public func addImportOptionAdvanced<Value: VariantStorableIn>(
+        type: Godot.Variant.StorageType,
+        name: Godot.GodotString,
+        defaultValue: Value,
+        hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!,
+        hintString: Godot.GodotString = "",
+        usageFlags: Int32 = 6
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { __ptr_defaultValue in
@@ -119,6 +160,7 @@ open class EditorScenePostImportPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -213,5 +255,4 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

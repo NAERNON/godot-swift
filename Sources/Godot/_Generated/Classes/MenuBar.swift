@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MenuBar: Control {
     internal static var __method_binding_set_switch_on_hover: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setSwitchOnHover(enable: Bool) {
+
+    private func __setSwitchOnHover(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __isSwitchOnHover() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func setDisableShortcuts(disabled: Bool) {
+
+    public func setDisableShortcuts(
+        disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +76,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setPreferGlobalMenu(enabled: Bool) {
+
+    private func __setPreferGlobalMenu(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +98,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __isPreferGlobalMenu() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     public func isNativeMenu() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     public func menuCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
+
+    private func __setTextDirection(
+        _ direction: Godot.Control.TextDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setFlat(enabled: Bool) {
+
+    private func __setFlat(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __isFlat() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    private func __setStartIndex(enabled: Int32) {
+
+    private func __setStartIndex(
+        enabled: Int32
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class MenuBar: Control {
         }
         }
     }()
+
     private func __getStartIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,11 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func setMenuTitle(menu: Int32, title: Godot.GodotString) {
+
+    public func setMenuTitle(
+        menu: Int32,
+        title: Godot.GodotString
+    ) {
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(__ptr_menu, __ptr_title) { __accessPtr in
@@ -309,7 +343,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func menuTitle(menu: Int32) -> Godot.GodotString {
+
+    public func menuTitle(
+        menu: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         withUnsafeArgumentPackPointer(__ptr_menu) { __accessPtr in
@@ -329,7 +366,11 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func setMenuTooltip(menu: Int32, tooltip: Godot.GodotString) {
+
+    public func setMenuTooltip(
+        menu: Int32,
+        tooltip: Godot.GodotString
+    ) {
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
         withUnsafeArgumentPackPointer(__ptr_menu, __ptr_tooltip) { __accessPtr in
@@ -349,7 +390,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func menuTooltip(menu: Int32) -> Godot.GodotString {
+
+    public func menuTooltip(
+        menu: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         withUnsafeArgumentPackPointer(__ptr_menu) { __accessPtr in
@@ -369,7 +413,11 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func setMenuDisabled(menu: Int32, disabled: Bool) {
+
+    public func setMenuDisabled(
+        menu: Int32,
+        disabled: Bool
+    ) {
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_menu, __ptr_disabled) { __accessPtr in
@@ -389,7 +437,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func isMenuDisabled(menu: Int32) -> Bool {
+
+    public func isMenuDisabled(
+        menu: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         withUnsafeArgumentPackPointer(__ptr_menu) { __accessPtr in
@@ -409,7 +460,11 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func setMenuHidden(menu: Int32, hidden: Bool) {
+
+    public func setMenuHidden(
+        menu: Int32,
+        hidden: Bool
+    ) {
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_menu, __ptr_hidden) { __accessPtr in
@@ -429,7 +484,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func isMenuHidden(menu: Int32) -> Bool {
+
+    public func isMenuHidden(
+        menu: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         withUnsafeArgumentPackPointer(__ptr_menu) { __accessPtr in
@@ -449,7 +507,10 @@ open class MenuBar: Control {
         }
         }
     }()
-    public func menuPopup(menu: Int32) -> Godot.PopupMenu? {
+
+    public func menuPopup(
+        menu: Int32
+    ) -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         menu.withGodotUnsafeRawPointer { __ptr_menu in
         withUnsafeArgumentPackPointer(__ptr_menu) { __accessPtr in
@@ -529,6 +590,7 @@ open class MenuBar: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -541,5 +603,4 @@ open class MenuBar: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

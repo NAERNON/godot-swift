@@ -3,21 +3,25 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CharacterBody3D: PhysicsBody3D {
     public enum MotionMode: UInt32, GodotEnum {
         case grounded = 0
         case floating = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Grounded", 0),
             ("Floating", 1),]
         }
     }
+
     public enum PlatformOnLeave: UInt32, GodotEnum {
         case addVelocity = 0
         case addUpwardVelocity = 1
         case doNothing = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Add Velocity", 0),
@@ -33,6 +37,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func moveAndSlide() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,6 +56,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func applyFloorSnap() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -68,7 +74,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setVelocity(_ velocity: Godot.Vector3) {
+
+    private func __setVelocity(
+        _ velocity: Godot.Vector3
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setSafeMargin(_ margin: Double) {
+
+    private func __setSafeMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getSafeMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +156,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isFloorStopOnSlopeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +175,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFloorStopOnSlopeEnabled(_ enabled: Bool) {
+
+    private func __setFloorStopOnSlopeEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +197,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFloorConstantSpeedEnabled(_ enabled: Bool) {
+
+    private func __setFloorConstantSpeedEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +219,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isFloorConstantSpeedEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +238,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFloorBlockOnWallEnabled(_ enabled: Bool) {
+
+    private func __setFloorBlockOnWallEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,6 +260,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isFloorBlockOnWallEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +279,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setSlideOnCeilingEnabled(_ enabled: Bool) {
+
+    private func __setSlideOnCeilingEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,6 +301,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isSlideOnCeilingEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,7 +320,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setPlatformFloorLayers(excludeLayer: UInt32) {
+
+    private func __setPlatformFloorLayers(
+        excludeLayer: UInt32
+    ) {
         excludeLayer.withGodotUnsafeRawPointer { __ptr_excludeLayer in
         withUnsafeArgumentPackPointer(__ptr_excludeLayer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,6 +342,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getPlatformFloorLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,7 +361,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setPlatformWallLayers(excludeLayer: UInt32) {
+
+    private func __setPlatformWallLayers(
+        excludeLayer: UInt32
+    ) {
         excludeLayer.withGodotUnsafeRawPointer { __ptr_excludeLayer in
         withUnsafeArgumentPackPointer(__ptr_excludeLayer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,6 +383,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getPlatformWallLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +402,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getMaxSlides() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +421,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setMaxSlides(_ maxSlides: Int32) {
+
+    private func __setMaxSlides(
+        _ maxSlides: Int32
+    ) {
         maxSlides.withGodotUnsafeRawPointer { __ptr_maxSlides in
         withUnsafeArgumentPackPointer(__ptr_maxSlides) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +443,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getFloorMaxAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,7 +462,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFloorMaxAngle(radians: Double) {
+
+    private func __setFloorMaxAngle(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +484,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getFloorSnapLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +503,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFloorSnapLength(_ floorSnapLength: Double) {
+
+    private func __setFloorSnapLength(
+        _ floorSnapLength: Double
+    ) {
         floorSnapLength.withGodotUnsafeRawPointer { __ptr_floorSnapLength in
         withUnsafeArgumentPackPointer(__ptr_floorSnapLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +525,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getWallMinSlideAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,7 +544,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setWallMinSlideAngle(radians: Double) {
+
+    private func __setWallMinSlideAngle(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -512,6 +566,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getUpDirection() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,7 +585,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setUpDirection(_ upDirection: Godot.Vector3) {
+
+    private func __setUpDirection(
+        _ upDirection: Godot.Vector3
+    ) {
         upDirection.withGodotUnsafeRawPointer { __ptr_upDirection in
         withUnsafeArgumentPackPointer(__ptr_upDirection) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,7 +607,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setMotionMode(_ mode: Godot.CharacterBody3D.MotionMode) {
+
+    private func __setMotionMode(
+        _ mode: Godot.CharacterBody3D.MotionMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -568,6 +629,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getMotionMode() -> Godot.CharacterBody3D.MotionMode {
         Godot.CharacterBody3D.MotionMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +648,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setPlatformOnLeave(onLeaveApplyVelocity: Godot.CharacterBody3D.PlatformOnLeave) {
+
+    private func __setPlatformOnLeave(
+        onLeaveApplyVelocity: Godot.CharacterBody3D.PlatformOnLeave
+    ) {
         onLeaveApplyVelocity.withGodotUnsafeRawPointer { __ptr_onLeaveApplyVelocity in
         withUnsafeArgumentPackPointer(__ptr_onLeaveApplyVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,6 +670,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getPlatformOnLeave() -> Godot.CharacterBody3D.PlatformOnLeave {
         Godot.CharacterBody3D.PlatformOnLeave.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,6 +689,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnFloor() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -641,6 +708,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnFloorOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -659,6 +727,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnCeiling() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -677,6 +746,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnCeilingOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -695,6 +765,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnWall() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -713,6 +784,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isOnWallOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -731,6 +803,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func floorNormal() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -749,6 +822,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func wallNormal() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -767,6 +841,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func lastMotion() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -785,6 +860,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func positionDelta() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -803,6 +879,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func realVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -821,7 +898,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    public func floorAngle(upDirection: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0)) -> Double {
+
+    public func floorAngle(
+        upDirection: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0)
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         upDirection.withGodotUnsafeRawPointer { __ptr_upDirection in
         withUnsafeArgumentPackPointer(__ptr_upDirection) { __accessPtr in
@@ -841,6 +921,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func platformVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -859,6 +940,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func platformAngularVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -877,6 +959,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func slideCollisionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -895,7 +978,10 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
-    public func slideCollision(slideIdx: Int32) -> Godot.KinematicCollision3D? {
+
+    public func slideCollision(
+        slideIdx: Int32
+    ) -> Godot.KinematicCollision3D? {
         Godot.KinematicCollision3D?.fromMutatingGodotUnsafePointer { __temporary in
         slideIdx.withGodotUnsafeRawPointer { __ptr_slideIdx in
         withUnsafeArgumentPackPointer(__ptr_slideIdx) { __accessPtr in
@@ -915,6 +1001,7 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         }
     }()
+
     public func lastSlideCollision() -> Godot.KinematicCollision3D? {
         Godot.KinematicCollision3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1092,6 +1179,7 @@ open class CharacterBody3D: PhysicsBody3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1104,5 +1192,4 @@ open class CharacterBody3D: PhysicsBody3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

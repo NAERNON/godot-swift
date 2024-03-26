@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RegExMatch: RefCounted {
     internal static var __method_binding_get_subject: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
+
     private func __getSubject() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
+
     public func groupCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
+
     private func __getNames() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
+
     private func __getStrings() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +89,10 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func string<Value: VariantStorableIn>(name: Value = 0) -> Godot.GodotString {
+
+    public func string<Value: VariantStorableIn>(
+        name: Value = 0
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -104,7 +112,10 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func start<Value: VariantStorableIn>(name: Value = 0) -> Int32 {
+
+    public func start<Value: VariantStorableIn>(
+        name: Value = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -124,7 +135,10 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func end<Value: VariantStorableIn>(name: Value = 0) -> Int32 {
+
+    public func end<Value: VariantStorableIn>(
+        name: Value = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -156,6 +170,7 @@ open class RegExMatch: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -168,5 +183,4 @@ open class RegExMatch: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

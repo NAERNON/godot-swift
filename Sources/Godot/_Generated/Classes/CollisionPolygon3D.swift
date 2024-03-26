@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CollisionPolygon3D: Node3D {
     internal static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
-    private func __setDepth(_ depth: Double) {
+
+    private func __setDepth(
+        _ depth: Double
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
+
     private func __getDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
-    private func __setDisabled(_ disabled: Bool) {
+
+    private func __setDisabled(
+        _ disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
+
     private func __isDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
-    private func __setMargin(_ margin: Double) {
+
+    private func __setMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CollisionPolygon3D: Node3D {
         }
         }
     }()
+
     private func __getMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class CollisionPolygon3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class CollisionPolygon3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

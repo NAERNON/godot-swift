@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WeakRef: RefCounted {
     internal static var __method_binding_get_ref: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class WeakRef: RefCounted {
         }
         }
     }()
+
     public func ref() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -24,6 +26,7 @@ open class WeakRef: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +39,4 @@ open class WeakRef: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

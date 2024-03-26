@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeOneShot: AnimationNodeSync {
     public enum OneShotRequest: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         case fire = 1
         case abort = 2
         case fadeOut = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -18,9 +20,11 @@ open class AnimationNodeOneShot: AnimationNodeSync {
             ("Fade Out", 3),]
         }
     }
+
     public enum MixMode: UInt32, GodotEnum {
         case blend = 0
         case add = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Blend", 0),
@@ -35,7 +39,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setFadeinTime(_ time: Double) {
+
+    private func __setFadeinTime(
+        _ time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +61,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getFadeinTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +80,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setFadeinCurve(_ curve: Godot.Curve?) {
+
+    private func __setFadeinCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -92,6 +103,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getFadeinCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,7 +122,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setFadeoutTime(_ time: Double) {
+
+    private func __setFadeoutTime(
+        _ time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -129,6 +144,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getFadeoutTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,7 +163,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setFadeoutCurve(_ curve: Godot.Curve?) {
+
+    private func __setFadeoutCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -167,6 +186,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getFadeoutCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -185,7 +205,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setAutorestart(active: Bool) {
+
+    private func __setAutorestart(
+        active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,6 +227,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __hasAutorestart() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,7 +246,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setAutorestartDelay(time: Double) {
+
+    private func __setAutorestartDelay(
+        time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -241,6 +268,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getAutorestartDelay() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,7 +287,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setAutorestartRandomDelay(time: Double) {
+
+    private func __setAutorestartRandomDelay(
+        time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -278,6 +309,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getAutorestartRandomDelay() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -296,7 +328,10 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
-    private func __setMixMode(_ mode: Godot.AnimationNodeOneShot.MixMode) {
+
+    private func __setMixMode(
+        _ mode: Godot.AnimationNodeOneShot.MixMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -315,6 +350,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         }
     }()
+
     private func __getMixMode() -> Godot.AnimationNodeOneShot.MixMode {
         Godot.AnimationNodeOneShot.MixMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -415,6 +451,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -427,5 +464,4 @@ open class AnimationNodeOneShot: AnimationNodeSync {
         }
         return _virtualFunctions!
     }
-
-    }
+}

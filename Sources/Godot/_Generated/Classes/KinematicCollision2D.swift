@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class KinematicCollision2D: RefCounted {
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func position() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func normal() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func travel() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func remainder() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +89,10 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
-    public func angle(upDirection: Godot.Vector2 = Vector2(x: 0, y: -1)) -> Double {
+
+    public func angle(
+        upDirection: Godot.Vector2 = Vector2(x: 0, y: -1)
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         upDirection.withGodotUnsafeRawPointer { __ptr_upDirection in
         withUnsafeArgumentPackPointer(__ptr_upDirection) { __accessPtr in
@@ -104,6 +112,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func depth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +131,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func localShape() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,6 +150,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func collider() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +169,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func colliderID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,6 +188,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func colliderRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,6 +207,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func colliderShape() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +226,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func colliderShapeIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,6 +245,7 @@ open class KinematicCollision2D: RefCounted {
         }
         }
     }()
+
     public func colliderVelocity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -242,6 +258,7 @@ open class KinematicCollision2D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -254,5 +271,4 @@ open class KinematicCollision2D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,13 +3,19 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImageFormatLoaderExtension: ImageFormatLoader {
     open func _getRecognizedExtensions() -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _loadImage(_ image: Godot.Image?, fileaccess: Godot.FileAccess?, flags: Godot.ImageFormatLoader.LoaderFlags, scale: Double) -> Godot.ErrorType {
+    open func _loadImage(
+        _ image: Godot.Image?,
+        fileaccess: Godot.FileAccess?,
+        flags: Godot.ImageFormatLoader.LoaderFlags,
+        scale: Double
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -20,6 +26,7 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
         }
         }
     }()
+
     public func addFormatLoader() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -37,6 +44,7 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
         }
         }
     }()
+
     public func removeFormatLoader() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -48,6 +56,7 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -80,5 +89,4 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
         }
         return _virtualFunctions!
     }
-
-    }
+}

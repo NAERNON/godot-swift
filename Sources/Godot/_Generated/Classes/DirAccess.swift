@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class DirAccess: RefCounted {
     internal static var __method_binding_open: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func open(path: Godot.GodotString) -> Godot.DirAccess? {
+
+    static public func open(
+        path: Godot.GodotString
+    ) -> Godot.DirAccess? {
         Godot.DirAccess?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -31,6 +35,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     static public func openError() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -48,6 +53,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func listDirBegin() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +72,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func next() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +91,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func currentIsDir() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +110,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func listDirEnd() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -119,6 +128,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func files() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,7 +147,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func filesAt(path: Godot.GodotString) -> Godot.PackedStringArray {
+
+    static public func filesAt(
+        path: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -156,6 +169,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func directories() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,7 +188,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func directoriesAt(path: Godot.GodotString) -> Godot.PackedStringArray {
+
+    static public func directoriesAt(
+        path: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -193,6 +210,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     static public func driveCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -210,7 +228,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func driveName(idx: Int32) -> Godot.GodotString {
+
+    static public func driveName(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -229,6 +250,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func currentDrive() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,7 +269,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func changeDir(_ dir: Godot.GodotString) -> Godot.ErrorType {
+
+    public func changeDir(
+        _ dir: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         dir.withGodotUnsafeRawPointer { __ptr_dir in
         withUnsafeArgumentPackPointer(__ptr_dir) { __accessPtr in
@@ -267,7 +292,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func currentDir(includeDrive: Bool = true) -> Godot.GodotString {
+
+    public func currentDir(
+        includeDrive: Bool = true
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         includeDrive.withGodotUnsafeRawPointer { __ptr_includeDrive in
         withUnsafeArgumentPackPointer(__ptr_includeDrive) { __accessPtr in
@@ -287,7 +315,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func makeDir(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func makeDir(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -307,7 +338,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func makeDirAbsolute(path: Godot.GodotString) -> Godot.ErrorType {
+
+    static public func makeDirAbsolute(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -326,7 +360,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func makeDirRecursive(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func makeDirRecursive(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -346,7 +383,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func makeDirRecursiveAbsolute(path: Godot.GodotString) -> Godot.ErrorType {
+
+    static public func makeDirRecursiveAbsolute(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -365,7 +405,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func fileExists(path: Godot.GodotString) -> Bool {
+
+    public func fileExists(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -385,7 +428,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func dirExists(path: Godot.GodotString) -> Bool {
+
+    public func dirExists(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -405,7 +451,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func dirExistsAbsolute(path: Godot.GodotString) -> Bool {
+
+    static public func dirExistsAbsolute(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -424,6 +473,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     public func spaceLeft() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -442,7 +492,12 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func copy(from: Godot.GodotString, to: Godot.GodotString, chmodFlags: Int32 = -1) -> Godot.ErrorType {
+
+    public func copy(
+        from: Godot.GodotString,
+        to: Godot.GodotString,
+        chmodFlags: Int32 = -1
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -464,7 +519,12 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func copyAbsolute(from: Godot.GodotString, to: Godot.GodotString, chmodFlags: Int32 = -1) -> Godot.ErrorType {
+
+    static public func copyAbsolute(
+        from: Godot.GodotString,
+        to: Godot.GodotString,
+        chmodFlags: Int32 = -1
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -485,7 +545,11 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func rename(from: Godot.GodotString, to: Godot.GodotString) -> Godot.ErrorType {
+
+    public func rename(
+        from: Godot.GodotString,
+        to: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -506,7 +570,11 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func renameAbsolute(from: Godot.GodotString, to: Godot.GodotString) -> Godot.ErrorType {
+
+    static public func renameAbsolute(
+        from: Godot.GodotString,
+        to: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -526,7 +594,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func remove(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func remove(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -546,7 +617,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    static public func removeAbsolute(path: Godot.GodotString) -> Godot.ErrorType {
+
+    static public func removeAbsolute(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -565,7 +639,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    private func __setIncludeNavigational(enable: Bool) {
+
+    private func __setIncludeNavigational(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -584,6 +661,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     private func __getIncludeNavigational() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -602,7 +680,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    private func __setIncludeHidden(enable: Bool) {
+
+    private func __setIncludeHidden(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -621,6 +702,7 @@ open class DirAccess: RefCounted {
         }
         }
     }()
+
     private func __getIncludeHidden() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -639,7 +721,10 @@ open class DirAccess: RefCounted {
         }
         }
     }()
-    public func isCaseSensitive(path: Godot.GodotString) -> Bool {
+
+    public func isCaseSensitive(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -675,6 +760,7 @@ open class DirAccess: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -687,5 +773,4 @@ open class DirAccess: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

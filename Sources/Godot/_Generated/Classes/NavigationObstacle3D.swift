@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NavigationObstacle3D: Node3D {
     internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setAvoidanceEnabled(_ enabled: Bool) {
+
+    private func __setAvoidanceEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getAvoidanceEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    public func setNavigationMap(_ navigationMap: Godot.RID) {
+
+    public func setNavigationMap(
+        _ navigationMap: Godot.RID
+    ) {
         navigationMap.withGodotUnsafeRawPointer { __ptr_navigationMap in
         withUnsafeArgumentPackPointer(__ptr_navigationMap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     public func navigationMap() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setRadius(_ radius: Double) {
+
+    private func __setRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setHeight(_ height: Double) {
+
+    private func __setHeight(
+        _ height: Double
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setVelocity(_ velocity: Godot.Vector3) {
+
+    private func __setVelocity(
+        _ velocity: Godot.Vector3
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setVertices(_ vertices: Godot.PackedVector3Array) {
+
+    private func __setVertices(
+        _ vertices: Godot.PackedVector3Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getVertices() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setAvoidanceLayers(_ layers: UInt32) {
+
+    private func __setAvoidanceLayers(
+        _ layers: UInt32
+    ) {
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_layers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getAvoidanceLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,11 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    public func setAvoidanceLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setAvoidanceLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -309,7 +343,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    public func avoidanceLayerValue(layerNumber: Int32) -> Bool {
+
+    public func avoidanceLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -329,7 +366,10 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
-    private func __setUse3DAvoidance(enabled: Bool) {
+
+    private func __setUse3DAvoidance(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +388,7 @@ open class NavigationObstacle3D: Node3D {
         }
         }
     }()
+
     private func __getUse3DAvoidance() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +478,7 @@ open class NavigationObstacle3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -449,5 +491,4 @@ open class NavigationObstacle3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,9 +3,12 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TextServerExtension: TextServer {
-    open func _hasFeature(_ feature: Godot.TextServer.Feature) -> Bool {
+    open func _hasFeature(
+        _ feature: Godot.TextServer.Feature
+    ) -> Bool {
         Bool()
     }
 
@@ -17,14 +20,20 @@ open class TextServerExtension: TextServer {
         Int64()
     }
 
-    open func _freeRid(_ rid: Godot.RID) {
+    open func _freeRid(
+        _ rid: Godot.RID
+    ) {
     }
 
-    open func _has(rid: Godot.RID) -> Bool {
+    open func _has(
+        rid: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _loadSupportData(filename: Godot.GodotString) -> Bool {
+    open func _loadSupportData(
+        filename: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
@@ -36,19 +45,27 @@ open class TextServerExtension: TextServer {
         Godot.GodotString()
     }
 
-    open func _saveSupportData(filename: Godot.GodotString) -> Bool {
+    open func _saveSupportData(
+        filename: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _isLocaleRightToLeft(locale: Godot.GodotString) -> Bool {
+    open func _isLocaleRightToLeft(
+        locale: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _nameToTag(name: Godot.GodotString) -> Int64 {
+    open func _nameToTag(
+        name: Godot.GodotString
+    ) -> Int64 {
         Int64()
     }
 
-    open func _tagToName(tag: Int64) -> Godot.GodotString {
+    open func _tagToName(
+        tag: Int64
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -56,397 +73,755 @@ open class TextServerExtension: TextServer {
         Godot.RID()
     }
 
-    open func _createFontLinkedVariation(fontRid: Godot.RID) -> Godot.RID {
+    open func _createFontLinkedVariation(
+        fontRid: Godot.RID
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _fontSetData(fontRid: Godot.RID, data: Godot.PackedByteArray) {
+    open func _fontSetData(
+        fontRid: Godot.RID,
+        data: Godot.PackedByteArray
+    ) {
     }
 
-    open func _fontSetDataPtr(fontRid: Godot.RID, dataPtr: UnsafePointer<UInt8>, dataSize: Int64) {
+    open func _fontSetDataPtr(
+        fontRid: Godot.RID,
+        dataPtr: UnsafePointer<UInt8>,
+        dataSize: Int64
+    ) {
     }
 
-    open func _fontSetFaceIndex(fontRid: Godot.RID, faceIndex: Int64) {
+    open func _fontSetFaceIndex(
+        fontRid: Godot.RID,
+        faceIndex: Int64
+    ) {
     }
 
-    open func _fontGetFaceIndex(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetFaceIndex(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontGetFaceCount(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetFaceCount(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetStyle(fontRid: Godot.RID, style: Godot.TextServer.FontStyle) {
+    open func _fontSetStyle(
+        fontRid: Godot.RID,
+        style: Godot.TextServer.FontStyle
+    ) {
     }
 
-    open func _fontGetStyle(fontRid: Godot.RID) -> Godot.TextServer.FontStyle {
+    open func _fontGetStyle(
+        fontRid: Godot.RID
+    ) -> Godot.TextServer.FontStyle {
         Godot.TextServer.FontStyle()
     }
 
-    open func _fontSetName(fontRid: Godot.RID, name: Godot.GodotString) {
+    open func _fontSetName(
+        fontRid: Godot.RID,
+        name: Godot.GodotString
+    ) {
     }
 
-    open func _fontGetName(fontRid: Godot.RID) -> Godot.GodotString {
+    open func _fontGetName(
+        fontRid: Godot.RID
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _fontGetOtNameStrings(fontRid: Godot.RID) -> Godot.AnyGodotDictionary {
+    open func _fontGetOtNameStrings(
+        fontRid: Godot.RID
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontSetStyleName(fontRid: Godot.RID, nameStyle: Godot.GodotString) {
+    open func _fontSetStyleName(
+        fontRid: Godot.RID,
+        nameStyle: Godot.GodotString
+    ) {
     }
 
-    open func _fontGetStyleName(fontRid: Godot.RID) -> Godot.GodotString {
+    open func _fontGetStyleName(
+        fontRid: Godot.RID
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _fontSetWeight(fontRid: Godot.RID, weight: Int64) {
+    open func _fontSetWeight(
+        fontRid: Godot.RID,
+        weight: Int64
+    ) {
     }
 
-    open func _fontGetWeight(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetWeight(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetStretch(fontRid: Godot.RID, stretch: Int64) {
+    open func _fontSetStretch(
+        fontRid: Godot.RID,
+        stretch: Int64
+    ) {
     }
 
-    open func _fontGetStretch(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetStretch(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetAntialiasing(fontRid: Godot.RID, antialiasing: Godot.TextServer.FontAntialiasing) {
+    open func _fontSetAntialiasing(
+        fontRid: Godot.RID,
+        antialiasing: Godot.TextServer.FontAntialiasing
+    ) {
     }
 
-    open func _fontGetAntialiasing(fontRid: Godot.RID) -> Godot.TextServer.FontAntialiasing {
+    open func _fontGetAntialiasing(
+        fontRid: Godot.RID
+    ) -> Godot.TextServer.FontAntialiasing {
         Godot.TextServer.FontAntialiasing(rawValue: 0)!
     }
 
-    open func _fontSetGenerateMipmaps(fontRid: Godot.RID, generateMipmaps: Bool) {
+    open func _fontSetGenerateMipmaps(
+        fontRid: Godot.RID,
+        generateMipmaps: Bool
+    ) {
     }
 
-    open func _fontGetGenerateMipmaps(fontRid: Godot.RID) -> Bool {
+    open func _fontGetGenerateMipmaps(
+        fontRid: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetMultichannelSignedDistanceField(fontRid: Godot.RID, msdf: Bool) {
+    open func _fontSetMultichannelSignedDistanceField(
+        fontRid: Godot.RID,
+        msdf: Bool
+    ) {
     }
 
-    open func _fontIsMultichannelSignedDistanceField(fontRid: Godot.RID) -> Bool {
+    open func _fontIsMultichannelSignedDistanceField(
+        fontRid: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetMsdfPixelRange(fontRid: Godot.RID, msdfPixelRange: Int64) {
+    open func _fontSetMsdfPixelRange(
+        fontRid: Godot.RID,
+        msdfPixelRange: Int64
+    ) {
     }
 
-    open func _fontGetMsdfPixelRange(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetMsdfPixelRange(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetMsdfSize(fontRid: Godot.RID, msdfSize: Int64) {
+    open func _fontSetMsdfSize(
+        fontRid: Godot.RID,
+        msdfSize: Int64
+    ) {
     }
 
-    open func _fontGetMsdfSize(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetMsdfSize(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetFixedSize(fontRid: Godot.RID, fixedSize: Int64) {
+    open func _fontSetFixedSize(
+        fontRid: Godot.RID,
+        fixedSize: Int64
+    ) {
     }
 
-    open func _fontGetFixedSize(fontRid: Godot.RID) -> Int64 {
+    open func _fontGetFixedSize(
+        fontRid: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetFixedSizeScaleMode(fontRid: Godot.RID, fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode) {
+    open func _fontSetFixedSizeScaleMode(
+        fontRid: Godot.RID,
+        fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode
+    ) {
     }
 
-    open func _fontGetFixedSizeScaleMode(fontRid: Godot.RID) -> Godot.TextServer.FixedSizeScaleMode {
+    open func _fontGetFixedSizeScaleMode(
+        fontRid: Godot.RID
+    ) -> Godot.TextServer.FixedSizeScaleMode {
         Godot.TextServer.FixedSizeScaleMode(rawValue: 0)!
     }
 
-    open func _fontSetAllowSystemFallback(fontRid: Godot.RID, allowSystemFallback: Bool) {
+    open func _fontSetAllowSystemFallback(
+        fontRid: Godot.RID,
+        allowSystemFallback: Bool
+    ) {
     }
 
-    open func _fontIsAllowSystemFallback(fontRid: Godot.RID) -> Bool {
+    open func _fontIsAllowSystemFallback(
+        fontRid: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetForceAutohinter(fontRid: Godot.RID, forceAutohinter: Bool) {
+    open func _fontSetForceAutohinter(
+        fontRid: Godot.RID,
+        forceAutohinter: Bool
+    ) {
     }
 
-    open func _fontIsForceAutohinter(fontRid: Godot.RID) -> Bool {
+    open func _fontIsForceAutohinter(
+        fontRid: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetHinting(fontRid: Godot.RID, hinting: Godot.TextServer.Hinting) {
+    open func _fontSetHinting(
+        fontRid: Godot.RID,
+        hinting: Godot.TextServer.Hinting
+    ) {
     }
 
-    open func _fontGetHinting(fontRid: Godot.RID) -> Godot.TextServer.Hinting {
+    open func _fontGetHinting(
+        fontRid: Godot.RID
+    ) -> Godot.TextServer.Hinting {
         Godot.TextServer.Hinting(rawValue: 0)!
     }
 
-    open func _fontSetSubpixelPositioning(fontRid: Godot.RID, subpixelPositioning: Godot.TextServer.SubpixelPositioning) {
+    open func _fontSetSubpixelPositioning(
+        fontRid: Godot.RID,
+        subpixelPositioning: Godot.TextServer.SubpixelPositioning
+    ) {
     }
 
-    open func _fontGetSubpixelPositioning(fontRid: Godot.RID) -> Godot.TextServer.SubpixelPositioning {
+    open func _fontGetSubpixelPositioning(
+        fontRid: Godot.RID
+    ) -> Godot.TextServer.SubpixelPositioning {
         Godot.TextServer.SubpixelPositioning(rawValue: 0)!
     }
 
-    open func _fontSetEmbolden(fontRid: Godot.RID, strength: Double) {
+    open func _fontSetEmbolden(
+        fontRid: Godot.RID,
+        strength: Double
+    ) {
     }
 
-    open func _fontGetEmbolden(fontRid: Godot.RID) -> Double {
+    open func _fontGetEmbolden(
+        fontRid: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _fontSetSpacing(fontRid: Godot.RID, spacing: Godot.TextServer.SpacingType, value: Int64) {
+    open func _fontSetSpacing(
+        fontRid: Godot.RID,
+        spacing: Godot.TextServer.SpacingType,
+        value: Int64
+    ) {
     }
 
-    open func _fontGetSpacing(fontRid: Godot.RID, spacing: Godot.TextServer.SpacingType) -> Int64 {
+    open func _fontGetSpacing(
+        fontRid: Godot.RID,
+        spacing: Godot.TextServer.SpacingType
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetTransform(fontRid: Godot.RID, transform: Godot.Transform2D) {
+    open func _fontSetTransform(
+        fontRid: Godot.RID,
+        transform: Godot.Transform2D
+    ) {
     }
 
-    open func _fontGetTransform(fontRid: Godot.RID) -> Godot.Transform2D {
+    open func _fontGetTransform(
+        fontRid: Godot.RID
+    ) -> Godot.Transform2D {
         Godot.Transform2D()
     }
 
-    open func _fontSetVariationCoordinates(fontRid: Godot.RID, variationCoordinates: Godot.AnyGodotDictionary) {
+    open func _fontSetVariationCoordinates(
+        fontRid: Godot.RID,
+        variationCoordinates: Godot.AnyGodotDictionary
+    ) {
     }
 
-    open func _fontGetVariationCoordinates(fontRid: Godot.RID) -> Godot.AnyGodotDictionary {
+    open func _fontGetVariationCoordinates(
+        fontRid: Godot.RID
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontSetOversampling(fontRid: Godot.RID, oversampling: Double) {
+    open func _fontSetOversampling(
+        fontRid: Godot.RID,
+        oversampling: Double
+    ) {
     }
 
-    open func _fontGetOversampling(fontRid: Godot.RID) -> Double {
+    open func _fontGetOversampling(
+        fontRid: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _fontGetSizeCacheList(fontRid: Godot.RID) -> Godot.GodotArray<Godot.Vector2I> {
+    open func _fontGetSizeCacheList(
+        fontRid: Godot.RID
+    ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>()
     }
 
-    open func _fontClearSizeCache(fontRid: Godot.RID) {
+    open func _fontClearSizeCache(
+        fontRid: Godot.RID
+    ) {
     }
 
-    open func _fontRemoveSizeCache(fontRid: Godot.RID, size: Godot.Vector2I) {
+    open func _fontRemoveSizeCache(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I
+    ) {
     }
 
-    open func _fontSetAscent(fontRid: Godot.RID, size: Int64, ascent: Double) {
+    open func _fontSetAscent(
+        fontRid: Godot.RID,
+        size: Int64,
+        ascent: Double
+    ) {
     }
 
-    open func _fontGetAscent(fontRid: Godot.RID, size: Int64) -> Double {
+    open func _fontGetAscent(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _fontSetDescent(fontRid: Godot.RID, size: Int64, descent: Double) {
+    open func _fontSetDescent(
+        fontRid: Godot.RID,
+        size: Int64,
+        descent: Double
+    ) {
     }
 
-    open func _fontGetDescent(fontRid: Godot.RID, size: Int64) -> Double {
+    open func _fontGetDescent(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _fontSetUnderlinePosition(fontRid: Godot.RID, size: Int64, underlinePosition: Double) {
+    open func _fontSetUnderlinePosition(
+        fontRid: Godot.RID,
+        size: Int64,
+        underlinePosition: Double
+    ) {
     }
 
-    open func _fontGetUnderlinePosition(fontRid: Godot.RID, size: Int64) -> Double {
+    open func _fontGetUnderlinePosition(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _fontSetUnderlineThickness(fontRid: Godot.RID, size: Int64, underlineThickness: Double) {
+    open func _fontSetUnderlineThickness(
+        fontRid: Godot.RID,
+        size: Int64,
+        underlineThickness: Double
+    ) {
     }
 
-    open func _fontGetUnderlineThickness(fontRid: Godot.RID, size: Int64) -> Double {
+    open func _fontGetUnderlineThickness(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _fontSetScale(fontRid: Godot.RID, size: Int64, scale: Double) {
+    open func _fontSetScale(
+        fontRid: Godot.RID,
+        size: Int64,
+        scale: Double
+    ) {
     }
 
-    open func _fontGetScale(fontRid: Godot.RID, size: Int64) -> Double {
+    open func _fontGetScale(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _fontGetTextureCount(fontRid: Godot.RID, size: Godot.Vector2I) -> Int64 {
+    open func _fontGetTextureCount(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontClearTextures(fontRid: Godot.RID, size: Godot.Vector2I) {
+    open func _fontClearTextures(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I
+    ) {
     }
 
-    open func _fontRemoveTexture(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) {
+    open func _fontRemoveTexture(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        textureIndex: Int64
+    ) {
     }
 
-    open func _fontSetTextureImage(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64, image: Godot.Image?) {
+    open func _fontSetTextureImage(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        textureIndex: Int64,
+        image: Godot.Image?
+    ) {
     }
 
-    open func _fontGetTextureImage(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) -> Godot.Image? {
+    open func _fontGetTextureImage(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        textureIndex: Int64
+    ) -> Godot.Image? {
         nil
     }
 
-    open func _fontSetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64, offset: Godot.PackedInt32Array) {
+    open func _fontSetTextureOffsets(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        textureIndex: Int64,
+        offset: Godot.PackedInt32Array
+    ) {
     }
 
-    open func _fontGetTextureOffsets(fontRid: Godot.RID, size: Godot.Vector2I, textureIndex: Int64) -> Godot.PackedInt32Array {
+    open func _fontGetTextureOffsets(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        textureIndex: Int64
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _fontGetGlyphList(fontRid: Godot.RID, size: Godot.Vector2I) -> Godot.PackedInt32Array {
+    open func _fontGetGlyphList(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _fontClearGlyphs(fontRid: Godot.RID, size: Godot.Vector2I) {
+    open func _fontClearGlyphs(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I
+    ) {
     }
 
-    open func _fontRemoveGlyph(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) {
+    open func _fontRemoveGlyph(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) {
     }
 
-    open func _fontGetGlyphAdvance(fontRid: Godot.RID, size: Int64, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphAdvance(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyph: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontSetGlyphAdvance(fontRid: Godot.RID, size: Int64, glyph: Int64, advance: Godot.Vector2) {
+    open func _fontSetGlyphAdvance(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyph: Int64,
+        advance: Godot.Vector2
+    ) {
     }
 
-    open func _fontGetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphOffset(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontSetGlyphOffset(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, offset: Godot.Vector2) {
+    open func _fontSetGlyphOffset(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64,
+        offset: Godot.Vector2
+    ) {
     }
 
-    open func _fontGetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphSize(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontSetGlyphSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, glSize: Godot.Vector2) {
+    open func _fontSetGlyphSize(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64,
+        glSize: Godot.Vector2
+    ) {
     }
 
-    open func _fontGetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Rect2 {
+    open func _fontGetGlyphUvRect(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Godot.Rect2 {
         Godot.Rect2()
     }
 
-    open func _fontSetGlyphUvRect(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, uvRect: Godot.Rect2) {
+    open func _fontSetGlyphUvRect(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64,
+        uvRect: Godot.Rect2
+    ) {
     }
 
-    open func _fontGetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Int64 {
+    open func _fontGetGlyphTextureIdx(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontSetGlyphTextureIdx(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64, textureIdx: Int64) {
+    open func _fontSetGlyphTextureIdx(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64,
+        textureIdx: Int64
+    ) {
     }
 
-    open func _fontGetGlyphTextureRid(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.RID {
+    open func _fontGetGlyphTextureRid(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _fontGetGlyphTextureSize(fontRid: Godot.RID, size: Godot.Vector2I, glyph: Int64) -> Godot.Vector2 {
+    open func _fontGetGlyphTextureSize(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        glyph: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontGetGlyphContours(fontRid: Godot.RID, size: Int64, index: Int64) -> Godot.AnyGodotDictionary {
+    open func _fontGetGlyphContours(
+        fontRid: Godot.RID,
+        size: Int64,
+        index: Int64
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontGetKerningList(fontRid: Godot.RID, size: Int64) -> Godot.GodotArray<Godot.Vector2I> {
+    open func _fontGetKerningList(
+        fontRid: Godot.RID,
+        size: Int64
+    ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>()
     }
 
-    open func _fontClearKerningMap(fontRid: Godot.RID, size: Int64) {
+    open func _fontClearKerningMap(
+        fontRid: Godot.RID,
+        size: Int64
+    ) {
     }
 
-    open func _fontRemoveKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I) {
+    open func _fontRemoveKerning(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyphPair: Godot.Vector2I
+    ) {
     }
 
-    open func _fontSetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I, kerning: Godot.Vector2) {
+    open func _fontSetKerning(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyphPair: Godot.Vector2I,
+        kerning: Godot.Vector2
+    ) {
     }
 
-    open func _fontGetKerning(fontRid: Godot.RID, size: Int64, glyphPair: Godot.Vector2I) -> Godot.Vector2 {
+    open func _fontGetKerning(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyphPair: Godot.Vector2I
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _fontGetGlyphIndex(fontRid: Godot.RID, size: Int64, char: Int64, variationSelector: Int64) -> Int64 {
+    open func _fontGetGlyphIndex(
+        fontRid: Godot.RID,
+        size: Int64,
+        char: Int64,
+        variationSelector: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontGetCharFromGlyphIndex(fontRid: Godot.RID, size: Int64, glyphIndex: Int64) -> Int64 {
+    open func _fontGetCharFromGlyphIndex(
+        fontRid: Godot.RID,
+        size: Int64,
+        glyphIndex: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _fontHasChar(fontRid: Godot.RID, char: Int64) -> Bool {
+    open func _fontHasChar(
+        fontRid: Godot.RID,
+        char: Int64
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontGetSupportedChars(fontRid: Godot.RID) -> Godot.GodotString {
+    open func _fontGetSupportedChars(
+        fontRid: Godot.RID
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _fontRenderRange(fontRid: Godot.RID, size: Godot.Vector2I, start: Int64, end: Int64) {
+    open func _fontRenderRange(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        start: Int64,
+        end: Int64
+    ) {
     }
 
-    open func _fontRenderGlyph(fontRid: Godot.RID, size: Godot.Vector2I, index: Int64) {
+    open func _fontRenderGlyph(
+        fontRid: Godot.RID,
+        size: Godot.Vector2I,
+        index: Int64
+    ) {
     }
 
-    open func _fontDrawGlyph(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color) {
+    open func _fontDrawGlyph(
+        fontRid: Godot.RID,
+        canvas: Godot.RID,
+        size: Int64,
+        pos: Godot.Vector2,
+        index: Int64,
+        color: Godot.Color
+    ) {
     }
 
-    open func _fontDrawGlyphOutline(fontRid: Godot.RID, canvas: Godot.RID, size: Int64, outlineSize: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color) {
+    open func _fontDrawGlyphOutline(
+        fontRid: Godot.RID,
+        canvas: Godot.RID,
+        size: Int64,
+        outlineSize: Int64,
+        pos: Godot.Vector2,
+        index: Int64,
+        color: Godot.Color
+    ) {
     }
 
-    open func _fontIsLanguageSupported(fontRid: Godot.RID, language: Godot.GodotString) -> Bool {
+    open func _fontIsLanguageSupported(
+        fontRid: Godot.RID,
+        language: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetLanguageSupportOverride(fontRid: Godot.RID, language: Godot.GodotString, supported: Bool) {
+    open func _fontSetLanguageSupportOverride(
+        fontRid: Godot.RID,
+        language: Godot.GodotString,
+        supported: Bool
+    ) {
     }
 
-    open func _fontGetLanguageSupportOverride(fontRid: Godot.RID, language: Godot.GodotString) -> Bool {
+    open func _fontGetLanguageSupportOverride(
+        fontRid: Godot.RID,
+        language: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontRemoveLanguageSupportOverride(fontRid: Godot.RID, language: Godot.GodotString) {
+    open func _fontRemoveLanguageSupportOverride(
+        fontRid: Godot.RID,
+        language: Godot.GodotString
+    ) {
     }
 
-    open func _fontGetLanguageSupportOverrides(fontRid: Godot.RID) -> Godot.PackedStringArray {
+    open func _fontGetLanguageSupportOverrides(
+        fontRid: Godot.RID
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _fontIsScriptSupported(fontRid: Godot.RID, script: Godot.GodotString) -> Bool {
+    open func _fontIsScriptSupported(
+        fontRid: Godot.RID,
+        script: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontSetScriptSupportOverride(fontRid: Godot.RID, script: Godot.GodotString, supported: Bool) {
+    open func _fontSetScriptSupportOverride(
+        fontRid: Godot.RID,
+        script: Godot.GodotString,
+        supported: Bool
+    ) {
     }
 
-    open func _fontGetScriptSupportOverride(fontRid: Godot.RID, script: Godot.GodotString) -> Bool {
+    open func _fontGetScriptSupportOverride(
+        fontRid: Godot.RID,
+        script: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _fontRemoveScriptSupportOverride(fontRid: Godot.RID, script: Godot.GodotString) {
+    open func _fontRemoveScriptSupportOverride(
+        fontRid: Godot.RID,
+        script: Godot.GodotString
+    ) {
     }
 
-    open func _fontGetScriptSupportOverrides(fontRid: Godot.RID) -> Godot.PackedStringArray {
+    open func _fontGetScriptSupportOverrides(
+        fontRid: Godot.RID
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _fontSetOpentypeFeatureOverrides(fontRid: Godot.RID, overrides: Godot.AnyGodotDictionary) {
+    open func _fontSetOpentypeFeatureOverrides(
+        fontRid: Godot.RID,
+        overrides: Godot.AnyGodotDictionary
+    ) {
     }
 
-    open func _fontGetOpentypeFeatureOverrides(fontRid: Godot.RID) -> Godot.AnyGodotDictionary {
+    open func _fontGetOpentypeFeatureOverrides(
+        fontRid: Godot.RID
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontSupportedFeatureList(fontRid: Godot.RID) -> Godot.AnyGodotDictionary {
+    open func _fontSupportedFeatureList(
+        fontRid: Godot.RID
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _fontSupportedVariationList(fontRid: Godot.RID) -> Godot.AnyGodotDictionary {
+    open func _fontSupportedVariationList(
+        fontRid: Godot.RID
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
@@ -454,304 +829,548 @@ open class TextServerExtension: TextServer {
         Double()
     }
 
-    open func _fontSetGlobalOversampling(_ oversampling: Double) {
+    open func _fontSetGlobalOversampling(
+        _ oversampling: Double
+    ) {
     }
 
-    open func _getHexCodeBoxSize(_ size: Int64, index: Int64) -> Godot.Vector2 {
+    open func _getHexCodeBoxSize(
+        _ size: Int64,
+        index: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _drawHexCodeBox(canvas: Godot.RID, size: Int64, pos: Godot.Vector2, index: Int64, color: Godot.Color) {
+    open func _drawHexCodeBox(
+        canvas: Godot.RID,
+        size: Int64,
+        pos: Godot.Vector2,
+        index: Int64,
+        color: Godot.Color
+    ) {
     }
 
-    open func _createShapedText(direction: Godot.TextServer.Direction, orientation: Godot.TextServer.Orientation) -> Godot.RID {
+    open func _createShapedText(
+        direction: Godot.TextServer.Direction,
+        orientation: Godot.TextServer.Orientation
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _shapedTextClear(shaped: Godot.RID) {
+    open func _shapedTextClear(
+        shaped: Godot.RID
+    ) {
     }
 
-    open func _shapedTextSetDirection(shaped: Godot.RID, direction: Godot.TextServer.Direction) {
+    open func _shapedTextSetDirection(
+        shaped: Godot.RID,
+        direction: Godot.TextServer.Direction
+    ) {
     }
 
-    open func _shapedTextGetDirection(shaped: Godot.RID) -> Godot.TextServer.Direction {
+    open func _shapedTextGetDirection(
+        shaped: Godot.RID
+    ) -> Godot.TextServer.Direction {
         Godot.TextServer.Direction(rawValue: 0)!
     }
 
-    open func _shapedTextGetInferredDirection(shaped: Godot.RID) -> Godot.TextServer.Direction {
+    open func _shapedTextGetInferredDirection(
+        shaped: Godot.RID
+    ) -> Godot.TextServer.Direction {
         Godot.TextServer.Direction(rawValue: 0)!
     }
 
-    open func _shapedTextSetBidiOverride(shaped: Godot.RID, override: Godot.AnyGodotArray) {
+    open func _shapedTextSetBidiOverride(
+        shaped: Godot.RID,
+        override: Godot.AnyGodotArray
+    ) {
     }
 
-    open func _shapedTextSetCustomPunctuation(shaped: Godot.RID, punct: Godot.GodotString) {
+    open func _shapedTextSetCustomPunctuation(
+        shaped: Godot.RID,
+        punct: Godot.GodotString
+    ) {
     }
 
-    open func _shapedTextGetCustomPunctuation(shaped: Godot.RID) -> Godot.GodotString {
+    open func _shapedTextGetCustomPunctuation(
+        shaped: Godot.RID
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _shapedTextSetOrientation(shaped: Godot.RID, orientation: Godot.TextServer.Orientation) {
+    open func _shapedTextSetOrientation(
+        shaped: Godot.RID,
+        orientation: Godot.TextServer.Orientation
+    ) {
     }
 
-    open func _shapedTextGetOrientation(shaped: Godot.RID) -> Godot.TextServer.Orientation {
+    open func _shapedTextGetOrientation(
+        shaped: Godot.RID
+    ) -> Godot.TextServer.Orientation {
         Godot.TextServer.Orientation(rawValue: 0)!
     }
 
-    open func _shapedTextSetPreserveInvalid(shaped: Godot.RID, enabled: Bool) {
+    open func _shapedTextSetPreserveInvalid(
+        shaped: Godot.RID,
+        enabled: Bool
+    ) {
     }
 
-    open func _shapedTextGetPreserveInvalid(shaped: Godot.RID) -> Bool {
+    open func _shapedTextGetPreserveInvalid(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextSetPreserveControl(shaped: Godot.RID, enabled: Bool) {
+    open func _shapedTextSetPreserveControl(
+        shaped: Godot.RID,
+        enabled: Bool
+    ) {
     }
 
-    open func _shapedTextGetPreserveControl(shaped: Godot.RID) -> Bool {
+    open func _shapedTextGetPreserveControl(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextSetSpacing(shaped: Godot.RID, spacing: Godot.TextServer.SpacingType, value: Int64) {
+    open func _shapedTextSetSpacing(
+        shaped: Godot.RID,
+        spacing: Godot.TextServer.SpacingType,
+        value: Int64
+    ) {
     }
 
-    open func _shapedTextGetSpacing(shaped: Godot.RID, spacing: Godot.TextServer.SpacingType) -> Int64 {
+    open func _shapedTextGetSpacing(
+        shaped: Godot.RID,
+        spacing: Godot.TextServer.SpacingType
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextAddString(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.AnyGodotDictionary, language: Godot.GodotString, meta: Godot.Variant) -> Bool {
+    open func _shapedTextAddString(
+        shaped: Godot.RID,
+        text: Godot.GodotString,
+        fonts: Godot.GodotArray<Godot.RID>,
+        size: Int64,
+        opentypeFeatures: Godot.AnyGodotDictionary,
+        language: Godot.GodotString,
+        meta: Godot.Variant
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextAddObject(shaped: Godot.RID, key: Godot.Variant, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment, length: Int64, baseline: Double) -> Bool {
+    open func _shapedTextAddObject(
+        shaped: Godot.RID,
+        key: Godot.Variant,
+        size: Godot.Vector2,
+        inlineAlign: Godot.InlineAlignment,
+        length: Int64,
+        baseline: Double
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextResizeObject(shaped: Godot.RID, key: Godot.Variant, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment, baseline: Double) -> Bool {
+    open func _shapedTextResizeObject(
+        shaped: Godot.RID,
+        key: Godot.Variant,
+        size: Godot.Vector2,
+        inlineAlign: Godot.InlineAlignment,
+        baseline: Double
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedGetSpanCount(shaped: Godot.RID) -> Int64 {
+    open func _shapedGetSpanCount(
+        shaped: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedGetSpanMeta(shaped: Godot.RID, index: Int64) -> Godot.Variant {
+    open func _shapedGetSpanMeta(
+        shaped: Godot.RID,
+        index: Int64
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _shapedSetSpanUpdateFont(shaped: Godot.RID, index: Int64, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.AnyGodotDictionary) {
+    open func _shapedSetSpanUpdateFont(
+        shaped: Godot.RID,
+        index: Int64,
+        fonts: Godot.GodotArray<Godot.RID>,
+        size: Int64,
+        opentypeFeatures: Godot.AnyGodotDictionary
+    ) {
     }
 
-    open func _shapedTextSubstr(shaped: Godot.RID, start: Int64, length: Int64) -> Godot.RID {
+    open func _shapedTextSubstr(
+        shaped: Godot.RID,
+        start: Int64,
+        length: Int64
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _shapedTextGetParent(shaped: Godot.RID) -> Godot.RID {
+    open func _shapedTextGetParent(
+        shaped: Godot.RID
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _shapedTextFitToWidth(shaped: Godot.RID, width: Double, justificationFlags: Godot.TextServer.JustificationFlag) -> Double {
+    open func _shapedTextFitToWidth(
+        shaped: Godot.RID,
+        width: Double,
+        justificationFlags: Godot.TextServer.JustificationFlag
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextTabAlign(shaped: Godot.RID, tabStops: Godot.PackedFloat32Array) -> Double {
+    open func _shapedTextTabAlign(
+        shaped: Godot.RID,
+        tabStops: Godot.PackedFloat32Array
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextShape(shaped: Godot.RID) -> Bool {
+    open func _shapedTextShape(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextUpdateBreaks(shaped: Godot.RID) -> Bool {
+    open func _shapedTextUpdateBreaks(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextUpdateJustificationOps(shaped: Godot.RID) -> Bool {
+    open func _shapedTextUpdateJustificationOps(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextIsReady(shaped: Godot.RID) -> Bool {
+    open func _shapedTextIsReady(
+        shaped: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _shapedTextGetGlyphs(shaped: Godot.RID) -> UnsafePointer<Glyph> {
+    open func _shapedTextGetGlyphs(
+        shaped: Godot.RID
+    ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _shapedTextSortLogical(shaped: Godot.RID) -> UnsafePointer<Glyph> {
+    open func _shapedTextSortLogical(
+        shaped: Godot.RID
+    ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _shapedTextGetGlyphCount(shaped: Godot.RID) -> Int64 {
+    open func _shapedTextGetGlyphCount(
+        shaped: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetRange(shaped: Godot.RID) -> Godot.Vector2I {
+    open func _shapedTextGetRange(
+        shaped: Godot.RID
+    ) -> Godot.Vector2I {
         Godot.Vector2I()
     }
 
-    open func _shapedTextGetLineBreaksAdv(shaped: Godot.RID, width: Godot.PackedFloat32Array, start: Int64, once: Bool, breakFlags: Godot.TextServer.LineBreakFlag) -> Godot.PackedInt32Array {
+    open func _shapedTextGetLineBreaksAdv(
+        shaped: Godot.RID,
+        width: Godot.PackedFloat32Array,
+        start: Int64,
+        once: Bool,
+        breakFlags: Godot.TextServer.LineBreakFlag
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _shapedTextGetLineBreaks(shaped: Godot.RID, width: Double, start: Int64, breakFlags: Godot.TextServer.LineBreakFlag) -> Godot.PackedInt32Array {
+    open func _shapedTextGetLineBreaks(
+        shaped: Godot.RID,
+        width: Double,
+        start: Int64,
+        breakFlags: Godot.TextServer.LineBreakFlag
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _shapedTextGetWordBreaks(shaped: Godot.RID, graphemeFlags: Godot.TextServer.GraphemeFlag) -> Godot.PackedInt32Array {
+    open func _shapedTextGetWordBreaks(
+        shaped: Godot.RID,
+        graphemeFlags: Godot.TextServer.GraphemeFlag
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _shapedTextGetTrimPos(shaped: Godot.RID) -> Int64 {
+    open func _shapedTextGetTrimPos(
+        shaped: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetEllipsisPos(shaped: Godot.RID) -> Int64 {
+    open func _shapedTextGetEllipsisPos(
+        shaped: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetEllipsisGlyphCount(shaped: Godot.RID) -> Int64 {
+    open func _shapedTextGetEllipsisGlyphCount(
+        shaped: Godot.RID
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetEllipsisGlyphs(shaped: Godot.RID) -> UnsafePointer<Glyph> {
+    open func _shapedTextGetEllipsisGlyphs(
+        shaped: Godot.RID
+    ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _shapedTextOverrunTrimToWidth(shaped: Godot.RID, width: Double, trimFlags: Godot.TextServer.TextOverrunFlag) {
+    open func _shapedTextOverrunTrimToWidth(
+        shaped: Godot.RID,
+        width: Double,
+        trimFlags: Godot.TextServer.TextOverrunFlag
+    ) {
     }
 
-    open func _shapedTextGetObjects(shaped: Godot.RID) -> Godot.AnyGodotArray {
+    open func _shapedTextGetObjects(
+        shaped: Godot.RID
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray()
     }
 
-    open func _shapedTextGetObjectRect(shaped: Godot.RID, key: Godot.Variant) -> Godot.Rect2 {
+    open func _shapedTextGetObjectRect(
+        shaped: Godot.RID,
+        key: Godot.Variant
+    ) -> Godot.Rect2 {
         Godot.Rect2()
     }
 
-    open func _shapedTextGetSize(shaped: Godot.RID) -> Godot.Vector2 {
+    open func _shapedTextGetSize(
+        shaped: Godot.RID
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _shapedTextGetAscent(shaped: Godot.RID) -> Double {
+    open func _shapedTextGetAscent(
+        shaped: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextGetDescent(shaped: Godot.RID) -> Double {
+    open func _shapedTextGetDescent(
+        shaped: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextGetWidth(shaped: Godot.RID) -> Double {
+    open func _shapedTextGetWidth(
+        shaped: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextGetUnderlinePosition(shaped: Godot.RID) -> Double {
+    open func _shapedTextGetUnderlinePosition(
+        shaped: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextGetUnderlineThickness(shaped: Godot.RID) -> Double {
+    open func _shapedTextGetUnderlineThickness(
+        shaped: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapedTextGetDominantDirectionInRange(shaped: Godot.RID, start: Int64, end: Int64) -> Int64 {
+    open func _shapedTextGetDominantDirectionInRange(
+        shaped: Godot.RID,
+        start: Int64,
+        end: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetCarets(shaped: Godot.RID, position: Int64, caret: UnsafeMutablePointer<CaretInfo>) {
+    open func _shapedTextGetCarets(
+        shaped: Godot.RID,
+        position: Int64,
+        caret: UnsafeMutablePointer<CaretInfo>
+    ) {
     }
 
-    open func _shapedTextGetSelection(shaped: Godot.RID, start: Int64, end: Int64) -> Godot.PackedVector2Array {
+    open func _shapedTextGetSelection(
+        shaped: Godot.RID,
+        start: Int64,
+        end: Int64
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array()
     }
 
-    open func _shapedTextHitTestGrapheme(shaped: Godot.RID, coord: Double) -> Int64 {
+    open func _shapedTextHitTestGrapheme(
+        shaped: Godot.RID,
+        coord: Double
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextHitTestPosition(shaped: Godot.RID, coord: Double) -> Int64 {
+    open func _shapedTextHitTestPosition(
+        shaped: Godot.RID,
+        coord: Double
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextDraw(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double, clipR: Double, color: Godot.Color) {
+    open func _shapedTextDraw(
+        shaped: Godot.RID,
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        clipL: Double,
+        clipR: Double,
+        color: Godot.Color
+    ) {
     }
 
-    open func _shapedTextDrawOutline(shaped: Godot.RID, canvas: Godot.RID, pos: Godot.Vector2, clipL: Double, clipR: Double, outlineSize: Int64, color: Godot.Color) {
+    open func _shapedTextDrawOutline(
+        shaped: Godot.RID,
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        clipL: Double,
+        clipR: Double,
+        outlineSize: Int64,
+        color: Godot.Color
+    ) {
     }
 
-    open func _shapedTextGetGraphemeBounds(shaped: Godot.RID, pos: Int64) -> Godot.Vector2 {
+    open func _shapedTextGetGraphemeBounds(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _shapedTextNextGraphemePos(shaped: Godot.RID, pos: Int64) -> Int64 {
+    open func _shapedTextNextGraphemePos(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextPrevGraphemePos(shaped: Godot.RID, pos: Int64) -> Int64 {
+    open func _shapedTextPrevGraphemePos(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextGetCharacterBreaks(shaped: Godot.RID) -> Godot.PackedInt32Array {
+    open func _shapedTextGetCharacterBreaks(
+        shaped: Godot.RID
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _shapedTextNextCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+    open func _shapedTextNextCharacterPos(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextPrevCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+    open func _shapedTextPrevCharacterPos(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _shapedTextClosestCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+    open func _shapedTextClosestCharacterPos(
+        shaped: Godot.RID,
+        pos: Int64
+    ) -> Int64 {
         Int64()
     }
 
-    open func _formatNumber(string: Godot.GodotString, language: Godot.GodotString) -> Godot.GodotString {
+    open func _formatNumber(
+        string: Godot.GodotString,
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _parseNumber(string: Godot.GodotString, language: Godot.GodotString) -> Godot.GodotString {
+    open func _parseNumber(
+        string: Godot.GodotString,
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _percentSign(language: Godot.GodotString) -> Godot.GodotString {
+    open func _percentSign(
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _stripDiacritics(string: Godot.GodotString) -> Godot.GodotString {
+    open func _stripDiacritics(
+        string: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _isValidIdentifier(string: Godot.GodotString) -> Bool {
+    open func _isValidIdentifier(
+        string: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _stringGetWordBreaks(string: Godot.GodotString, language: Godot.GodotString, charsPerLine: Int64) -> Godot.PackedInt32Array {
+    open func _stringGetWordBreaks(
+        string: Godot.GodotString,
+        language: Godot.GodotString,
+        charsPerLine: Int64
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _stringGetCharacterBreaks(string: Godot.GodotString, language: Godot.GodotString) -> Godot.PackedInt32Array {
+    open func _stringGetCharacterBreaks(
+        string: Godot.GodotString,
+        language: Godot.GodotString
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _isConfusable(string: Godot.GodotString, dict: Godot.PackedStringArray) -> Int64 {
+    open func _isConfusable(
+        string: Godot.GodotString,
+        dict: Godot.PackedStringArray
+    ) -> Int64 {
         Int64()
     }
 
-    open func _spoofCheck(string: Godot.GodotString) -> Bool {
+    open func _spoofCheck(
+        string: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _stringToUpper(string: Godot.GodotString, language: Godot.GodotString) -> Godot.GodotString {
+    open func _stringToUpper(
+        string: Godot.GodotString,
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _stringToLower(string: Godot.GodotString, language: Godot.GodotString) -> Godot.GodotString {
+    open func _stringToLower(
+        string: Godot.GodotString,
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _parseStructuredText(parserType: Godot.TextServer.StructuredTextParser, args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3I> {
+    open func _parseStructuredText(
+        parserType: Godot.TextServer.StructuredTextParser,
+        args: Godot.AnyGodotArray,
+        text: Godot.GodotString
+    ) -> Godot.GodotArray<Godot.Vector3I> {
         Godot.GodotArray<Godot.Vector3I>()
     }
 
@@ -759,6 +1378,7 @@ open class TextServerExtension: TextServer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2965,5 +3585,4 @@ open class TextServerExtension: TextServer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

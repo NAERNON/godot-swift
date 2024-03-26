@@ -3,25 +3,34 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OpenXRExtensionWrapperExtension: Object {
     open func _getRequestedExtensions() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _setSystemPropertiesAndGetNextPointer(_ nextPointer: UnsafeMutableRawPointer) -> UInt64 {
+    open func _setSystemPropertiesAndGetNextPointer(
+        _ nextPointer: UnsafeMutableRawPointer
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _setInstanceCreateInfoAndGetNextPointer(_ nextPointer: UnsafeMutableRawPointer) -> UInt64 {
+    open func _setInstanceCreateInfoAndGetNextPointer(
+        _ nextPointer: UnsafeMutableRawPointer
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _setSessionCreateAndGetNextPointer(_ nextPointer: UnsafeMutableRawPointer) -> UInt64 {
+    open func _setSessionCreateAndGetNextPointer(
+        _ nextPointer: UnsafeMutableRawPointer
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _setSwapchainCreateInfoAndGetNextPointer(_ nextPointer: UnsafeMutableRawPointer) -> UInt64 {
+    open func _setSwapchainCreateInfoAndGetNextPointer(
+        _ nextPointer: UnsafeMutableRawPointer
+    ) -> UInt64 {
         UInt64()
     }
 
@@ -31,13 +40,17 @@ open class OpenXRExtensionWrapperExtension: Object {
     open func _onBeforeInstanceCreated() {
     }
 
-    open func _onInstanceCreated(instance: UInt64) {
+    open func _onInstanceCreated(
+        instance: UInt64
+    ) {
     }
 
     open func _onInstanceDestroyed() {
     }
 
-    open func _onSessionCreated(session: UInt64) {
+    open func _onSessionCreated(
+        session: UInt64
+    ) {
     }
 
     open func _onProcess() {
@@ -73,7 +86,9 @@ open class OpenXRExtensionWrapperExtension: Object {
     open func _onStateExiting() {
     }
 
-    open func _onEventPolled(event: UnsafeRawPointer) -> Bool {
+    open func _onEventPolled(
+        event: UnsafeRawPointer
+    ) -> Bool {
         Bool()
     }
 
@@ -84,6 +99,7 @@ open class OpenXRExtensionWrapperExtension: Object {
         }
         }
     }()
+
     public func openxrApi() -> Godot.OpenXRAPIExtension? {
         Godot.OpenXRAPIExtension?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +118,7 @@ open class OpenXRExtensionWrapperExtension: Object {
         }
         }
     }()
+
     public func registerExtensionWrapper() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -113,6 +130,7 @@ open class OpenXRExtensionWrapperExtension: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -298,5 +316,4 @@ open class OpenXRExtensionWrapperExtension: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

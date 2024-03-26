@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ShapeCast3D: Node3D {
     internal static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func resourceChanged(resource: Godot.Resource?) {
+
+    public func resourceChanged(
+        resource: Godot.Resource?
+    ) {
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         withUnsafeArgumentPackPointer(_ptr___ptr_resource) { __accessPtr in
@@ -32,7 +36,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,6 +58,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __isEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +77,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.Shape3D?) {
+
+    private func __setShape(
+        _ shape: Godot.Shape3D?
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
         withUnsafeArgumentPackPointer(_ptr___ptr_shape) { __accessPtr in
@@ -89,6 +100,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getShape() -> Godot.Shape3D? {
         Godot.Shape3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,7 +119,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setTargetPosition(localPoint: Godot.Vector3) {
+
+    private func __setTargetPosition(
+        localPoint: Godot.Vector3
+    ) {
         localPoint.withGodotUnsafeRawPointer { __ptr_localPoint in
         withUnsafeArgumentPackPointer(__ptr_localPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,6 +141,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getTargetPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,7 +160,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setMargin(_ margin: Double) {
+
+    private func __setMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,6 +182,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,7 +201,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setMaxResults(_ maxResults: Int32) {
+
+    private func __setMaxResults(
+        _ maxResults: Int32
+    ) {
         maxResults.withGodotUnsafeRawPointer { __ptr_maxResults in
         withUnsafeArgumentPackPointer(__ptr_maxResults) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +223,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getMaxResults() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +242,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func isColliding() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,6 +261,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func collisionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +280,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func forceShapecastUpdate() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -271,7 +298,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func collider(index: Int32) -> Godot.Object? {
+
+    public func collider(
+        index: Int32
+    ) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -291,7 +321,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func colliderRid(index: Int32) -> Godot.RID {
+
+    public func colliderRid(
+        index: Int32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -311,7 +344,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func colliderShape(index: Int32) -> Int32 {
+
+    public func colliderShape(
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -331,7 +367,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func collisionPoint(index: Int32) -> Godot.Vector3 {
+
+    public func collisionPoint(
+        index: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -351,7 +390,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func collisionNormal(index: Int32) -> Godot.Vector3 {
+
+    public func collisionNormal(
+        index: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -371,6 +413,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func closestCollisionSafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -389,6 +432,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func closestCollisionUnsafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -407,7 +451,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func addExceptionRid(_ rid: Godot.RID) {
+
+    public func addExceptionRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -426,7 +473,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func addException(node: Godot.CollisionObject3D?) {
+
+    public func addException(
+        node: Godot.CollisionObject3D?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -446,7 +496,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func removeExceptionRid(_ rid: Godot.RID) {
+
+    public func removeExceptionRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -465,7 +518,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func removeException(node: Godot.CollisionObject3D?) {
+
+    public func removeException(
+        node: Godot.CollisionObject3D?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -485,6 +541,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     public func clearExceptions() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -502,7 +559,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -521,6 +581,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -539,7 +600,11 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -559,7 +624,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -579,7 +647,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setExcludeParentBody(mask: Bool) {
+
+    private func __setExcludeParentBody(
+        mask: Bool
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -598,6 +669,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getExcludeParentBody() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -616,7 +688,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setCollideWithAreas(enable: Bool) {
+
+    private func __setCollideWithAreas(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -635,6 +710,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __isCollideWithAreasEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -653,7 +729,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setCollideWithBodies(enable: Bool) {
+
+    private func __setCollideWithBodies(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -672,6 +751,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __isCollideWithBodiesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -690,7 +770,10 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
-    private func __setDebugShapeCustomColor(_ debugShapeCustomColor: Godot.Color) {
+
+    private func __setDebugShapeCustomColor(
+        _ debugShapeCustomColor: Godot.Color
+    ) {
         debugShapeCustomColor.withGodotUnsafeRawPointer { __ptr_debugShapeCustomColor in
         withUnsafeArgumentPackPointer(__ptr_debugShapeCustomColor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -709,6 +792,7 @@ open class ShapeCast3D: Node3D {
         }
         }
     }()
+
     private func __getDebugShapeCustomColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -831,6 +915,7 @@ open class ShapeCast3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -843,5 +928,4 @@ open class ShapeCast3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

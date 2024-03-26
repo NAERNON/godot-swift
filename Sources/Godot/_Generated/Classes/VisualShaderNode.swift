@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNode: Resource {
     public enum PortType: UInt32, GodotEnum {
@@ -16,6 +17,7 @@ open class VisualShaderNode: Resource {
         case transform = 7
         case sampler = 8
         case max = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
@@ -38,7 +40,10 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func defaultInputPort(type: Godot.VisualShaderNode.PortType) -> Int32 {
+
+    public func defaultInputPort(
+        type: Godot.VisualShaderNode.PortType
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -58,7 +63,10 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    private func __setOutputPortForPreview(port: Int32) {
+
+    private func __setOutputPortForPreview(
+        port: Int32
+    ) {
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,6 +85,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
+
     private func __getOutputPortForPreview() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,7 +104,12 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func setInputPortDefaultValue<Value1: VariantStorableIn, Value2: VariantStorableIn>(port: Int32, value: Value1, prevValue: Value2 = Variant()) {
+
+    public func setInputPortDefaultValue<Value1: VariantStorableIn, Value2: VariantStorableIn>(
+        port: Int32,
+        value: Value1,
+        prevValue: Value2 = Variant()
+    ) {
         port.withGodotUnsafeRawPointer { __ptr_port in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         Godot.Variant.withStorageUnsafeRawPointer(to: prevValue) { __ptr_prevValue in
@@ -116,7 +130,10 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func inputPortDefaultValue(port: Int32) -> Godot.Variant {
+
+    public func inputPortDefaultValue(
+        port: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
@@ -136,7 +153,10 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func removeInputPortDefaultValue(port: Int32) {
+
+    public func removeInputPortDefaultValue(
+        port: Int32
+    ) {
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -155,6 +175,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
+
     public func clearDefaultInputValues() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -172,7 +193,10 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    private func __setDefaultInputValues<Value: VariantStorable>(_ values: Godot.GodotArray<Value>) {
+
+    private func __setDefaultInputValues<Value: VariantStorable>(
+        _ values: Godot.GodotArray<Value>
+    ) {
         values.withGodotUnsafeRawPointer { __ptr_values in
         withUnsafeArgumentPackPointer(__ptr_values) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,6 +215,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
+
     private func __getDefaultInputValues() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -225,6 +250,7 @@ open class VisualShaderNode: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -237,5 +263,4 @@ open class VisualShaderNode: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

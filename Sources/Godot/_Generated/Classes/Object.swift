@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRootClass
 open class Object {
     public enum ConnectFlags: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class Object {
         case persist = 2
         case oneShot = 4
         case referenceCounted = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Deferred", 1),
@@ -22,6 +24,7 @@ open class Object {
     public func scriptChanged() {
         _ = scriptChangedSignal.emit()
     }
+
     public lazy var scriptChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "script_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -40,6 +43,7 @@ open class Object {
     public func propertyListChanged() {
         _ = propertyListChangedSignal.emit()
     }
+
     public lazy var propertyListChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "property_list_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -56,6 +60,7 @@ open class Object {
     }()
 
     public static let notificationPostinitialize: Notification = .init(rawValue: 0)
+
     public static let notificationPredelete: Notification = .init(rawValue: 1)
 
     internal static var __method_binding_get_class: GDExtensionMethodBindPtr = {
@@ -65,6 +70,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getClass() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -83,7 +89,10 @@ open class Object {
         }
         }
     }()
-    internal func __isClass(_ `class`: Godot.GodotString) -> Bool {
+
+    internal func __isClass(
+        _ `class`: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
@@ -103,7 +112,11 @@ open class Object {
         }
         }
     }()
-    internal func __set<Value: VariantStorableIn>(property: Godot.GodotStringName, value: Value) {
+
+    internal func __set<Value: VariantStorableIn>(
+        property: Godot.GodotStringName,
+        value: Value
+    ) {
         property.withGodotUnsafeRawPointer { __ptr_property in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { __accessPtr in
@@ -123,7 +136,10 @@ open class Object {
         }
         }
     }()
-    internal func __get(property: Godot.GodotStringName) -> Godot.Variant {
+
+    internal func __get(
+        property: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
@@ -143,7 +159,11 @@ open class Object {
         }
         }
     }()
-    internal func __setIndexed<Value: VariantStorableIn>(propertyPath: Godot.NodePath, value: Value) {
+
+    internal func __setIndexed<Value: VariantStorableIn>(
+        propertyPath: Godot.NodePath,
+        value: Value
+    ) {
         propertyPath.withGodotUnsafeRawPointer { __ptr_propertyPath in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_propertyPath, __ptr_value) { __accessPtr in
@@ -163,7 +183,10 @@ open class Object {
         }
         }
     }()
-    internal func __getIndexed(propertyPath: Godot.NodePath) -> Godot.Variant {
+
+    internal func __getIndexed(
+        propertyPath: Godot.NodePath
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         propertyPath.withGodotUnsafeRawPointer { __ptr_propertyPath in
         withUnsafeArgumentPackPointer(__ptr_propertyPath) { __accessPtr in
@@ -183,6 +206,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getPropertyList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,6 +225,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getMethodList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,7 +244,10 @@ open class Object {
         }
         }
     }()
-    internal func __propertyCanRevert(property: Godot.GodotStringName) -> Bool {
+
+    internal func __propertyCanRevert(
+        property: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
@@ -239,7 +267,10 @@ open class Object {
         }
         }
     }()
-    internal func __propertyGetRevert(property: Godot.GodotStringName) -> Godot.Variant {
+
+    internal func __propertyGetRevert(
+        property: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
@@ -259,7 +290,11 @@ open class Object {
         }
         }
     }()
-    internal func __notification(what: Int32, reversed: Bool = false) {
+
+    internal func __notification(
+        what: Int32,
+        reversed: Bool = false
+    ) {
         what.withGodotUnsafeRawPointer { __ptr_what in
         reversed.withGodotUnsafeRawPointer { __ptr_reversed in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_reversed) { __accessPtr in
@@ -279,6 +314,7 @@ open class Object {
         }
         }
     }()
+
     internal func __toString() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -297,6 +333,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getInstanceID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -315,7 +352,10 @@ open class Object {
         }
         }
     }()
-    internal func __setScript<Value: VariantStorableIn>(_ script: Value) {
+
+    internal func __setScript<Value: VariantStorableIn>(
+        _ script: Value
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: script) { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -334,6 +374,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getScript() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -352,7 +393,11 @@ open class Object {
         }
         }
     }()
-    internal func __setMeta<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
+
+    internal func __setMeta<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -372,7 +417,10 @@ open class Object {
         }
         }
     }()
-    internal func __removeMeta(name: Godot.GodotStringName) {
+
+    internal func __removeMeta(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -391,7 +439,11 @@ open class Object {
         }
         }
     }()
-    internal func __getMeta<Value: VariantStorableIn>(name: Godot.GodotStringName, `default`: Value = Variant()) -> Godot.Variant {
+
+    internal func __getMeta<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        `default`: Value = Variant()
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { __ptr_default in
@@ -412,7 +464,10 @@ open class Object {
         }
         }
     }()
-    internal func __hasMeta(name: Godot.GodotStringName) -> Bool {
+
+    internal func __hasMeta(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -432,6 +487,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getMetaList() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -450,7 +506,11 @@ open class Object {
         }
         }
     }()
-    internal func __addUserSignal<Value: VariantStorable>(_ signal: Godot.GodotString, arguments: Godot.GodotArray<Value> = []) {
+
+    internal func __addUserSignal<Value: VariantStorable>(
+        _ signal: Godot.GodotString,
+        arguments: Godot.GodotArray<Value> = []
+    ) {
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         withUnsafeArgumentPackPointer(__ptr_signal, __ptr_arguments) { __accessPtr in
@@ -470,7 +530,10 @@ open class Object {
         }
         }
     }()
-    internal func __hasUserSignal(_ signal: Godot.GodotStringName) -> Bool {
+
+    internal func __hasUserSignal(
+        _ signal: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_signal) { __accessPtr in
@@ -490,7 +553,11 @@ open class Object {
         }
         }
     }()
-    internal func __emitSignal<each VariantRest : VariantStorableIn>(_ signal: Godot.GodotStringName, _ rest: repeat each VariantRest) -> Godot.ErrorType {
+
+    internal func __emitSignal<each VariantRest : VariantStorableIn>(
+        _ signal: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_signal, varargs: repeat each rest) { packCount, __accessPtr in
@@ -504,7 +571,10 @@ open class Object {
             nil
         )}}}}
     }
-    internal func __emitSignal(_ signal: Godot.GodotStringName) -> Godot.ErrorType {
+
+    internal func __emitSignal(
+        _ signal: Godot.GodotStringName
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_signal) { __accessPtr in
@@ -526,7 +596,11 @@ open class Object {
         }
         }
     }()
-    internal func __call<each VariantRest : VariantStorableIn>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) -> Godot.Variant {
+
+    internal func __call<each VariantRest : VariantStorableIn>(
+        method: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
@@ -540,7 +614,10 @@ open class Object {
             nil
         )}}}}
     }
-    internal func __call(method: Godot.GodotStringName) -> Godot.Variant {
+
+    internal func __call(
+        method: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
@@ -562,7 +639,11 @@ open class Object {
         }
         }
     }()
-    internal func __callDeferred<each VariantRest : VariantStorableIn>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) -> Godot.Variant {
+
+    internal func __callDeferred<each VariantRest : VariantStorableIn>(
+        method: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
@@ -576,7 +657,10 @@ open class Object {
             nil
         )}}}}
     }
-    internal func __callDeferred(method: Godot.GodotStringName) -> Godot.Variant {
+
+    internal func __callDeferred(
+        method: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
@@ -598,7 +682,11 @@ open class Object {
         }
         }
     }()
-    internal func __setDeferred<Value: VariantStorableIn>(property: Godot.GodotStringName, value: Value) {
+
+    internal func __setDeferred<Value: VariantStorableIn>(
+        property: Godot.GodotStringName,
+        value: Value
+    ) {
         property.withGodotUnsafeRawPointer { __ptr_property in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { __accessPtr in
@@ -618,7 +706,11 @@ open class Object {
         }
         }
     }()
-    internal func __callv<Value: VariantStorable>(method: Godot.GodotStringName, argArray: Godot.GodotArray<Value>) -> Godot.Variant {
+
+    internal func __callv<Value: VariantStorable>(
+        method: Godot.GodotStringName,
+        argArray: Godot.GodotArray<Value>
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         argArray.withGodotUnsafeRawPointer { __ptr_argArray in
@@ -639,7 +731,10 @@ open class Object {
         }
         }
     }()
-    internal func __hasMethod(_ method: Godot.GodotStringName) -> Bool {
+
+    internal func __hasMethod(
+        _ method: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
@@ -659,7 +754,10 @@ open class Object {
         }
         }
     }()
-    internal func __hasSignal(_ signal: Godot.GodotStringName) -> Bool {
+
+    internal func __hasSignal(
+        _ signal: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_signal) { __accessPtr in
@@ -679,6 +777,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getSignalList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -697,7 +796,10 @@ open class Object {
         }
         }
     }()
-    internal func __getSignalConnectionList(signal: Godot.GodotStringName) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+
+    internal func __getSignalConnectionList(
+        signal: Godot.GodotStringName
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_signal) { __accessPtr in
@@ -717,6 +819,7 @@ open class Object {
         }
         }
     }()
+
     internal func __getIncomingConnections() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -735,7 +838,12 @@ open class Object {
         }
         }
     }()
-    internal func __connect(signal: Godot.GodotStringName, callable: Godot.Callable, flags: UInt32 = 0) -> Godot.ErrorType {
+
+    internal func __connect(
+        signal: Godot.GodotStringName,
+        callable: Godot.Callable,
+        flags: UInt32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
@@ -757,7 +865,11 @@ open class Object {
         }
         }
     }()
-    internal func __disconnect(signal: Godot.GodotStringName, callable: Godot.Callable) {
+
+    internal func __disconnect(
+        signal: Godot.GodotStringName,
+        callable: Godot.Callable
+    ) {
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_signal, __ptr_callable) { __accessPtr in
@@ -777,7 +889,11 @@ open class Object {
         }
         }
     }()
-    internal func __isConnected(signal: Godot.GodotStringName, callable: Godot.Callable) -> Bool {
+
+    internal func __isConnected(
+        signal: Godot.GodotStringName,
+        callable: Godot.Callable
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
@@ -798,7 +914,10 @@ open class Object {
         }
         }
     }()
-    internal func __setBlockSignals(enable: Bool) {
+
+    internal func __setBlockSignals(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -817,6 +936,7 @@ open class Object {
         }
         }
     }()
+
     internal func __isBlockingSignals() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -835,6 +955,7 @@ open class Object {
         }
         }
     }()
+
     internal func __notifyPropertyListChanged() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -852,7 +973,10 @@ open class Object {
         }
         }
     }()
-    internal func __setMessageTranslation(enable: Bool) {
+
+    internal func __setMessageTranslation(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,6 +995,7 @@ open class Object {
         }
         }
     }()
+
     internal func __canTranslateMessages() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -889,7 +1014,11 @@ open class Object {
         }
         }
     }()
-    internal func __tr(message: Godot.GodotStringName, context: Godot.GodotStringName = "") -> Godot.GodotString {
+
+    internal func __tr(
+        message: Godot.GodotStringName,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         context.withGodotUnsafeRawPointer { __ptr_context in
@@ -910,7 +1039,13 @@ open class Object {
         }
         }
     }()
-    internal func __trN(message: Godot.GodotStringName, pluralMessage: Godot.GodotStringName, n: Int32, context: Godot.GodotStringName = "") -> Godot.GodotString {
+
+    internal func __trN(
+        message: Godot.GodotStringName,
+        pluralMessage: Godot.GodotStringName,
+        n: Int32,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         pluralMessage.withGodotUnsafeRawPointer { __ptr_pluralMessage in
@@ -933,6 +1068,7 @@ open class Object {
         }
         }
     }()
+
     internal func __isQueuedForDeletion() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -951,6 +1087,7 @@ open class Object {
         }
         }
     }()
+
     internal func __cancelFree() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -962,6 +1099,7 @@ open class Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -971,5 +1109,4 @@ open class Object {
         ]
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Popup: Window {
+
     public func popupHide() {
         _ = popupHideSignal.emit()
     }
+
     public lazy var popupHideSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "popup_hide") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -24,6 +27,7 @@ open class Popup: Window {
     }()
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +40,4 @@ open class Popup: Window {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeStateMachineTransition: Resource {
     public enum SwitchMode: UInt32, GodotEnum {
         case immediate = 0
         case sync = 1
         case atEnd = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Immediate", 0),
@@ -16,10 +18,12 @@ open class AnimationNodeStateMachineTransition: Resource {
             ("At End", 2),]
         }
     }
+
     public enum AdvanceMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case auto = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -31,6 +35,7 @@ open class AnimationNodeStateMachineTransition: Resource {
     public func advanceConditionChanged() {
         _ = advanceConditionChangedSignal.emit()
     }
+
     public lazy var advanceConditionChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "advance_condition_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -53,7 +58,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setSwitchMode(_ mode: Godot.AnimationNodeStateMachineTransition.SwitchMode) {
+
+    private func __setSwitchMode(
+        _ mode: Godot.AnimationNodeStateMachineTransition.SwitchMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +80,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getSwitchMode() -> Godot.AnimationNodeStateMachineTransition.SwitchMode {
         Godot.AnimationNodeStateMachineTransition.SwitchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,7 +99,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setAdvanceMode(_ mode: Godot.AnimationNodeStateMachineTransition.AdvanceMode) {
+
+    private func __setAdvanceMode(
+        _ mode: Godot.AnimationNodeStateMachineTransition.AdvanceMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,6 +121,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getAdvanceMode() -> Godot.AnimationNodeStateMachineTransition.AdvanceMode {
         Godot.AnimationNodeStateMachineTransition.AdvanceMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,7 +140,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setAdvanceCondition(name: Godot.GodotStringName) {
+
+    private func __setAdvanceCondition(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,6 +162,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getAdvanceCondition() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,7 +181,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setXfadeTime(secs: Double) {
+
+    private func __setXfadeTime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,6 +203,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getXfadeTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,7 +222,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setXfadeCurve(_ curve: Godot.Curve?) {
+
+    private func __setXfadeCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -221,6 +245,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getXfadeCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -239,7 +264,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setReset(_ reset: Bool) {
+
+    private func __setReset(
+        _ reset: Bool
+    ) {
         reset.withGodotUnsafeRawPointer { __ptr_reset in
         withUnsafeArgumentPackPointer(__ptr_reset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,6 +286,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __isReset() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -276,7 +305,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setPriority(_ priority: Int32) {
+
+    private func __setPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -295,6 +327,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -313,7 +346,10 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
-    private func __setAdvanceExpression(text: Godot.GodotString) {
+
+    private func __setAdvanceExpression(
+        text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,6 +368,7 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         }
     }()
+
     private func __getAdvanceExpression() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -432,6 +469,7 @@ open class AnimationNodeStateMachineTransition: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -444,5 +482,4 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

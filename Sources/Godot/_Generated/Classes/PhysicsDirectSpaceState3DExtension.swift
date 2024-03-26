@@ -3,33 +3,95 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
-    open func _intersectRay(from: Godot.Vector3, to: Godot.Vector3, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, hitFromInside: Bool, hitBackFaces: Bool, pickRay: Bool, result: UnsafeMutablePointer<PhysicsServer3DExtensionRayResult>) -> Bool {
+    open func _intersectRay(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        hitFromInside: Bool,
+        hitBackFaces: Bool,
+        pickRay: Bool,
+        result: UnsafeMutablePointer<PhysicsServer3DExtensionRayResult>
+    ) -> Bool {
         Bool()
     }
 
-    open func _intersectPoint(position: Godot.Vector3, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, results: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult>, maxResults: Int32) -> Int32 {
+    open func _intersectPoint(
+        position: Godot.Vector3,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        results: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult>,
+        maxResults: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _intersectShape(shapeRid: Godot.RID, transform: Godot.Transform3D, motion: Godot.Vector3, margin: Double, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, resultCount: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult>, maxResults: Int32) -> Int32 {
+    open func _intersectShape(
+        shapeRid: Godot.RID,
+        transform: Godot.Transform3D,
+        motion: Godot.Vector3,
+        margin: Double,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        resultCount: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult>,
+        maxResults: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _castMotion(shapeRid: Godot.RID, transform: Godot.Transform3D, motion: Godot.Vector3, margin: Double, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, closestSafe: UnsafeMutablePointer<Double>, closestUnsafe: UnsafeMutablePointer<Double>, info: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo>) -> Bool {
+    open func _castMotion(
+        shapeRid: Godot.RID,
+        transform: Godot.Transform3D,
+        motion: Godot.Vector3,
+        margin: Double,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        closestSafe: UnsafeMutablePointer<Double>,
+        closestUnsafe: UnsafeMutablePointer<Double>,
+        info: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo>
+    ) -> Bool {
         Bool()
     }
 
-    open func _collideShape(shapeRid: Godot.RID, transform: Godot.Transform3D, motion: Godot.Vector3, margin: Double, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, results: UnsafeMutableRawPointer, maxResults: Int32, resultCount: UnsafeMutablePointer<Int32>) -> Bool {
+    open func _collideShape(
+        shapeRid: Godot.RID,
+        transform: Godot.Transform3D,
+        motion: Godot.Vector3,
+        margin: Double,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        results: UnsafeMutableRawPointer,
+        maxResults: Int32,
+        resultCount: UnsafeMutablePointer<Int32>
+    ) -> Bool {
         Bool()
     }
 
-    open func _restInfo(shapeRid: Godot.RID, transform: Godot.Transform3D, motion: Godot.Vector3, margin: Double, collisionMask: UInt32, collideWithBodies: Bool, collideWithAreas: Bool, restInfo: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo>) -> Bool {
+    open func _restInfo(
+        shapeRid: Godot.RID,
+        transform: Godot.Transform3D,
+        motion: Godot.Vector3,
+        margin: Double,
+        collisionMask: UInt32,
+        collideWithBodies: Bool,
+        collideWithAreas: Bool,
+        restInfo: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo>
+    ) -> Bool {
         Bool()
     }
 
-    open func _getClosestPointToObjectVolume(object: Godot.RID, point: Godot.Vector3) -> Godot.Vector3 {
+    open func _getClosestPointToObjectVolume(
+        object: Godot.RID,
+        point: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3()
     }
 
@@ -40,7 +102,10 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
         }
         }
     }()
-    public func isBodyExcludedFromQuery(body: Godot.RID) -> Bool {
+
+    public func isBodyExcludedFromQuery(
+        body: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -54,6 +119,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -182,5 +248,4 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

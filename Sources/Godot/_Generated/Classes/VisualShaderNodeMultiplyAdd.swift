@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
     public enum OpType: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         case vector3D = 2
         case vector4d = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
@@ -28,7 +30,10 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         }
         }
     }()
-    private func __setOpType(_ type: Godot.VisualShaderNodeMultiplyAdd.OpType) {
+
+    private func __setOpType(
+        _ type: Godot.VisualShaderNodeMultiplyAdd.OpType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         }
         }
     }()
+
     private func __getOpType() -> Godot.VisualShaderNodeMultiplyAdd.OpType {
         Godot.VisualShaderNodeMultiplyAdd.OpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +76,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -82,5 +89,4 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

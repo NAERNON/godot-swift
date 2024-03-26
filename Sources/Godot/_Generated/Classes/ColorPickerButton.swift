@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ColorPickerButton: Button {
     public struct ColorChangedSignalInput: Godot.SignalInput {
         public let color: Godot.Color
-        fileprivate init(color: Godot.Color) {
+
+        fileprivate init(
+            color: Godot.Color
+        ) {
             self.color = color
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.color)]
         }
     }
-    public func colorChanged(color: Godot.Color) {
+
+    public func colorChanged(
+        color: Godot.Color
+    ) {
         _ = colorChangedSignal.emit(.init(color: color))
     }
+
     public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
         .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -35,6 +46,7 @@ open class ColorPickerButton: Button {
     public func popupClosed() {
         _ = popupClosedSignal.emit()
     }
+
     public lazy var popupClosedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "popup_closed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -53,6 +65,7 @@ open class ColorPickerButton: Button {
     public func pickerCreated() {
         _ = pickerCreatedSignal.emit()
     }
+
     public lazy var pickerCreatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "picker_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -75,7 +88,10 @@ open class ColorPickerButton: Button {
         }
         }
     }()
-    private func __setPickColor(_ color: Godot.Color) {
+
+    private func __setPickColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,6 +110,7 @@ open class ColorPickerButton: Button {
         }
         }
     }()
+
     private func __getPickColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,6 +129,7 @@ open class ColorPickerButton: Button {
         }
         }
     }()
+
     public func picker() -> Godot.ColorPicker? {
         Godot.ColorPicker?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,6 +148,7 @@ open class ColorPickerButton: Button {
         }
         }
     }()
+
     public func popup() -> Godot.PopupPanel? {
         Godot.PopupPanel?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,7 +167,10 @@ open class ColorPickerButton: Button {
         }
         }
     }()
-    private func __setEditAlpha(show: Bool) {
+
+    private func __setEditAlpha(
+        show: Bool
+    ) {
         show.withGodotUnsafeRawPointer { __ptr_show in
         withUnsafeArgumentPackPointer(__ptr_show) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,6 +189,7 @@ open class ColorPickerButton: Button {
         }
         }
     }()
+
     private func __isEditingAlpha() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,6 +224,7 @@ open class ColorPickerButton: Button {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -213,5 +237,4 @@ open class ColorPickerButton: Button {
         }
         return _virtualFunctions!
     }
-
-    }
+}

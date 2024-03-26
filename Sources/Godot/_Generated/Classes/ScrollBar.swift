@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScrollBar: Range {
+
     public func scrolling() {
         _ = scrollingSignal.emit()
     }
+
     public lazy var scrollingSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "scrolling") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class ScrollBar: Range {
         }
         }
     }()
-    private func __setCustomStep(_ step: Double) {
+
+    private func __setCustomStep(
+        _ step: Double
+    ) {
         step.withGodotUnsafeRawPointer { __ptr_step in
         withUnsafeArgumentPackPointer(__ptr_step) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +55,7 @@ open class ScrollBar: Range {
         }
         }
     }()
+
     private func __getCustomStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +79,7 @@ open class ScrollBar: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -84,5 +92,4 @@ open class ScrollBar: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

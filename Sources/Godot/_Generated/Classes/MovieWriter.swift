@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MovieWriter: Object {
     open func _getAudioMixRate() -> UInt32 {
@@ -13,15 +14,24 @@ open class MovieWriter: Object {
         Godot.AudioServer.SpeakerMode(rawValue: 0)!
     }
 
-    open func _handlesFile(path: Godot.GodotString) -> Bool {
+    open func _handlesFile(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _writeBegin(movieSize: Godot.Vector2I, fps: UInt32, basePath: Godot.GodotString) -> Godot.ErrorType {
+    open func _writeBegin(
+        movieSize: Godot.Vector2I,
+        fps: UInt32,
+        basePath: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _writeFrame(frameImage: Godot.Image?, audioFrameBlock: UnsafeRawPointer) -> Godot.ErrorType {
+    open func _writeFrame(
+        frameImage: Godot.Image?,
+        audioFrameBlock: UnsafeRawPointer
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -35,7 +45,10 @@ open class MovieWriter: Object {
         }
         }
     }()
-    static public func addWriter(_ writer: Godot.MovieWriter?) {
+
+    static public func addWriter(
+        _ writer: Godot.MovieWriter?
+    ) {
         writer.withGodotUnsafeRawPointer { __ptr_writer in
         withUnsafePointer(to: __ptr_writer) { _ptr___ptr_writer in
         withUnsafeArgumentPackPointer(_ptr___ptr_writer) { __accessPtr in
@@ -48,6 +61,7 @@ open class MovieWriter: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -115,5 +129,4 @@ open class MovieWriter: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

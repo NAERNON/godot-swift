@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 extension Projection {
     public enum Planes: UInt32, GodotEnum {
         case near = 0
@@ -11,6 +12,7 @@ extension Projection {
         case top = 3
         case right = 4
         case bottom = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Near", 0),
@@ -21,5 +23,4 @@ extension Projection {
             ("Bottom", 5),]
         }
     }
-
-    }
+}

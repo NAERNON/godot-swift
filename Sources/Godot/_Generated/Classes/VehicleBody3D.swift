@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class VehicleBody3D: RigidBody3D {
     internal static var __method_binding_set_engine_force: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
-    private func __setEngineForce(_ engineForce: Double) {
+
+    private func __setEngineForce(
+        _ engineForce: Double
+    ) {
         engineForce.withGodotUnsafeRawPointer { __ptr_engineForce in
         withUnsafeArgumentPackPointer(__ptr_engineForce) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
+
     private func __getEngineForce() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
-    private func __setBrake(_ brake: Double) {
+
+    private func __setBrake(
+        _ brake: Double
+    ) {
         brake.withGodotUnsafeRawPointer { __ptr_brake in
         withUnsafeArgumentPackPointer(__ptr_brake) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
+
     private func __getBrake() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
-    private func __setSteering(_ steering: Double) {
+
+    private func __setSteering(
+        _ steering: Double
+    ) {
         steering.withGodotUnsafeRawPointer { __ptr_steering in
         withUnsafeArgumentPackPointer(__ptr_steering) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class VehicleBody3D: RigidBody3D {
         }
         }
     }()
+
     private func __getSteering() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class VehicleBody3D: RigidBody3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class VehicleBody3D: RigidBody3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

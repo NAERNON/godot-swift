@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Node2D: CanvasItem {
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setRotation(radians: Double) {
+
+    private func __setRotation(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +57,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setRotationDegrees(_ degrees: Double) {
+
+    private func __setRotationDegrees(
+        _ degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +79,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setSkew(radians: Double) {
+
+    private func __setSkew(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +101,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setScale(_ scale: Godot.Vector2) {
+
+    private func __setScale(
+        _ scale: Godot.Vector2
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +123,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +142,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getRotation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +161,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getRotationDegrees() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +180,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getSkew() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func rotate(radians: Double) {
+
+    public func rotate(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +240,11 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func moveLocalX(delta: Double, scaled: Bool = false) {
+
+    public func moveLocalX(
+        delta: Double,
+        scaled: Bool = false
+    ) {
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         scaled.withGodotUnsafeRawPointer { __ptr_scaled in
         withUnsafeArgumentPackPointer(__ptr_delta, __ptr_scaled) { __accessPtr in
@@ -236,7 +264,11 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func moveLocalY(delta: Double, scaled: Bool = false) {
+
+    public func moveLocalY(
+        delta: Double,
+        scaled: Bool = false
+    ) {
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         scaled.withGodotUnsafeRawPointer { __ptr_scaled in
         withUnsafeArgumentPackPointer(__ptr_delta, __ptr_scaled) { __accessPtr in
@@ -256,7 +288,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func translate(offset: Godot.Vector2) {
+
+    public func translate(
+        offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,7 +310,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func globalTranslate(offset: Godot.Vector2) {
+
+    public func globalTranslate(
+        offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,7 +332,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func applyScale(ratio: Godot.Vector2) {
+
+    public func applyScale(
+        ratio: Godot.Vector2
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -313,7 +354,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setGlobalPosition(_ position: Godot.Vector2) {
+
+    private func __setGlobalPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,6 +376,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getGlobalPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -350,7 +395,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setGlobalRotation(radians: Double) {
+
+    private func __setGlobalRotation(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,7 +417,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setGlobalRotationDegrees(_ degrees: Double) {
+
+    private func __setGlobalRotationDegrees(
+        _ degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -388,6 +439,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getGlobalRotation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -406,6 +458,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getGlobalRotationDegrees() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -424,7 +477,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setGlobalSkew(radians: Double) {
+
+    private func __setGlobalSkew(
+        radians: Double
+    ) {
         radians.withGodotUnsafeRawPointer { __ptr_radians in
         withUnsafeArgumentPackPointer(__ptr_radians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,6 +499,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getGlobalSkew() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +518,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    private func __setGlobalScale(_ scale: Godot.Vector2) {
+
+    private func __setGlobalScale(
+        _ scale: Godot.Vector2
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,6 +540,7 @@ open class Node2D: CanvasItem {
         }
         }
     }()
+
     private func __getGlobalScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -498,7 +559,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func setTransform(xform: Godot.Transform2D) {
+
+    public func setTransform(
+        xform: Godot.Transform2D
+    ) {
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_xform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -517,7 +581,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func setGlobalTransform(xform: Godot.Transform2D) {
+
+    public func setGlobalTransform(
+        xform: Godot.Transform2D
+    ) {
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_xform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,7 +603,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func lookAt(point: Godot.Vector2) {
+
+    public func lookAt(
+        point: Godot.Vector2
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -555,7 +625,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func angleTo(point: Godot.Vector2) -> Double {
+
+    public func angleTo(
+        point: Godot.Vector2
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -575,7 +648,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func toLocal(globalPoint: Godot.Vector2) -> Godot.Vector2 {
+
+    public func toLocal(
+        globalPoint: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         globalPoint.withGodotUnsafeRawPointer { __ptr_globalPoint in
         withUnsafeArgumentPackPointer(__ptr_globalPoint) { __accessPtr in
@@ -595,7 +671,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func toGlobal(localPoint: Godot.Vector2) -> Godot.Vector2 {
+
+    public func toGlobal(
+        localPoint: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         localPoint.withGodotUnsafeRawPointer { __ptr_localPoint in
         withUnsafeArgumentPackPointer(__ptr_localPoint) { __accessPtr in
@@ -615,7 +694,10 @@ open class Node2D: CanvasItem {
         }
         }
     }()
-    public func relativeTransformToParent(_ parent: Godot.Node?) -> Godot.Transform2D {
+
+    public func relativeTransformToParent(
+        _ parent: Godot.Node?
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         parent.withGodotUnsafeRawPointer { __ptr_parent in
         withUnsafePointer(to: __ptr_parent) { _ptr___ptr_parent in
@@ -740,6 +822,7 @@ open class Node2D: CanvasItem {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -752,5 +835,4 @@ open class Node2D: CanvasItem {
         }
         return _virtualFunctions!
     }
-
-    }
+}

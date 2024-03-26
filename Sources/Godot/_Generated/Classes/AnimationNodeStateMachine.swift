@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeStateMachine: AnimationRootNode {
     public enum StateMachineType: UInt32, GodotEnum {
         case root = 0
         case nested = 1
         case grouped = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Root", 0),
@@ -24,7 +26,12 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func addNode(name: Godot.GodotStringName, node: Godot.AnimationNode?, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func addNode(
+        name: Godot.GodotStringName,
+        node: Godot.AnimationNode?,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -46,7 +53,11 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func replaceNode(name: Godot.GodotStringName, node: Godot.AnimationNode?) {
+
+    public func replaceNode(
+        name: Godot.GodotStringName,
+        node: Godot.AnimationNode?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -67,7 +78,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func node(name: Godot.GodotStringName) -> Godot.AnimationNode? {
+
+    public func node(
+        name: Godot.GodotStringName
+    ) -> Godot.AnimationNode? {
         Godot.AnimationNode?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -87,7 +101,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func removeNode(name: Godot.GodotStringName) {
+
+    public func removeNode(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +123,11 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func renameNode(name: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+    public func renameNode(
+        name: Godot.GodotStringName,
+        newName: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         newName.withGodotUnsafeRawPointer { __ptr_newName in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_newName) { __accessPtr in
@@ -126,7 +147,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func hasNode(name: Godot.GodotStringName) -> Bool {
+
+    public func hasNode(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -146,7 +170,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func nodeName(node: Godot.AnimationNode?) -> Godot.GodotStringName {
+
+    public func nodeName(
+        node: Godot.AnimationNode?
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -167,7 +194,11 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func setNodePosition(name: Godot.GodotStringName, position: Godot.Vector2) {
+
+    public func setNodePosition(
+        name: Godot.GodotStringName,
+        position: Godot.Vector2
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_position) { __accessPtr in
@@ -187,7 +218,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func nodePosition(name: Godot.GodotStringName) -> Godot.Vector2 {
+
+    public func nodePosition(
+        name: Godot.GodotStringName
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -207,7 +241,11 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func hasTransition(from: Godot.GodotStringName, to: Godot.GodotStringName) -> Bool {
+
+    public func hasTransition(
+        from: Godot.GodotStringName,
+        to: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -228,7 +266,12 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func addTransition(from: Godot.GodotStringName, to: Godot.GodotStringName, transition: Godot.AnimationNodeStateMachineTransition?) {
+
+    public func addTransition(
+        from: Godot.GodotStringName,
+        to: Godot.GodotStringName,
+        transition: Godot.AnimationNodeStateMachineTransition?
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         transition.withGodotUnsafeRawPointer { __ptr_transition in
@@ -250,7 +293,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func transition(idx: Int32) -> Godot.AnimationNodeStateMachineTransition? {
+
+    public func transition(
+        idx: Int32
+    ) -> Godot.AnimationNodeStateMachineTransition? {
         Godot.AnimationNodeStateMachineTransition?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -270,7 +316,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func transitionFrom(idx: Int32) -> Godot.GodotStringName {
+
+    public func transitionFrom(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -290,7 +339,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func transitionTo(idx: Int32) -> Godot.GodotStringName {
+
+    public func transitionTo(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -310,6 +362,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
+
     public func transitionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,7 +381,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func removeTransitionByIndex(idx: Int32) {
+
+    public func removeTransitionByIndex(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -347,7 +403,11 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func removeTransition(from: Godot.GodotStringName, to: Godot.GodotStringName) {
+
+    public func removeTransition(
+        from: Godot.GodotStringName,
+        to: Godot.GodotStringName
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
@@ -367,7 +427,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    public func setGraphOffset(_ offset: Godot.Vector2) {
+
+    public func setGraphOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -386,6 +449,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
+
     public func graphOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -404,7 +468,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    private func __setStateMachineType(_ stateMachineType: Godot.AnimationNodeStateMachine.StateMachineType) {
+
+    private func __setStateMachineType(
+        _ stateMachineType: Godot.AnimationNodeStateMachine.StateMachineType
+    ) {
         stateMachineType.withGodotUnsafeRawPointer { __ptr_stateMachineType in
         withUnsafeArgumentPackPointer(__ptr_stateMachineType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -423,6 +490,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
+
     private func __getStateMachineType() -> Godot.AnimationNodeStateMachine.StateMachineType {
         Godot.AnimationNodeStateMachine.StateMachineType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -441,7 +509,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    private func __setAllowTransitionToSelf(enable: Bool) {
+
+    private func __setAllowTransitionToSelf(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -460,6 +531,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
+
     private func __isAllowTransitionToSelf() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -478,7 +550,10 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
-    private func __setResetEnds(enable: Bool) {
+
+    private func __setResetEnds(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -497,6 +572,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         }
     }()
+
     private func __areEndsReset() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -542,6 +618,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -554,5 +631,4 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

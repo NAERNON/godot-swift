@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
     internal static var __method_binding_set_inputs: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setInputs(_ inputs: Godot.GodotString) {
+
+    public func setInputs(
+        _ inputs: Godot.GodotString
+    ) {
         inputs.withGodotUnsafeRawPointer { __ptr_inputs in
         withUnsafeArgumentPackPointer(__ptr_inputs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func inputs() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setOutputs(_ outputs: Godot.GodotString) {
+
+    public func setOutputs(
+        _ outputs: Godot.GodotString
+    ) {
         outputs.withGodotUnsafeRawPointer { __ptr_outputs in
         withUnsafeArgumentPackPointer(__ptr_outputs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func outputs() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func isValidPortName(_ name: Godot.GodotString) -> Bool {
+
+    public func isValidPortName(
+        _ name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -106,7 +118,12 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func addInputPort(id: Int32, type: Int32, name: Godot.GodotString) {
+
+    public func addInputPort(
+        id: Int32,
+        type: Int32,
+        name: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         type.withGodotUnsafeRawPointer { __ptr_type in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -127,7 +144,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func removeInputPort(id: Int32) {
+
+    public func removeInputPort(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,6 +166,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func inputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,7 +185,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func hasInputPort(id: Int32) -> Bool {
+
+    public func hasInputPort(
+        id: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -184,6 +208,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func clearInputPorts() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -201,7 +226,12 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func addOutputPort(id: Int32, type: Int32, name: Godot.GodotString) {
+
+    public func addOutputPort(
+        id: Int32,
+        type: Int32,
+        name: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         type.withGodotUnsafeRawPointer { __ptr_type in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -222,7 +252,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func removeOutputPort(id: Int32) {
+
+    public func removeOutputPort(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -241,6 +274,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func outputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,7 +293,10 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func hasOutputPort(id: Int32) -> Bool {
+
+    public func hasOutputPort(
+        id: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -279,6 +316,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func clearOutputPorts() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -296,7 +334,11 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setInputPortName(id: Int32, name: Godot.GodotString) {
+
+    public func setInputPortName(
+        id: Int32,
+        name: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_name) { __accessPtr in
@@ -316,7 +358,11 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setInputPortType(id: Int32, type: Int32) {
+
+    public func setInputPortType(
+        id: Int32,
+        type: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_type) { __accessPtr in
@@ -336,7 +382,11 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setOutputPortName(id: Int32, name: Godot.GodotString) {
+
+    public func setOutputPortName(
+        id: Int32,
+        name: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_name) { __accessPtr in
@@ -356,7 +406,11 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
-    public func setOutputPortType(id: Int32, type: Int32) {
+
+    public func setOutputPortType(
+        id: Int32,
+        type: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_type) { __accessPtr in
@@ -376,6 +430,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func freeInputPortID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,6 +449,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     public func freeOutputPortID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -406,6 +462,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -418,5 +475,4 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
         }
         return _virtualFunctions!
     }
-
-    }
+}

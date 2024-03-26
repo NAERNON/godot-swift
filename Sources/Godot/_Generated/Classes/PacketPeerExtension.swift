@@ -3,13 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PacketPeerExtension: PacketPeer {
-    open func _getPacket(rBuffer: UnsafePointer<UnsafePointer<UInt8>>, rBufferSize: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _getPacket(
+        rBuffer: UnsafePointer<UnsafePointer<UInt8>>,
+        rBufferSize: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _putPacket(pBuffer: UnsafePointer<UInt8>, pBufferSize: Int32) -> Godot.ErrorType {
+    open func _putPacket(
+        pBuffer: UnsafePointer<UInt8>,
+        pBufferSize: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -22,6 +29,7 @@ open class PacketPeerExtension: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -71,5 +79,4 @@ open class PacketPeerExtension: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectPanner: AudioEffect {
     internal static var __method_binding_set_pan: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectPanner: AudioEffect {
         }
         }
     }()
-    private func __setPan(cpanume: Double) {
+
+    private func __setPan(
+        cpanume: Double
+    ) {
         cpanume.withGodotUnsafeRawPointer { __ptr_cpanume in
         withUnsafeArgumentPackPointer(__ptr_cpanume) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectPanner: AudioEffect {
         }
         }
     }()
+
     private func __getPan() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class AudioEffectPanner: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class AudioEffectPanner: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

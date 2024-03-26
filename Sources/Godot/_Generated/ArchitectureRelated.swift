@@ -15,4 +15,3 @@ extension Int {
 extension UInt {
     public static let variantRepresentationType: Variant.RepresentationType = .uint64
 }
-

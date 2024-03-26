@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeIs: VisualShaderNode {
     public enum Function: UInt32, GodotEnum {
         case isInf = 0
         case isNan = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Is Inf", 0),
@@ -24,7 +26,10 @@ open class VisualShaderNodeIs: VisualShaderNode {
         }
         }
     }()
-    private func __setFunction(`func`: Godot.VisualShaderNodeIs.Function) {
+
+    private func __setFunction(
+        `func`: Godot.VisualShaderNodeIs.Function
+    ) {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class VisualShaderNodeIs: VisualShaderNode {
         }
         }
     }()
+
     private func __getFunction() -> Godot.VisualShaderNodeIs.Function {
         Godot.VisualShaderNodeIs.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +72,7 @@ open class VisualShaderNodeIs: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -78,5 +85,4 @@ open class VisualShaderNodeIs: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

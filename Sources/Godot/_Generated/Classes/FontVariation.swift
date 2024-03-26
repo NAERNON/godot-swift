@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class FontVariation: Font {
     internal static var __method_binding_set_base_font: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setBaseFont(_ font: Godot.Font?) {
+
+    private func __setBaseFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -32,6 +36,7 @@ open class FontVariation: Font {
         }
         }
     }()
+
     private func __getBaseFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setVariationOpentype<Value1: VariantStorable, Value2: VariantStorable>(coords: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setVariationOpentype<Value1: VariantStorable, Value2: VariantStorable>(
+        coords: Godot.GodotDictionary<Value1, Value2>
+    ) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class FontVariation: Font {
         }
         }
     }()
+
     private func __getVariationOpentype() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setVariationEmbolden(strength: Double) {
+
+    private func __setVariationEmbolden(
+        strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class FontVariation: Font {
         }
         }
     }()
+
     private func __getVariationEmbolden() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +137,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setVariationFaceIndex(_ faceIndex: Int32) {
+
+    private func __setVariationFaceIndex(
+        _ faceIndex: Int32
+    ) {
         faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in
         withUnsafeArgumentPackPointer(__ptr_faceIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +159,7 @@ open class FontVariation: Font {
         }
         }
     }()
+
     private func __getVariationFaceIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +178,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setVariationTransform(_ transform: Godot.Transform2D) {
+
+    private func __setVariationTransform(
+        _ transform: Godot.Transform2D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class FontVariation: Font {
         }
         }
     }()
+
     private func __getVariationTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class FontVariation: Font {
         }
         }
     }()
-    public func setOpentypeFeatures<Value1: VariantStorable, Value2: VariantStorable>(_ features: Godot.GodotDictionary<Value1, Value2>) {
+
+    public func setOpentypeFeatures<Value1: VariantStorable, Value2: VariantStorable>(
+        _ features: Godot.GodotDictionary<Value1, Value2>
+    ) {
         features.withGodotUnsafeRawPointer { __ptr_features in
         withUnsafeArgumentPackPointer(__ptr_features) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +241,11 @@ open class FontVariation: Font {
         }
         }
     }()
-    public func setSpacing(_ spacing: Godot.TextServer.SpacingType, value: Int32) {
+
+    public func setSpacing(
+        _ spacing: Godot.TextServer.SpacingType,
+        value: Int32
+    ) {
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_spacing, __ptr_value) { __accessPtr in
@@ -286,6 +314,7 @@ open class FontVariation: Font {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -298,5 +327,4 @@ open class FontVariation: Font {
         }
         return _virtualFunctions!
     }
-
-    }
+}

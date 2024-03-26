@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ThemeDB: Object {
+
     public func fallbackChanged() {
         _ = fallbackChangedSignal.emit()
     }
+
     public lazy var fallbackChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "fallback_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,6 +33,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     public func defaultTheme() -> Godot.Theme? {
         Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +52,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     public func projectTheme() -> Godot.Theme? {
         Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +71,10 @@ open class ThemeDB: Object {
         }
         }
     }()
-    private func __setFallbackBaseScale(_ baseScale: Double) {
+
+    private func __setFallbackBaseScale(
+        _ baseScale: Double
+    ) {
         baseScale.withGodotUnsafeRawPointer { __ptr_baseScale in
         withUnsafeArgumentPackPointer(__ptr_baseScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +93,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     private func __getFallbackBaseScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +112,10 @@ open class ThemeDB: Object {
         }
         }
     }()
-    private func __setFallbackFont(_ font: Godot.Font?) {
+
+    private func __setFallbackFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -123,6 +135,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     private func __getFallbackFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +154,10 @@ open class ThemeDB: Object {
         }
         }
     }()
-    private func __setFallbackFontSize(_ fontSize: Int32) {
+
+    private func __setFallbackFontSize(
+        _ fontSize: Int32
+    ) {
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +176,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     private func __getFallbackFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +195,10 @@ open class ThemeDB: Object {
         }
         }
     }()
-    private func __setFallbackIcon(_ icon: Godot.Texture2D?) {
+
+    private func __setFallbackIcon(
+        _ icon: Godot.Texture2D?
+    ) {
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
         withUnsafeArgumentPackPointer(_ptr___ptr_icon) { __accessPtr in
@@ -198,6 +218,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     private func __getFallbackIcon() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +237,10 @@ open class ThemeDB: Object {
         }
         }
     }()
-    private func __setFallbackStylebox(_ stylebox: Godot.StyleBox?) {
+
+    private func __setFallbackStylebox(
+        _ stylebox: Godot.StyleBox?
+    ) {
         stylebox.withGodotUnsafeRawPointer { __ptr_stylebox in
         withUnsafePointer(to: __ptr_stylebox) { _ptr___ptr_stylebox in
         withUnsafeArgumentPackPointer(_ptr___ptr_stylebox) { __accessPtr in
@@ -236,6 +260,7 @@ open class ThemeDB: Object {
         }
         }
     }()
+
     private func __getFallbackStylebox() -> Godot.StyleBox? {
         Godot.StyleBox?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,6 +328,7 @@ open class ThemeDB: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -315,5 +341,4 @@ open class ThemeDB: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

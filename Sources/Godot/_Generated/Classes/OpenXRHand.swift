@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OpenXRHand: Node3D {
     public enum Hands: UInt32, GodotEnum {
         case left = 0
         case right = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Left", 0),
@@ -16,10 +18,12 @@ open class OpenXRHand: Node3D {
             ("Max", 2),]
         }
     }
+
     public enum MotionRange: UInt32, GodotEnum {
         case unobstructed = 0
         case conformToController = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unobstructed", 0),
@@ -35,7 +39,10 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
-    private func __setHand(_ hand: Godot.OpenXRHand.Hands) {
+
+    private func __setHand(
+        _ hand: Godot.OpenXRHand.Hands
+    ) {
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         withUnsafeArgumentPackPointer(__ptr_hand) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +61,7 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
+
     private func __getHand() -> Godot.OpenXRHand.Hands {
         Godot.OpenXRHand.Hands.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +80,10 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
-    private func __setHandSkeleton(_ handSkeleton: Godot.NodePath) {
+
+    private func __setHandSkeleton(
+        _ handSkeleton: Godot.NodePath
+    ) {
         handSkeleton.withGodotUnsafeRawPointer { __ptr_handSkeleton in
         withUnsafeArgumentPackPointer(__ptr_handSkeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +102,7 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
+
     private func __getHandSkeleton() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +121,10 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
-    private func __setMotionRange(_ motionRange: Godot.OpenXRHand.MotionRange) {
+
+    private func __setMotionRange(
+        _ motionRange: Godot.OpenXRHand.MotionRange
+    ) {
         motionRange.withGodotUnsafeRawPointer { __ptr_motionRange in
         withUnsafeArgumentPackPointer(__ptr_motionRange) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +143,7 @@ open class OpenXRHand: Node3D {
         }
         }
     }()
+
     private func __getMotionRange() -> Godot.OpenXRHand.MotionRange {
         Godot.OpenXRHand.MotionRange.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +189,7 @@ open class OpenXRHand: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -185,5 +202,4 @@ open class OpenXRHand: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

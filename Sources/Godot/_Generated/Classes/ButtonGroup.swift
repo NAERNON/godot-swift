@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ButtonGroup: Resource {
     public struct PressedSignalInput: Godot.SignalInput {
         public let button: Godot.BaseButton?
-        fileprivate init(button: Godot.BaseButton?) {
+
+        fileprivate init(
+            button: Godot.BaseButton?
+        ) {
             self.button = button
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.button)]
         }
     }
-    public func pressed(button: Godot.BaseButton?) {
+
+    public func pressed(
+        button: Godot.BaseButton?
+    ) {
         _ = pressedSignal.emit(.init(button: button))
     }
+
     public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,6 +50,7 @@ open class ButtonGroup: Resource {
         }
         }
     }()
+
     public func pressedButton() -> Godot.BaseButton? {
         Godot.BaseButton?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -57,6 +69,7 @@ open class ButtonGroup: Resource {
         }
         }
     }()
+
     public func buttons() -> Godot.GodotArray<Godot.BaseButton?> {
         Godot.GodotArray<Godot.BaseButton?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -75,7 +88,10 @@ open class ButtonGroup: Resource {
         }
         }
     }()
-    private func __setAllowUnpress(enabled: Bool) {
+
+    private func __setAllowUnpress(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,6 +110,7 @@ open class ButtonGroup: Resource {
         }
         }
     }()
+
     private func __isAllowUnpress() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +134,7 @@ open class ButtonGroup: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -129,5 +147,4 @@ open class ButtonGroup: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

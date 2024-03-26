@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Texture2D: Texture {
     open func _getWidth() -> Int32 {
@@ -13,7 +14,10 @@ open class Texture2D: Texture {
         Int32()
     }
 
-    open func _isPixelOpaque(x: Int32, y: Int32) -> Bool {
+    open func _isPixelOpaque(
+        x: Int32,
+        y: Int32
+    ) -> Bool {
         Bool()
     }
 
@@ -21,13 +25,31 @@ open class Texture2D: Texture {
         Bool()
     }
 
-    open func _draw(toCanvasItem canvasItem: Godot.RID, pos: Godot.Vector2, modulate: Godot.Color, transpose: Bool) {
+    open func _draw(
+        toCanvasItem canvasItem: Godot.RID,
+        pos: Godot.Vector2,
+        modulate: Godot.Color,
+        transpose: Bool
+    ) {
     }
 
-    open func _drawRect(toCanvasItem canvasItem: Godot.RID, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color, transpose: Bool) {
+    open func _drawRect(
+        toCanvasItem canvasItem: Godot.RID,
+        rect: Godot.Rect2,
+        tile: Bool,
+        modulate: Godot.Color,
+        transpose: Bool
+    ) {
     }
 
-    open func _drawRectRegion(toCanvasItem canvasItem: Godot.RID, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color, transpose: Bool, clipUv: Bool) {
+    open func _drawRectRegion(
+        toCanvasItem canvasItem: Godot.RID,
+        rect: Godot.Rect2,
+        srcRect: Godot.Rect2,
+        modulate: Godot.Color,
+        transpose: Bool,
+        clipUv: Bool
+    ) {
     }
 
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
@@ -37,6 +59,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func width() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +78,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func height() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +97,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func size() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +116,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func hasAlpha() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +135,13 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func draw(canvasItem: Godot.RID, position: Godot.Vector2, modulate: Godot.Color = .white, transpose: Bool = false) {
+
+    public func draw(
+        canvasItem: Godot.RID,
+        position: Godot.Vector2,
+        modulate: Godot.Color = .white,
+        transpose: Bool = false
+    ) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         position.withGodotUnsafeRawPointer { __ptr_position in
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
@@ -131,7 +163,14 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func drawRect(canvasItem: Godot.RID, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = .white, transpose: Bool = false) {
+
+    public func drawRect(
+        canvasItem: Godot.RID,
+        rect: Godot.Rect2,
+        tile: Bool,
+        modulate: Godot.Color = .white,
+        transpose: Bool = false
+    ) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         tile.withGodotUnsafeRawPointer { __ptr_tile in
@@ -154,7 +193,15 @@ open class Texture2D: Texture {
         }
         }
     }()
-    public func drawRectRegion(canvasItem: Godot.RID, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, transpose: Bool = false, clipUv: Bool = true) {
+
+    public func drawRectRegion(
+        canvasItem: Godot.RID,
+        rect: Godot.Rect2,
+        srcRect: Godot.Rect2,
+        modulate: Godot.Color = .white,
+        transpose: Bool = false,
+        clipUv: Bool = true
+    ) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
@@ -178,6 +225,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func image() -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,6 +244,7 @@ open class Texture2D: Texture {
         }
         }
     }()
+
     public func createPlaceholder() -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,6 +257,7 @@ open class Texture2D: Texture {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -293,5 +343,4 @@ open class Texture2D: Texture {
         }
         return _virtualFunctions!
     }
-
-    }
+}

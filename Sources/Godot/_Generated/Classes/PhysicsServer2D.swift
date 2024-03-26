@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsServer2D: Object {
     public enum SpaceParameter: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class PhysicsServer2D: Object {
         case bodyTimeToSleep = 6
         case constraintDefaultBias = 7
         case solverIterations = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Contact Recycle Radius", 0),
@@ -28,6 +30,7 @@ open class PhysicsServer2D: Object {
             ("Solver Iterations", 8),]
         }
     }
+
     public enum ShapeType: UInt32, GodotEnum {
         case worldBoundary = 0
         case separationRay = 1
@@ -38,6 +41,7 @@ open class PhysicsServer2D: Object {
         case convexPolygon = 6
         case concavePolygon = 7
         case custom = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("World Boundary", 0),
@@ -51,6 +55,7 @@ open class PhysicsServer2D: Object {
             ("Custom", 8),]
         }
     }
+
     public enum AreaParameter: UInt32, GodotEnum {
         case gravityOverrideMode = 0
         case gravity = 1
@@ -62,6 +67,7 @@ open class PhysicsServer2D: Object {
         case angularDampOverrideMode = 7
         case angularDamp = 8
         case priority = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Gravity Override Mode", 0),
@@ -76,12 +82,14 @@ open class PhysicsServer2D: Object {
             ("Priority", 9),]
         }
     }
+
     public enum AreaSpaceOverrideMode: UInt32, GodotEnum {
         case disabled = 0
         case combine = 1
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -91,11 +99,13 @@ open class PhysicsServer2D: Object {
             ("Replace Combine", 4),]
         }
     }
+
     public enum BodyMode: UInt32, GodotEnum {
         case `static` = 0
         case kinematic = 1
         case rigid = 2
         case rigidLinear = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Static", 0),
@@ -104,6 +114,7 @@ open class PhysicsServer2D: Object {
             ("Rigid Linear", 3),]
         }
     }
+
     public enum BodyParameter: UInt32, GodotEnum {
         case bounce = 0
         case friction = 1
@@ -116,6 +127,7 @@ open class PhysicsServer2D: Object {
         case linearDamp = 8
         case angularDamp = 9
         case max = 10
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bounce", 0),
@@ -131,21 +143,25 @@ open class PhysicsServer2D: Object {
             ("Max", 10),]
         }
     }
+
     public enum BodyDampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Combine", 0),
             ("Replace", 1),]
         }
     }
+
     public enum BodyState: UInt32, GodotEnum {
         case transform = 0
         case linearVelocity = 1
         case angularVelocity = 2
         case sleeping = 3
         case canSleep = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Transform", 0),
@@ -155,11 +171,13 @@ open class PhysicsServer2D: Object {
             ("Can Sleep", 4),]
         }
     }
+
     public enum JointType: UInt32, GodotEnum {
         case pin = 0
         case groove = 1
         case dampedSpring = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Pin", 0),
@@ -168,10 +186,12 @@ open class PhysicsServer2D: Object {
             ("Max", 3),]
         }
     }
+
     public enum JointParam: UInt32, GodotEnum {
         case bias = 0
         case maxBias = 1
         case maxForce = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bias", 0),
@@ -179,11 +199,13 @@ open class PhysicsServer2D: Object {
             ("Max Force", 2),]
         }
     }
+
     public enum PinJointParam: UInt32, GodotEnum {
         case softness = 0
         case limitUpper = 1
         case limitLower = 2
         case motorTargetVelocity = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Softness", 0),
@@ -192,19 +214,23 @@ open class PhysicsServer2D: Object {
             ("Motor Target Velocity", 3),]
         }
     }
+
     public enum PinJointFlag: UInt32, GodotEnum {
         case angularLimitEnabled = 0
         case motorEnabled = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Angular Limit Enabled", 0),
             ("Motor Enabled", 1),]
         }
     }
+
     public enum DampedSpringParam: UInt32, GodotEnum {
         case restLength = 0
         case stiffness = 1
         case damping = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Rest Length", 0),
@@ -212,10 +238,12 @@ open class PhysicsServer2D: Object {
             ("Damping", 2),]
         }
     }
+
     public enum CCDMode: UInt32, GodotEnum {
         case disabled = 0
         case castRay = 1
         case castShape = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -223,19 +251,23 @@ open class PhysicsServer2D: Object {
             ("Cast Shape", 2),]
         }
     }
+
     public enum AreaBodyStatus: UInt32, GodotEnum {
         case added = 0
         case removed = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Added", 0),
             ("Removed", 1),]
         }
     }
+
     public enum ProcessInfo: UInt32, GodotEnum {
         case activeObjects = 0
         case collisionPairs = 1
         case islandCount = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Active Objects", 0),
@@ -251,6 +283,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func worldBoundaryShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +302,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func separationRayShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,6 +321,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func segmentShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,6 +340,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func circleShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +359,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func rectangleShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -341,6 +378,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func capsuleShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +397,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func convexPolygonShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,6 +416,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func concavePolygonShapeCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -395,7 +435,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func shapeSetData<Value: VariantStorableIn>(shape: Godot.RID, data: Value) {
+
+    public func shapeSetData<Value: VariantStorableIn>(
+        shape: Godot.RID,
+        data: Value
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_shape, __ptr_data) { __accessPtr in
@@ -415,7 +459,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func shapeGetType(shape: Godot.RID) -> Godot.PhysicsServer2D.ShapeType {
+
+    public func shapeGetType(
+        shape: Godot.RID
+    ) -> Godot.PhysicsServer2D.ShapeType {
         Godot.PhysicsServer2D.ShapeType.fromMutatingGodotUnsafePointer { __temporary in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
@@ -435,7 +482,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func shapeGetData(shape: Godot.RID) -> Godot.Variant {
+
+    public func shapeGetData(
+        shape: Godot.RID
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
@@ -455,6 +505,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func spaceCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -473,7 +524,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func spaceSetActive(space: Godot.RID, active: Bool) {
+
+    public func spaceSetActive(
+        space: Godot.RID,
+        active: Bool
+    ) {
         space.withGodotUnsafeRawPointer { __ptr_space in
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_space, __ptr_active) { __accessPtr in
@@ -493,7 +548,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func spaceIsActive(space: Godot.RID) -> Bool {
+
+    public func spaceIsActive(
+        space: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         space.withGodotUnsafeRawPointer { __ptr_space in
         withUnsafeArgumentPackPointer(__ptr_space) { __accessPtr in
@@ -513,7 +571,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func spaceSetParam(space: Godot.RID, param: Godot.PhysicsServer2D.SpaceParameter, value: Double) {
+
+    public func spaceSetParam(
+        space: Godot.RID,
+        param: Godot.PhysicsServer2D.SpaceParameter,
+        value: Double
+    ) {
         space.withGodotUnsafeRawPointer { __ptr_space in
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -534,7 +597,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func spaceGetParam(space: Godot.RID, param: Godot.PhysicsServer2D.SpaceParameter) -> Double {
+
+    public func spaceGetParam(
+        space: Godot.RID,
+        param: Godot.PhysicsServer2D.SpaceParameter
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         space.withGodotUnsafeRawPointer { __ptr_space in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -555,7 +622,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func spaceGetDirectState(space: Godot.RID) -> Godot.PhysicsDirectSpaceState2D? {
+
+    public func spaceGetDirectState(
+        space: Godot.RID
+    ) -> Godot.PhysicsDirectSpaceState2D? {
         Godot.PhysicsDirectSpaceState2D?.fromMutatingGodotUnsafePointer { __temporary in
         space.withGodotUnsafeRawPointer { __ptr_space in
         withUnsafeArgumentPackPointer(__ptr_space) { __accessPtr in
@@ -575,6 +645,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func areaCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -593,7 +664,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetSpace(area: Godot.RID, space: Godot.RID) {
+
+    public func areaSetSpace(
+        area: Godot.RID,
+        space: Godot.RID
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         space.withGodotUnsafeRawPointer { __ptr_space in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_space) { __accessPtr in
@@ -613,7 +688,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetSpace(area: Godot.RID) -> Godot.RID {
+
+    public func areaGetSpace(
+        area: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -633,7 +711,13 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaAddShape(area: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = .identity, disabled: Bool = false) {
+
+    public func areaAddShape(
+        area: Godot.RID,
+        shape: Godot.RID,
+        transform: Godot.Transform2D = .identity,
+        disabled: Bool = false
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
@@ -655,7 +739,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetShape(area: Godot.RID, shapeIdx: Int32, shape: Godot.RID) {
+
+    public func areaSetShape(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        shape: Godot.RID
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -676,7 +765,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetShapeTransform(area: Godot.RID, shapeIdx: Int32, transform: Godot.Transform2D) {
+
+    public func areaSetShapeTransform(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        transform: Godot.Transform2D
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
@@ -697,7 +791,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetShapeDisabled(area: Godot.RID, shapeIdx: Int32, disabled: Bool) {
+
+    public func areaSetShapeDisabled(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        disabled: Bool
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
@@ -718,7 +817,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetShapeCount(area: Godot.RID) -> Int32 {
+
+    public func areaGetShapeCount(
+        area: Godot.RID
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -738,7 +840,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetShape(area: Godot.RID, shapeIdx: Int32) -> Godot.RID {
+
+    public func areaGetShape(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
@@ -759,7 +865,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetShapeTransform(area: Godot.RID, shapeIdx: Int32) -> Godot.Transform2D {
+
+    public func areaGetShapeTransform(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
@@ -780,7 +890,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaRemoveShape(area: Godot.RID, shapeIdx: Int32) {
+
+    public func areaRemoveShape(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_shapeIdx) { __accessPtr in
@@ -800,7 +914,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaClearShapes(area: Godot.RID) {
+
+    public func areaClearShapes(
+        area: Godot.RID
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -819,7 +936,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetCollisionLayer(area: Godot.RID, layer: UInt32) {
+
+    public func areaSetCollisionLayer(
+        area: Godot.RID,
+        layer: UInt32
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_layer) { __accessPtr in
@@ -839,7 +960,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetCollisionLayer(area: Godot.RID) -> UInt32 {
+
+    public func areaGetCollisionLayer(
+        area: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -859,7 +983,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetCollisionMask(area: Godot.RID, mask: UInt32) {
+
+    public func areaSetCollisionMask(
+        area: Godot.RID,
+        mask: UInt32
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_mask) { __accessPtr in
@@ -879,7 +1007,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetCollisionMask(area: Godot.RID) -> UInt32 {
+
+    public func areaGetCollisionMask(
+        area: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -899,7 +1030,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetParam<Value: VariantStorableIn>(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter, value: Value) {
+
+    public func areaSetParam<Value: VariantStorableIn>(
+        area: Godot.RID,
+        param: Godot.PhysicsServer2D.AreaParameter,
+        value: Value
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         param.withGodotUnsafeRawPointer { __ptr_param in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -920,7 +1056,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetTransform(area: Godot.RID, transform: Godot.Transform2D) {
+
+    public func areaSetTransform(
+        area: Godot.RID,
+        transform: Godot.Transform2D
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_transform) { __accessPtr in
@@ -940,7 +1080,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetParam(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter) -> Godot.Variant {
+
+    public func areaGetParam(
+        area: Godot.RID,
+        param: Godot.PhysicsServer2D.AreaParameter
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -961,7 +1105,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetTransform(area: Godot.RID) -> Godot.Transform2D {
+
+    public func areaGetTransform(
+        area: Godot.RID
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -981,7 +1128,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaAttachObjectInstanceID(area: Godot.RID, id: UInt64) {
+
+    public func areaAttachObjectInstanceID(
+        area: Godot.RID,
+        id: UInt64
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_id) { __accessPtr in
@@ -1001,7 +1152,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetObjectInstanceID(area: Godot.RID) -> UInt64 {
+
+    public func areaGetObjectInstanceID(
+        area: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -1021,7 +1175,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaAttachCanvasInstanceID(area: Godot.RID, id: UInt64) {
+
+    public func areaAttachCanvasInstanceID(
+        area: Godot.RID,
+        id: UInt64
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_id) { __accessPtr in
@@ -1041,7 +1199,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaGetCanvasInstanceID(area: Godot.RID) -> UInt64 {
+
+    public func areaGetCanvasInstanceID(
+        area: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafeArgumentPackPointer(__ptr_area) { __accessPtr in
@@ -1061,7 +1222,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetMonitorCallback(area: Godot.RID, callback: Godot.Callable) {
+
+    public func areaSetMonitorCallback(
+        area: Godot.RID,
+        callback: Godot.Callable
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_callback) { __accessPtr in
@@ -1081,7 +1246,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetAreaMonitorCallback(area: Godot.RID, callback: Godot.Callable) {
+
+    public func areaSetAreaMonitorCallback(
+        area: Godot.RID,
+        callback: Godot.Callable
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_callback) { __accessPtr in
@@ -1101,7 +1270,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func areaSetMonitorable(area: Godot.RID, monitorable: Bool) {
+
+    public func areaSetMonitorable(
+        area: Godot.RID,
+        monitorable: Bool
+    ) {
         area.withGodotUnsafeRawPointer { __ptr_area in
         monitorable.withGodotUnsafeRawPointer { __ptr_monitorable in
         withUnsafeArgumentPackPointer(__ptr_area, __ptr_monitorable) { __accessPtr in
@@ -1121,6 +1294,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func bodyCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1139,7 +1313,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetSpace(body: Godot.RID, space: Godot.RID) {
+
+    public func bodySetSpace(
+        body: Godot.RID,
+        space: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         space.withGodotUnsafeRawPointer { __ptr_space in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_space) { __accessPtr in
@@ -1159,7 +1337,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetSpace(body: Godot.RID) -> Godot.RID {
+
+    public func bodyGetSpace(
+        body: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1179,7 +1360,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetMode(body: Godot.RID, mode: Godot.PhysicsServer2D.BodyMode) {
+
+    public func bodySetMode(
+        body: Godot.RID,
+        mode: Godot.PhysicsServer2D.BodyMode
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_mode) { __accessPtr in
@@ -1199,7 +1384,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetMode(body: Godot.RID) -> Godot.PhysicsServer2D.BodyMode {
+
+    public func bodyGetMode(
+        body: Godot.RID
+    ) -> Godot.PhysicsServer2D.BodyMode {
         Godot.PhysicsServer2D.BodyMode.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1219,7 +1407,13 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddShape(body: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D = .identity, disabled: Bool = false) {
+
+    public func bodyAddShape(
+        body: Godot.RID,
+        shape: Godot.RID,
+        transform: Godot.Transform2D = .identity,
+        disabled: Bool = false
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
@@ -1241,7 +1435,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetShape(body: Godot.RID, shapeIdx: Int32, shape: Godot.RID) {
+
+    public func bodySetShape(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        shape: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -1262,7 +1461,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetShapeTransform(body: Godot.RID, shapeIdx: Int32, transform: Godot.Transform2D) {
+
+    public func bodySetShapeTransform(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        transform: Godot.Transform2D
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
@@ -1283,7 +1487,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetShapeCount(body: Godot.RID) -> Int32 {
+
+    public func bodyGetShapeCount(
+        body: Godot.RID
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1303,7 +1510,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetShape(body: Godot.RID, shapeIdx: Int32) -> Godot.RID {
+
+    public func bodyGetShape(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
@@ -1324,7 +1535,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetShapeTransform(body: Godot.RID, shapeIdx: Int32) -> Godot.Transform2D {
+
+    public func bodyGetShapeTransform(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
@@ -1345,7 +1560,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyRemoveShape(body: Godot.RID, shapeIdx: Int32) {
+
+    public func bodyRemoveShape(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_shapeIdx) { __accessPtr in
@@ -1365,7 +1584,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyClearShapes(body: Godot.RID) {
+
+    public func bodyClearShapes(
+        body: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1384,7 +1606,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetShapeDisabled(body: Godot.RID, shapeIdx: Int32, disabled: Bool) {
+
+    public func bodySetShapeDisabled(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        disabled: Bool
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
@@ -1405,7 +1632,13 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetShapeAsOneWayCollision(body: Godot.RID, shapeIdx: Int32, enable: Bool, margin: Double) {
+
+    public func bodySetShapeAsOneWayCollision(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        enable: Bool,
+        margin: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         shapeIdx.withGodotUnsafeRawPointer { __ptr_shapeIdx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
@@ -1427,7 +1660,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAttachObjectInstanceID(body: Godot.RID, id: UInt64) {
+
+    public func bodyAttachObjectInstanceID(
+        body: Godot.RID,
+        id: UInt64
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_id) { __accessPtr in
@@ -1447,7 +1684,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetObjectInstanceID(body: Godot.RID) -> UInt64 {
+
+    public func bodyGetObjectInstanceID(
+        body: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1467,7 +1707,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAttachCanvasInstanceID(body: Godot.RID, id: UInt64) {
+
+    public func bodyAttachCanvasInstanceID(
+        body: Godot.RID,
+        id: UInt64
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_id) { __accessPtr in
@@ -1487,7 +1731,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetCanvasInstanceID(body: Godot.RID) -> UInt64 {
+
+    public func bodyGetCanvasInstanceID(
+        body: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1507,7 +1754,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetContinuousCollisionDetectionMode(body: Godot.RID, mode: Godot.PhysicsServer2D.CCDMode) {
+
+    public func bodySetContinuousCollisionDetectionMode(
+        body: Godot.RID,
+        mode: Godot.PhysicsServer2D.CCDMode
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_mode) { __accessPtr in
@@ -1527,7 +1778,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetContinuousCollisionDetectionMode(body: Godot.RID) -> Godot.PhysicsServer2D.CCDMode {
+
+    public func bodyGetContinuousCollisionDetectionMode(
+        body: Godot.RID
+    ) -> Godot.PhysicsServer2D.CCDMode {
         Godot.PhysicsServer2D.CCDMode.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1547,7 +1801,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetCollisionLayer(body: Godot.RID, layer: UInt32) {
+
+    public func bodySetCollisionLayer(
+        body: Godot.RID,
+        layer: UInt32
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_layer) { __accessPtr in
@@ -1567,7 +1825,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetCollisionLayer(body: Godot.RID) -> UInt32 {
+
+    public func bodyGetCollisionLayer(
+        body: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1587,7 +1848,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetCollisionMask(body: Godot.RID, mask: UInt32) {
+
+    public func bodySetCollisionMask(
+        body: Godot.RID,
+        mask: UInt32
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_mask) { __accessPtr in
@@ -1607,7 +1872,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetCollisionMask(body: Godot.RID) -> UInt32 {
+
+    public func bodyGetCollisionMask(
+        body: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1627,7 +1895,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetCollisionPriority(body: Godot.RID, priority: Double) {
+
+    public func bodySetCollisionPriority(
+        body: Godot.RID,
+        priority: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_priority) { __accessPtr in
@@ -1647,7 +1919,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetCollisionPriority(body: Godot.RID) -> Double {
+
+    public func bodyGetCollisionPriority(
+        body: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1667,7 +1942,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetParam<Value: VariantStorableIn>(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter, value: Value) {
+
+    public func bodySetParam<Value: VariantStorableIn>(
+        body: Godot.RID,
+        param: Godot.PhysicsServer2D.BodyParameter,
+        value: Value
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         param.withGodotUnsafeRawPointer { __ptr_param in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -1688,7 +1968,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetParam(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter) -> Godot.Variant {
+
+    public func bodyGetParam(
+        body: Godot.RID,
+        param: Godot.PhysicsServer2D.BodyParameter
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -1709,7 +1993,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyResetMassProperties(body: Godot.RID) {
+
+    public func bodyResetMassProperties(
+        body: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1728,7 +2015,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetState<Value: VariantStorableIn>(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState, value: Value) {
+
+    public func bodySetState<Value: VariantStorableIn>(
+        body: Godot.RID,
+        state: Godot.PhysicsServer2D.BodyState,
+        value: Value
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         state.withGodotUnsafeRawPointer { __ptr_state in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -1749,7 +2041,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetState(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState) -> Godot.Variant {
+
+    public func bodyGetState(
+        body: Godot.RID,
+        state: Godot.PhysicsServer2D.BodyState
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         state.withGodotUnsafeRawPointer { __ptr_state in
@@ -1770,7 +2066,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyCentralImpulse(body: Godot.RID, impulse: Godot.Vector2) {
+
+    public func bodyApplyCentralImpulse(
+        body: Godot.RID,
+        impulse: Godot.Vector2
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_impulse) { __accessPtr in
@@ -1790,7 +2090,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyTorqueImpulse(body: Godot.RID, impulse: Double) {
+
+    public func bodyApplyTorqueImpulse(
+        body: Godot.RID,
+        impulse: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_impulse) { __accessPtr in
@@ -1810,7 +2114,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyImpulse(body: Godot.RID, impulse: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func bodyApplyImpulse(
+        body: Godot.RID,
+        impulse: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -1831,7 +2140,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyCentralForce(body: Godot.RID, force: Godot.Vector2) {
+
+    public func bodyApplyCentralForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_force) { __accessPtr in
@@ -1851,7 +2164,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyForce(body: Godot.RID, force: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func bodyApplyForce(
+        body: Godot.RID,
+        force: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         force.withGodotUnsafeRawPointer { __ptr_force in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -1872,7 +2190,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyApplyTorque(body: Godot.RID, torque: Double) {
+
+    public func bodyApplyTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_torque) { __accessPtr in
@@ -1892,7 +2214,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddConstantCentralForce(body: Godot.RID, force: Godot.Vector2) {
+
+    public func bodyAddConstantCentralForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_force) { __accessPtr in
@@ -1912,7 +2238,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddConstantForce(body: Godot.RID, force: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func bodyAddConstantForce(
+        body: Godot.RID,
+        force: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         force.withGodotUnsafeRawPointer { __ptr_force in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -1933,7 +2264,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddConstantTorque(body: Godot.RID, torque: Double) {
+
+    public func bodyAddConstantTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_torque) { __accessPtr in
@@ -1953,7 +2288,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetConstantForce(body: Godot.RID, force: Godot.Vector2) {
+
+    public func bodySetConstantForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_force) { __accessPtr in
@@ -1973,7 +2312,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetConstantForce(body: Godot.RID) -> Godot.Vector2 {
+
+    public func bodyGetConstantForce(
+        body: Godot.RID
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -1993,7 +2335,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetConstantTorque(body: Godot.RID, torque: Double) {
+
+    public func bodySetConstantTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_torque) { __accessPtr in
@@ -2013,7 +2359,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetConstantTorque(body: Godot.RID) -> Double {
+
+    public func bodyGetConstantTorque(
+        body: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -2033,7 +2382,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetAxisVelocity(body: Godot.RID, axisVelocity: Godot.Vector2) {
+
+    public func bodySetAxisVelocity(
+        body: Godot.RID,
+        axisVelocity: Godot.Vector2
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         axisVelocity.withGodotUnsafeRawPointer { __ptr_axisVelocity in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_axisVelocity) { __accessPtr in
@@ -2053,7 +2406,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyAddCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
+
+    public func bodyAddCollisionException(
+        body: Godot.RID,
+        exceptedBody: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         exceptedBody.withGodotUnsafeRawPointer { __ptr_exceptedBody in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_exceptedBody) { __accessPtr in
@@ -2073,7 +2430,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyRemoveCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
+
+    public func bodyRemoveCollisionException(
+        body: Godot.RID,
+        exceptedBody: Godot.RID
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         exceptedBody.withGodotUnsafeRawPointer { __ptr_exceptedBody in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_exceptedBody) { __accessPtr in
@@ -2093,7 +2454,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetMaxContactsReported(body: Godot.RID, amount: Int32) {
+
+    public func bodySetMaxContactsReported(
+        body: Godot.RID,
+        amount: Int32
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_amount) { __accessPtr in
@@ -2113,7 +2478,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetMaxContactsReported(body: Godot.RID) -> Int32 {
+
+    public func bodyGetMaxContactsReported(
+        body: Godot.RID
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -2133,7 +2501,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetOmitForceIntegration(body: Godot.RID, enable: Bool) {
+
+    public func bodySetOmitForceIntegration(
+        body: Godot.RID,
+        enable: Bool
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_body, __ptr_enable) { __accessPtr in
@@ -2153,7 +2525,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyIsOmittingForceIntegration(body: Godot.RID) -> Bool {
+
+    public func bodyIsOmittingForceIntegration(
+        body: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -2173,7 +2548,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodySetForceIntegrationCallback<Value: VariantStorableIn>(body: Godot.RID, callable: Godot.Callable, userdata: Value = Variant()) {
+
+    public func bodySetForceIntegrationCallback<Value: VariantStorableIn>(
+        body: Godot.RID,
+        callable: Godot.Callable,
+        userdata: Value = Variant()
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { __ptr_userdata in
@@ -2194,7 +2574,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyTestMotion(body: Godot.RID, parameters: Godot.PhysicsTestMotionParameters2D?, result: Godot.PhysicsTestMotionResult2D? = nil) -> Bool {
+
+    public func bodyTestMotion(
+        body: Godot.RID,
+        parameters: Godot.PhysicsTestMotionParameters2D?,
+        result: Godot.PhysicsTestMotionResult2D? = nil
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
@@ -2218,7 +2603,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func bodyGetDirectState(body: Godot.RID) -> Godot.PhysicsDirectBodyState2D? {
+
+    public func bodyGetDirectState(
+        body: Godot.RID
+    ) -> Godot.PhysicsDirectBodyState2D? {
         Godot.PhysicsDirectBodyState2D?.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -2238,6 +2626,7 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
+
     public func jointCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2256,7 +2645,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointClear(joint: Godot.RID) {
+
+    public func jointClear(
+        joint: Godot.RID
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_joint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2275,7 +2667,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.JointParam, value: Double) {
+
+    public func jointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.JointParam,
+        value: Double
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -2296,7 +2693,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.JointParam) -> Double {
+
+    public func jointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.JointParam
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -2317,7 +2718,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointDisableCollisionsBetweenBodies(joint: Godot.RID, disable: Bool) {
+
+    public func jointDisableCollisionsBetweenBodies(
+        joint: Godot.RID,
+        disable: Bool
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_joint, __ptr_disable) { __accessPtr in
@@ -2337,7 +2742,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointIsDisabledCollisionsBetweenBodies(joint: Godot.RID) -> Bool {
+
+    public func jointIsDisabledCollisionsBetweenBodies(
+        joint: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_joint) { __accessPtr in
@@ -2357,7 +2765,13 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointMakePin(joint: Godot.RID, anchor: Godot.Vector2, bodyA: Godot.RID, bodyB: Godot.RID = RID()) {
+
+    public func jointMakePin(
+        joint: Godot.RID,
+        anchor: Godot.Vector2,
+        bodyA: Godot.RID,
+        bodyB: Godot.RID = RID()
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         anchor.withGodotUnsafeRawPointer { __ptr_anchor in
         bodyA.withGodotUnsafeRawPointer { __ptr_bodyA in
@@ -2379,7 +2793,15 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointMakeGroove(joint: Godot.RID, groove1A: Godot.Vector2, groove2A: Godot.Vector2, anchorB: Godot.Vector2, bodyA: Godot.RID = RID(), bodyB: Godot.RID = RID()) {
+
+    public func jointMakeGroove(
+        joint: Godot.RID,
+        groove1A: Godot.Vector2,
+        groove2A: Godot.Vector2,
+        anchorB: Godot.Vector2,
+        bodyA: Godot.RID = RID(),
+        bodyB: Godot.RID = RID()
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         groove1A.withGodotUnsafeRawPointer { __ptr_groove1A in
         groove2A.withGodotUnsafeRawPointer { __ptr_groove2A in
@@ -2403,7 +2825,14 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointMakeDampedSpring(joint: Godot.RID, anchorA: Godot.Vector2, anchorB: Godot.Vector2, bodyA: Godot.RID, bodyB: Godot.RID = RID()) {
+
+    public func jointMakeDampedSpring(
+        joint: Godot.RID,
+        anchorA: Godot.Vector2,
+        anchorB: Godot.Vector2,
+        bodyA: Godot.RID,
+        bodyB: Godot.RID = RID()
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         anchorA.withGodotUnsafeRawPointer { __ptr_anchorA in
         anchorB.withGodotUnsafeRawPointer { __ptr_anchorB in
@@ -2426,7 +2855,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func pinJointSetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag, enabled: Bool) {
+
+    public func pinJointSetFlag(
+        joint: Godot.RID,
+        flag: Godot.PhysicsServer2D.PinJointFlag,
+        enabled: Bool
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
@@ -2447,7 +2881,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func pinJointGetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag) -> Bool {
+
+    public func pinJointGetFlag(
+        joint: Godot.RID,
+        flag: Godot.PhysicsServer2D.PinJointFlag
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
@@ -2468,7 +2906,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func pinJointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.PinJointParam, value: Double) {
+
+    public func pinJointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.PinJointParam,
+        value: Double
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -2489,7 +2932,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func pinJointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.PinJointParam) -> Double {
+
+    public func pinJointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.PinJointParam
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -2510,7 +2957,12 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func dampedSpringJointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.DampedSpringParam, value: Double) {
+
+    public func dampedSpringJointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.DampedSpringParam,
+        value: Double
+    ) {
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -2531,7 +2983,11 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func dampedSpringJointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.DampedSpringParam) -> Double {
+
+    public func dampedSpringJointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.DampedSpringParam
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         param.withGodotUnsafeRawPointer { __ptr_param in
@@ -2552,7 +3008,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func jointGetType(joint: Godot.RID) -> Godot.PhysicsServer2D.JointType {
+
+    public func jointGetType(
+        joint: Godot.RID
+    ) -> Godot.PhysicsServer2D.JointType {
         Godot.PhysicsServer2D.JointType.fromMutatingGodotUnsafePointer { __temporary in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_joint) { __accessPtr in
@@ -2572,7 +3031,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func freeRid(_ rid: Godot.RID) {
+
+    public func freeRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2591,7 +3053,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func setActive(_ active: Bool) {
+
+    public func setActive(
+        _ active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2610,7 +3075,10 @@ open class PhysicsServer2D: Object {
         }
         }
     }()
-    public func processInfo(_ processInfo: Godot.PhysicsServer2D.ProcessInfo) -> Int32 {
+
+    public func processInfo(
+        _ processInfo: Godot.PhysicsServer2D.ProcessInfo
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         processInfo.withGodotUnsafeRawPointer { __ptr_processInfo in
         withUnsafeArgumentPackPointer(__ptr_processInfo) { __accessPtr in
@@ -2624,6 +3092,7 @@ open class PhysicsServer2D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2636,5 +3105,4 @@ open class PhysicsServer2D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

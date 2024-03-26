@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsServer2DExtension: PhysicsServer2D {
     open func _worldBoundaryShapeCreate() -> Godot.RID {
@@ -37,25 +38,47 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Godot.RID()
     }
 
-    open func _shapeSetData(shape: Godot.RID, data: Godot.Variant) {
+    open func _shapeSetData(
+        shape: Godot.RID,
+        data: Godot.Variant
+    ) {
     }
 
-    open func _shapeSetCustomSolverBias(shape: Godot.RID, bias: Double) {
+    open func _shapeSetCustomSolverBias(
+        shape: Godot.RID,
+        bias: Double
+    ) {
     }
 
-    open func _shapeGetType(shape: Godot.RID) -> Godot.PhysicsServer2D.ShapeType {
+    open func _shapeGetType(
+        shape: Godot.RID
+    ) -> Godot.PhysicsServer2D.ShapeType {
         Godot.PhysicsServer2D.ShapeType(rawValue: 0)!
     }
 
-    open func _shapeGetData(shape: Godot.RID) -> Godot.Variant {
+    open func _shapeGetData(
+        shape: Godot.RID
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _shapeGetCustomSolverBias(shape: Godot.RID) -> Double {
+    open func _shapeGetCustomSolverBias(
+        shape: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _shapeCollide(shapeA: Godot.RID, xformA: Godot.Transform2D, motionA: Godot.Vector2, shapeB: Godot.RID, xformB: Godot.Transform2D, motionB: Godot.Vector2, results: UnsafeMutableRawPointer, resultMax: Int32, resultCount: UnsafeMutablePointer<Int32>) -> Bool {
+    open func _shapeCollide(
+        shapeA: Godot.RID,
+        xformA: Godot.Transform2D,
+        motionA: Godot.Vector2,
+        shapeB: Godot.RID,
+        xformB: Godot.Transform2D,
+        motionB: Godot.Vector2,
+        results: UnsafeMutableRawPointer,
+        resultMax: Int32,
+        resultCount: UnsafeMutablePointer<Int32>
+    ) -> Bool {
         Bool()
     }
 
@@ -63,32 +86,53 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Godot.RID()
     }
 
-    open func _spaceSetActive(space: Godot.RID, active: Bool) {
+    open func _spaceSetActive(
+        space: Godot.RID,
+        active: Bool
+    ) {
     }
 
-    open func _spaceIsActive(space: Godot.RID) -> Bool {
+    open func _spaceIsActive(
+        space: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _spaceSetParam(space: Godot.RID, param: Godot.PhysicsServer2D.SpaceParameter, value: Double) {
+    open func _spaceSetParam(
+        space: Godot.RID,
+        param: Godot.PhysicsServer2D.SpaceParameter,
+        value: Double
+    ) {
     }
 
-    open func _spaceGetParam(space: Godot.RID, param: Godot.PhysicsServer2D.SpaceParameter) -> Double {
+    open func _spaceGetParam(
+        space: Godot.RID,
+        param: Godot.PhysicsServer2D.SpaceParameter
+    ) -> Double {
         Double()
     }
 
-    open func _spaceGetDirectState(space: Godot.RID) -> Godot.PhysicsDirectSpaceState2D? {
+    open func _spaceGetDirectState(
+        space: Godot.RID
+    ) -> Godot.PhysicsDirectSpaceState2D? {
         nil
     }
 
-    open func _spaceSetDebugContacts(space: Godot.RID, maxContacts: Int32) {
+    open func _spaceSetDebugContacts(
+        space: Godot.RID,
+        maxContacts: Int32
+    ) {
     }
 
-    open func _spaceGetContacts(space: Godot.RID) -> Godot.PackedVector2Array {
+    open func _spaceGetContacts(
+        space: Godot.RID
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array()
     }
 
-    open func _spaceGetContactCount(space: Godot.RID) -> Int32 {
+    open func _spaceGetContactCount(
+        space: Godot.RID
+    ) -> Int32 {
         Int32()
     }
 
@@ -96,300 +140,565 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Godot.RID()
     }
 
-    open func _areaSetSpace(area: Godot.RID, space: Godot.RID) {
+    open func _areaSetSpace(
+        area: Godot.RID,
+        space: Godot.RID
+    ) {
     }
 
-    open func _areaGetSpace(area: Godot.RID) -> Godot.RID {
+    open func _areaGetSpace(
+        area: Godot.RID
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _areaAddShape(area: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D, disabled: Bool) {
+    open func _areaAddShape(
+        area: Godot.RID,
+        shape: Godot.RID,
+        transform: Godot.Transform2D,
+        disabled: Bool
+    ) {
     }
 
-    open func _areaSetShape(area: Godot.RID, shapeIdx: Int32, shape: Godot.RID) {
+    open func _areaSetShape(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        shape: Godot.RID
+    ) {
     }
 
-    open func _areaSetShapeTransform(area: Godot.RID, shapeIdx: Int32, transform: Godot.Transform2D) {
+    open func _areaSetShapeTransform(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        transform: Godot.Transform2D
+    ) {
     }
 
-    open func _areaSetShapeDisabled(area: Godot.RID, shapeIdx: Int32, disabled: Bool) {
+    open func _areaSetShapeDisabled(
+        area: Godot.RID,
+        shapeIdx: Int32,
+        disabled: Bool
+    ) {
     }
 
-    open func _areaGetShapeCount(area: Godot.RID) -> Int32 {
+    open func _areaGetShapeCount(
+        area: Godot.RID
+    ) -> Int32 {
         Int32()
     }
 
-    open func _areaGetShape(area: Godot.RID, shapeIdx: Int32) -> Godot.RID {
+    open func _areaGetShape(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _areaGetShapeTransform(area: Godot.RID, shapeIdx: Int32) -> Godot.Transform2D {
+    open func _areaGetShapeTransform(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D()
     }
 
-    open func _areaRemoveShape(area: Godot.RID, shapeIdx: Int32) {
+    open func _areaRemoveShape(
+        area: Godot.RID,
+        shapeIdx: Int32
+    ) {
     }
 
-    open func _areaClearShapes(area: Godot.RID) {
+    open func _areaClearShapes(
+        area: Godot.RID
+    ) {
     }
 
-    open func _areaAttachObjectInstanceID(area: Godot.RID, id: UInt64) {
+    open func _areaAttachObjectInstanceID(
+        area: Godot.RID,
+        id: UInt64
+    ) {
     }
 
-    open func _areaGetObjectInstanceID(area: Godot.RID) -> UInt64 {
+    open func _areaGetObjectInstanceID(
+        area: Godot.RID
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _areaAttachCanvasInstanceID(area: Godot.RID, id: UInt64) {
+    open func _areaAttachCanvasInstanceID(
+        area: Godot.RID,
+        id: UInt64
+    ) {
     }
 
-    open func _areaGetCanvasInstanceID(area: Godot.RID) -> UInt64 {
+    open func _areaGetCanvasInstanceID(
+        area: Godot.RID
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _areaSetParam(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter, value: Godot.Variant) {
+    open func _areaSetParam(
+        area: Godot.RID,
+        param: Godot.PhysicsServer2D.AreaParameter,
+        value: Godot.Variant
+    ) {
     }
 
-    open func _areaSetTransform(area: Godot.RID, transform: Godot.Transform2D) {
+    open func _areaSetTransform(
+        area: Godot.RID,
+        transform: Godot.Transform2D
+    ) {
     }
 
-    open func _areaGetParam(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter) -> Godot.Variant {
+    open func _areaGetParam(
+        area: Godot.RID,
+        param: Godot.PhysicsServer2D.AreaParameter
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _areaGetTransform(area: Godot.RID) -> Godot.Transform2D {
+    open func _areaGetTransform(
+        area: Godot.RID
+    ) -> Godot.Transform2D {
         Godot.Transform2D()
     }
 
-    open func _areaSetCollisionLayer(area: Godot.RID, layer: UInt32) {
+    open func _areaSetCollisionLayer(
+        area: Godot.RID,
+        layer: UInt32
+    ) {
     }
 
-    open func _areaGetCollisionLayer(area: Godot.RID) -> UInt32 {
+    open func _areaGetCollisionLayer(
+        area: Godot.RID
+    ) -> UInt32 {
         UInt32()
     }
 
-    open func _areaSetCollisionMask(area: Godot.RID, mask: UInt32) {
+    open func _areaSetCollisionMask(
+        area: Godot.RID,
+        mask: UInt32
+    ) {
     }
 
-    open func _areaGetCollisionMask(area: Godot.RID) -> UInt32 {
+    open func _areaGetCollisionMask(
+        area: Godot.RID
+    ) -> UInt32 {
         UInt32()
     }
 
-    open func _areaSetMonitorable(area: Godot.RID, monitorable: Bool) {
+    open func _areaSetMonitorable(
+        area: Godot.RID,
+        monitorable: Bool
+    ) {
     }
 
-    open func _areaSetPickable(area: Godot.RID, pickable: Bool) {
+    open func _areaSetPickable(
+        area: Godot.RID,
+        pickable: Bool
+    ) {
     }
 
-    open func _areaSetMonitorCallback(area: Godot.RID, callback: Godot.Callable) {
+    open func _areaSetMonitorCallback(
+        area: Godot.RID,
+        callback: Godot.Callable
+    ) {
     }
 
-    open func _areaSetAreaMonitorCallback(area: Godot.RID, callback: Godot.Callable) {
+    open func _areaSetAreaMonitorCallback(
+        area: Godot.RID,
+        callback: Godot.Callable
+    ) {
     }
 
     open func _bodyCreate() -> Godot.RID {
         Godot.RID()
     }
 
-    open func _bodySetSpace(body: Godot.RID, space: Godot.RID) {
+    open func _bodySetSpace(
+        body: Godot.RID,
+        space: Godot.RID
+    ) {
     }
 
-    open func _bodyGetSpace(body: Godot.RID) -> Godot.RID {
+    open func _bodyGetSpace(
+        body: Godot.RID
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _bodySetMode(body: Godot.RID, mode: Godot.PhysicsServer2D.BodyMode) {
+    open func _bodySetMode(
+        body: Godot.RID,
+        mode: Godot.PhysicsServer2D.BodyMode
+    ) {
     }
 
-    open func _bodyGetMode(body: Godot.RID) -> Godot.PhysicsServer2D.BodyMode {
+    open func _bodyGetMode(
+        body: Godot.RID
+    ) -> Godot.PhysicsServer2D.BodyMode {
         Godot.PhysicsServer2D.BodyMode(rawValue: 0)!
     }
 
-    open func _bodyAddShape(body: Godot.RID, shape: Godot.RID, transform: Godot.Transform2D, disabled: Bool) {
+    open func _bodyAddShape(
+        body: Godot.RID,
+        shape: Godot.RID,
+        transform: Godot.Transform2D,
+        disabled: Bool
+    ) {
     }
 
-    open func _bodySetShape(body: Godot.RID, shapeIdx: Int32, shape: Godot.RID) {
+    open func _bodySetShape(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        shape: Godot.RID
+    ) {
     }
 
-    open func _bodySetShapeTransform(body: Godot.RID, shapeIdx: Int32, transform: Godot.Transform2D) {
+    open func _bodySetShapeTransform(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        transform: Godot.Transform2D
+    ) {
     }
 
-    open func _bodyGetShapeCount(body: Godot.RID) -> Int32 {
+    open func _bodyGetShapeCount(
+        body: Godot.RID
+    ) -> Int32 {
         Int32()
     }
 
-    open func _bodyGetShape(body: Godot.RID, shapeIdx: Int32) -> Godot.RID {
+    open func _bodyGetShape(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _bodyGetShapeTransform(body: Godot.RID, shapeIdx: Int32) -> Godot.Transform2D {
+    open func _bodyGetShapeTransform(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D()
     }
 
-    open func _bodySetShapeDisabled(body: Godot.RID, shapeIdx: Int32, disabled: Bool) {
+    open func _bodySetShapeDisabled(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        disabled: Bool
+    ) {
     }
 
-    open func _bodySetShapeAsOneWayCollision(body: Godot.RID, shapeIdx: Int32, enable: Bool, margin: Double) {
+    open func _bodySetShapeAsOneWayCollision(
+        body: Godot.RID,
+        shapeIdx: Int32,
+        enable: Bool,
+        margin: Double
+    ) {
     }
 
-    open func _bodyRemoveShape(body: Godot.RID, shapeIdx: Int32) {
+    open func _bodyRemoveShape(
+        body: Godot.RID,
+        shapeIdx: Int32
+    ) {
     }
 
-    open func _bodyClearShapes(body: Godot.RID) {
+    open func _bodyClearShapes(
+        body: Godot.RID
+    ) {
     }
 
-    open func _bodyAttachObjectInstanceID(body: Godot.RID, id: UInt64) {
+    open func _bodyAttachObjectInstanceID(
+        body: Godot.RID,
+        id: UInt64
+    ) {
     }
 
-    open func _bodyGetObjectInstanceID(body: Godot.RID) -> UInt64 {
+    open func _bodyGetObjectInstanceID(
+        body: Godot.RID
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _bodyAttachCanvasInstanceID(body: Godot.RID, id: UInt64) {
+    open func _bodyAttachCanvasInstanceID(
+        body: Godot.RID,
+        id: UInt64
+    ) {
     }
 
-    open func _bodyGetCanvasInstanceID(body: Godot.RID) -> UInt64 {
+    open func _bodyGetCanvasInstanceID(
+        body: Godot.RID
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _bodySetContinuousCollisionDetectionMode(body: Godot.RID, mode: Godot.PhysicsServer2D.CCDMode) {
+    open func _bodySetContinuousCollisionDetectionMode(
+        body: Godot.RID,
+        mode: Godot.PhysicsServer2D.CCDMode
+    ) {
     }
 
-    open func _bodyGetContinuousCollisionDetectionMode(body: Godot.RID) -> Godot.PhysicsServer2D.CCDMode {
+    open func _bodyGetContinuousCollisionDetectionMode(
+        body: Godot.RID
+    ) -> Godot.PhysicsServer2D.CCDMode {
         Godot.PhysicsServer2D.CCDMode(rawValue: 0)!
     }
 
-    open func _bodySetCollisionLayer(body: Godot.RID, layer: UInt32) {
+    open func _bodySetCollisionLayer(
+        body: Godot.RID,
+        layer: UInt32
+    ) {
     }
 
-    open func _bodyGetCollisionLayer(body: Godot.RID) -> UInt32 {
+    open func _bodyGetCollisionLayer(
+        body: Godot.RID
+    ) -> UInt32 {
         UInt32()
     }
 
-    open func _bodySetCollisionMask(body: Godot.RID, mask: UInt32) {
+    open func _bodySetCollisionMask(
+        body: Godot.RID,
+        mask: UInt32
+    ) {
     }
 
-    open func _bodyGetCollisionMask(body: Godot.RID) -> UInt32 {
+    open func _bodyGetCollisionMask(
+        body: Godot.RID
+    ) -> UInt32 {
         UInt32()
     }
 
-    open func _bodySetCollisionPriority(body: Godot.RID, priority: Double) {
+    open func _bodySetCollisionPriority(
+        body: Godot.RID,
+        priority: Double
+    ) {
     }
 
-    open func _bodyGetCollisionPriority(body: Godot.RID) -> Double {
+    open func _bodyGetCollisionPriority(
+        body: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _bodySetParam(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter, value: Godot.Variant) {
+    open func _bodySetParam(
+        body: Godot.RID,
+        param: Godot.PhysicsServer2D.BodyParameter,
+        value: Godot.Variant
+    ) {
     }
 
-    open func _bodyGetParam(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter) -> Godot.Variant {
+    open func _bodyGetParam(
+        body: Godot.RID,
+        param: Godot.PhysicsServer2D.BodyParameter
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _bodyResetMassProperties(body: Godot.RID) {
+    open func _bodyResetMassProperties(
+        body: Godot.RID
+    ) {
     }
 
-    open func _bodySetState(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState, value: Godot.Variant) {
+    open func _bodySetState(
+        body: Godot.RID,
+        state: Godot.PhysicsServer2D.BodyState,
+        value: Godot.Variant
+    ) {
     }
 
-    open func _bodyGetState(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState) -> Godot.Variant {
+    open func _bodyGetState(
+        body: Godot.RID,
+        state: Godot.PhysicsServer2D.BodyState
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _bodyApplyCentralImpulse(body: Godot.RID, impulse: Godot.Vector2) {
+    open func _bodyApplyCentralImpulse(
+        body: Godot.RID,
+        impulse: Godot.Vector2
+    ) {
     }
 
-    open func _bodyApplyTorqueImpulse(body: Godot.RID, impulse: Double) {
+    open func _bodyApplyTorqueImpulse(
+        body: Godot.RID,
+        impulse: Double
+    ) {
     }
 
-    open func _bodyApplyImpulse(body: Godot.RID, impulse: Godot.Vector2, position: Godot.Vector2) {
+    open func _bodyApplyImpulse(
+        body: Godot.RID,
+        impulse: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _bodyApplyCentralForce(body: Godot.RID, force: Godot.Vector2) {
+    open func _bodyApplyCentralForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
     }
 
-    open func _bodyApplyForce(body: Godot.RID, force: Godot.Vector2, position: Godot.Vector2) {
+    open func _bodyApplyForce(
+        body: Godot.RID,
+        force: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _bodyApplyTorque(body: Godot.RID, torque: Double) {
+    open func _bodyApplyTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
     }
 
-    open func _bodyAddConstantCentralForce(body: Godot.RID, force: Godot.Vector2) {
+    open func _bodyAddConstantCentralForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
     }
 
-    open func _bodyAddConstantForce(body: Godot.RID, force: Godot.Vector2, position: Godot.Vector2) {
+    open func _bodyAddConstantForce(
+        body: Godot.RID,
+        force: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _bodyAddConstantTorque(body: Godot.RID, torque: Double) {
+    open func _bodyAddConstantTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
     }
 
-    open func _bodySetConstantForce(body: Godot.RID, force: Godot.Vector2) {
+    open func _bodySetConstantForce(
+        body: Godot.RID,
+        force: Godot.Vector2
+    ) {
     }
 
-    open func _bodyGetConstantForce(body: Godot.RID) -> Godot.Vector2 {
+    open func _bodyGetConstantForce(
+        body: Godot.RID
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _bodySetConstantTorque(body: Godot.RID, torque: Double) {
+    open func _bodySetConstantTorque(
+        body: Godot.RID,
+        torque: Double
+    ) {
     }
 
-    open func _bodyGetConstantTorque(body: Godot.RID) -> Double {
+    open func _bodyGetConstantTorque(
+        body: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _bodySetAxisVelocity(body: Godot.RID, axisVelocity: Godot.Vector2) {
+    open func _bodySetAxisVelocity(
+        body: Godot.RID,
+        axisVelocity: Godot.Vector2
+    ) {
     }
 
-    open func _bodyAddCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
+    open func _bodyAddCollisionException(
+        body: Godot.RID,
+        exceptedBody: Godot.RID
+    ) {
     }
 
-    open func _bodyRemoveCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
+    open func _bodyRemoveCollisionException(
+        body: Godot.RID,
+        exceptedBody: Godot.RID
+    ) {
     }
 
-    open func _bodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+    open func _bodyGetCollisionExceptions(
+        body: Godot.RID
+    ) -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>()
     }
 
-    open func _bodySetMaxContactsReported(body: Godot.RID, amount: Int32) {
+    open func _bodySetMaxContactsReported(
+        body: Godot.RID,
+        amount: Int32
+    ) {
     }
 
-    open func _bodyGetMaxContactsReported(body: Godot.RID) -> Int32 {
+    open func _bodyGetMaxContactsReported(
+        body: Godot.RID
+    ) -> Int32 {
         Int32()
     }
 
-    open func _bodySetContactsReportedDepthThreshold(body: Godot.RID, threshold: Double) {
+    open func _bodySetContactsReportedDepthThreshold(
+        body: Godot.RID,
+        threshold: Double
+    ) {
     }
 
-    open func _bodyGetContactsReportedDepthThreshold(body: Godot.RID) -> Double {
+    open func _bodyGetContactsReportedDepthThreshold(
+        body: Godot.RID
+    ) -> Double {
         Double()
     }
 
-    open func _bodySetOmitForceIntegration(body: Godot.RID, enable: Bool) {
+    open func _bodySetOmitForceIntegration(
+        body: Godot.RID,
+        enable: Bool
+    ) {
     }
 
-    open func _bodyIsOmittingForceIntegration(body: Godot.RID) -> Bool {
+    open func _bodyIsOmittingForceIntegration(
+        body: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _bodySetStateSyncCallback(body: Godot.RID, callable: Godot.Callable) {
+    open func _bodySetStateSyncCallback(
+        body: Godot.RID,
+        callable: Godot.Callable
+    ) {
     }
 
-    open func _bodySetForceIntegrationCallback(body: Godot.RID, callable: Godot.Callable, userdata: Godot.Variant) {
+    open func _bodySetForceIntegrationCallback(
+        body: Godot.RID,
+        callable: Godot.Callable,
+        userdata: Godot.Variant
+    ) {
     }
 
-    open func _bodyCollideShape(body: Godot.RID, bodyShape: Int32, shape: Godot.RID, shapeXform: Godot.Transform2D, motion: Godot.Vector2, results: UnsafeMutableRawPointer, resultMax: Int32, resultCount: UnsafeMutablePointer<Int32>) -> Bool {
+    open func _bodyCollideShape(
+        body: Godot.RID,
+        bodyShape: Int32,
+        shape: Godot.RID,
+        shapeXform: Godot.Transform2D,
+        motion: Godot.Vector2,
+        results: UnsafeMutableRawPointer,
+        resultMax: Int32,
+        resultCount: UnsafeMutablePointer<Int32>
+    ) -> Bool {
         Bool()
     }
 
-    open func _bodySetPickable(body: Godot.RID, pickable: Bool) {
+    open func _bodySetPickable(
+        body: Godot.RID,
+        pickable: Bool
+    ) {
     }
 
-    open func _bodyGetDirectState(body: Godot.RID) -> Godot.PhysicsDirectBodyState2D? {
+    open func _bodyGetDirectState(
+        body: Godot.RID
+    ) -> Godot.PhysicsDirectBodyState2D? {
         nil
     }
 
-    open func _bodyTestMotion(body: Godot.RID, from: Godot.Transform2D, motion: Godot.Vector2, margin: Double, collideSeparationRay: Bool, recoveryAsCollision: Bool, result: UnsafeMutablePointer<PhysicsServer2DExtensionMotionResult>) -> Bool {
+    open func _bodyTestMotion(
+        body: Godot.RID,
+        from: Godot.Transform2D,
+        motion: Godot.Vector2,
+        margin: Double,
+        collideSeparationRay: Bool,
+        recoveryAsCollision: Bool,
+        result: UnsafeMutablePointer<PhysicsServer2DExtensionMotionResult>
+    ) -> Bool {
         Bool()
     }
 
@@ -397,67 +706,128 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Godot.RID()
     }
 
-    open func _jointClear(joint: Godot.RID) {
+    open func _jointClear(
+        joint: Godot.RID
+    ) {
     }
 
-    open func _jointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.JointParam, value: Double) {
+    open func _jointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.JointParam,
+        value: Double
+    ) {
     }
 
-    open func _jointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.JointParam) -> Double {
+    open func _jointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.JointParam
+    ) -> Double {
         Double()
     }
 
-    open func _jointDisableCollisionsBetweenBodies(joint: Godot.RID, disable: Bool) {
+    open func _jointDisableCollisionsBetweenBodies(
+        joint: Godot.RID,
+        disable: Bool
+    ) {
     }
 
-    open func _jointIsDisabledCollisionsBetweenBodies(joint: Godot.RID) -> Bool {
+    open func _jointIsDisabledCollisionsBetweenBodies(
+        joint: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _jointMakePin(joint: Godot.RID, anchor: Godot.Vector2, bodyA: Godot.RID, bodyB: Godot.RID) {
+    open func _jointMakePin(
+        joint: Godot.RID,
+        anchor: Godot.Vector2,
+        bodyA: Godot.RID,
+        bodyB: Godot.RID
+    ) {
     }
 
-    open func _jointMakeGroove(joint: Godot.RID, aGroove1: Godot.Vector2, aGroove2: Godot.Vector2, bAnchor: Godot.Vector2, bodyA: Godot.RID, bodyB: Godot.RID) {
+    open func _jointMakeGroove(
+        joint: Godot.RID,
+        aGroove1: Godot.Vector2,
+        aGroove2: Godot.Vector2,
+        bAnchor: Godot.Vector2,
+        bodyA: Godot.RID,
+        bodyB: Godot.RID
+    ) {
     }
 
-    open func _jointMakeDampedSpring(joint: Godot.RID, anchorA: Godot.Vector2, anchorB: Godot.Vector2, bodyA: Godot.RID, bodyB: Godot.RID) {
+    open func _jointMakeDampedSpring(
+        joint: Godot.RID,
+        anchorA: Godot.Vector2,
+        anchorB: Godot.Vector2,
+        bodyA: Godot.RID,
+        bodyB: Godot.RID
+    ) {
     }
 
-    open func _pinJointSetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag, enabled: Bool) {
+    open func _pinJointSetFlag(
+        joint: Godot.RID,
+        flag: Godot.PhysicsServer2D.PinJointFlag,
+        enabled: Bool
+    ) {
     }
 
-    open func _pinJointGetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag) -> Bool {
+    open func _pinJointGetFlag(
+        joint: Godot.RID,
+        flag: Godot.PhysicsServer2D.PinJointFlag
+    ) -> Bool {
         Bool()
     }
 
-    open func _pinJointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.PinJointParam, value: Double) {
+    open func _pinJointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.PinJointParam,
+        value: Double
+    ) {
     }
 
-    open func _pinJointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.PinJointParam) -> Double {
+    open func _pinJointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.PinJointParam
+    ) -> Double {
         Double()
     }
 
-    open func _dampedSpringJointSetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.DampedSpringParam, value: Double) {
+    open func _dampedSpringJointSetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.DampedSpringParam,
+        value: Double
+    ) {
     }
 
-    open func _dampedSpringJointGetParam(joint: Godot.RID, param: Godot.PhysicsServer2D.DampedSpringParam) -> Double {
+    open func _dampedSpringJointGetParam(
+        joint: Godot.RID,
+        param: Godot.PhysicsServer2D.DampedSpringParam
+    ) -> Double {
         Double()
     }
 
-    open func _jointGetType(joint: Godot.RID) -> Godot.PhysicsServer2D.JointType {
+    open func _jointGetType(
+        joint: Godot.RID
+    ) -> Godot.PhysicsServer2D.JointType {
         Godot.PhysicsServer2D.JointType(rawValue: 0)!
     }
 
-    open func _freeRid(_ rid: Godot.RID) {
+    open func _freeRid(
+        _ rid: Godot.RID
+    ) {
     }
 
-    open func _setActive(_ active: Bool) {
+    open func _setActive(
+        _ active: Bool
+    ) {
     }
 
     open func _init() {
     }
 
-    open func _step(_ step: Double) {
+    open func _step(
+        _ step: Double
+    ) {
     }
 
     open func _sync() {
@@ -476,7 +846,9 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Bool()
     }
 
-    open func _getProcessInfo(_ processInfo: Godot.PhysicsServer2D.ProcessInfo) -> Int32 {
+    open func _getProcessInfo(
+        _ processInfo: Godot.PhysicsServer2D.ProcessInfo
+    ) -> Int32 {
         Int32()
     }
 
@@ -487,7 +859,10 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         }
         }
     }()
-    public func bodyTestMotionIsExcludingBody(_ body: Godot.RID) -> Bool {
+
+    public func bodyTestMotionIsExcludingBody(
+        _ body: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
@@ -507,7 +882,10 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         }
         }
     }()
-    public func bodyTestMotionIsExcludingObject(_ object: UInt64) -> Bool {
+
+    public func bodyTestMotionIsExcludingObject(
+        _ object: UInt64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafeArgumentPackPointer(__ptr_object) { __accessPtr in
@@ -521,6 +899,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1930,5 +2309,4 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class LightmapGI: VisualInstance3D {
     public enum BakeQuality: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class LightmapGI: VisualInstance3D {
         case medium = 1
         case high = 2
         case ultra = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Low", 0),
@@ -18,12 +20,14 @@ open class LightmapGI: VisualInstance3D {
             ("Ultra", 3),]
         }
     }
+
     public enum GenerateProbes: UInt32, GodotEnum {
         case disabled = 0
         case subdiv4 = 1
         case subdiv8 = 2
         case subdiv16 = 3
         case subdiv32 = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -33,6 +37,7 @@ open class LightmapGI: VisualInstance3D {
             ("Subdiv32", 4),]
         }
     }
+
     public enum BakeError: UInt32, GodotEnum {
         case ok = 0
         case noSceneRoot = 1
@@ -44,6 +49,7 @@ open class LightmapGI: VisualInstance3D {
         case cantCreateImage = 7
         case userAborted = 8
         case textureSizeTooSmall = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ok", 0),
@@ -58,11 +64,13 @@ open class LightmapGI: VisualInstance3D {
             ("Texture Size Too Small", 9),]
         }
     }
+
     public enum EnvironmentMode: UInt32, GodotEnum {
         case disabled = 0
         case scene = 1
         case customSky = 2
         case customColor = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -79,7 +87,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setLightData(_ data: Godot.LightmapGIData?) {
+
+    private func __setLightData(
+        _ data: Godot.LightmapGIData?
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafePointer(to: __ptr_data) { _ptr___ptr_data in
         withUnsafeArgumentPackPointer(_ptr___ptr_data) { __accessPtr in
@@ -99,6 +110,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getLightData() -> Godot.LightmapGIData? {
         Godot.LightmapGIData?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +129,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setBakeQuality(_ bakeQuality: Godot.LightmapGI.BakeQuality) {
+
+    private func __setBakeQuality(
+        _ bakeQuality: Godot.LightmapGI.BakeQuality
+    ) {
         bakeQuality.withGodotUnsafeRawPointer { __ptr_bakeQuality in
         withUnsafeArgumentPackPointer(__ptr_bakeQuality) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,6 +151,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getBakeQuality() -> Godot.LightmapGI.BakeQuality {
         Godot.LightmapGI.BakeQuality.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +170,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setBounces(_ bounces: Int32) {
+
+    private func __setBounces(
+        _ bounces: Int32
+    ) {
         bounces.withGodotUnsafeRawPointer { __ptr_bounces in
         withUnsafeArgumentPackPointer(__ptr_bounces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +192,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getBounces() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,7 +211,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setBounceIndirectEnergy(_ bounceIndirectEnergy: Double) {
+
+    private func __setBounceIndirectEnergy(
+        _ bounceIndirectEnergy: Double
+    ) {
         bounceIndirectEnergy.withGodotUnsafeRawPointer { __ptr_bounceIndirectEnergy in
         withUnsafeArgumentPackPointer(__ptr_bounceIndirectEnergy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,6 +233,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getBounceIndirectEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,7 +252,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setGenerateProbes(subdivision: Godot.LightmapGI.GenerateProbes) {
+
+    private func __setGenerateProbes(
+        subdivision: Godot.LightmapGI.GenerateProbes
+    ) {
         subdivision.withGodotUnsafeRawPointer { __ptr_subdivision in
         withUnsafeArgumentPackPointer(__ptr_subdivision) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +274,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getGenerateProbes() -> Godot.LightmapGI.GenerateProbes {
         Godot.LightmapGI.GenerateProbes.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,7 +293,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setBias(_ bias: Double) {
+
+    private func __setBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,6 +315,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,7 +334,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setEnvironmentMode(_ mode: Godot.LightmapGI.EnvironmentMode) {
+
+    private func __setEnvironmentMode(
+        _ mode: Godot.LightmapGI.EnvironmentMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,6 +356,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getEnvironmentMode() -> Godot.LightmapGI.EnvironmentMode {
         Godot.LightmapGI.EnvironmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -339,7 +375,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setEnvironmentCustomSky(_ sky: Godot.Sky?) {
+
+    private func __setEnvironmentCustomSky(
+        _ sky: Godot.Sky?
+    ) {
         sky.withGodotUnsafeRawPointer { __ptr_sky in
         withUnsafePointer(to: __ptr_sky) { _ptr___ptr_sky in
         withUnsafeArgumentPackPointer(_ptr___ptr_sky) { __accessPtr in
@@ -359,6 +398,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getEnvironmentCustomSky() -> Godot.Sky? {
         Godot.Sky?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,7 +417,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setEnvironmentCustomColor(_ color: Godot.Color) {
+
+    private func __setEnvironmentCustomColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,6 +439,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getEnvironmentCustomColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -414,7 +458,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setEnvironmentCustomEnergy(_ energy: Double) {
+
+    private func __setEnvironmentCustomEnergy(
+        _ energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -433,6 +480,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getEnvironmentCustomEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -451,7 +499,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setMaxTextureSize(_ maxTextureSize: Int32) {
+
+    private func __setMaxTextureSize(
+        _ maxTextureSize: Int32
+    ) {
         maxTextureSize.withGodotUnsafeRawPointer { __ptr_maxTextureSize in
         withUnsafeArgumentPackPointer(__ptr_maxTextureSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -470,6 +521,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getMaxTextureSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,7 +540,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setUseDenoiser(_ useDenoiser: Bool) {
+
+    private func __setUseDenoiser(
+        _ useDenoiser: Bool
+    ) {
         useDenoiser.withGodotUnsafeRawPointer { __ptr_useDenoiser in
         withUnsafeArgumentPackPointer(__ptr_useDenoiser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -507,6 +562,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __isUsingDenoiser() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -525,7 +581,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setDenoiserStrength(_ denoiserStrength: Double) {
+
+    private func __setDenoiserStrength(
+        _ denoiserStrength: Double
+    ) {
         denoiserStrength.withGodotUnsafeRawPointer { __ptr_denoiserStrength in
         withUnsafeArgumentPackPointer(__ptr_denoiserStrength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -544,6 +603,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getDenoiserStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -562,7 +622,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setInterior(enable: Bool) {
+
+    private func __setInterior(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -581,6 +644,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __isInterior() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -599,7 +663,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setDirectional(_ directional: Bool) {
+
+    private func __setDirectional(
+        _ directional: Bool
+    ) {
         directional.withGodotUnsafeRawPointer { __ptr_directional in
         withUnsafeArgumentPackPointer(__ptr_directional) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -618,6 +685,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __isDirectional() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -636,7 +704,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setUseTextureForBounces(_ useTextureForBounces: Bool) {
+
+    private func __setUseTextureForBounces(
+        _ useTextureForBounces: Bool
+    ) {
         useTextureForBounces.withGodotUnsafeRawPointer { __ptr_useTextureForBounces in
         withUnsafeArgumentPackPointer(__ptr_useTextureForBounces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -655,6 +726,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __isUsingTextureForBounces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -673,7 +745,10 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
-    private func __setCameraAttributes(_ cameraAttributes: Godot.CameraAttributes?) {
+
+    private func __setCameraAttributes(
+        _ cameraAttributes: Godot.CameraAttributes?
+    ) {
         cameraAttributes.withGodotUnsafeRawPointer { __ptr_cameraAttributes in
         withUnsafePointer(to: __ptr_cameraAttributes) { _ptr___ptr_cameraAttributes in
         withUnsafeArgumentPackPointer(_ptr___ptr_cameraAttributes) { __accessPtr in
@@ -693,6 +768,7 @@ open class LightmapGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -892,6 +968,7 @@ open class LightmapGI: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -904,5 +981,4 @@ open class LightmapGI: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class XRNode3D: Node3D {
     public struct TrackingChangedSignalInput: Godot.SignalInput {
         public let tracking: Bool
-        fileprivate init(tracking: Bool) {
+
+        fileprivate init(
+            tracking: Bool
+        ) {
             self.tracking = tracking
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.tracking)]
         }
     }
-    public func trackingChanged(tracking: Bool) {
+
+    public func trackingChanged(
+        tracking: Bool
+    ) {
         _ = trackingChangedSignal.emit(.init(tracking: tracking))
     }
+
     public lazy var trackingChangedSignal: Godot.SignalEmitter<TrackingChangedSignalInput> = {
         .init(object: self, signalName: "tracking_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,7 +50,10 @@ open class XRNode3D: Node3D {
         }
         }
     }()
-    private func __setTracker(trackerName: Godot.GodotStringName) {
+
+    private func __setTracker(
+        trackerName: Godot.GodotStringName
+    ) {
         trackerName.withGodotUnsafeRawPointer { __ptr_trackerName in
         withUnsafeArgumentPackPointer(__ptr_trackerName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -58,6 +72,7 @@ open class XRNode3D: Node3D {
         }
         }
     }()
+
     private func __getTracker() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +91,10 @@ open class XRNode3D: Node3D {
         }
         }
     }()
-    private func __setPoseName(pose: Godot.GodotStringName) {
+
+    private func __setPoseName(
+        pose: Godot.GodotStringName
+    ) {
         pose.withGodotUnsafeRawPointer { __ptr_pose in
         withUnsafeArgumentPackPointer(__ptr_pose) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,6 +113,7 @@ open class XRNode3D: Node3D {
         }
         }
     }()
+
     private func __getPoseName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,6 +132,7 @@ open class XRNode3D: Node3D {
         }
         }
     }()
+
     public func isActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -131,6 +151,7 @@ open class XRNode3D: Node3D {
         }
         }
     }()
+
     public func hasTrackingData() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,6 +170,7 @@ open class XRNode3D: Node3D {
         }
         }
     }()
+
     public func pose() -> Godot.XRPose? {
         Godot.XRPose?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,7 +189,14 @@ open class XRNode3D: Node3D {
         }
         }
     }()
-    public func triggerHapticPulse(actionName: Godot.GodotString, frequency: Double, amplitude: Double, durationSec: Double, delaySec: Double) {
+
+    public func triggerHapticPulse(
+        actionName: Godot.GodotString,
+        frequency: Double,
+        amplitude: Double,
+        durationSec: Double,
+        delaySec: Double
+    ) {
         actionName.withGodotUnsafeRawPointer { __ptr_actionName in
         frequency.withGodotUnsafeRawPointer { __ptr_frequency in
         amplitude.withGodotUnsafeRawPointer { __ptr_amplitude in
@@ -206,6 +235,7 @@ open class XRNode3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -218,5 +248,4 @@ open class XRNode3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

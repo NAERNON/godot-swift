@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsTestMotionResult3D: RefCounted {
     internal static var __method_binding_get_travel: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
+
     public func travel() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
+
     public func remainder() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
+
     public func collisionSafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
+
     public func collisionUnsafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +89,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
+
     public func collisionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +108,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func collisionPoint(collisionIndex: Int32 = 0) -> Godot.Vector3 {
+
+    public func collisionPoint(
+        collisionIndex: Int32 = 0
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -122,7 +131,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func collisionNormal(collisionIndex: Int32 = 0) -> Godot.Vector3 {
+
+    public func collisionNormal(
+        collisionIndex: Int32 = 0
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -142,7 +154,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func colliderVelocity(collisionIndex: Int32 = 0) -> Godot.Vector3 {
+
+    public func colliderVelocity(
+        collisionIndex: Int32 = 0
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -162,7 +177,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func colliderID(collisionIndex: Int32 = 0) -> UInt64 {
+
+    public func colliderID(
+        collisionIndex: Int32 = 0
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -182,7 +200,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func colliderRid(collisionIndex: Int32 = 0) -> Godot.RID {
+
+    public func colliderRid(
+        collisionIndex: Int32 = 0
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -202,7 +223,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func collider(collisionIndex: Int32 = 0) -> Godot.Object? {
+
+    public func collider(
+        collisionIndex: Int32 = 0
+    ) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -222,7 +246,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func colliderShape(collisionIndex: Int32 = 0) -> Int32 {
+
+    public func colliderShape(
+        collisionIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -242,7 +269,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func collisionLocalShape(collisionIndex: Int32 = 0) -> Int32 {
+
+    public func collisionLocalShape(
+        collisionIndex: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -262,7 +292,10 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         }
     }()
-    public func collisionDepth(collisionIndex: Int32 = 0) -> Double {
+
+    public func collisionDepth(
+        collisionIndex: Int32 = 0
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
@@ -276,6 +309,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -288,5 +322,4 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFCamera: Resource {
     internal static var __method_binding_from_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    static public func fromNode(cameraNode: Godot.Camera3D?) -> Godot.GLTFCamera? {
+
+    static public func fromNode(
+        cameraNode: Godot.Camera3D?
+    ) -> Godot.GLTFCamera? {
         Godot.GLTFCamera?.fromMutatingGodotUnsafePointer { __temporary in
         cameraNode.withGodotUnsafeRawPointer { __ptr_cameraNode in
         withUnsafePointer(to: __ptr_cameraNode) { _ptr___ptr_cameraNode in
@@ -32,6 +36,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     public func toNode() -> Godot.Camera3D? {
         Godot.Camera3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(_ dictionary: Godot.GodotDictionary<Value1, Value2>) -> Godot.GLTFCamera? {
+
+    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+        _ dictionary: Godot.GodotDictionary<Value1, Value2>
+    ) -> Godot.GLTFCamera? {
         Godot.GLTFCamera?.fromMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
@@ -69,6 +77,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     public func toDictionary() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     private func __getPerspective() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    private func __setPerspective(_ perspective: Bool) {
+
+    private func __setPerspective(
+        _ perspective: Bool
+    ) {
         perspective.withGodotUnsafeRawPointer { __ptr_perspective in
         withUnsafeArgumentPackPointer(__ptr_perspective) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     private func __getFov() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +156,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    private func __setFov(_ fov: Double) {
+
+    private func __setFov(
+        _ fov: Double
+    ) {
         fov.withGodotUnsafeRawPointer { __ptr_fov in
         withUnsafeArgumentPackPointer(__ptr_fov) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +178,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     private func __getSizeMag() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +197,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    private func __setSizeMag(_ sizeMag: Double) {
+
+    private func __setSizeMag(
+        _ sizeMag: Double
+    ) {
         sizeMag.withGodotUnsafeRawPointer { __ptr_sizeMag in
         withUnsafeArgumentPackPointer(__ptr_sizeMag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +219,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     private func __getDepthFar() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +238,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    private func __setDepthFar(zdepthFar: Double) {
+
+    private func __setDepthFar(
+        zdepthFar: Double
+    ) {
         zdepthFar.withGodotUnsafeRawPointer { __ptr_zdepthFar in
         withUnsafeArgumentPackPointer(__ptr_zdepthFar) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,6 +260,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
+
     private func __getDepthNear() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +279,10 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    private func __setDepthNear(zdepthNear: Double) {
+
+    private func __setDepthNear(
+        zdepthNear: Double
+    ) {
         zdepthNear.withGodotUnsafeRawPointer { __ptr_zdepthNear in
         withUnsafeArgumentPackPointer(__ptr_zdepthNear) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,6 +350,7 @@ open class GLTFCamera: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -333,5 +363,4 @@ open class GLTFCamera: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeTransition: AnimationNodeSync {
     internal static var __method_binding_set_input_count: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    public func setInputCount(_ inputCount: Int32) {
+
+    public func setInputCount(
+        _ inputCount: Int32
+    ) {
         inputCount.withGodotUnsafeRawPointer { __ptr_inputCount in
         withUnsafeArgumentPackPointer(__ptr_inputCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,11 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    public func setInputAsAutoAdvance(input: Int32, enable: Bool) {
+
+    public func setInputAsAutoAdvance(
+        input: Int32,
+        enable: Bool
+    ) {
         input.withGodotUnsafeRawPointer { __ptr_input in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { __accessPtr in
@@ -51,7 +59,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    public func isInputSetAsAutoAdvance(input: Int32) -> Bool {
+
+    public func isInputSetAsAutoAdvance(
+        input: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
@@ -71,7 +82,11 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    public func setInputReset(input: Int32, enable: Bool) {
+
+    public func setInputReset(
+        input: Int32,
+        enable: Bool
+    ) {
         input.withGodotUnsafeRawPointer { __ptr_input in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { __accessPtr in
@@ -91,7 +106,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    public func isInputReset(input: Int32) -> Bool {
+
+    public func isInputReset(
+        input: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
@@ -111,7 +129,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    private func __setXfadeTime(_ time: Double) {
+
+    private func __setXfadeTime(
+        _ time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,6 +151,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
+
     private func __getXfadeTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,7 +170,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    private func __setXfadeCurve(_ curve: Godot.Curve?) {
+
+    private func __setXfadeCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -168,6 +193,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
+
     private func __getXfadeCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +212,10 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
-    private func __setAllowTransitionToSelf(enable: Bool) {
+
+    private func __setAllowTransitionToSelf(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -205,6 +234,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         }
     }()
+
     private func __isAllowTransitionToSelf() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,6 +280,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -262,5 +293,4 @@ open class AnimationNodeTransition: AnimationNodeSync {
         }
         return _virtualFunctions!
     }
-
-    }
+}

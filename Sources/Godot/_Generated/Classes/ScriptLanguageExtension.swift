@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScriptLanguageExtension: ScriptLanguage {
     public enum LookupResultType: UInt32, GodotEnum {
@@ -16,6 +17,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
         case classTbdGlobalscope = 7
         case classAnnotation = 8
         case max = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Script Location", 0),
@@ -30,11 +32,13 @@ open class ScriptLanguageExtension: ScriptLanguage {
             ("Max", 9),]
         }
     }
+
     public enum CodeCompletionLocation: UInt32, GodotEnum {
         case local = 0
         case parentMask = 256
         case otherUserCode = 512
         case other = 1024
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Local", 0),
@@ -43,6 +47,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
             ("Other", 1024),]
         }
     }
+
     public enum CodeCompletionKind: UInt32, GodotEnum {
         case `class` = 0
         case function = 1
@@ -55,6 +60,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
         case filePath = 8
         case plainText = 9
         case max = 10
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Class", 0),
@@ -93,7 +99,9 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.PackedStringArray()
     }
 
-    open func _isControlFlowKeyword(_ keyword: Godot.GodotString) -> Bool {
+    open func _isControlFlowKeyword(
+        _ keyword: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
@@ -109,11 +117,17 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.PackedStringArray()
     }
 
-    open func _makeTemplate(_ template: Godot.GodotString, className: Godot.GodotString, baseClassName: Godot.GodotString) -> Godot.Script? {
+    open func _makeTemplate(
+        _ template: Godot.GodotString,
+        className: Godot.GodotString,
+        baseClassName: Godot.GodotString
+    ) -> Godot.Script? {
         nil
     }
 
-    open func _getBuiltInTemplates(object: Godot.GodotStringName) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+    open func _getBuiltInTemplates(
+        object: Godot.GodotStringName
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
@@ -121,11 +135,20 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _validate(script: Godot.GodotString, path: Godot.GodotString, validateFunctions: Bool, validateErrors: Bool, validateWarnings: Bool, validateSafeLines: Bool) -> Godot.AnyGodotDictionary {
+    open func _validate(
+        script: Godot.GodotString,
+        path: Godot.GodotString,
+        validateFunctions: Bool,
+        validateErrors: Bool,
+        validateWarnings: Bool,
+        validateSafeLines: Bool
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _validatePath(_ path: Godot.GodotString) -> Godot.GodotString {
+    open func _validatePath(
+        _ path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -149,15 +172,26 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _findFunction(className: Godot.GodotString, functionName: Godot.GodotString) -> Int32 {
+    open func _findFunction(
+        className: Godot.GodotString,
+        functionName: Godot.GodotString
+    ) -> Int32 {
         Int32()
     }
 
-    open func _makeFunction(className: Godot.GodotString, functionName: Godot.GodotString, functionArgs: Godot.PackedStringArray) -> Godot.GodotString {
+    open func _makeFunction(
+        className: Godot.GodotString,
+        functionName: Godot.GodotString,
+        functionArgs: Godot.PackedStringArray
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _openInExternalEditor(script: Godot.Script?, line: Int32, column: Int32) -> Godot.ErrorType {
+    open func _openInExternalEditor(
+        script: Godot.Script?,
+        line: Int32,
+        column: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -165,25 +199,46 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _completeCode(_ code: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.AnyGodotDictionary {
+    open func _completeCode(
+        _ code: Godot.GodotString,
+        path: Godot.GodotString,
+        owner: Godot.Object?
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _lookupCode(_ code: Godot.GodotString, symbol: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.AnyGodotDictionary {
+    open func _lookupCode(
+        _ code: Godot.GodotString,
+        symbol: Godot.GodotString,
+        path: Godot.GodotString,
+        owner: Godot.Object?
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _autoIndentCode(_ code: Godot.GodotString, fromLine: Int32, toLine: Int32) -> Godot.GodotString {
+    open func _autoIndentCode(
+        _ code: Godot.GodotString,
+        fromLine: Int32,
+        toLine: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _addGlobalConstant(name: Godot.GodotStringName, value: Godot.Variant) {
+    open func _addGlobalConstant(
+        name: Godot.GodotStringName,
+        value: Godot.Variant
+    ) {
     }
 
-    open func _addNamedGlobalConstant(name: Godot.GodotStringName, value: Godot.Variant) {
+    open func _addNamedGlobalConstant(
+        name: Godot.GodotStringName,
+        value: Godot.Variant
+    ) {
     }
 
-    open func _removeNamedGlobalConstant(name: Godot.GodotStringName) {
+    open func _removeNamedGlobalConstant(
+        name: Godot.GodotStringName
+    ) {
     }
 
     open func _threadEnter() {
@@ -200,31 +255,53 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Int32()
     }
 
-    open func _debugGetStackLevelLine(level: Int32) -> Int32 {
+    open func _debugGetStackLevelLine(
+        level: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _debugGetStackLevelFunction(level: Int32) -> Godot.GodotString {
+    open func _debugGetStackLevelFunction(
+        level: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _debugGetStackLevelLocals(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.AnyGodotDictionary {
+    open func _debugGetStackLevelLocals(
+        level: Int32,
+        maxSubitems: Int32,
+        maxDepth: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _debugGetStackLevelMembers(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.AnyGodotDictionary {
+    open func _debugGetStackLevelMembers(
+        level: Int32,
+        maxSubitems: Int32,
+        maxDepth: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _debugGetStackLevelInstance(level: Int32) -> UnsafeMutableRawPointer {
+    open func _debugGetStackLevelInstance(
+        level: Int32
+    ) -> UnsafeMutableRawPointer {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _debugGetGlobals(maxSubitems: Int32, maxDepth: Int32) -> Godot.AnyGodotDictionary {
+    open func _debugGetGlobals(
+        maxSubitems: Int32,
+        maxDepth: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
-    open func _debugParseStackLevelExpression(level: Int32, expression: Godot.GodotString, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotString {
+    open func _debugParseStackLevelExpression(
+        level: Int32,
+        expression: Godot.GodotString,
+        maxSubitems: Int32,
+        maxDepth: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -235,7 +312,10 @@ open class ScriptLanguageExtension: ScriptLanguage {
     open func _reloadAllScripts() {
     }
 
-    open func _reloadToolScript(_ script: Godot.Script?, softReload: Bool) {
+    open func _reloadToolScript(
+        _ script: Godot.Script?,
+        softReload: Bool
+    ) {
     }
 
     open func _getRecognizedExtensions() -> Godot.PackedStringArray {
@@ -260,26 +340,37 @@ open class ScriptLanguageExtension: ScriptLanguage {
     open func _profilingStop() {
     }
 
-    open func _profilingGetAccumulatedData(infoArray: UnsafeMutablePointer<ScriptLanguageExtensionProfilingInfo>, infoMax: Int32) -> Int32 {
+    open func _profilingGetAccumulatedData(
+        infoArray: UnsafeMutablePointer<ScriptLanguageExtensionProfilingInfo>,
+        infoMax: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _profilingGetFrameData(infoArray: UnsafeMutablePointer<ScriptLanguageExtensionProfilingInfo>, infoMax: Int32) -> Int32 {
+    open func _profilingGetFrameData(
+        infoArray: UnsafeMutablePointer<ScriptLanguageExtensionProfilingInfo>,
+        infoMax: Int32
+    ) -> Int32 {
         Int32()
     }
 
     open func _frame() {
     }
 
-    open func _handlesGlobalClassType(_ type: Godot.GodotString) -> Bool {
+    open func _handlesGlobalClassType(
+        _ type: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _getGlobalClassName(path: Godot.GodotString) -> Godot.AnyGodotDictionary {
+    open func _getGlobalClassName(
+        path: Godot.GodotString
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -803,5 +894,4 @@ open class ScriptLanguageExtension: ScriptLanguage {
         }
         return _virtualFunctions!
     }
-
-    }
+}

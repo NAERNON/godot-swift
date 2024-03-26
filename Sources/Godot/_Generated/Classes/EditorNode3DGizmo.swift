@@ -3,45 +3,80 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorNode3DGizmo: Node3DGizmo {
     open func _redraw() {
     }
 
-    open func _getHandleName(id: Int32, secondary: Bool) -> Godot.GodotString {
+    open func _getHandleName(
+        id: Int32,
+        secondary: Bool
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _isHandleHighlighted(id: Int32, secondary: Bool) -> Bool {
+    open func _isHandleHighlighted(
+        id: Int32,
+        secondary: Bool
+    ) -> Bool {
         Bool()
     }
 
-    open func _getHandleValue(id: Int32, secondary: Bool) -> Godot.Variant {
+    open func _getHandleValue(
+        id: Int32,
+        secondary: Bool
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _setHandle(id: Int32, secondary: Bool, camera: Godot.Camera3D?, point: Godot.Vector2) {
+    open func _setHandle(
+        id: Int32,
+        secondary: Bool,
+        camera: Godot.Camera3D?,
+        point: Godot.Vector2
+    ) {
     }
 
-    open func _commitHandle(id: Int32, secondary: Bool, restore: Godot.Variant, cancel: Bool) {
+    open func _commitHandle(
+        id: Int32,
+        secondary: Bool,
+        restore: Godot.Variant,
+        cancel: Bool
+    ) {
     }
 
-    open func _subgizmosIntersectRay(camera: Godot.Camera3D?, point: Godot.Vector2) -> Int32 {
+    open func _subgizmosIntersectRay(
+        camera: Godot.Camera3D?,
+        point: Godot.Vector2
+    ) -> Int32 {
         Int32()
     }
 
-    open func _subgizmosIntersectFrustum(camera: Godot.Camera3D?, frustum: Godot.GodotArray<Godot.Plane>) -> Godot.PackedInt32Array {
+    open func _subgizmosIntersectFrustum(
+        camera: Godot.Camera3D?,
+        frustum: Godot.GodotArray<Godot.Plane>
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _setSubgizmoTransform(id: Int32, transform: Godot.Transform3D) {
+    open func _setSubgizmoTransform(
+        id: Int32,
+        transform: Godot.Transform3D
+    ) {
     }
 
-    open func _getSubgizmoTransform(id: Int32) -> Godot.Transform3D {
+    open func _getSubgizmoTransform(
+        id: Int32
+    ) -> Godot.Transform3D {
         Godot.Transform3D()
     }
 
-    open func _commitSubgizmos(ids: Godot.PackedInt32Array, restores: Godot.GodotArray<Godot.Transform3D>, cancel: Bool) {
+    open func _commitSubgizmos(
+        ids: Godot.PackedInt32Array,
+        restores: Godot.GodotArray<Godot.Transform3D>,
+        cancel: Bool
+    ) {
     }
 
     internal static var __method_binding_add_lines: GDExtensionMethodBindPtr = {
@@ -51,7 +86,13 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addLines(_ lines: Godot.PackedVector3Array, material: Godot.Material?, billboard: Bool = false, modulate: Godot.Color = .white) {
+
+    public func addLines(
+        _ lines: Godot.PackedVector3Array,
+        material: Godot.Material?,
+        billboard: Bool = false,
+        modulate: Godot.Color = .white
+    ) {
         lines.withGodotUnsafeRawPointer { __ptr_lines in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -74,7 +115,13 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addMesh(_ mesh: Godot.Mesh?, material: Godot.Material? = nil, transform: Godot.Transform3D = .identity, skeleton: Godot.SkinReference? = nil) {
+
+    public func addMesh(
+        _ mesh: Godot.Mesh?,
+        material: Godot.Material? = nil,
+        transform: Godot.Transform3D = .identity,
+        skeleton: Godot.SkinReference? = nil
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         material.withGodotUnsafeRawPointer { __ptr_material in
@@ -99,7 +146,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addCollisionSegments(_ segments: Godot.PackedVector3Array) {
+
+    public func addCollisionSegments(
+        _ segments: Godot.PackedVector3Array
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,7 +168,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addCollisionTriangles(_ triangles: Godot.TriangleMesh?) {
+
+    public func addCollisionTriangles(
+        _ triangles: Godot.TriangleMesh?
+    ) {
         triangles.withGodotUnsafeRawPointer { __ptr_triangles in
         withUnsafePointer(to: __ptr_triangles) { _ptr___ptr_triangles in
         withUnsafeArgumentPackPointer(_ptr___ptr_triangles) { __accessPtr in
@@ -138,7 +191,12 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addUnscaledBillboard(material: Godot.Material?, defaultScale: Double = 1, modulate: Godot.Color = .white) {
+
+    public func addUnscaledBillboard(
+        material: Godot.Material?,
+        defaultScale: Double = 1,
+        modulate: Godot.Color = .white
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         defaultScale.withGodotUnsafeRawPointer { __ptr_defaultScale in
@@ -160,7 +218,14 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func addHandles(_ handles: Godot.PackedVector3Array, material: Godot.Material?, ids: Godot.PackedInt32Array, billboard: Bool = false, secondary: Bool = false) {
+
+    public func addHandles(
+        _ handles: Godot.PackedVector3Array,
+        material: Godot.Material?,
+        ids: Godot.PackedInt32Array,
+        billboard: Bool = false,
+        secondary: Bool = false
+    ) {
         handles.withGodotUnsafeRawPointer { __ptr_handles in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -184,7 +249,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func setNode3D(node: Godot.Node?) {
+
+    public func setNode3D(
+        node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -204,6 +272,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
+
     public func node3D() -> Godot.Node3D? {
         Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,6 +291,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
+
     public func plugin() -> Godot.EditorNode3DGizmoPlugin? {
         Godot.EditorNode3DGizmoPlugin?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,6 +310,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -257,7 +328,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func setHidden(_ hidden: Bool) {
+
+    public func setHidden(
+        _ hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -276,7 +350,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
-    public func isSubgizmoSelected(id: Int32) -> Bool {
+
+    public func isSubgizmoSelected(
+        id: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -296,6 +373,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         }
     }()
+
     public func subgizmoSelection() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +386,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -436,5 +515,4 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
         return _virtualFunctions!
     }
-
-    }
+}

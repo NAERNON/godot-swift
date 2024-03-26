@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Node3D: Node {
     public enum RotationEditMode: UInt32, GodotEnum {
         case euler = 0
         case quaternion = 1
         case basis = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Euler", 0),
@@ -20,6 +22,7 @@ open class Node3D: Node {
     public func visibilityChanged() {
         _ = visibilityChangedSignal.emit()
     }
+
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -36,9 +39,13 @@ open class Node3D: Node {
     }()
 
     public static let notificationTransformChanged: Notification = .init(rawValue: 2000)
+
     public static let notificationEnterWorld: Notification = .init(rawValue: 41)
+
     public static let notificationExitWorld: Notification = .init(rawValue: 42)
+
     public static let notificationVisibilityChanged: Notification = .init(rawValue: 43)
+
     public static let notificationLocalTransformChanged: Notification = .init(rawValue: 44)
 
     internal static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
@@ -48,7 +55,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setTransform(local: Godot.Transform3D) {
+
+    private func __setTransform(
+        local: Godot.Transform3D
+    ) {
         local.withGodotUnsafeRawPointer { __ptr_local in
         withUnsafeArgumentPackPointer(__ptr_local) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,6 +77,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,7 +96,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector3) {
+
+    private func __setPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +118,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +137,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setRotation(eulerRadians: Godot.Vector3) {
+
+    private func __setRotation(
+        eulerRadians: Godot.Vector3
+    ) {
         eulerRadians.withGodotUnsafeRawPointer { __ptr_eulerRadians in
         withUnsafeArgumentPackPointer(__ptr_eulerRadians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,6 +159,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getRotation() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,7 +178,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setRotationDegrees(eulerDegrees: Godot.Vector3) {
+
+    private func __setRotationDegrees(
+        eulerDegrees: Godot.Vector3
+    ) {
         eulerDegrees.withGodotUnsafeRawPointer { __ptr_eulerDegrees in
         withUnsafeArgumentPackPointer(__ptr_eulerDegrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,6 +200,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getRotationDegrees() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,7 +219,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setRotationOrder(_ order: Godot.EulerOrder) {
+
+    private func __setRotationOrder(
+        _ order: Godot.EulerOrder
+    ) {
         order.withGodotUnsafeRawPointer { __ptr_order in
         withUnsafeArgumentPackPointer(__ptr_order) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +241,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getRotationOrder() -> Godot.EulerOrder {
         Godot.EulerOrder.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,7 +260,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setRotationEditMode(_ editMode: Godot.Node3D.RotationEditMode) {
+
+    private func __setRotationEditMode(
+        _ editMode: Godot.Node3D.RotationEditMode
+    ) {
         editMode.withGodotUnsafeRawPointer { __ptr_editMode in
         withUnsafeArgumentPackPointer(__ptr_editMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,6 +282,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getRotationEditMode() -> Godot.Node3D.RotationEditMode {
         Godot.Node3D.RotationEditMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,7 +301,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setScale(_ scale: Godot.Vector3) {
+
+    private func __setScale(
+        _ scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,6 +323,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getScale() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -307,7 +342,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setQuaternion(_ quaternion: Godot.Quaternion) {
+
+    private func __setQuaternion(
+        _ quaternion: Godot.Quaternion
+    ) {
         quaternion.withGodotUnsafeRawPointer { __ptr_quaternion in
         withUnsafeArgumentPackPointer(__ptr_quaternion) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,6 +364,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getQuaternion() -> Godot.Quaternion {
         Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,7 +383,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setBasis(_ basis: Godot.Basis) {
+
+    private func __setBasis(
+        _ basis: Godot.Basis
+    ) {
         basis.withGodotUnsafeRawPointer { __ptr_basis in
         withUnsafeArgumentPackPointer(__ptr_basis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,6 +405,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getBasis() -> Godot.Basis {
         Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,7 +424,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setGlobalTransform(global: Godot.Transform3D) {
+
+    private func __setGlobalTransform(
+        global: Godot.Transform3D
+    ) {
         global.withGodotUnsafeRawPointer { __ptr_global in
         withUnsafeArgumentPackPointer(__ptr_global) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,6 +446,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getGlobalTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,7 +465,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setGlobalPosition(_ position: Godot.Vector3) {
+
+    private func __setGlobalPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +487,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getGlobalPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -455,7 +506,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setGlobalBasis(_ basis: Godot.Basis) {
+
+    private func __setGlobalBasis(
+        _ basis: Godot.Basis
+    ) {
         basis.withGodotUnsafeRawPointer { __ptr_basis in
         withUnsafeArgumentPackPointer(__ptr_basis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,6 +528,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getGlobalBasis() -> Godot.Basis {
         Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -492,7 +547,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setGlobalRotation(eulerRadians: Godot.Vector3) {
+
+    private func __setGlobalRotation(
+        eulerRadians: Godot.Vector3
+    ) {
         eulerRadians.withGodotUnsafeRawPointer { __ptr_eulerRadians in
         withUnsafeArgumentPackPointer(__ptr_eulerRadians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -511,6 +569,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getGlobalRotation() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -529,7 +588,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setGlobalRotationDegrees(eulerDegrees: Godot.Vector3) {
+
+    private func __setGlobalRotationDegrees(
+        eulerDegrees: Godot.Vector3
+    ) {
         eulerDegrees.withGodotUnsafeRawPointer { __ptr_eulerDegrees in
         withUnsafeArgumentPackPointer(__ptr_eulerDegrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -548,6 +610,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getGlobalRotationDegrees() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -566,6 +629,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func parentNode3D() -> Godot.Node3D? {
         Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -584,7 +648,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func setIgnoreTransformNotification(enabled: Bool) {
+
+    public func setIgnoreTransformNotification(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -603,7 +670,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setAsTopLevel(enable: Bool) {
+
+    private func __setAsTopLevel(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -622,6 +692,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __isSetAsTopLevel() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -640,7 +711,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func setDisableScale(disable: Bool) {
+
+    public func setDisableScale(
+        disable: Bool
+    ) {
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_disable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -659,6 +733,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func isScaleDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -677,6 +752,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func world3D() -> Godot.World3D? {
         Godot.World3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -695,6 +771,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func forceUpdateTransform() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -712,7 +789,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setVisibilityParent(path: Godot.NodePath) {
+
+    private func __setVisibilityParent(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -731,6 +811,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __getVisibilityParent() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -749,6 +830,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func updateGizmos() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -766,7 +848,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func addGizmo(_ gizmo: Godot.Node3DGizmo?) {
+
+    public func addGizmo(
+        _ gizmo: Godot.Node3DGizmo?
+    ) {
         gizmo.withGodotUnsafeRawPointer { __ptr_gizmo in
         withUnsafePointer(to: __ptr_gizmo) { _ptr___ptr_gizmo in
         withUnsafeArgumentPackPointer(_ptr___ptr_gizmo) { __accessPtr in
@@ -786,6 +871,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func gizmos() -> Godot.GodotArray<Godot.Node3DGizmo?> {
         Godot.GodotArray<Godot.Node3DGizmo?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -804,6 +890,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func clearGizmos() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -821,7 +908,12 @@ open class Node3D: Node {
         }
         }
     }()
-    public func setSubgizmoSelection(gizmo: Godot.Node3DGizmo?, id: Int32, transform: Godot.Transform3D) {
+
+    public func setSubgizmoSelection(
+        gizmo: Godot.Node3DGizmo?,
+        id: Int32,
+        transform: Godot.Transform3D
+    ) {
         gizmo.withGodotUnsafeRawPointer { __ptr_gizmo in
         withUnsafePointer(to: __ptr_gizmo) { _ptr___ptr_gizmo in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -843,6 +935,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func clearSubgizmoSelection() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -860,7 +953,10 @@ open class Node3D: Node {
         }
         }
     }()
-    private func __setVisible(_ visible: Bool) {
+
+    private func __setVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -879,6 +975,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -897,6 +994,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func isVisibleInTree() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -915,6 +1013,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func show() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -932,6 +1031,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func hide() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -949,7 +1049,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func setNotifyLocalTransform(enable: Bool) {
+
+    public func setNotifyLocalTransform(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -968,6 +1071,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func isLocalTransformNotificationEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -986,7 +1090,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func setNotifyTransform(enable: Bool) {
+
+    public func setNotifyTransform(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1005,6 +1112,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func isTransformNotificationEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1023,7 +1131,11 @@ open class Node3D: Node {
         }
         }
     }()
-    public func rotate(axis: Godot.Vector3, angle: Double) {
+
+    public func rotate(
+        axis: Godot.Vector3,
+        angle: Double
+    ) {
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { __accessPtr in
@@ -1043,7 +1155,11 @@ open class Node3D: Node {
         }
         }
     }()
-    public func globalRotate(axis: Godot.Vector3, angle: Double) {
+
+    public func globalRotate(
+        axis: Godot.Vector3,
+        angle: Double
+    ) {
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { __accessPtr in
@@ -1063,7 +1179,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func globalScale(_ scale: Godot.Vector3) {
+
+    public func globalScale(
+        _ scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1082,7 +1201,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func globalTranslate(offset: Godot.Vector3) {
+
+    public func globalTranslate(
+        offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1101,7 +1223,11 @@ open class Node3D: Node {
         }
         }
     }()
-    public func rotateObjectLocal(axis: Godot.Vector3, angle: Double) {
+
+    public func rotateObjectLocal(
+        axis: Godot.Vector3,
+        angle: Double
+    ) {
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { __accessPtr in
@@ -1121,7 +1247,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func scaleObjectLocal(scale: Godot.Vector3) {
+
+    public func scaleObjectLocal(
+        scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1140,7 +1269,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func translateObjectLocal(offset: Godot.Vector3) {
+
+    public func translateObjectLocal(
+        offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1159,7 +1291,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func rotateX(angle: Double) {
+
+    public func rotateX(
+        angle: Double
+    ) {
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1178,7 +1313,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func rotateY(angle: Double) {
+
+    public func rotateY(
+        angle: Double
+    ) {
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1197,7 +1335,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func rotateZ(angle: Double) {
+
+    public func rotateZ(
+        angle: Double
+    ) {
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1216,7 +1357,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func translate(offset: Godot.Vector3) {
+
+    public func translate(
+        offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1235,6 +1379,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func orthonormalize() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1252,6 +1397,7 @@ open class Node3D: Node {
         }
         }
     }()
+
     public func setIdentity() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1269,7 +1415,12 @@ open class Node3D: Node {
         }
         }
     }()
-    public func lookAt(target: Godot.Vector3, up: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0), useModelFront: Bool = false) {
+
+    public func lookAt(
+        target: Godot.Vector3,
+        up: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0),
+        useModelFront: Bool = false
+    ) {
         target.withGodotUnsafeRawPointer { __ptr_target in
         up.withGodotUnsafeRawPointer { __ptr_up in
         useModelFront.withGodotUnsafeRawPointer { __ptr_useModelFront in
@@ -1290,7 +1441,13 @@ open class Node3D: Node {
         }
         }
     }()
-    public func lookAtFromPosition(_ position: Godot.Vector3, target: Godot.Vector3, up: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0), useModelFront: Bool = false) {
+
+    public func lookAtFromPosition(
+        _ position: Godot.Vector3,
+        target: Godot.Vector3,
+        up: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0),
+        useModelFront: Bool = false
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         target.withGodotUnsafeRawPointer { __ptr_target in
         up.withGodotUnsafeRawPointer { __ptr_up in
@@ -1312,7 +1469,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func toLocal(globalPoint: Godot.Vector3) -> Godot.Vector3 {
+
+    public func toLocal(
+        globalPoint: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         globalPoint.withGodotUnsafeRawPointer { __ptr_globalPoint in
         withUnsafeArgumentPackPointer(__ptr_globalPoint) { __accessPtr in
@@ -1332,7 +1492,10 @@ open class Node3D: Node {
         }
         }
     }()
-    public func toGlobal(localPoint: Godot.Vector3) -> Godot.Vector3 {
+
+    public func toGlobal(
+        localPoint: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         localPoint.withGodotUnsafeRawPointer { __ptr_localPoint in
         withUnsafeArgumentPackPointer(__ptr_localPoint) { __accessPtr in
@@ -1533,6 +1696,7 @@ open class Node3D: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1545,5 +1709,4 @@ open class Node3D: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

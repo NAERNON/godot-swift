@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PortableCompressedTexture2D: Texture2D {
     public enum CompressionMode: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class PortableCompressedTexture2D: Texture2D {
         case s3tc = 3
         case etc2 = 4
         case bptc = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Lossless", 0),
@@ -30,7 +32,13 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
-    public func createFromImage(_ image: Godot.Image?, compressionMode: Godot.PortableCompressedTexture2D.CompressionMode, normalMap: Bool = false, lossyQuality: Double = 0.8) {
+
+    public func createFromImage(
+        _ image: Godot.Image?,
+        compressionMode: Godot.PortableCompressedTexture2D.CompressionMode,
+        normalMap: Bool = false,
+        lossyQuality: Double = 0.8
+    ) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         compressionMode.withGodotUnsafeRawPointer { __ptr_compressionMode in
@@ -53,6 +61,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
+
     public func format() -> Godot.Image.Format {
         Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,6 +80,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
+
     public func compressionMode() -> Godot.PortableCompressedTexture2D.CompressionMode {
         Godot.PortableCompressedTexture2D.CompressionMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,7 +99,10 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
-    private func __setSizeOverride(size: Godot.Vector2) {
+
+    private func __setSizeOverride(
+        size: Godot.Vector2
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,6 +121,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
+
     private func __getSizeOverride() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +140,10 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
-    private func __setKeepCompressedBuffer(keep: Bool) {
+
+    private func __setKeepCompressedBuffer(
+        keep: Bool
+    ) {
         keep.withGodotUnsafeRawPointer { __ptr_keep in
         withUnsafeArgumentPackPointer(__ptr_keep) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,6 +162,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
+
     private func __isKeepingCompressedBuffer() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +181,10 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
-    static public func setKeepAllCompressedBuffers(keep: Bool) {
+
+    static public func setKeepAllCompressedBuffers(
+        keep: Bool
+    ) {
         keep.withGodotUnsafeRawPointer { __ptr_keep in
         withUnsafeArgumentPackPointer(__ptr_keep) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -181,6 +202,7 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         }
     }()
+
     static public func isKeepingAllCompressedBuffers() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -214,6 +236,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -226,5 +249,4 @@ open class PortableCompressedTexture2D: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

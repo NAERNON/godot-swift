@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Texture3D: Texture {
     open func _getFormat() -> Godot.Image.Format {
@@ -36,6 +37,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func format() -> Godot.Image.Format {
         Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +56,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func width() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +75,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func height() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,6 +94,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func depth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,6 +113,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func hasMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,6 +132,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func data() -> Godot.GodotArray<Godot.Image?> {
         Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +151,7 @@ open class Texture3D: Texture {
         }
         }
     }()
+
     public func createPlaceholder() -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,6 +164,7 @@ open class Texture3D: Texture {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -215,5 +224,4 @@ open class Texture3D: Texture {
         }
         return _virtualFunctions!
     }
-
-    }
+}

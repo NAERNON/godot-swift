@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImmediateMesh: Mesh {
     internal static var __method_binding_surface_begin: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceBegin(primitive: Godot.Mesh.PrimitiveType, material: Godot.Material? = nil) {
+
+    public func surfaceBegin(
+        primitive: Godot.Mesh.PrimitiveType,
+        material: Godot.Material? = nil
+    ) {
         primitive.withGodotUnsafeRawPointer { __ptr_primitive in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -33,7 +38,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetColor(_ color: Godot.Color) {
+
+    public func surfaceSetColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -52,7 +60,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetNormal(_ normal: Godot.Vector3) {
+
+    public func surfaceSetNormal(
+        _ normal: Godot.Vector3
+    ) {
         normal.withGodotUnsafeRawPointer { __ptr_normal in
         withUnsafeArgumentPackPointer(__ptr_normal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,7 +82,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetTangent(_ tangent: Godot.Plane) {
+
+    public func surfaceSetTangent(
+        _ tangent: Godot.Plane
+    ) {
         tangent.withGodotUnsafeRawPointer { __ptr_tangent in
         withUnsafeArgumentPackPointer(__ptr_tangent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,7 +104,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetUv(_ uv: Godot.Vector2) {
+
+    public func surfaceSetUv(
+        _ uv: Godot.Vector2
+    ) {
         uv.withGodotUnsafeRawPointer { __ptr_uv in
         withUnsafeArgumentPackPointer(__ptr_uv) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +126,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetUv2(_ uv2: Godot.Vector2) {
+
+    public func surfaceSetUv2(
+        _ uv2: Godot.Vector2
+    ) {
         uv2.withGodotUnsafeRawPointer { __ptr_uv2 in
         withUnsafeArgumentPackPointer(__ptr_uv2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,7 +148,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceAddVertex(_ vertex: Godot.Vector3) {
+
+    public func surfaceAddVertex(
+        _ vertex: Godot.Vector3
+    ) {
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_vertex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,7 +170,10 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
-    public func surfaceAddVertex2D(vertex: Godot.Vector2) {
+
+    public func surfaceAddVertex2D(
+        vertex: Godot.Vector2
+    ) {
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_vertex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -166,6 +192,7 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
+
     public func surfaceEnd() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -183,6 +210,7 @@ open class ImmediateMesh: Mesh {
         }
         }
     }()
+
     public func clearSurfaces() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -194,6 +222,7 @@ open class ImmediateMesh: Mesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -206,5 +235,4 @@ open class ImmediateMesh: Mesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

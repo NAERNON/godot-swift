@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ConeTwistJoint3D: Joint3D {
     public enum Param: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class ConeTwistJoint3D: Joint3D {
         case softness = 3
         case relaxation = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Swing Span", 0),
@@ -30,7 +32,11 @@ open class ConeTwistJoint3D: Joint3D {
         }
         }
     }()
-    public func setParam(_ param: Godot.ConeTwistJoint3D.Param, value: Double) {
+
+    public func setParam(
+        _ param: Godot.ConeTwistJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -50,7 +56,10 @@ open class ConeTwistJoint3D: Joint3D {
         }
         }
     }()
-    private func __getParam(_ param: Godot.ConeTwistJoint3D.Param) -> Double {
+
+    private func __getParam(
+        _ param: Godot.ConeTwistJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -104,6 +113,7 @@ open class ConeTwistJoint3D: Joint3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -116,5 +126,4 @@ open class ConeTwistJoint3D: Joint3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

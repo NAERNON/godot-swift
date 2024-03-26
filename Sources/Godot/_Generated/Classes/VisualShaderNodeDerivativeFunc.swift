@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     public enum OpType: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         case vector3D = 2
         case vector4d = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
@@ -20,11 +22,13 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
             ("Max", 4),]
         }
     }
+
     public enum Function: UInt32, GodotEnum {
         case sum = 0
         case x = 1
         case y = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sum", 0),
@@ -33,11 +37,13 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
             ("Max", 3),]
         }
     }
+
     public enum Precision: UInt32, GodotEnum {
         case none = 0
         case coarse = 1
         case fine = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -54,7 +60,10 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
-    private func __setOpType(_ type: Godot.VisualShaderNodeDerivativeFunc.OpType) {
+
+    private func __setOpType(
+        _ type: Godot.VisualShaderNodeDerivativeFunc.OpType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +82,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
+
     private func __getOpType() -> Godot.VisualShaderNodeDerivativeFunc.OpType {
         Godot.VisualShaderNodeDerivativeFunc.OpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,7 +101,10 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
-    private func __setFunction(`func`: Godot.VisualShaderNodeDerivativeFunc.Function) {
+
+    private func __setFunction(
+        `func`: Godot.VisualShaderNodeDerivativeFunc.Function
+    ) {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,6 +123,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
+
     private func __getFunction() -> Godot.VisualShaderNodeDerivativeFunc.Function {
         Godot.VisualShaderNodeDerivativeFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,7 +142,10 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
-    private func __setPrecision(_ precision: Godot.VisualShaderNodeDerivativeFunc.Precision) {
+
+    private func __setPrecision(
+        _ precision: Godot.VisualShaderNodeDerivativeFunc.Precision
+    ) {
         precision.withGodotUnsafeRawPointer { __ptr_precision in
         withUnsafeArgumentPackPointer(__ptr_precision) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,6 +164,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         }
     }()
+
     private func __getPrecision() -> Godot.VisualShaderNodeDerivativeFunc.Precision {
         Godot.VisualShaderNodeDerivativeFunc.Precision.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,6 +210,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -204,5 +223,4 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

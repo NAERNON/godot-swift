@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TLSOptions: RefCounted {
     internal static var __method_binding_client: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class TLSOptions: RefCounted {
         }
         }
     }()
-    static public func client(trustedChain: Godot.X509Certificate? = nil, commonNameOverride: Godot.GodotString = "") -> Godot.TLSOptions? {
+
+    static public func client(
+        trustedChain: Godot.X509Certificate? = nil,
+        commonNameOverride: Godot.GodotString = ""
+    ) -> Godot.TLSOptions? {
         Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
         trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
         withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
@@ -33,7 +38,10 @@ open class TLSOptions: RefCounted {
         }
         }
     }()
-    static public func clientUnsafe(trustedChain: Godot.X509Certificate? = nil) -> Godot.TLSOptions? {
+
+    static public func clientUnsafe(
+        trustedChain: Godot.X509Certificate? = nil
+    ) -> Godot.TLSOptions? {
         Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
         trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
         withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
@@ -53,7 +61,11 @@ open class TLSOptions: RefCounted {
         }
         }
     }()
-    static public func server(key: Godot.CryptoKey?, certificate: Godot.X509Certificate?) -> Godot.TLSOptions? {
+
+    static public func server(
+        key: Godot.CryptoKey?,
+        certificate: Godot.X509Certificate?
+    ) -> Godot.TLSOptions? {
         Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
@@ -69,6 +81,7 @@ open class TLSOptions: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -81,5 +94,4 @@ open class TLSOptions: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

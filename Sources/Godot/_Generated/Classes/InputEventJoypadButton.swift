@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventJoypadButton: InputEvent {
     internal static var __method_binding_set_button_index: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventJoypadButton: InputEvent {
         }
         }
     }()
-    private func __setButtonIndex(_ buttonIndex: Godot.JoyButton) {
+
+    private func __setButtonIndex(
+        _ buttonIndex: Godot.JoyButton
+    ) {
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         withUnsafeArgumentPackPointer(__ptr_buttonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventJoypadButton: InputEvent {
         }
         }
     }()
+
     private func __getButtonIndex() -> Godot.JoyButton {
         Godot.JoyButton.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventJoypadButton: InputEvent {
         }
         }
     }()
-    private func __setPressure(_ pressure: Double) {
+
+    private func __setPressure(
+        _ pressure: Double
+    ) {
         pressure.withGodotUnsafeRawPointer { __ptr_pressure in
         withUnsafeArgumentPackPointer(__ptr_pressure) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventJoypadButton: InputEvent {
         }
         }
     }()
+
     private func __getPressure() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventJoypadButton: InputEvent {
         }
         }
     }()
-    public func setPressed(_ pressed: Bool) {
+
+    public func setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +133,7 @@ open class InputEventJoypadButton: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -133,5 +146,4 @@ open class InputEventJoypadButton: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

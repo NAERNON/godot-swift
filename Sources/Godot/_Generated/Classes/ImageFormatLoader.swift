@@ -3,18 +3,24 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImageFormatLoader: RefCounted {
     public struct LoaderFlags: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let none: Self = .init(rawValue: 0)
+
         public static let forceLinear: Self = .init(rawValue: 1)
+
         public static let convertColors: Self = .init(rawValue: 2)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -24,6 +30,7 @@ open class ImageFormatLoader: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +43,4 @@ open class ImageFormatLoader: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

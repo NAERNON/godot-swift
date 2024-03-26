@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectPhaser: AudioEffect {
     internal static var __method_binding_set_range_min_hz: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
-    private func __setRangeMinHz(_ hz: Double) {
+
+    private func __setRangeMinHz(
+        _ hz: Double
+    ) {
         hz.withGodotUnsafeRawPointer { __ptr_hz in
         withUnsafeArgumentPackPointer(__ptr_hz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
+
     private func __getRangeMinHz() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
-    private func __setRangeMaxHz(_ hz: Double) {
+
+    private func __setRangeMaxHz(
+        _ hz: Double
+    ) {
         hz.withGodotUnsafeRawPointer { __ptr_hz in
         withUnsafeArgumentPackPointer(__ptr_hz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
+
     private func __getRangeMaxHz() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
-    private func __setRateHz(_ hz: Double) {
+
+    private func __setRateHz(
+        _ hz: Double
+    ) {
         hz.withGodotUnsafeRawPointer { __ptr_hz in
         withUnsafeArgumentPackPointer(__ptr_hz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
+
     private func __getRateHz() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
-    private func __setFeedback(fbk: Double) {
+
+    private func __setFeedback(
+        fbk: Double
+    ) {
         fbk.withGodotUnsafeRawPointer { __ptr_fbk in
         withUnsafeArgumentPackPointer(__ptr_fbk) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
+
     private func __getFeedback() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
-    private func __setDepth(_ depth: Double) {
+
+    private func __setDepth(
+        _ depth: Double
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class AudioEffectPhaser: AudioEffect {
         }
         }
     }()
+
     private func __getDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class AudioEffectPhaser: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class AudioEffectPhaser: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

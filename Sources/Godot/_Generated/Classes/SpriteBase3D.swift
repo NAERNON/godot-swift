@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SpriteBase3D: GeometryInstance3D {
     public enum DrawFlags: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class SpriteBase3D: GeometryInstance3D {
         case disableDepthTest = 3
         case fixedSize = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Transparent", 0),
@@ -22,11 +24,13 @@ open class SpriteBase3D: GeometryInstance3D {
             ("Max", 5),]
         }
     }
+
     public enum AlphaCutMode: UInt32, GodotEnum {
         case disabled = 0
         case discard = 1
         case opaquePrepass = 2
         case hash = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -43,7 +47,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setCentered(_ centered: Bool) {
+
+    private func __setCentered(
+        _ centered: Bool
+    ) {
         centered.withGodotUnsafeRawPointer { __ptr_centered in
         withUnsafeArgumentPackPointer(__ptr_centered) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -62,6 +69,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isCentered() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,7 +88,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,6 +110,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +129,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setFlipH(_ flipH: Bool) {
+
+    private func __setFlipH(
+        _ flipH: Bool
+    ) {
         flipH.withGodotUnsafeRawPointer { __ptr_flipH in
         withUnsafeArgumentPackPointer(__ptr_flipH) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,6 +151,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isFlippedH() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +170,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setFlipV(_ flipV: Bool) {
+
+    private func __setFlipV(
+        _ flipV: Bool
+    ) {
         flipV.withGodotUnsafeRawPointer { __ptr_flipV in
         withUnsafeArgumentPackPointer(__ptr_flipV) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +192,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isFlippedV() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,7 +211,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setModulate(_ modulate: Godot.Color) {
+
+    private func __setModulate(
+        _ modulate: Godot.Color
+    ) {
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_modulate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,6 +233,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,7 +252,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setRenderPriority(_ priority: Int32) {
+
+    private func __setRenderPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +274,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getRenderPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,7 +293,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setPixelSize(_ pixelSize: Double) {
+
+    private func __setPixelSize(
+        _ pixelSize: Double
+    ) {
         pixelSize.withGodotUnsafeRawPointer { __ptr_pixelSize in
         withUnsafeArgumentPackPointer(__ptr_pixelSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,6 +315,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getPixelSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,7 +334,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAxis(_ axis: Godot.Vector3.Axis) {
+
+    private func __setAxis(
+        _ axis: Godot.Vector3.Axis
+    ) {
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         withUnsafeArgumentPackPointer(__ptr_axis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,6 +356,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAxis() -> Godot.Vector3.Axis {
         Godot.Vector3.Axis.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -339,7 +375,11 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    public func setDrawFlag(_ flag: Godot.SpriteBase3D.DrawFlags, enabled: Bool) {
+
+    public func setDrawFlag(
+        _ flag: Godot.SpriteBase3D.DrawFlags,
+        enabled: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
@@ -359,7 +399,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __getDrawFlag(_ flag: Godot.SpriteBase3D.DrawFlags) -> Bool {
+
+    private func __getDrawFlag(
+        _ flag: Godot.SpriteBase3D.DrawFlags
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -379,7 +422,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaCutMode(_ mode: Godot.SpriteBase3D.AlphaCutMode) {
+
+    private func __setAlphaCutMode(
+        _ mode: Godot.SpriteBase3D.AlphaCutMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,6 +444,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaCutMode() -> Godot.SpriteBase3D.AlphaCutMode {
         Godot.SpriteBase3D.AlphaCutMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,7 +463,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaScissorThreshold(_ threshold: Double) {
+
+    private func __setAlphaScissorThreshold(
+        _ threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -435,6 +485,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaScissorThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -453,7 +504,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaHashScale(threshold: Double) {
+
+    private func __setAlphaHashScale(
+        threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -472,6 +526,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaHashScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -490,7 +545,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaAntialiasing(alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing) {
+
+    private func __setAlphaAntialiasing(
+        alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing
+    ) {
         alphaAa.withGodotUnsafeRawPointer { __ptr_alphaAa in
         withUnsafeArgumentPackPointer(__ptr_alphaAa) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -509,6 +567,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
         Godot.BaseMaterial3D.AlphaAntiAliasing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -527,7 +586,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaAntialiasingEdge(_ edge: Double) {
+
+    private func __setAlphaAntialiasingEdge(
+        _ edge: Double
+    ) {
         edge.withGodotUnsafeRawPointer { __ptr_edge in
         withUnsafeArgumentPackPointer(__ptr_edge) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -546,6 +608,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaAntialiasingEdge() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -564,7 +627,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setBillboardMode(_ mode: Godot.BaseMaterial3D.BillboardMode) {
+
+    private func __setBillboardMode(
+        _ mode: Godot.BaseMaterial3D.BillboardMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -583,6 +649,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
         Godot.BaseMaterial3D.BillboardMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -601,7 +668,10 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setTextureFilter(mode: Godot.BaseMaterial3D.TextureFilter) {
+
+    private func __setTextureFilter(
+        mode: Godot.BaseMaterial3D.TextureFilter
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -620,6 +690,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
         Godot.BaseMaterial3D.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -638,6 +709,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     public func itemRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -656,6 +728,7 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         }
     }()
+
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
         Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -873,6 +946,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -885,5 +959,4 @@ open class SpriteBase3D: GeometryInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

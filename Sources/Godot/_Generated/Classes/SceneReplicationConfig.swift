@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SceneReplicationConfig: Resource {
     public enum ReplicationMode: UInt32, GodotEnum {
         case never = 0
         case always = 1
         case onChange = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Never", 0),
@@ -24,6 +26,7 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
+
     public func properties() -> Godot.GodotArray<Godot.NodePath> {
         Godot.GodotArray<Godot.NodePath>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,7 +45,11 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func addProperty(path: Godot.NodePath, index: Int32 = -1) {
+
+    public func addProperty(
+        path: Godot.NodePath,
+        index: Int32 = -1
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_index) { __accessPtr in
@@ -62,7 +69,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func hasProperty(path: Godot.NodePath) -> Bool {
+
+    public func hasProperty(
+        path: Godot.NodePath
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -82,7 +92,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func removeProperty(path: Godot.NodePath) {
+
+    public func removeProperty(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -101,7 +114,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertyGetIndex(path: Godot.NodePath) -> Int32 {
+
+    public func propertyGetIndex(
+        path: Godot.NodePath
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -121,7 +137,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertyGetSpawn(path: Godot.NodePath) -> Bool {
+
+    public func propertyGetSpawn(
+        path: Godot.NodePath
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -141,7 +160,11 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertySetSpawn(path: Godot.NodePath, enabled: Bool) {
+
+    public func propertySetSpawn(
+        path: Godot.NodePath,
+        enabled: Bool
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_enabled) { __accessPtr in
@@ -161,7 +184,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertyGetReplicationMode(path: Godot.NodePath) -> Godot.SceneReplicationConfig.ReplicationMode {
+
+    public func propertyGetReplicationMode(
+        path: Godot.NodePath
+    ) -> Godot.SceneReplicationConfig.ReplicationMode {
         Godot.SceneReplicationConfig.ReplicationMode.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -181,7 +207,11 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertySetReplicationMode(path: Godot.NodePath, mode: Godot.SceneReplicationConfig.ReplicationMode) {
+
+    public func propertySetReplicationMode(
+        path: Godot.NodePath,
+        mode: Godot.SceneReplicationConfig.ReplicationMode
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_mode) { __accessPtr in
@@ -201,7 +231,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertyGetSync(path: Godot.NodePath) -> Bool {
+
+    public func propertyGetSync(
+        path: Godot.NodePath
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -221,7 +254,11 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertySetSync(path: Godot.NodePath, enabled: Bool) {
+
+    public func propertySetSync(
+        path: Godot.NodePath,
+        enabled: Bool
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_enabled) { __accessPtr in
@@ -241,7 +278,10 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertyGetWatch(path: Godot.NodePath) -> Bool {
+
+    public func propertyGetWatch(
+        path: Godot.NodePath
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -261,7 +301,11 @@ open class SceneReplicationConfig: Resource {
         }
         }
     }()
-    public func propertySetWatch(path: Godot.NodePath, enabled: Bool) {
+
+    public func propertySetWatch(
+        path: Godot.NodePath,
+        enabled: Bool
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_enabled) { __accessPtr in
@@ -275,6 +319,7 @@ open class SceneReplicationConfig: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -287,5 +332,4 @@ open class SceneReplicationConfig: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

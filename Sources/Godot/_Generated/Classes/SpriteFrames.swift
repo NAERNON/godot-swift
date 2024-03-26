@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SpriteFrames: Resource {
     internal static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func addAnimation(anim: Godot.GodotStringName) {
+
+    public func addAnimation(
+        anim: Godot.GodotStringName
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func hasAnimation(anim: Godot.GodotStringName) -> Bool {
+
+    public func hasAnimation(
+        anim: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
@@ -51,7 +58,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func removeAnimation(anim: Godot.GodotStringName) {
+
+    public func removeAnimation(
+        anim: Godot.GodotStringName
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,7 +80,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func renameAnimation(anim: Godot.GodotStringName, newname: Godot.GodotStringName) {
+
+    public func renameAnimation(
+        anim: Godot.GodotStringName,
+        newname: Godot.GodotStringName
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         newname.withGodotUnsafeRawPointer { __ptr_newname in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_newname) { __accessPtr in
@@ -90,6 +104,7 @@ open class SpriteFrames: Resource {
         }
         }
     }()
+
     public func animationNames() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,7 +123,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func setAnimationSpeed(anim: Godot.GodotStringName, fps: Double) {
+
+    public func setAnimationSpeed(
+        anim: Godot.GodotStringName,
+        fps: Double
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         fps.withGodotUnsafeRawPointer { __ptr_fps in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_fps) { __accessPtr in
@@ -128,7 +147,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func animationSpeed(anim: Godot.GodotStringName) -> Double {
+
+    public func animationSpeed(
+        anim: Godot.GodotStringName
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
@@ -148,7 +170,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func setAnimationLoop(anim: Godot.GodotStringName, loop: Bool) {
+
+    public func setAnimationLoop(
+        anim: Godot.GodotStringName,
+        loop: Bool
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_loop) { __accessPtr in
@@ -168,7 +194,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func animationLoop(anim: Godot.GodotStringName) -> Bool {
+
+    public func animationLoop(
+        anim: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
@@ -188,7 +217,13 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func addFrame(anim: Godot.GodotStringName, texture: Godot.Texture2D?, duration: Double = 1.0, atPosition position: Int32 = -1) {
+
+    public func addFrame(
+        anim: Godot.GodotStringName,
+        texture: Godot.Texture2D?,
+        duration: Double = 1.0,
+        atPosition position: Int32 = -1
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -211,7 +246,13 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func setFrame(anim: Godot.GodotStringName, idx: Int32, texture: Godot.Texture2D?, duration: Double = 1.0) {
+
+    public func setFrame(
+        anim: Godot.GodotStringName,
+        idx: Int32,
+        texture: Godot.Texture2D?,
+        duration: Double = 1.0
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -234,7 +275,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func removeFrame(anim: Godot.GodotStringName, idx: Int32) {
+
+    public func removeFrame(
+        anim: Godot.GodotStringName,
+        idx: Int32
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_idx) { __accessPtr in
@@ -254,7 +299,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func frameCount(anim: Godot.GodotStringName) -> Int32 {
+
+    public func frameCount(
+        anim: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
@@ -274,7 +322,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func frameTexture(anim: Godot.GodotStringName, idx: Int32) -> Godot.Texture2D? {
+
+    public func frameTexture(
+        anim: Godot.GodotStringName,
+        idx: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -295,7 +347,11 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func frameDuration(anim: Godot.GodotStringName, idx: Int32) -> Double {
+
+    public func frameDuration(
+        anim: Godot.GodotStringName,
+        idx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -316,7 +372,10 @@ open class SpriteFrames: Resource {
         }
         }
     }()
-    public func clear(anim: Godot.GodotStringName) {
+
+    public func clear(
+        anim: Godot.GodotStringName
+    ) {
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -335,6 +394,7 @@ open class SpriteFrames: Resource {
         }
         }
     }()
+
     public func clearAll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -346,6 +406,7 @@ open class SpriteFrames: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -358,5 +419,4 @@ open class SpriteFrames: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

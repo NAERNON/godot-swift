@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PacketPeerDTLS: PacketPeer {
     public enum Status: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class PacketPeerDTLS: PacketPeer {
         case connected = 2
         case error = 3
         case errorHostnameMismatch = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disconnected", 0),
@@ -28,6 +30,7 @@ open class PacketPeerDTLS: PacketPeer {
         }
         }
     }()
+
     public func poll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -45,7 +48,12 @@ open class PacketPeerDTLS: PacketPeer {
         }
         }
     }()
-    public func connectToPeer(packetPeer: Godot.PacketPeerUDP?, hostname: Godot.GodotString, clientOptions: Godot.TLSOptions? = nil) -> Godot.ErrorType {
+
+    public func connectToPeer(
+        packetPeer: Godot.PacketPeerUDP?,
+        hostname: Godot.GodotString,
+        clientOptions: Godot.TLSOptions? = nil
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         packetPeer.withGodotUnsafeRawPointer { __ptr_packetPeer in
         withUnsafePointer(to: __ptr_packetPeer) { _ptr___ptr_packetPeer in
@@ -69,6 +77,7 @@ open class PacketPeerDTLS: PacketPeer {
         }
         }
     }()
+
     public func status() -> Godot.PacketPeerDTLS.Status {
         Godot.PacketPeerDTLS.Status.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class PacketPeerDTLS: PacketPeer {
         }
         }
     }()
+
     public func disconnectFromPeer() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -98,6 +108,7 @@ open class PacketPeerDTLS: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -110,5 +121,4 @@ open class PacketPeerDTLS: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

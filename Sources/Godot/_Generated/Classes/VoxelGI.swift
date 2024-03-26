@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class VoxelGI: VisualInstance3D {
     public enum Subdiv: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VoxelGI: VisualInstance3D {
         case subdiv256 = 2
         case subdiv512 = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Subdiv64", 0),
@@ -28,7 +30,10 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
-    private func __setProbeData(_ data: Godot.VoxelGIData?) {
+
+    private func __setProbeData(
+        _ data: Godot.VoxelGIData?
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafePointer(to: __ptr_data) { _ptr___ptr_data in
         withUnsafeArgumentPackPointer(_ptr___ptr_data) { __accessPtr in
@@ -48,6 +53,7 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getProbeData() -> Godot.VoxelGIData? {
         Godot.VoxelGIData?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +72,10 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
-    private func __setSubdiv(_ subdiv: Godot.VoxelGI.Subdiv) {
+
+    private func __setSubdiv(
+        _ subdiv: Godot.VoxelGI.Subdiv
+    ) {
         subdiv.withGodotUnsafeRawPointer { __ptr_subdiv in
         withUnsafeArgumentPackPointer(__ptr_subdiv) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getSubdiv() -> Godot.VoxelGI.Subdiv {
         Godot.VoxelGI.Subdiv.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +113,10 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
-    private func __setCameraAttributes(_ cameraAttributes: Godot.CameraAttributes?) {
+
+    private func __setCameraAttributes(
+        _ cameraAttributes: Godot.CameraAttributes?
+    ) {
         cameraAttributes.withGodotUnsafeRawPointer { __ptr_cameraAttributes in
         withUnsafePointer(to: __ptr_cameraAttributes) { _ptr___ptr_cameraAttributes in
         withUnsafeArgumentPackPointer(_ptr___ptr_cameraAttributes) { __accessPtr in
@@ -160,6 +177,7 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
+
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,11 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
-    public func bake(fromNode node: Godot.Node? = nil, createVisualDebug: Bool = false) {
+
+    public func bake(
+        fromNode node: Godot.Node? = nil,
+        createVisualDebug: Bool = false
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         createVisualDebug.withGodotUnsafeRawPointer { __ptr_createVisualDebug in
@@ -199,6 +221,7 @@ open class VoxelGI: VisualInstance3D {
         }
         }
     }()
+
     public func debugBake() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -254,6 +277,7 @@ open class VoxelGI: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -266,5 +290,4 @@ open class VoxelGI: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

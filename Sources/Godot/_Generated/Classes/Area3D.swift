@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Area3D: CollisionObject3D {
     public enum SpaceOverride: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class Area3D: CollisionObject3D {
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -23,25 +25,44 @@ open class Area3D: CollisionObject3D {
 
     public struct BodyShapeEnteredSignalInput: Godot.SignalInput {
         public let bodyRid: Godot.RID
+
         public let body: Godot.Node3D?
+
         public let bodyShapeIndex: Int
+
         public let localShapeIndex: Int
-        fileprivate init(bodyRid: Godot.RID, body: Godot.Node3D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+
+        fileprivate init(
+            bodyRid: Godot.RID,
+            body: Godot.Node3D?,
+            bodyShapeIndex: Int,
+            localShapeIndex: Int
+        ) {
             self.bodyRid = bodyRid
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func bodyShapeEntered(bodyRid: Godot.RID, body: Godot.Node3D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+
+    public func bodyShapeEntered(
+        bodyRid: Godot.RID,
+        body: Godot.Node3D?,
+        bodyShapeIndex: Int,
+        localShapeIndex: Int
+    ) {
         _ = bodyShapeEnteredSignal.emit(.init(bodyRid: bodyRid,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
     }
+
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,25 +83,44 @@ open class Area3D: CollisionObject3D {
 
     public struct BodyShapeExitedSignalInput: Godot.SignalInput {
         public let bodyRid: Godot.RID
+
         public let body: Godot.Node3D?
+
         public let bodyShapeIndex: Int
+
         public let localShapeIndex: Int
-        fileprivate init(bodyRid: Godot.RID, body: Godot.Node3D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+
+        fileprivate init(
+            bodyRid: Godot.RID,
+            body: Godot.Node3D?,
+            bodyShapeIndex: Int,
+            localShapeIndex: Int
+        ) {
             self.bodyRid = bodyRid
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func bodyShapeExited(bodyRid: Godot.RID, body: Godot.Node3D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+
+    public func bodyShapeExited(
+        bodyRid: Godot.RID,
+        body: Godot.Node3D?,
+        bodyShapeIndex: Int,
+        localShapeIndex: Int
+    ) {
         _ = bodyShapeExitedSignal.emit(.init(bodyRid: bodyRid,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
     }
+
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -101,16 +141,26 @@ open class Area3D: CollisionObject3D {
 
     public struct BodyEnteredSignalInput: Godot.SignalInput {
         public let body: Godot.Node3D?
-        fileprivate init(body: Godot.Node3D?) {
+
+        fileprivate init(
+            body: Godot.Node3D?
+        ) {
             self.body = body
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.body)]
         }
     }
-    public func bodyEntered(body: Godot.Node3D?) {
+
+    public func bodyEntered(
+        body: Godot.Node3D?
+    ) {
         _ = bodyEnteredSignal.emit(.init(body: body))
     }
+
     public lazy var bodyEnteredSignal: Godot.SignalEmitter<BodyEnteredSignalInput> = {
         .init(object: self, signalName: "body_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -128,16 +178,26 @@ open class Area3D: CollisionObject3D {
 
     public struct BodyExitedSignalInput: Godot.SignalInput {
         public let body: Godot.Node3D?
-        fileprivate init(body: Godot.Node3D?) {
+
+        fileprivate init(
+            body: Godot.Node3D?
+        ) {
             self.body = body
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.body)]
         }
     }
-    public func bodyExited(body: Godot.Node3D?) {
+
+    public func bodyExited(
+        body: Godot.Node3D?
+    ) {
         _ = bodyExitedSignal.emit(.init(body: body))
     }
+
     public lazy var bodyExitedSignal: Godot.SignalEmitter<BodyExitedSignalInput> = {
         .init(object: self, signalName: "body_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -155,25 +215,44 @@ open class Area3D: CollisionObject3D {
 
     public struct AreaShapeEnteredSignalInput: Godot.SignalInput {
         public let areaRid: Godot.RID
+
         public let area: Godot.Area3D?
+
         public let areaShapeIndex: Int
+
         public let localShapeIndex: Int
-        fileprivate init(areaRid: Godot.RID, area: Godot.Area3D?, areaShapeIndex: Int, localShapeIndex: Int) {
+
+        fileprivate init(
+            areaRid: Godot.RID,
+            area: Godot.Area3D?,
+            areaShapeIndex: Int,
+            localShapeIndex: Int
+        ) {
             self.areaRid = areaRid
             self.area = area
             self.areaShapeIndex = areaShapeIndex
             self.localShapeIndex = localShapeIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func areaShapeEntered(areaRid: Godot.RID, area: Godot.Area3D?, areaShapeIndex: Int, localShapeIndex: Int) {
+
+    public func areaShapeEntered(
+        areaRid: Godot.RID,
+        area: Godot.Area3D?,
+        areaShapeIndex: Int,
+        localShapeIndex: Int
+    ) {
         _ = areaShapeEnteredSignal.emit(.init(areaRid: areaRid,
                 area: area,
                 areaShapeIndex: areaShapeIndex,
                 localShapeIndex: localShapeIndex))
     }
+
     public lazy var areaShapeEnteredSignal: Godot.SignalEmitter<AreaShapeEnteredSignalInput> = {
         .init(object: self, signalName: "area_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -194,25 +273,44 @@ open class Area3D: CollisionObject3D {
 
     public struct AreaShapeExitedSignalInput: Godot.SignalInput {
         public let areaRid: Godot.RID
+
         public let area: Godot.Area3D?
+
         public let areaShapeIndex: Int
+
         public let localShapeIndex: Int
-        fileprivate init(areaRid: Godot.RID, area: Godot.Area3D?, areaShapeIndex: Int, localShapeIndex: Int) {
+
+        fileprivate init(
+            areaRid: Godot.RID,
+            area: Godot.Area3D?,
+            areaShapeIndex: Int,
+            localShapeIndex: Int
+        ) {
             self.areaRid = areaRid
             self.area = area
             self.areaShapeIndex = areaShapeIndex
             self.localShapeIndex = localShapeIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
-    public func areaShapeExited(areaRid: Godot.RID, area: Godot.Area3D?, areaShapeIndex: Int, localShapeIndex: Int) {
+
+    public func areaShapeExited(
+        areaRid: Godot.RID,
+        area: Godot.Area3D?,
+        areaShapeIndex: Int,
+        localShapeIndex: Int
+    ) {
         _ = areaShapeExitedSignal.emit(.init(areaRid: areaRid,
                 area: area,
                 areaShapeIndex: areaShapeIndex,
                 localShapeIndex: localShapeIndex))
     }
+
     public lazy var areaShapeExitedSignal: Godot.SignalEmitter<AreaShapeExitedSignalInput> = {
         .init(object: self, signalName: "area_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -233,16 +331,26 @@ open class Area3D: CollisionObject3D {
 
     public struct AreaEnteredSignalInput: Godot.SignalInput {
         public let area: Godot.Area3D?
-        fileprivate init(area: Godot.Area3D?) {
+
+        fileprivate init(
+            area: Godot.Area3D?
+        ) {
             self.area = area
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.area)]
         }
     }
-    public func areaEntered(area: Godot.Area3D?) {
+
+    public func areaEntered(
+        area: Godot.Area3D?
+    ) {
         _ = areaEnteredSignal.emit(.init(area: area))
     }
+
     public lazy var areaEnteredSignal: Godot.SignalEmitter<AreaEnteredSignalInput> = {
         .init(object: self, signalName: "area_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -260,16 +368,26 @@ open class Area3D: CollisionObject3D {
 
     public struct AreaExitedSignalInput: Godot.SignalInput {
         public let area: Godot.Area3D?
-        fileprivate init(area: Godot.Area3D?) {
+
+        fileprivate init(
+            area: Godot.Area3D?
+        ) {
             self.area = area
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.area)]
         }
     }
-    public func areaExited(area: Godot.Area3D?) {
+
+    public func areaExited(
+        area: Godot.Area3D?
+    ) {
         _ = areaExitedSignal.emit(.init(area: area))
     }
+
     public lazy var areaExitedSignal: Godot.SignalEmitter<AreaExitedSignalInput> = {
         .init(object: self, signalName: "area_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -292,7 +410,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravitySpaceOverrideMode(_ spaceOverrideMode: Godot.Area3D.SpaceOverride) {
+
+    private func __setGravitySpaceOverrideMode(
+        _ spaceOverrideMode: Godot.Area3D.SpaceOverride
+    ) {
         spaceOverrideMode.withGodotUnsafeRawPointer { __ptr_spaceOverrideMode in
         withUnsafeArgumentPackPointer(__ptr_spaceOverrideMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -311,6 +432,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getGravitySpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
         Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +451,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravityIsPoint(enable: Bool) {
+
+    private func __setGravityIsPoint(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +473,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __isGravityAPoint() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,7 +492,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravityPointUnitDistance(distanceScale: Double) {
+
+    private func __setGravityPointUnitDistance(
+        distanceScale: Double
+    ) {
         distanceScale.withGodotUnsafeRawPointer { __ptr_distanceScale in
         withUnsafeArgumentPackPointer(__ptr_distanceScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,6 +514,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getGravityPointUnitDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -403,7 +533,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravityPointCenter(_ center: Godot.Vector3) {
+
+    private func __setGravityPointCenter(
+        _ center: Godot.Vector3
+    ) {
         center.withGodotUnsafeRawPointer { __ptr_center in
         withUnsafeArgumentPackPointer(__ptr_center) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -422,6 +555,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getGravityPointCenter() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -440,7 +574,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravityDirection(_ direction: Godot.Vector3) {
+
+    private func __setGravityDirection(
+        _ direction: Godot.Vector3
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -459,6 +596,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getGravityDirection() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -477,7 +615,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setGravity(_ gravity: Double) {
+
+    private func __setGravity(
+        _ gravity: Double
+    ) {
         gravity.withGodotUnsafeRawPointer { __ptr_gravity in
         withUnsafeArgumentPackPointer(__ptr_gravity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -496,6 +637,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getGravity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -514,7 +656,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setLinearDampSpaceOverrideMode(_ spaceOverrideMode: Godot.Area3D.SpaceOverride) {
+
+    private func __setLinearDampSpaceOverrideMode(
+        _ spaceOverrideMode: Godot.Area3D.SpaceOverride
+    ) {
         spaceOverrideMode.withGodotUnsafeRawPointer { __ptr_spaceOverrideMode in
         withUnsafeArgumentPackPointer(__ptr_spaceOverrideMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -533,6 +678,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getLinearDampSpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
         Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -551,7 +697,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setAngularDampSpaceOverrideMode(_ spaceOverrideMode: Godot.Area3D.SpaceOverride) {
+
+    private func __setAngularDampSpaceOverrideMode(
+        _ spaceOverrideMode: Godot.Area3D.SpaceOverride
+    ) {
         spaceOverrideMode.withGodotUnsafeRawPointer { __ptr_spaceOverrideMode in
         withUnsafeArgumentPackPointer(__ptr_spaceOverrideMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -570,6 +719,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getAngularDampSpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
         Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -588,7 +738,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setAngularDamp(_ angularDamp: Double) {
+
+    private func __setAngularDamp(
+        _ angularDamp: Double
+    ) {
         angularDamp.withGodotUnsafeRawPointer { __ptr_angularDamp in
         withUnsafeArgumentPackPointer(__ptr_angularDamp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -607,6 +760,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getAngularDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -625,7 +779,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setLinearDamp(_ linearDamp: Double) {
+
+    private func __setLinearDamp(
+        _ linearDamp: Double
+    ) {
         linearDamp.withGodotUnsafeRawPointer { __ptr_linearDamp in
         withUnsafeArgumentPackPointer(__ptr_linearDamp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -644,6 +801,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getLinearDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -662,7 +820,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setPriority(_ priority: Int32) {
+
+    private func __setPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -681,6 +842,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -699,7 +861,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setWindForceMagnitude(_ windForceMagnitude: Double) {
+
+    private func __setWindForceMagnitude(
+        _ windForceMagnitude: Double
+    ) {
         windForceMagnitude.withGodotUnsafeRawPointer { __ptr_windForceMagnitude in
         withUnsafeArgumentPackPointer(__ptr_windForceMagnitude) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -718,6 +883,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getWindForceMagnitude() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -736,7 +902,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setWindAttenuationFactor(_ windAttenuationFactor: Double) {
+
+    private func __setWindAttenuationFactor(
+        _ windAttenuationFactor: Double
+    ) {
         windAttenuationFactor.withGodotUnsafeRawPointer { __ptr_windAttenuationFactor in
         withUnsafeArgumentPackPointer(__ptr_windAttenuationFactor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -755,6 +924,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getWindAttenuationFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -773,7 +943,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setWindSourcePath(_ windSourcePath: Godot.NodePath) {
+
+    private func __setWindSourcePath(
+        _ windSourcePath: Godot.NodePath
+    ) {
         windSourcePath.withGodotUnsafeRawPointer { __ptr_windSourcePath in
         withUnsafeArgumentPackPointer(__ptr_windSourcePath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -792,6 +965,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getWindSourcePath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -810,7 +984,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setMonitorable(enable: Bool) {
+
+    private func __setMonitorable(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -829,6 +1006,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __isMonitorable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -847,7 +1025,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setMonitoring(enable: Bool) {
+
+    private func __setMonitoring(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -866,6 +1047,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __isMonitoring() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -884,6 +1066,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     public func overlappingBodies() -> Godot.GodotArray<Godot.Node3D?> {
         Godot.GodotArray<Godot.Node3D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -902,6 +1085,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     public func overlappingAreas() -> Godot.GodotArray<Godot.Area3D?> {
         Godot.GodotArray<Godot.Area3D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -920,6 +1104,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     public func hasOverlappingBodies() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -938,6 +1123,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     public func hasOverlappingAreas() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -956,7 +1142,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    public func overlapsBody(_ body: Godot.Node?) -> Bool {
+
+    public func overlapsBody(
+        _ body: Godot.Node?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
@@ -977,7 +1166,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    public func overlapsArea(_ area: Godot.Node?) -> Bool {
+
+    public func overlapsArea(
+        _ area: Godot.Node?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafePointer(to: __ptr_area) { _ptr___ptr_area in
@@ -998,7 +1190,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setAudioBusOverride(enable: Bool) {
+
+    private func __setAudioBusOverride(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1017,6 +1212,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __isOverridingAudioBus() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1035,7 +1231,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setAudioBusName(_ name: Godot.GodotStringName) {
+
+    private func __setAudioBusName(
+        _ name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1054,6 +1253,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getAudioBusName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1072,7 +1272,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setUseReverbBus(enable: Bool) {
+
+    private func __setUseReverbBus(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1091,6 +1294,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __isUsingReverbBus() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1109,7 +1313,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setReverbBusName(_ name: Godot.GodotStringName) {
+
+    private func __setReverbBusName(
+        _ name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1128,6 +1335,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getReverbBusName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1146,7 +1354,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setReverbAmount(_ amount: Double) {
+
+    private func __setReverbAmount(
+        _ amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1165,6 +1376,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getReverbAmount() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1183,7 +1395,10 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
-    private func __setReverbUniformity(amount: Double) {
+
+    private func __setReverbUniformity(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1202,6 +1417,7 @@ open class Area3D: CollisionObject3D {
         }
         }
     }()
+
     private func __getReverbUniformity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1456,6 +1672,7 @@ open class Area3D: CollisionObject3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1468,5 +1685,4 @@ open class Area3D: CollisionObject3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

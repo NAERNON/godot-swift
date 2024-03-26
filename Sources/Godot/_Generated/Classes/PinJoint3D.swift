@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PinJoint3D: Joint3D {
     public enum Param: UInt32, GodotEnum {
         case bias = 0
         case damping = 1
         case impulseClamp = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bias", 0),
@@ -24,7 +26,11 @@ open class PinJoint3D: Joint3D {
         }
         }
     }()
-    public func setParam(_ param: Godot.PinJoint3D.Param, value: Double) {
+
+    public func setParam(
+        _ param: Godot.PinJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -44,7 +50,10 @@ open class PinJoint3D: Joint3D {
         }
         }
     }()
-    public func param(_ param: Godot.PinJoint3D.Param) -> Double {
+
+    public func param(
+        _ param: Godot.PinJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -58,6 +67,7 @@ open class PinJoint3D: Joint3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -70,5 +80,4 @@ open class PinJoint3D: Joint3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

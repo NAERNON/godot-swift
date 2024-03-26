@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RenderSceneBuffers: RefCounted {
     internal static var __method_binding_configure: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RenderSceneBuffers: RefCounted {
         }
         }
     }()
-    public func configure(config: Godot.RenderSceneBuffersConfiguration?) {
+
+    public func configure(
+        config: Godot.RenderSceneBuffersConfiguration?
+    ) {
         config.withGodotUnsafeRawPointer { __ptr_config in
         withUnsafePointer(to: __ptr_config) { _ptr___ptr_config in
         withUnsafeArgumentPackPointer(_ptr___ptr_config) { __accessPtr in
@@ -26,6 +30,7 @@ open class RenderSceneBuffers: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -38,5 +43,4 @@ open class RenderSceneBuffers: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

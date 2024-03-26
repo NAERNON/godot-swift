@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DFABRIK: SkeletonModification2D {
     internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    private func __setTargetNode(targetNodepath: Godot.NodePath) {
+
+    private func __setTargetNode(
+        targetNodepath: Godot.NodePath
+    ) {
         targetNodepath.withGodotUnsafeRawPointer { __ptr_targetNodepath in
         withUnsafeArgumentPackPointer(__ptr_targetNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
+
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    private func __setFabrikDataChainLength(_ length: Int32) {
+
+    private func __setFabrikDataChainLength(
+        _ length: Int32
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
+
     private func __getFabrikDataChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,11 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func setFabrikJointBone2dNode(jointIdx: Int32, bone2dNodepath: Godot.NodePath) {
+
+    public func setFabrikJointBone2dNode(
+        jointIdx: Int32,
+        bone2dNodepath: Godot.NodePath
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         bone2dNodepath.withGodotUnsafeRawPointer { __ptr_bone2dNodepath in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_bone2dNodepath) { __accessPtr in
@@ -106,7 +119,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func fabrikJointBone2dNode(jointIdx: Int32) -> Godot.NodePath {
+
+    public func fabrikJointBone2dNode(
+        jointIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -126,7 +142,11 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func setFabrikJointBoneIndex(jointIdx: Int32, boneIdx: Int32) {
+
+    public func setFabrikJointBoneIndex(
+        jointIdx: Int32,
+        boneIdx: Int32
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_boneIdx) { __accessPtr in
@@ -146,7 +166,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func fabrikJointBoneIndex(jointIdx: Int32) -> Int32 {
+
+    public func fabrikJointBoneIndex(
+        jointIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -166,7 +189,11 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func setFabrikJointMagnetPosition(jointIdx: Int32, magnetPosition: Godot.Vector2) {
+
+    public func setFabrikJointMagnetPosition(
+        jointIdx: Int32,
+        magnetPosition: Godot.Vector2
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         magnetPosition.withGodotUnsafeRawPointer { __ptr_magnetPosition in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_magnetPosition) { __accessPtr in
@@ -186,7 +213,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func fabrikJointMagnetPosition(jointIdx: Int32) -> Godot.Vector2 {
+
+    public func fabrikJointMagnetPosition(
+        jointIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -206,7 +236,11 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func setFabrikJointUseTargetRotation(jointIdx: Int32, useTargetRotation: Bool) {
+
+    public func setFabrikJointUseTargetRotation(
+        jointIdx: Int32,
+        useTargetRotation: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         useTargetRotation.withGodotUnsafeRawPointer { __ptr_useTargetRotation in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_useTargetRotation) { __accessPtr in
@@ -226,7 +260,10 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         }
     }()
-    public func fabrikJointUseTargetRotation(jointIdx: Int32) -> Bool {
+
+    public func fabrikJointUseTargetRotation(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -262,6 +299,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -274,5 +312,4 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

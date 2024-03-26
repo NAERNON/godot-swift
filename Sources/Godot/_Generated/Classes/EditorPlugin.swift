@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorPlugin: Node {
     public enum CustomControlContainer: UInt32, GodotEnum {
@@ -18,6 +19,7 @@ open class EditorPlugin: Node {
         case inspectorBottom = 9
         case projectSettingTabLeft = 10
         case projectSettingTabRight = 11
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Toolbar", 0),
@@ -34,6 +36,7 @@ open class EditorPlugin: Node {
             ("Project Setting Tab Right", 11),]
         }
     }
+
     public enum DockSlot: UInt32, GodotEnum {
         case leftUl = 0
         case leftBl = 1
@@ -44,6 +47,7 @@ open class EditorPlugin: Node {
         case rightUr = 6
         case rightBr = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Left Ul", 0),
@@ -57,10 +61,12 @@ open class EditorPlugin: Node {
             ("Max", 8),]
         }
     }
+
     public enum AfterGUIInput: UInt32, GodotEnum {
         case pass = 0
         case stop = 1
         case custom = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Pass", 0),
@@ -71,16 +77,26 @@ open class EditorPlugin: Node {
 
     public struct SceneChangedSignalInput: Godot.SignalInput {
         public let sceneRoot: Godot.Node?
-        fileprivate init(sceneRoot: Godot.Node?) {
+
+        fileprivate init(
+            sceneRoot: Godot.Node?
+        ) {
             self.sceneRoot = sceneRoot
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.sceneRoot)]
         }
     }
-    public func sceneChanged(sceneRoot: Godot.Node?) {
+
+    public func sceneChanged(
+        sceneRoot: Godot.Node?
+    ) {
         _ = sceneChangedSignal.emit(.init(sceneRoot: sceneRoot))
     }
+
     public lazy var sceneChangedSignal: Godot.SignalEmitter<SceneChangedSignalInput> = {
         .init(object: self, signalName: "scene_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SceneChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -98,16 +114,26 @@ open class EditorPlugin: Node {
 
     public struct SceneClosedSignalInput: Godot.SignalInput {
         public let filepath: Godot.GodotString
-        fileprivate init(filepath: Godot.GodotString) {
+
+        fileprivate init(
+            filepath: Godot.GodotString
+        ) {
             self.filepath = filepath
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.filepath)]
         }
     }
-    public func sceneClosed(filepath: Godot.GodotString) {
+
+    public func sceneClosed(
+        filepath: Godot.GodotString
+    ) {
         _ = sceneClosedSignal.emit(.init(filepath: filepath))
     }
+
     public lazy var sceneClosedSignal: Godot.SignalEmitter<SceneClosedSignalInput> = {
         .init(object: self, signalName: "scene_closed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SceneClosedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -125,16 +151,26 @@ open class EditorPlugin: Node {
 
     public struct MainScreenChangedSignalInput: Godot.SignalInput {
         public let screenName: Godot.GodotString
-        fileprivate init(screenName: Godot.GodotString) {
+
+        fileprivate init(
+            screenName: Godot.GodotString
+        ) {
             self.screenName = screenName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.screenName)]
         }
     }
-    public func mainScreenChanged(screenName: Godot.GodotString) {
+
+    public func mainScreenChanged(
+        screenName: Godot.GodotString
+    ) {
         _ = mainScreenChangedSignal.emit(.init(screenName: screenName))
     }
+
     public lazy var mainScreenChangedSignal: Godot.SignalEmitter<MainScreenChangedSignalInput> = {
         .init(object: self, signalName: "main_screen_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MainScreenChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -152,16 +188,26 @@ open class EditorPlugin: Node {
 
     public struct ResourceSavedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-        fileprivate init(resource: Godot.Resource?) {
+
+        fileprivate init(
+            resource: Godot.Resource?
+        ) {
             self.resource = resource
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resource)]
         }
     }
-    public func resourceSaved(resource: Godot.Resource?) {
+
+    public func resourceSaved(
+        resource: Godot.Resource?
+    ) {
         _ = resourceSavedSignal.emit(.init(resource: resource))
     }
+
     public lazy var resourceSavedSignal: Godot.SignalEmitter<ResourceSavedSignalInput> = {
         .init(object: self, signalName: "resource_saved") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSavedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -180,6 +226,7 @@ open class EditorPlugin: Node {
     public func projectSettingsChanged() {
         _ = projectSettingsChangedSignal.emit()
     }
+
     public lazy var projectSettingsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "project_settings_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -195,24 +242,37 @@ open class EditorPlugin: Node {
         }
     }()
 
-    open func _forwardCanvasGuiInput(event: Godot.InputEvent?) -> Bool {
+    open func _forwardCanvasGuiInput(
+        event: Godot.InputEvent?
+    ) -> Bool {
         Bool()
     }
 
-    open func _forwardCanvasDrawOverViewport(viewportControl: Godot.Control?) {
+    open func _forwardCanvasDrawOverViewport(
+        viewportControl: Godot.Control?
+    ) {
     }
 
-    open func _forwardCanvasForceDrawOverViewport(viewportControl: Godot.Control?) {
+    open func _forwardCanvasForceDrawOverViewport(
+        viewportControl: Godot.Control?
+    ) {
     }
 
-    open func _forward3DGuiInput(viewportCamera: Godot.Camera3D?, event: Godot.InputEvent?) -> Int32 {
+    open func _forward3DGuiInput(
+        viewportCamera: Godot.Camera3D?,
+        event: Godot.InputEvent?
+    ) -> Int32 {
         Int32()
     }
 
-    open func _forward3DDrawOverViewport(viewportControl: Godot.Control?) {
+    open func _forward3DDrawOverViewport(
+        viewportControl: Godot.Control?
+    ) {
     }
 
-    open func _forward3DForceDrawOverViewport(viewportControl: Godot.Control?) {
+    open func _forward3DForceDrawOverViewport(
+        viewportControl: Godot.Control?
+    ) {
     }
 
     open func _getPluginName() -> Godot.GodotString {
@@ -227,13 +287,19 @@ open class EditorPlugin: Node {
         Bool()
     }
 
-    open func _makeVisible(_ visible: Bool) {
+    open func _makeVisible(
+        _ visible: Bool
+    ) {
     }
 
-    open func _edit(object: Godot.Object?) {
+    open func _edit(
+        object: Godot.Object?
+    ) {
     }
 
-    open func _handles(object: Godot.Object?) -> Bool {
+    open func _handles(
+        object: Godot.Object?
+    ) -> Bool {
         Bool()
     }
 
@@ -241,13 +307,17 @@ open class EditorPlugin: Node {
         Godot.AnyGodotDictionary()
     }
 
-    open func _setState(_ state: Godot.AnyGodotDictionary) {
+    open func _setState(
+        _ state: Godot.AnyGodotDictionary
+    ) {
     }
 
     open func _clear() {
     }
 
-    open func _getUnsavedStatus(forScene scene: Godot.GodotString) -> Godot.GodotString {
+    open func _getUnsavedStatus(
+        forScene scene: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -261,10 +331,14 @@ open class EditorPlugin: Node {
         Godot.PackedStringArray()
     }
 
-    open func _setWindowLayout(configuration: Godot.ConfigFile?) {
+    open func _setWindowLayout(
+        configuration: Godot.ConfigFile?
+    ) {
     }
 
-    open func _getWindowLayout(configuration: Godot.ConfigFile?) {
+    open func _getWindowLayout(
+        configuration: Godot.ConfigFile?
+    ) {
     }
 
     open func _build() -> Bool {
@@ -284,7 +358,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addControlToContainer(_ container: Godot.EditorPlugin.CustomControlContainer, control: Godot.Control?) {
+
+    public func addControlToContainer(
+        _ container: Godot.EditorPlugin.CustomControlContainer,
+        control: Godot.Control?
+    ) {
         container.withGodotUnsafeRawPointer { __ptr_container in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
@@ -305,7 +383,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addControlToBottomPanel(control: Godot.Control?, title: Godot.GodotString) -> Godot.Button? {
+
+    public func addControlToBottomPanel(
+        control: Godot.Control?,
+        title: Godot.GodotString
+    ) -> Godot.Button? {
         Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
@@ -327,7 +409,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addControlToDock(slot: Godot.EditorPlugin.DockSlot, control: Godot.Control?) {
+
+    public func addControlToDock(
+        slot: Godot.EditorPlugin.DockSlot,
+        control: Godot.Control?
+    ) {
         slot.withGodotUnsafeRawPointer { __ptr_slot in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
@@ -348,7 +434,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeControlFromDocks(control: Godot.Control?) {
+
+    public func removeControlFromDocks(
+        control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -368,7 +457,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeControlFromBottomPanel(control: Godot.Control?) {
+
+    public func removeControlFromBottomPanel(
+        control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -388,7 +480,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeControlFromContainer(_ container: Godot.EditorPlugin.CustomControlContainer, control: Godot.Control?) {
+
+    public func removeControlFromContainer(
+        _ container: Godot.EditorPlugin.CustomControlContainer,
+        control: Godot.Control?
+    ) {
         container.withGodotUnsafeRawPointer { __ptr_container in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
@@ -409,7 +505,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addToolMenuItem(name: Godot.GodotString, callable: Godot.Callable) {
+
+    public func addToolMenuItem(
+        name: Godot.GodotString,
+        callable: Godot.Callable
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_callable) { __accessPtr in
@@ -429,7 +529,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addToolSubmenuItem(name: Godot.GodotString, submenu: Godot.PopupMenu?) {
+
+    public func addToolSubmenuItem(
+        name: Godot.GodotString,
+        submenu: Godot.PopupMenu?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         submenu.withGodotUnsafeRawPointer { __ptr_submenu in
         withUnsafePointer(to: __ptr_submenu) { _ptr___ptr_submenu in
@@ -450,7 +554,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeToolMenuItem(name: Godot.GodotString) {
+
+    public func removeToolMenuItem(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -469,6 +576,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func exportAsMenu() -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -487,7 +595,13 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addCustomType(_ type: Godot.GodotString, base: Godot.GodotString, script: Godot.Script?, icon: Godot.Texture2D?) {
+
+    public func addCustomType(
+        _ type: Godot.GodotString,
+        base: Godot.GodotString,
+        script: Godot.Script?,
+        icon: Godot.Texture2D?
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         base.withGodotUnsafeRawPointer { __ptr_base in
         script.withGodotUnsafeRawPointer { __ptr_script in
@@ -511,7 +625,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeCustomType(_ type: Godot.GodotString) {
+
+    public func removeCustomType(
+        _ type: Godot.GodotString
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,7 +647,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addAutoloadSingleton(name: Godot.GodotString, path: Godot.GodotString) {
+
+    public func addAutoloadSingleton(
+        name: Godot.GodotString,
+        path: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_path) { __accessPtr in
@@ -550,7 +671,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeAutoloadSingleton(name: Godot.GodotString) {
+
+    public func removeAutoloadSingleton(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -569,6 +693,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func updateOverlays() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -587,7 +712,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func makeBottomPanelItemVisible(item: Godot.Control?) {
+
+    public func makeBottomPanelItemVisible(
+        item: Godot.Control?
+    ) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         withUnsafeArgumentPackPointer(_ptr___ptr_item) { __accessPtr in
@@ -607,6 +735,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func hideBottomPanel() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -624,6 +753,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func undoRedo() -> Godot.EditorUndoRedoManager? {
         Godot.EditorUndoRedoManager?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +772,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addUndoRedoInspectorHookCallback(callable: Godot.Callable) {
+
+    public func addUndoRedoInspectorHookCallback(
+        callable: Godot.Callable
+    ) {
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -661,7 +794,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeUndoRedoInspectorHookCallback(callable: Godot.Callable) {
+
+    public func removeUndoRedoInspectorHookCallback(
+        callable: Godot.Callable
+    ) {
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -680,6 +816,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func queueSaveLayout() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -697,7 +834,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addTranslationParserPlugin(parser: Godot.EditorTranslationParserPlugin?) {
+
+    public func addTranslationParserPlugin(
+        parser: Godot.EditorTranslationParserPlugin?
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafePointer(to: __ptr_parser) { _ptr___ptr_parser in
         withUnsafeArgumentPackPointer(_ptr___ptr_parser) { __accessPtr in
@@ -717,7 +857,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeTranslationParserPlugin(parser: Godot.EditorTranslationParserPlugin?) {
+
+    public func removeTranslationParserPlugin(
+        parser: Godot.EditorTranslationParserPlugin?
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafePointer(to: __ptr_parser) { _ptr___ptr_parser in
         withUnsafeArgumentPackPointer(_ptr___ptr_parser) { __accessPtr in
@@ -737,7 +880,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addImportPlugin(importer: Godot.EditorImportPlugin?, firstPriority: Bool = false) {
+
+    public func addImportPlugin(
+        importer: Godot.EditorImportPlugin?,
+        firstPriority: Bool = false
+    ) {
         importer.withGodotUnsafeRawPointer { __ptr_importer in
         withUnsafePointer(to: __ptr_importer) { _ptr___ptr_importer in
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
@@ -758,7 +905,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeImportPlugin(importer: Godot.EditorImportPlugin?) {
+
+    public func removeImportPlugin(
+        importer: Godot.EditorImportPlugin?
+    ) {
         importer.withGodotUnsafeRawPointer { __ptr_importer in
         withUnsafePointer(to: __ptr_importer) { _ptr___ptr_importer in
         withUnsafeArgumentPackPointer(_ptr___ptr_importer) { __accessPtr in
@@ -778,7 +928,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addSceneFormatImporterPlugin(sceneFormatImporter: Godot.EditorSceneFormatImporter?, firstPriority: Bool = false) {
+
+    public func addSceneFormatImporterPlugin(
+        sceneFormatImporter: Godot.EditorSceneFormatImporter?,
+        firstPriority: Bool = false
+    ) {
         sceneFormatImporter.withGodotUnsafeRawPointer { __ptr_sceneFormatImporter in
         withUnsafePointer(to: __ptr_sceneFormatImporter) { _ptr___ptr_sceneFormatImporter in
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
@@ -799,7 +953,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeSceneFormatImporterPlugin(sceneFormatImporter: Godot.EditorSceneFormatImporter?) {
+
+    public func removeSceneFormatImporterPlugin(
+        sceneFormatImporter: Godot.EditorSceneFormatImporter?
+    ) {
         sceneFormatImporter.withGodotUnsafeRawPointer { __ptr_sceneFormatImporter in
         withUnsafePointer(to: __ptr_sceneFormatImporter) { _ptr___ptr_sceneFormatImporter in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneFormatImporter) { __accessPtr in
@@ -819,7 +976,11 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addScenePostImportPlugin(sceneImportPlugin: Godot.EditorScenePostImportPlugin?, firstPriority: Bool = false) {
+
+    public func addScenePostImportPlugin(
+        sceneImportPlugin: Godot.EditorScenePostImportPlugin?,
+        firstPriority: Bool = false
+    ) {
         sceneImportPlugin.withGodotUnsafeRawPointer { __ptr_sceneImportPlugin in
         withUnsafePointer(to: __ptr_sceneImportPlugin) { _ptr___ptr_sceneImportPlugin in
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
@@ -840,7 +1001,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeScenePostImportPlugin(sceneImportPlugin: Godot.EditorScenePostImportPlugin?) {
+
+    public func removeScenePostImportPlugin(
+        sceneImportPlugin: Godot.EditorScenePostImportPlugin?
+    ) {
         sceneImportPlugin.withGodotUnsafeRawPointer { __ptr_sceneImportPlugin in
         withUnsafePointer(to: __ptr_sceneImportPlugin) { _ptr___ptr_sceneImportPlugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneImportPlugin) { __accessPtr in
@@ -860,7 +1024,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addExportPlugin(_ plugin: Godot.EditorExportPlugin?) {
+
+    public func addExportPlugin(
+        _ plugin: Godot.EditorExportPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -880,7 +1047,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeExportPlugin(_ plugin: Godot.EditorExportPlugin?) {
+
+    public func removeExportPlugin(
+        _ plugin: Godot.EditorExportPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -900,7 +1070,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addNode3DGizmoPlugin(_ plugin: Godot.EditorNode3DGizmoPlugin?) {
+
+    public func addNode3DGizmoPlugin(
+        _ plugin: Godot.EditorNode3DGizmoPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -920,7 +1093,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeNode3DGizmoPlugin(_ plugin: Godot.EditorNode3DGizmoPlugin?) {
+
+    public func removeNode3DGizmoPlugin(
+        _ plugin: Godot.EditorNode3DGizmoPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -940,7 +1116,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addInspectorPlugin(_ plugin: Godot.EditorInspectorPlugin?) {
+
+    public func addInspectorPlugin(
+        _ plugin: Godot.EditorInspectorPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -960,7 +1139,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeInspectorPlugin(_ plugin: Godot.EditorInspectorPlugin?) {
+
+    public func removeInspectorPlugin(
+        _ plugin: Godot.EditorInspectorPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -980,7 +1162,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addResourceConversionPlugin(_ plugin: Godot.EditorResourceConversionPlugin?) {
+
+    public func addResourceConversionPlugin(
+        _ plugin: Godot.EditorResourceConversionPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -1000,7 +1185,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeResourceConversionPlugin(_ plugin: Godot.EditorResourceConversionPlugin?) {
+
+    public func removeResourceConversionPlugin(
+        _ plugin: Godot.EditorResourceConversionPlugin?
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
@@ -1020,6 +1208,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func setInputEventForwardingAlwaysEnabled() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1037,6 +1226,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func setForceDrawOverForwardingEnabled() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1054,6 +1244,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func editorInterface() -> Godot.EditorInterface? {
         Godot.EditorInterface?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1072,6 +1263,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func scriptCreateDialog() -> Godot.ScriptCreateDialog? {
         Godot.ScriptCreateDialog?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1090,7 +1282,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func addDebuggerPlugin(script: Godot.EditorDebuggerPlugin?) {
+
+    public func addDebuggerPlugin(
+        script: Godot.EditorDebuggerPlugin?
+    ) {
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafePointer(to: __ptr_script) { _ptr___ptr_script in
         withUnsafeArgumentPackPointer(_ptr___ptr_script) { __accessPtr in
@@ -1110,7 +1305,10 @@ open class EditorPlugin: Node {
         }
         }
     }()
-    public func removeDebuggerPlugin(script: Godot.EditorDebuggerPlugin?) {
+
+    public func removeDebuggerPlugin(
+        script: Godot.EditorDebuggerPlugin?
+    ) {
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafePointer(to: __ptr_script) { _ptr___ptr_script in
         withUnsafeArgumentPackPointer(_ptr___ptr_script) { __accessPtr in
@@ -1130,6 +1328,7 @@ open class EditorPlugin: Node {
         }
         }
     }()
+
     public func pluginVersion() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1142,6 +1341,7 @@ open class EditorPlugin: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1358,5 +1558,4 @@ open class EditorPlugin: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

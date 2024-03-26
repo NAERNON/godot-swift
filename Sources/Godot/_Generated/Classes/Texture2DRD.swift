@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Texture2DRD: Texture2D {
     internal static var __method_binding_set_texture_rd_rid: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Texture2DRD: Texture2D {
         }
         }
     }()
-    private func __setTextureRdRid(_ textureRdRid: Godot.RID) {
+
+    private func __setTextureRdRid(
+        _ textureRdRid: Godot.RID
+    ) {
         textureRdRid.withGodotUnsafeRawPointer { __ptr_textureRdRid in
         withUnsafeArgumentPackPointer(__ptr_textureRdRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Texture2DRD: Texture2D {
         }
         }
     }()
+
     private func __getTextureRdRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class Texture2DRD: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class Texture2DRD: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDFramebufferPass: RefCounted {
     public static let attachmentUnused: Int = -1
@@ -14,7 +15,10 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
-    private func __setColorAttachments(pMember: Godot.PackedInt32Array) {
+
+    private func __setColorAttachments(
+        pMember: Godot.PackedInt32Array
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -33,6 +37,7 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
+
     private func __getColorAttachments() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,7 +56,10 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
-    private func __setInputAttachments(pMember: Godot.PackedInt32Array) {
+
+    private func __setInputAttachments(
+        pMember: Godot.PackedInt32Array
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +78,7 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
+
     private func __getInputAttachments() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +97,10 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
-    private func __setResolveAttachments(pMember: Godot.PackedInt32Array) {
+
+    private func __setResolveAttachments(
+        pMember: Godot.PackedInt32Array
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +119,7 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
+
     private func __getResolveAttachments() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,7 +138,10 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
-    private func __setPreserveAttachments(pMember: Godot.PackedInt32Array) {
+
+    private func __setPreserveAttachments(
+        pMember: Godot.PackedInt32Array
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +160,7 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
+
     private func __getPreserveAttachments() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +179,10 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
-    private func __setDepthAttachment(pMember: Int32) {
+
+    private func __setDepthAttachment(
+        pMember: Int32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,6 +201,7 @@ open class RDFramebufferPass: RefCounted {
         }
         }
     }()
+
     private func __getDepthAttachment() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -248,6 +269,7 @@ open class RDFramebufferPass: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -260,5 +282,4 @@ open class RDFramebufferPass: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

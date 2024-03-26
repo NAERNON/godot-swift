@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PolygonOccluder3D: Occluder3D {
     internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PolygonOccluder3D: Occluder3D {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PolygonOccluder3D: Occluder3D {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class PolygonOccluder3D: Occluder3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class PolygonOccluder3D: Occluder3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

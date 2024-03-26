@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AudioStreamPlayer3D: Node3D {
     public enum AttenuationModel: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AudioStreamPlayer3D: Node3D {
         case inverseSquareDistance = 1
         case logarithmic = 2
         case disabled = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Inverse Distance", 0),
@@ -18,10 +20,12 @@ open class AudioStreamPlayer3D: Node3D {
             ("Disabled", 3),]
         }
     }
+
     public enum DopplerTracking: UInt32, GodotEnum {
         case disabled = 0
         case idleStep = 1
         case physicsStep = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -33,6 +37,7 @@ open class AudioStreamPlayer3D: Node3D {
     public func finished() {
         _ = finishedSignal.emit()
     }
+
     public lazy var finishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -55,7 +60,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setStream(_ stream: Godot.AudioStream?) {
+
+    private func __setStream(
+        _ stream: Godot.AudioStream?
+    ) {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream) { __accessPtr in
@@ -75,6 +83,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getStream() -> Godot.AudioStream? {
         Godot.AudioStream?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -93,7 +102,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setVolumeDb(_ volumeDb: Double) {
+
+    private func __setVolumeDb(
+        _ volumeDb: Double
+    ) {
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_volumeDb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,6 +124,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getVolumeDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,7 +143,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setUnitSize(_ unitSize: Double) {
+
+    private func __setUnitSize(
+        _ unitSize: Double
+    ) {
         unitSize.withGodotUnsafeRawPointer { __ptr_unitSize in
         withUnsafeArgumentPackPointer(__ptr_unitSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,6 +165,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getUnitSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,7 +184,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setMaxDb(_ maxDb: Double) {
+
+    private func __setMaxDb(
+        _ maxDb: Double
+    ) {
         maxDb.withGodotUnsafeRawPointer { __ptr_maxDb in
         withUnsafeArgumentPackPointer(__ptr_maxDb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,6 +206,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getMaxDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,7 +225,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setPitchScale(_ pitchScale: Double) {
+
+    private func __setPitchScale(
+        _ pitchScale: Double
+    ) {
         pitchScale.withGodotUnsafeRawPointer { __ptr_pitchScale in
         withUnsafeArgumentPackPointer(__ptr_pitchScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -223,6 +247,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getPitchScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -241,7 +266,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    public func play(fromPosition position: Double = 0.0) {
+
+    public func play(
+        fromPosition position: Double = 0.0
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -260,7 +288,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    public func seek(toPosition position: Double) {
+
+    public func seek(
+        toPosition position: Double
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,6 +310,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -296,6 +328,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __isPlaying() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -314,6 +347,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     public func playbackPosition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,7 +366,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setBus(_ bus: Godot.GodotStringName) {
+
+    private func __setBus(
+        _ bus: Godot.GodotStringName
+    ) {
         bus.withGodotUnsafeRawPointer { __ptr_bus in
         withUnsafeArgumentPackPointer(__ptr_bus) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -351,6 +388,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getBus() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,7 +407,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setAutoplay(enable: Bool) {
+
+    private func __setAutoplay(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -388,6 +429,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __isAutoplayEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -406,7 +448,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setMaxDistance(meters: Double) {
+
+    private func __setMaxDistance(
+        meters: Double
+    ) {
         meters.withGodotUnsafeRawPointer { __ptr_meters in
         withUnsafeArgumentPackPointer(__ptr_meters) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -425,6 +470,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getMaxDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,7 +489,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setAreaMask(_ mask: UInt32) {
+
+    private func __setAreaMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,6 +511,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getAreaMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,7 +530,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setEmissionAngle(degrees: Double) {
+
+    private func __setEmissionAngle(
+        degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -499,6 +552,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getEmissionAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -517,7 +571,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setEmissionAngleEnabled(_ enabled: Bool) {
+
+    private func __setEmissionAngleEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,6 +593,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __isEmissionAngleEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -554,7 +612,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setEmissionAngleFilterAttenuationDb(_ db: Double) {
+
+    private func __setEmissionAngleFilterAttenuationDb(
+        _ db: Double
+    ) {
         db.withGodotUnsafeRawPointer { __ptr_db in
         withUnsafeArgumentPackPointer(__ptr_db) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -573,6 +634,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getEmissionAngleFilterAttenuationDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -591,7 +653,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setAttenuationFilterCutoffHz(degrees: Double) {
+
+    private func __setAttenuationFilterCutoffHz(
+        degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -610,6 +675,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getAttenuationFilterCutoffHz() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -628,7 +694,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setAttenuationFilterDb(_ db: Double) {
+
+    private func __setAttenuationFilterDb(
+        _ db: Double
+    ) {
         db.withGodotUnsafeRawPointer { __ptr_db in
         withUnsafeArgumentPackPointer(__ptr_db) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -647,6 +716,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getAttenuationFilterDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -665,7 +735,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setAttenuationModel(_ model: Godot.AudioStreamPlayer3D.AttenuationModel) {
+
+    private func __setAttenuationModel(
+        _ model: Godot.AudioStreamPlayer3D.AttenuationModel
+    ) {
         model.withGodotUnsafeRawPointer { __ptr_model in
         withUnsafeArgumentPackPointer(__ptr_model) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -684,6 +757,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getAttenuationModel() -> Godot.AudioStreamPlayer3D.AttenuationModel {
         Godot.AudioStreamPlayer3D.AttenuationModel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -702,7 +776,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setDopplerTracking(mode: Godot.AudioStreamPlayer3D.DopplerTracking) {
+
+    private func __setDopplerTracking(
+        mode: Godot.AudioStreamPlayer3D.DopplerTracking
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -721,6 +798,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getDopplerTracking() -> Godot.AudioStreamPlayer3D.DopplerTracking {
         Godot.AudioStreamPlayer3D.DopplerTracking.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -739,7 +817,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setStreamPaused(pause: Bool) {
+
+    private func __setStreamPaused(
+        pause: Bool
+    ) {
         pause.withGodotUnsafeRawPointer { __ptr_pause in
         withUnsafeArgumentPackPointer(__ptr_pause) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -758,6 +839,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getStreamPaused() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -776,7 +858,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setMaxPolyphony(_ maxPolyphony: Int32) {
+
+    private func __setMaxPolyphony(
+        _ maxPolyphony: Int32
+    ) {
         maxPolyphony.withGodotUnsafeRawPointer { __ptr_maxPolyphony in
         withUnsafeArgumentPackPointer(__ptr_maxPolyphony) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -795,6 +880,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getMaxPolyphony() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -813,7 +899,10 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
-    private func __setPanningStrength(_ panningStrength: Double) {
+
+    private func __setPanningStrength(
+        _ panningStrength: Double
+    ) {
         panningStrength.withGodotUnsafeRawPointer { __ptr_panningStrength in
         withUnsafeArgumentPackPointer(__ptr_panningStrength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -832,6 +921,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     private func __getPanningStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -850,6 +940,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     public func hasStreamPlayback() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -868,6 +959,7 @@ open class AudioStreamPlayer3D: Node3D {
         }
         }
     }()
+
     public func streamPlayback() -> Godot.AudioStreamPlayback? {
         Godot.AudioStreamPlayback?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1095,6 +1187,7 @@ open class AudioStreamPlayer3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1107,5 +1200,4 @@ open class AudioStreamPlayer3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

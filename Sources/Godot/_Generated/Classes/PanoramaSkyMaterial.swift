@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PanoramaSkyMaterial: Material {
     internal static var __method_binding_set_panorama: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PanoramaSkyMaterial: Material {
         }
         }
     }()
-    private func __setPanorama(texture: Godot.Texture2D?) {
+
+    private func __setPanorama(
+        texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -32,6 +36,7 @@ open class PanoramaSkyMaterial: Material {
         }
         }
     }()
+
     private func __getPanorama() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class PanoramaSkyMaterial: Material {
         }
         }
     }()
-    private func __setFilteringEnabled(_ enabled: Bool) {
+
+    private func __setFilteringEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class PanoramaSkyMaterial: Material {
         }
         }
     }()
+
     private func __isFilteringEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +112,7 @@ open class PanoramaSkyMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -115,5 +125,4 @@ open class PanoramaSkyMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

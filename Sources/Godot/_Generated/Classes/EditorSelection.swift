@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorSelection: Object {
+
     public func selectionChanged() {
         _ = selectionChangedSignal.emit()
     }
+
     public lazy var selectionChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "selection_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,6 +33,7 @@ open class EditorSelection: Object {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -47,7 +51,10 @@ open class EditorSelection: Object {
         }
         }
     }()
-    public func addNode(_ node: Godot.Node?) {
+
+    public func addNode(
+        _ node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -67,7 +74,10 @@ open class EditorSelection: Object {
         }
         }
     }()
-    public func removeNode(_ node: Godot.Node?) {
+
+    public func removeNode(
+        _ node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -87,6 +97,7 @@ open class EditorSelection: Object {
         }
         }
     }()
+
     public func selectedNodes() -> Godot.GodotArray<Godot.Node?> {
         Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +116,7 @@ open class EditorSelection: Object {
         }
         }
     }()
+
     public func transformableSelectedNodes() -> Godot.GodotArray<Godot.Node?> {
         Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +129,7 @@ open class EditorSelection: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -129,5 +142,4 @@ open class EditorSelection: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

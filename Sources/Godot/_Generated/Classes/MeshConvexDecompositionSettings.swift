@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MeshConvexDecompositionSettings: RefCounted {
     public enum Mode: UInt32, GodotEnum {
         case voxel = 0
         case tetrahedron = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Voxel", 0),
@@ -22,7 +24,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setMaxConcavity(_ maxConcavity: Double) {
+
+    private func __setMaxConcavity(
+        _ maxConcavity: Double
+    ) {
         maxConcavity.withGodotUnsafeRawPointer { __ptr_maxConcavity in
         withUnsafeArgumentPackPointer(__ptr_maxConcavity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getMaxConcavity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +65,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setSymmetryPlanesClippingBias(_ symmetryPlanesClippingBias: Double) {
+
+    private func __setSymmetryPlanesClippingBias(
+        _ symmetryPlanesClippingBias: Double
+    ) {
         symmetryPlanesClippingBias.withGodotUnsafeRawPointer { __ptr_symmetryPlanesClippingBias in
         withUnsafeArgumentPackPointer(__ptr_symmetryPlanesClippingBias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +87,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getSymmetryPlanesClippingBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +106,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setRevolutionAxesClippingBias(_ revolutionAxesClippingBias: Double) {
+
+    private func __setRevolutionAxesClippingBias(
+        _ revolutionAxesClippingBias: Double
+    ) {
         revolutionAxesClippingBias.withGodotUnsafeRawPointer { __ptr_revolutionAxesClippingBias in
         withUnsafeArgumentPackPointer(__ptr_revolutionAxesClippingBias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,6 +128,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getRevolutionAxesClippingBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,7 +147,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setMinVolumePerConvexHull(_ minVolumePerConvexHull: Double) {
+
+    private func __setMinVolumePerConvexHull(
+        _ minVolumePerConvexHull: Double
+    ) {
         minVolumePerConvexHull.withGodotUnsafeRawPointer { __ptr_minVolumePerConvexHull in
         withUnsafeArgumentPackPointer(__ptr_minVolumePerConvexHull) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +169,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getMinVolumePerConvexHull() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +188,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setResolution(minVolumePerConvexHull: UInt32) {
+
+    private func __setResolution(
+        minVolumePerConvexHull: UInt32
+    ) {
         minVolumePerConvexHull.withGodotUnsafeRawPointer { __ptr_minVolumePerConvexHull in
         withUnsafeArgumentPackPointer(__ptr_minVolumePerConvexHull) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,6 +210,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getResolution() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -207,7 +229,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setMaxNumVerticesPerConvexHull(_ maxNumVerticesPerConvexHull: UInt32) {
+
+    private func __setMaxNumVerticesPerConvexHull(
+        _ maxNumVerticesPerConvexHull: UInt32
+    ) {
         maxNumVerticesPerConvexHull.withGodotUnsafeRawPointer { __ptr_maxNumVerticesPerConvexHull in
         withUnsafeArgumentPackPointer(__ptr_maxNumVerticesPerConvexHull) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -226,6 +251,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getMaxNumVerticesPerConvexHull() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -244,7 +270,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setPlaneDownsampling(_ planeDownsampling: UInt32) {
+
+    private func __setPlaneDownsampling(
+        _ planeDownsampling: UInt32
+    ) {
         planeDownsampling.withGodotUnsafeRawPointer { __ptr_planeDownsampling in
         withUnsafeArgumentPackPointer(__ptr_planeDownsampling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -263,6 +292,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getPlaneDownsampling() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -281,7 +311,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setConvexHullDownsampling(_ convexHullDownsampling: UInt32) {
+
+    private func __setConvexHullDownsampling(
+        _ convexHullDownsampling: UInt32
+    ) {
         convexHullDownsampling.withGodotUnsafeRawPointer { __ptr_convexHullDownsampling in
         withUnsafeArgumentPackPointer(__ptr_convexHullDownsampling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -300,6 +333,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getConvexHullDownsampling() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -318,7 +352,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setNormalizeMesh(_ normalizeMesh: Bool) {
+
+    private func __setNormalizeMesh(
+        _ normalizeMesh: Bool
+    ) {
         normalizeMesh.withGodotUnsafeRawPointer { __ptr_normalizeMesh in
         withUnsafeArgumentPackPointer(__ptr_normalizeMesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,6 +374,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getNormalizeMesh() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,7 +393,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setMode(_ mode: Godot.MeshConvexDecompositionSettings.Mode) {
+
+    private func __setMode(
+        _ mode: Godot.MeshConvexDecompositionSettings.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,6 +415,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getMode() -> Godot.MeshConvexDecompositionSettings.Mode {
         Godot.MeshConvexDecompositionSettings.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,7 +434,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setConvexHullApproximation(_ convexHullApproximation: Bool) {
+
+    private func __setConvexHullApproximation(
+        _ convexHullApproximation: Bool
+    ) {
         convexHullApproximation.withGodotUnsafeRawPointer { __ptr_convexHullApproximation in
         withUnsafeArgumentPackPointer(__ptr_convexHullApproximation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,6 +456,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getConvexHullApproximation() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,7 +475,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setMaxConvexHulls(_ maxConvexHulls: UInt32) {
+
+    private func __setMaxConvexHulls(
+        _ maxConvexHulls: UInt32
+    ) {
         maxConvexHulls.withGodotUnsafeRawPointer { __ptr_maxConvexHulls in
         withUnsafeArgumentPackPointer(__ptr_maxConvexHulls) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -448,6 +497,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getMaxConvexHulls() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +516,10 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
-    private func __setProjectHullVertices(_ projectHullVertices: Bool) {
+
+    private func __setProjectHullVertices(
+        _ projectHullVertices: Bool
+    ) {
         projectHullVertices.withGodotUnsafeRawPointer { __ptr_projectHullVertices in
         withUnsafeArgumentPackPointer(__ptr_projectHullVertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,6 +538,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         }
     }()
+
     private func __getProjectHullVertices() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -640,6 +694,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -652,5 +707,4 @@ open class MeshConvexDecompositionSettings: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

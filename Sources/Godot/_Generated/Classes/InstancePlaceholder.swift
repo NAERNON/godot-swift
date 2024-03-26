@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class InstancePlaceholder: Node {
     internal static var __method_binding_get_stored_values: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InstancePlaceholder: Node {
         }
         }
     }()
-    public func storedValues(withOrder order: Bool = false) -> Godot.AnyGodotDictionary {
+
+    public func storedValues(
+        withOrder order: Bool = false
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         order.withGodotUnsafeRawPointer { __ptr_order in
         withUnsafeArgumentPackPointer(__ptr_order) { __accessPtr in
@@ -32,7 +36,11 @@ open class InstancePlaceholder: Node {
         }
         }
     }()
-    public func createInstance(replace: Bool = false, customScene: Godot.PackedScene? = nil) -> Godot.Node? {
+
+    public func createInstance(
+        replace: Bool = false,
+        customScene: Godot.PackedScene? = nil
+    ) -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         replace.withGodotUnsafeRawPointer { __ptr_replace in
         customScene.withGodotUnsafeRawPointer { __ptr_customScene in
@@ -54,6 +62,7 @@ open class InstancePlaceholder: Node {
         }
         }
     }()
+
     public func instancePath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +75,7 @@ open class InstancePlaceholder: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -78,5 +88,4 @@ open class InstancePlaceholder: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

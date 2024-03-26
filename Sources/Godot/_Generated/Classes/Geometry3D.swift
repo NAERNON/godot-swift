@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Geometry3D: Object {
     internal static var __method_binding_compute_convex_mesh_points: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func computeConvexMeshPoints(planes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedVector3Array {
+
+    public func computeConvexMeshPoints(
+        planes: Godot.GodotArray<Godot.Plane>
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         planes.withGodotUnsafeRawPointer { __ptr_planes in
         withUnsafeArgumentPackPointer(__ptr_planes) { __accessPtr in
@@ -32,7 +36,10 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildBoxPlanes(extents: Godot.Vector3) -> Godot.GodotArray<Godot.Plane> {
+
+    public func buildBoxPlanes(
+        extents: Godot.Vector3
+    ) -> Godot.GodotArray<Godot.Plane> {
         Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         extents.withGodotUnsafeRawPointer { __ptr_extents in
         withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
@@ -52,7 +59,13 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildCylinderPlanes(radius: Double, height: Double, sides: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
+
+    public func buildCylinderPlanes(
+        radius: Double,
+        height: Double,
+        sides: Int32,
+        axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
+    ) -> Godot.GodotArray<Godot.Plane> {
         Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -75,7 +88,14 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildCapsulePlanes(radius: Double, height: Double, sides: Int32, lats: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
+
+    public func buildCapsulePlanes(
+        radius: Double,
+        height: Double,
+        sides: Int32,
+        lats: Int32,
+        axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
+    ) -> Godot.GodotArray<Godot.Plane> {
         Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -99,7 +119,13 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func closestPointsBetweenSegments(p1: Godot.Vector3, p2: Godot.Vector3, q1: Godot.Vector3, q2: Godot.Vector3) -> Godot.PackedVector3Array {
+
+    public func closestPointsBetweenSegments(
+        p1: Godot.Vector3,
+        p2: Godot.Vector3,
+        q1: Godot.Vector3,
+        q2: Godot.Vector3
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         p1.withGodotUnsafeRawPointer { __ptr_p1 in
         p2.withGodotUnsafeRawPointer { __ptr_p2 in
@@ -122,7 +148,12 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func closestPointToSegment(point: Godot.Vector3, s1: Godot.Vector3, s2: Godot.Vector3) -> Godot.Vector3 {
+
+    public func closestPointToSegment(
+        point: Godot.Vector3,
+        s1: Godot.Vector3,
+        s2: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
@@ -144,7 +175,12 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func closestPointToSegmentUncapped(point: Godot.Vector3, s1: Godot.Vector3, s2: Godot.Vector3) -> Godot.Vector3 {
+
+    public func closestPointToSegmentUncapped(
+        point: Godot.Vector3,
+        s1: Godot.Vector3,
+        s2: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
@@ -166,7 +202,13 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func triangleBarycentricCoords(point: Godot.Vector3, a: Godot.Vector3, b: Godot.Vector3, c: Godot.Vector3) -> Godot.Vector3 {
+
+    public func triangleBarycentricCoords(
+        point: Godot.Vector3,
+        a: Godot.Vector3,
+        b: Godot.Vector3,
+        c: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         a.withGodotUnsafeRawPointer { __ptr_a in
@@ -189,7 +231,14 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func rayIntersectsTriangle(from: Godot.Vector3, dir: Godot.Vector3, a: Godot.Vector3, b: Godot.Vector3, c: Godot.Vector3) -> Godot.Variant {
+
+    public func rayIntersectsTriangle(
+        from: Godot.Vector3,
+        dir: Godot.Vector3,
+        a: Godot.Vector3,
+        b: Godot.Vector3,
+        c: Godot.Vector3
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         dir.withGodotUnsafeRawPointer { __ptr_dir in
@@ -213,7 +262,14 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func segmentIntersectsTriangle(from: Godot.Vector3, to: Godot.Vector3, a: Godot.Vector3, b: Godot.Vector3, c: Godot.Vector3) -> Godot.Variant {
+
+    public func segmentIntersectsTriangle(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        a: Godot.Vector3,
+        b: Godot.Vector3,
+        c: Godot.Vector3
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -237,7 +293,13 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func segmentIntersectsSphere(from: Godot.Vector3, to: Godot.Vector3, spherePosition: Godot.Vector3, sphereRadius: Double) -> Godot.PackedVector3Array {
+
+    public func segmentIntersectsSphere(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        spherePosition: Godot.Vector3,
+        sphereRadius: Double
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -260,7 +322,13 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func segmentIntersectsCylinder(from: Godot.Vector3, to: Godot.Vector3, height: Double, radius: Double) -> Godot.PackedVector3Array {
+
+    public func segmentIntersectsCylinder(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        height: Double,
+        radius: Double
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -283,7 +351,12 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func segmentIntersectsConvex(from: Godot.Vector3, to: Godot.Vector3, planes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedVector3Array {
+
+    public func segmentIntersectsConvex(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        planes: Godot.GodotArray<Godot.Plane>
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -305,7 +378,11 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func clipPolygon(points: Godot.PackedVector3Array, plane: Godot.Plane) -> Godot.PackedVector3Array {
+
+    public func clipPolygon(
+        points: Godot.PackedVector3Array,
+        plane: Godot.Plane
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         plane.withGodotUnsafeRawPointer { __ptr_plane in
@@ -320,6 +397,7 @@ open class Geometry3D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -332,5 +410,4 @@ open class Geometry3D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

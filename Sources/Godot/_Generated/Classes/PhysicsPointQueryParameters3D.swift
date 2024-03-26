@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsPointQueryParameters3D: RefCounted {
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector3) {
+
+    private func __setPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollisionMask(_ collisionMask: UInt32) {
+
+    private func __setCollisionMask(
+        _ collisionMask: UInt32
+    ) {
         collisionMask.withGodotUnsafeRawPointer { __ptr_collisionMask in
         withUnsafeArgumentPackPointer(__ptr_collisionMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setExclude(_ exclude: Godot.GodotArray<Godot.RID>) {
+
+    private func __setExclude(
+        _ exclude: Godot.GodotArray<Godot.RID>
+    ) {
         exclude.withGodotUnsafeRawPointer { __ptr_exclude in
         withUnsafeArgumentPackPointer(__ptr_exclude) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getExclude() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollideWithBodies(enable: Bool) {
+
+    private func __setCollideWithBodies(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isCollideWithBodiesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollideWithAreas(enable: Bool) {
+
+    private func __setCollideWithAreas(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isCollideWithAreasEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class PhysicsPointQueryParameters3D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class PhysicsPointQueryParameters3D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

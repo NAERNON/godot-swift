@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeBillboard: VisualShaderNode {
     public enum BillboardType: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         case fixedY = 2
         case particles = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -28,7 +30,10 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
         }
     }()
-    private func __setBillboardType(_ billboardType: Godot.VisualShaderNodeBillboard.BillboardType) {
+
+    private func __setBillboardType(
+        _ billboardType: Godot.VisualShaderNodeBillboard.BillboardType
+    ) {
         billboardType.withGodotUnsafeRawPointer { __ptr_billboardType in
         withUnsafeArgumentPackPointer(__ptr_billboardType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
         }
     }()
+
     private func __getBillboardType() -> Godot.VisualShaderNodeBillboard.BillboardType {
         Godot.VisualShaderNodeBillboard.BillboardType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,7 +71,10 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
         }
     }()
-    private func __setKeepScaleEnabled(_ enabled: Bool) {
+
+    private func __setKeepScaleEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +93,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
         }
     }()
+
     private func __isKeepScaleEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,6 +128,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -130,5 +141,4 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

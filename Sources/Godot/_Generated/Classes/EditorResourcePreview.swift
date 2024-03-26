@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorResourcePreview: Node {
     public struct PreviewInvalidatedSignalInput: Godot.SignalInput {
         public let path: Godot.GodotString
-        fileprivate init(path: Godot.GodotString) {
+
+        fileprivate init(
+            path: Godot.GodotString
+        ) {
             self.path = path
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.path)]
         }
     }
-    public func previewInvalidated(path: Godot.GodotString) {
+
+    public func previewInvalidated(
+        path: Godot.GodotString
+    ) {
         _ = previewInvalidatedSignal.emit(.init(path: path))
     }
+
     public lazy var previewInvalidatedSignal: Godot.SignalEmitter<PreviewInvalidatedSignalInput> = {
         .init(object: self, signalName: "preview_invalidated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,7 +50,13 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueResourcePreview<Value: VariantStorableIn>(path: Godot.GodotString, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
+
+    public func queueResourcePreview<Value: VariantStorableIn>(
+        path: Godot.GodotString,
+        receiver: Godot.Object?,
+        receiverFunc: Godot.GodotStringName,
+        userdata: Value
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         receiver.withGodotUnsafeRawPointer { __ptr_receiver in
         withUnsafePointer(to: __ptr_receiver) { _ptr___ptr_receiver in
@@ -62,7 +79,13 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueEditedResourcePreview<Value: VariantStorableIn>(resource: Godot.Resource?, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
+
+    public func queueEditedResourcePreview<Value: VariantStorableIn>(
+        resource: Godot.Resource?,
+        receiver: Godot.Object?,
+        receiverFunc: Godot.GodotStringName,
+        userdata: Value
+    ) {
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         receiver.withGodotUnsafeRawPointer { __ptr_receiver in
@@ -86,7 +109,10 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func addPreviewGenerator(_ generator: Godot.EditorResourcePreviewGenerator?) {
+
+    public func addPreviewGenerator(
+        _ generator: Godot.EditorResourcePreviewGenerator?
+    ) {
         generator.withGodotUnsafeRawPointer { __ptr_generator in
         withUnsafePointer(to: __ptr_generator) { _ptr___ptr_generator in
         withUnsafeArgumentPackPointer(_ptr___ptr_generator) { __accessPtr in
@@ -106,7 +132,10 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func removePreviewGenerator(_ generator: Godot.EditorResourcePreviewGenerator?) {
+
+    public func removePreviewGenerator(
+        _ generator: Godot.EditorResourcePreviewGenerator?
+    ) {
         generator.withGodotUnsafeRawPointer { __ptr_generator in
         withUnsafePointer(to: __ptr_generator) { _ptr___ptr_generator in
         withUnsafeArgumentPackPointer(_ptr___ptr_generator) { __accessPtr in
@@ -126,7 +155,10 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func checkForInvalidation(path: Godot.GodotString) {
+
+    public func checkForInvalidation(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,6 +171,7 @@ open class EditorResourcePreview: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -151,5 +184,4 @@ open class EditorResourcePreview: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

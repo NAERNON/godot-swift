@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AtlasTexture: Texture2D {
     internal static var __method_binding_set_atlas: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
-    private func __setAtlas(_ atlas: Godot.Texture2D?) {
+
+    private func __setAtlas(
+        _ atlas: Godot.Texture2D?
+    ) {
         atlas.withGodotUnsafeRawPointer { __ptr_atlas in
         withUnsafePointer(to: __ptr_atlas) { _ptr___ptr_atlas in
         withUnsafeArgumentPackPointer(_ptr___ptr_atlas) { __accessPtr in
@@ -32,6 +36,7 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
+
     private func __getAtlas() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
-    private func __setRegion(_ region: Godot.Rect2) {
+
+    private func __setRegion(
+        _ region: Godot.Rect2
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
+
     private func __getRegion() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
-    private func __setMargin(_ margin: Godot.Rect2) {
+
+    private func __setMargin(
+        _ margin: Godot.Rect2
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
+
     private func __getMargin() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +137,10 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
-    private func __setFilterClip(enable: Bool) {
+
+    private func __setFilterClip(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +159,7 @@ open class AtlasTexture: Texture2D {
         }
         }
     }()
+
     private func __hasFilterClip() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +216,7 @@ open class AtlasTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -211,5 +229,4 @@ open class AtlasTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

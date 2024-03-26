@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TreeItem: Object {
     public enum TreeCellMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class TreeItem: Object {
         case range = 2
         case icon = 3
         case custom = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("String", 0),
@@ -28,7 +30,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCellMode(column: Int32, mode: Godot.TreeItem.TreeCellMode) {
+
+    public func setCellMode(
+        column: Int32,
+        mode: Godot.TreeItem.TreeCellMode
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_mode) { __accessPtr in
@@ -48,7 +54,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func cellMode(column: Int32) -> Godot.TreeItem.TreeCellMode {
+
+    public func cellMode(
+        column: Int32
+    ) -> Godot.TreeItem.TreeCellMode {
         Godot.TreeItem.TreeCellMode.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -68,7 +77,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setEditMultiline(column: Int32, multiline: Bool) {
+
+    public func setEditMultiline(
+        column: Int32,
+        multiline: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         multiline.withGodotUnsafeRawPointer { __ptr_multiline in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_multiline) { __accessPtr in
@@ -88,7 +101,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isEditMultiline(column: Int32) -> Bool {
+
+    public func isEditMultiline(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -108,7 +124,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setChecked(column: Int32, checked: Bool) {
+
+    public func setChecked(
+        column: Int32,
+        checked: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         checked.withGodotUnsafeRawPointer { __ptr_checked in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_checked) { __accessPtr in
@@ -128,7 +148,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setIndeterminate(column: Int32, indeterminate: Bool) {
+
+    public func setIndeterminate(
+        column: Int32,
+        indeterminate: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         indeterminate.withGodotUnsafeRawPointer { __ptr_indeterminate in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_indeterminate) { __accessPtr in
@@ -148,7 +172,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isChecked(column: Int32) -> Bool {
+
+    public func isChecked(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -168,7 +195,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isIndeterminate(column: Int32) -> Bool {
+
+    public func isIndeterminate(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -188,7 +218,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func propagateCheck(column: Int32, emitSignal: Bool = true) {
+
+    public func propagateCheck(
+        column: Int32,
+        emitSignal: Bool = true
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         emitSignal.withGodotUnsafeRawPointer { __ptr_emitSignal in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_emitSignal) { __accessPtr in
@@ -208,7 +242,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setText(column: Int32, text: Godot.GodotString) {
+
+    public func setText(
+        column: Int32,
+        text: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_text) { __accessPtr in
@@ -228,7 +266,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func text(column: Int32) -> Godot.GodotString {
+
+    public func text(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -248,7 +289,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setTextDirection(column: Int32, direction: Godot.Control.TextDirection) {
+
+    public func setTextDirection(
+        column: Int32,
+        direction: Godot.Control.TextDirection
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_direction) { __accessPtr in
@@ -268,7 +313,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func textDirection(column: Int32) -> Godot.Control.TextDirection {
+
+    public func textDirection(
+        column: Int32
+    ) -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -288,7 +336,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setAutowrapMode(column: Int32, autowrapMode: Godot.TextServer.AutowrapMode) {
+
+    public func setAutowrapMode(
+        column: Int32,
+        autowrapMode: Godot.TextServer.AutowrapMode
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         autowrapMode.withGodotUnsafeRawPointer { __ptr_autowrapMode in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_autowrapMode) { __accessPtr in
@@ -308,7 +360,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func autowrapMode(column: Int32) -> Godot.TextServer.AutowrapMode {
+
+    public func autowrapMode(
+        column: Int32
+    ) -> Godot.TextServer.AutowrapMode {
         Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -328,7 +383,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setTextOverrunBehavior(column: Int32, overrunBehavior: Godot.TextServer.OverrunBehavior) {
+
+    public func setTextOverrunBehavior(
+        column: Int32,
+        overrunBehavior: Godot.TextServer.OverrunBehavior
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         overrunBehavior.withGodotUnsafeRawPointer { __ptr_overrunBehavior in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_overrunBehavior) { __accessPtr in
@@ -348,7 +407,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func textOverrunBehavior(column: Int32) -> Godot.TextServer.OverrunBehavior {
+
+    public func textOverrunBehavior(
+        column: Int32
+    ) -> Godot.TextServer.OverrunBehavior {
         Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -368,7 +430,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setStructuredTextBidiOverride(column: Int32, parser: Godot.TextServer.StructuredTextParser) {
+
+    public func setStructuredTextBidiOverride(
+        column: Int32,
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_parser) { __accessPtr in
@@ -388,7 +454,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func structuredTextBidiOverride(column: Int32) -> Godot.TextServer.StructuredTextParser {
+
+    public func structuredTextBidiOverride(
+        column: Int32
+    ) -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -408,7 +477,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setStructuredTextBidiOverrideOptions<Value: VariantStorable>(column: Int32, args: Godot.GodotArray<Value>) {
+
+    public func setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        column: Int32,
+        args: Godot.GodotArray<Value>
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_args) { __accessPtr in
@@ -428,7 +501,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func structuredTextBidiOverrideOptions(column: Int32) -> Godot.AnyGodotArray {
+
+    public func structuredTextBidiOverrideOptions(
+        column: Int32
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -448,7 +524,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setLanguage(column: Int32, language: Godot.GodotString) {
+
+    public func setLanguage(
+        column: Int32,
+        language: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_language) { __accessPtr in
@@ -468,7 +548,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func language(column: Int32) -> Godot.GodotString {
+
+    public func language(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -488,7 +571,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setSuffix(column: Int32, text: Godot.GodotString) {
+
+    public func setSuffix(
+        column: Int32,
+        text: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_text) { __accessPtr in
@@ -508,7 +595,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func suffix(column: Int32) -> Godot.GodotString {
+
+    public func suffix(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -528,7 +618,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setIcon(column: Int32, texture: Godot.Texture2D?) {
+
+    public func setIcon(
+        column: Int32,
+        texture: Godot.Texture2D?
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -549,7 +643,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func icon(column: Int32) -> Godot.Texture2D? {
+
+    public func icon(
+        column: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -569,7 +666,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setIconRegion(column: Int32, region: Godot.Rect2) {
+
+    public func setIconRegion(
+        column: Int32,
+        region: Godot.Rect2
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_region) { __accessPtr in
@@ -589,7 +690,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func iconRegion(column: Int32) -> Godot.Rect2 {
+
+    public func iconRegion(
+        column: Int32
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -609,7 +713,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setIconMaxWidth(column: Int32, width: Int32) {
+
+    public func setIconMaxWidth(
+        column: Int32,
+        width: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_width) { __accessPtr in
@@ -629,7 +737,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func iconMaxWidth(column: Int32) -> Int32 {
+
+    public func iconMaxWidth(
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -649,7 +760,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setIconModulate(column: Int32, modulate: Godot.Color) {
+
+    public func setIconModulate(
+        column: Int32,
+        modulate: Godot.Color
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_modulate) { __accessPtr in
@@ -669,7 +784,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func iconModulate(column: Int32) -> Godot.Color {
+
+    public func iconModulate(
+        column: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -689,7 +807,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setRange(column: Int32, value: Double) {
+
+    public func setRange(
+        column: Int32,
+        value: Double
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_value) { __accessPtr in
@@ -709,7 +831,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func range(column: Int32) -> Double {
+
+    public func range(
+        column: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -729,7 +854,14 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setRangeConfig(column: Int32, min: Double, max: Double, step: Double, expr: Bool = false) {
+
+    public func setRangeConfig(
+        column: Int32,
+        min: Double,
+        max: Double,
+        step: Double,
+        expr: Bool = false
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         min.withGodotUnsafeRawPointer { __ptr_min in
         max.withGodotUnsafeRawPointer { __ptr_max in
@@ -752,7 +884,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func rangeConfig(column: Int32) -> Godot.AnyGodotDictionary {
+
+    public func rangeConfig(
+        column: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -772,7 +907,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setMetadata<Value: VariantStorableIn>(column: Int32, meta: Value) {
+
+    public func setMetadata<Value: VariantStorableIn>(
+        column: Int32,
+        meta: Value
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         Godot.Variant.withStorageUnsafeRawPointer(to: meta) { __ptr_meta in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_meta) { __accessPtr in
@@ -792,7 +931,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func metadata(column: Int32) -> Godot.Variant {
+
+    public func metadata(
+        column: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -812,7 +954,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomDraw(column: Int32, object: Godot.Object?, callback: Godot.GodotStringName) {
+
+    public func setCustomDraw(
+        column: Int32,
+        object: Godot.Object?,
+        callback: Godot.GodotStringName
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
@@ -834,7 +981,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    private func __setCollapsed(enable: Bool) {
+
+    private func __setCollapsed(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -853,6 +1003,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     private func __isCollapsed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,7 +1022,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCollapsedRecursive(enable: Bool) {
+
+    public func setCollapsedRecursive(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -890,7 +1044,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isAnyCollapsed(onlyVisible: Bool = false) -> Bool {
+
+    public func isAnyCollapsed(
+        onlyVisible: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         onlyVisible.withGodotUnsafeRawPointer { __ptr_onlyVisible in
         withUnsafeArgumentPackPointer(__ptr_onlyVisible) { __accessPtr in
@@ -910,7 +1067,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    private func __setVisible(enable: Bool) {
+
+    private func __setVisible(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -929,6 +1089,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -947,6 +1108,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func uncollapseTree() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -964,7 +1126,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    private func __setCustomMinimumHeight(_ height: Int32) {
+
+    private func __setCustomMinimumHeight(
+        _ height: Int32
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -983,6 +1148,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     private func __getCustomMinimumHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1001,7 +1167,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setSelectable(column: Int32, selectable: Bool) {
+
+    public func setSelectable(
+        column: Int32,
+        selectable: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         selectable.withGodotUnsafeRawPointer { __ptr_selectable in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_selectable) { __accessPtr in
@@ -1021,7 +1191,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isSelectable(column: Int32) -> Bool {
+
+    public func isSelectable(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1041,7 +1214,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isSelected(column: Int32) -> Bool {
+
+    public func isSelected(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1061,7 +1237,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func select(column: Int32) {
+
+    public func select(
+        column: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1080,7 +1259,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func deselect(column: Int32) {
+
+    public func deselect(
+        column: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1099,7 +1281,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setEditable(column: Int32, enabled: Bool) {
+
+    public func setEditable(
+        column: Int32,
+        enabled: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_enabled) { __accessPtr in
@@ -1119,7 +1305,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isEditable(column: Int32) -> Bool {
+
+    public func isEditable(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1139,7 +1328,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomColor(column: Int32, color: Godot.Color) {
+
+    public func setCustomColor(
+        column: Int32,
+        color: Godot.Color
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_color) { __accessPtr in
@@ -1159,7 +1352,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func customColor(column: Int32) -> Godot.Color {
+
+    public func customColor(
+        column: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1179,7 +1375,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func clearCustomColor(column: Int32) {
+
+    public func clearCustomColor(
+        column: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1198,7 +1397,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomFont(column: Int32, font: Godot.Font?) {
+
+    public func setCustomFont(
+        column: Int32,
+        font: Godot.Font?
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
@@ -1219,7 +1422,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func customFont(column: Int32) -> Godot.Font? {
+
+    public func customFont(
+        column: Int32
+    ) -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1239,7 +1445,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomFontSize(column: Int32, fontSize: Int32) {
+
+    public func setCustomFontSize(
+        column: Int32,
+        fontSize: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_fontSize) { __accessPtr in
@@ -1259,7 +1469,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func customFontSize(column: Int32) -> Int32 {
+
+    public func customFontSize(
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1279,7 +1492,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomBgColor(column: Int32, color: Godot.Color, justOutline: Bool = false) {
+
+    public func setCustomBgColor(
+        column: Int32,
+        color: Godot.Color,
+        justOutline: Bool = false
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         color.withGodotUnsafeRawPointer { __ptr_color in
         justOutline.withGodotUnsafeRawPointer { __ptr_justOutline in
@@ -1300,7 +1518,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func clearCustomBgColor(column: Int32) {
+
+    public func clearCustomBgColor(
+        column: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1319,7 +1540,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func customBgColor(column: Int32) -> Godot.Color {
+
+    public func customBgColor(
+        column: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1339,7 +1563,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setCustomAsButton(column: Int32, enable: Bool) {
+
+    public func setCustomAsButton(
+        column: Int32,
+        enable: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_enable) { __accessPtr in
@@ -1359,7 +1587,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isCustomSetAsButton(column: Int32) -> Bool {
+
+    public func isCustomSetAsButton(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1379,7 +1610,14 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func addButton(column: Int32, button: Godot.Texture2D?, id: Int32 = -1, disabled: Bool = false, tooltipText: Godot.GodotString = "") {
+
+    public func addButton(
+        column: Int32,
+        button: Godot.Texture2D?,
+        id: Int32 = -1,
+        disabled: Bool = false,
+        tooltipText: Godot.GodotString = ""
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         button.withGodotUnsafeRawPointer { __ptr_button in
         withUnsafePointer(to: __ptr_button) { _ptr___ptr_button in
@@ -1403,7 +1641,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonCount(column: Int32) -> Int32 {
+
+    public func buttonCount(
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1423,7 +1664,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonTooltipText(column: Int32, buttonIndex: Int32) -> Godot.GodotString {
+
+    public func buttonTooltipText(
+        column: Int32,
+        buttonIndex: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
@@ -1444,7 +1689,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonID(column: Int32, buttonIndex: Int32) -> Int32 {
+
+    public func buttonID(
+        column: Int32,
+        buttonIndex: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
@@ -1465,7 +1714,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func buttonByID(column: Int32, id: Int32) -> Int32 {
+
+    public func buttonByID(
+        column: Int32,
+        id: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -1486,7 +1739,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func button(column: Int32, buttonIndex: Int32) -> Godot.Texture2D? {
+
+    public func button(
+        column: Int32,
+        buttonIndex: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
@@ -1507,7 +1764,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setButtonTooltipText(column: Int32, buttonIndex: Int32, tooltip: Godot.GodotString) {
+
+    public func setButtonTooltipText(
+        column: Int32,
+        buttonIndex: Int32,
+        tooltip: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
@@ -1528,7 +1790,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setButton(column: Int32, buttonIndex: Int32, button: Godot.Texture2D?) {
+
+    public func setButton(
+        column: Int32,
+        buttonIndex: Int32,
+        button: Godot.Texture2D?
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         button.withGodotUnsafeRawPointer { __ptr_button in
@@ -1550,7 +1817,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func eraseButton(column: Int32, buttonIndex: Int32) {
+
+    public func eraseButton(
+        column: Int32,
+        buttonIndex: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_buttonIndex) { __accessPtr in
@@ -1570,7 +1841,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setButtonDisabled(column: Int32, buttonIndex: Int32, disabled: Bool) {
+
+    public func setButtonDisabled(
+        column: Int32,
+        buttonIndex: Int32,
+        disabled: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
@@ -1591,7 +1867,12 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setButtonColor(column: Int32, buttonIndex: Int32, color: Godot.Color) {
+
+    public func setButtonColor(
+        column: Int32,
+        buttonIndex: Int32,
+        color: Godot.Color
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1612,7 +1893,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func isButtonDisabled(column: Int32, buttonIndex: Int32) -> Bool {
+
+    public func isButtonDisabled(
+        column: Int32,
+        buttonIndex: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
@@ -1633,7 +1918,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setTooltipText(column: Int32, tooltip: Godot.GodotString) {
+
+    public func setTooltipText(
+        column: Int32,
+        tooltip: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_tooltip) { __accessPtr in
@@ -1653,7 +1942,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func tooltipText(column: Int32) -> Godot.GodotString {
+
+    public func tooltipText(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1673,7 +1965,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setTextAlignment(column: Int32, textAlignment: Godot.HorizontalAlignment) {
+
+    public func setTextAlignment(
+        column: Int32,
+        textAlignment: Godot.HorizontalAlignment
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         textAlignment.withGodotUnsafeRawPointer { __ptr_textAlignment in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_textAlignment) { __accessPtr in
@@ -1693,7 +1989,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func textAlignment(column: Int32) -> Godot.HorizontalAlignment {
+
+    public func textAlignment(
+        column: Int32
+    ) -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1713,7 +2012,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setExpandRight(column: Int32, enable: Bool) {
+
+    public func setExpandRight(
+        column: Int32,
+        enable: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_enable) { __accessPtr in
@@ -1733,7 +2036,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func expandRight(column: Int32) -> Bool {
+
+    public func expandRight(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1753,7 +2059,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    private func __setDisableFolding(disable: Bool) {
+
+    private func __setDisableFolding(
+        disable: Bool
+    ) {
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_disable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1772,6 +2081,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     private func __isFoldingDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1790,7 +2100,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func createChild(index: Int32 = -1) -> Godot.TreeItem? {
+
+    public func createChild(
+        index: Int32 = -1
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1810,7 +2123,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func addChild(_ child: Godot.TreeItem?) {
+
+    public func addChild(
+        _ child: Godot.TreeItem?
+    ) {
         child.withGodotUnsafeRawPointer { __ptr_child in
         withUnsafePointer(to: __ptr_child) { _ptr___ptr_child in
         withUnsafeArgumentPackPointer(_ptr___ptr_child) { __accessPtr in
@@ -1830,7 +2146,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func removeChild(_ child: Godot.TreeItem?) {
+
+    public func removeChild(
+        _ child: Godot.TreeItem?
+    ) {
         child.withGodotUnsafeRawPointer { __ptr_child in
         withUnsafePointer(to: __ptr_child) { _ptr___ptr_child in
         withUnsafeArgumentPackPointer(_ptr___ptr_child) { __accessPtr in
@@ -1850,6 +2169,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func tree() -> Godot.Tree? {
         Godot.Tree?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1868,6 +2188,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func next() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1886,6 +2207,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func prev() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1904,6 +2226,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func parent() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1922,6 +2245,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func firstChild() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1940,7 +2264,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func nextInTree(wrap: Bool = false) -> Godot.TreeItem? {
+
+    public func nextInTree(
+        wrap: Bool = false
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         wrap.withGodotUnsafeRawPointer { __ptr_wrap in
         withUnsafeArgumentPackPointer(__ptr_wrap) { __accessPtr in
@@ -1960,7 +2287,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func prevInTree(wrap: Bool = false) -> Godot.TreeItem? {
+
+    public func prevInTree(
+        wrap: Bool = false
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         wrap.withGodotUnsafeRawPointer { __ptr_wrap in
         withUnsafeArgumentPackPointer(__ptr_wrap) { __accessPtr in
@@ -1980,7 +2310,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func nextVisible(wrap: Bool = false) -> Godot.TreeItem? {
+
+    public func nextVisible(
+        wrap: Bool = false
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         wrap.withGodotUnsafeRawPointer { __ptr_wrap in
         withUnsafeArgumentPackPointer(__ptr_wrap) { __accessPtr in
@@ -2000,7 +2333,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func prevVisible(wrap: Bool = false) -> Godot.TreeItem? {
+
+    public func prevVisible(
+        wrap: Bool = false
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         wrap.withGodotUnsafeRawPointer { __ptr_wrap in
         withUnsafeArgumentPackPointer(__ptr_wrap) { __accessPtr in
@@ -2020,7 +2356,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func child(index: Int32) -> Godot.TreeItem? {
+
+    public func child(
+        index: Int32
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -2040,6 +2379,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func childCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2058,6 +2398,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func children() -> Godot.GodotArray<Godot.TreeItem?> {
         Godot.GodotArray<Godot.TreeItem?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2076,6 +2417,7 @@ open class TreeItem: Object {
         }
         }
     }()
+
     public func index() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2094,7 +2436,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func moveBefore(item: Godot.TreeItem?) {
+
+    public func moveBefore(
+        item: Godot.TreeItem?
+    ) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         withUnsafeArgumentPackPointer(_ptr___ptr_item) { __accessPtr in
@@ -2114,7 +2459,10 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func moveAfter(item: Godot.TreeItem?) {
+
+    public func moveAfter(
+        item: Godot.TreeItem?
+    ) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         withUnsafeArgumentPackPointer(_ptr___ptr_item) { __accessPtr in
@@ -2134,7 +2482,11 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func callRecursive<each VariantRest : VariantStorableIn>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+
+    public func callRecursive<each VariantRest : VariantStorableIn>(
+        method: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2147,7 +2499,10 @@ open class TreeItem: Object {
             nil
         )}}}
     }
-    public func callRecursive(method: Godot.GodotStringName) {
+
+    public func callRecursive(
+        method: Godot.GodotStringName
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2206,6 +2561,7 @@ open class TreeItem: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2218,5 +2574,4 @@ open class TreeItem: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

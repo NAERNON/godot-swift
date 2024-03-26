@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsRayQueryParameters3D: RefCounted {
     internal static var __method_binding_create: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    static public func create(from: Godot.Vector3, to: Godot.Vector3, collisionMask: UInt32 = 4294967295, exclude: Godot.GodotArray<Godot.RID> = []) -> Godot.PhysicsRayQueryParameters3D? {
+
+    static public func create(
+        from: Godot.Vector3,
+        to: Godot.Vector3,
+        collisionMask: UInt32 = 4294967295,
+        exclude: Godot.GodotArray<Godot.RID> = []
+    ) -> Godot.PhysicsRayQueryParameters3D? {
         Godot.PhysicsRayQueryParameters3D?.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -34,7 +41,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __set(from: Godot.Vector3) {
+
+    private func __set(
+        from: Godot.Vector3
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -53,6 +63,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getFrom() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,7 +82,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __set(to: Godot.Vector3) {
+
+    private func __set(
+        to: Godot.Vector3
+    ) {
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,6 +104,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getTo() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,7 +123,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollisionMask(_ collisionMask: UInt32) {
+
+    private func __setCollisionMask(
+        _ collisionMask: UInt32
+    ) {
         collisionMask.withGodotUnsafeRawPointer { __ptr_collisionMask in
         withUnsafeArgumentPackPointer(__ptr_collisionMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,6 +145,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,7 +164,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setExclude(_ exclude: Godot.GodotArray<Godot.RID>) {
+
+    private func __setExclude(
+        _ exclude: Godot.GodotArray<Godot.RID>
+    ) {
         exclude.withGodotUnsafeRawPointer { __ptr_exclude in
         withUnsafeArgumentPackPointer(__ptr_exclude) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,6 +186,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getExclude() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,7 +205,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollideWithBodies(enable: Bool) {
+
+    private func __setCollideWithBodies(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,6 +227,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isCollideWithBodiesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,7 +246,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setCollideWithAreas(enable: Bool) {
+
+    private func __setCollideWithAreas(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -238,6 +268,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isCollideWithAreasEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,7 +287,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setHitFromInside(enable: Bool) {
+
+    private func __setHitFromInside(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,6 +309,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isHitFromInsideEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -293,7 +328,10 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setHitBackFaces(enable: Bool) {
+
+    private func __setHitBackFaces(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -312,6 +350,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __isHitBackFacesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -412,6 +451,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -424,5 +464,4 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EncodedObjectAsID: RefCounted {
     internal static var __method_binding_set_object_id: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class EncodedObjectAsID: RefCounted {
         }
         }
     }()
-    private func __setObjectID(_ id: UInt64) {
+
+    private func __setObjectID(
+        _ id: UInt64
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class EncodedObjectAsID: RefCounted {
         }
         }
     }()
+
     private func __getObjectID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class EncodedObjectAsID: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class EncodedObjectAsID: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

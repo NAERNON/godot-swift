@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Theme: Resource {
     public enum DataType: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class Theme: Resource {
         case icon = 4
         case stylebox = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Color", 0),
@@ -32,7 +34,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setIcon(name: Godot.GodotStringName, themeType: Godot.GodotStringName, texture: Godot.Texture2D?) {
+
+    public func setIcon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        texture: Godot.Texture2D?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -54,7 +61,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func icon(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Godot.Texture2D? {
+
+    public func icon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -75,7 +86,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasIcon(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasIcon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -96,7 +111,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameIcon(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameIcon(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -117,7 +137,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearIcon(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearIcon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -137,7 +161,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func iconList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func iconList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -157,6 +184,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func iconTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,7 +203,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setStylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName, texture: Godot.StyleBox?) {
+
+    public func setStylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        texture: Godot.StyleBox?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -197,7 +230,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func stylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Godot.StyleBox? {
+
+    public func stylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Godot.StyleBox? {
         Godot.StyleBox?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -218,7 +255,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasStylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasStylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -239,7 +280,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameStylebox(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameStylebox(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -260,7 +306,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearStylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearStylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -280,7 +330,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func styleboxList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func styleboxList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -300,6 +353,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func styleboxTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -318,7 +372,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setFont(name: Godot.GodotStringName, themeType: Godot.GodotStringName, font: Godot.Font?) {
+
+    public func setFont(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        font: Godot.Font?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         font.withGodotUnsafeRawPointer { __ptr_font in
@@ -340,7 +399,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func font(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Godot.Font? {
+
+    public func font(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -361,7 +424,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasFont(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasFont(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -382,7 +449,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameFont(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameFont(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -403,7 +475,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearFont(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearFont(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -423,7 +499,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func fontList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func fontList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -443,6 +522,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func fontTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +541,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setFontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName, fontSize: Int32) {
+
+    public func setFontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        fontSize: Int32
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
@@ -482,7 +567,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func fontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Int32 {
+
+    public func fontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -503,7 +592,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasFontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasFontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -524,7 +617,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameFontSize(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameFontSize(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -545,7 +643,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearFontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearFontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -565,7 +667,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func fontSizeList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func fontSizeList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -585,6 +690,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func fontSizeTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -603,7 +709,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setColor(name: Godot.GodotStringName, themeType: Godot.GodotStringName, color: Godot.Color) {
+
+    public func setColor(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        color: Godot.Color
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -624,7 +735,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func color(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Godot.Color {
+
+    public func color(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -645,7 +760,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasColor(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasColor(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -666,7 +785,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameColor(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameColor(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -687,7 +811,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearColor(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearColor(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -707,7 +835,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func colorList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func colorList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -727,6 +858,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func colorTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -745,7 +877,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setConstant(name: Godot.GodotStringName, themeType: Godot.GodotStringName, constant: Int32) {
+
+    public func setConstant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        constant: Int32
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         constant.withGodotUnsafeRawPointer { __ptr_constant in
@@ -766,7 +903,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func constant(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Int32 {
+
+    public func constant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -787,7 +928,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasConstant(name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasConstant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -808,7 +953,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameConstant(oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameConstant(
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -829,7 +979,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearConstant(name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearConstant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -849,7 +1003,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func constantList(themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func constantList(
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -869,6 +1026,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func constantTypeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -887,7 +1045,10 @@ open class Theme: Resource {
         }
         }
     }()
-    private func __setDefaultBaseScale(_ baseScale: Double) {
+
+    private func __setDefaultBaseScale(
+        _ baseScale: Double
+    ) {
         baseScale.withGodotUnsafeRawPointer { __ptr_baseScale in
         withUnsafeArgumentPackPointer(__ptr_baseScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -906,6 +1067,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     private func __getDefaultBaseScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -924,6 +1086,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func hasDefaultBaseScale() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -942,7 +1105,10 @@ open class Theme: Resource {
         }
         }
     }()
-    private func __setDefaultFont(_ font: Godot.Font?) {
+
+    private func __setDefaultFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -962,6 +1128,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     private func __getDefaultFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -980,6 +1147,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func hasDefaultFont() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -998,7 +1166,10 @@ open class Theme: Resource {
         }
         }
     }()
-    private func __setDefaultFontSize(_ fontSize: Int32) {
+
+    private func __setDefaultFontSize(
+        _ fontSize: Int32
+    ) {
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1017,6 +1188,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     private func __getDefaultFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1035,6 +1207,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func hasDefaultFontSize() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1053,7 +1226,13 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setThemeItem<Value: VariantStorableIn>(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName, value: Value) {
+
+    public func setThemeItem<Value: VariantStorableIn>(
+        dataType: Godot.Theme.DataType,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName,
+        value: Value
+    ) {
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1075,7 +1254,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func themeItem(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Godot.Variant {
+
+    public func themeItem(
+        dataType: Godot.Theme.DataType,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -1097,7 +1281,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func hasThemeItem(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeItem(
+        dataType: Godot.Theme.DataType,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -1119,7 +1308,13 @@ open class Theme: Resource {
         }
         }
     }()
-    public func renameThemeItem(dataType: Godot.Theme.DataType, oldName: Godot.GodotStringName, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func renameThemeItem(
+        dataType: Godot.Theme.DataType,
+        oldName: Godot.GodotStringName,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -1141,7 +1336,12 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearThemeItem(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName) {
+
+    public func clearThemeItem(
+        dataType: Godot.Theme.DataType,
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName
+    ) {
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1162,7 +1362,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func themeItemList(dataType: Godot.Theme.DataType, themeType: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func themeItemList(
+        dataType: Godot.Theme.DataType,
+        themeType: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1183,7 +1387,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func themeItemTypeList(dataType: Godot.Theme.DataType) -> Godot.PackedStringArray {
+
+    public func themeItemTypeList(
+        dataType: Godot.Theme.DataType
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         withUnsafeArgumentPackPointer(__ptr_dataType) { __accessPtr in
@@ -1203,7 +1410,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setTypeVariation(themeType: Godot.GodotStringName, baseType: Godot.GodotStringName) {
+
+    public func setTypeVariation(
+        themeType: Godot.GodotStringName,
+        baseType: Godot.GodotStringName
+    ) {
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
         withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
@@ -1223,7 +1434,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func isTypeVariation(themeType: Godot.GodotStringName, baseType: Godot.GodotStringName) -> Bool {
+
+    public func isTypeVariation(
+        themeType: Godot.GodotStringName,
+        baseType: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
@@ -1244,7 +1459,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func clearTypeVariation(themeType: Godot.GodotStringName) {
+
+    public func clearTypeVariation(
+        themeType: Godot.GodotStringName
+    ) {
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1263,7 +1481,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func typeVariationBase(themeType: Godot.GodotStringName) -> Godot.GodotStringName {
+
+    public func typeVariationBase(
+        themeType: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -1283,7 +1504,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func typeVariationList(baseType: Godot.GodotStringName) -> Godot.PackedStringArray {
+
+    public func typeVariationList(
+        baseType: Godot.GodotStringName
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
         withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
@@ -1303,7 +1527,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func addType(themeType: Godot.GodotStringName) {
+
+    public func addType(
+        themeType: Godot.GodotStringName
+    ) {
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1322,7 +1549,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func removeType(themeType: Godot.GodotStringName) {
+
+    public func removeType(
+        themeType: Godot.GodotStringName
+    ) {
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1341,6 +1571,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func typeList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1359,7 +1590,10 @@ open class Theme: Resource {
         }
         }
     }()
-    public func mergeWith(other: Godot.Theme?) {
+
+    public func mergeWith(
+        other: Godot.Theme?
+    ) {
         other.withGodotUnsafeRawPointer { __ptr_other in
         withUnsafePointer(to: __ptr_other) { _ptr___ptr_other in
         withUnsafeArgumentPackPointer(_ptr___ptr_other) { __accessPtr in
@@ -1379,6 +1613,7 @@ open class Theme: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1423,6 +1658,7 @@ open class Theme: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1435,5 +1671,4 @@ open class Theme: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

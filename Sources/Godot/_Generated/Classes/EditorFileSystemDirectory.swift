@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorFileSystemDirectory: Object {
     internal static var __method_binding_get_subdir_count: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
+
     public func subdirCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func subdir(idx: Int32) -> Godot.EditorFileSystemDirectory? {
+
+    public func subdir(
+        idx: Int32
+    ) -> Godot.EditorFileSystemDirectory? {
         Godot.EditorFileSystemDirectory?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -50,6 +55,7 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
+
     public func fileCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +74,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func file(idx: Int32) -> Godot.GodotString {
+
+    public func file(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -88,7 +97,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func filePath(idx: Int32) -> Godot.GodotString {
+
+    public func filePath(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -108,7 +120,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func fileType(idx: Int32) -> Godot.GodotStringName {
+
+    public func fileType(
+        idx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -128,7 +143,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func fileScriptClassName(idx: Int32) -> Godot.GodotString {
+
+    public func fileScriptClassName(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -148,7 +166,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func fileScriptClassExtends(idx: Int32) -> Godot.GodotString {
+
+    public func fileScriptClassExtends(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -168,7 +189,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func fileImportIsValid(idx: Int32) -> Bool {
+
+    public func fileImportIsValid(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -188,6 +212,7 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
+
     public func name() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +231,7 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
+
     public func path() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,6 +250,7 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
+
     public func parent() -> Godot.EditorFileSystemDirectory? {
         Godot.EditorFileSystemDirectory?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -242,7 +269,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func findFileIndex(name: Godot.GodotString) -> Int32 {
+
+    public func findFileIndex(
+        name: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -262,7 +292,10 @@ open class EditorFileSystemDirectory: Object {
         }
         }
     }()
-    public func findDirIndex(name: Godot.GodotString) -> Int32 {
+
+    public func findDirIndex(
+        name: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -276,6 +309,7 @@ open class EditorFileSystemDirectory: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -288,5 +322,4 @@ open class EditorFileSystemDirectory: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

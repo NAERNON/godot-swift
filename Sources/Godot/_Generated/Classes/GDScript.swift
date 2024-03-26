@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GDScript: Script {
     internal static var __method_binding_new: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GDScript: Script {
         }
         }
     }()
-    public func new<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) -> Godot.Variant {
+
+    public func new<each VariantRest : VariantStorableIn>(
+        _ rest: repeat each VariantRest
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -25,6 +29,7 @@ open class GDScript: Script {
             nil
         )}}}
     }
+
     public func new() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -39,6 +44,7 @@ open class GDScript: Script {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -51,5 +57,4 @@ open class GDScript: Script {
         }
         return _virtualFunctions!
     }
-
-    }
+}

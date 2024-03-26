@@ -3,9 +3,12 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SyntaxHighlighter: Resource {
-    open func _getLineSyntaxHighlighting(line: Int32) -> Godot.AnyGodotDictionary {
+    open func _getLineSyntaxHighlighting(
+        line: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
@@ -22,7 +25,10 @@ open class SyntaxHighlighter: Resource {
         }
         }
     }()
-    public func lineSyntaxHighlighting(line: Int32) -> Godot.AnyGodotDictionary {
+
+    public func lineSyntaxHighlighting(
+        line: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -42,6 +48,7 @@ open class SyntaxHighlighter: Resource {
         }
         }
     }()
+
     public func updateCache() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -59,6 +66,7 @@ open class SyntaxHighlighter: Resource {
         }
         }
     }()
+
     public func clearHighlightingCache() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -76,6 +84,7 @@ open class SyntaxHighlighter: Resource {
         }
         }
     }()
+
     public func textEdit() -> Godot.TextEdit? {
         Godot.TextEdit?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +97,7 @@ open class SyntaxHighlighter: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -123,5 +133,4 @@ open class SyntaxHighlighter: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

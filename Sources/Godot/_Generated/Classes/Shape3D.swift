@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Shape3D: Resource {
     internal static var __method_binding_set_custom_solver_bias: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Shape3D: Resource {
         }
         }
     }()
-    private func __setCustomSolverBias(_ bias: Double) {
+
+    private func __setCustomSolverBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Shape3D: Resource {
         }
         }
     }()
+
     private func __getCustomSolverBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Shape3D: Resource {
         }
         }
     }()
-    private func __setMargin(_ margin: Double) {
+
+    private func __setMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Shape3D: Resource {
         }
         }
     }()
+
     private func __getMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class Shape3D: Resource {
         }
         }
     }()
+
     public func debugMesh() -> Godot.ArrayMesh? {
         Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -120,6 +130,7 @@ open class Shape3D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -132,5 +143,4 @@ open class Shape3D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

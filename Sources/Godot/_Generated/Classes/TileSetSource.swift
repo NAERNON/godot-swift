@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TileSetSource: Resource {
     internal static var __method_binding_get_tiles_count: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class TileSetSource: Resource {
         }
         }
     }()
+
     public func tilesCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func tileID(index: Int32) -> Godot.Vector2I {
+
+    public func tileID(
+        index: Int32
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -50,7 +55,10 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func hasTile(atlasCoords: Godot.Vector2I) -> Bool {
+
+    public func hasTile(
+        atlasCoords: Godot.Vector2I
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -70,7 +78,10 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func alternativeTilesCount(atlasCoords: Godot.Vector2I) -> Int32 {
+
+    public func alternativeTilesCount(
+        atlasCoords: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         withUnsafeArgumentPackPointer(__ptr_atlasCoords) { __accessPtr in
@@ -90,7 +101,11 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func alternativeTileID(atlasCoords: Godot.Vector2I, index: Int32) -> Int32 {
+
+    public func alternativeTileID(
+        atlasCoords: Godot.Vector2I,
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -111,7 +126,11 @@ open class TileSetSource: Resource {
         }
         }
     }()
-    public func hasAlternativeTile(atlasCoords: Godot.Vector2I, alternativeTile: Int32) -> Bool {
+
+    public func hasAlternativeTile(
+        atlasCoords: Godot.Vector2I,
+        alternativeTile: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
         alternativeTile.withGodotUnsafeRawPointer { __ptr_alternativeTile in
@@ -126,6 +145,7 @@ open class TileSetSource: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -138,5 +158,4 @@ open class TileSetSource: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

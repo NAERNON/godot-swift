@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class FogMaterial: Material {
     internal static var __method_binding_set_density: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setDensity(_ density: Double) {
+
+    private func __setDensity(
+        _ density: Double
+    ) {
         density.withGodotUnsafeRawPointer { __ptr_density in
         withUnsafeArgumentPackPointer(__ptr_density) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getDensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setAlbedo(_ albedo: Godot.Color) {
+
+    private func __setAlbedo(
+        _ albedo: Godot.Color
+    ) {
         albedo.withGodotUnsafeRawPointer { __ptr_albedo in
         withUnsafeArgumentPackPointer(__ptr_albedo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getAlbedo() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setEmission(_ emission: Godot.Color) {
+
+    private func __setEmission(
+        _ emission: Godot.Color
+    ) {
         emission.withGodotUnsafeRawPointer { __ptr_emission in
         withUnsafeArgumentPackPointer(__ptr_emission) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getEmission() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setHeightFalloff(_ heightFalloff: Double) {
+
+    private func __setHeightFalloff(
+        _ heightFalloff: Double
+    ) {
         heightFalloff.withGodotUnsafeRawPointer { __ptr_heightFalloff in
         withUnsafeArgumentPackPointer(__ptr_heightFalloff) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getHeightFalloff() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setEdgeFade(_ edgeFade: Double) {
+
+    private func __setEdgeFade(
+        _ edgeFade: Double
+    ) {
         edgeFade.withGodotUnsafeRawPointer { __ptr_edgeFade in
         withUnsafeArgumentPackPointer(__ptr_edgeFade) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getEdgeFade() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class FogMaterial: Material {
         }
         }
     }()
-    private func __setDensityTexture(_ densityTexture: Godot.Texture3D?) {
+
+    private func __setDensityTexture(
+        _ densityTexture: Godot.Texture3D?
+    ) {
         densityTexture.withGodotUnsafeRawPointer { __ptr_densityTexture in
         withUnsafePointer(to: __ptr_densityTexture) { _ptr___ptr_densityTexture in
         withUnsafeArgumentPackPointer(_ptr___ptr_densityTexture) { __accessPtr in
@@ -217,6 +241,7 @@ open class FogMaterial: Material {
         }
         }
     }()
+
     private func __getDensityTexture() -> Godot.Texture3D? {
         Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -295,6 +320,7 @@ open class FogMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -307,5 +333,4 @@ open class FogMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

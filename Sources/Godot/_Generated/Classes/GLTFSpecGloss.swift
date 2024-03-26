@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFSpecGloss: Resource {
     internal static var __method_binding_get_diffuse_img: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
+
     private func __getDiffuseImg() -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
-    private func __setDiffuseImg(_ diffuseImg: Godot.Image?) {
+
+    private func __setDiffuseImg(
+        _ diffuseImg: Godot.Image?
+    ) {
         diffuseImg.withGodotUnsafeRawPointer { __ptr_diffuseImg in
         withUnsafePointer(to: __ptr_diffuseImg) { _ptr___ptr_diffuseImg in
         withUnsafeArgumentPackPointer(_ptr___ptr_diffuseImg) { __accessPtr in
@@ -50,6 +55,7 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
+
     private func __getDiffuseFactor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +74,10 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
-    private func __setDiffuseFactor(_ diffuseFactor: Godot.Color) {
+
+    private func __setDiffuseFactor(
+        _ diffuseFactor: Godot.Color
+    ) {
         diffuseFactor.withGodotUnsafeRawPointer { __ptr_diffuseFactor in
         withUnsafeArgumentPackPointer(__ptr_diffuseFactor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
+
     private func __getGlossFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
-    private func __setGlossFactor(_ glossFactor: Double) {
+
+    private func __setGlossFactor(
+        _ glossFactor: Double
+    ) {
         glossFactor.withGodotUnsafeRawPointer { __ptr_glossFactor in
         withUnsafeArgumentPackPointer(__ptr_glossFactor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
+
     private func __getSpecularFactor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +156,10 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
-    private func __setSpecularFactor(_ specularFactor: Godot.Color) {
+
+    private func __setSpecularFactor(
+        _ specularFactor: Godot.Color
+    ) {
         specularFactor.withGodotUnsafeRawPointer { __ptr_specularFactor in
         withUnsafeArgumentPackPointer(__ptr_specularFactor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +178,7 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
+
     private func __getSpecGlossImg() -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +197,10 @@ open class GLTFSpecGloss: Resource {
         }
         }
     }()
-    private func __setSpecGlossImg(_ specGlossImg: Godot.Image?) {
+
+    private func __setSpecGlossImg(
+        _ specGlossImg: Godot.Image?
+    ) {
         specGlossImg.withGodotUnsafeRawPointer { __ptr_specGlossImg in
         withUnsafePointer(to: __ptr_specGlossImg) { _ptr___ptr_specGlossImg in
         withUnsafeArgumentPackPointer(_ptr___ptr_specGlossImg) { __accessPtr in
@@ -248,6 +269,7 @@ open class GLTFSpecGloss: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -260,5 +282,4 @@ open class GLTFSpecGloss: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

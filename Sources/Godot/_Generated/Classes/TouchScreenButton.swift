@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TouchScreenButton: Node2D {
     public enum VisibilityMode: UInt32, GodotEnum {
         case always = 0
         case touchscreenOnly = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Always", 0),
@@ -18,6 +20,7 @@ open class TouchScreenButton: Node2D {
     public func pressed() {
         _ = pressedSignal.emit()
     }
+
     public lazy var pressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -36,6 +39,7 @@ open class TouchScreenButton: Node2D {
     public func released() {
         _ = releasedSignal.emit()
     }
+
     public lazy var releasedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "released") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -58,7 +62,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setTextureNormal(texture: Godot.Texture2D?) {
+
+    private func __setTextureNormal(
+        texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -78,6 +85,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getTextureNormal() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +104,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setTexturePressed(texture: Godot.Texture2D?) {
+
+    private func __setTexturePressed(
+        texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -116,6 +127,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getTexturePressed() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,7 +146,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setBitmask(_ bitmask: Godot.BitMap?) {
+
+    private func __setBitmask(
+        _ bitmask: Godot.BitMap?
+    ) {
         bitmask.withGodotUnsafeRawPointer { __ptr_bitmask in
         withUnsafePointer(to: __ptr_bitmask) { _ptr___ptr_bitmask in
         withUnsafeArgumentPackPointer(_ptr___ptr_bitmask) { __accessPtr in
@@ -154,6 +169,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getBitmask() -> Godot.BitMap? {
         Godot.BitMap?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,7 +188,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.Shape2D?) {
+
+    private func __setShape(
+        _ shape: Godot.Shape2D?
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
         withUnsafeArgumentPackPointer(_ptr___ptr_shape) { __accessPtr in
@@ -192,6 +211,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getShape() -> Godot.Shape2D? {
         Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,7 +230,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setShapeCentered(bool: Bool) {
+
+    private func __setShapeCentered(
+        bool: Bool
+    ) {
         bool.withGodotUnsafeRawPointer { __ptr_bool in
         withUnsafeArgumentPackPointer(__ptr_bool) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,6 +252,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __isShapeCentered() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,7 +271,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setShapeVisible(bool: Bool) {
+
+    private func __setShapeVisible(
+        bool: Bool
+    ) {
         bool.withGodotUnsafeRawPointer { __ptr_bool in
         withUnsafeArgumentPackPointer(__ptr_bool) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -266,6 +293,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __isShapeVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,7 +312,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setAction(_ action: Godot.GodotString) {
+
+    private func __setAction(
+        _ action: Godot.GodotString
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,6 +334,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getAction() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,7 +353,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setVisibilityMode(_ mode: Godot.TouchScreenButton.VisibilityMode) {
+
+    private func __setVisibilityMode(
+        _ mode: Godot.TouchScreenButton.VisibilityMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -340,6 +375,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __getVisibilityMode() -> Godot.TouchScreenButton.VisibilityMode {
         Godot.TouchScreenButton.VisibilityMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -358,7 +394,10 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
-    private func __setPassbyPress(enabled: Bool) {
+
+    private func __setPassbyPress(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,6 +416,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     private func __isPassbyPressEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -395,6 +435,7 @@ open class TouchScreenButton: Node2D {
         }
         }
     }()
+
     public func isPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -506,6 +547,7 @@ open class TouchScreenButton: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -518,5 +560,4 @@ open class TouchScreenButton: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

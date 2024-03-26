@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OpenXRActionSet: Resource {
     internal static var __method_binding_set_localized_name: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    private func __setLocalizedName(_ localizedName: Godot.GodotString) {
+
+    private func __setLocalizedName(
+        _ localizedName: Godot.GodotString
+    ) {
         localizedName.withGodotUnsafeRawPointer { __ptr_localizedName in
         withUnsafeArgumentPackPointer(__ptr_localizedName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
+
     private func __getLocalizedName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    private func __setPriority(_ priority: Int32) {
+
+    private func __setPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
+
     private func __getPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
+
     public func actionCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    private func __setActions<Value: VariantStorable>(_ actions: Godot.GodotArray<Value>) {
+
+    private func __setActions<Value: VariantStorable>(
+        _ actions: Godot.GodotArray<Value>
+    ) {
         actions.withGodotUnsafeRawPointer { __ptr_actions in
         withUnsafeArgumentPackPointer(__ptr_actions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
+
     private func __getActions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    public func addAction(_ action: Godot.OpenXRAction?) {
+
+    public func addAction(
+        _ action: Godot.OpenXRAction?
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafePointer(to: __ptr_action) { _ptr___ptr_action in
         withUnsafeArgumentPackPointer(_ptr___ptr_action) { __accessPtr in
@@ -161,7 +178,10 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    public func removeAction(_ action: Godot.OpenXRAction?) {
+
+    public func removeAction(
+        _ action: Godot.OpenXRAction?
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafePointer(to: __ptr_action) { _ptr___ptr_action in
         withUnsafeArgumentPackPointer(_ptr___ptr_action) { __accessPtr in
@@ -208,6 +228,7 @@ open class OpenXRActionSet: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -220,5 +241,4 @@ open class OpenXRActionSet: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

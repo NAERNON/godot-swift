@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class HTTPRequest: Node {
     public enum Result: UInt32, GodotEnum {
@@ -20,6 +21,7 @@ open class HTTPRequest: Node {
         case downloadFileWriteError = 11
         case redirectLimitReached = 12
         case timeout = 13
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Success", 0),
@@ -41,25 +43,44 @@ open class HTTPRequest: Node {
 
     public struct RequestCompletedSignalInput: Godot.SignalInput {
         public let result: Int
+
         public let responseCode: Int
+
         public let headers: Godot.PackedStringArray
+
         public let body: Godot.PackedByteArray
-        fileprivate init(result: Int, responseCode: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
+
+        fileprivate init(
+            result: Int,
+            responseCode: Int,
+            headers: Godot.PackedStringArray,
+            body: Godot.PackedByteArray
+        ) {
             self.result = result
             self.responseCode = responseCode
             self.headers = headers
             self.body = body
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.result), Variant(input.responseCode), Variant(input.headers), Variant(input.body)]
         }
     }
-    public func requestCompleted(result: Int, responseCode: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
+
+    public func requestCompleted(
+        result: Int,
+        responseCode: Int,
+        headers: Godot.PackedStringArray,
+        body: Godot.PackedByteArray
+    ) {
         _ = requestCompletedSignal.emit(.init(result: result,
                 responseCode: responseCode,
                 headers: headers,
                 body: body))
     }
+
     public lazy var requestCompletedSignal: Godot.SignalEmitter<RequestCompletedSignalInput> = {
         .init(object: self, signalName: "request_completed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -85,7 +106,13 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    public func request(url: Godot.GodotString, customHeaders: Godot.PackedStringArray = PackedStringArray(), method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!, requestData: Godot.GodotString = "") -> Godot.ErrorType {
+
+    public func request(
+        url: Godot.GodotString,
+        customHeaders: Godot.PackedStringArray = PackedStringArray(),
+        method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
+        requestData: Godot.GodotString = ""
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         customHeaders.withGodotUnsafeRawPointer { __ptr_customHeaders in
@@ -108,7 +135,13 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    public func requestRaw(url: Godot.GodotString, customHeaders: Godot.PackedStringArray = PackedStringArray(), method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!, requestDataRaw: Godot.PackedByteArray = PackedByteArray()) -> Godot.ErrorType {
+
+    public func requestRaw(
+        url: Godot.GodotString,
+        customHeaders: Godot.PackedStringArray = PackedStringArray(),
+        method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
+        requestDataRaw: Godot.PackedByteArray = PackedByteArray()
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         customHeaders.withGodotUnsafeRawPointer { __ptr_customHeaders in
@@ -131,6 +164,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     public func cancelRequest() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -148,7 +182,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    public func setTlsOptions(clientOptions: Godot.TLSOptions?) {
+
+    public func setTlsOptions(
+        clientOptions: Godot.TLSOptions?
+    ) {
         clientOptions.withGodotUnsafeRawPointer { __ptr_clientOptions in
         withUnsafePointer(to: __ptr_clientOptions) { _ptr___ptr_clientOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_clientOptions) { __accessPtr in
@@ -168,6 +205,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     public func httpClientStatus() -> Godot.HTTPClient.Status {
         Godot.HTTPClient.Status.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +224,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setUseThreads(enable: Bool) {
+
+    private func __setUseThreads(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -205,6 +246,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __isUsingThreads() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -223,7 +265,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setAcceptGzip(enable: Bool) {
+
+    private func __setAcceptGzip(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -242,6 +287,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __isAcceptingGzip() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -260,7 +306,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setBodySizeLimit(bytes: Int32) {
+
+    private func __setBodySizeLimit(
+        bytes: Int32
+    ) {
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,6 +328,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __getBodySizeLimit() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -297,7 +347,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setMaxRedirects(amount: Int32) {
+
+    private func __setMaxRedirects(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -316,6 +369,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __getMaxRedirects() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -334,7 +388,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setDownloadFile(path: Godot.GodotString) {
+
+    private func __setDownloadFile(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -353,6 +410,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __getDownloadFile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -371,6 +429,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     public func downloadedBytes() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -389,6 +448,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     public func bodySize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -407,7 +467,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setTimeout(_ timeout: Double) {
+
+    private func __setTimeout(
+        _ timeout: Double
+    ) {
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         withUnsafeArgumentPackPointer(__ptr_timeout) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -426,6 +489,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __getTimeout() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -444,7 +508,10 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    private func __setDownloadChunkSize(_ chunkSize: Int32) {
+
+    private func __setDownloadChunkSize(
+        _ chunkSize: Int32
+    ) {
         chunkSize.withGodotUnsafeRawPointer { __ptr_chunkSize in
         withUnsafeArgumentPackPointer(__ptr_chunkSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -463,6 +530,7 @@ open class HTTPRequest: Node {
         }
         }
     }()
+
     private func __getDownloadChunkSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -481,7 +549,11 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    public func setHttpProxy(host: Godot.GodotString, port: Int32) {
+
+    public func setHttpProxy(
+        host: Godot.GodotString,
+        port: Int32
+    ) {
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_port) { __accessPtr in
@@ -501,7 +573,11 @@ open class HTTPRequest: Node {
         }
         }
     }()
-    public func setHttpsProxy(host: Godot.GodotString, port: Int32) {
+
+    public func setHttpsProxy(
+        host: Godot.GodotString,
+        port: Int32
+    ) {
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_port) { __accessPtr in
@@ -592,6 +668,7 @@ open class HTTPRequest: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -604,5 +681,4 @@ open class HTTPRequest: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

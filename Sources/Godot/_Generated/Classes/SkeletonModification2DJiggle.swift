@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DJiggle: SkeletonModification2D {
     internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setTargetNode(targetNodepath: Godot.NodePath) {
+
+    private func __setTargetNode(
+        targetNodepath: Godot.NodePath
+    ) {
         targetNodepath.withGodotUnsafeRawPointer { __ptr_targetNodepath in
         withUnsafeArgumentPackPointer(__ptr_targetNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setJiggleDataChainLength(_ length: Int32) {
+
+    private func __setJiggleDataChainLength(
+        _ length: Int32
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getJiggleDataChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setStiffness(_ stiffness: Double) {
+
+    private func __setStiffness(
+        _ stiffness: Double
+    ) {
         stiffness.withGodotUnsafeRawPointer { __ptr_stiffness in
         withUnsafeArgumentPackPointer(__ptr_stiffness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getStiffness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setMass(_ mass: Double) {
+
+    private func __setMass(
+        _ mass: Double
+    ) {
         mass.withGodotUnsafeRawPointer { __ptr_mass in
         withUnsafeArgumentPackPointer(__ptr_mass) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getMass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setDamping(_ damping: Double) {
+
+    private func __setDamping(
+        _ damping: Double
+    ) {
         damping.withGodotUnsafeRawPointer { __ptr_damping in
         withUnsafeArgumentPackPointer(__ptr_damping) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getDamping() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setUseGravity(_ useGravity: Bool) {
+
+    private func __setUseGravity(
+        _ useGravity: Bool
+    ) {
         useGravity.withGodotUnsafeRawPointer { __ptr_useGravity in
         withUnsafeArgumentPackPointer(__ptr_useGravity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getUseGravity() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    private func __setGravity(_ gravity: Godot.Vector2) {
+
+    private func __setGravity(
+        _ gravity: Godot.Vector2
+    ) {
         gravity.withGodotUnsafeRawPointer { __ptr_gravity in
         withUnsafeArgumentPackPointer(__ptr_gravity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     private func __getGravity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setUseColliders(_ useColliders: Bool) {
+
+    public func setUseColliders(
+        _ useColliders: Bool
+    ) {
         useColliders.withGodotUnsafeRawPointer { __ptr_useColliders in
         withUnsafeArgumentPackPointer(__ptr_useColliders) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     public func useColliders() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setCollisionMask(_ collisionMask: Int32) {
+
+    public func setCollisionMask(
+        _ collisionMask: Int32
+    ) {
         collisionMask.withGodotUnsafeRawPointer { __ptr_collisionMask in
         withUnsafeArgumentPackPointer(__ptr_collisionMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
+
     public func collisionMask() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointBone2dNode(jointIdx: Int32, bone2dNode: Godot.NodePath) {
+
+    public func setJiggleJointBone2dNode(
+        jointIdx: Int32,
+        bone2dNode: Godot.NodePath
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         bone2dNode.withGodotUnsafeRawPointer { __ptr_bone2dNode in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_bone2dNode) { __accessPtr in
@@ -365,7 +406,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointBone2dNode(jointIdx: Int32) -> Godot.NodePath {
+
+    public func jiggleJointBone2dNode(
+        jointIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -385,7 +429,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointBoneIndex(jointIdx: Int32, boneIdx: Int32) {
+
+    public func setJiggleJointBoneIndex(
+        jointIdx: Int32,
+        boneIdx: Int32
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_boneIdx) { __accessPtr in
@@ -405,7 +453,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointBoneIndex(jointIdx: Int32) -> Int32 {
+
+    public func jiggleJointBoneIndex(
+        jointIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -425,7 +476,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointOverride(jointIdx: Int32, override: Bool) {
+
+    public func setJiggleJointOverride(
+        jointIdx: Int32,
+        override: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         override.withGodotUnsafeRawPointer { __ptr_override in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_override) { __accessPtr in
@@ -445,7 +500,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointOverride(jointIdx: Int32) -> Bool {
+
+    public func jiggleJointOverride(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -465,7 +523,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointStiffness(jointIdx: Int32, stiffness: Double) {
+
+    public func setJiggleJointStiffness(
+        jointIdx: Int32,
+        stiffness: Double
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         stiffness.withGodotUnsafeRawPointer { __ptr_stiffness in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_stiffness) { __accessPtr in
@@ -485,7 +547,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointStiffness(jointIdx: Int32) -> Double {
+
+    public func jiggleJointStiffness(
+        jointIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -505,7 +570,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointMass(jointIdx: Int32, mass: Double) {
+
+    public func setJiggleJointMass(
+        jointIdx: Int32,
+        mass: Double
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         mass.withGodotUnsafeRawPointer { __ptr_mass in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_mass) { __accessPtr in
@@ -525,7 +594,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointMass(jointIdx: Int32) -> Double {
+
+    public func jiggleJointMass(
+        jointIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -545,7 +617,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointDamping(jointIdx: Int32, damping: Double) {
+
+    public func setJiggleJointDamping(
+        jointIdx: Int32,
+        damping: Double
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         damping.withGodotUnsafeRawPointer { __ptr_damping in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_damping) { __accessPtr in
@@ -565,7 +641,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointDamping(jointIdx: Int32) -> Double {
+
+    public func jiggleJointDamping(
+        jointIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -585,7 +664,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointUseGravity(jointIdx: Int32, useGravity: Bool) {
+
+    public func setJiggleJointUseGravity(
+        jointIdx: Int32,
+        useGravity: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         useGravity.withGodotUnsafeRawPointer { __ptr_useGravity in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_useGravity) { __accessPtr in
@@ -605,7 +688,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointUseGravity(jointIdx: Int32) -> Bool {
+
+    public func jiggleJointUseGravity(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -625,7 +711,11 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func setJiggleJointGravity(jointIdx: Int32, gravity: Godot.Vector2) {
+
+    public func setJiggleJointGravity(
+        jointIdx: Int32,
+        gravity: Godot.Vector2
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         gravity.withGodotUnsafeRawPointer { __ptr_gravity in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_gravity) { __accessPtr in
@@ -645,7 +735,10 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         }
     }()
-    public func jiggleJointGravity(jointIdx: Int32) -> Godot.Vector2 {
+
+    public func jiggleJointGravity(
+        jointIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -736,6 +829,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -748,5 +842,4 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFAnimation: Resource {
     internal static var __method_binding_get_loop: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFAnimation: Resource {
         }
         }
     }()
+
     private func __getLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFAnimation: Resource {
         }
         }
     }()
-    private func __setLoop(_ loop: Bool) {
+
+    private func __setLoop(
+        _ loop: Bool
+    ) {
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class GLTFAnimation: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class GLTFAnimation: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeAnimation: AnimationRootNode {
     public enum PlayMode: UInt32, GodotEnum {
         case forward = 0
         case backward = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Forward", 0),
@@ -22,7 +24,10 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
         }
     }()
-    private func __setAnimation(name: Godot.GodotStringName) {
+
+    private func __setAnimation(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
         }
     }()
+
     private func __getAnimation() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +65,10 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
         }
     }()
-    private func __setPlayMode(_ mode: Godot.AnimationNodeAnimation.PlayMode) {
+
+    private func __setPlayMode(
+        _ mode: Godot.AnimationNodeAnimation.PlayMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +87,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
         }
     }()
+
     private func __getPlayMode() -> Godot.AnimationNodeAnimation.PlayMode {
         Godot.AnimationNodeAnimation.PlayMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,6 +122,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -124,5 +135,4 @@ open class AnimationNodeAnimation: AnimationRootNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

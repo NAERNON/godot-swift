@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ConvexPolygonShape2D: Shape2D {
     internal static var __method_binding_set_point_cloud: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ConvexPolygonShape2D: Shape2D {
         }
         }
     }()
-    public func setPointCloud(_ pointCloud: Godot.PackedVector2Array) {
+
+    public func setPointCloud(
+        _ pointCloud: Godot.PackedVector2Array
+    ) {
         pointCloud.withGodotUnsafeRawPointer { __ptr_pointCloud in
         withUnsafeArgumentPackPointer(__ptr_pointCloud) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class ConvexPolygonShape2D: Shape2D {
         }
         }
     }()
-    private func __setPoints(_ points: Godot.PackedVector2Array) {
+
+    private func __setPoints(
+        _ points: Godot.PackedVector2Array
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +57,7 @@ open class ConvexPolygonShape2D: Shape2D {
         }
         }
     }()
+
     private func __getPoints() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +81,7 @@ open class ConvexPolygonShape2D: Shape2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -85,5 +94,4 @@ open class ConvexPolygonShape2D: Shape2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

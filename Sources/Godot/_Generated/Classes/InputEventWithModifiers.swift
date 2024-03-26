@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventWithModifiers: InputEventFromWindow {
     internal static var __method_binding_set_command_or_control_autoremap: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
-    private func __setCommandOrControlAutoremap(enable: Bool) {
+
+    private func __setCommandOrControlAutoremap(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     private func __isCommandOrControlAutoremap() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     public func isCommandOrControlPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
-    private func __setAltPressed(_ pressed: Bool) {
+
+    private func __setAltPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     private func __isAltPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
-    private func __setShiftPressed(_ pressed: Bool) {
+
+    private func __setShiftPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     private func __isShiftPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
-    private func __setCtrlPressed(_ pressed: Bool) {
+
+    private func __setCtrlPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     private func __isCtrlPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
-    private func __setMetaPressed(_ pressed: Bool) {
+
+    private func __setMetaPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     private func __isMetaPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +237,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         }
     }()
+
     public func modifiersMask() -> Godot.KeyModifierMask {
         Godot.KeyModifierMask.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,6 +305,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -294,5 +318,4 @@ open class InputEventWithModifiers: InputEventFromWindow {
         }
         return _virtualFunctions!
     }
-
-    }
+}

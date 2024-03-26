@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PacketPeerUDP: PacketPeer {
     internal static var __method_binding_bind: GDExtensionMethodBindPtr = {
@@ -12,7 +13,12 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func bind(port: Int32, bindAddress: Godot.GodotString = "*", recvBufSize: Int32 = 65536) -> Godot.ErrorType {
+
+    public func bind(
+        port: Int32,
+        bindAddress: Godot.GodotString = "*",
+        recvBufSize: Int32 = 65536
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
@@ -34,6 +40,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -51,6 +58,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func wait() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func isBound() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,11 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func connectToHost(_ host: Godot.GodotString, port: Int32) -> Godot.ErrorType {
+
+    public func connectToHost(
+        _ host: Godot.GodotString,
+        port: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
@@ -108,6 +121,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func isSocketConnected() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,6 +140,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func packetIp() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +159,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func packetPort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,6 +178,7 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
+
     public func localPort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,7 +197,11 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func setDestAddress(host: Godot.GodotString, port: Int32) -> Godot.ErrorType {
+
+    public func setDestAddress(
+        host: Godot.GodotString,
+        port: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
@@ -201,7 +222,10 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func setBroadcastEnabled(_ enabled: Bool) {
+
+    public func setBroadcastEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,7 +244,11 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func joinMulticastGroup(multicastAddress: Godot.GodotString, interfaceName: Godot.GodotString) -> Godot.ErrorType {
+
+    public func joinMulticastGroup(
+        multicastAddress: Godot.GodotString,
+        interfaceName: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         multicastAddress.withGodotUnsafeRawPointer { __ptr_multicastAddress in
         interfaceName.withGodotUnsafeRawPointer { __ptr_interfaceName in
@@ -241,7 +269,11 @@ open class PacketPeerUDP: PacketPeer {
         }
         }
     }()
-    public func leaveMulticastGroup(multicastAddress: Godot.GodotString, interfaceName: Godot.GodotString) -> Godot.ErrorType {
+
+    public func leaveMulticastGroup(
+        multicastAddress: Godot.GodotString,
+        interfaceName: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         multicastAddress.withGodotUnsafeRawPointer { __ptr_multicastAddress in
         interfaceName.withGodotUnsafeRawPointer { __ptr_interfaceName in
@@ -256,6 +288,7 @@ open class PacketPeerUDP: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -268,5 +301,4 @@ open class PacketPeerUDP: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

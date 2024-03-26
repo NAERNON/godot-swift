@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectLimiter: AudioEffect {
     internal static var __method_binding_set_ceiling_db: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
-    private func __setCeilingDb(ceiling: Double) {
+
+    private func __setCeilingDb(
+        ceiling: Double
+    ) {
         ceiling.withGodotUnsafeRawPointer { __ptr_ceiling in
         withUnsafeArgumentPackPointer(__ptr_ceiling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
+
     private func __getCeilingDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
-    private func __setThresholdDb(threshold: Double) {
+
+    private func __setThresholdDb(
+        threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
+
     private func __getThresholdDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
-    private func __setSoftClipDb(softClip: Double) {
+
+    private func __setSoftClipDb(
+        softClip: Double
+    ) {
         softClip.withGodotUnsafeRawPointer { __ptr_softClip in
         withUnsafeArgumentPackPointer(__ptr_softClip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
+
     private func __getSoftClipDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
-    private func __setSoftClipRatio(softClip: Double) {
+
+    private func __setSoftClipRatio(
+        softClip: Double
+    ) {
         softClip.withGodotUnsafeRawPointer { __ptr_softClip in
         withUnsafeArgumentPackPointer(__ptr_softClip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class AudioEffectLimiter: AudioEffect {
         }
         }
     }()
+
     private func __getSoftClipRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class AudioEffectLimiter: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class AudioEffectLimiter: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

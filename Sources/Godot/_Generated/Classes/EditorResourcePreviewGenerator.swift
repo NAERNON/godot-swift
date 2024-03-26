@@ -3,17 +3,28 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorResourcePreviewGenerator: RefCounted {
-    open func _handles(type: Godot.GodotString) -> Bool {
+    open func _handles(
+        type: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _generate(resource: Godot.Resource?, size: Godot.Vector2I, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
+    open func _generate(
+        resource: Godot.Resource?,
+        size: Godot.Vector2I,
+        metadata: Godot.AnyGodotDictionary
+    ) -> Godot.Texture2D? {
         nil
     }
 
-    open func _generateFromPath(_ path: Godot.GodotString, size: Godot.Vector2I, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
+    open func _generateFromPath(
+        _ path: Godot.GodotString,
+        size: Godot.Vector2I,
+        metadata: Godot.AnyGodotDictionary
+    ) -> Godot.Texture2D? {
         nil
     }
 
@@ -26,6 +37,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -87,5 +99,4 @@ open class EditorResourcePreviewGenerator: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

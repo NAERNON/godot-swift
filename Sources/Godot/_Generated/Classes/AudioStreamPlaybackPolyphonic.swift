@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     public static let invalidID: Int = -1
@@ -14,7 +15,13 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         }
     }()
-    public func playStream(_ stream: Godot.AudioStream?, fromOffset offset: Double = 0, volumeDb: Double = 0, pitchScale: Double = 1.0) -> Int64 {
+
+    public func playStream(
+        _ stream: Godot.AudioStream?,
+        fromOffset offset: Double = 0,
+        volumeDb: Double = 0,
+        pitchScale: Double = 1.0
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
@@ -38,7 +45,11 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         }
     }()
-    public func setStreamVolume(stream: Int64, volumeDb: Double) {
+
+    public func setStreamVolume(
+        stream: Int64,
+        volumeDb: Double
+    ) {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_stream, __ptr_volumeDb) { __accessPtr in
@@ -58,7 +69,11 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         }
     }()
-    public func setStreamPitchScale(stream: Int64, pitchScale: Double) {
+
+    public func setStreamPitchScale(
+        stream: Int64,
+        pitchScale: Double
+    ) {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         pitchScale.withGodotUnsafeRawPointer { __ptr_pitchScale in
         withUnsafeArgumentPackPointer(__ptr_stream, __ptr_pitchScale) { __accessPtr in
@@ -78,7 +93,10 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         }
     }()
-    public func isStreamPlaying(stream: Int64) -> Bool {
+
+    public func isStreamPlaying(
+        stream: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafeArgumentPackPointer(__ptr_stream) { __accessPtr in
@@ -98,7 +116,10 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         }
     }()
-    public func stopStream(_ stream: Int64) {
+
+    public func stopStream(
+        _ stream: Int64
+    ) {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafeArgumentPackPointer(__ptr_stream) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,6 +132,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -123,5 +145,4 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         }
         return _virtualFunctions!
     }
-
-    }
+}

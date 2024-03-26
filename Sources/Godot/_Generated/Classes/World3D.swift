@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class World3D: Resource {
     internal static var __method_binding_get_space: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getSpace() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getNavigationMap() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getScenario() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +70,10 @@ open class World3D: Resource {
         }
         }
     }()
-    private func __setEnvironment(env: Godot.Environment?) {
+
+    private func __setEnvironment(
+        env: Godot.Environment?
+    ) {
         env.withGodotUnsafeRawPointer { __ptr_env in
         withUnsafePointer(to: __ptr_env) { _ptr___ptr_env in
         withUnsafeArgumentPackPointer(_ptr___ptr_env) { __accessPtr in
@@ -86,6 +93,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getEnvironment() -> Godot.Environment? {
         Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +112,10 @@ open class World3D: Resource {
         }
         }
     }()
-    private func __setFallbackEnvironment(env: Godot.Environment?) {
+
+    private func __setFallbackEnvironment(
+        env: Godot.Environment?
+    ) {
         env.withGodotUnsafeRawPointer { __ptr_env in
         withUnsafePointer(to: __ptr_env) { _ptr___ptr_env in
         withUnsafeArgumentPackPointer(_ptr___ptr_env) { __accessPtr in
@@ -124,6 +135,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getFallbackEnvironment() -> Godot.Environment? {
         Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +154,10 @@ open class World3D: Resource {
         }
         }
     }()
-    private func __setCameraAttributes(_ attributes: Godot.CameraAttributes?) {
+
+    private func __setCameraAttributes(
+        _ attributes: Godot.CameraAttributes?
+    ) {
         attributes.withGodotUnsafeRawPointer { __ptr_attributes in
         withUnsafePointer(to: __ptr_attributes) { _ptr___ptr_attributes in
         withUnsafeArgumentPackPointer(_ptr___ptr_attributes) { __accessPtr in
@@ -162,6 +177,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +196,7 @@ open class World3D: Resource {
         }
         }
     }()
+
     private func __getDirectSpaceState() -> Godot.PhysicsDirectSpaceState3D? {
         Godot.PhysicsDirectSpaceState3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,6 +266,7 @@ open class World3D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -261,5 +279,4 @@ open class World3D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

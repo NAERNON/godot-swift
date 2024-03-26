@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationPolygon: Resource {
     public enum ParsedGeometryType: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class NavigationPolygon: Resource {
         case staticColliders = 1
         case both = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mesh Instances", 0),
@@ -18,11 +20,13 @@ open class NavigationPolygon: Resource {
             ("Max", 3),]
         }
     }
+
     public enum SourceGeometryMode: UInt32, GodotEnum {
         case rootNodeChildren = 0
         case groupsWithChildren = 1
         case groupsExplicit = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Root Node Children", 0),
@@ -39,7 +43,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setVertices(_ vertices: Godot.PackedVector2Array) {
+
+    private func __setVertices(
+        _ vertices: Godot.PackedVector2Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -58,6 +65,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getVertices() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +84,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func addPolygon(_ polygon: Godot.PackedInt32Array) {
+
+    public func addPolygon(
+        _ polygon: Godot.PackedInt32Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,6 +106,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func polygonCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,7 +125,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func polygon(idx: Int32) -> Godot.PackedInt32Array {
+
+    public func polygon(
+        idx: Int32
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -133,6 +148,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func clearPolygons() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -150,6 +166,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func navigationMesh() -> Godot.NavigationMesh? {
         Godot.NavigationMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,7 +185,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func addOutline(_ outline: Godot.PackedVector2Array) {
+
+    public func addOutline(
+        _ outline: Godot.PackedVector2Array
+    ) {
         outline.withGodotUnsafeRawPointer { __ptr_outline in
         withUnsafeArgumentPackPointer(__ptr_outline) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +207,11 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func addOutlineAtIndex(outline: Godot.PackedVector2Array, index: Int32) {
+
+    public func addOutlineAtIndex(
+        outline: Godot.PackedVector2Array,
+        index: Int32
+    ) {
         outline.withGodotUnsafeRawPointer { __ptr_outline in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_outline, __ptr_index) { __accessPtr in
@@ -207,6 +231,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func outlineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -225,7 +250,11 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func setOutline(idx: Int32, outline: Godot.PackedVector2Array) {
+
+    public func setOutline(
+        idx: Int32,
+        outline: Godot.PackedVector2Array
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         outline.withGodotUnsafeRawPointer { __ptr_outline in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_outline) { __accessPtr in
@@ -245,7 +274,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func outline(idx: Int32) -> Godot.PackedVector2Array {
+
+    public func outline(
+        idx: Int32
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -265,7 +297,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func removeOutline(idx: Int32) {
+
+    public func removeOutline(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,6 +319,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func clearOutlines() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -301,6 +337,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func makePolygonsFromOutlines() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -318,7 +355,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setCellSize(_ cellSize: Double) {
+
+    private func __setCellSize(
+        _ cellSize: Double
+    ) {
         cellSize.withGodotUnsafeRawPointer { __ptr_cellSize in
         withUnsafeArgumentPackPointer(__ptr_cellSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,6 +377,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getCellSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,7 +396,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setParsedGeometryType(_ geometryType: Godot.NavigationPolygon.ParsedGeometryType) {
+
+    private func __setParsedGeometryType(
+        _ geometryType: Godot.NavigationPolygon.ParsedGeometryType
+    ) {
         geometryType.withGodotUnsafeRawPointer { __ptr_geometryType in
         withUnsafeArgumentPackPointer(__ptr_geometryType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,6 +418,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getParsedGeometryType() -> Godot.NavigationPolygon.ParsedGeometryType {
         Godot.NavigationPolygon.ParsedGeometryType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,7 +437,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setParsedCollisionMask(_ mask: UInt32) {
+
+    private func __setParsedCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,6 +459,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getParsedCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,7 +478,11 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func setParsedCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setParsedCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -449,7 +502,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    public func parsedCollisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func parsedCollisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -469,7 +525,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setSourceGeometryMode(_ geometryMode: Godot.NavigationPolygon.SourceGeometryMode) {
+
+    private func __setSourceGeometryMode(
+        _ geometryMode: Godot.NavigationPolygon.SourceGeometryMode
+    ) {
         geometryMode.withGodotUnsafeRawPointer { __ptr_geometryMode in
         withUnsafeArgumentPackPointer(__ptr_geometryMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,6 +547,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getSourceGeometryMode() -> Godot.NavigationPolygon.SourceGeometryMode {
         Godot.NavigationPolygon.SourceGeometryMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -506,7 +566,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setSourceGeometryGroupName(_ groupName: Godot.GodotStringName) {
+
+    private func __setSourceGeometryGroupName(
+        _ groupName: Godot.GodotStringName
+    ) {
         groupName.withGodotUnsafeRawPointer { __ptr_groupName in
         withUnsafeArgumentPackPointer(__ptr_groupName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -525,6 +588,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getSourceGeometryGroupName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -543,7 +607,10 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
-    private func __setAgentRadius(_ agentRadius: Double) {
+
+    private func __setAgentRadius(
+        _ agentRadius: Double
+    ) {
         agentRadius.withGodotUnsafeRawPointer { __ptr_agentRadius in
         withUnsafeArgumentPackPointer(__ptr_agentRadius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -562,6 +629,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     private func __getAgentRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -580,6 +648,7 @@ open class NavigationPolygon: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -668,6 +737,7 @@ open class NavigationPolygon: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -680,5 +750,4 @@ open class NavigationPolygon: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Range: Control {
     public struct ValueChangedSignalInput: Godot.SignalInput {
         public let value: Double
-        fileprivate init(value: Double) {
+
+        fileprivate init(
+            value: Double
+        ) {
             self.value = value
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.value)]
         }
     }
-    public func valueChanged(value: Double) {
+
+    public func valueChanged(
+        value: Double
+    ) {
         _ = valueChangedSignal.emit(.init(value: value))
     }
+
     public lazy var valueChangedSignal: Godot.SignalEmitter<ValueChangedSignalInput> = {
         .init(object: self, signalName: "value_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ValueChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -35,6 +46,7 @@ open class Range: Control {
     public func changed() {
         _ = changedSignal.emit()
     }
+
     public lazy var changedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -50,7 +62,9 @@ open class Range: Control {
         }
     }()
 
-    open func _valueChanged(newValue: Double) {
+    open func _valueChanged(
+        newValue: Double
+    ) {
     }
 
     internal static var __method_binding_get_value: GDExtensionMethodBindPtr = {
@@ -60,6 +74,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +93,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getMin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,6 +112,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +131,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,6 +150,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getPage() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +169,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __getAsRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,7 +188,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setValue(_ value: Double) {
+
+    private func __setValue(
+        _ value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +210,10 @@ open class Range: Control {
         }
         }
     }()
-    public func setValueNoSignal(value: Double) {
+
+    public func setValueNoSignal(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,7 +232,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setMin(minimum: Double) {
+
+    private func __setMin(
+        minimum: Double
+    ) {
         minimum.withGodotUnsafeRawPointer { __ptr_minimum in
         withUnsafeArgumentPackPointer(__ptr_minimum) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -225,7 +254,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setMax(maximum: Double) {
+
+    private func __setMax(
+        maximum: Double
+    ) {
         maximum.withGodotUnsafeRawPointer { __ptr_maximum in
         withUnsafeArgumentPackPointer(__ptr_maximum) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -244,7 +276,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setStep(_ step: Double) {
+
+    private func __setStep(
+        _ step: Double
+    ) {
         step.withGodotUnsafeRawPointer { __ptr_step in
         withUnsafeArgumentPackPointer(__ptr_step) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -263,7 +298,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setPage(pagesize: Double) {
+
+    private func __setPage(
+        pagesize: Double
+    ) {
         pagesize.withGodotUnsafeRawPointer { __ptr_pagesize in
         withUnsafeArgumentPackPointer(__ptr_pagesize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,7 +320,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setAsRatio(value: Double) {
+
+    private func __setAsRatio(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -301,7 +342,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setUseRoundedValues(enabled: Bool) {
+
+    private func __setUseRoundedValues(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -320,6 +364,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __isUsingRoundedValues() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -338,7 +383,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setExpRatio(enabled: Bool) {
+
+    private func __setExpRatio(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -357,6 +405,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __isRatioExp() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,7 +424,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setAllowGreater(allow: Bool) {
+
+    private func __setAllowGreater(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,6 +446,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __isGreaterAllowed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -412,7 +465,10 @@ open class Range: Control {
         }
         }
     }()
-    private func __setAllowLesser(allow: Bool) {
+
+    private func __setAllowLesser(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -431,6 +487,7 @@ open class Range: Control {
         }
         }
     }()
+
     private func __isLesserAllowed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -449,7 +506,10 @@ open class Range: Control {
         }
         }
     }()
-    public func share(with: Godot.Node?) {
+
+    public func share(
+        with: Godot.Node?
+    ) {
         with.withGodotUnsafeRawPointer { __ptr_with in
         withUnsafePointer(to: __ptr_with) { _ptr___ptr_with in
         withUnsafeArgumentPackPointer(_ptr___ptr_with) { __accessPtr in
@@ -469,6 +529,7 @@ open class Range: Control {
         }
         }
     }()
+
     public func unshare() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -590,6 +651,7 @@ open class Range: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -610,5 +672,4 @@ open class Range: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

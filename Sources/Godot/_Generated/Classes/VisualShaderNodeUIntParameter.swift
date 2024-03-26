@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
     internal static var __method_binding_set_default_value_enabled: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setDefaultValueEnabled(_ enabled: Bool) {
+
+    private func __setDefaultValueEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __isDefaultValueEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setDefaultValue(_ value: Int32) {
+
+    private func __setDefaultValue(
+        _ value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getDefaultValue() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class VisualShaderNodeUIntParameter: VisualShaderNodeParameter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

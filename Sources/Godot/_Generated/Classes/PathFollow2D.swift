@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PathFollow2D: Node2D {
     internal static var __method_binding_set_progress: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setProgress(_ progress: Double) {
+
+    private func __setProgress(
+        _ progress: Double
+    ) {
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_progress) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __getProgress() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setHOffset(_ hOffset: Double) {
+
+    private func __setHOffset(
+        _ hOffset: Double
+    ) {
         hOffset.withGodotUnsafeRawPointer { __ptr_hOffset in
         withUnsafeArgumentPackPointer(__ptr_hOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __getHOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setVOffset(_ vOffset: Double) {
+
+    private func __setVOffset(
+        _ vOffset: Double
+    ) {
         vOffset.withGodotUnsafeRawPointer { __ptr_vOffset in
         withUnsafeArgumentPackPointer(__ptr_vOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __getVOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setProgressRatio(_ ratio: Double) {
+
+    private func __setProgressRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __getProgressRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setRotates(enabled: Bool) {
+
+    private func __setRotates(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __isRotating() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setCubicInterpolation(enabled: Bool) {
+
+    private func __setCubicInterpolation(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __getCubicInterpolation() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
-    private func __setLoop(_ loop: Bool) {
+
+    private func __setLoop(
+        _ loop: Bool
+    ) {
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class PathFollow2D: Node2D {
         }
         }
     }()
+
     private func __hasLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class PathFollow2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class PathFollow2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

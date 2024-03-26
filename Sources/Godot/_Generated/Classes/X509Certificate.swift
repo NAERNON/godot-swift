@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class X509Certificate: Resource {
     internal static var __method_binding_save: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class X509Certificate: Resource {
         }
         }
     }()
-    public func save(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func save(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -32,7 +36,10 @@ open class X509Certificate: Resource {
         }
         }
     }()
-    public func load(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func load(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -52,6 +59,7 @@ open class X509Certificate: Resource {
         }
         }
     }()
+
     public func saveToString() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,7 +78,10 @@ open class X509Certificate: Resource {
         }
         }
     }()
-    public func loadFromString(_ string: Godot.GodotString) -> Godot.ErrorType {
+
+    public func loadFromString(
+        _ string: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
@@ -84,6 +95,7 @@ open class X509Certificate: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -96,5 +108,4 @@ open class X509Certificate: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

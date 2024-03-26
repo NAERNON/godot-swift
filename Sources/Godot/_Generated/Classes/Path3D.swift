@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Path3D: Node3D {
+
     public func curveChanged() {
         _ = curveChangedSignal.emit()
     }
+
     public lazy var curveChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "curve_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class Path3D: Node3D {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve3D?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve3D?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -50,6 +56,7 @@ open class Path3D: Node3D {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve3D? {
         Godot.Curve3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +80,7 @@ open class Path3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -85,5 +93,4 @@ open class Path3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

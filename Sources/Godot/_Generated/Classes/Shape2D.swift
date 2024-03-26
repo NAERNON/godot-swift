@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Shape2D: Resource {
     internal static var __method_binding_set_custom_solver_bias: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Shape2D: Resource {
         }
         }
     }()
-    private func __setCustomSolverBias(_ bias: Double) {
+
+    private func __setCustomSolverBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Shape2D: Resource {
         }
         }
     }()
+
     private func __getCustomSolverBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,12 @@ open class Shape2D: Resource {
         }
         }
     }()
-    public func collide(localXform: Godot.Transform2D, withShape shape: Godot.Shape2D?, shapeXform: Godot.Transform2D) -> Bool {
+
+    public func collide(
+        localXform: Godot.Transform2D,
+        withShape shape: Godot.Shape2D?,
+        shapeXform: Godot.Transform2D
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -72,7 +82,14 @@ open class Shape2D: Resource {
         }
         }
     }()
-    public func collideWithMotion(localXform: Godot.Transform2D, localMotion: Godot.Vector2, withShape shape: Godot.Shape2D?, shapeXform: Godot.Transform2D, shapeMotion: Godot.Vector2) -> Bool {
+
+    public func collideWithMotion(
+        localXform: Godot.Transform2D,
+        localMotion: Godot.Vector2,
+        withShape shape: Godot.Shape2D?,
+        shapeXform: Godot.Transform2D,
+        shapeMotion: Godot.Vector2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         localMotion.withGodotUnsafeRawPointer { __ptr_localMotion in
@@ -97,7 +114,12 @@ open class Shape2D: Resource {
         }
         }
     }()
-    public func collideAndGetContacts(localXform: Godot.Transform2D, withShape shape: Godot.Shape2D?, shapeXform: Godot.Transform2D) -> Godot.PackedVector2Array {
+
+    public func collideAndGetContacts(
+        localXform: Godot.Transform2D,
+        withShape shape: Godot.Shape2D?,
+        shapeXform: Godot.Transform2D
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -120,7 +142,14 @@ open class Shape2D: Resource {
         }
         }
     }()
-    public func collideWithMotionAndGetContacts(localXform: Godot.Transform2D, localMotion: Godot.Vector2, withShape shape: Godot.Shape2D?, shapeXform: Godot.Transform2D, shapeMotion: Godot.Vector2) -> Godot.PackedVector2Array {
+
+    public func collideWithMotionAndGetContacts(
+        localXform: Godot.Transform2D,
+        localMotion: Godot.Vector2,
+        withShape shape: Godot.Shape2D?,
+        shapeXform: Godot.Transform2D,
+        shapeMotion: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         localMotion.withGodotUnsafeRawPointer { __ptr_localMotion in
@@ -145,7 +174,11 @@ open class Shape2D: Resource {
         }
         }
     }()
-    public func draw(canvasItem: Godot.RID, color: Godot.Color) {
+
+    public func draw(
+        canvasItem: Godot.RID,
+        color: Godot.Color
+    ) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_color) { __accessPtr in
@@ -165,6 +198,7 @@ open class Shape2D: Resource {
         }
         }
     }()
+
     public func rect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +222,7 @@ open class Shape2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +235,4 @@ open class Shape2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

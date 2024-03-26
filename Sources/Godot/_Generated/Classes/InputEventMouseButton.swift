@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventMouseButton: InputEventMouse {
     internal static var __method_binding_set_factor: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
-    private func __setFactor(_ factor: Double) {
+
+    private func __setFactor(
+        _ factor: Double
+    ) {
         factor.withGodotUnsafeRawPointer { __ptr_factor in
         withUnsafeArgumentPackPointer(__ptr_factor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
+
     private func __getFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
-    private func __setButtonIndex(_ buttonIndex: Godot.MouseButton) {
+
+    private func __setButtonIndex(
+        _ buttonIndex: Godot.MouseButton
+    ) {
         buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
         withUnsafeArgumentPackPointer(__ptr_buttonIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
+
     private func __getButtonIndex() -> Godot.MouseButton {
         Godot.MouseButton.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
-    public func setPressed(_ pressed: Bool) {
+
+    public func setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +117,10 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
-    public func setCanceled(_ canceled: Bool) {
+
+    public func setCanceled(
+        _ canceled: Bool
+    ) {
         canceled.withGodotUnsafeRawPointer { __ptr_canceled in
         withUnsafeArgumentPackPointer(__ptr_canceled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +139,10 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
-    private func __setDoubleClick(_ doubleClick: Bool) {
+
+    private func __setDoubleClick(
+        _ doubleClick: Bool
+    ) {
         doubleClick.withGodotUnsafeRawPointer { __ptr_doubleClick in
         withUnsafeArgumentPackPointer(__ptr_doubleClick) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +161,7 @@ open class InputEventMouseButton: InputEventMouse {
         }
         }
     }()
+
     private func __isDoubleClick() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +207,7 @@ open class InputEventMouseButton: InputEventMouse {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +220,4 @@ open class InputEventMouseButton: InputEventMouse {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PinJoint2D: Joint2D {
     internal static var __method_binding_set_softness: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setSoftness(_ softness: Double) {
+
+    private func __setSoftness(
+        _ softness: Double
+    ) {
         softness.withGodotUnsafeRawPointer { __ptr_softness in
         withUnsafeArgumentPackPointer(__ptr_softness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getSoftness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setAngularLimitLower(_ angularLimitLower: Double) {
+
+    private func __setAngularLimitLower(
+        _ angularLimitLower: Double
+    ) {
         angularLimitLower.withGodotUnsafeRawPointer { __ptr_angularLimitLower in
         withUnsafeArgumentPackPointer(__ptr_angularLimitLower) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getAngularLimitLower() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setAngularLimitUpper(_ angularLimitUpper: Double) {
+
+    private func __setAngularLimitUpper(
+        _ angularLimitUpper: Double
+    ) {
         angularLimitUpper.withGodotUnsafeRawPointer { __ptr_angularLimitUpper in
         withUnsafeArgumentPackPointer(__ptr_angularLimitUpper) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getAngularLimitUpper() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setMotorTargetVelocity(_ motorTargetVelocity: Double) {
+
+    private func __setMotorTargetVelocity(
+        _ motorTargetVelocity: Double
+    ) {
         motorTargetVelocity.withGodotUnsafeRawPointer { __ptr_motorTargetVelocity in
         withUnsafeArgumentPackPointer(__ptr_motorTargetVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getMotorTargetVelocity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setMotorEnabled(_ enabled: Bool) {
+
+    private func __setMotorEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __isMotorEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
-    private func __setAngularLimitEnabled(_ enabled: Bool) {
+
+    private func __setAngularLimitEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class PinJoint2D: Joint2D {
         }
         }
     }()
+
     private func __isAngularLimitEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,6 +319,7 @@ open class PinJoint2D: Joint2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -306,5 +332,4 @@ open class PinJoint2D: Joint2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

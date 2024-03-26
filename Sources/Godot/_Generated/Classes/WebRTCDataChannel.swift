@@ -3,22 +3,26 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WebRTCDataChannel: PacketPeer {
     public enum WriteMode: UInt32, GodotEnum {
         case text = 0
         case binary = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Text", 0),
             ("Binary", 1),]
         }
     }
+
     public enum ChannelState: UInt32, GodotEnum {
         case connecting = 0
         case open = 1
         case closing = 2
         case closed = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Connecting", 0),
@@ -35,6 +39,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func poll() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -53,6 +58,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -70,6 +76,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func wasStringPacket() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +95,10 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
-    private func __setWriteMode(_ writeMode: Godot.WebRTCDataChannel.WriteMode) {
+
+    private func __setWriteMode(
+        _ writeMode: Godot.WebRTCDataChannel.WriteMode
+    ) {
         writeMode.withGodotUnsafeRawPointer { __ptr_writeMode in
         withUnsafeArgumentPackPointer(__ptr_writeMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +117,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     private func __getWriteMode() -> Godot.WebRTCDataChannel.WriteMode {
         Godot.WebRTCDataChannel.WriteMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +136,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func readyState() -> Godot.WebRTCDataChannel.ChannelState {
         Godot.WebRTCDataChannel.ChannelState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +155,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func label() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +174,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func isOrdered() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +193,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func id() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +212,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func maxPacketLifeTime() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +231,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func maxRetransmits() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,6 +250,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func `protocol`() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,6 +269,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func isNegotiated() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +288,7 @@ open class WebRTCDataChannel: PacketPeer {
         }
         }
     }()
+
     public func bufferedAmount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -292,6 +312,7 @@ open class WebRTCDataChannel: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -304,5 +325,4 @@ open class WebRTCDataChannel: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

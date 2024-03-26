@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CompressedTexture2D: Texture2D {
     internal static var __method_binding_load: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CompressedTexture2D: Texture2D {
         }
         }
     }()
-    public func load(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func load(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -32,6 +36,7 @@ open class CompressedTexture2D: Texture2D {
         }
         }
     }()
+
     private func __getLoadPath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +55,7 @@ open class CompressedTexture2D: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -62,5 +68,4 @@ open class CompressedTexture2D: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

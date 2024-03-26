@@ -3,13 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorResourceTooltipPlugin: RefCounted {
-    open func _handles(type: Godot.GodotString) -> Bool {
+    open func _handles(
+        type: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _makeTooltipForPath(_ path: Godot.GodotString, metadata: Godot.AnyGodotDictionary, base: Godot.Control?) -> Godot.Control? {
+    open func _makeTooltipForPath(
+        _ path: Godot.GodotString,
+        metadata: Godot.AnyGodotDictionary,
+        base: Godot.Control?
+    ) -> Godot.Control? {
         nil
     }
 
@@ -20,7 +27,11 @@ open class EditorResourceTooltipPlugin: RefCounted {
         }
         }
     }()
-    public func requestThumbnail(path: Godot.GodotString, control: Godot.TextureRect?) {
+
+    public func requestThumbnail(
+        path: Godot.GodotString,
+        control: Godot.TextureRect?
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
@@ -35,6 +46,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -68,5 +80,4 @@ open class EditorResourceTooltipPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

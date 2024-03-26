@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     public enum Resolution: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         case resolution4096 = 4
         case resolution8192 = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Resolution256", 0),
@@ -24,9 +26,11 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
             ("Max", 6),]
         }
     }
+
     public enum UpdateMode: UInt32, GodotEnum {
         case whenMoved = 0
         case always = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("When Moved", 0),
@@ -41,7 +45,10 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -60,6 +67,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,7 +86,10 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setResolution(_ resolution: Godot.GPUParticlesCollisionHeightField3D.Resolution) {
+
+    private func __setResolution(
+        _ resolution: Godot.GPUParticlesCollisionHeightField3D.Resolution
+    ) {
         resolution.withGodotUnsafeRawPointer { __ptr_resolution in
         withUnsafeArgumentPackPointer(__ptr_resolution) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,6 +108,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getResolution() -> Godot.GPUParticlesCollisionHeightField3D.Resolution {
         Godot.GPUParticlesCollisionHeightField3D.Resolution.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,7 +127,10 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setUpdateMode(_ updateMode: Godot.GPUParticlesCollisionHeightField3D.UpdateMode) {
+
+    private func __setUpdateMode(
+        _ updateMode: Godot.GPUParticlesCollisionHeightField3D.UpdateMode
+    ) {
         updateMode.withGodotUnsafeRawPointer { __ptr_updateMode in
         withUnsafeArgumentPackPointer(__ptr_updateMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,6 +149,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getUpdateMode() -> Godot.GPUParticlesCollisionHeightField3D.UpdateMode {
         Godot.GPUParticlesCollisionHeightField3D.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,7 +168,10 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setFollowCameraEnabled(_ enabled: Bool) {
+
+    private func __setFollowCameraEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -171,6 +190,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __isFollowCameraEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,6 +247,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -239,5 +260,4 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

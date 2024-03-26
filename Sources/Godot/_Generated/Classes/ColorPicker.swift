@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ColorPicker: VBoxContainer {
     public enum ColorModeType: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class ColorPicker: VBoxContainer {
         case hsv = 1
         case raw = 2
         case okhsl = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Rgb", 0),
@@ -18,12 +20,14 @@ open class ColorPicker: VBoxContainer {
             ("Okhsl", 3),]
         }
     }
+
     public enum PickerShapeType: UInt32, GodotEnum {
         case hsvRectangle = 0
         case hsvWheel = 1
         case vhsCircle = 2
         case okhslCircle = 3
         case none = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Hsv Rectangle", 0),
@@ -36,16 +40,26 @@ open class ColorPicker: VBoxContainer {
 
     public struct ColorChangedSignalInput: Godot.SignalInput {
         public let color: Godot.Color
-        fileprivate init(color: Godot.Color) {
+
+        fileprivate init(
+            color: Godot.Color
+        ) {
             self.color = color
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.color)]
         }
     }
-    public func colorChanged(color: Godot.Color) {
+
+    public func colorChanged(
+        color: Godot.Color
+    ) {
         _ = colorChangedSignal.emit(.init(color: color))
     }
+
     public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
         .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -63,16 +77,26 @@ open class ColorPicker: VBoxContainer {
 
     public struct PresetAddedSignalInput: Godot.SignalInput {
         public let color: Godot.Color
-        fileprivate init(color: Godot.Color) {
+
+        fileprivate init(
+            color: Godot.Color
+        ) {
             self.color = color
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.color)]
         }
     }
-    public func presetAdded(color: Godot.Color) {
+
+    public func presetAdded(
+        color: Godot.Color
+    ) {
         _ = presetAddedSignal.emit(.init(color: color))
     }
+
     public lazy var presetAddedSignal: Godot.SignalEmitter<PresetAddedSignalInput> = {
         .init(object: self, signalName: "preset_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -90,16 +114,26 @@ open class ColorPicker: VBoxContainer {
 
     public struct PresetRemovedSignalInput: Godot.SignalInput {
         public let color: Godot.Color
-        fileprivate init(color: Godot.Color) {
+
+        fileprivate init(
+            color: Godot.Color
+        ) {
             self.color = color
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.color)]
         }
     }
-    public func presetRemoved(color: Godot.Color) {
+
+    public func presetRemoved(
+        color: Godot.Color
+    ) {
         _ = presetRemovedSignal.emit(.init(color: color))
     }
+
     public lazy var presetRemovedSignal: Godot.SignalEmitter<PresetRemovedSignalInput> = {
         .init(object: self, signalName: "preset_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -122,7 +156,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setPickColor(_ color: Godot.Color) {
+
+    private func __setPickColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,6 +178,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __getPickColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,7 +197,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setDeferredMode(_ mode: Bool) {
+
+    private func __setDeferredMode(
+        _ mode: Bool
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,6 +219,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __isDeferredMode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,7 +238,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setColorMode(_ colorMode: Godot.ColorPicker.ColorModeType) {
+
+    private func __setColorMode(
+        _ colorMode: Godot.ColorPicker.ColorModeType
+    ) {
         colorMode.withGodotUnsafeRawPointer { __ptr_colorMode in
         withUnsafeArgumentPackPointer(__ptr_colorMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +260,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __getColorMode() -> Godot.ColorPicker.ColorModeType {
         Godot.ColorPicker.ColorModeType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,7 +279,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setEditAlpha(show: Bool) {
+
+    private func __setEditAlpha(
+        show: Bool
+    ) {
         show.withGodotUnsafeRawPointer { __ptr_show in
         withUnsafeArgumentPackPointer(__ptr_show) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,6 +301,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __isEditingAlpha() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,7 +320,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setCanAddSwatches(enabled: Bool) {
+
+    private func __setCanAddSwatches(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,6 +342,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __areSwatchesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -307,7 +361,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setPresetsVisible(_ visible: Bool) {
+
+    private func __setPresetsVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,6 +383,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __arePresetsVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,7 +402,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setModesVisible(_ visible: Bool) {
+
+    private func __setModesVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,6 +424,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __areModesVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,7 +443,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setSamplerVisible(_ visible: Bool) {
+
+    private func __setSamplerVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,6 +465,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __isSamplerVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,7 +484,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setSlidersVisible(_ visible: Bool) {
+
+    private func __setSlidersVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +506,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __areSlidersVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -455,7 +525,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setHexVisible(_ visible: Bool) {
+
+    private func __setHexVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,6 +547,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __isHexVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -492,7 +566,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    public func addPreset(color: Godot.Color) {
+
+    public func addPreset(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -511,7 +588,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    public func erasePreset(color: Godot.Color) {
+
+    public func erasePreset(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,6 +610,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     public func presets() -> Godot.PackedColorArray {
         Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -548,7 +629,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    public func addRecentPreset(color: Godot.Color) {
+
+    public func addRecentPreset(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -567,7 +651,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    public func eraseRecentPreset(color: Godot.Color) {
+
+    public func eraseRecentPreset(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,6 +673,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     public func recentPresets() -> Godot.PackedColorArray {
         Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -604,7 +692,10 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
-    private func __setPickerShape(_ shape: Godot.ColorPicker.PickerShapeType) {
+
+    private func __setPickerShape(
+        _ shape: Godot.ColorPicker.PickerShapeType
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,6 +714,7 @@ open class ColorPicker: VBoxContainer {
         }
         }
     }()
+
     private func __getPickerShape() -> Godot.ColorPicker.PickerShapeType {
         Godot.ColorPicker.PickerShapeType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -756,6 +848,7 @@ open class ColorPicker: VBoxContainer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -768,5 +861,4 @@ open class ColorPicker: VBoxContainer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

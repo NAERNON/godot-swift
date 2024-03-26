@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamOggVorbis: AudioStream {
     internal static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    static public func loadFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.AudioStreamOggVorbis? {
+
+    static public func loadFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.AudioStreamOggVorbis? {
         Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -31,7 +35,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    static public func loadFromFile(path: Godot.GodotString) -> Godot.AudioStreamOggVorbis? {
+
+    static public func loadFromFile(
+        path: Godot.GodotString
+    ) -> Godot.AudioStreamOggVorbis? {
         Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -50,7 +57,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setPacketSequence(_ packetSequence: Godot.OggPacketSequence?) {
+
+    private func __setPacketSequence(
+        _ packetSequence: Godot.OggPacketSequence?
+    ) {
         packetSequence.withGodotUnsafeRawPointer { __ptr_packetSequence in
         withUnsafePointer(to: __ptr_packetSequence) { _ptr___ptr_packetSequence in
         withUnsafeArgumentPackPointer(_ptr___ptr_packetSequence) { __accessPtr in
@@ -70,6 +80,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __getPacketSequence() -> Godot.OggPacketSequence? {
         Godot.OggPacketSequence?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +99,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setLoop(enable: Bool) {
+
+    private func __setLoop(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +121,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __hasLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,7 +140,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setLoopOffset(seconds: Double) {
+
+    private func __setLoopOffset(
+        seconds: Double
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         withUnsafeArgumentPackPointer(__ptr_seconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +162,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __getLoopOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +181,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setBpm(_ bpm: Double) {
+
+    private func __setBpm(
+        _ bpm: Double
+    ) {
         bpm.withGodotUnsafeRawPointer { __ptr_bpm in
         withUnsafeArgumentPackPointer(__ptr_bpm) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,6 +203,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __getBpm() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,7 +222,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setBeatCount(_ count: Int32) {
+
+    private func __setBeatCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +244,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __getBeatCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,7 +263,10 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
-    private func __setBarBeats(count: Int32) {
+
+    private func __setBarBeats(
+        count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,6 +285,7 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         }
     }()
+
     private func __getBarBeats() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -333,6 +364,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -345,5 +377,4 @@ open class AudioStreamOggVorbis: AudioStream {
         }
         return _virtualFunctions!
     }
-
-    }
+}

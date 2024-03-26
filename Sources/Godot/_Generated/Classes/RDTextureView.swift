@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDTextureView: RefCounted {
     internal static var __method_binding_set_format_override: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
-    private func __setFormatOverride(pMember: Godot.RenderingDevice.DataFormat) {
+
+    private func __setFormatOverride(
+        pMember: Godot.RenderingDevice.DataFormat
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
+
     private func __getFormatOverride() -> Godot.RenderingDevice.DataFormat {
         Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
-    private func __setSwizzleR(pMember: Godot.RenderingDevice.TextureSwizzle) {
+
+    private func __setSwizzleR(
+        pMember: Godot.RenderingDevice.TextureSwizzle
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
+
     private func __getSwizzleR() -> Godot.RenderingDevice.TextureSwizzle {
         Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
-    private func __setSwizzleG(pMember: Godot.RenderingDevice.TextureSwizzle) {
+
+    private func __setSwizzleG(
+        pMember: Godot.RenderingDevice.TextureSwizzle
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
+
     private func __getSwizzleG() -> Godot.RenderingDevice.TextureSwizzle {
         Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
-    private func __setSwizzleB(pMember: Godot.RenderingDevice.TextureSwizzle) {
+
+    private func __setSwizzleB(
+        pMember: Godot.RenderingDevice.TextureSwizzle
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
+
     private func __getSwizzleB() -> Godot.RenderingDevice.TextureSwizzle {
         Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
-    private func __setSwizzleA(pMember: Godot.RenderingDevice.TextureSwizzle) {
+
+    private func __setSwizzleA(
+        pMember: Godot.RenderingDevice.TextureSwizzle
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDTextureView: RefCounted {
         }
         }
     }()
+
     private func __getSwizzleA() -> Godot.RenderingDevice.TextureSwizzle {
         Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class RDTextureView: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class RDTextureView: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

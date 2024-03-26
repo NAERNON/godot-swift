@@ -3,36 +3,48 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationPathQueryParameters3D: RefCounted {
     public enum PathfindingAlgorithm: UInt32, GodotEnum {
         case pathfindingAlgorithmAstar = 0
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Pathfinding Algorithm Astar", 0),]
         }
     }
+
     public enum PathPostProcessing: UInt32, GodotEnum {
         case corridorfunnel = 0
         case edgecentered = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Corridorfunnel", 0),
             ("Edgecentered", 1),]
         }
     }
+
     public struct PathMetadataFlags: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let none: Self = .init(rawValue: 0)
+
         public static let types: Self = .init(rawValue: 1)
+
         public static let rids: Self = .init(rawValue: 2)
+
         public static let owners: Self = .init(rawValue: 4)
+
         public static let all: Self = .init(rawValue: 7)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -50,7 +62,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setPathfindingAlgorithm(_ pathfindingAlgorithm: Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm) {
+
+    private func __setPathfindingAlgorithm(
+        _ pathfindingAlgorithm: Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm
+    ) {
         pathfindingAlgorithm.withGodotUnsafeRawPointer { __ptr_pathfindingAlgorithm in
         withUnsafeArgumentPackPointer(__ptr_pathfindingAlgorithm) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +84,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getPathfindingAlgorithm() -> Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm {
         Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +103,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setPathPostprocessing(_ pathPostprocessing: Godot.NavigationPathQueryParameters3D.PathPostProcessing) {
+
+    private func __setPathPostprocessing(
+        _ pathPostprocessing: Godot.NavigationPathQueryParameters3D.PathPostProcessing
+    ) {
         pathPostprocessing.withGodotUnsafeRawPointer { __ptr_pathPostprocessing in
         withUnsafeArgumentPackPointer(__ptr_pathPostprocessing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +125,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getPathPostprocessing() -> Godot.NavigationPathQueryParameters3D.PathPostProcessing {
         Godot.NavigationPathQueryParameters3D.PathPostProcessing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +144,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setMap(_ map: Godot.RID) {
+
+    private func __setMap(
+        _ map: Godot.RID
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +166,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getMap() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +185,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setStartPosition(_ startPosition: Godot.Vector3) {
+
+    private func __setStartPosition(
+        _ startPosition: Godot.Vector3
+    ) {
         startPosition.withGodotUnsafeRawPointer { __ptr_startPosition in
         withUnsafeArgumentPackPointer(__ptr_startPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +207,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getStartPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +226,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setTargetPosition(_ targetPosition: Godot.Vector3) {
+
+    private func __setTargetPosition(
+        _ targetPosition: Godot.Vector3
+    ) {
         targetPosition.withGodotUnsafeRawPointer { __ptr_targetPosition in
         withUnsafeArgumentPackPointer(__ptr_targetPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +248,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getTargetPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +267,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setNavigationLayers(_ navigationLayers: UInt32) {
+
+    private func __setNavigationLayers(
+        _ navigationLayers: UInt32
+    ) {
         navigationLayers.withGodotUnsafeRawPointer { __ptr_navigationLayers in
         withUnsafeArgumentPackPointer(__ptr_navigationLayers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +289,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getNavigationLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +308,10 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setMetadataFlags(_ flags: Godot.NavigationPathQueryParameters3D.PathMetadataFlags) {
+
+    private func __setMetadataFlags(
+        _ flags: Godot.NavigationPathQueryParameters3D.PathMetadataFlags
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +330,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         }
     }()
+
     private func __getMetadataFlags() -> Godot.NavigationPathQueryParameters3D.PathMetadataFlags {
         Godot.NavigationPathQueryParameters3D.PathMetadataFlags.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -380,6 +420,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -392,5 +433,4 @@ open class NavigationPathQueryParameters3D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

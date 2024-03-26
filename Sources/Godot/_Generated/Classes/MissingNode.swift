@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MissingNode: Node {
     internal static var __method_binding_set_original_class: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MissingNode: Node {
         }
         }
     }()
-    private func __setOriginalClass(name: Godot.GodotString) {
+
+    private func __setOriginalClass(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class MissingNode: Node {
         }
         }
     }()
+
     private func __getOriginalClass() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class MissingNode: Node {
         }
         }
     }()
-    private func __setRecordingProperties(enable: Bool) {
+
+    private func __setRecordingProperties(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class MissingNode: Node {
         }
         }
     }()
+
     private func __isRecordingProperties() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class MissingNode: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class MissingNode: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

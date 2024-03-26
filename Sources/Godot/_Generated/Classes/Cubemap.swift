@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Cubemap: ImageTextureLayered {
     internal static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Cubemap: ImageTextureLayered {
         }
         }
     }()
+
     public func createPlaceholder() -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -24,6 +26,7 @@ open class Cubemap: ImageTextureLayered {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +39,4 @@ open class Cubemap: ImageTextureLayered {
         }
         return _virtualFunctions!
     }
-
-    }
+}

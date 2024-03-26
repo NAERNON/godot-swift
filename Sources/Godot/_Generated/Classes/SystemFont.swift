@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SystemFont: Font {
     internal static var __method_binding_set_antialiasing: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setAntialiasing(_ antialiasing: Godot.TextServer.FontAntialiasing) {
+
+    private func __setAntialiasing(
+        _ antialiasing: Godot.TextServer.FontAntialiasing
+    ) {
         antialiasing.withGodotUnsafeRawPointer { __ptr_antialiasing in
         withUnsafeArgumentPackPointer(__ptr_antialiasing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getAntialiasing() -> Godot.TextServer.FontAntialiasing {
         Godot.TextServer.FontAntialiasing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setGenerateMipmaps(_ generateMipmaps: Bool) {
+
+    private func __setGenerateMipmaps(
+        _ generateMipmaps: Bool
+    ) {
         generateMipmaps.withGodotUnsafeRawPointer { __ptr_generateMipmaps in
         withUnsafeArgumentPackPointer(__ptr_generateMipmaps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getGenerateMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setAllowSystemFallback(_ allowSystemFallback: Bool) {
+
+    private func __setAllowSystemFallback(
+        _ allowSystemFallback: Bool
+    ) {
         allowSystemFallback.withGodotUnsafeRawPointer { __ptr_allowSystemFallback in
         withUnsafeArgumentPackPointer(__ptr_allowSystemFallback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __isAllowSystemFallback() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setForceAutohinter(_ forceAutohinter: Bool) {
+
+    private func __setForceAutohinter(
+        _ forceAutohinter: Bool
+    ) {
         forceAutohinter.withGodotUnsafeRawPointer { __ptr_forceAutohinter in
         withUnsafeArgumentPackPointer(__ptr_forceAutohinter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __isForceAutohinter() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setHinting(_ hinting: Godot.TextServer.Hinting) {
+
+    private func __setHinting(
+        _ hinting: Godot.TextServer.Hinting
+    ) {
         hinting.withGodotUnsafeRawPointer { __ptr_hinting in
         withUnsafeArgumentPackPointer(__ptr_hinting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getHinting() -> Godot.TextServer.Hinting {
         Godot.TextServer.Hinting.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setSubpixelPositioning(_ subpixelPositioning: Godot.TextServer.SubpixelPositioning) {
+
+    private func __setSubpixelPositioning(
+        _ subpixelPositioning: Godot.TextServer.SubpixelPositioning
+    ) {
         subpixelPositioning.withGodotUnsafeRawPointer { __ptr_subpixelPositioning in
         withUnsafeArgumentPackPointer(__ptr_subpixelPositioning) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getSubpixelPositioning() -> Godot.TextServer.SubpixelPositioning {
         Godot.TextServer.SubpixelPositioning.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setMultichannelSignedDistanceField(msdf: Bool) {
+
+    private func __setMultichannelSignedDistanceField(
+        msdf: Bool
+    ) {
         msdf.withGodotUnsafeRawPointer { __ptr_msdf in
         withUnsafeArgumentPackPointer(__ptr_msdf) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __isMultichannelSignedDistanceField() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setMsdfPixelRange(_ msdfPixelRange: Int32) {
+
+    private func __setMsdfPixelRange(
+        _ msdfPixelRange: Int32
+    ) {
         msdfPixelRange.withGodotUnsafeRawPointer { __ptr_msdfPixelRange in
         withUnsafeArgumentPackPointer(__ptr_msdfPixelRange) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getMsdfPixelRange() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setMsdfSize(_ msdfSize: Int32) {
+
+    private func __setMsdfSize(
+        _ msdfSize: Int32
+    ) {
         msdfSize.withGodotUnsafeRawPointer { __ptr_msdfSize in
         withUnsafeArgumentPackPointer(__ptr_msdfSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getMsdfSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setOversampling(_ oversampling: Double) {
+
+    private func __setOversampling(
+        _ oversampling: Double
+    ) {
         oversampling.withGodotUnsafeRawPointer { __ptr_oversampling in
         withUnsafeArgumentPackPointer(__ptr_oversampling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getOversampling() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +423,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getFontNames() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +442,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setFontNames(_ names: Godot.PackedStringArray) {
+
+    private func __setFontNames(
+        _ names: Godot.PackedStringArray
+    ) {
         names.withGodotUnsafeRawPointer { __ptr_names in
         withUnsafeArgumentPackPointer(__ptr_names) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +464,7 @@ open class SystemFont: Font {
         }
         }
     }()
+
     private func __getFontItalic() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,7 +483,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    private func __setFontItalic(_ italic: Bool) {
+
+    private func __setFontItalic(
+        _ italic: Bool
+    ) {
         italic.withGodotUnsafeRawPointer { __ptr_italic in
         withUnsafeArgumentPackPointer(__ptr_italic) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +505,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    public func setFontWeight(_ weight: Int32) {
+
+    public func setFontWeight(
+        _ weight: Int32
+    ) {
         weight.withGodotUnsafeRawPointer { __ptr_weight in
         withUnsafeArgumentPackPointer(__ptr_weight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,7 +527,10 @@ open class SystemFont: Font {
         }
         }
     }()
-    public func setFontStretch(_ stretch: Int32) {
+
+    public func setFontStretch(
+        _ stretch: Int32
+    ) {
         stretch.withGodotUnsafeRawPointer { __ptr_stretch in
         withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -620,6 +675,7 @@ open class SystemFont: Font {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -632,5 +688,4 @@ open class SystemFont: Font {
         }
         return _virtualFunctions!
     }
-
-    }
+}

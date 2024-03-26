@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PackedScene: Resource {
     public enum GenEditState: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class PackedScene: Resource {
         case instance = 1
         case main = 2
         case mainInherited = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -26,7 +28,10 @@ open class PackedScene: Resource {
         }
         }
     }()
-    public func pack(path: Godot.Node?) -> Godot.ErrorType {
+
+    public func pack(
+        path: Godot.Node?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafePointer(to: __ptr_path) { _ptr___ptr_path in
@@ -47,7 +52,10 @@ open class PackedScene: Resource {
         }
         }
     }()
-    public func instantiate(editState: Godot.PackedScene.GenEditState = PackedScene.GenEditState(rawValue: 0)!) -> Godot.Node? {
+
+    public func instantiate(
+        editState: Godot.PackedScene.GenEditState = PackedScene.GenEditState(rawValue: 0)!
+    ) -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         editState.withGodotUnsafeRawPointer { __ptr_editState in
         withUnsafeArgumentPackPointer(__ptr_editState) { __accessPtr in
@@ -67,6 +75,7 @@ open class PackedScene: Resource {
         }
         }
     }()
+
     public func canInstantiate() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class PackedScene: Resource {
         }
         }
     }()
+
     public func state() -> Godot.SceneState? {
         Godot.SceneState?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,6 +107,7 @@ open class PackedScene: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -109,5 +120,4 @@ open class PackedScene: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

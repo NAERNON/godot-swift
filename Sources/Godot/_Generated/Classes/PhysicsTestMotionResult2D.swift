@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsTestMotionResult2D: RefCounted {
     internal static var __method_binding_get_travel: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func travel() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func remainder() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionPoint() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionNormal() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +89,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func colliderVelocity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +108,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func colliderID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -120,6 +127,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func colliderRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -138,6 +146,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collider() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,6 +165,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func colliderShape() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,6 +184,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionLocalShape() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,6 +203,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,6 +222,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionSafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,6 +241,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         }
     }()
+
     public func collisionUnsafeFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,6 +254,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -252,5 +267,4 @@ open class PhysicsTestMotionResult2D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

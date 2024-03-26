@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Sky: Resource {
     public enum RadianceSize: UInt32, GodotEnum {
@@ -14,6 +15,7 @@ open class Sky: Resource {
         case radianceSize1024 = 5
         case radianceSize2048 = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Radiance Size32", 0),
@@ -26,11 +28,13 @@ open class Sky: Resource {
             ("Max", 7),]
         }
     }
+
     public enum ProcessMode: UInt32, GodotEnum {
         case automatic = 0
         case quality = 1
         case incremental = 2
         case realtime = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Automatic", 0),
@@ -47,7 +51,10 @@ open class Sky: Resource {
         }
         }
     }()
-    private func __setRadianceSize(_ size: Godot.Sky.RadianceSize) {
+
+    private func __setRadianceSize(
+        _ size: Godot.Sky.RadianceSize
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +73,7 @@ open class Sky: Resource {
         }
         }
     }()
+
     private func __getRadianceSize() -> Godot.Sky.RadianceSize {
         Godot.Sky.RadianceSize.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +92,10 @@ open class Sky: Resource {
         }
         }
     }()
-    private func __setProcessMode(_ mode: Godot.Sky.ProcessMode) {
+
+    private func __setProcessMode(
+        _ mode: Godot.Sky.ProcessMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +114,7 @@ open class Sky: Resource {
         }
         }
     }()
+
     private func __getProcessMode() -> Godot.Sky.ProcessMode {
         Godot.Sky.ProcessMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,7 +133,10 @@ open class Sky: Resource {
         }
         }
     }()
-    private func __setMaterial(_ material: Godot.Material?) {
+
+    private func __setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -141,6 +156,7 @@ open class Sky: Resource {
         }
         }
     }()
+
     private func __getMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,6 +202,7 @@ open class Sky: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -198,5 +215,4 @@ open class Sky: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

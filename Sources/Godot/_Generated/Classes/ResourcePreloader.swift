@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ResourcePreloader: Node {
     internal static var __method_binding_add_resource: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class ResourcePreloader: Node {
         }
         }
     }()
-    public func addResource(name: Godot.GodotStringName, resource: Godot.Resource?) {
+
+    public func addResource(
+        name: Godot.GodotStringName,
+        resource: Godot.Resource?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
@@ -33,7 +38,10 @@ open class ResourcePreloader: Node {
         }
         }
     }()
-    public func removeResource(name: Godot.GodotStringName) {
+
+    public func removeResource(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -52,7 +60,11 @@ open class ResourcePreloader: Node {
         }
         }
     }()
-    public func renameResource(name: Godot.GodotStringName, newname: Godot.GodotStringName) {
+
+    public func renameResource(
+        name: Godot.GodotStringName,
+        newname: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         newname.withGodotUnsafeRawPointer { __ptr_newname in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_newname) { __accessPtr in
@@ -72,7 +84,10 @@ open class ResourcePreloader: Node {
         }
         }
     }()
-    public func hasResource(name: Godot.GodotStringName) -> Bool {
+
+    public func hasResource(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -92,7 +107,10 @@ open class ResourcePreloader: Node {
         }
         }
     }()
-    public func resource(name: Godot.GodotStringName) -> Godot.Resource? {
+
+    public func resource(
+        name: Godot.GodotStringName
+    ) -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -112,6 +130,7 @@ open class ResourcePreloader: Node {
         }
         }
     }()
+
     public func resourceList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +143,7 @@ open class ResourcePreloader: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -136,5 +156,4 @@ open class ResourcePreloader: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

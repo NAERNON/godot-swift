@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFDocument: Resource {
     public enum RootNodeMode: UInt32, GodotEnum {
         case singleRoot = 0
         case keepRoot = 1
         case multiRoot = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Single Root", 0),
@@ -24,7 +26,13 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func appendFromFile(path: Godot.GodotString, state: Godot.GLTFState?, flags: UInt32 = 0, basePath: Godot.GodotString = "") -> Godot.ErrorType {
+
+    public func appendFromFile(
+        path: Godot.GodotString,
+        state: Godot.GLTFState?,
+        flags: UInt32 = 0,
+        basePath: Godot.GodotString = ""
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         state.withGodotUnsafeRawPointer { __ptr_state in
@@ -48,7 +56,13 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func appendFromBuffer(bytes: Godot.PackedByteArray, basePath: Godot.GodotString, state: Godot.GLTFState?, flags: UInt32 = 0) -> Godot.ErrorType {
+
+    public func appendFromBuffer(
+        bytes: Godot.PackedByteArray,
+        basePath: Godot.GodotString,
+        state: Godot.GLTFState?,
+        flags: UInt32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         basePath.withGodotUnsafeRawPointer { __ptr_basePath in
@@ -72,7 +86,12 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func appendFromScene(node: Godot.Node?, state: Godot.GLTFState?, flags: UInt32 = 0) -> Godot.ErrorType {
+
+    public func appendFromScene(
+        node: Godot.Node?,
+        state: Godot.GLTFState?,
+        flags: UInt32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -96,7 +115,13 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func generateScene(state: Godot.GLTFState?, bakeFps: Double = 30, trimming: Bool = false, removeImmutableTracks: Bool = true) -> Godot.Node? {
+
+    public func generateScene(
+        state: Godot.GLTFState?,
+        bakeFps: Double = 30,
+        trimming: Bool = false,
+        removeImmutableTracks: Bool = true
+    ) -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
@@ -120,7 +145,10 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func generateBuffer(state: Godot.GLTFState?) -> Godot.PackedByteArray {
+
+    public func generateBuffer(
+        state: Godot.GLTFState?
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
@@ -141,7 +169,11 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    public func writeToFilesystem(state: Godot.GLTFState?, path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func writeToFilesystem(
+        state: Godot.GLTFState?,
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
@@ -163,7 +195,10 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    private func __setImageFormat(_ imageFormat: Godot.GodotString) {
+
+    private func __setImageFormat(
+        _ imageFormat: Godot.GodotString
+    ) {
         imageFormat.withGodotUnsafeRawPointer { __ptr_imageFormat in
         withUnsafeArgumentPackPointer(__ptr_imageFormat) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,6 +217,7 @@ open class GLTFDocument: Resource {
         }
         }
     }()
+
     private func __getImageFormat() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,7 +236,10 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    private func __setLossyQuality(_ lossyQuality: Double) {
+
+    private func __setLossyQuality(
+        _ lossyQuality: Double
+    ) {
         lossyQuality.withGodotUnsafeRawPointer { __ptr_lossyQuality in
         withUnsafeArgumentPackPointer(__ptr_lossyQuality) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,6 +258,7 @@ open class GLTFDocument: Resource {
         }
         }
     }()
+
     private func __getLossyQuality() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,7 +277,10 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    private func __setRootNodeMode(_ rootNodeMode: Godot.GLTFDocument.RootNodeMode) {
+
+    private func __setRootNodeMode(
+        _ rootNodeMode: Godot.GLTFDocument.RootNodeMode
+    ) {
         rootNodeMode.withGodotUnsafeRawPointer { __ptr_rootNodeMode in
         withUnsafeArgumentPackPointer(__ptr_rootNodeMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,6 +299,7 @@ open class GLTFDocument: Resource {
         }
         }
     }()
+
     private func __getRootNodeMode() -> Godot.GLTFDocument.RootNodeMode {
         Godot.GLTFDocument.RootNodeMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -274,7 +318,11 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    static public func registerGltfDocumentExtension(_ `extension`: Godot.GLTFDocumentExtension?, firstPriority: Bool = false) {
+
+    static public func registerGltfDocumentExtension(
+        _ `extension`: Godot.GLTFDocumentExtension?,
+        firstPriority: Bool = false
+    ) {
         `extension`.withGodotUnsafeRawPointer { __ptr_extension in
         withUnsafePointer(to: __ptr_extension) { _ptr___ptr_extension in
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
@@ -294,7 +342,10 @@ open class GLTFDocument: Resource {
         }
         }
     }()
-    static public func unregisterGltfDocumentExtension(_ `extension`: Godot.GLTFDocumentExtension?) {
+
+    static public func unregisterGltfDocumentExtension(
+        _ `extension`: Godot.GLTFDocumentExtension?
+    ) {
         `extension`.withGodotUnsafeRawPointer { __ptr_extension in
         withUnsafePointer(to: __ptr_extension) { _ptr___ptr_extension in
         withUnsafeArgumentPackPointer(_ptr___ptr_extension) { __accessPtr in
@@ -340,6 +391,7 @@ open class GLTFDocument: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -352,5 +404,4 @@ open class GLTFDocument: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

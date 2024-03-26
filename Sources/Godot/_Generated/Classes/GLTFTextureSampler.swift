@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFTextureSampler: Resource {
     internal static var __method_binding_get_mag_filter: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
+
     private func __getMagFilter() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
-    private func __setMagFilter(filterMode: Int32) {
+
+    private func __setMagFilter(
+        filterMode: Int32
+    ) {
         filterMode.withGodotUnsafeRawPointer { __ptr_filterMode in
         withUnsafeArgumentPackPointer(__ptr_filterMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
+
     private func __getMinFilter() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
-    private func __setMinFilter(filterMode: Int32) {
+
+    private func __setMinFilter(
+        filterMode: Int32
+    ) {
         filterMode.withGodotUnsafeRawPointer { __ptr_filterMode in
         withUnsafeArgumentPackPointer(__ptr_filterMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
+
     private func __getWrapS() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
-    private func __setWrapS(wrapMode: Int32) {
+
+    private func __setWrapS(
+        wrapMode: Int32
+    ) {
         wrapMode.withGodotUnsafeRawPointer { __ptr_wrapMode in
         withUnsafeArgumentPackPointer(__ptr_wrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
+
     private func __getWrapT() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class GLTFTextureSampler: Resource {
         }
         }
     }()
-    private func __setWrapT(wrapMode: Int32) {
+
+    private func __setWrapT(
+        wrapMode: Int32
+    ) {
         wrapMode.withGodotUnsafeRawPointer { __ptr_wrapMode in
         withUnsafeArgumentPackPointer(__ptr_wrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class GLTFTextureSampler: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class GLTFTextureSampler: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

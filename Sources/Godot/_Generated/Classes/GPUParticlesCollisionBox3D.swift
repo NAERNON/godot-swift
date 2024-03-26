@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesCollisionBox3D: GPUParticlesCollision3D {
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GPUParticlesCollisionBox3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class GPUParticlesCollisionBox3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class GPUParticlesCollisionBox3D: GPUParticlesCollision3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class GPUParticlesCollisionBox3D: GPUParticlesCollision3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

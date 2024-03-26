@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SphereOccluder3D: Occluder3D {
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SphereOccluder3D: Occluder3D {
         }
         }
     }()
-    private func __setRadius(_ radius: Double) {
+
+    private func __setRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SphereOccluder3D: Occluder3D {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class SphereOccluder3D: Occluder3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class SphereOccluder3D: Occluder3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

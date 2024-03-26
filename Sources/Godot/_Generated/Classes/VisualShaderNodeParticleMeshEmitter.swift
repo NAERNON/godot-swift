@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.Mesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.Mesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -32,6 +36,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
+
     private func __getMesh() -> Godot.Mesh? {
         Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
-    private func __setUseAllSurfaces(enabled: Bool) {
+
+    private func __setUseAllSurfaces(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
+
     private func __isUseAllSurfaces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
-    private func __setSurfaceIndex(_ surfaceIndex: Int32) {
+
+    private func __setSurfaceIndex(
+        _ surfaceIndex: Int32
+    ) {
         surfaceIndex.withGodotUnsafeRawPointer { __ptr_surfaceIndex in
         withUnsafeArgumentPackPointer(__ptr_surfaceIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         }
     }()
+
     private func __getSurfaceIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class VisualShaderNodeParticleMeshEmitter: VisualShaderNodeParticleEmitter 
         }
         return _virtualFunctions!
     }
-
-    }
+}

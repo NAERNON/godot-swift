@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MenuButton: Button {
+
     public func aboutToPopup() {
         _ = aboutToPopupSignal.emit()
     }
+
     public lazy var aboutToPopupSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "about_to_popup") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,6 +33,7 @@ open class MenuButton: Button {
         }
         }
     }()
+
     public func popup() -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +52,7 @@ open class MenuButton: Button {
         }
         }
     }()
+
     public func showPopup() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -65,7 +70,10 @@ open class MenuButton: Button {
         }
         }
     }()
-    private func __setSwitchOnHover(enable: Bool) {
+
+    private func __setSwitchOnHover(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +92,7 @@ open class MenuButton: Button {
         }
         }
     }()
+
     private func __isSwitchOnHover() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +111,10 @@ open class MenuButton: Button {
         }
         }
     }()
-    public func setDisableShortcuts(disabled: Bool) {
+
+    public func setDisableShortcuts(
+        disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,7 +133,10 @@ open class MenuButton: Button {
         }
         }
     }()
-    private func __setItemCount(_ count: Int32) {
+
+    private func __setItemCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,6 +155,7 @@ open class MenuButton: Button {
         }
         }
     }()
+
     private func __getItemCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,6 +190,7 @@ open class MenuButton: Button {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -186,5 +203,4 @@ open class MenuButton: Button {
         }
         return _virtualFunctions!
     }
-
-    }
+}

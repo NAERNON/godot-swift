@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsDirectSpaceState2D: Object {
     internal static var __method_binding_intersect_point: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters2D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+
+    public func intersectPoint(
+        parameters: Godot.PhysicsPointQueryParameters2D?,
+        maxResults: Int32 = 32
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -34,7 +39,10 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func intersectRay(parameters: Godot.PhysicsRayQueryParameters2D?) -> Godot.AnyGodotDictionary {
+
+    public func intersectRay(
+        parameters: Godot.PhysicsRayQueryParameters2D?
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -55,7 +63,11 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters2D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+
+    public func intersectShape(
+        parameters: Godot.PhysicsShapeQueryParameters2D?,
+        maxResults: Int32 = 32
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -77,7 +89,10 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func castMotion(parameters: Godot.PhysicsShapeQueryParameters2D?) -> Godot.PackedFloat32Array {
+
+    public func castMotion(
+        parameters: Godot.PhysicsShapeQueryParameters2D?
+    ) -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -98,7 +113,11 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func collideShape(parameters: Godot.PhysicsShapeQueryParameters2D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.Vector2> {
+
+    public func collideShape(
+        parameters: Godot.PhysicsShapeQueryParameters2D?,
+        maxResults: Int32 = 32
+    ) -> Godot.GodotArray<Godot.Vector2> {
         Godot.GodotArray<Godot.Vector2>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -120,7 +139,10 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         }
     }()
-    public func restInfo(parameters: Godot.PhysicsShapeQueryParameters2D?) -> Godot.AnyGodotDictionary {
+
+    public func restInfo(
+        parameters: Godot.PhysicsShapeQueryParameters2D?
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
@@ -135,6 +157,7 @@ open class PhysicsDirectSpaceState2D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -147,5 +170,4 @@ open class PhysicsDirectSpaceState2D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

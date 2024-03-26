@@ -3,23 +3,34 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ResourceSaver: Object {
     public struct SaverFlags: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let none: Self = .init(rawValue: 0)
+
         public static let relativePaths: Self = .init(rawValue: 1)
+
         public static let bundleResources: Self = .init(rawValue: 2)
+
         public static let changePath: Self = .init(rawValue: 4)
+
         public static let omitEditorProperties: Self = .init(rawValue: 8)
+
         public static let saveBigEndian: Self = .init(rawValue: 16)
+
         public static let compress: Self = .init(rawValue: 32)
+
         public static let replaceSubresourcePaths: Self = .init(rawValue: 64)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -40,7 +51,12 @@ open class ResourceSaver: Object {
         }
         }
     }()
-    public func save(resource: Godot.Resource?, path: Godot.GodotString = "", flags: Godot.ResourceSaver.SaverFlags = ResourceSaver.SaverFlags(rawValue: 0)) -> Godot.ErrorType {
+
+    public func save(
+        resource: Godot.Resource?,
+        path: Godot.GodotString = "",
+        flags: Godot.ResourceSaver.SaverFlags = ResourceSaver.SaverFlags(rawValue: 0)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
@@ -63,7 +79,10 @@ open class ResourceSaver: Object {
         }
         }
     }()
-    public func recognizedExtensions(type: Godot.Resource?) -> Godot.PackedStringArray {
+
+    public func recognizedExtensions(
+        type: Godot.Resource?
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafePointer(to: __ptr_type) { _ptr___ptr_type in
@@ -84,7 +103,11 @@ open class ResourceSaver: Object {
         }
         }
     }()
-    public func addResourceFormatSaver(_ formatSaver: Godot.ResourceFormatSaver?, atFront front: Bool = false) {
+
+    public func addResourceFormatSaver(
+        _ formatSaver: Godot.ResourceFormatSaver?,
+        atFront front: Bool = false
+    ) {
         formatSaver.withGodotUnsafeRawPointer { __ptr_formatSaver in
         withUnsafePointer(to: __ptr_formatSaver) { _ptr___ptr_formatSaver in
         front.withGodotUnsafeRawPointer { __ptr_front in
@@ -105,7 +128,10 @@ open class ResourceSaver: Object {
         }
         }
     }()
-    public func removeResourceFormatSaver(_ formatSaver: Godot.ResourceFormatSaver?) {
+
+    public func removeResourceFormatSaver(
+        _ formatSaver: Godot.ResourceFormatSaver?
+    ) {
         formatSaver.withGodotUnsafeRawPointer { __ptr_formatSaver in
         withUnsafePointer(to: __ptr_formatSaver) { _ptr___ptr_formatSaver in
         withUnsafeArgumentPackPointer(_ptr___ptr_formatSaver) { __accessPtr in
@@ -119,6 +145,7 @@ open class ResourceSaver: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -131,5 +158,4 @@ open class ResourceSaver: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

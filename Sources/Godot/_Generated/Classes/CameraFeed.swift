@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CameraFeed: RefCounted {
     public enum FeedDataType: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class CameraFeed: RefCounted {
         case rgb = 1
         case ycbcr = 2
         case ycbcrSep = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Noimage", 0),
@@ -18,10 +20,12 @@ open class CameraFeed: RefCounted {
             ("Ycbcr Sep", 3),]
         }
     }
+
     public enum FeedPosition: UInt32, GodotEnum {
         case unspecified = 0
         case front = 1
         case back = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unspecified", 0),
@@ -37,6 +41,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     public func id() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     private func __isActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,7 +79,10 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
-    private func __setActive(_ active: Bool) {
+
+    private func __setActive(
+        _ active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -92,6 +101,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     public func name() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,6 +120,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     public func position() -> Godot.CameraFeed.FeedPosition {
         Godot.CameraFeed.FeedPosition.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +139,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +158,10 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
-    private func __setTransform(_ transform: Godot.Transform2D) {
+
+    private func __setTransform(
+        _ transform: Godot.Transform2D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +180,7 @@ open class CameraFeed: RefCounted {
         }
         }
     }()
+
     public func datatype() -> Godot.CameraFeed.FeedDataType {
         Godot.CameraFeed.FeedDataType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +215,7 @@ open class CameraFeed: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -211,5 +228,4 @@ open class CameraFeed: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

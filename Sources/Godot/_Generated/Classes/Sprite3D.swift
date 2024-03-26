@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Sprite3D: SpriteBase3D {
+
     public func frameChanged() {
         _ = frameChangedSignal.emit()
     }
+
     public lazy var frameChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "frame_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class Sprite3D: SpriteBase3D {
     public func textureChanged() {
         _ = textureChangedSignal.emit()
     }
+
     public lazy var textureChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -48,7 +52,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -68,6 +75,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +94,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setRegionEnabled(_ enabled: Bool) {
+
+    private func __setRegionEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +116,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __isRegionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +135,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setRegionRect(_ rect: Godot.Rect2) {
+
+    private func __setRegionRect(
+        _ rect: Godot.Rect2
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +157,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getRegionRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +176,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setFrame(_ frame: Int32) {
+
+    private func __setFrame(
+        _ frame: Int32
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +198,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getFrame() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +217,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setFrameCoords(_ coords: Godot.Vector2I) {
+
+    private func __setFrameCoords(
+        _ coords: Godot.Vector2I
+    ) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +239,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getFrameCoords() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +258,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setVframes(_ vframes: Int32) {
+
+    private func __setVframes(
+        _ vframes: Int32
+    ) {
         vframes.withGodotUnsafeRawPointer { __ptr_vframes in
         withUnsafeArgumentPackPointer(__ptr_vframes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +280,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getVframes() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +299,10 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setHframes(_ hframes: Int32) {
+
+    private func __setHframes(
+        _ hframes: Int32
+    ) {
         hframes.withGodotUnsafeRawPointer { __ptr_hframes in
         withUnsafeArgumentPackPointer(__ptr_hframes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +321,7 @@ open class Sprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getHframes() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -379,6 +411,7 @@ open class Sprite3D: SpriteBase3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -391,5 +424,4 @@ open class Sprite3D: SpriteBase3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

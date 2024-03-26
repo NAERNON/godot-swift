@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventGesture: InputEventWithModifiers {
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventGesture: InputEventWithModifiers {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventGesture: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class InputEventGesture: InputEventWithModifiers {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class InputEventGesture: InputEventWithModifiers {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Marshalls: Object {
     internal static var __method_binding_variant_to_base64: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func variantToBase64<Value: VariantStorableIn>(variant: Value, fullObjects: Bool = false) -> Godot.GodotString {
+
+    public func variantToBase64<Value: VariantStorableIn>(
+        variant: Value,
+        fullObjects: Bool = false
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: variant) { __ptr_variant in
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
@@ -33,7 +38,11 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func base64ToVariant(base64Str: Godot.GodotString, allowObjects: Bool = false) -> Godot.Variant {
+
+    public func base64ToVariant(
+        base64Str: Godot.GodotString,
+        allowObjects: Bool = false
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
@@ -54,7 +63,10 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func rawToBase64(array: Godot.PackedByteArray) -> Godot.GodotString {
+
+    public func rawToBase64(
+        array: Godot.PackedByteArray
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
@@ -74,7 +86,10 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func base64ToRaw(base64Str: Godot.GodotString) -> Godot.PackedByteArray {
+
+    public func base64ToRaw(
+        base64Str: Godot.GodotString
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
@@ -94,7 +109,10 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func utf8ToBase64(utf8Str: Godot.GodotString) -> Godot.GodotString {
+
+    public func utf8ToBase64(
+        utf8Str: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         utf8Str.withGodotUnsafeRawPointer { __ptr_utf8Str in
         withUnsafeArgumentPackPointer(__ptr_utf8Str) { __accessPtr in
@@ -114,7 +132,10 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func base64ToUtf8(base64Str: Godot.GodotString) -> Godot.GodotString {
+
+    public func base64ToUtf8(
+        base64Str: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
@@ -128,6 +149,7 @@ open class Marshalls: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -140,5 +162,4 @@ open class Marshalls: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

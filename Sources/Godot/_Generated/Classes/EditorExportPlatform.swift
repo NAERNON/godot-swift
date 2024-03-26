@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorExportPlatform: RefCounted {
     internal static var __method_binding_get_os_name: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class EditorExportPlatform: RefCounted {
         }
         }
     }()
+
     public func osName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -24,6 +26,7 @@ open class EditorExportPlatform: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +39,4 @@ open class EditorExportPlatform: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

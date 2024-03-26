@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectEQ: AudioEffect {
     internal static var __method_binding_set_band_gain_db: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class AudioEffectEQ: AudioEffect {
         }
         }
     }()
-    public func setBandGainDb(bandIdx: Int32, volumeDb: Double) {
+
+    public func setBandGainDb(
+        bandIdx: Int32,
+        volumeDb: Double
+    ) {
         bandIdx.withGodotUnsafeRawPointer { __ptr_bandIdx in
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_bandIdx, __ptr_volumeDb) { __accessPtr in
@@ -32,7 +37,10 @@ open class AudioEffectEQ: AudioEffect {
         }
         }
     }()
-    public func bandGainDb(bandIdx: Int32) -> Double {
+
+    public func bandGainDb(
+        bandIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         bandIdx.withGodotUnsafeRawPointer { __ptr_bandIdx in
         withUnsafeArgumentPackPointer(__ptr_bandIdx) { __accessPtr in
@@ -52,6 +60,7 @@ open class AudioEffectEQ: AudioEffect {
         }
         }
     }()
+
     public func bandCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -64,6 +73,7 @@ open class AudioEffectEQ: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -76,5 +86,4 @@ open class AudioEffectEQ: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

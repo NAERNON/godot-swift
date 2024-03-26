@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Slider: Range {
+
     public func dragStarted() {
         _ = dragStartedSignal.emit()
     }
+
     public lazy var dragStartedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "drag_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,16 +28,26 @@ open class Slider: Range {
 
     public struct DragEndedSignalInput: Godot.SignalInput {
         public let valueChanged: Bool
-        fileprivate init(valueChanged: Bool) {
+
+        fileprivate init(
+            valueChanged: Bool
+        ) {
             self.valueChanged = valueChanged
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.valueChanged)]
         }
     }
-    public func dragEnded(valueChanged: Bool) {
+
+    public func dragEnded(
+        valueChanged: Bool
+    ) {
         _ = dragEndedSignal.emit(.init(valueChanged: valueChanged))
     }
+
     public lazy var dragEndedSignal: Godot.SignalEmitter<DragEndedSignalInput> = {
         .init(object: self, signalName: "drag_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -57,7 +70,10 @@ open class Slider: Range {
         }
         }
     }()
-    private func __setTicks(count: Int32) {
+
+    private func __setTicks(
+        count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,6 +92,7 @@ open class Slider: Range {
         }
         }
     }()
+
     private func __getTicks() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,6 +111,7 @@ open class Slider: Range {
         }
         }
     }()
+
     private func __getTicksOnBorders() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,7 +130,10 @@ open class Slider: Range {
         }
         }
     }()
-    private func __setTicksOnBorders(ticksOnBorder: Bool) {
+
+    private func __setTicksOnBorders(
+        ticksOnBorder: Bool
+    ) {
         ticksOnBorder.withGodotUnsafeRawPointer { __ptr_ticksOnBorder in
         withUnsafeArgumentPackPointer(__ptr_ticksOnBorder) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -131,7 +152,10 @@ open class Slider: Range {
         }
         }
     }()
-    private func __setEditable(_ editable: Bool) {
+
+    private func __setEditable(
+        _ editable: Bool
+    ) {
         editable.withGodotUnsafeRawPointer { __ptr_editable in
         withUnsafeArgumentPackPointer(__ptr_editable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +174,7 @@ open class Slider: Range {
         }
         }
     }()
+
     private func __isEditable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,7 +193,10 @@ open class Slider: Range {
         }
         }
     }()
-    private func __setScrollable(_ scrollable: Bool) {
+
+    private func __setScrollable(
+        _ scrollable: Bool
+    ) {
         scrollable.withGodotUnsafeRawPointer { __ptr_scrollable in
         withUnsafeArgumentPackPointer(__ptr_scrollable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,6 +215,7 @@ open class Slider: Range {
         }
         }
     }()
+
     private func __isScrollable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -243,6 +272,7 @@ open class Slider: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -255,5 +285,4 @@ open class Slider: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

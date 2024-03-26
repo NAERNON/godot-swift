@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TextParagraph: RefCounted {
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,7 +31,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setDirection(_ direction: Godot.TextServer.Direction) {
+
+    private func __setDirection(
+        _ direction: Godot.TextServer.Direction
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +53,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getDirection() -> Godot.TextServer.Direction {
         Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +72,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setCustomPunctuation(_ customPunctuation: Godot.GodotString) {
+
+    private func __setCustomPunctuation(
+        _ customPunctuation: Godot.GodotString
+    ) {
         customPunctuation.withGodotUnsafeRawPointer { __ptr_customPunctuation in
         withUnsafeArgumentPackPointer(__ptr_customPunctuation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getCustomPunctuation() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +113,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setOrientation(_ orientation: Godot.TextServer.Orientation) {
+
+    private func __setOrientation(
+        _ orientation: Godot.TextServer.Orientation
+    ) {
         orientation.withGodotUnsafeRawPointer { __ptr_orientation in
         withUnsafeArgumentPackPointer(__ptr_orientation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getOrientation() -> Godot.TextServer.Orientation {
         Godot.TextServer.Orientation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setPreserveInvalid(enabled: Bool) {
+
+    private func __setPreserveInvalid(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,6 +176,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getPreserveInvalid() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +195,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setPreserveControl(enabled: Bool) {
+
+    private func __setPreserveControl(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,6 +217,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getPreserveControl() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -214,7 +236,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func setBidiOverride<Value: VariantStorable>(_ override: Godot.GodotArray<Value>) {
+
+    public func setBidiOverride<Value: VariantStorable>(
+        _ override: Godot.GodotArray<Value>
+    ) {
         override.withGodotUnsafeRawPointer { __ptr_override in
         withUnsafeArgumentPackPointer(__ptr_override) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,7 +258,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func setDropcap(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, dropcapMargins: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), language: Godot.GodotString = "") -> Bool {
+
+    public func setDropcap(
+        text: Godot.GodotString,
+        font: Godot.Font?,
+        fontSize: Int32,
+        dropcapMargins: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
+        language: Godot.GodotString = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         font.withGodotUnsafeRawPointer { __ptr_font in
@@ -258,6 +290,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func clearDropcap() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -275,7 +308,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addString<Value: VariantStorableIn>(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, language: Godot.GodotString = "", meta: Value = Variant()) -> Bool {
+
+    public func addString<Value: VariantStorableIn>(
+        text: Godot.GodotString,
+        font: Godot.Font?,
+        fontSize: Int32,
+        language: Godot.GodotString = "",
+        meta: Value = Variant()
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         font.withGodotUnsafeRawPointer { __ptr_font in
@@ -300,7 +340,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addObject<Value: VariantStorableIn>(key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int32 = 1, baseline: Double = 0.0) -> Bool {
+
+    public func addObject<Value: VariantStorableIn>(
+        key: Value,
+        size: Godot.Vector2,
+        inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
+        length: Int32 = 1,
+        baseline: Double = 0.0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -324,7 +371,13 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func resizeObject<Value: VariantStorableIn>(key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
+
+    public func resizeObject<Value: VariantStorableIn>(
+        key: Value,
+        size: Godot.Vector2,
+        inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
+        baseline: Double = 0.0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -347,7 +400,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,6 +422,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,7 +441,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func tabAlign(tabStops: Godot.PackedFloat32Array) {
+
+    public func tabAlign(
+        tabStops: Godot.PackedFloat32Array
+    ) {
         tabStops.withGodotUnsafeRawPointer { __ptr_tabStops in
         withUnsafeArgumentPackPointer(__ptr_tabStops) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -403,7 +463,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setBreakFlags(_ flags: Godot.TextServer.LineBreakFlag) {
+
+    private func __setBreakFlags(
+        _ flags: Godot.TextServer.LineBreakFlag
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -422,6 +485,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getBreakFlags() -> Godot.TextServer.LineBreakFlag {
         Godot.TextServer.LineBreakFlag.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -440,7 +504,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setJustificationFlags(_ flags: Godot.TextServer.JustificationFlag) {
+
+    private func __setJustificationFlags(
+        _ flags: Godot.TextServer.JustificationFlag
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -459,6 +526,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
         Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -477,7 +545,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setTextOverrunBehavior(_ overrunBehavior: Godot.TextServer.OverrunBehavior) {
+
+    private func __setTextOverrunBehavior(
+        _ overrunBehavior: Godot.TextServer.OverrunBehavior
+    ) {
         overrunBehavior.withGodotUnsafeRawPointer { __ptr_overrunBehavior in
         withUnsafeArgumentPackPointer(__ptr_overrunBehavior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -496,6 +567,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
         Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -514,7 +586,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setWidth(_ width: Double) {
+
+    private func __setWidth(
+        _ width: Double
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -533,6 +608,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -551,6 +627,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func nonWrappedSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -569,6 +646,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func size() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -587,6 +665,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,7 +684,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineRid(line: Int32) -> Godot.RID {
+
+    public func lineRid(
+        line: Int32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -625,6 +707,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func dropcapRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -643,6 +726,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func lineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -661,7 +745,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    private func __setMaxLinesVisible(_ maxLinesVisible: Int32) {
+
+    private func __setMaxLinesVisible(
+        _ maxLinesVisible: Int32
+    ) {
         maxLinesVisible.withGodotUnsafeRawPointer { __ptr_maxLinesVisible in
         withUnsafeArgumentPackPointer(__ptr_maxLinesVisible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -680,6 +767,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     private func __getMaxLinesVisible() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -698,7 +786,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjects(line: Int32) -> Godot.AnyGodotArray {
+
+    public func lineObjects(
+        line: Int32
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -718,7 +809,11 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjectRect<Value: VariantStorableIn>(line: Int32, key: Value) -> Godot.Rect2 {
+
+    public func lineObjectRect<Value: VariantStorableIn>(
+        line: Int32,
+        key: Value
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
@@ -739,7 +834,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineSize(line: Int32) -> Godot.Vector2 {
+
+    public func lineSize(
+        line: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -759,7 +857,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineRange(line: Int32) -> Godot.Vector2I {
+
+    public func lineRange(
+        line: Int32
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -779,7 +880,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineAscent(line: Int32) -> Double {
+
+    public func lineAscent(
+        line: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -799,7 +903,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineDescent(line: Int32) -> Double {
+
+    public func lineDescent(
+        line: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -819,7 +926,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineWidth(line: Int32) -> Double {
+
+    public func lineWidth(
+        line: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -839,7 +949,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineUnderlinePosition(line: Int32) -> Double {
+
+    public func lineUnderlinePosition(
+        line: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -859,7 +972,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineUnderlineThickness(line: Int32) -> Double {
+
+    public func lineUnderlineThickness(
+        line: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -879,6 +995,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func dropcapSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -897,6 +1014,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
+
     public func dropcapLines() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -915,7 +1033,13 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func draw(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = .white, dcColor: Godot.Color = .white) {
+
+    public func draw(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        color: Godot.Color = .white,
+        dcColor: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -937,7 +1061,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = .white, dcColor: Godot.Color = .white) {
+
+    public func drawOutline(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        outlineSize: Int32 = 1,
+        color: Godot.Color = .white,
+        dcColor: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
@@ -960,7 +1091,13 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawLine(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, color: Godot.Color = .white) {
+
+    public func drawLine(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        line: Int32,
+        color: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -982,7 +1119,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawLineOutline(canvas: Godot.RID, pos: Godot.Vector2, line: Int32, outlineSize: Int32 = 1, color: Godot.Color = .white) {
+
+    public func drawLineOutline(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        line: Int32,
+        outlineSize: Int32 = 1,
+        color: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -1005,7 +1149,12 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawDropcap(canvas: Godot.RID, pos: Godot.Vector2, color: Godot.Color = .white) {
+
+    public func drawDropcap(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        color: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1026,7 +1175,13 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func drawDropcapOutline(canvas: Godot.RID, pos: Godot.Vector2, outlineSize: Int32 = 1, color: Godot.Color = .white) {
+
+    public func drawDropcapOutline(
+        canvas: Godot.RID,
+        pos: Godot.Vector2,
+        outlineSize: Int32 = 1,
+        color: Godot.Color = .white
+    ) {
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
@@ -1048,7 +1203,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func hitTest(coords: Godot.Vector2) -> Int32 {
+
+    public func hitTest(
+        coords: Godot.Vector2
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -1183,6 +1341,7 @@ open class TextParagraph: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1195,5 +1354,4 @@ open class TextParagraph: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

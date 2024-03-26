@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class UPNP: RefCounted {
     public enum UPNPResult: UInt32, GodotEnum {
@@ -35,6 +36,7 @@ open class UPNP: RefCounted {
         case noGateway = 26
         case noDevices = 27
         case unknownError = 28
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Success", 0),
@@ -76,6 +78,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     public func deviceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,7 +97,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func device(index: Int32) -> Godot.UPNPDevice? {
+
+    public func device(
+        index: Int32
+    ) -> Godot.UPNPDevice? {
         Godot.UPNPDevice?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -114,7 +120,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func addDevice(_ device: Godot.UPNPDevice?) {
+
+    public func addDevice(
+        _ device: Godot.UPNPDevice?
+    ) {
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafePointer(to: __ptr_device) { _ptr___ptr_device in
         withUnsafeArgumentPackPointer(_ptr___ptr_device) { __accessPtr in
@@ -134,7 +143,11 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func setDevice(index: Int32, device: Godot.UPNPDevice?) {
+
+    public func setDevice(
+        index: Int32,
+        device: Godot.UPNPDevice?
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafePointer(to: __ptr_device) { _ptr___ptr_device in
@@ -155,7 +168,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func removeDevice(index: Int32) {
+
+    public func removeDevice(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,6 +190,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     public func clearDevices() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -191,6 +208,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     public func gateway() -> Godot.UPNPDevice? {
         Godot.UPNPDevice?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,7 +227,12 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func discover(timeout: Int32 = 2000, ttl: Int32 = 2, deviceFilter: Godot.GodotString = "InternetGatewayDevice") -> Int32 {
+
+    public func discover(
+        timeout: Int32 = 2000,
+        ttl: Int32 = 2,
+        deviceFilter: Godot.GodotString = "InternetGatewayDevice"
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         ttl.withGodotUnsafeRawPointer { __ptr_ttl in
@@ -231,6 +254,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     public func queryExternalAddress() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,7 +273,14 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func addPortMapping(port: Int32, portInternal: Int32 = 0, desc: Godot.GodotString = "", proto: Godot.GodotString = "UDP", duration: Int32 = 0) -> Int32 {
+
+    public func addPortMapping(
+        port: Int32,
+        portInternal: Int32 = 0,
+        desc: Godot.GodotString = "",
+        proto: Godot.GodotString = "UDP",
+        duration: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         portInternal.withGodotUnsafeRawPointer { __ptr_portInternal in
@@ -273,7 +304,11 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    public func deletePortMapping(port: Int32, proto: Godot.GodotString = "UDP") -> Int32 {
+
+    public func deletePortMapping(
+        port: Int32,
+        proto: Godot.GodotString = "UDP"
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         proto.withGodotUnsafeRawPointer { __ptr_proto in
@@ -294,7 +329,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    private func __setDiscoverMulticastIf(mIf: Godot.GodotString) {
+
+    private func __setDiscoverMulticastIf(
+        mIf: Godot.GodotString
+    ) {
         mIf.withGodotUnsafeRawPointer { __ptr_mIf in
         withUnsafeArgumentPackPointer(__ptr_mIf) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -313,6 +351,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     private func __getDiscoverMulticastIf() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -331,7 +370,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    private func __setDiscoverLocalPort(_ port: Int32) {
+
+    private func __setDiscoverLocalPort(
+        _ port: Int32
+    ) {
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -350,6 +392,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     private func __getDiscoverLocalPort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -368,7 +411,10 @@ open class UPNP: RefCounted {
         }
         }
     }()
-    private func __setDiscoverIpv6(_ ipv6: Bool) {
+
+    private func __setDiscoverIpv6(
+        _ ipv6: Bool
+    ) {
         ipv6.withGodotUnsafeRawPointer { __ptr_ipv6 in
         withUnsafeArgumentPackPointer(__ptr_ipv6) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -387,6 +433,7 @@ open class UPNP: RefCounted {
         }
         }
     }()
+
     private func __isDiscoverIpv6() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -432,6 +479,7 @@ open class UPNP: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -444,5 +492,4 @@ open class UPNP: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

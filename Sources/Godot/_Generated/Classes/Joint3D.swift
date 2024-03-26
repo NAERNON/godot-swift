@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Joint3D: Node3D {
     internal static var __method_binding_set_node_a: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Joint3D: Node3D {
         }
         }
     }()
-    private func __setNodeA(node: Godot.NodePath) {
+
+    private func __setNodeA(
+        node: Godot.NodePath
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafeArgumentPackPointer(__ptr_node) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Joint3D: Node3D {
         }
         }
     }()
+
     private func __getNodeA() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Joint3D: Node3D {
         }
         }
     }()
-    private func __setNodeB(node: Godot.NodePath) {
+
+    private func __setNodeB(
+        node: Godot.NodePath
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafeArgumentPackPointer(__ptr_node) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Joint3D: Node3D {
         }
         }
     }()
+
     private func __getNodeB() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Joint3D: Node3D {
         }
         }
     }()
-    private func __setSolverPriority(_ priority: Int32) {
+
+    private func __setSolverPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Joint3D: Node3D {
         }
         }
     }()
+
     private func __getSolverPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class Joint3D: Node3D {
         }
         }
     }()
-    private func __setExcludeNodesFromCollision(enable: Bool) {
+
+    private func __setExcludeNodesFromCollision(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class Joint3D: Node3D {
         }
         }
     }()
+
     private func __getExcludeNodesFromCollision() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class Joint3D: Node3D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +234,7 @@ open class Joint3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -228,5 +247,4 @@ open class Joint3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

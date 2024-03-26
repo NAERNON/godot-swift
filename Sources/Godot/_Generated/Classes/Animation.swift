@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Animation: Resource {
     public enum TrackType: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class Animation: Resource {
         case bezier = 6
         case audio = 7
         case animation = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Value", 0),
@@ -28,12 +30,14 @@ open class Animation: Resource {
             ("Animation", 8),]
         }
     }
+
     public enum InterpolationType: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case cubic = 2
         case linearAngle = 3
         case cubicAngle = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Nearest", 0),
@@ -43,10 +47,12 @@ open class Animation: Resource {
             ("Cubic Angle", 4),]
         }
     }
+
     public enum UpdateMode: UInt32, GodotEnum {
         case continuous = 0
         case discrete = 1
         case capture = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Continuous", 0),
@@ -54,10 +60,12 @@ open class Animation: Resource {
             ("Capture", 2),]
         }
     }
+
     public enum LoopMode: UInt32, GodotEnum {
         case none = 0
         case linear = 1
         case pingpong = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -65,10 +73,12 @@ open class Animation: Resource {
             ("Pingpong", 2),]
         }
     }
+
     public enum LoopedFlag: UInt32, GodotEnum {
         case none = 0
         case end = 1
         case start = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -76,10 +86,12 @@ open class Animation: Resource {
             ("Start", 2),]
         }
     }
+
     public enum FindMode: UInt32, GodotEnum {
         case nearest = 0
         case approx = 1
         case exact = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Nearest", 0),
@@ -95,7 +107,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func addTrack(type: Godot.Animation.TrackType, atPosition position: Int32 = -1) -> Int32 {
+
+    public func addTrack(
+        type: Godot.Animation.TrackType,
+        atPosition position: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -116,7 +132,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func removeTrack(trackIdx: Int32) {
+
+    public func removeTrack(
+        trackIdx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,6 +154,7 @@ open class Animation: Resource {
         }
         }
     }()
+
     public func trackCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +173,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetType(trackIdx: Int32) -> Godot.Animation.TrackType {
+
+    public func trackGetType(
+        trackIdx: Int32
+    ) -> Godot.Animation.TrackType {
         Godot.Animation.TrackType.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -173,7 +196,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetPath(trackIdx: Int32) -> Godot.NodePath {
+
+    public func trackGetPath(
+        trackIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -193,7 +219,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetPath(trackIdx: Int32, path: Godot.NodePath) {
+
+    public func trackSetPath(
+        trackIdx: Int32,
+        path: Godot.NodePath
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_path) { __accessPtr in
@@ -213,7 +243,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func findTrack(path: Godot.NodePath, type: Godot.Animation.TrackType) -> Int32 {
+
+    public func findTrack(
+        path: Godot.NodePath,
+        type: Godot.Animation.TrackType
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         type.withGodotUnsafeRawPointer { __ptr_type in
@@ -234,7 +268,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackMoveUp(trackIdx: Int32) {
+
+    public func trackMoveUp(
+        trackIdx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +290,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackMoveDown(trackIdx: Int32) {
+
+    public func trackMoveDown(
+        trackIdx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +312,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackMoveTo(trackIdx: Int32, toIdx idx: Int32) {
+
+    public func trackMoveTo(
+        trackIdx: Int32,
+        toIdx idx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_idx) { __accessPtr in
@@ -292,7 +336,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSwap(trackIdx: Int32, withIdx idx: Int32) {
+
+    public func trackSwap(
+        trackIdx: Int32,
+        withIdx idx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_idx) { __accessPtr in
@@ -312,7 +360,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetImported(trackIdx: Int32, imported: Bool) {
+
+    public func trackSetImported(
+        trackIdx: Int32,
+        imported: Bool
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         imported.withGodotUnsafeRawPointer { __ptr_imported in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_imported) { __accessPtr in
@@ -332,7 +384,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackIsImported(trackIdx: Int32) -> Bool {
+
+    public func trackIsImported(
+        trackIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -352,7 +407,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetEnabled(trackIdx: Int32, enabled: Bool) {
+
+    public func trackSetEnabled(
+        trackIdx: Int32,
+        enabled: Bool
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_enabled) { __accessPtr in
@@ -372,7 +431,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackIsEnabled(trackIdx: Int32) -> Bool {
+
+    public func trackIsEnabled(
+        trackIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -392,7 +454,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func positionTrackInsertKey(trackIdx: Int32, time: Double, position: Godot.Vector3) -> Int32 {
+
+    public func positionTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        position: Godot.Vector3
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -414,7 +481,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func rotationTrackInsertKey(trackIdx: Int32, time: Double, rotation: Godot.Quaternion) -> Int32 {
+
+    public func rotationTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        rotation: Godot.Quaternion
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -436,7 +508,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func scaleTrackInsertKey(trackIdx: Int32, time: Double, scale: Godot.Vector3) -> Int32 {
+
+    public func scaleTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        scale: Godot.Vector3
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -458,7 +535,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func blendShapeTrackInsertKey(trackIdx: Int32, time: Double, amount: Double) -> Int32 {
+
+    public func blendShapeTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        amount: Double
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -480,7 +562,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func positionTrackInterpolate(trackIdx: Int32, timeSec: Double) -> Godot.Vector3 {
+
+    public func positionTrackInterpolate(
+        trackIdx: Int32,
+        timeSec: Double
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
@@ -501,7 +587,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func rotationTrackInterpolate(trackIdx: Int32, timeSec: Double) -> Godot.Quaternion {
+
+    public func rotationTrackInterpolate(
+        trackIdx: Int32,
+        timeSec: Double
+    ) -> Godot.Quaternion {
         Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
@@ -522,7 +612,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func scaleTrackInterpolate(trackIdx: Int32, timeSec: Double) -> Godot.Vector3 {
+
+    public func scaleTrackInterpolate(
+        trackIdx: Int32,
+        timeSec: Double
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
@@ -543,7 +637,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func blendShapeTrackInterpolate(trackIdx: Int32, timeSec: Double) -> Double {
+
+    public func blendShapeTrackInterpolate(
+        trackIdx: Int32,
+        timeSec: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
@@ -564,7 +662,13 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackInsertKey<Value: VariantStorableIn>(trackIdx: Int32, time: Double, key: Value, transition: Double = 1) -> Int32 {
+
+    public func trackInsertKey<Value: VariantStorableIn>(
+        trackIdx: Int32,
+        time: Double,
+        key: Value,
+        transition: Double = 1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -587,7 +691,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackRemoveKey(trackIdx: Int32, keyIdx: Int32) {
+
+    public func trackRemoveKey(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_keyIdx) { __accessPtr in
@@ -607,7 +715,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackRemoveKeyAtTime(trackIdx: Int32, time: Double) {
+
+    public func trackRemoveKeyAtTime(
+        trackIdx: Int32,
+        time: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_time) { __accessPtr in
@@ -627,7 +739,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetKeyValue<Value: VariantStorableIn>(trackIdx: Int32, key: Int32, value: Value) {
+
+    public func trackSetKeyValue<Value: VariantStorableIn>(
+        trackIdx: Int32,
+        key: Int32,
+        value: Value
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         key.withGodotUnsafeRawPointer { __ptr_key in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -648,7 +765,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetKeyTransition(trackIdx: Int32, keyIdx: Int32, transition: Double) {
+
+    public func trackSetKeyTransition(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        transition: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         transition.withGodotUnsafeRawPointer { __ptr_transition in
@@ -669,7 +791,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetKeyTime(trackIdx: Int32, keyIdx: Int32, time: Double) {
+
+    public func trackSetKeyTime(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        time: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -690,7 +817,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetKeyTransition(trackIdx: Int32, keyIdx: Int32) -> Double {
+
+    public func trackGetKeyTransition(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -711,7 +842,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetKeyCount(trackIdx: Int32) -> Int32 {
+
+    public func trackGetKeyCount(
+        trackIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -731,7 +865,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetKeyValue(trackIdx: Int32, keyIdx: Int32) -> Godot.Variant {
+
+    public func trackGetKeyValue(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -752,7 +890,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetKeyTime(trackIdx: Int32, keyIdx: Int32) -> Double {
+
+    public func trackGetKeyTime(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -773,7 +915,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackFindKey(trackIdx: Int32, time: Double, findMode: Godot.Animation.FindMode = Animation.FindMode(rawValue: 0)!) -> Int32 {
+
+    public func trackFindKey(
+        trackIdx: Int32,
+        time: Double,
+        findMode: Godot.Animation.FindMode = Animation.FindMode(rawValue: 0)!
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -795,7 +942,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetInterpolationType(trackIdx: Int32, interpolation: Godot.Animation.InterpolationType) {
+
+    public func trackSetInterpolationType(
+        trackIdx: Int32,
+        interpolation: Godot.Animation.InterpolationType
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         interpolation.withGodotUnsafeRawPointer { __ptr_interpolation in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_interpolation) { __accessPtr in
@@ -815,7 +966,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetInterpolationType(trackIdx: Int32) -> Godot.Animation.InterpolationType {
+
+    public func trackGetInterpolationType(
+        trackIdx: Int32
+    ) -> Godot.Animation.InterpolationType {
         Godot.Animation.InterpolationType.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -835,7 +989,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetInterpolationLoopWrap(trackIdx: Int32, interpolation: Bool) {
+
+    public func trackSetInterpolationLoopWrap(
+        trackIdx: Int32,
+        interpolation: Bool
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         interpolation.withGodotUnsafeRawPointer { __ptr_interpolation in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_interpolation) { __accessPtr in
@@ -855,7 +1013,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackGetInterpolationLoopWrap(trackIdx: Int32) -> Bool {
+
+    public func trackGetInterpolationLoopWrap(
+        trackIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -875,7 +1036,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackIsCompressed(trackIdx: Int32) -> Bool {
+
+    public func trackIsCompressed(
+        trackIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -895,7 +1059,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func valueTrackSetUpdateMode(trackIdx: Int32, mode: Godot.Animation.UpdateMode) {
+
+    public func valueTrackSetUpdateMode(
+        trackIdx: Int32,
+        mode: Godot.Animation.UpdateMode
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_mode) { __accessPtr in
@@ -915,7 +1083,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func valueTrackGetUpdateMode(trackIdx: Int32) -> Godot.Animation.UpdateMode {
+
+    public func valueTrackGetUpdateMode(
+        trackIdx: Int32
+    ) -> Godot.Animation.UpdateMode {
         Godot.Animation.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -935,7 +1106,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func valueTrackInterpolate(trackIdx: Int32, timeSec: Double) -> Godot.Variant {
+
+    public func valueTrackInterpolate(
+        trackIdx: Int32,
+        timeSec: Double
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
@@ -956,7 +1131,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func methodTrackGetName(trackIdx: Int32, keyIdx: Int32) -> Godot.GodotStringName {
+
+    public func methodTrackGetName(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -977,7 +1156,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func methodTrackGetParams(trackIdx: Int32, keyIdx: Int32) -> Godot.AnyGodotArray {
+
+    public func methodTrackGetParams(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -998,7 +1181,14 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackInsertKey(trackIdx: Int32, time: Double, value: Double, inHandle handle: Godot.Vector2 = Vector2(x: 0, y: 0), outHandle: Godot.Vector2 = Vector2(x: 0, y: 0)) -> Int32 {
+
+    public func bezierTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        value: Double,
+        inHandle handle: Godot.Vector2 = Vector2(x: 0, y: 0),
+        outHandle: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -1022,7 +1212,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackSetKeyValue(trackIdx: Int32, keyIdx: Int32, value: Double) {
+
+    public func bezierTrackSetKeyValue(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        value: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -1043,7 +1238,13 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackSetKeyInHandle(trackIdx: Int32, keyIdx: Int32, inHandle handle: Godot.Vector2, balancedValueTimeRatio: Double = 1.0) {
+
+    public func bezierTrackSetKeyInHandle(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        inHandle handle: Godot.Vector2,
+        balancedValueTimeRatio: Double = 1.0
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         handle.withGodotUnsafeRawPointer { __ptr_handle in
@@ -1065,7 +1266,13 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackSetKeyOutHandle(trackIdx: Int32, keyIdx: Int32, outHandle: Godot.Vector2, balancedValueTimeRatio: Double = 1.0) {
+
+    public func bezierTrackSetKeyOutHandle(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        outHandle: Godot.Vector2,
+        balancedValueTimeRatio: Double = 1.0
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         outHandle.withGodotUnsafeRawPointer { __ptr_outHandle in
@@ -1087,7 +1294,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackGetKeyValue(trackIdx: Int32, keyIdx: Int32) -> Double {
+
+    public func bezierTrackGetKeyValue(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1108,7 +1319,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackGetKeyInHandle(trackIdx: Int32, keyIdx: Int32) -> Godot.Vector2 {
+
+    public func bezierTrackGetKeyInHandle(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1129,7 +1344,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackGetKeyOutHandle(trackIdx: Int32, keyIdx: Int32) -> Godot.Vector2 {
+
+    public func bezierTrackGetKeyOutHandle(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1150,7 +1369,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func bezierTrackInterpolate(trackIdx: Int32, time: Double) -> Double {
+
+    public func bezierTrackInterpolate(
+        trackIdx: Int32,
+        time: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -1171,7 +1394,14 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackInsertKey(trackIdx: Int32, time: Double, stream: Godot.Resource?, startOffset: Double = 0, endOffset: Double = 0) -> Int32 {
+
+    public func audioTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        stream: Godot.Resource?,
+        startOffset: Double = 0,
+        endOffset: Double = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -1196,7 +1426,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackSetKeyStream(trackIdx: Int32, keyIdx: Int32, stream: Godot.Resource?) {
+
+    public func audioTrackSetKeyStream(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        stream: Godot.Resource?
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
@@ -1218,7 +1453,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackSetKeyStartOffset(trackIdx: Int32, keyIdx: Int32, offset: Double) {
+
+    public func audioTrackSetKeyStartOffset(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        offset: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -1239,7 +1479,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackSetKeyEndOffset(trackIdx: Int32, keyIdx: Int32, offset: Double) {
+
+    public func audioTrackSetKeyEndOffset(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        offset: Double
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -1260,7 +1505,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackGetKeyStream(trackIdx: Int32, keyIdx: Int32) -> Godot.Resource? {
+
+    public func audioTrackGetKeyStream(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1281,7 +1530,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackGetKeyStartOffset(trackIdx: Int32, keyIdx: Int32) -> Double {
+
+    public func audioTrackGetKeyStartOffset(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1302,7 +1555,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackGetKeyEndOffset(trackIdx: Int32, keyIdx: Int32) -> Double {
+
+    public func audioTrackGetKeyEndOffset(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1323,7 +1580,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackSetUseBlend(trackIdx: Int32, enable: Bool) {
+
+    public func audioTrackSetUseBlend(
+        trackIdx: Int32,
+        enable: Bool
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_enable) { __accessPtr in
@@ -1343,7 +1604,10 @@ open class Animation: Resource {
         }
         }
     }()
-    public func audioTrackIsUseBlend(trackIdx: Int32) -> Bool {
+
+    public func audioTrackIsUseBlend(
+        trackIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         withUnsafeArgumentPackPointer(__ptr_trackIdx) { __accessPtr in
@@ -1363,7 +1627,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func animationTrackInsertKey(trackIdx: Int32, time: Double, animation: Godot.GodotStringName) -> Int32 {
+
+    public func animationTrackInsertKey(
+        trackIdx: Int32,
+        time: Double,
+        animation: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -1385,7 +1654,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func animationTrackSetKeyAnimation(trackIdx: Int32, keyIdx: Int32, animation: Godot.GodotStringName) {
+
+    public func animationTrackSetKeyAnimation(
+        trackIdx: Int32,
+        keyIdx: Int32,
+        animation: Godot.GodotStringName
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
@@ -1406,7 +1680,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func animationTrackGetKeyAnimation(trackIdx: Int32, keyIdx: Int32) -> Godot.GodotStringName {
+
+    public func animationTrackGetKeyAnimation(
+        trackIdx: Int32,
+        keyIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         keyIdx.withGodotUnsafeRawPointer { __ptr_keyIdx in
@@ -1427,7 +1705,10 @@ open class Animation: Resource {
         }
         }
     }()
-    private func __setLength(timeSec: Double) {
+
+    private func __setLength(
+        timeSec: Double
+    ) {
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
         withUnsafeArgumentPackPointer(__ptr_timeSec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1446,6 +1727,7 @@ open class Animation: Resource {
         }
         }
     }()
+
     private func __getLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1464,7 +1746,10 @@ open class Animation: Resource {
         }
         }
     }()
-    private func __setLoopMode(_ loopMode: Godot.Animation.LoopMode) {
+
+    private func __setLoopMode(
+        _ loopMode: Godot.Animation.LoopMode
+    ) {
         loopMode.withGodotUnsafeRawPointer { __ptr_loopMode in
         withUnsafeArgumentPackPointer(__ptr_loopMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1483,6 +1768,7 @@ open class Animation: Resource {
         }
         }
     }()
+
     private func __getLoopMode() -> Godot.Animation.LoopMode {
         Godot.Animation.LoopMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1501,7 +1787,10 @@ open class Animation: Resource {
         }
         }
     }()
-    private func __setStep(sizeSec: Double) {
+
+    private func __setStep(
+        sizeSec: Double
+    ) {
         sizeSec.withGodotUnsafeRawPointer { __ptr_sizeSec in
         withUnsafeArgumentPackPointer(__ptr_sizeSec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1520,6 +1809,7 @@ open class Animation: Resource {
         }
         }
     }()
+
     private func __getStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1538,6 +1828,7 @@ open class Animation: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1555,7 +1846,11 @@ open class Animation: Resource {
         }
         }
     }()
-    public func copyTrack(trackIdx: Int32, to animation: Godot.Animation?) {
+
+    public func copyTrack(
+        trackIdx: Int32,
+        to animation: Godot.Animation?
+    ) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafePointer(to: __ptr_animation) { _ptr___ptr_animation in
@@ -1576,7 +1871,12 @@ open class Animation: Resource {
         }
         }
     }()
-    public func compress(pageSize: UInt32 = 8192, fps: UInt32 = 120, splitTolerance: Double = 4.0) {
+
+    public func compress(
+        pageSize: UInt32 = 8192,
+        fps: UInt32 = 120,
+        splitTolerance: Double = 4.0
+    ) {
         pageSize.withGodotUnsafeRawPointer { __ptr_pageSize in
         fps.withGodotUnsafeRawPointer { __ptr_fps in
         splitTolerance.withGodotUnsafeRawPointer { __ptr_splitTolerance in
@@ -1624,6 +1924,7 @@ open class Animation: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1636,5 +1937,4 @@ open class Animation: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

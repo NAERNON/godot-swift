@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Polygon2D: Node2D {
     internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setUv(_ uv: Godot.PackedVector2Array) {
+
+    private func __setUv(
+        _ uv: Godot.PackedVector2Array
+    ) {
         uv.withGodotUnsafeRawPointer { __ptr_uv in
         withUnsafeArgumentPackPointer(__ptr_uv) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getUv() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setPolygons<Value: VariantStorable>(_ polygons: Godot.GodotArray<Value>) {
+
+    private func __setPolygons<Value: VariantStorable>(
+        _ polygons: Godot.GodotArray<Value>
+    ) {
         polygons.withGodotUnsafeRawPointer { __ptr_polygons in
         withUnsafeArgumentPackPointer(__ptr_polygons) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getPolygons() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setVertexColors(_ vertexColors: Godot.PackedColorArray) {
+
+    private func __setVertexColors(
+        _ vertexColors: Godot.PackedColorArray
+    ) {
         vertexColors.withGodotUnsafeRawPointer { __ptr_vertexColors in
         withUnsafeArgumentPackPointer(__ptr_vertexColors) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getVertexColors() -> Godot.PackedColorArray {
         Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -217,6 +241,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setTextureOffset(_ textureOffset: Godot.Vector2) {
+
+    private func __setTextureOffset(
+        _ textureOffset: Godot.Vector2
+    ) {
         textureOffset.withGodotUnsafeRawPointer { __ptr_textureOffset in
         withUnsafeArgumentPackPointer(__ptr_textureOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getTextureOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setTextureRotation(_ textureRotation: Double) {
+
+    private func __setTextureRotation(
+        _ textureRotation: Double
+    ) {
         textureRotation.withGodotUnsafeRawPointer { __ptr_textureRotation in
         withUnsafeArgumentPackPointer(__ptr_textureRotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getTextureRotation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setTextureScale(_ textureScale: Godot.Vector2) {
+
+    private func __setTextureScale(
+        _ textureScale: Godot.Vector2
+    ) {
         textureScale.withGodotUnsafeRawPointer { __ptr_textureScale in
         withUnsafeArgumentPackPointer(__ptr_textureScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getTextureScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +383,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setInvertEnabled(invert: Bool) {
+
+    private func __setInvertEnabled(
+        invert: Bool
+    ) {
         invert.withGodotUnsafeRawPointer { __ptr_invert in
         withUnsafeArgumentPackPointer(__ptr_invert) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +405,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getInvertEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +424,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setAntialiased(_ antialiased: Bool) {
+
+    private func __setAntialiased(
+        _ antialiased: Bool
+    ) {
         antialiased.withGodotUnsafeRawPointer { __ptr_antialiased in
         withUnsafeArgumentPackPointer(__ptr_antialiased) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,6 +446,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getAntialiased() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,7 +465,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setInvertBorder(_ invertBorder: Double) {
+
+    private func __setInvertBorder(
+        _ invertBorder: Double
+    ) {
         invertBorder.withGodotUnsafeRawPointer { __ptr_invertBorder in
         withUnsafeArgumentPackPointer(__ptr_invertBorder) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +487,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getInvertBorder() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,7 +506,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -476,6 +528,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -494,7 +547,11 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func addBone(path: Godot.NodePath, weights: Godot.PackedFloat32Array) {
+
+    public func addBone(
+        path: Godot.NodePath,
+        weights: Godot.PackedFloat32Array
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         weights.withGodotUnsafeRawPointer { __ptr_weights in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_weights) { __accessPtr in
@@ -514,6 +571,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     public func boneCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -532,7 +590,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func bonePath(index: Int32) -> Godot.NodePath {
+
+    public func bonePath(
+        index: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -552,7 +613,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func boneWeights(index: Int32) -> Godot.PackedFloat32Array {
+
+    public func boneWeights(
+        index: Int32
+    ) -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -572,7 +636,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func eraseBone(index: Int32) {
+
+    public func eraseBone(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -591,6 +658,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     public func clearBones() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -608,7 +676,11 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func setBonePath(index: Int32, path: Godot.NodePath) {
+
+    public func setBonePath(
+        index: Int32,
+        path: Godot.NodePath
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_path) { __accessPtr in
@@ -628,7 +700,11 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    public func setBoneWeights(index: Int32, weights: Godot.PackedFloat32Array) {
+
+    public func setBoneWeights(
+        index: Int32,
+        weights: Godot.PackedFloat32Array
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         weights.withGodotUnsafeRawPointer { __ptr_weights in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_weights) { __accessPtr in
@@ -648,7 +724,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setSkeleton(_ skeleton: Godot.NodePath) {
+
+    private func __setSkeleton(
+        _ skeleton: Godot.NodePath
+    ) {
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         withUnsafeArgumentPackPointer(__ptr_skeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -667,6 +746,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getSkeleton() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -685,7 +765,10 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setInternalVertexCount(_ internalVertexCount: Int32) {
+
+    private func __setInternalVertexCount(
+        _ internalVertexCount: Int32
+    ) {
         internalVertexCount.withGodotUnsafeRawPointer { __ptr_internalVertexCount in
         withUnsafeArgumentPackPointer(__ptr_internalVertexCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -704,6 +787,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
+
     private func __getInternalVertexCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -881,6 +965,7 @@ open class Polygon2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -893,5 +978,4 @@ open class Polygon2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

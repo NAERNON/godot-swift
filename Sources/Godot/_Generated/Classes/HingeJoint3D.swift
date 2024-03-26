@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class HingeJoint3D: Joint3D {
     public enum Param: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class HingeJoint3D: Joint3D {
         case motorTargetVelocity = 6
         case motorMaxImpulse = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bias", 0),
@@ -28,10 +30,12 @@ open class HingeJoint3D: Joint3D {
             ("Max", 8),]
         }
     }
+
     public enum Flag: UInt32, GodotEnum {
         case useLimit = 0
         case enableMotor = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Use Limit", 0),
@@ -47,7 +51,11 @@ open class HingeJoint3D: Joint3D {
         }
         }
     }()
-    public func setParam(_ param: Godot.HingeJoint3D.Param, value: Double) {
+
+    public func setParam(
+        _ param: Godot.HingeJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -67,7 +75,10 @@ open class HingeJoint3D: Joint3D {
         }
         }
     }()
-    public func param(_ param: Godot.HingeJoint3D.Param) -> Double {
+
+    public func param(
+        _ param: Godot.HingeJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -87,7 +98,11 @@ open class HingeJoint3D: Joint3D {
         }
         }
     }()
-    public func setFlag(_ flag: Godot.HingeJoint3D.Flag, enabled: Bool) {
+
+    public func setFlag(
+        _ flag: Godot.HingeJoint3D.Flag,
+        enabled: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
@@ -107,7 +122,10 @@ open class HingeJoint3D: Joint3D {
         }
         }
     }()
-    public func flag(_ flag: Godot.HingeJoint3D.Flag) -> Bool {
+
+    public func flag(
+        _ flag: Godot.HingeJoint3D.Flag
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -121,6 +139,7 @@ open class HingeJoint3D: Joint3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -133,5 +152,4 @@ open class HingeJoint3D: Joint3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Image: Resource {
     public enum Format: UInt32, GodotEnum {
@@ -46,6 +47,7 @@ open class Image: Resource {
         case astc8x8 = 37
         case astc8x8Hdr = 38
         case max = 39
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("L8", 0),
@@ -90,12 +92,14 @@ open class Image: Resource {
             ("Max", 39),]
         }
     }
+
     public enum Interpolation: UInt32, GodotEnum {
         case nearest = 0
         case bilinear = 1
         case cubic = 2
         case trilinear = 3
         case lanczos = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Nearest", 0),
@@ -105,10 +109,12 @@ open class Image: Resource {
             ("Lanczos", 4),]
         }
     }
+
     public enum AlphaMode: UInt32, GodotEnum {
         case none = 0
         case bit = 1
         case blend = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -116,6 +122,7 @@ open class Image: Resource {
             ("Blend", 2),]
         }
     }
+
     public enum CompressMode: UInt32, GodotEnum {
         case s3tc = 0
         case etc = 1
@@ -123,6 +130,7 @@ open class Image: Resource {
         case bptc = 3
         case astc = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("S3tc", 0),
@@ -133,6 +141,7 @@ open class Image: Resource {
             ("Max", 5),]
         }
     }
+
     public enum UsedChannels: UInt32, GodotEnum {
         case l = 0
         case la = 1
@@ -140,6 +149,7 @@ open class Image: Resource {
         case rg = 3
         case rgb = 4
         case rgba = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("L", 0),
@@ -150,10 +160,12 @@ open class Image: Resource {
             ("Rgba", 5),]
         }
     }
+
     public enum CompressSource: UInt32, GodotEnum {
         case generic = 0
         case srgb = 1
         case normal = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Generic", 0),
@@ -161,9 +173,11 @@ open class Image: Resource {
             ("Normal", 2),]
         }
     }
+
     public enum ASTCFormat: UInt32, GodotEnum {
         case astcFormat4x4 = 0
         case astcFormat8x8 = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Astc Format4x4", 0),
@@ -172,6 +186,7 @@ open class Image: Resource {
     }
 
     public static let maxWidth: Int = 16777216
+
     public static let maxHeight: Int = 16777216
 
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
@@ -181,6 +196,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func width() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +215,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func height() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +234,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func size() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,6 +253,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func hasMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +272,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func format() -> Godot.Image.Format {
         Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +291,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func data() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +310,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func convert(format: Godot.Image.Format) {
+
+    public func convert(
+        format: Godot.Image.Format
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +332,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func mipmapCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +351,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func mipmapOffset(mipmap: Int32) -> Int32 {
+
+    public func mipmapOffset(
+        mipmap: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         mipmap.withGodotUnsafeRawPointer { __ptr_mipmap in
         withUnsafeArgumentPackPointer(__ptr_mipmap) { __accessPtr in
@@ -346,7 +374,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func resizeToPo2(square: Bool = false, interpolation: Godot.Image.Interpolation = Image.Interpolation(rawValue: 1)!) {
+
+    public func resizeToPo2(
+        square: Bool = false,
+        interpolation: Godot.Image.Interpolation = Image.Interpolation(rawValue: 1)!
+    ) {
         square.withGodotUnsafeRawPointer { __ptr_square in
         interpolation.withGodotUnsafeRawPointer { __ptr_interpolation in
         withUnsafeArgumentPackPointer(__ptr_square, __ptr_interpolation) { __accessPtr in
@@ -366,7 +398,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func resize(width: Int32, height: Int32, interpolation: Godot.Image.Interpolation = Image.Interpolation(rawValue: 1)!) {
+
+    public func resize(
+        width: Int32,
+        height: Int32,
+        interpolation: Godot.Image.Interpolation = Image.Interpolation(rawValue: 1)!
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         interpolation.withGodotUnsafeRawPointer { __ptr_interpolation in
@@ -387,6 +424,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func shrinkX2() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -404,7 +442,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func crop(width: Int32, height: Int32) {
+
+    public func crop(
+        width: Int32,
+        height: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_width, __ptr_height) { __accessPtr in
@@ -424,6 +466,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func flipX() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -441,6 +484,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func flipY() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -458,7 +502,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func generateMipmaps(renormalize: Bool = false) -> Godot.ErrorType {
+
+    public func generateMipmaps(
+        renormalize: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         renormalize.withGodotUnsafeRawPointer { __ptr_renormalize in
         withUnsafeArgumentPackPointer(__ptr_renormalize) { __accessPtr in
@@ -478,6 +525,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func clearMipmaps() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -495,7 +543,13 @@ open class Image: Resource {
         }
         }
     }()
-    static public func create(width: Int32, height: Int32, useMipmaps: Bool, format: Godot.Image.Format) -> Godot.Image? {
+
+    static public func create(
+        width: Int32,
+        height: Int32,
+        useMipmaps: Bool,
+        format: Godot.Image.Format
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -517,7 +571,14 @@ open class Image: Resource {
         }
         }
     }()
-    static public func createFromData(width: Int32, height: Int32, useMipmaps: Bool, format: Godot.Image.Format, data: Godot.PackedByteArray) -> Godot.Image? {
+
+    static public func createFromData(
+        width: Int32,
+        height: Int32,
+        useMipmaps: Bool,
+        format: Godot.Image.Format,
+        data: Godot.PackedByteArray
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -540,7 +601,14 @@ open class Image: Resource {
         }
         }
     }()
-    public func setData(width: Int32, height: Int32, useMipmaps: Bool, format: Godot.Image.Format, data: Godot.PackedByteArray) {
+
+    public func setData(
+        width: Int32,
+        height: Int32,
+        useMipmaps: Bool,
+        format: Godot.Image.Format,
+        data: Godot.PackedByteArray
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         useMipmaps.withGodotUnsafeRawPointer { __ptr_useMipmaps in
@@ -563,6 +631,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func isEmpty() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -581,7 +650,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func load(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func load(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -601,7 +673,10 @@ open class Image: Resource {
         }
         }
     }()
-    static public func loadFromFile(path: Godot.GodotString) -> Godot.Image? {
+
+    static public func loadFromFile(
+        path: Godot.GodotString
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -620,7 +695,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func savePng(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func savePng(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -640,6 +718,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func savePngToBuffer() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -658,7 +737,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveJpg(path: Godot.GodotString, quality: Double = 0.75) -> Godot.ErrorType {
+
+    public func saveJpg(
+        path: Godot.GodotString,
+        quality: Double = 0.75
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         quality.withGodotUnsafeRawPointer { __ptr_quality in
@@ -679,7 +762,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveJpgToBuffer(quality: Double = 0.75) -> Godot.PackedByteArray {
+
+    public func saveJpgToBuffer(
+        quality: Double = 0.75
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         quality.withGodotUnsafeRawPointer { __ptr_quality in
         withUnsafeArgumentPackPointer(__ptr_quality) { __accessPtr in
@@ -699,7 +785,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveExr(path: Godot.GodotString, grayscale: Bool = false) -> Godot.ErrorType {
+
+    public func saveExr(
+        path: Godot.GodotString,
+        grayscale: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         grayscale.withGodotUnsafeRawPointer { __ptr_grayscale in
@@ -720,7 +810,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveExrToBuffer(grayscale: Bool = false) -> Godot.PackedByteArray {
+
+    public func saveExrToBuffer(
+        grayscale: Bool = false
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         grayscale.withGodotUnsafeRawPointer { __ptr_grayscale in
         withUnsafeArgumentPackPointer(__ptr_grayscale) { __accessPtr in
@@ -740,7 +833,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveWebp(path: Godot.GodotString, lossy: Bool = false, quality: Double = 0.75) -> Godot.ErrorType {
+
+    public func saveWebp(
+        path: Godot.GodotString,
+        lossy: Bool = false,
+        quality: Double = 0.75
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         lossy.withGodotUnsafeRawPointer { __ptr_lossy in
@@ -762,7 +860,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func saveWebpToBuffer(lossy: Bool = false, quality: Double = 0.75) -> Godot.PackedByteArray {
+
+    public func saveWebpToBuffer(
+        lossy: Bool = false,
+        quality: Double = 0.75
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         lossy.withGodotUnsafeRawPointer { __ptr_lossy in
         quality.withGodotUnsafeRawPointer { __ptr_quality in
@@ -783,6 +885,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func detectAlpha() -> Godot.Image.AlphaMode {
         Godot.Image.AlphaMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -801,6 +904,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func isInvisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -819,7 +923,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func detectUsedChannels(source: Godot.Image.CompressSource = Image.CompressSource(rawValue: 0)!) -> Godot.Image.UsedChannels {
+
+    public func detectUsedChannels(
+        source: Godot.Image.CompressSource = Image.CompressSource(rawValue: 0)!
+    ) -> Godot.Image.UsedChannels {
         Godot.Image.UsedChannels.fromMutatingGodotUnsafePointer { __temporary in
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_source) { __accessPtr in
@@ -839,7 +946,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func compress(mode: Godot.Image.CompressMode, source: Godot.Image.CompressSource = Image.CompressSource(rawValue: 0)!, astcFormat: Godot.Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)!) -> Godot.ErrorType {
+
+    public func compress(
+        mode: Godot.Image.CompressMode,
+        source: Godot.Image.CompressSource = Image.CompressSource(rawValue: 0)!,
+        astcFormat: Godot.Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)!
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         source.withGodotUnsafeRawPointer { __ptr_source in
@@ -861,7 +973,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func compressFromChannels(mode: Godot.Image.CompressMode, channels: Godot.Image.UsedChannels, astcFormat: Godot.Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)!) -> Godot.ErrorType {
+
+    public func compressFromChannels(
+        mode: Godot.Image.CompressMode,
+        channels: Godot.Image.UsedChannels,
+        astcFormat: Godot.Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)!
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         channels.withGodotUnsafeRawPointer { __ptr_channels in
@@ -883,6 +1000,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func decompress() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -901,6 +1019,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func isCompressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -919,7 +1038,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func rotate90(direction: Godot.ClockDirection) {
+
+    public func rotate90(
+        direction: Godot.ClockDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -938,6 +1060,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func rotate180() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -955,6 +1078,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func fixAlphaEdges() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -972,6 +1096,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func premultiplyAlpha() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -989,6 +1114,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func srgbToLinear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1006,6 +1132,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func normalMapToXy() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1023,6 +1150,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func rgbeToSrgb() -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1041,7 +1169,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func bumpMapToNormalMap(bumpScale: Double = 1.0) {
+
+    public func bumpMapToNormalMap(
+        bumpScale: Double = 1.0
+    ) {
         bumpScale.withGodotUnsafeRawPointer { __ptr_bumpScale in
         withUnsafeArgumentPackPointer(__ptr_bumpScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1060,7 +1191,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func computeImageMetrics(comparedImage: Godot.Image?, useLuma: Bool) -> Godot.AnyGodotDictionary {
+
+    public func computeImageMetrics(
+        comparedImage: Godot.Image?,
+        useLuma: Bool
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         comparedImage.withGodotUnsafeRawPointer { __ptr_comparedImage in
         withUnsafePointer(to: __ptr_comparedImage) { _ptr___ptr_comparedImage in
@@ -1082,7 +1217,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func blitRect(src: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
+
+    public func blitRect(
+        src: Godot.Image?,
+        srcRect: Godot.Rect2I,
+        dst: Godot.Vector2I
+    ) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
@@ -1104,7 +1244,13 @@ open class Image: Resource {
         }
         }
     }()
-    public func blitRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
+
+    public func blitRectMask(
+        src: Godot.Image?,
+        mask: Godot.Image?,
+        srcRect: Godot.Rect2I,
+        dst: Godot.Vector2I
+    ) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
@@ -1128,7 +1274,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func blendRect(src: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
+
+    public func blendRect(
+        src: Godot.Image?,
+        srcRect: Godot.Rect2I,
+        dst: Godot.Vector2I
+    ) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
@@ -1150,7 +1301,13 @@ open class Image: Resource {
         }
         }
     }()
-    public func blendRectMask(src: Godot.Image?, mask: Godot.Image?, srcRect: Godot.Rect2I, dst: Godot.Vector2I) {
+
+    public func blendRectMask(
+        src: Godot.Image?,
+        mask: Godot.Image?,
+        srcRect: Godot.Rect2I,
+        dst: Godot.Vector2I
+    ) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
@@ -1174,7 +1331,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func fill(color: Godot.Color) {
+
+    public func fill(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1193,7 +1353,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func fillRect(_ rect: Godot.Rect2I, color: Godot.Color) {
+
+    public func fillRect(
+        _ rect: Godot.Rect2I,
+        color: Godot.Color
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_rect, __ptr_color) { __accessPtr in
@@ -1213,6 +1377,7 @@ open class Image: Resource {
         }
         }
     }()
+
     public func usedRect() -> Godot.Rect2I {
         Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1231,7 +1396,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func region(_ region: Godot.Rect2I) -> Godot.Image? {
+
+    public func region(
+        _ region: Godot.Rect2I
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -1251,7 +1419,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func copyFrom(src: Godot.Image?) {
+
+    public func copyFrom(
+        src: Godot.Image?
+    ) {
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafePointer(to: __ptr_src) { _ptr___ptr_src in
         withUnsafeArgumentPackPointer(_ptr___ptr_src) { __accessPtr in
@@ -1271,7 +1442,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func pixelv(point: Godot.Vector2I) -> Godot.Color {
+
+    public func pixelv(
+        point: Godot.Vector2I
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -1291,7 +1465,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func pixel(x: Int32, y: Int32) -> Godot.Color {
+
+    public func pixel(
+        x: Int32,
+        y: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -1312,7 +1490,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func setPixelv(point: Godot.Vector2I, color: Godot.Color) {
+
+    public func setPixelv(
+        point: Godot.Vector2I,
+        color: Godot.Color
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_color) { __accessPtr in
@@ -1332,7 +1514,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func setPixel(x: Int32, y: Int32, color: Godot.Color) {
+
+    public func setPixel(
+        x: Int32,
+        y: Int32,
+        color: Godot.Color
+    ) {
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1353,7 +1540,12 @@ open class Image: Resource {
         }
         }
     }()
-    public func adjustBcs(brightness: Double, contrast: Double, saturation: Double) {
+
+    public func adjustBcs(
+        brightness: Double,
+        contrast: Double,
+        saturation: Double
+    ) {
         brightness.withGodotUnsafeRawPointer { __ptr_brightness in
         contrast.withGodotUnsafeRawPointer { __ptr_contrast in
         saturation.withGodotUnsafeRawPointer { __ptr_saturation in
@@ -1374,7 +1566,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadPngFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadPngFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1394,7 +1589,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadJpgFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadJpgFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1414,7 +1612,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadWebpFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadWebpFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1434,7 +1635,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadTgaFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadTgaFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1454,7 +1658,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadBmpFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadBmpFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1474,7 +1681,10 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadKtxFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadKtxFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1494,7 +1704,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadSvgFromBuffer(_ buffer: Godot.PackedByteArray, scale: Double = 1.0) -> Godot.ErrorType {
+
+    public func loadSvgFromBuffer(
+        _ buffer: Godot.PackedByteArray,
+        scale: Double = 1.0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
@@ -1515,7 +1729,11 @@ open class Image: Resource {
         }
         }
     }()
-    public func loadSvgFromString(svgStr: Godot.GodotString, scale: Double = 1.0) -> Godot.ErrorType {
+
+    public func loadSvgFromString(
+        svgStr: Godot.GodotString,
+        scale: Double = 1.0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         svgStr.withGodotUnsafeRawPointer { __ptr_svgStr in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
@@ -1530,6 +1748,7 @@ open class Image: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1542,5 +1761,4 @@ open class Image: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

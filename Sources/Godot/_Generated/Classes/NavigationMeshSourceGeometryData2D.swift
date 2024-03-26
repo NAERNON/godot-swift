@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationMeshSourceGeometryData2D: Resource {
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,6 +31,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
+
     public func hasData() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,7 +50,10 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
-    private func __setTraversableOutlines(_ traversableOutlines: Godot.GodotArray<Godot.PackedVector2Array>) {
+
+    private func __setTraversableOutlines(
+        _ traversableOutlines: Godot.GodotArray<Godot.PackedVector2Array>
+    ) {
         traversableOutlines.withGodotUnsafeRawPointer { __ptr_traversableOutlines in
         withUnsafeArgumentPackPointer(__ptr_traversableOutlines) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +72,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
+
     private func __getTraversableOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +91,10 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
-    private func __setObstructionOutlines(_ obstructionOutlines: Godot.GodotArray<Godot.PackedVector2Array>) {
+
+    private func __setObstructionOutlines(
+        _ obstructionOutlines: Godot.GodotArray<Godot.PackedVector2Array>
+    ) {
         obstructionOutlines.withGodotUnsafeRawPointer { __ptr_obstructionOutlines in
         withUnsafeArgumentPackPointer(__ptr_obstructionOutlines) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +113,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
+
     private func __getObstructionOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,7 +132,10 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
-    public func addTraversableOutline(shapeOutline: Godot.PackedVector2Array) {
+
+    public func addTraversableOutline(
+        shapeOutline: Godot.PackedVector2Array
+    ) {
         shapeOutline.withGodotUnsafeRawPointer { __ptr_shapeOutline in
         withUnsafeArgumentPackPointer(__ptr_shapeOutline) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         }
     }()
-    public func addObstructionOutline(shapeOutline: Godot.PackedVector2Array) {
+
+    public func addObstructionOutline(
+        shapeOutline: Godot.PackedVector2Array
+    ) {
         shapeOutline.withGodotUnsafeRawPointer { __ptr_shapeOutline in
         withUnsafeArgumentPackPointer(__ptr_shapeOutline) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,6 +192,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -187,5 +205,4 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

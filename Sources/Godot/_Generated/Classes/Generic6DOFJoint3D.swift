@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Generic6DOFJoint3D: Joint3D {
     public enum Param: UInt32, GodotEnum {
@@ -29,6 +30,7 @@ open class Generic6DOFJoint3D: Joint3D {
         case angularSpringDamping = 20
         case angularSpringEquilibriumPoint = 21
         case max = 22
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Linear Lower Limit", 0),
@@ -56,6 +58,7 @@ open class Generic6DOFJoint3D: Joint3D {
             ("Max", 22),]
         }
     }
+
     public enum Flag: UInt32, GodotEnum {
         case enableLinearLimit = 0
         case enableAngularLimit = 1
@@ -64,6 +67,7 @@ open class Generic6DOFJoint3D: Joint3D {
         case enableMotor = 4
         case enableLinearMotor = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Enable Linear Limit", 0),
@@ -83,7 +87,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setParamX(param: Godot.Generic6DOFJoint3D.Param, value: Double) {
+
+    public func setParamX(
+        param: Godot.Generic6DOFJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -103,7 +111,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func paramX(param: Godot.Generic6DOFJoint3D.Param) -> Double {
+
+    public func paramX(
+        param: Godot.Generic6DOFJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -123,7 +134,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setParamY(param: Godot.Generic6DOFJoint3D.Param, value: Double) {
+
+    public func setParamY(
+        param: Godot.Generic6DOFJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -143,7 +158,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func paramY(param: Godot.Generic6DOFJoint3D.Param) -> Double {
+
+    public func paramY(
+        param: Godot.Generic6DOFJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -163,7 +181,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setParamZ(param: Godot.Generic6DOFJoint3D.Param, value: Double) {
+
+    public func setParamZ(
+        param: Godot.Generic6DOFJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -183,7 +205,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func paramZ(param: Godot.Generic6DOFJoint3D.Param) -> Double {
+
+    public func paramZ(
+        param: Godot.Generic6DOFJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -203,7 +228,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setFlagX(flag: Godot.Generic6DOFJoint3D.Flag, value: Bool) {
+
+    public func setFlagX(
+        flag: Godot.Generic6DOFJoint3D.Flag,
+        value: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_value) { __accessPtr in
@@ -223,7 +252,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func flagX(flag: Godot.Generic6DOFJoint3D.Flag) -> Bool {
+
+    public func flagX(
+        flag: Godot.Generic6DOFJoint3D.Flag
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -243,7 +275,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setFlagY(flag: Godot.Generic6DOFJoint3D.Flag, value: Bool) {
+
+    public func setFlagY(
+        flag: Godot.Generic6DOFJoint3D.Flag,
+        value: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_value) { __accessPtr in
@@ -263,7 +299,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func flagY(flag: Godot.Generic6DOFJoint3D.Flag) -> Bool {
+
+    public func flagY(
+        flag: Godot.Generic6DOFJoint3D.Flag
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -283,7 +322,11 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func setFlagZ(flag: Godot.Generic6DOFJoint3D.Flag, value: Bool) {
+
+    public func setFlagZ(
+        flag: Godot.Generic6DOFJoint3D.Flag,
+        value: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_value) { __accessPtr in
@@ -303,7 +346,10 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         }
     }()
-    public func flagZ(flag: Godot.Generic6DOFJoint3D.Flag) -> Bool {
+
+    public func flagZ(
+        flag: Godot.Generic6DOFJoint3D.Flag
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -317,6 +363,7 @@ open class Generic6DOFJoint3D: Joint3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -329,5 +376,4 @@ open class Generic6DOFJoint3D: Joint3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

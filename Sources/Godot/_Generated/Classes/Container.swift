@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Container: Control {
+
     public func preSortChildren() {
         _ = preSortChildrenSignal.emit()
     }
+
     public lazy var preSortChildrenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pre_sort_children") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class Container: Control {
     public func sortChildren() {
         _ = sortChildrenSignal.emit()
     }
+
     public lazy var sortChildrenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "sort_children") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,6 +46,7 @@ open class Container: Control {
     }()
 
     public static let notificationPreSortChildren: Notification = .init(rawValue: 50)
+
     public static let notificationSortChildren: Notification = .init(rawValue: 51)
 
     open func _getAllowedSizeFlagsHorizontal() -> Godot.PackedInt32Array {
@@ -59,6 +64,7 @@ open class Container: Control {
         }
         }
     }()
+
     public func queueSort() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -76,7 +82,11 @@ open class Container: Control {
         }
         }
     }()
-    public func fitChildInRect(child: Godot.Control?, rect: Godot.Rect2) {
+
+    public func fitChildInRect(
+        child: Godot.Control?,
+        rect: Godot.Rect2
+    ) {
         child.withGodotUnsafeRawPointer { __ptr_child in
         withUnsafePointer(to: __ptr_child) { _ptr___ptr_child in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -91,6 +101,7 @@ open class Container: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -118,5 +129,4 @@ open class Container: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

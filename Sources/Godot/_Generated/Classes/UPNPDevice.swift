@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class UPNPDevice: RefCounted {
     public enum IGDStatus: UInt32, GodotEnum {
@@ -16,6 +17,7 @@ open class UPNPDevice: RefCounted {
         case invalidControl = 7
         case mallocError = 8
         case unknownError = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ok", 0),
@@ -38,6 +40,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     public func isValidGateway() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -56,6 +59,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     public func queryExternalAddress() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +78,14 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    public func addPortMapping(port: Int32, portInternal: Int32 = 0, desc: Godot.GodotString = "", proto: Godot.GodotString = "UDP", duration: Int32 = 0) -> Int32 {
+
+    public func addPortMapping(
+        port: Int32,
+        portInternal: Int32 = 0,
+        desc: Godot.GodotString = "",
+        proto: Godot.GodotString = "UDP",
+        duration: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         portInternal.withGodotUnsafeRawPointer { __ptr_portInternal in
@@ -98,7 +109,11 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    public func deletePortMapping(port: Int32, proto: Godot.GodotString = "UDP") -> Int32 {
+
+    public func deletePortMapping(
+        port: Int32,
+        proto: Godot.GodotString = "UDP"
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         proto.withGodotUnsafeRawPointer { __ptr_proto in
@@ -119,7 +134,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setDescriptionUrl(_ url: Godot.GodotString) {
+
+    private func __setDescriptionUrl(
+        _ url: Godot.GodotString
+    ) {
         url.withGodotUnsafeRawPointer { __ptr_url in
         withUnsafeArgumentPackPointer(__ptr_url) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -138,6 +156,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getDescriptionUrl() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,7 +175,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setServiceType(_ type: Godot.GodotString) {
+
+    private func __setServiceType(
+        _ type: Godot.GodotString
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,6 +197,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getServiceType() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -193,7 +216,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setIgdControlUrl(_ url: Godot.GodotString) {
+
+    private func __setIgdControlUrl(
+        _ url: Godot.GodotString
+    ) {
         url.withGodotUnsafeRawPointer { __ptr_url in
         withUnsafeArgumentPackPointer(__ptr_url) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +238,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getIgdControlUrl() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,7 +257,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setIgdServiceType(_ type: Godot.GodotString) {
+
+    private func __setIgdServiceType(
+        _ type: Godot.GodotString
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,6 +279,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getIgdServiceType() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -267,7 +298,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setIgdOurAddr(_ addr: Godot.GodotString) {
+
+    private func __setIgdOurAddr(
+        _ addr: Godot.GodotString
+    ) {
         addr.withGodotUnsafeRawPointer { __ptr_addr in
         withUnsafeArgumentPackPointer(__ptr_addr) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -286,6 +320,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getIgdOurAddr() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -304,7 +339,10 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
-    private func __setIgdStatus(_ status: Godot.UPNPDevice.IGDStatus) {
+
+    private func __setIgdStatus(
+        _ status: Godot.UPNPDevice.IGDStatus
+    ) {
         status.withGodotUnsafeRawPointer { __ptr_status in
         withUnsafeArgumentPackPointer(__ptr_status) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +361,7 @@ open class UPNPDevice: RefCounted {
         }
         }
     }()
+
     private func __getIgdStatus() -> Godot.UPNPDevice.IGDStatus {
         Godot.UPNPDevice.IGDStatus.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +440,7 @@ open class UPNPDevice: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -413,5 +453,4 @@ open class UPNPDevice: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

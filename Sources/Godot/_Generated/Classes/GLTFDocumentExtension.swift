@@ -3,9 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFDocumentExtension: Resource {
-    open func _importPreflight(state: Godot.GLTFState?, extensions: Godot.PackedStringArray) -> Godot.ErrorType {
+    open func _importPreflight(
+        state: Godot.GLTFState?,
+        extensions: Godot.PackedStringArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -13,11 +17,20 @@ open class GLTFDocumentExtension: Resource {
         Godot.PackedStringArray()
     }
 
-    open func _parseNodeExtensions(state: Godot.GLTFState?, gltfNode: Godot.GLTFNode?, extensions: Godot.AnyGodotDictionary) -> Godot.ErrorType {
+    open func _parseNodeExtensions(
+        state: Godot.GLTFState?,
+        gltfNode: Godot.GLTFNode?,
+        extensions: Godot.AnyGodotDictionary
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _parseImageData(state: Godot.GLTFState?, imageData: Godot.PackedByteArray, mimeType: Godot.GodotString, retImage: Godot.Image?) -> Godot.ErrorType {
+    open func _parseImageData(
+        state: Godot.GLTFState?,
+        imageData: Godot.PackedByteArray,
+        mimeType: Godot.GodotString,
+        retImage: Godot.Image?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -25,34 +38,61 @@ open class GLTFDocumentExtension: Resource {
         Godot.GodotString()
     }
 
-    open func _parseTextureJson(state: Godot.GLTFState?, textureJson: Godot.AnyGodotDictionary, retGltfTexture: Godot.GLTFTexture?) -> Godot.ErrorType {
+    open func _parseTextureJson(
+        state: Godot.GLTFState?,
+        textureJson: Godot.AnyGodotDictionary,
+        retGltfTexture: Godot.GLTFTexture?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _generateSceneNode(state: Godot.GLTFState?, gltfNode: Godot.GLTFNode?, sceneParent: Godot.Node?) -> Godot.Node3D? {
+    open func _generateSceneNode(
+        state: Godot.GLTFState?,
+        gltfNode: Godot.GLTFNode?,
+        sceneParent: Godot.Node?
+    ) -> Godot.Node3D? {
         nil
     }
 
-    open func _importPostParse(state: Godot.GLTFState?) -> Godot.ErrorType {
+    open func _importPostParse(
+        state: Godot.GLTFState?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _importNode(state: Godot.GLTFState?, gltfNode: Godot.GLTFNode?, json: Godot.AnyGodotDictionary, node: Godot.Node?) -> Godot.ErrorType {
+    open func _importNode(
+        state: Godot.GLTFState?,
+        gltfNode: Godot.GLTFNode?,
+        json: Godot.AnyGodotDictionary,
+        node: Godot.Node?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _importPost(state: Godot.GLTFState?, root: Godot.Node?) -> Godot.ErrorType {
+    open func _importPost(
+        state: Godot.GLTFState?,
+        root: Godot.Node?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _exportPreflight(state: Godot.GLTFState?, root: Godot.Node?) -> Godot.ErrorType {
+    open func _exportPreflight(
+        state: Godot.GLTFState?,
+        root: Godot.Node?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _convertSceneNode(state: Godot.GLTFState?, gltfNode: Godot.GLTFNode?, sceneNode: Godot.Node?) {
+    open func _convertSceneNode(
+        state: Godot.GLTFState?,
+        gltfNode: Godot.GLTFNode?,
+        sceneNode: Godot.Node?
+    ) {
     }
 
-    open func _exportPreserialize(state: Godot.GLTFState?) -> Godot.ErrorType {
+    open func _exportPreserialize(
+        state: Godot.GLTFState?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -60,27 +100,52 @@ open class GLTFDocumentExtension: Resource {
         Godot.PackedStringArray()
     }
 
-    open func _serializeImageToBytes(state: Godot.GLTFState?, image: Godot.Image?, imageDict: Godot.AnyGodotDictionary, imageFormat: Godot.GodotString, lossyQuality: Double) -> Godot.PackedByteArray {
+    open func _serializeImageToBytes(
+        state: Godot.GLTFState?,
+        image: Godot.Image?,
+        imageDict: Godot.AnyGodotDictionary,
+        imageFormat: Godot.GodotString,
+        lossyQuality: Double
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray()
     }
 
-    open func _saveImageAtPath(state: Godot.GLTFState?, image: Godot.Image?, filePath: Godot.GodotString, imageFormat: Godot.GodotString, lossyQuality: Double) -> Godot.ErrorType {
+    open func _saveImageAtPath(
+        state: Godot.GLTFState?,
+        image: Godot.Image?,
+        filePath: Godot.GodotString,
+        imageFormat: Godot.GodotString,
+        lossyQuality: Double
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _serializeTextureJson(state: Godot.GLTFState?, textureJson: Godot.AnyGodotDictionary, gltfTexture: Godot.GLTFTexture?, imageFormat: Godot.GodotString) -> Godot.ErrorType {
+    open func _serializeTextureJson(
+        state: Godot.GLTFState?,
+        textureJson: Godot.AnyGodotDictionary,
+        gltfTexture: Godot.GLTFTexture?,
+        imageFormat: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _exportNode(state: Godot.GLTFState?, gltfNode: Godot.GLTFNode?, json: Godot.AnyGodotDictionary, node: Godot.Node?) -> Godot.ErrorType {
+    open func _exportNode(
+        state: Godot.GLTFState?,
+        gltfNode: Godot.GLTFNode?,
+        json: Godot.AnyGodotDictionary,
+        node: Godot.Node?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _exportPost(state: Godot.GLTFState?) -> Godot.ErrorType {
+    open func _exportPost(
+        state: Godot.GLTFState?
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -306,5 +371,4 @@ open class GLTFDocumentExtension: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

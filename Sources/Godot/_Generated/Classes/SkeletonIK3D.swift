@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SkeletonIK3D: Node {
     internal static var __method_binding_set_root_bone: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setRootBone(_ rootBone: Godot.GodotStringName) {
+
+    private func __setRootBone(
+        _ rootBone: Godot.GodotStringName
+    ) {
         rootBone.withGodotUnsafeRawPointer { __ptr_rootBone in
         withUnsafeArgumentPackPointer(__ptr_rootBone) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getRootBone() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setTipBone(_ tipBone: Godot.GodotStringName) {
+
+    private func __setTipBone(
+        _ tipBone: Godot.GodotStringName
+    ) {
         tipBone.withGodotUnsafeRawPointer { __ptr_tipBone in
         withUnsafeArgumentPackPointer(__ptr_tipBone) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getTipBone() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setInterpolation(_ interpolation: Double) {
+
+    private func __setInterpolation(
+        _ interpolation: Double
+    ) {
         interpolation.withGodotUnsafeRawPointer { __ptr_interpolation in
         withUnsafeArgumentPackPointer(__ptr_interpolation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getInterpolation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setTargetTransform(target: Godot.Transform3D) {
+
+    private func __setTargetTransform(
+        target: Godot.Transform3D
+    ) {
         target.withGodotUnsafeRawPointer { __ptr_target in
         withUnsafeArgumentPackPointer(__ptr_target) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getTargetTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setTargetNode(_ node: Godot.NodePath) {
+
+    private func __setTargetNode(
+        _ node: Godot.NodePath
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafeArgumentPackPointer(__ptr_node) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setOverrideTipBasis(override: Bool) {
+
+    private func __setOverrideTipBasis(
+        override: Bool
+    ) {
         override.withGodotUnsafeRawPointer { __ptr_override in
         withUnsafeArgumentPackPointer(__ptr_override) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __isOverrideTipBasis() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setUseMagnet(use: Bool) {
+
+    private func __setUseMagnet(
+        use: Bool
+    ) {
         use.withGodotUnsafeRawPointer { __ptr_use in
         withUnsafeArgumentPackPointer(__ptr_use) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __isUsingMagnet() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setMagnetPosition(localPosition: Godot.Vector3) {
+
+    private func __setMagnetPosition(
+        localPosition: Godot.Vector3
+    ) {
         localPosition.withGodotUnsafeRawPointer { __ptr_localPosition in
         withUnsafeArgumentPackPointer(__ptr_localPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getMagnetPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     public func parentSkeleton() -> Godot.Skeleton3D? {
         Godot.Skeleton3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,6 +360,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     public func isRunning() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,7 +379,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setMinDistance(_ minDistance: Double) {
+
+    private func __setMinDistance(
+        _ minDistance: Double
+    ) {
         minDistance.withGodotUnsafeRawPointer { __ptr_minDistance in
         withUnsafeArgumentPackPointer(__ptr_minDistance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,6 +401,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getMinDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,7 +420,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    private func __setMaxIterations(_ iterations: Int32) {
+
+    private func __setMaxIterations(
+        _ iterations: Int32
+    ) {
         iterations.withGodotUnsafeRawPointer { __ptr_iterations in
         withUnsafeArgumentPackPointer(__ptr_iterations) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,6 +442,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     private func __getMaxIterations() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,7 +461,10 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
-    public func start(oneTime: Bool = false) {
+
+    public func start(
+        oneTime: Bool = false
+    ) {
         oneTime.withGodotUnsafeRawPointer { __ptr_oneTime in
         withUnsafeArgumentPackPointer(__ptr_oneTime) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +483,7 @@ open class SkeletonIK3D: Node {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -558,6 +605,7 @@ open class SkeletonIK3D: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -570,5 +618,4 @@ open class SkeletonIK3D: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

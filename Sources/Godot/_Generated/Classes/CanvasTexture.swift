@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CanvasTexture: Texture2D {
     internal static var __method_binding_set_diffuse_texture: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setDiffuseTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setDiffuseTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -32,6 +36,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getDiffuseTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setNormalTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setNormalTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -70,6 +78,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getNormalTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +97,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setSpecularTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setSpecularTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -108,6 +120,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getSpecularTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +139,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setSpecularColor(_ color: Godot.Color) {
+
+    private func __setSpecularColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,6 +161,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getSpecularColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +180,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setSpecularShininess(_ shininess: Double) {
+
+    private func __setSpecularShininess(
+        _ shininess: Double
+    ) {
         shininess.withGodotUnsafeRawPointer { __ptr_shininess in
         withUnsafeArgumentPackPointer(__ptr_shininess) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,6 +202,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getSpecularShininess() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,7 +221,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setTextureFilter(_ filter: Godot.CanvasItem.TextureFilter) {
+
+    private func __setTextureFilter(
+        _ filter: Godot.CanvasItem.TextureFilter
+    ) {
         filter.withGodotUnsafeRawPointer { __ptr_filter in
         withUnsafeArgumentPackPointer(__ptr_filter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,6 +243,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getTextureFilter() -> Godot.CanvasItem.TextureFilter {
         Godot.CanvasItem.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,7 +262,10 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
-    private func __setTextureRepeat(_ `repeat`: Godot.CanvasItem.TextureRepeat) {
+
+    private func __setTextureRepeat(
+        _ `repeat`: Godot.CanvasItem.TextureRepeat
+    ) {
         `repeat`.withGodotUnsafeRawPointer { __ptr_repeat in
         withUnsafeArgumentPackPointer(__ptr_repeat) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,6 +284,7 @@ open class CanvasTexture: Texture2D {
         }
         }
     }()
+
     private func __getTextureRepeat() -> Godot.CanvasItem.TextureRepeat {
         Godot.CanvasItem.TextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +374,7 @@ open class CanvasTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -357,5 +387,4 @@ open class CanvasTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Noise: Resource {
     internal static var __method_binding_get_noise_1d: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Noise: Resource {
         }
         }
     }()
-    public func noise1d(_ x: Double) -> Double {
+
+    public func noise1d(
+        _ x: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -32,7 +36,11 @@ open class Noise: Resource {
         }
         }
     }()
-    public func noise2D(x: Double, y: Double) -> Double {
+
+    public func noise2D(
+        x: Double,
+        y: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -53,7 +61,10 @@ open class Noise: Resource {
         }
         }
     }()
-    public func noise2dv(_ v: Godot.Vector2) -> Double {
+
+    public func noise2dv(
+        _ v: Godot.Vector2
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         v.withGodotUnsafeRawPointer { __ptr_v in
         withUnsafeArgumentPackPointer(__ptr_v) { __accessPtr in
@@ -73,7 +84,12 @@ open class Noise: Resource {
         }
         }
     }()
-    public func noise3D(x: Double, y: Double, z: Double) -> Double {
+
+    public func noise3D(
+        x: Double,
+        y: Double,
+        z: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
@@ -95,7 +111,10 @@ open class Noise: Resource {
         }
         }
     }()
-    public func noise3dv(_ v: Godot.Vector3) -> Double {
+
+    public func noise3dv(
+        _ v: Godot.Vector3
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         v.withGodotUnsafeRawPointer { __ptr_v in
         withUnsafeArgumentPackPointer(__ptr_v) { __accessPtr in
@@ -115,7 +134,14 @@ open class Noise: Resource {
         }
         }
     }()
-    public func image(width: Int32, height: Int32, invert: Bool = false, in3DSpace: Bool = false, normalize: Bool = true) -> Godot.Image? {
+
+    public func image(
+        width: Int32,
+        height: Int32,
+        invert: Bool = false,
+        in3DSpace: Bool = false,
+        normalize: Bool = true
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -139,7 +165,15 @@ open class Noise: Resource {
         }
         }
     }()
-    public func seamlessImage(width: Int32, height: Int32, invert: Bool = false, in3DSpace: Bool = false, skirt: Double = 0.1, normalize: Bool = true) -> Godot.Image? {
+
+    public func seamlessImage(
+        width: Int32,
+        height: Int32,
+        invert: Bool = false,
+        in3DSpace: Bool = false,
+        skirt: Double = 0.1,
+        normalize: Bool = true
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -164,7 +198,14 @@ open class Noise: Resource {
         }
         }
     }()
-    public func image3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, normalize: Bool = true) -> Godot.GodotArray<Godot.Image?> {
+
+    public func image3D(
+        width: Int32,
+        height: Int32,
+        depth: Int32,
+        invert: Bool = false,
+        normalize: Bool = true
+    ) -> Godot.GodotArray<Godot.Image?> {
         Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -188,7 +229,15 @@ open class Noise: Resource {
         }
         }
     }()
-    public func seamlessImage3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, skirt: Double = 0.1, normalize: Bool = true) -> Godot.GodotArray<Godot.Image?> {
+
+    public func seamlessImage3D(
+        width: Int32,
+        height: Int32,
+        depth: Int32,
+        invert: Bool = false,
+        skirt: Double = 0.1,
+        normalize: Bool = true
+    ) -> Godot.GodotArray<Godot.Image?> {
         Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -207,6 +256,7 @@ open class Noise: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -219,5 +269,4 @@ open class Noise: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

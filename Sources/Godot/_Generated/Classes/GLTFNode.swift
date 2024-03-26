@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFNode: Resource {
     internal static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getParent() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setParent(_ parent: Int32) {
+
+    private func __setParent(
+        _ parent: Int32
+    ) {
         parent.withGodotUnsafeRawPointer { __ptr_parent in
         withUnsafeArgumentPackPointer(__ptr_parent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setHeight(_ height: Int32) {
+
+    private func __setHeight(
+        _ height: Int32
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getXform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setXform(_ xform: Godot.Transform3D) {
+
+    private func __setXform(
+        _ xform: Godot.Transform3D
+    ) {
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_xform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getMesh() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setMesh(_ mesh: Int32) {
+
+    private func __setMesh(
+        _ mesh: Int32
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafeArgumentPackPointer(__ptr_mesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getCamera() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setCamera(_ camera: Int32) {
+
+    private func __setCamera(
+        _ camera: Int32
+    ) {
         camera.withGodotUnsafeRawPointer { __ptr_camera in
         withUnsafeArgumentPackPointer(__ptr_camera) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getSkin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setSkin(_ skin: Int32) {
+
+    private func __setSkin(
+        _ skin: Int32
+    ) {
         skin.withGodotUnsafeRawPointer { __ptr_skin in
         withUnsafeArgumentPackPointer(__ptr_skin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getSkeleton() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setSkeleton(_ skeleton: Int32) {
+
+    private func __setSkeleton(
+        _ skeleton: Int32
+    ) {
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         withUnsafeArgumentPackPointer(__ptr_skeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector3) {
+
+    private func __setPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getRotation() -> Godot.Quaternion {
         Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +360,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setRotation(_ rotation: Godot.Quaternion) {
+
+    private func __setRotation(
+        _ rotation: Godot.Quaternion
+    ) {
         rotation.withGodotUnsafeRawPointer { __ptr_rotation in
         withUnsafeArgumentPackPointer(__ptr_rotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +382,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getScale() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,7 +401,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setScale(_ scale: Godot.Vector3) {
+
+    private func __setScale(
+        _ scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +423,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getChildren() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +442,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setChildren(_ children: Godot.PackedInt32Array) {
+
+    private func __setChildren(
+        _ children: Godot.PackedInt32Array
+    ) {
         children.withGodotUnsafeRawPointer { __ptr_children in
         withUnsafeArgumentPackPointer(__ptr_children) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +464,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
+
     private func __getLight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,7 +483,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    private func __setLight(_ light: Int32) {
+
+    private func __setLight(
+        _ light: Int32
+    ) {
         light.withGodotUnsafeRawPointer { __ptr_light in
         withUnsafeArgumentPackPointer(__ptr_light) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +505,10 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    public func additionalData(extensionName: Godot.GodotStringName) -> Godot.Variant {
+
+    public func additionalData(
+        extensionName: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         extensionName.withGodotUnsafeRawPointer { __ptr_extensionName in
         withUnsafeArgumentPackPointer(__ptr_extensionName) { __accessPtr in
@@ -476,7 +528,11 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    public func setAdditionalData<Value: VariantStorableIn>(extensionName: Godot.GodotStringName, additionalData: Value) {
+
+    public func setAdditionalData<Value: VariantStorableIn>(
+        extensionName: Godot.GodotStringName,
+        additionalData: Value
+    ) {
         extensionName.withGodotUnsafeRawPointer { __ptr_extensionName in
         Godot.Variant.withStorageUnsafeRawPointer(to: additionalData) { __ptr_additionalData in
         withUnsafeArgumentPackPointer(__ptr_extensionName, __ptr_additionalData) { __accessPtr in
@@ -622,6 +678,7 @@ open class GLTFNode: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -634,5 +691,4 @@ open class GLTFNode: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

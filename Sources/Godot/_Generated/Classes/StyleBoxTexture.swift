@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StyleBoxTexture: StyleBox {
     public enum AxisStretchMode: UInt32, GodotEnum {
         case stretch = 0
         case tile = 1
         case tileFit = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Stretch", 0),
@@ -24,7 +26,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -44,6 +49,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -62,7 +68,11 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    public func setTextureMargin(_ margin: Godot.Side, size: Double) {
+
+    public func setTextureMargin(
+        _ margin: Godot.Side,
+        size: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_size) { __accessPtr in
@@ -82,7 +92,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    public func setTextureMarginAll(size: Double) {
+
+    public func setTextureMarginAll(
+        size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -101,7 +114,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __getTextureMargin(_ margin: Godot.Side) -> Double {
+
+    private func __getTextureMargin(
+        _ margin: Godot.Side
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -121,7 +137,11 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    public func setExpandMargin(_ margin: Godot.Side, size: Double) {
+
+    public func setExpandMargin(
+        _ margin: Godot.Side,
+        size: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_size) { __accessPtr in
@@ -141,7 +161,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    public func setExpandMarginAll(size: Double) {
+
+    public func setExpandMarginAll(
+        size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +183,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __getExpandMargin(_ margin: Godot.Side) -> Double {
+
+    private func __getExpandMargin(
+        _ margin: Godot.Side
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -180,7 +206,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setRegionRect(region: Godot.Rect2) {
+
+    private func __setRegionRect(
+        region: Godot.Rect2
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +228,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __getRegionRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +247,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setDrawCenter(enable: Bool) {
+
+    private func __setDrawCenter(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,6 +269,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __isDrawCenterEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,7 +288,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setModulate(color: Godot.Color) {
+
+    private func __setModulate(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,6 +310,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __getModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,7 +329,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setHAxisStretchMode(_ mode: Godot.StyleBoxTexture.AxisStretchMode) {
+
+    private func __setHAxisStretchMode(
+        _ mode: Godot.StyleBoxTexture.AxisStretchMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -310,6 +351,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __getHAxisStretchMode() -> Godot.StyleBoxTexture.AxisStretchMode {
         Godot.StyleBoxTexture.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,7 +370,10 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
-    private func __setVAxisStretchMode(_ mode: Godot.StyleBoxTexture.AxisStretchMode) {
+
+    private func __setVAxisStretchMode(
+        _ mode: Godot.StyleBoxTexture.AxisStretchMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -347,6 +392,7 @@ open class StyleBoxTexture: StyleBox {
         }
         }
     }()
+
     private func __getVAxisStretchMode() -> Godot.StyleBoxTexture.AxisStretchMode {
         Godot.StyleBoxTexture.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -489,6 +535,7 @@ open class StyleBoxTexture: StyleBox {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -501,5 +548,4 @@ open class StyleBoxTexture: StyleBox {
         }
         return _virtualFunctions!
     }
-
-    }
+}

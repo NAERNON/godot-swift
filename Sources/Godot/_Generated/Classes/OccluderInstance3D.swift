@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OccluderInstance3D: Node3D {
     internal static var __method_binding_set_bake_mask: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
-    private func __setBakeMask(_ mask: UInt32) {
+
+    private func __setBakeMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
+
     private func __getBakeMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,11 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
-    public func setBakeMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setBakeMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -69,7 +78,10 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
-    public func bakeMaskValue(layerNumber: Int32) -> Bool {
+
+    public func bakeMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -89,7 +101,10 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
-    private func __setBakeSimplificationDistance(_ simplificationDistance: Double) {
+
+    private func __setBakeSimplificationDistance(
+        _ simplificationDistance: Double
+    ) {
         simplificationDistance.withGodotUnsafeRawPointer { __ptr_simplificationDistance in
         withUnsafeArgumentPackPointer(__ptr_simplificationDistance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,6 +123,7 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
+
     private func __getBakeSimplificationDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +142,10 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
-    private func __setOccluder(_ occluder: Godot.Occluder3D?) {
+
+    private func __setOccluder(
+        _ occluder: Godot.Occluder3D?
+    ) {
         occluder.withGodotUnsafeRawPointer { __ptr_occluder in
         withUnsafePointer(to: __ptr_occluder) { _ptr___ptr_occluder in
         withUnsafeArgumentPackPointer(_ptr___ptr_occluder) { __accessPtr in
@@ -146,6 +165,7 @@ open class OccluderInstance3D: Node3D {
         }
         }
     }()
+
     private func __getOccluder() -> Godot.Occluder3D? {
         Godot.Occluder3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,6 +211,7 @@ open class OccluderInstance3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -203,5 +224,4 @@ open class OccluderInstance3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

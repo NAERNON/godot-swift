@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AudioServer: Object {
     public enum SpeakerMode: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AudioServer: Object {
         case surround31 = 1
         case surround51 = 2
         case surround71 = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mode Stereo", 0),
@@ -22,6 +24,7 @@ open class AudioServer: Object {
     public func busLayoutChanged() {
         _ = busLayoutChangedSignal.emit()
     }
+
     public lazy var busLayoutChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bus_layout_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,22 +42,38 @@ open class AudioServer: Object {
 
     public struct BusRenamedSignalInput: Godot.SignalInput {
         public let busIndex: Int
+
         public let oldName: Godot.GodotStringName
+
         public let newName: Godot.GodotStringName
-        fileprivate init(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+        fileprivate init(
+            busIndex: Int,
+            oldName: Godot.GodotStringName,
+            newName: Godot.GodotStringName
+        ) {
             self.busIndex = busIndex
             self.oldName = oldName
             self.newName = newName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.busIndex), Variant(input.oldName), Variant(input.newName)]
         }
     }
-    public func busRenamed(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+    public func busRenamed(
+        busIndex: Int,
+        oldName: Godot.GodotStringName,
+        newName: Godot.GodotStringName
+    ) {
         _ = busRenamedSignal.emit(.init(busIndex: busIndex,
                 oldName: oldName,
                 newName: newName))
     }
+
     public lazy var busRenamedSignal: Godot.SignalEmitter<BusRenamedSignalInput> = {
         .init(object: self, signalName: "bus_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BusRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,7 +98,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    private func __setBusCount(amount: Int32) {
+
+    private func __setBusCount(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,6 +120,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     private func __getBusCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,7 +139,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func removeBus(index: Int32) {
+
+    public func removeBus(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,7 +161,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func addBus(atPosition position: Int32 = -1) {
+
+    public func addBus(
+        atPosition position: Int32 = -1
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +183,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func moveBus(index: Int32, toIndex: Int32) {
+
+    public func moveBus(
+        index: Int32,
+        toIndex: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         toIndex.withGodotUnsafeRawPointer { __ptr_toIndex in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_toIndex) { __accessPtr in
@@ -174,7 +207,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusName(busIdx: Int32, name: Godot.GodotString) {
+
+    public func setBusName(
+        busIdx: Int32,
+        name: Godot.GodotString
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_name) { __accessPtr in
@@ -194,7 +231,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busName(busIdx: Int32) -> Godot.GodotString {
+
+    public func busName(
+        busIdx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -214,7 +254,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busIndex(busName: Godot.GodotStringName) -> Int32 {
+
+    public func busIndex(
+        busName: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         busName.withGodotUnsafeRawPointer { __ptr_busName in
         withUnsafeArgumentPackPointer(__ptr_busName) { __accessPtr in
@@ -234,7 +277,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busChannels(busIdx: Int32) -> Int32 {
+
+    public func busChannels(
+        busIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -254,7 +300,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusVolumeDb(busIdx: Int32, volumeDb: Double) {
+
+    public func setBusVolumeDb(
+        busIdx: Int32,
+        volumeDb: Double
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_volumeDb) { __accessPtr in
@@ -274,7 +324,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busVolumeDb(busIdx: Int32) -> Double {
+
+    public func busVolumeDb(
+        busIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -294,7 +347,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusSend(busIdx: Int32, send: Godot.GodotStringName) {
+
+    public func setBusSend(
+        busIdx: Int32,
+        send: Godot.GodotStringName
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         send.withGodotUnsafeRawPointer { __ptr_send in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_send) { __accessPtr in
@@ -314,7 +371,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busSend(busIdx: Int32) -> Godot.GodotStringName {
+
+    public func busSend(
+        busIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -334,7 +394,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusSolo(busIdx: Int32, enable: Bool) {
+
+    public func setBusSolo(
+        busIdx: Int32,
+        enable: Bool
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_enable) { __accessPtr in
@@ -354,7 +418,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func isBusSolo(busIdx: Int32) -> Bool {
+
+    public func isBusSolo(
+        busIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -374,7 +441,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusMute(busIdx: Int32, enable: Bool) {
+
+    public func setBusMute(
+        busIdx: Int32,
+        enable: Bool
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_enable) { __accessPtr in
@@ -394,7 +465,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func isBusMute(busIdx: Int32) -> Bool {
+
+    public func isBusMute(
+        busIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -414,7 +488,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusBypassEffects(busIdx: Int32, enable: Bool) {
+
+    public func setBusBypassEffects(
+        busIdx: Int32,
+        enable: Bool
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_enable) { __accessPtr in
@@ -434,7 +512,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func isBusBypassingEffects(busIdx: Int32) -> Bool {
+
+    public func isBusBypassingEffects(
+        busIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -454,7 +535,12 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func addBusEffect(busIdx: Int32, effect: Godot.AudioEffect?, atPosition position: Int32 = -1) {
+
+    public func addBusEffect(
+        busIdx: Int32,
+        effect: Godot.AudioEffect?,
+        atPosition position: Int32 = -1
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effect.withGodotUnsafeRawPointer { __ptr_effect in
         withUnsafePointer(to: __ptr_effect) { _ptr___ptr_effect in
@@ -476,7 +562,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func removeBusEffect(busIdx: Int32, effectIdx: Int32) {
+
+    public func removeBusEffect(
+        busIdx: Int32,
+        effectIdx: Int32
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx, __ptr_effectIdx) { __accessPtr in
@@ -496,7 +586,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busEffectCount(busIdx: Int32) -> Int32 {
+
+    public func busEffectCount(
+        busIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         withUnsafeArgumentPackPointer(__ptr_busIdx) { __accessPtr in
@@ -516,7 +609,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busEffect(busIdx: Int32, effectIdx: Int32) -> Godot.AudioEffect? {
+
+    public func busEffect(
+        busIdx: Int32,
+        effectIdx: Int32
+    ) -> Godot.AudioEffect? {
         Godot.AudioEffect?.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
@@ -537,7 +634,12 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busEffectInstance(busIdx: Int32, effectIdx: Int32, channel: Int32 = 0) -> Godot.AudioEffectInstance? {
+
+    public func busEffectInstance(
+        busIdx: Int32,
+        effectIdx: Int32,
+        channel: Int32 = 0
+    ) -> Godot.AudioEffectInstance? {
         Godot.AudioEffectInstance?.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
@@ -559,7 +661,12 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func swapBusEffects(busIdx: Int32, effectIdx: Int32, byEffectIdx: Int32) {
+
+    public func swapBusEffects(
+        busIdx: Int32,
+        effectIdx: Int32,
+        byEffectIdx: Int32
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
         byEffectIdx.withGodotUnsafeRawPointer { __ptr_byEffectIdx in
@@ -580,7 +687,12 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusEffectEnabled(busIdx: Int32, effectIdx: Int32, enabled: Bool) {
+
+    public func setBusEffectEnabled(
+        busIdx: Int32,
+        effectIdx: Int32,
+        enabled: Bool
+    ) {
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
@@ -601,7 +713,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func isBusEffectEnabled(busIdx: Int32, effectIdx: Int32) -> Bool {
+
+    public func isBusEffectEnabled(
+        busIdx: Int32,
+        effectIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         effectIdx.withGodotUnsafeRawPointer { __ptr_effectIdx in
@@ -622,7 +738,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busPeakVolumeLeftDb(busIdx: Int32, channel: Int32) -> Double {
+
+    public func busPeakVolumeLeftDb(
+        busIdx: Int32,
+        channel: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         channel.withGodotUnsafeRawPointer { __ptr_channel in
@@ -643,7 +763,11 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func busPeakVolumeRightDb(busIdx: Int32, channel: Int32) -> Double {
+
+    public func busPeakVolumeRightDb(
+        busIdx: Int32,
+        channel: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         busIdx.withGodotUnsafeRawPointer { __ptr_busIdx in
         channel.withGodotUnsafeRawPointer { __ptr_channel in
@@ -664,7 +788,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    private func __setPlaybackSpeedScale(_ scale: Double) {
+
+    private func __setPlaybackSpeedScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -683,6 +810,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     private func __getPlaybackSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -701,6 +829,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func lock() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -718,6 +847,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func unlock() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -735,6 +865,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func speakerMode() -> Godot.AudioServer.SpeakerMode {
         Godot.AudioServer.SpeakerMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -753,6 +884,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func mixRate() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -771,6 +903,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func outputDeviceList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -789,6 +922,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     private func __getOutputDevice() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -807,7 +941,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    private func __setOutputDevice(name: Godot.GodotString) {
+
+    private func __setOutputDevice(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -826,6 +963,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func timeToNextMix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -844,6 +982,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func timeSinceLastMix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -862,6 +1001,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func outputLatency() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -880,6 +1020,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func inputDeviceList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -898,6 +1039,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     private func __getInputDevice() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -916,7 +1058,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    private func __setInputDevice(name: Godot.GodotString) {
+
+    private func __setInputDevice(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -935,7 +1080,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setBusLayout(_ busLayout: Godot.AudioBusLayout?) {
+
+    public func setBusLayout(
+        _ busLayout: Godot.AudioBusLayout?
+    ) {
         busLayout.withGodotUnsafeRawPointer { __ptr_busLayout in
         withUnsafePointer(to: __ptr_busLayout) { _ptr___ptr_busLayout in
         withUnsafeArgumentPackPointer(_ptr___ptr_busLayout) { __accessPtr in
@@ -955,6 +1103,7 @@ open class AudioServer: Object {
         }
         }
     }()
+
     public func generateBusLayout() -> Godot.AudioBusLayout? {
         Godot.AudioBusLayout?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -973,7 +1122,10 @@ open class AudioServer: Object {
         }
         }
     }()
-    public func setEnableTaggingUsedAudioStreams(enable: Bool) {
+
+    public func setEnableTaggingUsedAudioStreams(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1030,6 +1182,7 @@ open class AudioServer: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1042,5 +1195,4 @@ open class AudioServer: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

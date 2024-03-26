@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OggPacketSequence: Resource {
     internal static var __method_binding_set_packet_data: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
-    private func __setPacketData(_ packetData: Godot.GodotArray<Godot.AnyGodotArray>) {
+
+    private func __setPacketData(
+        _ packetData: Godot.GodotArray<Godot.AnyGodotArray>
+    ) {
         packetData.withGodotUnsafeRawPointer { __ptr_packetData in
         withUnsafeArgumentPackPointer(__ptr_packetData) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
+
     private func __getPacketData() -> Godot.GodotArray<Godot.AnyGodotArray> {
         Godot.GodotArray<Godot.AnyGodotArray>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
-    private func __setPacketGranulePositions(_ granulePositions: Godot.PackedInt64Array) {
+
+    private func __setPacketGranulePositions(
+        _ granulePositions: Godot.PackedInt64Array
+    ) {
         granulePositions.withGodotUnsafeRawPointer { __ptr_granulePositions in
         withUnsafeArgumentPackPointer(__ptr_granulePositions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
+
     private func __getPacketGranulePositions() -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
-    private func __setSamplingRate(_ samplingRate: Double) {
+
+    private func __setSamplingRate(
+        _ samplingRate: Double
+    ) {
         samplingRate.withGodotUnsafeRawPointer { __ptr_samplingRate in
         withUnsafeArgumentPackPointer(__ptr_samplingRate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
+
     private func __getSamplingRate() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
+
     public func length() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,6 +182,7 @@ open class OggPacketSequence: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -180,5 +195,4 @@ open class OggPacketSequence: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

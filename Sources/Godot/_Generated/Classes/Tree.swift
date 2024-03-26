@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Tree: Control {
     public enum SelectMode: UInt32, GodotEnum {
         case single = 0
         case row = 1
         case multi = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Single", 0),
@@ -16,10 +18,12 @@ open class Tree: Control {
             ("Multi", 2),]
         }
     }
+
     public enum DropModeFlags: UInt32, GodotEnum {
         case disabled = 0
         case onItem = 1
         case inbetween = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -31,6 +35,7 @@ open class Tree: Control {
     public func itemSelected() {
         _ = itemSelectedSignal.emit()
     }
+
     public lazy var itemSelectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -49,6 +54,7 @@ open class Tree: Control {
     public func cellSelected() {
         _ = cellSelectedSignal.emit()
     }
+
     public lazy var cellSelectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "cell_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,22 +72,38 @@ open class Tree: Control {
 
     public struct MultiSelectedSignalInput: Godot.SignalInput {
         public let item: Godot.TreeItem?
+
         public let column: Int
+
         public let selected: Bool
-        fileprivate init(item: Godot.TreeItem?, column: Int, selected: Bool) {
+
+        fileprivate init(
+            item: Godot.TreeItem?,
+            column: Int,
+            selected: Bool
+        ) {
             self.item = item
             self.column = column
             self.selected = selected
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.item), Variant(input.column), Variant(input.selected)]
         }
     }
-    public func multiSelected(item: Godot.TreeItem?, column: Int, selected: Bool) {
+
+    public func multiSelected(
+        item: Godot.TreeItem?,
+        column: Int,
+        selected: Bool
+    ) {
         _ = multiSelectedSignal.emit(.init(item: item,
                 column: column,
                 selected: selected))
     }
+
     public lazy var multiSelectedSignal: Godot.SignalEmitter<MultiSelectedSignalInput> = {
         .init(object: self, signalName: "multi_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -101,19 +123,32 @@ open class Tree: Control {
 
     public struct ItemMouseSelectedSignalInput: Godot.SignalInput {
         public let position: Godot.Vector2
+
         public let mouseButtonIndex: Int
-        fileprivate init(position: Godot.Vector2, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            position: Godot.Vector2,
+            mouseButtonIndex: Int
+        ) {
             self.position = position
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.position), Variant(input.mouseButtonIndex)]
         }
     }
-    public func itemMouseSelected(position: Godot.Vector2, mouseButtonIndex: Int) {
+
+    public func itemMouseSelected(
+        position: Godot.Vector2,
+        mouseButtonIndex: Int
+    ) {
         _ = itemMouseSelectedSignal.emit(.init(position: position,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var itemMouseSelectedSignal: Godot.SignalEmitter<ItemMouseSelectedSignalInput> = {
         .init(object: self, signalName: "item_mouse_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -132,19 +167,32 @@ open class Tree: Control {
 
     public struct EmptyClickedSignalInput: Godot.SignalInput {
         public let position: Godot.Vector2
+
         public let mouseButtonIndex: Int
-        fileprivate init(position: Godot.Vector2, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            position: Godot.Vector2,
+            mouseButtonIndex: Int
+        ) {
             self.position = position
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.position), Variant(input.mouseButtonIndex)]
         }
     }
-    public func emptyClicked(position: Godot.Vector2, mouseButtonIndex: Int) {
+
+    public func emptyClicked(
+        position: Godot.Vector2,
+        mouseButtonIndex: Int
+    ) {
         _ = emptyClickedSignal.emit(.init(position: position,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var emptyClickedSignal: Godot.SignalEmitter<EmptyClickedSignalInput> = {
         .init(object: self, signalName: "empty_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -164,6 +212,7 @@ open class Tree: Control {
     public func itemEdited() {
         _ = itemEditedSignal.emit()
     }
+
     public lazy var itemEditedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -181,16 +230,26 @@ open class Tree: Control {
 
     public struct CustomItemClickedSignalInput: Godot.SignalInput {
         public let mouseButtonIndex: Int
-        fileprivate init(mouseButtonIndex: Int) {
+
+        fileprivate init(
+            mouseButtonIndex: Int
+        ) {
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.mouseButtonIndex)]
         }
     }
-    public func customItemClicked(mouseButtonIndex: Int) {
+
+    public func customItemClicked(
+        mouseButtonIndex: Int
+    ) {
         _ = customItemClickedSignal.emit(.init(mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var customItemClickedSignal: Godot.SignalEmitter<CustomItemClickedSignalInput> = {
         .init(object: self, signalName: "custom_item_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -209,6 +268,7 @@ open class Tree: Control {
     public func itemIconDoubleClicked() {
         _ = itemIconDoubleClickedSignal.emit()
     }
+
     public lazy var itemIconDoubleClickedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_icon_double_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -226,16 +286,26 @@ open class Tree: Control {
 
     public struct ItemCollapsedSignalInput: Godot.SignalInput {
         public let item: Godot.TreeItem?
-        fileprivate init(item: Godot.TreeItem?) {
+
+        fileprivate init(
+            item: Godot.TreeItem?
+        ) {
             self.item = item
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.item)]
         }
     }
-    public func itemCollapsed(item: Godot.TreeItem?) {
+
+    public func itemCollapsed(
+        item: Godot.TreeItem?
+    ) {
         _ = itemCollapsedSignal.emit(.init(item: item))
     }
+
     public lazy var itemCollapsedSignal: Godot.SignalEmitter<ItemCollapsedSignalInput> = {
         .init(object: self, signalName: "item_collapsed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemCollapsedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -253,19 +323,32 @@ open class Tree: Control {
 
     public struct CheckPropagatedToItemSignalInput: Godot.SignalInput {
         public let item: Godot.TreeItem?
+
         public let column: Int
-        fileprivate init(item: Godot.TreeItem?, column: Int) {
+
+        fileprivate init(
+            item: Godot.TreeItem?,
+            column: Int
+        ) {
             self.item = item
             self.column = column
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.item), Variant(input.column)]
         }
     }
-    public func checkPropagatedToItem(item: Godot.TreeItem?, column: Int) {
+
+    public func checkPropagatedToItem(
+        item: Godot.TreeItem?,
+        column: Int
+    ) {
         _ = checkPropagatedToItemSignal.emit(.init(item: item,
                 column: column))
     }
+
     public lazy var checkPropagatedToItemSignal: Godot.SignalEmitter<CheckPropagatedToItemSignalInput> = {
         .init(object: self, signalName: "check_propagated_to_item") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CheckPropagatedToItemSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -284,25 +367,44 @@ open class Tree: Control {
 
     public struct ButtonClickedSignalInput: Godot.SignalInput {
         public let item: Godot.TreeItem?
+
         public let column: Int
+
         public let id: Int
+
         public let mouseButtonIndex: Int
-        fileprivate init(item: Godot.TreeItem?, column: Int, id: Int, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            item: Godot.TreeItem?,
+            column: Int,
+            id: Int,
+            mouseButtonIndex: Int
+        ) {
             self.item = item
             self.column = column
             self.id = id
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.item), Variant(input.column), Variant(input.id), Variant(input.mouseButtonIndex)]
         }
     }
-    public func buttonClicked(item: Godot.TreeItem?, column: Int, id: Int, mouseButtonIndex: Int) {
+
+    public func buttonClicked(
+        item: Godot.TreeItem?,
+        column: Int,
+        id: Int,
+        mouseButtonIndex: Int
+    ) {
         _ = buttonClickedSignal.emit(.init(item: item,
                 column: column,
                 id: id,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var buttonClickedSignal: Godot.SignalEmitter<ButtonClickedSignalInput> = {
         .init(object: self, signalName: "button_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -323,16 +425,26 @@ open class Tree: Control {
 
     public struct CustomPopupEditedSignalInput: Godot.SignalInput {
         public let arrowClicked: Bool
-        fileprivate init(arrowClicked: Bool) {
+
+        fileprivate init(
+            arrowClicked: Bool
+        ) {
             self.arrowClicked = arrowClicked
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.arrowClicked)]
         }
     }
-    public func customPopupEdited(arrowClicked: Bool) {
+
+    public func customPopupEdited(
+        arrowClicked: Bool
+    ) {
         _ = customPopupEditedSignal.emit(.init(arrowClicked: arrowClicked))
     }
+
     public lazy var customPopupEditedSignal: Godot.SignalEmitter<CustomPopupEditedSignalInput> = {
         .init(object: self, signalName: "custom_popup_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -351,6 +463,7 @@ open class Tree: Control {
     public func itemActivated() {
         _ = itemActivatedSignal.emit()
     }
+
     public lazy var itemActivatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_activated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -368,19 +481,32 @@ open class Tree: Control {
 
     public struct ColumnTitleClickedSignalInput: Godot.SignalInput {
         public let column: Int
+
         public let mouseButtonIndex: Int
-        fileprivate init(column: Int, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            column: Int,
+            mouseButtonIndex: Int
+        ) {
             self.column = column
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.column), Variant(input.mouseButtonIndex)]
         }
     }
-    public func columnTitleClicked(column: Int, mouseButtonIndex: Int) {
+
+    public func columnTitleClicked(
+        column: Int,
+        mouseButtonIndex: Int
+    ) {
         _ = columnTitleClickedSignal.emit(.init(column: column,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var columnTitleClickedSignal: Godot.SignalEmitter<ColumnTitleClickedSignalInput> = {
         .init(object: self, signalName: "column_title_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -400,6 +526,7 @@ open class Tree: Control {
     public func nothingSelected() {
         _ = nothingSelectedSignal.emit()
     }
+
     public lazy var nothingSelectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "nothing_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -422,6 +549,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -439,7 +567,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func createItem(parent: Godot.TreeItem? = nil, index: Int32 = -1) -> Godot.TreeItem? {
+
+    public func createItem(
+        parent: Godot.TreeItem? = nil,
+        index: Int32 = -1
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         parent.withGodotUnsafeRawPointer { __ptr_parent in
         withUnsafePointer(to: __ptr_parent) { _ptr___ptr_parent in
@@ -461,6 +593,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func root() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -479,7 +612,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnCustomMinimumWidth(column: Int32, minWidth: Int32) {
+
+    public func setColumnCustomMinimumWidth(
+        column: Int32,
+        minWidth: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         minWidth.withGodotUnsafeRawPointer { __ptr_minWidth in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_minWidth) { __accessPtr in
@@ -499,7 +636,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnExpand(column: Int32, expand: Bool) {
+
+    public func setColumnExpand(
+        column: Int32,
+        expand: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         expand.withGodotUnsafeRawPointer { __ptr_expand in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_expand) { __accessPtr in
@@ -519,7 +660,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnExpandRatio(column: Int32, ratio: Int32) {
+
+    public func setColumnExpandRatio(
+        column: Int32,
+        ratio: Int32
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_ratio) { __accessPtr in
@@ -539,7 +684,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnClipContent(column: Int32, enable: Bool) {
+
+    public func setColumnClipContent(
+        column: Int32,
+        enable: Bool
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_enable) { __accessPtr in
@@ -559,7 +708,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func isColumnExpanding(column: Int32) -> Bool {
+
+    public func isColumnExpanding(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -579,7 +731,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func isColumnClippingContent(column: Int32) -> Bool {
+
+    public func isColumnClippingContent(
+        column: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -599,7 +754,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnExpandRatio(column: Int32) -> Int32 {
+
+    public func columnExpandRatio(
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -619,7 +777,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnWidth(column: Int32) -> Int32 {
+
+    public func columnWidth(
+        column: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -639,7 +800,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setHideRoot(enable: Bool) {
+
+    private func __setHideRoot(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -658,6 +822,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __isRootHidden() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -676,7 +841,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func nextSelected(from: Godot.TreeItem?) -> Godot.TreeItem? {
+
+    public func nextSelected(
+        from: Godot.TreeItem?
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafePointer(to: __ptr_from) { _ptr___ptr_from in
@@ -697,6 +865,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func selected() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -715,7 +884,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setSelected(item: Godot.TreeItem?, column: Int32) {
+
+    public func setSelected(
+        item: Godot.TreeItem?,
+        column: Int32
+    ) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -736,6 +909,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func selectedColumn() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -754,6 +928,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func pressedButton() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -772,7 +947,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setSelectMode(_ mode: Godot.Tree.SelectMode) {
+
+    private func __setSelectMode(
+        _ mode: Godot.Tree.SelectMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -791,6 +969,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getSelectMode() -> Godot.Tree.SelectMode {
         Godot.Tree.SelectMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -809,6 +988,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func deselectAll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -826,7 +1006,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setColumns(amount: Int32) {
+
+    private func __setColumns(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -845,6 +1028,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getColumns() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -863,6 +1047,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func edited() -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -881,6 +1066,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func editedColumn() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -899,7 +1085,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func editSelected(forceEdit: Bool = false) -> Bool {
+
+    public func editSelected(
+        forceEdit: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         forceEdit.withGodotUnsafeRawPointer { __ptr_forceEdit in
         withUnsafeArgumentPackPointer(__ptr_forceEdit) { __accessPtr in
@@ -919,6 +1108,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func customPopupRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -937,7 +1127,12 @@ open class Tree: Control {
         }
         }
     }()
-    public func itemAreaRect(item: Godot.TreeItem?, column: Int32 = -1, buttonIndex: Int32 = -1) -> Godot.Rect2 {
+
+    public func itemAreaRect(
+        item: Godot.TreeItem?,
+        column: Int32 = -1,
+        buttonIndex: Int32 = -1
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
@@ -960,7 +1155,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func itemAtPosition(_ position: Godot.Vector2) -> Godot.TreeItem? {
+
+    public func itemAtPosition(
+        _ position: Godot.Vector2
+    ) -> Godot.TreeItem? {
         Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -980,7 +1178,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnAtPosition(_ position: Godot.Vector2) -> Int32 {
+
+    public func columnAtPosition(
+        _ position: Godot.Vector2
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -1000,7 +1201,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func dropSectionAtPosition(_ position: Godot.Vector2) -> Int32 {
+
+    public func dropSectionAtPosition(
+        _ position: Godot.Vector2
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -1020,7 +1224,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func buttonIDAtPosition(_ position: Godot.Vector2) -> Int32 {
+
+    public func buttonIDAtPosition(
+        _ position: Godot.Vector2
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -1040,6 +1247,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func ensureCursorIsVisible() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1057,7 +1265,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setColumnTitlesVisible(_ visible: Bool) {
+
+    private func __setColumnTitlesVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1076,6 +1287,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __areColumnTitlesVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1094,7 +1306,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnTitle(column: Int32, title: Godot.GodotString) {
+
+    public func setColumnTitle(
+        column: Int32,
+        title: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_title) { __accessPtr in
@@ -1114,7 +1330,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnTitle(column: Int32) -> Godot.GodotString {
+
+    public func columnTitle(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1134,7 +1353,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnTitleAlignment(column: Int32, titleAlignment: Godot.HorizontalAlignment) {
+
+    public func setColumnTitleAlignment(
+        column: Int32,
+        titleAlignment: Godot.HorizontalAlignment
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         titleAlignment.withGodotUnsafeRawPointer { __ptr_titleAlignment in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_titleAlignment) { __accessPtr in
@@ -1154,7 +1377,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnTitleAlignment(column: Int32) -> Godot.HorizontalAlignment {
+
+    public func columnTitleAlignment(
+        column: Int32
+    ) -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1174,7 +1400,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnTitleDirection(column: Int32, direction: Godot.Control.TextDirection) {
+
+    public func setColumnTitleDirection(
+        column: Int32,
+        direction: Godot.Control.TextDirection
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_direction) { __accessPtr in
@@ -1194,7 +1424,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnTitleDirection(column: Int32) -> Godot.Control.TextDirection {
+
+    public func columnTitleDirection(
+        column: Int32
+    ) -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1214,7 +1447,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func setColumnTitleLanguage(column: Int32, language: Godot.GodotString) {
+
+    public func setColumnTitleLanguage(
+        column: Int32,
+        language: Godot.GodotString
+    ) {
         column.withGodotUnsafeRawPointer { __ptr_column in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_column, __ptr_language) { __accessPtr in
@@ -1234,7 +1471,10 @@ open class Tree: Control {
         }
         }
     }()
-    public func columnTitleLanguage(column: Int32) -> Godot.GodotString {
+
+    public func columnTitleLanguage(
+        column: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
@@ -1254,6 +1494,7 @@ open class Tree: Control {
         }
         }
     }()
+
     public func scroll() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1272,7 +1513,11 @@ open class Tree: Control {
         }
         }
     }()
-    public func scrollToItem(_ item: Godot.TreeItem?, centerOnItem: Bool = false) {
+
+    public func scrollToItem(
+        _ item: Godot.TreeItem?,
+        centerOnItem: Bool = false
+    ) {
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         centerOnItem.withGodotUnsafeRawPointer { __ptr_centerOnItem in
@@ -1293,7 +1538,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setHScrollEnabled(hScroll: Bool) {
+
+    private func __setHScrollEnabled(
+        hScroll: Bool
+    ) {
         hScroll.withGodotUnsafeRawPointer { __ptr_hScroll in
         withUnsafeArgumentPackPointer(__ptr_hScroll) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1312,6 +1560,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __isHScrollEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1330,7 +1579,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setVScrollEnabled(hScroll: Bool) {
+
+    private func __setVScrollEnabled(
+        hScroll: Bool
+    ) {
         hScroll.withGodotUnsafeRawPointer { __ptr_hScroll in
         withUnsafeArgumentPackPointer(__ptr_hScroll) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1349,6 +1601,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __isVScrollEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1367,7 +1620,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setHideFolding(hide: Bool) {
+
+    private func __setHideFolding(
+        hide: Bool
+    ) {
         hide.withGodotUnsafeRawPointer { __ptr_hide in
         withUnsafeArgumentPackPointer(__ptr_hide) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1386,6 +1642,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __isFoldingHidden() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1404,7 +1661,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setEnableRecursiveFolding(enable: Bool) {
+
+    private func __setEnableRecursiveFolding(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1423,6 +1683,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __isRecursiveFoldingEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1441,7 +1702,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setDropModeFlags(_ flags: Int32) {
+
+    private func __setDropModeFlags(
+        _ flags: Int32
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1460,6 +1724,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getDropModeFlags() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1478,7 +1743,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setAllowRmbSelect(allow: Bool) {
+
+    private func __setAllowRmbSelect(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1497,6 +1765,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getAllowRmbSelect() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1515,7 +1784,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setAllowReselect(allow: Bool) {
+
+    private func __setAllowReselect(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1534,6 +1806,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getAllowReselect() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1552,7 +1825,10 @@ open class Tree: Control {
         }
         }
     }()
-    private func __setAllowSearch(allow: Bool) {
+
+    private func __setAllowSearch(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1571,6 +1847,7 @@ open class Tree: Control {
         }
         }
     }()
+
     private func __getAllowSearch() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1715,6 +1992,7 @@ open class Tree: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1727,5 +2005,4 @@ open class Tree: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

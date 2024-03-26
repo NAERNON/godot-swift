@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Label: Control {
     internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setHorizontalAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setHorizontalAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setVerticalAlignment(_ alignment: Godot.VerticalAlignment) {
+
+    private func __setVerticalAlignment(
+        _ alignment: Godot.VerticalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
         Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setLabelSettings(_ settings: Godot.LabelSettings?) {
+
+    private func __setLabelSettings(
+        _ settings: Godot.LabelSettings?
+    ) {
         settings.withGodotUnsafeRawPointer { __ptr_settings in
         withUnsafePointer(to: __ptr_settings) { _ptr___ptr_settings in
         withUnsafeArgumentPackPointer(_ptr___ptr_settings) { __accessPtr in
@@ -143,6 +159,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getLabelSettings() -> Godot.LabelSettings? {
         Godot.LabelSettings?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +178,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
+
+    private func __setTextDirection(
+        _ direction: Godot.Control.TextDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setAutowrapMode(_ autowrapMode: Godot.TextServer.AutowrapMode) {
+
+    private func __setAutowrapMode(
+        _ autowrapMode: Godot.TextServer.AutowrapMode
+    ) {
         autowrapMode.withGodotUnsafeRawPointer { __ptr_autowrapMode in
         withUnsafeArgumentPackPointer(__ptr_autowrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
         Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setJustificationFlags(_ justificationFlags: Godot.TextServer.JustificationFlag) {
+
+    private func __setJustificationFlags(
+        _ justificationFlags: Godot.TextServer.JustificationFlag
+    ) {
         justificationFlags.withGodotUnsafeRawPointer { __ptr_justificationFlags in
         withUnsafeArgumentPackPointer(__ptr_justificationFlags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
         Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setClipText(enable: Bool) {
+
+    private func __setClipText(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __isClippingText() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +383,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setTabStops(_ tabStops: Godot.PackedFloat32Array) {
+
+    private func __setTabStops(
+        _ tabStops: Godot.PackedFloat32Array
+    ) {
         tabStops.withGodotUnsafeRawPointer { __ptr_tabStops in
         withUnsafeArgumentPackPointer(__ptr_tabStops) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +405,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getTabStops() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +424,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setTextOverrunBehavior(_ overrunBehavior: Godot.TextServer.OverrunBehavior) {
+
+    private func __setTextOverrunBehavior(
+        _ overrunBehavior: Godot.TextServer.OverrunBehavior
+    ) {
         overrunBehavior.withGodotUnsafeRawPointer { __ptr_overrunBehavior in
         withUnsafeArgumentPackPointer(__ptr_overrunBehavior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,6 +446,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
         Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,7 +465,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setUppercase(enable: Bool) {
+
+    private func __setUppercase(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +487,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __isUppercase() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,7 +506,10 @@ open class Label: Control {
         }
         }
     }()
-    public func lineHeight(line: Int32 = -1) -> Int32 {
+
+    public func lineHeight(
+        line: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
@@ -477,6 +529,7 @@ open class Label: Control {
         }
         }
     }()
+
     public func lineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -495,6 +548,7 @@ open class Label: Control {
         }
         }
     }()
+
     public func visibleLineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -513,6 +567,7 @@ open class Label: Control {
         }
         }
     }()
+
     public func totalCharacterCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +586,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setVisibleCharacters(amount: Int32) {
+
+    private func __setVisibleCharacters(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -550,6 +608,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getVisibleCharacters() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -568,6 +627,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getVisibleCharactersBehavior() -> Godot.TextServer.VisibleCharactersBehavior {
         Godot.TextServer.VisibleCharactersBehavior.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +646,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setVisibleCharactersBehavior(_ behavior: Godot.TextServer.VisibleCharactersBehavior) {
+
+    private func __setVisibleCharactersBehavior(
+        _ behavior: Godot.TextServer.VisibleCharactersBehavior
+    ) {
         behavior.withGodotUnsafeRawPointer { __ptr_behavior in
         withUnsafeArgumentPackPointer(__ptr_behavior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,7 +668,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setVisibleRatio(_ ratio: Double) {
+
+    private func __setVisibleRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -624,6 +690,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getVisibleRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +709,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setLinesSkipped(_ linesSkipped: Int32) {
+
+    private func __setLinesSkipped(
+        _ linesSkipped: Int32
+    ) {
         linesSkipped.withGodotUnsafeRawPointer { __ptr_linesSkipped in
         withUnsafeArgumentPackPointer(__ptr_linesSkipped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -661,6 +731,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getLinesSkipped() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -679,7 +750,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setMaxLinesVisible(_ linesVisible: Int32) {
+
+    private func __setMaxLinesVisible(
+        _ linesVisible: Int32
+    ) {
         linesVisible.withGodotUnsafeRawPointer { __ptr_linesVisible in
         withUnsafeArgumentPackPointer(__ptr_linesVisible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -698,6 +772,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getMaxLinesVisible() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -716,7 +791,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverride(parser: Godot.TextServer.StructuredTextParser) {
+
+    private func __setStructuredTextBidiOverride(
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -735,6 +813,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -753,7 +832,10 @@ open class Label: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
+
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        args: Godot.GodotArray<Value>
+    ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_args) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -772,6 +854,7 @@ open class Label: Control {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -993,6 +1076,7 @@ open class Label: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1005,5 +1089,4 @@ open class Label: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

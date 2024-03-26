@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDShaderSPIRV: Resource {
     internal static var __method_binding_set_stage_bytecode: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class RDShaderSPIRV: Resource {
         }
         }
     }()
-    public func setStageBytecode(stage: Godot.RenderingDevice.ShaderStage, bytecode: Godot.PackedByteArray) {
+
+    public func setStageBytecode(
+        stage: Godot.RenderingDevice.ShaderStage,
+        bytecode: Godot.PackedByteArray
+    ) {
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         bytecode.withGodotUnsafeRawPointer { __ptr_bytecode in
         withUnsafeArgumentPackPointer(__ptr_stage, __ptr_bytecode) { __accessPtr in
@@ -32,7 +37,10 @@ open class RDShaderSPIRV: Resource {
         }
         }
     }()
-    private func __getStageBytecode(stage: Godot.RenderingDevice.ShaderStage) -> Godot.PackedByteArray {
+
+    private func __getStageBytecode(
+        stage: Godot.RenderingDevice.ShaderStage
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
@@ -52,7 +60,11 @@ open class RDShaderSPIRV: Resource {
         }
         }
     }()
-    public func setStageCompileError(stage: Godot.RenderingDevice.ShaderStage, compileError: Godot.GodotString) {
+
+    public func setStageCompileError(
+        stage: Godot.RenderingDevice.ShaderStage,
+        compileError: Godot.GodotString
+    ) {
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         compileError.withGodotUnsafeRawPointer { __ptr_compileError in
         withUnsafeArgumentPackPointer(__ptr_stage, __ptr_compileError) { __accessPtr in
@@ -72,7 +84,10 @@ open class RDShaderSPIRV: Resource {
         }
         }
     }()
-    private func __getStageCompileError(stage: Godot.RenderingDevice.ShaderStage) -> Godot.GodotString {
+
+    private func __getStageCompileError(
+        stage: Godot.RenderingDevice.ShaderStage
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
@@ -166,6 +181,7 @@ open class RDShaderSPIRV: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -178,5 +194,4 @@ open class RDShaderSPIRV: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RandomNumberGenerator: RefCounted {
     internal static var __method_binding_set_seed: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
-    private func __setSeed(_ seed: UInt64) {
+
+    private func __setSeed(
+        _ seed: UInt64
+    ) {
         seed.withGodotUnsafeRawPointer { __ptr_seed in
         withUnsafeArgumentPackPointer(__ptr_seed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
+
     private func __getSeed() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
-    private func __setState(_ state: UInt64) {
+
+    private func __setState(
+        _ state: UInt64
+    ) {
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafeArgumentPackPointer(__ptr_state) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
+
     private func __getState() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
+
     public func randi() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +114,7 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
+
     public func randf() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +133,11 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
-    public func randfn(mean: Double = 0.0, deviation: Double = 1.0) -> Double {
+
+    public func randfn(
+        mean: Double = 0.0,
+        deviation: Double = 1.0
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         mean.withGodotUnsafeRawPointer { __ptr_mean in
         deviation.withGodotUnsafeRawPointer { __ptr_deviation in
@@ -143,7 +158,11 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
-    public func randfRange(from: Double, to: Double) -> Double {
+
+    public func randfRange(
+        from: Double,
+        to: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -164,7 +183,11 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
-    public func randiRange(from: Int32, to: Int32) -> Int32 {
+
+    public func randiRange(
+        from: Int32,
+        to: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -185,6 +208,7 @@ open class RandomNumberGenerator: RefCounted {
         }
         }
     }()
+
     public func randomize() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -218,6 +242,7 @@ open class RandomNumberGenerator: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -230,5 +255,4 @@ open class RandomNumberGenerator: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

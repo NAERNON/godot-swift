@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AnimationPlayer: AnimationMixer {
     public enum AnimationProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
         case manual = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Physics", 0),
@@ -16,9 +18,11 @@ open class AnimationPlayer: AnimationMixer {
             ("Manual", 2),]
         }
     }
+
     public enum AnimationMethodCallMode: UInt32, GodotEnum {
         case deferred = 0
         case immediate = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Deferred", 0),
@@ -28,16 +32,26 @@ open class AnimationPlayer: AnimationMixer {
 
     public struct CurrentAnimationChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-        fileprivate init(name: Godot.GodotString) {
+
+        fileprivate init(
+            name: Godot.GodotString
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func currentAnimationChanged(name: Godot.GodotString) {
+
+    public func currentAnimationChanged(
+        name: Godot.GodotString
+    ) {
         _ = currentAnimationChangedSignal.emit(.init(name: name))
     }
+
     public lazy var currentAnimationChangedSignal: Godot.SignalEmitter<CurrentAnimationChangedSignalInput> = {
         .init(object: self, signalName: "current_animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CurrentAnimationChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -55,19 +69,32 @@ open class AnimationPlayer: AnimationMixer {
 
     public struct AnimationChangedSignalInput: Godot.SignalInput {
         public let oldName: Godot.GodotStringName
+
         public let newName: Godot.GodotStringName
-        fileprivate init(oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+        fileprivate init(
+            oldName: Godot.GodotStringName,
+            newName: Godot.GodotStringName
+        ) {
             self.oldName = oldName
             self.newName = newName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.oldName), Variant(input.newName)]
         }
     }
-    public func animationChanged(oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+    public func animationChanged(
+        oldName: Godot.GodotStringName,
+        newName: Godot.GodotStringName
+    ) {
         _ = animationChangedSignal.emit(.init(oldName: oldName,
                 newName: newName))
     }
+
     public lazy var animationChangedSignal: Godot.SignalEmitter<AnimationChangedSignalInput> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -91,7 +118,11 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func animationSetNext(animationFrom: Godot.GodotStringName, animationTo: Godot.GodotStringName) {
+
+    public func animationSetNext(
+        animationFrom: Godot.GodotStringName,
+        animationTo: Godot.GodotStringName
+    ) {
         animationFrom.withGodotUnsafeRawPointer { __ptr_animationFrom in
         animationTo.withGodotUnsafeRawPointer { __ptr_animationTo in
         withUnsafeArgumentPackPointer(__ptr_animationFrom, __ptr_animationTo) { __accessPtr in
@@ -111,7 +142,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func animationGetNext(animationFrom: Godot.GodotStringName) -> Godot.GodotStringName {
+
+    public func animationGetNext(
+        animationFrom: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         animationFrom.withGodotUnsafeRawPointer { __ptr_animationFrom in
         withUnsafeArgumentPackPointer(__ptr_animationFrom) { __accessPtr in
@@ -131,7 +165,12 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func setBlendTime(animationFrom: Godot.GodotStringName, animationTo: Godot.GodotStringName, sec: Double) {
+
+    public func setBlendTime(
+        animationFrom: Godot.GodotStringName,
+        animationTo: Godot.GodotStringName,
+        sec: Double
+    ) {
         animationFrom.withGodotUnsafeRawPointer { __ptr_animationFrom in
         animationTo.withGodotUnsafeRawPointer { __ptr_animationTo in
         sec.withGodotUnsafeRawPointer { __ptr_sec in
@@ -152,7 +191,11 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func blendTime(animationFrom: Godot.GodotStringName, animationTo: Godot.GodotStringName) -> Double {
+
+    public func blendTime(
+        animationFrom: Godot.GodotStringName,
+        animationTo: Godot.GodotStringName
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         animationFrom.withGodotUnsafeRawPointer { __ptr_animationFrom in
         animationTo.withGodotUnsafeRawPointer { __ptr_animationTo in
@@ -173,7 +216,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setDefaultBlendTime(sec: Double) {
+
+    private func __setDefaultBlendTime(
+        sec: Double
+    ) {
         sec.withGodotUnsafeRawPointer { __ptr_sec in
         withUnsafeArgumentPackPointer(__ptr_sec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,6 +238,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getDefaultBlendTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,7 +257,13 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func play(name: Godot.GodotStringName = "", customBlend: Double = -1, customSpeed: Double = 1.0, fromEnd end: Bool = false) {
+
+    public func play(
+        name: Godot.GodotStringName = "",
+        customBlend: Double = -1,
+        customSpeed: Double = 1.0,
+        fromEnd end: Bool = false
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         customBlend.withGodotUnsafeRawPointer { __ptr_customBlend in
         customSpeed.withGodotUnsafeRawPointer { __ptr_customSpeed in
@@ -232,7 +285,11 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func playBackwards(name: Godot.GodotStringName = "", customBlend: Double = -1) {
+
+    public func playBackwards(
+        name: Godot.GodotStringName = "",
+        customBlend: Double = -1
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         customBlend.withGodotUnsafeRawPointer { __ptr_customBlend in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_customBlend) { __accessPtr in
@@ -252,6 +309,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func pause() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -269,7 +327,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func stop(keepState: Bool = false) {
+
+    public func stop(
+        keepState: Bool = false
+    ) {
         keepState.withGodotUnsafeRawPointer { __ptr_keepState in
         withUnsafeArgumentPackPointer(__ptr_keepState) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -288,6 +349,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func isPlaying() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -306,7 +368,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setCurrentAnimation(_ animation: Godot.GodotString) {
+
+    private func __setCurrentAnimation(
+        _ animation: Godot.GodotString
+    ) {
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafeArgumentPackPointer(__ptr_animation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -325,6 +390,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getCurrentAnimation() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,7 +409,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setAssignedAnimation(_ animation: Godot.GodotString) {
+
+    private func __setAssignedAnimation(
+        _ animation: Godot.GodotString
+    ) {
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafeArgumentPackPointer(__ptr_animation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -362,6 +431,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getAssignedAnimation() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -380,7 +450,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func queue(name: Godot.GodotStringName) {
+
+    public func queue(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -399,6 +472,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func queue() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -417,6 +491,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func clearQueue() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -434,7 +509,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setSpeedScale(speed: Double) {
+
+    private func __setSpeedScale(
+        speed: Double
+    ) {
         speed.withGodotUnsafeRawPointer { __ptr_speed in
         withUnsafeArgumentPackPointer(__ptr_speed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -453,6 +531,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -471,6 +550,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func playingSpeed() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -489,7 +569,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setAutoplay(name: Godot.GodotString) {
+
+    private func __setAutoplay(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -508,6 +591,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getAutoplay() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -526,7 +610,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    private func __setMovieQuitOnFinishEnabled(_ enabled: Bool) {
+
+    private func __setMovieQuitOnFinishEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -545,6 +632,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __isMovieQuitOnFinishEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -563,6 +651,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getCurrentAnimationPosition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -581,6 +670,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     private func __getCurrentAnimationLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -599,7 +689,12 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func seek(seconds: Double, update: Bool = false, updateOnly: Bool = false) {
+
+    public func seek(
+        seconds: Double,
+        update: Bool = false,
+        updateOnly: Bool = false
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         update.withGodotUnsafeRawPointer { __ptr_update in
         updateOnly.withGodotUnsafeRawPointer { __ptr_updateOnly in
@@ -620,7 +715,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func setProcessCallback(mode: Godot.AnimationPlayer.AnimationProcessCallback) {
+
+    public func setProcessCallback(
+        mode: Godot.AnimationPlayer.AnimationProcessCallback
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -639,6 +737,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func processCallback() -> Godot.AnimationPlayer.AnimationProcessCallback {
         Godot.AnimationPlayer.AnimationProcessCallback.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -657,7 +756,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func setMethodCallMode(_ mode: Godot.AnimationPlayer.AnimationMethodCallMode) {
+
+    public func setMethodCallMode(
+        _ mode: Godot.AnimationPlayer.AnimationMethodCallMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -676,6 +778,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func methodCallMode() -> Godot.AnimationPlayer.AnimationMethodCallMode {
         Godot.AnimationPlayer.AnimationMethodCallMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -694,7 +797,10 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
-    public func setRoot(path: Godot.NodePath) {
+
+    public func setRoot(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -713,6 +819,7 @@ open class AnimationPlayer: AnimationMixer {
         }
         }
     }()
+
     public func root() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -803,6 +910,7 @@ open class AnimationPlayer: AnimationMixer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -815,5 +923,4 @@ open class AnimationPlayer: AnimationMixer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

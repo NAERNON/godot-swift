@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GeometryInstance3D: VisualInstance3D {
     public enum ShadowCastingSetting: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class GeometryInstance3D: VisualInstance3D {
         case on = 1
         case doubleSided = 2
         case shadowsOnly = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Off", 0),
@@ -18,10 +20,12 @@ open class GeometryInstance3D: VisualInstance3D {
             ("Shadows Only", 3),]
         }
     }
+
     public enum GIMode: UInt32, GodotEnum {
         case disabled = 0
         case `static` = 1
         case dynamic = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -29,12 +33,14 @@ open class GeometryInstance3D: VisualInstance3D {
             ("Dynamic", 2),]
         }
     }
+
     public enum LightmapScale: UInt32, GodotEnum {
         case lightmapScale1x = 0
         case lightmapScale2x = 1
         case lightmapScale4x = 2
         case lightmapScale8x = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Lightmap Scale1x", 0),
@@ -44,10 +50,12 @@ open class GeometryInstance3D: VisualInstance3D {
             ("Max", 4),]
         }
     }
+
     public enum VisibilityRangeFadeMode: UInt32, GodotEnum {
         case disabled = 0
         case `self` = 1
         case dependencies = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -63,7 +71,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setMaterialOverride(material: Godot.Material?) {
+
+    private func __setMaterialOverride(
+        material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -83,6 +94,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getMaterialOverride() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -101,7 +113,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setMaterialOverlay(material: Godot.Material?) {
+
+    private func __setMaterialOverlay(
+        material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -121,6 +136,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getMaterialOverlay() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +155,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setCastShadowsSetting(shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting) {
+
+    private func __setCastShadowsSetting(
+        shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting
+    ) {
         shadowCastingSetting.withGodotUnsafeRawPointer { __ptr_shadowCastingSetting in
         withUnsafeArgumentPackPointer(__ptr_shadowCastingSetting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +177,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getCastShadowsSetting() -> Godot.GeometryInstance3D.ShadowCastingSetting {
         Godot.GeometryInstance3D.ShadowCastingSetting.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,7 +196,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setLodBias(_ bias: Double) {
+
+    private func __setLodBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,6 +218,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getLodBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,7 +237,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setTransparency(_ transparency: Double) {
+
+    private func __setTransparency(
+        _ transparency: Double
+    ) {
         transparency.withGodotUnsafeRawPointer { __ptr_transparency in
         withUnsafeArgumentPackPointer(__ptr_transparency) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -232,6 +259,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getTransparency() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,7 +278,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setVisibilityRangeEndMargin(distance: Double) {
+
+    private func __setVisibilityRangeEndMargin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +300,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getVisibilityRangeEndMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,7 +319,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setVisibilityRangeEnd(distance: Double) {
+
+    private func __setVisibilityRangeEnd(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -306,6 +341,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getVisibilityRangeEnd() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -324,7 +360,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setVisibilityRangeBeginMargin(distance: Double) {
+
+    private func __setVisibilityRangeBeginMargin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,6 +382,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getVisibilityRangeBeginMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,7 +401,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setVisibilityRangeBegin(distance: Double) {
+
+    private func __setVisibilityRangeBegin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -380,6 +423,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getVisibilityRangeBegin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,7 +442,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setVisibilityRangeFadeMode(_ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode) {
+
+    private func __setVisibilityRangeFadeMode(
+        _ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -417,6 +464,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getVisibilityRangeFadeMode() -> Godot.GeometryInstance3D.VisibilityRangeFadeMode {
         Godot.GeometryInstance3D.VisibilityRangeFadeMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -435,7 +483,11 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    public func setInstanceShaderParameter<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
+
+    public func setInstanceShaderParameter<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -455,7 +507,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    public func instanceShaderParameter(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func instanceShaderParameter(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -475,7 +530,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setExtraCullMargin(_ margin: Double) {
+
+    private func __setExtraCullMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -494,6 +552,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getExtraCullMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -512,7 +571,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setLightmapScale(_ scale: Godot.GeometryInstance3D.LightmapScale) {
+
+    private func __setLightmapScale(
+        _ scale: Godot.GeometryInstance3D.LightmapScale
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,6 +593,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getLightmapScale() -> Godot.GeometryInstance3D.LightmapScale {
         Godot.GeometryInstance3D.LightmapScale.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,7 +612,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setGiMode(_ mode: Godot.GeometryInstance3D.GIMode) {
+
+    private func __setGiMode(
+        _ mode: Godot.GeometryInstance3D.GIMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -568,6 +634,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getGiMode() -> Godot.GeometryInstance3D.GIMode {
         Godot.GeometryInstance3D.GIMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +653,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setIgnoreOcclusionCulling(ignoreCulling: Bool) {
+
+    private func __setIgnoreOcclusionCulling(
+        ignoreCulling: Bool
+    ) {
         ignoreCulling.withGodotUnsafeRawPointer { __ptr_ignoreCulling in
         withUnsafeArgumentPackPointer(__ptr_ignoreCulling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,6 +675,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __isIgnoringOcclusionCulling() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,7 +694,10 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
-    private func __setCustomAabb(_ aabb: Godot.AABB) {
+
+    private func __setCustomAabb(
+        _ aabb: Godot.AABB
+    ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,6 +716,7 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getCustomAabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -819,6 +894,7 @@ open class GeometryInstance3D: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -831,5 +907,4 @@ open class GeometryInstance3D: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

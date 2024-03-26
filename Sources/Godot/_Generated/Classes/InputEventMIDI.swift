@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventMIDI: InputEvent {
     internal static var __method_binding_set_channel: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setChannel(_ channel: Int32) {
+
+    private func __setChannel(
+        _ channel: Int32
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getChannel() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setMessage(_ message: Godot.MIDIMessage) {
+
+    private func __setMessage(
+        _ message: Godot.MIDIMessage
+    ) {
         message.withGodotUnsafeRawPointer { __ptr_message in
         withUnsafeArgumentPackPointer(__ptr_message) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getMessage() -> Godot.MIDIMessage {
         Godot.MIDIMessage.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setPitch(_ pitch: Int32) {
+
+    private func __setPitch(
+        _ pitch: Int32
+    ) {
         pitch.withGodotUnsafeRawPointer { __ptr_pitch in
         withUnsafeArgumentPackPointer(__ptr_pitch) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getPitch() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setVelocity(_ velocity: Int32) {
+
+    private func __setVelocity(
+        _ velocity: Int32
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getVelocity() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setInstrument(_ instrument: Int32) {
+
+    private func __setInstrument(
+        _ instrument: Int32
+    ) {
         instrument.withGodotUnsafeRawPointer { __ptr_instrument in
         withUnsafeArgumentPackPointer(__ptr_instrument) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getInstrument() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setPressure(_ pressure: Int32) {
+
+    private func __setPressure(
+        _ pressure: Int32
+    ) {
         pressure.withGodotUnsafeRawPointer { __ptr_pressure in
         withUnsafeArgumentPackPointer(__ptr_pressure) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getPressure() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setControllerNumber(_ controllerNumber: Int32) {
+
+    private func __setControllerNumber(
+        _ controllerNumber: Int32
+    ) {
         controllerNumber.withGodotUnsafeRawPointer { __ptr_controllerNumber in
         withUnsafeArgumentPackPointer(__ptr_controllerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getControllerNumber() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
-    private func __setControllerValue(_ controllerValue: Int32) {
+
+    private func __setControllerValue(
+        _ controllerValue: Int32
+    ) {
         controllerValue.withGodotUnsafeRawPointer { __ptr_controllerValue in
         withUnsafeArgumentPackPointer(__ptr_controllerValue) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class InputEventMIDI: InputEvent {
         }
         }
     }()
+
     private func __getControllerValue() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -390,6 +423,7 @@ open class InputEventMIDI: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -402,5 +436,4 @@ open class InputEventMIDI: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

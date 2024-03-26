@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class JSON: Resource {
     internal static var __method_binding_stringify: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class JSON: Resource {
         }
         }
     }()
-    static public func stringify<Value: VariantStorableIn>(data: Value, indent: Godot.GodotString = "", sortKeys: Bool = true, fullPrecision: Bool = false) -> Godot.GodotString {
+
+    static public func stringify<Value: VariantStorableIn>(
+        data: Value,
+        indent: Godot.GodotString = "",
+        sortKeys: Bool = true,
+        fullPrecision: Bool = false
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
         indent.withGodotUnsafeRawPointer { __ptr_indent in
@@ -34,7 +41,10 @@ open class JSON: Resource {
         }
         }
     }()
-    static public func parseString(jsonString: Godot.GodotString) -> Godot.Variant {
+
+    static public func parseString(
+        jsonString: Godot.GodotString
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         jsonString.withGodotUnsafeRawPointer { __ptr_jsonString in
         withUnsafeArgumentPackPointer(__ptr_jsonString) { __accessPtr in
@@ -53,7 +63,11 @@ open class JSON: Resource {
         }
         }
     }()
-    public func parse(jsonText: Godot.GodotString, keepText: Bool = false) -> Godot.ErrorType {
+
+    public func parse(
+        jsonText: Godot.GodotString,
+        keepText: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         jsonText.withGodotUnsafeRawPointer { __ptr_jsonText in
         keepText.withGodotUnsafeRawPointer { __ptr_keepText in
@@ -74,6 +88,7 @@ open class JSON: Resource {
         }
         }
     }()
+
     private func __getData() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -92,7 +107,10 @@ open class JSON: Resource {
         }
         }
     }()
-    private func __setData<Value: VariantStorableIn>(_ data: Value) {
+
+    private func __setData<Value: VariantStorableIn>(
+        _ data: Value
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,6 +129,7 @@ open class JSON: Resource {
         }
         }
     }()
+
     public func parsedText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -129,6 +148,7 @@ open class JSON: Resource {
         }
         }
     }()
+
     public func errorLine() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,6 +167,7 @@ open class JSON: Resource {
         }
         }
     }()
+
     public func errorMessage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +191,7 @@ open class JSON: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -182,5 +204,4 @@ open class JSON: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

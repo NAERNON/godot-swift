@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ENetMultiplayerPeer: MultiplayerPeer {
     internal static var __method_binding_create_server: GDExtensionMethodBindPtr = {
@@ -12,7 +13,14 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createServer(port: Int32, maxClients: Int32 = 32, maxChannels: Int32 = 0, inBandwidth bandwidth: Int32 = 0, outBandwidth: Int32 = 0) -> Godot.ErrorType {
+
+    public func createServer(
+        port: Int32,
+        maxClients: Int32 = 32,
+        maxChannels: Int32 = 0,
+        inBandwidth bandwidth: Int32 = 0,
+        outBandwidth: Int32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         maxClients.withGodotUnsafeRawPointer { __ptr_maxClients in
@@ -36,7 +44,15 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createClient(address: Godot.GodotString, port: Int32, channelCount: Int32 = 0, inBandwidth bandwidth: Int32 = 0, outBandwidth: Int32 = 0, localPort: Int32 = 0) -> Godot.ErrorType {
+
+    public func createClient(
+        address: Godot.GodotString,
+        port: Int32,
+        channelCount: Int32 = 0,
+        inBandwidth bandwidth: Int32 = 0,
+        outBandwidth: Int32 = 0,
+        localPort: Int32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         address.withGodotUnsafeRawPointer { __ptr_address in
         port.withGodotUnsafeRawPointer { __ptr_port in
@@ -61,7 +77,10 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createMesh(uniqueID: Int32) -> Godot.ErrorType {
+
+    public func createMesh(
+        uniqueID: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         uniqueID.withGodotUnsafeRawPointer { __ptr_uniqueID in
         withUnsafeArgumentPackPointer(__ptr_uniqueID) { __accessPtr in
@@ -81,7 +100,11 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func addMeshPeer(peerID: Int32, host: Godot.ENetConnection?) -> Godot.ErrorType {
+
+    public func addMeshPeer(
+        peerID: Int32,
+        host: Godot.ENetConnection?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         host.withGodotUnsafeRawPointer { __ptr_host in
@@ -103,7 +126,10 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func setBindIp(_ ip: Godot.GodotString) {
+
+    public func setBindIp(
+        _ ip: Godot.GodotString
+    ) {
         ip.withGodotUnsafeRawPointer { __ptr_ip in
         withUnsafeArgumentPackPointer(__ptr_ip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +148,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
+
     private func __getHost() -> Godot.ENetConnection? {
         Godot.ENetConnection?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +167,10 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func peer(id: Int32) -> Godot.ENetPacketPeer? {
+
+    public func peer(
+        id: Int32
+    ) -> Godot.ENetPacketPeer? {
         Godot.ENetPacketPeer?.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -160,6 +190,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -172,5 +203,4 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDSamplerState: RefCounted {
     internal static var __method_binding_set_mag_filter: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setMagFilter(pMember: Godot.RenderingDevice.SamplerFilter) {
+
+    private func __setMagFilter(
+        pMember: Godot.RenderingDevice.SamplerFilter
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getMagFilter() -> Godot.RenderingDevice.SamplerFilter {
         Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setMinFilter(pMember: Godot.RenderingDevice.SamplerFilter) {
+
+    private func __setMinFilter(
+        pMember: Godot.RenderingDevice.SamplerFilter
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getMinFilter() -> Godot.RenderingDevice.SamplerFilter {
         Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setMipFilter(pMember: Godot.RenderingDevice.SamplerFilter) {
+
+    private func __setMipFilter(
+        pMember: Godot.RenderingDevice.SamplerFilter
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getMipFilter() -> Godot.RenderingDevice.SamplerFilter {
         Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setRepeatU(pMember: Godot.RenderingDevice.SamplerRepeatMode) {
+
+    private func __setRepeatU(
+        pMember: Godot.RenderingDevice.SamplerRepeatMode
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getRepeatU() -> Godot.RenderingDevice.SamplerRepeatMode {
         Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setRepeatV(pMember: Godot.RenderingDevice.SamplerRepeatMode) {
+
+    private func __setRepeatV(
+        pMember: Godot.RenderingDevice.SamplerRepeatMode
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getRepeatV() -> Godot.RenderingDevice.SamplerRepeatMode {
         Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setRepeatW(pMember: Godot.RenderingDevice.SamplerRepeatMode) {
+
+    private func __setRepeatW(
+        pMember: Godot.RenderingDevice.SamplerRepeatMode
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getRepeatW() -> Godot.RenderingDevice.SamplerRepeatMode {
         Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setLodBias(pMember: Double) {
+
+    private func __setLodBias(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getLodBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setUseAnisotropy(pMember: Bool) {
+
+    private func __setUseAnisotropy(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getUseAnisotropy() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setAnisotropyMax(pMember: Double) {
+
+    private func __setAnisotropyMax(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getAnisotropyMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setEnableCompare(pMember: Bool) {
+
+    private func __setEnableCompare(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getEnableCompare() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +423,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setCompareOp(pMember: Godot.RenderingDevice.CompareOperator) {
+
+    private func __setCompareOp(
+        pMember: Godot.RenderingDevice.CompareOperator
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +445,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getCompareOp() -> Godot.RenderingDevice.CompareOperator {
         Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,7 +464,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setMinLod(pMember: Double) {
+
+    private func __setMinLod(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +486,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getMinLod() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +505,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setMaxLod(pMember: Double) {
+
+    private func __setMaxLod(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +527,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getMaxLod() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,7 +546,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setBorderColor(pMember: Godot.RenderingDevice.SamplerBorderColor) {
+
+    private func __setBorderColor(
+        pMember: Godot.RenderingDevice.SamplerBorderColor
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -512,6 +568,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getBorderColor() -> Godot.RenderingDevice.SamplerBorderColor {
         Godot.RenderingDevice.SamplerBorderColor.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,7 +587,10 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
-    private func __setUnnormalizedUvw(pMember: Bool) {
+
+    private func __setUnnormalizedUvw(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,6 +609,7 @@ open class RDSamplerState: RefCounted {
         }
         }
     }()
+
     private func __getUnnormalizedUvw() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -726,6 +787,7 @@ open class RDSamplerState: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -738,5 +800,4 @@ open class RDSamplerState: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class VisibleOnScreenNotifier3D: VisualInstance3D {
+
     public func screenEntered() {
         _ = screenEnteredSignal.emit()
     }
+
     public lazy var screenEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "screen_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
     public func screenExited() {
         _ = screenExitedSignal.emit()
     }
+
     public lazy var screenExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "screen_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -48,7 +52,10 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         }
         }
     }()
-    public func setAabb(rect: Godot.AABB) {
+
+    public func setAabb(
+        rect: Godot.AABB
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,6 +74,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         }
         }
     }()
+
     public func isOnScreen() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,6 +87,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -91,5 +100,4 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

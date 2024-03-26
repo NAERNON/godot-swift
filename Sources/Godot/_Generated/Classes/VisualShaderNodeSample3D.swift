@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeSample3D: VisualShaderNode {
     public enum Source: UInt32, GodotEnum {
         case texture = 0
         case port = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture", 0),
@@ -24,7 +26,10 @@ open class VisualShaderNodeSample3D: VisualShaderNode {
         }
         }
     }()
-    private func __setSource(value: Godot.VisualShaderNodeSample3D.Source) {
+
+    private func __setSource(
+        value: Godot.VisualShaderNodeSample3D.Source
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class VisualShaderNodeSample3D: VisualShaderNode {
         }
         }
     }()
+
     private func __getSource() -> Godot.VisualShaderNodeSample3D.Source {
         Godot.VisualShaderNodeSample3D.Source.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +72,7 @@ open class VisualShaderNodeSample3D: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -78,5 +85,4 @@ open class VisualShaderNodeSample3D: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WorldBoundaryShape2D: Shape2D {
     internal static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class WorldBoundaryShape2D: Shape2D {
         }
         }
     }()
-    private func __setNormal(_ normal: Godot.Vector2) {
+
+    private func __setNormal(
+        _ normal: Godot.Vector2
+    ) {
         normal.withGodotUnsafeRawPointer { __ptr_normal in
         withUnsafeArgumentPackPointer(__ptr_normal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class WorldBoundaryShape2D: Shape2D {
         }
         }
     }()
+
     private func __getNormal() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class WorldBoundaryShape2D: Shape2D {
         }
         }
     }()
-    private func __setDistance(_ distance: Double) {
+
+    private func __setDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class WorldBoundaryShape2D: Shape2D {
         }
         }
     }()
+
     private func __getDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class WorldBoundaryShape2D: Shape2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class WorldBoundaryShape2D: Shape2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

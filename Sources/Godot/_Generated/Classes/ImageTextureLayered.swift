@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImageTextureLayered: TextureLayered {
     internal static var __method_binding_create_from_images: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ImageTextureLayered: TextureLayered {
         }
         }
     }()
-    public func createFromImages(_ images: Godot.GodotArray<Godot.Image?>) -> Godot.ErrorType {
+
+    public func createFromImages(
+        _ images: Godot.GodotArray<Godot.Image?>
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         images.withGodotUnsafeRawPointer { __ptr_images in
         withUnsafeArgumentPackPointer(__ptr_images) { __accessPtr in
@@ -32,7 +36,11 @@ open class ImageTextureLayered: TextureLayered {
         }
         }
     }()
-    public func updateLayer(image: Godot.Image?, layer: Int32) {
+
+    public func updateLayer(
+        image: Godot.Image?,
+        layer: Int32
+    ) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -47,6 +55,7 @@ open class ImageTextureLayered: TextureLayered {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -59,5 +68,4 @@ open class ImageTextureLayered: TextureLayered {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WorldBoundaryShape3D: Shape3D {
     internal static var __method_binding_set_plane: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class WorldBoundaryShape3D: Shape3D {
         }
         }
     }()
-    private func __setPlane(_ plane: Godot.Plane) {
+
+    private func __setPlane(
+        _ plane: Godot.Plane
+    ) {
         plane.withGodotUnsafeRawPointer { __ptr_plane in
         withUnsafeArgumentPackPointer(__ptr_plane) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class WorldBoundaryShape3D: Shape3D {
         }
         }
     }()
+
     private func __getPlane() -> Godot.Plane {
         Godot.Plane.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class WorldBoundaryShape3D: Shape3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class WorldBoundaryShape3D: Shape3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

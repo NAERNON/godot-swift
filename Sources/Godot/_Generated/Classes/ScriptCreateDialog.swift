@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScriptCreateDialog: ConfirmationDialog {
     public struct ScriptCreatedSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-        fileprivate init(script: Godot.Script?) {
+
+        fileprivate init(
+            script: Godot.Script?
+        ) {
             self.script = script
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.script)]
         }
     }
-    public func scriptCreated(script: Godot.Script?) {
+
+    public func scriptCreated(
+        script: Godot.Script?
+    ) {
         _ = scriptCreatedSignal.emit(.init(script: script))
     }
+
     public lazy var scriptCreatedSignal: Godot.SignalEmitter<ScriptCreatedSignalInput> = {
         .init(object: self, signalName: "script_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,7 +50,13 @@ open class ScriptCreateDialog: ConfirmationDialog {
         }
         }
     }()
-    public func config(inherits: Godot.GodotString, path: Godot.GodotString, builtInEnabled: Bool = true, loadEnabled: Bool = true) {
+
+    public func config(
+        inherits: Godot.GodotString,
+        path: Godot.GodotString,
+        builtInEnabled: Bool = true,
+        loadEnabled: Bool = true
+    ) {
         inherits.withGodotUnsafeRawPointer { __ptr_inherits in
         path.withGodotUnsafeRawPointer { __ptr_path in
         builtInEnabled.withGodotUnsafeRawPointer { __ptr_builtInEnabled in
@@ -55,6 +72,7 @@ open class ScriptCreateDialog: ConfirmationDialog {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +85,4 @@ open class ScriptCreateDialog: ConfirmationDialog {
         }
         return _virtualFunctions!
     }
-
-    }
+}

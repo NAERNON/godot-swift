@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class BackBufferCopy: Node2D {
     public enum CopyMode: UInt32, GodotEnum {
         case disabled = 0
         case rect = 1
         case viewport = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -24,7 +26,10 @@ open class BackBufferCopy: Node2D {
         }
         }
     }()
-    private func __setRect(_ rect: Godot.Rect2) {
+
+    private func __setRect(
+        _ rect: Godot.Rect2
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class BackBufferCopy: Node2D {
         }
         }
     }()
+
     private func __getRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class BackBufferCopy: Node2D {
         }
         }
     }()
-    private func __setCopyMode(_ copyMode: Godot.BackBufferCopy.CopyMode) {
+
+    private func __setCopyMode(
+        _ copyMode: Godot.BackBufferCopy.CopyMode
+    ) {
         copyMode.withGodotUnsafeRawPointer { __ptr_copyMode in
         withUnsafeArgumentPackPointer(__ptr_copyMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class BackBufferCopy: Node2D {
         }
         }
     }()
+
     private func __getCopyMode() -> Godot.BackBufferCopy.CopyMode {
         Godot.BackBufferCopy.CopyMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +124,7 @@ open class BackBufferCopy: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -126,5 +137,4 @@ open class BackBufferCopy: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

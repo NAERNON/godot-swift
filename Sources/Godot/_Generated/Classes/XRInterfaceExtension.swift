@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class XRInterfaceExtension: XRInterface {
     open func _getName() -> Godot.GodotStringName {
@@ -28,7 +29,9 @@ open class XRInterfaceExtension: XRInterface {
         Godot.AnyGodotDictionary()
     }
 
-    open func _supportsPlayAreaMode(_ mode: Godot.XRInterface.PlayAreaMode) -> Bool {
+    open func _supportsPlayAreaMode(
+        _ mode: Godot.XRInterface.PlayAreaMode
+    ) -> Bool {
         Bool()
     }
 
@@ -36,7 +39,9 @@ open class XRInterfaceExtension: XRInterface {
         Godot.XRInterface.PlayAreaMode(rawValue: 0)!
     }
 
-    open func _setPlayAreaMode(_ mode: Godot.XRInterface.PlayAreaMode) -> Bool {
+    open func _setPlayAreaMode(
+        _ mode: Godot.XRInterface.PlayAreaMode
+    ) -> Bool {
         Bool()
     }
 
@@ -56,11 +61,19 @@ open class XRInterfaceExtension: XRInterface {
         Godot.Transform3D()
     }
 
-    open func _getTransformForView(_ view: UInt32, camTransform: Godot.Transform3D) -> Godot.Transform3D {
+    open func _getTransformForView(
+        _ view: UInt32,
+        camTransform: Godot.Transform3D
+    ) -> Godot.Transform3D {
         Godot.Transform3D()
     }
 
-    open func _getProjectionForView(_ view: UInt32, aspect: Double, zNear: Double, zFar: Double) -> Godot.PackedFloat64Array {
+    open func _getProjectionForView(
+        _ view: UInt32,
+        aspect: Double,
+        zNear: Double,
+        zFar: Double
+    ) -> Godot.PackedFloat64Array {
         Godot.PackedFloat64Array()
     }
 
@@ -74,11 +87,16 @@ open class XRInterfaceExtension: XRInterface {
     open func _preRender() {
     }
 
-    open func _preDrawViewport(renderTarget: Godot.RID) -> Bool {
+    open func _preDrawViewport(
+        renderTarget: Godot.RID
+    ) -> Bool {
         Bool()
     }
 
-    open func _postDrawViewport(renderTarget: Godot.RID, screenRect: Godot.Rect2) {
+    open func _postDrawViewport(
+        renderTarget: Godot.RID,
+        screenRect: Godot.Rect2
+    ) {
     }
 
     open func _endFrame() {
@@ -88,7 +106,9 @@ open class XRInterfaceExtension: XRInterface {
         Godot.PackedStringArray()
     }
 
-    open func _getSuggestedPoseNames(trackerName: Godot.GodotStringName) -> Godot.PackedStringArray {
+    open func _getSuggestedPoseNames(
+        trackerName: Godot.GodotStringName
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
@@ -96,14 +116,23 @@ open class XRInterfaceExtension: XRInterface {
         Godot.XRInterface.TrackingStatus(rawValue: 0)!
     }
 
-    open func _triggerHapticPulse(actionName: Godot.GodotString, trackerName: Godot.GodotStringName, frequency: Double, amplitude: Double, durationSec: Double, delaySec: Double) {
+    open func _triggerHapticPulse(
+        actionName: Godot.GodotString,
+        trackerName: Godot.GodotStringName,
+        frequency: Double,
+        amplitude: Double,
+        durationSec: Double,
+        delaySec: Double
+    ) {
     }
 
     open func _getAnchorDetectionIsEnabled() -> Bool {
         Bool()
     }
 
-    open func _setAnchorDetectionIsEnabled(_ enabled: Bool) {
+    open func _setAnchorDetectionIsEnabled(
+        _ enabled: Bool
+    ) {
     }
 
     open func _getCameraFeedID() -> Int32 {
@@ -129,6 +158,7 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
+
     public func colorTexture() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,6 +177,7 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
+
     public func depthTexture() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +196,7 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
+
     public func velocityTexture() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,7 +215,20 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
-    public func addBlit(renderTarget: Godot.RID, srcRect: Godot.Rect2, dstRect: Godot.Rect2I, useLayer: Bool, layer: UInt32, applyLensDistortion: Bool, eyeCenter: Godot.Vector2, k1: Double, k2: Double, upscale: Double, aspectRatio: Double) {
+
+    public func addBlit(
+        renderTarget: Godot.RID,
+        srcRect: Godot.Rect2,
+        dstRect: Godot.Rect2I,
+        useLayer: Bool,
+        layer: UInt32,
+        applyLensDistortion: Bool,
+        eyeCenter: Godot.Vector2,
+        k1: Double,
+        k2: Double,
+        upscale: Double,
+        aspectRatio: Double
+    ) {
         renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
         srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
         dstRect.withGodotUnsafeRawPointer { __ptr_dstRect in
@@ -212,7 +257,10 @@ open class XRInterfaceExtension: XRInterface {
         }
         }
     }()
-    public func renderTargetTexture(renderTarget: Godot.RID) -> Godot.RID {
+
+    public func renderTargetTexture(
+        renderTarget: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
         withUnsafeArgumentPackPointer(__ptr_renderTarget) { __accessPtr in
@@ -226,6 +274,7 @@ open class XRInterfaceExtension: XRInterface {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -506,5 +555,4 @@ open class XRInterfaceExtension: XRInterface {
         }
         return _virtualFunctions!
     }
-
-    }
+}

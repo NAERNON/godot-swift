@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDVertexAttribute: RefCounted {
     internal static var __method_binding_set_location: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
-    private func __setLocation(pMember: UInt32) {
+
+    private func __setLocation(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
+
     private func __getLocation() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
-    private func __setOffset(pMember: UInt32) {
+
+    private func __setOffset(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
+
     private func __getOffset() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
-    private func __setFormat(pMember: Godot.RenderingDevice.DataFormat) {
+
+    private func __setFormat(
+        pMember: Godot.RenderingDevice.DataFormat
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
+
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
         Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
-    private func __setStride(pMember: UInt32) {
+
+    private func __setStride(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
+
     private func __getStride() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
-    private func __setFrequency(pMember: Godot.RenderingDevice.VertexFrequency) {
+
+    private func __setFrequency(
+        pMember: Godot.RenderingDevice.VertexFrequency
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDVertexAttribute: RefCounted {
         }
         }
     }()
+
     private func __getFrequency() -> Godot.RenderingDevice.VertexFrequency {
         Godot.RenderingDevice.VertexFrequency.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class RDVertexAttribute: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class RDVertexAttribute: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

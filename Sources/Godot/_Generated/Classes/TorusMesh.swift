@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TorusMesh: PrimitiveMesh {
     internal static var __method_binding_set_inner_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setInnerRadius(_ radius: Double) {
+
+    private func __setInnerRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getInnerRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setOuterRadius(_ radius: Double) {
+
+    private func __setOuterRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getOuterRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRings(_ rings: Int32) {
+
+    private func __setRings(
+        _ rings: Int32
+    ) {
         rings.withGodotUnsafeRawPointer { __ptr_rings in
         withUnsafeArgumentPackPointer(__ptr_rings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRings() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRingSegments(rings: Int32) {
+
+    private func __setRingSegments(
+        rings: Int32
+    ) {
         rings.withGodotUnsafeRawPointer { __ptr_rings in
         withUnsafeArgumentPackPointer(__ptr_rings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class TorusMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRingSegments() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class TorusMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class TorusMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

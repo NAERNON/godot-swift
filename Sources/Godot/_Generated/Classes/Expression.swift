@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Expression: RefCounted {
     internal static var __method_binding_parse: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class Expression: RefCounted {
         }
         }
     }()
-    public func parse(_ expression: Godot.GodotString, inputNames: Godot.PackedStringArray = PackedStringArray()) -> Godot.ErrorType {
+
+    public func parse(
+        _ expression: Godot.GodotString,
+        inputNames: Godot.PackedStringArray = PackedStringArray()
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         expression.withGodotUnsafeRawPointer { __ptr_expression in
         inputNames.withGodotUnsafeRawPointer { __ptr_inputNames in
@@ -33,7 +38,13 @@ open class Expression: RefCounted {
         }
         }
     }()
-    public func execute<Value: VariantStorable>(inputs: Godot.GodotArray<Value> = [], baseInstance: Godot.Object? = nil, showError: Bool = true, constCallsOnly: Bool = false) -> Godot.Variant {
+
+    public func execute<Value: VariantStorable>(
+        inputs: Godot.GodotArray<Value> = [],
+        baseInstance: Godot.Object? = nil,
+        showError: Bool = true,
+        constCallsOnly: Bool = false
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         inputs.withGodotUnsafeRawPointer { __ptr_inputs in
         baseInstance.withGodotUnsafeRawPointer { __ptr_baseInstance in
@@ -57,6 +68,7 @@ open class Expression: RefCounted {
         }
         }
     }()
+
     public func hasExecuteFailed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -75,6 +87,7 @@ open class Expression: RefCounted {
         }
         }
     }()
+
     public func errorText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +100,7 @@ open class Expression: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -99,5 +113,4 @@ open class Expression: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

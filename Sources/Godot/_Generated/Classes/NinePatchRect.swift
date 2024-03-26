@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NinePatchRect: Control {
     public enum AxisStretchMode: UInt32, GodotEnum {
         case stretch = 0
         case tile = 1
         case tileFit = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Stretch", 0),
@@ -20,6 +22,7 @@ open class NinePatchRect: Control {
     public func textureChanged() {
         _ = textureChangedSignal.emit()
     }
+
     public lazy var textureChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,7 +45,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -62,6 +68,7 @@ open class NinePatchRect: Control {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,7 +87,11 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    public func setPatchMargin(_ margin: Godot.Side, value: Int32) {
+
+    public func setPatchMargin(
+        _ margin: Godot.Side,
+        value: Int32
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_value) { __accessPtr in
@@ -100,7 +111,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __getPatchMargin(_ margin: Godot.Side) -> Int32 {
+
+    private func __getPatchMargin(
+        _ margin: Godot.Side
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -120,7 +134,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __setRegionRect(_ rect: Godot.Rect2) {
+
+    private func __setRegionRect(
+        _ rect: Godot.Rect2
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,6 +156,7 @@ open class NinePatchRect: Control {
         }
         }
     }()
+
     private func __getRegionRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,7 +175,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __setDrawCenter(_ drawCenter: Bool) {
+
+    private func __setDrawCenter(
+        _ drawCenter: Bool
+    ) {
         drawCenter.withGodotUnsafeRawPointer { __ptr_drawCenter in
         withUnsafeArgumentPackPointer(__ptr_drawCenter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,6 +197,7 @@ open class NinePatchRect: Control {
         }
         }
     }()
+
     private func __isDrawCenterEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,7 +216,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __setHAxisStretchMode(_ mode: Godot.NinePatchRect.AxisStretchMode) {
+
+    private func __setHAxisStretchMode(
+        _ mode: Godot.NinePatchRect.AxisStretchMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,6 +238,7 @@ open class NinePatchRect: Control {
         }
         }
     }()
+
     private func __getHAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
         Godot.NinePatchRect.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -231,7 +257,10 @@ open class NinePatchRect: Control {
         }
         }
     }()
-    private func __setVAxisStretchMode(_ mode: Godot.NinePatchRect.AxisStretchMode) {
+
+    private func __setVAxisStretchMode(
+        _ mode: Godot.NinePatchRect.AxisStretchMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,6 +279,7 @@ open class NinePatchRect: Control {
         }
         }
     }()
+
     private func __getVAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
         Godot.NinePatchRect.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,6 +379,7 @@ open class NinePatchRect: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -361,5 +392,4 @@ open class NinePatchRect: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

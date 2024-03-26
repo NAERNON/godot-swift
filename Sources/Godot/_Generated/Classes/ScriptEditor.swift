@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScriptEditor: PanelContainer {
     public struct EditorScriptChangedSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-        fileprivate init(script: Godot.Script?) {
+
+        fileprivate init(
+            script: Godot.Script?
+        ) {
             self.script = script
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.script)]
         }
     }
-    public func editorScriptChanged(script: Godot.Script?) {
+
+    public func editorScriptChanged(
+        script: Godot.Script?
+    ) {
         _ = editorScriptChangedSignal.emit(.init(script: script))
     }
+
     public lazy var editorScriptChangedSignal: Godot.SignalEmitter<EditorScriptChangedSignalInput> = {
         .init(object: self, signalName: "editor_script_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class ScriptEditor: PanelContainer {
 
     public struct ScriptCloseSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-        fileprivate init(script: Godot.Script?) {
+
+        fileprivate init(
+            script: Godot.Script?
+        ) {
             self.script = script
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.script)]
         }
     }
-    public func scriptClose(script: Godot.Script?) {
+
+    public func scriptClose(
+        script: Godot.Script?
+    ) {
         _ = scriptCloseSignal.emit(.init(script: script))
     }
+
     public lazy var scriptCloseSignal: Godot.SignalEmitter<ScriptCloseSignalInput> = {
         .init(object: self, signalName: "script_close") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,6 +87,7 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
+
     public func currentEditor() -> Godot.ScriptEditorBase? {
         Godot.ScriptEditorBase?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +106,7 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
+
     public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase?> {
         Godot.GodotArray<Godot.ScriptEditorBase?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +125,10 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func registerSyntaxHighlighter(_ syntaxHighlighter: Godot.EditorSyntaxHighlighter?) {
+
+    public func registerSyntaxHighlighter(
+        _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
+    ) {
         syntaxHighlighter.withGodotUnsafeRawPointer { __ptr_syntaxHighlighter in
         withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
         withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
@@ -122,7 +148,10 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func unregisterSyntaxHighlighter(_ syntaxHighlighter: Godot.EditorSyntaxHighlighter?) {
+
+    public func unregisterSyntaxHighlighter(
+        _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
+    ) {
         syntaxHighlighter.withGodotUnsafeRawPointer { __ptr_syntaxHighlighter in
         withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
         withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
@@ -142,7 +171,10 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func gotoLine(lineNumber: Int32) {
+
+    public func gotoLine(
+        lineNumber: Int32
+    ) {
         lineNumber.withGodotUnsafeRawPointer { __ptr_lineNumber in
         withUnsafeArgumentPackPointer(__ptr_lineNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +193,7 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
+
     public func currentScript() -> Godot.Script? {
         Godot.Script?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +212,7 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
+
     public func openScripts() -> Godot.GodotArray<Godot.Script?> {
         Godot.GodotArray<Godot.Script?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +231,11 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func openScriptCreateDialog(baseName: Godot.GodotString, basePath: Godot.GodotString) {
+
+    public func openScriptCreateDialog(
+        baseName: Godot.GodotString,
+        basePath: Godot.GodotString
+    ) {
         baseName.withGodotUnsafeRawPointer { __ptr_baseName in
         basePath.withGodotUnsafeRawPointer { __ptr_basePath in
         withUnsafeArgumentPackPointer(__ptr_baseName, __ptr_basePath) { __accessPtr in
@@ -211,6 +249,7 @@ open class ScriptEditor: PanelContainer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -223,5 +262,4 @@ open class ScriptEditor: PanelContainer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

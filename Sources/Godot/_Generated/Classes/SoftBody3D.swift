@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SoftBody3D: MeshInstance3D {
     public enum DisableMode: UInt32, GodotEnum {
         case remove = 0
         case keepActive = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Remove", 0),
@@ -22,6 +24,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     public func physicsRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -40,7 +43,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setCollisionMask(_ collisionMask: UInt32) {
+
+    private func __setCollisionMask(
+        _ collisionMask: UInt32
+    ) {
         collisionMask.withGodotUnsafeRawPointer { __ptr_collisionMask in
         withUnsafeArgumentPackPointer(__ptr_collisionMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,6 +65,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,7 +84,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setCollisionLayer(_ collisionLayer: UInt32) {
+
+    private func __setCollisionLayer(
+        _ collisionLayer: UInt32
+    ) {
         collisionLayer.withGodotUnsafeRawPointer { __ptr_collisionLayer in
         withUnsafeArgumentPackPointer(__ptr_collisionLayer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,6 +106,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getCollisionLayer() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,7 +125,11 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -134,7 +149,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -154,7 +172,11 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func setCollisionLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -174,7 +196,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func collisionLayerValue(layerNumber: Int32) -> Bool {
+
+    public func collisionLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -194,7 +219,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setParentCollisionIgnore(_ parentCollisionIgnore: Godot.NodePath) {
+
+    private func __setParentCollisionIgnore(
+        _ parentCollisionIgnore: Godot.NodePath
+    ) {
         parentCollisionIgnore.withGodotUnsafeRawPointer { __ptr_parentCollisionIgnore in
         withUnsafeArgumentPackPointer(__ptr_parentCollisionIgnore) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,6 +241,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getParentCollisionIgnore() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -231,7 +260,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setDisableMode(_ mode: Godot.SoftBody3D.DisableMode) {
+
+    private func __setDisableMode(
+        _ mode: Godot.SoftBody3D.DisableMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,6 +282,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getDisableMode() -> Godot.SoftBody3D.DisableMode {
         Godot.SoftBody3D.DisableMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -268,6 +301,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody3D?> {
         Godot.GodotArray<Godot.PhysicsBody3D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -286,7 +320,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func addCollisionExceptionWith(body: Godot.Node?) {
+
+    public func addCollisionExceptionWith(
+        body: Godot.Node?
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
         withUnsafeArgumentPackPointer(_ptr___ptr_body) { __accessPtr in
@@ -306,7 +343,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func removeCollisionExceptionWith(body: Godot.Node?) {
+
+    public func removeCollisionExceptionWith(
+        body: Godot.Node?
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
         withUnsafeArgumentPackPointer(_ptr___ptr_body) { __accessPtr in
@@ -326,7 +366,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setSimulationPrecision(_ simulationPrecision: Int32) {
+
+    private func __setSimulationPrecision(
+        _ simulationPrecision: Int32
+    ) {
         simulationPrecision.withGodotUnsafeRawPointer { __ptr_simulationPrecision in
         withUnsafeArgumentPackPointer(__ptr_simulationPrecision) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +388,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getSimulationPrecision() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,7 +407,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setTotalMass(_ mass: Double) {
+
+    private func __setTotalMass(
+        _ mass: Double
+    ) {
         mass.withGodotUnsafeRawPointer { __ptr_mass in
         withUnsafeArgumentPackPointer(__ptr_mass) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +429,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getTotalMass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +448,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setLinearStiffness(_ linearStiffness: Double) {
+
+    private func __setLinearStiffness(
+        _ linearStiffness: Double
+    ) {
         linearStiffness.withGodotUnsafeRawPointer { __ptr_linearStiffness in
         withUnsafeArgumentPackPointer(__ptr_linearStiffness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +470,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getLinearStiffness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,7 +489,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setPressureCoefficient(_ pressureCoefficient: Double) {
+
+    private func __setPressureCoefficient(
+        _ pressureCoefficient: Double
+    ) {
         pressureCoefficient.withGodotUnsafeRawPointer { __ptr_pressureCoefficient in
         withUnsafeArgumentPackPointer(__ptr_pressureCoefficient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,6 +511,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getPressureCoefficient() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,7 +530,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setDampingCoefficient(_ dampingCoefficient: Double) {
+
+    private func __setDampingCoefficient(
+        _ dampingCoefficient: Double
+    ) {
         dampingCoefficient.withGodotUnsafeRawPointer { __ptr_dampingCoefficient in
         withUnsafeArgumentPackPointer(__ptr_dampingCoefficient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,6 +552,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getDampingCoefficient() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -511,7 +571,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setDragCoefficient(_ dragCoefficient: Double) {
+
+    private func __setDragCoefficient(
+        _ dragCoefficient: Double
+    ) {
         dragCoefficient.withGodotUnsafeRawPointer { __ptr_dragCoefficient in
         withUnsafeArgumentPackPointer(__ptr_dragCoefficient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,6 +593,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __getDragCoefficient() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -548,7 +612,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func pointTransform(pointIndex: Int32) -> Godot.Vector3 {
+
+    public func pointTransform(
+        pointIndex: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         pointIndex.withGodotUnsafeRawPointer { __ptr_pointIndex in
         withUnsafeArgumentPackPointer(__ptr_pointIndex) { __accessPtr in
@@ -568,7 +635,12 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func setPointPinned(pointIndex: Int32, pinned: Bool, attachmentPath: Godot.NodePath = NodePath(string: "")) {
+
+    public func setPointPinned(
+        pointIndex: Int32,
+        pinned: Bool,
+        attachmentPath: Godot.NodePath = NodePath(string: "")
+    ) {
         pointIndex.withGodotUnsafeRawPointer { __ptr_pointIndex in
         pinned.withGodotUnsafeRawPointer { __ptr_pinned in
         attachmentPath.withGodotUnsafeRawPointer { __ptr_attachmentPath in
@@ -589,7 +661,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func isPointPinned(pointIndex: Int32) -> Bool {
+
+    public func isPointPinned(
+        pointIndex: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         pointIndex.withGodotUnsafeRawPointer { __ptr_pointIndex in
         withUnsafeArgumentPackPointer(__ptr_pointIndex) { __accessPtr in
@@ -609,7 +684,10 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    private func __setRayPickable(_ rayPickable: Bool) {
+
+    private func __setRayPickable(
+        _ rayPickable: Bool
+    ) {
         rayPickable.withGodotUnsafeRawPointer { __ptr_rayPickable in
         withUnsafeArgumentPackPointer(__ptr_rayPickable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -628,6 +706,7 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
+
     private func __isRayPickable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -761,6 +840,7 @@ open class SoftBody3D: MeshInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -773,5 +853,4 @@ open class SoftBody3D: MeshInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

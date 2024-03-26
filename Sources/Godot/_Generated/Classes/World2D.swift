@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class World2D: Resource {
     internal static var __method_binding_get_canvas: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class World2D: Resource {
         }
         }
     }()
+
     private func __getCanvas() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class World2D: Resource {
         }
         }
     }()
+
     private func __getSpace() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class World2D: Resource {
         }
         }
     }()
+
     private func __getNavigationMap() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class World2D: Resource {
         }
         }
     }()
+
     private func __getDirectSpaceState() -> Godot.PhysicsDirectSpaceState2D? {
         Godot.PhysicsDirectSpaceState2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +107,7 @@ open class World2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +120,4 @@ open class World2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

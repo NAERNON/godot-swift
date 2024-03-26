@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GridContainer: Container {
     internal static var __method_binding_set_columns: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GridContainer: Container {
         }
         }
     }()
-    private func __setColumns(_ columns: Int32) {
+
+    private func __setColumns(
+        _ columns: Int32
+    ) {
         columns.withGodotUnsafeRawPointer { __ptr_columns in
         withUnsafeArgumentPackPointer(__ptr_columns) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class GridContainer: Container {
         }
         }
     }()
+
     private func __getColumns() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class GridContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class GridContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

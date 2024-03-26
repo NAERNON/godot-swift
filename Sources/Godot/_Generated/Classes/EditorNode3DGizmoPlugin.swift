@@ -3,13 +3,18 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorNode3DGizmoPlugin: Resource {
-    open func _hasGizmo(forNode3D node3D: Godot.Node3D?) -> Bool {
+    open func _hasGizmo(
+        forNode3D node3D: Godot.Node3D?
+    ) -> Bool {
         Bool()
     }
 
-    open func _createGizmo(forNode3D node3D: Godot.Node3D?) -> Godot.EditorNode3DGizmo? {
+    open func _createGizmo(
+        forNode3D node3D: Godot.Node3D?
+    ) -> Godot.EditorNode3DGizmo? {
         nil
     }
 
@@ -29,43 +34,89 @@ open class EditorNode3DGizmoPlugin: Resource {
         Bool()
     }
 
-    open func _redraw(gizmo: Godot.EditorNode3DGizmo?) {
+    open func _redraw(
+        gizmo: Godot.EditorNode3DGizmo?
+    ) {
     }
 
-    open func _getHandleName(gizmo: Godot.EditorNode3DGizmo?, handleID: Int32, secondary: Bool) -> Godot.GodotString {
+    open func _getHandleName(
+        gizmo: Godot.EditorNode3DGizmo?,
+        handleID: Int32,
+        secondary: Bool
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _isHandleHighlighted(gizmo: Godot.EditorNode3DGizmo?, handleID: Int32, secondary: Bool) -> Bool {
+    open func _isHandleHighlighted(
+        gizmo: Godot.EditorNode3DGizmo?,
+        handleID: Int32,
+        secondary: Bool
+    ) -> Bool {
         Bool()
     }
 
-    open func _getHandleValue(gizmo: Godot.EditorNode3DGizmo?, handleID: Int32, secondary: Bool) -> Godot.Variant {
+    open func _getHandleValue(
+        gizmo: Godot.EditorNode3DGizmo?,
+        handleID: Int32,
+        secondary: Bool
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _setHandle(gizmo: Godot.EditorNode3DGizmo?, handleID: Int32, secondary: Bool, camera: Godot.Camera3D?, screenPos: Godot.Vector2) {
+    open func _setHandle(
+        gizmo: Godot.EditorNode3DGizmo?,
+        handleID: Int32,
+        secondary: Bool,
+        camera: Godot.Camera3D?,
+        screenPos: Godot.Vector2
+    ) {
     }
 
-    open func _commitHandle(gizmo: Godot.EditorNode3DGizmo?, handleID: Int32, secondary: Bool, restore: Godot.Variant, cancel: Bool) {
+    open func _commitHandle(
+        gizmo: Godot.EditorNode3DGizmo?,
+        handleID: Int32,
+        secondary: Bool,
+        restore: Godot.Variant,
+        cancel: Bool
+    ) {
     }
 
-    open func _subgizmosIntersectRay(gizmo: Godot.EditorNode3DGizmo?, camera: Godot.Camera3D?, screenPos: Godot.Vector2) -> Int32 {
+    open func _subgizmosIntersectRay(
+        gizmo: Godot.EditorNode3DGizmo?,
+        camera: Godot.Camera3D?,
+        screenPos: Godot.Vector2
+    ) -> Int32 {
         Int32()
     }
 
-    open func _subgizmosIntersectFrustum(gizmo: Godot.EditorNode3DGizmo?, camera: Godot.Camera3D?, frustumPlanes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedInt32Array {
+    open func _subgizmosIntersectFrustum(
+        gizmo: Godot.EditorNode3DGizmo?,
+        camera: Godot.Camera3D?,
+        frustumPlanes: Godot.GodotArray<Godot.Plane>
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
-    open func _getSubgizmoTransform(gizmo: Godot.EditorNode3DGizmo?, subgizmoID: Int32) -> Godot.Transform3D {
+    open func _getSubgizmoTransform(
+        gizmo: Godot.EditorNode3DGizmo?,
+        subgizmoID: Int32
+    ) -> Godot.Transform3D {
         Godot.Transform3D()
     }
 
-    open func _setSubgizmoTransform(gizmo: Godot.EditorNode3DGizmo?, subgizmoID: Int32, transform: Godot.Transform3D) {
+    open func _setSubgizmoTransform(
+        gizmo: Godot.EditorNode3DGizmo?,
+        subgizmoID: Int32,
+        transform: Godot.Transform3D
+    ) {
     }
 
-    open func _commitSubgizmos(gizmo: Godot.EditorNode3DGizmo?, ids: Godot.PackedInt32Array, restores: Godot.GodotArray<Godot.Transform3D>, cancel: Bool) {
+    open func _commitSubgizmos(
+        gizmo: Godot.EditorNode3DGizmo?,
+        ids: Godot.PackedInt32Array,
+        restores: Godot.GodotArray<Godot.Transform3D>,
+        cancel: Bool
+    ) {
     }
 
     internal static var __method_binding_create_material: GDExtensionMethodBindPtr = {
@@ -75,7 +126,14 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func createMaterial(name: Godot.GodotString, color: Godot.Color, billboard: Bool = false, onTop: Bool = false, useVertexColor: Bool = false) {
+
+    public func createMaterial(
+        name: Godot.GodotString,
+        color: Godot.Color,
+        billboard: Bool = false,
+        onTop: Bool = false,
+        useVertexColor: Bool = false
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         color.withGodotUnsafeRawPointer { __ptr_color in
         billboard.withGodotUnsafeRawPointer { __ptr_billboard in
@@ -98,7 +156,13 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func createIconMaterial(name: Godot.GodotString, texture: Godot.Texture2D?, onTop: Bool = false, color: Godot.Color = .white) {
+
+    public func createIconMaterial(
+        name: Godot.GodotString,
+        texture: Godot.Texture2D?,
+        onTop: Bool = false,
+        color: Godot.Color = .white
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -121,7 +185,12 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func createHandleMaterial(name: Godot.GodotString, billboard: Bool = false, texture: Godot.Texture2D? = nil) {
+
+    public func createHandleMaterial(
+        name: Godot.GodotString,
+        billboard: Bool = false,
+        texture: Godot.Texture2D? = nil
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         billboard.withGodotUnsafeRawPointer { __ptr_billboard in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -143,7 +212,11 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func addMaterial(name: Godot.GodotString, material: Godot.StandardMaterial3D?) {
+
+    public func addMaterial(
+        name: Godot.GodotString,
+        material: Godot.StandardMaterial3D?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -164,7 +237,11 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         }
     }()
-    public func material(name: Godot.GodotString, gizmo: Godot.EditorNode3DGizmo? = nil) -> Godot.StandardMaterial3D? {
+
+    public func material(
+        name: Godot.GodotString,
+        gizmo: Godot.EditorNode3DGizmo? = nil
+    ) -> Godot.StandardMaterial3D? {
         Godot.StandardMaterial3D?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         gizmo.withGodotUnsafeRawPointer { __ptr_gizmo in
@@ -180,6 +257,7 @@ open class EditorNode3DGizmoPlugin: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -372,5 +450,4 @@ open class EditorNode3DGizmoPlugin: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

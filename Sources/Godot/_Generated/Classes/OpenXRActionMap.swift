@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OpenXRActionMap: Resource {
     internal static var __method_binding_set_action_sets: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setActionSets<Value: VariantStorable>(_ actionSets: Godot.GodotArray<Value>) {
+
+    private func __setActionSets<Value: VariantStorable>(
+        _ actionSets: Godot.GodotArray<Value>
+    ) {
         actionSets.withGodotUnsafeRawPointer { __ptr_actionSets in
         withUnsafeArgumentPackPointer(__ptr_actionSets) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
+
     private func __getActionSets() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
+
     public func actionSetCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func findActionSet(name: Godot.GodotString) -> Godot.OpenXRActionSet? {
+
+    public func findActionSet(
+        name: Godot.GodotString
+    ) -> Godot.OpenXRActionSet? {
         Godot.OpenXRActionSet?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -87,7 +96,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func actionSet(idx: Int32) -> Godot.OpenXRActionSet? {
+
+    public func actionSet(
+        idx: Int32
+    ) -> Godot.OpenXRActionSet? {
         Godot.OpenXRActionSet?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -107,7 +119,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func addActionSet(_ actionSet: Godot.OpenXRActionSet?) {
+
+    public func addActionSet(
+        _ actionSet: Godot.OpenXRActionSet?
+    ) {
         actionSet.withGodotUnsafeRawPointer { __ptr_actionSet in
         withUnsafePointer(to: __ptr_actionSet) { _ptr___ptr_actionSet in
         withUnsafeArgumentPackPointer(_ptr___ptr_actionSet) { __accessPtr in
@@ -127,7 +142,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func removeActionSet(_ actionSet: Godot.OpenXRActionSet?) {
+
+    public func removeActionSet(
+        _ actionSet: Godot.OpenXRActionSet?
+    ) {
         actionSet.withGodotUnsafeRawPointer { __ptr_actionSet in
         withUnsafePointer(to: __ptr_actionSet) { _ptr___ptr_actionSet in
         withUnsafeArgumentPackPointer(_ptr___ptr_actionSet) { __accessPtr in
@@ -147,7 +165,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setInteractionProfiles<Value: VariantStorable>(_ interactionProfiles: Godot.GodotArray<Value>) {
+
+    private func __setInteractionProfiles<Value: VariantStorable>(
+        _ interactionProfiles: Godot.GodotArray<Value>
+    ) {
         interactionProfiles.withGodotUnsafeRawPointer { __ptr_interactionProfiles in
         withUnsafeArgumentPackPointer(__ptr_interactionProfiles) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -166,6 +187,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
+
     private func __getInteractionProfiles() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,6 +206,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
+
     public func interactionProfileCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,7 +225,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func findInteractionProfile(name: Godot.GodotString) -> Godot.OpenXRInteractionProfile? {
+
+    public func findInteractionProfile(
+        name: Godot.GodotString
+    ) -> Godot.OpenXRInteractionProfile? {
         Godot.OpenXRInteractionProfile?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -222,7 +248,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func interactionProfile(idx: Int32) -> Godot.OpenXRInteractionProfile? {
+
+    public func interactionProfile(
+        idx: Int32
+    ) -> Godot.OpenXRInteractionProfile? {
         Godot.OpenXRInteractionProfile?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -242,7 +271,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func addInteractionProfile(_ interactionProfile: Godot.OpenXRInteractionProfile?) {
+
+    public func addInteractionProfile(
+        _ interactionProfile: Godot.OpenXRInteractionProfile?
+    ) {
         interactionProfile.withGodotUnsafeRawPointer { __ptr_interactionProfile in
         withUnsafePointer(to: __ptr_interactionProfile) { _ptr___ptr_interactionProfile in
         withUnsafeArgumentPackPointer(_ptr___ptr_interactionProfile) { __accessPtr in
@@ -262,7 +294,10 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    public func removeInteractionProfile(_ interactionProfile: Godot.OpenXRInteractionProfile?) {
+
+    public func removeInteractionProfile(
+        _ interactionProfile: Godot.OpenXRInteractionProfile?
+    ) {
         interactionProfile.withGodotUnsafeRawPointer { __ptr_interactionProfile in
         withUnsafePointer(to: __ptr_interactionProfile) { _ptr___ptr_interactionProfile in
         withUnsafeArgumentPackPointer(_ptr___ptr_interactionProfile) { __accessPtr in
@@ -282,6 +317,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
+
     public func createDefaultActionSets() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -315,6 +351,7 @@ open class OpenXRActionMap: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -327,5 +364,4 @@ open class OpenXRActionMap: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

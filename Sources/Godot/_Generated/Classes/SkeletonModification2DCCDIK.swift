@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DCCDIK: SkeletonModification2D {
     internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    private func __setTargetNode(targetNodepath: Godot.NodePath) {
+
+    private func __setTargetNode(
+        targetNodepath: Godot.NodePath
+    ) {
         targetNodepath.withGodotUnsafeRawPointer { __ptr_targetNodepath in
         withUnsafeArgumentPackPointer(__ptr_targetNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
+
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    private func __setTipNode(tipNodepath: Godot.NodePath) {
+
+    private func __setTipNode(
+        tipNodepath: Godot.NodePath
+    ) {
         tipNodepath.withGodotUnsafeRawPointer { __ptr_tipNodepath in
         withUnsafeArgumentPackPointer(__ptr_tipNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
+
     private func __getTipNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    private func __setCcdikDataChainLength(_ length: Int32) {
+
+    private func __setCcdikDataChainLength(
+        _ length: Int32
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
+
     private func __getCcdikDataChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointBone2dNode(jointIdx: Int32, bone2dNodepath: Godot.NodePath) {
+
+    public func setCcdikJointBone2dNode(
+        jointIdx: Int32,
+        bone2dNodepath: Godot.NodePath
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         bone2dNodepath.withGodotUnsafeRawPointer { __ptr_bone2dNodepath in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_bone2dNodepath) { __accessPtr in
@@ -143,7 +160,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointBone2dNode(jointIdx: Int32) -> Godot.NodePath {
+
+    public func ccdikJointBone2dNode(
+        jointIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -163,7 +183,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointBoneIndex(jointIdx: Int32, boneIdx: Int32) {
+
+    public func setCcdikJointBoneIndex(
+        jointIdx: Int32,
+        boneIdx: Int32
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_boneIdx) { __accessPtr in
@@ -183,7 +207,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointBoneIndex(jointIdx: Int32) -> Int32 {
+
+    public func ccdikJointBoneIndex(
+        jointIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -203,7 +230,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointRotateFromJoint(jointIdx: Int32, rotateFromJoint: Bool) {
+
+    public func setCcdikJointRotateFromJoint(
+        jointIdx: Int32,
+        rotateFromJoint: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         rotateFromJoint.withGodotUnsafeRawPointer { __ptr_rotateFromJoint in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_rotateFromJoint) { __accessPtr in
@@ -223,7 +254,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointRotateFromJoint(jointIdx: Int32) -> Bool {
+
+    public func ccdikJointRotateFromJoint(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -243,7 +277,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointEnableConstraint(jointIdx: Int32, enableConstraint: Bool) {
+
+    public func setCcdikJointEnableConstraint(
+        jointIdx: Int32,
+        enableConstraint: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         enableConstraint.withGodotUnsafeRawPointer { __ptr_enableConstraint in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_enableConstraint) { __accessPtr in
@@ -263,7 +301,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointEnableConstraint(jointIdx: Int32) -> Bool {
+
+    public func ccdikJointEnableConstraint(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -283,7 +324,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointConstraintAngleMin(jointIdx: Int32, angleMin: Double) {
+
+    public func setCcdikJointConstraintAngleMin(
+        jointIdx: Int32,
+        angleMin: Double
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         angleMin.withGodotUnsafeRawPointer { __ptr_angleMin in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_angleMin) { __accessPtr in
@@ -303,7 +348,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointConstraintAngleMin(jointIdx: Int32) -> Double {
+
+    public func ccdikJointConstraintAngleMin(
+        jointIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -323,7 +371,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointConstraintAngleMax(jointIdx: Int32, angleMax: Double) {
+
+    public func setCcdikJointConstraintAngleMax(
+        jointIdx: Int32,
+        angleMax: Double
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         angleMax.withGodotUnsafeRawPointer { __ptr_angleMax in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_angleMax) { __accessPtr in
@@ -343,7 +395,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointConstraintAngleMax(jointIdx: Int32) -> Double {
+
+    public func ccdikJointConstraintAngleMax(
+        jointIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -363,7 +418,11 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func setCcdikJointConstraintAngleInvert(jointIdx: Int32, invert: Bool) {
+
+    public func setCcdikJointConstraintAngleInvert(
+        jointIdx: Int32,
+        invert: Bool
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         invert.withGodotUnsafeRawPointer { __ptr_invert in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_invert) { __accessPtr in
@@ -383,7 +442,10 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         }
     }()
-    public func ccdikJointConstraintAngleInvert(jointIdx: Int32) -> Bool {
+
+    public func ccdikJointConstraintAngleInvert(
+        jointIdx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -430,6 +492,7 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -442,5 +505,4 @@ open class SkeletonModification2DCCDIK: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

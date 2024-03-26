@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ConfirmationDialog: AcceptDialog {
     internal static var __method_binding_get_cancel_button: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class ConfirmationDialog: AcceptDialog {
         }
         }
     }()
+
     public func cancelButton() -> Godot.Button? {
         Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class ConfirmationDialog: AcceptDialog {
         }
         }
     }()
-    private func __setCancelButtonText(_ text: Godot.GodotString) {
+
+    private func __setCancelButtonText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class ConfirmationDialog: AcceptDialog {
         }
         }
     }()
+
     private func __getCancelButtonText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +78,7 @@ open class ConfirmationDialog: AcceptDialog {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -84,5 +91,4 @@ open class ConfirmationDialog: AcceptDialog {
         }
         return _virtualFunctions!
     }
-
-    }
+}

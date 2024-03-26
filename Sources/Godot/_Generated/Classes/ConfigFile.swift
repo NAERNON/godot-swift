@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ConfigFile: RefCounted {
     internal static var __method_binding_set_value: GDExtensionMethodBindPtr = {
@@ -12,7 +13,12 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func setValue<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, value: Value) {
+
+    public func setValue<Value: VariantStorableIn>(
+        section: Godot.GodotString,
+        key: Godot.GodotString,
+        value: Value
+    ) {
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -33,7 +39,12 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func value<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, `default`: Value = Variant()) -> Godot.Variant {
+
+    public func value<Value: VariantStorableIn>(
+        section: Godot.GodotString,
+        key: Godot.GodotString,
+        `default`: Value = Variant()
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -55,7 +66,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func hasSection(_ section: Godot.GodotString) -> Bool {
+
+    public func hasSection(
+        _ section: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
@@ -75,7 +89,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func hasSectionKey(section: Godot.GodotString, key: Godot.GodotString) -> Bool {
+
+    public func hasSectionKey(
+        section: Godot.GodotString,
+        key: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -96,6 +114,7 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
+
     public func sections() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,7 +133,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func sectionKeys(section: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func sectionKeys(
+        section: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
@@ -134,7 +156,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func eraseSection(_ section: Godot.GodotString) {
+
+    public func eraseSection(
+        _ section: Godot.GodotString
+    ) {
         section.withGodotUnsafeRawPointer { __ptr_section in
         withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +178,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func eraseSectionKey(section: Godot.GodotString, key: Godot.GodotString) {
+
+    public func eraseSectionKey(
+        section: Godot.GodotString,
+        key: Godot.GodotString
+    ) {
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_section, __ptr_key) { __accessPtr in
@@ -173,7 +202,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func load(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func load(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -193,7 +225,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func parse(data: Godot.GodotString) -> Godot.ErrorType {
+
+    public func parse(
+        data: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -213,7 +248,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func save(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func save(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -233,6 +271,7 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
+
     public func encodeToText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,7 +290,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func loadEncrypted(path: Godot.GodotString, key: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func loadEncrypted(
+        path: Godot.GodotString,
+        key: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -272,7 +315,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func loadEncryptedPass(path: Godot.GodotString, password: Godot.GodotString) -> Godot.ErrorType {
+
+    public func loadEncryptedPass(
+        path: Godot.GodotString,
+        password: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         password.withGodotUnsafeRawPointer { __ptr_password in
@@ -293,7 +340,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func saveEncrypted(path: Godot.GodotString, key: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func saveEncrypted(
+        path: Godot.GodotString,
+        key: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -314,7 +365,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func saveEncryptedPass(path: Godot.GodotString, password: Godot.GodotString) -> Godot.ErrorType {
+
+    public func saveEncryptedPass(
+        path: Godot.GodotString,
+        password: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         password.withGodotUnsafeRawPointer { __ptr_password in
@@ -335,6 +390,7 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -346,6 +402,7 @@ open class ConfigFile: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -358,5 +415,4 @@ open class ConfigFile: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

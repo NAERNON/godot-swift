@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventScreenDrag: InputEventFromWindow {
     internal static var __method_binding_set_index: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setIndex(_ index: Int32) {
+
+    private func __setIndex(
+        _ index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setTilt(_ tilt: Godot.Vector2) {
+
+    private func __setTilt(
+        _ tilt: Godot.Vector2
+    ) {
         tilt.withGodotUnsafeRawPointer { __ptr_tilt in
         withUnsafeArgumentPackPointer(__ptr_tilt) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getTilt() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setPressure(_ pressure: Double) {
+
+    private func __setPressure(
+        _ pressure: Double
+    ) {
         pressure.withGodotUnsafeRawPointer { __ptr_pressure in
         withUnsafeArgumentPackPointer(__ptr_pressure) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getPressure() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setPenInverted(_ penInverted: Bool) {
+
+    private func __setPenInverted(
+        _ penInverted: Bool
+    ) {
         penInverted.withGodotUnsafeRawPointer { __ptr_penInverted in
         withUnsafeArgumentPackPointer(__ptr_penInverted) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getPenInverted() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setRelative(_ relative: Godot.Vector2) {
+
+    private func __setRelative(
+        _ relative: Godot.Vector2
+    ) {
         relative.withGodotUnsafeRawPointer { __ptr_relative in
         withUnsafeArgumentPackPointer(__ptr_relative) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getRelative() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
-    private func __setVelocity(_ velocity: Godot.Vector2) {
+
+    private func __setVelocity(
+        _ velocity: Godot.Vector2
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         }
     }()
+
     private func __getVelocity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class InputEventScreenDrag: InputEventFromWindow {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class InputEventScreenDrag: InputEventFromWindow {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,21 +3,38 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StreamPeerExtension: StreamPeer {
-    open func _getData(rBuffer: UnsafeMutablePointer<UInt8>, rBytes: Int32, rReceived: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _getData(
+        rBuffer: UnsafeMutablePointer<UInt8>,
+        rBytes: Int32,
+        rReceived: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getPartialData(rBuffer: UnsafeMutablePointer<UInt8>, rBytes: Int32, rReceived: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _getPartialData(
+        rBuffer: UnsafeMutablePointer<UInt8>,
+        rBytes: Int32,
+        rReceived: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _putData(pData: UnsafePointer<UInt8>, pBytes: Int32, rSent: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _putData(
+        pData: UnsafePointer<UInt8>,
+        pBytes: Int32,
+        rSent: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _putPartialData(pData: UnsafePointer<UInt8>, pBytes: Int32, rSent: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _putPartialData(
+        pData: UnsafePointer<UInt8>,
+        pBytes: Int32,
+        rSent: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -26,6 +43,7 @@ open class StreamPeerExtension: StreamPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -93,5 +111,4 @@ open class StreamPeerExtension: StreamPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

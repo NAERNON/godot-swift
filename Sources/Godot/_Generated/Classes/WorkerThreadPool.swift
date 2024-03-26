@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class WorkerThreadPool: Object {
     internal static var __method_binding_add_task: GDExtensionMethodBindPtr = {
@@ -12,7 +13,12 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func addTask(action: Godot.Callable, highPriority: Bool = false, description: Godot.GodotString = "") -> Int64 {
+
+    public func addTask(
+        action: Godot.Callable,
+        highPriority: Bool = false,
+        description: Godot.GodotString = ""
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         highPriority.withGodotUnsafeRawPointer { __ptr_highPriority in
@@ -34,7 +40,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func isTaskCompleted(taskID: Int64) -> Bool {
+
+    public func isTaskCompleted(
+        taskID: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         taskID.withGodotUnsafeRawPointer { __ptr_taskID in
         withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
@@ -54,7 +63,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func waitForTaskCompletion(taskID: Int64) -> Godot.ErrorType {
+
+    public func waitForTaskCompletion(
+        taskID: Int64
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         taskID.withGodotUnsafeRawPointer { __ptr_taskID in
         withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
@@ -74,7 +86,14 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func addGroupTask(action: Godot.Callable, elements: Int32, tasksNeeded: Int32 = -1, highPriority: Bool = false, description: Godot.GodotString = "") -> Int64 {
+
+    public func addGroupTask(
+        action: Godot.Callable,
+        elements: Int32,
+        tasksNeeded: Int32 = -1,
+        highPriority: Bool = false,
+        description: Godot.GodotString = ""
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         elements.withGodotUnsafeRawPointer { __ptr_elements in
@@ -98,7 +117,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func isGroupTaskCompleted(groupID: Int64) -> Bool {
+
+    public func isGroupTaskCompleted(
+        groupID: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         groupID.withGodotUnsafeRawPointer { __ptr_groupID in
         withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
@@ -118,7 +140,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func groupProcessedElementCount(groupID: Int64) -> UInt32 {
+
+    public func groupProcessedElementCount(
+        groupID: Int64
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         groupID.withGodotUnsafeRawPointer { __ptr_groupID in
         withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
@@ -138,7 +163,10 @@ open class WorkerThreadPool: Object {
         }
         }
     }()
-    public func waitForGroupTaskCompletion(groupID: Int64) {
+
+    public func waitForGroupTaskCompletion(
+        groupID: Int64
+    ) {
         groupID.withGodotUnsafeRawPointer { __ptr_groupID in
         withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +179,7 @@ open class WorkerThreadPool: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +192,4 @@ open class WorkerThreadPool: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

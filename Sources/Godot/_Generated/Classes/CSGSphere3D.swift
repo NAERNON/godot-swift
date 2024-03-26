@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CSGSphere3D: CSGPrimitive3D {
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setRadius(_ radius: Double) {
+
+    private func __setRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setRadialSegments(_ radialSegments: Int32) {
+
+    private func __setRadialSegments(
+        _ radialSegments: Int32
+    ) {
         radialSegments.withGodotUnsafeRawPointer { __ptr_radialSegments in
         withUnsafeArgumentPackPointer(__ptr_radialSegments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getRadialSegments() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setRings(_ rings: Int32) {
+
+    private func __setRings(
+        _ rings: Int32
+    ) {
         rings.withGodotUnsafeRawPointer { __ptr_rings in
         withUnsafeArgumentPackPointer(__ptr_rings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getRings() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setSmoothFaces(_ smoothFaces: Bool) {
+
+    private func __setSmoothFaces(
+        _ smoothFaces: Bool
+    ) {
         smoothFaces.withGodotUnsafeRawPointer { __ptr_smoothFaces in
         withUnsafeArgumentPackPointer(__ptr_smoothFaces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getSmoothFaces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setMaterial(_ material: Godot.Material?) {
+
+    private func __setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -180,6 +200,7 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +268,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -259,5 +281,4 @@ open class CSGSphere3D: CSGPrimitive3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

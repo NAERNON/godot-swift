@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class XRPositionalTracker: RefCounted {
     public enum TrackerHand: UInt32, GodotEnum {
         case unknown = 0
         case left = 1
         case right = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unknown", 0),
@@ -19,16 +21,26 @@ open class XRPositionalTracker: RefCounted {
 
     public struct PoseChangedSignalInput: Godot.SignalInput {
         public let pose: Godot.XRPose?
-        fileprivate init(pose: Godot.XRPose?) {
+
+        fileprivate init(
+            pose: Godot.XRPose?
+        ) {
             self.pose = pose
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.pose)]
         }
     }
-    public func poseChanged(pose: Godot.XRPose?) {
+
+    public func poseChanged(
+        pose: Godot.XRPose?
+    ) {
         _ = poseChangedSignal.emit(.init(pose: pose))
     }
+
     public lazy var poseChangedSignal: Godot.SignalEmitter<PoseChangedSignalInput> = {
         .init(object: self, signalName: "pose_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PoseChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -46,16 +58,26 @@ open class XRPositionalTracker: RefCounted {
 
     public struct PoseLostTrackingSignalInput: Godot.SignalInput {
         public let pose: Godot.XRPose?
-        fileprivate init(pose: Godot.XRPose?) {
+
+        fileprivate init(
+            pose: Godot.XRPose?
+        ) {
             self.pose = pose
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.pose)]
         }
     }
-    public func poseLostTracking(pose: Godot.XRPose?) {
+
+    public func poseLostTracking(
+        pose: Godot.XRPose?
+    ) {
         _ = poseLostTrackingSignal.emit(.init(pose: pose))
     }
+
     public lazy var poseLostTrackingSignal: Godot.SignalEmitter<PoseLostTrackingSignalInput> = {
         .init(object: self, signalName: "pose_lost_tracking") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PoseLostTrackingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -73,16 +95,26 @@ open class XRPositionalTracker: RefCounted {
 
     public struct ButtonPressedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-        fileprivate init(name: Godot.GodotString) {
+
+        fileprivate init(
+            name: Godot.GodotString
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func buttonPressed(name: Godot.GodotString) {
+
+    public func buttonPressed(
+        name: Godot.GodotString
+    ) {
         _ = buttonPressedSignal.emit(.init(name: name))
     }
+
     public lazy var buttonPressedSignal: Godot.SignalEmitter<ButtonPressedSignalInput> = {
         .init(object: self, signalName: "button_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -100,16 +132,26 @@ open class XRPositionalTracker: RefCounted {
 
     public struct ButtonReleasedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-        fileprivate init(name: Godot.GodotString) {
+
+        fileprivate init(
+            name: Godot.GodotString
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func buttonReleased(name: Godot.GodotString) {
+
+    public func buttonReleased(
+        name: Godot.GodotString
+    ) {
         _ = buttonReleasedSignal.emit(.init(name: name))
     }
+
     public lazy var buttonReleasedSignal: Godot.SignalEmitter<ButtonReleasedSignalInput> = {
         .init(object: self, signalName: "button_released") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonReleasedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -127,19 +169,32 @@ open class XRPositionalTracker: RefCounted {
 
     public struct InputFloatChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
+
         public let value: Double
-        fileprivate init(name: Godot.GodotString, value: Double) {
+
+        fileprivate init(
+            name: Godot.GodotString,
+            value: Double
+        ) {
             self.name = name
             self.value = value
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name), Variant(input.value)]
         }
     }
-    public func inputFloatChanged(name: Godot.GodotString, value: Double) {
+
+    public func inputFloatChanged(
+        name: Godot.GodotString,
+        value: Double
+    ) {
         _ = inputFloatChangedSignal.emit(.init(name: name,
                 value: value))
     }
+
     public lazy var inputFloatChangedSignal: Godot.SignalEmitter<InputFloatChangedSignalInput> = {
         .init(object: self, signalName: "input_float_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputFloatChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -158,19 +213,32 @@ open class XRPositionalTracker: RefCounted {
 
     public struct InputVector2ChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
+
         public let vector: Godot.Vector2
-        fileprivate init(name: Godot.GodotString, vector: Godot.Vector2) {
+
+        fileprivate init(
+            name: Godot.GodotString,
+            vector: Godot.Vector2
+        ) {
             self.name = name
             self.vector = vector
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name), Variant(input.vector)]
         }
     }
-    public func inputVector2Changed(name: Godot.GodotString, vector: Godot.Vector2) {
+
+    public func inputVector2Changed(
+        name: Godot.GodotString,
+        vector: Godot.Vector2
+    ) {
         _ = inputVector2ChangedSignal.emit(.init(name: name,
                 vector: vector))
     }
+
     public lazy var inputVector2ChangedSignal: Godot.SignalEmitter<InputVector2ChangedSignalInput> = {
         .init(object: self, signalName: "input_vector2_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputVector2ChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -189,16 +257,26 @@ open class XRPositionalTracker: RefCounted {
 
     public struct ProfileChangedSignalInput: Godot.SignalInput {
         public let role: Godot.GodotString
-        fileprivate init(role: Godot.GodotString) {
+
+        fileprivate init(
+            role: Godot.GodotString
+        ) {
             self.role = role
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.role)]
         }
     }
-    public func profileChanged(role: Godot.GodotString) {
+
+    public func profileChanged(
+        role: Godot.GodotString
+    ) {
         _ = profileChangedSignal.emit(.init(role: role))
     }
+
     public lazy var profileChangedSignal: Godot.SignalEmitter<ProfileChangedSignalInput> = {
         .init(object: self, signalName: "profile_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ProfileChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -221,6 +299,7 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
+
     private func __getTrackerType() -> Godot.XRServer.TrackerType {
         Godot.XRServer.TrackerType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -239,7 +318,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    private func __setTrackerType(_ type: Godot.XRServer.TrackerType) {
+
+    private func __setTrackerType(
+        _ type: Godot.XRServer.TrackerType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,6 +340,7 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
+
     private func __getTrackerName() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -276,7 +359,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    private func __setTrackerName(_ name: Godot.GodotStringName) {
+
+    private func __setTrackerName(
+        _ name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -295,6 +381,7 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
+
     private func __getTrackerDesc() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -313,7 +400,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    private func __setTrackerDesc(description: Godot.GodotString) {
+
+    private func __setTrackerDesc(
+        description: Godot.GodotString
+    ) {
         description.withGodotUnsafeRawPointer { __ptr_description in
         withUnsafeArgumentPackPointer(__ptr_description) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,6 +422,7 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
+
     private func __getTrackerProfile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -350,7 +441,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    private func __setTrackerProfile(_ profile: Godot.GodotString) {
+
+    private func __setTrackerProfile(
+        _ profile: Godot.GodotString
+    ) {
         profile.withGodotUnsafeRawPointer { __ptr_profile in
         withUnsafeArgumentPackPointer(__ptr_profile) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,6 +463,7 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
+
     private func __getTrackerHand() -> Godot.XRPositionalTracker.TrackerHand {
         Godot.XRPositionalTracker.TrackerHand.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -387,7 +482,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    private func __setTrackerHand(_ hand: Godot.XRPositionalTracker.TrackerHand) {
+
+    private func __setTrackerHand(
+        _ hand: Godot.XRPositionalTracker.TrackerHand
+    ) {
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         withUnsafeArgumentPackPointer(__ptr_hand) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -406,7 +504,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func hasPose(name: Godot.GodotStringName) -> Bool {
+
+    public func hasPose(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -426,7 +527,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func pose(name: Godot.GodotStringName) -> Godot.XRPose? {
+
+    public func pose(
+        name: Godot.GodotStringName
+    ) -> Godot.XRPose? {
         Godot.XRPose?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -446,7 +550,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func invalidatePose(name: Godot.GodotStringName) {
+
+    public func invalidatePose(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -465,7 +572,14 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func setPose(name: Godot.GodotStringName, transform: Godot.Transform3D, linearVelocity: Godot.Vector3, angularVelocity: Godot.Vector3, trackingConfidence: Godot.XRPose.TrackingConfidence) {
+
+    public func setPose(
+        name: Godot.GodotStringName,
+        transform: Godot.Transform3D,
+        linearVelocity: Godot.Vector3,
+        angularVelocity: Godot.Vector3,
+        trackingConfidence: Godot.XRPose.TrackingConfidence
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         linearVelocity.withGodotUnsafeRawPointer { __ptr_linearVelocity in
@@ -488,7 +602,10 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func input(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func input(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -508,7 +625,11 @@ open class XRPositionalTracker: RefCounted {
         }
         }
     }()
-    public func setInput<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
+
+    public func setInput<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -577,6 +698,7 @@ open class XRPositionalTracker: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -589,5 +711,4 @@ open class XRPositionalTracker: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

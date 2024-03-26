@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeBlendTree: AnimationRootNode {
     public struct NodeChangedSignalInput: Godot.SignalInput {
         public let nodeName: Godot.GodotStringName
-        fileprivate init(nodeName: Godot.GodotStringName) {
+
+        fileprivate init(
+            nodeName: Godot.GodotStringName
+        ) {
             self.nodeName = nodeName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.nodeName)]
         }
     }
-    public func nodeChanged(nodeName: Godot.GodotStringName) {
+
+    public func nodeChanged(
+        nodeName: Godot.GodotStringName
+    ) {
         _ = nodeChangedSignal.emit(.init(nodeName: nodeName))
     }
+
     public lazy var nodeChangedSignal: Godot.SignalEmitter<NodeChangedSignalInput> = {
         .init(object: self, signalName: "node_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -33,10 +44,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     }()
 
     public static let connectionOk: Int = 0
+
     public static let connectionErrorNoInput: Int = 1
+
     public static let connectionErrorNoInputIndex: Int = 2
+
     public static let connectionErrorNoOutput: Int = 3
+
     public static let connectionErrorSameNode: Int = 4
+
     public static let connectionErrorConnectionExists: Int = 5
 
     internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
@@ -46,7 +62,12 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func addNode(name: Godot.GodotStringName, node: Godot.AnimationNode?, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func addNode(
+        name: Godot.GodotStringName,
+        node: Godot.AnimationNode?,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -68,7 +89,10 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func node(name: Godot.GodotStringName) -> Godot.AnimationNode? {
+
+    public func node(
+        name: Godot.GodotStringName
+    ) -> Godot.AnimationNode? {
         Godot.AnimationNode?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -88,7 +112,10 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func removeNode(name: Godot.GodotStringName) {
+
+    public func removeNode(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,7 +134,11 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func renameNode(name: Godot.GodotStringName, newName: Godot.GodotStringName) {
+
+    public func renameNode(
+        name: Godot.GodotStringName,
+        newName: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         newName.withGodotUnsafeRawPointer { __ptr_newName in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_newName) { __accessPtr in
@@ -127,7 +158,10 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func hasNode(name: Godot.GodotStringName) -> Bool {
+
+    public func hasNode(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -147,7 +181,12 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func connectNode(inputNode: Godot.GodotStringName, inputIndex: Int32, outputNode: Godot.GodotStringName) {
+
+    public func connectNode(
+        inputNode: Godot.GodotStringName,
+        inputIndex: Int32,
+        outputNode: Godot.GodotStringName
+    ) {
         inputNode.withGodotUnsafeRawPointer { __ptr_inputNode in
         inputIndex.withGodotUnsafeRawPointer { __ptr_inputIndex in
         outputNode.withGodotUnsafeRawPointer { __ptr_outputNode in
@@ -168,7 +207,11 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func disconnectNode(inputNode: Godot.GodotStringName, inputIndex: Int32) {
+
+    public func disconnectNode(
+        inputNode: Godot.GodotStringName,
+        inputIndex: Int32
+    ) {
         inputNode.withGodotUnsafeRawPointer { __ptr_inputNode in
         inputIndex.withGodotUnsafeRawPointer { __ptr_inputIndex in
         withUnsafeArgumentPackPointer(__ptr_inputNode, __ptr_inputIndex) { __accessPtr in
@@ -188,7 +231,11 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func setNodePosition(name: Godot.GodotStringName, position: Godot.Vector2) {
+
+    public func setNodePosition(
+        name: Godot.GodotStringName,
+        position: Godot.Vector2
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_position) { __accessPtr in
@@ -208,7 +255,10 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    public func nodePosition(name: Godot.GodotStringName) -> Godot.Vector2 {
+
+    public func nodePosition(
+        name: Godot.GodotStringName
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -228,7 +278,10 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
-    private func __setGraphOffset(_ offset: Godot.Vector2) {
+
+    private func __setGraphOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +300,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         }
     }()
+
     private func __getGraphOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,6 +324,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -282,5 +337,4 @@ open class AnimationNodeBlendTree: AnimationRootNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,17 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CPUParticles2D: Node2D {
     public enum DrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Index", 0),
             ("Lifetime", 1),]
         }
     }
+
     public enum Parameter: UInt32, GodotEnum {
         case initialLinearVelocity = 0
         case angularVelocity = 1
@@ -28,6 +31,7 @@ open class CPUParticles2D: Node2D {
         case animSpeed = 10
         case animOffset = 11
         case max = 12
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Initial Linear Velocity", 0),
@@ -45,11 +49,13 @@ open class CPUParticles2D: Node2D {
             ("Max", 12),]
         }
     }
+
     public enum ParticleFlags: UInt32, GodotEnum {
         case alignYToVelocity = 0
         case rotateY = 1
         case disableZ = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Align Y To Velocity", 0),
@@ -58,6 +64,7 @@ open class CPUParticles2D: Node2D {
             ("Max", 3),]
         }
     }
+
     public enum EmissionShape: UInt32, GodotEnum {
         case point = 0
         case sphere = 1
@@ -66,6 +73,7 @@ open class CPUParticles2D: Node2D {
         case points = 4
         case directedPoints = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Point", 0),
@@ -81,6 +89,7 @@ open class CPUParticles2D: Node2D {
     public func finished() {
         _ = finishedSignal.emit()
     }
+
     public lazy var finishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -103,7 +112,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmitting(_ emitting: Bool) {
+
+    private func __setEmitting(
+        _ emitting: Bool
+    ) {
         emitting.withGodotUnsafeRawPointer { __ptr_emitting in
         withUnsafeArgumentPackPointer(__ptr_emitting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +134,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setAmount(_ amount: Int32) {
+
+    private func __setAmount(
+        _ amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +156,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setLifetime(secs: Double) {
+
+    private func __setLifetime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +178,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setOneShot(enable: Bool) {
+
+    private func __setOneShot(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +200,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setPreProcessTime(secs: Double) {
+
+    private func __setPreProcessTime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +222,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setExplosivenessRatio(_ ratio: Double) {
+
+    private func __setExplosivenessRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +244,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setRandomnessRatio(_ ratio: Double) {
+
+    private func __setRandomnessRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,7 +266,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setLifetimeRandomness(random: Double) {
+
+    private func __setLifetimeRandomness(
+        random: Double
+    ) {
         random.withGodotUnsafeRawPointer { __ptr_random in
         withUnsafeArgumentPackPointer(__ptr_random) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,7 +288,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setUseLocalCoordinates(enable: Bool) {
+
+    private func __setUseLocalCoordinates(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -274,7 +310,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setFixedFps(_ fps: Int32) {
+
+    private func __setFixedFps(
+        _ fps: Int32
+    ) {
         fps.withGodotUnsafeRawPointer { __ptr_fps in
         withUnsafeArgumentPackPointer(__ptr_fps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -293,7 +332,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setFractionalDelta(enable: Bool) {
+
+    private func __setFractionalDelta(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -312,7 +354,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setSpeedScale(_ scale: Double) {
+
+    private func __setSpeedScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -331,6 +376,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __isEmitting() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,6 +395,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getAmount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -367,6 +414,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getLifetime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,6 +433,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getOneShot() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -403,6 +452,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getPreProcessTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -421,6 +471,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getExplosivenessRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +490,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getRandomnessRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,6 +509,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getLifetimeRandomness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +528,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getUseLocalCoordinates() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,6 +547,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getFixedFps() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -511,6 +566,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getFractionalDelta() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -529,6 +585,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -547,7 +604,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setDrawOrder(_ order: Godot.CPUParticles2D.DrawOrder) {
+
+    private func __setDrawOrder(
+        _ order: Godot.CPUParticles2D.DrawOrder
+    ) {
         order.withGodotUnsafeRawPointer { __ptr_order in
         withUnsafeArgumentPackPointer(__ptr_order) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -566,6 +626,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getDrawOrder() -> Godot.CPUParticles2D.DrawOrder {
         Godot.CPUParticles2D.DrawOrder.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -584,7 +645,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -604,6 +668,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -622,6 +687,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     public func restart() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -639,7 +705,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setDirection(_ direction: Godot.Vector2) {
+
+    private func __setDirection(
+        _ direction: Godot.Vector2
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -658,6 +727,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getDirection() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -676,7 +746,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setSpread(_ spread: Double) {
+
+    private func __setSpread(
+        _ spread: Double
+    ) {
         spread.withGodotUnsafeRawPointer { __ptr_spread in
         withUnsafeArgumentPackPointer(__ptr_spread) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -695,6 +768,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getSpread() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -713,7 +787,11 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    public func setParamMin(param: Godot.CPUParticles2D.Parameter, value: Double) {
+
+    public func setParamMin(
+        param: Godot.CPUParticles2D.Parameter,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -733,7 +811,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __getParamMin(param: Godot.CPUParticles2D.Parameter) -> Double {
+
+    private func __getParamMin(
+        param: Godot.CPUParticles2D.Parameter
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -753,7 +834,11 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    public func setParamMax(param: Godot.CPUParticles2D.Parameter, value: Double) {
+
+    public func setParamMax(
+        param: Godot.CPUParticles2D.Parameter,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -773,7 +858,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __getParamMax(param: Godot.CPUParticles2D.Parameter) -> Double {
+
+    private func __getParamMax(
+        param: Godot.CPUParticles2D.Parameter
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -793,7 +881,11 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    public func setParamCurve(param: Godot.CPUParticles2D.Parameter, curve: Godot.Curve?) {
+
+    public func setParamCurve(
+        param: Godot.CPUParticles2D.Parameter,
+        curve: Godot.Curve?
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
@@ -814,7 +906,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __getParamCurve(param: Godot.CPUParticles2D.Parameter) -> Godot.Curve? {
+
+    private func __getParamCurve(
+        param: Godot.CPUParticles2D.Parameter
+    ) -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -834,7 +929,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -853,6 +951,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,7 +970,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setColorRamp(_ ramp: Godot.Gradient?) {
+
+    private func __setColorRamp(
+        _ ramp: Godot.Gradient?
+    ) {
         ramp.withGodotUnsafeRawPointer { __ptr_ramp in
         withUnsafePointer(to: __ptr_ramp) { _ptr___ptr_ramp in
         withUnsafeArgumentPackPointer(_ptr___ptr_ramp) { __accessPtr in
@@ -891,6 +993,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getColorRamp() -> Godot.Gradient? {
         Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -909,7 +1012,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setColorInitialRamp(_ ramp: Godot.Gradient?) {
+
+    private func __setColorInitialRamp(
+        _ ramp: Godot.Gradient?
+    ) {
         ramp.withGodotUnsafeRawPointer { __ptr_ramp in
         withUnsafePointer(to: __ptr_ramp) { _ptr___ptr_ramp in
         withUnsafeArgumentPackPointer(_ptr___ptr_ramp) { __accessPtr in
@@ -929,6 +1035,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getColorInitialRamp() -> Godot.Gradient? {
         Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -947,7 +1054,11 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    public func setParticleFlag(_ particleFlag: Godot.CPUParticles2D.ParticleFlags, enable: Bool) {
+
+    public func setParticleFlag(
+        _ particleFlag: Godot.CPUParticles2D.ParticleFlags,
+        enable: Bool
+    ) {
         particleFlag.withGodotUnsafeRawPointer { __ptr_particleFlag in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_particleFlag, __ptr_enable) { __accessPtr in
@@ -967,7 +1078,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __getParticleFlag(_ particleFlag: Godot.CPUParticles2D.ParticleFlags) -> Bool {
+
+    private func __getParticleFlag(
+        _ particleFlag: Godot.CPUParticles2D.ParticleFlags
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         particleFlag.withGodotUnsafeRawPointer { __ptr_particleFlag in
         withUnsafeArgumentPackPointer(__ptr_particleFlag) { __accessPtr in
@@ -987,7 +1101,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionShape(_ shape: Godot.CPUParticles2D.EmissionShape) {
+
+    private func __setEmissionShape(
+        _ shape: Godot.CPUParticles2D.EmissionShape
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1006,6 +1123,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionShape() -> Godot.CPUParticles2D.EmissionShape {
         Godot.CPUParticles2D.EmissionShape.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1024,7 +1142,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionSphereRadius(_ radius: Double) {
+
+    private func __setEmissionSphereRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1043,6 +1164,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionSphereRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1061,7 +1183,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionRectExtents(_ extents: Godot.Vector2) {
+
+    private func __setEmissionRectExtents(
+        _ extents: Godot.Vector2
+    ) {
         extents.withGodotUnsafeRawPointer { __ptr_extents in
         withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1080,6 +1205,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionRectExtents() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1098,7 +1224,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionPoints(array: Godot.PackedVector2Array) {
+
+    private func __setEmissionPoints(
+        array: Godot.PackedVector2Array
+    ) {
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1117,6 +1246,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionPoints() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1135,7 +1265,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionNormals(array: Godot.PackedVector2Array) {
+
+    private func __setEmissionNormals(
+        array: Godot.PackedVector2Array
+    ) {
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1154,6 +1287,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionNormals() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1172,7 +1306,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmissionColors(array: Godot.PackedColorArray) {
+
+    private func __setEmissionColors(
+        array: Godot.PackedColorArray
+    ) {
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1191,6 +1328,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getEmissionColors() -> Godot.PackedColorArray {
         Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1209,6 +1347,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getGravity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1227,7 +1366,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setGravity(accelVec: Godot.Vector2) {
+
+    private func __setGravity(
+        accelVec: Godot.Vector2
+    ) {
         accelVec.withGodotUnsafeRawPointer { __ptr_accelVec in
         withUnsafeArgumentPackPointer(__ptr_accelVec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1246,6 +1388,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getSplitScale() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1264,7 +1407,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setSplitScale(_ splitScale: Bool) {
+
+    private func __setSplitScale(
+        _ splitScale: Bool
+    ) {
         splitScale.withGodotUnsafeRawPointer { __ptr_splitScale in
         withUnsafeArgumentPackPointer(__ptr_splitScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1283,6 +1429,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getScaleCurveX() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1301,7 +1448,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setScaleCurveX(scaleCurve: Godot.Curve?) {
+
+    private func __setScaleCurveX(
+        scaleCurve: Godot.Curve?
+    ) {
         scaleCurve.withGodotUnsafeRawPointer { __ptr_scaleCurve in
         withUnsafePointer(to: __ptr_scaleCurve) { _ptr___ptr_scaleCurve in
         withUnsafeArgumentPackPointer(_ptr___ptr_scaleCurve) { __accessPtr in
@@ -1321,6 +1471,7 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getScaleCurveY() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1339,7 +1490,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setScaleCurveY(scaleCurve: Godot.Curve?) {
+
+    private func __setScaleCurveY(
+        scaleCurve: Godot.Curve?
+    ) {
         scaleCurve.withGodotUnsafeRawPointer { __ptr_scaleCurve in
         withUnsafePointer(to: __ptr_scaleCurve) { _ptr___ptr_scaleCurve in
         withUnsafeArgumentPackPointer(_ptr___ptr_scaleCurve) { __accessPtr in
@@ -1359,7 +1513,10 @@ open class CPUParticles2D: Node2D {
         }
         }
     }()
-    public func convertFromParticles(_ particles: Godot.Node?) {
+
+    public func convertFromParticles(
+        _ particles: Godot.Node?
+    ) {
         particles.withGodotUnsafeRawPointer { __ptr_particles in
         withUnsafePointer(to: __ptr_particles) { _ptr___ptr_particles in
         withUnsafeArgumentPackPointer(_ptr___ptr_particles) { __accessPtr in
@@ -1980,6 +2137,7 @@ open class CPUParticles2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1992,5 +2150,4 @@ open class CPUParticles2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

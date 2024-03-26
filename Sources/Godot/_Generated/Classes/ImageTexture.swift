@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImageTexture: Texture2D {
     internal static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
-    static public func createFromImage(_ image: Godot.Image?) -> Godot.ImageTexture? {
+
+    static public func createFromImage(
+        _ image: Godot.Image?
+    ) -> Godot.ImageTexture? {
         Godot.ImageTexture?.fromMutatingGodotUnsafePointer { __temporary in
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
@@ -32,6 +36,7 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
+
     public func format() -> Godot.Image.Format {
         Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
-    public func setImage(_ image: Godot.Image?) {
+
+    public func setImage(
+        _ image: Godot.Image?
+    ) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         withUnsafeArgumentPackPointer(_ptr___ptr_image) { __accessPtr in
@@ -70,7 +78,10 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
-    public func update(image: Godot.Image?) {
+
+    public func update(
+        image: Godot.Image?
+    ) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         withUnsafeArgumentPackPointer(_ptr___ptr_image) { __accessPtr in
@@ -90,7 +101,10 @@ open class ImageTexture: Texture2D {
         }
         }
     }()
-    public func setSizeOverride(size: Godot.Vector2I) {
+
+    public func setSizeOverride(
+        size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +117,7 @@ open class ImageTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -115,5 +130,4 @@ open class ImageTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

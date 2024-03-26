@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ConcavePolygonShape2D: Shape2D {
     internal static var __method_binding_set_segments: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ConcavePolygonShape2D: Shape2D {
         }
         }
     }()
-    private func __setSegments(_ segments: Godot.PackedVector2Array) {
+
+    private func __setSegments(
+        _ segments: Godot.PackedVector2Array
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ConcavePolygonShape2D: Shape2D {
         }
         }
     }()
+
     private func __getSegments() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class ConcavePolygonShape2D: Shape2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class ConcavePolygonShape2D: Shape2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

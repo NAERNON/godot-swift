@@ -3,13 +3,16 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MultiplayerAPIExtension: MultiplayerAPI {
     open func _poll() -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _setMultiplayerPeer(_ multiplayerPeer: Godot.MultiplayerPeer?) {
+    open func _setMultiplayerPeer(
+        _ multiplayerPeer: Godot.MultiplayerPeer?
+    ) {
     }
 
     open func _getMultiplayerPeer() -> Godot.MultiplayerPeer? {
@@ -24,7 +27,12 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         Godot.PackedInt32Array()
     }
 
-    open func _rpc(peer: Int32, object: Godot.Object?, method: Godot.GodotStringName, args: Godot.AnyGodotArray) -> Godot.ErrorType {
+    open func _rpc(
+        peer: Int32,
+        object: Godot.Object?,
+        method: Godot.GodotStringName,
+        args: Godot.AnyGodotArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -32,15 +40,22 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         Int32()
     }
 
-    open func _objectConfigurationAdd(object: Godot.Object?, configuration: Godot.Variant) -> Godot.ErrorType {
+    open func _objectConfigurationAdd(
+        object: Godot.Object?,
+        configuration: Godot.Variant
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _objectConfigurationRemove(object: Godot.Object?, configuration: Godot.Variant) -> Godot.ErrorType {
+    open func _objectConfigurationRemove(
+        object: Godot.Object?,
+        configuration: Godot.Variant
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -136,5 +151,4 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         }
         return _virtualFunctions!
     }
-
-    }
+}

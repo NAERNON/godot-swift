@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Skeleton2D: Node2D {
+
     public func boneSetupChanged() {
         _ = boneSetupChangedSignal.emit()
     }
+
     public lazy var boneSetupChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bone_setup_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,6 +33,7 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
+
     public func boneCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,7 +52,10 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
-    public func bone(idx: Int32) -> Godot.Bone2D? {
+
+    public func bone(
+        idx: Int32
+    ) -> Godot.Bone2D? {
         Godot.Bone2D?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -68,6 +75,7 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
+
     public func skeleton() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +94,10 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
-    public func setModificationStack(_ modificationStack: Godot.SkeletonModificationStack2D?) {
+
+    public func setModificationStack(
+        _ modificationStack: Godot.SkeletonModificationStack2D?
+    ) {
         modificationStack.withGodotUnsafeRawPointer { __ptr_modificationStack in
         withUnsafePointer(to: __ptr_modificationStack) { _ptr___ptr_modificationStack in
         withUnsafeArgumentPackPointer(_ptr___ptr_modificationStack) { __accessPtr in
@@ -106,6 +117,7 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
+
     public func modificationStack() -> Godot.SkeletonModificationStack2D? {
         Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +136,11 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
-    public func executeModifications(delta: Double, executionMode: Int32) {
+
+    public func executeModifications(
+        delta: Double,
+        executionMode: Int32
+    ) {
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         executionMode.withGodotUnsafeRawPointer { __ptr_executionMode in
         withUnsafeArgumentPackPointer(__ptr_delta, __ptr_executionMode) { __accessPtr in
@@ -144,7 +160,13 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
-    public func setBoneLocalPoseOverride(boneIdx: Int32, overridePose: Godot.Transform2D, strength: Double, persistent: Bool) {
+
+    public func setBoneLocalPoseOverride(
+        boneIdx: Int32,
+        overridePose: Godot.Transform2D,
+        strength: Double,
+        persistent: Bool
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         overridePose.withGodotUnsafeRawPointer { __ptr_overridePose in
         strength.withGodotUnsafeRawPointer { __ptr_strength in
@@ -166,7 +188,10 @@ open class Skeleton2D: Node2D {
         }
         }
     }()
-    public func boneLocalPoseOverride(boneIdx: Int32) -> Godot.Transform2D {
+
+    public func boneLocalPoseOverride(
+        boneIdx: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -180,6 +205,7 @@ open class Skeleton2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -192,5 +218,4 @@ open class Skeleton2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

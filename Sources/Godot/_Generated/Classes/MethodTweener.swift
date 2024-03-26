@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MethodTweener: Tweener {
     internal static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MethodTweener: Tweener {
         }
         }
     }()
-    public func setDelay(_ delay: Double) -> Godot.MethodTweener? {
+
+    public func setDelay(
+        _ delay: Double
+    ) -> Godot.MethodTweener? {
         Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
@@ -32,7 +36,10 @@ open class MethodTweener: Tweener {
         }
         }
     }()
-    public func setTrans(_ trans: Godot.Tween.TransitionType) -> Godot.MethodTweener? {
+
+    public func setTrans(
+        _ trans: Godot.Tween.TransitionType
+    ) -> Godot.MethodTweener? {
         Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
         trans.withGodotUnsafeRawPointer { __ptr_trans in
         withUnsafeArgumentPackPointer(__ptr_trans) { __accessPtr in
@@ -52,7 +59,10 @@ open class MethodTweener: Tweener {
         }
         }
     }()
-    public func setEase(_ ease: Godot.Tween.EaseType) -> Godot.MethodTweener? {
+
+    public func setEase(
+        _ ease: Godot.Tween.EaseType
+    ) -> Godot.MethodTweener? {
         Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
         ease.withGodotUnsafeRawPointer { __ptr_ease in
         withUnsafeArgumentPackPointer(__ptr_ease) { __accessPtr in
@@ -66,6 +76,7 @@ open class MethodTweener: Tweener {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -78,5 +89,4 @@ open class MethodTweener: Tweener {
         }
         return _virtualFunctions!
     }
-
-    }
+}

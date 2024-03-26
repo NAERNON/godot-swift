@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SeparationRayShape3D: Shape3D {
     internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SeparationRayShape3D: Shape3D {
         }
         }
     }()
-    private func __setLength(_ length: Double) {
+
+    private func __setLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SeparationRayShape3D: Shape3D {
         }
         }
     }()
+
     private func __getLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SeparationRayShape3D: Shape3D {
         }
         }
     }()
-    private func __setSlideOnSlope(active: Bool) {
+
+    private func __setSlideOnSlope(
+        active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SeparationRayShape3D: Shape3D {
         }
         }
     }()
+
     private func __getSlideOnSlope() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class SeparationRayShape3D: Shape3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class SeparationRayShape3D: Shape3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

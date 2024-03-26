@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventJoypadMotion: InputEvent {
     internal static var __method_binding_set_axis: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventJoypadMotion: InputEvent {
         }
         }
     }()
-    private func __setAxis(_ axis: Godot.JoyAxis) {
+
+    private func __setAxis(
+        _ axis: Godot.JoyAxis
+    ) {
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         withUnsafeArgumentPackPointer(__ptr_axis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventJoypadMotion: InputEvent {
         }
         }
     }()
+
     private func __getAxis() -> Godot.JoyAxis {
         Godot.JoyAxis.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventJoypadMotion: InputEvent {
         }
         }
     }()
-    private func __setAxisValue(_ axisValue: Double) {
+
+    private func __setAxisValue(
+        _ axisValue: Double
+    ) {
         axisValue.withGodotUnsafeRawPointer { __ptr_axisValue in
         withUnsafeArgumentPackPointer(__ptr_axisValue) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventJoypadMotion: InputEvent {
         }
         }
     }()
+
     private func __getAxisValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class InputEventJoypadMotion: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class InputEventJoypadMotion: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

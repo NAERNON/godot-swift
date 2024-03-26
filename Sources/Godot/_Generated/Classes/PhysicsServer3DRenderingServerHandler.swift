@@ -3,15 +3,24 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsServer3DRenderingServerHandler: Object {
-    open func _setVertex(vertexID: Int32, vertex: Godot.Vector3) {
+    open func _setVertex(
+        vertexID: Int32,
+        vertex: Godot.Vector3
+    ) {
     }
 
-    open func _setNormal(vertexID: Int32, normal: Godot.Vector3) {
+    open func _setNormal(
+        vertexID: Int32,
+        normal: Godot.Vector3
+    ) {
     }
 
-    open func _setAabb(_ aabb: Godot.AABB) {
+    open func _setAabb(
+        _ aabb: Godot.AABB
+    ) {
     }
 
     internal static var __method_binding_set_vertex: GDExtensionMethodBindPtr = {
@@ -21,7 +30,11 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         }
         }
     }()
-    public func setVertex(vertexID: Int32, vertex: Godot.Vector3) {
+
+    public func setVertex(
+        vertexID: Int32,
+        vertex: Godot.Vector3
+    ) {
         vertexID.withGodotUnsafeRawPointer { __ptr_vertexID in
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_vertex) { __accessPtr in
@@ -41,7 +54,11 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         }
         }
     }()
-    public func setNormal(vertexID: Int32, normal: Godot.Vector3) {
+
+    public func setNormal(
+        vertexID: Int32,
+        normal: Godot.Vector3
+    ) {
         vertexID.withGodotUnsafeRawPointer { __ptr_vertexID in
         normal.withGodotUnsafeRawPointer { __ptr_normal in
         withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_normal) { __accessPtr in
@@ -61,7 +78,10 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         }
         }
     }()
-    public func setAabb(_ aabb: Godot.AABB) {
+
+    public func setAabb(
+        _ aabb: Godot.AABB
+    ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,6 +94,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +135,4 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -1,26 +1,17 @@
 import SwiftSyntax
 
-extension GeneratedFile {
-    static func architectureRelated(
-        _ extensionAPI: GodotExtensionAPI,
+struct ArchitectureRelatedSource: FileSource {
+    func fileCodeContent(
+        for extensionAPI: GodotExtensionAPI,
         with configuration: BuildConfiguration
-    ) -> GeneratedFile {
-        .init(path: "ArchitectureRelated.swift") {
-            try variantOpaqueSizeDeclSyntax(extensionAPI, with: configuration)
-                .with(\.trailingTrivia, .newlines(2))
-            
-            realDeclSyntax(type: configuration.floatingPointType)
-                .with(\.trailingTrivia, .newlines(2))
-            
-            try intVariantRepresentationDeclSyntax(architecture: configuration.architecture)
-                .with(\.trailingTrivia, .newlines(2))
-            
-            try uintVariantRepresentationDeclSyntax(architecture: configuration.architecture)
-                .with(\.trailingTrivia, .newlines(2))
-        }
+    ) throws -> CodeBlockItemListSyntax {
+        try variantOpaqueSizeDeclSyntax(extensionAPI, with: configuration)
+        realDeclSyntax(type: configuration.floatingPointType)
+        try intVariantRepresentationDeclSyntax(architecture: configuration.architecture)
+        try uintVariantRepresentationDeclSyntax(architecture: configuration.architecture)
     }
     
-    private static func variantOpaqueSizeDeclSyntax(
+    private func variantOpaqueSizeDeclSyntax(
         _ extensionAPI: GodotExtensionAPI,
         with configuration: BuildConfiguration
     ) throws -> ExtensionDeclSyntax {
@@ -36,7 +27,7 @@ extension GeneratedFile {
         }
     }
     
-    private static func realDeclSyntax(
+    private func realDeclSyntax(
         type: BuildConfiguration.FloatingPointType
     ) -> DeclSyntax {
         let floatingPointTypeString = switch type {
@@ -49,7 +40,7 @@ extension GeneratedFile {
             """
     }
     
-    private static func intVariantRepresentationDeclSyntax(
+    private func intVariantRepresentationDeclSyntax(
         architecture: BuildConfiguration.Architecture
     ) throws -> ExtensionDeclSyntax {
         let type = switch architecture {
@@ -62,7 +53,7 @@ extension GeneratedFile {
         }
     }
     
-    private static func uintVariantRepresentationDeclSyntax(
+    private func uintVariantRepresentationDeclSyntax(
         architecture: BuildConfiguration.Architecture
     ) throws -> ExtensionDeclSyntax {
         let type = switch architecture {

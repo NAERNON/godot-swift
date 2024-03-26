@@ -3,9 +3,11 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectBandLimitFilter: AudioEffectFilter {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -18,5 +20,4 @@ open class AudioEffectBandLimitFilter: AudioEffectFilter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

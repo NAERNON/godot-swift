@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PlaceholderTexture2D: Texture2D {
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PlaceholderTexture2D: Texture2D {
         }
         }
     }()
-    public func setSize(_ size: Godot.Vector2) {
+
+    public func setSize(
+        _ size: Godot.Vector2
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -25,6 +29,7 @@ open class PlaceholderTexture2D: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -37,5 +42,4 @@ open class PlaceholderTexture2D: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

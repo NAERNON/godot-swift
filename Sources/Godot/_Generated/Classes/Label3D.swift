@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Label3D: GeometryInstance3D {
     public enum DrawFlags: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class Label3D: GeometryInstance3D {
         case disableDepthTest = 2
         case fixedSize = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Shaded", 0),
@@ -20,11 +22,13 @@ open class Label3D: GeometryInstance3D {
             ("Max", 4),]
         }
     }
+
     public enum AlphaCutMode: UInt32, GodotEnum {
         case disabled = 0
         case discard = 1
         case opaquePrepass = 2
         case hash = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -41,7 +45,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setHorizontalAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setHorizontalAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -60,6 +67,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,7 +86,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setVerticalAlignment(_ alignment: Godot.VerticalAlignment) {
+
+    private func __setVerticalAlignment(
+        _ alignment: Godot.VerticalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,6 +108,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
         Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,7 +127,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setModulate(_ modulate: Godot.Color) {
+
+    private func __setModulate(
+        _ modulate: Godot.Color
+    ) {
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_modulate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,6 +149,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,7 +168,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOutlineModulate(_ modulate: Godot.Color) {
+
+    private func __setOutlineModulate(
+        _ modulate: Godot.Color
+    ) {
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_modulate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -171,6 +190,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOutlineModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,7 +209,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,6 +231,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -226,7 +250,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.TextServer.Direction) {
+
+    private func __setTextDirection(
+        _ direction: Godot.TextServer.Direction
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,6 +272,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.TextServer.Direction {
         Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -263,7 +291,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,6 +313,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -300,7 +332,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setStructuredTextBidiOverride(parser: Godot.TextServer.StructuredTextParser) {
+
+    private func __setStructuredTextBidiOverride(
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -319,6 +354,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,7 +373,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
+
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        args: Godot.GodotArray<Value>
+    ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_args) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -356,6 +395,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,7 +414,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setUppercase(enable: Bool) {
+
+    private func __setUppercase(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -393,6 +436,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isUppercase() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,7 +455,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setRenderPriority(_ priority: Int32) {
+
+    private func __setRenderPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -430,6 +477,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getRenderPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -448,7 +496,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOutlineRenderPriority(_ priority: Int32) {
+
+    private func __setOutlineRenderPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -467,6 +518,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOutlineRenderPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,7 +537,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setFont(_ font: Godot.Font?) {
+
+    private func __setFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -505,6 +560,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -523,7 +579,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setFontSize(_ size: Int32) {
+
+    private func __setFontSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -542,6 +601,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -560,7 +620,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOutlineSize(_ outlineSize: Int32) {
+
+    private func __setOutlineSize(
+        _ outlineSize: Int32
+    ) {
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
         withUnsafeArgumentPackPointer(__ptr_outlineSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -579,6 +642,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOutlineSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -597,7 +661,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setLineSpacing(_ lineSpacing: Double) {
+
+    private func __setLineSpacing(
+        _ lineSpacing: Double
+    ) {
         lineSpacing.withGodotUnsafeRawPointer { __ptr_lineSpacing in
         withUnsafeArgumentPackPointer(__ptr_lineSpacing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -616,6 +683,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getLineSpacing() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -634,7 +702,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAutowrapMode(_ autowrapMode: Godot.TextServer.AutowrapMode) {
+
+    private func __setAutowrapMode(
+        _ autowrapMode: Godot.TextServer.AutowrapMode
+    ) {
         autowrapMode.withGodotUnsafeRawPointer { __ptr_autowrapMode in
         withUnsafeArgumentPackPointer(__ptr_autowrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -653,6 +724,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
         Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -671,7 +743,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setJustificationFlags(_ justificationFlags: Godot.TextServer.JustificationFlag) {
+
+    private func __setJustificationFlags(
+        _ justificationFlags: Godot.TextServer.JustificationFlag
+    ) {
         justificationFlags.withGodotUnsafeRawPointer { __ptr_justificationFlags in
         withUnsafeArgumentPackPointer(__ptr_justificationFlags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -690,6 +765,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
         Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -708,7 +784,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setWidth(_ width: Double) {
+
+    private func __setWidth(
+        _ width: Double
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -727,6 +806,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -745,7 +825,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setPixelSize(_ pixelSize: Double) {
+
+    private func __setPixelSize(
+        _ pixelSize: Double
+    ) {
         pixelSize.withGodotUnsafeRawPointer { __ptr_pixelSize in
         withUnsafeArgumentPackPointer(__ptr_pixelSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -764,6 +847,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getPixelSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -782,7 +866,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -801,6 +888,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -819,7 +907,11 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    public func setDrawFlag(_ flag: Godot.Label3D.DrawFlags, enabled: Bool) {
+
+    public func setDrawFlag(
+        _ flag: Godot.Label3D.DrawFlags,
+        enabled: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
@@ -839,7 +931,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __getDrawFlag(_ flag: Godot.Label3D.DrawFlags) -> Bool {
+
+    private func __getDrawFlag(
+        _ flag: Godot.Label3D.DrawFlags
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -859,7 +954,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setBillboardMode(_ mode: Godot.BaseMaterial3D.BillboardMode) {
+
+    private func __setBillboardMode(
+        _ mode: Godot.BaseMaterial3D.BillboardMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -878,6 +976,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
         Godot.BaseMaterial3D.BillboardMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -896,7 +995,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaCutMode(_ mode: Godot.Label3D.AlphaCutMode) {
+
+    private func __setAlphaCutMode(
+        _ mode: Godot.Label3D.AlphaCutMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -915,6 +1017,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaCutMode() -> Godot.Label3D.AlphaCutMode {
         Godot.Label3D.AlphaCutMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -933,7 +1036,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaScissorThreshold(_ threshold: Double) {
+
+    private func __setAlphaScissorThreshold(
+        _ threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -952,6 +1058,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaScissorThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -970,7 +1077,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaHashScale(threshold: Double) {
+
+    private func __setAlphaHashScale(
+        threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -989,6 +1099,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaHashScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1007,7 +1118,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaAntialiasing(alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing) {
+
+    private func __setAlphaAntialiasing(
+        alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing
+    ) {
         alphaAa.withGodotUnsafeRawPointer { __ptr_alphaAa in
         withUnsafeArgumentPackPointer(__ptr_alphaAa) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1026,6 +1140,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
         Godot.BaseMaterial3D.AlphaAntiAliasing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1044,7 +1159,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setAlphaAntialiasingEdge(_ edge: Double) {
+
+    private func __setAlphaAntialiasingEdge(
+        _ edge: Double
+    ) {
         edge.withGodotUnsafeRawPointer { __ptr_edge in
         withUnsafeArgumentPackPointer(__ptr_edge) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1063,6 +1181,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getAlphaAntialiasingEdge() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1081,7 +1200,10 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setTextureFilter(mode: Godot.BaseMaterial3D.TextureFilter) {
+
+    private func __setTextureFilter(
+        mode: Godot.BaseMaterial3D.TextureFilter
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1100,6 +1222,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
         Godot.BaseMaterial3D.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1118,6 +1241,7 @@ open class Label3D: GeometryInstance3D {
         }
         }
     }()
+
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
         Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1470,6 +1594,7 @@ open class Label3D: GeometryInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1482,5 +1607,4 @@ open class Label3D: GeometryInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

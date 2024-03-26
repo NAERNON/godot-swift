@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StyleBoxFlat: StyleBox {
     internal static var __method_binding_set_bg_color: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setBgColor(_ color: Godot.Color) {
+
+    private func __setBgColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getBgColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setBorderColor(_ color: Godot.Color) {
+
+    private func __setBorderColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getBorderColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setBorderWidthAll(width: Int32) {
+
+    public func setBorderWidthAll(
+        width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     public func borderWidthMin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,11 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setBorderWidth(margin: Godot.Side, width: Int32) {
+
+    public func setBorderWidth(
+        margin: Godot.Side,
+        width: Int32
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_width) { __accessPtr in
@@ -143,7 +160,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __getBorderWidth(margin: Godot.Side) -> Int32 {
+
+    private func __getBorderWidth(
+        margin: Godot.Side
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -163,7 +183,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setBorderBlend(_ blend: Bool) {
+
+    private func __setBorderBlend(
+        _ blend: Bool
+    ) {
         blend.withGodotUnsafeRawPointer { __ptr_blend in
         withUnsafeArgumentPackPointer(__ptr_blend) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,6 +205,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getBorderBlend() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,7 +224,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setCornerRadiusAll(radius: Int32) {
+
+    public func setCornerRadiusAll(
+        radius: Int32
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,7 +246,11 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setCornerRadius(corner: Godot.Corner, radius: Int32) {
+
+    public func setCornerRadius(
+        corner: Godot.Corner,
+        radius: Int32
+    ) {
         corner.withGodotUnsafeRawPointer { __ptr_corner in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_corner, __ptr_radius) { __accessPtr in
@@ -239,7 +270,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __getCornerRadius(corner: Godot.Corner) -> Int32 {
+
+    private func __getCornerRadius(
+        corner: Godot.Corner
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         corner.withGodotUnsafeRawPointer { __ptr_corner in
         withUnsafeArgumentPackPointer(__ptr_corner) { __accessPtr in
@@ -259,7 +293,11 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setExpandMargin(_ margin: Godot.Side, size: Double) {
+
+    public func setExpandMargin(
+        _ margin: Godot.Side,
+        size: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_size) { __accessPtr in
@@ -279,7 +317,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    public func setExpandMarginAll(size: Double) {
+
+    public func setExpandMarginAll(
+        size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -298,7 +339,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __getExpandMargin(_ margin: Godot.Side) -> Double {
+
+    private func __getExpandMargin(
+        _ margin: Godot.Side
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -318,7 +362,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setDrawCenter(_ drawCenter: Bool) {
+
+    private func __setDrawCenter(
+        _ drawCenter: Bool
+    ) {
         drawCenter.withGodotUnsafeRawPointer { __ptr_drawCenter in
         withUnsafeArgumentPackPointer(__ptr_drawCenter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,6 +384,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __isDrawCenterEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,7 +403,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setSkew(_ skew: Godot.Vector2) {
+
+    private func __setSkew(
+        _ skew: Godot.Vector2
+    ) {
         skew.withGodotUnsafeRawPointer { __ptr_skew in
         withUnsafeArgumentPackPointer(__ptr_skew) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,6 +425,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getSkew() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,7 +444,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setShadowColor(_ color: Godot.Color) {
+
+    private func __setShadowColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,6 +466,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getShadowColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,7 +485,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setShadowSize(_ size: Int32) {
+
+    private func __setShadowSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -448,6 +507,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getShadowSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +526,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setShadowOffset(_ offset: Godot.Vector2) {
+
+    private func __setShadowOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,6 +548,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getShadowOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -503,7 +567,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setAntiAliased(_ antiAliased: Bool) {
+
+    private func __setAntiAliased(
+        _ antiAliased: Bool
+    ) {
         antiAliased.withGodotUnsafeRawPointer { __ptr_antiAliased in
         withUnsafeArgumentPackPointer(__ptr_antiAliased) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -522,6 +589,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __isAntiAliased() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -540,7 +608,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setAaSize(_ size: Double) {
+
+    private func __setAaSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -559,6 +630,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getAaSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,7 +649,10 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
-    private func __setCornerDetail(_ detail: Int32) {
+
+    private func __setCornerDetail(
+        _ detail: Int32
+    ) {
         detail.withGodotUnsafeRawPointer { __ptr_detail in
         withUnsafeArgumentPackPointer(__ptr_detail) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -596,6 +671,7 @@ open class StyleBoxFlat: StyleBox {
         }
         }
     }()
+
     private func __getCornerDetail() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -825,6 +901,7 @@ open class StyleBoxFlat: StyleBox {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -837,5 +914,4 @@ open class StyleBoxFlat: StyleBox {
         }
         return _virtualFunctions!
     }
-
-    }
+}

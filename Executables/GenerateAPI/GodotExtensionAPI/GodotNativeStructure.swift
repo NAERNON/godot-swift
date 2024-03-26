@@ -83,3 +83,14 @@ extension GodotNativeStructure {
         }
     }
 }
+
+extension GodotNativeStructure: FileSource {
+    func fileCodeContent(
+        for extensionAPI: GodotExtensionAPI,
+        with configuration: BuildConfiguration
+    ) throws -> CodeBlockItemListSyntax {
+        try StructDeclSyntax("public struct \(raw: name)") {
+            propertiesSyntax()
+        }
+    }
+}

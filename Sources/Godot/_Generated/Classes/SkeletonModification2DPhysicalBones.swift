@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     internal static var __method_binding_set_physical_bone_chain_length: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    private func __setPhysicalBoneChainLength(_ length: Int32) {
+
+    private func __setPhysicalBoneChainLength(
+        _ length: Int32
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
+
     private func __getPhysicalBoneChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,11 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func setPhysicalBoneNode(jointIdx: Int32, physicalbone2dNode: Godot.NodePath) {
+
+    public func setPhysicalBoneNode(
+        jointIdx: Int32,
+        physicalbone2dNode: Godot.NodePath
+    ) {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         physicalbone2dNode.withGodotUnsafeRawPointer { __ptr_physicalbone2dNode in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_physicalbone2dNode) { __accessPtr in
@@ -69,7 +78,10 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func physicalBoneNode(jointIdx: Int32) -> Godot.NodePath {
+
+    public func physicalBoneNode(
+        jointIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
@@ -89,6 +101,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
+
     public func fetchPhysicalBones() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -106,7 +119,10 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func startSimulation(bones: Godot.GodotArray<Godot.GodotStringName> = []) {
+
+    public func startSimulation(
+        bones: Godot.GodotArray<Godot.GodotStringName> = []
+    ) {
         bones.withGodotUnsafeRawPointer { __ptr_bones in
         withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,7 +141,10 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func stopSimulation(bones: Godot.GodotArray<Godot.GodotStringName> = []) {
+
+    public func stopSimulation(
+        bones: Godot.GodotArray<Godot.GodotStringName> = []
+    ) {
         bones.withGodotUnsafeRawPointer { __ptr_bones in
         withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,6 +168,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -161,5 +181,4 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

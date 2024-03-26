@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeParticleMultiplyByAxisAngle: VisualShaderNode {
     internal static var __method_binding_set_degrees_mode: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeParticleMultiplyByAxisAngle: VisualShaderNode {
         }
         }
     }()
-    private func __setDegreesMode(enabled: Bool) {
+
+    private func __setDegreesMode(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeParticleMultiplyByAxisAngle: VisualShaderNode {
         }
         }
     }()
+
     private func __isDegreesMode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class VisualShaderNodeParticleMultiplyByAxisAngle: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class VisualShaderNodeParticleMultiplyByAxisAngle: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

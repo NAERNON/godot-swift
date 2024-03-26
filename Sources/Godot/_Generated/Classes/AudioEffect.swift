@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffect: Resource {
     open func _instantiate() -> Godot.AudioEffectInstance? {
@@ -10,6 +11,7 @@ open class AudioEffect: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -29,5 +31,4 @@ open class AudioEffect: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

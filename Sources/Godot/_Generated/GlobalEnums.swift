@@ -7,6 +7,7 @@ public enum Side: UInt32, GodotEnum {
     case top = 1
     case right = 2
     case bottom = 3
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Left", 0),
@@ -21,6 +22,7 @@ public enum Corner: UInt32, GodotEnum {
     case topRight = 1
     case bottomRight = 2
     case bottomLeft = 3
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Top Left", 0),
@@ -33,6 +35,7 @@ public enum Corner: UInt32, GodotEnum {
 public enum Orientation: UInt32, GodotEnum {
     case vertical = 1
     case horizontal = 0
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Horizontal", 0),
@@ -43,6 +46,7 @@ public enum Orientation: UInt32, GodotEnum {
 public enum ClockDirection: UInt32, GodotEnum {
     case clockwise = 0
     case counterclockwise = 1
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Clockwise", 0),
@@ -55,6 +59,7 @@ public enum HorizontalAlignment: UInt32, GodotEnum {
     case center = 1
     case right = 2
     case fill = 3
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Left", 0),
@@ -69,6 +74,7 @@ public enum VerticalAlignment: UInt32, GodotEnum {
     case center = 1
     case bottom = 2
     case fill = 3
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Top", 0),
@@ -83,15 +89,20 @@ public enum InlineAlignment: UInt32, GodotEnum {
     case centerTo = 1
     case baselineTo = 3
     case bottomTo = 2
+
     public static let toTop: Self = .topTo
     case toCenter = 4
     case toBaseline = 8
     case toBottom = 12
+
     public static let top: Self = .topTo
     case center = 5
     case bottom = 14
+
     public static let imageMask: Self = .baselineTo
+
     public static let textMask: Self = .toBottom
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Top To", 0),
@@ -113,6 +124,7 @@ public enum EulerOrder: UInt32, GodotEnum {
     case yzx = 3
     case zxy = 4
     case zyx = 5
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Xyz", 0),
@@ -318,6 +330,7 @@ public enum Key: UInt32, GodotEnum {
     case asciitilde = 126
     case yen = 165
     case section = 167
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -519,19 +532,30 @@ public enum Key: UInt32, GodotEnum {
 public struct KeyModifierMask: GodotOptionSet {
     public let rawValue: Int64
 
-    public init(rawValue: Int64) {
+    public init(
+        rawValue: Int64
+    ) {
         self.rawValue = rawValue
     }
 
     public static let codeMask: Self = .init(rawValue: 8388607)
+
     public static let modifierMask: Self = .init(rawValue: 532676608)
+
     public static let maskCmdOrCtrl: Self = .init(rawValue: 16777216)
+
     public static let maskShift: Self = .init(rawValue: 33554432)
+
     public static let maskAlt: Self = .init(rawValue: 67108864)
+
     public static let maskMeta: Self = .init(rawValue: 134217728)
+
     public static let maskCtrl: Self = .init(rawValue: 268435456)
+
     public static let maskKpad: Self = .init(rawValue: 536870912)
+
     public static let maskGroupSwitch: Self = .init(rawValue: 1073741824)
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Code Mask", 8388607),
@@ -557,6 +581,7 @@ public enum MouseButton: UInt32, GodotEnum {
     case wheelRight = 7
     case xbutton1 = 8
     case xbutton2 = 9
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -575,15 +600,22 @@ public enum MouseButton: UInt32, GodotEnum {
 public struct MouseButtonMask: GodotOptionSet {
     public let rawValue: Int64
 
-    public init(rawValue: Int64) {
+    public init(
+        rawValue: Int64
+    ) {
         self.rawValue = rawValue
     }
 
     public static let left: Self = .init(rawValue: 1)
+
     public static let right: Self = .init(rawValue: 2)
+
     public static let middle: Self = .init(rawValue: 4)
+
     public static let mbXbutton1: Self = .init(rawValue: 128)
+
     public static let mbXbutton2: Self = .init(rawValue: 256)
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Left", 1),
@@ -619,6 +651,7 @@ public enum JoyButton: Int32, GodotEnum {
     case touchpad = 20
     case sdlMax = 21
     case max = 128
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Invalid", -1),
@@ -658,6 +691,7 @@ public enum JoyAxis: Int32, GodotEnum {
     case triggerRight = 5
     case sdlMax = 6
     case max = 10
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Invalid", -1),
@@ -692,6 +726,7 @@ public enum MIDIMessage: UInt32, GodotEnum {
     case stop = 252
     case activeSensing = 254
     case systemReset = 255
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -766,6 +801,7 @@ public enum ErrorType: UInt32, GodotEnum {
     case errHelp = 46
     case errBug = 47
     case errPrinterOnFire = 48
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Ok", 0),
@@ -860,6 +896,7 @@ public enum PropertyHint: UInt32, GodotEnum {
     case hideQuaternionEdit = 35
     case password = 36
     case max = 38
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -907,42 +944,76 @@ public enum PropertyHint: UInt32, GodotEnum {
 public struct PropertyUsageFlags: GodotOptionSet {
     public let rawValue: Int64
 
-    public init(rawValue: Int64) {
+    public init(
+        rawValue: Int64
+    ) {
         self.rawValue = rawValue
     }
 
     public static let none: Self = .init(rawValue: 0)
+
     public static let storage: Self = .init(rawValue: 2)
+
     public static let editor: Self = .init(rawValue: 4)
+
     public static let `internal`: Self = .init(rawValue: 8)
+
     public static let checkable: Self = .init(rawValue: 16)
+
     public static let checked: Self = .init(rawValue: 32)
+
     public static let group: Self = .init(rawValue: 64)
+
     public static let category: Self = .init(rawValue: 128)
+
     public static let subgroup: Self = .init(rawValue: 256)
+
     public static let classIsBitfield: Self = .init(rawValue: 512)
+
     public static let noInstanceState: Self = .init(rawValue: 1024)
+
     public static let restartIfChanged: Self = .init(rawValue: 2048)
+
     public static let scriptVariable: Self = .init(rawValue: 4096)
+
     public static let storeIfNull: Self = .init(rawValue: 8192)
+
     public static let updateAllIfModified: Self = .init(rawValue: 16384)
+
     public static let scriptDefaultValue: Self = .init(rawValue: 32768)
+
     public static let classIsEnum: Self = .init(rawValue: 65536)
+
     public static let nilIsVariant: Self = .init(rawValue: 131072)
+
     public static let array: Self = .init(rawValue: 262144)
+
     public static let alwaysDuplicate: Self = .init(rawValue: 524288)
+
     public static let neverDuplicate: Self = .init(rawValue: 1048576)
+
     public static let highEndGfx: Self = .init(rawValue: 2097152)
+
     public static let nodePathFromSceneRoot: Self = .init(rawValue: 4194304)
+
     public static let resourceNotPersistent: Self = .init(rawValue: 8388608)
+
     public static let keyingIncrements: Self = .init(rawValue: 16777216)
+
     public static let deferredSetResource: Self = .init(rawValue: 33554432)
+
     public static let editorInstantiateObject: Self = .init(rawValue: 67108864)
+
     public static let editorBasicSetting: Self = .init(rawValue: 134217728)
+
     public static let readOnly: Self = .init(rawValue: 268435456)
+
     public static let secret: Self = .init(rawValue: 536870912)
+
     public static let `default`: Self = .init(rawValue: 6)
+
     public static let noEditor: Self = .init(rawValue: 2)
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -982,18 +1053,28 @@ public struct PropertyUsageFlags: GodotOptionSet {
 public struct MethodFlags: GodotOptionSet {
     public let rawValue: Int64
 
-    public init(rawValue: Int64) {
+    public init(
+        rawValue: Int64
+    ) {
         self.rawValue = rawValue
     }
 
     public static let flagNormal: Self = .init(rawValue: 1)
+
     public static let flagEditor: Self = .init(rawValue: 2)
+
     public static let flagConst: Self = .init(rawValue: 4)
+
     public static let flagVirtual: Self = .init(rawValue: 8)
+
     public static let flagVararg: Self = .init(rawValue: 16)
+
     public static let flagStatic: Self = .init(rawValue: 32)
+
     public static let flagObjectCore: Self = .init(rawValue: 64)
+
     public static let flagsDefault: Self = .init(rawValue: 1)
+
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("Flag Normal", 1),
@@ -1005,4 +1086,3 @@ public struct MethodFlags: GodotOptionSet {
         ("Flag Object Core", 64),]
     }
 }
-

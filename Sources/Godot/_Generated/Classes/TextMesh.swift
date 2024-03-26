@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TextMesh: PrimitiveMesh {
     internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setHorizontalAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setHorizontalAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setVerticalAlignment(_ alignment: Godot.VerticalAlignment) {
+
+    private func __setVerticalAlignment(
+        _ alignment: Godot.VerticalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
         Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setFont(_ font: Godot.Font?) {
+
+    private func __setFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -143,6 +159,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +178,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setFontSize(_ fontSize: Int32) {
+
+    private func __setFontSize(
+        _ fontSize: Int32
+    ) {
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setLineSpacing(_ lineSpacing: Double) {
+
+    private func __setLineSpacing(
+        _ lineSpacing: Double
+    ) {
         lineSpacing.withGodotUnsafeRawPointer { __ptr_lineSpacing in
         withUnsafeArgumentPackPointer(__ptr_lineSpacing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getLineSpacing() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setAutowrapMode(_ autowrapMode: Godot.TextServer.AutowrapMode) {
+
+    private func __setAutowrapMode(
+        _ autowrapMode: Godot.TextServer.AutowrapMode
+    ) {
         autowrapMode.withGodotUnsafeRawPointer { __ptr_autowrapMode in
         withUnsafeArgumentPackPointer(__ptr_autowrapMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
         Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setJustificationFlags(_ justificationFlags: Godot.TextServer.JustificationFlag) {
+
+    private func __setJustificationFlags(
+        _ justificationFlags: Godot.TextServer.JustificationFlag
+    ) {
         justificationFlags.withGodotUnsafeRawPointer { __ptr_justificationFlags in
         withUnsafeArgumentPackPointer(__ptr_justificationFlags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
         Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setDepth(_ depth: Double) {
+
+    private func __setDepth(
+        _ depth: Double
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +383,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setWidth(_ width: Double) {
+
+    private func __setWidth(
+        _ width: Double
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +405,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +424,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setPixelSize(_ pixelSize: Double) {
+
+    private func __setPixelSize(
+        _ pixelSize: Double
+    ) {
         pixelSize.withGodotUnsafeRawPointer { __ptr_pixelSize in
         withUnsafeArgumentPackPointer(__ptr_pixelSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,6 +446,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getPixelSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,7 +465,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +487,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,7 +506,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCurveStep(_ curveStep: Double) {
+
+    private func __setCurveStep(
+        _ curveStep: Double
+    ) {
         curveStep.withGodotUnsafeRawPointer { __ptr_curveStep in
         withUnsafeArgumentPackPointer(__ptr_curveStep) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -476,6 +528,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getCurveStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -494,7 +547,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.TextServer.Direction) {
+
+    private func __setTextDirection(
+        _ direction: Godot.TextServer.Direction
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -513,6 +569,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.TextServer.Direction {
         Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +588,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -550,6 +610,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -568,7 +629,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setStructuredTextBidiOverride(parser: Godot.TextServer.StructuredTextParser) {
+
+    private func __setStructuredTextBidiOverride(
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -587,6 +651,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,7 +670,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
+
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        args: Godot.GodotArray<Value>
+    ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_args) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -624,6 +692,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +711,10 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setUppercase(enable: Bool) {
+
+    private func __setUppercase(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -661,6 +733,7 @@ open class TextMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __isUppercase() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,6 +944,7 @@ open class TextMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -883,5 +957,4 @@ open class TextMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFSkin: Resource {
     internal static var __method_binding_get_skin_root: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getSkinRoot() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setSkinRoot(_ skinRoot: Int32) {
+
+    private func __setSkinRoot(
+        _ skinRoot: Int32
+    ) {
         skinRoot.withGodotUnsafeRawPointer { __ptr_skinRoot in
         withUnsafeArgumentPackPointer(__ptr_skinRoot) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getJointsOriginal() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJointsOriginal(_ jointsOriginal: Godot.PackedInt32Array) {
+
+    private func __setJointsOriginal(
+        _ jointsOriginal: Godot.PackedInt32Array
+    ) {
         jointsOriginal.withGodotUnsafeRawPointer { __ptr_jointsOriginal in
         withUnsafeArgumentPackPointer(__ptr_jointsOriginal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getInverseBinds() -> Godot.GodotArray<Godot.Transform3D> {
         Godot.GodotArray<Godot.Transform3D>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setInverseBinds(_ inverseBinds: Godot.GodotArray<Godot.Transform3D>) {
+
+    private func __setInverseBinds(
+        _ inverseBinds: Godot.GodotArray<Godot.Transform3D>
+    ) {
         inverseBinds.withGodotUnsafeRawPointer { __ptr_inverseBinds in
         withUnsafeArgumentPackPointer(__ptr_inverseBinds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getJoints() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJoints(_ joints: Godot.PackedInt32Array) {
+
+    private func __setJoints(
+        _ joints: Godot.PackedInt32Array
+    ) {
         joints.withGodotUnsafeRawPointer { __ptr_joints in
         withUnsafeArgumentPackPointer(__ptr_joints) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getNonJoints() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setNonJoints(_ nonJoints: Godot.PackedInt32Array) {
+
+    private func __setNonJoints(
+        _ nonJoints: Godot.PackedInt32Array
+    ) {
         nonJoints.withGodotUnsafeRawPointer { __ptr_nonJoints in
         withUnsafeArgumentPackPointer(__ptr_nonJoints) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getRoots() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setRoots(_ roots: Godot.PackedInt32Array) {
+
+    private func __setRoots(
+        _ roots: Godot.PackedInt32Array
+    ) {
         roots.withGodotUnsafeRawPointer { __ptr_roots in
         withUnsafeArgumentPackPointer(__ptr_roots) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getSkeleton() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setSkeleton(_ skeleton: Int32) {
+
+    private func __setSkeleton(
+        _ skeleton: Int32
+    ) {
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         withUnsafeArgumentPackPointer(__ptr_skeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getJointIToBoneI() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJointIToBoneI<Value1: VariantStorable, Value2: VariantStorable>(_ jointIToBoneI: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setJointIToBoneI<Value1: VariantStorable, Value2: VariantStorable>(
+        _ jointIToBoneI: Godot.GodotDictionary<Value1, Value2>
+    ) {
         jointIToBoneI.withGodotUnsafeRawPointer { __ptr_jointIToBoneI in
         withUnsafeArgumentPackPointer(__ptr_jointIToBoneI) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getJointIToName() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +360,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJointIToName<Value1: VariantStorable, Value2: VariantStorable>(_ jointIToName: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setJointIToName<Value1: VariantStorable, Value2: VariantStorable>(
+        _ jointIToName: Godot.GodotDictionary<Value1, Value2>
+    ) {
         jointIToName.withGodotUnsafeRawPointer { __ptr_jointIToName in
         withUnsafeArgumentPackPointer(__ptr_jointIToName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +382,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
+
     private func __getGodotSkin() -> Godot.Skin? {
         Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,7 +401,10 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setGodotSkin(_ godotSkin: Godot.Skin?) {
+
+    private func __setGodotSkin(
+        _ godotSkin: Godot.Skin?
+    ) {
         godotSkin.withGodotUnsafeRawPointer { __ptr_godotSkin in
         withUnsafePointer(to: __ptr_godotSkin) { _ptr___ptr_godotSkin in
         withUnsafeArgumentPackPointer(_ptr___ptr_godotSkin) { __accessPtr in
@@ -487,6 +528,7 @@ open class GLTFSkin: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -499,5 +541,4 @@ open class GLTFSkin: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

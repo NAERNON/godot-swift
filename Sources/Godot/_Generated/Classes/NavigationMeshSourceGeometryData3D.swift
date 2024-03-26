@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationMeshSourceGeometryData3D: Resource {
     internal static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    private func __setVertices(_ vertices: Godot.PackedFloat32Array) {
+
+    private func __setVertices(
+        _ vertices: Godot.PackedFloat32Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
+
     private func __getVertices() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    private func __setIndices(_ indices: Godot.PackedInt32Array) {
+
+    private func __setIndices(
+        _ indices: Godot.PackedInt32Array
+    ) {
         indices.withGodotUnsafeRawPointer { __ptr_indices in
         withUnsafeArgumentPackPointer(__ptr_indices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
+
     private func __getIndices() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -103,6 +113,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
+
     public func hasData() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,7 +132,11 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    public func addMesh(_ mesh: Godot.Mesh?, xform: Godot.Transform3D) {
+
+    public func addMesh(
+        _ mesh: Godot.Mesh?,
+        xform: Godot.Transform3D
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
@@ -142,7 +157,11 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    public func addMeshArray<Value: VariantStorable>(_ meshArray: Godot.GodotArray<Value>, xform: Godot.Transform3D) {
+
+    public func addMeshArray<Value: VariantStorable>(
+        _ meshArray: Godot.GodotArray<Value>,
+        xform: Godot.Transform3D
+    ) {
         meshArray.withGodotUnsafeRawPointer { __ptr_meshArray in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_meshArray, __ptr_xform) { __accessPtr in
@@ -162,7 +181,11 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    public func addFaces(_ faces: Godot.PackedVector3Array, xform: Godot.Transform3D) {
+
+    public func addFaces(
+        _ faces: Godot.PackedVector3Array,
+        xform: Godot.Transform3D
+    ) {
         faces.withGodotUnsafeRawPointer { __ptr_faces in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_faces, __ptr_xform) { __accessPtr in
@@ -198,6 +221,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +234,4 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

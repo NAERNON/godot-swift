@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Curve2D: Resource {
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Curve2D: Resource {
         }
         }
     }()
+
     private func __getPointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    private func __setPointCount(_ count: Int32) {
+
+    private func __setPointCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,13 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func addPoint(position: Godot.Vector2, `in`: Godot.Vector2 = Vector2(x: 0, y: 0), out: Godot.Vector2 = Vector2(x: 0, y: 0), index: Int32 = -1) {
+
+    public func addPoint(
+        position: Godot.Vector2,
+        `in`: Godot.Vector2 = Vector2(x: 0, y: 0),
+        out: Godot.Vector2 = Vector2(x: 0, y: 0),
+        index: Int32 = -1
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         `in`.withGodotUnsafeRawPointer { __ptr_in in
         out.withGodotUnsafeRawPointer { __ptr_out in
@@ -71,7 +82,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func setPointPosition(idx: Int32, position: Godot.Vector2) {
+
+    public func setPointPosition(
+        idx: Int32,
+        position: Godot.Vector2
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -91,7 +106,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func pointPosition(idx: Int32) -> Godot.Vector2 {
+
+    public func pointPosition(
+        idx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -111,7 +129,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func setPointIn(idx: Int32, position: Godot.Vector2) {
+
+    public func setPointIn(
+        idx: Int32,
+        position: Godot.Vector2
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -131,7 +153,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func pointIn(idx: Int32) -> Godot.Vector2 {
+
+    public func pointIn(
+        idx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -151,7 +176,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func setPointOut(idx: Int32, position: Godot.Vector2) {
+
+    public func setPointOut(
+        idx: Int32,
+        position: Godot.Vector2
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -171,7 +200,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func pointOut(idx: Int32) -> Godot.Vector2 {
+
+    public func pointOut(
+        idx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -191,7 +223,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func removePoint(idx: Int32) {
+
+    public func removePoint(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,6 +245,7 @@ open class Curve2D: Resource {
         }
         }
     }()
+
     public func clearPoints() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -227,7 +263,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func sample(idx: Int32, t: Double) -> Godot.Vector2 {
+
+    public func sample(
+        idx: Int32,
+        t: Double
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         t.withGodotUnsafeRawPointer { __ptr_t in
@@ -248,7 +288,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func samplef(fofs: Double) -> Godot.Vector2 {
+
+    public func samplef(
+        fofs: Double
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         fofs.withGodotUnsafeRawPointer { __ptr_fofs in
         withUnsafeArgumentPackPointer(__ptr_fofs) { __accessPtr in
@@ -268,7 +311,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    private func __setBakeInterval(distance: Double) {
+
+    private func __setBakeInterval(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,6 +333,7 @@ open class Curve2D: Resource {
         }
         }
     }()
+
     private func __getBakeInterval() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,6 +352,7 @@ open class Curve2D: Resource {
         }
         }
     }()
+
     public func bakedLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,7 +371,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func sampleBaked(offset: Double = 0.0, cubic: Bool = false) -> Godot.Vector2 {
+
+    public func sampleBaked(
+        offset: Double = 0.0,
+        cubic: Bool = false
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
@@ -344,7 +396,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func sampleBakedWithRotation(offset: Double = 0.0, cubic: Bool = false) -> Godot.Transform2D {
+
+    public func sampleBakedWithRotation(
+        offset: Double = 0.0,
+        cubic: Bool = false
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
@@ -365,6 +421,7 @@ open class Curve2D: Resource {
         }
         }
     }()
+
     public func bakedPoints() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +440,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func closestPoint(_ point: Godot.Vector2) -> Godot.Vector2 {
+
+    public func closestPoint(
+        _ point: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -403,7 +463,10 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func closestOffset(toPoint point: Godot.Vector2) -> Double {
+
+    public func closestOffset(
+        toPoint point: Godot.Vector2
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -423,7 +486,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func tessellate(maxStages: Int32 = 5, toleranceDegrees: Double = 4) -> Godot.PackedVector2Array {
+
+    public func tessellate(
+        maxStages: Int32 = 5,
+        toleranceDegrees: Double = 4
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceDegrees.withGodotUnsafeRawPointer { __ptr_toleranceDegrees in
@@ -444,7 +511,11 @@ open class Curve2D: Resource {
         }
         }
     }()
-    public func tessellateEvenLength(maxStages: Int32 = 5, toleranceLength: Double = 20.0) -> Godot.PackedVector2Array {
+
+    public func tessellateEvenLength(
+        maxStages: Int32 = 5,
+        toleranceLength: Double = 20.0
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceLength.withGodotUnsafeRawPointer { __ptr_toleranceLength in
@@ -481,6 +552,7 @@ open class Curve2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -493,5 +565,4 @@ open class Curve2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

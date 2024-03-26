@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimatedTexture: Texture2D {
     public static let maxFrames: Int = 256
@@ -14,7 +15,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    private func __setFrames(_ frames: Int32) {
+
+    private func __setFrames(
+        _ frames: Int32
+    ) {
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -33,6 +37,7 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
+
     private func __getFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,7 +56,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    private func __setCurrentFrame(_ frame: Int32) {
+
+    private func __setCurrentFrame(
+        _ frame: Int32
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +78,7 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
+
     private func __getCurrentFrame() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +97,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    private func __setPause(_ pause: Bool) {
+
+    private func __setPause(
+        _ pause: Bool
+    ) {
         pause.withGodotUnsafeRawPointer { __ptr_pause in
         withUnsafeArgumentPackPointer(__ptr_pause) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +119,7 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
+
     private func __getPause() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,7 +138,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    private func __setOneShot(_ oneShot: Bool) {
+
+    private func __setOneShot(
+        _ oneShot: Bool
+    ) {
         oneShot.withGodotUnsafeRawPointer { __ptr_oneShot in
         withUnsafeArgumentPackPointer(__ptr_oneShot) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +160,7 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
+
     private func __getOneShot() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +179,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    private func __setSpeedScale(_ scale: Double) {
+
+    private func __setSpeedScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,6 +201,7 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
+
     private func __getSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,7 +220,11 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    public func setFrameTexture(frame: Int32, texture: Godot.Texture2D?) {
+
+    public func setFrameTexture(
+        frame: Int32,
+        texture: Godot.Texture2D?
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -220,7 +245,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    public func frameTexture(frame: Int32) -> Godot.Texture2D? {
+
+    public func frameTexture(
+        frame: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
@@ -240,7 +268,11 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    public func setFrameDuration(frame: Int32, duration: Double) {
+
+    public func setFrameDuration(
+        frame: Int32,
+        duration: Double
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         duration.withGodotUnsafeRawPointer { __ptr_duration in
         withUnsafeArgumentPackPointer(__ptr_frame, __ptr_duration) { __accessPtr in
@@ -260,7 +292,10 @@ open class AnimatedTexture: Texture2D {
         }
         }
     }()
-    public func frameDuration(frame: Int32) -> Double {
+
+    public func frameDuration(
+        frame: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
@@ -329,6 +364,7 @@ open class AnimatedTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -341,5 +377,4 @@ open class AnimatedTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GDExtension: Resource {
     public enum InitializationLevel: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class GDExtension: Resource {
         case servers = 1
         case scene = 2
         case editor = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Core", 0),
@@ -26,7 +28,11 @@ open class GDExtension: Resource {
         }
         }
     }()
-    public func openLibrary(path: Godot.GodotString, entrySymbol: Godot.GodotString) -> Godot.ErrorType {
+
+    public func openLibrary(
+        path: Godot.GodotString,
+        entrySymbol: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         entrySymbol.withGodotUnsafeRawPointer { __ptr_entrySymbol in
@@ -47,6 +53,7 @@ open class GDExtension: Resource {
         }
         }
     }()
+
     public func closeLibrary() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -64,6 +71,7 @@ open class GDExtension: Resource {
         }
         }
     }()
+
     public func isLibraryOpen() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +90,7 @@ open class GDExtension: Resource {
         }
         }
     }()
+
     public func minimumLibraryInitializationLevel() -> Godot.GDExtension.InitializationLevel {
         Godot.GDExtension.InitializationLevel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,7 +109,10 @@ open class GDExtension: Resource {
         }
         }
     }()
-    public func initializeLibrary(level: Godot.GDExtension.InitializationLevel) {
+
+    public func initializeLibrary(
+        level: Godot.GDExtension.InitializationLevel
+    ) {
         level.withGodotUnsafeRawPointer { __ptr_level in
         withUnsafeArgumentPackPointer(__ptr_level) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,6 +125,7 @@ open class GDExtension: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -125,5 +138,4 @@ open class GDExtension: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

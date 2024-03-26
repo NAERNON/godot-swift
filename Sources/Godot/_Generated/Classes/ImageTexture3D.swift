@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ImageTexture3D: Texture3D {
     internal static var __method_binding_create: GDExtensionMethodBindPtr = {
@@ -12,7 +13,15 @@ open class ImageTexture3D: Texture3D {
         }
         }
     }()
-    public func create(format: Godot.Image.Format, width: Int32, height: Int32, depth: Int32, useMipmaps: Bool, data: Godot.GodotArray<Godot.Image?>) -> Godot.ErrorType {
+
+    public func create(
+        format: Godot.Image.Format,
+        width: Int32,
+        height: Int32,
+        depth: Int32,
+        useMipmaps: Bool,
+        data: Godot.GodotArray<Godot.Image?>
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -37,7 +46,10 @@ open class ImageTexture3D: Texture3D {
         }
         }
     }()
-    public func update(data: Godot.GodotArray<Godot.Image?>) {
+
+    public func update(
+        data: Godot.GodotArray<Godot.Image?>
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +62,7 @@ open class ImageTexture3D: Texture3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -62,5 +75,4 @@ open class ImageTexture3D: Texture3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

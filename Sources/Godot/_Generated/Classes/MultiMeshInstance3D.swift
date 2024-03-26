@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MultiMeshInstance3D: GeometryInstance3D {
     internal static var __method_binding_set_multimesh: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MultiMeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setMultimesh(_ multimesh: Godot.MultiMesh?) {
+
+    private func __setMultimesh(
+        _ multimesh: Godot.MultiMesh?
+    ) {
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafePointer(to: __ptr_multimesh) { _ptr___ptr_multimesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_multimesh) { __accessPtr in
@@ -32,6 +36,7 @@ open class MultiMeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getMultimesh() -> Godot.MultiMesh? {
         Godot.MultiMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class MultiMeshInstance3D: GeometryInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class MultiMeshInstance3D: GeometryInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class RootMotionView: VisualInstance3D {
     internal static var __method_binding_set_animation_path: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
-    private func __setAnimationPath(_ path: Godot.NodePath) {
+
+    private func __setAnimationPath(
+        _ path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
+
     private func __getAnimationPath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
-    private func __setCellSize(_ size: Double) {
+
+    private func __setCellSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
+
     private func __getCellSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
-    private func __setRadius(size: Double) {
+
+    private func __setRadius(
+        size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
-    private func __setZeroY(enable: Bool) {
+
+    private func __setZeroY(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RootMotionView: VisualInstance3D {
         }
         }
     }()
+
     private func __getZeroY() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class RootMotionView: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class RootMotionView: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

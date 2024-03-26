@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AudioListener3D: Node3D {
     internal static var __method_binding_make_current: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class AudioListener3D: Node3D {
         }
         }
     }()
+
     public func makeCurrent() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,6 +31,7 @@ open class AudioListener3D: Node3D {
         }
         }
     }()
+
     public func clearCurrent() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -46,6 +49,7 @@ open class AudioListener3D: Node3D {
         }
         }
     }()
+
     public func isCurrent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -64,6 +68,7 @@ open class AudioListener3D: Node3D {
         }
         }
     }()
+
     public func listenerTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,6 +81,7 @@ open class AudioListener3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -88,5 +94,4 @@ open class AudioListener3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

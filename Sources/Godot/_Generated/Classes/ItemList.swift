@@ -3,20 +3,24 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ItemList: Control {
     public enum IconMode: UInt32, GodotEnum {
         case top = 0
         case left = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Top", 0),
             ("Left", 1),]
         }
     }
+
     public enum SelectMode: UInt32, GodotEnum {
         case single = 0
         case multi = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Single", 0),
@@ -26,16 +30,26 @@ open class ItemList: Control {
 
     public struct ItemSelectedSignalInput: Godot.SignalInput {
         public let index: Int
-        fileprivate init(index: Int) {
+
+        fileprivate init(
+            index: Int
+        ) {
             self.index = index
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index)]
         }
     }
-    public func itemSelected(index: Int) {
+
+    public func itemSelected(
+        index: Int
+    ) {
         _ = itemSelectedSignal.emit(.init(index: index))
     }
+
     public lazy var itemSelectedSignal: Godot.SignalEmitter<ItemSelectedSignalInput> = {
         .init(object: self, signalName: "item_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -53,19 +67,32 @@ open class ItemList: Control {
 
     public struct EmptyClickedSignalInput: Godot.SignalInput {
         public let atPosition: Godot.Vector2
+
         public let mouseButtonIndex: Int
-        fileprivate init(atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            atPosition: Godot.Vector2,
+            mouseButtonIndex: Int
+        ) {
             self.atPosition = atPosition
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.atPosition), Variant(input.mouseButtonIndex)]
         }
     }
-    public func emptyClicked(atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+
+    public func emptyClicked(
+        atPosition: Godot.Vector2,
+        mouseButtonIndex: Int
+    ) {
         _ = emptyClickedSignal.emit(.init(atPosition: atPosition,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var emptyClickedSignal: Godot.SignalEmitter<EmptyClickedSignalInput> = {
         .init(object: self, signalName: "empty_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -84,22 +111,38 @@ open class ItemList: Control {
 
     public struct ItemClickedSignalInput: Godot.SignalInput {
         public let index: Int
+
         public let atPosition: Godot.Vector2
+
         public let mouseButtonIndex: Int
-        fileprivate init(index: Int, atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+
+        fileprivate init(
+            index: Int,
+            atPosition: Godot.Vector2,
+            mouseButtonIndex: Int
+        ) {
             self.index = index
             self.atPosition = atPosition
             self.mouseButtonIndex = mouseButtonIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index), Variant(input.atPosition), Variant(input.mouseButtonIndex)]
         }
     }
-    public func itemClicked(index: Int, atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+
+    public func itemClicked(
+        index: Int,
+        atPosition: Godot.Vector2,
+        mouseButtonIndex: Int
+    ) {
         _ = itemClickedSignal.emit(.init(index: index,
                 atPosition: atPosition,
                 mouseButtonIndex: mouseButtonIndex))
     }
+
     public lazy var itemClickedSignal: Godot.SignalEmitter<ItemClickedSignalInput> = {
         .init(object: self, signalName: "item_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -119,19 +162,32 @@ open class ItemList: Control {
 
     public struct MultiSelectedSignalInput: Godot.SignalInput {
         public let index: Int
+
         public let selected: Bool
-        fileprivate init(index: Int, selected: Bool) {
+
+        fileprivate init(
+            index: Int,
+            selected: Bool
+        ) {
             self.index = index
             self.selected = selected
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index), Variant(input.selected)]
         }
     }
-    public func multiSelected(index: Int, selected: Bool) {
+
+    public func multiSelected(
+        index: Int,
+        selected: Bool
+    ) {
         _ = multiSelectedSignal.emit(.init(index: index,
                 selected: selected))
     }
+
     public lazy var multiSelectedSignal: Godot.SignalEmitter<MultiSelectedSignalInput> = {
         .init(object: self, signalName: "multi_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -150,16 +206,26 @@ open class ItemList: Control {
 
     public struct ItemActivatedSignalInput: Godot.SignalInput {
         public let index: Int
-        fileprivate init(index: Int) {
+
+        fileprivate init(
+            index: Int
+        ) {
             self.index = index
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index)]
         }
     }
-    public func itemActivated(index: Int) {
+
+    public func itemActivated(
+        index: Int
+    ) {
         _ = itemActivatedSignal.emit(.init(index: index))
     }
+
     public lazy var itemActivatedSignal: Godot.SignalEmitter<ItemActivatedSignalInput> = {
         .init(object: self, signalName: "item_activated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemActivatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -182,7 +248,12 @@ open class ItemList: Control {
         }
         }
     }()
-    public func addItem(text: Godot.GodotString, icon: Godot.Texture2D? = nil, selectable: Bool = true) -> Int32 {
+
+    public func addItem(
+        text: Godot.GodotString,
+        icon: Godot.Texture2D? = nil,
+        selectable: Bool = true
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -205,7 +276,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func addIconItem(icon: Godot.Texture2D?, selectable: Bool = true) -> Int32 {
+
+    public func addIconItem(
+        icon: Godot.Texture2D?,
+        selectable: Bool = true
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -227,7 +302,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemText(idx: Int32, text: Godot.GodotString) {
+
+    public func setItemText(
+        idx: Int32,
+        text: Godot.GodotString
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_text) { __accessPtr in
@@ -247,7 +326,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemText(idx: Int32) -> Godot.GodotString {
+
+    public func itemText(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -267,7 +349,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemIcon(idx: Int32, icon: Godot.Texture2D?) {
+
+    public func setItemIcon(
+        idx: Int32,
+        icon: Godot.Texture2D?
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -288,7 +374,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemIcon(idx: Int32) -> Godot.Texture2D? {
+
+    public func itemIcon(
+        idx: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -308,7 +397,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemTextDirection(idx: Int32, direction: Godot.Control.TextDirection) {
+
+    public func setItemTextDirection(
+        idx: Int32,
+        direction: Godot.Control.TextDirection
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_direction) { __accessPtr in
@@ -328,7 +421,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemTextDirection(idx: Int32) -> Godot.Control.TextDirection {
+
+    public func itemTextDirection(
+        idx: Int32
+    ) -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -348,7 +444,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemLanguage(idx: Int32, language: Godot.GodotString) {
+
+    public func setItemLanguage(
+        idx: Int32,
+        language: Godot.GodotString
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_language) { __accessPtr in
@@ -368,7 +468,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemLanguage(idx: Int32) -> Godot.GodotString {
+
+    public func itemLanguage(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -388,7 +491,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemIconTransposed(idx: Int32, transposed: Bool) {
+
+    public func setItemIconTransposed(
+        idx: Int32,
+        transposed: Bool
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         transposed.withGodotUnsafeRawPointer { __ptr_transposed in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_transposed) { __accessPtr in
@@ -408,7 +515,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func isItemIconTransposed(idx: Int32) -> Bool {
+
+    public func isItemIconTransposed(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -428,7 +538,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemIconRegion(idx: Int32, rect: Godot.Rect2) {
+
+    public func setItemIconRegion(
+        idx: Int32,
+        rect: Godot.Rect2
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_rect) { __accessPtr in
@@ -448,7 +562,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemIconRegion(idx: Int32) -> Godot.Rect2 {
+
+    public func itemIconRegion(
+        idx: Int32
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -468,7 +585,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemIconModulate(idx: Int32, modulate: Godot.Color) {
+
+    public func setItemIconModulate(
+        idx: Int32,
+        modulate: Godot.Color
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_modulate) { __accessPtr in
@@ -488,7 +609,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemIconModulate(idx: Int32) -> Godot.Color {
+
+    public func itemIconModulate(
+        idx: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -508,7 +632,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemSelectable(idx: Int32, selectable: Bool) {
+
+    public func setItemSelectable(
+        idx: Int32,
+        selectable: Bool
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         selectable.withGodotUnsafeRawPointer { __ptr_selectable in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_selectable) { __accessPtr in
@@ -528,7 +656,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func isItemSelectable(idx: Int32) -> Bool {
+
+    public func isItemSelectable(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -548,7 +679,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemDisabled(idx: Int32, disabled: Bool) {
+
+    public func setItemDisabled(
+        idx: Int32,
+        disabled: Bool
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_disabled) { __accessPtr in
@@ -568,7 +703,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func isItemDisabled(idx: Int32) -> Bool {
+
+    public func isItemDisabled(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -588,7 +726,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemMetadata<Value: VariantStorableIn>(idx: Int32, metadata: Value) {
+
+    public func setItemMetadata<Value: VariantStorableIn>(
+        idx: Int32,
+        metadata: Value
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { __ptr_metadata in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_metadata) { __accessPtr in
@@ -608,7 +750,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemMetadata(idx: Int32) -> Godot.Variant {
+
+    public func itemMetadata(
+        idx: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -628,7 +773,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemCustomBgColor(idx: Int32, customBgColor: Godot.Color) {
+
+    public func setItemCustomBgColor(
+        idx: Int32,
+        customBgColor: Godot.Color
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         customBgColor.withGodotUnsafeRawPointer { __ptr_customBgColor in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_customBgColor) { __accessPtr in
@@ -648,7 +797,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemCustomBgColor(idx: Int32) -> Godot.Color {
+
+    public func itemCustomBgColor(
+        idx: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -668,7 +820,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemCustomFgColor(idx: Int32, customFgColor: Godot.Color) {
+
+    public func setItemCustomFgColor(
+        idx: Int32,
+        customFgColor: Godot.Color
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         customFgColor.withGodotUnsafeRawPointer { __ptr_customFgColor in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_customFgColor) { __accessPtr in
@@ -688,7 +844,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemCustomFgColor(idx: Int32) -> Godot.Color {
+
+    public func itemCustomFgColor(
+        idx: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -708,7 +867,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemRect(idx: Int32, expand: Bool = true) -> Godot.Rect2 {
+
+    public func itemRect(
+        idx: Int32,
+        expand: Bool = true
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         expand.withGodotUnsafeRawPointer { __ptr_expand in
@@ -729,7 +892,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemTooltipEnabled(idx: Int32, enable: Bool) {
+
+    public func setItemTooltipEnabled(
+        idx: Int32,
+        enable: Bool
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_enable) { __accessPtr in
@@ -749,7 +916,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func isItemTooltipEnabled(idx: Int32) -> Bool {
+
+    public func isItemTooltipEnabled(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -769,7 +939,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func setItemTooltip(idx: Int32, tooltip: Godot.GodotString) {
+
+    public func setItemTooltip(
+        idx: Int32,
+        tooltip: Godot.GodotString
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_tooltip) { __accessPtr in
@@ -789,7 +963,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemTooltip(idx: Int32) -> Godot.GodotString {
+
+    public func itemTooltip(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -809,7 +986,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func select(idx: Int32, single: Bool = true) {
+
+    public func select(
+        idx: Int32,
+        single: Bool = true
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         single.withGodotUnsafeRawPointer { __ptr_single in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_single) { __accessPtr in
@@ -829,7 +1010,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func deselect(idx: Int32) {
+
+    public func deselect(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -848,6 +1032,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func deselectAll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -865,7 +1050,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func isSelected(idx: Int32) -> Bool {
+
+    public func isSelected(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -885,6 +1073,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func selectedItems() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -903,7 +1092,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func moveItem(fromIdx: Int32, toIdx: Int32) {
+
+    public func moveItem(
+        fromIdx: Int32,
+        toIdx: Int32
+    ) {
         fromIdx.withGodotUnsafeRawPointer { __ptr_fromIdx in
         toIdx.withGodotUnsafeRawPointer { __ptr_toIdx in
         withUnsafeArgumentPackPointer(__ptr_fromIdx, __ptr_toIdx) { __accessPtr in
@@ -923,7 +1116,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setItemCount(_ count: Int32) {
+
+    private func __setItemCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -942,6 +1138,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getItemCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -960,7 +1157,10 @@ open class ItemList: Control {
         }
         }
     }()
-    public func removeItem(idx: Int32) {
+
+    public func removeItem(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -979,6 +1179,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -996,6 +1197,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func sortItemsByText() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1013,7 +1215,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setFixedColumnWidth(_ width: Int32) {
+
+    private func __setFixedColumnWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1032,6 +1237,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getFixedColumnWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1050,7 +1256,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setSameColumnWidth(enable: Bool) {
+
+    private func __setSameColumnWidth(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1069,6 +1278,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __isSameColumnWidth() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1087,7 +1297,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setMaxTextLines(_ lines: Int32) {
+
+    private func __setMaxTextLines(
+        _ lines: Int32
+    ) {
         lines.withGodotUnsafeRawPointer { __ptr_lines in
         withUnsafeArgumentPackPointer(__ptr_lines) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1106,6 +1319,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getMaxTextLines() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1124,7 +1338,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setMaxColumns(amount: Int32) {
+
+    private func __setMaxColumns(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1143,6 +1360,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getMaxColumns() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1161,7 +1379,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setSelectMode(_ mode: Godot.ItemList.SelectMode) {
+
+    private func __setSelectMode(
+        _ mode: Godot.ItemList.SelectMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1180,6 +1401,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getSelectMode() -> Godot.ItemList.SelectMode {
         Godot.ItemList.SelectMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1198,7 +1420,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setIconMode(_ mode: Godot.ItemList.IconMode) {
+
+    private func __setIconMode(
+        _ mode: Godot.ItemList.IconMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1217,6 +1442,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getIconMode() -> Godot.ItemList.IconMode {
         Godot.ItemList.IconMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1235,7 +1461,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setFixedIconSize(_ size: Godot.Vector2I) {
+
+    private func __setFixedIconSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1254,6 +1483,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getFixedIconSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1272,7 +1502,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setIconScale(_ scale: Double) {
+
+    private func __setIconScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1291,6 +1524,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getIconScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1309,7 +1543,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setAllowRmbSelect(allow: Bool) {
+
+    private func __setAllowRmbSelect(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1328,6 +1565,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getAllowRmbSelect() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1346,7 +1584,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setAllowReselect(allow: Bool) {
+
+    private func __setAllowReselect(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1365,6 +1606,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getAllowReselect() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1383,7 +1625,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setAllowSearch(allow: Bool) {
+
+    private func __setAllowSearch(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1402,6 +1647,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getAllowSearch() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1420,7 +1666,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setAutoHeight(enable: Bool) {
+
+    private func __setAutoHeight(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1439,6 +1688,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __hasAutoHeight() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1457,6 +1707,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func isAnythingSelected() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1475,7 +1726,11 @@ open class ItemList: Control {
         }
         }
     }()
-    public func itemAtPosition(_ position: Godot.Vector2, exact: Bool = false) -> Int32 {
+
+    public func itemAtPosition(
+        _ position: Godot.Vector2,
+        exact: Bool = false
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         exact.withGodotUnsafeRawPointer { __ptr_exact in
@@ -1496,6 +1751,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func ensureCurrentIsVisible() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1513,6 +1769,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func vScrollBar() -> Godot.VScrollBar? {
         Godot.VScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1531,7 +1788,10 @@ open class ItemList: Control {
         }
         }
     }()
-    private func __setTextOverrunBehavior(_ overrunBehavior: Godot.TextServer.OverrunBehavior) {
+
+    private func __setTextOverrunBehavior(
+        _ overrunBehavior: Godot.TextServer.OverrunBehavior
+    ) {
         overrunBehavior.withGodotUnsafeRawPointer { __ptr_overrunBehavior in
         withUnsafeArgumentPackPointer(__ptr_overrunBehavior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1550,6 +1810,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
         Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1568,6 +1829,7 @@ open class ItemList: Control {
         }
         }
     }()
+
     public func forceUpdateListSize() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1733,6 +1995,7 @@ open class ItemList: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1745,5 +2008,4 @@ open class ItemList: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VoxelGIData: Resource {
     internal static var __method_binding_allocate: GDExtensionMethodBindPtr = {
@@ -12,7 +13,16 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    public func allocate(toCellXform cellXform: Godot.Transform3D, aabb: Godot.AABB, octreeSize: Godot.Vector3, octreeCells: Godot.PackedByteArray, dataCells: Godot.PackedByteArray, distanceField: Godot.PackedByteArray, levelCounts: Godot.PackedInt32Array) {
+
+    public func allocate(
+        toCellXform cellXform: Godot.Transform3D,
+        aabb: Godot.AABB,
+        octreeSize: Godot.Vector3,
+        octreeCells: Godot.PackedByteArray,
+        dataCells: Godot.PackedByteArray,
+        distanceField: Godot.PackedByteArray,
+        levelCounts: Godot.PackedInt32Array
+    ) {
         cellXform.withGodotUnsafeRawPointer { __ptr_cellXform in
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         octreeSize.withGodotUnsafeRawPointer { __ptr_octreeSize in
@@ -37,6 +47,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func bounds() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +66,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func octreeSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +85,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func toCellXform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +104,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func octreeCells() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,6 +123,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func dataCells() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,6 +142,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     public func levelCounts() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,7 +161,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setDynamicRange(_ dynamicRange: Double) {
+
+    private func __setDynamicRange(
+        _ dynamicRange: Double
+    ) {
         dynamicRange.withGodotUnsafeRawPointer { __ptr_dynamicRange in
         withUnsafeArgumentPackPointer(__ptr_dynamicRange) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,6 +183,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __getDynamicRange() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,7 +202,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setEnergy(_ energy: Double) {
+
+    private func __setEnergy(
+        _ energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,6 +224,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __getEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -219,7 +243,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setBias(_ bias: Double) {
+
+    private func __setBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -238,6 +265,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __getBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,7 +284,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setNormalBias(_ bias: Double) {
+
+    private func __setNormalBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,6 +306,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __getNormalBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -293,7 +325,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setPropagation(_ propagation: Double) {
+
+    private func __setPropagation(
+        _ propagation: Double
+    ) {
         propagation.withGodotUnsafeRawPointer { __ptr_propagation in
         withUnsafeArgumentPackPointer(__ptr_propagation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -312,6 +347,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __getPropagation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -330,7 +366,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setInterior(_ interior: Bool) {
+
+    private func __setInterior(
+        _ interior: Bool
+    ) {
         interior.withGodotUnsafeRawPointer { __ptr_interior in
         withUnsafeArgumentPackPointer(__ptr_interior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,6 +388,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __isInterior() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -367,7 +407,10 @@ open class VoxelGIData: Resource {
         }
         }
     }()
-    private func __setUseTwoBounces(enable: Bool) {
+
+    private func __setUseTwoBounces(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -386,6 +429,7 @@ open class VoxelGIData: Resource {
         }
         }
     }()
+
     private func __isUsingTwoBounces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +519,7 @@ open class VoxelGIData: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -487,5 +532,4 @@ open class VoxelGIData: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

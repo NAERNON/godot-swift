@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class HeightMapShape3D: Shape3D {
     internal static var __method_binding_set_map_width: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
-    private func __setMapWidth(_ width: Int32) {
+
+    private func __setMapWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
+
     private func __getMapWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
-    private func __setMapDepth(height: Int32) {
+
+    private func __setMapDepth(
+        height: Int32
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
+
     private func __getMapDepth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
-    private func __setMapData(_ data: Godot.PackedFloat32Array) {
+
+    private func __setMapData(
+        _ data: Godot.PackedFloat32Array
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class HeightMapShape3D: Shape3D {
         }
         }
     }()
+
     private func __getMapData() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class HeightMapShape3D: Shape3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class HeightMapShape3D: Shape3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

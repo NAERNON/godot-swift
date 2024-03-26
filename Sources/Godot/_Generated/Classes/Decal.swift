@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Decal: VisualInstance3D {
     public enum DecalTexture: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class Decal: VisualInstance3D {
         case orm = 2
         case emission = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Albedo", 0),
@@ -28,7 +30,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,7 +71,11 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    public func setTexture(type: Godot.Decal.DecalTexture, texture: Godot.Texture2D?) {
+
+    public func setTexture(
+        type: Godot.Decal.DecalTexture,
+        texture: Godot.Texture2D?
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -86,7 +96,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __getTexture(type: Godot.Decal.DecalTexture) -> Godot.Texture2D? {
+
+    private func __getTexture(
+        type: Godot.Decal.DecalTexture
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -106,7 +119,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setEmissionEnergy(_ energy: Double) {
+
+    private func __setEmissionEnergy(
+        _ energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +141,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getEmissionEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,7 +160,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setAlbedoMix(energy: Double) {
+
+    private func __setAlbedoMix(
+        energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,6 +182,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getAlbedoMix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,7 +201,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setModulate(color: Godot.Color) {
+
+    private func __setModulate(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +223,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +242,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setUpperFade(_ fade: Double) {
+
+    private func __setUpperFade(
+        _ fade: Double
+    ) {
         fade.withGodotUnsafeRawPointer { __ptr_fade in
         withUnsafeArgumentPackPointer(__ptr_fade) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,6 +264,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getUpperFade() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,7 +283,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setLowerFade(_ fade: Double) {
+
+    private func __setLowerFade(
+        _ fade: Double
+    ) {
         fade.withGodotUnsafeRawPointer { __ptr_fade in
         withUnsafeArgumentPackPointer(__ptr_fade) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,6 +305,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getLowerFade() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,7 +324,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setNormalFade(_ fade: Double) {
+
+    private func __setNormalFade(
+        _ fade: Double
+    ) {
         fade.withGodotUnsafeRawPointer { __ptr_fade in
         withUnsafeArgumentPackPointer(__ptr_fade) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -310,6 +346,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getNormalFade() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,7 +365,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setEnableDistanceFade(enable: Bool) {
+
+    private func __setEnableDistanceFade(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -347,6 +387,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __isDistanceFadeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,7 +406,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setDistanceFadeBegin(distance: Double) {
+
+    private func __setDistanceFadeBegin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,6 +428,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getDistanceFadeBegin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,7 +447,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setDistanceFadeLength(distance: Double) {
+
+    private func __setDistanceFadeLength(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -421,6 +469,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getDistanceFadeLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,7 +488,10 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
-    private func __setCullMask(_ mask: UInt32) {
+
+    private func __setCullMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -458,6 +510,7 @@ open class Decal: VisualInstance3D {
         }
         }
     }()
+
     private func __getCullMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,6 +676,7 @@ open class Decal: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -635,5 +689,4 @@ open class Decal: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

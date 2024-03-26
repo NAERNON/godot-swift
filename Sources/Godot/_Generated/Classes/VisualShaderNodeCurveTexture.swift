@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.CurveTexture?) {
+
+    private func __setTexture(
+        _ texture: Godot.CurveTexture?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -32,6 +36,7 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     private func __getTexture() -> Godot.CurveTexture? {
         Godot.CurveTexture?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
         }
         return _virtualFunctions!
     }
-
-    }
+}

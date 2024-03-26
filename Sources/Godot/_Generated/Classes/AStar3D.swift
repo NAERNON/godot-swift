@@ -3,13 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AStar3D: RefCounted {
-    open func _estimateCost(fromID: Int64, toID: Int64) -> Double {
+    open func _estimateCost(
+        fromID: Int64,
+        toID: Int64
+    ) -> Double {
         Double()
     }
 
-    open func _computeCost(fromID: Int64, toID: Int64) -> Double {
+    open func _computeCost(
+        fromID: Int64,
+        toID: Int64
+    ) -> Double {
         Double()
     }
 
@@ -20,6 +27,7 @@ open class AStar3D: RefCounted {
         }
         }
     }()
+
     public func availablePointID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -38,7 +46,12 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func addPoint(id: Int64, position: Godot.Vector3, weightScale: Double = 1.0) {
+
+    public func addPoint(
+        id: Int64,
+        position: Godot.Vector3,
+        weightScale: Double = 1.0
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         position.withGodotUnsafeRawPointer { __ptr_position in
         weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
@@ -59,7 +72,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func pointPosition(id: Int64) -> Godot.Vector3 {
+
+    public func pointPosition(
+        id: Int64
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -79,7 +95,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func setPointPosition(id: Int64, position: Godot.Vector3) {
+
+    public func setPointPosition(
+        id: Int64,
+        position: Godot.Vector3
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_position) { __accessPtr in
@@ -99,7 +119,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func pointWeightScale(id: Int64) -> Double {
+
+    public func pointWeightScale(
+        id: Int64
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -119,7 +142,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func setPointWeightScale(id: Int64, weightScale: Double) {
+
+    public func setPointWeightScale(
+        id: Int64,
+        weightScale: Double
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_weightScale) { __accessPtr in
@@ -139,7 +166,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func removePoint(id: Int64) {
+
+    public func removePoint(
+        id: Int64
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,7 +188,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func hasPoint(id: Int64) -> Bool {
+
+    public func hasPoint(
+        id: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -178,7 +211,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func pointConnections(id: Int64) -> Godot.PackedInt64Array {
+
+    public func pointConnections(
+        id: Int64
+    ) -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -198,6 +234,7 @@ open class AStar3D: RefCounted {
         }
         }
     }()
+
     public func pointIds() -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +253,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func setPointDisabled(id: Int64, disabled: Bool = true) {
+
+    public func setPointDisabled(
+        id: Int64,
+        disabled: Bool = true
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_disabled) { __accessPtr in
@@ -236,7 +277,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func isPointDisabled(id: Int64) -> Bool {
+
+    public func isPointDisabled(
+        id: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -256,7 +300,12 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func connectPoints(id: Int64, toID: Int64, bidirectional: Bool = true) {
+
+    public func connectPoints(
+        id: Int64,
+        toID: Int64,
+        bidirectional: Bool = true
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
@@ -277,7 +326,12 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func disconnectPoints(id: Int64, toID: Int64, bidirectional: Bool = true) {
+
+    public func disconnectPoints(
+        id: Int64,
+        toID: Int64,
+        bidirectional: Bool = true
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
@@ -298,7 +352,12 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func arePointsConnected(id: Int64, toID: Int64, bidirectional: Bool = true) -> Bool {
+
+    public func arePointsConnected(
+        id: Int64,
+        toID: Int64,
+        bidirectional: Bool = true
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
@@ -320,6 +379,7 @@ open class AStar3D: RefCounted {
         }
         }
     }()
+
     public func pointCount() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -338,6 +398,7 @@ open class AStar3D: RefCounted {
         }
         }
     }()
+
     public func pointCapacity() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -356,7 +417,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func reserveSpace(numNodes: Int64) {
+
+    public func reserveSpace(
+        numNodes: Int64
+    ) {
         numNodes.withGodotUnsafeRawPointer { __ptr_numNodes in
         withUnsafeArgumentPackPointer(__ptr_numNodes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,6 +439,7 @@ open class AStar3D: RefCounted {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -392,7 +457,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func closestPoint(toPosition position: Godot.Vector3, includeDisabled: Bool = false) -> Int64 {
+
+    public func closestPoint(
+        toPosition position: Godot.Vector3,
+        includeDisabled: Bool = false
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         includeDisabled.withGodotUnsafeRawPointer { __ptr_includeDisabled in
@@ -413,7 +482,10 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func closestPositionInSegment(toPosition position: Godot.Vector3) -> Godot.Vector3 {
+
+    public func closestPositionInSegment(
+        toPosition position: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -433,7 +505,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func pointPath(fromID: Int64, toID: Int64) -> Godot.PackedVector3Array {
+
+    public func pointPath(
+        fromID: Int64,
+        toID: Int64
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
@@ -454,7 +530,11 @@ open class AStar3D: RefCounted {
         }
         }
     }()
-    public func idPath(fromID: Int64, toID: Int64) -> Godot.PackedInt64Array {
+
+    public func idPath(
+        fromID: Int64,
+        toID: Int64
+    ) -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
@@ -469,6 +549,7 @@ open class AStar3D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -502,5 +583,4 @@ open class AStar3D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

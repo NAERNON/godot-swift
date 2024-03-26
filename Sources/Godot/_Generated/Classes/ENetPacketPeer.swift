@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ENetPacketPeer: PacketPeer {
     public enum PeerState: UInt32, GodotEnum {
@@ -16,6 +17,7 @@ open class ENetPacketPeer: PacketPeer {
         case disconnecting = 7
         case acknowledgingDisconnect = 8
         case zombie = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disconnected", 0),
@@ -30,6 +32,7 @@ open class ENetPacketPeer: PacketPeer {
             ("Zombie", 9),]
         }
     }
+
     public enum PeerStatistic: UInt32, GodotEnum {
         case packetLoss = 0
         case packetLossVariance = 1
@@ -45,6 +48,7 @@ open class ENetPacketPeer: PacketPeer {
         case packetThrottleAcceleration = 11
         case packetThrottleDeceleration = 12
         case packetThrottleInterval = 13
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Packet Loss", 0),
@@ -65,9 +69,13 @@ open class ENetPacketPeer: PacketPeer {
     }
 
     public static let packetLossScale: Int = 65536
+
     public static let packetThrottleScale: Int = 32
+
     public static let flagReliable: Int = 1
+
     public static let flagUnsequenced: Int = 2
+
     public static let flagUnreliableFragment: Int = 8
 
     internal static var __method_binding_peer_disconnect: GDExtensionMethodBindPtr = {
@@ -77,7 +85,10 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func peerDisconnect(data: Int32 = 0) {
+
+    public func peerDisconnect(
+        data: Int32 = 0
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +107,10 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func peerDisconnectLater(data: Int32 = 0) {
+
+    public func peerDisconnectLater(
+        data: Int32 = 0
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,7 +129,10 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func peerDisconnectNow(data: Int32 = 0) {
+
+    public func peerDisconnectNow(
+        data: Int32 = 0
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,6 +151,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func ping() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -151,7 +169,10 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func pingInterval(_ pingInterval: Int32) {
+
+    public func pingInterval(
+        _ pingInterval: Int32
+    ) {
         pingInterval.withGodotUnsafeRawPointer { __ptr_pingInterval in
         withUnsafeArgumentPackPointer(__ptr_pingInterval) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +191,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func reset() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -187,7 +209,12 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func send(channel: Int32, packet: Godot.PackedByteArray, flags: Int32) -> Godot.ErrorType {
+
+    public func send(
+        channel: Int32,
+        packet: Godot.PackedByteArray,
+        flags: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         packet.withGodotUnsafeRawPointer { __ptr_packet in
@@ -209,7 +236,12 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func throttleConfigure(interval: Int32, acceleration: Int32, deceleration: Int32) {
+
+    public func throttleConfigure(
+        interval: Int32,
+        acceleration: Int32,
+        deceleration: Int32
+    ) {
         interval.withGodotUnsafeRawPointer { __ptr_interval in
         acceleration.withGodotUnsafeRawPointer { __ptr_acceleration in
         deceleration.withGodotUnsafeRawPointer { __ptr_deceleration in
@@ -230,7 +262,12 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func setTimeout(_ timeout: Int32, timeoutMin: Int32, timeoutMax: Int32) {
+
+    public func setTimeout(
+        _ timeout: Int32,
+        timeoutMin: Int32,
+        timeoutMax: Int32
+    ) {
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         timeoutMin.withGodotUnsafeRawPointer { __ptr_timeoutMin in
         timeoutMax.withGodotUnsafeRawPointer { __ptr_timeoutMax in
@@ -251,6 +288,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func remoteAddress() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +307,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func remotePort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,7 +326,10 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
-    public func statistic(_ statistic: Godot.ENetPacketPeer.PeerStatistic) -> Double {
+
+    public func statistic(
+        _ statistic: Godot.ENetPacketPeer.PeerStatistic
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         statistic.withGodotUnsafeRawPointer { __ptr_statistic in
         withUnsafeArgumentPackPointer(__ptr_statistic) { __accessPtr in
@@ -307,6 +349,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func state() -> Godot.ENetPacketPeer.PeerState {
         Godot.ENetPacketPeer.PeerState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -325,6 +368,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func channels() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,6 +387,7 @@ open class ENetPacketPeer: PacketPeer {
         }
         }
     }()
+
     public func isActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,6 +400,7 @@ open class ENetPacketPeer: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -367,5 +413,4 @@ open class ENetPacketPeer: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

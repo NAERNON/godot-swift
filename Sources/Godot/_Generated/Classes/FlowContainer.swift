@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class FlowContainer: Container {
     public enum AlignmentMode: UInt32, GodotEnum {
         case begin = 0
         case center = 1
         case end = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Begin", 0),
@@ -24,6 +26,7 @@ open class FlowContainer: Container {
         }
         }
     }()
+
     public func lineCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,7 +45,10 @@ open class FlowContainer: Container {
         }
         }
     }()
-    private func __setAlignment(_ alignment: Godot.FlowContainer.AlignmentMode) {
+
+    private func __setAlignment(
+        _ alignment: Godot.FlowContainer.AlignmentMode
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,6 +67,7 @@ open class FlowContainer: Container {
         }
         }
     }()
+
     private func __getAlignment() -> Godot.FlowContainer.AlignmentMode {
         Godot.FlowContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,7 +86,10 @@ open class FlowContainer: Container {
         }
         }
     }()
-    private func __setVertical(_ vertical: Bool) {
+
+    private func __setVertical(
+        _ vertical: Bool
+    ) {
         vertical.withGodotUnsafeRawPointer { __ptr_vertical in
         withUnsafeArgumentPackPointer(__ptr_vertical) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,6 +108,7 @@ open class FlowContainer: Container {
         }
         }
     }()
+
     private func __isVertical() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,6 +143,7 @@ open class FlowContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -144,5 +156,4 @@ open class FlowContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

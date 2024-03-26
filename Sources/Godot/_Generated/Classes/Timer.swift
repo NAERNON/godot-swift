@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Timer: Node {
     public enum TimerProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Physics", 0),
@@ -18,6 +20,7 @@ open class Timer: Node {
     public func timeout() {
         _ = timeoutSignal.emit()
     }
+
     public lazy var timeoutSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "timeout") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -40,7 +43,10 @@ open class Timer: Node {
         }
         }
     }()
-    private func __setWaitTime(timeSec: Double) {
+
+    private func __setWaitTime(
+        timeSec: Double
+    ) {
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
         withUnsafeArgumentPackPointer(__ptr_timeSec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,6 +65,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __getWaitTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,7 +84,10 @@ open class Timer: Node {
         }
         }
     }()
-    private func __setOneShot(enable: Bool) {
+
+    private func __setOneShot(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,6 +106,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __isOneShot() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,7 +125,10 @@ open class Timer: Node {
         }
         }
     }()
-    private func __setAutostart(enable: Bool) {
+
+    private func __setAutostart(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,6 +147,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __hasAutostart() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,7 +166,10 @@ open class Timer: Node {
         }
         }
     }()
-    public func start(timeSec: Double = -1) {
+
+    public func start(
+        timeSec: Double = -1
+    ) {
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
         withUnsafeArgumentPackPointer(__ptr_timeSec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +188,7 @@ open class Timer: Node {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -187,7 +206,10 @@ open class Timer: Node {
         }
         }
     }()
-    private func __setPaused(_ paused: Bool) {
+
+    private func __setPaused(
+        _ paused: Bool
+    ) {
         paused.withGodotUnsafeRawPointer { __ptr_paused in
         withUnsafeArgumentPackPointer(__ptr_paused) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +228,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __isPaused() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,6 +247,7 @@ open class Timer: Node {
         }
         }
     }()
+
     public func isStopped() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -242,6 +266,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __getTimeLeft() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -260,7 +285,10 @@ open class Timer: Node {
         }
         }
     }()
-    private func __setTimerProcessCallback(_ callback: Godot.Timer.TimerProcessCallback) {
+
+    private func __setTimerProcessCallback(
+        _ callback: Godot.Timer.TimerProcessCallback
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,6 +307,7 @@ open class Timer: Node {
         }
         }
     }()
+
     private func __getTimerProcessCallback() -> Godot.Timer.TimerProcessCallback {
         Godot.Timer.TimerProcessCallback.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -352,6 +381,7 @@ open class Timer: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -364,5 +394,4 @@ open class Timer: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

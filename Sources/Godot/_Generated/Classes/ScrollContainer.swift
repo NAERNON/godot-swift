@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScrollContainer: Container {
     public enum ScrollMode: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class ScrollContainer: Container {
         case auto = 1
         case showAlways = 2
         case showNever = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -22,6 +24,7 @@ open class ScrollContainer: Container {
     public func scrollStarted() {
         _ = scrollStartedSignal.emit()
     }
+
     public lazy var scrollStartedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "scroll_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -40,6 +43,7 @@ open class ScrollContainer: Container {
     public func scrollEnded() {
         _ = scrollEndedSignal.emit()
     }
+
     public lazy var scrollEndedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "scroll_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,7 +66,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setHScroll(value: Int32) {
+
+    private func __setHScroll(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -81,6 +88,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getHScroll() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,7 +107,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setVScroll(value: Int32) {
+
+    private func __setVScroll(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,6 +129,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getVScroll() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,7 +148,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setHorizontalCustomStep(value: Double) {
+
+    private func __setHorizontalCustomStep(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -155,6 +170,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getHorizontalCustomStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,7 +189,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setVerticalCustomStep(value: Double) {
+
+    private func __setVerticalCustomStep(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,6 +211,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getVerticalCustomStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,7 +230,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setHorizontalScrollMode(enable: Godot.ScrollContainer.ScrollMode) {
+
+    private func __setHorizontalScrollMode(
+        enable: Godot.ScrollContainer.ScrollMode
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,6 +252,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getHorizontalScrollMode() -> Godot.ScrollContainer.ScrollMode {
         Godot.ScrollContainer.ScrollMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,7 +271,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setVerticalScrollMode(enable: Godot.ScrollContainer.ScrollMode) {
+
+    private func __setVerticalScrollMode(
+        enable: Godot.ScrollContainer.ScrollMode
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -266,6 +293,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getVerticalScrollMode() -> Godot.ScrollContainer.ScrollMode {
         Godot.ScrollContainer.ScrollMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,7 +312,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setDeadzone(_ deadzone: Int32) {
+
+    private func __setDeadzone(
+        _ deadzone: Int32
+    ) {
         deadzone.withGodotUnsafeRawPointer { __ptr_deadzone in
         withUnsafeArgumentPackPointer(__ptr_deadzone) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,6 +334,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __getDeadzone() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,7 +353,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    private func __setFollowFocus(enabled: Bool) {
+
+    private func __setFollowFocus(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -340,6 +375,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     private func __isFollowingFocus() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -358,6 +394,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     public func hScrollBar() -> Godot.HScrollBar? {
         Godot.HScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -376,6 +413,7 @@ open class ScrollContainer: Container {
         }
         }
     }()
+
     public func vScrollBar() -> Godot.VScrollBar? {
         Godot.VScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,7 +432,10 @@ open class ScrollContainer: Container {
         }
         }
     }()
-    public func ensureControlVisible(control: Godot.Control?) {
+
+    public func ensureControlVisible(
+        control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -496,6 +537,7 @@ open class ScrollContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -508,5 +550,4 @@ open class ScrollContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

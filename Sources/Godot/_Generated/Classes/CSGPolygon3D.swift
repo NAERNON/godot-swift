@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CSGPolygon3D: CSGPrimitive3D {
     public enum Mode: UInt32, GodotEnum {
         case depth = 0
         case spin = 1
         case path = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Depth", 0),
@@ -16,10 +18,12 @@ open class CSGPolygon3D: CSGPrimitive3D {
             ("Path", 2),]
         }
     }
+
     public enum PathRotation: UInt32, GodotEnum {
         case polygon = 0
         case path = 1
         case pathFollow = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Polygon", 0),
@@ -27,9 +31,11 @@ open class CSGPolygon3D: CSGPrimitive3D {
             ("Path Follow", 2),]
         }
     }
+
     public enum PathIntervalType: UInt32, GodotEnum {
         case distance = 0
         case subdivide = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Distance", 0),
@@ -44,7 +50,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,6 +72,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -81,7 +91,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setMode(_ mode: Godot.CSGPolygon3D.Mode) {
+
+    private func __setMode(
+        _ mode: Godot.CSGPolygon3D.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,6 +113,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getMode() -> Godot.CSGPolygon3D.Mode {
         Godot.CSGPolygon3D.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,7 +132,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setDepth(_ depth: Double) {
+
+    private func __setDepth(
+        _ depth: Double
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,6 +154,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -155,7 +173,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setSpinDegrees(_ degrees: Double) {
+
+    private func __setSpinDegrees(
+        _ degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,6 +195,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getSpinDegrees() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,7 +214,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setSpinSides(_ spinSides: Int32) {
+
+    private func __setSpinSides(
+        _ spinSides: Int32
+    ) {
         spinSides.withGodotUnsafeRawPointer { __ptr_spinSides in
         withUnsafeArgumentPackPointer(__ptr_spinSides) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -211,6 +236,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getSpinSides() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,7 +255,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathNode(path: Godot.NodePath) {
+
+    private func __setPathNode(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -248,6 +277,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -266,7 +296,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathIntervalType(_ intervalType: Godot.CSGPolygon3D.PathIntervalType) {
+
+    private func __setPathIntervalType(
+        _ intervalType: Godot.CSGPolygon3D.PathIntervalType
+    ) {
         intervalType.withGodotUnsafeRawPointer { __ptr_intervalType in
         withUnsafeArgumentPackPointer(__ptr_intervalType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -285,6 +318,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathIntervalType() -> Godot.CSGPolygon3D.PathIntervalType {
         Godot.CSGPolygon3D.PathIntervalType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +337,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathInterval(_ interval: Double) {
+
+    private func __setPathInterval(
+        _ interval: Double
+    ) {
         interval.withGodotUnsafeRawPointer { __ptr_interval in
         withUnsafeArgumentPackPointer(__ptr_interval) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,6 +359,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathInterval() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -340,7 +378,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathSimplifyAngle(degrees: Double) {
+
+    private func __setPathSimplifyAngle(
+        degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +400,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathSimplifyAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,7 +419,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathRotation(_ pathRotation: Godot.CSGPolygon3D.PathRotation) {
+
+    private func __setPathRotation(
+        _ pathRotation: Godot.CSGPolygon3D.PathRotation
+    ) {
         pathRotation.withGodotUnsafeRawPointer { __ptr_pathRotation in
         withUnsafeArgumentPackPointer(__ptr_pathRotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,6 +441,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathRotation() -> Godot.CSGPolygon3D.PathRotation {
         Godot.CSGPolygon3D.PathRotation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -414,7 +460,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathLocal(enable: Bool) {
+
+    private func __setPathLocal(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -433,6 +482,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __isPathLocal() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -451,7 +501,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathContinuousU(enable: Bool) {
+
+    private func __setPathContinuousU(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -470,6 +523,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __isPathContinuousU() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,7 +542,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathUDistance(_ distance: Double) {
+
+    private func __setPathUDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -507,6 +564,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getPathUDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -525,7 +583,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setPathJoined(enable: Bool) {
+
+    private func __setPathJoined(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -544,6 +605,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __isPathJoined() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -562,7 +624,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setMaterial(_ material: Godot.Material?) {
+
+    private func __setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -582,6 +647,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -600,7 +666,10 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
-    private func __setSmoothFaces(_ smoothFaces: Bool) {
+
+    private func __setSmoothFaces(
+        _ smoothFaces: Bool
+    ) {
         smoothFaces.withGodotUnsafeRawPointer { __ptr_smoothFaces in
         withUnsafeArgumentPackPointer(__ptr_smoothFaces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -619,6 +688,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         }
     }()
+
     private func __getSmoothFaces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -807,6 +877,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -819,5 +890,4 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

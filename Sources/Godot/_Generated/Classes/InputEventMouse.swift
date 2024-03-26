@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventMouse: InputEventWithModifiers {
     internal static var __method_binding_set_button_mask: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
-    private func __setButtonMask(_ buttonMask: Godot.MouseButtonMask) {
+
+    private func __setButtonMask(
+        _ buttonMask: Godot.MouseButtonMask
+    ) {
         buttonMask.withGodotUnsafeRawPointer { __ptr_buttonMask in
         withUnsafeArgumentPackPointer(__ptr_buttonMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getButtonMask() -> Godot.MouseButtonMask {
         Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
-    private func __setGlobalPosition(_ globalPosition: Godot.Vector2) {
+
+    private func __setGlobalPosition(
+        _ globalPosition: Godot.Vector2
+    ) {
         globalPosition.withGodotUnsafeRawPointer { __ptr_globalPosition in
         withUnsafeArgumentPackPointer(__ptr_globalPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getGlobalPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class InputEventMouse: InputEventWithModifiers {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class InputEventMouse: InputEventWithModifiers {
         }
         return _virtualFunctions!
     }
-
-    }
+}

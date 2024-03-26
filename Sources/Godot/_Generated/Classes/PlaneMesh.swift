@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PlaneMesh: PrimitiveMesh {
     public enum Orientation: UInt32, GodotEnum {
         case x = 0
         case y = 1
         case z = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("X", 0),
@@ -24,7 +26,10 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2) {
+
+    private func __setSize(
+        _ size: Godot.Vector2
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideWidth(subdivide: Int32) {
+
+    private func __setSubdivideWidth(
+        subdivide: Int32
+    ) {
         subdivide.withGodotUnsafeRawPointer { __ptr_subdivide in
         withUnsafeArgumentPackPointer(__ptr_subdivide) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,7 +108,10 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideDepth(subdivide: Int32) {
+
+    private func __setSubdivideDepth(
+        subdivide: Int32
+    ) {
         subdivide.withGodotUnsafeRawPointer { __ptr_subdivide in
         withUnsafeArgumentPackPointer(__ptr_subdivide) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +130,7 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideDepth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,7 +149,10 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCenterOffset(_ offset: Godot.Vector3) {
+
+    private func __setCenterOffset(
+        _ offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,6 +171,7 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getCenterOffset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,7 +190,10 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setOrientation(_ orientation: Godot.PlaneMesh.Orientation) {
+
+    private func __setOrientation(
+        _ orientation: Godot.PlaneMesh.Orientation
+    ) {
         orientation.withGodotUnsafeRawPointer { __ptr_orientation in
         withUnsafeArgumentPackPointer(__ptr_orientation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,6 +212,7 @@ open class PlaneMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getOrientation() -> Godot.PlaneMesh.Orientation {
         Godot.PlaneMesh.Orientation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,6 +280,7 @@ open class PlaneMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -270,5 +293,4 @@ open class PlaneMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,9 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamPlaybackResampled: AudioStreamPlayback {
-    open func _mixResampled(dstBuffer: UnsafeMutablePointer<AudioFrame>, frameCount: Int32) -> Int32 {
+    open func _mixResampled(
+        dstBuffer: UnsafeMutablePointer<AudioFrame>,
+        frameCount: Int32
+    ) -> Int32 {
         Int32()
     }
 
@@ -20,6 +24,7 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
         }
         }
     }()
+
     public func beginResample() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -31,6 +36,7 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -61,5 +67,4 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
         }
         return _virtualFunctions!
     }
-
-    }
+}

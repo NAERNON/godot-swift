@@ -3,21 +3,25 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ReflectionProbe: VisualInstance3D {
     public enum UpdateMode: UInt32, GodotEnum {
         case once = 0
         case always = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Once", 0),
             ("Always", 1),]
         }
     }
+
     public enum AmbientMode: UInt32, GodotEnum {
         case disabled = 0
         case environment = 1
         case color = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -33,7 +37,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setIntensity(_ intensity: Double) {
+
+    private func __setIntensity(
+        _ intensity: Double
+    ) {
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_intensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -52,6 +59,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,7 +78,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setAmbientMode(ambient: Godot.ReflectionProbe.AmbientMode) {
+
+    private func __setAmbientMode(
+        ambient: Godot.ReflectionProbe.AmbientMode
+    ) {
         ambient.withGodotUnsafeRawPointer { __ptr_ambient in
         withUnsafeArgumentPackPointer(__ptr_ambient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,6 +100,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getAmbientMode() -> Godot.ReflectionProbe.AmbientMode {
         Godot.ReflectionProbe.AmbientMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,7 +119,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setAmbientColor(ambient: Godot.Color) {
+
+    private func __setAmbientColor(
+        ambient: Godot.Color
+    ) {
         ambient.withGodotUnsafeRawPointer { __ptr_ambient in
         withUnsafeArgumentPackPointer(__ptr_ambient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,6 +141,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getAmbientColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,7 +160,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setAmbientColorEnergy(ambientEnergy: Double) {
+
+    private func __setAmbientColorEnergy(
+        ambientEnergy: Double
+    ) {
         ambientEnergy.withGodotUnsafeRawPointer { __ptr_ambientEnergy in
         withUnsafeArgumentPackPointer(__ptr_ambientEnergy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,6 +182,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getAmbientColorEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,7 +201,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setMaxDistance(_ maxDistance: Double) {
+
+    private func __setMaxDistance(
+        _ maxDistance: Double
+    ) {
         maxDistance.withGodotUnsafeRawPointer { __ptr_maxDistance in
         withUnsafeArgumentPackPointer(__ptr_maxDistance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +223,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getMaxDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,7 +242,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setMeshLodThreshold(ratio: Double) {
+
+    private func __setMeshLodThreshold(
+        ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,6 +264,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getMeshLodThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,7 +283,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -274,6 +305,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -292,7 +324,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setOriginOffset(_ originOffset: Godot.Vector3) {
+
+    private func __setOriginOffset(
+        _ originOffset: Godot.Vector3
+    ) {
         originOffset.withGodotUnsafeRawPointer { __ptr_originOffset in
         withUnsafeArgumentPackPointer(__ptr_originOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -311,6 +346,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getOriginOffset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +365,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setAsInterior(enable: Bool) {
+
+    private func __setAsInterior(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +387,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __isSetAsInterior() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,7 +406,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setEnableBoxProjection(enable: Bool) {
+
+    private func __setEnableBoxProjection(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,6 +428,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __isBoxProjectionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -403,7 +447,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setEnableShadows(enable: Bool) {
+
+    private func __setEnableShadows(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -422,6 +469,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __areShadowsEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -440,7 +488,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setCullMask(layers: UInt32) {
+
+    private func __setCullMask(
+        layers: UInt32
+    ) {
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_layers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -459,6 +510,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getCullMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -477,7 +529,10 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
-    private func __setUpdateMode(_ mode: Godot.ReflectionProbe.UpdateMode) {
+
+    private func __setUpdateMode(
+        _ mode: Godot.ReflectionProbe.UpdateMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -496,6 +551,7 @@ open class ReflectionProbe: VisualInstance3D {
         }
         }
     }()
+
     private func __getUpdateMode() -> Godot.ReflectionProbe.UpdateMode {
         Godot.ReflectionProbe.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -651,6 +707,7 @@ open class ReflectionProbe: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -663,5 +720,4 @@ open class ReflectionProbe: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -13,20 +13,6 @@ struct GodotExtensionAPI: Decodable {
     var singletons: [GodotSingleton]
     var nativeStructures: [GodotNativeStructure]
     
-    // MARK: Init
-    
-    func builtinClassesToGenerate() -> [GodotBuiltinClass] {
-        builtinClasses.filter { builtinClass in
-            switch builtinClass.name {
-            case "bool",
-                "float",
-                "int",
-                "Nil": false
-            default: true
-            }
-        }
-    }
-    
     // MARK: Filter
     
     func filter(classFilter: (GodotType) -> Bool) -> GodotExtensionAPI {

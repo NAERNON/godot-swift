@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PrimitiveMesh: Mesh {
     open func _createMeshArray() -> Godot.AnyGodotArray {
@@ -16,7 +17,10 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    private func __setMaterial(_ material: Godot.Material?) {
+
+    private func __setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -36,6 +40,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     private func __getMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     public func meshArrays() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +78,10 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    private func __setCustomAabb(_ aabb: Godot.AABB) {
+
+    private func __setCustomAabb(
+        _ aabb: Godot.AABB
+    ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +100,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     private func __getCustomAabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +119,10 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    private func __setFlipFaces(_ flipFaces: Bool) {
+
+    private func __setFlipFaces(
+        _ flipFaces: Bool
+    ) {
         flipFaces.withGodotUnsafeRawPointer { __ptr_flipFaces in
         withUnsafeArgumentPackPointer(__ptr_flipFaces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +141,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     private func __getFlipFaces() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +160,10 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    private func __setAddUv2(_ addUv2: Bool) {
+
+    private func __setAddUv2(
+        _ addUv2: Bool
+    ) {
         addUv2.withGodotUnsafeRawPointer { __ptr_addUv2 in
         withUnsafeArgumentPackPointer(__ptr_addUv2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +182,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     private func __getAddUv2() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,7 +201,10 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    private func __setUv2Padding(_ uv2Padding: Double) {
+
+    private func __setUv2Padding(
+        _ uv2Padding: Double
+    ) {
         uv2Padding.withGodotUnsafeRawPointer { __ptr_uv2Padding in
         withUnsafeArgumentPackPointer(__ptr_uv2Padding) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,6 +223,7 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
+
     private func __getUv2Padding() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +291,7 @@ open class PrimitiveMesh: Mesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -288,5 +311,4 @@ open class PrimitiveMesh: Mesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

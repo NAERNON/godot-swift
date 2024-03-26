@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ConvexPolygonShape3D: Shape3D {
     internal static var __method_binding_set_points: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ConvexPolygonShape3D: Shape3D {
         }
         }
     }()
-    private func __setPoints(_ points: Godot.PackedVector3Array) {
+
+    private func __setPoints(
+        _ points: Godot.PackedVector3Array
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ConvexPolygonShape3D: Shape3D {
         }
         }
     }()
+
     private func __getPoints() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class ConvexPolygonShape3D: Shape3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class ConvexPolygonShape3D: Shape3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

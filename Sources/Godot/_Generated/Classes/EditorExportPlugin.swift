@@ -3,30 +3,52 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorExportPlugin: RefCounted {
-    open func _exportFile(path: Godot.GodotString, type: Godot.GodotString, features: Godot.PackedStringArray) {
+    open func _exportFile(
+        path: Godot.GodotString,
+        type: Godot.GodotString,
+        features: Godot.PackedStringArray
+    ) {
     }
 
-    open func _exportBegin(features: Godot.PackedStringArray, isDebug: Bool, path: Godot.GodotString, flags: UInt32) {
+    open func _exportBegin(
+        features: Godot.PackedStringArray,
+        isDebug: Bool,
+        path: Godot.GodotString,
+        flags: UInt32
+    ) {
     }
 
     open func _exportEnd() {
     }
 
-    open func _beginCustomizeResources(platform: Godot.EditorExportPlatform?, features: Godot.PackedStringArray) -> Bool {
+    open func _beginCustomizeResources(
+        platform: Godot.EditorExportPlatform?,
+        features: Godot.PackedStringArray
+    ) -> Bool {
         Bool()
     }
 
-    open func _customizeResource(_ resource: Godot.Resource?, path: Godot.GodotString) -> Godot.Resource? {
+    open func _customizeResource(
+        _ resource: Godot.Resource?,
+        path: Godot.GodotString
+    ) -> Godot.Resource? {
         nil
     }
 
-    open func _beginCustomizeScenes(platform: Godot.EditorExportPlatform?, features: Godot.PackedStringArray) -> Bool {
+    open func _beginCustomizeScenes(
+        platform: Godot.EditorExportPlatform?,
+        features: Godot.PackedStringArray
+    ) -> Bool {
         Bool()
     }
 
-    open func _customizeScene(_ scene: Godot.Node?, path: Godot.GodotString) -> Godot.Node? {
+    open func _customizeScene(
+        _ scene: Godot.Node?,
+        path: Godot.GodotString
+    ) -> Godot.Node? {
         nil
     }
 
@@ -40,19 +62,29 @@ open class EditorExportPlugin: RefCounted {
     open func _endCustomizeResources() {
     }
 
-    open func _getExportOptions(platform: Godot.EditorExportPlatform?) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+    open func _getExportOptions(
+        platform: Godot.EditorExportPlatform?
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
-    open func _shouldUpdateExportOptions(platform: Godot.EditorExportPlatform?) -> Bool {
+    open func _shouldUpdateExportOptions(
+        platform: Godot.EditorExportPlatform?
+    ) -> Bool {
         Bool()
     }
 
-    open func _getExportOptionWarning(platform: Godot.EditorExportPlatform?, option: Godot.GodotString) -> Godot.GodotString {
+    open func _getExportOptionWarning(
+        platform: Godot.EditorExportPlatform?,
+        option: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getExportFeatures(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.PackedStringArray {
+    open func _getExportFeatures(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
@@ -60,31 +92,51 @@ open class EditorExportPlugin: RefCounted {
         Godot.GodotString()
     }
 
-    open func _supportsPlatform(_ platform: Godot.EditorExportPlatform?) -> Bool {
+    open func _supportsPlatform(
+        _ platform: Godot.EditorExportPlatform?
+    ) -> Bool {
         Bool()
     }
 
-    open func _getAndroidDependencies(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.PackedStringArray {
+    open func _getAndroidDependencies(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _getAndroidDependenciesMavenRepos(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.PackedStringArray {
+    open func _getAndroidDependenciesMavenRepos(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _getAndroidLibraries(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.PackedStringArray {
+    open func _getAndroidLibraries(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _getAndroidManifestActivityElementContents(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.GodotString {
+    open func _getAndroidManifestActivityElementContents(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getAndroidManifestApplicationElementContents(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.GodotString {
+    open func _getAndroidManifestApplicationElementContents(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getAndroidManifestElementContents(platform: Godot.EditorExportPlatform?, debug: Bool) -> Godot.GodotString {
+    open func _getAndroidManifestElementContents(
+        platform: Godot.EditorExportPlatform?,
+        debug: Bool
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -95,7 +147,12 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addSharedObject(path: Godot.GodotString, tags: Godot.PackedStringArray, target: Godot.GodotString) {
+
+    public func addSharedObject(
+        path: Godot.GodotString,
+        tags: Godot.PackedStringArray,
+        target: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         tags.withGodotUnsafeRawPointer { __ptr_tags in
         target.withGodotUnsafeRawPointer { __ptr_target in
@@ -116,7 +173,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosProjectStaticLib(path: Godot.GodotString) {
+
+    public func addIosProjectStaticLib(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,7 +195,12 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addFile(path: Godot.GodotString, file: Godot.PackedByteArray, remap: Bool) {
+
+    public func addFile(
+        path: Godot.GodotString,
+        file: Godot.PackedByteArray,
+        remap: Bool
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         file.withGodotUnsafeRawPointer { __ptr_file in
         remap.withGodotUnsafeRawPointer { __ptr_remap in
@@ -156,7 +221,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosFramework(path: Godot.GodotString) {
+
+    public func addIosFramework(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,7 +243,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosEmbeddedFramework(path: Godot.GodotString) {
+
+    public func addIosEmbeddedFramework(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,7 +265,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosPlistContent(_ plistContent: Godot.GodotString) {
+
+    public func addIosPlistContent(
+        _ plistContent: Godot.GodotString
+    ) {
         plistContent.withGodotUnsafeRawPointer { __ptr_plistContent in
         withUnsafeArgumentPackPointer(__ptr_plistContent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,7 +287,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosLinkerFlags(_ flags: Godot.GodotString) {
+
+    public func addIosLinkerFlags(
+        _ flags: Godot.GodotString
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -232,7 +309,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosBundleFile(path: Godot.GodotString) {
+
+    public func addIosBundleFile(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,7 +331,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addIosCppCode(_ code: Godot.GodotString) {
+
+    public func addIosCppCode(
+        _ code: Godot.GodotString
+    ) {
         code.withGodotUnsafeRawPointer { __ptr_code in
         withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,7 +353,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func addMacosPluginFile(path: Godot.GodotString) {
+
+    public func addMacosPluginFile(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,6 +375,7 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
+
     public func skip() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -306,7 +393,10 @@ open class EditorExportPlugin: RefCounted {
         }
         }
     }()
-    public func option(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func option(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -320,6 +410,7 @@ open class EditorExportPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -553,5 +644,4 @@ open class EditorExportPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

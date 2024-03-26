@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorUndoRedoManager: Object {
     public enum SpecialHistory: Int32, GodotEnum {
         case globalHistory = 0
         case remoteHistory = -9
         case invalidHistory = -99
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Invalid History", -99),
@@ -20,6 +22,7 @@ open class EditorUndoRedoManager: Object {
     public func historyChanged() {
         _ = historyChangedSignal.emit()
     }
+
     public lazy var historyChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "history_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -38,6 +41,7 @@ open class EditorUndoRedoManager: Object {
     public func versionChanged() {
         _ = versionChangedSignal.emit()
     }
+
     public lazy var versionChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "version_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -60,7 +64,13 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func createAction(name: Godot.GodotString, mergeMode: Godot.UndoRedo.MergeMode = UndoRedo.MergeMode(rawValue: 0)!, customContext: Godot.Object? = nil, backwardUndoOps: Bool = false) {
+
+    public func createAction(
+        name: Godot.GodotString,
+        mergeMode: Godot.UndoRedo.MergeMode = UndoRedo.MergeMode(rawValue: 0)!,
+        customContext: Godot.Object? = nil,
+        backwardUndoOps: Bool = false
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         mergeMode.withGodotUnsafeRawPointer { __ptr_mergeMode in
         customContext.withGodotUnsafeRawPointer { __ptr_customContext in
@@ -83,7 +93,10 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func commitAction(execute: Bool = true) {
+
+    public func commitAction(
+        execute: Bool = true
+    ) {
         execute.withGodotUnsafeRawPointer { __ptr_execute in
         withUnsafeArgumentPackPointer(__ptr_execute) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +115,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
+
     public func isCommittingAction() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -120,7 +134,12 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoMethod<each VariantRest : VariantStorableIn>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+
+    public func addDoMethod<each VariantRest : VariantStorableIn>(
+        object: Godot.Object?,
+        method: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
@@ -134,7 +153,11 @@ open class EditorUndoRedoManager: Object {
             nil
         )}}}}
     }
-    public func addDoMethod(object: Godot.Object?, method: Godot.GodotStringName) {
+
+    public func addDoMethod(
+        object: Godot.Object?,
+        method: Godot.GodotStringName
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
@@ -156,7 +179,12 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoMethod<each VariantRest : VariantStorableIn>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+
+    public func addUndoMethod<each VariantRest : VariantStorableIn>(
+        object: Godot.Object?,
+        method: Godot.GodotStringName,
+        _ rest: repeat each VariantRest
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
@@ -170,7 +198,11 @@ open class EditorUndoRedoManager: Object {
             nil
         )}}}}
     }
-    public func addUndoMethod(object: Godot.Object?, method: Godot.GodotStringName) {
+
+    public func addUndoMethod(
+        object: Godot.Object?,
+        method: Godot.GodotStringName
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
@@ -192,7 +224,12 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoProperty<Value: VariantStorableIn>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
+
+    public func addDoProperty<Value: VariantStorableIn>(
+        object: Godot.Object?,
+        property: Godot.GodotStringName,
+        value: Value
+    ) {
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -214,7 +251,12 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoProperty<Value: VariantStorableIn>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
+
+    public func addUndoProperty<Value: VariantStorableIn>(
+        object: Godot.Object?,
+        property: Godot.GodotStringName,
+        value: Value
+    ) {
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -236,7 +278,10 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoReference(object: Godot.Object?) {
+
+    public func addDoReference(
+        object: Godot.Object?
+    ) {
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
@@ -256,7 +301,10 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoReference(object: Godot.Object?) {
+
+    public func addUndoReference(
+        object: Godot.Object?
+    ) {
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
@@ -276,7 +324,10 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func objectHistoryID(object: Godot.Object?) -> Int32 {
+
+    public func objectHistoryID(
+        object: Godot.Object?
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
@@ -297,7 +348,10 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func historyUndoRedo(id: Int32) -> Godot.UndoRedo? {
+
+    public func historyUndoRedo(
+        id: Int32
+    ) -> Godot.UndoRedo? {
         Godot.UndoRedo?.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -311,6 +365,7 @@ open class EditorUndoRedoManager: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -323,5 +378,4 @@ open class EditorUndoRedoManager: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

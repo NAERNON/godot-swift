@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NavigationRegion2D: Node2D {
+
     public func navigationPolygonChanged() {
         _ = navigationPolygonChangedSignal.emit()
     }
+
     public lazy var navigationPolygonChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "navigation_polygon_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class NavigationRegion2D: Node2D {
     public func bakeFinished() {
         _ = bakeFinishedSignal.emit()
     }
+
     public lazy var bakeFinishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bake_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -48,6 +52,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +71,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setNavigationPolygon(_ navigationPolygon: Godot.NavigationPolygon?) {
+
+    private func __setNavigationPolygon(
+        _ navigationPolygon: Godot.NavigationPolygon?
+    ) {
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationPolygon) { __accessPtr in
@@ -86,6 +94,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getNavigationPolygon() -> Godot.NavigationPolygon? {
         Godot.NavigationPolygon?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +113,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +135,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __isEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +154,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func setNavigationMap(_ navigationMap: Godot.RID) {
+
+    public func setNavigationMap(
+        _ navigationMap: Godot.RID
+    ) {
         navigationMap.withGodotUnsafeRawPointer { __ptr_navigationMap in
         withUnsafeArgumentPackPointer(__ptr_navigationMap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +176,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     public func navigationMap() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +195,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setUseEdgeConnections(enabled: Bool) {
+
+    private func __setUseEdgeConnections(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +217,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getUseEdgeConnections() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +236,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setNavigationLayers(_ navigationLayers: UInt32) {
+
+    private func __setNavigationLayers(
+        _ navigationLayers: UInt32
+    ) {
         navigationLayers.withGodotUnsafeRawPointer { __ptr_navigationLayers in
         withUnsafeArgumentPackPointer(__ptr_navigationLayers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +258,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getNavigationLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +277,11 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func setNavigationLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setNavigationLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -272,7 +301,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func navigationLayerValue(layerNumber: Int32) -> Bool {
+
+    public func navigationLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -292,7 +324,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setConstrainAvoidance(enabled: Bool) {
+
+    private func __setConstrainAvoidance(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -311,6 +346,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getConstrainAvoidance() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +365,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setAvoidanceLayers(_ layers: UInt32) {
+
+    private func __setAvoidanceLayers(
+        _ layers: UInt32
+    ) {
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_layers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +387,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getAvoidanceLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,7 +406,11 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func setAvoidanceLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setAvoidanceLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -386,7 +430,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func avoidanceLayerValue(layerNumber: Int32) -> Bool {
+
+    public func avoidanceLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -406,6 +453,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     public func regionRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -424,7 +472,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setEnterCost(_ enterCost: Double) {
+
+    private func __setEnterCost(
+        _ enterCost: Double
+    ) {
         enterCost.withGodotUnsafeRawPointer { __ptr_enterCost in
         withUnsafeArgumentPackPointer(__ptr_enterCost) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,6 +494,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getEnterCost() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +513,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    private func __setTravelCost(_ travelCost: Double) {
+
+    private func __setTravelCost(
+        _ travelCost: Double
+    ) {
         travelCost.withGodotUnsafeRawPointer { __ptr_travelCost in
         withUnsafeArgumentPackPointer(__ptr_travelCost) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,6 +535,7 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
+
     private func __getTravelCost() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -498,7 +554,10 @@ open class NavigationRegion2D: Node2D {
         }
         }
     }()
-    public func bakeNavigationPolygon(onThread: Bool = true) {
+
+    public func bakeNavigationPolygon(
+        onThread: Bool = true
+    ) {
         onThread.withGodotUnsafeRawPointer { __ptr_onThread in
         withUnsafeArgumentPackPointer(__ptr_onThread) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -599,6 +658,7 @@ open class NavigationRegion2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -611,5 +671,4 @@ open class NavigationRegion2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

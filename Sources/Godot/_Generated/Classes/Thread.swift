@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Thread: RefCounted {
     public enum Priority: UInt32, GodotEnum {
         case low = 0
         case normal = 1
         case high = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Low", 0),
@@ -24,7 +26,11 @@ open class Thread: RefCounted {
         }
         }
     }()
-    public func start(callable: Godot.Callable, priority: Godot.Thread.Priority = Thread.Priority(rawValue: 1)!) -> Godot.ErrorType {
+
+    public func start(
+        callable: Godot.Callable,
+        priority: Godot.Thread.Priority = Thread.Priority(rawValue: 1)!
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         priority.withGodotUnsafeRawPointer { __ptr_priority in
@@ -45,6 +51,7 @@ open class Thread: RefCounted {
         }
         }
     }()
+
     public func id() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,6 +70,7 @@ open class Thread: RefCounted {
         }
         }
     }()
+
     public func isStarted() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -81,6 +89,7 @@ open class Thread: RefCounted {
         }
         }
     }()
+
     public func isAlive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,6 +108,7 @@ open class Thread: RefCounted {
         }
         }
     }()
+
     public func waitToFinish() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +127,10 @@ open class Thread: RefCounted {
         }
         }
     }()
-    static public func setThreadSafetyChecksEnabled(_ enabled: Bool) {
+
+    static public func setThreadSafetyChecksEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -129,6 +142,7 @@ open class Thread: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -141,5 +155,4 @@ open class Thread: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

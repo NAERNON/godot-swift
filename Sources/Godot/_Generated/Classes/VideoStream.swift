@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VideoStream: Resource {
     open func _instantiatePlayback() -> Godot.VideoStreamPlayback? {
@@ -16,7 +17,10 @@ open class VideoStream: Resource {
         }
         }
     }()
-    private func __setFile(_ file: Godot.GodotString) {
+
+    private func __setFile(
+        _ file: Godot.GodotString
+    ) {
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -35,6 +39,7 @@ open class VideoStream: Resource {
         }
         }
     }()
+
     private func __getFile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -58,6 +63,7 @@ open class VideoStream: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -77,5 +83,4 @@ open class VideoStream: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class InputMap: Object {
     internal static var __method_binding_has_action: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputMap: Object {
         }
         }
     }()
-    public func hasAction(_ action: Godot.GodotStringName) -> Bool {
+
+    public func hasAction(
+        _ action: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
@@ -32,6 +36,7 @@ open class InputMap: Object {
         }
         }
     }()
+
     public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,11 @@ open class InputMap: Object {
         }
         }
     }()
-    public func addAction(_ action: Godot.GodotStringName, deadzone: Double = 0.5) {
+
+    public func addAction(
+        _ action: Godot.GodotStringName,
+        deadzone: Double = 0.5
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         deadzone.withGodotUnsafeRawPointer { __ptr_deadzone in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_deadzone) { __accessPtr in
@@ -70,7 +79,10 @@ open class InputMap: Object {
         }
         }
     }()
-    public func eraseAction(_ action: Godot.GodotStringName) {
+
+    public func eraseAction(
+        _ action: Godot.GodotStringName
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,7 +101,11 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionSetDeadzone(action: Godot.GodotStringName, deadzone: Double) {
+
+    public func actionSetDeadzone(
+        action: Godot.GodotStringName,
+        deadzone: Double
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         deadzone.withGodotUnsafeRawPointer { __ptr_deadzone in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_deadzone) { __accessPtr in
@@ -109,7 +125,10 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionGetDeadzone(action: Godot.GodotStringName) -> Double {
+
+    public func actionGetDeadzone(
+        action: Godot.GodotStringName
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
@@ -129,7 +148,11 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionAddEvent(action: Godot.GodotStringName, event: Godot.InputEvent?) {
+
+    public func actionAddEvent(
+        action: Godot.GodotStringName,
+        event: Godot.InputEvent?
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -150,7 +173,11 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionHasEvent(action: Godot.GodotStringName, event: Godot.InputEvent?) -> Bool {
+
+    public func actionHasEvent(
+        action: Godot.GodotStringName,
+        event: Godot.InputEvent?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         event.withGodotUnsafeRawPointer { __ptr_event in
@@ -172,7 +199,11 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionEraseEvent(action: Godot.GodotStringName, event: Godot.InputEvent?) {
+
+    public func actionEraseEvent(
+        action: Godot.GodotStringName,
+        event: Godot.InputEvent?
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -193,7 +224,10 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionEraseEvents(action: Godot.GodotStringName) {
+
+    public func actionEraseEvents(
+        action: Godot.GodotStringName
+    ) {
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,7 +246,10 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionGetEvents(action: Godot.GodotStringName) -> Godot.GodotArray<Godot.InputEvent?> {
+
+    public func actionGetEvents(
+        action: Godot.GodotStringName
+    ) -> Godot.GodotArray<Godot.InputEvent?> {
         Godot.GodotArray<Godot.InputEvent?>.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
@@ -232,7 +269,12 @@ open class InputMap: Object {
         }
         }
     }()
-    public func eventIsAction(event: Godot.InputEvent?, action: Godot.GodotStringName, exactMatch: Bool = false) -> Bool {
+
+    public func eventIsAction(
+        event: Godot.InputEvent?,
+        action: Godot.GodotStringName,
+        exactMatch: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -255,6 +297,7 @@ open class InputMap: Object {
         }
         }
     }()
+
     public func loadFromProjectSettings() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -266,6 +309,7 @@ open class InputMap: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -278,5 +322,4 @@ open class InputMap: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

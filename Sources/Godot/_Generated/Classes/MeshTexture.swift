@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MeshTexture: Texture2D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.Mesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.Mesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -32,6 +36,7 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
+
     private func __getMesh() -> Godot.Mesh? {
         Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
-    private func __setImageSize(_ size: Godot.Vector2) {
+
+    private func __setImageSize(
+        _ size: Godot.Vector2
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
+
     private func __getImageSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
-    private func __setBaseTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setBaseTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -107,6 +119,7 @@ open class MeshTexture: Texture2D {
         }
         }
     }()
+
     private func __getBaseTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +165,7 @@ open class MeshTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -164,5 +178,4 @@ open class MeshTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

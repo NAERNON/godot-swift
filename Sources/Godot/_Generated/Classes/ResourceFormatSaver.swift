@@ -3,29 +3,45 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ResourceFormatSaver: RefCounted {
-    open func _save(resource: Godot.Resource?, path: Godot.GodotString, flags: UInt32) -> Godot.ErrorType {
+    open func _save(
+        resource: Godot.Resource?,
+        path: Godot.GodotString,
+        flags: UInt32
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _setUid(path: Godot.GodotString, uid: Int64) -> Godot.ErrorType {
+    open func _setUid(
+        path: Godot.GodotString,
+        uid: Int64
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _recognize(resource: Godot.Resource?) -> Bool {
+    open func _recognize(
+        resource: Godot.Resource?
+    ) -> Bool {
         Bool()
     }
 
-    open func _getRecognizedExtensions(resource: Godot.Resource?) -> Godot.PackedStringArray {
+    open func _getRecognizedExtensions(
+        resource: Godot.Resource?
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _recognizePath(resource: Godot.Resource?, path: Godot.GodotString) -> Bool {
+    open func _recognizePath(
+        resource: Godot.Resource?,
+        path: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -91,5 +107,4 @@ open class ResourceFormatSaver: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

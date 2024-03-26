@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class VehicleWheel3D: Node3D {
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setRadius(length: Double) {
+
+    private func __setRadius(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setSuspensionRestLength(_ length: Double) {
+
+    private func __setSuspensionRestLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getSuspensionRestLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setSuspensionTravel(length: Double) {
+
+    private func __setSuspensionTravel(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getSuspensionTravel() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setSuspensionStiffness(length: Double) {
+
+    private func __setSuspensionStiffness(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getSuspensionStiffness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setSuspensionMaxForce(length: Double) {
+
+    private func __setSuspensionMaxForce(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getSuspensionMaxForce() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setDampingCompression(length: Double) {
+
+    private func __setDampingCompression(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getDampingCompression() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setDampingRelaxation(length: Double) {
+
+    private func __setDampingRelaxation(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getDampingRelaxation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setUseAsTraction(enable: Bool) {
+
+    private func __setUseAsTraction(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __isUsedAsTraction() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setUseAsSteering(enable: Bool) {
+
+    private func __setUseAsSteering(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __isUsedAsSteering() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setFrictionSlip(length: Double) {
+
+    private func __setFrictionSlip(
+        length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getFrictionSlip() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +423,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     public func isInContact() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,6 +442,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     public func contactBody() -> Godot.Node3D? {
         Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,7 +461,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setRollInfluence(_ rollInfluence: Double) {
+
+    private func __setRollInfluence(
+        _ rollInfluence: Double
+    ) {
         rollInfluence.withGodotUnsafeRawPointer { __ptr_rollInfluence in
         withUnsafeArgumentPackPointer(__ptr_rollInfluence) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +483,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getRollInfluence() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -455,6 +502,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     public func skidinfo() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -473,6 +521,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     public func rpm() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -491,7 +540,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setEngineForce(_ engineForce: Double) {
+
+    private func __setEngineForce(
+        _ engineForce: Double
+    ) {
         engineForce.withGodotUnsafeRawPointer { __ptr_engineForce in
         withUnsafeArgumentPackPointer(__ptr_engineForce) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -510,6 +562,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getEngineForce() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -528,7 +581,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setBrake(_ brake: Double) {
+
+    private func __setBrake(
+        _ brake: Double
+    ) {
         brake.withGodotUnsafeRawPointer { __ptr_brake in
         withUnsafeArgumentPackPointer(__ptr_brake) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -547,6 +603,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getBrake() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -565,7 +622,10 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
-    private func __setSteering(_ steering: Double) {
+
+    private func __setSteering(
+        _ steering: Double
+    ) {
         steering.withGodotUnsafeRawPointer { __ptr_steering in
         withUnsafeArgumentPackPointer(__ptr_steering) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -584,6 +644,7 @@ open class VehicleWheel3D: Node3D {
         }
         }
     }()
+
     private func __getSteering() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -750,6 +811,7 @@ open class VehicleWheel3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -762,5 +824,4 @@ open class VehicleWheel3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

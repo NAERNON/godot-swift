@@ -3,9 +3,11 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TriangleMesh: RefCounted {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -18,5 +20,4 @@ open class TriangleMesh: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

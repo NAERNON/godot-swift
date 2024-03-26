@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TubeTrailMesh: PrimitiveMesh {
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRadius(_ radius: Double) {
+
+    private func __setRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRadialSteps(_ radialSteps: Int32) {
+
+    private func __setRadialSteps(
+        _ radialSteps: Int32
+    ) {
         radialSteps.withGodotUnsafeRawPointer { __ptr_radialSteps in
         withUnsafeArgumentPackPointer(__ptr_radialSteps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRadialSteps() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSections(_ sections: Int32) {
+
+    private func __setSections(
+        _ sections: Int32
+    ) {
         sections.withGodotUnsafeRawPointer { __ptr_sections in
         withUnsafeArgumentPackPointer(__ptr_sections) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSections() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSectionLength(_ sectionLength: Double) {
+
+    private func __setSectionLength(
+        _ sectionLength: Double
+    ) {
         sectionLength.withGodotUnsafeRawPointer { __ptr_sectionLength in
         withUnsafeArgumentPackPointer(__ptr_sectionLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSectionLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSectionRings(_ sectionRings: Int32) {
+
+    private func __setSectionRings(
+        _ sectionRings: Int32
+    ) {
         sectionRings.withGodotUnsafeRawPointer { __ptr_sectionRings in
         withUnsafeArgumentPackPointer(__ptr_sectionRings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSectionRings() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCapTop(_ capTop: Bool) {
+
+    private func __setCapTop(
+        _ capTop: Bool
+    ) {
         capTop.withGodotUnsafeRawPointer { __ptr_capTop in
         withUnsafeArgumentPackPointer(__ptr_capTop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __isCapTop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCapBottom(_ capBottom: Bool) {
+
+    private func __setCapBottom(
+        _ capBottom: Bool
+    ) {
         capBottom.withGodotUnsafeRawPointer { __ptr_capBottom in
         withUnsafeArgumentPackPointer(__ptr_capBottom) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __isCapBottom() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -291,6 +323,7 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -391,6 +424,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -403,5 +437,4 @@ open class TubeTrailMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

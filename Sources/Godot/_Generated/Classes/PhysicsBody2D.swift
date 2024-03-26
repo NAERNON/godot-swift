@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsBody2D: CollisionObject2D {
     internal static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         }
     }()
-    public func moveAndCollide(motion: Godot.Vector2, testOnly: Bool = false, safeMargin: Double = 0.08, recoveryAsCollision: Bool = false) -> Godot.KinematicCollision2D? {
+
+    public func moveAndCollide(
+        motion: Godot.Vector2,
+        testOnly: Bool = false,
+        safeMargin: Double = 0.08,
+        recoveryAsCollision: Bool = false
+    ) -> Godot.KinematicCollision2D? {
         Godot.KinematicCollision2D?.fromMutatingGodotUnsafePointer { __temporary in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         testOnly.withGodotUnsafeRawPointer { __ptr_testOnly in
@@ -35,7 +42,14 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         }
     }()
-    public func testMove(from: Godot.Transform2D, motion: Godot.Vector2, collision: Godot.KinematicCollision2D? = nil, safeMargin: Double = 0.08, recoveryAsCollision: Bool = false) -> Bool {
+
+    public func testMove(
+        from: Godot.Transform2D,
+        motion: Godot.Vector2,
+        collision: Godot.KinematicCollision2D? = nil,
+        safeMargin: Double = 0.08,
+        recoveryAsCollision: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
@@ -60,6 +74,7 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         }
     }()
+
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody2D?> {
         Godot.GodotArray<Godot.PhysicsBody2D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,7 +93,10 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         }
     }()
-    public func addCollisionExceptionWith(body: Godot.Node?) {
+
+    public func addCollisionExceptionWith(
+        body: Godot.Node?
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
         withUnsafeArgumentPackPointer(_ptr___ptr_body) { __accessPtr in
@@ -98,7 +116,10 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         }
     }()
-    public func removeCollisionExceptionWith(body: Godot.Node?) {
+
+    public func removeCollisionExceptionWith(
+        body: Godot.Node?
+    ) {
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
         withUnsafeArgumentPackPointer(_ptr___ptr_body) { __accessPtr in
@@ -112,6 +133,7 @@ open class PhysicsBody2D: CollisionObject2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -124,5 +146,4 @@ open class PhysicsBody2D: CollisionObject2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

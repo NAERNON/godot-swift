@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RibbonTrailMesh: PrimitiveMesh {
     public enum Shape: UInt32, GodotEnum {
         case flat = 0
         case cross = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Flat", 0),
@@ -22,7 +24,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSize(_ size: Double) {
+
+    private func __setSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +65,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSections(_ sections: Int32) {
+
+    private func __setSections(
+        _ sections: Int32
+    ) {
         sections.withGodotUnsafeRawPointer { __ptr_sections in
         withUnsafeArgumentPackPointer(__ptr_sections) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +87,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSections() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +106,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSectionLength(_ sectionLength: Double) {
+
+    private func __setSectionLength(
+        _ sectionLength: Double
+    ) {
         sectionLength.withGodotUnsafeRawPointer { __ptr_sectionLength in
         withUnsafeArgumentPackPointer(__ptr_sectionLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,6 +128,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSectionLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,7 +147,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSectionSegments(_ sectionSegments: Int32) {
+
+    private func __setSectionSegments(
+        _ sectionSegments: Int32
+    ) {
         sectionSegments.withGodotUnsafeRawPointer { __ptr_sectionSegments in
         withUnsafeArgumentPackPointer(__ptr_sectionSegments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +169,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSectionSegments() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +188,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -190,6 +211,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,7 +230,10 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.RibbonTrailMesh.Shape) {
+
+    private func __setShape(
+        _ shape: Godot.RibbonTrailMesh.Shape
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,6 +252,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getShape() -> Godot.RibbonTrailMesh.Shape {
         Godot.RibbonTrailMesh.Shape.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,6 +331,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -317,5 +344,4 @@ open class RibbonTrailMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

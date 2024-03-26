@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class LabelSettings: Resource {
     internal static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setLineSpacing(_ spacing: Double) {
+
+    private func __setLineSpacing(
+        _ spacing: Double
+    ) {
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         withUnsafeArgumentPackPointer(__ptr_spacing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getLineSpacing() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setFont(_ font: Godot.Font?) {
+
+    private func __setFont(
+        _ font: Godot.Font?
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
@@ -69,6 +77,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setFontSize(_ size: Int32) {
+
+    private func __setFontSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +137,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setFontColor(_ color: Godot.Color) {
+
+    private func __setFontColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +159,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getFontColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +178,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setOutlineSize(_ size: Int32) {
+
+    private func __setOutlineSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getOutlineSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setOutlineColor(_ color: Godot.Color) {
+
+    private func __setOutlineColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getOutlineColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setShadowSize(_ size: Int32) {
+
+    private func __setShadowSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getShadowSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setShadowColor(_ color: Godot.Color) {
+
+    private func __setShadowColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getShadowColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class LabelSettings: Resource {
         }
         }
     }()
-    private func __setShadowOffset(_ offset: Godot.Vector2) {
+
+    private func __setShadowOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class LabelSettings: Resource {
         }
         }
     }()
+
     private func __getShadowOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +476,7 @@ open class LabelSettings: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -451,5 +489,4 @@ open class LabelSettings: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

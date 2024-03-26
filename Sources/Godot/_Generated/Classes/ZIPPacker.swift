@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ZIPPacker: RefCounted {
     public enum ZipAppend: UInt32, GodotEnum {
         case create = 0
         case createafter = 1
         case addinzip = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Create", 0),
@@ -24,7 +26,11 @@ open class ZIPPacker: RefCounted {
         }
         }
     }()
-    public func open(path: Godot.GodotString, append: Godot.ZIPPacker.ZipAppend = ZIPPacker.ZipAppend(rawValue: 0)!) -> Godot.ErrorType {
+
+    public func open(
+        path: Godot.GodotString,
+        append: Godot.ZIPPacker.ZipAppend = ZIPPacker.ZipAppend(rawValue: 0)!
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         append.withGodotUnsafeRawPointer { __ptr_append in
@@ -45,7 +51,10 @@ open class ZIPPacker: RefCounted {
         }
         }
     }()
-    public func startFile(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func startFile(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -65,7 +74,10 @@ open class ZIPPacker: RefCounted {
         }
         }
     }()
-    public func writeFile(data: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func writeFile(
+        data: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -85,6 +97,7 @@ open class ZIPPacker: RefCounted {
         }
         }
     }()
+
     public func closeFile() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +116,7 @@ open class ZIPPacker: RefCounted {
         }
         }
     }()
+
     public func close() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,6 +129,7 @@ open class ZIPPacker: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -127,5 +142,4 @@ open class ZIPPacker: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

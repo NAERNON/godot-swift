@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Button: BaseButton {
     internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setTextOverrunBehavior(_ overrunBehavior: Godot.TextServer.OverrunBehavior) {
+
+    private func __setTextOverrunBehavior(
+        _ overrunBehavior: Godot.TextServer.OverrunBehavior
+    ) {
         overrunBehavior.withGodotUnsafeRawPointer { __ptr_overrunBehavior in
         withUnsafeArgumentPackPointer(__ptr_overrunBehavior) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
         Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
+
+    private func __setTextDirection(
+        _ direction: Godot.Control.TextDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setButtonIcon(texture: Godot.Texture2D?) {
+
+    private func __setButtonIcon(
+        texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -180,6 +200,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getButtonIcon() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setFlat(enabled: Bool) {
+
+    private func __setFlat(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __isFlat() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setClipText(enabled: Bool) {
+
+    private func __setClipText(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getClipText() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setTextAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setTextAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getTextAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setIconAlignment(_ iconAlignment: Godot.HorizontalAlignment) {
+
+    private func __setIconAlignment(
+        _ iconAlignment: Godot.HorizontalAlignment
+    ) {
         iconAlignment.withGodotUnsafeRawPointer { __ptr_iconAlignment in
         withUnsafeArgumentPackPointer(__ptr_iconAlignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getIconAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +383,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setVerticalIconAlignment(_ verticalIconAlignment: Godot.VerticalAlignment) {
+
+    private func __setVerticalIconAlignment(
+        _ verticalIconAlignment: Godot.VerticalAlignment
+    ) {
         verticalIconAlignment.withGodotUnsafeRawPointer { __ptr_verticalIconAlignment in
         withUnsafeArgumentPackPointer(__ptr_verticalIconAlignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +405,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __getVerticalIconAlignment() -> Godot.VerticalAlignment {
         Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +424,10 @@ open class Button: BaseButton {
         }
         }
     }()
-    private func __setExpandIcon(enabled: Bool) {
+
+    private func __setExpandIcon(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,6 +446,7 @@ open class Button: BaseButton {
         }
         }
     }()
+
     private func __isExpandIcon() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -535,6 +580,7 @@ open class Button: BaseButton {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -547,5 +593,4 @@ open class Button: BaseButton {
         }
         return _virtualFunctions!
     }
-
-    }
+}

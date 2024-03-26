@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AudioStreamPlayer: Node {
     public enum MixTarget: UInt32, GodotEnum {
         case stereo = 0
         case surround = 1
         case center = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Stereo", 0),
@@ -20,6 +22,7 @@ open class AudioStreamPlayer: Node {
     public func finished() {
         _ = finishedSignal.emit()
     }
+
     public lazy var finishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,7 +45,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setStream(_ stream: Godot.AudioStream?) {
+
+    private func __setStream(
+        _ stream: Godot.AudioStream?
+    ) {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream) { __accessPtr in
@@ -62,6 +68,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getStream() -> Godot.AudioStream? {
         Godot.AudioStream?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,7 +87,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setVolumeDb(_ volumeDb: Double) {
+
+    private func __setVolumeDb(
+        _ volumeDb: Double
+    ) {
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_volumeDb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,6 +109,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getVolumeDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +128,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setPitchScale(_ pitchScale: Double) {
+
+    private func __setPitchScale(
+        _ pitchScale: Double
+    ) {
         pitchScale.withGodotUnsafeRawPointer { __ptr_pitchScale in
         withUnsafeArgumentPackPointer(__ptr_pitchScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,6 +150,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getPitchScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +169,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    public func play(fromPosition position: Double = 0.0) {
+
+    public func play(
+        fromPosition position: Double = 0.0
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,7 +191,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    public func seek(toPosition position: Double) {
+
+    public func seek(
+        toPosition position: Double
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,6 +213,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -209,6 +231,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __isPlaying() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,6 +250,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     public func playbackPosition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,7 +269,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setBus(_ bus: Godot.GodotStringName) {
+
+    private func __setBus(
+        _ bus: Godot.GodotStringName
+    ) {
         bus.withGodotUnsafeRawPointer { __ptr_bus in
         withUnsafeArgumentPackPointer(__ptr_bus) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -264,6 +291,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getBus() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,7 +310,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setAutoplay(enable: Bool) {
+
+    private func __setAutoplay(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -301,6 +332,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __isAutoplayEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -319,7 +351,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setMixTarget(_ mixTarget: Godot.AudioStreamPlayer.MixTarget) {
+
+    private func __setMixTarget(
+        _ mixTarget: Godot.AudioStreamPlayer.MixTarget
+    ) {
         mixTarget.withGodotUnsafeRawPointer { __ptr_mixTarget in
         withUnsafeArgumentPackPointer(__ptr_mixTarget) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -338,6 +373,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getMixTarget() -> Godot.AudioStreamPlayer.MixTarget {
         Godot.AudioStreamPlayer.MixTarget.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -356,7 +392,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setStreamPaused(pause: Bool) {
+
+    private func __setStreamPaused(
+        pause: Bool
+    ) {
         pause.withGodotUnsafeRawPointer { __ptr_pause in
         withUnsafeArgumentPackPointer(__ptr_pause) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,6 +414,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getStreamPaused() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -393,7 +433,10 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
-    private func __setMaxPolyphony(_ maxPolyphony: Int32) {
+
+    private func __setMaxPolyphony(
+        _ maxPolyphony: Int32
+    ) {
         maxPolyphony.withGodotUnsafeRawPointer { __ptr_maxPolyphony in
         withUnsafeArgumentPackPointer(__ptr_maxPolyphony) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -412,6 +455,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     private func __getMaxPolyphony() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -430,6 +474,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     public func hasStreamPlayback() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -448,6 +493,7 @@ open class AudioStreamPlayer: Node {
         }
         }
     }()
+
     public func streamPlayback() -> Godot.AudioStreamPlayback? {
         Godot.AudioStreamPlayback?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -554,6 +600,7 @@ open class AudioStreamPlayer: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -566,5 +613,4 @@ open class AudioStreamPlayer: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,18 +3,30 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EngineProfiler: RefCounted {
-    open func _toggle(enable: Bool, options: Godot.AnyGodotArray) {
+    open func _toggle(
+        enable: Bool,
+        options: Godot.AnyGodotArray
+    ) {
     }
 
-    open func _addFrame(data: Godot.AnyGodotArray) {
+    open func _addFrame(
+        data: Godot.AnyGodotArray
+    ) {
     }
 
-    open func _tick(frameTime: Double, processTime: Double, physicsTime: Double, physicsFrameTime: Double) {
+    open func _tick(
+        frameTime: Double,
+        processTime: Double,
+        physicsTime: Double,
+        physicsFrameTime: Double
+    ) {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -57,5 +69,4 @@ open class EngineProfiler: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

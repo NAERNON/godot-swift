@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StreamPeerTLS: StreamPeer {
     public enum Status: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class StreamPeerTLS: StreamPeer {
         case connected = 2
         case error = 3
         case errorHostnameMismatch = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disconnected", 0),
@@ -28,6 +30,7 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
+
     public func poll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -45,7 +48,11 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
-    public func acceptStream(_ stream: Godot.StreamPeer?, serverOptions: Godot.TLSOptions?) -> Godot.ErrorType {
+
+    public func acceptStream(
+        _ stream: Godot.StreamPeer?,
+        serverOptions: Godot.TLSOptions?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
@@ -68,7 +75,12 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
-    public func connectToStream(_ stream: Godot.StreamPeer?, commonName: Godot.GodotString, clientOptions: Godot.TLSOptions? = nil) -> Godot.ErrorType {
+
+    public func connectToStream(
+        _ stream: Godot.StreamPeer?,
+        commonName: Godot.GodotString,
+        clientOptions: Godot.TLSOptions? = nil
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
@@ -92,6 +104,7 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
+
     public func status() -> Godot.StreamPeerTLS.Status {
         Godot.StreamPeerTLS.Status.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,6 +123,7 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
+
     public func stream() -> Godot.StreamPeer? {
         Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +142,7 @@ open class StreamPeerTLS: StreamPeer {
         }
         }
     }()
+
     public func disconnectFromStream() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -139,6 +154,7 @@ open class StreamPeerTLS: StreamPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -151,5 +167,4 @@ open class StreamPeerTLS: StreamPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

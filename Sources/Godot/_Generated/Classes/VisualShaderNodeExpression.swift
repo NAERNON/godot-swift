@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
     internal static var __method_binding_set_expression: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
         }
         }
     }()
-    private func __setExpression(_ expression: Godot.GodotString) {
+
+    private func __setExpression(
+        _ expression: Godot.GodotString
+    ) {
         expression.withGodotUnsafeRawPointer { __ptr_expression in
         withUnsafeArgumentPackPointer(__ptr_expression) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
         }
         }
     }()
+
     private func __getExpression() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
         }
         return _virtualFunctions!
     }
-
-    }
+}

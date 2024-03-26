@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ArrayOccluder3D: Occluder3D {
     internal static var __method_binding_set_arrays: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class ArrayOccluder3D: Occluder3D {
         }
         }
     }()
-    public func setArrays(vertices: Godot.PackedVector3Array, indices: Godot.PackedInt32Array) {
+
+    public func setArrays(
+        vertices: Godot.PackedVector3Array,
+        indices: Godot.PackedInt32Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         indices.withGodotUnsafeRawPointer { __ptr_indices in
         withUnsafeArgumentPackPointer(__ptr_vertices, __ptr_indices) { __accessPtr in
@@ -32,7 +37,10 @@ open class ArrayOccluder3D: Occluder3D {
         }
         }
     }()
-    public func setVertices(_ vertices: Godot.PackedVector3Array) {
+
+    public func setVertices(
+        _ vertices: Godot.PackedVector3Array
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,7 +59,10 @@ open class ArrayOccluder3D: Occluder3D {
         }
         }
     }()
-    public func setIndices(_ indices: Godot.PackedInt32Array) {
+
+    public func setIndices(
+        _ indices: Godot.PackedInt32Array
+    ) {
         indices.withGodotUnsafeRawPointer { __ptr_indices in
         withUnsafeArgumentPackPointer(__ptr_indices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -64,6 +75,7 @@ open class ArrayOccluder3D: Occluder3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -76,5 +88,4 @@ open class ArrayOccluder3D: Occluder3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

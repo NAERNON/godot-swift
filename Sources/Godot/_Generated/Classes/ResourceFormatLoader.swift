@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ResourceFormatLoader: RefCounted {
     public enum CacheMode: UInt32, GodotEnum {
         case ignore = 0
         case reuse = 1
         case replace = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ignore", 0),
@@ -21,47 +23,74 @@ open class ResourceFormatLoader: RefCounted {
         Godot.PackedStringArray()
     }
 
-    open func _recognizePath(_ path: Godot.GodotString, type: Godot.GodotStringName) -> Bool {
+    open func _recognizePath(
+        _ path: Godot.GodotString,
+        type: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _handlesType(_ type: Godot.GodotStringName) -> Bool {
+    open func _handlesType(
+        _ type: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _getResourceType(path: Godot.GodotString) -> Godot.GodotString {
+    open func _getResourceType(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getResourceScriptClass(path: Godot.GodotString) -> Godot.GodotString {
+    open func _getResourceScriptClass(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getResourceUid(path: Godot.GodotString) -> Int64 {
+    open func _getResourceUid(
+        path: Godot.GodotString
+    ) -> Int64 {
         Int64()
     }
 
-    open func _getDependencies(path: Godot.GodotString, addTypes: Bool) -> Godot.PackedStringArray {
+    open func _getDependencies(
+        path: Godot.GodotString,
+        addTypes: Bool
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _renameDependencies(path: Godot.GodotString, renames: Godot.AnyGodotDictionary) -> Godot.ErrorType {
+    open func _renameDependencies(
+        path: Godot.GodotString,
+        renames: Godot.AnyGodotDictionary
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _exists(path: Godot.GodotString) -> Bool {
+    open func _exists(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _getClassesUsed(path: Godot.GodotString) -> Godot.PackedStringArray {
+    open func _getClassesUsed(
+        path: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _load(path: Godot.GodotString, originalPath: Godot.GodotString, useSubThreads: Bool, cacheMode: Int32) -> Godot.Variant {
+    open func _load(
+        path: Godot.GodotString,
+        originalPath: Godot.GodotString,
+        useSubThreads: Bool,
+        cacheMode: Int32
+    ) -> Godot.Variant {
         Variant()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -187,5 +216,4 @@ open class ResourceFormatLoader: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

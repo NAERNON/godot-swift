@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectAmplify: AudioEffect {
     internal static var __method_binding_set_volume_db: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectAmplify: AudioEffect {
         }
         }
     }()
-    private func __setVolumeDb(volume: Double) {
+
+    private func __setVolumeDb(
+        volume: Double
+    ) {
         volume.withGodotUnsafeRawPointer { __ptr_volume in
         withUnsafeArgumentPackPointer(__ptr_volume) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectAmplify: AudioEffect {
         }
         }
     }()
+
     private func __getVolumeDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class AudioEffectAmplify: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class AudioEffectAmplify: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

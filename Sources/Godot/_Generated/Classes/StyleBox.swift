@@ -3,12 +3,18 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StyleBox: Resource {
-    open func _draw(toCanvasItem canvasItem: Godot.RID, rect: Godot.Rect2) {
+    open func _draw(
+        toCanvasItem canvasItem: Godot.RID,
+        rect: Godot.Rect2
+    ) {
     }
 
-    open func _getDrawRect(_ rect: Godot.Rect2) -> Godot.Rect2 {
+    open func _getDrawRect(
+        _ rect: Godot.Rect2
+    ) -> Godot.Rect2 {
         Godot.Rect2()
     }
 
@@ -16,7 +22,10 @@ open class StyleBox: Resource {
         Godot.Vector2()
     }
 
-    open func _testMask(point: Godot.Vector2, rect: Godot.Rect2) -> Bool {
+    open func _testMask(
+        point: Godot.Vector2,
+        rect: Godot.Rect2
+    ) -> Bool {
         Bool()
     }
 
@@ -27,6 +36,7 @@ open class StyleBox: Resource {
         }
         }
     }()
+
     public func minimumSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,7 +55,11 @@ open class StyleBox: Resource {
         }
         }
     }()
-    public func setContentMargin(_ margin: Godot.Side, offset: Double) {
+
+    public func setContentMargin(
+        _ margin: Godot.Side,
+        offset: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_offset) { __accessPtr in
@@ -65,7 +79,10 @@ open class StyleBox: Resource {
         }
         }
     }()
-    public func setContentMarginAll(offset: Double) {
+
+    public func setContentMarginAll(
+        offset: Double
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +101,10 @@ open class StyleBox: Resource {
         }
         }
     }()
-    private func __getContentMargin(_ margin: Godot.Side) -> Double {
+
+    private func __getContentMargin(
+        _ margin: Godot.Side
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -104,7 +124,10 @@ open class StyleBox: Resource {
         }
         }
     }()
-    public func margin(_ margin: Godot.Side) -> Double {
+
+    public func margin(
+        _ margin: Godot.Side
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -124,6 +147,7 @@ open class StyleBox: Resource {
         }
         }
     }()
+
     public func offset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +166,11 @@ open class StyleBox: Resource {
         }
         }
     }()
-    public func draw(canvasItem: Godot.RID, rect: Godot.Rect2) {
+
+    public func draw(
+        canvasItem: Godot.RID,
+        rect: Godot.Rect2
+    ) {
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect) { __accessPtr in
@@ -162,6 +190,7 @@ open class StyleBox: Resource {
         }
         }
     }()
+
     public func currentItemDrawn() -> Godot.CanvasItem? {
         Godot.CanvasItem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,7 +209,11 @@ open class StyleBox: Resource {
         }
         }
     }()
-    public func testMask(point: Godot.Vector2, rect: Godot.Rect2) -> Bool {
+
+    public func testMask(
+        point: Godot.Vector2,
+        rect: Godot.Rect2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -227,6 +260,7 @@ open class StyleBox: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -277,5 +311,4 @@ open class StyleBox: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

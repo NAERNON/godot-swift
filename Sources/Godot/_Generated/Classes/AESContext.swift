@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AESContext: RefCounted {
     public enum Mode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class AESContext: RefCounted {
         case cbcEncrypt = 2
         case cbcDecrypt = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ecb Encrypt", 0),
@@ -28,7 +30,12 @@ open class AESContext: RefCounted {
         }
         }
     }()
-    public func start(mode: Godot.AESContext.Mode, key: Godot.PackedByteArray, iv: Godot.PackedByteArray = PackedByteArray()) -> Godot.ErrorType {
+
+    public func start(
+        mode: Godot.AESContext.Mode,
+        key: Godot.PackedByteArray,
+        iv: Godot.PackedByteArray = PackedByteArray()
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -50,7 +57,10 @@ open class AESContext: RefCounted {
         }
         }
     }()
-    public func update(src: Godot.PackedByteArray) -> Godot.PackedByteArray {
+
+    public func update(
+        src: Godot.PackedByteArray
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         src.withGodotUnsafeRawPointer { __ptr_src in
         withUnsafeArgumentPackPointer(__ptr_src) { __accessPtr in
@@ -70,6 +80,7 @@ open class AESContext: RefCounted {
         }
         }
     }()
+
     public func ivState() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +99,7 @@ open class AESContext: RefCounted {
         }
         }
     }()
+
     public func finish() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -99,6 +111,7 @@ open class AESContext: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -111,5 +124,4 @@ open class AESContext: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

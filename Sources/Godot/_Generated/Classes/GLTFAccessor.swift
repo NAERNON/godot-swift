@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFAccessor: Resource {
     internal static var __method_binding_get_buffer_view: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getBufferView() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setBufferView(_ bufferView: Int32) {
+
+    private func __setBufferView(
+        _ bufferView: Int32
+    ) {
         bufferView.withGodotUnsafeRawPointer { __ptr_bufferView in
         withUnsafeArgumentPackPointer(__ptr_bufferView) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getByteOffset() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setByteOffset(_ byteOffset: Int32) {
+
+    private func __setByteOffset(
+        _ byteOffset: Int32
+    ) {
         byteOffset.withGodotUnsafeRawPointer { __ptr_byteOffset in
         withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getComponentType() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setComponentType(_ componentType: Int32) {
+
+    private func __setComponentType(
+        _ componentType: Int32
+    ) {
         componentType.withGodotUnsafeRawPointer { __ptr_componentType in
         withUnsafeArgumentPackPointer(__ptr_componentType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getNormalized() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setNormalized(_ normalized: Bool) {
+
+    private func __setNormalized(
+        _ normalized: Bool
+    ) {
         normalized.withGodotUnsafeRawPointer { __ptr_normalized in
         withUnsafeArgumentPackPointer(__ptr_normalized) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setCount(_ count: Int32) {
+
+    private func __setCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getType() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setType(_ type: Int32) {
+
+    private func __setType(
+        _ type: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getMin() -> Godot.PackedFloat64Array {
         Godot.PackedFloat64Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setMin(_ min: Godot.PackedFloat64Array) {
+
+    private func __setMin(
+        _ min: Godot.PackedFloat64Array
+    ) {
         min.withGodotUnsafeRawPointer { __ptr_min in
         withUnsafeArgumentPackPointer(__ptr_min) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getMax() -> Godot.PackedFloat64Array {
         Godot.PackedFloat64Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setMax(_ max: Godot.PackedFloat64Array) {
+
+    private func __setMax(
+        _ max: Godot.PackedFloat64Array
+    ) {
         max.withGodotUnsafeRawPointer { __ptr_max in
         withUnsafeArgumentPackPointer(__ptr_max) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +360,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseCount(_ sparseCount: Int32) {
+
+    private func __setSparseCount(
+        _ sparseCount: Int32
+    ) {
         sparseCount.withGodotUnsafeRawPointer { __ptr_sparseCount in
         withUnsafeArgumentPackPointer(__ptr_sparseCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +382,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseIndicesBufferView() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,7 +401,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseIndicesBufferView(_ sparseIndicesBufferView: Int32) {
+
+    private func __setSparseIndicesBufferView(
+        _ sparseIndicesBufferView: Int32
+    ) {
         sparseIndicesBufferView.withGodotUnsafeRawPointer { __ptr_sparseIndicesBufferView in
         withUnsafeArgumentPackPointer(__ptr_sparseIndicesBufferView) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +423,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseIndicesByteOffset() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +442,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseIndicesByteOffset(_ sparseIndicesByteOffset: Int32) {
+
+    private func __setSparseIndicesByteOffset(
+        _ sparseIndicesByteOffset: Int32
+    ) {
         sparseIndicesByteOffset.withGodotUnsafeRawPointer { __ptr_sparseIndicesByteOffset in
         withUnsafeArgumentPackPointer(__ptr_sparseIndicesByteOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +464,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseIndicesComponentType() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,7 +483,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseIndicesComponentType(_ sparseIndicesComponentType: Int32) {
+
+    private func __setSparseIndicesComponentType(
+        _ sparseIndicesComponentType: Int32
+    ) {
         sparseIndicesComponentType.withGodotUnsafeRawPointer { __ptr_sparseIndicesComponentType in
         withUnsafeArgumentPackPointer(__ptr_sparseIndicesComponentType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,6 +505,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseValuesBufferView() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,7 +524,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseValuesBufferView(_ sparseValuesBufferView: Int32) {
+
+    private func __setSparseValuesBufferView(
+        _ sparseValuesBufferView: Int32
+    ) {
         sparseValuesBufferView.withGodotUnsafeRawPointer { __ptr_sparseValuesBufferView in
         withUnsafeArgumentPackPointer(__ptr_sparseValuesBufferView) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,6 +546,7 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
+
     private func __getSparseValuesByteOffset() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -511,7 +565,10 @@ open class GLTFAccessor: Resource {
         }
         }
     }()
-    private func __setSparseValuesByteOffset(_ sparseValuesByteOffset: Int32) {
+
+    private func __setSparseValuesByteOffset(
+        _ sparseValuesByteOffset: Int32
+    ) {
         sparseValuesByteOffset.withGodotUnsafeRawPointer { __ptr_sparseValuesByteOffset in
         withUnsafeArgumentPackPointer(__ptr_sparseValuesByteOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -678,6 +735,7 @@ open class GLTFAccessor: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -690,5 +748,4 @@ open class GLTFAccessor: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

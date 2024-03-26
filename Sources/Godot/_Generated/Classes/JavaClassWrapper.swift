@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class JavaClassWrapper: Object {
     internal static var __method_binding_wrap: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class JavaClassWrapper: Object {
         }
         }
     }()
-    public func wrap(name: Godot.GodotString) -> Godot.JavaClass? {
+
+    public func wrap(
+        name: Godot.GodotString
+    ) -> Godot.JavaClass? {
         Godot.JavaClass?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -26,6 +30,7 @@ open class JavaClassWrapper: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -38,5 +43,4 @@ open class JavaClassWrapper: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

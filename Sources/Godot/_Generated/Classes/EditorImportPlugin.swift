@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorImportPlugin: ResourceImporter {
     open func _getImporterName() -> Godot.GodotString {
@@ -17,7 +18,9 @@ open class EditorImportPlugin: ResourceImporter {
         Int32()
     }
 
-    open func _getPresetName(presetIndex: Int32) -> Godot.GodotString {
+    open func _getPresetName(
+        presetIndex: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -25,7 +28,10 @@ open class EditorImportPlugin: ResourceImporter {
         Godot.PackedStringArray()
     }
 
-    open func _getImportOptions(path: Godot.GodotString, presetIndex: Int32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+    open func _getImportOptions(
+        path: Godot.GodotString,
+        presetIndex: Int32
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
@@ -45,11 +51,21 @@ open class EditorImportPlugin: ResourceImporter {
         Int32()
     }
 
-    open func _getOptionVisibility(path: Godot.GodotString, optionName: Godot.GodotStringName, options: Godot.AnyGodotDictionary) -> Bool {
+    open func _getOptionVisibility(
+        path: Godot.GodotString,
+        optionName: Godot.GodotStringName,
+        options: Godot.AnyGodotDictionary
+    ) -> Bool {
         Bool()
     }
 
-    open func _import(sourceFile: Godot.GodotString, savePath: Godot.GodotString, options: Godot.AnyGodotDictionary, platformVariants: Godot.GodotArray<Godot.GodotString>, genFiles: Godot.GodotArray<Godot.GodotString>) -> Godot.ErrorType {
+    open func _import(
+        sourceFile: Godot.GodotString,
+        savePath: Godot.GodotString,
+        options: Godot.AnyGodotDictionary,
+        platformVariants: Godot.GodotArray<Godot.GodotString>,
+        genFiles: Godot.GodotArray<Godot.GodotString>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -60,7 +76,13 @@ open class EditorImportPlugin: ResourceImporter {
         }
         }
     }()
-    public func appendImportExternalResource<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(path: Godot.GodotString, customOptions: Godot.GodotDictionary<Value1, Value2> = [:], customImporter: Godot.GodotString = "", generatorParameters: Value3 = Variant()) -> Godot.ErrorType {
+
+    public func appendImportExternalResource<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(
+        path: Godot.GodotString,
+        customOptions: Godot.GodotDictionary<Value1, Value2> = [:],
+        customImporter: Godot.GodotString = "",
+        generatorParameters: Value3 = Variant()
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         customOptions.withGodotUnsafeRawPointer { __ptr_customOptions in
@@ -77,6 +99,7 @@ open class EditorImportPlugin: ResourceImporter {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -199,5 +222,4 @@ open class EditorImportPlugin: ResourceImporter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class BoneMap: Resource {
+
     public func boneMapUpdated() {
         _ = boneMapUpdatedSignal.emit()
     }
+
     public lazy var boneMapUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bone_map_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class BoneMap: Resource {
     public func profileUpdated() {
         _ = profileUpdatedSignal.emit()
     }
+
     public lazy var profileUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "profile_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -48,6 +52,7 @@ open class BoneMap: Resource {
         }
         }
     }()
+
     private func __getProfile() -> Godot.SkeletonProfile? {
         Godot.SkeletonProfile?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +71,10 @@ open class BoneMap: Resource {
         }
         }
     }()
-    private func __setProfile(_ profile: Godot.SkeletonProfile?) {
+
+    private func __setProfile(
+        _ profile: Godot.SkeletonProfile?
+    ) {
         profile.withGodotUnsafeRawPointer { __ptr_profile in
         withUnsafePointer(to: __ptr_profile) { _ptr___ptr_profile in
         withUnsafeArgumentPackPointer(_ptr___ptr_profile) { __accessPtr in
@@ -86,7 +94,10 @@ open class BoneMap: Resource {
         }
         }
     }()
-    public func skeletonBoneName(profileBoneName: Godot.GodotStringName) -> Godot.GodotStringName {
+
+    public func skeletonBoneName(
+        profileBoneName: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         profileBoneName.withGodotUnsafeRawPointer { __ptr_profileBoneName in
         withUnsafeArgumentPackPointer(__ptr_profileBoneName) { __accessPtr in
@@ -106,7 +117,11 @@ open class BoneMap: Resource {
         }
         }
     }()
-    public func setSkeletonBoneName(profileBoneName: Godot.GodotStringName, skeletonBoneName: Godot.GodotStringName) {
+
+    public func setSkeletonBoneName(
+        profileBoneName: Godot.GodotStringName,
+        skeletonBoneName: Godot.GodotStringName
+    ) {
         profileBoneName.withGodotUnsafeRawPointer { __ptr_profileBoneName in
         skeletonBoneName.withGodotUnsafeRawPointer { __ptr_skeletonBoneName in
         withUnsafeArgumentPackPointer(__ptr_profileBoneName, __ptr_skeletonBoneName) { __accessPtr in
@@ -126,7 +141,10 @@ open class BoneMap: Resource {
         }
         }
     }()
-    public func findProfileBoneName(skeletonBoneName: Godot.GodotStringName) -> Godot.GodotStringName {
+
+    public func findProfileBoneName(
+        skeletonBoneName: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         skeletonBoneName.withGodotUnsafeRawPointer { __ptr_skeletonBoneName in
         withUnsafeArgumentPackPointer(__ptr_skeletonBoneName) { __accessPtr in
@@ -151,6 +169,7 @@ open class BoneMap: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +182,4 @@ open class BoneMap: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GraphEdit: Control {
     public enum PanningScheme: UInt32, GodotEnum {
         case zooms = 0
         case pans = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Zooms", 0),
@@ -17,25 +19,44 @@ open class GraphEdit: Control {
 
     public struct ConnectionRequestSignalInput: Godot.SignalInput {
         public let fromNode: Godot.GodotStringName
+
         public let fromPort: Int
+
         public let toNode: Godot.GodotStringName
+
         public let toPort: Int
-        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+
+        fileprivate init(
+            fromNode: Godot.GodotStringName,
+            fromPort: Int,
+            toNode: Godot.GodotStringName,
+            toPort: Int
+        ) {
             self.fromNode = fromNode
             self.fromPort = fromPort
             self.toNode = toNode
             self.toPort = toPort
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.fromNode), Variant(input.fromPort), Variant(input.toNode), Variant(input.toPort)]
         }
     }
-    public func connectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+
+    public func connectionRequest(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int,
+        toNode: Godot.GodotStringName,
+        toPort: Int
+    ) {
         _ = connectionRequestSignal.emit(.init(fromNode: fromNode,
                 fromPort: fromPort,
                 toNode: toNode,
                 toPort: toPort))
     }
+
     public lazy var connectionRequestSignal: Godot.SignalEmitter<ConnectionRequestSignalInput> = {
         .init(object: self, signalName: "connection_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -56,25 +77,44 @@ open class GraphEdit: Control {
 
     public struct DisconnectionRequestSignalInput: Godot.SignalInput {
         public let fromNode: Godot.GodotStringName
+
         public let fromPort: Int
+
         public let toNode: Godot.GodotStringName
+
         public let toPort: Int
-        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+
+        fileprivate init(
+            fromNode: Godot.GodotStringName,
+            fromPort: Int,
+            toNode: Godot.GodotStringName,
+            toPort: Int
+        ) {
             self.fromNode = fromNode
             self.fromPort = fromPort
             self.toNode = toNode
             self.toPort = toPort
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.fromNode), Variant(input.fromPort), Variant(input.toNode), Variant(input.toPort)]
         }
     }
-    public func disconnectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+
+    public func disconnectionRequest(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int,
+        toNode: Godot.GodotStringName,
+        toPort: Int
+    ) {
         _ = disconnectionRequestSignal.emit(.init(fromNode: fromNode,
                 fromPort: fromPort,
                 toNode: toNode,
                 toPort: toPort))
     }
+
     public lazy var disconnectionRequestSignal: Godot.SignalEmitter<DisconnectionRequestSignalInput> = {
         .init(object: self, signalName: "disconnection_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -95,22 +135,38 @@ open class GraphEdit: Control {
 
     public struct ConnectionToEmptySignalInput: Godot.SignalInput {
         public let fromNode: Godot.GodotStringName
+
         public let fromPort: Int
+
         public let releasePosition: Godot.Vector2
-        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, releasePosition: Godot.Vector2) {
+
+        fileprivate init(
+            fromNode: Godot.GodotStringName,
+            fromPort: Int,
+            releasePosition: Godot.Vector2
+        ) {
             self.fromNode = fromNode
             self.fromPort = fromPort
             self.releasePosition = releasePosition
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.fromNode), Variant(input.fromPort), Variant(input.releasePosition)]
         }
     }
-    public func connectionToEmpty(fromNode: Godot.GodotStringName, fromPort: Int, releasePosition: Godot.Vector2) {
+
+    public func connectionToEmpty(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int,
+        releasePosition: Godot.Vector2
+    ) {
         _ = connectionToEmptySignal.emit(.init(fromNode: fromNode,
                 fromPort: fromPort,
                 releasePosition: releasePosition))
     }
+
     public lazy var connectionToEmptySignal: Godot.SignalEmitter<ConnectionToEmptySignalInput> = {
         .init(object: self, signalName: "connection_to_empty") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -130,22 +186,38 @@ open class GraphEdit: Control {
 
     public struct ConnectionFromEmptySignalInput: Godot.SignalInput {
         public let toNode: Godot.GodotStringName
+
         public let toPort: Int
+
         public let releasePosition: Godot.Vector2
-        fileprivate init(toNode: Godot.GodotStringName, toPort: Int, releasePosition: Godot.Vector2) {
+
+        fileprivate init(
+            toNode: Godot.GodotStringName,
+            toPort: Int,
+            releasePosition: Godot.Vector2
+        ) {
             self.toNode = toNode
             self.toPort = toPort
             self.releasePosition = releasePosition
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.toNode), Variant(input.toPort), Variant(input.releasePosition)]
         }
     }
-    public func connectionFromEmpty(toNode: Godot.GodotStringName, toPort: Int, releasePosition: Godot.Vector2) {
+
+    public func connectionFromEmpty(
+        toNode: Godot.GodotStringName,
+        toPort: Int,
+        releasePosition: Godot.Vector2
+    ) {
         _ = connectionFromEmptySignal.emit(.init(toNode: toNode,
                 toPort: toPort,
                 releasePosition: releasePosition))
     }
+
     public lazy var connectionFromEmptySignal: Godot.SignalEmitter<ConnectionFromEmptySignalInput> = {
         .init(object: self, signalName: "connection_from_empty") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -165,22 +237,38 @@ open class GraphEdit: Control {
 
     public struct ConnectionDragStartedSignalInput: Godot.SignalInput {
         public let fromNode: Godot.GodotStringName
+
         public let fromPort: Int
+
         public let isOutput: Bool
-        fileprivate init(fromNode: Godot.GodotStringName, fromPort: Int, isOutput: Bool) {
+
+        fileprivate init(
+            fromNode: Godot.GodotStringName,
+            fromPort: Int,
+            isOutput: Bool
+        ) {
             self.fromNode = fromNode
             self.fromPort = fromPort
             self.isOutput = isOutput
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.fromNode), Variant(input.fromPort), Variant(input.isOutput)]
         }
     }
-    public func connectionDragStarted(fromNode: Godot.GodotStringName, fromPort: Int, isOutput: Bool) {
+
+    public func connectionDragStarted(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int,
+        isOutput: Bool
+    ) {
         _ = connectionDragStartedSignal.emit(.init(fromNode: fromNode,
                 fromPort: fromPort,
                 isOutput: isOutput))
     }
+
     public lazy var connectionDragStartedSignal: Godot.SignalEmitter<ConnectionDragStartedSignalInput> = {
         .init(object: self, signalName: "connection_drag_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -201,6 +289,7 @@ open class GraphEdit: Control {
     public func connectionDragEnded() {
         _ = connectionDragEndedSignal.emit()
     }
+
     public lazy var connectionDragEndedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "connection_drag_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -219,6 +308,7 @@ open class GraphEdit: Control {
     public func copyNodesRequest() {
         _ = copyNodesRequestSignal.emit()
     }
+
     public lazy var copyNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "copy_nodes_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -237,6 +327,7 @@ open class GraphEdit: Control {
     public func pasteNodesRequest() {
         _ = pasteNodesRequestSignal.emit()
     }
+
     public lazy var pasteNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "paste_nodes_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -255,6 +346,7 @@ open class GraphEdit: Control {
     public func duplicateNodesRequest() {
         _ = duplicateNodesRequestSignal.emit()
     }
+
     public lazy var duplicateNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "duplicate_nodes_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -272,16 +364,26 @@ open class GraphEdit: Control {
 
     public struct DeleteNodesRequestSignalInput: Godot.SignalInput {
         public let nodes: Godot.GodotArray<Godot.GodotStringName>
-        fileprivate init(nodes: Godot.GodotArray<Godot.GodotStringName>) {
+
+        fileprivate init(
+            nodes: Godot.GodotArray<Godot.GodotStringName>
+        ) {
             self.nodes = nodes
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.nodes)]
         }
     }
-    public func deleteNodesRequest(nodes: Godot.GodotArray<Godot.GodotStringName>) {
+
+    public func deleteNodesRequest(
+        nodes: Godot.GodotArray<Godot.GodotStringName>
+    ) {
         _ = deleteNodesRequestSignal.emit(.init(nodes: nodes))
     }
+
     public lazy var deleteNodesRequestSignal: Godot.SignalEmitter<DeleteNodesRequestSignalInput> = {
         .init(object: self, signalName: "delete_nodes_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -299,16 +401,26 @@ open class GraphEdit: Control {
 
     public struct NodeSelectedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-        fileprivate init(node: Godot.Node?) {
+
+        fileprivate init(
+            node: Godot.Node?
+        ) {
             self.node = node
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.node)]
         }
     }
-    public func nodeSelected(node: Godot.Node?) {
+
+    public func nodeSelected(
+        node: Godot.Node?
+    ) {
         _ = nodeSelectedSignal.emit(.init(node: node))
     }
+
     public lazy var nodeSelectedSignal: Godot.SignalEmitter<NodeSelectedSignalInput> = {
         .init(object: self, signalName: "node_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -326,16 +438,26 @@ open class GraphEdit: Control {
 
     public struct NodeDeselectedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-        fileprivate init(node: Godot.Node?) {
+
+        fileprivate init(
+            node: Godot.Node?
+        ) {
             self.node = node
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.node)]
         }
     }
-    public func nodeDeselected(node: Godot.Node?) {
+
+    public func nodeDeselected(
+        node: Godot.Node?
+    ) {
         _ = nodeDeselectedSignal.emit(.init(node: node))
     }
+
     public lazy var nodeDeselectedSignal: Godot.SignalEmitter<NodeDeselectedSignalInput> = {
         .init(object: self, signalName: "node_deselected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -353,16 +475,26 @@ open class GraphEdit: Control {
 
     public struct PopupRequestSignalInput: Godot.SignalInput {
         public let position: Godot.Vector2
-        fileprivate init(position: Godot.Vector2) {
+
+        fileprivate init(
+            position: Godot.Vector2
+        ) {
             self.position = position
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.position)]
         }
     }
-    public func popupRequest(position: Godot.Vector2) {
+
+    public func popupRequest(
+        position: Godot.Vector2
+    ) {
         _ = popupRequestSignal.emit(.init(position: position))
     }
+
     public lazy var popupRequestSignal: Godot.SignalEmitter<PopupRequestSignalInput> = {
         .init(object: self, signalName: "popup_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -381,6 +513,7 @@ open class GraphEdit: Control {
     public func beginNodeMove() {
         _ = beginNodeMoveSignal.emit()
     }
+
     public lazy var beginNodeMoveSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "begin_node_move") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -399,6 +532,7 @@ open class GraphEdit: Control {
     public func endNodeMove() {
         _ = endNodeMoveSignal.emit()
     }
+
     public lazy var endNodeMoveSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "end_node_move") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -416,16 +550,26 @@ open class GraphEdit: Control {
 
     public struct ScrollOffsetChangedSignalInput: Godot.SignalInput {
         public let offset: Godot.Vector2
-        fileprivate init(offset: Godot.Vector2) {
+
+        fileprivate init(
+            offset: Godot.Vector2
+        ) {
             self.offset = offset
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.offset)]
         }
     }
-    public func scrollOffsetChanged(offset: Godot.Vector2) {
+
+    public func scrollOffsetChanged(
+        offset: Godot.Vector2
+    ) {
         _ = scrollOffsetChangedSignal.emit(.init(offset: offset))
     }
+
     public lazy var scrollOffsetChangedSignal: Godot.SignalEmitter<ScrollOffsetChangedSignalInput> = {
         .init(object: self, signalName: "scroll_offset_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -441,19 +585,35 @@ open class GraphEdit: Control {
         }
     }()
 
-    open func _isInInputHotzone(inNode node: Godot.Object?, inPort port: Int32, mousePosition: Godot.Vector2) -> Bool {
+    open func _isInInputHotzone(
+        inNode node: Godot.Object?,
+        inPort port: Int32,
+        mousePosition: Godot.Vector2
+    ) -> Bool {
         Bool()
     }
 
-    open func _isInOutputHotzone(inNode node: Godot.Object?, inPort port: Int32, mousePosition: Godot.Vector2) -> Bool {
+    open func _isInOutputHotzone(
+        inNode node: Godot.Object?,
+        inPort port: Int32,
+        mousePosition: Godot.Vector2
+    ) -> Bool {
         Bool()
     }
 
-    open func _getConnectionLine(fromPosition: Godot.Vector2, toPosition: Godot.Vector2) -> Godot.PackedVector2Array {
+    open func _getConnectionLine(
+        fromPosition: Godot.Vector2,
+        toPosition: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array()
     }
 
-    open func _isNodeHoverValid(fromNode: Godot.GodotStringName, fromPort: Int32, toNode: Godot.GodotStringName, toPort: Int32) -> Bool {
+    open func _isNodeHoverValid(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int32,
+        toNode: Godot.GodotStringName,
+        toPort: Int32
+    ) -> Bool {
         Bool()
     }
 
@@ -464,7 +624,13 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func connectNode(_ fromNode: Godot.GodotStringName, fromPort: Int32, toNode: Godot.GodotStringName, toPort: Int32) -> Godot.ErrorType {
+
+    public func connectNode(
+        _ fromNode: Godot.GodotStringName,
+        fromPort: Int32,
+        toNode: Godot.GodotStringName,
+        toPort: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -487,7 +653,13 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func isNodeConnected(fromNode: Godot.GodotStringName, fromPort: Int32, toNode: Godot.GodotStringName, toPort: Int32) -> Bool {
+
+    public func isNodeConnected(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int32,
+        toNode: Godot.GodotStringName,
+        toPort: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -510,7 +682,13 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func disconnectNode(_ fromNode: Godot.GodotStringName, fromPort: Int32, toNode: Godot.GodotStringName, toPort: Int32) {
+
+    public func disconnectNode(
+        _ fromNode: Godot.GodotStringName,
+        fromPort: Int32,
+        toNode: Godot.GodotStringName,
+        toPort: Int32
+    ) {
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
         toNode.withGodotUnsafeRawPointer { __ptr_toNode in
@@ -532,7 +710,14 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func setConnectionActivity(fromNode: Godot.GodotStringName, fromPort: Int32, toNode: Godot.GodotStringName, toPort: Int32, amount: Double) {
+
+    public func setConnectionActivity(
+        fromNode: Godot.GodotStringName,
+        fromPort: Int32,
+        toNode: Godot.GodotStringName,
+        toPort: Int32,
+        amount: Double
+    ) {
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
         toNode.withGodotUnsafeRawPointer { __ptr_toNode in
@@ -555,6 +740,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     public func connectionList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -573,6 +759,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     public func clearConnections() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -590,6 +777,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     public func forceConnectionDragEnd() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -607,6 +795,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getScrollOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -625,7 +814,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setScrollOffset(_ offset: Godot.Vector2) {
+
+    private func __setScrollOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -644,7 +836,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func addValidRightDisconnectType(_ type: Int32) {
+
+    public func addValidRightDisconnectType(
+        _ type: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -663,7 +858,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func removeValidRightDisconnectType(_ type: Int32) {
+
+    public func removeValidRightDisconnectType(
+        _ type: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -682,7 +880,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func addValidLeftDisconnectType(_ type: Int32) {
+
+    public func addValidLeftDisconnectType(
+        _ type: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -701,7 +902,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func removeValidLeftDisconnectType(_ type: Int32) {
+
+    public func removeValidLeftDisconnectType(
+        _ type: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -720,7 +924,11 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func addValidConnectionType(_ fromType: Int32, toType: Int32) {
+
+    public func addValidConnectionType(
+        _ fromType: Int32,
+        toType: Int32
+    ) {
         fromType.withGodotUnsafeRawPointer { __ptr_fromType in
         toType.withGodotUnsafeRawPointer { __ptr_toType in
         withUnsafeArgumentPackPointer(__ptr_fromType, __ptr_toType) { __accessPtr in
@@ -740,7 +948,11 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func removeValidConnectionType(_ fromType: Int32, toType: Int32) {
+
+    public func removeValidConnectionType(
+        _ fromType: Int32,
+        toType: Int32
+    ) {
         fromType.withGodotUnsafeRawPointer { __ptr_fromType in
         toType.withGodotUnsafeRawPointer { __ptr_toType in
         withUnsafeArgumentPackPointer(__ptr_fromType, __ptr_toType) { __accessPtr in
@@ -760,7 +972,11 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func isValidConnectionType(_ fromType: Int32, toType: Int32) -> Bool {
+
+    public func isValidConnectionType(
+        _ fromType: Int32,
+        toType: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         fromType.withGodotUnsafeRawPointer { __ptr_fromType in
         toType.withGodotUnsafeRawPointer { __ptr_toType in
@@ -781,7 +997,11 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func connectionLine(fromNode: Godot.Vector2, toNode: Godot.Vector2) -> Godot.PackedVector2Array {
+
+    public func connectionLine(
+        fromNode: Godot.Vector2,
+        toNode: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         toNode.withGodotUnsafeRawPointer { __ptr_toNode in
@@ -802,7 +1022,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setPanningScheme(_ scheme: Godot.GraphEdit.PanningScheme) {
+
+    private func __setPanningScheme(
+        _ scheme: Godot.GraphEdit.PanningScheme
+    ) {
         scheme.withGodotUnsafeRawPointer { __ptr_scheme in
         withUnsafeArgumentPackPointer(__ptr_scheme) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -821,6 +1044,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getPanningScheme() -> Godot.GraphEdit.PanningScheme {
         Godot.GraphEdit.PanningScheme.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -839,7 +1063,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setZoom(_ zoom: Double) {
+
+    private func __setZoom(
+        _ zoom: Double
+    ) {
         zoom.withGodotUnsafeRawPointer { __ptr_zoom in
         withUnsafeArgumentPackPointer(__ptr_zoom) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -858,6 +1085,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getZoom() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -876,7 +1104,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setZoomMin(_ zoomMin: Double) {
+
+    private func __setZoomMin(
+        _ zoomMin: Double
+    ) {
         zoomMin.withGodotUnsafeRawPointer { __ptr_zoomMin in
         withUnsafeArgumentPackPointer(__ptr_zoomMin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -895,6 +1126,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getZoomMin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -913,7 +1145,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setZoomMax(_ zoomMax: Double) {
+
+    private func __setZoomMax(
+        _ zoomMax: Double
+    ) {
         zoomMax.withGodotUnsafeRawPointer { __ptr_zoomMax in
         withUnsafeArgumentPackPointer(__ptr_zoomMax) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -932,6 +1167,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getZoomMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -950,7 +1186,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setZoomStep(_ zoomStep: Double) {
+
+    private func __setZoomStep(
+        _ zoomStep: Double
+    ) {
         zoomStep.withGodotUnsafeRawPointer { __ptr_zoomStep in
         withUnsafeArgumentPackPointer(__ptr_zoomStep) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -969,6 +1208,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getZoomStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -987,7 +1227,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowGrid(enable: Bool) {
+
+    private func __setShowGrid(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1006,6 +1249,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingGrid() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1024,7 +1268,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setSnappingEnabled(enable: Bool) {
+
+    private func __setSnappingEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1043,6 +1290,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isSnappingEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1061,7 +1309,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setSnappingDistance(pixels: Int32) {
+
+    private func __setSnappingDistance(
+        pixels: Int32
+    ) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         withUnsafeArgumentPackPointer(__ptr_pixels) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1080,6 +1331,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getSnappingDistance() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1098,7 +1350,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setConnectionLinesCurvature(_ curvature: Double) {
+
+    private func __setConnectionLinesCurvature(
+        _ curvature: Double
+    ) {
         curvature.withGodotUnsafeRawPointer { __ptr_curvature in
         withUnsafeArgumentPackPointer(__ptr_curvature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1117,6 +1372,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getConnectionLinesCurvature() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1135,7 +1391,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setConnectionLinesThickness(pixels: Double) {
+
+    private func __setConnectionLinesThickness(
+        pixels: Double
+    ) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         withUnsafeArgumentPackPointer(__ptr_pixels) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1154,6 +1413,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getConnectionLinesThickness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1172,7 +1432,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setConnectionLinesAntialiased(pixels: Bool) {
+
+    private func __setConnectionLinesAntialiased(
+        pixels: Bool
+    ) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         withUnsafeArgumentPackPointer(__ptr_pixels) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1191,6 +1454,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isConnectionLinesAntialiased() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1209,7 +1473,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setMinimapSize(_ size: Godot.Vector2) {
+
+    private func __setMinimapSize(
+        _ size: Godot.Vector2
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1228,6 +1495,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getMinimapSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1246,7 +1514,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setMinimapOpacity(_ opacity: Double) {
+
+    private func __setMinimapOpacity(
+        _ opacity: Double
+    ) {
         opacity.withGodotUnsafeRawPointer { __ptr_opacity in
         withUnsafeArgumentPackPointer(__ptr_opacity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1265,6 +1536,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __getMinimapOpacity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1283,7 +1555,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setMinimapEnabled(enable: Bool) {
+
+    private func __setMinimapEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1302,6 +1577,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isMinimapEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1320,7 +1596,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowMenu(hidden: Bool) {
+
+    private func __setShowMenu(
+        hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1339,6 +1618,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingMenu() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1357,7 +1637,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowZoomLabel(enable: Bool) {
+
+    private func __setShowZoomLabel(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1376,6 +1659,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingZoomLabel() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1394,7 +1678,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowGridButtons(hidden: Bool) {
+
+    private func __setShowGridButtons(
+        hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1413,6 +1700,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingGridButtons() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1431,7 +1719,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowZoomButtons(hidden: Bool) {
+
+    private func __setShowZoomButtons(
+        hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1450,6 +1741,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingZoomButtons() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1468,7 +1760,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowMinimapButton(hidden: Bool) {
+
+    private func __setShowMinimapButton(
+        hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1487,6 +1782,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingMinimapButton() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1505,7 +1801,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setShowArrangeButton(hidden: Bool) {
+
+    private func __setShowArrangeButton(
+        hidden: Bool
+    ) {
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
         withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1524,6 +1823,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isShowingArrangeButton() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1542,7 +1842,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    private func __setRightDisconnects(enable: Bool) {
+
+    private func __setRightDisconnects(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1561,6 +1864,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     private func __isRightDisconnectsEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1579,6 +1883,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     public func menuHbox() -> Godot.HBoxContainer? {
         Godot.HBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1597,6 +1902,7 @@ open class GraphEdit: Control {
         }
         }
     }()
+
     public func arrangeNodes() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1614,7 +1920,10 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func setSelected(node: Godot.Node?) {
+
+    public func setSelected(
+        node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -1870,6 +2179,7 @@ open class GraphEdit: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1929,5 +2239,4 @@ open class GraphEdit: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectSpectrumAnalyzer: AudioEffect {
     public enum FFTSize: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         case fftSize2048 = 3
         case fftSize4096 = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Fft Size256", 0),
@@ -30,7 +32,10 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
-    private func __setBufferLength(seconds: Double) {
+
+    private func __setBufferLength(
+        seconds: Double
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         withUnsafeArgumentPackPointer(__ptr_seconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
+
     private func __getBufferLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
-    private func __setTapBackPos(seconds: Double) {
+
+    private func __setTapBackPos(
+        seconds: Double
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         withUnsafeArgumentPackPointer(__ptr_seconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
+
     private func __getTapBackPos() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
-    private func __setFftSize(_ size: Godot.AudioEffectSpectrumAnalyzer.FFTSize) {
+
+    private func __setFftSize(
+        _ size: Godot.AudioEffectSpectrumAnalyzer.FFTSize
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         }
     }()
+
     private func __getFftSize() -> Godot.AudioEffectSpectrumAnalyzer.FFTSize {
         Godot.AudioEffectSpectrumAnalyzer.FFTSize.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,6 +182,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -180,5 +195,4 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

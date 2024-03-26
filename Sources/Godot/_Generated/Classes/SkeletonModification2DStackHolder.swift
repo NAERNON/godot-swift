@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DStackHolder: SkeletonModification2D {
     internal static var __method_binding_set_held_modification_stack: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
         }
         }
     }()
-    public func setHeldModificationStack(_ heldModificationStack: Godot.SkeletonModificationStack2D?) {
+
+    public func setHeldModificationStack(
+        _ heldModificationStack: Godot.SkeletonModificationStack2D?
+    ) {
         heldModificationStack.withGodotUnsafeRawPointer { __ptr_heldModificationStack in
         withUnsafePointer(to: __ptr_heldModificationStack) { _ptr___ptr_heldModificationStack in
         withUnsafeArgumentPackPointer(_ptr___ptr_heldModificationStack) { __accessPtr in
@@ -32,6 +36,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
         }
         }
     }()
+
     public func heldModificationStack() -> Godot.SkeletonModificationStack2D? {
         Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -44,6 +49,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -56,5 +62,4 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

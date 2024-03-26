@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
     internal static var __method_binding_push_frame: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
-    public func pushFrame(_ frame: Godot.Vector2) -> Bool {
+
+    public func pushFrame(
+        _ frame: Godot.Vector2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
@@ -32,7 +36,10 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
-    public func canPushBuffer(amount: Int32) -> Bool {
+
+    public func canPushBuffer(
+        amount: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
@@ -52,7 +59,10 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
-    public func pushBuffer(frames: Godot.PackedVector2Array) -> Bool {
+
+    public func pushBuffer(
+        frames: Godot.PackedVector2Array
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
@@ -72,6 +82,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
+
     public func framesAvailable() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,6 +101,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
+
     public func skips() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,6 +120,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         }
     }()
+
     public func clearBuffer() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -119,6 +132,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -131,5 +145,4 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
         }
         return _virtualFunctions!
     }
-
-    }
+}

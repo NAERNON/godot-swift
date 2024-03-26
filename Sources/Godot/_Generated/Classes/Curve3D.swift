@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Curve3D: Resource {
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     private func __getPointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    private func __setPointCount(_ count: Int32) {
+
+    private func __setPointCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,13 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func addPoint(position: Godot.Vector3, `in`: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0), out: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0), index: Int32 = -1) {
+
+    public func addPoint(
+        position: Godot.Vector3,
+        `in`: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0),
+        out: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0),
+        index: Int32 = -1
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         `in`.withGodotUnsafeRawPointer { __ptr_in in
         out.withGodotUnsafeRawPointer { __ptr_out in
@@ -71,7 +82,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func setPointPosition(idx: Int32, position: Godot.Vector3) {
+
+    public func setPointPosition(
+        idx: Int32,
+        position: Godot.Vector3
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -91,7 +106,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func pointPosition(idx: Int32) -> Godot.Vector3 {
+
+    public func pointPosition(
+        idx: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -111,7 +129,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func setPointTilt(idx: Int32, tilt: Double) {
+
+    public func setPointTilt(
+        idx: Int32,
+        tilt: Double
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         tilt.withGodotUnsafeRawPointer { __ptr_tilt in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_tilt) { __accessPtr in
@@ -131,7 +153,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func pointTilt(idx: Int32) -> Double {
+
+    public func pointTilt(
+        idx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -151,7 +176,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func setPointIn(idx: Int32, position: Godot.Vector3) {
+
+    public func setPointIn(
+        idx: Int32,
+        position: Godot.Vector3
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -171,7 +200,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func pointIn(idx: Int32) -> Godot.Vector3 {
+
+    public func pointIn(
+        idx: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -191,7 +223,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func setPointOut(idx: Int32, position: Godot.Vector3) {
+
+    public func setPointOut(
+        idx: Int32,
+        position: Godot.Vector3
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_position) { __accessPtr in
@@ -211,7 +247,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func pointOut(idx: Int32) -> Godot.Vector3 {
+
+    public func pointOut(
+        idx: Int32
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -231,7 +270,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func removePoint(idx: Int32) {
+
+    public func removePoint(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,6 +292,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     public func clearPoints() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -267,7 +310,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func sample(idx: Int32, t: Double) -> Godot.Vector3 {
+
+    public func sample(
+        idx: Int32,
+        t: Double
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         t.withGodotUnsafeRawPointer { __ptr_t in
@@ -288,7 +335,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func samplef(fofs: Double) -> Godot.Vector3 {
+
+    public func samplef(
+        fofs: Double
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         fofs.withGodotUnsafeRawPointer { __ptr_fofs in
         withUnsafeArgumentPackPointer(__ptr_fofs) { __accessPtr in
@@ -308,7 +358,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    private func __setBakeInterval(distance: Double) {
+
+    private func __setBakeInterval(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +380,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     private func __getBakeInterval() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +399,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    private func __setUpVectorEnabled(enable: Bool) {
+
+    private func __setUpVectorEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +421,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     private func __isUpVectorEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +440,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     public func bakedLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +459,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func sampleBaked(offset: Double = 0.0, cubic: Bool = false) -> Godot.Vector3 {
+
+    public func sampleBaked(
+        offset: Double = 0.0,
+        cubic: Bool = false
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
@@ -421,7 +484,12 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func sampleBakedWithRotation(offset: Double = 0.0, cubic: Bool = false, applyTilt: Bool = false) -> Godot.Transform3D {
+
+    public func sampleBakedWithRotation(
+        offset: Double = 0.0,
+        cubic: Bool = false,
+        applyTilt: Bool = false
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
@@ -443,7 +511,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func sampleBakedUpVector(offset: Double, applyTilt: Bool = false) -> Godot.Vector3 {
+
+    public func sampleBakedUpVector(
+        offset: Double,
+        applyTilt: Bool = false
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         applyTilt.withGodotUnsafeRawPointer { __ptr_applyTilt in
@@ -464,6 +536,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     public func bakedPoints() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -482,6 +555,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     public func bakedTilts() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -500,6 +574,7 @@ open class Curve3D: Resource {
         }
         }
     }()
+
     public func bakedUpVectors() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -518,7 +593,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func closestPoint(_ point: Godot.Vector3) -> Godot.Vector3 {
+
+    public func closestPoint(
+        _ point: Godot.Vector3
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -538,7 +616,10 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func closestOffset(toPoint point: Godot.Vector3) -> Double {
+
+    public func closestOffset(
+        toPoint point: Godot.Vector3
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -558,7 +639,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func tessellate(maxStages: Int32 = 5, toleranceDegrees: Double = 4) -> Godot.PackedVector3Array {
+
+    public func tessellate(
+        maxStages: Int32 = 5,
+        toleranceDegrees: Double = 4
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceDegrees.withGodotUnsafeRawPointer { __ptr_toleranceDegrees in
@@ -579,7 +664,11 @@ open class Curve3D: Resource {
         }
         }
     }()
-    public func tessellateEvenLength(maxStages: Int32 = 5, toleranceLength: Double = 0.2) -> Godot.PackedVector3Array {
+
+    public func tessellateEvenLength(
+        maxStages: Int32 = 5,
+        toleranceLength: Double = 0.2
+    ) -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceLength.withGodotUnsafeRawPointer { __ptr_toleranceLength in
@@ -627,6 +716,7 @@ open class Curve3D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -639,5 +729,4 @@ open class Curve3D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

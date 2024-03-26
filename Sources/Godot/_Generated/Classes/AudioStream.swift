@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStream: Resource {
     open func _instantiatePlayback() -> Godot.AudioStreamPlayback? {
@@ -36,6 +37,7 @@ open class AudioStream: Resource {
         }
         }
     }()
+
     public func length() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +56,7 @@ open class AudioStream: Resource {
         }
         }
     }()
+
     public func isMonophonic() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +75,7 @@ open class AudioStream: Resource {
         }
         }
     }()
+
     public func instantiatePlayback() -> Godot.AudioStreamPlayback? {
         Godot.AudioStreamPlayback?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +88,7 @@ open class AudioStream: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -143,5 +148,4 @@ open class AudioStream: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

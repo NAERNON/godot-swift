@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorCommandPalette: ConfirmationDialog {
     internal static var __method_binding_add_command: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class EditorCommandPalette: ConfirmationDialog {
         }
         }
     }()
-    public func addCommand(commandName: Godot.GodotString, keyName: Godot.GodotString, bindedCallable: Godot.Callable, shortcutText: Godot.GodotString = "None") {
+
+    public func addCommand(
+        commandName: Godot.GodotString,
+        keyName: Godot.GodotString,
+        bindedCallable: Godot.Callable,
+        shortcutText: Godot.GodotString = "None"
+    ) {
         commandName.withGodotUnsafeRawPointer { __ptr_commandName in
         keyName.withGodotUnsafeRawPointer { __ptr_keyName in
         bindedCallable.withGodotUnsafeRawPointer { __ptr_bindedCallable in
@@ -34,7 +41,10 @@ open class EditorCommandPalette: ConfirmationDialog {
         }
         }
     }()
-    public func removeCommand(keyName: Godot.GodotString) {
+
+    public func removeCommand(
+        keyName: Godot.GodotString
+    ) {
         keyName.withGodotUnsafeRawPointer { __ptr_keyName in
         withUnsafeArgumentPackPointer(__ptr_keyName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +57,7 @@ open class EditorCommandPalette: ConfirmationDialog {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -59,5 +70,4 @@ open class EditorCommandPalette: ConfirmationDialog {
         }
         return _virtualFunctions!
     }
-
-    }
+}

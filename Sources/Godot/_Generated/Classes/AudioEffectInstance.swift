@@ -3,9 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectInstance: RefCounted {
-    open func _process(srcBuffer: UnsafeRawPointer, dstBuffer: UnsafeMutablePointer<AudioFrame>, frameCount: Int32) {
+    open func _process(
+        srcBuffer: UnsafeRawPointer,
+        dstBuffer: UnsafeMutablePointer<AudioFrame>,
+        frameCount: Int32
+    ) {
     }
 
     open func _processSilence() -> Bool {
@@ -13,6 +18,7 @@ open class AudioEffectInstance: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -43,5 +49,4 @@ open class AudioEffectInstance: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

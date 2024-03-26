@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ResourceImporter: RefCounted {
     public enum ImportOrder: UInt32, GodotEnum {
         case `default` = 0
         case scene = 100
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Default", 0),
@@ -16,6 +18,7 @@ open class ResourceImporter: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -28,5 +31,4 @@ open class ResourceImporter: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

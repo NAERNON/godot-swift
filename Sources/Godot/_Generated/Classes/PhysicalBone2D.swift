@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicalBone2D: RigidBody2D {
     internal static var __method_binding_get_joint: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     public func joint() -> Godot.Joint2D? {
         Godot.Joint2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     private func __getAutoConfigureJoint() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,7 +51,10 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
-    private func __setAutoConfigureJoint(_ autoConfigureJoint: Bool) {
+
+    private func __setAutoConfigureJoint(
+        _ autoConfigureJoint: Bool
+    ) {
         autoConfigureJoint.withGodotUnsafeRawPointer { __ptr_autoConfigureJoint in
         withUnsafeArgumentPackPointer(__ptr_autoConfigureJoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
-    private func __setSimulatePhysics(_ simulatePhysics: Bool) {
+
+    private func __setSimulatePhysics(
+        _ simulatePhysics: Bool
+    ) {
         simulatePhysics.withGodotUnsafeRawPointer { __ptr_simulatePhysics in
         withUnsafeArgumentPackPointer(__ptr_simulatePhysics) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     private func __getSimulatePhysics() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +114,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     public func isSimulatingPhysics() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +133,10 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
-    private func __setBone2dNodepath(_ nodepath: Godot.NodePath) {
+
+    private func __setBone2dNodepath(
+        _ nodepath: Godot.NodePath
+    ) {
         nodepath.withGodotUnsafeRawPointer { __ptr_nodepath in
         withUnsafeArgumentPackPointer(__ptr_nodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,6 +155,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     private func __getBone2dNodepath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,7 +174,10 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
-    private func __setBone2dIndex(boneIndex: Int32) {
+
+    private func __setBone2dIndex(
+        boneIndex: Int32
+    ) {
         boneIndex.withGodotUnsafeRawPointer { __ptr_boneIndex in
         withUnsafeArgumentPackPointer(__ptr_boneIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,6 +196,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     private func __getBone2dIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,7 +215,10 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
-    private func __setFollowBoneWhenSimulating(followBone: Bool) {
+
+    private func __setFollowBoneWhenSimulating(
+        followBone: Bool
+    ) {
         followBone.withGodotUnsafeRawPointer { __ptr_followBone in
         withUnsafeArgumentPackPointer(__ptr_followBone) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +237,7 @@ open class PhysicalBone2D: RigidBody2D {
         }
         }
     }()
+
     private func __getFollowBoneWhenSimulating() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,6 +305,7 @@ open class PhysicalBone2D: RigidBody2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -294,5 +318,4 @@ open class PhysicalBone2D: RigidBody2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

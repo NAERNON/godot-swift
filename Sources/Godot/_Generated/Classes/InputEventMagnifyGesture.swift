@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventMagnifyGesture: InputEventGesture {
     internal static var __method_binding_set_factor: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventMagnifyGesture: InputEventGesture {
         }
         }
     }()
-    private func __setFactor(_ factor: Double) {
+
+    private func __setFactor(
+        _ factor: Double
+    ) {
         factor.withGodotUnsafeRawPointer { __ptr_factor in
         withUnsafeArgumentPackPointer(__ptr_factor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventMagnifyGesture: InputEventGesture {
         }
         }
     }()
+
     private func __getFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class InputEventMagnifyGesture: InputEventGesture {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class InputEventMagnifyGesture: InputEventGesture {
         }
         return _virtualFunctions!
     }
-
-    }
+}

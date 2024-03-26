@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TranslationServer: Object {
     internal static var __method_binding_set_locale: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func setLocale(_ locale: Godot.GodotString) {
+
+    public func setLocale(
+        _ locale: Godot.GodotString
+    ) {
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func locale() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func toolLocale() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,11 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func compareLocales(localeA: Godot.GodotString, localeB: Godot.GodotString) -> Int32 {
+
+    public func compareLocales(
+        localeA: Godot.GodotString,
+        localeB: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         localeA.withGodotUnsafeRawPointer { __ptr_localeA in
         localeB.withGodotUnsafeRawPointer { __ptr_localeB in
@@ -88,7 +98,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func standardizeLocale(_ locale: Godot.GodotString) -> Godot.GodotString {
+
+    public func standardizeLocale(
+        _ locale: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
@@ -108,6 +121,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func allLanguages() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +140,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func languageName(language: Godot.GodotString) -> Godot.GodotString {
+
+    public func languageName(
+        language: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
@@ -146,6 +163,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func allScripts() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,7 +182,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func scriptName(script: Godot.GodotString) -> Godot.GodotString {
+
+    public func scriptName(
+        script: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_script) { __accessPtr in
@@ -184,6 +205,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func allCountries() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,7 +224,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func countryName(country: Godot.GodotString) -> Godot.GodotString {
+
+    public func countryName(
+        country: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         country.withGodotUnsafeRawPointer { __ptr_country in
         withUnsafeArgumentPackPointer(__ptr_country) { __accessPtr in
@@ -222,7 +247,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func localeName(locale: Godot.GodotString) -> Godot.GodotString {
+
+    public func localeName(
+        locale: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
@@ -242,7 +270,11 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func translate(message: Godot.GodotStringName, context: Godot.GodotStringName = "") -> Godot.GodotStringName {
+
+    public func translate(
+        message: Godot.GodotStringName,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         context.withGodotUnsafeRawPointer { __ptr_context in
@@ -263,7 +295,13 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func translatePlural(message: Godot.GodotStringName, pluralMessage: Godot.GodotStringName, n: Int32, context: Godot.GodotStringName = "") -> Godot.GodotStringName {
+
+    public func translatePlural(
+        message: Godot.GodotStringName,
+        pluralMessage: Godot.GodotStringName,
+        n: Int32,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         pluralMessage.withGodotUnsafeRawPointer { __ptr_pluralMessage in
@@ -286,7 +324,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func addTranslation(_ translation: Godot.Translation?) {
+
+    public func addTranslation(
+        _ translation: Godot.Translation?
+    ) {
         translation.withGodotUnsafeRawPointer { __ptr_translation in
         withUnsafePointer(to: __ptr_translation) { _ptr___ptr_translation in
         withUnsafeArgumentPackPointer(_ptr___ptr_translation) { __accessPtr in
@@ -306,7 +347,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func removeTranslation(_ translation: Godot.Translation?) {
+
+    public func removeTranslation(
+        _ translation: Godot.Translation?
+    ) {
         translation.withGodotUnsafeRawPointer { __ptr_translation in
         withUnsafePointer(to: __ptr_translation) { _ptr___ptr_translation in
         withUnsafeArgumentPackPointer(_ptr___ptr_translation) { __accessPtr in
@@ -326,7 +370,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func translationObject(locale: Godot.GodotString) -> Godot.Translation? {
+
+    public func translationObject(
+        locale: Godot.GodotString
+    ) -> Godot.Translation? {
         Godot.Translation?.fromMutatingGodotUnsafePointer { __temporary in
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
@@ -346,6 +393,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -363,6 +411,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func loadedLocales() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,6 +430,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     private func __isPseudolocalizationEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -399,7 +449,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    private func __setPseudolocalizationEnabled(_ enabled: Bool) {
+
+    private func __setPseudolocalizationEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,6 +471,7 @@ open class TranslationServer: Object {
         }
         }
     }()
+
     public func reloadPseudolocalization() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -435,7 +489,10 @@ open class TranslationServer: Object {
         }
         }
     }()
-    public func pseudolocalize(message: Godot.GodotStringName) -> Godot.GodotStringName {
+
+    public func pseudolocalize(
+        message: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         withUnsafeArgumentPackPointer(__ptr_message) { __accessPtr in
@@ -460,6 +517,7 @@ open class TranslationServer: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -472,5 +530,4 @@ open class TranslationServer: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

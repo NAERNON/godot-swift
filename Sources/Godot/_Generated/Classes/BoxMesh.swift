@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class BoxMesh: PrimitiveMesh {
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideWidth(subdivide: Int32) {
+
+    private func __setSubdivideWidth(
+        subdivide: Int32
+    ) {
         subdivide.withGodotUnsafeRawPointer { __ptr_subdivide in
         withUnsafeArgumentPackPointer(__ptr_subdivide) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideHeight(divisions: Int32) {
+
+    private func __setSubdivideHeight(
+        divisions: Int32
+    ) {
         divisions.withGodotUnsafeRawPointer { __ptr_divisions in
         withUnsafeArgumentPackPointer(__ptr_divisions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideDepth(divisions: Int32) {
+
+    private func __setSubdivideDepth(
+        divisions: Int32
+    ) {
         divisions.withGodotUnsafeRawPointer { __ptr_divisions in
         withUnsafeArgumentPackPointer(__ptr_divisions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class BoxMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideDepth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class BoxMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class BoxMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

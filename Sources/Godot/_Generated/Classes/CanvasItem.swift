@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CanvasItem: Node {
     public enum TextureFilter: UInt32, GodotEnum {
@@ -14,6 +15,7 @@ open class CanvasItem: Node {
         case nearestWithMipmapsAnisotropic = 5
         case linearWithMipmapsAnisotropic = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Parent Node", 0),
@@ -26,12 +28,14 @@ open class CanvasItem: Node {
             ("Max", 7),]
         }
     }
+
     public enum TextureRepeat: UInt32, GodotEnum {
         case parentNode = 0
         case disabled = 1
         case enabled = 2
         case mirror = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Parent Node", 0),
@@ -41,11 +45,13 @@ open class CanvasItem: Node {
             ("Max", 4),]
         }
     }
+
     public enum ClipChildrenMode: UInt32, GodotEnum {
         case disabled = 0
         case only = 1
         case andDraw = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -58,6 +64,7 @@ open class CanvasItem: Node {
     public func draw() {
         _ = drawSignal.emit()
     }
+
     public lazy var drawSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "draw") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -76,6 +83,7 @@ open class CanvasItem: Node {
     public func visibilityChanged() {
         _ = visibilityChangedSignal.emit()
     }
+
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -94,6 +102,7 @@ open class CanvasItem: Node {
     public func hidden() {
         _ = hiddenSignal.emit()
     }
+
     public lazy var hiddenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "hidden") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -112,6 +121,7 @@ open class CanvasItem: Node {
     public func itemRectChanged() {
         _ = itemRectChangedSignal.emit()
     }
+
     public lazy var itemRectChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_rect_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -128,11 +138,17 @@ open class CanvasItem: Node {
     }()
 
     public static let notificationTransformChanged: Notification = .init(rawValue: 2000)
+
     public static let notificationLocalTransformChanged: Notification = .init(rawValue: 35)
+
     public static let notificationDraw: Notification = .init(rawValue: 30)
+
     public static let notificationVisibilityChanged: Notification = .init(rawValue: 31)
+
     public static let notificationEnterCanvas: Notification = .init(rawValue: 32)
+
     public static let notificationExitCanvas: Notification = .init(rawValue: 33)
+
     public static let notificationWorld2DChanged: Notification = .init(rawValue: 36)
 
     open func _draw() {
@@ -145,6 +161,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func canvasItem() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +180,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setVisible(_ visible: Bool) {
+
+    private func __setVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,6 +202,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +221,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func isVisibleInTree() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +240,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func show() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -235,6 +258,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func hide() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -252,6 +276,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func queueRedraw() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -269,6 +294,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func moveToFront() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -286,7 +312,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setAsTopLevel(enable: Bool) {
+
+    private func __setAsTopLevel(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,6 +334,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __isSetAsTopLevel() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,7 +353,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setLightMask(_ lightMask: Int32) {
+
+    private func __setLightMask(
+        _ lightMask: Int32
+    ) {
         lightMask.withGodotUnsafeRawPointer { __ptr_lightMask in
         withUnsafeArgumentPackPointer(__ptr_lightMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +375,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getLightMask() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,7 +394,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setModulate(_ modulate: Godot.Color) {
+
+    private func __setModulate(
+        _ modulate: Godot.Color
+    ) {
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_modulate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -379,6 +416,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -397,7 +435,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setSelfModulate(_ selfModulate: Godot.Color) {
+
+    private func __setSelfModulate(
+        _ selfModulate: Godot.Color
+    ) {
         selfModulate.withGodotUnsafeRawPointer { __ptr_selfModulate in
         withUnsafeArgumentPackPointer(__ptr_selfModulate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,6 +457,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getSelfModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -434,7 +476,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setZIndex(_ zIndex: Int32) {
+
+    private func __setZIndex(
+        _ zIndex: Int32
+    ) {
         zIndex.withGodotUnsafeRawPointer { __ptr_zIndex in
         withUnsafeArgumentPackPointer(__ptr_zIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -453,6 +498,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getZIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -471,7 +517,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setZAsRelative(enable: Bool) {
+
+    private func __setZAsRelative(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -490,6 +539,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __isZRelative() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -508,7 +558,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setYSortEnabled(_ enabled: Bool) {
+
+    private func __setYSortEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -527,6 +580,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __isYSortEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -545,7 +599,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setDrawBehindParent(enable: Bool) {
+
+    private func __setDrawBehindParent(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -564,6 +621,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __isDrawBehindParentEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -582,7 +640,14 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawLine(from: Godot.Vector2, to: Godot.Vector2, color: Godot.Color, width: Double = -1.0, antialiased: Bool = false) {
+
+    public func drawLine(
+        from: Godot.Vector2,
+        to: Godot.Vector2,
+        color: Godot.Color,
+        width: Double = -1.0,
+        antialiased: Bool = false
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -605,7 +670,15 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawDashedLine(from: Godot.Vector2, to: Godot.Vector2, color: Godot.Color, width: Double = -1.0, dash: Double = 2.0, aligned: Bool = true) {
+
+    public func drawDashedLine(
+        from: Godot.Vector2,
+        to: Godot.Vector2,
+        color: Godot.Color,
+        width: Double = -1.0,
+        dash: Double = 2.0,
+        aligned: Bool = true
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -629,7 +702,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawPolyline(points: Godot.PackedVector2Array, color: Godot.Color, width: Double = -1.0, antialiased: Bool = false) {
+
+    public func drawPolyline(
+        points: Godot.PackedVector2Array,
+        color: Godot.Color,
+        width: Double = -1.0,
+        antialiased: Bool = false
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         color.withGodotUnsafeRawPointer { __ptr_color in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -651,7 +730,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawPolylineColors(points: Godot.PackedVector2Array, colors: Godot.PackedColorArray, width: Double = -1.0, antialiased: Bool = false) {
+
+    public func drawPolylineColors(
+        points: Godot.PackedVector2Array,
+        colors: Godot.PackedColorArray,
+        width: Double = -1.0,
+        antialiased: Bool = false
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         colors.withGodotUnsafeRawPointer { __ptr_colors in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -673,7 +758,17 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawArc(center: Godot.Vector2, radius: Double, startAngle: Double, endAngle: Double, pointCount: Int32, color: Godot.Color, width: Double = -1.0, antialiased: Bool = false) {
+
+    public func drawArc(
+        center: Godot.Vector2,
+        radius: Double,
+        startAngle: Double,
+        endAngle: Double,
+        pointCount: Int32,
+        color: Godot.Color,
+        width: Double = -1.0,
+        antialiased: Bool = false
+    ) {
         center.withGodotUnsafeRawPointer { __ptr_center in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         startAngle.withGodotUnsafeRawPointer { __ptr_startAngle in
@@ -699,7 +794,12 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultiline(points: Godot.PackedVector2Array, color: Godot.Color, width: Double = -1.0) {
+
+    public func drawMultiline(
+        points: Godot.PackedVector2Array,
+        color: Godot.Color,
+        width: Double = -1.0
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         color.withGodotUnsafeRawPointer { __ptr_color in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -720,7 +820,12 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultilineColors(points: Godot.PackedVector2Array, colors: Godot.PackedColorArray, width: Double = -1.0) {
+
+    public func drawMultilineColors(
+        points: Godot.PackedVector2Array,
+        colors: Godot.PackedColorArray,
+        width: Double = -1.0
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         colors.withGodotUnsafeRawPointer { __ptr_colors in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -741,7 +846,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawRect(_ rect: Godot.Rect2, color: Godot.Color, filled: Bool = true, width: Double = -1.0) {
+
+    public func drawRect(
+        _ rect: Godot.Rect2,
+        color: Godot.Color,
+        filled: Bool = true,
+        width: Double = -1.0
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         color.withGodotUnsafeRawPointer { __ptr_color in
         filled.withGodotUnsafeRawPointer { __ptr_filled in
@@ -763,7 +874,12 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawCircle(position: Godot.Vector2, radius: Double, color: Godot.Color) {
+
+    public func drawCircle(
+        position: Godot.Vector2,
+        radius: Double,
+        color: Godot.Color
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -784,7 +900,12 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTexture(_ texture: Godot.Texture2D?, position: Godot.Vector2, modulate: Godot.Color = .white) {
+
+    public func drawTexture(
+        _ texture: Godot.Texture2D?,
+        position: Godot.Vector2,
+        modulate: Godot.Color = .white
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -806,7 +927,14 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTextureRect(texture: Godot.Texture2D?, rect: Godot.Rect2, tile: Bool, modulate: Godot.Color = .white, transpose: Bool = false) {
+
+    public func drawTextureRect(
+        texture: Godot.Texture2D?,
+        rect: Godot.Rect2,
+        tile: Bool,
+        modulate: Godot.Color = .white,
+        transpose: Bool = false
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -830,7 +958,15 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, transpose: Bool = false, clipUv: Bool = true) {
+
+    public func drawTextureRectRegion(
+        texture: Godot.Texture2D?,
+        rect: Godot.Rect2,
+        srcRect: Godot.Rect2,
+        modulate: Godot.Color = .white,
+        transpose: Bool = false,
+        clipUv: Bool = true
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -855,7 +991,16 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMsdfTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white, outline: Double = 0.0, pixelRange: Double = 4.0, scale: Double = 1.0) {
+
+    public func drawMsdfTextureRectRegion(
+        texture: Godot.Texture2D?,
+        rect: Godot.Rect2,
+        srcRect: Godot.Rect2,
+        modulate: Godot.Color = .white,
+        outline: Double = 0.0,
+        pixelRange: Double = 4.0,
+        scale: Double = 1.0
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -881,7 +1026,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawLcdTextureRectRegion(texture: Godot.Texture2D?, rect: Godot.Rect2, srcRect: Godot.Rect2, modulate: Godot.Color = .white) {
+
+    public func drawLcdTextureRectRegion(
+        texture: Godot.Texture2D?,
+        rect: Godot.Rect2,
+        srcRect: Godot.Rect2,
+        modulate: Godot.Color = .white
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -904,7 +1055,11 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawStyleBox(_ styleBox: Godot.StyleBox?, rect: Godot.Rect2) {
+
+    public func drawStyleBox(
+        _ styleBox: Godot.StyleBox?,
+        rect: Godot.Rect2
+    ) {
         styleBox.withGodotUnsafeRawPointer { __ptr_styleBox in
         withUnsafePointer(to: __ptr_styleBox) { _ptr___ptr_styleBox in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -925,7 +1080,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawPrimitive(points: Godot.PackedVector2Array, colors: Godot.PackedColorArray, uvs: Godot.PackedVector2Array, texture: Godot.Texture2D? = nil) {
+
+    public func drawPrimitive(
+        points: Godot.PackedVector2Array,
+        colors: Godot.PackedColorArray,
+        uvs: Godot.PackedVector2Array,
+        texture: Godot.Texture2D? = nil
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         colors.withGodotUnsafeRawPointer { __ptr_colors in
         uvs.withGodotUnsafeRawPointer { __ptr_uvs in
@@ -948,7 +1109,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawPolygon(points: Godot.PackedVector2Array, colors: Godot.PackedColorArray, uvs: Godot.PackedVector2Array = PackedVector2Array(), texture: Godot.Texture2D? = nil) {
+
+    public func drawPolygon(
+        points: Godot.PackedVector2Array,
+        colors: Godot.PackedColorArray,
+        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        texture: Godot.Texture2D? = nil
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         colors.withGodotUnsafeRawPointer { __ptr_colors in
         uvs.withGodotUnsafeRawPointer { __ptr_uvs in
@@ -971,7 +1138,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawColoredPolygon(points: Godot.PackedVector2Array, color: Godot.Color, uvs: Godot.PackedVector2Array = PackedVector2Array(), texture: Godot.Texture2D? = nil) {
+
+    public func drawColoredPolygon(
+        points: Godot.PackedVector2Array,
+        color: Godot.Color,
+        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        texture: Godot.Texture2D? = nil
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         color.withGodotUnsafeRawPointer { __ptr_color in
         uvs.withGodotUnsafeRawPointer { __ptr_uvs in
@@ -994,7 +1167,19 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+
+    public func drawString(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        text: Godot.GodotString,
+        alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!,
+        width: Double = -1,
+        fontSize: Int32 = 16,
+        modulate: Godot.Color = .white,
+        justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3),
+        direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
+        orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1023,7 +1208,21 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultilineString(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+
+    public func drawMultilineString(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        text: Godot.GodotString,
+        alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!,
+        width: Double = -1,
+        fontSize: Int32 = 16,
+        maxLines: Int32 = -1,
+        modulate: Godot.Color = .white,
+        brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3),
+        justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3),
+        direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
+        orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1054,7 +1253,20 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, size: Int32 = 1, modulate: Godot.Color = .white, justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+
+    public func drawStringOutline(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        text: Godot.GodotString,
+        alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!,
+        width: Double = -1,
+        fontSize: Int32 = 16,
+        size: Int32 = 1,
+        modulate: Godot.Color = .white,
+        justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3),
+        direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
+        orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1084,7 +1296,22 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultilineStringOutline(font: Godot.Font?, pos: Godot.Vector2, text: Godot.GodotString, alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!, width: Double = -1, fontSize: Int32 = 16, maxLines: Int32 = -1, size: Int32 = 1, modulate: Godot.Color = .white, brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3), justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3), direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!, orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!) {
+
+    public func drawMultilineStringOutline(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        text: Godot.GodotString,
+        alignment: Godot.HorizontalAlignment = HorizontalAlignment(rawValue: 0)!,
+        width: Double = -1,
+        fontSize: Int32 = 16,
+        maxLines: Int32 = -1,
+        size: Int32 = 1,
+        modulate: Godot.Color = .white,
+        brkFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3),
+        justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3),
+        direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
+        orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1116,7 +1343,14 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawChar(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, modulate: Godot.Color = .white) {
+
+    public func drawChar(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        char: Godot.GodotString,
+        fontSize: Int32 = 16,
+        modulate: Godot.Color = .white
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1140,7 +1374,15 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawCharOutline(font: Godot.Font?, pos: Godot.Vector2, char: Godot.GodotString, fontSize: Int32 = 16, size: Int32 = -1, modulate: Godot.Color = .white) {
+
+    public func drawCharOutline(
+        font: Godot.Font?,
+        pos: Godot.Vector2,
+        char: Godot.GodotString,
+        fontSize: Int32 = 16,
+        size: Int32 = -1,
+        modulate: Godot.Color = .white
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -1165,7 +1407,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMesh(_ mesh: Godot.Mesh?, texture: Godot.Texture2D?, transform: Godot.Transform2D = .identity, modulate: Godot.Color = .white) {
+
+    public func drawMesh(
+        _ mesh: Godot.Mesh?,
+        texture: Godot.Texture2D?,
+        transform: Godot.Transform2D = .identity,
+        modulate: Godot.Color = .white
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -1189,7 +1437,11 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawMultimesh(_ multimesh: Godot.MultiMesh?, texture: Godot.Texture2D?) {
+
+    public func drawMultimesh(
+        _ multimesh: Godot.MultiMesh?,
+        texture: Godot.Texture2D?
+    ) {
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafePointer(to: __ptr_multimesh) { _ptr___ptr_multimesh in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
@@ -1211,7 +1463,12 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawSetTransform(position: Godot.Vector2, rotation: Double = 0.0, scale: Godot.Vector2 = Vector2(x: 1, y: 1)) {
+
+    public func drawSetTransform(
+        position: Godot.Vector2,
+        rotation: Double = 0.0,
+        scale: Godot.Vector2 = Vector2(x: 1, y: 1)
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         rotation.withGodotUnsafeRawPointer { __ptr_rotation in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
@@ -1232,7 +1489,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawSetTransformMatrix(xform: Godot.Transform2D) {
+
+    public func drawSetTransformMatrix(
+        xform: Godot.Transform2D
+    ) {
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         withUnsafeArgumentPackPointer(__ptr_xform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1251,7 +1511,13 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func drawAnimationSlice(animationLength: Double, sliceBegin: Double, sliceEnd: Double, offset: Double = 0.0) {
+
+    public func drawAnimationSlice(
+        animationLength: Double,
+        sliceBegin: Double,
+        sliceEnd: Double,
+        offset: Double = 0.0
+    ) {
         animationLength.withGodotUnsafeRawPointer { __ptr_animationLength in
         sliceBegin.withGodotUnsafeRawPointer { __ptr_sliceBegin in
         sliceEnd.withGodotUnsafeRawPointer { __ptr_sliceEnd in
@@ -1273,6 +1539,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func drawEndAnimation() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1290,6 +1557,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func transform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1308,6 +1576,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func globalTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1326,6 +1595,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func globalTransformWithCanvas() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1344,6 +1614,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func viewportTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1362,6 +1633,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func viewportRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1380,6 +1652,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func canvasTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1398,6 +1671,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func screenTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1416,6 +1690,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func localMousePosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1434,6 +1709,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func globalMousePosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1452,6 +1728,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func canvas() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1470,6 +1747,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func world2D() -> Godot.World2D? {
         Godot.World2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1488,7 +1766,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setMaterial(_ material: Godot.Material?) {
+
+    private func __setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -1508,6 +1789,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1526,7 +1808,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setUseParentMaterial(enable: Bool) {
+
+    private func __setUseParentMaterial(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1545,6 +1830,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getUseParentMaterial() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1563,7 +1849,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func setNotifyLocalTransform(enable: Bool) {
+
+    public func setNotifyLocalTransform(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1582,6 +1871,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func isLocalTransformNotificationEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1600,7 +1890,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func setNotifyTransform(enable: Bool) {
+
+    public func setNotifyTransform(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1619,6 +1912,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func isTransformNotificationEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1637,6 +1931,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     public func forceUpdateTransform() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1654,7 +1949,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func makeCanvasPositionLocal(screenPoint: Godot.Vector2) -> Godot.Vector2 {
+
+    public func makeCanvasPositionLocal(
+        screenPoint: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
@@ -1674,7 +1972,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func makeInputLocal(event: Godot.InputEvent?) -> Godot.InputEvent? {
+
+    public func makeInputLocal(
+        event: Godot.InputEvent?
+    ) -> Godot.InputEvent? {
         Godot.InputEvent?.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -1695,7 +1996,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setVisibilityLayer(_ layer: UInt32) {
+
+    private func __setVisibilityLayer(
+        _ layer: UInt32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1714,6 +2018,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getVisibilityLayer() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1732,7 +2037,11 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func setVisibilityLayerBit(layer: UInt32, enabled: Bool) {
+
+    public func setVisibilityLayerBit(
+        layer: UInt32,
+        enabled: Bool
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_layer, __ptr_enabled) { __accessPtr in
@@ -1752,7 +2061,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    public func visibilityLayerBit(layer: UInt32) -> Bool {
+
+    public func visibilityLayerBit(
+        layer: UInt32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
@@ -1772,7 +2084,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setTextureFilter(mode: Godot.CanvasItem.TextureFilter) {
+
+    private func __setTextureFilter(
+        mode: Godot.CanvasItem.TextureFilter
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1791,6 +2106,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getTextureFilter() -> Godot.CanvasItem.TextureFilter {
         Godot.CanvasItem.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1809,7 +2125,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setTextureRepeat(mode: Godot.CanvasItem.TextureRepeat) {
+
+    private func __setTextureRepeat(
+        mode: Godot.CanvasItem.TextureRepeat
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1828,6 +2147,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getTextureRepeat() -> Godot.CanvasItem.TextureRepeat {
         Godot.CanvasItem.TextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1846,7 +2166,10 @@ open class CanvasItem: Node {
         }
         }
     }()
-    private func __setClipChildrenMode(_ mode: Godot.CanvasItem.ClipChildrenMode) {
+
+    private func __setClipChildrenMode(
+        _ mode: Godot.CanvasItem.ClipChildrenMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1865,6 +2188,7 @@ open class CanvasItem: Node {
         }
         }
     }()
+
     private func __getClipChildrenMode() -> Godot.CanvasItem.ClipChildrenMode {
         Godot.CanvasItem.ClipChildrenMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2042,6 +2366,7 @@ open class CanvasItem: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2060,5 +2385,4 @@ open class CanvasItem: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

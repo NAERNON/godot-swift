@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
     open func _getTotalGravity() -> Godot.Vector2 {
@@ -33,73 +34,108 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
         Double()
     }
 
-    open func _setLinearVelocity(_ velocity: Godot.Vector2) {
+    open func _setLinearVelocity(
+        _ velocity: Godot.Vector2
+    ) {
     }
 
     open func _getLinearVelocity() -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _setAngularVelocity(_ velocity: Double) {
+    open func _setAngularVelocity(
+        _ velocity: Double
+    ) {
     }
 
     open func _getAngularVelocity() -> Double {
         Double()
     }
 
-    open func _setTransform(_ transform: Godot.Transform2D) {
+    open func _setTransform(
+        _ transform: Godot.Transform2D
+    ) {
     }
 
     open func _getTransform() -> Godot.Transform2D {
         Godot.Transform2D()
     }
 
-    open func _getVelocityAtLocalPosition(_ localPosition: Godot.Vector2) -> Godot.Vector2 {
+    open func _getVelocityAtLocalPosition(
+        _ localPosition: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _applyCentralImpulse(_ impulse: Godot.Vector2) {
+    open func _applyCentralImpulse(
+        _ impulse: Godot.Vector2
+    ) {
     }
 
-    open func _applyImpulse(_ impulse: Godot.Vector2, position: Godot.Vector2) {
+    open func _applyImpulse(
+        _ impulse: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _applyTorqueImpulse(_ impulse: Double) {
+    open func _applyTorqueImpulse(
+        _ impulse: Double
+    ) {
     }
 
-    open func _applyCentralForce(_ force: Godot.Vector2) {
+    open func _applyCentralForce(
+        _ force: Godot.Vector2
+    ) {
     }
 
-    open func _applyForce(_ force: Godot.Vector2, position: Godot.Vector2) {
+    open func _applyForce(
+        _ force: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _applyTorque(_ torque: Double) {
+    open func _applyTorque(
+        _ torque: Double
+    ) {
     }
 
-    open func _addConstantCentralForce(_ force: Godot.Vector2) {
+    open func _addConstantCentralForce(
+        _ force: Godot.Vector2
+    ) {
     }
 
-    open func _addConstantForce(_ force: Godot.Vector2, position: Godot.Vector2) {
+    open func _addConstantForce(
+        _ force: Godot.Vector2,
+        position: Godot.Vector2
+    ) {
     }
 
-    open func _addConstantTorque(_ torque: Double) {
+    open func _addConstantTorque(
+        _ torque: Double
+    ) {
     }
 
-    open func _setConstantForce(_ force: Godot.Vector2) {
+    open func _setConstantForce(
+        _ force: Godot.Vector2
+    ) {
     }
 
     open func _getConstantForce() -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _setConstantTorque(_ torque: Double) {
+    open func _setConstantTorque(
+        _ torque: Double
+    ) {
     }
 
     open func _getConstantTorque() -> Double {
         Double()
     }
 
-    open func _setSleepState(enabled: Bool) {
+    open func _setSleepState(
+        enabled: Bool
+    ) {
     }
 
     open func _isSleeping() -> Bool {
@@ -110,47 +146,69 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
         Int32()
     }
 
-    open func _getContactLocalPosition(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactLocalPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _getContactLocalNormal(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactLocalNormal(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _getContactLocalShape(contactIdx: Int32) -> Int32 {
+    open func _getContactLocalShape(
+        contactIdx: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _getContactLocalVelocityAtPosition(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactLocalVelocityAtPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _getContactCollider(contactIdx: Int32) -> Godot.RID {
+    open func _getContactCollider(
+        contactIdx: Int32
+    ) -> Godot.RID {
         Godot.RID()
     }
 
-    open func _getContactColliderPosition(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactColliderPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _getContactColliderID(contactIdx: Int32) -> UInt64 {
+    open func _getContactColliderID(
+        contactIdx: Int32
+    ) -> UInt64 {
         UInt64()
     }
 
-    open func _getContactColliderObject(contactIdx: Int32) -> Godot.Object? {
+    open func _getContactColliderObject(
+        contactIdx: Int32
+    ) -> Godot.Object? {
         nil
     }
 
-    open func _getContactColliderShape(contactIdx: Int32) -> Int32 {
+    open func _getContactColliderShape(
+        contactIdx: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _getContactColliderVelocityAtPosition(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactColliderVelocityAtPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
-    open func _getContactImpulse(contactIdx: Int32) -> Godot.Vector2 {
+    open func _getContactImpulse(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2()
     }
 
@@ -166,6 +224,7 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -570,5 +629,4 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

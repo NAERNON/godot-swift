@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ConcavePolygonShape3D: Shape3D {
     internal static var __method_binding_set_faces: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ConcavePolygonShape3D: Shape3D {
         }
         }
     }()
-    private func __setFaces(_ faces: Godot.PackedVector3Array) {
+
+    private func __setFaces(
+        _ faces: Godot.PackedVector3Array
+    ) {
         faces.withGodotUnsafeRawPointer { __ptr_faces in
         withUnsafeArgumentPackPointer(__ptr_faces) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ConcavePolygonShape3D: Shape3D {
         }
         }
     }()
+
     private func __getFaces() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class ConcavePolygonShape3D: Shape3D {
         }
         }
     }()
-    private func __setBackfaceCollisionEnabled(_ enabled: Bool) {
+
+    private func __setBackfaceCollisionEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class ConcavePolygonShape3D: Shape3D {
         }
         }
     }()
+
     private func __isBackfaceCollisionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class ConcavePolygonShape3D: Shape3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class ConcavePolygonShape3D: Shape3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

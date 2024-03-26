@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class XRController3D: XRNode3D {
     public struct ButtonPressedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-        fileprivate init(name: Godot.GodotString) {
+
+        fileprivate init(
+            name: Godot.GodotString
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func buttonPressed(name: Godot.GodotString) {
+
+    public func buttonPressed(
+        name: Godot.GodotString
+    ) {
         _ = buttonPressedSignal.emit(.init(name: name))
     }
+
     public lazy var buttonPressedSignal: Godot.SignalEmitter<ButtonPressedSignalInput> = {
         .init(object: self, signalName: "button_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class XRController3D: XRNode3D {
 
     public struct ButtonReleasedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-        fileprivate init(name: Godot.GodotString) {
+
+        fileprivate init(
+            name: Godot.GodotString
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func buttonReleased(name: Godot.GodotString) {
+
+    public func buttonReleased(
+        name: Godot.GodotString
+    ) {
         _ = buttonReleasedSignal.emit(.init(name: name))
     }
+
     public lazy var buttonReleasedSignal: Godot.SignalEmitter<ButtonReleasedSignalInput> = {
         .init(object: self, signalName: "button_released") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonReleasedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,19 +82,32 @@ open class XRController3D: XRNode3D {
 
     public struct InputFloatChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
+
         public let value: Double
-        fileprivate init(name: Godot.GodotString, value: Double) {
+
+        fileprivate init(
+            name: Godot.GodotString,
+            value: Double
+        ) {
             self.name = name
             self.value = value
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name), Variant(input.value)]
         }
     }
-    public func inputFloatChanged(name: Godot.GodotString, value: Double) {
+
+    public func inputFloatChanged(
+        name: Godot.GodotString,
+        value: Double
+    ) {
         _ = inputFloatChangedSignal.emit(.init(name: name,
                 value: value))
     }
+
     public lazy var inputFloatChangedSignal: Godot.SignalEmitter<InputFloatChangedSignalInput> = {
         .init(object: self, signalName: "input_float_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputFloatChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -92,19 +126,32 @@ open class XRController3D: XRNode3D {
 
     public struct InputVector2ChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
+
         public let value: Godot.Vector2
-        fileprivate init(name: Godot.GodotString, value: Godot.Vector2) {
+
+        fileprivate init(
+            name: Godot.GodotString,
+            value: Godot.Vector2
+        ) {
             self.name = name
             self.value = value
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name), Variant(input.value)]
         }
     }
-    public func inputVector2Changed(name: Godot.GodotString, value: Godot.Vector2) {
+
+    public func inputVector2Changed(
+        name: Godot.GodotString,
+        value: Godot.Vector2
+    ) {
         _ = inputVector2ChangedSignal.emit(.init(name: name,
                 value: value))
     }
+
     public lazy var inputVector2ChangedSignal: Godot.SignalEmitter<InputVector2ChangedSignalInput> = {
         .init(object: self, signalName: "input_vector2_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputVector2ChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -128,7 +175,10 @@ open class XRController3D: XRNode3D {
         }
         }
     }()
-    public func isButtonPressed(name: Godot.GodotStringName) -> Bool {
+
+    public func isButtonPressed(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -148,7 +198,10 @@ open class XRController3D: XRNode3D {
         }
         }
     }()
-    public func input(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func input(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -168,7 +221,10 @@ open class XRController3D: XRNode3D {
         }
         }
     }()
-    public func float(name: Godot.GodotStringName) -> Double {
+
+    public func float(
+        name: Godot.GodotStringName
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -188,7 +244,10 @@ open class XRController3D: XRNode3D {
         }
         }
     }()
-    public func vector2(name: Godot.GodotStringName) -> Godot.Vector2 {
+
+    public func vector2(
+        name: Godot.GodotStringName
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -208,6 +267,7 @@ open class XRController3D: XRNode3D {
         }
         }
     }()
+
     public func trackerHand() -> Godot.XRPositionalTracker.TrackerHand {
         Godot.XRPositionalTracker.TrackerHand.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,6 +280,7 @@ open class XRController3D: XRNode3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -232,5 +293,4 @@ open class XRController3D: XRNode3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

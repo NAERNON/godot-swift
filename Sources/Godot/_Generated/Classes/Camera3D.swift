@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Camera3D: Node3D {
     public enum ProjectionType: UInt32, GodotEnum {
         case perspective = 0
         case orthogonal = 1
         case frustum = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Perspective", 0),
@@ -16,19 +18,23 @@ open class Camera3D: Node3D {
             ("Frustum", 2),]
         }
     }
+
     public enum KeepAspect: UInt32, GodotEnum {
         case width = 0
         case height = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Width", 0),
             ("Height", 1),]
         }
     }
+
     public enum DopplerTracking: UInt32, GodotEnum {
         case disabled = 0
         case idleStep = 1
         case physicsStep = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -44,7 +50,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func projectRayNormal(screenPoint: Godot.Vector2) -> Godot.Vector3 {
+
+    public func projectRayNormal(
+        screenPoint: Godot.Vector2
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
@@ -64,7 +73,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func projectLocalRayNormal(screenPoint: Godot.Vector2) -> Godot.Vector3 {
+
+    public func projectLocalRayNormal(
+        screenPoint: Godot.Vector2
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
@@ -84,7 +96,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func projectRayOrigin(screenPoint: Godot.Vector2) -> Godot.Vector3 {
+
+    public func projectRayOrigin(
+        screenPoint: Godot.Vector2
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
@@ -104,7 +119,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func unprojectPosition(worldPoint: Godot.Vector3) -> Godot.Vector2 {
+
+    public func unprojectPosition(
+        worldPoint: Godot.Vector3
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
@@ -124,7 +142,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func isPositionBehind(worldPoint: Godot.Vector3) -> Bool {
+
+    public func isPositionBehind(
+        worldPoint: Godot.Vector3
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
@@ -144,7 +165,11 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func projectPosition(screenPoint: Godot.Vector2, zDepth: Double) -> Godot.Vector3 {
+
+    public func projectPosition(
+        screenPoint: Godot.Vector2,
+        zDepth: Double
+    ) -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         zDepth.withGodotUnsafeRawPointer { __ptr_zDepth in
@@ -165,7 +190,12 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func setPerspective(fov: Double, zNear: Double, zFar: Double) {
+
+    public func setPerspective(
+        fov: Double,
+        zNear: Double,
+        zFar: Double
+    ) {
         fov.withGodotUnsafeRawPointer { __ptr_fov in
         zNear.withGodotUnsafeRawPointer { __ptr_zNear in
         zFar.withGodotUnsafeRawPointer { __ptr_zFar in
@@ -186,7 +216,12 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func setOrthogonal(size: Double, zNear: Double, zFar: Double) {
+
+    public func setOrthogonal(
+        size: Double,
+        zNear: Double,
+        zFar: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         zNear.withGodotUnsafeRawPointer { __ptr_zNear in
         zFar.withGodotUnsafeRawPointer { __ptr_zFar in
@@ -207,7 +242,13 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func setFrustum(size: Double, offset: Godot.Vector2, zNear: Double, zFar: Double) {
+
+    public func setFrustum(
+        size: Double,
+        offset: Godot.Vector2,
+        zNear: Double,
+        zFar: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         zNear.withGodotUnsafeRawPointer { __ptr_zNear in
@@ -229,6 +270,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func makeCurrent() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -246,7 +288,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func clearCurrent(enableNext: Bool = true) {
+
+    public func clearCurrent(
+        enableNext: Bool = true
+    ) {
         enableNext.withGodotUnsafeRawPointer { __ptr_enableNext in
         withUnsafeArgumentPackPointer(__ptr_enableNext) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,7 +310,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setCurrent(enabled: Bool) {
+
+    private func __setCurrent(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,6 +332,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __isCurrent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,6 +351,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func cameraTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -320,6 +370,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func cameraProjection() -> Godot.Projection {
         Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -338,6 +389,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getFov() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -356,6 +408,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getFrustumOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,6 +427,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,6 +446,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getFar() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -410,6 +465,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getNear() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -428,7 +484,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setFov(_ fov: Double) {
+
+    private func __setFov(
+        _ fov: Double
+    ) {
         fov.withGodotUnsafeRawPointer { __ptr_fov in
         withUnsafeArgumentPackPointer(__ptr_fov) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -447,7 +506,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setFrustumOffset(_ offset: Godot.Vector2) {
+
+    private func __setFrustumOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +528,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setSize(_ size: Double) {
+
+    private func __setSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,7 +550,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setFar(_ far: Double) {
+
+    private func __setFar(
+        _ far: Double
+    ) {
         far.withGodotUnsafeRawPointer { __ptr_far in
         withUnsafeArgumentPackPointer(__ptr_far) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -504,7 +572,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setNear(_ near: Double) {
+
+    private func __setNear(
+        _ near: Double
+    ) {
         near.withGodotUnsafeRawPointer { __ptr_near in
         withUnsafeArgumentPackPointer(__ptr_near) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -523,6 +594,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getProjection() -> Godot.Camera3D.ProjectionType {
         Godot.Camera3D.ProjectionType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -541,7 +613,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setProjection(mode: Godot.Camera3D.ProjectionType) {
+
+    private func __setProjection(
+        mode: Godot.Camera3D.ProjectionType
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -560,7 +635,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setHOffset(_ offset: Double) {
+
+    private func __setHOffset(
+        _ offset: Double
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -579,6 +657,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getHOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -597,7 +676,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setVOffset(_ offset: Double) {
+
+    private func __setVOffset(
+        _ offset: Double
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -616,6 +698,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getVOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -634,7 +717,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setCullMask(_ mask: UInt32) {
+
+    private func __setCullMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -653,6 +739,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getCullMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -671,7 +758,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setEnvironment(env: Godot.Environment?) {
+
+    private func __setEnvironment(
+        env: Godot.Environment?
+    ) {
         env.withGodotUnsafeRawPointer { __ptr_env in
         withUnsafePointer(to: __ptr_env) { _ptr___ptr_env in
         withUnsafeArgumentPackPointer(_ptr___ptr_env) { __accessPtr in
@@ -691,6 +781,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getEnvironment() -> Godot.Environment? {
         Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -709,7 +800,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setAttributes(env: Godot.CameraAttributes?) {
+
+    private func __setAttributes(
+        env: Godot.CameraAttributes?
+    ) {
         env.withGodotUnsafeRawPointer { __ptr_env in
         withUnsafePointer(to: __ptr_env) { _ptr___ptr_env in
         withUnsafeArgumentPackPointer(_ptr___ptr_env) { __accessPtr in
@@ -729,6 +823,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getAttributes() -> Godot.CameraAttributes? {
         Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -747,7 +842,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setKeepAspectMode(_ mode: Godot.Camera3D.KeepAspect) {
+
+    private func __setKeepAspectMode(
+        _ mode: Godot.Camera3D.KeepAspect
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -766,6 +864,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getKeepAspectMode() -> Godot.Camera3D.KeepAspect {
         Godot.Camera3D.KeepAspect.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -784,7 +883,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    private func __setDopplerTracking(mode: Godot.Camera3D.DopplerTracking) {
+
+    private func __setDopplerTracking(
+        mode: Godot.Camera3D.DopplerTracking
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -803,6 +905,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     private func __getDopplerTracking() -> Godot.Camera3D.DopplerTracking {
         Godot.Camera3D.DopplerTracking.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -821,6 +924,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func frustum() -> Godot.GodotArray<Godot.Plane> {
         Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -839,7 +943,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func isPositionInFrustum(worldPoint: Godot.Vector3) -> Bool {
+
+    public func isPositionInFrustum(
+        worldPoint: Godot.Vector3
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
@@ -859,6 +966,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func cameraRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -877,6 +985,7 @@ open class Camera3D: Node3D {
         }
         }
     }()
+
     public func pyramidShapeRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -895,7 +1004,11 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func setCullMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCullMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -915,7 +1028,10 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func cullMaskValue(layerNumber: Int32) -> Bool {
+
+    public func cullMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -1083,6 +1199,7 @@ open class Camera3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1095,5 +1212,4 @@ open class Camera3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

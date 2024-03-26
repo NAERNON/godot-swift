@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OpenXRAction: Resource {
     public enum ActionType: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class OpenXRAction: Resource {
         case float = 1
         case vector2 = 2
         case pose = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bool", 0),
@@ -26,7 +28,10 @@ open class OpenXRAction: Resource {
         }
         }
     }()
-    private func __setLocalizedName(_ localizedName: Godot.GodotString) {
+
+    private func __setLocalizedName(
+        _ localizedName: Godot.GodotString
+    ) {
         localizedName.withGodotUnsafeRawPointer { __ptr_localizedName in
         withUnsafeArgumentPackPointer(__ptr_localizedName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class OpenXRAction: Resource {
         }
         }
     }()
+
     private func __getLocalizedName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +69,10 @@ open class OpenXRAction: Resource {
         }
         }
     }()
-    private func __setActionType(_ actionType: Godot.OpenXRAction.ActionType) {
+
+    private func __setActionType(
+        _ actionType: Godot.OpenXRAction.ActionType
+    ) {
         actionType.withGodotUnsafeRawPointer { __ptr_actionType in
         withUnsafeArgumentPackPointer(__ptr_actionType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +91,7 @@ open class OpenXRAction: Resource {
         }
         }
     }()
+
     private func __getActionType() -> Godot.OpenXRAction.ActionType {
         Godot.OpenXRAction.ActionType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,7 +110,10 @@ open class OpenXRAction: Resource {
         }
         }
     }()
-    private func __setToplevelPaths(_ toplevelPaths: Godot.PackedStringArray) {
+
+    private func __setToplevelPaths(
+        _ toplevelPaths: Godot.PackedStringArray
+    ) {
         toplevelPaths.withGodotUnsafeRawPointer { __ptr_toplevelPaths in
         withUnsafeArgumentPackPointer(__ptr_toplevelPaths) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -119,6 +132,7 @@ open class OpenXRAction: Resource {
         }
         }
     }()
+
     private func __getToplevelPaths() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,6 +178,7 @@ open class OpenXRAction: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -176,5 +191,4 @@ open class OpenXRAction: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

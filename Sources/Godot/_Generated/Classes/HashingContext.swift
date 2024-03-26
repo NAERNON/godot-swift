@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class HashingContext: RefCounted {
     public enum HashType: UInt32, GodotEnum {
         case md5 = 0
         case sha1 = 1
         case sha256 = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Md5", 0),
@@ -24,7 +26,10 @@ open class HashingContext: RefCounted {
         }
         }
     }()
-    public func start(type: Godot.HashingContext.HashType) -> Godot.ErrorType {
+
+    public func start(
+        type: Godot.HashingContext.HashType
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -44,7 +49,10 @@ open class HashingContext: RefCounted {
         }
         }
     }()
-    public func update(chunk: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func update(
+        chunk: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         chunk.withGodotUnsafeRawPointer { __ptr_chunk in
         withUnsafeArgumentPackPointer(__ptr_chunk) { __accessPtr in
@@ -64,6 +72,7 @@ open class HashingContext: RefCounted {
         }
         }
     }()
+
     public func finish() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,6 +85,7 @@ open class HashingContext: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -88,5 +98,4 @@ open class HashingContext: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

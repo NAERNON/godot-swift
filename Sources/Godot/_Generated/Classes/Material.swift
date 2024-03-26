@@ -3,9 +3,11 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Material: Resource {
     public static let renderPriorityMax: Int = 127
+
     public static let renderPriorityMin: Int = -128
 
     open func _getShaderRid() -> Godot.RID {
@@ -31,7 +33,10 @@ open class Material: Resource {
         }
         }
     }()
-    private func __setNextPass(_ nextPass: Godot.Material?) {
+
+    private func __setNextPass(
+        _ nextPass: Godot.Material?
+    ) {
         nextPass.withGodotUnsafeRawPointer { __ptr_nextPass in
         withUnsafePointer(to: __ptr_nextPass) { _ptr___ptr_nextPass in
         withUnsafeArgumentPackPointer(_ptr___ptr_nextPass) { __accessPtr in
@@ -51,6 +56,7 @@ open class Material: Resource {
         }
         }
     }()
+
     private func __getNextPass() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +75,10 @@ open class Material: Resource {
         }
         }
     }()
-    private func __setRenderPriority(_ priority: Int32) {
+
+    private func __setRenderPriority(
+        _ priority: Int32
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +97,7 @@ open class Material: Resource {
         }
         }
     }()
+
     private func __getRenderPriority() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +116,7 @@ open class Material: Resource {
         }
         }
     }()
+
     public func inspectNativeShaderCode() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -123,6 +134,7 @@ open class Material: Resource {
         }
         }
     }()
+
     public func createPlaceholder() -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,6 +169,7 @@ open class Material: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +213,4 @@ open class Material: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SliderJoint3D: Joint3D {
     public enum Param: UInt32, GodotEnum {
@@ -29,6 +30,7 @@ open class SliderJoint3D: Joint3D {
         case angularOrthogonalRestitution = 20
         case angularOrthogonalDamping = 21
         case max = 22
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Linear Limit Upper", 0),
@@ -64,7 +66,11 @@ open class SliderJoint3D: Joint3D {
         }
         }
     }()
-    public func setParam(_ param: Godot.SliderJoint3D.Param, value: Double) {
+
+    public func setParam(
+        _ param: Godot.SliderJoint3D.Param,
+        value: Double
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -84,7 +90,10 @@ open class SliderJoint3D: Joint3D {
         }
         }
     }()
-    public func param(_ param: Godot.SliderJoint3D.Param) -> Double {
+
+    public func param(
+        _ param: Godot.SliderJoint3D.Param
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -98,6 +107,7 @@ open class SliderJoint3D: Joint3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -110,5 +120,4 @@ open class SliderJoint3D: Joint3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

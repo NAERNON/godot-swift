@@ -4,5 +4,6 @@
 
 public struct AudioFrame {
     public var left: Double
+
     public var right: Double
 }

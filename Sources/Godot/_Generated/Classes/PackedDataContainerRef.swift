@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PackedDataContainerRef: RefCounted {
     internal static var __method_binding_size: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PackedDataContainerRef: RefCounted {
         }
         }
     }()
+
     public func size() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -24,6 +26,7 @@ open class PackedDataContainerRef: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -36,5 +39,4 @@ open class PackedDataContainerRef: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

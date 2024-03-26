@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventKey: InputEventWithModifiers {
     internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    public func setPressed(_ pressed: Bool) {
+
+    public func setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    private func __setKeycode(_ keycode: Godot.Key) {
+
+    private func __setKeycode(
+        _ keycode: Godot.Key
+    ) {
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +57,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getKeycode() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +76,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    private func __setPhysicalKeycode(_ physicalKeycode: Godot.Key) {
+
+    private func __setPhysicalKeycode(
+        _ physicalKeycode: Godot.Key
+    ) {
         physicalKeycode.withGodotUnsafeRawPointer { __ptr_physicalKeycode in
         withUnsafeArgumentPackPointer(__ptr_physicalKeycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +98,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getPhysicalKeycode() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +117,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    private func __setKeyLabel(_ keyLabel: Godot.Key) {
+
+    private func __setKeyLabel(
+        _ keyLabel: Godot.Key
+    ) {
         keyLabel.withGodotUnsafeRawPointer { __ptr_keyLabel in
         withUnsafeArgumentPackPointer(__ptr_keyLabel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +139,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getKeyLabel() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +158,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    private func __setUnicode(_ unicode: Int) {
+
+    private func __setUnicode(
+        _ unicode: Int
+    ) {
         unicode.withGodotUnsafeRawPointer { __ptr_unicode in
         withUnsafeArgumentPackPointer(__ptr_unicode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +180,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     private func __getUnicode() -> Int {
         Int.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +199,10 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
-    public func setEcho(_ echo: Bool) {
+
+    public func setEcho(
+        _ echo: Bool
+    ) {
         echo.withGodotUnsafeRawPointer { __ptr_echo in
         withUnsafeArgumentPackPointer(__ptr_echo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +221,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func keycodeWithModifiers() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func physicalKeycodeWithModifiers() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func keyLabelWithModifiers() -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,6 +278,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func asTextKeycode() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,6 +297,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func asTextPhysicalKeycode() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -288,6 +316,7 @@ open class InputEventKey: InputEventWithModifiers {
         }
         }
     }()
+
     public func asTextKeyLabel() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,6 +373,7 @@ open class InputEventKey: InputEventWithModifiers {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -356,5 +386,4 @@ open class InputEventKey: InputEventWithModifiers {
         }
         return _virtualFunctions!
     }
-
-    }
+}

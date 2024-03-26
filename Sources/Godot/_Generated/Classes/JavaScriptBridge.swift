@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class JavaScriptBridge: Object {
+
     public func pwaUpdateAvailable() {
         _ = pwaUpdateAvailableSignal.emit()
     }
+
     public lazy var pwaUpdateAvailableSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pwa_update_available") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,11 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func eval(code: Godot.GodotString, useGlobalExecutionContext: Bool = false) -> Godot.Variant {
+
+    public func eval(
+        code: Godot.GodotString,
+        useGlobalExecutionContext: Bool = false
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         code.withGodotUnsafeRawPointer { __ptr_code in
         useGlobalExecutionContext.withGodotUnsafeRawPointer { __ptr_useGlobalExecutionContext in
@@ -51,7 +58,10 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func interface(_ interface: Godot.GodotString) -> Godot.JavaScriptObject? {
+
+    public func interface(
+        _ interface: Godot.GodotString
+    ) -> Godot.JavaScriptObject? {
         Godot.JavaScriptObject?.fromMutatingGodotUnsafePointer { __temporary in
         interface.withGodotUnsafeRawPointer { __ptr_interface in
         withUnsafeArgumentPackPointer(__ptr_interface) { __accessPtr in
@@ -71,7 +81,10 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func createCallback(callable: Godot.Callable) -> Godot.JavaScriptObject? {
+
+    public func createCallback(
+        callable: Godot.Callable
+    ) -> Godot.JavaScriptObject? {
         Godot.JavaScriptObject?.fromMutatingGodotUnsafePointer { __temporary in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
@@ -91,7 +104,11 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func createObject<each VariantRest : VariantStorableIn>(_ object: Godot.GodotString, _ rest: repeat each VariantRest) -> Godot.Variant {
+
+    public func createObject<each VariantRest : VariantStorableIn>(
+        _ object: Godot.GodotString,
+        _ rest: repeat each VariantRest
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         withUnsafeArgumentPackPointer(__ptr_object, varargs: repeat each rest) { packCount, __accessPtr in
@@ -105,7 +122,10 @@ open class JavaScriptBridge: Object {
             nil
         )}}}}
     }
-    public func createObject(_ object: Godot.GodotString) -> Godot.Variant {
+
+    public func createObject(
+        _ object: Godot.GodotString
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         withUnsafeArgumentPackPointer(__ptr_object) { __accessPtr in
@@ -127,7 +147,12 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func downloadBuffer(_ buffer: Godot.PackedByteArray, name: Godot.GodotString, mime: Godot.GodotString = "application/octet-stream") {
+
+    public func downloadBuffer(
+        _ buffer: Godot.PackedByteArray,
+        name: Godot.GodotString,
+        mime: Godot.GodotString = "application/octet-stream"
+    ) {
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         name.withGodotUnsafeRawPointer { __ptr_name in
         mime.withGodotUnsafeRawPointer { __ptr_mime in
@@ -148,6 +173,7 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
+
     public func pwaNeedsUpdate() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -166,6 +192,7 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
+
     public func pwaUpdate() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,6 +211,7 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
+
     public func forceFsSync() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -195,6 +223,7 @@ open class JavaScriptBridge: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -207,5 +236,4 @@ open class JavaScriptBridge: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

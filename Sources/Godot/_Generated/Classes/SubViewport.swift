@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SubViewport: Viewport {
     public enum ClearMode: UInt32, GodotEnum {
         case always = 0
         case never = 1
         case once = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Always", 0),
@@ -16,12 +18,14 @@ open class SubViewport: Viewport {
             ("Once", 2),]
         }
     }
+
     public enum UpdateMode: UInt32, GodotEnum {
         case disabled = 0
         case once = 1
         case whenVisible = 2
         case whenParentVisible = 3
         case always = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -39,7 +43,10 @@ open class SubViewport: Viewport {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2I) {
+
+    private func __setSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -58,6 +65,7 @@ open class SubViewport: Viewport {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +84,10 @@ open class SubViewport: Viewport {
         }
         }
     }()
-    private func __setSize2DOverride(size: Godot.Vector2I) {
+
+    private func __setSize2DOverride(
+        size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,6 +106,7 @@ open class SubViewport: Viewport {
         }
         }
     }()
+
     private func __getSize2DOverride() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,7 +125,10 @@ open class SubViewport: Viewport {
         }
         }
     }()
-    private func __setSize2DOverrideStretch(enable: Bool) {
+
+    private func __setSize2DOverrideStretch(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,6 +147,7 @@ open class SubViewport: Viewport {
         }
         }
     }()
+
     private func __isSize2DOverrideStretchEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,7 +166,10 @@ open class SubViewport: Viewport {
         }
         }
     }()
-    private func __setUpdateMode(_ mode: Godot.SubViewport.UpdateMode) {
+
+    private func __setUpdateMode(
+        _ mode: Godot.SubViewport.UpdateMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -169,6 +188,7 @@ open class SubViewport: Viewport {
         }
         }
     }()
+
     private func __getUpdateMode() -> Godot.SubViewport.UpdateMode {
         Godot.SubViewport.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +207,10 @@ open class SubViewport: Viewport {
         }
         }
     }()
-    private func __setClearMode(_ mode: Godot.SubViewport.ClearMode) {
+
+    private func __setClearMode(
+        _ mode: Godot.SubViewport.ClearMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +229,7 @@ open class SubViewport: Viewport {
         }
         }
     }()
+
     private func __getClearMode() -> Godot.SubViewport.ClearMode {
         Godot.SubViewport.ClearMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,6 +297,7 @@ open class SubViewport: Viewport {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -285,5 +310,4 @@ open class SubViewport: Viewport {
         }
         return _virtualFunctions!
     }
-
-    }
+}

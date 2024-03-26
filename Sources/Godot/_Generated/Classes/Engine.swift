@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Engine: Object {
     internal static var __method_binding_set_physics_ticks_per_second: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setPhysicsTicksPerSecond(_ physicsTicksPerSecond: Int32) {
+
+    private func __setPhysicsTicksPerSecond(
+        _ physicsTicksPerSecond: Int32
+    ) {
         physicsTicksPerSecond.withGodotUnsafeRawPointer { __ptr_physicsTicksPerSecond in
         withUnsafeArgumentPackPointer(__ptr_physicsTicksPerSecond) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __getPhysicsTicksPerSecond() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setMaxPhysicsStepsPerFrame(maxPhysicsSteps: Int32) {
+
+    private func __setMaxPhysicsStepsPerFrame(
+        maxPhysicsSteps: Int32
+    ) {
         maxPhysicsSteps.withGodotUnsafeRawPointer { __ptr_maxPhysicsSteps in
         withUnsafeArgumentPackPointer(__ptr_maxPhysicsSteps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __getMaxPhysicsStepsPerFrame() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setPhysicsJitterFix(_ physicsJitterFix: Double) {
+
+    private func __setPhysicsJitterFix(
+        _ physicsJitterFix: Double
+    ) {
         physicsJitterFix.withGodotUnsafeRawPointer { __ptr_physicsJitterFix in
         withUnsafeArgumentPackPointer(__ptr_physicsJitterFix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __getPhysicsJitterFix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func physicsInterpolationFraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setMaxFps(_ maxFps: Int32) {
+
+    private func __setMaxFps(
+        _ maxFps: Int32
+    ) {
         maxFps.withGodotUnsafeRawPointer { __ptr_maxFps in
         withUnsafeArgumentPackPointer(__ptr_maxFps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __getMaxFps() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setTimeScale(_ timeScale: Double) {
+
+    private func __setTimeScale(
+        _ timeScale: Double
+    ) {
         timeScale.withGodotUnsafeRawPointer { __ptr_timeScale in
         withUnsafeArgumentPackPointer(__ptr_timeScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __getTimeScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,6 +237,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func framesDrawn() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,6 +256,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func framesPerSecond() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,6 +275,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func physicsFrames() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +294,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func processFrames() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,6 +313,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func mainLoop() -> Godot.MainLoop? {
         Godot.MainLoop?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,6 +332,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func versionInfo() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +351,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func authorInfo() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -341,6 +370,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func copyrightInfo() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +389,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func donorInfo() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,6 +408,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func licenseInfo() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -395,6 +427,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func licenseText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -413,6 +446,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func architectureName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -431,6 +465,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func isInPhysicsFrame() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -449,7 +484,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func hasSingleton(name: Godot.GodotStringName) -> Bool {
+
+    public func hasSingleton(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -469,7 +507,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func singleton(name: Godot.GodotStringName) -> Godot.Object? {
+
+    public func singleton(
+        name: Godot.GodotStringName
+    ) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -489,7 +530,11 @@ open class Engine: Object {
         }
         }
     }()
-    public func registerSingleton(name: Godot.GodotStringName, instance: Godot.Object?) {
+
+    public func registerSingleton(
+        name: Godot.GodotStringName,
+        instance: Godot.Object?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafePointer(to: __ptr_instance) { _ptr___ptr_instance in
@@ -510,7 +555,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func unregisterSingleton(name: Godot.GodotStringName) {
+
+    public func unregisterSingleton(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -529,6 +577,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func singletonList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -547,7 +596,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func registerScriptLanguage(_ language: Godot.ScriptLanguage?) -> Godot.ErrorType {
+
+    public func registerScriptLanguage(
+        _ language: Godot.ScriptLanguage?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafePointer(to: __ptr_language) { _ptr___ptr_language in
@@ -568,7 +620,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func unregisterScriptLanguage(_ language: Godot.ScriptLanguage?) -> Godot.ErrorType {
+
+    public func unregisterScriptLanguage(
+        _ language: Godot.ScriptLanguage?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafePointer(to: __ptr_language) { _ptr___ptr_language in
@@ -589,6 +644,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func scriptLanguageCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -607,7 +663,10 @@ open class Engine: Object {
         }
         }
     }()
-    public func scriptLanguage(index: Int32) -> Godot.ScriptLanguage? {
+
+    public func scriptLanguage(
+        index: Int32
+    ) -> Godot.ScriptLanguage? {
         Godot.ScriptLanguage?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -627,6 +686,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func isEditorHint() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -645,6 +705,7 @@ open class Engine: Object {
         }
         }
     }()
+
     public func writeMoviePath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -663,7 +724,10 @@ open class Engine: Object {
         }
         }
     }()
-    private func __setPrintErrorMessages(enabled: Bool) {
+
+    private func __setPrintErrorMessages(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -682,6 +746,7 @@ open class Engine: Object {
         }
         }
     }()
+
     private func __isPrintingErrorMessages() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -760,6 +825,7 @@ open class Engine: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -772,5 +838,4 @@ open class Engine: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNode: Resource {
     public enum FilterAction: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AnimationNode: Resource {
         case pass = 1
         case stop = 2
         case blend = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ignore", 0),
@@ -22,6 +24,7 @@ open class AnimationNode: Resource {
     public func treeChanged() {
         _ = treeChangedSignal.emit()
     }
+
     public lazy var treeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,22 +42,38 @@ open class AnimationNode: Resource {
 
     public struct AnimationNodeRenamedSignalInput: Godot.SignalInput {
         public let objectID: Int
+
         public let oldName: Godot.GodotString
+
         public let newName: Godot.GodotString
-        fileprivate init(objectID: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
+
+        fileprivate init(
+            objectID: Int,
+            oldName: Godot.GodotString,
+            newName: Godot.GodotString
+        ) {
             self.objectID = objectID
             self.oldName = oldName
             self.newName = newName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.objectID), Variant(input.oldName), Variant(input.newName)]
         }
     }
-    public func animationNodeRenamed(objectID: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
+
+    public func animationNodeRenamed(
+        objectID: Int,
+        oldName: Godot.GodotString,
+        newName: Godot.GodotString
+    ) {
         _ = animationNodeRenamedSignal.emit(.init(objectID: objectID,
                 oldName: oldName,
                 newName: newName))
     }
+
     public lazy var animationNodeRenamedSignal: Godot.SignalEmitter<AnimationNodeRenamedSignalInput> = {
         .init(object: self, signalName: "animation_node_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -74,19 +93,32 @@ open class AnimationNode: Resource {
 
     public struct AnimationNodeRemovedSignalInput: Godot.SignalInput {
         public let objectID: Int
+
         public let name: Godot.GodotString
-        fileprivate init(objectID: Int, name: Godot.GodotString) {
+
+        fileprivate init(
+            objectID: Int,
+            name: Godot.GodotString
+        ) {
             self.objectID = objectID
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.objectID), Variant(input.name)]
         }
     }
-    public func animationNodeRemoved(objectID: Int, name: Godot.GodotString) {
+
+    public func animationNodeRemoved(
+        objectID: Int,
+        name: Godot.GodotString
+    ) {
         _ = animationNodeRemovedSignal.emit(.init(objectID: objectID,
                 name: name))
     }
+
     public lazy var animationNodeRemovedSignal: Godot.SignalEmitter<AnimationNodeRemovedSignalInput> = {
         .init(object: self, signalName: "animation_node_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -111,19 +143,30 @@ open class AnimationNode: Resource {
         Godot.AnyGodotArray()
     }
 
-    open func _getChildByName(_ name: Godot.GodotStringName) -> Godot.AnimationNode? {
+    open func _getChildByName(
+        _ name: Godot.GodotStringName
+    ) -> Godot.AnimationNode? {
         nil
     }
 
-    open func _getParameterDefaultValue(parameter: Godot.GodotStringName) -> Godot.Variant {
+    open func _getParameterDefaultValue(
+        parameter: Godot.GodotStringName
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _isParameterReadOnly(parameter: Godot.GodotStringName) -> Bool {
+    open func _isParameterReadOnly(
+        parameter: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _process(time: Double, seek: Bool, isExternalSeeking: Bool, testOnly: Bool) -> Double {
+    open func _process(
+        time: Double,
+        seek: Bool,
+        isExternalSeeking: Bool,
+        testOnly: Bool
+    ) -> Double {
         Double()
     }
 
@@ -142,7 +185,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func addInput(name: Godot.GodotString) -> Bool {
+
+    public func addInput(
+        name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -162,7 +208,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func removeInput(index: Int32) {
+
+    public func removeInput(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,7 +230,11 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func setInputName(input: Int32, name: Godot.GodotString) -> Bool {
+
+    public func setInputName(
+        input: Int32,
+        name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -202,7 +255,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func inputName(input: Int32) -> Godot.GodotString {
+
+    public func inputName(
+        input: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
@@ -222,6 +278,7 @@ open class AnimationNode: Resource {
         }
         }
     }()
+
     public func inputCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,7 +297,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func findInput(name: Godot.GodotString) -> Int32 {
+
+    public func findInput(
+        name: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -260,7 +320,11 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func setFilterPath(_ path: Godot.NodePath, enable: Bool) {
+
+    public func setFilterPath(
+        _ path: Godot.NodePath,
+        enable: Bool
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_enable) { __accessPtr in
@@ -280,7 +344,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func isPathFiltered(path: Godot.NodePath) -> Bool {
+
+    public func isPathFiltered(
+        path: Godot.NodePath
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -300,7 +367,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    private func __setFilterEnabled(enable: Bool) {
+
+    private func __setFilterEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -319,6 +389,7 @@ open class AnimationNode: Resource {
         }
         }
     }()
+
     private func __isFilterEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,7 +408,16 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func blendAnimation(_ animation: Godot.GodotStringName, time: Double, delta: Double, seeked: Bool, isExternalSeeking: Bool, blend: Double, loopedFlag: Godot.Animation.LoopedFlag = Animation.LoopedFlag(rawValue: 0)!) {
+
+    public func blendAnimation(
+        _ animation: Godot.GodotStringName,
+        time: Double,
+        delta: Double,
+        seeked: Bool,
+        isExternalSeeking: Bool,
+        blend: Double,
+        loopedFlag: Godot.Animation.LoopedFlag = Animation.LoopedFlag(rawValue: 0)!
+    ) {
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         time.withGodotUnsafeRawPointer { __ptr_time in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
@@ -362,7 +442,18 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func blendNode(name: Godot.GodotStringName, node: Godot.AnimationNode?, time: Double, seek: Bool, isExternalSeeking: Bool, blend: Double, filter: Godot.AnimationNode.FilterAction = AnimationNode.FilterAction(rawValue: 0)!, sync: Bool = true, testOnly: Bool = false) -> Double {
+
+    public func blendNode(
+        name: Godot.GodotStringName,
+        node: Godot.AnimationNode?,
+        time: Double,
+        seek: Bool,
+        isExternalSeeking: Bool,
+        blend: Double,
+        filter: Godot.AnimationNode.FilterAction = AnimationNode.FilterAction(rawValue: 0)!,
+        sync: Bool = true,
+        testOnly: Bool = false
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         node.withGodotUnsafeRawPointer { __ptr_node in
@@ -391,7 +482,17 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func blendInput(inputIndex: Int32, time: Double, seek: Bool, isExternalSeeking: Bool, blend: Double, filter: Godot.AnimationNode.FilterAction = AnimationNode.FilterAction(rawValue: 0)!, sync: Bool = true, testOnly: Bool = false) -> Double {
+
+    public func blendInput(
+        inputIndex: Int32,
+        time: Double,
+        seek: Bool,
+        isExternalSeeking: Bool,
+        blend: Double,
+        filter: Godot.AnimationNode.FilterAction = AnimationNode.FilterAction(rawValue: 0)!,
+        sync: Bool = true,
+        testOnly: Bool = false
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         inputIndex.withGodotUnsafeRawPointer { __ptr_inputIndex in
         time.withGodotUnsafeRawPointer { __ptr_time in
@@ -418,7 +519,11 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func setParameter<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
+
+    public func setParameter<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -438,7 +543,10 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func parameter(name: Godot.GodotStringName) -> Godot.Variant {
+
+    public func parameter(
+        name: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -463,6 +571,7 @@ open class AnimationNode: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -549,5 +658,4 @@ open class AnimationNode: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OpenXRInteractionProfile: Resource {
     internal static var __method_binding_set_interaction_profile_path: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
-    private func __setInteractionProfilePath(_ interactionProfilePath: Godot.GodotString) {
+
+    private func __setInteractionProfilePath(
+        _ interactionProfilePath: Godot.GodotString
+    ) {
         interactionProfilePath.withGodotUnsafeRawPointer { __ptr_interactionProfilePath in
         withUnsafeArgumentPackPointer(__ptr_interactionProfilePath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
+
     private func __getInteractionProfilePath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
+
     public func bindingCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
-    public func binding(index: Int32) -> Godot.OpenXRIPBinding? {
+
+    public func binding(
+        index: Int32
+    ) -> Godot.OpenXRIPBinding? {
         Godot.OpenXRIPBinding?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -87,7 +96,10 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
-    private func __setBindings<Value: VariantStorable>(_ bindings: Godot.GodotArray<Value>) {
+
+    private func __setBindings<Value: VariantStorable>(
+        _ bindings: Godot.GodotArray<Value>
+    ) {
         bindings.withGodotUnsafeRawPointer { __ptr_bindings in
         withUnsafeArgumentPackPointer(__ptr_bindings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
+
     private func __getBindings() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,6 +153,7 @@ open class OpenXRInteractionProfile: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -152,5 +166,4 @@ open class OpenXRInteractionProfile: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ParallaxLayer: Node2D {
     internal static var __method_binding_set_motion_scale: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
-    private func __setMotionScale(_ scale: Godot.Vector2) {
+
+    private func __setMotionScale(
+        _ scale: Godot.Vector2
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
+
     private func __getMotionScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
-    private func __setMotionOffset(_ offset: Godot.Vector2) {
+
+    private func __setMotionOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
+
     private func __getMotionOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
-    private func __setMirroring(mirror: Godot.Vector2) {
+
+    private func __setMirroring(
+        mirror: Godot.Vector2
+    ) {
         mirror.withGodotUnsafeRawPointer { __ptr_mirror in
         withUnsafeArgumentPackPointer(__ptr_mirror) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class ParallaxLayer: Node2D {
         }
         }
     }()
+
     private func __getMirroring() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class ParallaxLayer: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class ParallaxLayer: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

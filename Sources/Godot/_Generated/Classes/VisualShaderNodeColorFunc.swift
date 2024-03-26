@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeColorFunc: VisualShaderNode {
     public enum Function: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         case rgb2hsv = 2
         case sepia = 3
         case max = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Grayscale", 0),
@@ -28,7 +30,10 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         }
         }
     }()
-    private func __setFunction(`func`: Godot.VisualShaderNodeColorFunc.Function) {
+
+    private func __setFunction(
+        `func`: Godot.VisualShaderNodeColorFunc.Function
+    ) {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         }
         }
     }()
+
     private func __getFunction() -> Godot.VisualShaderNodeColorFunc.Function {
         Godot.VisualShaderNodeColorFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +76,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -82,5 +89,4 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

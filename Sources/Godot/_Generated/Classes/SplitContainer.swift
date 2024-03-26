@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SplitContainer: Container {
     public enum DraggerVisibility: UInt32, GodotEnum {
         case visible = 0
         case hidden = 1
         case hiddenCollapsed = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Visible", 0),
@@ -19,16 +21,26 @@ open class SplitContainer: Container {
 
     public struct DraggedSignalInput: Godot.SignalInput {
         public let offset: Int
-        fileprivate init(offset: Int) {
+
+        fileprivate init(
+            offset: Int
+        ) {
             self.offset = offset
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.offset)]
         }
     }
-    public func dragged(offset: Int) {
+
+    public func dragged(
+        offset: Int
+    ) {
         _ = draggedSignal.emit(.init(offset: offset))
     }
+
     public lazy var draggedSignal: Godot.SignalEmitter<DraggedSignalInput> = {
         .init(object: self, signalName: "dragged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DraggedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -51,7 +63,10 @@ open class SplitContainer: Container {
         }
         }
     }()
-    private func __setSplitOffset(_ offset: Int32) {
+
+    private func __setSplitOffset(
+        _ offset: Int32
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +85,7 @@ open class SplitContainer: Container {
         }
         }
     }()
+
     private func __getSplitOffset() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +104,7 @@ open class SplitContainer: Container {
         }
         }
     }()
+
     public func clampSplitOffset() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -105,7 +122,10 @@ open class SplitContainer: Container {
         }
         }
     }()
-    private func __setCollapsed(_ collapsed: Bool) {
+
+    private func __setCollapsed(
+        _ collapsed: Bool
+    ) {
         collapsed.withGodotUnsafeRawPointer { __ptr_collapsed in
         withUnsafeArgumentPackPointer(__ptr_collapsed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +144,7 @@ open class SplitContainer: Container {
         }
         }
     }()
+
     private func __isCollapsed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +163,10 @@ open class SplitContainer: Container {
         }
         }
     }()
-    private func __setDraggerVisibility(mode: Godot.SplitContainer.DraggerVisibility) {
+
+    private func __setDraggerVisibility(
+        mode: Godot.SplitContainer.DraggerVisibility
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +185,7 @@ open class SplitContainer: Container {
         }
         }
     }()
+
     private func __getDraggerVisibility() -> Godot.SplitContainer.DraggerVisibility {
         Godot.SplitContainer.DraggerVisibility.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +204,10 @@ open class SplitContainer: Container {
         }
         }
     }()
-    private func __setVertical(_ vertical: Bool) {
+
+    private func __setVertical(
+        _ vertical: Bool
+    ) {
         vertical.withGodotUnsafeRawPointer { __ptr_vertical in
         withUnsafeArgumentPackPointer(__ptr_vertical) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +226,7 @@ open class SplitContainer: Container {
         }
         }
     }()
+
     private func __isVertical() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +283,7 @@ open class SplitContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -266,5 +296,4 @@ open class SplitContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

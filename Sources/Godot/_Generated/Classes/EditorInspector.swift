@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorInspector: ScrollContainer {
     public struct PropertySelectedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotString
-        fileprivate init(property: Godot.GodotString) {
+
+        fileprivate init(
+            property: Godot.GodotString
+        ) {
             self.property = property
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.property)]
         }
     }
-    public func propertySelected(property: Godot.GodotString) {
+
+    public func propertySelected(
+        property: Godot.GodotString
+    ) {
         _ = propertySelectedSignal.emit(.init(property: property))
     }
+
     public lazy var propertySelectedSignal: Godot.SignalEmitter<PropertySelectedSignalInput> = {
         .init(object: self, signalName: "property_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertySelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,22 +45,38 @@ open class EditorInspector: ScrollContainer {
 
     public struct PropertyKeyedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotString
+
         public let value: Godot.Variant
+
         public let advance: Bool
-        fileprivate init(property: Godot.GodotString, value: Godot.Variant, advance: Bool) {
+
+        fileprivate init(
+            property: Godot.GodotString,
+            value: Godot.Variant,
+            advance: Bool
+        ) {
             self.property = property
             self.value = value
             self.advance = advance
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.property), Variant(input.value), Variant(input.advance)]
         }
     }
-    public func propertyKeyed(property: Godot.GodotString, value: Godot.Variant, advance: Bool) {
+
+    public func propertyKeyed(
+        property: Godot.GodotString,
+        value: Godot.Variant,
+        advance: Bool
+    ) {
         _ = propertyKeyedSignal.emit(.init(property: property,
                 value: value,
                 advance: advance))
     }
+
     public lazy var propertyKeyedSignal: Godot.SignalEmitter<PropertyKeyedSignalInput> = {
         .init(object: self, signalName: "property_keyed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -69,16 +96,26 @@ open class EditorInspector: ScrollContainer {
 
     public struct PropertyDeletedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotString
-        fileprivate init(property: Godot.GodotString) {
+
+        fileprivate init(
+            property: Godot.GodotString
+        ) {
             self.property = property
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.property)]
         }
     }
-    public func propertyDeleted(property: Godot.GodotString) {
+
+    public func propertyDeleted(
+        property: Godot.GodotString
+    ) {
         _ = propertyDeletedSignal.emit(.init(property: property))
     }
+
     public lazy var propertyDeletedSignal: Godot.SignalEmitter<PropertyDeletedSignalInput> = {
         .init(object: self, signalName: "property_deleted") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -96,19 +133,32 @@ open class EditorInspector: ScrollContainer {
 
     public struct ResourceSelectedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
+
         public let path: Godot.GodotString
-        fileprivate init(resource: Godot.Resource?, path: Godot.GodotString) {
+
+        fileprivate init(
+            resource: Godot.Resource?,
+            path: Godot.GodotString
+        ) {
             self.resource = resource
             self.path = path
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resource), Variant(input.path)]
         }
     }
-    public func resourceSelected(resource: Godot.Resource?, path: Godot.GodotString) {
+
+    public func resourceSelected(
+        resource: Godot.Resource?,
+        path: Godot.GodotString
+    ) {
         _ = resourceSelectedSignal.emit(.init(resource: resource,
                 path: path))
     }
+
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -127,16 +177,26 @@ open class EditorInspector: ScrollContainer {
 
     public struct ObjectIDSelectedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func objectIDSelected(id: Int) {
+
+    public func objectIDSelected(
+        id: Int
+    ) {
         _ = objectIDSelectedSignal.emit(.init(id: id))
     }
+
     public lazy var objectIDSelectedSignal: Godot.SignalEmitter<ObjectIDSelectedSignalInput> = {
         .init(object: self, signalName: "object_id_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -154,16 +214,26 @@ open class EditorInspector: ScrollContainer {
 
     public struct PropertyEditedSignalInput: Godot.SignalInput {
         public let property: Godot.GodotString
-        fileprivate init(property: Godot.GodotString) {
+
+        fileprivate init(
+            property: Godot.GodotString
+        ) {
             self.property = property
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.property)]
         }
     }
-    public func propertyEdited(property: Godot.GodotString) {
+
+    public func propertyEdited(
+        property: Godot.GodotString
+    ) {
         _ = propertyEditedSignal.emit(.init(property: property))
     }
+
     public lazy var propertyEditedSignal: Godot.SignalEmitter<PropertyEditedSignalInput> = {
         .init(object: self, signalName: "property_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyEditedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -181,19 +251,32 @@ open class EditorInspector: ScrollContainer {
 
     public struct PropertyToggledSignalInput: Godot.SignalInput {
         public let property: Godot.GodotString
+
         public let checked: Bool
-        fileprivate init(property: Godot.GodotString, checked: Bool) {
+
+        fileprivate init(
+            property: Godot.GodotString,
+            checked: Bool
+        ) {
             self.property = property
             self.checked = checked
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.property), Variant(input.checked)]
         }
     }
-    public func propertyToggled(property: Godot.GodotString, checked: Bool) {
+
+    public func propertyToggled(
+        property: Godot.GodotString,
+        checked: Bool
+    ) {
         _ = propertyToggledSignal.emit(.init(property: property,
                 checked: checked))
     }
+
     public lazy var propertyToggledSignal: Godot.SignalEmitter<PropertyToggledSignalInput> = {
         .init(object: self, signalName: "property_toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -213,6 +296,7 @@ open class EditorInspector: ScrollContainer {
     public func editedObjectChanged() {
         _ = editedObjectChangedSignal.emit()
     }
+
     public lazy var editedObjectChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "edited_object_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -231,6 +315,7 @@ open class EditorInspector: ScrollContainer {
     public func restartRequested() {
         _ = restartRequestedSignal.emit()
     }
+
     public lazy var restartRequestedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "restart_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -253,6 +338,7 @@ open class EditorInspector: ScrollContainer {
         }
         }
     }()
+
     public func selectedPath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +357,7 @@ open class EditorInspector: ScrollContainer {
         }
         }
     }()
+
     public func editedObject() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -283,6 +370,7 @@ open class EditorInspector: ScrollContainer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -295,5 +383,4 @@ open class EditorInspector: ScrollContainer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

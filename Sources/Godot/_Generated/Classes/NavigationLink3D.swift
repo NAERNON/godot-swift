@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NavigationLink3D: Node3D {
     internal static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __isEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setBidirectional(_ bidirectional: Bool) {
+
+    private func __setBidirectional(
+        _ bidirectional: Bool
+    ) {
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
         withUnsafeArgumentPackPointer(__ptr_bidirectional) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __isBidirectional() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setNavigationLayers(_ navigationLayers: UInt32) {
+
+    private func __setNavigationLayers(
+        _ navigationLayers: UInt32
+    ) {
         navigationLayers.withGodotUnsafeRawPointer { __ptr_navigationLayers in
         withUnsafeArgumentPackPointer(__ptr_navigationLayers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __getNavigationLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,11 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    public func setNavigationLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setNavigationLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -161,7 +179,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    public func navigationLayerValue(layerNumber: Int32) -> Bool {
+
+    public func navigationLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -181,7 +202,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setStartPosition(_ position: Godot.Vector3) {
+
+    private func __setStartPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +224,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __getStartPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,7 +243,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setEndPosition(_ position: Godot.Vector3) {
+
+    private func __setEndPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,6 +265,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __getEndPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,7 +284,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    public func setGlobalStartPosition(_ position: Godot.Vector3) {
+
+    public func setGlobalStartPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -274,6 +306,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     public func globalStartPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -292,7 +325,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    public func setGlobalEndPosition(_ position: Godot.Vector3) {
+
+    public func setGlobalEndPosition(
+        _ position: Godot.Vector3
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -311,6 +347,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     public func globalEndPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +366,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setEnterCost(_ enterCost: Double) {
+
+    private func __setEnterCost(
+        _ enterCost: Double
+    ) {
         enterCost.withGodotUnsafeRawPointer { __ptr_enterCost in
         withUnsafeArgumentPackPointer(__ptr_enterCost) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +388,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __getEnterCost() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,7 +407,10 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
-    private func __setTravelCost(_ travelCost: Double) {
+
+    private func __setTravelCost(
+        _ travelCost: Double
+    ) {
         travelCost.withGodotUnsafeRawPointer { __ptr_travelCost in
         withUnsafeArgumentPackPointer(__ptr_travelCost) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,6 +429,7 @@ open class NavigationLink3D: Node3D {
         }
         }
     }()
+
     private func __getTravelCost() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,6 +519,7 @@ open class NavigationLink3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -486,5 +532,4 @@ open class NavigationLink3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

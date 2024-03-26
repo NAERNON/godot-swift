@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeVarying: VisualShaderNode {
     internal static var __method_binding_set_varying_name: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         }
         }
     }()
-    private func __setVaryingName(_ name: Godot.GodotString) {
+
+    private func __setVaryingName(
+        _ name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         }
         }
     }()
+
     private func __getVaryingName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         }
         }
     }()
-    private func __setVaryingType(_ type: Godot.VisualShader.VaryingType) {
+
+    private func __setVaryingType(
+        _ type: Godot.VisualShader.VaryingType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         }
         }
     }()
+
     private func __getVaryingType() -> Godot.VisualShader.VaryingType {
         Godot.VisualShader.VaryingType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class VisualShaderNodeVarying: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

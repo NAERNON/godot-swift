@@ -2,7 +2,7 @@ import Foundation
 import ArgumentParser
 
 @main
-struct APIGeneration: ParsableCommand {
+struct APIGeneration: AsyncParsableCommand {
     @Argument(help: "The configuration of Godot.\n[float-32, float-64, double-32, double-64]")
     private var buildConfiguration: BuildConfiguration
     
@@ -12,7 +12,7 @@ struct APIGeneration: ParsableCommand {
     @Flag(name: .long, help: "Only a small subset of classes are generated.")
     private var subset: Bool = false
     
-    func run() throws {
+    func run() async throws {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         let fileManager = FileManager.default
@@ -21,7 +21,7 @@ struct APIGeneration: ParsableCommand {
             forResource: "extension_api",
             withExtension: "json"
         ) else {
-            fatalError("Cannot find 'extension_api.json' file")
+            fatalError("Cannot find 'extension_api.json' file.")
         }
         
         let generatedFolderURL = URL(filePath: #file)
@@ -36,84 +36,87 @@ struct APIGeneration: ParsableCommand {
         
         var extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
-        GodotType.godotClassTypes = Set(extensionAPI.classes.map { $0.name })
-        GodotType.godotBuiltinClassTypes = Set(extensionAPI.builtinClassesToGenerate().map { $0.name })
-        
-        if subset {
-            extensionAPI = extensionAPI.subset()
-        }
-        
-        // MARK: Generate files
-        
         // Delete _Generated directory if needed before making a new one.
         if !noWrite, fileManager.fileExists(atPath: generatedFolderURL.path) {
             try fileManager.removeItem(atPath: generatedFolderURL.path)
         }
         
-        let godotFiles = [
-            GeneratedFile.globalEnum(extensionAPI),
-            GeneratedFile.architectureRelated(extensionAPI, with: buildConfiguration),
-            GeneratedFile.utilityFunctions(extensionAPI),
-            GeneratedFile.registerGodotClasses(extensionAPI),
-            GeneratedFile.singletons(extensionAPI),
-        ] + extensionAPI.builtinClassesToGenerate().map {
-            GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
-        } + extensionAPI.classes.map {
-            GeneratedFile.class(extensionAPI, for: $0)
-        } + extensionAPI.nativeStructures.map {
-            GeneratedFile.nativeStructure(extensionAPI, for: $0)
-        }
+        let classTypes = Set(extensionAPI.classes.map { $0.name })
+        let builtinClassTypes = Set(extensionAPI.builtinClasses.lazy
+            .filter { !$0.isCoveredByStandardLibrary }
+            .map { $0.name }
+        )
         
-        print("Generating files...")
-        let generationStart = Date()
-        
-        for (index, file) in godotFiles.enumerated() {
-            let printedText = "[\(index+1)/\(godotFiles.count)] Generating \(file.name)"
-            print("\u{1B}[K" + printedText, terminator: "\r")
-            if index < godotFiles.count-1 {
-                fflush(stdout)
-            } else {
-                print("")
+        try await GodotType.$godotClassTypes.withValue(classTypes) {
+            try await GodotType.$godotBuiltinClassTypes.withValue(builtinClassTypes) {
+                if subset {
+                    extensionAPI = extensionAPI.subset()
+                }
+                
+                let pool = files(
+                    baseURL: generatedFolderURL,
+                    extensionAPI: extensionAPI,
+                    buildConfiguration: buildConfiguration
+                )
+                
+                try await pool.generateFiles(writeFiles: !noWrite)
             }
-            
-            try process(
-                file: file,
-                fileManager: fileManager,
-                at: generatedFolderURL)
         }
-        
-        let generationDuration = Date.now.timeIntervalSince(generationStart)
-        
-        print("Files generated! (\(String(format: "%.2f", generationDuration))s)")
     }
     
-    // MARK: Process file
-    
-    private enum ProcessError: Error {
-        case cannotGenerateDataFromCode
-    }
-
-    private func process(
-        file: GeneratedFile,
-        fileManager: FileManager,
-        at url: URL
-    ) throws {
-        let fileURL = url.appending(path: file.path)
+    private func files(
+        baseURL: URL,
+        extensionAPI: GodotExtensionAPI,
+        buildConfiguration: BuildConfiguration
+    ) -> FilePool {
+        var pool = FilePool(
+            baseURL: baseURL,
+            extensionAPI: extensionAPI,
+            buildConfiguration: buildConfiguration
+        )
         
-        guard !noWrite else {
-            _ = try file.code()
-            return
+        pool.append(
+            source: ArchitectureRelatedSource(),
+            nameURLComponent: "ArchitectureRelated.swift"
+        )
+        pool.append(
+            source: GlobalEnumSource(),
+            nameURLComponent: "GlobalEnums.swift"
+        )
+        pool.append(
+            source: UtilityFunctionsSource(),
+            nameURLComponent: "UtilityFunctions+Bindings.swift"
+        )
+        pool.append(
+            source: RegisterGodotClassesSource(),
+            nameURLComponent: "RegisterGodotClasses.swift"
+        )
+        pool.append(
+            source: SingletonsSource(),
+            nameURLComponent: "Singletons.swift"
+        )
+        
+        for builtinClass in extensionAPI.builtinClasses {
+            pool.append(
+                source: builtinClass,
+                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax() + "+Bindings.swift"
+            )
         }
         
-        let filePathWithoutFileName = fileURL.deletingLastPathComponent()
-        if !fileManager.fileExists(atPath: filePathWithoutFileName.path) {
-            try fileManager.createDirectory(atPath: filePathWithoutFileName.path, withIntermediateDirectories: true)
+        for `class` in extensionAPI.classes {
+            pool.append(
+                source: `class`,
+                nameURLComponent: "Classes/" + `class`.identifier + ".swift"
+            )
         }
         
-        guard let data = try file.code().data(using: .utf8) else {
-            throw ProcessError.cannotGenerateDataFromCode
+        for nativeStructure in extensionAPI.nativeStructures {
+            pool.append(
+                source: nativeStructure,
+                nameURLComponent: "Native Structs/" + nativeStructure.name + ".swift"
+            )
         }
         
-        try data.write(to: fileURL)
+        return pool
     }
 }

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ResourceLoader: Object {
     public enum ThreadLoadStatus: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class ResourceLoader: Object {
         case inProgress = 1
         case failed = 2
         case loaded = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Invalid Resource", 0),
@@ -18,10 +20,12 @@ open class ResourceLoader: Object {
             ("Loaded", 3),]
         }
     }
+
     public enum CacheMode: UInt32, GodotEnum {
         case ignore = 0
         case reuse = 1
         case replace = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ignore", 0),
@@ -37,7 +41,13 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func loadThreadedRequest(path: Godot.GodotString, typeHint: Godot.GodotString = "", useSubThreads: Bool = false, cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!) -> Godot.ErrorType {
+
+    public func loadThreadedRequest(
+        path: Godot.GodotString,
+        typeHint: Godot.GodotString = "",
+        useSubThreads: Bool = false,
+        cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
@@ -60,7 +70,11 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func loadThreadedGetStatus<Value: VariantStorable>(path: Godot.GodotString, progress: Godot.GodotArray<Value> = []) -> Godot.ResourceLoader.ThreadLoadStatus {
+
+    public func loadThreadedGetStatus<Value: VariantStorable>(
+        path: Godot.GodotString,
+        progress: Godot.GodotArray<Value> = []
+    ) -> Godot.ResourceLoader.ThreadLoadStatus {
         Godot.ResourceLoader.ThreadLoadStatus.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         progress.withGodotUnsafeRawPointer { __ptr_progress in
@@ -81,7 +95,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func loadThreadedGet(path: Godot.GodotString) -> Godot.Resource? {
+
+    public func loadThreadedGet(
+        path: Godot.GodotString
+    ) -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -101,7 +118,12 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func load(path: Godot.GodotString, typeHint: Godot.GodotString = "", cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!) -> Godot.Resource? {
+
+    public func load(
+        path: Godot.GodotString,
+        typeHint: Godot.GodotString = "",
+        cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!
+    ) -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
@@ -123,7 +145,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func recognizedExtensionsForType(_ type: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func recognizedExtensionsForType(
+        _ type: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -143,7 +168,11 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func addResourceFormatLoader(_ formatLoader: Godot.ResourceFormatLoader?, atFront front: Bool = false) {
+
+    public func addResourceFormatLoader(
+        _ formatLoader: Godot.ResourceFormatLoader?,
+        atFront front: Bool = false
+    ) {
         formatLoader.withGodotUnsafeRawPointer { __ptr_formatLoader in
         withUnsafePointer(to: __ptr_formatLoader) { _ptr___ptr_formatLoader in
         front.withGodotUnsafeRawPointer { __ptr_front in
@@ -164,7 +193,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func removeResourceFormatLoader(_ formatLoader: Godot.ResourceFormatLoader?) {
+
+    public func removeResourceFormatLoader(
+        _ formatLoader: Godot.ResourceFormatLoader?
+    ) {
         formatLoader.withGodotUnsafeRawPointer { __ptr_formatLoader in
         withUnsafePointer(to: __ptr_formatLoader) { _ptr___ptr_formatLoader in
         withUnsafeArgumentPackPointer(_ptr___ptr_formatLoader) { __accessPtr in
@@ -184,7 +216,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func setAbortOnMissingResources(abort: Bool) {
+
+    public func setAbortOnMissingResources(
+        abort: Bool
+    ) {
         abort.withGodotUnsafeRawPointer { __ptr_abort in
         withUnsafeArgumentPackPointer(__ptr_abort) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -203,7 +238,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func dependencies(path: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func dependencies(
+        path: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -223,7 +261,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func hasCached(path: Godot.GodotString) -> Bool {
+
+    public func hasCached(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -243,7 +284,11 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func exists(path: Godot.GodotString, typeHint: Godot.GodotString = "") -> Bool {
+
+    public func exists(
+        path: Godot.GodotString,
+        typeHint: Godot.GodotString = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
@@ -264,7 +309,10 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func resourceUid(path: Godot.GodotString) -> Int64 {
+
+    public func resourceUid(
+        path: Godot.GodotString
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -278,6 +326,7 @@ open class ResourceLoader: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -290,5 +339,4 @@ open class ResourceLoader: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

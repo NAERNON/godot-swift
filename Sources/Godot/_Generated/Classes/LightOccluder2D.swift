@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class LightOccluder2D: Node2D {
     internal static var __method_binding_set_occluder_polygon: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
-    private func __setOccluderPolygon(_ polygon: Godot.OccluderPolygon2D?) {
+
+    private func __setOccluderPolygon(
+        _ polygon: Godot.OccluderPolygon2D?
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafePointer(to: __ptr_polygon) { _ptr___ptr_polygon in
         withUnsafeArgumentPackPointer(_ptr___ptr_polygon) { __accessPtr in
@@ -32,6 +36,7 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
+
     private func __getOccluderPolygon() -> Godot.OccluderPolygon2D? {
         Godot.OccluderPolygon2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
-    private func __setOccluderLightMask(_ mask: Int32) {
+
+    private func __setOccluderLightMask(
+        _ mask: Int32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
+
     private func __getOccluderLightMask() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
-    private func __setAsSdfCollision(enable: Bool) {
+
+    private func __setAsSdfCollision(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class LightOccluder2D: Node2D {
         }
         }
     }()
+
     private func __isSetAsSdfCollision() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class LightOccluder2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class LightOccluder2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

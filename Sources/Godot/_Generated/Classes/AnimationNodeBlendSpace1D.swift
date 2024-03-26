@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeBlendSpace1D: AnimationRootNode {
     public enum BlendMode: UInt32, GodotEnum {
         case interpolated = 0
         case discrete = 1
         case discreteCarry = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Interpolated", 0),
@@ -24,7 +26,12 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func addBlendPoint(node: Godot.AnimationRootNode?, pos: Double, atIndex index: Int32 = -1) {
+
+    public func addBlendPoint(
+        node: Godot.AnimationRootNode?,
+        pos: Double,
+        atIndex index: Int32 = -1
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -46,7 +53,11 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func setBlendPointPosition(point: Int32, pos: Double) {
+
+    public func setBlendPointPosition(
+        point: Int32,
+        pos: Double
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_pos) { __accessPtr in
@@ -66,7 +77,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func blendPointPosition(point: Int32) -> Double {
+
+    public func blendPointPosition(
+        point: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -86,7 +100,11 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func setBlendPointNode(point: Int32, node: Godot.AnimationRootNode?) {
+
+    public func setBlendPointNode(
+        point: Int32,
+        node: Godot.AnimationRootNode?
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -107,7 +125,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func blendPointNode(point: Int32) -> Godot.AnimationRootNode? {
+
+    public func blendPointNode(
+        point: Int32
+    ) -> Godot.AnimationRootNode? {
         Godot.AnimationRootNode?.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -127,7 +148,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    public func removeBlendPoint(_ point: Int32) {
+
+    public func removeBlendPoint(
+        _ point: Int32
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,6 +170,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     public func blendPointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,7 +189,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setMinSpace(_ minSpace: Double) {
+
+    private func __setMinSpace(
+        _ minSpace: Double
+    ) {
         minSpace.withGodotUnsafeRawPointer { __ptr_minSpace in
         withUnsafeArgumentPackPointer(__ptr_minSpace) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,6 +211,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __getMinSpace() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,7 +230,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setMaxSpace(_ maxSpace: Double) {
+
+    private func __setMaxSpace(
+        _ maxSpace: Double
+    ) {
         maxSpace.withGodotUnsafeRawPointer { __ptr_maxSpace in
         withUnsafeArgumentPackPointer(__ptr_maxSpace) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,6 +252,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __getMaxSpace() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -238,7 +271,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setSnap(_ snap: Double) {
+
+    private func __setSnap(
+        _ snap: Double
+    ) {
         snap.withGodotUnsafeRawPointer { __ptr_snap in
         withUnsafeArgumentPackPointer(__ptr_snap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -257,6 +293,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __getSnap() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,7 +312,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setValueLabel(text: Godot.GodotString) {
+
+    private func __setValueLabel(
+        text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,6 +334,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __getValueLabel() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -312,7 +353,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setBlendMode(_ mode: Godot.AnimationNodeBlendSpace1D.BlendMode) {
+
+    private func __setBlendMode(
+        _ mode: Godot.AnimationNodeBlendSpace1D.BlendMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -331,6 +375,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __getBlendMode() -> Godot.AnimationNodeBlendSpace1D.BlendMode {
         Godot.AnimationNodeBlendSpace1D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,7 +394,10 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
-    private func __setUseSync(enable: Bool) {
+
+    private func __setUseSync(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -368,6 +416,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         }
     }()
+
     private func __isUsingSync() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -446,6 +495,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -458,5 +508,4 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

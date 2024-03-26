@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
     public enum EnableMode: UInt32, GodotEnum {
         case inherit = 0
         case always = 1
         case whenPaused = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Inherit", 0),
@@ -24,7 +26,10 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
         }
         }
     }()
-    private func __setEnableMode(_ mode: Godot.VisibleOnScreenEnabler3D.EnableMode) {
+
+    private func __setEnableMode(
+        _ mode: Godot.VisibleOnScreenEnabler3D.EnableMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
         }
         }
     }()
+
     private func __getEnableMode() -> Godot.VisibleOnScreenEnabler3D.EnableMode {
         Godot.VisibleOnScreenEnabler3D.EnableMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
         }
         }
     }()
-    private func __setEnableNodePath(_ path: Godot.NodePath) {
+
+    private func __setEnableNodePath(
+        _ path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
         }
         }
     }()
+
     private func __getEnableNodePath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +124,7 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -126,5 +137,4 @@ open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

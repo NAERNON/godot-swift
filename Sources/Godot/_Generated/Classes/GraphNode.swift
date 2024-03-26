@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GraphNode: GraphElement {
     public struct SlotUpdatedSignalInput: Godot.SignalInput {
         public let slotIndex: Int
-        fileprivate init(slotIndex: Int) {
+
+        fileprivate init(
+            slotIndex: Int
+        ) {
             self.slotIndex = slotIndex
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.slotIndex)]
         }
     }
-    public func slotUpdated(slotIndex: Int) {
+
+    public func slotUpdated(
+        slotIndex: Int
+    ) {
         _ = slotUpdatedSignal.emit(.init(slotIndex: slotIndex))
     }
+
     public lazy var slotUpdatedSignal: Godot.SignalEmitter<SlotUpdatedSignalInput> = {
         .init(object: self, signalName: "slot_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -32,7 +43,12 @@ open class GraphNode: GraphElement {
         }
     }()
 
-    open func _drawPort(slotIndex: Int32, position: Godot.Vector2I, left: Bool, color: Godot.Color) {
+    open func _drawPort(
+        slotIndex: Int32,
+        position: Godot.Vector2I,
+        left: Bool,
+        color: Godot.Color
+    ) {
     }
 
     internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
@@ -42,7 +58,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    private func __setTitle(_ title: Godot.GodotString) {
+
+    private func __setTitle(
+        _ title: Godot.GodotString
+    ) {
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(__ptr_title) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,6 +80,7 @@ open class GraphNode: GraphElement {
         }
         }
     }()
+
     private func __getTitle() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,6 +99,7 @@ open class GraphNode: GraphElement {
         }
         }
     }()
+
     public func titlebarHbox() -> Godot.HBoxContainer? {
         Godot.HBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,7 +118,19 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlot(slotIndex: Int32, enableLeftPort: Bool, typeLeft: Int32, colorLeft: Godot.Color, enableRightPort: Bool, typeRight: Int32, colorRight: Godot.Color, customIconLeft: Godot.Texture2D? = nil, customIconRight: Godot.Texture2D? = nil, drawStylebox: Bool = true) {
+
+    public func setSlot(
+        slotIndex: Int32,
+        enableLeftPort: Bool,
+        typeLeft: Int32,
+        colorLeft: Godot.Color,
+        enableRightPort: Bool,
+        typeRight: Int32,
+        colorRight: Godot.Color,
+        customIconLeft: Godot.Texture2D? = nil,
+        customIconRight: Godot.Texture2D? = nil,
+        drawStylebox: Bool = true
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         enableLeftPort.withGodotUnsafeRawPointer { __ptr_enableLeftPort in
         typeLeft.withGodotUnsafeRawPointer { __ptr_typeLeft in
@@ -127,7 +160,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func clearSlot(slotIndex: Int32) {
+
+    public func clearSlot(
+        slotIndex: Int32
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,6 +182,7 @@ open class GraphNode: GraphElement {
         }
         }
     }()
+
     public func clearAllSlots() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -163,7 +200,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func isSlotEnabledLeft(slotIndex: Int32) -> Bool {
+
+    public func isSlotEnabledLeft(
+        slotIndex: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -183,7 +223,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotEnabledLeft(slotIndex: Int32, enable: Bool) {
+
+    public func setSlotEnabledLeft(
+        slotIndex: Int32,
+        enable: Bool
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
@@ -203,7 +247,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotTypeLeft(slotIndex: Int32, type: Int32) {
+
+    public func setSlotTypeLeft(
+        slotIndex: Int32,
+        type: Int32
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_type) { __accessPtr in
@@ -223,7 +271,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func slotTypeLeft(slotIndex: Int32) -> Int32 {
+
+    public func slotTypeLeft(
+        slotIndex: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -243,7 +294,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotColorLeft(slotIndex: Int32, color: Godot.Color) {
+
+    public func setSlotColorLeft(
+        slotIndex: Int32,
+        color: Godot.Color
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_color) { __accessPtr in
@@ -263,7 +318,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func slotColorLeft(slotIndex: Int32) -> Godot.Color {
+
+    public func slotColorLeft(
+        slotIndex: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -283,7 +341,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func isSlotEnabledRight(slotIndex: Int32) -> Bool {
+
+    public func isSlotEnabledRight(
+        slotIndex: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -303,7 +364,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotEnabledRight(slotIndex: Int32, enable: Bool) {
+
+    public func setSlotEnabledRight(
+        slotIndex: Int32,
+        enable: Bool
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
@@ -323,7 +388,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotTypeRight(slotIndex: Int32, type: Int32) {
+
+    public func setSlotTypeRight(
+        slotIndex: Int32,
+        type: Int32
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_type) { __accessPtr in
@@ -343,7 +412,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func slotTypeRight(slotIndex: Int32) -> Int32 {
+
+    public func slotTypeRight(
+        slotIndex: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -363,7 +435,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotColorRight(slotIndex: Int32, color: Godot.Color) {
+
+    public func setSlotColorRight(
+        slotIndex: Int32,
+        color: Godot.Color
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_color) { __accessPtr in
@@ -383,7 +459,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func slotColorRight(slotIndex: Int32) -> Godot.Color {
+
+    public func slotColorRight(
+        slotIndex: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -403,7 +482,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func isSlotDrawStylebox(slotIndex: Int32) -> Bool {
+
+    public func isSlotDrawStylebox(
+        slotIndex: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
@@ -423,7 +505,11 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func setSlotDrawStylebox(slotIndex: Int32, enable: Bool) {
+
+    public func setSlotDrawStylebox(
+        slotIndex: Int32,
+        enable: Bool
+    ) {
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
@@ -443,6 +529,7 @@ open class GraphNode: GraphElement {
         }
         }
     }()
+
     public func inputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +548,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func inputPortPosition(portIdx: Int32) -> Godot.Vector2 {
+
+    public func inputPortPosition(
+        portIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -481,7 +571,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func inputPortType(portIdx: Int32) -> Int32 {
+
+    public func inputPortType(
+        portIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -501,7 +594,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func inputPortColor(portIdx: Int32) -> Godot.Color {
+
+    public func inputPortColor(
+        portIdx: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -521,7 +617,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func inputPortSlot(portIdx: Int32) -> Int32 {
+
+    public func inputPortSlot(
+        portIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -541,6 +640,7 @@ open class GraphNode: GraphElement {
         }
         }
     }()
+
     public func outputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -559,7 +659,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func outputPortPosition(portIdx: Int32) -> Godot.Vector2 {
+
+    public func outputPortPosition(
+        portIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -579,7 +682,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func outputPortType(portIdx: Int32) -> Int32 {
+
+    public func outputPortType(
+        portIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -599,7 +705,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func outputPortColor(portIdx: Int32) -> Godot.Color {
+
+    public func outputPortColor(
+        portIdx: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -619,7 +728,10 @@ open class GraphNode: GraphElement {
         }
         }
     }()
-    public func outputPortSlot(portIdx: Int32) -> Int32 {
+
+    public func outputPortSlot(
+        portIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
@@ -644,6 +756,7 @@ open class GraphNode: GraphElement {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -667,5 +780,4 @@ open class GraphNode: GraphElement {
         }
         return _virtualFunctions!
     }
-
-    }
+}

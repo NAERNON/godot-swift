@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeTransformOp: VisualShaderNode {
     public enum Operator: UInt32, GodotEnum {
@@ -16,6 +17,7 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
         case aDivB = 7
         case bDivA = 8
         case max = 9
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Axb", 0),
@@ -38,7 +40,10 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
         }
         }
     }()
-    private func __setOperator(op: Godot.VisualShaderNodeTransformOp.Operator) {
+
+    private func __setOperator(
+        op: Godot.VisualShaderNodeTransformOp.Operator
+    ) {
         op.withGodotUnsafeRawPointer { __ptr_op in
         withUnsafeArgumentPackPointer(__ptr_op) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -57,6 +62,7 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
         }
         }
     }()
+
     private func __getOperator() -> Godot.VisualShaderNodeTransformOp.Operator {
         Godot.VisualShaderNodeTransformOp.Operator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +86,7 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -92,5 +99,4 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MobileVRInterface: XRInterface {
     internal static var __method_binding_set_eye_height: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setEyeHeight(_ eyeHeight: Double) {
+
+    private func __setEyeHeight(
+        _ eyeHeight: Double
+    ) {
         eyeHeight.withGodotUnsafeRawPointer { __ptr_eyeHeight in
         withUnsafeArgumentPackPointer(__ptr_eyeHeight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getEyeHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setIod(_ iod: Double) {
+
+    private func __setIod(
+        _ iod: Double
+    ) {
         iod.withGodotUnsafeRawPointer { __ptr_iod in
         withUnsafeArgumentPackPointer(__ptr_iod) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getIod() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setDisplayWidth(_ displayWidth: Double) {
+
+    private func __setDisplayWidth(
+        _ displayWidth: Double
+    ) {
         displayWidth.withGodotUnsafeRawPointer { __ptr_displayWidth in
         withUnsafeArgumentPackPointer(__ptr_displayWidth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getDisplayWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setDisplayToLens(_ displayToLens: Double) {
+
+    private func __setDisplayToLens(
+        _ displayToLens: Double
+    ) {
         displayToLens.withGodotUnsafeRawPointer { __ptr_displayToLens in
         withUnsafeArgumentPackPointer(__ptr_displayToLens) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getDisplayToLens() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setOversample(_ oversample: Double) {
+
+    private func __setOversample(
+        _ oversample: Double
+    ) {
         oversample.withGodotUnsafeRawPointer { __ptr_oversample in
         withUnsafeArgumentPackPointer(__ptr_oversample) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getOversample() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setK1(_ k: Double) {
+
+    private func __setK1(
+        _ k: Double
+    ) {
         k.withGodotUnsafeRawPointer { __ptr_k in
         withUnsafeArgumentPackPointer(__ptr_k) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getK1() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
-    private func __setK2(_ k: Double) {
+
+    private func __setK2(
+        _ k: Double
+    ) {
         k.withGodotUnsafeRawPointer { __ptr_k in
         withUnsafeArgumentPackPointer(__ptr_k) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class MobileVRInterface: XRInterface {
         }
         }
     }()
+
     private func __getK2() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class MobileVRInterface: XRInterface {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class MobileVRInterface: XRInterface {
         }
         return _virtualFunctions!
     }
-
-    }
+}

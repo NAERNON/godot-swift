@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PlaceholderTextureLayered: TextureLayered {
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2I) {
+
+    private func __setSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         }
     }()
-    public func setLayers(_ layers: Int32) {
+
+    public func setLayers(
+        _ layers: Int32
+    ) {
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_layers) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,6 +81,7 @@ open class PlaceholderTextureLayered: TextureLayered {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -85,5 +94,4 @@ open class PlaceholderTextureLayered: TextureLayered {
         }
         return _virtualFunctions!
     }
-
-    }
+}

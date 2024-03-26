@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDPipelineColorBlendStateAttachment: RefCounted {
     internal static var __method_binding_set_as_mix: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     public func setAsMix() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,7 +31,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setEnableBlend(pMember: Bool) {
+
+    private func __setEnableBlend(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +53,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getEnableBlend() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +72,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setSrcColorBlendFactor(pMember: Godot.RenderingDevice.BlendFactor) {
+
+    private func __setSrcColorBlendFactor(
+        pMember: Godot.RenderingDevice.BlendFactor
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getSrcColorBlendFactor() -> Godot.RenderingDevice.BlendFactor {
         Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +113,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setDstColorBlendFactor(pMember: Godot.RenderingDevice.BlendFactor) {
+
+    private func __setDstColorBlendFactor(
+        pMember: Godot.RenderingDevice.BlendFactor
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getDstColorBlendFactor() -> Godot.RenderingDevice.BlendFactor {
         Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setColorBlendOp(pMember: Godot.RenderingDevice.BlendOperation) {
+
+    private func __setColorBlendOp(
+        pMember: Godot.RenderingDevice.BlendOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,6 +176,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getColorBlendOp() -> Godot.RenderingDevice.BlendOperation {
         Godot.RenderingDevice.BlendOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +195,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setSrcAlphaBlendFactor(pMember: Godot.RenderingDevice.BlendFactor) {
+
+    private func __setSrcAlphaBlendFactor(
+        pMember: Godot.RenderingDevice.BlendFactor
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,6 +217,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getSrcAlphaBlendFactor() -> Godot.RenderingDevice.BlendFactor {
         Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -214,7 +236,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setDstAlphaBlendFactor(pMember: Godot.RenderingDevice.BlendFactor) {
+
+    private func __setDstAlphaBlendFactor(
+        pMember: Godot.RenderingDevice.BlendFactor
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,6 +258,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getDstAlphaBlendFactor() -> Godot.RenderingDevice.BlendFactor {
         Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,7 +277,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setAlphaBlendOp(pMember: Godot.RenderingDevice.BlendOperation) {
+
+    private func __setAlphaBlendOp(
+        pMember: Godot.RenderingDevice.BlendOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,6 +299,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getAlphaBlendOp() -> Godot.RenderingDevice.BlendOperation {
         Godot.RenderingDevice.BlendOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -288,7 +318,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setWriteR(pMember: Bool) {
+
+    private func __setWriteR(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -307,6 +340,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getWriteR() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -325,7 +359,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setWriteG(pMember: Bool) {
+
+    private func __setWriteG(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,6 +381,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getWriteG() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -362,7 +400,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setWriteB(pMember: Bool) {
+
+    private func __setWriteB(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,6 +422,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getWriteB() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -399,7 +441,10 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
-    private func __setWriteA(pMember: Bool) {
+
+    private func __setWriteA(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,6 +463,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         }
     }()
+
     private func __getWriteA() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -551,6 +597,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -563,5 +610,4 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

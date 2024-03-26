@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class FontFile: Font {
     internal static var __method_binding_load_bitmap_font: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func loadBitmapFont(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func loadBitmapFont(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -32,7 +36,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func loadDynamicFont(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func loadDynamicFont(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -52,7 +59,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setData(_ data: Godot.PackedByteArray) {
+
+    private func __setData(
+        _ data: Godot.PackedByteArray
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,6 +81,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getData() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,7 +100,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFontName(_ name: Godot.GodotString) {
+
+    public func setFontName(
+        _ name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -108,7 +122,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFontStyleName(_ name: Godot.GodotString) {
+
+    public func setFontStyleName(
+        _ name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,7 +144,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFontStyle(_ style: Godot.TextServer.FontStyle) {
+
+    public func setFontStyle(
+        _ style: Godot.TextServer.FontStyle
+    ) {
         style.withGodotUnsafeRawPointer { __ptr_style in
         withUnsafeArgumentPackPointer(__ptr_style) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +166,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFontWeight(_ weight: Int32) {
+
+    public func setFontWeight(
+        _ weight: Int32
+    ) {
         weight.withGodotUnsafeRawPointer { __ptr_weight in
         withUnsafeArgumentPackPointer(__ptr_weight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,7 +188,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFontStretch(_ stretch: Int32) {
+
+    public func setFontStretch(
+        _ stretch: Int32
+    ) {
         stretch.withGodotUnsafeRawPointer { __ptr_stretch in
         withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,7 +210,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setAntialiasing(_ antialiasing: Godot.TextServer.FontAntialiasing) {
+
+    private func __setAntialiasing(
+        _ antialiasing: Godot.TextServer.FontAntialiasing
+    ) {
         antialiasing.withGodotUnsafeRawPointer { __ptr_antialiasing in
         withUnsafeArgumentPackPointer(__ptr_antialiasing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -203,6 +232,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getAntialiasing() -> Godot.TextServer.FontAntialiasing {
         Godot.TextServer.FontAntialiasing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -221,7 +251,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setGenerateMipmaps(_ generateMipmaps: Bool) {
+
+    private func __setGenerateMipmaps(
+        _ generateMipmaps: Bool
+    ) {
         generateMipmaps.withGodotUnsafeRawPointer { __ptr_generateMipmaps in
         withUnsafeArgumentPackPointer(__ptr_generateMipmaps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,6 +273,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getGenerateMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,7 +292,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setMultichannelSignedDistanceField(msdf: Bool) {
+
+    private func __setMultichannelSignedDistanceField(
+        msdf: Bool
+    ) {
         msdf.withGodotUnsafeRawPointer { __ptr_msdf in
         withUnsafeArgumentPackPointer(__ptr_msdf) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -277,6 +314,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __isMultichannelSignedDistanceField() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -295,7 +333,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setMsdfPixelRange(_ msdfPixelRange: Int32) {
+
+    private func __setMsdfPixelRange(
+        _ msdfPixelRange: Int32
+    ) {
         msdfPixelRange.withGodotUnsafeRawPointer { __ptr_msdfPixelRange in
         withUnsafeArgumentPackPointer(__ptr_msdfPixelRange) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -314,6 +355,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getMsdfPixelRange() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,7 +374,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setMsdfSize(_ msdfSize: Int32) {
+
+    private func __setMsdfSize(
+        _ msdfSize: Int32
+    ) {
         msdfSize.withGodotUnsafeRawPointer { __ptr_msdfSize in
         withUnsafeArgumentPackPointer(__ptr_msdfSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -351,6 +396,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getMsdfSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,7 +415,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setFixedSize(_ fixedSize: Int32) {
+
+    private func __setFixedSize(
+        _ fixedSize: Int32
+    ) {
         fixedSize.withGodotUnsafeRawPointer { __ptr_fixedSize in
         withUnsafeArgumentPackPointer(__ptr_fixedSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -388,6 +437,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getFixedSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -406,7 +456,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setFixedSizeScaleMode(_ fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode) {
+
+    private func __setFixedSizeScaleMode(
+        _ fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode
+    ) {
         fixedSizeScaleMode.withGodotUnsafeRawPointer { __ptr_fixedSizeScaleMode in
         withUnsafeArgumentPackPointer(__ptr_fixedSizeScaleMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -425,6 +478,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getFixedSizeScaleMode() -> Godot.TextServer.FixedSizeScaleMode {
         Godot.TextServer.FixedSizeScaleMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,7 +497,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setAllowSystemFallback(_ allowSystemFallback: Bool) {
+
+    private func __setAllowSystemFallback(
+        _ allowSystemFallback: Bool
+    ) {
         allowSystemFallback.withGodotUnsafeRawPointer { __ptr_allowSystemFallback in
         withUnsafeArgumentPackPointer(__ptr_allowSystemFallback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,6 +519,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __isAllowSystemFallback() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,7 +538,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setForceAutohinter(_ forceAutohinter: Bool) {
+
+    private func __setForceAutohinter(
+        _ forceAutohinter: Bool
+    ) {
         forceAutohinter.withGodotUnsafeRawPointer { __ptr_forceAutohinter in
         withUnsafeArgumentPackPointer(__ptr_forceAutohinter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -499,6 +560,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __isForceAutohinter() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -517,7 +579,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setHinting(_ hinting: Godot.TextServer.Hinting) {
+
+    private func __setHinting(
+        _ hinting: Godot.TextServer.Hinting
+    ) {
         hinting.withGodotUnsafeRawPointer { __ptr_hinting in
         withUnsafeArgumentPackPointer(__ptr_hinting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,6 +601,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getHinting() -> Godot.TextServer.Hinting {
         Godot.TextServer.Hinting.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -554,7 +620,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setSubpixelPositioning(_ subpixelPositioning: Godot.TextServer.SubpixelPositioning) {
+
+    private func __setSubpixelPositioning(
+        _ subpixelPositioning: Godot.TextServer.SubpixelPositioning
+    ) {
         subpixelPositioning.withGodotUnsafeRawPointer { __ptr_subpixelPositioning in
         withUnsafeArgumentPackPointer(__ptr_subpixelPositioning) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -573,6 +642,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getSubpixelPositioning() -> Godot.TextServer.SubpixelPositioning {
         Godot.TextServer.SubpixelPositioning.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -591,7 +661,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setOversampling(_ oversampling: Double) {
+
+    private func __setOversampling(
+        _ oversampling: Double
+    ) {
         oversampling.withGodotUnsafeRawPointer { __ptr_oversampling in
         withUnsafeArgumentPackPointer(__ptr_oversampling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -610,6 +683,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getOversampling() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -628,6 +702,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     public func cacheCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -646,6 +721,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     public func clearCache() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -663,7 +739,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeCache(cacheIndex: Int32) {
+
+    public func removeCache(
+        cacheIndex: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -682,7 +761,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func sizeCacheList(cacheIndex: Int32) -> Godot.GodotArray<Godot.Vector2I> {
+
+    public func sizeCacheList(
+        cacheIndex: Int32
+    ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
@@ -702,7 +784,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func clearSizeCache(cacheIndex: Int32) {
+
+    public func clearSizeCache(
+        cacheIndex: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -721,7 +806,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeSizeCache(cacheIndex: Int32, size: Godot.Vector2I) {
+
+    public func removeSizeCache(
+        cacheIndex: Int32,
+        size: Godot.Vector2I
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in
@@ -741,7 +830,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setVariationCoordinates<Value1: VariantStorable, Value2: VariantStorable>(cacheIndex: Int32, variationCoordinates: Godot.GodotDictionary<Value1, Value2>) {
+
+    public func setVariationCoordinates<Value1: VariantStorable, Value2: VariantStorable>(
+        cacheIndex: Int32,
+        variationCoordinates: Godot.GodotDictionary<Value1, Value2>
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         variationCoordinates.withGodotUnsafeRawPointer { __ptr_variationCoordinates in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_variationCoordinates) { __accessPtr in
@@ -761,7 +854,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func variationCoordinates(cacheIndex: Int32) -> Godot.AnyGodotDictionary {
+
+    public func variationCoordinates(
+        cacheIndex: Int32
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
@@ -781,7 +877,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setEmbolden(cacheIndex: Int32, strength: Double) {
+
+    public func setEmbolden(
+        cacheIndex: Int32,
+        strength: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_strength) { __accessPtr in
@@ -801,7 +901,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func embolden(cacheIndex: Int32) -> Double {
+
+    public func embolden(
+        cacheIndex: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
@@ -821,7 +924,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setTransform(cacheIndex: Int32, transform: Godot.Transform2D) {
+
+    public func setTransform(
+        cacheIndex: Int32,
+        transform: Godot.Transform2D
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_transform) { __accessPtr in
@@ -841,7 +948,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func transform(cacheIndex: Int32) -> Godot.Transform2D {
+
+    public func transform(
+        cacheIndex: Int32
+    ) -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
@@ -861,7 +971,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setExtraSpacing(cacheIndex: Int32, spacing: Godot.TextServer.SpacingType, value: Int64) {
+
+    public func setExtraSpacing(
+        cacheIndex: Int32,
+        spacing: Godot.TextServer.SpacingType,
+        value: Int64
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         value.withGodotUnsafeRawPointer { __ptr_value in
@@ -882,7 +997,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func extraSpacing(cacheIndex: Int32, spacing: Godot.TextServer.SpacingType) -> Int64 {
+
+    public func extraSpacing(
+        cacheIndex: Int32,
+        spacing: Godot.TextServer.SpacingType
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
@@ -903,7 +1022,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setFaceIndex(cacheIndex: Int32, faceIndex: Int64) {
+
+    public func setFaceIndex(
+        cacheIndex: Int32,
+        faceIndex: Int64
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_faceIndex) { __accessPtr in
@@ -923,7 +1046,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func faceIndex(cacheIndex: Int32) -> Int64 {
+
+    public func faceIndex(
+        cacheIndex: Int32
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
@@ -943,7 +1069,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setCacheAscent(cacheIndex: Int32, size: Int32, ascent: Double) {
+
+    public func setCacheAscent(
+        cacheIndex: Int32,
+        size: Int32,
+        ascent: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         ascent.withGodotUnsafeRawPointer { __ptr_ascent in
@@ -964,7 +1095,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func cacheAscent(cacheIndex: Int32, size: Int32) -> Double {
+
+    public func cacheAscent(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -985,7 +1120,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setCacheDescent(cacheIndex: Int32, size: Int32, descent: Double) {
+
+    public func setCacheDescent(
+        cacheIndex: Int32,
+        size: Int32,
+        descent: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         descent.withGodotUnsafeRawPointer { __ptr_descent in
@@ -1006,7 +1146,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func cacheDescent(cacheIndex: Int32, size: Int32) -> Double {
+
+    public func cacheDescent(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1027,7 +1171,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setCacheUnderlinePosition(cacheIndex: Int32, size: Int32, underlinePosition: Double) {
+
+    public func setCacheUnderlinePosition(
+        cacheIndex: Int32,
+        size: Int32,
+        underlinePosition: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         underlinePosition.withGodotUnsafeRawPointer { __ptr_underlinePosition in
@@ -1048,7 +1197,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func cacheUnderlinePosition(cacheIndex: Int32, size: Int32) -> Double {
+
+    public func cacheUnderlinePosition(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1069,7 +1222,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setCacheUnderlineThickness(cacheIndex: Int32, size: Int32, underlineThickness: Double) {
+
+    public func setCacheUnderlineThickness(
+        cacheIndex: Int32,
+        size: Int32,
+        underlineThickness: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         underlineThickness.withGodotUnsafeRawPointer { __ptr_underlineThickness in
@@ -1090,7 +1248,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func cacheUnderlineThickness(cacheIndex: Int32, size: Int32) -> Double {
+
+    public func cacheUnderlineThickness(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1111,7 +1273,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setCacheScale(cacheIndex: Int32, size: Int32, scale: Double) {
+
+    public func setCacheScale(
+        cacheIndex: Int32,
+        size: Int32,
+        scale: Double
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
@@ -1132,7 +1299,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func cacheScale(cacheIndex: Int32, size: Int32) -> Double {
+
+    public func cacheScale(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1153,7 +1324,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func textureCount(cacheIndex: Int32, size: Godot.Vector2I) -> Int32 {
+
+    public func textureCount(
+        cacheIndex: Int32,
+        size: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1174,7 +1349,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func clearTextures(cacheIndex: Int32, size: Godot.Vector2I) {
+
+    public func clearTextures(
+        cacheIndex: Int32,
+        size: Godot.Vector2I
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in
@@ -1194,7 +1373,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeTexture(cacheIndex: Int32, size: Godot.Vector2I, textureIndex: Int32) {
+
+    public func removeTexture(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        textureIndex: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
@@ -1215,7 +1399,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setTextureImage(cacheIndex: Int32, size: Godot.Vector2I, textureIndex: Int32, image: Godot.Image?) {
+
+    public func setTextureImage(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        textureIndex: Int32,
+        image: Godot.Image?
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
@@ -1238,7 +1428,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func textureImage(cacheIndex: Int32, size: Godot.Vector2I, textureIndex: Int32) -> Godot.Image? {
+
+    public func textureImage(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        textureIndex: Int32
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1260,7 +1455,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setTextureOffsets(cacheIndex: Int32, size: Godot.Vector2I, textureIndex: Int32, offset: Godot.PackedInt32Array) {
+
+    public func setTextureOffsets(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        textureIndex: Int32,
+        offset: Godot.PackedInt32Array
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
@@ -1282,7 +1483,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func textureOffsets(cacheIndex: Int32, size: Godot.Vector2I, textureIndex: Int32) -> Godot.PackedInt32Array {
+
+    public func textureOffsets(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        textureIndex: Int32
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1304,7 +1510,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphList(cacheIndex: Int32, size: Godot.Vector2I) -> Godot.PackedInt32Array {
+
+    public func glyphList(
+        cacheIndex: Int32,
+        size: Godot.Vector2I
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1325,7 +1535,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func clearGlyphs(cacheIndex: Int32, size: Godot.Vector2I) {
+
+    public func clearGlyphs(
+        cacheIndex: Int32,
+        size: Godot.Vector2I
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in
@@ -1345,7 +1559,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeGlyph(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32) {
+
+    public func removeGlyph(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1366,7 +1585,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setGlyphAdvance(cacheIndex: Int32, size: Int32, glyph: Int32, advance: Godot.Vector2) {
+
+    public func setGlyphAdvance(
+        cacheIndex: Int32,
+        size: Int32,
+        glyph: Int32,
+        advance: Godot.Vector2
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1388,7 +1613,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphAdvance(cacheIndex: Int32, size: Int32, glyph: Int32) -> Godot.Vector2 {
+
+    public func glyphAdvance(
+        cacheIndex: Int32,
+        size: Int32,
+        glyph: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1410,7 +1640,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setGlyphOffset(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32, offset: Godot.Vector2) {
+
+    public func setGlyphOffset(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32,
+        offset: Godot.Vector2
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1432,7 +1668,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphOffset(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32) -> Godot.Vector2 {
+
+    public func glyphOffset(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1454,7 +1695,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setGlyphSize(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32, glSize: Godot.Vector2) {
+
+    public func setGlyphSize(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32,
+        glSize: Godot.Vector2
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1476,7 +1723,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphSize(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32) -> Godot.Vector2 {
+
+    public func glyphSize(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1498,7 +1750,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setGlyphUvRect(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32, uvRect: Godot.Rect2) {
+
+    public func setGlyphUvRect(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32,
+        uvRect: Godot.Rect2
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1520,7 +1778,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphUvRect(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32) -> Godot.Rect2 {
+
+    public func glyphUvRect(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32
+    ) -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1542,7 +1805,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setGlyphTextureIdx(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32, textureIdx: Int32) {
+
+    public func setGlyphTextureIdx(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32,
+        textureIdx: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -1564,7 +1833,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphTextureIdx(cacheIndex: Int32, size: Godot.Vector2I, glyph: Int32) -> Int32 {
+
+    public func glyphTextureIdx(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        glyph: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1586,7 +1860,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func kerningList(cacheIndex: Int32, size: Int32) -> Godot.GodotArray<Godot.Vector2I> {
+
+    public func kerningList(
+        cacheIndex: Int32,
+        size: Int32
+    ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1607,7 +1885,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func clearKerningMap(cacheIndex: Int32, size: Int32) {
+
+    public func clearKerningMap(
+        cacheIndex: Int32,
+        size: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in
@@ -1627,7 +1909,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeKerning(cacheIndex: Int32, size: Int32, glyphPair: Godot.Vector2I) {
+
+    public func removeKerning(
+        cacheIndex: Int32,
+        size: Int32,
+        glyphPair: Godot.Vector2I
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
@@ -1648,7 +1935,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setKerning(cacheIndex: Int32, size: Int32, glyphPair: Godot.Vector2I, kerning: Godot.Vector2) {
+
+    public func setKerning(
+        cacheIndex: Int32,
+        size: Int32,
+        glyphPair: Godot.Vector2I,
+        kerning: Godot.Vector2
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
@@ -1670,7 +1963,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func kerning(cacheIndex: Int32, size: Int32, glyphPair: Godot.Vector2I) -> Godot.Vector2 {
+
+    public func kerning(
+        cacheIndex: Int32,
+        size: Int32,
+        glyphPair: Godot.Vector2I
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -1692,7 +1990,13 @@ open class FontFile: Font {
         }
         }
     }()
-    public func renderRange(cacheIndex: Int32, size: Godot.Vector2I, start: Int, end: Int) {
+
+    public func renderRange(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        start: Int,
+        end: Int
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         start.withGodotUnsafeRawPointer { __ptr_start in
@@ -1714,7 +2018,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func renderGlyph(cacheIndex: Int32, size: Godot.Vector2I, index: Int32) {
+
+    public func renderGlyph(
+        cacheIndex: Int32,
+        size: Godot.Vector2I,
+        index: Int32
+    ) {
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -1735,7 +2044,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setLanguageSupportOverride(language: Godot.GodotString, supported: Bool) {
+
+    public func setLanguageSupportOverride(
+        language: Godot.GodotString,
+        supported: Bool
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         supported.withGodotUnsafeRawPointer { __ptr_supported in
         withUnsafeArgumentPackPointer(__ptr_language, __ptr_supported) { __accessPtr in
@@ -1755,7 +2068,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func languageSupportOverride(language: Godot.GodotString) -> Bool {
+
+    public func languageSupportOverride(
+        language: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
@@ -1775,7 +2091,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeLanguageSupportOverride(language: Godot.GodotString) {
+
+    public func removeLanguageSupportOverride(
+        language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1794,6 +2113,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     public func languageSupportOverrides() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1812,7 +2132,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setScriptSupportOverride(script: Godot.GodotString, supported: Bool) {
+
+    public func setScriptSupportOverride(
+        script: Godot.GodotString,
+        supported: Bool
+    ) {
         script.withGodotUnsafeRawPointer { __ptr_script in
         supported.withGodotUnsafeRawPointer { __ptr_supported in
         withUnsafeArgumentPackPointer(__ptr_script, __ptr_supported) { __accessPtr in
@@ -1832,7 +2156,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func scriptSupportOverride(script: Godot.GodotString) -> Bool {
+
+    public func scriptSupportOverride(
+        script: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_script) { __accessPtr in
@@ -1852,7 +2179,10 @@ open class FontFile: Font {
         }
         }
     }()
-    public func removeScriptSupportOverride(script: Godot.GodotString) {
+
+    public func removeScriptSupportOverride(
+        script: Godot.GodotString
+    ) {
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1871,6 +2201,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     public func scriptSupportOverrides() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1889,7 +2220,10 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setOpentypeFeatureOverrides<Value1: VariantStorable, Value2: VariantStorable>(_ overrides: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setOpentypeFeatureOverrides<Value1: VariantStorable, Value2: VariantStorable>(
+        _ overrides: Godot.GodotDictionary<Value1, Value2>
+    ) {
         overrides.withGodotUnsafeRawPointer { __ptr_overrides in
         withUnsafeArgumentPackPointer(__ptr_overrides) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1908,6 +2242,7 @@ open class FontFile: Font {
         }
         }
     }()
+
     private func __getOpentypeFeatureOverrides() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1926,7 +2261,12 @@ open class FontFile: Font {
         }
         }
     }()
-    public func glyphIndex(size: Int32, char: Int, variationSelector: Int) -> Int32 {
+
+    public func glyphIndex(
+        size: Int32,
+        char: Int,
+        variationSelector: Int
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         char.withGodotUnsafeRawPointer { __ptr_char in
@@ -1948,7 +2288,11 @@ open class FontFile: Font {
         }
         }
     }()
-    public func charFromGlyphIndex(size: Int32, glyphIndex: Int32) -> Int {
+
+    public func charFromGlyphIndex(
+        size: Int32,
+        glyphIndex: Int32
+    ) -> Int {
         Int.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphIndex.withGodotUnsafeRawPointer { __ptr_glyphIndex in
@@ -2117,6 +2461,7 @@ open class FontFile: Font {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2129,5 +2474,4 @@ open class FontFile: Font {
         }
         return _virtualFunctions!
     }
-
-    }
+}

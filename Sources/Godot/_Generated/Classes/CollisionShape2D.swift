@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CollisionShape2D: Node2D {
     internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.Shape2D?) {
+
+    private func __setShape(
+        _ shape: Godot.Shape2D?
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
         withUnsafeArgumentPackPointer(_ptr___ptr_shape) { __accessPtr in
@@ -32,6 +36,7 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
+
     private func __getShape() -> Godot.Shape2D? {
         Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
-    private func __setDisabled(_ disabled: Bool) {
+
+    private func __setDisabled(
+        _ disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
+
     private func __isDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
-    private func __setOneWayCollision(enabled: Bool) {
+
+    private func __setOneWayCollision(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
+
     private func __isOneWayCollisionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +137,10 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
-    private func __setOneWayCollisionMargin(_ margin: Double) {
+
+    private func __setOneWayCollisionMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +159,7 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
+
     private func __getOneWayCollisionMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +178,10 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
-    private func __setDebugColor(_ color: Godot.Color) {
+
+    private func __setDebugColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class CollisionShape2D: Node2D {
         }
         }
     }()
+
     private func __getDebugColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +268,7 @@ open class CollisionShape2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -259,5 +281,4 @@ open class CollisionShape2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

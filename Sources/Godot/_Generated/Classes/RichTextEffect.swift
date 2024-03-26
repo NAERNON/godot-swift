@@ -3,13 +3,17 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RichTextEffect: Resource {
-    open func _processCustomFx(charFx: Godot.CharFXTransform?) -> Bool {
+    open func _processCustomFx(
+        charFx: Godot.CharFXTransform?
+    ) -> Bool {
         Bool()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -31,5 +35,4 @@ open class RichTextEffect: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

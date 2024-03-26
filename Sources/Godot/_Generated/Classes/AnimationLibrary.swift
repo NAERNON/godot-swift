@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationLibrary: Resource {
     public struct AnimationAddedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-        fileprivate init(name: Godot.GodotStringName) {
+
+        fileprivate init(
+            name: Godot.GodotStringName
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func animationAdded(name: Godot.GodotStringName) {
+
+    public func animationAdded(
+        name: Godot.GodotStringName
+    ) {
         _ = animationAddedSignal.emit(.init(name: name))
     }
+
     public lazy var animationAddedSignal: Godot.SignalEmitter<AnimationAddedSignalInput> = {
         .init(object: self, signalName: "animation_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class AnimationLibrary: Resource {
 
     public struct AnimationRemovedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-        fileprivate init(name: Godot.GodotStringName) {
+
+        fileprivate init(
+            name: Godot.GodotStringName
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func animationRemoved(name: Godot.GodotStringName) {
+
+    public func animationRemoved(
+        name: Godot.GodotStringName
+    ) {
         _ = animationRemovedSignal.emit(.init(name: name))
     }
+
     public lazy var animationRemovedSignal: Godot.SignalEmitter<AnimationRemovedSignalInput> = {
         .init(object: self, signalName: "animation_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,19 +82,32 @@ open class AnimationLibrary: Resource {
 
     public struct AnimationRenamedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
+
         public let toName: Godot.GodotStringName
-        fileprivate init(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
+
+        fileprivate init(
+            name: Godot.GodotStringName,
+            toName: Godot.GodotStringName
+        ) {
             self.name = name
             self.toName = toName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name), Variant(input.toName)]
         }
     }
-    public func animationRenamed(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
+
+    public func animationRenamed(
+        name: Godot.GodotStringName,
+        toName: Godot.GodotStringName
+    ) {
         _ = animationRenamedSignal.emit(.init(name: name,
                 toName: toName))
     }
+
     public lazy var animationRenamedSignal: Godot.SignalEmitter<AnimationRenamedSignalInput> = {
         .init(object: self, signalName: "animation_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -92,16 +126,26 @@ open class AnimationLibrary: Resource {
 
     public struct AnimationChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-        fileprivate init(name: Godot.GodotStringName) {
+
+        fileprivate init(
+            name: Godot.GodotStringName
+        ) {
             self.name = name
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.name)]
         }
     }
-    public func animationChanged(name: Godot.GodotStringName) {
+
+    public func animationChanged(
+        name: Godot.GodotStringName
+    ) {
         _ = animationChangedSignal.emit(.init(name: name))
     }
+
     public lazy var animationChangedSignal: Godot.SignalEmitter<AnimationChangedSignalInput> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -124,7 +168,11 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
-    public func addAnimation(name: Godot.GodotStringName, animation: Godot.Animation?) -> Godot.ErrorType {
+
+    public func addAnimation(
+        name: Godot.GodotStringName,
+        animation: Godot.Animation?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
@@ -146,7 +194,10 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
-    public func removeAnimation(name: Godot.GodotStringName) {
+
+    public func removeAnimation(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,7 +216,11 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
-    public func renameAnimation(name: Godot.GodotStringName, newname: Godot.GodotStringName) {
+
+    public func renameAnimation(
+        name: Godot.GodotStringName,
+        newname: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         newname.withGodotUnsafeRawPointer { __ptr_newname in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_newname) { __accessPtr in
@@ -185,7 +240,10 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
-    public func hasAnimation(name: Godot.GodotStringName) -> Bool {
+
+    public func hasAnimation(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -205,7 +263,10 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
-    public func animation(name: Godot.GodotStringName) -> Godot.Animation? {
+
+    public func animation(
+        name: Godot.GodotStringName
+    ) -> Godot.Animation? {
         Godot.Animation?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -225,6 +286,7 @@ open class AnimationLibrary: Resource {
         }
         }
     }()
+
     public func animationList() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,6 +299,7 @@ open class AnimationLibrary: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -249,5 +312,4 @@ open class AnimationLibrary: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

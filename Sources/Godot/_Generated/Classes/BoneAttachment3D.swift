@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class BoneAttachment3D: Node3D {
     internal static var __method_binding_set_bone_name: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    private func __setBoneName(_ boneName: Godot.GodotString) {
+
+    private func __setBoneName(
+        _ boneName: Godot.GodotString
+    ) {
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
+
     private func __getBoneName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    private func __setBoneIdx(_ boneIdx: Int32) {
+
+    private func __setBoneIdx(
+        _ boneIdx: Int32
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
+
     private func __getBoneIdx() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    public func onBonePoseUpdate(boneIndex: Int32) {
+
+    public func onBonePoseUpdate(
+        boneIndex: Int32
+    ) {
         boneIndex.withGodotUnsafeRawPointer { __ptr_boneIndex in
         withUnsafeArgumentPackPointer(__ptr_boneIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +117,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    private func __setOverridePose(_ overridePose: Bool) {
+
+    private func __setOverridePose(
+        _ overridePose: Bool
+    ) {
         overridePose.withGodotUnsafeRawPointer { __ptr_overridePose in
         withUnsafeArgumentPackPointer(__ptr_overridePose) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +139,7 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
+
     private func __getOverridePose() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +158,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    public func setUseExternalSkeleton(_ useExternalSkeleton: Bool) {
+
+    public func setUseExternalSkeleton(
+        _ useExternalSkeleton: Bool
+    ) {
         useExternalSkeleton.withGodotUnsafeRawPointer { __ptr_useExternalSkeleton in
         withUnsafeArgumentPackPointer(__ptr_useExternalSkeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +180,7 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
+
     public func useExternalSkeleton() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +199,10 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
-    public func setExternalSkeleton(_ externalSkeleton: Godot.NodePath) {
+
+    public func setExternalSkeleton(
+        _ externalSkeleton: Godot.NodePath
+    ) {
         externalSkeleton.withGodotUnsafeRawPointer { __ptr_externalSkeleton in
         withUnsafeArgumentPackPointer(__ptr_externalSkeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +221,7 @@ open class BoneAttachment3D: Node3D {
         }
         }
     }()
+
     public func externalSkeleton() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -243,6 +267,7 @@ open class BoneAttachment3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -255,5 +280,4 @@ open class BoneAttachment3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

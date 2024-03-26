@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEvent: Resource {
     internal static var __method_binding_set_device: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEvent: Resource {
         }
         }
     }()
-    private func __setDevice(_ device: Int32) {
+
+    private func __setDevice(
+        _ device: Int32
+    ) {
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     private func __getDevice() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,11 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func isAction(_ action: Godot.GodotStringName, exactMatch: Bool = false) -> Bool {
+
+    public func isAction(
+        _ action: Godot.GodotStringName,
+        exactMatch: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
@@ -70,7 +79,12 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func isActionPressed(action: Godot.GodotStringName, allowEcho: Bool = false, exactMatch: Bool = false) -> Bool {
+
+    public func isActionPressed(
+        action: Godot.GodotStringName,
+        allowEcho: Bool = false,
+        exactMatch: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         allowEcho.withGodotUnsafeRawPointer { __ptr_allowEcho in
@@ -92,7 +106,11 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func isActionReleased(action: Godot.GodotStringName, exactMatch: Bool = false) -> Bool {
+
+    public func isActionReleased(
+        action: Godot.GodotStringName,
+        exactMatch: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
@@ -113,7 +131,11 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func actionStrength(action: Godot.GodotStringName, exactMatch: Bool = false) -> Double {
+
+    public func actionStrength(
+        action: Godot.GodotStringName,
+        exactMatch: Bool = false
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
@@ -134,6 +156,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func isCanceled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +175,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func isPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +194,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func isReleased() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +213,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func isEcho() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +232,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func asText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,7 +251,11 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func isMatch(event: Godot.InputEvent?, exactMatch: Bool = true) -> Bool {
+
+    public func isMatch(
+        event: Godot.InputEvent?,
+        exactMatch: Bool = true
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -246,6 +277,7 @@ open class InputEvent: Resource {
         }
         }
     }()
+
     public func isActionType() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -264,7 +296,10 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func accumulate(withEvent event: Godot.InputEvent?) -> Bool {
+
+    public func accumulate(
+        withEvent event: Godot.InputEvent?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -285,7 +320,11 @@ open class InputEvent: Resource {
         }
         }
     }()
-    public func xformedBy(xform: Godot.Transform2D, localOfs: Godot.Vector2 = Vector2(x: 0, y: 0)) -> Godot.InputEvent? {
+
+    public func xformedBy(
+        xform: Godot.Transform2D,
+        localOfs: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) -> Godot.InputEvent? {
         Godot.InputEvent?.fromMutatingGodotUnsafePointer { __temporary in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         localOfs.withGodotUnsafeRawPointer { __ptr_localOfs in
@@ -311,6 +350,7 @@ open class InputEvent: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -323,5 +363,4 @@ open class InputEvent: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

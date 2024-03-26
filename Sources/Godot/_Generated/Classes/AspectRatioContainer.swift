@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AspectRatioContainer: Container {
     public enum StretchMode: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AspectRatioContainer: Container {
         case heightControlsWidth = 1
         case fit = 2
         case cover = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Width Controls Height", 0),
@@ -18,10 +20,12 @@ open class AspectRatioContainer: Container {
             ("Cover", 3),]
         }
     }
+
     public enum AlignmentMode: UInt32, GodotEnum {
         case begin = 0
         case center = 1
         case end = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Begin", 0),
@@ -37,7 +41,10 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
-    private func __setRatio(_ ratio: Double) {
+
+    private func __setRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -56,6 +63,7 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
+
     private func __getRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +82,10 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
-    private func __setStretchMode(_ stretchMode: Godot.AspectRatioContainer.StretchMode) {
+
+    private func __setStretchMode(
+        _ stretchMode: Godot.AspectRatioContainer.StretchMode
+    ) {
         stretchMode.withGodotUnsafeRawPointer { __ptr_stretchMode in
         withUnsafeArgumentPackPointer(__ptr_stretchMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -93,6 +104,7 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
+
     private func __getStretchMode() -> Godot.AspectRatioContainer.StretchMode {
         Godot.AspectRatioContainer.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,7 +123,10 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
-    private func __setAlignmentHorizontal(_ alignmentHorizontal: Godot.AspectRatioContainer.AlignmentMode) {
+
+    private func __setAlignmentHorizontal(
+        _ alignmentHorizontal: Godot.AspectRatioContainer.AlignmentMode
+    ) {
         alignmentHorizontal.withGodotUnsafeRawPointer { __ptr_alignmentHorizontal in
         withUnsafeArgumentPackPointer(__ptr_alignmentHorizontal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,6 +145,7 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
+
     private func __getAlignmentHorizontal() -> Godot.AspectRatioContainer.AlignmentMode {
         Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,7 +164,10 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
-    private func __setAlignmentVertical(_ alignmentVertical: Godot.AspectRatioContainer.AlignmentMode) {
+
+    private func __setAlignmentVertical(
+        _ alignmentVertical: Godot.AspectRatioContainer.AlignmentMode
+    ) {
         alignmentVertical.withGodotUnsafeRawPointer { __ptr_alignmentVertical in
         withUnsafeArgumentPackPointer(__ptr_alignmentVertical) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,6 +186,7 @@ open class AspectRatioContainer: Container {
         }
         }
     }()
+
     private func __getAlignmentVertical() -> Godot.AspectRatioContainer.AlignmentMode {
         Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -223,6 +243,7 @@ open class AspectRatioContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -235,5 +256,4 @@ open class AspectRatioContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

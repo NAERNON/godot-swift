@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OpenXRAPIExtension: RefCounted {
     internal static var __method_binding_get_instance: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func instance() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func systemID() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func session() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +70,10 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func transformFromPose(_ pose: UnsafeRawPointer) -> Godot.Transform3D {
+
+    public func transformFromPose(
+        _ pose: UnsafeRawPointer
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(pose) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,7 +92,12 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func xrResult<Value: VariantStorable>(_ result: UInt64, format: Godot.GodotString, args: Godot.GodotArray<Value>) -> Bool {
+
+    public func xrResult<Value: VariantStorable>(
+        _ result: UInt64,
+        format: Godot.GodotString,
+        args: Godot.GodotArray<Value>
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         result.withGodotUnsafeRawPointer { __ptr_result in
         format.withGodotUnsafeRawPointer { __ptr_format in
@@ -107,7 +119,10 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    static public func openxrIsEnabled(checkRunInEditor: Bool) -> Bool {
+
+    static public func openxrIsEnabled(
+        checkRunInEditor: Bool
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         checkRunInEditor.withGodotUnsafeRawPointer { __ptr_checkRunInEditor in
         withUnsafeArgumentPackPointer(__ptr_checkRunInEditor) { __accessPtr in
@@ -126,7 +141,10 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func instanceProcAddr(name: Godot.GodotString) -> UInt64 {
+
+    public func instanceProcAddr(
+        name: Godot.GodotString
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -146,7 +164,10 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func errorString(result: UInt64) -> Godot.GodotString {
+
+    public func errorString(
+        result: UInt64
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         result.withGodotUnsafeRawPointer { __ptr_result in
         withUnsafeArgumentPackPointer(__ptr_result) { __accessPtr in
@@ -166,7 +187,10 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
-    public func swapchainFormatName(swapchainFormat: Int64) -> Godot.GodotString {
+
+    public func swapchainFormatName(
+        swapchainFormat: Int64
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         swapchainFormat.withGodotUnsafeRawPointer { __ptr_swapchainFormat in
         withUnsafeArgumentPackPointer(__ptr_swapchainFormat) { __accessPtr in
@@ -186,6 +210,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func isInitialized() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,6 +229,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func isRunning() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,6 +248,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func playSpace() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,6 +267,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func nextFrameTime() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,6 +286,7 @@ open class OpenXRAPIExtension: RefCounted {
         }
         }
     }()
+
     public func canRender() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,6 +299,7 @@ open class OpenXRAPIExtension: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -282,5 +312,4 @@ open class OpenXRAPIExtension: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

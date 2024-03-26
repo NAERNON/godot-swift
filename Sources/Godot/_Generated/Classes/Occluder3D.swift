@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Occluder3D: Resource {
     internal static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Occluder3D: Resource {
         }
         }
     }()
+
     public func vertices() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class Occluder3D: Resource {
         }
         }
     }()
+
     public func indices() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,6 +45,7 @@ open class Occluder3D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -54,5 +58,4 @@ open class Occluder3D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFLight: Resource {
     internal static var __method_binding_from_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    static public func fromNode(lightNode: Godot.Light3D?) -> Godot.GLTFLight? {
+
+    static public func fromNode(
+        lightNode: Godot.Light3D?
+    ) -> Godot.GLTFLight? {
         Godot.GLTFLight?.fromMutatingGodotUnsafePointer { __temporary in
         lightNode.withGodotUnsafeRawPointer { __ptr_lightNode in
         withUnsafePointer(to: __ptr_lightNode) { _ptr___ptr_lightNode in
@@ -32,6 +36,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     public func toNode() -> Godot.Light3D? {
         Godot.Light3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(_ dictionary: Godot.GodotDictionary<Value1, Value2>) -> Godot.GLTFLight? {
+
+    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+        _ dictionary: Godot.GodotDictionary<Value1, Value2>
+    ) -> Godot.GLTFLight? {
         Godot.GLTFLight?.fromMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
@@ -69,6 +77,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     public func toDictionary() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +156,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setIntensity(_ intensity: Double) {
+
+    private func __setIntensity(
+        _ intensity: Double
+    ) {
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_intensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +178,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getLightType() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +197,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setLightType(_ lightType: Godot.GodotString) {
+
+    private func __setLightType(
+        _ lightType: Godot.GodotString
+    ) {
         lightType.withGodotUnsafeRawPointer { __ptr_lightType in
         withUnsafeArgumentPackPointer(__ptr_lightType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +219,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getRange() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +238,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setRange(_ range: Double) {
+
+    private func __setRange(
+        _ range: Double
+    ) {
         range.withGodotUnsafeRawPointer { __ptr_range in
         withUnsafeArgumentPackPointer(__ptr_range) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,6 +260,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getInnerConeAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +279,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setInnerConeAngle(_ innerConeAngle: Double) {
+
+    private func __setInnerConeAngle(
+        _ innerConeAngle: Double
+    ) {
         innerConeAngle.withGodotUnsafeRawPointer { __ptr_innerConeAngle in
         withUnsafeArgumentPackPointer(__ptr_innerConeAngle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,6 +301,7 @@ open class GLTFLight: Resource {
         }
         }
     }()
+
     private func __getOuterConeAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,7 +320,10 @@ open class GLTFLight: Resource {
         }
         }
     }()
-    private func __setOuterConeAngle(_ outerConeAngle: Double) {
+
+    private func __setOuterConeAngle(
+        _ outerConeAngle: Double
+    ) {
         outerConeAngle.withGodotUnsafeRawPointer { __ptr_outerConeAngle in
         withUnsafeArgumentPackPointer(__ptr_outerConeAngle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,6 +402,7 @@ open class GLTFLight: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -381,5 +415,4 @@ open class GLTFLight: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

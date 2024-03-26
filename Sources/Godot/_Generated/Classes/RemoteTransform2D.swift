@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class RemoteTransform2D: Node2D {
     internal static var __method_binding_set_remote_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
-    private func __setRemoteNode(path: Godot.NodePath) {
+
+    private func __setRemoteNode(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     private func __getRemoteNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     public func forceUpdateCache() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -66,7 +72,10 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
-    private func __setUseGlobalCoordinates(_ useGlobalCoordinates: Bool) {
+
+    private func __setUseGlobalCoordinates(
+        _ useGlobalCoordinates: Bool
+    ) {
         useGlobalCoordinates.withGodotUnsafeRawPointer { __ptr_useGlobalCoordinates in
         withUnsafeArgumentPackPointer(__ptr_useGlobalCoordinates) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     private func __getUseGlobalCoordinates() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +113,10 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
-    private func __setUpdatePosition(updateRemotePosition: Bool) {
+
+    private func __setUpdatePosition(
+        updateRemotePosition: Bool
+    ) {
         updateRemotePosition.withGodotUnsafeRawPointer { __ptr_updateRemotePosition in
         withUnsafeArgumentPackPointer(__ptr_updateRemotePosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     private func __getUpdatePosition() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
-    private func __setUpdateRotation(updateRemoteRotation: Bool) {
+
+    private func __setUpdateRotation(
+        updateRemoteRotation: Bool
+    ) {
         updateRemoteRotation.withGodotUnsafeRawPointer { __ptr_updateRemoteRotation in
         withUnsafeArgumentPackPointer(__ptr_updateRemoteRotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,6 +176,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     private func __getUpdateRotation() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +195,10 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
-    private func __setUpdateScale(updateRemoteScale: Bool) {
+
+    private func __setUpdateScale(
+        updateRemoteScale: Bool
+    ) {
         updateRemoteScale.withGodotUnsafeRawPointer { __ptr_updateRemoteScale in
         withUnsafeArgumentPackPointer(__ptr_updateRemoteScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,6 +217,7 @@ open class RemoteTransform2D: Node2D {
         }
         }
     }()
+
     private func __getUpdateScale() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -263,6 +285,7 @@ open class RemoteTransform2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -275,5 +298,4 @@ open class RemoteTransform2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

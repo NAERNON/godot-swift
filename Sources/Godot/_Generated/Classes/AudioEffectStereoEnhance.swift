@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectStereoEnhance: AudioEffect {
     internal static var __method_binding_set_pan_pullout: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
-    private func __setPanPullout(amount: Double) {
+
+    private func __setPanPullout(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
+
     private func __getPanPullout() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
-    private func __setTimePullout(amount: Double) {
+
+    private func __setTimePullout(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
+
     private func __getTimePullout() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
-    private func __setSurround(amount: Double) {
+
+    private func __setSurround(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         }
     }()
+
     private func __getSurround() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class AudioEffectStereoEnhance: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectChorus: AudioEffect {
     internal static var __method_binding_set_voice_count: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    private func __setVoiceCount(voices: Int32) {
+
+    private func __setVoiceCount(
+        voices: Int32
+    ) {
         voices.withGodotUnsafeRawPointer { __ptr_voices in
         withUnsafeArgumentPackPointer(__ptr_voices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
+
     private func __getVoiceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoiceDelayMs(voiceIdx: Int32, delayMs: Double) {
+
+    public func setVoiceDelayMs(
+        voiceIdx: Int32,
+        delayMs: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         delayMs.withGodotUnsafeRawPointer { __ptr_delayMs in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_delayMs) { __accessPtr in
@@ -69,7 +78,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voiceDelayMs(voiceIdx: Int32) -> Double {
+
+    public func voiceDelayMs(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -89,7 +101,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoiceRateHz(voiceIdx: Int32, rateHz: Double) {
+
+    public func setVoiceRateHz(
+        voiceIdx: Int32,
+        rateHz: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         rateHz.withGodotUnsafeRawPointer { __ptr_rateHz in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_rateHz) { __accessPtr in
@@ -109,7 +125,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voiceRateHz(voiceIdx: Int32) -> Double {
+
+    public func voiceRateHz(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -129,7 +148,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoiceDepthMs(voiceIdx: Int32, depthMs: Double) {
+
+    public func setVoiceDepthMs(
+        voiceIdx: Int32,
+        depthMs: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         depthMs.withGodotUnsafeRawPointer { __ptr_depthMs in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_depthMs) { __accessPtr in
@@ -149,7 +172,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voiceDepthMs(voiceIdx: Int32) -> Double {
+
+    public func voiceDepthMs(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -169,7 +195,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoiceLevelDb(voiceIdx: Int32, levelDb: Double) {
+
+    public func setVoiceLevelDb(
+        voiceIdx: Int32,
+        levelDb: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         levelDb.withGodotUnsafeRawPointer { __ptr_levelDb in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_levelDb) { __accessPtr in
@@ -189,7 +219,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voiceLevelDb(voiceIdx: Int32) -> Double {
+
+    public func voiceLevelDb(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -209,7 +242,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoiceCutoffHz(voiceIdx: Int32, cutoffHz: Double) {
+
+    public func setVoiceCutoffHz(
+        voiceIdx: Int32,
+        cutoffHz: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         cutoffHz.withGodotUnsafeRawPointer { __ptr_cutoffHz in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_cutoffHz) { __accessPtr in
@@ -229,7 +266,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voiceCutoffHz(voiceIdx: Int32) -> Double {
+
+    public func voiceCutoffHz(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -249,7 +289,11 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func setVoicePan(voiceIdx: Int32, pan: Double) {
+
+    public func setVoicePan(
+        voiceIdx: Int32,
+        pan: Double
+    ) {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         pan.withGodotUnsafeRawPointer { __ptr_pan in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_pan) { __accessPtr in
@@ -269,7 +313,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    public func voicePan(voiceIdx: Int32) -> Double {
+
+    public func voicePan(
+        voiceIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
@@ -289,7 +336,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    private func __setWet(amount: Double) {
+
+    private func __setWet(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +358,7 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
+
     private func __getWet() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +377,10 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
-    private func __setDry(amount: Double) {
+
+    private func __setDry(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +399,7 @@ open class AudioEffectChorus: AudioEffect {
         }
         }
     }()
+
     private func __getDry() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -390,6 +445,7 @@ open class AudioEffectChorus: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -402,5 +458,4 @@ open class AudioEffectChorus: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

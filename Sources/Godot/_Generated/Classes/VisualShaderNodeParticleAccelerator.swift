@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
     public enum Mode: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         case radial = 1
         case tangential = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Linear", 0),
@@ -26,7 +28,10 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         }
         }
     }()
-    private func __setMode(_ mode: Godot.VisualShaderNodeParticleAccelerator.Mode) {
+
+    private func __setMode(
+        _ mode: Godot.VisualShaderNodeParticleAccelerator.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         }
         }
     }()
+
     private func __getMode() -> Godot.VisualShaderNodeParticleAccelerator.Mode {
         Godot.VisualShaderNodeParticleAccelerator.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +74,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -80,5 +87,4 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

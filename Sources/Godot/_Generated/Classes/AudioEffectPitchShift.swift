@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectPitchShift: AudioEffect {
     public enum FFTSize: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class AudioEffectPitchShift: AudioEffect {
         case fftSize2048 = 3
         case fftSize4096 = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Fft Size256", 0),
@@ -30,7 +32,10 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
-    private func __setPitchScale(rate: Double) {
+
+    private func __setPitchScale(
+        rate: Double
+    ) {
         rate.withGodotUnsafeRawPointer { __ptr_rate in
         withUnsafeArgumentPackPointer(__ptr_rate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
+
     private func __getPitchScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
-    private func __setOversampling(amount: Int32) {
+
+    private func __setOversampling(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
+
     private func __getOversampling() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
-    private func __setFftSize(_ size: Godot.AudioEffectPitchShift.FFTSize) {
+
+    private func __setFftSize(
+        _ size: Godot.AudioEffectPitchShift.FFTSize
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         }
     }()
+
     private func __getFftSize() -> Godot.AudioEffectPitchShift.FFTSize {
         Godot.AudioEffectPitchShift.FFTSize.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,6 +182,7 @@ open class AudioEffectPitchShift: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -180,5 +195,4 @@ open class AudioEffectPitchShift: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Geometry2D: Object {
     public enum PolyBooleanOperation: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class Geometry2D: Object {
         case difference = 1
         case intersection = 2
         case xor = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Union", 0),
@@ -18,10 +20,12 @@ open class Geometry2D: Object {
             ("Xor", 3),]
         }
     }
+
     public enum PolyJoinType: UInt32, GodotEnum {
         case square = 0
         case round = 1
         case miter = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Square", 0),
@@ -29,12 +33,14 @@ open class Geometry2D: Object {
             ("Miter", 2),]
         }
     }
+
     public enum PolyEndType: UInt32, GodotEnum {
         case polygon = 0
         case joined = 1
         case butt = 2
         case square = 3
         case round = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Polygon", 0),
@@ -52,7 +58,12 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func isPointInCircle(point: Godot.Vector2, circlePosition: Godot.Vector2, circleRadius: Double) -> Bool {
+
+    public func isPointInCircle(
+        point: Godot.Vector2,
+        circlePosition: Godot.Vector2,
+        circleRadius: Double
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         circlePosition.withGodotUnsafeRawPointer { __ptr_circlePosition in
@@ -74,7 +85,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func segmentIntersectsCircle(segmentFrom: Godot.Vector2, segmentTo: Godot.Vector2, circlePosition: Godot.Vector2, circleRadius: Double) -> Double {
+
+    public func segmentIntersectsCircle(
+        segmentFrom: Godot.Vector2,
+        segmentTo: Godot.Vector2,
+        circlePosition: Godot.Vector2,
+        circleRadius: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         segmentFrom.withGodotUnsafeRawPointer { __ptr_segmentFrom in
         segmentTo.withGodotUnsafeRawPointer { __ptr_segmentTo in
@@ -97,7 +114,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func segmentIntersectsSegment(fromA: Godot.Vector2, toA: Godot.Vector2, fromB: Godot.Vector2, toB: Godot.Vector2) -> Godot.Variant {
+
+    public func segmentIntersectsSegment(
+        fromA: Godot.Vector2,
+        toA: Godot.Vector2,
+        fromB: Godot.Vector2,
+        toB: Godot.Vector2
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         fromA.withGodotUnsafeRawPointer { __ptr_fromA in
         toA.withGodotUnsafeRawPointer { __ptr_toA in
@@ -120,7 +143,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func lineIntersectsLine(fromA a: Godot.Vector2, dirA: Godot.Vector2, fromB b: Godot.Vector2, dirB: Godot.Vector2) -> Godot.Variant {
+
+    public func lineIntersectsLine(
+        fromA a: Godot.Vector2,
+        dirA: Godot.Vector2,
+        fromB b: Godot.Vector2,
+        dirB: Godot.Vector2
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         a.withGodotUnsafeRawPointer { __ptr_a in
         dirA.withGodotUnsafeRawPointer { __ptr_dirA in
@@ -143,7 +172,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func closestPointsBetweenSegments(p1: Godot.Vector2, q1: Godot.Vector2, p2: Godot.Vector2, q2: Godot.Vector2) -> Godot.PackedVector2Array {
+
+    public func closestPointsBetweenSegments(
+        p1: Godot.Vector2,
+        q1: Godot.Vector2,
+        p2: Godot.Vector2,
+        q2: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         p1.withGodotUnsafeRawPointer { __ptr_p1 in
         q1.withGodotUnsafeRawPointer { __ptr_q1 in
@@ -166,7 +201,12 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func closestPointToSegment(point: Godot.Vector2, s1: Godot.Vector2, s2: Godot.Vector2) -> Godot.Vector2 {
+
+    public func closestPointToSegment(
+        point: Godot.Vector2,
+        s1: Godot.Vector2,
+        s2: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
@@ -188,7 +228,12 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func closestPointToSegmentUncapped(point: Godot.Vector2, s1: Godot.Vector2, s2: Godot.Vector2) -> Godot.Vector2 {
+
+    public func closestPointToSegmentUncapped(
+        point: Godot.Vector2,
+        s1: Godot.Vector2,
+        s2: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
@@ -210,7 +255,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func pointIsInsideTriangle(point: Godot.Vector2, a: Godot.Vector2, b: Godot.Vector2, c: Godot.Vector2) -> Bool {
+
+    public func pointIsInsideTriangle(
+        point: Godot.Vector2,
+        a: Godot.Vector2,
+        b: Godot.Vector2,
+        c: Godot.Vector2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         a.withGodotUnsafeRawPointer { __ptr_a in
@@ -233,7 +284,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func isPolygonClockwise(polygon: Godot.PackedVector2Array) -> Bool {
+
+    public func isPolygonClockwise(
+        polygon: Godot.PackedVector2Array
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -253,7 +307,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func isPointInPolygon(point: Godot.Vector2, polygon: Godot.PackedVector2Array) -> Bool {
+
+    public func isPointInPolygon(
+        point: Godot.Vector2,
+        polygon: Godot.PackedVector2Array
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
@@ -274,7 +332,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func triangulatePolygon(_ polygon: Godot.PackedVector2Array) -> Godot.PackedInt32Array {
+
+    public func triangulatePolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -294,7 +355,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func triangulateDelaunay(points: Godot.PackedVector2Array) -> Godot.PackedInt32Array {
+
+    public func triangulateDelaunay(
+        points: Godot.PackedVector2Array
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -314,7 +378,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func convexHull(points: Godot.PackedVector2Array) -> Godot.PackedVector2Array {
+
+    public func convexHull(
+        points: Godot.PackedVector2Array
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -334,7 +401,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func decomposePolygonInConvex(polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func decomposePolygonInConvex(
+        polygon: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -354,7 +424,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func mergePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func mergePolygons(
+        polygonA: Godot.PackedVector2Array,
+        polygonB: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
@@ -375,7 +449,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func clipPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func clipPolygons(
+        polygonA: Godot.PackedVector2Array,
+        polygonB: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
@@ -396,7 +474,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func intersectPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func intersectPolygons(
+        polygonA: Godot.PackedVector2Array,
+        polygonB: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
@@ -417,7 +499,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func excludePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func excludePolygons(
+        polygonA: Godot.PackedVector2Array,
+        polygonB: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
@@ -438,7 +524,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func clipPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func clipPolylineWithPolygon(
+        polyline: Godot.PackedVector2Array,
+        polygon: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
@@ -459,7 +549,11 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func intersectPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func intersectPolylineWithPolygon(
+        polyline: Godot.PackedVector2Array,
+        polygon: Godot.PackedVector2Array
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
@@ -480,7 +574,12 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func offsetPolygon(_ polygon: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func offsetPolygon(
+        _ polygon: Godot.PackedVector2Array,
+        delta: Double,
+        joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
@@ -502,7 +601,13 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func offsetPolyline(_ polyline: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!, endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!) -> Godot.GodotArray<Godot.PackedVector2Array> {
+
+    public func offsetPolyline(
+        _ polyline: Godot.PackedVector2Array,
+        delta: Double,
+        joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!,
+        endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!
+    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
         Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
@@ -525,7 +630,10 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func makeAtlas(sizes: Godot.PackedVector2Array) -> Godot.AnyGodotDictionary {
+
+    public func makeAtlas(
+        sizes: Godot.PackedVector2Array
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         sizes.withGodotUnsafeRawPointer { __ptr_sizes in
         withUnsafeArgumentPackPointer(__ptr_sizes) { __accessPtr in
@@ -539,6 +647,7 @@ open class Geometry2D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -551,5 +660,4 @@ open class Geometry2D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

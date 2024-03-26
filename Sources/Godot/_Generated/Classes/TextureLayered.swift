@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TextureLayered: Texture {
     public enum LayeredType: UInt32, GodotEnum {
         case layeredType2DArray = 0
         case cubemap = 1
         case cubemapArray = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Layered Type2D Array", 0),
@@ -41,7 +43,9 @@ open class TextureLayered: Texture {
         Bool()
     }
 
-    open func _getLayerData(layerIndex: Int32) -> Godot.Image? {
+    open func _getLayerData(
+        layerIndex: Int32
+    ) -> Godot.Image? {
         nil
     }
 
@@ -52,6 +56,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func format() -> Godot.Image.Format {
         Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +75,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func layeredType() -> Godot.TextureLayered.LayeredType {
         Godot.TextureLayered.LayeredType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +94,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func width() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +113,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func height() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +132,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func layers() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +151,7 @@ open class TextureLayered: Texture {
         }
         }
     }()
+
     public func hasMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +170,10 @@ open class TextureLayered: Texture {
         }
         }
     }()
-    public func layerData(layer: Int32) -> Godot.Image? {
+
+    public func layerData(
+        layer: Int32
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
@@ -174,6 +187,7 @@ open class TextureLayered: Texture {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -243,5 +257,4 @@ open class TextureLayered: Texture {
         }
         return _virtualFunctions!
     }
-
-    }
+}

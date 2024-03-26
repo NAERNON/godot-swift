@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeParameter: VisualShaderNode {
     public enum Qualifier: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         case global = 1
         case instance = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -26,7 +28,10 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         }
         }
     }()
-    private func __setParameterName(_ name: Godot.GodotString) {
+
+    private func __setParameterName(
+        _ name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         }
         }
     }()
+
     private func __getParameterName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +69,10 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         }
         }
     }()
-    private func __setQualifier(_ qualifier: Godot.VisualShaderNodeParameter.Qualifier) {
+
+    private func __setQualifier(
+        _ qualifier: Godot.VisualShaderNodeParameter.Qualifier
+    ) {
         qualifier.withGodotUnsafeRawPointer { __ptr_qualifier in
         withUnsafeArgumentPackPointer(__ptr_qualifier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +91,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         }
         }
     }()
+
     private func __getQualifier() -> Godot.VisualShaderNodeParameter.Qualifier {
         Godot.VisualShaderNodeParameter.Qualifier.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,6 +126,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -128,5 +139,4 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

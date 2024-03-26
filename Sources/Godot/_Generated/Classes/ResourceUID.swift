@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ResourceUID: Object {
     public static let invalidID: Int = -1
@@ -14,7 +15,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func idToText(id: Int64) -> Godot.GodotString {
+
+    public func idToText(
+        id: Int64
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -34,7 +38,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func textToID(textID: Godot.GodotString) -> Int64 {
+
+    public func textToID(
+        textID: Godot.GodotString
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         textID.withGodotUnsafeRawPointer { __ptr_textID in
         withUnsafeArgumentPackPointer(__ptr_textID) { __accessPtr in
@@ -54,6 +61,7 @@ open class ResourceUID: Object {
         }
         }
     }()
+
     public func createID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +80,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func hasID(_ id: Int64) -> Bool {
+
+    public func hasID(
+        _ id: Int64
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -92,7 +103,11 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func addID(_ id: Int64, path: Godot.GodotString) {
+
+    public func addID(
+        _ id: Int64,
+        path: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_path) { __accessPtr in
@@ -112,7 +127,11 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func setID(_ id: Int64, path: Godot.GodotString) {
+
+    public func setID(
+        _ id: Int64,
+        path: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_path) { __accessPtr in
@@ -132,7 +151,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func idPath(id: Int64) -> Godot.GodotString {
+
+    public func idPath(
+        id: Int64
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -152,7 +174,10 @@ open class ResourceUID: Object {
         }
         }
     }()
-    public func removeID(_ id: Int64) {
+
+    public func removeID(
+        _ id: Int64
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +190,7 @@ open class ResourceUID: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -177,5 +203,4 @@ open class ResourceUID: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

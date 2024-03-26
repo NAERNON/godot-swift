@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class StaticBody2D: PhysicsBody2D {
     internal static var __method_binding_set_constant_linear_velocity: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
-    private func __setConstantLinearVelocity(vel: Godot.Vector2) {
+
+    private func __setConstantLinearVelocity(
+        vel: Godot.Vector2
+    ) {
         vel.withGodotUnsafeRawPointer { __ptr_vel in
         withUnsafeArgumentPackPointer(__ptr_vel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
-    private func __setConstantAngularVelocity(vel: Double) {
+
+    private func __setConstantAngularVelocity(
+        vel: Double
+    ) {
         vel.withGodotUnsafeRawPointer { __ptr_vel in
         withUnsafeArgumentPackPointer(__ptr_vel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +57,7 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
+
     private func __getConstantLinearVelocity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
+
     private func __getConstantAngularVelocity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
-    private func __setPhysicsMaterialOverride(_ physicsMaterialOverride: Godot.PhysicsMaterial?) {
+
+    private func __setPhysicsMaterialOverride(
+        _ physicsMaterialOverride: Godot.PhysicsMaterial?
+    ) {
         physicsMaterialOverride.withGodotUnsafeRawPointer { __ptr_physicsMaterialOverride in
         withUnsafePointer(to: __ptr_physicsMaterialOverride) { _ptr___ptr_physicsMaterialOverride in
         withUnsafeArgumentPackPointer(_ptr___ptr_physicsMaterialOverride) { __accessPtr in
@@ -106,6 +118,7 @@ open class StaticBody2D: PhysicsBody2D {
         }
         }
     }()
+
     private func __getPhysicsMaterialOverride() -> Godot.PhysicsMaterial? {
         Godot.PhysicsMaterial?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class StaticBody2D: PhysicsBody2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class StaticBody2D: PhysicsBody2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

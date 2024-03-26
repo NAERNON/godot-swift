@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TileSetScenesCollectionSource: TileSetSource {
     internal static var __method_binding_get_scene_tiles_count: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
+
     public func sceneTilesCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func sceneTileID(index: Int32) -> Int32 {
+
+    public func sceneTileID(
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -50,7 +55,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func hasSceneTileID(_ id: Int32) -> Bool {
+
+    public func hasSceneTileID(
+        _ id: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -70,7 +78,11 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func createSceneTile(packedScene: Godot.PackedScene?, idOverride: Int32 = -1) -> Int32 {
+
+    public func createSceneTile(
+        packedScene: Godot.PackedScene?,
+        idOverride: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         packedScene.withGodotUnsafeRawPointer { __ptr_packedScene in
         withUnsafePointer(to: __ptr_packedScene) { _ptr___ptr_packedScene in
@@ -92,7 +104,11 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func setSceneTileID(_ id: Int32, newID: Int32) {
+
+    public func setSceneTileID(
+        _ id: Int32,
+        newID: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         newID.withGodotUnsafeRawPointer { __ptr_newID in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_newID) { __accessPtr in
@@ -112,7 +128,11 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func setSceneTileScene(id: Int32, packedScene: Godot.PackedScene?) {
+
+    public func setSceneTileScene(
+        id: Int32,
+        packedScene: Godot.PackedScene?
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         packedScene.withGodotUnsafeRawPointer { __ptr_packedScene in
         withUnsafePointer(to: __ptr_packedScene) { _ptr___ptr_packedScene in
@@ -133,7 +153,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func sceneTileScene(id: Int32) -> Godot.PackedScene? {
+
+    public func sceneTileScene(
+        id: Int32
+    ) -> Godot.PackedScene? {
         Godot.PackedScene?.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -153,7 +176,11 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func setSceneTileDisplayPlaceholder(id: Int32, displayPlaceholder: Bool) {
+
+    public func setSceneTileDisplayPlaceholder(
+        id: Int32,
+        displayPlaceholder: Bool
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         displayPlaceholder.withGodotUnsafeRawPointer { __ptr_displayPlaceholder in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_displayPlaceholder) { __accessPtr in
@@ -173,7 +200,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func sceneTileDisplayPlaceholder(id: Int32) -> Bool {
+
+    public func sceneTileDisplayPlaceholder(
+        id: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -193,7 +223,10 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
-    public func removeSceneTile(id: Int32) {
+
+    public func removeSceneTile(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +245,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         }
     }()
+
     public func nextSceneTileID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,6 +258,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -236,5 +271,4 @@ open class TileSetScenesCollectionSource: TileSetSource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

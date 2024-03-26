@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ENetConnection: RefCounted {
     public enum CompressionMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class ENetConnection: RefCounted {
         case fastlz = 2
         case zlib = 3
         case zstd = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -20,12 +22,14 @@ open class ENetConnection: RefCounted {
             ("Zstd", 4),]
         }
     }
+
     public enum EventType: Int32, GodotEnum {
         case error = -1
         case none = 0
         case connect = 1
         case disconnect = 2
         case receive = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Error", -1),
@@ -35,11 +39,13 @@ open class ENetConnection: RefCounted {
             ("Receive", 3),]
         }
     }
+
     public enum HostStatistic: UInt32, GodotEnum {
         case sentData = 0
         case sentPackets = 1
         case receivedData = 2
         case receivedPackets = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sent Data", 0),
@@ -56,7 +62,15 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func createHostBound(bindAddress: Godot.GodotString, bindPort: Int32, maxPeers: Int32 = 32, maxChannels: Int32 = 0, inBandwidth bandwidth: Int32 = 0, outBandwidth: Int32 = 0) -> Godot.ErrorType {
+
+    public func createHostBound(
+        bindAddress: Godot.GodotString,
+        bindPort: Int32,
+        maxPeers: Int32 = 32,
+        maxChannels: Int32 = 0,
+        inBandwidth bandwidth: Int32 = 0,
+        outBandwidth: Int32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
         bindPort.withGodotUnsafeRawPointer { __ptr_bindPort in
@@ -81,7 +95,13 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func createHost(maxPeers: Int32 = 32, maxChannels: Int32 = 0, inBandwidth bandwidth: Int32 = 0, outBandwidth: Int32 = 0) -> Godot.ErrorType {
+
+    public func createHost(
+        maxPeers: Int32 = 32,
+        maxChannels: Int32 = 0,
+        inBandwidth bandwidth: Int32 = 0,
+        outBandwidth: Int32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         maxPeers.withGodotUnsafeRawPointer { __ptr_maxPeers in
         maxChannels.withGodotUnsafeRawPointer { __ptr_maxChannels in
@@ -104,6 +124,7 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
+
     public func destroy() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -121,7 +142,13 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func connectToHost(address: Godot.GodotString, port: Int32, channels: Int32 = 0, data: Int32 = 0) -> Godot.ENetPacketPeer? {
+
+    public func connectToHost(
+        address: Godot.GodotString,
+        port: Int32,
+        channels: Int32 = 0,
+        data: Int32 = 0
+    ) -> Godot.ENetPacketPeer? {
         Godot.ENetPacketPeer?.fromMutatingGodotUnsafePointer { __temporary in
         address.withGodotUnsafeRawPointer { __ptr_address in
         port.withGodotUnsafeRawPointer { __ptr_port in
@@ -144,7 +171,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func service(timeout: Int32 = 0) -> Godot.AnyGodotArray {
+
+    public func service(
+        timeout: Int32 = 0
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         withUnsafeArgumentPackPointer(__ptr_timeout) { __accessPtr in
@@ -164,6 +194,7 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
+
     public func flush() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -181,7 +212,11 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func bandwidthLimit(inBandwidth bandwidth: Int32 = 0, outBandwidth: Int32 = 0) {
+
+    public func bandwidthLimit(
+        inBandwidth bandwidth: Int32 = 0,
+        outBandwidth: Int32 = 0
+    ) {
         bandwidth.withGodotUnsafeRawPointer { __ptr_bandwidth in
         outBandwidth.withGodotUnsafeRawPointer { __ptr_outBandwidth in
         withUnsafeArgumentPackPointer(__ptr_bandwidth, __ptr_outBandwidth) { __accessPtr in
@@ -201,7 +236,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func channelLimit(_ limit: Int32) {
+
+    public func channelLimit(
+        _ limit: Int32
+    ) {
         limit.withGodotUnsafeRawPointer { __ptr_limit in
         withUnsafeArgumentPackPointer(__ptr_limit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,7 +258,12 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func broadcast(channel: Int32, packet: Godot.PackedByteArray, flags: Int32) {
+
+    public func broadcast(
+        channel: Int32,
+        packet: Godot.PackedByteArray,
+        flags: Int32
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         packet.withGodotUnsafeRawPointer { __ptr_packet in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
@@ -241,7 +284,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func compress(mode: Godot.ENetConnection.CompressionMode) {
+
+    public func compress(
+        mode: Godot.ENetConnection.CompressionMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -260,7 +306,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func dtlsServerSetup(serverOptions: Godot.TLSOptions?) -> Godot.ErrorType {
+
+    public func dtlsServerSetup(
+        serverOptions: Godot.TLSOptions?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         serverOptions.withGodotUnsafeRawPointer { __ptr_serverOptions in
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
@@ -281,7 +330,11 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func dtlsClientSetup(hostname: Godot.GodotString, clientOptions: Godot.TLSOptions? = nil) -> Godot.ErrorType {
+
+    public func dtlsClientSetup(
+        hostname: Godot.GodotString,
+        clientOptions: Godot.TLSOptions? = nil
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         hostname.withGodotUnsafeRawPointer { __ptr_hostname in
         clientOptions.withGodotUnsafeRawPointer { __ptr_clientOptions in
@@ -303,7 +356,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func refuseNewConnections(refuse: Bool) {
+
+    public func refuseNewConnections(
+        refuse: Bool
+    ) {
         refuse.withGodotUnsafeRawPointer { __ptr_refuse in
         withUnsafeArgumentPackPointer(__ptr_refuse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,7 +378,10 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func popStatistic(_ statistic: Godot.ENetConnection.HostStatistic) -> Double {
+
+    public func popStatistic(
+        _ statistic: Godot.ENetConnection.HostStatistic
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         statistic.withGodotUnsafeRawPointer { __ptr_statistic in
         withUnsafeArgumentPackPointer(__ptr_statistic) { __accessPtr in
@@ -342,6 +401,7 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
+
     public func maxChannels() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,6 +420,7 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
+
     public func localPort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -378,6 +439,7 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
+
     public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
         Godot.GodotArray<Godot.ENetPacketPeer?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,7 +458,12 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func socketSend(destinationAddress: Godot.GodotString, destinationPort: Int32, packet: Godot.PackedByteArray) {
+
+    public func socketSend(
+        destinationAddress: Godot.GodotString,
+        destinationPort: Int32,
+        packet: Godot.PackedByteArray
+    ) {
         destinationAddress.withGodotUnsafeRawPointer { __ptr_destinationAddress in
         destinationPort.withGodotUnsafeRawPointer { __ptr_destinationPort in
         packet.withGodotUnsafeRawPointer { __ptr_packet in
@@ -411,6 +478,7 @@ open class ENetConnection: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -423,5 +491,4 @@ open class ENetConnection: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

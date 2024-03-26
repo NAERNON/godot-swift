@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GraphElement: Container {
+
     public func nodeSelected() {
         _ = nodeSelectedSignal.emit()
     }
+
     public lazy var nodeSelectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "node_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class GraphElement: Container {
     public func nodeDeselected() {
         _ = nodeDeselectedSignal.emit()
     }
+
     public lazy var nodeDeselectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "node_deselected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,6 +48,7 @@ open class GraphElement: Container {
     public func raiseRequest() {
         _ = raiseRequestSignal.emit()
     }
+
     public lazy var raiseRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "raise_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,6 +67,7 @@ open class GraphElement: Container {
     public func deleteRequest() {
         _ = deleteRequestSignal.emit()
     }
+
     public lazy var deleteRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "delete_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,16 +85,26 @@ open class GraphElement: Container {
 
     public struct ResizeRequestSignalInput: Godot.SignalInput {
         public let newMinsize: Godot.Vector2
-        fileprivate init(newMinsize: Godot.Vector2) {
+
+        fileprivate init(
+            newMinsize: Godot.Vector2
+        ) {
             self.newMinsize = newMinsize
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.newMinsize)]
         }
     }
-    public func resizeRequest(newMinsize: Godot.Vector2) {
+
+    public func resizeRequest(
+        newMinsize: Godot.Vector2
+    ) {
         _ = resizeRequestSignal.emit(.init(newMinsize: newMinsize))
     }
+
     public lazy var resizeRequestSignal: Godot.SignalEmitter<ResizeRequestSignalInput> = {
         .init(object: self, signalName: "resize_request") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResizeRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -106,19 +122,32 @@ open class GraphElement: Container {
 
     public struct DraggedSignalInput: Godot.SignalInput {
         public let from: Godot.Vector2
+
         public let to: Godot.Vector2
-        fileprivate init(from: Godot.Vector2, to: Godot.Vector2) {
+
+        fileprivate init(
+            from: Godot.Vector2,
+            to: Godot.Vector2
+        ) {
             self.from = from
             self.to = to
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.from), Variant(input.to)]
         }
     }
-    public func dragged(from: Godot.Vector2, to: Godot.Vector2) {
+
+    public func dragged(
+        from: Godot.Vector2,
+        to: Godot.Vector2
+    ) {
         _ = draggedSignal.emit(.init(from: from,
                 to: to))
     }
+
     public lazy var draggedSignal: Godot.SignalEmitter<DraggedSignalInput> = {
         .init(object: self, signalName: "dragged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DraggedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -138,6 +167,7 @@ open class GraphElement: Container {
     public func positionOffsetChanged() {
         _ = positionOffsetChangedSignal.emit()
     }
+
     public lazy var positionOffsetChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "position_offset_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -160,7 +190,10 @@ open class GraphElement: Container {
         }
         }
     }()
-    private func __setResizable(_ resizable: Bool) {
+
+    private func __setResizable(
+        _ resizable: Bool
+    ) {
         resizable.withGodotUnsafeRawPointer { __ptr_resizable in
         withUnsafeArgumentPackPointer(__ptr_resizable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +212,7 @@ open class GraphElement: Container {
         }
         }
     }()
+
     private func __isResizable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +231,10 @@ open class GraphElement: Container {
         }
         }
     }()
-    private func __setDraggable(_ draggable: Bool) {
+
+    private func __setDraggable(
+        _ draggable: Bool
+    ) {
         draggable.withGodotUnsafeRawPointer { __ptr_draggable in
         withUnsafeArgumentPackPointer(__ptr_draggable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +253,7 @@ open class GraphElement: Container {
         }
         }
     }()
+
     private func __isDraggable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +272,10 @@ open class GraphElement: Container {
         }
         }
     }()
-    private func __setSelectable(_ selectable: Bool) {
+
+    private func __setSelectable(
+        _ selectable: Bool
+    ) {
         selectable.withGodotUnsafeRawPointer { __ptr_selectable in
         withUnsafeArgumentPackPointer(__ptr_selectable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +294,7 @@ open class GraphElement: Container {
         }
         }
     }()
+
     private func __isSelectable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +313,10 @@ open class GraphElement: Container {
         }
         }
     }()
-    private func __setSelected(_ selected: Bool) {
+
+    private func __setSelected(
+        _ selected: Bool
+    ) {
         selected.withGodotUnsafeRawPointer { __ptr_selected in
         withUnsafeArgumentPackPointer(__ptr_selected) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +335,7 @@ open class GraphElement: Container {
         }
         }
     }()
+
     private func __isSelected() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +354,10 @@ open class GraphElement: Container {
         }
         }
     }()
-    private func __setPositionOffset(_ offset: Godot.Vector2) {
+
+    private func __setPositionOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +376,7 @@ open class GraphElement: Container {
         }
         }
     }()
+
     private func __getPositionOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,6 +444,7 @@ open class GraphElement: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -406,5 +457,4 @@ open class GraphElement: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

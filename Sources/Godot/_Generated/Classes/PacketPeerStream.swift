@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PacketPeerStream: PacketPeer {
     internal static var __method_binding_set_stream_peer: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
-    private func __setStreamPeer(_ peer: Godot.StreamPeer?) {
+
+    private func __setStreamPeer(
+        _ peer: Godot.StreamPeer?
+    ) {
         peer.withGodotUnsafeRawPointer { __ptr_peer in
         withUnsafePointer(to: __ptr_peer) { _ptr___ptr_peer in
         withUnsafeArgumentPackPointer(_ptr___ptr_peer) { __accessPtr in
@@ -32,6 +36,7 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
+
     private func __getStreamPeer() -> Godot.StreamPeer? {
         Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
-    private func __setInputBufferMaxSize(maxSizeBytes: Int32) {
+
+    private func __setInputBufferMaxSize(
+        maxSizeBytes: Int32
+    ) {
         maxSizeBytes.withGodotUnsafeRawPointer { __ptr_maxSizeBytes in
         withUnsafeArgumentPackPointer(__ptr_maxSizeBytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +77,10 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
-    private func __setOutputBufferMaxSize(maxSizeBytes: Int32) {
+
+    private func __setOutputBufferMaxSize(
+        maxSizeBytes: Int32
+    ) {
         maxSizeBytes.withGodotUnsafeRawPointer { __ptr_maxSizeBytes in
         withUnsafeArgumentPackPointer(__ptr_maxSizeBytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +99,7 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
+
     private func __getInputBufferMaxSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class PacketPeerStream: PacketPeer {
         }
         }
     }()
+
     private func __getOutputBufferMaxSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class PacketPeerStream: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class PacketPeerStream: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

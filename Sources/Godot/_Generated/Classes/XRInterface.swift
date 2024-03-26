@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class XRInterface: RefCounted {
     public enum Capabilities: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class XRInterface: RefCounted {
         case vr = 8
         case ar = 16
         case external = 32
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -24,12 +26,14 @@ open class XRInterface: RefCounted {
             ("External", 32),]
         }
     }
+
     public enum TrackingStatus: UInt32, GodotEnum {
         case normalTracking = 0
         case excessiveMotion = 1
         case insufficientFeatures = 2
         case unknownTracking = 3
         case notTracking = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Normal Tracking", 0),
@@ -39,12 +43,14 @@ open class XRInterface: RefCounted {
             ("Not Tracking", 4),]
         }
     }
+
     public enum PlayAreaMode: UInt32, GodotEnum {
         case unknown = 0
         case xrPlayArea3dof = 1
         case sitting = 2
         case roomscale = 3
         case stage = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unknown", 0),
@@ -54,10 +60,12 @@ open class XRInterface: RefCounted {
             ("Stage", 4),]
         }
     }
+
     public enum EnvironmentBlendMode: UInt32, GodotEnum {
         case opaque = 0
         case additive = 1
         case alphaBlend = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Opaque", 0),
@@ -68,16 +76,26 @@ open class XRInterface: RefCounted {
 
     public struct PlayAreaChangedSignalInput: Godot.SignalInput {
         public let mode: Int
-        fileprivate init(mode: Int) {
+
+        fileprivate init(
+            mode: Int
+        ) {
             self.mode = mode
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.mode)]
         }
     }
-    public func playAreaChanged(mode: Int) {
+
+    public func playAreaChanged(
+        mode: Int
+    ) {
         _ = playAreaChangedSignal.emit(.init(mode: mode))
     }
+
     public lazy var playAreaChangedSignal: Godot.SignalEmitter<PlayAreaChangedSignalInput> = {
         .init(object: self, signalName: "play_area_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -100,6 +118,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func name() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,6 +137,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func capabilities() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,6 +156,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     private func __isPrimary() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +175,10 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    private func __setPrimary(_ primary: Bool) {
+
+    private func __setPrimary(
+        _ primary: Bool
+    ) {
         primary.withGodotUnsafeRawPointer { __ptr_primary in
         withUnsafeArgumentPackPointer(__ptr_primary) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +197,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func isInitialized() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,6 +216,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func initialize() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,6 +235,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func uninitialize() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -226,6 +253,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func systemInfo() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -244,6 +272,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func trackingStatus() -> Godot.XRInterface.TrackingStatus {
         Godot.XRInterface.TrackingStatus.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -262,6 +291,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func renderTargetSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -280,6 +310,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func viewCount() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -298,7 +329,15 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func triggerHapticPulse(actionName: Godot.GodotString, trackerName: Godot.GodotStringName, frequency: Double, amplitude: Double, durationSec: Double, delaySec: Double) {
+
+    public func triggerHapticPulse(
+        actionName: Godot.GodotString,
+        trackerName: Godot.GodotStringName,
+        frequency: Double,
+        amplitude: Double,
+        durationSec: Double,
+        delaySec: Double
+    ) {
         actionName.withGodotUnsafeRawPointer { __ptr_actionName in
         trackerName.withGodotUnsafeRawPointer { __ptr_trackerName in
         frequency.withGodotUnsafeRawPointer { __ptr_frequency in
@@ -322,7 +361,10 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func supportsPlayAreaMode(_ mode: Godot.XRInterface.PlayAreaMode) -> Bool {
+
+    public func supportsPlayAreaMode(
+        _ mode: Godot.XRInterface.PlayAreaMode
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
@@ -342,6 +384,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     private func __getPlayAreaMode() -> Godot.XRInterface.PlayAreaMode {
         Godot.XRInterface.PlayAreaMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,7 +403,10 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func setPlayAreaMode(_ mode: Godot.XRInterface.PlayAreaMode) -> Bool {
+
+    public func setPlayAreaMode(
+        _ mode: Godot.XRInterface.PlayAreaMode
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
@@ -380,6 +426,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func playArea() -> Godot.PackedVector3Array {
         Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,6 +445,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     private func __getAnchorDetectionIsEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,7 +464,10 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    private func __setAnchorDetectionIsEnabled(enable: Bool) {
+
+    private func __setAnchorDetectionIsEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -435,6 +486,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func cameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -453,6 +505,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func isPassthroughSupported() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -471,6 +524,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func isPassthroughEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -489,6 +543,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func startPassthrough() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -507,6 +562,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func stopPassthrough() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -524,7 +580,11 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func transformForView(_ view: UInt32, camTransform: Godot.Transform3D) -> Godot.Transform3D {
+
+    public func transformForView(
+        _ view: UInt32,
+        camTransform: Godot.Transform3D
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         camTransform.withGodotUnsafeRawPointer { __ptr_camTransform in
@@ -545,7 +605,13 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func projectionForView(_ view: UInt32, aspect: Double, near: Double, far: Double) -> Godot.Projection {
+
+    public func projectionForView(
+        _ view: UInt32,
+        aspect: Double,
+        near: Double,
+        far: Double
+    ) -> Godot.Projection {
         Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
@@ -568,6 +634,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     public func supportedEnvironmentBlendModes() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +653,10 @@ open class XRInterface: RefCounted {
         }
         }
     }()
-    public func setEnvironmentBlendMode(_ mode: Godot.XRInterface.EnvironmentBlendMode) -> Bool {
+
+    public func setEnvironmentBlendMode(
+        _ mode: Godot.XRInterface.EnvironmentBlendMode
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
@@ -606,6 +676,7 @@ open class XRInterface: RefCounted {
         }
         }
     }()
+
     private func __getEnvironmentBlendMode() -> Godot.XRInterface.EnvironmentBlendMode {
         Godot.XRInterface.EnvironmentBlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -652,6 +723,7 @@ open class XRInterface: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -664,5 +736,4 @@ open class XRInterface: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

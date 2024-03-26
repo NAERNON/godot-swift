@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectDelay: AudioEffect {
     internal static var __method_binding_set_dry: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setDry(amount: Double) {
+
+    private func __setDry(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getDry() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap1Active(amount: Bool) {
+
+    private func __setTap1Active(
+        amount: Bool
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __isTap1Active() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap1DelayMs(amount: Double) {
+
+    private func __setTap1DelayMs(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap1DelayMs() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap1LevelDb(amount: Double) {
+
+    private func __setTap1LevelDb(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap1LevelDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap1Pan(amount: Double) {
+
+    private func __setTap1Pan(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap1Pan() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap2Active(amount: Bool) {
+
+    private func __setTap2Active(
+        amount: Bool
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __isTap2Active() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap2DelayMs(amount: Double) {
+
+    private func __setTap2DelayMs(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap2DelayMs() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap2LevelDb(amount: Double) {
+
+    private func __setTap2LevelDb(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap2LevelDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setTap2Pan(amount: Double) {
+
+    private func __setTap2Pan(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getTap2Pan() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setFeedbackActive(amount: Bool) {
+
+    private func __setFeedbackActive(
+        amount: Bool
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __isFeedbackActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +423,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setFeedbackDelayMs(amount: Double) {
+
+    private func __setFeedbackDelayMs(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +445,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getFeedbackDelayMs() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,7 +464,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setFeedbackLevelDb(amount: Double) {
+
+    private func __setFeedbackLevelDb(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +486,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getFeedbackLevelDb() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +505,10 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
-    private func __setFeedbackLowpass(amount: Double) {
+
+    private func __setFeedbackLowpass(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +527,7 @@ open class AudioEffectDelay: AudioEffect {
         }
         }
     }()
+
     private func __getFeedbackLowpass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -630,6 +683,7 @@ open class AudioEffectDelay: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -642,5 +696,4 @@ open class AudioEffectDelay: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

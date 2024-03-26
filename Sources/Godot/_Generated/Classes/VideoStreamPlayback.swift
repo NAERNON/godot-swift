@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VideoStreamPlayback: Resource {
     open func _stop() {
@@ -15,7 +16,9 @@ open class VideoStreamPlayback: Resource {
         Bool()
     }
 
-    open func _setPaused(_ paused: Bool) {
+    open func _setPaused(
+        _ paused: Bool
+    ) {
     }
 
     open func _isPaused() -> Bool {
@@ -30,17 +33,23 @@ open class VideoStreamPlayback: Resource {
         Double()
     }
 
-    open func _seek(time: Double) {
+    open func _seek(
+        time: Double
+    ) {
     }
 
-    open func _setAudioTrack(idx: Int32) {
+    open func _setAudioTrack(
+        idx: Int32
+    ) {
     }
 
     open func _getTexture() -> Godot.Texture2D? {
         nil
     }
 
-    open func _update(delta: Double) {
+    open func _update(
+        delta: Double
+    ) {
     }
 
     open func _getChannels() -> Int32 {
@@ -58,7 +67,12 @@ open class VideoStreamPlayback: Resource {
         }
         }
     }()
-    public func mixAudio(numFrames: Int32, buffer: Godot.PackedFloat32Array = PackedFloat32Array(), offset: Int32 = 0) -> Int32 {
+
+    public func mixAudio(
+        numFrames: Int32,
+        buffer: Godot.PackedFloat32Array = PackedFloat32Array(),
+        offset: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         numFrames.withGodotUnsafeRawPointer { __ptr_numFrames in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
@@ -74,6 +88,7 @@ open class VideoStreamPlayback: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -191,5 +206,4 @@ open class VideoStreamPlayback: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

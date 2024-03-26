@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDUniform: RefCounted {
     internal static var __method_binding_set_uniform_type: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDUniform: RefCounted {
         }
         }
     }()
-    private func __setUniformType(pMember: Godot.RenderingDevice.UniformType) {
+
+    private func __setUniformType(
+        pMember: Godot.RenderingDevice.UniformType
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDUniform: RefCounted {
         }
         }
     }()
+
     private func __getUniformType() -> Godot.RenderingDevice.UniformType {
         Godot.RenderingDevice.UniformType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDUniform: RefCounted {
         }
         }
     }()
-    private func __setBinding(pMember: Int32) {
+
+    private func __setBinding(
+        pMember: Int32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDUniform: RefCounted {
         }
         }
     }()
+
     private func __getBinding() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDUniform: RefCounted {
         }
         }
     }()
-    public func addID(_ id: Godot.RID) {
+
+    public func addID(
+        _ id: Godot.RID
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDUniform: RefCounted {
         }
         }
     }()
+
     public func clearIds() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -122,6 +135,7 @@ open class RDUniform: RefCounted {
         }
         }
     }()
+
     public func ids() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,6 +170,7 @@ open class RDUniform: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -168,5 +183,4 @@ open class RDUniform: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

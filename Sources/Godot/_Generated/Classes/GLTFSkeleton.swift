@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFSkeleton: Resource {
     internal static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     private func __getJoints() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setJoints(_ joints: Godot.PackedInt32Array) {
+
+    private func __setJoints(
+        _ joints: Godot.PackedInt32Array
+    ) {
         joints.withGodotUnsafeRawPointer { __ptr_joints in
         withUnsafeArgumentPackPointer(__ptr_joints) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     private func __getRoots() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setRoots(_ roots: Godot.PackedInt32Array) {
+
+    private func __setRoots(
+        _ roots: Godot.PackedInt32Array
+    ) {
         roots.withGodotUnsafeRawPointer { __ptr_roots in
         withUnsafeArgumentPackPointer(__ptr_roots) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     public func godotSkeleton() -> Godot.Skeleton3D? {
         Godot.Skeleton3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +114,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
         Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +133,10 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setUniqueNames(_ uniqueNames: Godot.GodotArray<Godot.GodotString>) {
+
+    private func __setUniqueNames(
+        _ uniqueNames: Godot.GodotArray<Godot.GodotString>
+    ) {
         uniqueNames.withGodotUnsafeRawPointer { __ptr_uniqueNames in
         withUnsafeArgumentPackPointer(__ptr_uniqueNames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,6 +155,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     private func __getGodotBoneNode() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,7 +174,10 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setGodotBoneNode<Value1: VariantStorable, Value2: VariantStorable>(_ godotBoneNode: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setGodotBoneNode<Value1: VariantStorable, Value2: VariantStorable>(
+        _ godotBoneNode: Godot.GodotDictionary<Value1, Value2>
+    ) {
         godotBoneNode.withGodotUnsafeRawPointer { __ptr_godotBoneNode in
         withUnsafeArgumentPackPointer(__ptr_godotBoneNode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,6 +196,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
+
     public func boneAttachmentCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,7 +215,10 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    public func boneAttachment(idx: Int32) -> Godot.BoneAttachment3D? {
+
+    public func boneAttachment(
+        idx: Int32
+    ) -> Godot.BoneAttachment3D? {
         Godot.BoneAttachment3D?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -254,6 +276,7 @@ open class GLTFSkeleton: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -266,5 +289,4 @@ open class GLTFSkeleton: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

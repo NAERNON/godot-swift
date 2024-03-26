@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ReferenceRect: Control {
     internal static var __method_binding_get_border_color: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class ReferenceRect: Control {
         }
         }
     }()
+
     private func __getBorderColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class ReferenceRect: Control {
         }
         }
     }()
-    private func __setBorderColor(_ color: Godot.Color) {
+
+    private func __setBorderColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class ReferenceRect: Control {
         }
         }
     }()
+
     private func __getBorderWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class ReferenceRect: Control {
         }
         }
     }()
-    private func __setBorderWidth(_ width: Double) {
+
+    private func __setBorderWidth(
+        _ width: Double
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class ReferenceRect: Control {
         }
         }
     }()
+
     private func __getEditorOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class ReferenceRect: Control {
         }
         }
     }()
-    private func __setEditorOnly(enabled: Bool) {
+
+    private func __setEditorOnly(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class ReferenceRect: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class ReferenceRect: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

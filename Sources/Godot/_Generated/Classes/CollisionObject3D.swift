@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CollisionObject3D: Node3D {
     public enum DisableMode: UInt32, GodotEnum {
         case remove = 0
         case makeStatic = 1
         case keepActive = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Remove", 0),
@@ -19,28 +21,50 @@ open class CollisionObject3D: Node3D {
 
     public struct InputEventSignalInput: Godot.SignalInput {
         public let camera: Godot.Node?
+
         public let event: Godot.InputEvent?
+
         public let position: Godot.Vector3
+
         public let normal: Godot.Vector3
+
         public let shapeIdx: Int
-        fileprivate init(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int) {
+
+        fileprivate init(
+            camera: Godot.Node?,
+            event: Godot.InputEvent?,
+            position: Godot.Vector3,
+            normal: Godot.Vector3,
+            shapeIdx: Int
+        ) {
             self.camera = camera
             self.event = event
             self.position = position
             self.normal = normal
             self.shapeIdx = shapeIdx
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.camera), Variant(input.event), Variant(input.position), Variant(input.normal), Variant(input.shapeIdx)]
         }
     }
-    public func inputEvent(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int) {
+
+    public func inputEvent(
+        camera: Godot.Node?,
+        event: Godot.InputEvent?,
+        position: Godot.Vector3,
+        normal: Godot.Vector3,
+        shapeIdx: Int
+    ) {
         _ = inputEventSignal.emit(.init(camera: camera,
                 event: event,
                 position: position,
                 normal: normal,
                 shapeIdx: shapeIdx))
     }
+
     public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
         .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -63,6 +87,7 @@ open class CollisionObject3D: Node3D {
     public func mouseEntered() {
         _ = mouseEnteredSignal.emit()
     }
+
     public lazy var mouseEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -81,6 +106,7 @@ open class CollisionObject3D: Node3D {
     public func mouseExited() {
         _ = mouseExitedSignal.emit()
     }
+
     public lazy var mouseExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -96,7 +122,13 @@ open class CollisionObject3D: Node3D {
         }
     }()
 
-    open func _inputEvent(camera: Godot.Camera3D?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int32) {
+    open func _inputEvent(
+        camera: Godot.Camera3D?,
+        event: Godot.InputEvent?,
+        position: Godot.Vector3,
+        normal: Godot.Vector3,
+        shapeIdx: Int32
+    ) {
     }
 
     open func _mouseEnter() {
@@ -112,7 +144,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setCollisionLayer(_ layer: UInt32) {
+
+    private func __setCollisionLayer(
+        _ layer: UInt32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -131,6 +166,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionLayer() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,7 +185,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,6 +207,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +226,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func setCollisionLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -206,7 +250,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func collisionLayerValue(layerNumber: Int32) -> Bool {
+
+    public func collisionLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -226,7 +273,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -246,7 +297,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -266,7 +320,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setCollisionPriority(_ priority: Double) {
+
+    private func __setCollisionPriority(
+        _ priority: Double
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -285,6 +342,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionPriority() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +361,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setDisableMode(_ mode: Godot.CollisionObject3D.DisableMode) {
+
+    private func __setDisableMode(
+        _ mode: Godot.CollisionObject3D.DisableMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,6 +383,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __getDisableMode() -> Godot.CollisionObject3D.DisableMode {
         Godot.CollisionObject3D.DisableMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -340,7 +402,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setRayPickable(_ rayPickable: Bool) {
+
+    private func __setRayPickable(
+        _ rayPickable: Bool
+    ) {
         rayPickable.withGodotUnsafeRawPointer { __ptr_rayPickable in
         withUnsafeArgumentPackPointer(__ptr_rayPickable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +424,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __isRayPickable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,7 +443,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    private func __setCaptureInputOnDrag(enable: Bool) {
+
+    private func __setCaptureInputOnDrag(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,6 +465,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     private func __getCaptureInputOnDrag() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -414,6 +484,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -432,7 +503,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func createShapeOwner(_ owner: Godot.Object?) -> UInt32 {
+
+    public func createShapeOwner(
+        _ owner: Godot.Object?
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         owner.withGodotUnsafeRawPointer { __ptr_owner in
         withUnsafePointer(to: __ptr_owner) { _ptr___ptr_owner in
@@ -453,7 +527,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func removeShapeOwner(ownerID: UInt32) {
+
+    public func removeShapeOwner(
+        ownerID: UInt32
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -472,6 +549,7 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
+
     public func shapeOwners() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -490,7 +568,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerSetTransform(ownerID: UInt32, transform: Godot.Transform3D) {
+
+    public func shapeOwnerSetTransform(
+        ownerID: UInt32,
+        transform: Godot.Transform3D
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_transform) { __accessPtr in
@@ -510,7 +592,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerGetTransform(ownerID: UInt32) -> Godot.Transform3D {
+
+    public func shapeOwnerGetTransform(
+        ownerID: UInt32
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
@@ -530,7 +615,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerGetOwner(ownerID: UInt32) -> Godot.Object? {
+
+    public func shapeOwnerGetOwner(
+        ownerID: UInt32
+    ) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
@@ -550,7 +638,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerSetDisabled(ownerID: UInt32, disabled: Bool) {
+
+    public func shapeOwnerSetDisabled(
+        ownerID: UInt32,
+        disabled: Bool
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_disabled) { __accessPtr in
@@ -570,7 +662,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func isShapeOwnerDisabled(ownerID: UInt32) -> Bool {
+
+    public func isShapeOwnerDisabled(
+        ownerID: UInt32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
@@ -590,7 +685,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerAddShape(ownerID: UInt32, shape: Godot.Shape3D?) {
+
+    public func shapeOwnerAddShape(
+        ownerID: UInt32,
+        shape: Godot.Shape3D?
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
@@ -611,7 +710,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerGetShapeCount(ownerID: UInt32) -> Int32 {
+
+    public func shapeOwnerGetShapeCount(
+        ownerID: UInt32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
@@ -631,7 +733,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerGetShape(ownerID: UInt32, shapeID: Int32) -> Godot.Shape3D? {
+
+    public func shapeOwnerGetShape(
+        ownerID: UInt32,
+        shapeID: Int32
+    ) -> Godot.Shape3D? {
         Godot.Shape3D?.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
@@ -652,7 +758,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerGetShapeIndex(ownerID: UInt32, shapeID: Int32) -> Int32 {
+
+    public func shapeOwnerGetShapeIndex(
+        ownerID: UInt32,
+        shapeID: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
@@ -673,7 +783,11 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerRemoveShape(ownerID: UInt32, shapeID: Int32) {
+
+    public func shapeOwnerRemoveShape(
+        ownerID: UInt32,
+        shapeID: Int32
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
         withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
@@ -693,7 +807,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeOwnerClearShapes(ownerID: UInt32) {
+
+    public func shapeOwnerClearShapes(
+        ownerID: UInt32
+    ) {
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -712,7 +829,10 @@ open class CollisionObject3D: Node3D {
         }
         }
     }()
-    public func shapeFindOwner(shapeIndex: Int32) -> UInt32 {
+
+    public func shapeFindOwner(
+        shapeIndex: Int32
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         shapeIndex.withGodotUnsafeRawPointer { __ptr_shapeIndex in
         withUnsafeArgumentPackPointer(__ptr_shapeIndex) { __accessPtr in
@@ -792,6 +912,7 @@ open class CollisionObject3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -830,5 +951,4 @@ open class CollisionObject3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

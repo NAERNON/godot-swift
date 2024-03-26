@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonProfile: Resource {
     public enum TailDirection: UInt32, GodotEnum {
         case averageChildren = 0
         case specificChild = 1
         case end = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Average Children", 0),
@@ -20,6 +22,7 @@ open class SkeletonProfile: Resource {
     public func profileUpdated() {
         _ = profileUpdatedSignal.emit()
     }
+
     public lazy var profileUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "profile_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,7 +45,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    private func __setRootBone(boneName: Godot.GodotStringName) {
+
+    private func __setRootBone(
+        boneName: Godot.GodotStringName
+    ) {
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,6 +67,7 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
+
     private func __getRootBone() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,7 +86,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    private func __setScaleBaseBone(boneName: Godot.GodotStringName) {
+
+    private func __setScaleBaseBone(
+        boneName: Godot.GodotStringName
+    ) {
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,6 +108,7 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
+
     private func __getScaleBaseBone() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,7 +127,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    private func __setGroupSize(_ size: Int32) {
+
+    private func __setGroupSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,6 +149,7 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
+
     private func __getGroupSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +168,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func groupName(groupIdx: Int32) -> Godot.GodotStringName {
+
+    public func groupName(
+        groupIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         groupIdx.withGodotUnsafeRawPointer { __ptr_groupIdx in
         withUnsafeArgumentPackPointer(__ptr_groupIdx) { __accessPtr in
@@ -173,7 +191,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setGroupName(groupIdx: Int32, groupName: Godot.GodotStringName) {
+
+    public func setGroupName(
+        groupIdx: Int32,
+        groupName: Godot.GodotStringName
+    ) {
         groupIdx.withGodotUnsafeRawPointer { __ptr_groupIdx in
         groupName.withGodotUnsafeRawPointer { __ptr_groupName in
         withUnsafeArgumentPackPointer(__ptr_groupIdx, __ptr_groupName) { __accessPtr in
@@ -193,7 +215,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func texture(groupIdx: Int32) -> Godot.Texture2D? {
+
+    public func texture(
+        groupIdx: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         groupIdx.withGodotUnsafeRawPointer { __ptr_groupIdx in
         withUnsafeArgumentPackPointer(__ptr_groupIdx) { __accessPtr in
@@ -213,7 +238,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setTexture(groupIdx: Int32, texture: Godot.Texture2D?) {
+
+    public func setTexture(
+        groupIdx: Int32,
+        texture: Godot.Texture2D?
+    ) {
         groupIdx.withGodotUnsafeRawPointer { __ptr_groupIdx in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -234,7 +263,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    private func __setBoneSize(_ size: Int32) {
+
+    private func __setBoneSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +285,7 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
+
     private func __getBoneSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +304,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func findBone(boneName: Godot.GodotStringName) -> Int32 {
+
+    public func findBone(
+        boneName: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneName) { __accessPtr in
@@ -291,7 +327,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func boneName(boneIdx: Int32) -> Godot.GodotStringName {
+
+    public func boneName(
+        boneIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -311,7 +350,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setBoneName(boneIdx: Int32, boneName: Godot.GodotStringName) {
+
+    public func setBoneName(
+        boneIdx: Int32,
+        boneName: Godot.GodotStringName
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_boneName) { __accessPtr in
@@ -331,7 +374,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func boneParent(boneIdx: Int32) -> Godot.GodotStringName {
+
+    public func boneParent(
+        boneIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -351,7 +397,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setBoneParent(boneIdx: Int32, boneParent: Godot.GodotStringName) {
+
+    public func setBoneParent(
+        boneIdx: Int32,
+        boneParent: Godot.GodotStringName
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         boneParent.withGodotUnsafeRawPointer { __ptr_boneParent in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_boneParent) { __accessPtr in
@@ -371,7 +421,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func tailDirection(boneIdx: Int32) -> Godot.SkeletonProfile.TailDirection {
+
+    public func tailDirection(
+        boneIdx: Int32
+    ) -> Godot.SkeletonProfile.TailDirection {
         Godot.SkeletonProfile.TailDirection.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -391,7 +444,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setTailDirection(boneIdx: Int32, tailDirection: Godot.SkeletonProfile.TailDirection) {
+
+    public func setTailDirection(
+        boneIdx: Int32,
+        tailDirection: Godot.SkeletonProfile.TailDirection
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         tailDirection.withGodotUnsafeRawPointer { __ptr_tailDirection in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_tailDirection) { __accessPtr in
@@ -411,7 +468,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func boneTail(boneIdx: Int32) -> Godot.GodotStringName {
+
+    public func boneTail(
+        boneIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -431,7 +491,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setBoneTail(boneIdx: Int32, boneTail: Godot.GodotStringName) {
+
+    public func setBoneTail(
+        boneIdx: Int32,
+        boneTail: Godot.GodotStringName
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         boneTail.withGodotUnsafeRawPointer { __ptr_boneTail in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_boneTail) { __accessPtr in
@@ -451,7 +515,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func referencePose(boneIdx: Int32) -> Godot.Transform3D {
+
+    public func referencePose(
+        boneIdx: Int32
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -471,7 +538,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setReferencePose(boneIdx: Int32, boneName: Godot.Transform3D) {
+
+    public func setReferencePose(
+        boneIdx: Int32,
+        boneName: Godot.Transform3D
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         boneName.withGodotUnsafeRawPointer { __ptr_boneName in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_boneName) { __accessPtr in
@@ -491,7 +562,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func handleOffset(boneIdx: Int32) -> Godot.Vector2 {
+
+    public func handleOffset(
+        boneIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -511,7 +585,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setHandleOffset(boneIdx: Int32, handleOffset: Godot.Vector2) {
+
+    public func setHandleOffset(
+        boneIdx: Int32,
+        handleOffset: Godot.Vector2
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         handleOffset.withGodotUnsafeRawPointer { __ptr_handleOffset in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_handleOffset) { __accessPtr in
@@ -531,7 +609,10 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func group(boneIdx: Int32) -> Godot.GodotStringName {
+
+    public func group(
+        boneIdx: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -551,7 +632,11 @@ open class SkeletonProfile: Resource {
         }
         }
     }()
-    public func setGroup(boneIdx: Int32, group: Godot.GodotStringName) {
+
+    public func setGroup(
+        boneIdx: Int32,
+        group: Godot.GodotStringName
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         group.withGodotUnsafeRawPointer { __ptr_group in
         withUnsafeArgumentPackPointer(__ptr_boneIdx, __ptr_group) { __accessPtr in
@@ -609,6 +694,7 @@ open class SkeletonProfile: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -621,5 +707,4 @@ open class SkeletonProfile: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

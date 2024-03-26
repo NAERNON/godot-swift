@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MultiplayerSpawner: Node {
     public struct DespawnedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-        fileprivate init(node: Godot.Node?) {
+
+        fileprivate init(
+            node: Godot.Node?
+        ) {
             self.node = node
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.node)]
         }
     }
-    public func despawned(node: Godot.Node?) {
+
+    public func despawned(
+        node: Godot.Node?
+    ) {
         _ = despawnedSignal.emit(.init(node: node))
     }
+
     public lazy var despawnedSignal: Godot.SignalEmitter<DespawnedSignalInput> = {
         .init(object: self, signalName: "despawned") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class MultiplayerSpawner: Node {
 
     public struct SpawnedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-        fileprivate init(node: Godot.Node?) {
+
+        fileprivate init(
+            node: Godot.Node?
+        ) {
             self.node = node
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.node)]
         }
     }
-    public func spawned(node: Godot.Node?) {
+
+    public func spawned(
+        node: Godot.Node?
+    ) {
         _ = spawnedSignal.emit(.init(node: node))
     }
+
     public lazy var spawnedSignal: Godot.SignalEmitter<SpawnedSignalInput> = {
         .init(object: self, signalName: "spawned") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,7 +87,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    public func addSpawnableScene(path: Godot.GodotString) {
+
+    public func addSpawnableScene(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +109,7 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
+
     public func spawnableSceneCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +128,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    public func spawnableScene(index: Int32) -> Godot.GodotString {
+
+    public func spawnableScene(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -123,6 +151,7 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
+
     public func clearSpawnableScenes() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -140,7 +169,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    public func spawn<Value: VariantStorableIn>(data: Value = Variant()) -> Godot.Node? {
+
+    public func spawn<Value: VariantStorableIn>(
+        data: Value = Variant()
+    ) -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -160,6 +192,7 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
+
     private func __getSpawnPath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +211,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    private func __setSpawnPath(_ path: Godot.NodePath) {
+
+    private func __setSpawnPath(
+        _ path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +233,7 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
+
     private func __getSpawnLimit() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +252,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    private func __setSpawnLimit(_ limit: UInt32) {
+
+    private func __setSpawnLimit(
+        _ limit: UInt32
+    ) {
         limit.withGodotUnsafeRawPointer { __ptr_limit in
         withUnsafeArgumentPackPointer(__ptr_limit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +274,7 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
+
     private func __getSpawnFunction() -> Godot.Callable {
         Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +293,10 @@ open class MultiplayerSpawner: Node {
         }
         }
     }()
-    private func __setSpawnFunction(_ spawnFunction: Godot.Callable) {
+
+    private func __setSpawnFunction(
+        _ spawnFunction: Godot.Callable
+    ) {
         spawnFunction.withGodotUnsafeRawPointer { __ptr_spawnFunction in
         withUnsafeArgumentPackPointer(__ptr_spawnFunction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -298,6 +342,7 @@ open class MultiplayerSpawner: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -310,5 +355,4 @@ open class MultiplayerSpawner: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

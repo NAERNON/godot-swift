@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeCustom: VisualShaderNode {
     open func _getName() -> Godot.GodotString {
@@ -25,19 +26,27 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Int32()
     }
 
-    open func _getInputPortType(port: Int32) -> Godot.VisualShaderNode.PortType {
+    open func _getInputPortType(
+        port: Int32
+    ) -> Godot.VisualShaderNode.PortType {
         Godot.VisualShaderNode.PortType(rawValue: 0)!
     }
 
-    open func _getInputPortName(port: Int32) -> Godot.GodotString {
+    open func _getInputPortName(
+        port: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getInputPortDefaultValue(port: Int32) -> Godot.Variant {
+    open func _getInputPortDefaultValue(
+        port: Int32
+    ) -> Godot.Variant {
         Variant()
     }
 
-    open func _getDefaultInputPort(type: Godot.VisualShaderNode.PortType) -> Int32 {
+    open func _getDefaultInputPort(
+        type: Godot.VisualShaderNode.PortType
+    ) -> Int32 {
         Int32()
     }
 
@@ -45,11 +54,15 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Int32()
     }
 
-    open func _getOutputPortType(port: Int32) -> Godot.VisualShaderNode.PortType {
+    open func _getOutputPortType(
+        port: Int32
+    ) -> Godot.VisualShaderNode.PortType {
         Godot.VisualShaderNode.PortType(rawValue: 0)!
     }
 
-    open func _getOutputPortName(port: Int32) -> Godot.GodotString {
+    open func _getOutputPortName(
+        port: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -57,27 +70,43 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Int32()
     }
 
-    open func _getPropertyName(index: Int32) -> Godot.GodotString {
+    open func _getPropertyName(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getPropertyDefaultIndex(_ index: Int32) -> Int32 {
+    open func _getPropertyDefaultIndex(
+        _ index: Int32
+    ) -> Int32 {
         Int32()
     }
 
-    open func _getPropertyOptions(index: Int32) -> Godot.PackedStringArray {
+    open func _getPropertyOptions(
+        index: Int32
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray()
     }
 
-    open func _getCode(inputVars: Godot.GodotArray<Godot.GodotString>, outputVars: Godot.GodotArray<Godot.GodotString>, mode: Godot.Shader.Mode, type: Godot.VisualShader.GodotType) -> Godot.GodotString {
+    open func _getCode(
+        inputVars: Godot.GodotArray<Godot.GodotString>,
+        outputVars: Godot.GodotArray<Godot.GodotString>,
+        mode: Godot.Shader.Mode,
+        type: Godot.VisualShader.GodotType
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getFuncCode(mode: Godot.Shader.Mode, type: Godot.VisualShader.GodotType) -> Godot.GodotString {
+    open func _getFuncCode(
+        mode: Godot.Shader.Mode,
+        type: Godot.VisualShader.GodotType
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _getGlobalCode(mode: Godot.Shader.Mode) -> Godot.GodotString {
+    open func _getGlobalCode(
+        mode: Godot.Shader.Mode
+    ) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -85,7 +114,10 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Bool()
     }
 
-    open func _isAvailable(mode: Godot.Shader.Mode, type: Godot.VisualShader.GodotType) -> Bool {
+    open func _isAvailable(
+        mode: Godot.Shader.Mode,
+        type: Godot.VisualShader.GodotType
+    ) -> Bool {
         Bool()
     }
 
@@ -96,7 +128,10 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         }
         }
     }()
-    public func optionIndex(option: Int32) -> Int32 {
+
+    public func optionIndex(
+        option: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         option.withGodotUnsafeRawPointer { __ptr_option in
         withUnsafeArgumentPackPointer(__ptr_option) { __accessPtr in
@@ -110,6 +145,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -320,5 +356,4 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

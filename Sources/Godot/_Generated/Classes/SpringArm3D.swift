@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SpringArm3D: Node3D {
     internal static var __method_binding_get_hit_length: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     public func hitLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    private func __setLength(_ length: Double) {
+
+    private func __setLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     private func __getLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.Shape3D?) {
+
+    private func __setShape(
+        _ shape: Godot.Shape3D?
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
         withUnsafeArgumentPackPointer(_ptr___ptr_shape) { __accessPtr in
@@ -87,6 +96,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     private func __getShape() -> Godot.Shape3D? {
         Godot.Shape3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    public func addExcludedObject(rid: Godot.RID) {
+
+    public func addExcludedObject(
+        rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +137,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    public func removeExcludedObject(rid: Godot.RID) -> Bool {
+
+    public func removeExcludedObject(
+        rid: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
@@ -144,6 +160,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     public func clearExcludedObjects() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -161,7 +178,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +200,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
-    private func __setMargin(_ margin: Double) {
+
+    private func __setMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class SpringArm3D: Node3D {
         }
         }
     }()
+
     private func __getMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,6 +298,7 @@ open class SpringArm3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -285,5 +311,4 @@ open class SpringArm3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

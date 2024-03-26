@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
     public enum Hint: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         case range = 1
         case rangeStep = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -26,7 +28,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setHint(_ hint: Godot.VisualShaderNodeIntParameter.Hint) {
+
+    private func __setHint(
+        _ hint: Godot.VisualShaderNodeIntParameter.Hint
+    ) {
         hint.withGodotUnsafeRawPointer { __ptr_hint in
         withUnsafeArgumentPackPointer(__ptr_hint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getHint() -> Godot.VisualShaderNodeIntParameter.Hint {
         Godot.VisualShaderNodeIntParameter.Hint.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +69,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setMin(value: Int32) {
+
+    private func __setMin(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +91,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getMin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,7 +110,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setMax(value: Int32) {
+
+    private func __setMax(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -119,6 +132,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getMax() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,7 +151,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setStep(value: Int32) {
+
+    private func __setStep(
+        value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,6 +173,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getStep() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,7 +192,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setDefaultValueEnabled(_ enabled: Bool) {
+
+    private func __setDefaultValueEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -193,6 +214,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __isDefaultValueEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -211,7 +233,10 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
-    private func __setDefaultValue(_ value: Int32) {
+
+    private func __setDefaultValue(
+        _ value: Int32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,6 +255,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         }
     }()
+
     private func __getDefaultValue() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +334,7 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -320,5 +347,4 @@ open class VisualShaderNodeIntParameter: VisualShaderNodeParameter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

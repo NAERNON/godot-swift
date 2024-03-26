@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorDebuggerSession: RefCounted {
+
     public func started() {
         _ = startedSignal.emit()
     }
+
     public lazy var startedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class EditorDebuggerSession: RefCounted {
     public func stopped() {
         _ = stoppedSignal.emit()
     }
+
     public lazy var stoppedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "stopped") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -43,16 +47,26 @@ open class EditorDebuggerSession: RefCounted {
 
     public struct BreakedSignalInput: Godot.SignalInput {
         public let canDebug: Bool
-        fileprivate init(canDebug: Bool) {
+
+        fileprivate init(
+            canDebug: Bool
+        ) {
             self.canDebug = canDebug
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.canDebug)]
         }
     }
-    public func breaked(canDebug: Bool) {
+
+    public func breaked(
+        canDebug: Bool
+    ) {
         _ = breakedSignal.emit(.init(canDebug: canDebug))
     }
+
     public lazy var breakedSignal: Godot.SignalEmitter<BreakedSignalInput> = {
         .init(object: self, signalName: "breaked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BreakedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -71,6 +85,7 @@ open class EditorDebuggerSession: RefCounted {
     public func continued() {
         _ = continuedSignal.emit()
     }
+
     public lazy var continuedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "continued") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -93,7 +108,11 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func sendMessage<Value: VariantStorable>(_ message: Godot.GodotString, data: Godot.GodotArray<Value> = []) {
+
+    public func sendMessage<Value: VariantStorable>(
+        _ message: Godot.GodotString,
+        data: Godot.GodotArray<Value> = []
+    ) {
         message.withGodotUnsafeRawPointer { __ptr_message in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_message, __ptr_data) { __accessPtr in
@@ -113,7 +132,12 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func toggleProfiler<Value: VariantStorable>(_ profiler: Godot.GodotString, enable: Bool, data: Godot.GodotArray<Value> = []) {
+
+    public func toggleProfiler<Value: VariantStorable>(
+        _ profiler: Godot.GodotString,
+        enable: Bool,
+        data: Godot.GodotArray<Value> = []
+    ) {
         profiler.withGodotUnsafeRawPointer { __ptr_profiler in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -134,6 +158,7 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
+
     public func isBreaked() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +177,7 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
+
     public func isDebuggable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +196,7 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
+
     public func isActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,7 +215,10 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func addSessionTab(control: Godot.Control?) {
+
+    public func addSessionTab(
+        control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -208,7 +238,10 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func removeSessionTab(control: Godot.Control?) {
+
+    public func removeSessionTab(
+        control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -222,6 +255,7 @@ open class EditorDebuggerSession: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -234,5 +268,4 @@ open class EditorDebuggerSession: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

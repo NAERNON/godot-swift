@@ -3,5 +3,6 @@
 //
 
 import GodotExtensionHeaders
+
 extension Vector3 {
 }

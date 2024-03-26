@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CameraAttributes: Resource {
     internal static var __method_binding_set_exposure_multiplier: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CameraAttributes: Resource {
         }
         }
     }()
-    private func __setExposureMultiplier(_ multiplier: Double) {
+
+    private func __setExposureMultiplier(
+        _ multiplier: Double
+    ) {
         multiplier.withGodotUnsafeRawPointer { __ptr_multiplier in
         withUnsafeArgumentPackPointer(__ptr_multiplier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CameraAttributes: Resource {
         }
         }
     }()
+
     private func __getExposureMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CameraAttributes: Resource {
         }
         }
     }()
-    private func __setExposureSensitivity(_ sensitivity: Double) {
+
+    private func __setExposureSensitivity(
+        _ sensitivity: Double
+    ) {
         sensitivity.withGodotUnsafeRawPointer { __ptr_sensitivity in
         withUnsafeArgumentPackPointer(__ptr_sensitivity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CameraAttributes: Resource {
         }
         }
     }()
+
     private func __getExposureSensitivity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CameraAttributes: Resource {
         }
         }
     }()
-    private func __setAutoExposureEnabled(_ enabled: Bool) {
+
+    private func __setAutoExposureEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CameraAttributes: Resource {
         }
         }
     }()
+
     private func __isAutoExposureEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CameraAttributes: Resource {
         }
         }
     }()
-    private func __setAutoExposureSpeed(_ exposureSpeed: Double) {
+
+    private func __setAutoExposureSpeed(
+        _ exposureSpeed: Double
+    ) {
         exposureSpeed.withGodotUnsafeRawPointer { __ptr_exposureSpeed in
         withUnsafeArgumentPackPointer(__ptr_exposureSpeed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CameraAttributes: Resource {
         }
         }
     }()
+
     private func __getAutoExposureSpeed() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class CameraAttributes: Resource {
         }
         }
     }()
-    private func __setAutoExposureScale(exposureGrey: Double) {
+
+    private func __setAutoExposureScale(
+        exposureGrey: Double
+    ) {
         exposureGrey.withGodotUnsafeRawPointer { __ptr_exposureGrey in
         withUnsafeArgumentPackPointer(__ptr_exposureGrey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class CameraAttributes: Resource {
         }
         }
     }()
+
     private func __getAutoExposureScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class CameraAttributes: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class CameraAttributes: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -225,7 +225,6 @@ struct GodotClass: Decodable {
         if let signals {
             for signal in signals {
                 try signalSyntax(signal)
-                    .with(\.trailingTrivia, .newlines(2))
             }
         }
     }
@@ -267,7 +266,6 @@ struct GodotClass: Decodable {
         if let methods {
             for method in methods {
                 try methodSyntax(method)
-                    .with(\.trailingTrivia, .newlines(2))
             }
         }
     }
@@ -439,7 +437,7 @@ struct GodotClass: Decodable {
                     property,
                     hasSameGetterAsOtherProperty: propertiesGetter[property.getter]! > 1
                 ) {
-                    syntax.with(\.trailingTrivia, .newlines(2))
+                    syntax
                 }
             }
         }
@@ -566,5 +564,42 @@ struct GodotClass: Decodable {
             
             "return _virtualFunctions!"
         }
+    }
+}
+
+extension GodotClass: FileSource {
+    func fileCodeContent(
+        for extensionAPI: GodotExtensionAPI,
+        with configuration: BuildConfiguration
+    ) throws -> CodeBlockItemListSyntax {
+        "import GodotExtensionHeaders"
+        
+        try ClassDeclSyntax("\(raw: classHeader())") {
+            try enumSyntax()
+            try signalsSyntax()
+            constantsSyntax()
+            try methodsSyntax()
+            try propertiesSyntax()
+            try setVirtualFunctionBindingsSyntax()
+        }
+    }
+    
+    private func classHeader() -> String {
+        var header = String()
+        if isRootClass {
+            header += "@GodotRootClass\n"
+        } else if isRefCountedRootClass {
+            header += "@GodotRefCountedRootClass\n"
+        } else if isRefcounted {
+            header += "@GodotRefCountedClass\n"
+        } else {
+            header += "@GodotClass\n"
+        }
+        
+        header += "open class \(identifier)"
+        if let superclass = inherits {
+            header += ": \(superclass.syntax())"
+        }
+        return header
     }
 }

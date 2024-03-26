@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ShaderInclude: Resource {
     internal static var __method_binding_set_code: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ShaderInclude: Resource {
         }
         }
     }()
-    private func __setCode(_ code: Godot.GodotString) {
+
+    private func __setCode(
+        _ code: Godot.GodotString
+    ) {
         code.withGodotUnsafeRawPointer { __ptr_code in
         withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ShaderInclude: Resource {
         }
         }
     }()
+
     private func __getCode() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class ShaderInclude: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class ShaderInclude: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

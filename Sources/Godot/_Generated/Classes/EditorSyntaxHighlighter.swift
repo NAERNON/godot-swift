@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorSyntaxHighlighter: SyntaxHighlighter {
     open func _getName() -> Godot.GodotString {
@@ -14,6 +15,7 @@ open class EditorSyntaxHighlighter: SyntaxHighlighter {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -41,5 +43,4 @@ open class EditorSyntaxHighlighter: SyntaxHighlighter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

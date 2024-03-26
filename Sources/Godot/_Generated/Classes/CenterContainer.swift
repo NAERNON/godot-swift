@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CenterContainer: Container {
     internal static var __method_binding_set_use_top_left: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CenterContainer: Container {
         }
         }
     }()
-    private func __setUseTopLeft(enable: Bool) {
+
+    private func __setUseTopLeft(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CenterContainer: Container {
         }
         }
     }()
+
     private func __isUsingTopLeft() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class CenterContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class CenterContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

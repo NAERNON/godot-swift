@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SceneTreeTimer: RefCounted {
+
     public func timeout() {
         _ = timeoutSignal.emit()
     }
+
     public lazy var timeoutSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "timeout") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class SceneTreeTimer: RefCounted {
         }
         }
     }()
-    private func __setTimeLeft(time: Double) {
+
+    private func __setTimeLeft(
+        time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +55,7 @@ open class SceneTreeTimer: RefCounted {
         }
         }
     }()
+
     private func __getTimeLeft() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +79,7 @@ open class SceneTreeTimer: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -84,5 +92,4 @@ open class SceneTreeTimer: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

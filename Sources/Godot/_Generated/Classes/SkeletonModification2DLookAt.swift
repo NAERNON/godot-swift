@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModification2DLookAt: SkeletonModification2D {
     internal static var __method_binding_set_bone2d_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    private func __setBone2dNode(bone2dNodepath: Godot.NodePath) {
+
+    private func __setBone2dNode(
+        bone2dNodepath: Godot.NodePath
+    ) {
         bone2dNodepath.withGodotUnsafeRawPointer { __ptr_bone2dNodepath in
         withUnsafeArgumentPackPointer(__ptr_bone2dNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     private func __getBone2dNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    private func __setBoneIndex(boneIdx: Int32) {
+
+    private func __setBoneIndex(
+        boneIdx: Int32
+    ) {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     private func __getBoneIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    private func __setTargetNode(targetNodepath: Godot.NodePath) {
+
+    private func __setTargetNode(
+        targetNodepath: Godot.NodePath
+    ) {
         targetNodepath.withGodotUnsafeRawPointer { __ptr_targetNodepath in
         withUnsafeArgumentPackPointer(__ptr_targetNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    public func setAdditionalRotation(_ rotation: Double) {
+
+    public func setAdditionalRotation(
+        _ rotation: Double
+    ) {
         rotation.withGodotUnsafeRawPointer { __ptr_rotation in
         withUnsafeArgumentPackPointer(__ptr_rotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     public func additionalRotation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    public func setEnableConstraint(_ enableConstraint: Bool) {
+
+    public func setEnableConstraint(
+        _ enableConstraint: Bool
+    ) {
         enableConstraint.withGodotUnsafeRawPointer { __ptr_enableConstraint in
         withUnsafeArgumentPackPointer(__ptr_enableConstraint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     public func enableConstraint() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    public func setConstraintAngleMin(_ angleMin: Double) {
+
+    public func setConstraintAngleMin(
+        _ angleMin: Double
+    ) {
         angleMin.withGodotUnsafeRawPointer { __ptr_angleMin in
         withUnsafeArgumentPackPointer(__ptr_angleMin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     public func constraintAngleMin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    public func setConstraintAngleMax(_ angleMax: Double) {
+
+    public func setConstraintAngleMax(
+        _ angleMax: Double
+    ) {
         angleMax.withGodotUnsafeRawPointer { __ptr_angleMax in
         withUnsafeArgumentPackPointer(__ptr_angleMax) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     public func constraintAngleMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
-    public func setConstraintAngleInvert(_ invert: Bool) {
+
+    public func setConstraintAngleInvert(
+        _ invert: Bool
+    ) {
         invert.withGodotUnsafeRawPointer { __ptr_invert in
         withUnsafeArgumentPackPointer(__ptr_invert) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         }
     }()
+
     public func constraintAngleInvert() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -335,6 +368,7 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -347,5 +381,4 @@ open class SkeletonModification2DLookAt: SkeletonModification2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

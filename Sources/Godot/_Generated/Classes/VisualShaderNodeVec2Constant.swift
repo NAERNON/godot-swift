@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeVec2Constant: VisualShaderNodeConstant {
     internal static var __method_binding_set_constant: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeVec2Constant: VisualShaderNodeConstant {
         }
         }
     }()
-    private func __setConstant(_ constant: Godot.Vector2) {
+
+    private func __setConstant(
+        _ constant: Godot.Vector2
+    ) {
         constant.withGodotUnsafeRawPointer { __ptr_constant in
         withUnsafeArgumentPackPointer(__ptr_constant) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeVec2Constant: VisualShaderNodeConstant {
         }
         }
     }()
+
     private func __getConstant() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class VisualShaderNodeVec2Constant: VisualShaderNodeConstant {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class VisualShaderNodeVec2Constant: VisualShaderNodeConstant {
         }
         return _virtualFunctions!
     }
-
-    }
+}

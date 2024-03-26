@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorPaths: Object {
     internal static var __method_binding_get_data_dir: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func dataDir() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func configDir() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func cacheDir() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func isSelfContained() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +89,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func selfContainedFile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +108,7 @@ open class EditorPaths: Object {
         }
         }
     }()
+
     public func projectSettingsDir() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +121,7 @@ open class EditorPaths: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -126,5 +134,4 @@ open class EditorPaths: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

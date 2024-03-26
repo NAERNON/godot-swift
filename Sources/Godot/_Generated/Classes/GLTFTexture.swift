@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFTexture: Resource {
     internal static var __method_binding_get_src_image: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFTexture: Resource {
         }
         }
     }()
+
     private func __getSrcImage() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFTexture: Resource {
         }
         }
     }()
-    private func __setSrcImage(_ srcImage: Int32) {
+
+    private func __setSrcImage(
+        _ srcImage: Int32
+    ) {
         srcImage.withGodotUnsafeRawPointer { __ptr_srcImage in
         withUnsafeArgumentPackPointer(__ptr_srcImage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFTexture: Resource {
         }
         }
     }()
+
     private func __getSampler() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFTexture: Resource {
         }
         }
     }()
-    private func __setSampler(_ sampler: Int32) {
+
+    private func __setSampler(
+        _ sampler: Int32
+    ) {
         sampler.withGodotUnsafeRawPointer { __ptr_sampler in
         withUnsafeArgumentPackPointer(__ptr_sampler) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class GLTFTexture: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class GLTFTexture: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

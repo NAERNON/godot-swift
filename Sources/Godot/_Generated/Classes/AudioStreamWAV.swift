@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamWAV: AudioStream {
     public enum Format: UInt32, GodotEnum {
         case format8Bits = 0
         case format16Bits = 1
         case imaAdpcm = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Format8 Bits", 0),
@@ -16,11 +18,13 @@ open class AudioStreamWAV: AudioStream {
             ("Ima Adpcm", 2),]
         }
     }
+
     public enum LoopMode: UInt32, GodotEnum {
         case disabled = 0
         case forward = 1
         case pingpong = 2
         case backward = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -37,7 +41,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setData(_ data: Godot.PackedByteArray) {
+
+    private func __setData(
+        _ data: Godot.PackedByteArray
+    ) {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -56,6 +63,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getData() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +82,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setFormat(_ format: Godot.AudioStreamWAV.Format) {
+
+    private func __setFormat(
+        _ format: Godot.AudioStreamWAV.Format
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -93,6 +104,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getFormat() -> Godot.AudioStreamWAV.Format {
         Godot.AudioStreamWAV.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,7 +123,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setLoopMode(_ loopMode: Godot.AudioStreamWAV.LoopMode) {
+
+    private func __setLoopMode(
+        _ loopMode: Godot.AudioStreamWAV.LoopMode
+    ) {
         loopMode.withGodotUnsafeRawPointer { __ptr_loopMode in
         withUnsafeArgumentPackPointer(__ptr_loopMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,6 +145,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getLoopMode() -> Godot.AudioStreamWAV.LoopMode {
         Godot.AudioStreamWAV.LoopMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,7 +164,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setLoopBegin(_ loopBegin: Int32) {
+
+    private func __setLoopBegin(
+        _ loopBegin: Int32
+    ) {
         loopBegin.withGodotUnsafeRawPointer { __ptr_loopBegin in
         withUnsafeArgumentPackPointer(__ptr_loopBegin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,6 +186,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getLoopBegin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -185,7 +205,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setLoopEnd(_ loopEnd: Int32) {
+
+    private func __setLoopEnd(
+        _ loopEnd: Int32
+    ) {
         loopEnd.withGodotUnsafeRawPointer { __ptr_loopEnd in
         withUnsafeArgumentPackPointer(__ptr_loopEnd) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,6 +227,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getLoopEnd() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,7 +246,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setMixRate(_ mixRate: Int32) {
+
+    private func __setMixRate(
+        _ mixRate: Int32
+    ) {
         mixRate.withGodotUnsafeRawPointer { __ptr_mixRate in
         withUnsafeArgumentPackPointer(__ptr_mixRate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -241,6 +268,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __getMixRate() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,7 +287,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    private func __setStereo(_ stereo: Bool) {
+
+    private func __setStereo(
+        _ stereo: Bool
+    ) {
         stereo.withGodotUnsafeRawPointer { __ptr_stereo in
         withUnsafeArgumentPackPointer(__ptr_stereo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -278,6 +309,7 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
+
     private func __isStereo() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -296,7 +328,10 @@ open class AudioStreamWAV: AudioStream {
         }
         }
     }()
-    public func saveToWav(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func saveToWav(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -387,6 +422,7 @@ open class AudioStreamWAV: AudioStream {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -399,5 +435,4 @@ open class AudioStreamWAV: AudioStream {
         }
         return _virtualFunctions!
     }
-
-    }
+}

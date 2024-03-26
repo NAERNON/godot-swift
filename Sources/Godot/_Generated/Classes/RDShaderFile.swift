@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDShaderFile: Resource {
     internal static var __method_binding_set_bytecode: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class RDShaderFile: Resource {
         }
         }
     }()
-    public func setBytecode(_ bytecode: Godot.RDShaderSPIRV?, version: Godot.GodotStringName = "") {
+
+    public func setBytecode(
+        _ bytecode: Godot.RDShaderSPIRV?,
+        version: Godot.GodotStringName = ""
+    ) {
         bytecode.withGodotUnsafeRawPointer { __ptr_bytecode in
         withUnsafePointer(to: __ptr_bytecode) { _ptr___ptr_bytecode in
         version.withGodotUnsafeRawPointer { __ptr_version in
@@ -33,7 +38,10 @@ open class RDShaderFile: Resource {
         }
         }
     }()
-    public func spirv(version: Godot.GodotStringName = "") -> Godot.RDShaderSPIRV? {
+
+    public func spirv(
+        version: Godot.GodotStringName = ""
+    ) -> Godot.RDShaderSPIRV? {
         Godot.RDShaderSPIRV?.fromMutatingGodotUnsafePointer { __temporary in
         version.withGodotUnsafeRawPointer { __ptr_version in
         withUnsafeArgumentPackPointer(__ptr_version) { __accessPtr in
@@ -53,6 +61,7 @@ open class RDShaderFile: Resource {
         }
         }
     }()
+
     public func versionList() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,7 +80,10 @@ open class RDShaderFile: Resource {
         }
         }
     }()
-    private func __setBaseError(_ error: Godot.GodotString) {
+
+    private func __setBaseError(
+        _ error: Godot.GodotString
+    ) {
         error.withGodotUnsafeRawPointer { __ptr_error in
         withUnsafeArgumentPackPointer(__ptr_error) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,6 +102,7 @@ open class RDShaderFile: Resource {
         }
         }
     }()
+
     private func __getBaseError() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,6 +126,7 @@ open class RDShaderFile: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -125,5 +139,4 @@ open class RDShaderFile: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

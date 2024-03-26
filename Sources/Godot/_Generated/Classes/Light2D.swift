@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Light2D: Node2D {
     public enum ShadowFilter: UInt32, GodotEnum {
         case none = 0
         case pcf5 = 1
         case pcf13 = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -16,10 +18,12 @@ open class Light2D: Node2D {
             ("Pcf13", 2),]
         }
     }
+
     public enum BlendMode: UInt32, GodotEnum {
         case add = 0
         case sub = 1
         case mix = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Add", 0),
@@ -35,7 +39,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +61,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __isEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +80,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setEditorOnly(_ editorOnly: Bool) {
+
+    private func __setEditorOnly(
+        _ editorOnly: Bool
+    ) {
         editorOnly.withGodotUnsafeRawPointer { __ptr_editorOnly in
         withUnsafeArgumentPackPointer(__ptr_editorOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +102,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __isEditorOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +121,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +143,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +162,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setEnergy(_ energy: Double) {
+
+    private func __setEnergy(
+        _ energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +184,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,7 +203,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setZRangeMin(_ z: Int32) {
+
+    private func __setZRangeMin(
+        _ z: Int32
+    ) {
         z.withGodotUnsafeRawPointer { __ptr_z in
         withUnsafeArgumentPackPointer(__ptr_z) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,6 +225,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getZRangeMin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,7 +244,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setZRangeMax(_ z: Int32) {
+
+    private func __setZRangeMax(
+        _ z: Int32
+    ) {
         z.withGodotUnsafeRawPointer { __ptr_z in
         withUnsafeArgumentPackPointer(__ptr_z) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -239,6 +266,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getZRangeMax() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -257,7 +285,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setLayerRangeMin(layer: Int32) {
+
+    private func __setLayerRangeMin(
+        layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -276,6 +307,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getLayerRangeMin() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,7 +326,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setLayerRangeMax(layer: Int32) {
+
+    private func __setLayerRangeMax(
+        layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -313,6 +348,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getLayerRangeMax() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -331,7 +367,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setItemCullMask(_ itemCullMask: Int32) {
+
+    private func __setItemCullMask(
+        _ itemCullMask: Int32
+    ) {
         itemCullMask.withGodotUnsafeRawPointer { __ptr_itemCullMask in
         withUnsafeArgumentPackPointer(__ptr_itemCullMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -350,6 +389,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getItemCullMask() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -368,7 +408,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setItemShadowCullMask(_ itemShadowCullMask: Int32) {
+
+    private func __setItemShadowCullMask(
+        _ itemShadowCullMask: Int32
+    ) {
         itemShadowCullMask.withGodotUnsafeRawPointer { __ptr_itemShadowCullMask in
         withUnsafeArgumentPackPointer(__ptr_itemShadowCullMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -387,6 +430,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getItemShadowCullMask() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -405,7 +449,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setShadowEnabled(_ enabled: Bool) {
+
+    private func __setShadowEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -424,6 +471,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __isShadowEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -442,7 +490,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setShadowSmooth(_ smooth: Double) {
+
+    private func __setShadowSmooth(
+        _ smooth: Double
+    ) {
         smooth.withGodotUnsafeRawPointer { __ptr_smooth in
         withUnsafeArgumentPackPointer(__ptr_smooth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,6 +512,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getShadowSmooth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -479,7 +531,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setShadowFilter(_ filter: Godot.Light2D.ShadowFilter) {
+
+    private func __setShadowFilter(
+        _ filter: Godot.Light2D.ShadowFilter
+    ) {
         filter.withGodotUnsafeRawPointer { __ptr_filter in
         withUnsafeArgumentPackPointer(__ptr_filter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -498,6 +553,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getShadowFilter() -> Godot.Light2D.ShadowFilter {
         Godot.Light2D.ShadowFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -516,7 +572,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setShadowColor(_ shadowColor: Godot.Color) {
+
+    private func __setShadowColor(
+        _ shadowColor: Godot.Color
+    ) {
         shadowColor.withGodotUnsafeRawPointer { __ptr_shadowColor in
         withUnsafeArgumentPackPointer(__ptr_shadowColor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -535,6 +594,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getShadowColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -553,7 +613,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    private func __setBlendMode(_ mode: Godot.Light2D.BlendMode) {
+
+    private func __setBlendMode(
+        _ mode: Godot.Light2D.BlendMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -572,6 +635,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     private func __getBlendMode() -> Godot.Light2D.BlendMode {
         Godot.Light2D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -590,7 +654,10 @@ open class Light2D: Node2D {
         }
         }
     }()
-    public func setHeight(_ height: Double) {
+
+    public func setHeight(
+        _ height: Double
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -609,6 +676,7 @@ open class Light2D: Node2D {
         }
         }
     }()
+
     public func height() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -786,6 +854,7 @@ open class Light2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -798,5 +867,4 @@ open class Light2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

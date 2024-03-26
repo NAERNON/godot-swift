@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFPhysicsBody: Resource {
     internal static var __method_binding_from_node: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    static public func fromNode(bodyNode: Godot.CollisionObject3D?) -> Godot.GLTFPhysicsBody? {
+
+    static public func fromNode(
+        bodyNode: Godot.CollisionObject3D?
+    ) -> Godot.GLTFPhysicsBody? {
         Godot.GLTFPhysicsBody?.fromMutatingGodotUnsafePointer { __temporary in
         bodyNode.withGodotUnsafeRawPointer { __ptr_bodyNode in
         withUnsafePointer(to: __ptr_bodyNode) { _ptr___ptr_bodyNode in
@@ -32,6 +36,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     public func toNode() -> Godot.CollisionObject3D? {
         Godot.CollisionObject3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(_ dictionary: Godot.GodotDictionary<Value1, Value2>) -> Godot.GLTFPhysicsBody? {
+
+    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+        _ dictionary: Godot.GodotDictionary<Value1, Value2>
+    ) -> Godot.GLTFPhysicsBody? {
         Godot.GLTFPhysicsBody?.fromMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
@@ -69,6 +77,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     public func toDictionary() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getBodyType() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setBodyType(_ bodyType: Godot.GodotString) {
+
+    private func __setBodyType(
+        _ bodyType: Godot.GodotString
+    ) {
         bodyType.withGodotUnsafeRawPointer { __ptr_bodyType in
         withUnsafeArgumentPackPointer(__ptr_bodyType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getMass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +156,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setMass(_ mass: Double) {
+
+    private func __setMass(
+        _ mass: Double
+    ) {
         mass.withGodotUnsafeRawPointer { __ptr_mass in
         withUnsafeArgumentPackPointer(__ptr_mass) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +178,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getLinearVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +197,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setLinearVelocity(_ linearVelocity: Godot.Vector3) {
+
+    private func __setLinearVelocity(
+        _ linearVelocity: Godot.Vector3
+    ) {
         linearVelocity.withGodotUnsafeRawPointer { __ptr_linearVelocity in
         withUnsafeArgumentPackPointer(__ptr_linearVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +219,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getAngularVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,7 +238,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setAngularVelocity(_ angularVelocity: Godot.Vector3) {
+
+    private func __setAngularVelocity(
+        _ angularVelocity: Godot.Vector3
+    ) {
         angularVelocity.withGodotUnsafeRawPointer { __ptr_angularVelocity in
         withUnsafeArgumentPackPointer(__ptr_angularVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,6 +260,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getCenterOfMass() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,7 +279,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setCenterOfMass(_ centerOfMass: Godot.Vector3) {
+
+    private func __setCenterOfMass(
+        _ centerOfMass: Godot.Vector3
+    ) {
         centerOfMass.withGodotUnsafeRawPointer { __ptr_centerOfMass in
         withUnsafeArgumentPackPointer(__ptr_centerOfMass) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,6 +301,7 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
+
     private func __getInertiaTensor() -> Godot.Basis {
         Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,7 +320,10 @@ open class GLTFPhysicsBody: Resource {
         }
         }
     }()
-    private func __setInertiaTensor(_ inertiaTensor: Godot.Basis) {
+
+    private func __setInertiaTensor(
+        _ inertiaTensor: Godot.Basis
+    ) {
         inertiaTensor.withGodotUnsafeRawPointer { __ptr_inertiaTensor in
         withUnsafeArgumentPackPointer(__ptr_inertiaTensor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,6 +402,7 @@ open class GLTFPhysicsBody: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -381,5 +415,4 @@ open class GLTFPhysicsBody: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

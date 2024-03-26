@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AnimationTree: AnimationMixer {
     public enum AnimationProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
         case manual = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Physics", 0),
@@ -20,6 +22,7 @@ open class AnimationTree: AnimationMixer {
     public func animationPlayerChanged() {
         _ = animationPlayerChangedSignal.emit()
     }
+
     public lazy var animationPlayerChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_player_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,7 +45,10 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
-    private func __setTreeRoot(animationNode: Godot.AnimationRootNode?) {
+
+    private func __setTreeRoot(
+        animationNode: Godot.AnimationRootNode?
+    ) {
         animationNode.withGodotUnsafeRawPointer { __ptr_animationNode in
         withUnsafePointer(to: __ptr_animationNode) { _ptr___ptr_animationNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_animationNode) { __accessPtr in
@@ -62,6 +68,7 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
+
     private func __getTreeRoot() -> Godot.AnimationRootNode? {
         Godot.AnimationRootNode?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,7 +87,10 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
-    private func __setAdvanceExpressionBaseNode(path: Godot.NodePath) {
+
+    private func __setAdvanceExpressionBaseNode(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,6 +109,7 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
+
     private func __getAdvanceExpressionBaseNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +128,10 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
-    private func __setAnimationPlayer(path: Godot.NodePath) {
+
+    private func __setAnimationPlayer(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,6 +150,7 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
+
     private func __getAnimationPlayer() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,7 +169,10 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
-    public func setProcessCallback(mode: Godot.AnimationTree.AnimationProcessCallback) {
+
+    public func setProcessCallback(
+        mode: Godot.AnimationTree.AnimationProcessCallback
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +191,7 @@ open class AnimationTree: AnimationMixer {
         }
         }
     }()
+
     public func processCallback() -> Godot.AnimationTree.AnimationProcessCallback {
         Godot.AnimationTree.AnimationProcessCallback.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +237,7 @@ open class AnimationTree: AnimationMixer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -230,5 +250,4 @@ open class AnimationTree: AnimationMixer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

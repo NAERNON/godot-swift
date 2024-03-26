@@ -3,9 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorTranslationParserPlugin: RefCounted {
-    open func _parseFile(path: Godot.GodotString, msgids: Godot.GodotArray<Godot.GodotString>, msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray>) {
+    open func _parseFile(
+        path: Godot.GodotString,
+        msgids: Godot.GodotArray<Godot.GodotString>,
+        msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray>
+    ) {
     }
 
     open func _getRecognizedExtensions() -> Godot.PackedStringArray {
@@ -13,6 +18,7 @@ open class EditorTranslationParserPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -43,5 +49,4 @@ open class EditorTranslationParserPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectFilter: AudioEffect {
     public enum FilterDB: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class AudioEffectFilter: AudioEffect {
         case filter12db = 1
         case filter18db = 2
         case filter24db = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Filter6db", 0),
@@ -26,7 +28,10 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
-    private func __setCutoff(freq: Double) {
+
+    private func __setCutoff(
+        freq: Double
+    ) {
         freq.withGodotUnsafeRawPointer { __ptr_freq in
         withUnsafeArgumentPackPointer(__ptr_freq) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
+
     private func __getCutoff() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +69,10 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
-    private func __setResonance(amount: Double) {
+
+    private func __setResonance(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +91,7 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
+
     private func __getResonance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,7 +110,10 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
-    private func __setGain(amount: Double) {
+
+    private func __setGain(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -119,6 +132,7 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
+
     private func __getGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,7 +151,10 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
-    private func __setDb(amount: Godot.AudioEffectFilter.FilterDB) {
+
+    private func __setDb(
+        amount: Godot.AudioEffectFilter.FilterDB
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -156,6 +173,7 @@ open class AudioEffectFilter: AudioEffect {
         }
         }
     }()
+
     private func __getDb() -> Godot.AudioEffectFilter.FilterDB {
         Godot.AudioEffectFilter.FilterDB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +230,7 @@ open class AudioEffectFilter: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -224,5 +243,4 @@ open class AudioEffectFilter: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

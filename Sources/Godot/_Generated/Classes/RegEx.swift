@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RegEx: RefCounted {
     internal static var __method_binding_create_from_string: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    static public func createFromString(pattern: Godot.GodotString) -> Godot.RegEx? {
+
+    static public func createFromString(
+        pattern: Godot.GodotString
+    ) -> Godot.RegEx? {
         Godot.RegEx?.fromMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
@@ -31,6 +35,7 @@ open class RegEx: RefCounted {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -48,7 +53,10 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    public func compile(pattern: Godot.GodotString) -> Godot.ErrorType {
+
+    public func compile(
+        pattern: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
@@ -68,7 +76,12 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    public func search(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.RegExMatch? {
+
+    public func search(
+        subject: Godot.GodotString,
+        offset: Int32 = 0,
+        end: Int32 = -1
+    ) -> Godot.RegExMatch? {
         Godot.RegExMatch?.fromMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -90,7 +103,12 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    public func searchAll(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotArray<Godot.RegExMatch?> {
+
+    public func searchAll(
+        subject: Godot.GodotString,
+        offset: Int32 = 0,
+        end: Int32 = -1
+    ) -> Godot.GodotArray<Godot.RegExMatch?> {
         Godot.GodotArray<Godot.RegExMatch?>.fromMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -112,7 +130,14 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    public func sub(subject: Godot.GodotString, replacement: Godot.GodotString, all: Bool = false, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotString {
+
+    public func sub(
+        subject: Godot.GodotString,
+        replacement: Godot.GodotString,
+        all: Bool = false,
+        offset: Int32 = 0,
+        end: Int32 = -1
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         replacement.withGodotUnsafeRawPointer { __ptr_replacement in
@@ -136,6 +161,7 @@ open class RegEx: RefCounted {
         }
         }
     }()
+
     public func isValid() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,6 +180,7 @@ open class RegEx: RefCounted {
         }
         }
     }()
+
     public func pattern() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,6 +199,7 @@ open class RegEx: RefCounted {
         }
         }
     }()
+
     public func groupCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,6 +218,7 @@ open class RegEx: RefCounted {
         }
         }
     }()
+
     public func names() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,6 +231,7 @@ open class RegEx: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -214,5 +244,4 @@ open class RegEx: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

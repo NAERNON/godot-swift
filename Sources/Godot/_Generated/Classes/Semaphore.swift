@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Semaphore: RefCounted {
     internal static var __method_binding_wait: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Semaphore: RefCounted {
         }
         }
     }()
+
     public func wait() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,6 +31,7 @@ open class Semaphore: RefCounted {
         }
         }
     }()
+
     public func tryWait() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +50,7 @@ open class Semaphore: RefCounted {
         }
         }
     }()
+
     public func post() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -58,6 +62,7 @@ open class Semaphore: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -70,5 +75,4 @@ open class Semaphore: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

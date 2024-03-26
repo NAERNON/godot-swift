@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SpinBox: Range {
     internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setHorizontalAlignment(_ alignment: Godot.HorizontalAlignment) {
+
+    private func __setHorizontalAlignment(
+        _ alignment: Godot.HorizontalAlignment
+    ) {
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         withUnsafeArgumentPackPointer(__ptr_alignment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
         Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setSuffix(_ suffix: Godot.GodotString) {
+
+    private func __setSuffix(
+        _ suffix: Godot.GodotString
+    ) {
         suffix.withGodotUnsafeRawPointer { __ptr_suffix in
         withUnsafeArgumentPackPointer(__ptr_suffix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __getSuffix() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setPrefix(_ prefix: Godot.GodotString) {
+
+    private func __setPrefix(
+        _ prefix: Godot.GodotString
+    ) {
         prefix.withGodotUnsafeRawPointer { __ptr_prefix in
         withUnsafeArgumentPackPointer(__ptr_prefix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __getPrefix() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setEditable(enabled: Bool) {
+
+    private func __setEditable(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +158,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setCustomArrowStep(_ arrowStep: Double) {
+
+    private func __setCustomArrowStep(
+        _ arrowStep: Double
+    ) {
         arrowStep.withGodotUnsafeRawPointer { __ptr_arrowStep in
         withUnsafeArgumentPackPointer(__ptr_arrowStep) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,6 +180,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __getCustomArrowStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __isEditable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setUpdateOnTextChanged(enabled: Bool) {
+
+    private func __setUpdateOnTextChanged(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __getUpdateOnTextChanged() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class SpinBox: Range {
         }
         }
     }()
-    private func __setSelectAllOnFocus(enabled: Bool) {
+
+    private func __setSelectAllOnFocus(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     private func __isSelectAllOnFocus() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     public func apply() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -288,6 +318,7 @@ open class SpinBox: Range {
         }
         }
     }()
+
     public func lineEdit() -> Godot.LineEdit? {
         Godot.LineEdit?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,6 +408,7 @@ open class SpinBox: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -389,5 +421,4 @@ open class SpinBox: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

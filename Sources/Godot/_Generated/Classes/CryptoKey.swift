@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CryptoKey: Resource {
     internal static var __method_binding_save: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class CryptoKey: Resource {
         }
         }
     }()
-    public func save(path: Godot.GodotString, publicOnly: Bool = false) -> Godot.ErrorType {
+
+    public func save(
+        path: Godot.GodotString,
+        publicOnly: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
@@ -33,7 +38,11 @@ open class CryptoKey: Resource {
         }
         }
     }()
-    public func load(path: Godot.GodotString, publicOnly: Bool = false) -> Godot.ErrorType {
+
+    public func load(
+        path: Godot.GodotString,
+        publicOnly: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
@@ -54,6 +63,7 @@ open class CryptoKey: Resource {
         }
         }
     }()
+
     public func isPublicOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +82,10 @@ open class CryptoKey: Resource {
         }
         }
     }()
-    public func saveToString(publicOnly: Bool = false) -> Godot.GodotString {
+
+    public func saveToString(
+        publicOnly: Bool = false
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_publicOnly) { __accessPtr in
@@ -92,7 +105,11 @@ open class CryptoKey: Resource {
         }
         }
     }()
-    public func loadFromString(stringKey: Godot.GodotString, publicOnly: Bool = false) -> Godot.ErrorType {
+
+    public func loadFromString(
+        stringKey: Godot.GodotString,
+        publicOnly: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         stringKey.withGodotUnsafeRawPointer { __ptr_stringKey in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
@@ -107,6 +124,7 @@ open class CryptoKey: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -119,5 +137,4 @@ open class CryptoKey: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

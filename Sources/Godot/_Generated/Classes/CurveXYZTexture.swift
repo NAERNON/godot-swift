@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CurveXYZTexture: Texture2D {
     internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
-    public func setWidth(_ width: Int32) {
+
+    public func setWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
-    private func __setCurveX(curve: Godot.Curve?) {
+
+    private func __setCurveX(
+        curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -51,6 +58,7 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
+
     private func __getCurveX() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +77,10 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
-    private func __setCurveY(curve: Godot.Curve?) {
+
+    private func __setCurveY(
+        curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -89,6 +100,7 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
+
     private func __getCurveY() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,7 +119,10 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
-    private func __setCurveZ(curve: Godot.Curve?) {
+
+    private func __setCurveZ(
+        curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -127,6 +142,7 @@ open class CurveXYZTexture: Texture2D {
         }
         }
     }()
+
     private func __getCurveZ() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,6 +188,7 @@ open class CurveXYZTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -184,5 +201,4 @@ open class CurveXYZTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

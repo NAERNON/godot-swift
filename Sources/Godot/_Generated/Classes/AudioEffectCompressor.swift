@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectCompressor: AudioEffect {
     internal static var __method_binding_set_threshold: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setThreshold(_ threshold: Double) {
+
+    private func __setThreshold(
+        _ threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setRatio(_ ratio: Double) {
+
+    private func __setRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setGain(_ gain: Double) {
+
+    private func __setGain(
+        _ gain: Double
+    ) {
         gain.withGodotUnsafeRawPointer { __ptr_gain in
         withUnsafeArgumentPackPointer(__ptr_gain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setAttackUs(_ attackUs: Double) {
+
+    private func __setAttackUs(
+        _ attackUs: Double
+    ) {
         attackUs.withGodotUnsafeRawPointer { __ptr_attackUs in
         withUnsafeArgumentPackPointer(__ptr_attackUs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getAttackUs() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setReleaseMs(_ releaseMs: Double) {
+
+    private func __setReleaseMs(
+        _ releaseMs: Double
+    ) {
         releaseMs.withGodotUnsafeRawPointer { __ptr_releaseMs in
         withUnsafeArgumentPackPointer(__ptr_releaseMs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getReleaseMs() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setMix(_ mix: Double) {
+
+    private func __setMix(
+        _ mix: Double
+    ) {
         mix.withGodotUnsafeRawPointer { __ptr_mix in
         withUnsafeArgumentPackPointer(__ptr_mix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getMix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
-    private func __setSidechain(_ sidechain: Godot.GodotStringName) {
+
+    private func __setSidechain(
+        _ sidechain: Godot.GodotStringName
+    ) {
         sidechain.withGodotUnsafeRawPointer { __ptr_sidechain in
         withUnsafeArgumentPackPointer(__ptr_sidechain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class AudioEffectCompressor: AudioEffect {
         }
         }
     }()
+
     private func __getSidechain() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class AudioEffectCompressor: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class AudioEffectCompressor: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

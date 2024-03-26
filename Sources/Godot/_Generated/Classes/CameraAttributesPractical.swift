@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CameraAttributesPractical: CameraAttributes {
     internal static var __method_binding_set_dof_blur_far_enabled: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurFarEnabled(_ enabled: Bool) {
+
+    private func __setDofBlurFarEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __isDofBlurFarEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurFarDistance(_ distance: Double) {
+
+    private func __setDofBlurFarDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getDofBlurFarDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurFarTransition(distance: Double) {
+
+    private func __setDofBlurFarTransition(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getDofBlurFarTransition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurNearEnabled(_ enabled: Bool) {
+
+    private func __setDofBlurNearEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __isDofBlurNearEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurNearDistance(_ distance: Double) {
+
+    private func __setDofBlurNearDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getDofBlurNearDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurNearTransition(distance: Double) {
+
+    private func __setDofBlurNearTransition(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getDofBlurNearTransition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setDofBlurAmount(_ amount: Double) {
+
+    private func __setDofBlurAmount(
+        _ amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getDofBlurAmount() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setAutoExposureMaxSensitivity(_ maxSensitivity: Double) {
+
+    private func __setAutoExposureMaxSensitivity(
+        _ maxSensitivity: Double
+    ) {
         maxSensitivity.withGodotUnsafeRawPointer { __ptr_maxSensitivity in
         withUnsafeArgumentPackPointer(__ptr_maxSensitivity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getAutoExposureMaxSensitivity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
-    private func __setAutoExposureMinSensitivity(_ minSensitivity: Double) {
+
+    private func __setAutoExposureMinSensitivity(
+        _ minSensitivity: Double
+    ) {
         minSensitivity.withGodotUnsafeRawPointer { __ptr_minSensitivity in
         withUnsafeArgumentPackPointer(__ptr_minSensitivity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         }
     }()
+
     private func __getAutoExposureMinSensitivity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +475,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -450,5 +488,4 @@ open class CameraAttributesPractical: CameraAttributes {
         }
         return _virtualFunctions!
     }
-
-    }
+}

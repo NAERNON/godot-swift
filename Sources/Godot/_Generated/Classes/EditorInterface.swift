@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorInterface: Object {
     internal static var __method_binding_restart_editor: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func restartEditor(save: Bool = true) {
+
+    public func restartEditor(
+        save: Bool = true
+    ) {
         save.withGodotUnsafeRawPointer { __ptr_save in
         withUnsafeArgumentPackPointer(__ptr_save) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func commandPalette() -> Godot.EditorCommandPalette? {
         Godot.EditorCommandPalette?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func resourceFilesystem() -> Godot.EditorFileSystem? {
         Godot.EditorFileSystem?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,6 +73,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorPaths() -> Godot.EditorPaths? {
         Godot.EditorPaths?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +92,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func resourcePreviewer() -> Godot.EditorResourcePreview? {
         Godot.EditorResourcePreview?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +111,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func selection() -> Godot.EditorSelection? {
         Godot.EditorSelection?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +130,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorSettings() -> Godot.EditorSettings? {
         Godot.EditorSettings?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +149,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func makeMeshPreviews(meshes: Godot.GodotArray<Godot.Mesh?>, previewSize: Int32) -> Godot.GodotArray<Godot.Texture2D?> {
+
+    public func makeMeshPreviews(
+        meshes: Godot.GodotArray<Godot.Mesh?>,
+        previewSize: Int32
+    ) -> Godot.GodotArray<Godot.Texture2D?> {
         Godot.GodotArray<Godot.Texture2D?>.fromMutatingGodotUnsafePointer { __temporary in
         meshes.withGodotUnsafeRawPointer { __ptr_meshes in
         previewSize.withGodotUnsafeRawPointer { __ptr_previewSize in
@@ -160,7 +174,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func setPluginEnabled(plugin: Godot.GodotString, enabled: Bool) {
+
+    public func setPluginEnabled(
+        plugin: Godot.GodotString,
+        enabled: Bool
+    ) {
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_plugin, __ptr_enabled) { __accessPtr in
@@ -180,7 +198,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func isPluginEnabled(plugin: Godot.GodotString) -> Bool {
+
+    public func isPluginEnabled(
+        plugin: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafeArgumentPackPointer(__ptr_plugin) { __accessPtr in
@@ -200,6 +221,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorTheme() -> Godot.Theme? {
         Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +240,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func baseControl() -> Godot.Control? {
         Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,6 +259,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorMainScreen() -> Godot.VBoxContainer? {
         Godot.VBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +278,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func scriptEditor() -> Godot.ScriptEditor? {
         Godot.ScriptEditor?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,6 +297,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorViewport2D() -> Godot.SubViewport? {
         Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,7 +316,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func editorViewport3D(idx: Int32 = 0) -> Godot.SubViewport? {
+
+    public func editorViewport3D(
+        idx: Int32 = 0
+    ) -> Godot.SubViewport? {
         Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -310,7 +339,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func setMainScreenEditor(name: Godot.GodotString) {
+
+    public func setMainScreenEditor(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +361,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    private func __setDistractionFreeMode(enter: Bool) {
+
+    private func __setDistractionFreeMode(
+        enter: Bool
+    ) {
         enter.withGodotUnsafeRawPointer { __ptr_enter in
         withUnsafeArgumentPackPointer(__ptr_enter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,6 +383,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     private func __isDistractionFreeModeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,6 +402,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editorScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,7 +421,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialog(_ dialog: Godot.Window?, rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+
+    public func popupDialog(
+        _ dialog: Godot.Window?,
+        rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)
+    ) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -405,7 +446,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialogCentered(dialog: Godot.Window?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
+
+    public func popupDialogCentered(
+        dialog: Godot.Window?,
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)
+    ) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -426,7 +471,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialogCenteredRatio(dialog: Godot.Window?, ratio: Double = 0.8) {
+
+    public func popupDialogCenteredRatio(
+        dialog: Godot.Window?,
+        ratio: Double = 0.8
+    ) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
@@ -447,7 +496,12 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func popupDialogCenteredClamped(dialog: Godot.Window?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+
+    public func popupDialogCenteredClamped(
+        dialog: Godot.Window?,
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0),
+        fallbackRatio: Double = 0.75
+    ) {
         dialog.withGodotUnsafeRawPointer { __ptr_dialog in
         withUnsafePointer(to: __ptr_dialog) { _ptr___ptr_dialog in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -469,6 +523,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func currentFeatureProfile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -487,7 +542,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func setCurrentFeatureProfile(profileName: Godot.GodotString) {
+
+    public func setCurrentFeatureProfile(
+        profileName: Godot.GodotString
+    ) {
         profileName.withGodotUnsafeRawPointer { __ptr_profileName in
         withUnsafeArgumentPackPointer(__ptr_profileName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -506,6 +564,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func fileSystemDock() -> Godot.FileSystemDock? {
         Godot.FileSystemDock?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -524,7 +583,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func selectFile(_ file: Godot.GodotString) {
+
+    public func selectFile(
+        _ file: Godot.GodotString
+    ) {
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -543,6 +605,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func selectedPaths() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -561,6 +624,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func currentPath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -579,6 +643,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func currentDirectory() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -597,6 +662,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func inspector() -> Godot.EditorInspector? {
         Godot.EditorInspector?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -615,7 +681,12 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func inspectObject(_ object: Godot.Object?, forProperty property: Godot.GodotString = "", inspectorOnly: Bool = false) {
+
+    public func inspectObject(
+        _ object: Godot.Object?,
+        forProperty property: Godot.GodotString = "",
+        inspectorOnly: Bool = false
+    ) {
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -637,7 +708,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func editResource(_ resource: Godot.Resource?) {
+
+    public func editResource(
+        _ resource: Godot.Resource?
+    ) {
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         withUnsafeArgumentPackPointer(_ptr___ptr_resource) { __accessPtr in
@@ -657,7 +731,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func editNode(_ node: Godot.Node?) {
+
+    public func editNode(
+        _ node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -677,7 +754,13 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func editScript(_ script: Godot.Script?, line: Int32 = -1, column: Int32 = 0, grabFocus: Bool = true) {
+
+    public func editScript(
+        _ script: Godot.Script?,
+        line: Int32 = -1,
+        column: Int32 = 0,
+        grabFocus: Bool = true
+    ) {
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafePointer(to: __ptr_script) { _ptr___ptr_script in
         line.withGodotUnsafeRawPointer { __ptr_line in
@@ -700,7 +783,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func openSceneFromPath(sceneFilepath: Godot.GodotString) {
+
+    public func openSceneFromPath(
+        sceneFilepath: Godot.GodotString
+    ) {
         sceneFilepath.withGodotUnsafeRawPointer { __ptr_sceneFilepath in
         withUnsafeArgumentPackPointer(__ptr_sceneFilepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -719,7 +805,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func reloadSceneFromPath(sceneFilepath: Godot.GodotString) {
+
+    public func reloadSceneFromPath(
+        sceneFilepath: Godot.GodotString
+    ) {
         sceneFilepath.withGodotUnsafeRawPointer { __ptr_sceneFilepath in
         withUnsafeArgumentPackPointer(__ptr_sceneFilepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -738,6 +827,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func openScenes() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -756,6 +846,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func editedSceneRoot() -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -774,6 +865,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func saveScene() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -792,7 +884,11 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func saveSceneAs(path: Godot.GodotString, withPreview preview: Bool = true) {
+
+    public func saveSceneAs(
+        path: Godot.GodotString,
+        withPreview preview: Bool = true
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         preview.withGodotUnsafeRawPointer { __ptr_preview in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_preview) { __accessPtr in
@@ -812,6 +908,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func saveAllScenes() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -829,6 +926,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func markSceneAsUnsaved() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -846,6 +944,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func playMainScene() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -863,6 +962,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func playCurrentScene() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -880,7 +980,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func playCustomScene(sceneFilepath: Godot.GodotString) {
+
+    public func playCustomScene(
+        sceneFilepath: Godot.GodotString
+    ) {
         sceneFilepath.withGodotUnsafeRawPointer { __ptr_sceneFilepath in
         withUnsafeArgumentPackPointer(__ptr_sceneFilepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -899,6 +1002,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func stopPlayingScene() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -916,6 +1020,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func isPlayingScene() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -934,6 +1039,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     public func playingScene() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -952,7 +1058,10 @@ open class EditorInterface: Object {
         }
         }
     }()
-    private func __setMovieMakerEnabled(_ enabled: Bool) {
+
+    private func __setMovieMakerEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -971,6 +1080,7 @@ open class EditorInterface: Object {
         }
         }
     }()
+
     private func __isMovieMakerEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1005,6 +1115,7 @@ open class EditorInterface: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1017,5 +1128,4 @@ open class EditorInterface: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

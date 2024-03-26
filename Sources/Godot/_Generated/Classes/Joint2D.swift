@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Joint2D: Node2D {
     internal static var __method_binding_set_node_a: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Joint2D: Node2D {
         }
         }
     }()
-    private func __setNodeA(node: Godot.NodePath) {
+
+    private func __setNodeA(
+        node: Godot.NodePath
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafeArgumentPackPointer(__ptr_node) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Joint2D: Node2D {
         }
         }
     }()
+
     private func __getNodeA() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class Joint2D: Node2D {
         }
         }
     }()
-    private func __setNodeB(node: Godot.NodePath) {
+
+    private func __setNodeB(
+        node: Godot.NodePath
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafeArgumentPackPointer(__ptr_node) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class Joint2D: Node2D {
         }
         }
     }()
+
     private func __getNodeB() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class Joint2D: Node2D {
         }
         }
     }()
-    private func __setBias(_ bias: Double) {
+
+    private func __setBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class Joint2D: Node2D {
         }
         }
     }()
+
     private func __getBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class Joint2D: Node2D {
         }
         }
     }()
-    private func __setExcludeNodesFromCollision(enable: Bool) {
+
+    private func __setExcludeNodesFromCollision(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class Joint2D: Node2D {
         }
         }
     }()
+
     private func __getExcludeNodesFromCollision() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class Joint2D: Node2D {
         }
         }
     }()
+
     public func rid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +234,7 @@ open class Joint2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -228,5 +247,4 @@ open class Joint2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

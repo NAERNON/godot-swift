@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class HMACContext: RefCounted {
     internal static var __method_binding_start: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class HMACContext: RefCounted {
         }
         }
     }()
-    public func start(hashType: Godot.HashingContext.HashType, key: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func start(
+        hashType: Godot.HashingContext.HashType,
+        key: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         hashType.withGodotUnsafeRawPointer { __ptr_hashType in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -33,7 +38,10 @@ open class HMACContext: RefCounted {
         }
         }
     }()
-    public func update(data: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func update(
+        data: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -53,6 +61,7 @@ open class HMACContext: RefCounted {
         }
         }
     }()
+
     public func finish() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,6 +74,7 @@ open class HMACContext: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -77,5 +87,4 @@ open class HMACContext: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

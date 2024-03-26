@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticles2D: Node2D {
     public enum DrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
         case reverseLifetime = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Index", 0),
@@ -16,12 +18,14 @@ open class GPUParticles2D: Node2D {
             ("Reverse Lifetime", 2),]
         }
     }
+
     public enum EmitFlags: UInt32, GodotEnum {
         case position = 1
         case rotationScale = 2
         case velocity = 4
         case color = 8
         case custom = 16
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Position", 1),
@@ -35,6 +39,7 @@ open class GPUParticles2D: Node2D {
     public func finished() {
         _ = finishedSignal.emit()
     }
+
     public lazy var finishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -57,7 +62,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setEmitting(_ emitting: Bool) {
+
+    private func __setEmitting(
+        _ emitting: Bool
+    ) {
         emitting.withGodotUnsafeRawPointer { __ptr_emitting in
         withUnsafeArgumentPackPointer(__ptr_emitting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +84,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setAmount(_ amount: Int32) {
+
+    private func __setAmount(
+        _ amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,7 +106,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setLifetime(secs: Double) {
+
+    private func __setLifetime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,7 +128,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setOneShot(secs: Bool) {
+
+    private func __setOneShot(
+        secs: Bool
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,7 +150,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setPreProcessTime(secs: Double) {
+
+    private func __setPreProcessTime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,7 +172,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setExplosivenessRatio(_ ratio: Double) {
+
+    private func __setExplosivenessRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -171,7 +194,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setRandomnessRatio(_ ratio: Double) {
+
+    private func __setRandomnessRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,7 +216,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setVisibilityRect(_ visibilityRect: Godot.Rect2) {
+
+    private func __setVisibilityRect(
+        _ visibilityRect: Godot.Rect2
+    ) {
         visibilityRect.withGodotUnsafeRawPointer { __ptr_visibilityRect in
         withUnsafeArgumentPackPointer(__ptr_visibilityRect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,7 +238,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setUseLocalCoordinates(enable: Bool) {
+
+    private func __setUseLocalCoordinates(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,7 +260,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setFixedFps(_ fps: Int32) {
+
+    private func __setFixedFps(
+        _ fps: Int32
+    ) {
         fps.withGodotUnsafeRawPointer { __ptr_fps in
         withUnsafeArgumentPackPointer(__ptr_fps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,7 +282,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setFractionalDelta(enable: Bool) {
+
+    private func __setFractionalDelta(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -266,7 +304,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setInterpolate(enable: Bool) {
+
+    private func __setInterpolate(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -285,7 +326,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setProcessMaterial(_ material: Godot.Material?) {
+
+    private func __setProcessMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -305,7 +349,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setSpeedScale(_ scale: Double) {
+
+    private func __setSpeedScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -324,7 +371,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setCollisionBaseSize(_ size: Double) {
+
+    private func __setCollisionBaseSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,7 +393,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setInterpToEnd(interp: Double) {
+
+    private func __setInterpToEnd(
+        interp: Double
+    ) {
         interp.withGodotUnsafeRawPointer { __ptr_interp in
         withUnsafeArgumentPackPointer(__ptr_interp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -362,6 +415,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __isEmitting() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -380,6 +434,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getAmount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,6 +453,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getLifetime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,6 +472,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getOneShot() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -434,6 +491,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getPreProcessTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -452,6 +510,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getExplosivenessRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -470,6 +529,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getRandomnessRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,6 +548,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getVisibilityRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -506,6 +567,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getUseLocalCoordinates() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -524,6 +586,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getFixedFps() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -542,6 +605,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getFractionalDelta() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -560,6 +624,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getInterpolate() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -578,6 +643,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getProcessMaterial() -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -596,6 +662,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -614,6 +681,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getCollisionBaseSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -632,6 +700,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getInterpToEnd() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -650,7 +719,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setDrawOrder(_ order: Godot.GPUParticles2D.DrawOrder) {
+
+    private func __setDrawOrder(
+        _ order: Godot.GPUParticles2D.DrawOrder
+    ) {
         order.withGodotUnsafeRawPointer { __ptr_order in
         withUnsafeArgumentPackPointer(__ptr_order) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -669,6 +741,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getDrawOrder() -> Godot.GPUParticles2D.DrawOrder {
         Godot.GPUParticles2D.DrawOrder.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -687,7 +760,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -707,6 +783,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -725,6 +802,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     public func captureRect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -743,6 +821,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     public func restart() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -760,7 +839,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setSubEmitter(path: Godot.NodePath) {
+
+    private func __setSubEmitter(
+        path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -779,6 +861,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getSubEmitter() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -797,7 +880,14 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    public func emitParticle(xform: Godot.Transform2D, velocity: Godot.Vector2, color: Godot.Color, custom: Godot.Color, flags: UInt32) {
+
+    public func emitParticle(
+        xform: Godot.Transform2D,
+        velocity: Godot.Vector2,
+        color: Godot.Color,
+        custom: Godot.Color,
+        flags: UInt32
+    ) {
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -820,7 +910,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTrailEnabled(_ enabled: Bool) {
+
+    private func __setTrailEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -839,7 +932,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTrailLifetime(secs: Double) {
+
+    private func __setTrailLifetime(
+        secs: Double
+    ) {
         secs.withGodotUnsafeRawPointer { __ptr_secs in
         withUnsafeArgumentPackPointer(__ptr_secs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -858,6 +954,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __isTrailEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -876,6 +973,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getTrailLifetime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -894,7 +992,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTrailSections(_ sections: Int32) {
+
+    private func __setTrailSections(
+        _ sections: Int32
+    ) {
         sections.withGodotUnsafeRawPointer { __ptr_sections in
         withUnsafeArgumentPackPointer(__ptr_sections) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -913,6 +1014,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getTrailSections() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -931,7 +1033,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setTrailSectionSubdivisions(_ subdivisions: Int32) {
+
+    private func __setTrailSectionSubdivisions(
+        _ subdivisions: Int32
+    ) {
         subdivisions.withGodotUnsafeRawPointer { __ptr_subdivisions in
         withUnsafeArgumentPackPointer(__ptr_subdivisions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -950,6 +1055,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getTrailSectionSubdivisions() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -968,7 +1074,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    public func convertFromParticles(_ particles: Godot.Node?) {
+
+    public func convertFromParticles(
+        _ particles: Godot.Node?
+    ) {
         particles.withGodotUnsafeRawPointer { __ptr_particles in
         withUnsafePointer(to: __ptr_particles) { _ptr___ptr_particles in
         withUnsafeArgumentPackPointer(_ptr___ptr_particles) { __accessPtr in
@@ -988,7 +1097,10 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
-    private func __setAmountRatio(_ ratio: Double) {
+
+    private func __setAmountRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1007,6 +1119,7 @@ open class GPUParticles2D: Node2D {
         }
         }
     }()
+
     private func __getAmountRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1283,6 +1396,7 @@ open class GPUParticles2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1295,5 +1409,4 @@ open class GPUParticles2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

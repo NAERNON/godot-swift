@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class LightmapGIData: Resource {
     internal static var __method_binding_set_lightmap_textures: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class LightmapGIData: Resource {
         }
         }
     }()
-    private func __setLightmapTextures(lightTextures: Godot.GodotArray<Godot.TextureLayered?>) {
+
+    private func __setLightmapTextures(
+        lightTextures: Godot.GodotArray<Godot.TextureLayered?>
+    ) {
         lightTextures.withGodotUnsafeRawPointer { __ptr_lightTextures in
         withUnsafeArgumentPackPointer(__ptr_lightTextures) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class LightmapGIData: Resource {
         }
         }
     }()
+
     private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered?> {
         Godot.GodotArray<Godot.TextureLayered?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class LightmapGIData: Resource {
         }
         }
     }()
-    private func __setUsesSphericalHarmonics(_ usesSphericalHarmonics: Bool) {
+
+    private func __setUsesSphericalHarmonics(
+        _ usesSphericalHarmonics: Bool
+    ) {
         usesSphericalHarmonics.withGodotUnsafeRawPointer { __ptr_usesSphericalHarmonics in
         withUnsafeArgumentPackPointer(__ptr_usesSphericalHarmonics) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class LightmapGIData: Resource {
         }
         }
     }()
+
     private func __isUsingSphericalHarmonics() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,13 @@ open class LightmapGIData: Resource {
         }
         }
     }()
-    public func addUser(path: Godot.NodePath, uvScale: Godot.Rect2, sliceIndex: Int32, subInstance: Int32) {
+
+    public func addUser(
+        path: Godot.NodePath,
+        uvScale: Godot.Rect2,
+        sliceIndex: Int32,
+        subInstance: Int32
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         uvScale.withGodotUnsafeRawPointer { __ptr_uvScale in
         sliceIndex.withGodotUnsafeRawPointer { __ptr_sliceIndex in
@@ -108,6 +123,7 @@ open class LightmapGIData: Resource {
         }
         }
     }()
+
     public func userCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +142,10 @@ open class LightmapGIData: Resource {
         }
         }
     }()
-    public func userPath(userIdx: Int32) -> Godot.NodePath {
+
+    public func userPath(
+        userIdx: Int32
+    ) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         userIdx.withGodotUnsafeRawPointer { __ptr_userIdx in
         withUnsafeArgumentPackPointer(__ptr_userIdx) { __accessPtr in
@@ -146,6 +165,7 @@ open class LightmapGIData: Resource {
         }
         }
     }()
+
     public func clearUsers() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -163,7 +183,10 @@ open class LightmapGIData: Resource {
         }
         }
     }()
-    private func __setLightTexture(_ lightTexture: Godot.TextureLayered?) {
+
+    private func __setLightTexture(
+        _ lightTexture: Godot.TextureLayered?
+    ) {
         lightTexture.withGodotUnsafeRawPointer { __ptr_lightTexture in
         withUnsafePointer(to: __ptr_lightTexture) { _ptr___ptr_lightTexture in
         withUnsafeArgumentPackPointer(_ptr___ptr_lightTexture) { __accessPtr in
@@ -183,6 +206,7 @@ open class LightmapGIData: Resource {
         }
         }
     }()
+
     private func __getLightTexture() -> Godot.TextureLayered? {
         Godot.TextureLayered?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,6 +252,7 @@ open class LightmapGIData: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -240,5 +265,4 @@ open class LightmapGIData: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

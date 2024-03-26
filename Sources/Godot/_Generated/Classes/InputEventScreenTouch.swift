@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventScreenTouch: InputEventFromWindow {
     internal static var __method_binding_set_index: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
-    private func __setIndex(_ index: Int32) {
+
+    private func __setIndex(
+        _ index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
+
     private func __getIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
-    public func setPressed(_ pressed: Bool) {
+
+    public func setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +117,10 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
-    public func setCanceled(_ canceled: Bool) {
+
+    public func setCanceled(
+        _ canceled: Bool
+    ) {
         canceled.withGodotUnsafeRawPointer { __ptr_canceled in
         withUnsafeArgumentPackPointer(__ptr_canceled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +139,10 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
-    private func __setDoubleTap(_ doubleTap: Bool) {
+
+    private func __setDoubleTap(
+        _ doubleTap: Bool
+    ) {
         doubleTap.withGodotUnsafeRawPointer { __ptr_doubleTap in
         withUnsafeArgumentPackPointer(__ptr_doubleTap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +161,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         }
     }()
+
     private func __isDoubleTap() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +207,7 @@ open class InputEventScreenTouch: InputEventFromWindow {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +220,4 @@ open class InputEventScreenTouch: InputEventFromWindow {
         }
         return _virtualFunctions!
     }
-
-    }
+}

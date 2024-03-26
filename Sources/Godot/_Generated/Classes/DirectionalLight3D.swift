@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class DirectionalLight3D: Light3D {
     public enum ShadowMode: UInt32, GodotEnum {
         case orthogonal = 0
         case parallel2Splits = 1
         case parallel4Splits = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Orthogonal", 0),
@@ -16,10 +18,12 @@ open class DirectionalLight3D: Light3D {
             ("Parallel4 Splits", 2),]
         }
     }
+
     public enum SkyMode: UInt32, GodotEnum {
         case lightAndSky = 0
         case lightOnly = 1
         case skyOnly = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Light And Sky", 0),
@@ -35,7 +39,10 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
-    private func __setShadowMode(_ mode: Godot.DirectionalLight3D.ShadowMode) {
+
+    private func __setShadowMode(
+        _ mode: Godot.DirectionalLight3D.ShadowMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +61,7 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
+
     private func __getShadowMode() -> Godot.DirectionalLight3D.ShadowMode {
         Godot.DirectionalLight3D.ShadowMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,7 +80,10 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
-    private func __setBlendSplits(enabled: Bool) {
+
+    private func __setBlendSplits(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -91,6 +102,7 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
+
     private func __isBlendSplitsEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,7 +121,10 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
-    private func __setSkyMode(_ mode: Godot.DirectionalLight3D.SkyMode) {
+
+    private func __setSkyMode(
+        _ mode: Godot.DirectionalLight3D.SkyMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,6 +143,7 @@ open class DirectionalLight3D: Light3D {
         }
         }
     }()
+
     private func __getSkyMode() -> Godot.DirectionalLight3D.SkyMode {
         Godot.DirectionalLight3D.SkyMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -173,6 +189,7 @@ open class DirectionalLight3D: Light3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -185,5 +202,4 @@ open class DirectionalLight3D: Light3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

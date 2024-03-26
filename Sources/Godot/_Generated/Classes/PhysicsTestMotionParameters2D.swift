@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicsTestMotionParameters2D: RefCounted {
     internal static var __method_binding_get_from: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __getFrom() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __set(from: Godot.Transform2D) {
+
+    private func __set(
+        from: Godot.Transform2D
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __getMotion() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setMotion(_ motion: Godot.Vector2) {
+
+    private func __setMotion(
+        _ motion: Godot.Vector2
+    ) {
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         withUnsafeArgumentPackPointer(__ptr_motion) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __getMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setMargin(_ margin: Double) {
+
+    private func __setMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __isCollideSeparationRayEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setCollideSeparationRayEnabled(_ enabled: Bool) {
+
+    private func __setCollideSeparationRayEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __getExcludeBodies() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setExcludeBodies(excludeList: Godot.GodotArray<Godot.RID>) {
+
+    private func __setExcludeBodies(
+        excludeList: Godot.GodotArray<Godot.RID>
+    ) {
         excludeList.withGodotUnsafeRawPointer { __ptr_excludeList in
         withUnsafeArgumentPackPointer(__ptr_excludeList) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __getExcludeObjects() -> Godot.GodotArray<Int> {
         Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setExcludeObjects(excludeList: Godot.GodotArray<Int>) {
+
+    private func __setExcludeObjects(
+        excludeList: Godot.GodotArray<Int>
+    ) {
         excludeList.withGodotUnsafeRawPointer { __ptr_excludeList in
         withUnsafeArgumentPackPointer(__ptr_excludeList) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
+
     private func __isRecoveryAsCollisionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setRecoveryAsCollisionEnabled(_ enabled: Bool) {
+
+    private func __setRecoveryAsCollisionEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

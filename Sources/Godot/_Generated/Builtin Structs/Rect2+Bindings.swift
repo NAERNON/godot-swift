@@ -3,5 +3,6 @@
 //
 
 import GodotExtensionHeaders
+
 extension Rect2 {
 }

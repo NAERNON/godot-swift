@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MeshInstance3D: GeometryInstance3D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.Mesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.Mesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -32,6 +36,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getMesh() -> Godot.Mesh? {
         Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setSkeletonPath(_ skeletonPath: Godot.NodePath) {
+
+    private func __setSkeletonPath(
+        _ skeletonPath: Godot.NodePath
+    ) {
         skeletonPath.withGodotUnsafeRawPointer { __ptr_skeletonPath in
         withUnsafeArgumentPackPointer(__ptr_skeletonPath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getSkeletonPath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setSkin(_ skin: Godot.Skin?) {
+
+    private func __setSkin(
+        _ skin: Godot.Skin?
+    ) {
         skin.withGodotUnsafeRawPointer { __ptr_skin in
         withUnsafePointer(to: __ptr_skin) { _ptr___ptr_skin in
         withUnsafeArgumentPackPointer(_ptr___ptr_skin) { __accessPtr in
@@ -107,6 +119,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getSkin() -> Godot.Skin? {
         Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +138,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     public func surfaceOverrideMaterialCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,7 +157,11 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func setSurfaceOverrideMaterial(surface: Int32, material: Godot.Material?) {
+
+    public func setSurfaceOverrideMaterial(
+        surface: Int32,
+        material: Godot.Material?
+    ) {
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
@@ -164,7 +182,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func surfaceOverrideMaterial(surface: Int32) -> Godot.Material? {
+
+    public func surfaceOverrideMaterial(
+        surface: Int32
+    ) -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_surface) { __accessPtr in
@@ -184,7 +205,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func activeMaterial(surface: Int32) -> Godot.Material? {
+
+    public func activeMaterial(
+        surface: Int32
+    ) -> Godot.Material? {
         Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_surface) { __accessPtr in
@@ -204,6 +228,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     public func createTrimeshCollision() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -221,7 +246,11 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func createConvexCollision(clean: Bool = true, simplify: Bool = false) {
+
+    public func createConvexCollision(
+        clean: Bool = true,
+        simplify: Bool = false
+    ) {
         clean.withGodotUnsafeRawPointer { __ptr_clean in
         simplify.withGodotUnsafeRawPointer { __ptr_simplify in
         withUnsafeArgumentPackPointer(__ptr_clean, __ptr_simplify) { __accessPtr in
@@ -241,7 +270,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func createMultipleConvexCollisions(settings: Godot.MeshConvexDecompositionSettings? = nil) {
+
+    public func createMultipleConvexCollisions(
+        settings: Godot.MeshConvexDecompositionSettings? = nil
+    ) {
         settings.withGodotUnsafeRawPointer { __ptr_settings in
         withUnsafePointer(to: __ptr_settings) { _ptr___ptr_settings in
         withUnsafeArgumentPackPointer(_ptr___ptr_settings) { __accessPtr in
@@ -261,6 +293,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     public func blendShapeCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,7 +312,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func findBlendShapeByName(_ name: Godot.GodotStringName) -> Int32 {
+
+    public func findBlendShapeByName(
+        _ name: Godot.GodotStringName
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -299,7 +335,10 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func blendShapeValue(blendShapeIdx: Int32) -> Double {
+
+    public func blendShapeValue(
+        blendShapeIdx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         blendShapeIdx.withGodotUnsafeRawPointer { __ptr_blendShapeIdx in
         withUnsafeArgumentPackPointer(__ptr_blendShapeIdx) { __accessPtr in
@@ -319,7 +358,11 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
-    public func setBlendShapeValue(blendShapeIdx: Int32, value: Double) {
+
+    public func setBlendShapeValue(
+        blendShapeIdx: Int32,
+        value: Double
+    ) {
         blendShapeIdx.withGodotUnsafeRawPointer { __ptr_blendShapeIdx in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_blendShapeIdx, __ptr_value) { __accessPtr in
@@ -339,6 +382,7 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         }
     }()
+
     public func createDebugTangents() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -383,6 +427,7 @@ open class MeshInstance3D: GeometryInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -395,5 +440,4 @@ open class MeshInstance3D: GeometryInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

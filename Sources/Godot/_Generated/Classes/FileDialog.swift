@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class FileDialog: ConfirmationDialog {
     public enum FileMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class FileDialog: ConfirmationDialog {
         case openDir = 2
         case openAny = 3
         case saveFile = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Open File", 0),
@@ -20,10 +22,12 @@ open class FileDialog: ConfirmationDialog {
             ("Save File", 4),]
         }
     }
+
     public enum Access: UInt32, GodotEnum {
         case resources = 0
         case userdata = 1
         case filesystem = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Resources", 0),
@@ -34,16 +38,26 @@ open class FileDialog: ConfirmationDialog {
 
     public struct FileSelectedSignalInput: Godot.SignalInput {
         public let path: Godot.GodotString
-        fileprivate init(path: Godot.GodotString) {
+
+        fileprivate init(
+            path: Godot.GodotString
+        ) {
             self.path = path
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.path)]
         }
     }
-    public func fileSelected(path: Godot.GodotString) {
+
+    public func fileSelected(
+        path: Godot.GodotString
+    ) {
         _ = fileSelectedSignal.emit(.init(path: path))
     }
+
     public lazy var fileSelectedSignal: Godot.SignalEmitter<FileSelectedSignalInput> = {
         .init(object: self, signalName: "file_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,16 +75,26 @@ open class FileDialog: ConfirmationDialog {
 
     public struct FilesSelectedSignalInput: Godot.SignalInput {
         public let paths: Godot.PackedStringArray
-        fileprivate init(paths: Godot.PackedStringArray) {
+
+        fileprivate init(
+            paths: Godot.PackedStringArray
+        ) {
             self.paths = paths
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.paths)]
         }
     }
-    public func filesSelected(paths: Godot.PackedStringArray) {
+
+    public func filesSelected(
+        paths: Godot.PackedStringArray
+    ) {
         _ = filesSelectedSignal.emit(.init(paths: paths))
     }
+
     public lazy var filesSelectedSignal: Godot.SignalEmitter<FilesSelectedSignalInput> = {
         .init(object: self, signalName: "files_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -88,16 +112,26 @@ open class FileDialog: ConfirmationDialog {
 
     public struct DirSelectedSignalInput: Godot.SignalInput {
         public let dir: Godot.GodotString
-        fileprivate init(dir: Godot.GodotString) {
+
+        fileprivate init(
+            dir: Godot.GodotString
+        ) {
             self.dir = dir
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.dir)]
         }
     }
-    public func dirSelected(dir: Godot.GodotString) {
+
+    public func dirSelected(
+        dir: Godot.GodotString
+    ) {
         _ = dirSelectedSignal.emit(.init(dir: dir))
     }
+
     public lazy var dirSelectedSignal: Godot.SignalEmitter<DirSelectedSignalInput> = {
         .init(object: self, signalName: "dir_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -120,6 +154,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     public func clearFilters() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -137,7 +172,11 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    public func addFilter(_ filter: Godot.GodotString, description: Godot.GodotString = "") {
+
+    public func addFilter(
+        _ filter: Godot.GodotString,
+        description: Godot.GodotString = ""
+    ) {
         filter.withGodotUnsafeRawPointer { __ptr_filter in
         description.withGodotUnsafeRawPointer { __ptr_description in
         withUnsafeArgumentPackPointer(__ptr_filter, __ptr_description) { __accessPtr in
@@ -157,7 +196,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setFilters(_ filters: Godot.PackedStringArray) {
+
+    private func __setFilters(
+        _ filters: Godot.PackedStringArray
+    ) {
         filters.withGodotUnsafeRawPointer { __ptr_filters in
         withUnsafeArgumentPackPointer(__ptr_filters) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,6 +218,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getFilters() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,6 +237,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getCurrentDir() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,6 +256,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getCurrentFile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,6 +275,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getCurrentPath() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -248,7 +294,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setCurrentDir(_ dir: Godot.GodotString) {
+
+    private func __setCurrentDir(
+        _ dir: Godot.GodotString
+    ) {
         dir.withGodotUnsafeRawPointer { __ptr_dir in
         withUnsafeArgumentPackPointer(__ptr_dir) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -267,7 +316,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setCurrentFile(_ file: Godot.GodotString) {
+
+    private func __setCurrentFile(
+        _ file: Godot.GodotString
+    ) {
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -286,7 +338,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setCurrentPath(_ path: Godot.GodotString) {
+
+    private func __setCurrentPath(
+        _ path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,7 +360,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setModeOverridesTitle(override: Bool) {
+
+    private func __setModeOverridesTitle(
+        override: Bool
+    ) {
         override.withGodotUnsafeRawPointer { __ptr_override in
         withUnsafeArgumentPackPointer(__ptr_override) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -324,6 +382,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __isModeOverridingTitle() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,7 +401,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setFileMode(_ mode: Godot.FileDialog.FileMode) {
+
+    private func __setFileMode(
+        _ mode: Godot.FileDialog.FileMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,6 +423,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getFileMode() -> Godot.FileDialog.FileMode {
         Godot.FileDialog.FileMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -379,6 +442,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     public func vbox() -> Godot.VBoxContainer? {
         Godot.VBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -397,6 +461,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     public func lineEdit() -> Godot.LineEdit? {
         Godot.LineEdit?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -415,7 +480,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setAccess(_ access: Godot.FileDialog.Access) {
+
+    private func __setAccess(
+        _ access: Godot.FileDialog.Access
+    ) {
         access.withGodotUnsafeRawPointer { __ptr_access in
         withUnsafeArgumentPackPointer(__ptr_access) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -434,6 +502,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getAccess() -> Godot.FileDialog.Access {
         Godot.FileDialog.Access.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -452,7 +521,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setRootSubfolder(dir: Godot.GodotString) {
+
+    private func __setRootSubfolder(
+        dir: Godot.GodotString
+    ) {
         dir.withGodotUnsafeRawPointer { __ptr_dir in
         withUnsafeArgumentPackPointer(__ptr_dir) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -471,6 +543,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getRootSubfolder() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -489,7 +562,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setShowHiddenFiles(show: Bool) {
+
+    private func __setShowHiddenFiles(
+        show: Bool
+    ) {
         show.withGodotUnsafeRawPointer { __ptr_show in
         withUnsafeArgumentPackPointer(__ptr_show) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -508,6 +584,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __isShowingHiddenFiles() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -526,7 +603,10 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
-    private func __setUseNativeDialog(native: Bool) {
+
+    private func __setUseNativeDialog(
+        native: Bool
+    ) {
         native.withGodotUnsafeRawPointer { __ptr_native in
         withUnsafeArgumentPackPointer(__ptr_native) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -545,6 +625,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     private func __getUseNativeDialog() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -563,6 +644,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     public func deselectAll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -580,6 +662,7 @@ open class FileDialog: ConfirmationDialog {
         }
         }
     }()
+
     public func invalidate() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -701,6 +784,7 @@ open class FileDialog: ConfirmationDialog {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -713,5 +797,4 @@ open class FileDialog: ConfirmationDialog {
         }
         return _virtualFunctions!
     }
-
-    }
+}

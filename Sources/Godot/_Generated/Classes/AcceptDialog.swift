@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AcceptDialog: Window {
+
     public func confirmed() {
         _ = confirmedSignal.emit()
     }
+
     public lazy var confirmedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "confirmed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class AcceptDialog: Window {
     public func canceled() {
         _ = canceledSignal.emit()
     }
+
     public lazy var canceledSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "canceled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -43,16 +47,26 @@ open class AcceptDialog: Window {
 
     public struct CustomActionSignalInput: Godot.SignalInput {
         public let action: Godot.GodotStringName
-        fileprivate init(action: Godot.GodotStringName) {
+
+        fileprivate init(
+            action: Godot.GodotStringName
+        ) {
             self.action = action
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.action)]
         }
     }
-    public func customAction(action: Godot.GodotStringName) {
+
+    public func customAction(
+        action: Godot.GodotStringName
+    ) {
         _ = customActionSignal.emit(.init(action: action))
     }
+
     public lazy var customActionSignal: Godot.SignalEmitter<CustomActionSignalInput> = {
         .init(object: self, signalName: "custom_action") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -75,6 +89,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     public func okButton() -> Godot.Button? {
         Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -93,6 +108,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     public func label() -> Godot.Label? {
         Godot.Label?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,7 +127,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    private func __setHideOnOk(enabled: Bool) {
+
+    private func __setHideOnOk(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,6 +149,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     private func __getHideOnOk() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,7 +168,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    private func __setCloseOnEscape(enabled: Bool) {
+
+    private func __setCloseOnEscape(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,6 +190,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     private func __getCloseOnEscape() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -185,7 +209,12 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    public func addButton(text: Godot.GodotString, right: Bool = false, action: Godot.GodotString = "") -> Godot.Button? {
+
+    public func addButton(
+        text: Godot.GodotString,
+        right: Bool = false,
+        action: Godot.GodotString = ""
+    ) -> Godot.Button? {
         Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         right.withGodotUnsafeRawPointer { __ptr_right in
@@ -207,7 +236,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    public func addCancelButton(name: Godot.GodotString) -> Godot.Button? {
+
+    public func addCancelButton(
+        name: Godot.GodotString
+    ) -> Godot.Button? {
         Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -227,7 +259,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    public func removeButton(_ button: Godot.Control?) {
+
+    public func removeButton(
+        _ button: Godot.Control?
+    ) {
         button.withGodotUnsafeRawPointer { __ptr_button in
         withUnsafePointer(to: __ptr_button) { _ptr___ptr_button in
         withUnsafeArgumentPackPointer(_ptr___ptr_button) { __accessPtr in
@@ -247,7 +282,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    public func registerTextEnter(lineEdit: Godot.Control?) {
+
+    public func registerTextEnter(
+        lineEdit: Godot.Control?
+    ) {
         lineEdit.withGodotUnsafeRawPointer { __ptr_lineEdit in
         withUnsafePointer(to: __ptr_lineEdit) { _ptr___ptr_lineEdit in
         withUnsafeArgumentPackPointer(_ptr___ptr_lineEdit) { __accessPtr in
@@ -267,7 +305,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -286,6 +327,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -304,7 +346,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    private func __setAutowrap(_ autowrap: Bool) {
+
+    private func __setAutowrap(
+        _ autowrap: Bool
+    ) {
         autowrap.withGodotUnsafeRawPointer { __ptr_autowrap in
         withUnsafeArgumentPackPointer(__ptr_autowrap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +368,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     private func __hasAutowrap() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -341,7 +387,10 @@ open class AcceptDialog: Window {
         }
         }
     }()
-    private func __setOkButtonText(_ text: Godot.GodotString) {
+
+    private func __setOkButtonText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,6 +409,7 @@ open class AcceptDialog: Window {
         }
         }
     }()
+
     private func __getOkButtonText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -427,6 +477,7 @@ open class AcceptDialog: Window {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -439,5 +490,4 @@ open class AcceptDialog: Window {
         }
         return _virtualFunctions!
     }
-
-    }
+}

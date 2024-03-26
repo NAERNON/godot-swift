@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Script: Resource {
     internal static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func canInstantiate() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class Script: Resource {
         }
         }
     }()
-    public func instanceHas(baseObject: Godot.Object?) -> Bool {
+
+    public func instanceHas(
+        baseObject: Godot.Object?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         baseObject.withGodotUnsafeRawPointer { __ptr_baseObject in
         withUnsafePointer(to: __ptr_baseObject) { _ptr___ptr_baseObject in
@@ -51,6 +56,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func hasSourceCode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +75,7 @@ open class Script: Resource {
         }
         }
     }()
+
     private func __getSourceCode() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +94,10 @@ open class Script: Resource {
         }
         }
     }()
-    private func __setSourceCode(source: Godot.GodotString) {
+
+    private func __setSourceCode(
+        source: Godot.GodotString
+    ) {
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_source) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +116,10 @@ open class Script: Resource {
         }
         }
     }()
-    public func reload(keepState: Bool = false) -> Godot.ErrorType {
+
+    public func reload(
+        keepState: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         keepState.withGodotUnsafeRawPointer { __ptr_keepState in
         withUnsafeArgumentPackPointer(__ptr_keepState) { __accessPtr in
@@ -126,6 +139,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func baseScript() -> Godot.Script? {
         Godot.Script?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +158,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func instanceBaseType() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +177,10 @@ open class Script: Resource {
         }
         }
     }()
-    public func hasScriptSignal(signalName: Godot.GodotStringName) -> Bool {
+
+    public func hasScriptSignal(
+        signalName: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         signalName.withGodotUnsafeRawPointer { __ptr_signalName in
         withUnsafeArgumentPackPointer(__ptr_signalName) { __accessPtr in
@@ -182,6 +200,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func scriptPropertyList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +219,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func scriptMethodList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +238,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func scriptSignalList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,6 +257,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func scriptConstantMap() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,7 +276,10 @@ open class Script: Resource {
         }
         }
     }()
-    public func propertyDefaultValue(property: Godot.GodotStringName) -> Godot.Variant {
+
+    public func propertyDefaultValue(
+        property: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
@@ -274,6 +299,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func isTool() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -292,6 +318,7 @@ open class Script: Resource {
         }
         }
     }()
+
     public func isAbstract() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -315,6 +342,7 @@ open class Script: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -327,5 +355,4 @@ open class Script: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

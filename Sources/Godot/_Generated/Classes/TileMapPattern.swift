@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class TileMapPattern: Resource {
     internal static var __method_binding_set_cell: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func setCell(coords: Godot.Vector2I, sourceID: Int32 = -1, atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) {
+
+    public func setCell(
+        coords: Godot.Vector2I,
+        sourceID: Int32 = -1,
+        atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1),
+        alternativeTile: Int32 = -1
+    ) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
@@ -34,7 +41,10 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func hasCell(coords: Godot.Vector2I) -> Bool {
+
+    public func hasCell(
+        coords: Godot.Vector2I
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -54,7 +64,11 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func removeCell(coords: Godot.Vector2I, updateSize: Bool) {
+
+    public func removeCell(
+        coords: Godot.Vector2I,
+        updateSize: Bool
+    ) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         updateSize.withGodotUnsafeRawPointer { __ptr_updateSize in
         withUnsafeArgumentPackPointer(__ptr_coords, __ptr_updateSize) { __accessPtr in
@@ -74,7 +88,10 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellSourceID(coords: Godot.Vector2I) -> Int32 {
+
+    public func cellSourceID(
+        coords: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -94,7 +111,10 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellAtlasCoords(_ coords: Godot.Vector2I) -> Godot.Vector2I {
+
+    public func cellAtlasCoords(
+        _ coords: Godot.Vector2I
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -114,7 +134,10 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func cellAlternativeTile(coords: Godot.Vector2I) -> Int32 {
+
+    public func cellAlternativeTile(
+        coords: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
@@ -134,6 +157,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
+
     public func usedCells() -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +176,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
+
     public func size() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +195,10 @@ open class TileMapPattern: Resource {
         }
         }
     }()
-    public func setSize(_ size: Godot.Vector2I) {
+
+    public func setSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,6 +217,7 @@ open class TileMapPattern: Resource {
         }
         }
     }()
+
     public func isEmpty() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,6 +230,7 @@ open class TileMapPattern: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -213,5 +243,4 @@ open class TileMapPattern: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

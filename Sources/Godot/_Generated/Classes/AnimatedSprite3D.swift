@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class AnimatedSprite3D: SpriteBase3D {
+
     public func spriteFramesChanged() {
         _ = spriteFramesChangedSignal.emit()
     }
+
     public lazy var spriteFramesChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "sprite_frames_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class AnimatedSprite3D: SpriteBase3D {
     public func animationChanged() {
         _ = animationChangedSignal.emit()
     }
+
     public lazy var animationChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,6 +48,7 @@ open class AnimatedSprite3D: SpriteBase3D {
     public func frameChanged() {
         _ = frameChangedSignal.emit()
     }
+
     public lazy var frameChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "frame_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,6 +67,7 @@ open class AnimatedSprite3D: SpriteBase3D {
     public func animationLooped() {
         _ = animationLoopedSignal.emit()
     }
+
     public lazy var animationLoopedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_looped") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -80,6 +86,7 @@ open class AnimatedSprite3D: SpriteBase3D {
     public func animationFinished() {
         _ = animationFinishedSignal.emit()
     }
+
     public lazy var animationFinishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -102,7 +109,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setSpriteFrames(_ spriteFrames: Godot.SpriteFrames?) {
+
+    private func __setSpriteFrames(
+        _ spriteFrames: Godot.SpriteFrames?
+    ) {
         spriteFrames.withGodotUnsafeRawPointer { __ptr_spriteFrames in
         withUnsafePointer(to: __ptr_spriteFrames) { _ptr___ptr_spriteFrames in
         withUnsafeArgumentPackPointer(_ptr___ptr_spriteFrames) { __accessPtr in
@@ -122,6 +132,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getSpriteFrames() -> Godot.SpriteFrames? {
         Godot.SpriteFrames?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +151,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setAnimation(name: Godot.GodotStringName) {
+
+    private func __setAnimation(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,6 +173,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getAnimation() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +192,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setAutoplay(name: Godot.GodotString) {
+
+    private func __setAutoplay(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -196,6 +214,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getAutoplay() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -214,6 +233,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     public func isPlaying() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -232,7 +252,12 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    public func play(name: Godot.GodotStringName = "", customSpeed: Double = 1.0, fromEnd end: Bool = false) {
+
+    public func play(
+        name: Godot.GodotStringName = "",
+        customSpeed: Double = 1.0,
+        fromEnd end: Bool = false
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         customSpeed.withGodotUnsafeRawPointer { __ptr_customSpeed in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -253,7 +278,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    public func playBackwards(name: Godot.GodotStringName = "") {
+
+    public func playBackwards(
+        name: Godot.GodotStringName = ""
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,6 +300,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     public func pause() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -289,6 +318,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -306,7 +336,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setFrame(_ frame: Int32) {
+
+    private func __setFrame(
+        _ frame: Int32
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         withUnsafeArgumentPackPointer(__ptr_frame) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -325,6 +358,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getFrame() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,7 +377,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setFrameProgress(_ progress: Double) {
+
+    private func __setFrameProgress(
+        _ progress: Double
+    ) {
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_progress) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -362,6 +399,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getFrameProgress() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -380,7 +418,11 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    public func setFrameAndProgress(frame: Int32, progress: Double) {
+
+    public func setFrameAndProgress(
+        frame: Int32,
+        progress: Double
+    ) {
         frame.withGodotUnsafeRawPointer { __ptr_frame in
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_frame, __ptr_progress) { __accessPtr in
@@ -400,7 +442,10 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
-    private func __setSpeedScale(_ speedScale: Double) {
+
+    private func __setSpeedScale(
+        _ speedScale: Double
+    ) {
         speedScale.withGodotUnsafeRawPointer { __ptr_speedScale in
         withUnsafeArgumentPackPointer(__ptr_speedScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +464,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     private func __getSpeedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +483,7 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         }
     }()
+
     public func playingSpeed() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -515,6 +562,7 @@ open class AnimatedSprite3D: SpriteBase3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -527,5 +575,4 @@ open class AnimatedSprite3D: SpriteBase3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectCapture: AudioEffect {
     internal static var __method_binding_can_get_buffer: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
-    public func canGetBuffer(frames: Int32) -> Bool {
+
+    public func canGetBuffer(
+        frames: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
@@ -32,7 +36,10 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
-    public func buffer(frames: Int32) -> Godot.PackedVector2Array {
+
+    public func buffer(
+        frames: Int32
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
@@ -52,6 +59,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     public func clearBuffer() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -69,7 +77,10 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
-    private func __setBufferLength(bufferLengthSeconds: Double) {
+
+    private func __setBufferLength(
+        bufferLengthSeconds: Double
+    ) {
         bufferLengthSeconds.withGodotUnsafeRawPointer { __ptr_bufferLengthSeconds in
         withUnsafeArgumentPackPointer(__ptr_bufferLengthSeconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +99,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     private func __getBufferLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     public func framesAvailable() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,6 +137,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     public func discardedFrames() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +156,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     public func bufferLengthFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +175,7 @@ open class AudioEffectCapture: AudioEffect {
         }
         }
     }()
+
     public func pushedFrames() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,6 +199,7 @@ open class AudioEffectCapture: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -195,5 +212,4 @@ open class AudioEffectCapture: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

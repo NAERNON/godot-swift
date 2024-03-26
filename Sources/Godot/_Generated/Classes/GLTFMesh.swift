@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFMesh: Resource {
     internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFMesh: Resource {
         }
         }
     }()
+
     private func __getMesh() -> Godot.ImporterMesh? {
         Godot.ImporterMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFMesh: Resource {
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.ImporterMesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.ImporterMesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -50,6 +55,7 @@ open class GLTFMesh: Resource {
         }
         }
     }()
+
     private func __getBlendWeights() -> Godot.PackedFloat32Array {
         Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +74,10 @@ open class GLTFMesh: Resource {
         }
         }
     }()
-    private func __setBlendWeights(_ blendWeights: Godot.PackedFloat32Array) {
+
+    private func __setBlendWeights(
+        _ blendWeights: Godot.PackedFloat32Array
+    ) {
         blendWeights.withGodotUnsafeRawPointer { __ptr_blendWeights in
         withUnsafeArgumentPackPointer(__ptr_blendWeights) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,6 +96,7 @@ open class GLTFMesh: Resource {
         }
         }
     }()
+
     private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material?> {
         Godot.GodotArray<Godot.Material?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +115,10 @@ open class GLTFMesh: Resource {
         }
         }
     }()
-    private func __setInstanceMaterials(_ instanceMaterials: Godot.GodotArray<Godot.Material?>) {
+
+    private func __setInstanceMaterials(
+        _ instanceMaterials: Godot.GodotArray<Godot.Material?>
+    ) {
         instanceMaterials.withGodotUnsafeRawPointer { __ptr_instanceMaterials in
         withUnsafeArgumentPackPointer(__ptr_instanceMaterials) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class GLTFMesh: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class GLTFMesh: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

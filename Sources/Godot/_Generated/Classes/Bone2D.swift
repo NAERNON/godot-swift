@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Bone2D: Node2D {
     internal static var __method_binding_set_rest: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Bone2D: Node2D {
         }
         }
     }()
-    private func __setRest(_ rest: Godot.Transform2D) {
+
+    private func __setRest(
+        _ rest: Godot.Transform2D
+    ) {
         rest.withGodotUnsafeRawPointer { __ptr_rest in
         withUnsafeArgumentPackPointer(__ptr_rest) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     private func __getRest() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func applyRest() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -66,6 +72,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func skeletonRest() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +91,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func indexInSkeleton() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +110,10 @@ open class Bone2D: Node2D {
         }
         }
     }()
-    public func setAutocalculateLengthAndAngle(autoCalculate: Bool) {
+
+    public func setAutocalculateLengthAndAngle(
+        autoCalculate: Bool
+    ) {
         autoCalculate.withGodotUnsafeRawPointer { __ptr_autoCalculate in
         withUnsafeArgumentPackPointer(__ptr_autoCalculate) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +132,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func autocalculateLengthAndAngle() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +151,10 @@ open class Bone2D: Node2D {
         }
         }
     }()
-    public func setLength(_ length: Double) {
+
+    public func setLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +173,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func length() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,7 +192,10 @@ open class Bone2D: Node2D {
         }
         }
     }()
-    public func setBoneAngle(_ angle: Double) {
+
+    public func setBoneAngle(
+        _ angle: Double
+    ) {
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         withUnsafeArgumentPackPointer(__ptr_angle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,6 +214,7 @@ open class Bone2D: Node2D {
         }
         }
     }()
+
     public func boneAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +238,7 @@ open class Bone2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -230,5 +251,4 @@ open class Bone2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

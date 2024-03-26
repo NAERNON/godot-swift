@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Curve: Resource {
     public enum TangentMode: UInt32, GodotEnum {
         case free = 0
         case linear = 1
         case modeCount = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Free", 0),
@@ -20,6 +22,7 @@ open class Curve: Resource {
     public func rangeChanged() {
         _ = rangeChangedSignal.emit()
     }
+
     public lazy var rangeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "range_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,6 +45,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     private func __getPointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -60,7 +64,10 @@ open class Curve: Resource {
         }
         }
     }()
-    private func __setPointCount(_ count: Int32) {
+
+    private func __setPointCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,7 +86,14 @@ open class Curve: Resource {
         }
         }
     }()
-    public func addPoint(position: Godot.Vector2, leftTangent: Double = 0, rightTangent: Double = 0, leftMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!, rightMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!) -> Int32 {
+
+    public func addPoint(
+        position: Godot.Vector2,
+        leftTangent: Double = 0,
+        rightTangent: Double = 0,
+        leftMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!,
+        rightMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         leftTangent.withGodotUnsafeRawPointer { __ptr_leftTangent in
@@ -103,7 +117,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func removePoint(index: Int32) {
+
+    public func removePoint(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +139,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     public func clearPoints() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -139,7 +157,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func pointPosition(index: Int32) -> Godot.Vector2 {
+
+    public func pointPosition(
+        index: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -159,7 +180,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointValue(index: Int32, y: Double) {
+
+    public func setPointValue(
+        index: Int32,
+        y: Double
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         y.withGodotUnsafeRawPointer { __ptr_y in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_y) { __accessPtr in
@@ -179,7 +204,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointOffset(index: Int32, offset: Double) -> Int32 {
+
+    public func setPointOffset(
+        index: Int32,
+        offset: Double
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -200,7 +229,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func sample(offset: Double) -> Double {
+
+    public func sample(
+        offset: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
@@ -220,7 +252,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func sampleBaked(offset: Double) -> Double {
+
+    public func sampleBaked(
+        offset: Double
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
@@ -240,7 +275,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func pointLeftTangent(index: Int32) -> Double {
+
+    public func pointLeftTangent(
+        index: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -260,7 +298,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func pointRightTangent(index: Int32) -> Double {
+
+    public func pointRightTangent(
+        index: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -280,7 +321,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func pointLeftMode(index: Int32) -> Godot.Curve.TangentMode {
+
+    public func pointLeftMode(
+        index: Int32
+    ) -> Godot.Curve.TangentMode {
         Godot.Curve.TangentMode.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -300,7 +344,10 @@ open class Curve: Resource {
         }
         }
     }()
-    public func pointRightMode(index: Int32) -> Godot.Curve.TangentMode {
+
+    public func pointRightMode(
+        index: Int32
+    ) -> Godot.Curve.TangentMode {
         Godot.Curve.TangentMode.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -320,7 +367,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointLeftTangent(index: Int32, tangent: Double) {
+
+    public func setPointLeftTangent(
+        index: Int32,
+        tangent: Double
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         tangent.withGodotUnsafeRawPointer { __ptr_tangent in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_tangent) { __accessPtr in
@@ -340,7 +391,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointRightTangent(index: Int32, tangent: Double) {
+
+    public func setPointRightTangent(
+        index: Int32,
+        tangent: Double
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         tangent.withGodotUnsafeRawPointer { __ptr_tangent in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_tangent) { __accessPtr in
@@ -360,7 +415,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointLeftMode(index: Int32, mode: Godot.Curve.TangentMode) {
+
+    public func setPointLeftMode(
+        index: Int32,
+        mode: Godot.Curve.TangentMode
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_mode) { __accessPtr in
@@ -380,7 +439,11 @@ open class Curve: Resource {
         }
         }
     }()
-    public func setPointRightMode(index: Int32, mode: Godot.Curve.TangentMode) {
+
+    public func setPointRightMode(
+        index: Int32,
+        mode: Godot.Curve.TangentMode
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_mode) { __accessPtr in
@@ -400,6 +463,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     private func __getMinValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -418,7 +482,10 @@ open class Curve: Resource {
         }
         }
     }()
-    private func __setMinValue(min: Double) {
+
+    private func __setMinValue(
+        min: Double
+    ) {
         min.withGodotUnsafeRawPointer { __ptr_min in
         withUnsafeArgumentPackPointer(__ptr_min) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,6 +504,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     private func __getMaxValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -455,7 +523,10 @@ open class Curve: Resource {
         }
         }
     }()
-    private func __setMaxValue(max: Double) {
+
+    private func __setMaxValue(
+        max: Double
+    ) {
         max.withGodotUnsafeRawPointer { __ptr_max in
         withUnsafeArgumentPackPointer(__ptr_max) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,6 +545,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     public func cleanDupes() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -491,6 +563,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     public func bake() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -508,6 +581,7 @@ open class Curve: Resource {
         }
         }
     }()
+
     private func __getBakeResolution() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -526,7 +600,10 @@ open class Curve: Resource {
         }
         }
     }()
-    private func __setBakeResolution(_ resolution: Int32) {
+
+    private func __setBakeResolution(
+        _ resolution: Int32
+    ) {
         resolution.withGodotUnsafeRawPointer { __ptr_resolution in
         withUnsafeArgumentPackPointer(__ptr_resolution) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -583,6 +660,7 @@ open class Curve: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -595,5 +673,4 @@ open class Curve: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

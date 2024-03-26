@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PolygonPathFinder: Resource {
     internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func setup(points: Godot.PackedVector2Array, connections: Godot.PackedInt32Array) {
+
+    public func setup(
+        points: Godot.PackedVector2Array,
+        connections: Godot.PackedInt32Array
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         connections.withGodotUnsafeRawPointer { __ptr_connections in
         withUnsafeArgumentPackPointer(__ptr_points, __ptr_connections) { __accessPtr in
@@ -32,7 +37,11 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func findPath(from: Godot.Vector2, to: Godot.Vector2) -> Godot.PackedVector2Array {
+
+    public func findPath(
+        from: Godot.Vector2,
+        to: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -53,7 +62,11 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func intersections(from: Godot.Vector2, to: Godot.Vector2) -> Godot.PackedVector2Array {
+
+    public func intersections(
+        from: Godot.Vector2,
+        to: Godot.Vector2
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -74,7 +87,10 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func closestPoint(_ point: Godot.Vector2) -> Godot.Vector2 {
+
+    public func closestPoint(
+        _ point: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -94,7 +110,10 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func isPointInside(point: Godot.Vector2) -> Bool {
+
+    public func isPointInside(
+        point: Godot.Vector2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -114,7 +133,11 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func setPointPenalty(idx: Int32, penalty: Double) {
+
+    public func setPointPenalty(
+        idx: Int32,
+        penalty: Double
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         penalty.withGodotUnsafeRawPointer { __ptr_penalty in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_penalty) { __accessPtr in
@@ -134,7 +157,10 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
-    public func pointPenalty(idx: Int32) -> Double {
+
+    public func pointPenalty(
+        idx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -154,6 +180,7 @@ open class PolygonPathFinder: Resource {
         }
         }
     }()
+
     public func bounds() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -166,6 +193,7 @@ open class PolygonPathFinder: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -178,5 +206,4 @@ open class PolygonPathFinder: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

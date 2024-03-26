@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OptionButton: Button {
     public struct ItemSelectedSignalInput: Godot.SignalInput {
         public let index: Int
-        fileprivate init(index: Int) {
+
+        fileprivate init(
+            index: Int
+        ) {
             self.index = index
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index)]
         }
     }
-    public func itemSelected(index: Int) {
+
+    public func itemSelected(
+        index: Int
+    ) {
         _ = itemSelectedSignal.emit(.init(index: index))
     }
+
     public lazy var itemSelectedSignal: Godot.SignalEmitter<ItemSelectedSignalInput> = {
         .init(object: self, signalName: "item_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class OptionButton: Button {
 
     public struct ItemFocusedSignalInput: Godot.SignalInput {
         public let index: Int
-        fileprivate init(index: Int) {
+
+        fileprivate init(
+            index: Int
+        ) {
             self.index = index
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index)]
         }
     }
-    public func itemFocused(index: Int) {
+
+    public func itemFocused(
+        index: Int
+    ) {
         _ = itemFocusedSignal.emit(.init(index: index))
     }
+
     public lazy var itemFocusedSignal: Godot.SignalEmitter<ItemFocusedSignalInput> = {
         .init(object: self, signalName: "item_focused") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,7 +87,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func addItem(label: Godot.GodotString, id: Int32 = -1) {
+
+    public func addItem(
+        label: Godot.GodotString,
+        id: Int32 = -1
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_label, __ptr_id) { __accessPtr in
@@ -86,7 +111,12 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func addIconItem(texture: Godot.Texture2D?, label: Godot.GodotString, id: Int32 = -1) {
+
+    public func addIconItem(
+        texture: Godot.Texture2D?,
+        label: Godot.GodotString,
+        id: Int32 = -1
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -108,7 +138,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemText(idx: Int32, text: Godot.GodotString) {
+
+    public func setItemText(
+        idx: Int32,
+        text: Godot.GodotString
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_text) { __accessPtr in
@@ -128,7 +162,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemIcon(idx: Int32, texture: Godot.Texture2D?) {
+
+    public func setItemIcon(
+        idx: Int32,
+        texture: Godot.Texture2D?
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -149,7 +187,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemDisabled(idx: Int32, disabled: Bool) {
+
+    public func setItemDisabled(
+        idx: Int32,
+        disabled: Bool
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_disabled) { __accessPtr in
@@ -169,7 +211,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemID(idx: Int32, id: Int32) {
+
+    public func setItemID(
+        idx: Int32,
+        id: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_id) { __accessPtr in
@@ -189,7 +235,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemMetadata<Value: VariantStorableIn>(idx: Int32, metadata: Value) {
+
+    public func setItemMetadata<Value: VariantStorableIn>(
+        idx: Int32,
+        metadata: Value
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { __ptr_metadata in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_metadata) { __accessPtr in
@@ -209,7 +259,11 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemTooltip(idx: Int32, tooltip: Godot.GodotString) {
+
+    public func setItemTooltip(
+        idx: Int32,
+        tooltip: Godot.GodotString
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_tooltip) { __accessPtr in
@@ -229,7 +283,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemText(idx: Int32) -> Godot.GodotString {
+
+    public func itemText(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -249,7 +306,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemIcon(idx: Int32) -> Godot.Texture2D? {
+
+    public func itemIcon(
+        idx: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -269,7 +329,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemID(idx: Int32) -> Int32 {
+
+    public func itemID(
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -289,7 +352,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemIndex(id: Int32) -> Int32 {
+
+    public func itemIndex(
+        id: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -309,7 +375,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemMetadata(idx: Int32) -> Godot.Variant {
+
+    public func itemMetadata(
+        idx: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -329,7 +398,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func itemTooltip(idx: Int32) -> Godot.GodotString {
+
+    public func itemTooltip(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -349,7 +421,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func isItemDisabled(idx: Int32) -> Bool {
+
+    public func isItemDisabled(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -369,7 +444,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func isItemSeparator(idx: Int32) -> Bool {
+
+    public func isItemSeparator(
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -389,7 +467,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func addSeparator(text: Godot.GodotString = "") {
+
+    public func addSeparator(
+        text: Godot.GodotString = ""
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -408,6 +489,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -425,7 +507,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func select(idx: Int32) {
+
+    public func select(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -444,6 +529,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     private func __getSelected() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,6 +548,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func selectedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,6 +567,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func selectedMetadata() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -498,7 +586,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func removeItem(idx: Int32) {
+
+    public func removeItem(
+        idx: Int32
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -517,6 +608,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func popup() -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -535,6 +627,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func showPopup() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -552,7 +645,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    private func __setItemCount(_ count: Int32) {
+
+    private func __setItemCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -571,6 +667,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     private func __getItemCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -589,6 +686,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     public func hasSelectableItems() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -607,7 +705,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func selectableItem(fromLast last: Bool = false) -> Int32 {
+
+    public func selectableItem(
+        fromLast last: Bool = false
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         last.withGodotUnsafeRawPointer { __ptr_last in
         withUnsafeArgumentPackPointer(__ptr_last) { __accessPtr in
@@ -627,7 +728,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    private func __setFitToLongestItem(fit: Bool) {
+
+    private func __setFitToLongestItem(
+        fit: Bool
+    ) {
         fit.withGodotUnsafeRawPointer { __ptr_fit in
         withUnsafeArgumentPackPointer(__ptr_fit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -646,6 +750,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     private func __isFitToLongestItem() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -664,7 +769,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    private func __setAllowReselect(allow: Bool) {
+
+    private func __setAllowReselect(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -683,6 +791,7 @@ open class OptionButton: Button {
         }
         }
     }()
+
     private func __getAllowReselect() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -701,7 +810,10 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setDisableShortcuts(disabled: Bool) {
+
+    public func setDisableShortcuts(
+        disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -753,6 +865,7 @@ open class OptionButton: Button {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -765,5 +878,4 @@ open class OptionButton: Button {
         }
         return _virtualFunctions!
     }
-
-    }
+}

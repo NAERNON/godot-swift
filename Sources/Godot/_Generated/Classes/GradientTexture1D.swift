@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GradientTexture1D: Texture2D {
     internal static var __method_binding_set_gradient: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GradientTexture1D: Texture2D {
         }
         }
     }()
-    private func __setGradient(_ gradient: Godot.Gradient?) {
+
+    private func __setGradient(
+        _ gradient: Godot.Gradient?
+    ) {
         gradient.withGodotUnsafeRawPointer { __ptr_gradient in
         withUnsafePointer(to: __ptr_gradient) { _ptr___ptr_gradient in
         withUnsafeArgumentPackPointer(_ptr___ptr_gradient) { __accessPtr in
@@ -32,6 +36,7 @@ open class GradientTexture1D: Texture2D {
         }
         }
     }()
+
     private func __getGradient() -> Godot.Gradient? {
         Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class GradientTexture1D: Texture2D {
         }
         }
     }()
-    public func setWidth(_ width: Int32) {
+
+    public func setWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +77,10 @@ open class GradientTexture1D: Texture2D {
         }
         }
     }()
-    private func __setUseHdr(enabled: Bool) {
+
+    private func __setUseHdr(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +99,7 @@ open class GradientTexture1D: Texture2D {
         }
         }
     }()
+
     private func __isUsingHdr() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +134,7 @@ open class GradientTexture1D: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -134,5 +147,4 @@ open class GradientTexture1D: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

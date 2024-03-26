@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Shader: Resource {
     public enum Mode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class Shader: Resource {
         case particles = 2
         case sky = 3
         case fog = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Spatial", 0),
@@ -28,6 +30,7 @@ open class Shader: Resource {
         }
         }
     }()
+
     public func mode() -> Godot.Shader.Mode {
         Godot.Shader.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -46,7 +49,10 @@ open class Shader: Resource {
         }
         }
     }()
-    private func __setCode(_ code: Godot.GodotString) {
+
+    private func __setCode(
+        _ code: Godot.GodotString
+    ) {
         code.withGodotUnsafeRawPointer { __ptr_code in
         withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,6 +71,7 @@ open class Shader: Resource {
         }
         }
     }()
+
     private func __getCode() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -83,7 +90,12 @@ open class Shader: Resource {
         }
         }
     }()
-    public func setDefaultTextureParameter(name: Godot.GodotStringName, texture: Godot.Texture2D?, index: Int32 = 0) {
+
+    public func setDefaultTextureParameter(
+        name: Godot.GodotStringName,
+        texture: Godot.Texture2D?,
+        index: Int32 = 0
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -105,7 +117,11 @@ open class Shader: Resource {
         }
         }
     }()
-    public func defaultTextureParameter(name: Godot.GodotStringName, index: Int32 = 0) -> Godot.Texture2D? {
+
+    public func defaultTextureParameter(
+        name: Godot.GodotStringName,
+        index: Int32 = 0
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -126,7 +142,10 @@ open class Shader: Resource {
         }
         }
     }()
-    public func shaderUniformList(getGroups: Bool = false) -> Godot.AnyGodotArray {
+
+    public func shaderUniformList(
+        getGroups: Bool = false
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         getGroups.withGodotUnsafeRawPointer { __ptr_getGroups in
         withUnsafeArgumentPackPointer(__ptr_getGroups) { __accessPtr in
@@ -151,6 +170,7 @@ open class Shader: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +183,4 @@ open class Shader: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

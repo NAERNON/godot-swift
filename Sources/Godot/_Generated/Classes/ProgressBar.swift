@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ProgressBar: Range {
     public enum FillMode: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class ProgressBar: Range {
         case endToBegin = 1
         case topToBottom = 2
         case bottomToTop = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Begin To End", 0),
@@ -26,7 +28,10 @@ open class ProgressBar: Range {
         }
         }
     }()
-    private func __setFillMode(_ mode: Int32) {
+
+    private func __setFillMode(
+        _ mode: Int32
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -45,6 +50,7 @@ open class ProgressBar: Range {
         }
         }
     }()
+
     private func __getFillMode() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +69,10 @@ open class ProgressBar: Range {
         }
         }
     }()
-    private func __setShowPercentage(visible: Bool) {
+
+    private func __setShowPercentage(
+        visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,6 +91,7 @@ open class ProgressBar: Range {
         }
         }
     }()
+
     private func __isPercentageShown() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,6 +126,7 @@ open class ProgressBar: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -128,5 +139,4 @@ open class ProgressBar: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

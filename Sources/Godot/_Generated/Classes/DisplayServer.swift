@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class DisplayServer: Object {
     public enum Feature: UInt32, GodotEnum {
@@ -27,6 +28,7 @@ open class DisplayServer: Object {
         case textToSpeech = 19
         case extendToTitle = 20
         case screenCapture = 21
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Global Menu", 0),
@@ -52,12 +54,14 @@ open class DisplayServer: Object {
             ("Screen Capture", 21),]
         }
     }
+
     public enum MouseMode: UInt32, GodotEnum {
         case visible = 0
         case hidden = 1
         case captured = 2
         case confined = 3
         case confinedHidden = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Visible", 0),
@@ -67,6 +71,7 @@ open class DisplayServer: Object {
             ("Confined Hidden", 4),]
         }
     }
+
     public enum ScreenOrientation: UInt32, GodotEnum {
         case landscape = 0
         case portrait = 1
@@ -75,6 +80,7 @@ open class DisplayServer: Object {
         case sensorLandscape = 4
         case sensorPortrait = 5
         case sensor = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Landscape", 0),
@@ -86,6 +92,7 @@ open class DisplayServer: Object {
             ("Sensor", 6),]
         }
     }
+
     public enum VirtualKeyboardType: UInt32, GodotEnum {
         case `default` = 0
         case multiline = 1
@@ -95,6 +102,7 @@ open class DisplayServer: Object {
         case emailAddress = 5
         case password = 6
         case url = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Default", 0),
@@ -107,6 +115,7 @@ open class DisplayServer: Object {
             ("Url", 7),]
         }
     }
+
     public enum CursorShape: UInt32, GodotEnum {
         case arrow = 0
         case ibeam = 1
@@ -126,6 +135,7 @@ open class DisplayServer: Object {
         case hsplit = 15
         case help = 16
         case max = 17
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Arrow", 0),
@@ -148,12 +158,14 @@ open class DisplayServer: Object {
             ("Max", 17),]
         }
     }
+
     public enum FileDialogMode: UInt32, GodotEnum {
         case openFile = 0
         case openFiles = 1
         case openDir = 2
         case openAny = 3
         case saveFile = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Open File", 0),
@@ -163,12 +175,14 @@ open class DisplayServer: Object {
             ("Save File", 4),]
         }
     }
+
     public enum WindowMode: UInt32, GodotEnum {
         case windowed = 0
         case minimized = 1
         case maximized = 2
         case fullscreen = 3
         case exclusiveFullscreen = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Windowed", 0),
@@ -178,6 +192,7 @@ open class DisplayServer: Object {
             ("Exclusive Fullscreen", 4),]
         }
     }
+
     public enum WindowFlags: UInt32, GodotEnum {
         case resizeDisabled = 0
         case borderless = 1
@@ -188,6 +203,7 @@ open class DisplayServer: Object {
         case extendToTitle = 6
         case mousePassthrough = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Resize Disabled", 0),
@@ -201,6 +217,7 @@ open class DisplayServer: Object {
             ("Max", 8),]
         }
     }
+
     public enum WindowEvent: UInt32, GodotEnum {
         case mouseEnter = 0
         case mouseExit = 1
@@ -210,6 +227,7 @@ open class DisplayServer: Object {
         case goBackRequest = 5
         case dpiChange = 6
         case titlebarChange = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mouse Enter", 0),
@@ -222,11 +240,13 @@ open class DisplayServer: Object {
             ("Titlebar Change", 7),]
         }
     }
+
     public enum VSyncMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case adaptive = 2
         case mailbox = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -235,11 +255,13 @@ open class DisplayServer: Object {
             ("Mailbox", 3),]
         }
     }
+
     public enum HandleType: UInt32, GodotEnum {
         case displayHandle = 0
         case windowHandle = 1
         case windowView = 2
         case openglContext = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Display Handle", 0),
@@ -248,11 +270,13 @@ open class DisplayServer: Object {
             ("Opengl Context", 3),]
         }
     }
+
     public enum TTSUtteranceEvent: UInt32, GodotEnum {
         case started = 0
         case ended = 1
         case canceled = 2
         case boundary = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Started", 0),
@@ -263,10 +287,15 @@ open class DisplayServer: Object {
     }
 
     public static let screenWithMouseFocus: Int = -4
+
     public static let screenWithKeyboardFocus: Int = -3
+
     public static let screenPrimary: Int = -2
+
     public static let screenOfMainWindow: Int = -1
+
     public static let mainWindowID: Int = 0
+
     public static let invalidWindowID: Int = -1
 
     internal static var __method_binding_has_feature: GDExtensionMethodBindPtr = {
@@ -276,7 +305,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func hasFeature(_ feature: Godot.DisplayServer.Feature) -> Bool {
+
+    public func hasFeature(
+        _ feature: Godot.DisplayServer.Feature
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
@@ -296,6 +328,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func name() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -314,7 +347,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetPopupCallbacks(menuRoot: Godot.GodotString, openCallback: Godot.Callable, closeCallback: Godot.Callable) {
+
+    public func globalMenuSetPopupCallbacks(
+        menuRoot: Godot.GodotString,
+        openCallback: Godot.Callable,
+        closeCallback: Godot.Callable
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         openCallback.withGodotUnsafeRawPointer { __ptr_openCallback in
         closeCallback.withGodotUnsafeRawPointer { __ptr_closeCallback in
@@ -335,7 +373,13 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddSubmenuItem(menuRoot: Godot.GodotString, label: Godot.GodotString, submenu: Godot.GodotString, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddSubmenuItem(
+        menuRoot: Godot.GodotString,
+        label: Godot.GodotString,
+        submenu: Godot.GodotString,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -358,7 +402,16 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -384,7 +437,16 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddCheckItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddCheckItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -410,7 +472,17 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddIconItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        icon: Godot.Texture2D?,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -438,7 +510,17 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconCheckItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddIconCheckItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        icon: Godot.Texture2D?,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -466,7 +548,16 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddRadioCheckItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddRadioCheckItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -492,7 +583,17 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconRadioCheckItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddIconRadioCheckItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        icon: Godot.Texture2D?,
+        label: Godot.GodotString,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -520,7 +621,18 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddMultistateItem<Value: VariantStorableIn>(menuRoot: Godot.GodotString, label: Godot.GodotString, maxStates: Int32, defaultState: Int32, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddMultistateItem<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        label: Godot.GodotString,
+        maxStates: Int32,
+        defaultState: Int32,
+        callback: Godot.Callable = Callable(),
+        keyCallback: Godot.Callable = Callable(),
+        tag: Value = Variant(),
+        accelerator: Godot.Key = Key(rawValue: 0)!,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -548,7 +660,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddSeparator(menuRoot: Godot.GodotString, index: Int32 = -1) -> Int32 {
+
+    public func globalMenuAddSeparator(
+        menuRoot: Godot.GodotString,
+        index: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -569,7 +685,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemIndexFromText(menuRoot: Godot.GodotString, text: Godot.GodotString) -> Int32 {
+
+    public func globalMenuGetItemIndexFromText(
+        menuRoot: Godot.GodotString,
+        text: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -590,7 +710,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemIndexFromTag<Value: VariantStorableIn>(menuRoot: Godot.GodotString, tag: Value) -> Int32 {
+
+    public func globalMenuGetItemIndexFromTag<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        tag: Value
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         Godot.Variant.withStorageUnsafeRawPointer(to: tag) { __ptr_tag in
@@ -611,7 +735,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuIsItemChecked(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+
+    public func globalMenuIsItemChecked(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -632,7 +760,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuIsItemCheckable(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+
+    public func globalMenuIsItemCheckable(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -653,7 +785,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuIsItemRadioCheckable(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+
+    public func globalMenuIsItemRadioCheckable(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -674,7 +810,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemCallback(menuRoot: Godot.GodotString, idx: Int32) -> Godot.Callable {
+
+    public func globalMenuGetItemCallback(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.Callable {
         Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -695,7 +835,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemKeyCallback(menuRoot: Godot.GodotString, idx: Int32) -> Godot.Callable {
+
+    public func globalMenuGetItemKeyCallback(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.Callable {
         Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -716,7 +860,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemTag(menuRoot: Godot.GodotString, idx: Int32) -> Godot.Variant {
+
+    public func globalMenuGetItemTag(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -737,7 +885,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemText(menuRoot: Godot.GodotString, idx: Int32) -> Godot.GodotString {
+
+    public func globalMenuGetItemText(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -758,7 +910,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemSubmenu(menuRoot: Godot.GodotString, idx: Int32) -> Godot.GodotString {
+
+    public func globalMenuGetItemSubmenu(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -779,7 +935,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemAccelerator(menuRoot: Godot.GodotString, idx: Int32) -> Godot.Key {
+
+    public func globalMenuGetItemAccelerator(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -800,7 +960,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuIsItemDisabled(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+
+    public func globalMenuIsItemDisabled(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -821,7 +985,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuIsItemHidden(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+
+    public func globalMenuIsItemHidden(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -842,7 +1010,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemTooltip(menuRoot: Godot.GodotString, idx: Int32) -> Godot.GodotString {
+
+    public func globalMenuGetItemTooltip(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -863,7 +1035,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemState(menuRoot: Godot.GodotString, idx: Int32) -> Int32 {
+
+    public func globalMenuGetItemState(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -884,7 +1060,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemMaxStates(menuRoot: Godot.GodotString, idx: Int32) -> Int32 {
+
+    public func globalMenuGetItemMaxStates(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -905,7 +1085,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemIcon(menuRoot: Godot.GodotString, idx: Int32) -> Godot.Texture2D? {
+
+    public func globalMenuGetItemIcon(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -926,7 +1110,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemIndentationLevel(menuRoot: Godot.GodotString, idx: Int32) -> Int32 {
+
+    public func globalMenuGetItemIndentationLevel(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
@@ -947,7 +1135,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemChecked(menuRoot: Godot.GodotString, idx: Int32, checked: Bool) {
+
+    public func globalMenuSetItemChecked(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        checked: Bool
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         checked.withGodotUnsafeRawPointer { __ptr_checked in
@@ -968,7 +1161,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemCheckable(menuRoot: Godot.GodotString, idx: Int32, checkable: Bool) {
+
+    public func globalMenuSetItemCheckable(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        checkable: Bool
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         checkable.withGodotUnsafeRawPointer { __ptr_checkable in
@@ -989,7 +1187,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemRadioCheckable(menuRoot: Godot.GodotString, idx: Int32, checkable: Bool) {
+
+    public func globalMenuSetItemRadioCheckable(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        checkable: Bool
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         checkable.withGodotUnsafeRawPointer { __ptr_checkable in
@@ -1010,7 +1213,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemCallback(menuRoot: Godot.GodotString, idx: Int32, callback: Godot.Callable) {
+
+    public func globalMenuSetItemCallback(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        callback: Godot.Callable
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
@@ -1031,7 +1239,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemHoverCallbacks(menuRoot: Godot.GodotString, idx: Int32, callback: Godot.Callable) {
+
+    public func globalMenuSetItemHoverCallbacks(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        callback: Godot.Callable
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
@@ -1052,7 +1265,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemKeyCallback(menuRoot: Godot.GodotString, idx: Int32, keyCallback: Godot.Callable) {
+
+    public func globalMenuSetItemKeyCallback(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        keyCallback: Godot.Callable
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         keyCallback.withGodotUnsafeRawPointer { __ptr_keyCallback in
@@ -1073,7 +1291,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemTag<Value: VariantStorableIn>(menuRoot: Godot.GodotString, idx: Int32, tag: Value) {
+
+    public func globalMenuSetItemTag<Value: VariantStorableIn>(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        tag: Value
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         Godot.Variant.withStorageUnsafeRawPointer(to: tag) { __ptr_tag in
@@ -1094,7 +1317,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemText(menuRoot: Godot.GodotString, idx: Int32, text: Godot.GodotString) {
+
+    public func globalMenuSetItemText(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        text: Godot.GodotString
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         text.withGodotUnsafeRawPointer { __ptr_text in
@@ -1115,7 +1343,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemSubmenu(menuRoot: Godot.GodotString, idx: Int32, submenu: Godot.GodotString) {
+
+    public func globalMenuSetItemSubmenu(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        submenu: Godot.GodotString
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         submenu.withGodotUnsafeRawPointer { __ptr_submenu in
@@ -1136,7 +1369,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemAccelerator(menuRoot: Godot.GodotString, idx: Int32, keycode: Godot.Key) {
+
+    public func globalMenuSetItemAccelerator(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        keycode: Godot.Key
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
@@ -1157,7 +1395,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemDisabled(menuRoot: Godot.GodotString, idx: Int32, disabled: Bool) {
+
+    public func globalMenuSetItemDisabled(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        disabled: Bool
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
@@ -1178,7 +1421,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemHidden(menuRoot: Godot.GodotString, idx: Int32, hidden: Bool) {
+
+    public func globalMenuSetItemHidden(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        hidden: Bool
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
@@ -1199,7 +1447,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemTooltip(menuRoot: Godot.GodotString, idx: Int32, tooltip: Godot.GodotString) {
+
+    public func globalMenuSetItemTooltip(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        tooltip: Godot.GodotString
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
@@ -1220,7 +1473,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemState(menuRoot: Godot.GodotString, idx: Int32, state: Int32) {
+
+    public func globalMenuSetItemState(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        state: Int32
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         state.withGodotUnsafeRawPointer { __ptr_state in
@@ -1241,7 +1499,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemMaxStates(menuRoot: Godot.GodotString, idx: Int32, maxStates: Int32) {
+
+    public func globalMenuSetItemMaxStates(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        maxStates: Int32
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         maxStates.withGodotUnsafeRawPointer { __ptr_maxStates in
@@ -1262,7 +1525,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemIcon(menuRoot: Godot.GodotString, idx: Int32, icon: Godot.Texture2D?) {
+
+    public func globalMenuSetItemIcon(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        icon: Godot.Texture2D?
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
@@ -1284,7 +1552,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemIndentationLevel(menuRoot: Godot.GodotString, idx: Int32, level: Int32) {
+
+    public func globalMenuSetItemIndentationLevel(
+        menuRoot: Godot.GodotString,
+        idx: Int32,
+        level: Int32
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         level.withGodotUnsafeRawPointer { __ptr_level in
@@ -1305,7 +1578,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemCount(menuRoot: Godot.GodotString) -> Int32 {
+
+    public func globalMenuGetItemCount(
+        menuRoot: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         withUnsafeArgumentPackPointer(__ptr_menuRoot) { __accessPtr in
@@ -1325,7 +1601,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuRemoveItem(menuRoot: Godot.GodotString, idx: Int32) {
+
+    public func globalMenuRemoveItem(
+        menuRoot: Godot.GodotString,
+        idx: Int32
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1345,7 +1625,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuClear(menuRoot: Godot.GodotString) {
+
+    public func globalMenuClear(
+        menuRoot: Godot.GodotString
+    ) {
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         withUnsafeArgumentPackPointer(__ptr_menuRoot) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1364,6 +1647,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsIsSpeaking() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1382,6 +1666,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsIsPaused() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1400,6 +1685,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsGetVoices() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1418,7 +1704,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func ttsGetVoicesForLanguage(_ language: Godot.GodotString) -> Godot.PackedStringArray {
+
+    public func ttsGetVoicesForLanguage(
+        _ language: Godot.GodotString
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
@@ -1438,7 +1727,16 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func ttsSpeak(text: Godot.GodotString, voice: Godot.GodotString, volume: Int32 = 50, pitch: Double = 1.0, rate: Double = 1.0, utteranceID: Int32 = 0, interrupt: Bool = false) {
+
+    public func ttsSpeak(
+        text: Godot.GodotString,
+        voice: Godot.GodotString,
+        volume: Int32 = 50,
+        pitch: Double = 1.0,
+        rate: Double = 1.0,
+        utteranceID: Int32 = 0,
+        interrupt: Bool = false
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         voice.withGodotUnsafeRawPointer { __ptr_voice in
         volume.withGodotUnsafeRawPointer { __ptr_volume in
@@ -1463,6 +1761,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsPause() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1480,6 +1779,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsResume() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1497,6 +1797,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func ttsStop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1514,7 +1815,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func ttsSetUtteranceCallback(event: Godot.DisplayServer.TTSUtteranceEvent, callable: Godot.Callable) {
+
+    public func ttsSetUtteranceCallback(
+        event: Godot.DisplayServer.TTSUtteranceEvent,
+        callable: Godot.Callable
+    ) {
         event.withGodotUnsafeRawPointer { __ptr_event in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_event, __ptr_callable) { __accessPtr in
@@ -1534,6 +1839,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func isDarkModeSupported() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1552,6 +1858,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func isDarkMode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1570,6 +1877,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func accentColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1588,7 +1896,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func mouseSetMode(mouseMode: Godot.DisplayServer.MouseMode) {
+
+    public func mouseSetMode(
+        mouseMode: Godot.DisplayServer.MouseMode
+    ) {
         mouseMode.withGodotUnsafeRawPointer { __ptr_mouseMode in
         withUnsafeArgumentPackPointer(__ptr_mouseMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1607,6 +1918,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func mouseGetMode() -> Godot.DisplayServer.MouseMode {
         Godot.DisplayServer.MouseMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1625,7 +1937,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func warpMouse(position: Godot.Vector2I) {
+
+    public func warpMouse(
+        position: Godot.Vector2I
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1644,6 +1959,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func mouseGetPosition() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1662,6 +1978,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func mouseGetButtonState() -> Godot.MouseButtonMask {
         Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1680,7 +1997,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func clipboardSet(clipboard: Godot.GodotString) {
+
+    public func clipboardSet(
+        clipboard: Godot.GodotString
+    ) {
         clipboard.withGodotUnsafeRawPointer { __ptr_clipboard in
         withUnsafeArgumentPackPointer(__ptr_clipboard) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1699,6 +2019,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func clipboardGet() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1717,6 +2038,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func clipboardGetImage() -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1735,6 +2057,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func clipboardHas() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1753,6 +2076,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func clipboardHasImage() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1771,7 +2095,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func clipboardSetPrimary(clipboardPrimary: Godot.GodotString) {
+
+    public func clipboardSetPrimary(
+        clipboardPrimary: Godot.GodotString
+    ) {
         clipboardPrimary.withGodotUnsafeRawPointer { __ptr_clipboardPrimary in
         withUnsafeArgumentPackPointer(__ptr_clipboardPrimary) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1790,6 +2117,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func clipboardGetPrimary() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1808,6 +2136,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func displayCutouts() -> Godot.GodotArray<Godot.Rect2> {
         Godot.GodotArray<Godot.Rect2>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1826,6 +2155,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func displaySafeArea() -> Godot.Rect2I {
         Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1844,6 +2174,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func screenCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1862,6 +2193,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func primaryScreen() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1880,6 +2212,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func keyboardFocusScreen() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1898,7 +2231,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenFromRect(_ rect: Godot.Rect2) -> Int32 {
+
+    public func screenFromRect(
+        _ rect: Godot.Rect2
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
@@ -1918,7 +2254,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetPosition(screen: Int32 = -1) -> Godot.Vector2I {
+
+    public func screenGetPosition(
+        screen: Int32 = -1
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -1938,7 +2277,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetSize(screen: Int32 = -1) -> Godot.Vector2I {
+
+    public func screenGetSize(
+        screen: Int32 = -1
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -1958,7 +2300,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetUsableRect(screen: Int32 = -1) -> Godot.Rect2I {
+
+    public func screenGetUsableRect(
+        screen: Int32 = -1
+    ) -> Godot.Rect2I {
         Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -1978,7 +2323,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetDpi(screen: Int32 = -1) -> Int32 {
+
+    public func screenGetDpi(
+        screen: Int32 = -1
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -1998,7 +2346,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetScale(screen: Int32 = -1) -> Double {
+
+    public func screenGetScale(
+        screen: Int32 = -1
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2018,6 +2369,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func isTouchscreenAvailable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2036,6 +2388,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func screenGetMaxScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2054,7 +2407,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetRefreshRate(screen: Int32 = -1) -> Double {
+
+    public func screenGetRefreshRate(
+        screen: Int32 = -1
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2074,7 +2430,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetPixel(position: Godot.Vector2I) -> Godot.Color {
+
+    public func screenGetPixel(
+        position: Godot.Vector2I
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -2094,7 +2453,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetImage(screen: Int32 = -1) -> Godot.Image? {
+
+    public func screenGetImage(
+        screen: Int32 = -1
+    ) -> Godot.Image? {
         Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2114,7 +2476,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenSetOrientation(_ orientation: Godot.DisplayServer.ScreenOrientation, screen: Int32 = -1) {
+
+    public func screenSetOrientation(
+        _ orientation: Godot.DisplayServer.ScreenOrientation,
+        screen: Int32 = -1
+    ) {
         orientation.withGodotUnsafeRawPointer { __ptr_orientation in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_orientation, __ptr_screen) { __accessPtr in
@@ -2134,7 +2500,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenGetOrientation(screen: Int32 = -1) -> Godot.DisplayServer.ScreenOrientation {
+
+    public func screenGetOrientation(
+        screen: Int32 = -1
+    ) -> Godot.DisplayServer.ScreenOrientation {
         Godot.DisplayServer.ScreenOrientation.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2154,7 +2523,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func screenSetKeepOn(enable: Bool) {
+
+    public func screenSetKeepOn(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2173,6 +2545,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func screenIsKeptOn() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2191,6 +2564,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func windowList() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2209,7 +2583,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowAtScreenPosition(_ position: Godot.Vector2I) -> Int32 {
+
+    public func windowAtScreenPosition(
+        _ position: Godot.Vector2I
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -2229,7 +2606,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetNativeHandle(handleType: Godot.DisplayServer.HandleType, windowID: Int32 = 0) -> Int64 {
+
+    public func windowGetNativeHandle(
+        handleType: Godot.DisplayServer.HandleType,
+        windowID: Int32 = 0
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         handleType.withGodotUnsafeRawPointer { __ptr_handleType in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
@@ -2250,6 +2631,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func windowGetActivePopup() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2268,7 +2650,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetPopupSafeRect(window: Int32, rect: Godot.Rect2I) {
+
+    public func windowSetPopupSafeRect(
+        window: Int32,
+        rect: Godot.Rect2I
+    ) {
         window.withGodotUnsafeRawPointer { __ptr_window in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_window, __ptr_rect) { __accessPtr in
@@ -2288,7 +2674,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetPopupSafeRect(window: Int32) -> Godot.Rect2I {
+
+    public func windowGetPopupSafeRect(
+        window: Int32
+    ) -> Godot.Rect2I {
         Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
         window.withGodotUnsafeRawPointer { __ptr_window in
         withUnsafeArgumentPackPointer(__ptr_window) { __accessPtr in
@@ -2308,7 +2697,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetTitle(_ title: Godot.GodotString, windowID: Int32 = 0) {
+
+    public func windowSetTitle(
+        _ title: Godot.GodotString,
+        windowID: Int32 = 0
+    ) {
         title.withGodotUnsafeRawPointer { __ptr_title in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowID) { __accessPtr in
@@ -2328,7 +2721,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetTitleSize(title: Godot.GodotString, windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetTitleSize(
+        title: Godot.GodotString,
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
@@ -2349,7 +2746,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMousePassthrough(region: Godot.PackedVector2Array, windowID: Int32 = 0) {
+
+    public func windowSetMousePassthrough(
+        region: Godot.PackedVector2Array,
+        windowID: Int32 = 0
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_windowID) { __accessPtr in
@@ -2369,7 +2770,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetCurrentScreen(windowID: Int32 = 0) -> Int32 {
+
+    public func windowGetCurrentScreen(
+        windowID: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2389,7 +2793,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetCurrentScreen(_ screen: Int32, windowID: Int32 = 0) {
+
+    public func windowSetCurrentScreen(
+        _ screen: Int32,
+        windowID: Int32 = 0
+    ) {
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_screen, __ptr_windowID) { __accessPtr in
@@ -2409,7 +2817,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetPosition(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetPosition(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2429,7 +2840,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetPositionWithDecorations(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetPositionWithDecorations(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2449,7 +2863,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetPosition(_ position: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetPosition(
+        _ position: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowID) { __accessPtr in
@@ -2469,7 +2887,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSize(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetSize(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2489,7 +2910,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetSize(_ size: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetSize(
+        _ size: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_size, __ptr_windowID) { __accessPtr in
@@ -2509,7 +2934,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetRectChangedCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
+
+    public func windowSetRectChangedCallback(
+        _ callback: Godot.Callable,
+        windowID: Int32 = 0
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
@@ -2529,7 +2958,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetWindowEventCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
+
+    public func windowSetWindowEventCallback(
+        _ callback: Godot.Callable,
+        windowID: Int32 = 0
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
@@ -2549,7 +2982,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetInputEventCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
+
+    public func windowSetInputEventCallback(
+        _ callback: Godot.Callable,
+        windowID: Int32 = 0
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
@@ -2569,7 +3006,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetInputTextCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
+
+    public func windowSetInputTextCallback(
+        _ callback: Godot.Callable,
+        windowID: Int32 = 0
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
@@ -2589,7 +3030,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetDropFilesCallback(_ callback: Godot.Callable, windowID: Int32 = 0) {
+
+    public func windowSetDropFilesCallback(
+        _ callback: Godot.Callable,
+        windowID: Int32 = 0
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_callback, __ptr_windowID) { __accessPtr in
@@ -2609,7 +3054,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetAttachedInstanceID(windowID: Int32 = 0) -> UInt64 {
+
+    public func windowGetAttachedInstanceID(
+        windowID: Int32 = 0
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2629,7 +3077,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMaxSize(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetMaxSize(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2649,7 +3100,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMaxSize(_ maxSize: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetMaxSize(
+        _ maxSize: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_maxSize, __ptr_windowID) { __accessPtr in
@@ -2669,7 +3124,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMinSize(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetMinSize(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2689,7 +3147,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMinSize(_ minSize: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetMinSize(
+        _ minSize: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         minSize.withGodotUnsafeRawPointer { __ptr_minSize in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_minSize, __ptr_windowID) { __accessPtr in
@@ -2709,7 +3171,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSizeWithDecorations(windowID: Int32 = 0) -> Godot.Vector2I {
+
+    public func windowGetSizeWithDecorations(
+        windowID: Int32 = 0
+    ) -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2729,7 +3194,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetMode(windowID: Int32 = 0) -> Godot.DisplayServer.WindowMode {
+
+    public func windowGetMode(
+        windowID: Int32 = 0
+    ) -> Godot.DisplayServer.WindowMode {
         Godot.DisplayServer.WindowMode.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2749,7 +3217,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetMode(_ mode: Godot.DisplayServer.WindowMode, windowID: Int32 = 0) {
+
+    public func windowSetMode(
+        _ mode: Godot.DisplayServer.WindowMode,
+        windowID: Int32 = 0
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_mode, __ptr_windowID) { __accessPtr in
@@ -2769,7 +3241,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetFlag(_ flag: Godot.DisplayServer.WindowFlags, enabled: Bool, windowID: Int32 = 0) {
+
+    public func windowSetFlag(
+        _ flag: Godot.DisplayServer.WindowFlags,
+        enabled: Bool,
+        windowID: Int32 = 0
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
@@ -2790,7 +3267,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetFlag(_ flag: Godot.DisplayServer.WindowFlags, windowID: Int32 = 0) -> Bool {
+
+    public func windowGetFlag(
+        _ flag: Godot.DisplayServer.WindowFlags,
+        windowID: Int32 = 0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
@@ -2811,7 +3292,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetWindowButtonsOffset(_ offset: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetWindowButtonsOffset(
+        _ offset: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_offset, __ptr_windowID) { __accessPtr in
@@ -2831,7 +3316,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetSafeTitleMargins(windowID: Int32 = 0) -> Godot.Vector3I {
+
+    public func windowGetSafeTitleMargins(
+        windowID: Int32 = 0
+    ) -> Godot.Vector3I {
         Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2851,7 +3339,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowRequestAttention(windowID: Int32 = 0) {
+
+    public func windowRequestAttention(
+        windowID: Int32 = 0
+    ) {
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2870,7 +3361,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowMoveToForeground(windowID: Int32 = 0) {
+
+    public func windowMoveToForeground(
+        windowID: Int32 = 0
+    ) {
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2889,7 +3383,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowIsFocused(windowID: Int32 = 0) -> Bool {
+
+    public func windowIsFocused(
+        windowID: Int32 = 0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2909,7 +3406,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowCanDraw(windowID: Int32 = 0) -> Bool {
+
+    public func windowCanDraw(
+        windowID: Int32 = 0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -2929,7 +3429,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetTransient(windowID: Int32, parentWindowID: Int32) {
+
+    public func windowSetTransient(
+        windowID: Int32,
+        parentWindowID: Int32
+    ) {
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         parentWindowID.withGodotUnsafeRawPointer { __ptr_parentWindowID in
         withUnsafeArgumentPackPointer(__ptr_windowID, __ptr_parentWindowID) { __accessPtr in
@@ -2949,7 +3453,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetExclusive(windowID: Int32, exclusive: Bool) {
+
+    public func windowSetExclusive(
+        windowID: Int32,
+        exclusive: Bool
+    ) {
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         exclusive.withGodotUnsafeRawPointer { __ptr_exclusive in
         withUnsafeArgumentPackPointer(__ptr_windowID, __ptr_exclusive) { __accessPtr in
@@ -2969,7 +3477,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetImeActive(_ active: Bool, windowID: Int32 = 0) {
+
+    public func windowSetImeActive(
+        _ active: Bool,
+        windowID: Int32 = 0
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_active, __ptr_windowID) { __accessPtr in
@@ -2989,7 +3501,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetImePosition(_ position: Godot.Vector2I, windowID: Int32 = 0) {
+
+    public func windowSetImePosition(
+        _ position: Godot.Vector2I,
+        windowID: Int32 = 0
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_windowID) { __accessPtr in
@@ -3009,7 +3525,11 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowSetVsyncMode(_ vsyncMode: Godot.DisplayServer.VSyncMode, windowID: Int32 = 0) {
+
+    public func windowSetVsyncMode(
+        _ vsyncMode: Godot.DisplayServer.VSyncMode,
+        windowID: Int32 = 0
+    ) {
         vsyncMode.withGodotUnsafeRawPointer { __ptr_vsyncMode in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_vsyncMode, __ptr_windowID) { __accessPtr in
@@ -3029,7 +3549,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowGetVsyncMode(windowID: Int32 = 0) -> Godot.DisplayServer.VSyncMode {
+
+    public func windowGetVsyncMode(
+        windowID: Int32 = 0
+    ) -> Godot.DisplayServer.VSyncMode {
         Godot.DisplayServer.VSyncMode.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -3049,7 +3572,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func windowIsMaximizeAllowed(windowID: Int32 = 0) -> Bool {
+
+    public func windowIsMaximizeAllowed(
+        windowID: Int32 = 0
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
@@ -3069,6 +3595,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func windowMaximizeOnTitleDblClick() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3087,6 +3614,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func windowMinimizeOnTitleDblClick() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3105,6 +3633,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func imeGetSelection() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3123,6 +3652,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func imeGetText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3141,7 +3671,15 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func virtualKeyboardShow(existingText: Godot.GodotString, position: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), type: Godot.DisplayServer.VirtualKeyboardType = DisplayServer.VirtualKeyboardType(rawValue: 0)!, maxLength: Int32 = -1, cursorStart: Int32 = -1, cursorEnd: Int32 = -1) {
+
+    public func virtualKeyboardShow(
+        existingText: Godot.GodotString,
+        position: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
+        type: Godot.DisplayServer.VirtualKeyboardType = DisplayServer.VirtualKeyboardType(rawValue: 0)!,
+        maxLength: Int32 = -1,
+        cursorStart: Int32 = -1,
+        cursorEnd: Int32 = -1
+    ) {
         existingText.withGodotUnsafeRawPointer { __ptr_existingText in
         position.withGodotUnsafeRawPointer { __ptr_position in
         type.withGodotUnsafeRawPointer { __ptr_type in
@@ -3165,6 +3703,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func virtualKeyboardHide() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3182,6 +3721,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func virtualKeyboardGetHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3200,7 +3740,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func cursorSetShape(_ shape: Godot.DisplayServer.CursorShape) {
+
+    public func cursorSetShape(
+        _ shape: Godot.DisplayServer.CursorShape
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafeArgumentPackPointer(__ptr_shape) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3219,6 +3762,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func cursorGetShape() -> Godot.DisplayServer.CursorShape {
         Godot.DisplayServer.CursorShape.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3237,7 +3781,12 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func cursorSetCustomImage(cursor: Godot.Resource?, shape: Godot.DisplayServer.CursorShape = DisplayServer.CursorShape(rawValue: 0)!, hotspot: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func cursorSetCustomImage(
+        cursor: Godot.Resource?,
+        shape: Godot.DisplayServer.CursorShape = DisplayServer.CursorShape(rawValue: 0)!,
+        hotspot: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         cursor.withGodotUnsafeRawPointer { __ptr_cursor in
         withUnsafePointer(to: __ptr_cursor) { _ptr___ptr_cursor in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -3259,6 +3808,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func swapCancelOk() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3277,7 +3827,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func enableForStealingFocus(processID: Int64) {
+
+    public func enableForStealingFocus(
+        processID: Int64
+    ) {
         processID.withGodotUnsafeRawPointer { __ptr_processID in
         withUnsafeArgumentPackPointer(__ptr_processID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3296,7 +3849,13 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func dialogShow(title: Godot.GodotString, description: Godot.GodotString, buttons: Godot.PackedStringArray, callback: Godot.Callable) -> Godot.ErrorType {
+
+    public func dialogShow(
+        title: Godot.GodotString,
+        description: Godot.GodotString,
+        buttons: Godot.PackedStringArray,
+        callback: Godot.Callable
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         description.withGodotUnsafeRawPointer { __ptr_description in
@@ -3319,7 +3878,13 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func dialogInputText(title: Godot.GodotString, description: Godot.GodotString, existingText: Godot.GodotString, callback: Godot.Callable) -> Godot.ErrorType {
+
+    public func dialogInputText(
+        title: Godot.GodotString,
+        description: Godot.GodotString,
+        existingText: Godot.GodotString,
+        callback: Godot.Callable
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         description.withGodotUnsafeRawPointer { __ptr_description in
@@ -3342,7 +3907,16 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func fileDialogShow(title: Godot.GodotString, currentDirectory: Godot.GodotString, filename: Godot.GodotString, showHidden: Bool, mode: Godot.DisplayServer.FileDialogMode, filters: Godot.PackedStringArray, callback: Godot.Callable) -> Godot.ErrorType {
+
+    public func fileDialogShow(
+        title: Godot.GodotString,
+        currentDirectory: Godot.GodotString,
+        filename: Godot.GodotString,
+        showHidden: Bool,
+        mode: Godot.DisplayServer.FileDialogMode,
+        filters: Godot.PackedStringArray,
+        callback: Godot.Callable
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         currentDirectory.withGodotUnsafeRawPointer { __ptr_currentDirectory in
@@ -3368,6 +3942,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func keyboardGetLayoutCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3386,6 +3961,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func keyboardGetCurrentLayout() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3404,7 +3980,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func keyboardSetCurrentLayout(index: Int32) {
+
+    public func keyboardSetCurrentLayout(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3423,7 +4002,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func keyboardGetLayoutLanguage(index: Int32) -> Godot.GodotString {
+
+    public func keyboardGetLayoutLanguage(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -3443,7 +4025,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func keyboardGetLayoutName(index: Int32) -> Godot.GodotString {
+
+    public func keyboardGetLayoutName(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -3463,7 +4048,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func keyboardGetKeycodeFromPhysical(keycode: Godot.Key) -> Godot.Key {
+
+    public func keyboardGetKeycodeFromPhysical(
+        keycode: Godot.Key
+    ) -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
@@ -3483,7 +4071,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func keyboardGetLabelFromPhysical(keycode: Godot.Key) -> Godot.Key {
+
+    public func keyboardGetLabelFromPhysical(
+        keycode: Godot.Key
+    ) -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
@@ -3503,6 +4094,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func processEvents() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3520,6 +4112,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func forceProcessAndDropEvents() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3537,7 +4130,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func setNativeIcon(filename: Godot.GodotString) {
+
+    public func setNativeIcon(
+        filename: Godot.GodotString
+    ) {
         filename.withGodotUnsafeRawPointer { __ptr_filename in
         withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3556,7 +4152,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func setIcon(image: Godot.Image?) {
+
+    public func setIcon(
+        image: Godot.Image?
+    ) {
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         withUnsafeArgumentPackPointer(_ptr___ptr_image) { __accessPtr in
@@ -3576,6 +4175,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func tabletGetDriverCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3594,7 +4194,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func tabletGetDriverName(idx: Int32) -> Godot.GodotString {
+
+    public func tabletGetDriverName(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -3614,6 +4217,7 @@ open class DisplayServer: Object {
         }
         }
     }()
+
     public func tabletGetCurrentDriver() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3632,7 +4236,10 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func tabletSetCurrentDriver(name: Godot.GodotString) {
+
+    public func tabletSetCurrentDriver(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3645,6 +4252,7 @@ open class DisplayServer: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -3657,5 +4265,4 @@ open class DisplayServer: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

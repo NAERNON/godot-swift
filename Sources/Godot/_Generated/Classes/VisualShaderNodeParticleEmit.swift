@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeParticleEmit: VisualShaderNode {
     public enum EmitFlags: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
         case velocity = 4
         case color = 8
         case custom = 16
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Position", 1),
@@ -28,7 +30,10 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
         }
         }
     }()
-    private func __setFlags(_ flags: Godot.VisualShaderNodeParticleEmit.EmitFlags) {
+
+    private func __setFlags(
+        _ flags: Godot.VisualShaderNodeParticleEmit.EmitFlags
+    ) {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
         }
         }
     }()
+
     private func __getFlags() -> Godot.VisualShaderNodeParticleEmit.EmitFlags {
         Godot.VisualShaderNodeParticleEmit.EmitFlags.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,6 +76,7 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -82,5 +89,4 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

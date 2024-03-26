@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class RayCast3D: Node3D {
     internal static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __isEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setTargetPosition(localPoint: Godot.Vector3) {
+
+    private func __setTargetPosition(
+        localPoint: Godot.Vector3
+    ) {
         localPoint.withGodotUnsafeRawPointer { __ptr_localPoint in
         withUnsafeArgumentPackPointer(__ptr_localPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __getTargetPosition() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func isColliding() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +114,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func forceRaycastUpdate() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -121,6 +132,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func collider() -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,6 +151,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func colliderRid() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,6 +170,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func colliderShape() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,6 +189,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func collisionPoint() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -193,6 +208,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func collisionNormal() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -211,6 +227,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func collisionFaceIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,7 +246,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func addExceptionRid(_ rid: Godot.RID) {
+
+    public func addExceptionRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -248,7 +268,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func addException(node: Godot.CollisionObject3D?) {
+
+    public func addException(
+        node: Godot.CollisionObject3D?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -268,7 +291,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func removeExceptionRid(_ rid: Godot.RID) {
+
+    public func removeExceptionRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,7 +313,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func removeException(node: Godot.CollisionObject3D?) {
+
+    public func removeException(
+        node: Godot.CollisionObject3D?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -307,6 +336,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     public func clearExceptions() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -324,7 +354,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,6 +376,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,7 +395,11 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -381,7 +419,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -401,7 +442,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setExcludeParentBody(mask: Bool) {
+
+    private func __setExcludeParentBody(
+        mask: Bool
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,6 +464,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __getExcludeParentBody() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,7 +483,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setCollideWithAreas(enable: Bool) {
+
+    private func __setCollideWithAreas(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,6 +505,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __isCollideWithAreasEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,7 +524,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setCollideWithBodies(enable: Bool) {
+
+    private func __setCollideWithBodies(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -494,6 +546,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __isCollideWithBodiesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -512,7 +565,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setHitFromInside(enable: Bool) {
+
+    private func __setHitFromInside(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,6 +587,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __isHitFromInsideEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,7 +606,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setHitBackFaces(enable: Bool) {
+
+    private func __setHitBackFaces(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -568,6 +628,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __isHitBackFacesEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +647,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setDebugShapeCustomColor(_ debugShapeCustomColor: Godot.Color) {
+
+    private func __setDebugShapeCustomColor(
+        _ debugShapeCustomColor: Godot.Color
+    ) {
         debugShapeCustomColor.withGodotUnsafeRawPointer { __ptr_debugShapeCustomColor in
         withUnsafeArgumentPackPointer(__ptr_debugShapeCustomColor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -605,6 +669,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __getDebugShapeCustomColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,7 +688,10 @@ open class RayCast3D: Node3D {
         }
         }
     }()
-    private func __setDebugShapeThickness(_ debugShapeThickness: Int32) {
+
+    private func __setDebugShapeThickness(
+        _ debugShapeThickness: Int32
+    ) {
         debugShapeThickness.withGodotUnsafeRawPointer { __ptr_debugShapeThickness in
         withUnsafeArgumentPackPointer(__ptr_debugShapeThickness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,6 +710,7 @@ open class RayCast3D: Node3D {
         }
         }
     }()
+
     private func __getDebugShapeThickness() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -764,6 +833,7 @@ open class RayCast3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -776,5 +846,4 @@ open class RayCast3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

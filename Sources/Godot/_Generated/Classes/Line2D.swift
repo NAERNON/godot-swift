@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Line2D: Node2D {
     public enum LineJointMode: UInt32, GodotEnum {
         case sharp = 0
         case bevel = 1
         case round = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sharp", 0),
@@ -16,10 +18,12 @@ open class Line2D: Node2D {
             ("Round", 2),]
         }
     }
+
     public enum LineCapMode: UInt32, GodotEnum {
         case none = 0
         case box = 1
         case round = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -27,10 +31,12 @@ open class Line2D: Node2D {
             ("Round", 2),]
         }
     }
+
     public enum LineTextureMode: UInt32, GodotEnum {
         case none = 0
         case tile = 1
         case stretch = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -46,7 +52,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setPoints(_ points: Godot.PackedVector2Array) {
+
+    private func __setPoints(
+        _ points: Godot.PackedVector2Array
+    ) {
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,6 +74,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getPoints() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -83,7 +93,11 @@ open class Line2D: Node2D {
         }
         }
     }()
-    public func setPointPosition(index: Int32, position: Godot.Vector2) {
+
+    public func setPointPosition(
+        index: Int32,
+        position: Godot.Vector2
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_position) { __accessPtr in
@@ -103,7 +117,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    public func pointPosition(index: Int32) -> Godot.Vector2 {
+
+    public func pointPosition(
+        index: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -123,6 +140,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     public func pointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +159,11 @@ open class Line2D: Node2D {
         }
         }
     }()
-    public func addPoint(position: Godot.Vector2, index: Int32 = -1) {
+
+    public func addPoint(
+        position: Godot.Vector2,
+        index: Int32 = -1
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_index) { __accessPtr in
@@ -161,7 +183,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    public func removePoint(index: Int32) {
+
+    public func removePoint(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +205,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     public func clearPoints() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -197,7 +223,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setClosed(_ closed: Bool) {
+
+    private func __setClosed(
+        _ closed: Bool
+    ) {
         closed.withGodotUnsafeRawPointer { __ptr_closed in
         withUnsafeArgumentPackPointer(__ptr_closed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +245,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __isClosed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +264,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setWidth(_ width: Double) {
+
+    private func __setWidth(
+        _ width: Double
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +286,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +305,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -291,6 +328,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +347,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setDefaultColor(_ color: Godot.Color) {
+
+    private func __setDefaultColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +369,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getDefaultColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +388,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setGradient(color: Godot.Gradient?) {
+
+    private func __setGradient(
+        color: Godot.Gradient?
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafePointer(to: __ptr_color) { _ptr___ptr_color in
         withUnsafeArgumentPackPointer(_ptr___ptr_color) { __accessPtr in
@@ -366,6 +411,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getGradient() -> Godot.Gradient? {
         Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,7 +430,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -404,6 +453,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -422,7 +472,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setTextureMode(_ mode: Godot.Line2D.LineTextureMode) {
+
+    private func __setTextureMode(
+        _ mode: Godot.Line2D.LineTextureMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -441,6 +494,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getTextureMode() -> Godot.Line2D.LineTextureMode {
         Godot.Line2D.LineTextureMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -459,7 +513,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setJointMode(_ mode: Godot.Line2D.LineJointMode) {
+
+    private func __setJointMode(
+        _ mode: Godot.Line2D.LineJointMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -478,6 +535,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getJointMode() -> Godot.Line2D.LineJointMode {
         Godot.Line2D.LineJointMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -496,7 +554,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setBeginCapMode(_ mode: Godot.Line2D.LineCapMode) {
+
+    private func __setBeginCapMode(
+        _ mode: Godot.Line2D.LineCapMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -515,6 +576,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getBeginCapMode() -> Godot.Line2D.LineCapMode {
         Godot.Line2D.LineCapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -533,7 +595,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setEndCapMode(_ mode: Godot.Line2D.LineCapMode) {
+
+    private func __setEndCapMode(
+        _ mode: Godot.Line2D.LineCapMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -552,6 +617,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getEndCapMode() -> Godot.Line2D.LineCapMode {
         Godot.Line2D.LineCapMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -570,7 +636,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setSharpLimit(_ limit: Double) {
+
+    private func __setSharpLimit(
+        _ limit: Double
+    ) {
         limit.withGodotUnsafeRawPointer { __ptr_limit in
         withUnsafeArgumentPackPointer(__ptr_limit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -589,6 +658,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getSharpLimit() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -607,7 +677,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setRoundPrecision(_ precision: Int32) {
+
+    private func __setRoundPrecision(
+        _ precision: Int32
+    ) {
         precision.withGodotUnsafeRawPointer { __ptr_precision in
         withUnsafeArgumentPackPointer(__ptr_precision) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -626,6 +699,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getRoundPrecision() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -644,7 +718,10 @@ open class Line2D: Node2D {
         }
         }
     }()
-    private func __setAntialiased(_ antialiased: Bool) {
+
+    private func __setAntialiased(
+        _ antialiased: Bool
+    ) {
         antialiased.withGodotUnsafeRawPointer { __ptr_antialiased in
         withUnsafeArgumentPackPointer(__ptr_antialiased) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -663,6 +740,7 @@ open class Line2D: Node2D {
         }
         }
     }()
+
     private func __getAntialiased() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -829,6 +907,7 @@ open class Line2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -841,5 +920,4 @@ open class Line2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

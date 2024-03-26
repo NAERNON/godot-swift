@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RenderSceneBuffersConfiguration: RefCounted {
     internal static var __method_binding_get_render_target: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getRenderTarget() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setRenderTarget(_ renderTarget: Godot.RID) {
+
+    private func __setRenderTarget(
+        _ renderTarget: Godot.RID
+    ) {
         renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
         withUnsafeArgumentPackPointer(__ptr_renderTarget) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getInternalSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setInternalSize(_ internalSize: Godot.Vector2I) {
+
+    private func __setInternalSize(
+        _ internalSize: Godot.Vector2I
+    ) {
         internalSize.withGodotUnsafeRawPointer { __ptr_internalSize in
         withUnsafeArgumentPackPointer(__ptr_internalSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getTargetSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setTargetSize(_ targetSize: Godot.Vector2I) {
+
+    private func __setTargetSize(
+        _ targetSize: Godot.Vector2I
+    ) {
         targetSize.withGodotUnsafeRawPointer { __ptr_targetSize in
         withUnsafeArgumentPackPointer(__ptr_targetSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getViewCount() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setViewCount(_ viewCount: UInt32) {
+
+    private func __setViewCount(
+        _ viewCount: UInt32
+    ) {
         viewCount.withGodotUnsafeRawPointer { __ptr_viewCount in
         withUnsafeArgumentPackPointer(__ptr_viewCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getScaling3DMode() -> Godot.RenderingServer.ViewportScaling3DMode {
         Godot.RenderingServer.ViewportScaling3DMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setScaling3DMode(_ scaling3DMode: Godot.RenderingServer.ViewportScaling3DMode) {
+
+    private func __setScaling3DMode(
+        _ scaling3DMode: Godot.RenderingServer.ViewportScaling3DMode
+    ) {
         scaling3DMode.withGodotUnsafeRawPointer { __ptr_scaling3DMode in
         withUnsafeArgumentPackPointer(__ptr_scaling3DMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getMsaa3D() -> Godot.RenderingServer.ViewportMSAA {
         Godot.RenderingServer.ViewportMSAA.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setMsaa3D(_ msaa3D: Godot.RenderingServer.ViewportMSAA) {
+
+    private func __setMsaa3D(
+        _ msaa3D: Godot.RenderingServer.ViewportMSAA
+    ) {
         msaa3D.withGodotUnsafeRawPointer { __ptr_msaa3D in
         withUnsafeArgumentPackPointer(__ptr_msaa3D) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getScreenSpaceAa() -> Godot.RenderingServer.ViewportScreenSpaceAA {
         Godot.RenderingServer.ViewportScreenSpaceAA.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setScreenSpaceAa(_ screenSpaceAa: Godot.RenderingServer.ViewportScreenSpaceAA) {
+
+    private func __setScreenSpaceAa(
+        _ screenSpaceAa: Godot.RenderingServer.ViewportScreenSpaceAA
+    ) {
         screenSpaceAa.withGodotUnsafeRawPointer { __ptr_screenSpaceAa in
         withUnsafeArgumentPackPointer(__ptr_screenSpaceAa) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getFsrSharpness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setFsrSharpness(_ fsrSharpness: Double) {
+
+    private func __setFsrSharpness(
+        _ fsrSharpness: Double
+    ) {
         fsrSharpness.withGodotUnsafeRawPointer { __ptr_fsrSharpness in
         withUnsafeArgumentPackPointer(__ptr_fsrSharpness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
+
     private func __getTextureMipmapBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +360,10 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         }
     }()
-    private func __setTextureMipmapBias(_ textureMipmapBias: Double) {
+
+    private func __setTextureMipmapBias(
+        _ textureMipmapBias: Double
+    ) {
         textureMipmapBias.withGodotUnsafeRawPointer { __ptr_textureMipmapBias in
         withUnsafeArgumentPackPointer(__ptr_textureMipmapBias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +475,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -450,5 +488,4 @@ open class RenderSceneBuffersConfiguration: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

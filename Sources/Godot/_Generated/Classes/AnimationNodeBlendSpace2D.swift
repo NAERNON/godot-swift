@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeBlendSpace2D: AnimationRootNode {
     public enum BlendMode: UInt32, GodotEnum {
         case interpolated = 0
         case discrete = 1
         case discreteCarry = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Interpolated", 0),
@@ -20,6 +22,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
     public func trianglesUpdated() {
         _ = trianglesUpdatedSignal.emit()
     }
+
     public lazy var trianglesUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "triangles_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,7 +45,12 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func addBlendPoint(node: Godot.AnimationRootNode?, pos: Godot.Vector2, atIndex index: Int32 = -1) {
+
+    public func addBlendPoint(
+        node: Godot.AnimationRootNode?,
+        pos: Godot.Vector2,
+        atIndex index: Int32 = -1
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
@@ -64,7 +72,11 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func setBlendPointPosition(point: Int32, pos: Godot.Vector2) {
+
+    public func setBlendPointPosition(
+        point: Int32,
+        pos: Godot.Vector2
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_pos) { __accessPtr in
@@ -84,7 +96,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func blendPointPosition(point: Int32) -> Godot.Vector2 {
+
+    public func blendPointPosition(
+        point: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -104,7 +119,11 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func setBlendPointNode(point: Int32, node: Godot.AnimationRootNode?) {
+
+    public func setBlendPointNode(
+        point: Int32,
+        node: Godot.AnimationRootNode?
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -125,7 +144,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func blendPointNode(point: Int32) -> Godot.AnimationRootNode? {
+
+    public func blendPointNode(
+        point: Int32
+    ) -> Godot.AnimationRootNode? {
         Godot.AnimationRootNode?.fromMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
@@ -145,7 +167,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func removeBlendPoint(_ point: Int32) {
+
+    public func removeBlendPoint(
+        _ point: Int32
+    ) {
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -164,6 +189,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     public func blendPointCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -182,7 +208,13 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func addTriangle(x: Int32, y: Int32, z: Int32, atIndex index: Int32 = -1) {
+
+    public func addTriangle(
+        x: Int32,
+        y: Int32,
+        z: Int32,
+        atIndex index: Int32 = -1
+    ) {
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         z.withGodotUnsafeRawPointer { __ptr_z in
@@ -204,7 +236,11 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func trianglePoint(triangle: Int32, point: Int32) -> Int32 {
+
+    public func trianglePoint(
+        triangle: Int32,
+        point: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         triangle.withGodotUnsafeRawPointer { __ptr_triangle in
         point.withGodotUnsafeRawPointer { __ptr_point in
@@ -225,7 +261,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    public func removeTriangle(_ triangle: Int32) {
+
+    public func removeTriangle(
+        _ triangle: Int32
+    ) {
         triangle.withGodotUnsafeRawPointer { __ptr_triangle in
         withUnsafeArgumentPackPointer(__ptr_triangle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -244,6 +283,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     public func triangleCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -262,7 +302,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setMinSpace(_ minSpace: Godot.Vector2) {
+
+    private func __setMinSpace(
+        _ minSpace: Godot.Vector2
+    ) {
         minSpace.withGodotUnsafeRawPointer { __ptr_minSpace in
         withUnsafeArgumentPackPointer(__ptr_minSpace) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -281,6 +324,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getMinSpace() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -299,7 +343,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setMaxSpace(_ maxSpace: Godot.Vector2) {
+
+    private func __setMaxSpace(
+        _ maxSpace: Godot.Vector2
+    ) {
         maxSpace.withGodotUnsafeRawPointer { __ptr_maxSpace in
         withUnsafeArgumentPackPointer(__ptr_maxSpace) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -318,6 +365,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getMaxSpace() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -336,7 +384,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setSnap(_ snap: Godot.Vector2) {
+
+    private func __setSnap(
+        _ snap: Godot.Vector2
+    ) {
         snap.withGodotUnsafeRawPointer { __ptr_snap in
         withUnsafeArgumentPackPointer(__ptr_snap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,6 +406,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getSnap() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -373,7 +425,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setXLabel(text: Godot.GodotString) {
+
+    private func __setXLabel(
+        text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,6 +447,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getXLabel() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -410,7 +466,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setYLabel(text: Godot.GodotString) {
+
+    private func __setYLabel(
+        text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,6 +488,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getYLabel() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -447,7 +507,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setAutoTriangles(enable: Bool) {
+
+    private func __setAutoTriangles(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,6 +529,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getAutoTriangles() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -484,7 +548,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setBlendMode(_ mode: Godot.AnimationNodeBlendSpace2D.BlendMode) {
+
+    private func __setBlendMode(
+        _ mode: Godot.AnimationNodeBlendSpace2D.BlendMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -503,6 +570,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __getBlendMode() -> Godot.AnimationNodeBlendSpace2D.BlendMode {
         Godot.AnimationNodeBlendSpace2D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -521,7 +589,10 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
-    private func __setUseSync(enable: Bool) {
+
+    private func __setUseSync(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -540,6 +611,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         }
     }()
+
     private func __isUsingSync() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -640,6 +712,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -652,5 +725,4 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

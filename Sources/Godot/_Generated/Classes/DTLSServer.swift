@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class DTLSServer: RefCounted {
     internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class DTLSServer: RefCounted {
         }
         }
     }()
-    public func setup(serverOptions: Godot.TLSOptions?) -> Godot.ErrorType {
+
+    public func setup(
+        serverOptions: Godot.TLSOptions?
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         serverOptions.withGodotUnsafeRawPointer { __ptr_serverOptions in
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
@@ -33,7 +37,10 @@ open class DTLSServer: RefCounted {
         }
         }
     }()
-    public func takeConnection(udpPeer: Godot.PacketPeerUDP?) -> Godot.PacketPeerDTLS? {
+
+    public func takeConnection(
+        udpPeer: Godot.PacketPeerUDP?
+    ) -> Godot.PacketPeerDTLS? {
         Godot.PacketPeerDTLS?.fromMutatingGodotUnsafePointer { __temporary in
         udpPeer.withGodotUnsafeRawPointer { __ptr_udpPeer in
         withUnsafePointer(to: __ptr_udpPeer) { _ptr___ptr_udpPeer in
@@ -48,6 +55,7 @@ open class DTLSServer: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -60,5 +68,4 @@ open class DTLSServer: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

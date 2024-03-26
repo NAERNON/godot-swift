@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CollisionPolygon2D: Node2D {
     public enum BuildMode: UInt32, GodotEnum {
         case solids = 0
         case segments = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Solids", 0),
@@ -22,7 +24,10 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +65,10 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
-    private func __setBuildMode(_ buildMode: Godot.CollisionPolygon2D.BuildMode) {
+
+    private func __setBuildMode(
+        _ buildMode: Godot.CollisionPolygon2D.BuildMode
+    ) {
         buildMode.withGodotUnsafeRawPointer { __ptr_buildMode in
         withUnsafeArgumentPackPointer(__ptr_buildMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +87,7 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
+
     private func __getBuildMode() -> Godot.CollisionPolygon2D.BuildMode {
         Godot.CollisionPolygon2D.BuildMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +106,10 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
-    private func __setDisabled(_ disabled: Bool) {
+
+    private func __setDisabled(
+        _ disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,6 +128,7 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
+
     private func __isDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,7 +147,10 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
-    private func __setOneWayCollision(enabled: Bool) {
+
+    private func __setOneWayCollision(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +169,7 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
+
     private func __isOneWayCollisionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +188,10 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
-    private func __setOneWayCollisionMargin(_ margin: Double) {
+
+    private func __setOneWayCollisionMargin(
+        _ margin: Double
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,6 +210,7 @@ open class CollisionPolygon2D: Node2D {
         }
         }
     }()
+
     private func __getOneWayCollisionMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,6 +278,7 @@ open class CollisionPolygon2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -268,5 +291,4 @@ open class CollisionPolygon2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

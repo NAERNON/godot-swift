@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class LinkButton: BaseButton {
     public enum UnderlineMode: UInt32, GodotEnum {
         case always = 0
         case onHover = 1
         case never = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Always", 0),
@@ -24,7 +26,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setText(_ text: Godot.GodotString) {
+
+    private func __setText(
+        _ text: Godot.GodotString
+    ) {
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
+
+    private func __setTextDirection(
+        _ direction: Godot.Control.TextDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getTextDirection() -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,7 +108,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setLanguage(_ language: Godot.GodotString) {
+
+    private func __setLanguage(
+        _ language: Godot.GodotString
+    ) {
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +130,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getLanguage() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,7 +149,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setUri(_ uri: Godot.GodotString) {
+
+    private func __setUri(
+        _ uri: Godot.GodotString
+    ) {
         uri.withGodotUnsafeRawPointer { __ptr_uri in
         withUnsafeArgumentPackPointer(__ptr_uri) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -154,6 +171,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getUri() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,7 +190,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setUnderlineMode(_ underlineMode: Godot.LinkButton.UnderlineMode) {
+
+    private func __setUnderlineMode(
+        _ underlineMode: Godot.LinkButton.UnderlineMode
+    ) {
         underlineMode.withGodotUnsafeRawPointer { __ptr_underlineMode in
         withUnsafeArgumentPackPointer(__ptr_underlineMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -191,6 +212,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getUnderlineMode() -> Godot.LinkButton.UnderlineMode {
         Godot.LinkButton.UnderlineMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,7 +231,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setStructuredTextBidiOverride(parser: Godot.TextServer.StructuredTextParser) {
+
+    private func __setStructuredTextBidiOverride(
+        parser: Godot.TextServer.StructuredTextParser
+    ) {
         parser.withGodotUnsafeRawPointer { __ptr_parser in
         withUnsafeArgumentPackPointer(__ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,6 +253,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,7 +272,10 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
+
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+        args: Godot.GodotArray<Value>
+    ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
         withUnsafeArgumentPackPointer(__ptr_args) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,6 +294,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
+
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -354,6 +384,7 @@ open class LinkButton: BaseButton {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -366,5 +397,4 @@ open class LinkButton: BaseButton {
         }
         return _virtualFunctions!
     }
-
-    }
+}

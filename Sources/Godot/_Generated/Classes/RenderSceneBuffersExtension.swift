@@ -3,21 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RenderSceneBuffersExtension: RenderSceneBuffers {
-    open func _configure(config: Godot.RenderSceneBuffersConfiguration?) {
+    open func _configure(
+        config: Godot.RenderSceneBuffersConfiguration?
+    ) {
     }
 
-    open func _setFsrSharpness(_ fsrSharpness: Double) {
+    open func _setFsrSharpness(
+        _ fsrSharpness: Double
+    ) {
     }
 
-    open func _setTextureMipmapBias(_ textureMipmapBias: Double) {
+    open func _setTextureMipmapBias(
+        _ textureMipmapBias: Double
+    ) {
     }
 
-    open func _setUseDebanding(_ useDebanding: Bool) {
+    open func _setUseDebanding(
+        _ useDebanding: Bool
+    ) {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -65,5 +75,4 @@ open class RenderSceneBuffersExtension: RenderSceneBuffers {
         }
         return _virtualFunctions!
     }
-
-    }
+}

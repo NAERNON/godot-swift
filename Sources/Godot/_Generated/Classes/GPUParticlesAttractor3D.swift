@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesAttractor3D: VisualInstance3D {
     internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
-    private func __setCullMask(_ mask: UInt32) {
+
+    private func __setCullMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getCullMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
-    private func __setStrength(_ strength: Double) {
+
+    private func __setStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
-    private func __setAttenuation(_ attenuation: Double) {
+
+    private func __setAttenuation(
+        _ attenuation: Double
+    ) {
         attenuation.withGodotUnsafeRawPointer { __ptr_attenuation in
         withUnsafeArgumentPackPointer(__ptr_attenuation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getAttenuation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
-    private func __setDirectionality(amount: Double) {
+
+    private func __setDirectionality(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getDirectionality() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

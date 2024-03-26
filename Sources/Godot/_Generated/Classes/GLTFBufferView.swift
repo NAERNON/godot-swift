@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class GLTFBufferView: Resource {
     internal static var __method_binding_get_buffer: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
+
     private func __getBuffer() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
-    private func __setBuffer(_ buffer: Int32) {
+
+    private func __setBuffer(
+        _ buffer: Int32
+    ) {
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
+
     private func __getByteOffset() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
-    private func __setByteOffset(_ byteOffset: Int32) {
+
+    private func __setByteOffset(
+        _ byteOffset: Int32
+    ) {
         byteOffset.withGodotUnsafeRawPointer { __ptr_byteOffset in
         withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
+
     private func __getByteLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
-    private func __setByteLength(_ byteLength: Int32) {
+
+    private func __setByteLength(
+        _ byteLength: Int32
+    ) {
         byteLength.withGodotUnsafeRawPointer { __ptr_byteLength in
         withUnsafeArgumentPackPointer(__ptr_byteLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
+
     private func __getByteStride() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
-    private func __setByteStride(_ byteStride: Int32) {
+
+    private func __setByteStride(
+        _ byteStride: Int32
+    ) {
         byteStride.withGodotUnsafeRawPointer { __ptr_byteStride in
         withUnsafeArgumentPackPointer(__ptr_byteStride) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
+
     private func __getIndices() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class GLTFBufferView: Resource {
         }
         }
     }()
-    private func __setIndices(_ indices: Bool) {
+
+    private func __setIndices(
+        _ indices: Bool
+    ) {
         indices.withGodotUnsafeRawPointer { __ptr_indices in
         withUnsafeArgumentPackPointer(__ptr_indices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class GLTFBufferView: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class GLTFBufferView: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CylinderMesh: PrimitiveMesh {
     internal static var __method_binding_set_top_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setTopRadius(_ radius: Double) {
+
+    private func __setTopRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getTopRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setBottomRadius(_ radius: Double) {
+
+    private func __setBottomRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getBottomRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setHeight(_ height: Double) {
+
+    private func __setHeight(
+        _ height: Double
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRadialSegments(_ segments: Int32) {
+
+    private func __setRadialSegments(
+        _ segments: Int32
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRadialSegments() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRings(_ rings: Int32) {
+
+    private func __setRings(
+        _ rings: Int32
+    ) {
         rings.withGodotUnsafeRawPointer { __ptr_rings in
         withUnsafeArgumentPackPointer(__ptr_rings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRings() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCapTop(_ capTop: Bool) {
+
+    private func __setCapTop(
+        _ capTop: Bool
+    ) {
         capTop.withGodotUnsafeRawPointer { __ptr_capTop in
         withUnsafeArgumentPackPointer(__ptr_capTop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __isCapTop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setCapBottom(_ capBottom: Bool) {
+
+    private func __setCapBottom(
+        _ capBottom: Bool
+    ) {
         capBottom.withGodotUnsafeRawPointer { __ptr_capBottom in
         withUnsafeArgumentPackPointer(__ptr_capBottom) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class CylinderMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __isCapBottom() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -342,6 +371,7 @@ open class CylinderMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -354,5 +384,4 @@ open class CylinderMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

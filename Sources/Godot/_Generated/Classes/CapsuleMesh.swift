@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CapsuleMesh: PrimitiveMesh {
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRadius(_ radius: Double) {
+
+    private func __setRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setHeight(_ height: Double) {
+
+    private func __setHeight(
+        _ height: Double
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRadialSegments(_ segments: Int32) {
+
+    private func __setRadialSegments(
+        _ segments: Int32
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRadialSegments() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setRings(_ rings: Int32) {
+
+    private func __setRings(
+        _ rings: Int32
+    ) {
         rings.withGodotUnsafeRawPointer { __ptr_rings in
         withUnsafeArgumentPackPointer(__ptr_rings) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getRings() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class CapsuleMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class CapsuleMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

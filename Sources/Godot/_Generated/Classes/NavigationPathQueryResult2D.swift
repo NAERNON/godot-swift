@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NavigationPathQueryResult2D: RefCounted {
     public enum PathSegmentType: UInt32, GodotEnum {
         case region = 0
         case link = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Region", 0),
@@ -22,7 +24,10 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
-    private func __setPath(_ path: Godot.PackedVector2Array) {
+
+    private func __setPath(
+        _ path: Godot.PackedVector2Array
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
+
     private func __getPath() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +65,10 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
-    private func __setPathTypes(_ pathTypes: Godot.PackedInt32Array) {
+
+    private func __setPathTypes(
+        _ pathTypes: Godot.PackedInt32Array
+    ) {
         pathTypes.withGodotUnsafeRawPointer { __ptr_pathTypes in
         withUnsafeArgumentPackPointer(__ptr_pathTypes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +87,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
+
     private func __getPathTypes() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +106,10 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
-    private func __setPathRids(_ pathRids: Godot.GodotArray<Godot.RID>) {
+
+    private func __setPathRids(
+        _ pathRids: Godot.GodotArray<Godot.RID>
+    ) {
         pathRids.withGodotUnsafeRawPointer { __ptr_pathRids in
         withUnsafeArgumentPackPointer(__ptr_pathRids) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,6 +128,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
+
     private func __getPathRids() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -133,7 +147,10 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
-    private func __setPathOwnerIds(_ pathOwnerIds: Godot.PackedInt64Array) {
+
+    private func __setPathOwnerIds(
+        _ pathOwnerIds: Godot.PackedInt64Array
+    ) {
         pathOwnerIds.withGodotUnsafeRawPointer { __ptr_pathOwnerIds in
         withUnsafeArgumentPackPointer(__ptr_pathOwnerIds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -152,6 +169,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
+
     private func __getPathOwnerIds() -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +188,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         }
     }()
+
     public func reset() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -225,6 +244,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -237,5 +257,4 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

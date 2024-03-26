@@ -3,16 +3,25 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorDebuggerPlugin: RefCounted {
-    open func _setupSession(sessionID: Int32) {
+    open func _setupSession(
+        sessionID: Int32
+    ) {
     }
 
-    open func _hasCapture(_ capture: Godot.GodotString) -> Bool {
+    open func _hasCapture(
+        _ capture: Godot.GodotString
+    ) -> Bool {
         Bool()
     }
 
-    open func _capture(message: Godot.GodotString, data: Godot.AnyGodotArray, sessionID: Int32) -> Bool {
+    open func _capture(
+        message: Godot.GodotString,
+        data: Godot.AnyGodotArray,
+        sessionID: Int32
+    ) -> Bool {
         Bool()
     }
 
@@ -23,7 +32,10 @@ open class EditorDebuggerPlugin: RefCounted {
         }
         }
     }()
-    public func session(id: Int32) -> Godot.EditorDebuggerSession? {
+
+    public func session(
+        id: Int32
+    ) -> Godot.EditorDebuggerSession? {
         Godot.EditorDebuggerSession?.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -43,6 +55,7 @@ open class EditorDebuggerPlugin: RefCounted {
         }
         }
     }()
+
     public func sessions() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +68,7 @@ open class EditorDebuggerPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -97,5 +111,4 @@ open class EditorDebuggerPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

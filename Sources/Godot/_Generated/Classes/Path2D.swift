@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Path2D: Node2D {
     internal static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Path2D: Node2D {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve2D?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve2D?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -32,6 +36,7 @@ open class Path2D: Node2D {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve2D? {
         Godot.Curve2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class Path2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class Path2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class XMLParser: RefCounted {
     public enum NodeType: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class XMLParser: RefCounted {
         case comment = 4
         case cdata = 5
         case unknown = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -32,6 +34,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func read() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,6 +53,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func nodeType() -> Godot.XMLParser.NodeType {
         Godot.XMLParser.NodeType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +72,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func nodeName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +91,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func nodeData() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +110,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func nodeOffset() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +129,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func attributeCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +148,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func attributeName(idx: Int32) -> Godot.GodotString {
+
+    public func attributeName(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -160,7 +171,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func attributeValue(idx: Int32) -> Godot.GodotString {
+
+    public func attributeValue(
+        idx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -180,7 +194,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func hasAttribute(name: Godot.GodotString) -> Bool {
+
+    public func hasAttribute(
+        name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -200,7 +217,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func namedAttributeValue(name: Godot.GodotString) -> Godot.GodotString {
+
+    public func namedAttributeValue(
+        name: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -220,7 +240,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func namedAttributeValueSafe(name: Godot.GodotString) -> Godot.GodotString {
+
+    public func namedAttributeValueSafe(
+        name: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -240,6 +263,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func isEmpty() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -258,6 +282,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func currentLine() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -276,6 +301,7 @@ open class XMLParser: RefCounted {
         }
         }
     }()
+
     public func skipSection() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -293,7 +319,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func seek(position: UInt64) -> Godot.ErrorType {
+
+    public func seek(
+        position: UInt64
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
@@ -313,7 +342,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func open(file: Godot.GodotString) -> Godot.ErrorType {
+
+    public func open(
+        file: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
@@ -333,7 +365,10 @@ open class XMLParser: RefCounted {
         }
         }
     }()
-    public func openBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func openBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -347,6 +382,7 @@ open class XMLParser: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -359,5 +395,4 @@ open class XMLParser: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

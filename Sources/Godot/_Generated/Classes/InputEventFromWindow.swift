@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventFromWindow: InputEvent {
     internal static var __method_binding_set_window_id: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventFromWindow: InputEvent {
         }
         }
     }()
-    private func __setWindowID(_ id: Int64) {
+
+    private func __setWindowID(
+        _ id: Int64
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventFromWindow: InputEvent {
         }
         }
     }()
+
     private func __getWindowID() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class InputEventFromWindow: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class InputEventFromWindow: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

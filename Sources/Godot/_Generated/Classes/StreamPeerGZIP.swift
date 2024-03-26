@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StreamPeerGZIP: StreamPeer {
     internal static var __method_binding_start_compression: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class StreamPeerGZIP: StreamPeer {
         }
         }
     }()
-    public func startCompression(useDeflate: Bool = false, bufferSize: Int32 = 65535) -> Godot.ErrorType {
+
+    public func startCompression(
+        useDeflate: Bool = false,
+        bufferSize: Int32 = 65535
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         useDeflate.withGodotUnsafeRawPointer { __ptr_useDeflate in
         bufferSize.withGodotUnsafeRawPointer { __ptr_bufferSize in
@@ -33,7 +38,11 @@ open class StreamPeerGZIP: StreamPeer {
         }
         }
     }()
-    public func startDecompression(useDeflate: Bool = false, bufferSize: Int32 = 65535) -> Godot.ErrorType {
+
+    public func startDecompression(
+        useDeflate: Bool = false,
+        bufferSize: Int32 = 65535
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         useDeflate.withGodotUnsafeRawPointer { __ptr_useDeflate in
         bufferSize.withGodotUnsafeRawPointer { __ptr_bufferSize in
@@ -54,6 +63,7 @@ open class StreamPeerGZIP: StreamPeer {
         }
         }
     }()
+
     public func finish() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +82,7 @@ open class StreamPeerGZIP: StreamPeer {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -83,6 +94,7 @@ open class StreamPeerGZIP: StreamPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -95,5 +107,4 @@ open class StreamPeerGZIP: StreamPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

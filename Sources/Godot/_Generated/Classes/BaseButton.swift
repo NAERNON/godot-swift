@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class BaseButton: Control {
     public enum DrawMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class BaseButton: Control {
         case hover = 2
         case disabled = 3
         case hoverPressed = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Normal", 0),
@@ -20,9 +22,11 @@ open class BaseButton: Control {
             ("Hover Pressed", 4),]
         }
     }
+
     public enum ActionMode: UInt32, GodotEnum {
         case press = 0
         case release = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Press", 0),
@@ -33,6 +37,7 @@ open class BaseButton: Control {
     public func pressed() {
         _ = pressedSignal.emit()
     }
+
     public lazy var pressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -51,6 +56,7 @@ open class BaseButton: Control {
     public func buttonUp() {
         _ = buttonUpSignal.emit()
     }
+
     public lazy var buttonUpSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "button_up") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -69,6 +75,7 @@ open class BaseButton: Control {
     public func buttonDown() {
         _ = buttonDownSignal.emit()
     }
+
     public lazy var buttonDownSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "button_down") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -86,16 +93,26 @@ open class BaseButton: Control {
 
     public struct ToggledSignalInput: Godot.SignalInput {
         public let toggledOn: Bool
-        fileprivate init(toggledOn: Bool) {
+
+        fileprivate init(
+            toggledOn: Bool
+        ) {
             self.toggledOn = toggledOn
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.toggledOn)]
         }
     }
-    public func toggled(toggledOn: Bool) {
+
+    public func toggled(
+        toggledOn: Bool
+    ) {
         _ = toggledSignal.emit(.init(toggledOn: toggledOn))
     }
+
     public lazy var toggledSignal: Godot.SignalEmitter<ToggledSignalInput> = {
         .init(object: self, signalName: "toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -114,7 +131,9 @@ open class BaseButton: Control {
     open func _pressed() {
     }
 
-    open func _toggled(toggledOn: Bool) {
+    open func _toggled(
+        toggledOn: Bool
+    ) {
     }
 
     internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
@@ -124,7 +143,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setPressed(_ pressed: Bool) {
+
+    private func __setPressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +165,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isPressed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +184,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    public func setPressedNoSignal(pressed: Bool) {
+
+    public func setPressedNoSignal(
+        pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +206,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     public func isHovered() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +225,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setToggleMode(enabled: Bool) {
+
+    private func __setToggleMode(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +247,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isToggleMode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +266,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setShortcutInTooltip(enabled: Bool) {
+
+    private func __setShortcutInTooltip(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +288,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isShortcutInTooltipEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +307,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setDisabled(_ disabled: Bool) {
+
+    private func __setDisabled(
+        _ disabled: Bool
+    ) {
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +329,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +348,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setActionMode(_ mode: Godot.BaseButton.ActionMode) {
+
+    private func __setActionMode(
+        _ mode: Godot.BaseButton.ActionMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +370,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __getActionMode() -> Godot.BaseButton.ActionMode {
         Godot.BaseButton.ActionMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +389,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setButtonMask(_ mask: Godot.MouseButtonMask) {
+
+    private func __setButtonMask(
+        _ mask: Godot.MouseButtonMask
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +411,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __getButtonMask() -> Godot.MouseButtonMask {
         Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,6 +430,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     public func drawMode() -> Godot.BaseButton.DrawMode {
         Godot.BaseButton.DrawMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,7 +449,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setKeepPressedOutside(enabled: Bool) {
+
+    private func __setKeepPressedOutside(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,6 +471,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isKeepPressedOutside() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,7 +490,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setShortcutFeedback(enabled: Bool) {
+
+    private func __setShortcutFeedback(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,6 +512,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __isShortcutFeedback() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,7 +531,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setShortcut(_ shortcut: Godot.Shortcut?) {
+
+    private func __setShortcut(
+        _ shortcut: Godot.Shortcut?
+    ) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         withUnsafeArgumentPackPointer(_ptr___ptr_shortcut) { __accessPtr in
@@ -495,6 +554,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __getShortcut() -> Godot.Shortcut? {
         Godot.Shortcut?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -513,7 +573,10 @@ open class BaseButton: Control {
         }
         }
     }()
-    private func __setButtonGroup(_ buttonGroup: Godot.ButtonGroup?) {
+
+    private func __setButtonGroup(
+        _ buttonGroup: Godot.ButtonGroup?
+    ) {
         buttonGroup.withGodotUnsafeRawPointer { __ptr_buttonGroup in
         withUnsafePointer(to: __ptr_buttonGroup) { _ptr___ptr_buttonGroup in
         withUnsafeArgumentPackPointer(_ptr___ptr_buttonGroup) { __accessPtr in
@@ -533,6 +596,7 @@ open class BaseButton: Control {
         }
         }
     }()
+
     private func __getButtonGroup() -> Godot.ButtonGroup? {
         Godot.ButtonGroup?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -655,6 +719,7 @@ open class BaseButton: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -682,5 +747,4 @@ open class BaseButton: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

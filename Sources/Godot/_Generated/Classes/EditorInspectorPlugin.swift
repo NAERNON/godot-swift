@@ -3,26 +3,47 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorInspectorPlugin: RefCounted {
-    open func _canHandle(object: Godot.Object?) -> Bool {
+    open func _canHandle(
+        object: Godot.Object?
+    ) -> Bool {
         Bool()
     }
 
-    open func _parseBegin(object: Godot.Object?) {
+    open func _parseBegin(
+        object: Godot.Object?
+    ) {
     }
 
-    open func _parseCategory(object: Godot.Object?, category: Godot.GodotString) {
+    open func _parseCategory(
+        object: Godot.Object?,
+        category: Godot.GodotString
+    ) {
     }
 
-    open func _parseGroup(object: Godot.Object?, group: Godot.GodotString) {
+    open func _parseGroup(
+        object: Godot.Object?,
+        group: Godot.GodotString
+    ) {
     }
 
-    open func _parseProperty(object: Godot.Object?, type: Godot.Variant.StorageType, name: Godot.GodotString, hintType: Godot.PropertyHint, hintString: Godot.GodotString, usageFlags: Godot.PropertyUsageFlags, wide: Bool) -> Bool {
+    open func _parseProperty(
+        object: Godot.Object?,
+        type: Godot.Variant.StorageType,
+        name: Godot.GodotString,
+        hintType: Godot.PropertyHint,
+        hintString: Godot.GodotString,
+        usageFlags: Godot.PropertyUsageFlags,
+        wide: Bool
+    ) -> Bool {
         Bool()
     }
 
-    open func _parseEnd(object: Godot.Object?) {
+    open func _parseEnd(
+        object: Godot.Object?
+    ) {
     }
 
     internal static var __method_binding_add_custom_control: GDExtensionMethodBindPtr = {
@@ -32,7 +53,10 @@ open class EditorInspectorPlugin: RefCounted {
         }
         }
     }()
-    public func addCustomControl(_ control: Godot.Control?) {
+
+    public func addCustomControl(
+        _ control: Godot.Control?
+    ) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -52,7 +76,12 @@ open class EditorInspectorPlugin: RefCounted {
         }
         }
     }()
-    public func addPropertyEditor(property: Godot.GodotString, editor: Godot.Control?, addToEnd: Bool = false) {
+
+    public func addPropertyEditor(
+        property: Godot.GodotString,
+        editor: Godot.Control?,
+        addToEnd: Bool = false
+    ) {
         property.withGodotUnsafeRawPointer { __ptr_property in
         editor.withGodotUnsafeRawPointer { __ptr_editor in
         withUnsafePointer(to: __ptr_editor) { _ptr___ptr_editor in
@@ -74,7 +103,12 @@ open class EditorInspectorPlugin: RefCounted {
         }
         }
     }()
-    public func addPropertyEditorForMultipleProperties(label: Godot.GodotString, properties: Godot.PackedStringArray, editor: Godot.Control?) {
+
+    public func addPropertyEditorForMultipleProperties(
+        label: Godot.GodotString,
+        properties: Godot.PackedStringArray,
+        editor: Godot.Control?
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         properties.withGodotUnsafeRawPointer { __ptr_properties in
         editor.withGodotUnsafeRawPointer { __ptr_editor in
@@ -90,6 +124,7 @@ open class EditorInspectorPlugin: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -165,5 +200,4 @@ open class EditorInspectorPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

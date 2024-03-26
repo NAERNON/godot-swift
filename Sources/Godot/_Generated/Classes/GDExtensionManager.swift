@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GDExtensionManager: Object {
     public enum LoadStatus: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class GDExtensionManager: Object {
         case alreadyLoaded = 2
         case notLoaded = 3
         case needsRestart = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ok", 0),
@@ -24,6 +26,7 @@ open class GDExtensionManager: Object {
     public func extensionsReloaded() {
         _ = extensionsReloadedSignal.emit()
     }
+
     public lazy var extensionsReloadedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "extensions_reloaded") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -46,7 +49,10 @@ open class GDExtensionManager: Object {
         }
         }
     }()
-    public func loadExtension(path: Godot.GodotString) -> Godot.GDExtensionManager.LoadStatus {
+
+    public func loadExtension(
+        path: Godot.GodotString
+    ) -> Godot.GDExtensionManager.LoadStatus {
         Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -66,7 +72,10 @@ open class GDExtensionManager: Object {
         }
         }
     }()
-    public func reloadExtension(path: Godot.GodotString) -> Godot.GDExtensionManager.LoadStatus {
+
+    public func reloadExtension(
+        path: Godot.GodotString
+    ) -> Godot.GDExtensionManager.LoadStatus {
         Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -86,7 +95,10 @@ open class GDExtensionManager: Object {
         }
         }
     }()
-    public func unloadExtension(path: Godot.GodotString) -> Godot.GDExtensionManager.LoadStatus {
+
+    public func unloadExtension(
+        path: Godot.GodotString
+    ) -> Godot.GDExtensionManager.LoadStatus {
         Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -106,7 +118,10 @@ open class GDExtensionManager: Object {
         }
         }
     }()
-    public func isExtensionLoaded(path: Godot.GodotString) -> Bool {
+
+    public func isExtensionLoaded(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -126,6 +141,7 @@ open class GDExtensionManager: Object {
         }
         }
     }()
+
     public func loadedExtensions() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,7 +160,10 @@ open class GDExtensionManager: Object {
         }
         }
     }()
-    public func `extension`(path: Godot.GodotString) -> Godot.GDExtension? {
+
+    public func `extension`(
+        path: Godot.GodotString
+    ) -> Godot.GDExtension? {
         Godot.GDExtension?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -158,6 +177,7 @@ open class GDExtensionManager: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -170,5 +190,4 @@ open class GDExtensionManager: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,21 +3,27 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorResourceConversionPlugin: RefCounted {
     open func _convertsTo() -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _handles(resource: Godot.Resource?) -> Bool {
+    open func _handles(
+        resource: Godot.Resource?
+    ) -> Bool {
         Bool()
     }
 
-    open func _convert(resource: Godot.Resource?) -> Godot.Resource? {
+    open func _convert(
+        resource: Godot.Resource?
+    ) -> Godot.Resource? {
         nil
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -57,5 +63,4 @@ open class EditorResourceConversionPlugin: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

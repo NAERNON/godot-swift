@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkinReference: RefCounted {
     internal static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class SkinReference: RefCounted {
         }
         }
     }()
+
     public func skeleton() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class SkinReference: RefCounted {
         }
         }
     }()
+
     public func skin() -> Godot.Skin? {
         Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,6 +45,7 @@ open class SkinReference: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -54,5 +58,4 @@ open class SkinReference: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

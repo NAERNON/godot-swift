@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShader: Shader {
     public enum GodotType: UInt32, GodotEnum {
@@ -17,6 +18,7 @@ open class VisualShader: Shader {
         case sky = 8
         case fog = 9
         case max = 10
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vertex", 0),
@@ -32,10 +34,12 @@ open class VisualShader: Shader {
             ("Max", 10),]
         }
     }
+
     public enum VaryingMode: UInt32, GodotEnum {
         case vertexToFragLight = 0
         case fragToLight = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vertex To Frag Light", 0),
@@ -43,6 +47,7 @@ open class VisualShader: Shader {
             ("Max", 2),]
         }
     }
+
     public enum VaryingType: UInt32, GodotEnum {
         case float = 0
         case int = 1
@@ -53,6 +58,7 @@ open class VisualShader: Shader {
         case boolean = 6
         case transform = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Float", 0),
@@ -68,6 +74,7 @@ open class VisualShader: Shader {
     }
 
     public static let nodeIDInvalid: Int = -1
+
     public static let nodeIDOutput: Int = 0
 
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
@@ -77,7 +84,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func setMode(_ mode: Godot.Shader.Mode) {
+
+    public func setMode(
+        _ mode: Godot.Shader.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,7 +106,13 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func addNode(type: Godot.VisualShader.GodotType, node: Godot.VisualShaderNode?, position: Godot.Vector2, id: Int32) {
+
+    public func addNode(
+        type: Godot.VisualShader.GodotType,
+        node: Godot.VisualShaderNode?,
+        position: Godot.Vector2,
+        id: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -119,7 +135,11 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func node(type: Godot.VisualShader.GodotType, id: Int32) -> Godot.VisualShaderNode? {
+
+    public func node(
+        type: Godot.VisualShader.GodotType,
+        id: Int32
+    ) -> Godot.VisualShaderNode? {
         Godot.VisualShaderNode?.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -140,7 +160,12 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func setNodePosition(type: Godot.VisualShader.GodotType, id: Int32, position: Godot.Vector2) {
+
+    public func setNodePosition(
+        type: Godot.VisualShader.GodotType,
+        id: Int32,
+        position: Godot.Vector2
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
         position.withGodotUnsafeRawPointer { __ptr_position in
@@ -161,7 +186,11 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func nodePosition(type: Godot.VisualShader.GodotType, id: Int32) -> Godot.Vector2 {
+
+    public func nodePosition(
+        type: Godot.VisualShader.GodotType,
+        id: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -182,7 +211,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func nodeList(type: Godot.VisualShader.GodotType) -> Godot.PackedInt32Array {
+
+    public func nodeList(
+        type: Godot.VisualShader.GodotType
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -202,7 +234,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func validNodeID(type: Godot.VisualShader.GodotType) -> Int32 {
+
+    public func validNodeID(
+        type: Godot.VisualShader.GodotType
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -222,7 +257,11 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func removeNode(type: Godot.VisualShader.GodotType, id: Int32) {
+
+    public func removeNode(
+        type: Godot.VisualShader.GodotType,
+        id: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_id) { __accessPtr in
@@ -242,7 +281,12 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func replaceNode(type: Godot.VisualShader.GodotType, id: Int32, newClass: Godot.GodotStringName) {
+
+    public func replaceNode(
+        type: Godot.VisualShader.GodotType,
+        id: Int32,
+        newClass: Godot.GodotStringName
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
         newClass.withGodotUnsafeRawPointer { __ptr_newClass in
@@ -263,7 +307,14 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func isNodeConnection(type: Godot.VisualShader.GodotType, fromNode: Int32, fromPort: Int32, toNode: Int32, toPort: Int32) -> Bool {
+
+    public func isNodeConnection(
+        type: Godot.VisualShader.GodotType,
+        fromNode: Int32,
+        fromPort: Int32,
+        toNode: Int32,
+        toPort: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
@@ -287,7 +338,14 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func canConnectNodes(type: Godot.VisualShader.GodotType, fromNode: Int32, fromPort: Int32, toNode: Int32, toPort: Int32) -> Bool {
+
+    public func canConnectNodes(
+        type: Godot.VisualShader.GodotType,
+        fromNode: Int32,
+        fromPort: Int32,
+        toNode: Int32,
+        toPort: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
@@ -311,7 +369,14 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func connectNodes(type: Godot.VisualShader.GodotType, fromNode: Int32, fromPort: Int32, toNode: Int32, toPort: Int32) -> Godot.ErrorType {
+
+    public func connectNodes(
+        type: Godot.VisualShader.GodotType,
+        fromNode: Int32,
+        fromPort: Int32,
+        toNode: Int32,
+        toPort: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
@@ -335,7 +400,14 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func disconnectNodes(type: Godot.VisualShader.GodotType, fromNode: Int32, fromPort: Int32, toNode: Int32, toPort: Int32) {
+
+    public func disconnectNodes(
+        type: Godot.VisualShader.GodotType,
+        fromNode: Int32,
+        fromPort: Int32,
+        toNode: Int32,
+        toPort: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -358,7 +430,14 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func connectNodesForced(type: Godot.VisualShader.GodotType, fromNode: Int32, fromPort: Int32, toNode: Int32, toPort: Int32) {
+
+    public func connectNodesForced(
+        type: Godot.VisualShader.GodotType,
+        fromNode: Int32,
+        fromPort: Int32,
+        toNode: Int32,
+        toPort: Int32
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -381,7 +460,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func nodeConnections(type: Godot.VisualShader.GodotType) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+
+    public func nodeConnections(
+        type: Godot.VisualShader.GodotType
+    ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -401,7 +483,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    private func __setGraphOffset(_ offset: Godot.Vector2) {
+
+    private func __setGraphOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,6 +505,7 @@ open class VisualShader: Shader {
         }
         }
     }()
+
     private func __getGraphOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,7 +524,12 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func addVarying(name: Godot.GodotString, mode: Godot.VisualShader.VaryingMode, type: Godot.VisualShader.VaryingType) {
+
+    public func addVarying(
+        name: Godot.GodotString,
+        mode: Godot.VisualShader.VaryingMode,
+        type: Godot.VisualShader.VaryingType
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         type.withGodotUnsafeRawPointer { __ptr_type in
@@ -459,7 +550,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func removeVarying(name: Godot.GodotString) {
+
+    public func removeVarying(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -478,7 +572,10 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func hasVarying(name: Godot.GodotString) -> Bool {
+
+    public func hasVarying(
+        name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -503,6 +600,7 @@ open class VisualShader: Shader {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -515,5 +613,4 @@ open class VisualShader: Shader {
         }
         return _virtualFunctions!
     }
-
-    }
+}

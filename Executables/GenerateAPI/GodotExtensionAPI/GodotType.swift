@@ -117,12 +117,12 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// The Godot classes types.
     ///
     /// This set is used to know if a type is a Godot class.
-    static var godotClassTypes: Set<GodotType> = []
+    @TaskLocal static var godotClassTypes: Set<GodotType> = []
     
     /// The Godot builtin classes types.
     ///
     /// This set is used to know if a type is a Godot builtin class.
-    static var godotBuiltinClassTypes: Set<GodotType> = []
+    @TaskLocal static var godotBuiltinClassTypes: Set<GodotType> = []
     
     // MARK: Init
     

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class WorldEnvironment: Node {
     internal static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class WorldEnvironment: Node {
         }
         }
     }()
-    private func __setEnvironment(env: Godot.Environment?) {
+
+    private func __setEnvironment(
+        env: Godot.Environment?
+    ) {
         env.withGodotUnsafeRawPointer { __ptr_env in
         withUnsafePointer(to: __ptr_env) { _ptr___ptr_env in
         withUnsafeArgumentPackPointer(_ptr___ptr_env) { __accessPtr in
@@ -32,6 +36,7 @@ open class WorldEnvironment: Node {
         }
         }
     }()
+
     private func __getEnvironment() -> Godot.Environment? {
         Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class WorldEnvironment: Node {
         }
         }
     }()
-    private func __setCameraAttributes(_ cameraAttributes: Godot.CameraAttributes?) {
+
+    private func __setCameraAttributes(
+        _ cameraAttributes: Godot.CameraAttributes?
+    ) {
         cameraAttributes.withGodotUnsafeRawPointer { __ptr_cameraAttributes in
         withUnsafePointer(to: __ptr_cameraAttributes) { _ptr___ptr_cameraAttributes in
         withUnsafeArgumentPackPointer(_ptr___ptr_cameraAttributes) { __accessPtr in
@@ -70,6 +78,7 @@ open class WorldEnvironment: Node {
         }
         }
     }()
+
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +113,7 @@ open class WorldEnvironment: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -116,5 +126,4 @@ open class WorldEnvironment: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

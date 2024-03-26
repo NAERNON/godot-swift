@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeCubemap: VisualShaderNode {
     public enum Source: UInt32, GodotEnum {
         case texture = 0
         case port = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture", 0),
@@ -16,11 +18,13 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             ("Max", 2),]
         }
     }
+
     public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Data", 0),
@@ -37,7 +41,10 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
-    private func __setSource(value: Godot.VisualShaderNodeCubemap.Source) {
+
+    private func __setSource(
+        value: Godot.VisualShaderNodeCubemap.Source
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -56,6 +63,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
+
     private func __getSource() -> Godot.VisualShaderNodeCubemap.Source {
         Godot.VisualShaderNodeCubemap.Source.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +82,10 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
-    private func __setCubeMap(value: Godot.Cubemap?) {
+
+    private func __setCubeMap(
+        value: Godot.Cubemap?
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafePointer(to: __ptr_value) { _ptr___ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_value) { __accessPtr in
@@ -94,6 +105,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
+
     private func __getCubeMap() -> Godot.Cubemap? {
         Godot.Cubemap?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,7 +124,10 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
-    private func __setTextureType(value: Godot.VisualShaderNodeCubemap.TextureType) {
+
+    private func __setTextureType(
+        value: Godot.VisualShaderNodeCubemap.TextureType
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -131,6 +146,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         }
     }()
+
     private func __getTextureType() -> Godot.VisualShaderNodeCubemap.TextureType {
         Godot.VisualShaderNodeCubemap.TextureType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,6 +192,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -188,5 +205,4 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

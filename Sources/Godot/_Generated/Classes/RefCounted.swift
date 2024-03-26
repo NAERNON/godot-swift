@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedRootClass
 open class RefCounted: Object {
     internal static var __method_binding_init_ref: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class RefCounted: Object {
         }
         }
     }()
+
     private func __initRef() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class RefCounted: Object {
         }
         }
     }()
+
     private func __reference() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class RefCounted: Object {
         }
         }
     }()
+
     private func __unreference() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class RefCounted: Object {
         }
         }
     }()
+
     private func __getReferenceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -78,6 +83,7 @@ open class RefCounted: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -90,5 +96,4 @@ open class RefCounted: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

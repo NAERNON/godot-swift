@@ -3,12 +3,16 @@
 //
 
 import GodotExtensionHeaders
+
 private var __function_binding_sin: GDExtensionPtrUtilityFunction = {
     GodotStringName(swiftStaticString: "sin").withGodotUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _sin(angleRad: Double) -> Double {
+
+internal func _sin(
+    angleRad: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     angleRad.withGodotUnsafeRawPointer { __ptr_angleRad in
     withUnsafeArgumentPackPointer(__ptr_angleRad) { __accessPtr in
@@ -20,7 +24,10 @@ private var __function_binding_cos: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _cos(angleRad: Double) -> Double {
+
+internal func _cos(
+    angleRad: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     angleRad.withGodotUnsafeRawPointer { __ptr_angleRad in
     withUnsafeArgumentPackPointer(__ptr_angleRad) { __accessPtr in
@@ -32,7 +39,10 @@ private var __function_binding_tan: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _tan(angleRad: Double) -> Double {
+
+internal func _tan(
+    angleRad: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     angleRad.withGodotUnsafeRawPointer { __ptr_angleRad in
     withUnsafeArgumentPackPointer(__ptr_angleRad) { __accessPtr in
@@ -44,7 +54,10 @@ private var __function_binding_sinh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _sinh(_ x: Double) -> Double {
+
+internal func _sinh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -56,7 +69,10 @@ private var __function_binding_cosh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _cosh(_ x: Double) -> Double {
+
+internal func _cosh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -68,7 +84,10 @@ private var __function_binding_tanh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _tanh(_ x: Double) -> Double {
+
+internal func _tanh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -80,7 +99,10 @@ private var __function_binding_asin: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _asin(_ x: Double) -> Double {
+
+internal func _asin(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -92,7 +114,10 @@ private var __function_binding_acos: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _acos(_ x: Double) -> Double {
+
+internal func _acos(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -104,7 +129,10 @@ private var __function_binding_atan: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _atan(_ x: Double) -> Double {
+
+internal func _atan(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -116,7 +144,11 @@ private var __function_binding_atan2: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _atan2(y: Double, x: Double) -> Double {
+
+internal func _atan2(
+    y: Double,
+    x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     y.withGodotUnsafeRawPointer { __ptr_y in
     x.withGodotUnsafeRawPointer { __ptr_x in
@@ -129,7 +161,10 @@ private var __function_binding_asinh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _asinh(_ x: Double) -> Double {
+
+internal func _asinh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -141,7 +176,10 @@ private var __function_binding_acosh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _acosh(_ x: Double) -> Double {
+
+internal func _acosh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -153,7 +191,10 @@ private var __function_binding_atanh: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _atanh(_ x: Double) -> Double {
+
+internal func _atanh(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -165,7 +206,10 @@ private var __function_binding_sqrt: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _sqrt(_ x: Double) -> Double {
+
+internal func _sqrt(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -177,7 +221,11 @@ private var __function_binding_fmod: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _fmod(x: Double, y: Double) -> Double {
+
+internal func _fmod(
+    x: Double,
+    y: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     y.withGodotUnsafeRawPointer { __ptr_y in
@@ -190,7 +238,11 @@ private var __function_binding_fposmod: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _fposmod(x: Double, y: Double) -> Double {
+
+internal func _fposmod(
+    x: Double,
+    y: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     y.withGodotUnsafeRawPointer { __ptr_y in
@@ -203,7 +255,11 @@ private var __function_binding_posmod: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
-internal func _posmod(x: Int, y: Int) -> Int {
+
+internal func _posmod(
+    x: Int,
+    y: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     y.withGodotUnsafeRawPointer { __ptr_y in
@@ -216,7 +272,10 @@ private var __function_binding_floor: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _floor<Value: VariantStorableIn>(_ x: Value) -> Variant {
+
+internal func _floor<Value: VariantStorableIn>(
+    _ x: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -228,7 +287,10 @@ private var __function_binding_floorf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _floorf(_ x: Double) -> Double {
+
+internal func _floorf(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -240,7 +302,10 @@ private var __function_binding_floori: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
-internal func _floori(_ x: Double) -> Int {
+
+internal func _floori(
+    _ x: Double
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -252,7 +317,10 @@ private var __function_binding_ceil: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _ceil<Value: VariantStorableIn>(_ x: Value) -> Variant {
+
+internal func _ceil<Value: VariantStorableIn>(
+    _ x: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -264,7 +332,10 @@ private var __function_binding_ceilf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _ceilf(_ x: Double) -> Double {
+
+internal func _ceilf(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -276,7 +347,10 @@ private var __function_binding_ceili: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
-internal func _ceili(_ x: Double) -> Int {
+
+internal func _ceili(
+    _ x: Double
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -288,7 +362,10 @@ private var __function_binding_round: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _round<Value: VariantStorableIn>(_ x: Value) -> Variant {
+
+internal func _round<Value: VariantStorableIn>(
+    _ x: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -300,7 +377,10 @@ private var __function_binding_roundf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _roundf(_ x: Double) -> Double {
+
+internal func _roundf(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -312,7 +392,10 @@ private var __function_binding_roundi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
-internal func _roundi(_ x: Double) -> Int {
+
+internal func _roundi(
+    _ x: Double
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -324,7 +407,10 @@ private var __function_binding_abs: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _abs<Value: VariantStorableIn>(_ x: Value) -> Variant {
+
+internal func _abs<Value: VariantStorableIn>(
+    _ x: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -336,7 +422,10 @@ private var __function_binding_absf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _absf(_ x: Double) -> Double {
+
+internal func _absf(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -348,7 +437,10 @@ private var __function_binding_absi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
-internal func _absi(_ x: Int) -> Int {
+
+internal func _absi(
+    _ x: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -360,7 +452,10 @@ private var __function_binding_sign: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _sign<Value: VariantStorableIn>(_ x: Value) -> Variant {
+
+internal func _sign<Value: VariantStorableIn>(
+    _ x: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -372,7 +467,10 @@ private var __function_binding_signf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _signf(_ x: Double) -> Double {
+
+internal func _signf(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -384,7 +482,10 @@ private var __function_binding_signi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
-internal func _signi(_ x: Int) -> Int {
+
+internal func _signi(
+    _ x: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -396,7 +497,11 @@ private var __function_binding_snapped: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 459914704)!
     }
 }()
-internal func _snapped<Value1: VariantStorableIn, Value2: VariantStorableIn>(x: Value1, step: Value2) -> Variant {
+
+internal func _snapped<Value1: VariantStorableIn, Value2: VariantStorableIn>(
+    x: Value1,
+    step: Value2
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: x) { __ptr_x in
     Godot.Variant.withStorageUnsafeRawPointer(to: step) { __ptr_step in
@@ -409,7 +514,11 @@ private var __function_binding_snappedf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _snappedf(x: Double, step: Double) -> Double {
+
+internal func _snappedf(
+    x: Double,
+    step: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     step.withGodotUnsafeRawPointer { __ptr_step in
@@ -422,7 +531,11 @@ private var __function_binding_snappedi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3570758393)!
     }
 }()
-internal func _snappedi(x: Double, step: Int) -> Int {
+
+internal func _snappedi(
+    x: Double,
+    step: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     step.withGodotUnsafeRawPointer { __ptr_step in
@@ -435,7 +548,11 @@ private var __function_binding_pow: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _pow(base: Double, exp: Double) -> Double {
+
+internal func _pow(
+    base: Double,
+    exp: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     base.withGodotUnsafeRawPointer { __ptr_base in
     exp.withGodotUnsafeRawPointer { __ptr_exp in
@@ -448,7 +565,10 @@ private var __function_binding_log: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _log(_ x: Double) -> Double {
+
+internal func _log(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -460,7 +580,10 @@ private var __function_binding_exp: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _exp(_ x: Double) -> Double {
+
+internal func _exp(
+    _ x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -472,7 +595,10 @@ private var __function_binding_is_nan: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
-internal func _isNan(_ x: Double) -> Bool {
+
+internal func _isNan(
+    _ x: Double
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -484,7 +610,10 @@ private var __function_binding_is_inf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
-internal func _isInf(_ x: Double) -> Bool {
+
+internal func _isInf(
+    _ x: Double
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -496,7 +625,11 @@ private var __function_binding_is_equal_approx: GDExtensionPtrUtilityFunction = 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1400789633)!
     }
 }()
-internal func _isEqualApprox(a: Double, b: Double) -> Bool {
+
+internal func _isEqualApprox(
+    a: Double,
+    b: Double
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     a.withGodotUnsafeRawPointer { __ptr_a in
     b.withGodotUnsafeRawPointer { __ptr_b in
@@ -509,7 +642,10 @@ private var __function_binding_is_zero_approx: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
-internal func _isZeroApprox(_ x: Double) -> Bool {
+
+internal func _isZeroApprox(
+    _ x: Double
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -521,7 +657,10 @@ private var __function_binding_is_finite: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
-internal func _isFinite(_ x: Double) -> Bool {
+
+internal func _isFinite(
+    _ x: Double
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -533,7 +672,11 @@ private var __function_binding_ease: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _ease(x: Double, curve: Double) -> Double {
+
+internal func _ease(
+    x: Double,
+    curve: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     curve.withGodotUnsafeRawPointer { __ptr_curve in
@@ -546,7 +689,10 @@ private var __function_binding_step_decimals: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
-internal func _stepDecimals(_ x: Double) -> Int {
+
+internal func _stepDecimals(
+    _ x: Double
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     x.withGodotUnsafeRawPointer { __ptr_x in
     withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
@@ -558,7 +704,12 @@ private var __function_binding_lerp: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
-internal func _lerp<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(from: Value1, to: Value2, weight: Value3) -> Variant {
+
+internal func _lerp<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(
+    from: Value1,
+    to: Value2,
+    weight: Value3
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: from) { __ptr_from in
     Godot.Variant.withStorageUnsafeRawPointer(to: to) { __ptr_to in
@@ -572,7 +723,12 @@ private var __function_binding_lerpf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _lerpf(from: Double, to: Double, weight: Double) -> Double {
+
+internal func _lerpf(
+    from: Double,
+    to: Double,
+    weight: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -586,7 +742,14 @@ private var __function_binding_cubic_interpolate: GDExtensionPtrUtilityFunction 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
-internal func _cubicInterpolate(from: Double, to: Double, pre: Double, post: Double, weight: Double) -> Double {
+
+internal func _cubicInterpolate(
+    from: Double,
+    to: Double,
+    pre: Double,
+    post: Double,
+    weight: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -602,7 +765,14 @@ private var __function_binding_cubic_interpolate_angle: GDExtensionPtrUtilityFun
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
-internal func _cubicInterpolateAngle(from: Double, to: Double, pre: Double, post: Double, weight: Double) -> Double {
+
+internal func _cubicInterpolateAngle(
+    from: Double,
+    to: Double,
+    pre: Double,
+    post: Double,
+    weight: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -618,7 +788,17 @@ private var __function_binding_cubic_interpolate_in_time: GDExtensionPtrUtilityF
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 388121036)!
     }
 }()
-internal func _cubicInterpolateInTime(from: Double, to: Double, pre: Double, post: Double, weight: Double, toT t: Double, preT: Double, postT: Double) -> Double {
+
+internal func _cubicInterpolateInTime(
+    from: Double,
+    to: Double,
+    pre: Double,
+    post: Double,
+    weight: Double,
+    toT t: Double,
+    preT: Double,
+    postT: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -637,7 +817,17 @@ private var __function_binding_cubic_interpolate_angle_in_time: GDExtensionPtrUt
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 388121036)!
     }
 }()
-internal func _cubicInterpolateAngleInTime(from: Double, to: Double, pre: Double, post: Double, weight: Double, toT t: Double, preT: Double, postT: Double) -> Double {
+
+internal func _cubicInterpolateAngleInTime(
+    from: Double,
+    to: Double,
+    pre: Double,
+    post: Double,
+    weight: Double,
+    toT t: Double,
+    preT: Double,
+    postT: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -656,7 +846,14 @@ private var __function_binding_bezier_interpolate: GDExtensionPtrUtilityFunction
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
-internal func _bezierInterpolate(start: Double, control1: Double, control2: Double, end: Double, t: Double) -> Double {
+
+internal func _bezierInterpolate(
+    start: Double,
+    control1: Double,
+    control2: Double,
+    end: Double,
+    t: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     start.withGodotUnsafeRawPointer { __ptr_start in
     control1.withGodotUnsafeRawPointer { __ptr_control1 in
@@ -672,7 +869,14 @@ private var __function_binding_bezier_derivative: GDExtensionPtrUtilityFunction 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
-internal func _bezierDerivative(start: Double, control1: Double, control2: Double, end: Double, t: Double) -> Double {
+
+internal func _bezierDerivative(
+    start: Double,
+    control1: Double,
+    control2: Double,
+    end: Double,
+    t: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     start.withGodotUnsafeRawPointer { __ptr_start in
     control1.withGodotUnsafeRawPointer { __ptr_control1 in
@@ -688,7 +892,11 @@ private var __function_binding_angle_difference: GDExtensionPtrUtilityFunction =
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _angleDifference(from: Double, to: Double) -> Double {
+
+internal func _angleDifference(
+    from: Double,
+    to: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -701,7 +909,12 @@ private var __function_binding_lerp_angle: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _lerpAngle(from: Double, to: Double, weight: Double) -> Double {
+
+internal func _lerpAngle(
+    from: Double,
+    to: Double,
+    weight: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -715,7 +928,12 @@ private var __function_binding_inverse_lerp: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _inverseLerp(from: Double, to: Double, weight: Double) -> Double {
+
+internal func _inverseLerp(
+    from: Double,
+    to: Double,
+    weight: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -729,7 +947,14 @@ private var __function_binding_remap: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
-internal func _remap(value: Double, istart: Double, istop: Double, ostart: Double, ostop: Double) -> Double {
+
+internal func _remap(
+    value: Double,
+    istart: Double,
+    istop: Double,
+    ostart: Double,
+    ostop: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     istart.withGodotUnsafeRawPointer { __ptr_istart in
@@ -745,7 +970,12 @@ private var __function_binding_smoothstep: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _smoothstep(from: Double, to: Double, x: Double) -> Double {
+
+internal func _smoothstep(
+    from: Double,
+    to: Double,
+    x: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -759,7 +989,12 @@ private var __function_binding_move_toward: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _moveToward(from: Double, to: Double, delta: Double) -> Double {
+
+internal func _moveToward(
+    from: Double,
+    to: Double,
+    delta: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -773,7 +1008,12 @@ private var __function_binding_rotate_toward: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _rotateToward(from: Double, to: Double, delta: Double) -> Double {
+
+internal func _rotateToward(
+    from: Double,
+    to: Double,
+    delta: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -787,7 +1027,10 @@ private var __function_binding_deg_to_rad: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _degToRad(deg: Double) -> Double {
+
+internal func _degToRad(
+    deg: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     deg.withGodotUnsafeRawPointer { __ptr_deg in
     withUnsafeArgumentPackPointer(__ptr_deg) { __accessPtr in
@@ -799,7 +1042,10 @@ private var __function_binding_rad_to_deg: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _radToDeg(rad: Double) -> Double {
+
+internal func _radToDeg(
+    rad: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     rad.withGodotUnsafeRawPointer { __ptr_rad in
     withUnsafeArgumentPackPointer(__ptr_rad) { __accessPtr in
@@ -811,7 +1057,10 @@ private var __function_binding_linear_to_db: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _linearToDb(lin: Double) -> Double {
+
+internal func _linearToDb(
+    lin: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     lin.withGodotUnsafeRawPointer { __ptr_lin in
     withUnsafeArgumentPackPointer(__ptr_lin) { __accessPtr in
@@ -823,7 +1072,10 @@ private var __function_binding_db_to_linear: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
-internal func _dbToLinear(db: Double) -> Double {
+
+internal func _dbToLinear(
+    db: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     db.withGodotUnsafeRawPointer { __ptr_db in
     withUnsafeArgumentPackPointer(__ptr_db) { __accessPtr in
@@ -835,7 +1087,12 @@ private var __function_binding_wrap: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
-internal func _wrap<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(value: Value1, min: Value2, max: Value3) -> Variant {
+
+internal func _wrap<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(
+    value: Value1,
+    min: Value2,
+    max: Value3
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
     Godot.Variant.withStorageUnsafeRawPointer(to: min) { __ptr_min in
@@ -849,7 +1106,12 @@ private var __function_binding_wrapi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 650295447)!
     }
 }()
-internal func _wrapi(value: Int, min: Int, max: Int) -> Int {
+
+internal func _wrapi(
+    value: Int,
+    min: Int,
+    max: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     min.withGodotUnsafeRawPointer { __ptr_min in
@@ -863,7 +1125,12 @@ private var __function_binding_wrapf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _wrapf(value: Double, min: Double, max: Double) -> Double {
+
+internal func _wrapf(
+    value: Double,
+    min: Double,
+    max: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     min.withGodotUnsafeRawPointer { __ptr_min in
@@ -877,7 +1144,12 @@ private var __function_binding_max: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3896050336)!
     }
 }()
-internal func _max<Value1: VariantStorableIn, Value2: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value1, arg2: Value2, _ rest: repeat each VariantRest) -> Variant {
+
+internal func _max<Value1: VariantStorableIn, Value2: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value1,
+    arg2: Value2,
+    _ rest: repeat each VariantRest
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     Godot.Variant.withStorageUnsafeRawPointer(to: arg2) { __ptr_arg2 in
@@ -890,7 +1162,11 @@ private var __function_binding_maxi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
-internal func _maxi(a: Int, b: Int) -> Int {
+
+internal func _maxi(
+    a: Int,
+    b: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     a.withGodotUnsafeRawPointer { __ptr_a in
     b.withGodotUnsafeRawPointer { __ptr_b in
@@ -903,7 +1179,11 @@ private var __function_binding_maxf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _maxf(a: Double, b: Double) -> Double {
+
+internal func _maxf(
+    a: Double,
+    b: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     a.withGodotUnsafeRawPointer { __ptr_a in
     b.withGodotUnsafeRawPointer { __ptr_b in
@@ -916,7 +1196,12 @@ private var __function_binding_min: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3896050336)!
     }
 }()
-internal func _min<Value1: VariantStorableIn, Value2: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value1, arg2: Value2, _ rest: repeat each VariantRest) -> Variant {
+
+internal func _min<Value1: VariantStorableIn, Value2: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value1,
+    arg2: Value2,
+    _ rest: repeat each VariantRest
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     Godot.Variant.withStorageUnsafeRawPointer(to: arg2) { __ptr_arg2 in
@@ -929,7 +1214,11 @@ private var __function_binding_mini: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
-internal func _mini(a: Int, b: Int) -> Int {
+
+internal func _mini(
+    a: Int,
+    b: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     a.withGodotUnsafeRawPointer { __ptr_a in
     b.withGodotUnsafeRawPointer { __ptr_b in
@@ -942,7 +1231,11 @@ private var __function_binding_minf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _minf(a: Double, b: Double) -> Double {
+
+internal func _minf(
+    a: Double,
+    b: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     a.withGodotUnsafeRawPointer { __ptr_a in
     b.withGodotUnsafeRawPointer { __ptr_b in
@@ -955,7 +1248,12 @@ private var __function_binding_clamp: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
-internal func _clamp<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(value: Value1, min: Value2, max: Value3) -> Variant {
+
+internal func _clamp<Value1: VariantStorableIn, Value2: VariantStorableIn, Value3: VariantStorableIn>(
+    value: Value1,
+    min: Value2,
+    max: Value3
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
     Godot.Variant.withStorageUnsafeRawPointer(to: min) { __ptr_min in
@@ -969,7 +1267,12 @@ private var __function_binding_clampi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 650295447)!
     }
 }()
-internal func _clampi(value: Int, min: Int, max: Int) -> Int {
+
+internal func _clampi(
+    value: Int,
+    min: Int,
+    max: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     min.withGodotUnsafeRawPointer { __ptr_min in
@@ -983,7 +1286,12 @@ private var __function_binding_clampf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
-internal func _clampf(value: Double, min: Double, max: Double) -> Double {
+
+internal func _clampf(
+    value: Double,
+    min: Double,
+    max: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     min.withGodotUnsafeRawPointer { __ptr_min in
@@ -997,7 +1305,10 @@ private var __function_binding_nearest_po2: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
-internal func _nearestPo2(value: Int) -> Int {
+
+internal func _nearestPo2(
+    value: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
@@ -1009,7 +1320,11 @@ private var __function_binding_pingpong: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _pingpong(value: Double, length: Double) -> Double {
+
+internal func _pingpong(
+    value: Double,
+    length: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     value.withGodotUnsafeRawPointer { __ptr_value in
     length.withGodotUnsafeRawPointer { __ptr_length in
@@ -1022,6 +1337,7 @@ private var __function_binding_randomize: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1691721052)!
     }
 }()
+
 internal func _randomize() {
     __function_binding_randomize(nil, nil, 0)
 }
@@ -1031,6 +1347,7 @@ private var __function_binding_randi: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 701202648)!
     }
 }()
+
 internal func _randi() -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     __function_binding_randi(__temporary, nil, 0)}
@@ -1041,6 +1358,7 @@ private var __function_binding_randf: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2086227845)!
     }
 }()
+
 internal func _randf() -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     __function_binding_randf(__temporary, nil, 0)}
@@ -1051,7 +1369,11 @@ private var __function_binding_randi_range: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
-internal func _randiRange(from: Int, to: Int) -> Int {
+
+internal func _randiRange(
+    from: Int,
+    to: Int
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -1064,7 +1386,11 @@ private var __function_binding_randf_range: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _randfRange(from: Double, to: Double) -> Double {
+
+internal func _randfRange(
+    from: Double,
+    to: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     from.withGodotUnsafeRawPointer { __ptr_from in
     to.withGodotUnsafeRawPointer { __ptr_to in
@@ -1077,7 +1403,11 @@ private var __function_binding_randfn: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
-internal func _randfn(mean: Double, deviation: Double) -> Double {
+
+internal func _randfn(
+    mean: Double,
+    deviation: Double
+) -> Double {
     Double.fromMutatingGodotUnsafePointer { __temporary in
     mean.withGodotUnsafeRawPointer { __ptr_mean in
     deviation.withGodotUnsafeRawPointer { __ptr_deviation in
@@ -1090,7 +1420,10 @@ private var __function_binding_seed: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 382931173)!
     }
 }()
-internal func _seed(base: Int) {
+
+internal func _seed(
+    base: Int
+) {
     base.withGodotUnsafeRawPointer { __ptr_base in
     withUnsafeArgumentPackPointer(__ptr_base) { __accessPtr in
     __function_binding_seed(nil, __accessPtr, 1)}}
@@ -1101,7 +1434,10 @@ private var __function_binding_rand_from_seed: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1391063685)!
     }
 }()
-internal func _randFromSeed(_ seed: Int) -> PackedInt64Array {
+
+internal func _randFromSeed(
+    _ seed: Int
+) -> PackedInt64Array {
     PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
     seed.withGodotUnsafeRawPointer { __ptr_seed in
     withUnsafeArgumentPackPointer(__ptr_seed) { __accessPtr in
@@ -1113,7 +1449,10 @@ private var __function_binding_weakref: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
-internal func _weakref<Value: VariantStorableIn>(obj: Value) -> Variant {
+
+internal func _weakref<Value: VariantStorableIn>(
+    obj: Value
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: obj) { __ptr_obj in
     withUnsafeArgumentPackPointer(__ptr_obj) { __accessPtr in
@@ -1125,7 +1464,10 @@ private var __function_binding_typeof: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 326422594)!
     }
 }()
-internal func _typeof<Value: VariantStorableIn>(variable: Value) -> Int {
+
+internal func _typeof<Value: VariantStorableIn>(
+    variable: Value
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
     withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -1137,7 +1479,11 @@ private var __function_binding_type_convert: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2453062746)!
     }
 }()
-internal func _typeConvert<Value: VariantStorableIn>(variant: Value, type: Int) -> Variant {
+
+internal func _typeConvert<Value: VariantStorableIn>(
+    variant: Value,
+    type: Int
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variant) { __ptr_variant in
     type.withGodotUnsafeRawPointer { __ptr_type in
@@ -1150,7 +1496,11 @@ private var __function_binding_str: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 32569176)!
     }
 }()
-internal func _str<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) -> GodotString {
+
+internal func _str<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) -> GodotString {
     GodotString.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
@@ -1162,7 +1512,10 @@ private var __function_binding_error_string: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 942708242)!
     }
 }()
-internal func _errorString(error: Int) -> GodotString {
+
+internal func _errorString(
+    error: Int
+) -> GodotString {
     GodotString.fromMutatingGodotUnsafePointer { __temporary in
     error.withGodotUnsafeRawPointer { __ptr_error in
     withUnsafeArgumentPackPointer(__ptr_error) { __accessPtr in
@@ -1174,7 +1527,10 @@ private var __function_binding_type_string: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 942708242)!
     }
 }()
-internal func _typeString(type: Int) -> GodotString {
+
+internal func _typeString(
+    type: Int
+) -> GodotString {
     GodotString.fromMutatingGodotUnsafePointer { __temporary in
     type.withGodotUnsafeRawPointer { __ptr_type in
     withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -1186,7 +1542,11 @@ private var __function_binding_print: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _print<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _print<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_print(nil, __accessPtr, Int32(packCount))}}
@@ -1197,7 +1557,11 @@ private var __function_binding_print_rich: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printRich<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _printRich<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_print_rich(nil, __accessPtr, Int32(packCount))}}
@@ -1208,7 +1572,11 @@ private var __function_binding_printerr: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printerr<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _printerr<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_printerr(nil, __accessPtr, Int32(packCount))}}
@@ -1219,7 +1587,11 @@ private var __function_binding_printt: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printt<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _printt<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_printt(nil, __accessPtr, Int32(packCount))}}
@@ -1230,7 +1602,11 @@ private var __function_binding_prints: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _prints<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _prints<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_prints(nil, __accessPtr, Int32(packCount))}}
@@ -1241,7 +1617,11 @@ private var __function_binding_printraw: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printraw<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _printraw<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_printraw(nil, __accessPtr, Int32(packCount))}}
@@ -1252,7 +1632,11 @@ private var __function_binding_print_verbose: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _printVerbose<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _printVerbose<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_print_verbose(nil, __accessPtr, Int32(packCount))}}
@@ -1263,7 +1647,11 @@ private var __function_binding_push_error: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _pushError<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _pushError<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_push_error(nil, __accessPtr, Int32(packCount))}}
@@ -1274,7 +1662,11 @@ private var __function_binding_push_warning: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
-internal func _pushWarning<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(arg1: Value, _ rest: repeat each VariantRest) {
+
+internal func _pushWarning<Value: VariantStorableIn, each VariantRest : VariantStorableIn>(
+    arg1: Value,
+    _ rest: repeat each VariantRest
+) {
     Godot.Variant.withStorageUnsafeRawPointer(to: arg1) { __ptr_arg1 in
     withUnsafeArgumentPackPointer(__ptr_arg1, varargs: repeat each rest) { packCount, __accessPtr in
     __function_binding_push_warning(nil, __accessPtr, Int32(packCount))}}
@@ -1285,7 +1677,10 @@ private var __function_binding_var_to_str: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 866625479)!
     }
 }()
-internal func _varToStr<Value: VariantStorableIn>(variable: Value) -> GodotString {
+
+internal func _varToStr<Value: VariantStorableIn>(
+    variable: Value
+) -> GodotString {
     GodotString.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
     withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -1297,7 +1692,10 @@ private var __function_binding_str_to_var: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1891498491)!
     }
 }()
-internal func _strToVar(string: GodotString) -> Variant {
+
+internal func _strToVar(
+    string: GodotString
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     string.withGodotUnsafeRawPointer { __ptr_string in
     withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
@@ -1309,7 +1707,10 @@ private var __function_binding_var_to_bytes: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2947269930)!
     }
 }()
-internal func _varToBytes<Value: VariantStorableIn>(variable: Value) -> PackedByteArray {
+
+internal func _varToBytes<Value: VariantStorableIn>(
+    variable: Value
+) -> PackedByteArray {
     PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
     withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -1321,7 +1722,10 @@ private var __function_binding_bytes_to_var: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4249819452)!
     }
 }()
-internal func _bytesToVar(bytes: PackedByteArray) -> Variant {
+
+internal func _bytesToVar(
+    bytes: PackedByteArray
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     bytes.withGodotUnsafeRawPointer { __ptr_bytes in
     withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
@@ -1333,7 +1737,10 @@ private var __function_binding_var_to_bytes_with_objects: GDExtensionPtrUtilityF
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2947269930)!
     }
 }()
-internal func _varToBytesWithObjects<Value: VariantStorableIn>(variable: Value) -> PackedByteArray {
+
+internal func _varToBytesWithObjects<Value: VariantStorableIn>(
+    variable: Value
+) -> PackedByteArray {
     PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
     withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -1345,7 +1752,10 @@ private var __function_binding_bytes_to_var_with_objects: GDExtensionPtrUtilityF
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4249819452)!
     }
 }()
-internal func _bytesToVarWithObjects(bytes: PackedByteArray) -> Variant {
+
+internal func _bytesToVarWithObjects(
+    bytes: PackedByteArray
+) -> Variant {
     Variant.fromMutatingGodotUnsafePointer { __temporary in
     bytes.withGodotUnsafeRawPointer { __ptr_bytes in
     withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
@@ -1357,7 +1767,10 @@ private var __function_binding_hash: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 326422594)!
     }
 }()
-internal func _hash<Value: VariantStorableIn>(variable: Value) -> Int {
+
+internal func _hash<Value: VariantStorableIn>(
+    variable: Value
+) -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
     withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -1369,7 +1782,10 @@ private var __function_binding_instance_from_id: GDExtensionPtrUtilityFunction =
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1156694636)!
     }
 }()
-internal func _instanceFromID(instanceID: Int) -> Object? {
+
+internal func _instanceFromID(
+    instanceID: Int
+) -> Object? {
     Object?.fromMutatingGodotUnsafePointer { __temporary in
     instanceID.withGodotUnsafeRawPointer { __ptr_instanceID in
     withUnsafeArgumentPackPointer(__ptr_instanceID) { __accessPtr in
@@ -1381,7 +1797,10 @@ private var __function_binding_is_instance_id_valid: GDExtensionPtrUtilityFuncti
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2232439758)!
     }
 }()
-internal func _isInstanceIDValid(id: Int) -> Bool {
+
+internal func _isInstanceIDValid(
+    id: Int
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     id.withGodotUnsafeRawPointer { __ptr_id in
     withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -1393,7 +1812,10 @@ private var __function_binding_is_instance_valid: GDExtensionPtrUtilityFunction 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 996128841)!
     }
 }()
-internal func _isInstanceValid<Value: VariantStorableIn>(instance: Value) -> Bool {
+
+internal func _isInstanceValid<Value: VariantStorableIn>(
+    instance: Value
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: instance) { __ptr_instance in
     withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
@@ -1405,6 +1827,7 @@ private var __function_binding_rid_allocate_id: GDExtensionPtrUtilityFunction = 
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 701202648)!
     }
 }()
+
 internal func _ridAllocateID() -> Int {
     Int.fromMutatingGodotUnsafePointer { __temporary in
     __function_binding_rid_allocate_id(__temporary, nil, 0)}
@@ -1415,7 +1838,10 @@ private var __function_binding_rid_from_int64: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3426892196)!
     }
 }()
-internal func _ridFromInt64(base: Int) -> RID {
+
+internal func _ridFromInt64(
+    base: Int
+) -> RID {
     RID.fromMutatingGodotUnsafePointer { __temporary in
     base.withGodotUnsafeRawPointer { __ptr_base in
     withUnsafeArgumentPackPointer(__ptr_base) { __accessPtr in
@@ -1427,11 +1853,14 @@ private var __function_binding_is_same: GDExtensionPtrUtilityFunction = {
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1409423524)!
     }
 }()
-internal func _isSame<Value1: VariantStorableIn, Value2: VariantStorableIn>(a: Value1, b: Value2) -> Bool {
+
+internal func _isSame<Value1: VariantStorableIn, Value2: VariantStorableIn>(
+    a: Value1,
+    b: Value2
+) -> Bool {
     Bool.fromMutatingGodotUnsafePointer { __temporary in
     Godot.Variant.withStorageUnsafeRawPointer(to: a) { __ptr_a in
     Godot.Variant.withStorageUnsafeRawPointer(to: b) { __ptr_b in
     withUnsafeArgumentPackPointer(__ptr_a, __ptr_b) { __accessPtr in
     __function_binding_is_same(__temporary, __accessPtr, 2)}}}}
 }
-

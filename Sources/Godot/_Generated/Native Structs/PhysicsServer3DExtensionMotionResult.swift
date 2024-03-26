@@ -4,10 +4,16 @@
 
 public struct PhysicsServer3DExtensionMotionResult {
     public var travel: Vector3
+
     public var remainder: Vector3
+
     public var collisionDepth: Scalar
+
     public var collisionSafeFraction: Scalar
+
     public var collisionUnsafeFraction: Scalar
+
     public var collisions: (PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision)
+
     public var collisionCount: Int
 }

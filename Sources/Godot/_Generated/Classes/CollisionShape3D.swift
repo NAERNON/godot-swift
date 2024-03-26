@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CollisionShape3D: Node3D {
     internal static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
-    public func resourceChanged(resource: Godot.Resource?) {
+
+    public func resourceChanged(
+        resource: Godot.Resource?
+    ) {
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         withUnsafeArgumentPackPointer(_ptr___ptr_resource) { __accessPtr in
@@ -32,7 +36,10 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
-    private func __setShape(_ shape: Godot.Shape3D?) {
+
+    private func __setShape(
+        _ shape: Godot.Shape3D?
+    ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
         withUnsafeArgumentPackPointer(_ptr___ptr_shape) { __accessPtr in
@@ -52,6 +59,7 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
+
     private func __getShape() -> Godot.Shape3D? {
         Godot.Shape3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -70,7 +78,10 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
-    private func __setDisabled(enable: Bool) {
+
+    private func __setDisabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -89,6 +100,7 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
+
     private func __isDisabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +119,7 @@ open class CollisionShape3D: Node3D {
         }
         }
     }()
+
     public func makeConvexFromSiblings() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -140,6 +153,7 @@ open class CollisionShape3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -152,5 +166,4 @@ open class CollisionShape3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

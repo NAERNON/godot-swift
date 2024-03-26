@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDPipelineDepthStencilState: RefCounted {
     internal static var __method_binding_set_enable_depth_test: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setEnableDepthTest(pMember: Bool) {
+
+    private func __setEnableDepthTest(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getEnableDepthTest() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setEnableDepthWrite(pMember: Bool) {
+
+    private func __setEnableDepthWrite(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getEnableDepthWrite() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setDepthCompareOperator(pMember: Godot.RenderingDevice.CompareOperator) {
+
+    private func __setDepthCompareOperator(
+        pMember: Godot.RenderingDevice.CompareOperator
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getDepthCompareOperator() -> Godot.RenderingDevice.CompareOperator {
         Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setEnableDepthRange(pMember: Bool) {
+
+    private func __setEnableDepthRange(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getEnableDepthRange() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setDepthRangeMin(pMember: Double) {
+
+    private func __setDepthRangeMin(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getDepthRangeMin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setDepthRangeMax(pMember: Double) {
+
+    private func __setDepthRangeMax(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getDepthRangeMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setEnableStencil(pMember: Bool) {
+
+    private func __setEnableStencil(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getEnableStencil() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpFail(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setFrontOpFail(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpFail() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpPass(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setFrontOpPass(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpPass() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpDepthFail(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setFrontOpDepthFail(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +423,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpCompare(pMember: Godot.RenderingDevice.CompareOperator) {
+
+    private func __setFrontOpCompare(
+        pMember: Godot.RenderingDevice.CompareOperator
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +445,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpCompare() -> Godot.RenderingDevice.CompareOperator {
         Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,7 +464,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpCompareMask(pMember: UInt32) {
+
+    private func __setFrontOpCompareMask(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,6 +486,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpCompareMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +505,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpWriteMask(pMember: UInt32) {
+
+    private func __setFrontOpWriteMask(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -475,6 +527,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpWriteMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -493,7 +546,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setFrontOpReference(pMember: UInt32) {
+
+    private func __setFrontOpReference(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -512,6 +568,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getFrontOpReference() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,7 +587,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpFail(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setBackOpFail(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,6 +609,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpFail() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -567,7 +628,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpPass(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setBackOpPass(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,6 +650,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpPass() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -604,7 +669,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpDepthFail(pMember: Godot.RenderingDevice.StencilOperation) {
+
+    private func __setBackOpDepthFail(
+        pMember: Godot.RenderingDevice.StencilOperation
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -623,6 +691,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
         Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -641,7 +710,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpCompare(pMember: Godot.RenderingDevice.CompareOperator) {
+
+    private func __setBackOpCompare(
+        pMember: Godot.RenderingDevice.CompareOperator
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -660,6 +732,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpCompare() -> Godot.RenderingDevice.CompareOperator {
         Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -678,7 +751,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpCompareMask(pMember: UInt32) {
+
+    private func __setBackOpCompareMask(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -697,6 +773,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpCompareMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -715,7 +792,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpWriteMask(pMember: UInt32) {
+
+    private func __setBackOpWriteMask(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -734,6 +814,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpWriteMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -752,7 +833,10 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
-    private func __setBackOpReference(pMember: UInt32) {
+
+    private func __setBackOpReference(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -771,6 +855,7 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         }
     }()
+
     private func __getBackOpReference() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1014,6 +1099,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1026,5 +1112,4 @@ open class RDPipelineDepthStencilState: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class MultiMeshInstance2D: Node2D {
+
     public func textureChanged() {
         _ = textureChangedSignal.emit()
     }
+
     public lazy var textureChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class MultiMeshInstance2D: Node2D {
         }
         }
     }()
-    private func __setMultimesh(_ multimesh: Godot.MultiMesh?) {
+
+    private func __setMultimesh(
+        _ multimesh: Godot.MultiMesh?
+    ) {
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafePointer(to: __ptr_multimesh) { _ptr___ptr_multimesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_multimesh) { __accessPtr in
@@ -50,6 +56,7 @@ open class MultiMeshInstance2D: Node2D {
         }
         }
     }()
+
     private func __getMultimesh() -> Godot.MultiMesh? {
         Godot.MultiMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +75,10 @@ open class MultiMeshInstance2D: Node2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -88,6 +98,7 @@ open class MultiMeshInstance2D: Node2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +133,7 @@ open class MultiMeshInstance2D: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -134,5 +146,4 @@ open class MultiMeshInstance2D: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PathFollow3D: Node3D {
     public enum RotationMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class PathFollow3D: Node3D {
         case xy = 2
         case xyz = 3
         case oriented = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -28,7 +30,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setProgress(_ progress: Double) {
+
+    private func __setProgress(
+        _ progress: Double
+    ) {
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_progress) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getProgress() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,7 +71,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setHOffset(_ hOffset: Double) {
+
+    private func __setHOffset(
+        _ hOffset: Double
+    ) {
         hOffset.withGodotUnsafeRawPointer { __ptr_hOffset in
         withUnsafeArgumentPackPointer(__ptr_hOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +93,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getHOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +112,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setVOffset(_ vOffset: Double) {
+
+    private func __setVOffset(
+        _ vOffset: Double
+    ) {
         vOffset.withGodotUnsafeRawPointer { __ptr_vOffset in
         withUnsafeArgumentPackPointer(__ptr_vOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +134,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getVOffset() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +153,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setProgressRatio(_ ratio: Double) {
+
+    private func __setProgressRatio(
+        _ ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +175,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getProgressRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,7 +194,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setRotationMode(_ rotationMode: Godot.PathFollow3D.RotationMode) {
+
+    private func __setRotationMode(
+        _ rotationMode: Godot.PathFollow3D.RotationMode
+    ) {
         rotationMode.withGodotUnsafeRawPointer { __ptr_rotationMode in
         withUnsafeArgumentPackPointer(__ptr_rotationMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,6 +216,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getRotationMode() -> Godot.PathFollow3D.RotationMode {
         Godot.PathFollow3D.RotationMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,7 +235,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setCubicInterpolation(enabled: Bool) {
+
+    private func __setCubicInterpolation(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -232,6 +257,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __getCubicInterpolation() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,7 +276,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setUseModelFront(enabled: Bool) {
+
+    private func __setUseModelFront(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -269,6 +298,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __isUsingModelFront() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -287,7 +317,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setLoop(_ loop: Bool) {
+
+    private func __setLoop(
+        _ loop: Bool
+    ) {
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -306,6 +339,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __hasLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -324,7 +358,10 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    private func __setTiltEnabled(_ enabled: Bool) {
+
+    private func __setTiltEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,6 +380,7 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
+
     private func __isTiltEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,7 +399,11 @@ open class PathFollow3D: Node3D {
         }
         }
     }()
-    static public func correctPosture(transform: Godot.Transform3D, rotationMode: Godot.PathFollow3D.RotationMode) -> Godot.Transform3D {
+
+    static public func correctPosture(
+        transform: Godot.Transform3D,
+        rotationMode: Godot.PathFollow3D.RotationMode
+    ) -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         rotationMode.withGodotUnsafeRawPointer { __ptr_rotationMode in
@@ -474,6 +516,7 @@ open class PathFollow3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -486,5 +529,4 @@ open class PathFollow3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

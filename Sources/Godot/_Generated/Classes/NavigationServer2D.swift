@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NavigationServer2D: Object {
     public struct MapChangedSignalInput: Godot.SignalInput {
         public let map: Godot.RID
-        fileprivate init(map: Godot.RID) {
+
+        fileprivate init(
+            map: Godot.RID
+        ) {
             self.map = map
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.map)]
         }
     }
-    public func mapChanged(map: Godot.RID) {
+
+    public func mapChanged(
+        map: Godot.RID
+    ) {
         _ = mapChangedSignal.emit(.init(map: map))
     }
+
     public lazy var mapChangedSignal: Godot.SignalEmitter<MapChangedSignalInput> = {
         .init(object: self, signalName: "map_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -35,6 +46,7 @@ open class NavigationServer2D: Object {
     public func navigationDebugChanged() {
         _ = navigationDebugChangedSignal.emit()
     }
+
     public lazy var navigationDebugChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "navigation_debug_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -57,6 +69,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func maps() -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -75,6 +88,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func mapCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -93,7 +107,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapSetActive(map: Godot.RID, active: Bool) {
+
+    public func mapSetActive(
+        map: Godot.RID,
+        active: Bool
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_active) { __accessPtr in
@@ -113,7 +131,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapIsActive(map: Godot.RID) -> Bool {
+
+    public func mapIsActive(
+        map: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -133,7 +154,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapSetCellSize(map: Godot.RID, cellSize: Double) {
+
+    public func mapSetCellSize(
+        map: Godot.RID,
+        cellSize: Double
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         cellSize.withGodotUnsafeRawPointer { __ptr_cellSize in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_cellSize) { __accessPtr in
@@ -153,7 +178,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetCellSize(map: Godot.RID) -> Double {
+
+    public func mapGetCellSize(
+        map: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -173,7 +201,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapSetUseEdgeConnections(map: Godot.RID, enabled: Bool) {
+
+    public func mapSetUseEdgeConnections(
+        map: Godot.RID,
+        enabled: Bool
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_enabled) { __accessPtr in
@@ -193,7 +225,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetUseEdgeConnections(map: Godot.RID) -> Bool {
+
+    public func mapGetUseEdgeConnections(
+        map: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -213,7 +248,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapSetEdgeConnectionMargin(map: Godot.RID, margin: Double) {
+
+    public func mapSetEdgeConnectionMargin(
+        map: Godot.RID,
+        margin: Double
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_margin) { __accessPtr in
@@ -233,7 +272,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetEdgeConnectionMargin(map: Godot.RID) -> Double {
+
+    public func mapGetEdgeConnectionMargin(
+        map: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -253,7 +295,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapSetLinkConnectionRadius(map: Godot.RID, radius: Double) {
+
+    public func mapSetLinkConnectionRadius(
+        map: Godot.RID,
+        radius: Double
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_radius) { __accessPtr in
@@ -273,7 +319,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetLinkConnectionRadius(map: Godot.RID) -> Double {
+
+    public func mapGetLinkConnectionRadius(
+        map: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -293,7 +342,14 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetPath(map: Godot.RID, origin: Godot.Vector2, destination: Godot.Vector2, optimize: Bool, navigationLayers: UInt32 = 1) -> Godot.PackedVector2Array {
+
+    public func mapGetPath(
+        map: Godot.RID,
+        origin: Godot.Vector2,
+        destination: Godot.Vector2,
+        optimize: Bool,
+        navigationLayers: UInt32 = 1
+    ) -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         origin.withGodotUnsafeRawPointer { __ptr_origin in
@@ -317,7 +373,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetClosestPoint(map: Godot.RID, toPoint point: Godot.Vector2) -> Godot.Vector2 {
+
+    public func mapGetClosestPoint(
+        map: Godot.RID,
+        toPoint point: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         point.withGodotUnsafeRawPointer { __ptr_point in
@@ -338,7 +398,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetClosestPointOwner(map: Godot.RID, toPoint point: Godot.Vector2) -> Godot.RID {
+
+    public func mapGetClosestPointOwner(
+        map: Godot.RID,
+        toPoint point: Godot.Vector2
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         point.withGodotUnsafeRawPointer { __ptr_point in
@@ -359,7 +423,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetLinks(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+
+    public func mapGetLinks(
+        map: Godot.RID
+    ) -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -379,7 +446,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetRegions(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+
+    public func mapGetRegions(
+        map: Godot.RID
+    ) -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -399,7 +469,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetAgents(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+
+    public func mapGetAgents(
+        map: Godot.RID
+    ) -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -419,7 +492,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapGetObstacles(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+
+    public func mapGetObstacles(
+        map: Godot.RID
+    ) -> Godot.GodotArray<Godot.RID> {
         Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
@@ -439,7 +515,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func mapForceUpdate(map: Godot.RID) {
+
+    public func mapForceUpdate(
+        map: Godot.RID
+    ) {
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -458,7 +537,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func queryPath(parameters: Godot.NavigationPathQueryParameters2D?, result: Godot.NavigationPathQueryResult2D?) {
+
+    public func queryPath(
+        parameters: Godot.NavigationPathQueryParameters2D?,
+        result: Godot.NavigationPathQueryResult2D?
+    ) {
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
         result.withGodotUnsafeRawPointer { __ptr_result in
@@ -480,6 +563,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func regionCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -498,7 +582,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetEnabled(region: Godot.RID, enabled: Bool) {
+
+    public func regionSetEnabled(
+        region: Godot.RID,
+        enabled: Bool
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_enabled) { __accessPtr in
@@ -518,7 +606,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetEnabled(region: Godot.RID) -> Bool {
+
+    public func regionGetEnabled(
+        region: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -538,7 +629,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetUseEdgeConnections(region: Godot.RID, enabled: Bool) {
+
+    public func regionSetUseEdgeConnections(
+        region: Godot.RID,
+        enabled: Bool
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_enabled) { __accessPtr in
@@ -558,7 +653,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetUseEdgeConnections(region: Godot.RID) -> Bool {
+
+    public func regionGetUseEdgeConnections(
+        region: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -578,7 +676,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetEnterCost(region: Godot.RID, enterCost: Double) {
+
+    public func regionSetEnterCost(
+        region: Godot.RID,
+        enterCost: Double
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         enterCost.withGodotUnsafeRawPointer { __ptr_enterCost in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_enterCost) { __accessPtr in
@@ -598,7 +700,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetEnterCost(region: Godot.RID) -> Double {
+
+    public func regionGetEnterCost(
+        region: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -618,7 +723,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetTravelCost(region: Godot.RID, travelCost: Double) {
+
+    public func regionSetTravelCost(
+        region: Godot.RID,
+        travelCost: Double
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         travelCost.withGodotUnsafeRawPointer { __ptr_travelCost in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_travelCost) { __accessPtr in
@@ -638,7 +747,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetTravelCost(region: Godot.RID) -> Double {
+
+    public func regionGetTravelCost(
+        region: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -658,7 +770,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetOwnerID(region: Godot.RID, ownerID: UInt64) {
+
+    public func regionSetOwnerID(
+        region: Godot.RID,
+        ownerID: UInt64
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_ownerID) { __accessPtr in
@@ -678,7 +794,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetOwnerID(region: Godot.RID) -> UInt64 {
+
+    public func regionGetOwnerID(
+        region: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -698,7 +817,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionOwnsPoint(region: Godot.RID, point: Godot.Vector2) -> Bool {
+
+    public func regionOwnsPoint(
+        region: Godot.RID,
+        point: Godot.Vector2
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         point.withGodotUnsafeRawPointer { __ptr_point in
@@ -719,7 +842,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetMap(region: Godot.RID, map: Godot.RID) {
+
+    public func regionSetMap(
+        region: Godot.RID,
+        map: Godot.RID
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_map) { __accessPtr in
@@ -739,7 +866,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetMap(region: Godot.RID) -> Godot.RID {
+
+    public func regionGetMap(
+        region: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -759,7 +889,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetNavigationLayers(region: Godot.RID, navigationLayers: UInt32) {
+
+    public func regionSetNavigationLayers(
+        region: Godot.RID,
+        navigationLayers: UInt32
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         navigationLayers.withGodotUnsafeRawPointer { __ptr_navigationLayers in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_navigationLayers) { __accessPtr in
@@ -779,7 +913,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetNavigationLayers(region: Godot.RID) -> UInt32 {
+
+    public func regionGetNavigationLayers(
+        region: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -799,7 +936,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetTransform(region: Godot.RID, transform: Godot.Transform2D) {
+
+    public func regionSetTransform(
+        region: Godot.RID,
+        transform: Godot.Transform2D
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_transform) { __accessPtr in
@@ -819,7 +960,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionSetNavigationPolygon(region: Godot.RID, navigationPolygon: Godot.NavigationPolygon?) {
+
+    public func regionSetNavigationPolygon(
+        region: Godot.RID,
+        navigationPolygon: Godot.NavigationPolygon?
+    ) {
         region.withGodotUnsafeRawPointer { __ptr_region in
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
@@ -840,7 +985,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetConnectionsCount(region: Godot.RID) -> Int32 {
+
+    public func regionGetConnectionsCount(
+        region: Godot.RID
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
@@ -860,7 +1008,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetConnectionPathwayStart(region: Godot.RID, connection: Int32) -> Godot.Vector2 {
+
+    public func regionGetConnectionPathwayStart(
+        region: Godot.RID,
+        connection: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         connection.withGodotUnsafeRawPointer { __ptr_connection in
@@ -881,7 +1033,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func regionGetConnectionPathwayEnd(region: Godot.RID, connection: Int32) -> Godot.Vector2 {
+
+    public func regionGetConnectionPathwayEnd(
+        region: Godot.RID,
+        connection: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         connection.withGodotUnsafeRawPointer { __ptr_connection in
@@ -902,6 +1058,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func linkCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -920,7 +1077,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetMap(link: Godot.RID, map: Godot.RID) {
+
+    public func linkSetMap(
+        link: Godot.RID,
+        map: Godot.RID
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_map) { __accessPtr in
@@ -940,7 +1101,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetMap(link: Godot.RID) -> Godot.RID {
+
+    public func linkGetMap(
+        link: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -960,7 +1124,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetEnabled(link: Godot.RID, enabled: Bool) {
+
+    public func linkSetEnabled(
+        link: Godot.RID,
+        enabled: Bool
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_enabled) { __accessPtr in
@@ -980,7 +1148,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetEnabled(link: Godot.RID) -> Bool {
+
+    public func linkGetEnabled(
+        link: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1000,7 +1171,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetBidirectional(link: Godot.RID, bidirectional: Bool) {
+
+    public func linkSetBidirectional(
+        link: Godot.RID,
+        bidirectional: Bool
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_bidirectional) { __accessPtr in
@@ -1020,7 +1195,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkIsBidirectional(link: Godot.RID) -> Bool {
+
+    public func linkIsBidirectional(
+        link: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1040,7 +1218,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetNavigationLayers(link: Godot.RID, navigationLayers: UInt32) {
+
+    public func linkSetNavigationLayers(
+        link: Godot.RID,
+        navigationLayers: UInt32
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         navigationLayers.withGodotUnsafeRawPointer { __ptr_navigationLayers in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_navigationLayers) { __accessPtr in
@@ -1060,7 +1242,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetNavigationLayers(link: Godot.RID) -> UInt32 {
+
+    public func linkGetNavigationLayers(
+        link: Godot.RID
+    ) -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1080,7 +1265,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetStartPosition(link: Godot.RID, position: Godot.Vector2) {
+
+    public func linkSetStartPosition(
+        link: Godot.RID,
+        position: Godot.Vector2
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_position) { __accessPtr in
@@ -1100,7 +1289,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetStartPosition(link: Godot.RID) -> Godot.Vector2 {
+
+    public func linkGetStartPosition(
+        link: Godot.RID
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1120,7 +1312,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetEndPosition(link: Godot.RID, position: Godot.Vector2) {
+
+    public func linkSetEndPosition(
+        link: Godot.RID,
+        position: Godot.Vector2
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_position) { __accessPtr in
@@ -1140,7 +1336,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetEndPosition(link: Godot.RID) -> Godot.Vector2 {
+
+    public func linkGetEndPosition(
+        link: Godot.RID
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1160,7 +1359,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetEnterCost(link: Godot.RID, enterCost: Double) {
+
+    public func linkSetEnterCost(
+        link: Godot.RID,
+        enterCost: Double
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         enterCost.withGodotUnsafeRawPointer { __ptr_enterCost in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_enterCost) { __accessPtr in
@@ -1180,7 +1383,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetEnterCost(link: Godot.RID) -> Double {
+
+    public func linkGetEnterCost(
+        link: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1200,7 +1406,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetTravelCost(link: Godot.RID, travelCost: Double) {
+
+    public func linkSetTravelCost(
+        link: Godot.RID,
+        travelCost: Double
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         travelCost.withGodotUnsafeRawPointer { __ptr_travelCost in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_travelCost) { __accessPtr in
@@ -1220,7 +1430,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetTravelCost(link: Godot.RID) -> Double {
+
+    public func linkGetTravelCost(
+        link: Godot.RID
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1240,7 +1453,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkSetOwnerID(link: Godot.RID, ownerID: UInt64) {
+
+    public func linkSetOwnerID(
+        link: Godot.RID,
+        ownerID: UInt64
+    ) {
         link.withGodotUnsafeRawPointer { __ptr_link in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_link, __ptr_ownerID) { __accessPtr in
@@ -1260,7 +1477,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func linkGetOwnerID(link: Godot.RID) -> UInt64 {
+
+    public func linkGetOwnerID(
+        link: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
@@ -1280,6 +1500,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func agentCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1298,7 +1519,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetAvoidanceEnabled(agent: Godot.RID, enabled: Bool) {
+
+    public func agentSetAvoidanceEnabled(
+        agent: Godot.RID,
+        enabled: Bool
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_enabled) { __accessPtr in
@@ -1318,7 +1543,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentGetAvoidanceEnabled(agent: Godot.RID) -> Bool {
+
+    public func agentGetAvoidanceEnabled(
+        agent: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
@@ -1338,7 +1566,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetMap(agent: Godot.RID, map: Godot.RID) {
+
+    public func agentSetMap(
+        agent: Godot.RID,
+        map: Godot.RID
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_map) { __accessPtr in
@@ -1358,7 +1590,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentGetMap(agent: Godot.RID) -> Godot.RID {
+
+    public func agentGetMap(
+        agent: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
@@ -1378,7 +1613,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetPaused(agent: Godot.RID, paused: Bool) {
+
+    public func agentSetPaused(
+        agent: Godot.RID,
+        paused: Bool
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         paused.withGodotUnsafeRawPointer { __ptr_paused in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_paused) { __accessPtr in
@@ -1398,7 +1637,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentGetPaused(agent: Godot.RID) -> Bool {
+
+    public func agentGetPaused(
+        agent: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
@@ -1418,7 +1660,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetNeighborDistance(agent: Godot.RID, distance: Double) {
+
+    public func agentSetNeighborDistance(
+        agent: Godot.RID,
+        distance: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_distance) { __accessPtr in
@@ -1438,7 +1684,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetMaxNeighbors(agent: Godot.RID, count: Int32) {
+
+    public func agentSetMaxNeighbors(
+        agent: Godot.RID,
+        count: Int32
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_count) { __accessPtr in
@@ -1458,7 +1708,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetTimeHorizonAgents(agent: Godot.RID, timeHorizon: Double) {
+
+    public func agentSetTimeHorizonAgents(
+        agent: Godot.RID,
+        timeHorizon: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         timeHorizon.withGodotUnsafeRawPointer { __ptr_timeHorizon in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_timeHorizon) { __accessPtr in
@@ -1478,7 +1732,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetTimeHorizonObstacles(agent: Godot.RID, timeHorizon: Double) {
+
+    public func agentSetTimeHorizonObstacles(
+        agent: Godot.RID,
+        timeHorizon: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         timeHorizon.withGodotUnsafeRawPointer { __ptr_timeHorizon in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_timeHorizon) { __accessPtr in
@@ -1498,7 +1756,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetRadius(agent: Godot.RID, radius: Double) {
+
+    public func agentSetRadius(
+        agent: Godot.RID,
+        radius: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_radius) { __accessPtr in
@@ -1518,7 +1780,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetMaxSpeed(agent: Godot.RID, maxSpeed: Double) {
+
+    public func agentSetMaxSpeed(
+        agent: Godot.RID,
+        maxSpeed: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         maxSpeed.withGodotUnsafeRawPointer { __ptr_maxSpeed in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_maxSpeed) { __accessPtr in
@@ -1538,7 +1804,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetVelocityForced(agent: Godot.RID, velocity: Godot.Vector2) {
+
+    public func agentSetVelocityForced(
+        agent: Godot.RID,
+        velocity: Godot.Vector2
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_velocity) { __accessPtr in
@@ -1558,7 +1828,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetVelocity(agent: Godot.RID, velocity: Godot.Vector2) {
+
+    public func agentSetVelocity(
+        agent: Godot.RID,
+        velocity: Godot.Vector2
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_velocity) { __accessPtr in
@@ -1578,7 +1852,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetPosition(agent: Godot.RID, position: Godot.Vector2) {
+
+    public func agentSetPosition(
+        agent: Godot.RID,
+        position: Godot.Vector2
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_position) { __accessPtr in
@@ -1598,7 +1876,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentIsMapChanged(agent: Godot.RID) -> Bool {
+
+    public func agentIsMapChanged(
+        agent: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
@@ -1618,7 +1899,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetAvoidanceCallback(agent: Godot.RID, callback: Godot.Callable) {
+
+    public func agentSetAvoidanceCallback(
+        agent: Godot.RID,
+        callback: Godot.Callable
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_callback) { __accessPtr in
@@ -1638,7 +1923,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetAvoidanceLayers(agent: Godot.RID, layers: UInt32) {
+
+    public func agentSetAvoidanceLayers(
+        agent: Godot.RID,
+        layers: UInt32
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_layers) { __accessPtr in
@@ -1658,7 +1947,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetAvoidanceMask(agent: Godot.RID, mask: UInt32) {
+
+    public func agentSetAvoidanceMask(
+        agent: Godot.RID,
+        mask: UInt32
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_mask) { __accessPtr in
@@ -1678,7 +1971,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func agentSetAvoidancePriority(agent: Godot.RID, priority: Double) {
+
+    public func agentSetAvoidancePriority(
+        agent: Godot.RID,
+        priority: Double
+    ) {
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_agent, __ptr_priority) { __accessPtr in
@@ -1698,6 +1995,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func obstacleCreate() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1716,7 +2014,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetAvoidanceEnabled(obstacle: Godot.RID, enabled: Bool) {
+
+    public func obstacleSetAvoidanceEnabled(
+        obstacle: Godot.RID,
+        enabled: Bool
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_enabled) { __accessPtr in
@@ -1736,7 +2038,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleGetAvoidanceEnabled(obstacle: Godot.RID) -> Bool {
+
+    public func obstacleGetAvoidanceEnabled(
+        obstacle: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
@@ -1756,7 +2061,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetMap(obstacle: Godot.RID, map: Godot.RID) {
+
+    public func obstacleSetMap(
+        obstacle: Godot.RID,
+        map: Godot.RID
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_map) { __accessPtr in
@@ -1776,7 +2085,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleGetMap(obstacle: Godot.RID) -> Godot.RID {
+
+    public func obstacleGetMap(
+        obstacle: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
@@ -1796,7 +2108,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetPaused(obstacle: Godot.RID, paused: Bool) {
+
+    public func obstacleSetPaused(
+        obstacle: Godot.RID,
+        paused: Bool
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         paused.withGodotUnsafeRawPointer { __ptr_paused in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_paused) { __accessPtr in
@@ -1816,7 +2132,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleGetPaused(obstacle: Godot.RID) -> Bool {
+
+    public func obstacleGetPaused(
+        obstacle: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
@@ -1836,7 +2155,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetRadius(obstacle: Godot.RID, radius: Double) {
+
+    public func obstacleSetRadius(
+        obstacle: Godot.RID,
+        radius: Double
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_radius) { __accessPtr in
@@ -1856,7 +2179,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetVelocity(obstacle: Godot.RID, velocity: Godot.Vector2) {
+
+    public func obstacleSetVelocity(
+        obstacle: Godot.RID,
+        velocity: Godot.Vector2
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_velocity) { __accessPtr in
@@ -1876,7 +2203,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetPosition(obstacle: Godot.RID, position: Godot.Vector2) {
+
+    public func obstacleSetPosition(
+        obstacle: Godot.RID,
+        position: Godot.Vector2
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_position) { __accessPtr in
@@ -1896,7 +2227,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetVertices(obstacle: Godot.RID, vertices: Godot.PackedVector2Array) {
+
+    public func obstacleSetVertices(
+        obstacle: Godot.RID,
+        vertices: Godot.PackedVector2Array
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_vertices) { __accessPtr in
@@ -1916,7 +2251,11 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func obstacleSetAvoidanceLayers(obstacle: Godot.RID, layers: UInt32) {
+
+    public func obstacleSetAvoidanceLayers(
+        obstacle: Godot.RID,
+        layers: UInt32
+    ) {
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         withUnsafeArgumentPackPointer(__ptr_obstacle, __ptr_layers) { __accessPtr in
@@ -1936,7 +2275,13 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func parseSourceGeometryData(navigationPolygon: Godot.NavigationPolygon?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?, rootNode: Godot.Node?, callback: Godot.Callable = Callable()) {
+
+    public func parseSourceGeometryData(
+        navigationPolygon: Godot.NavigationPolygon?,
+        sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?,
+        rootNode: Godot.Node?,
+        callback: Godot.Callable = Callable()
+    ) {
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
         sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
@@ -1961,7 +2306,12 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func bakeFromSourceGeometryData(navigationPolygon: Godot.NavigationPolygon?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?, callback: Godot.Callable = Callable()) {
+
+    public func bakeFromSourceGeometryData(
+        navigationPolygon: Godot.NavigationPolygon?,
+        sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?,
+        callback: Godot.Callable = Callable()
+    ) {
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
         sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
@@ -1984,7 +2334,12 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func bakeFromSourceGeometryDataAsync(navigationPolygon: Godot.NavigationPolygon?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?, callback: Godot.Callable = Callable()) {
+
+    public func bakeFromSourceGeometryDataAsync(
+        navigationPolygon: Godot.NavigationPolygon?,
+        sourceGeometryData: Godot.NavigationMeshSourceGeometryData2D?,
+        callback: Godot.Callable = Callable()
+    ) {
         navigationPolygon.withGodotUnsafeRawPointer { __ptr_navigationPolygon in
         withUnsafePointer(to: __ptr_navigationPolygon) { _ptr___ptr_navigationPolygon in
         sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
@@ -2007,7 +2362,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func freeRid(_ rid: Godot.RID) {
+
+    public func freeRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2026,7 +2384,10 @@ open class NavigationServer2D: Object {
         }
         }
     }()
-    public func setDebugEnabled(_ enabled: Bool) {
+
+    public func setDebugEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2045,6 +2406,7 @@ open class NavigationServer2D: Object {
         }
         }
     }()
+
     public func debugEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2057,6 +2419,7 @@ open class NavigationServer2D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2069,5 +2432,4 @@ open class NavigationServer2D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

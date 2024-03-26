@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class DampedSpringJoint2D: Joint2D {
     internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
-    private func __setLength(_ length: Double) {
+
+    private func __setLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
-    private func __setRestLength(_ restLength: Double) {
+
+    private func __setRestLength(
+        _ restLength: Double
+    ) {
         restLength.withGodotUnsafeRawPointer { __ptr_restLength in
         withUnsafeArgumentPackPointer(__ptr_restLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getRestLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
-    private func __setStiffness(_ stiffness: Double) {
+
+    private func __setStiffness(
+        _ stiffness: Double
+    ) {
         stiffness.withGodotUnsafeRawPointer { __ptr_stiffness in
         withUnsafeArgumentPackPointer(__ptr_stiffness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getStiffness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
-    private func __setDamping(_ damping: Double) {
+
+    private func __setDamping(
+        _ damping: Double
+    ) {
         damping.withGodotUnsafeRawPointer { __ptr_damping in
         withUnsafeArgumentPackPointer(__ptr_damping) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class DampedSpringJoint2D: Joint2D {
         }
         }
     }()
+
     private func __getDamping() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,6 +215,7 @@ open class DampedSpringJoint2D: Joint2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -210,5 +228,4 @@ open class DampedSpringJoint2D: Joint2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

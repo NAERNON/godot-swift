@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Mutex: RefCounted {
     internal static var __method_binding_lock: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class Mutex: RefCounted {
         }
         }
     }()
+
     public func lock() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,6 +31,7 @@ open class Mutex: RefCounted {
         }
         }
     }()
+
     public func tryLock() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +50,7 @@ open class Mutex: RefCounted {
         }
         }
     }()
+
     public func unlock() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -58,6 +62,7 @@ open class Mutex: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -70,5 +75,4 @@ open class Mutex: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Performance: Object {
     public enum Monitor: UInt32, GodotEnum {
@@ -40,6 +41,7 @@ open class Performance: Object {
         case navigationEdgeConnectionCount = 31
         case navigationEdgeFreeCount = 32
         case monitorMax = 33
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Time Fps", 0),
@@ -86,7 +88,10 @@ open class Performance: Object {
         }
         }
     }()
-    public func monitor(_ monitor: Godot.Performance.Monitor) -> Double {
+
+    public func monitor(
+        _ monitor: Godot.Performance.Monitor
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         monitor.withGodotUnsafeRawPointer { __ptr_monitor in
         withUnsafeArgumentPackPointer(__ptr_monitor) { __accessPtr in
@@ -106,7 +111,12 @@ open class Performance: Object {
         }
         }
     }()
-    public func addCustomMonitor<Value: VariantStorable>(id: Godot.GodotStringName, callable: Godot.Callable, arguments: Godot.GodotArray<Value> = []) {
+
+    public func addCustomMonitor<Value: VariantStorable>(
+        id: Godot.GodotStringName,
+        callable: Godot.Callable,
+        arguments: Godot.GodotArray<Value> = []
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
@@ -127,7 +137,10 @@ open class Performance: Object {
         }
         }
     }()
-    public func removeCustomMonitor(id: Godot.GodotStringName) {
+
+    public func removeCustomMonitor(
+        id: Godot.GodotStringName
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +159,10 @@ open class Performance: Object {
         }
         }
     }()
-    public func hasCustomMonitor(id: Godot.GodotStringName) -> Bool {
+
+    public func hasCustomMonitor(
+        id: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -166,7 +182,10 @@ open class Performance: Object {
         }
         }
     }()
-    public func customMonitor(id: Godot.GodotStringName) -> Godot.Variant {
+
+    public func customMonitor(
+        id: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -186,6 +205,7 @@ open class Performance: Object {
         }
         }
     }()
+
     public func monitorModificationTime() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,6 +224,7 @@ open class Performance: Object {
         }
         }
     }()
+
     public func customMonitorNames() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +237,7 @@ open class Performance: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -228,5 +250,4 @@ open class Performance: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

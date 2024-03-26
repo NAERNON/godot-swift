@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class XROrigin3D: Node3D {
     internal static var __method_binding_set_world_scale: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class XROrigin3D: Node3D {
         }
         }
     }()
-    private func __setWorldScale(_ worldScale: Double) {
+
+    private func __setWorldScale(
+        _ worldScale: Double
+    ) {
         worldScale.withGodotUnsafeRawPointer { __ptr_worldScale in
         withUnsafeArgumentPackPointer(__ptr_worldScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class XROrigin3D: Node3D {
         }
         }
     }()
+
     private func __getWorldScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class XROrigin3D: Node3D {
         }
         }
     }()
-    private func __setCurrent(enabled: Bool) {
+
+    private func __setCurrent(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class XROrigin3D: Node3D {
         }
         }
     }()
+
     private func __isCurrent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class XROrigin3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class XROrigin3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

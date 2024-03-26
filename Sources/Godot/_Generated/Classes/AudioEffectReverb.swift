@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectReverb: AudioEffect {
     internal static var __method_binding_set_predelay_msec: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setPredelayMsec(_ msec: Double) {
+
+    private func __setPredelayMsec(
+        _ msec: Double
+    ) {
         msec.withGodotUnsafeRawPointer { __ptr_msec in
         withUnsafeArgumentPackPointer(__ptr_msec) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getPredelayMsec() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setPredelayFeedback(_ feedback: Double) {
+
+    private func __setPredelayFeedback(
+        _ feedback: Double
+    ) {
         feedback.withGodotUnsafeRawPointer { __ptr_feedback in
         withUnsafeArgumentPackPointer(__ptr_feedback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getPredelayFeedback() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setRoomSize(_ size: Double) {
+
+    private func __setRoomSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getRoomSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setDamping(amount: Double) {
+
+    private func __setDamping(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getDamping() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setSpread(amount: Double) {
+
+    private func __setSpread(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getSpread() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setDry(amount: Double) {
+
+    private func __setDry(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getDry() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setWet(amount: Double) {
+
+    private func __setWet(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getWet() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
-    private func __setHpf(amount: Double) {
+
+    private func __setHpf(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class AudioEffectReverb: AudioEffect {
         }
         }
     }()
+
     private func __getHpf() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -390,6 +423,7 @@ open class AudioEffectReverb: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -402,5 +436,4 @@ open class AudioEffectReverb: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

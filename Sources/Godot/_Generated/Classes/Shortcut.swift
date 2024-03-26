@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Shortcut: Resource {
     internal static var __method_binding_set_events: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class Shortcut: Resource {
         }
         }
     }()
-    private func __setEvents<Value: VariantStorable>(_ events: Godot.GodotArray<Value>) {
+
+    private func __setEvents<Value: VariantStorable>(
+        _ events: Godot.GodotArray<Value>
+    ) {
         events.withGodotUnsafeRawPointer { __ptr_events in
         withUnsafeArgumentPackPointer(__ptr_events) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class Shortcut: Resource {
         }
         }
     }()
+
     private func __getEvents() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class Shortcut: Resource {
         }
         }
     }()
+
     public func hasValidEvent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class Shortcut: Resource {
         }
         }
     }()
-    public func matchesEvent(_ event: Godot.InputEvent?) -> Bool {
+
+    public func matchesEvent(
+        _ event: Godot.InputEvent?
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -88,6 +97,7 @@ open class Shortcut: Resource {
         }
         }
     }()
+
     public func asText() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,6 +121,7 @@ open class Shortcut: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -123,5 +134,4 @@ open class Shortcut: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

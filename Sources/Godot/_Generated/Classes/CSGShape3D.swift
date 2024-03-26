@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CSGShape3D: GeometryInstance3D {
     public enum Operation: UInt32, GodotEnum {
         case union = 0
         case intersection = 1
         case subtraction = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Union", 0),
@@ -24,6 +26,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     public func isRootShape() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,7 +45,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setOperation(_ operation: Godot.CSGShape3D.Operation) {
+
+    private func __setOperation(
+        _ operation: Godot.CSGShape3D.Operation
+    ) {
         operation.withGodotUnsafeRawPointer { __ptr_operation in
         withUnsafeArgumentPackPointer(__ptr_operation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,6 +67,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getOperation() -> Godot.CSGShape3D.Operation {
         Godot.CSGShape3D.Operation.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,7 +86,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setSnap(_ snap: Double) {
+
+    private func __setSnap(
+        _ snap: Double
+    ) {
         snap.withGodotUnsafeRawPointer { __ptr_snap in
         withUnsafeArgumentPackPointer(__ptr_snap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,6 +108,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getSnap() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,7 +127,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setUseCollision(operation: Bool) {
+
+    private func __setUseCollision(
+        operation: Bool
+    ) {
         operation.withGodotUnsafeRawPointer { __ptr_operation in
         withUnsafeArgumentPackPointer(__ptr_operation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -135,6 +149,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isUsingCollision() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +168,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setCollisionLayer(_ layer: UInt32) {
+
+    private func __setCollisionLayer(
+        _ layer: UInt32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,6 +190,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getCollisionLayer() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,7 +209,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setCollisionMask(_ mask: UInt32) {
+
+    private func __setCollisionMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,6 +231,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getCollisionMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,7 +250,11 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    public func setCollisionMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -247,7 +274,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    public func collisionMaskValue(layerNumber: Int32) -> Bool {
+
+    public func collisionMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -267,7 +297,11 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    public func setCollisionLayerValue(layerNumber: Int32, value: Bool) {
+
+    public func setCollisionLayerValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -287,7 +321,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    public func collisionLayerValue(layerNumber: Int32) -> Bool {
+
+    public func collisionLayerValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -307,7 +344,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setCollisionPriority(_ priority: Double) {
+
+    private func __setCollisionPriority(
+        _ priority: Double
+    ) {
         priority.withGodotUnsafeRawPointer { __ptr_priority in
         withUnsafeArgumentPackPointer(__ptr_priority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,6 +366,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __getCollisionPriority() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -344,7 +385,10 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
-    private func __setCalculateTangents(enabled: Bool) {
+
+    private func __setCalculateTangents(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,6 +407,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     private func __isCalculatingTangents() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -381,6 +426,7 @@ open class CSGShape3D: GeometryInstance3D {
         }
         }
     }()
+
     public func meshes() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -470,6 +516,7 @@ open class CSGShape3D: GeometryInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -482,5 +529,4 @@ open class CSGShape3D: GeometryInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

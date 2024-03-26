@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorFileSystem: Node {
+
     public func filesystemChanged() {
         _ = filesystemChangedSignal.emit()
     }
+
     public lazy var filesystemChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "filesystem_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class EditorFileSystem: Node {
     public func scriptClassesUpdated() {
         _ = scriptClassesUpdatedSignal.emit()
     }
+
     public lazy var scriptClassesUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "script_classes_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -43,16 +47,26 @@ open class EditorFileSystem: Node {
 
     public struct SourcesChangedSignalInput: Godot.SignalInput {
         public let exist: Bool
-        fileprivate init(exist: Bool) {
+
+        fileprivate init(
+            exist: Bool
+        ) {
             self.exist = exist
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.exist)]
         }
     }
-    public func sourcesChanged(exist: Bool) {
+
+    public func sourcesChanged(
+        exist: Bool
+    ) {
         _ = sourcesChangedSignal.emit(.init(exist: exist))
     }
+
     public lazy var sourcesChangedSignal: Godot.SignalEmitter<SourcesChangedSignalInput> = {
         .init(object: self, signalName: "sources_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SourcesChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -70,16 +84,26 @@ open class EditorFileSystem: Node {
 
     public struct ResourcesReimportedSignalInput: Godot.SignalInput {
         public let resources: Godot.PackedStringArray
-        fileprivate init(resources: Godot.PackedStringArray) {
+
+        fileprivate init(
+            resources: Godot.PackedStringArray
+        ) {
             self.resources = resources
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resources)]
         }
     }
-    public func resourcesReimported(resources: Godot.PackedStringArray) {
+
+    public func resourcesReimported(
+        resources: Godot.PackedStringArray
+    ) {
         _ = resourcesReimportedSignal.emit(.init(resources: resources))
     }
+
     public lazy var resourcesReimportedSignal: Godot.SignalEmitter<ResourcesReimportedSignalInput> = {
         .init(object: self, signalName: "resources_reimported") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReimportedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -97,16 +121,26 @@ open class EditorFileSystem: Node {
 
     public struct ResourcesReloadSignalInput: Godot.SignalInput {
         public let resources: Godot.PackedStringArray
-        fileprivate init(resources: Godot.PackedStringArray) {
+
+        fileprivate init(
+            resources: Godot.PackedStringArray
+        ) {
             self.resources = resources
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resources)]
         }
     }
-    public func resourcesReload(resources: Godot.PackedStringArray) {
+
+    public func resourcesReload(
+        resources: Godot.PackedStringArray
+    ) {
         _ = resourcesReloadSignal.emit(.init(resources: resources))
     }
+
     public lazy var resourcesReloadSignal: Godot.SignalEmitter<ResourcesReloadSignalInput> = {
         .init(object: self, signalName: "resources_reload") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReloadSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -129,6 +163,7 @@ open class EditorFileSystem: Node {
         }
         }
     }()
+
     public func filesystem() -> Godot.EditorFileSystemDirectory? {
         Godot.EditorFileSystemDirectory?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -147,6 +182,7 @@ open class EditorFileSystem: Node {
         }
         }
     }()
+
     public func isScanning() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -165,6 +201,7 @@ open class EditorFileSystem: Node {
         }
         }
     }()
+
     public func scanningProgress() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,6 +220,7 @@ open class EditorFileSystem: Node {
         }
         }
     }()
+
     public func scan() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -200,6 +238,7 @@ open class EditorFileSystem: Node {
         }
         }
     }()
+
     public func scanSources() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -217,7 +256,10 @@ open class EditorFileSystem: Node {
         }
         }
     }()
-    public func updateFile(path: Godot.GodotString) {
+
+    public func updateFile(
+        path: Godot.GodotString
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,7 +278,10 @@ open class EditorFileSystem: Node {
         }
         }
     }()
-    public func filesystemPath(_ path: Godot.GodotString) -> Godot.EditorFileSystemDirectory? {
+
+    public func filesystemPath(
+        _ path: Godot.GodotString
+    ) -> Godot.EditorFileSystemDirectory? {
         Godot.EditorFileSystemDirectory?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -256,7 +301,10 @@ open class EditorFileSystem: Node {
         }
         }
     }()
-    public func fileType(path: Godot.GodotString) -> Godot.GodotString {
+
+    public func fileType(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -276,7 +324,10 @@ open class EditorFileSystem: Node {
         }
         }
     }()
-    public func reimportFiles(_ files: Godot.PackedStringArray) {
+
+    public func reimportFiles(
+        _ files: Godot.PackedStringArray
+    ) {
         files.withGodotUnsafeRawPointer { __ptr_files in
         withUnsafeArgumentPackPointer(__ptr_files) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,6 +340,7 @@ open class EditorFileSystem: Node {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -301,5 +353,4 @@ open class EditorFileSystem: Node {
         }
         return _virtualFunctions!
     }
-
-    }
+}

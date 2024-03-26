@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PrismMesh: PrimitiveMesh {
     internal static var __method_binding_set_left_to_right: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setLeftToRight(_ leftToRight: Double) {
+
+    private func __setLeftToRight(
+        _ leftToRight: Double
+    ) {
         leftToRight.withGodotUnsafeRawPointer { __ptr_leftToRight in
         withUnsafeArgumentPackPointer(__ptr_leftToRight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getLeftToRight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideWidth(segments: Int32) {
+
+    private func __setSubdivideWidth(
+        segments: Int32
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideWidth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideHeight(segments: Int32) {
+
+    private func __setSubdivideHeight(
+        segments: Int32
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideHeight() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
-    private func __setSubdivideDepth(segments: Int32) {
+
+    private func __setSubdivideDepth(
+        segments: Int32
+    ) {
         segments.withGodotUnsafeRawPointer { __ptr_segments in
         withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class PrismMesh: PrimitiveMesh {
         }
         }
     }()
+
     private func __getSubdivideDepth() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class PrismMesh: PrimitiveMesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class PrismMesh: PrimitiveMesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

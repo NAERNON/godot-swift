@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SceneMultiplayer: MultiplayerAPI {
     public struct PeerAuthenticatingSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func peerAuthenticating(id: Int) {
+
+    public func peerAuthenticating(
+        id: Int
+    ) {
         _ = peerAuthenticatingSignal.emit(.init(id: id))
     }
+
     public lazy var peerAuthenticatingSignal: Godot.SignalEmitter<PeerAuthenticatingSignalInput> = {
         .init(object: self, signalName: "peer_authenticating") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     public struct PeerAuthenticationFailedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func peerAuthenticationFailed(id: Int) {
+
+    public func peerAuthenticationFailed(
+        id: Int
+    ) {
         _ = peerAuthenticationFailedSignal.emit(.init(id: id))
     }
+
     public lazy var peerAuthenticationFailedSignal: Godot.SignalEmitter<PeerAuthenticationFailedSignalInput> = {
         .init(object: self, signalName: "peer_authentication_failed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,19 +82,32 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     public struct PeerPacketSignalInput: Godot.SignalInput {
         public let id: Int
+
         public let packet: Godot.PackedByteArray
-        fileprivate init(id: Int, packet: Godot.PackedByteArray) {
+
+        fileprivate init(
+            id: Int,
+            packet: Godot.PackedByteArray
+        ) {
             self.id = id
             self.packet = packet
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id), Variant(input.packet)]
         }
     }
-    public func peerPacket(id: Int, packet: Godot.PackedByteArray) {
+
+    public func peerPacket(
+        id: Int,
+        packet: Godot.PackedByteArray
+    ) {
         _ = peerPacketSignal.emit(.init(id: id,
                 packet: packet))
     }
+
     public lazy var peerPacketSignal: Godot.SignalEmitter<PeerPacketSignalInput> = {
         .init(object: self, signalName: "peer_packet") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -97,7 +131,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setRootPath(_ path: Godot.NodePath) {
+
+    private func __setRootPath(
+        _ path: Godot.NodePath
+    ) {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,6 +153,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __getRootPath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,6 +172,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -151,7 +190,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    public func disconnectPeer(id: Int32) {
+
+    public func disconnectPeer(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,6 +212,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     public func authenticatingPeers() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,7 +231,11 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    public func sendAuth(id: Int32, data: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func sendAuth(
+        id: Int32,
+        data: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -209,7 +256,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    public func completeAuth(id: Int32) -> Godot.ErrorType {
+
+    public func completeAuth(
+        id: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -229,7 +279,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setAuthCallback(_ callback: Godot.Callable) {
+
+    private func __setAuthCallback(
+        _ callback: Godot.Callable
+    ) {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -248,6 +301,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __getAuthCallback() -> Godot.Callable {
         Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -266,7 +320,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setAuthTimeout(_ timeout: Double) {
+
+    private func __setAuthTimeout(
+        _ timeout: Double
+    ) {
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         withUnsafeArgumentPackPointer(__ptr_timeout) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -285,6 +342,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __getAuthTimeout() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +361,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setRefuseNewConnections(refuse: Bool) {
+
+    private func __setRefuseNewConnections(
+        refuse: Bool
+    ) {
         refuse.withGodotUnsafeRawPointer { __ptr_refuse in
         withUnsafeArgumentPackPointer(__ptr_refuse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,6 +383,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __isRefusingNewConnections() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -340,7 +402,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setAllowObjectDecoding(enable: Bool) {
+
+    private func __setAllowObjectDecoding(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +424,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __isObjectDecodingAllowed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,7 +443,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setServerRelayEnabled(_ enabled: Bool) {
+
+    private func __setServerRelayEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,6 +465,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __isServerRelayEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -414,7 +484,13 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    public func sendBytes(_ bytes: Godot.PackedByteArray, id: Int32 = 0, mode: Godot.MultiplayerPeer.TransferMode = MultiplayerPeer.TransferMode(rawValue: 2)!, channel: Int32 = 0) -> Godot.ErrorType {
+
+    public func sendBytes(
+        _ bytes: Godot.PackedByteArray,
+        id: Int32 = 0,
+        mode: Godot.MultiplayerPeer.TransferMode = MultiplayerPeer.TransferMode(rawValue: 2)!,
+        channel: Int32 = 0
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -437,6 +513,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __getMaxSyncPacketSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -455,7 +532,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setMaxSyncPacketSize(_ size: Int32) {
+
+    private func __setMaxSyncPacketSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,6 +554,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
+
     private func __getMaxDeltaPacketSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -492,7 +573,10 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         }
     }()
-    private func __setMaxDeltaPacketSize(_ size: Int32) {
+
+    private func __setMaxDeltaPacketSize(
+        _ size: Int32
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -593,6 +677,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -605,5 +690,4 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
         return _virtualFunctions!
     }
-
-    }
+}

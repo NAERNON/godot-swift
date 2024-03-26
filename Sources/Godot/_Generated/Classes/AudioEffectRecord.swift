@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectRecord: AudioEffect {
     internal static var __method_binding_set_recording_active: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioEffectRecord: AudioEffect {
         }
         }
     }()
-    public func setRecordingActive(record: Bool) {
+
+    public func setRecordingActive(
+        record: Bool
+    ) {
         record.withGodotUnsafeRawPointer { __ptr_record in
         withUnsafeArgumentPackPointer(__ptr_record) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioEffectRecord: AudioEffect {
         }
         }
     }()
+
     public func isRecordingActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioEffectRecord: AudioEffect {
         }
         }
     }()
-    private func __setFormat(_ format: Godot.AudioStreamWAV.Format) {
+
+    private func __setFormat(
+        _ format: Godot.AudioStreamWAV.Format
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioEffectRecord: AudioEffect {
         }
         }
     }()
+
     private func __getFormat() -> Godot.AudioStreamWAV.Format {
         Godot.AudioStreamWAV.Format.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class AudioEffectRecord: AudioEffect {
         }
         }
     }()
+
     public func recording() -> Godot.AudioStreamWAV? {
         Godot.AudioStreamWAV?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,6 +119,7 @@ open class AudioEffectRecord: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -121,5 +132,4 @@ open class AudioEffectRecord: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

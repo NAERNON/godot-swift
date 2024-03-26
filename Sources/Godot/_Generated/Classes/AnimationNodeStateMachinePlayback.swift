@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AnimationNodeStateMachinePlayback: Resource {
     internal static var __method_binding_travel: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
-    public func travel(toNode node: Godot.GodotStringName, resetOnTeleport: Bool = true) {
+
+    public func travel(
+        toNode node: Godot.GodotStringName,
+        resetOnTeleport: Bool = true
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         resetOnTeleport.withGodotUnsafeRawPointer { __ptr_resetOnTeleport in
         withUnsafeArgumentPackPointer(__ptr_node, __ptr_resetOnTeleport) { __accessPtr in
@@ -32,7 +37,11 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
-    public func start(node: Godot.GodotStringName, reset: Bool = true) {
+
+    public func start(
+        node: Godot.GodotStringName,
+        reset: Bool = true
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         reset.withGodotUnsafeRawPointer { __ptr_reset in
         withUnsafeArgumentPackPointer(__ptr_node, __ptr_reset) { __accessPtr in
@@ -52,6 +61,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func next() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -69,6 +79,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func stop() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -86,6 +97,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func isPlaying() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,6 +116,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func currentNode() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func currentPlayPosition() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,6 +154,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func currentLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +173,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func fadingFromNode() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,6 +192,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         }
     }()
+
     public func travelPath() -> Godot.GodotArray<Godot.GodotStringName> {
         Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +205,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +218,4 @@ open class AnimationNodeStateMachinePlayback: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorScript: RefCounted {
     open func _run() {
@@ -15,7 +16,10 @@ open class EditorScript: RefCounted {
         }
         }
     }()
-    public func addRootNode(_ node: Godot.Node?) {
+
+    public func addRootNode(
+        _ node: Godot.Node?
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -35,6 +39,7 @@ open class EditorScript: RefCounted {
         }
         }
     }()
+
     public func scene() -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -53,6 +58,7 @@ open class EditorScript: RefCounted {
         }
         }
     }()
+
     public func editorInterface() -> Godot.EditorInterface? {
         Godot.EditorInterface?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,6 +71,7 @@ open class EditorScript: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -83,5 +90,4 @@ open class EditorScript: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

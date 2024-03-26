@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Environment: Resource {
     public enum BGMode: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class Environment: Resource {
         case keep = 4
         case cameraFeed = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Clear Color", 0),
@@ -24,11 +26,13 @@ open class Environment: Resource {
             ("Max", 6),]
         }
     }
+
     public enum AmbientSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case color = 2
         case sky = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bg", 0),
@@ -37,10 +41,12 @@ open class Environment: Resource {
             ("Sky", 3),]
         }
     }
+
     public enum ReflectionSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case sky = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bg", 0),
@@ -48,11 +54,13 @@ open class Environment: Resource {
             ("Sky", 2),]
         }
     }
+
     public enum ToneMapper: UInt32, GodotEnum {
         case linear = 0
         case reinhardt = 1
         case filmic = 2
         case aces = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Linear", 0),
@@ -61,12 +69,14 @@ open class Environment: Resource {
             ("Aces", 3),]
         }
     }
+
     public enum GlowBlendMode: UInt32, GodotEnum {
         case additive = 0
         case screen = 1
         case softlight = 2
         case replace = 3
         case mix = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Additive", 0),
@@ -76,10 +86,12 @@ open class Environment: Resource {
             ("Mix", 4),]
         }
     }
+
     public enum SDFGIYScale: UInt32, GodotEnum {
         case sdfgiYScale50Percent = 0
         case sdfgiYScale75Percent = 1
         case sdfgiYScale100Percent = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sdfgi Y Scale50 Percent", 0),
@@ -95,7 +107,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setBackground(mode: Godot.Environment.BGMode) {
+
+    private func __setBackground(
+        mode: Godot.Environment.BGMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +129,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getBackground() -> Godot.Environment.BGMode {
         Godot.Environment.BGMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,7 +148,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSky(_ sky: Godot.Sky?) {
+
+    private func __setSky(
+        _ sky: Godot.Sky?
+    ) {
         sky.withGodotUnsafeRawPointer { __ptr_sky in
         withUnsafePointer(to: __ptr_sky) { _ptr___ptr_sky in
         withUnsafeArgumentPackPointer(_ptr___ptr_sky) { __accessPtr in
@@ -152,6 +171,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSky() -> Godot.Sky? {
         Godot.Sky?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +190,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSkyCustomFov(scale: Double) {
+
+    private func __setSkyCustomFov(
+        scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,6 +212,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSkyCustomFov() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -207,7 +231,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSkyRotation(eulerRadians: Godot.Vector3) {
+
+    private func __setSkyRotation(
+        eulerRadians: Godot.Vector3
+    ) {
         eulerRadians.withGodotUnsafeRawPointer { __ptr_eulerRadians in
         withUnsafeArgumentPackPointer(__ptr_eulerRadians) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -226,6 +253,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSkyRotation() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -244,7 +272,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setBgColor(_ color: Godot.Color) {
+
+    private func __setBgColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -263,6 +294,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getBgColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -281,7 +313,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setBgEnergyMultiplier(energy: Double) {
+
+    private func __setBgEnergyMultiplier(
+        energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -300,6 +335,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getBgEnergyMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -318,7 +354,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setBgIntensity(energy: Double) {
+
+    private func __setBgIntensity(
+        energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -337,6 +376,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getBgIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,7 +395,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setCanvasMaxLayer(_ layer: Int32) {
+
+    private func __setCanvasMaxLayer(
+        _ layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,6 +417,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getCanvasMaxLayer() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -392,7 +436,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setCameraFeedID(_ id: Int32) {
+
+    private func __setCameraFeedID(
+        _ id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -411,6 +458,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getCameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,7 +477,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAmbientLightColor(_ color: Godot.Color) {
+
+    private func __setAmbientLightColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -448,6 +499,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAmbientLightColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +518,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAmbientSource(_ source: Godot.Environment.AmbientSource) {
+
+    private func __setAmbientSource(
+        _ source: Godot.Environment.AmbientSource
+    ) {
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_source) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,6 +540,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAmbientSource() -> Godot.Environment.AmbientSource {
         Godot.Environment.AmbientSource.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -503,7 +559,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAmbientLightEnergy(_ energy: Double) {
+
+    private func __setAmbientLightEnergy(
+        _ energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -522,6 +581,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAmbientLightEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -540,7 +600,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAmbientLightSkyContribution(ratio: Double) {
+
+    private func __setAmbientLightSkyContribution(
+        ratio: Double
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -559,6 +622,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAmbientLightSkyContribution() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,7 +641,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setReflectionSource(_ source: Godot.Environment.ReflectionSource) {
+
+    private func __setReflectionSource(
+        _ source: Godot.Environment.ReflectionSource
+    ) {
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_source) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -596,6 +663,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getReflectionSource() -> Godot.Environment.ReflectionSource {
         Godot.Environment.ReflectionSource.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -614,7 +682,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setTonemapper(mode: Godot.Environment.ToneMapper) {
+
+    private func __setTonemapper(
+        mode: Godot.Environment.ToneMapper
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -633,6 +704,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getTonemapper() -> Godot.Environment.ToneMapper {
         Godot.Environment.ToneMapper.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -651,7 +723,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setTonemapExposure(_ exposure: Double) {
+
+    private func __setTonemapExposure(
+        _ exposure: Double
+    ) {
         exposure.withGodotUnsafeRawPointer { __ptr_exposure in
         withUnsafeArgumentPackPointer(__ptr_exposure) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -670,6 +745,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getTonemapExposure() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -688,7 +764,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setTonemapWhite(_ white: Double) {
+
+    private func __setTonemapWhite(
+        _ white: Double
+    ) {
         white.withGodotUnsafeRawPointer { __ptr_white in
         withUnsafeArgumentPackPointer(__ptr_white) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -707,6 +786,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getTonemapWhite() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -725,7 +805,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrEnabled(_ enabled: Bool) {
+
+    private func __setSsrEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -744,6 +827,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSsrEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -762,7 +846,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrMaxSteps(_ maxSteps: Int32) {
+
+    private func __setSsrMaxSteps(
+        _ maxSteps: Int32
+    ) {
         maxSteps.withGodotUnsafeRawPointer { __ptr_maxSteps in
         withUnsafeArgumentPackPointer(__ptr_maxSteps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -781,6 +868,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsrMaxSteps() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -799,7 +887,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrFade(in fadeIn: Double) {
+
+    private func __setSsrFade(
+        in fadeIn: Double
+    ) {
         fadeIn.withGodotUnsafeRawPointer { __ptr_fadeIn in
         withUnsafeArgumentPackPointer(__ptr_fadeIn) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -818,6 +909,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsrFadeIn() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -836,7 +928,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrFadeOut(_ fadeOut: Double) {
+
+    private func __setSsrFadeOut(
+        _ fadeOut: Double
+    ) {
         fadeOut.withGodotUnsafeRawPointer { __ptr_fadeOut in
         withUnsafeArgumentPackPointer(__ptr_fadeOut) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -855,6 +950,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsrFadeOut() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -873,7 +969,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrDepthTolerance(_ depthTolerance: Double) {
+
+    private func __setSsrDepthTolerance(
+        _ depthTolerance: Double
+    ) {
         depthTolerance.withGodotUnsafeRawPointer { __ptr_depthTolerance in
         withUnsafeArgumentPackPointer(__ptr_depthTolerance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -892,6 +991,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsrDepthTolerance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -910,7 +1010,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoEnabled(_ enabled: Bool) {
+
+    private func __setSsaoEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -929,6 +1032,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSsaoEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -947,7 +1051,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoRadius(_ radius: Double) {
+
+    private func __setSsaoRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -966,6 +1073,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -984,7 +1092,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoIntensity(_ intensity: Double) {
+
+    private func __setSsaoIntensity(
+        _ intensity: Double
+    ) {
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_intensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1003,6 +1114,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1021,7 +1133,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoPower(_ power: Double) {
+
+    private func __setSsaoPower(
+        _ power: Double
+    ) {
         power.withGodotUnsafeRawPointer { __ptr_power in
         withUnsafeArgumentPackPointer(__ptr_power) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1040,6 +1155,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoPower() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1058,7 +1174,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoDetail(_ detail: Double) {
+
+    private func __setSsaoDetail(
+        _ detail: Double
+    ) {
         detail.withGodotUnsafeRawPointer { __ptr_detail in
         withUnsafeArgumentPackPointer(__ptr_detail) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1077,6 +1196,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoDetail() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1095,7 +1215,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoHorizon(_ horizon: Double) {
+
+    private func __setSsaoHorizon(
+        _ horizon: Double
+    ) {
         horizon.withGodotUnsafeRawPointer { __ptr_horizon in
         withUnsafeArgumentPackPointer(__ptr_horizon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1114,6 +1237,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoHorizon() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1132,7 +1256,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoSharpness(_ sharpness: Double) {
+
+    private func __setSsaoSharpness(
+        _ sharpness: Double
+    ) {
         sharpness.withGodotUnsafeRawPointer { __ptr_sharpness in
         withUnsafeArgumentPackPointer(__ptr_sharpness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1151,6 +1278,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoSharpness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1169,7 +1297,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoDirectLightAffect(amount: Double) {
+
+    private func __setSsaoDirectLightAffect(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1188,6 +1319,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoDirectLightAffect() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1206,7 +1338,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsaoAoChannelAffect(amount: Double) {
+
+    private func __setSsaoAoChannelAffect(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1225,6 +1360,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsaoAoChannelAffect() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1243,7 +1379,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsilEnabled(_ enabled: Bool) {
+
+    private func __setSsilEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1262,6 +1401,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSsilEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1280,7 +1420,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsilRadius(_ radius: Double) {
+
+    private func __setSsilRadius(
+        _ radius: Double
+    ) {
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         withUnsafeArgumentPackPointer(__ptr_radius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1299,6 +1442,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsilRadius() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1317,7 +1461,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsilIntensity(_ intensity: Double) {
+
+    private func __setSsilIntensity(
+        _ intensity: Double
+    ) {
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_intensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1336,6 +1483,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsilIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1354,7 +1502,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsilSharpness(_ sharpness: Double) {
+
+    private func __setSsilSharpness(
+        _ sharpness: Double
+    ) {
         sharpness.withGodotUnsafeRawPointer { __ptr_sharpness in
         withUnsafeArgumentPackPointer(__ptr_sharpness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1373,6 +1524,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsilSharpness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1391,7 +1543,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsilNormalRejection(_ normalRejection: Double) {
+
+    private func __setSsilNormalRejection(
+        _ normalRejection: Double
+    ) {
         normalRejection.withGodotUnsafeRawPointer { __ptr_normalRejection in
         withUnsafeArgumentPackPointer(__ptr_normalRejection) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1410,6 +1565,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSsilNormalRejection() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1428,7 +1584,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiEnabled(_ enabled: Bool) {
+
+    private func __setSdfgiEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1447,6 +1606,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSdfgiEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1465,7 +1625,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiCascades(amount: Int32) {
+
+    private func __setSdfgiCascades(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1484,6 +1647,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiCascades() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1502,7 +1666,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiMinCellSize(_ size: Double) {
+
+    private func __setSdfgiMinCellSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1521,6 +1688,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiMinCellSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1539,7 +1707,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiMaxDistance(_ distance: Double) {
+
+    private func __setSdfgiMaxDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1558,6 +1729,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiMaxDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1576,7 +1748,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiCascade0Distance(_ distance: Double) {
+
+    private func __setSdfgiCascade0Distance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1595,6 +1770,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiCascade0Distance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1613,7 +1789,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiYScale(_ scale: Godot.Environment.SDFGIYScale) {
+
+    private func __setSdfgiYScale(
+        _ scale: Godot.Environment.SDFGIYScale
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1632,6 +1811,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiYScale() -> Godot.Environment.SDFGIYScale {
         Godot.Environment.SDFGIYScale.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1650,7 +1830,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiUseOcclusion(enable: Bool) {
+
+    private func __setSdfgiUseOcclusion(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1669,6 +1852,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSdfgiUsingOcclusion() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1687,7 +1871,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiBounceFeedback(amount: Double) {
+
+    private func __setSdfgiBounceFeedback(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1706,6 +1893,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiBounceFeedback() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1724,7 +1912,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiReadSkyLight(enable: Bool) {
+
+    private func __setSdfgiReadSkyLight(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1743,6 +1934,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isSdfgiReadingSkyLight() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1761,7 +1953,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiEnergy(amount: Double) {
+
+    private func __setSdfgiEnergy(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1780,6 +1975,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1798,7 +1994,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiNormalBias(_ bias: Double) {
+
+    private func __setSdfgiNormalBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1817,6 +2016,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiNormalBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1835,7 +2035,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSdfgiProbeBias(_ bias: Double) {
+
+    private func __setSdfgiProbeBias(
+        _ bias: Double
+    ) {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1854,6 +2057,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getSdfgiProbeBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1872,7 +2076,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowEnabled(_ enabled: Bool) {
+
+    private func __setGlowEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1891,6 +2098,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isGlowEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1909,7 +2117,11 @@ open class Environment: Resource {
         }
         }
     }()
-    public func setGlowLevel(idx: Int32, intensity: Double) {
+
+    public func setGlowLevel(
+        idx: Int32,
+        intensity: Double
+    ) {
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_intensity) { __accessPtr in
@@ -1929,7 +2141,10 @@ open class Environment: Resource {
         }
         }
     }()
-    public func glowLevel(idx: Int32) -> Double {
+
+    public func glowLevel(
+        idx: Int32
+    ) -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -1949,7 +2164,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowNormalized(normalize: Bool) {
+
+    private func __setGlowNormalized(
+        normalize: Bool
+    ) {
         normalize.withGodotUnsafeRawPointer { __ptr_normalize in
         withUnsafeArgumentPackPointer(__ptr_normalize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1968,6 +2186,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isGlowNormalized() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1986,7 +2205,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowIntensity(_ intensity: Double) {
+
+    private func __setGlowIntensity(
+        _ intensity: Double
+    ) {
         intensity.withGodotUnsafeRawPointer { __ptr_intensity in
         withUnsafeArgumentPackPointer(__ptr_intensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2005,6 +2227,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2023,7 +2246,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowStrength(_ strength: Double) {
+
+    private func __setGlowStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2042,6 +2268,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2060,7 +2287,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowMix(_ mix: Double) {
+
+    private func __setGlowMix(
+        _ mix: Double
+    ) {
         mix.withGodotUnsafeRawPointer { __ptr_mix in
         withUnsafeArgumentPackPointer(__ptr_mix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2079,6 +2309,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowMix() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2097,7 +2328,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowBloom(amount: Double) {
+
+    private func __setGlowBloom(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2116,6 +2350,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowBloom() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2134,7 +2369,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowBlendMode(_ mode: Godot.Environment.GlowBlendMode) {
+
+    private func __setGlowBlendMode(
+        _ mode: Godot.Environment.GlowBlendMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2153,6 +2391,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowBlendMode() -> Godot.Environment.GlowBlendMode {
         Godot.Environment.GlowBlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2171,7 +2410,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowHdrBleedThreshold(_ threshold: Double) {
+
+    private func __setGlowHdrBleedThreshold(
+        _ threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2190,6 +2432,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowHdrBleedThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2208,7 +2451,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowHdrBleedScale(_ scale: Double) {
+
+    private func __setGlowHdrBleedScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2227,6 +2473,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowHdrBleedScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2245,7 +2492,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowHdrLuminanceCap(amount: Double) {
+
+    private func __setGlowHdrLuminanceCap(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2264,6 +2514,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowHdrLuminanceCap() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2282,7 +2533,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowMapStrength(_ strength: Double) {
+
+    private func __setGlowMapStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2301,6 +2555,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowMapStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2319,7 +2574,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setGlowMap(mode: Godot.Texture?) {
+
+    private func __setGlowMap(
+        mode: Godot.Texture?
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafePointer(to: __ptr_mode) { _ptr___ptr_mode in
         withUnsafeArgumentPackPointer(_ptr___ptr_mode) { __accessPtr in
@@ -2339,6 +2597,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getGlowMap() -> Godot.Texture? {
         Godot.Texture?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2357,7 +2616,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogEnabled(_ enabled: Bool) {
+
+    private func __setFogEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2376,6 +2638,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isFogEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2394,7 +2657,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogLightColor(_ lightColor: Godot.Color) {
+
+    private func __setFogLightColor(
+        _ lightColor: Godot.Color
+    ) {
         lightColor.withGodotUnsafeRawPointer { __ptr_lightColor in
         withUnsafeArgumentPackPointer(__ptr_lightColor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2413,6 +2679,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogLightColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2431,7 +2698,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogLightEnergy(_ lightEnergy: Double) {
+
+    private func __setFogLightEnergy(
+        _ lightEnergy: Double
+    ) {
         lightEnergy.withGodotUnsafeRawPointer { __ptr_lightEnergy in
         withUnsafeArgumentPackPointer(__ptr_lightEnergy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2450,6 +2720,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogLightEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2468,7 +2739,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogSunScatter(_ sunScatter: Double) {
+
+    private func __setFogSunScatter(
+        _ sunScatter: Double
+    ) {
         sunScatter.withGodotUnsafeRawPointer { __ptr_sunScatter in
         withUnsafeArgumentPackPointer(__ptr_sunScatter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2487,6 +2761,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogSunScatter() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2505,7 +2780,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogDensity(_ density: Double) {
+
+    private func __setFogDensity(
+        _ density: Double
+    ) {
         density.withGodotUnsafeRawPointer { __ptr_density in
         withUnsafeArgumentPackPointer(__ptr_density) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2524,6 +2802,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogDensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2542,7 +2821,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogHeight(_ height: Double) {
+
+    private func __setFogHeight(
+        _ height: Double
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2561,6 +2843,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogHeight() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2579,7 +2862,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogHeightDensity(_ heightDensity: Double) {
+
+    private func __setFogHeightDensity(
+        _ heightDensity: Double
+    ) {
         heightDensity.withGodotUnsafeRawPointer { __ptr_heightDensity in
         withUnsafeArgumentPackPointer(__ptr_heightDensity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2598,6 +2884,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogHeightDensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2616,7 +2903,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogAerialPerspective(_ aerialPerspective: Double) {
+
+    private func __setFogAerialPerspective(
+        _ aerialPerspective: Double
+    ) {
         aerialPerspective.withGodotUnsafeRawPointer { __ptr_aerialPerspective in
         withUnsafeArgumentPackPointer(__ptr_aerialPerspective) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2635,6 +2925,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogAerialPerspective() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2653,7 +2944,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setFogSkyAffect(_ skyAffect: Double) {
+
+    private func __setFogSkyAffect(
+        _ skyAffect: Double
+    ) {
         skyAffect.withGodotUnsafeRawPointer { __ptr_skyAffect in
         withUnsafeArgumentPackPointer(__ptr_skyAffect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2672,6 +2966,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getFogSkyAffect() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2690,7 +2985,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogEnabled(_ enabled: Bool) {
+
+    private func __setVolumetricFogEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2709,6 +3007,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isVolumetricFogEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2727,7 +3026,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogEmission(color: Godot.Color) {
+
+    private func __setVolumetricFogEmission(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2746,6 +3048,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogEmission() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2764,7 +3067,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogAlbedo(color: Godot.Color) {
+
+    private func __setVolumetricFogAlbedo(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2783,6 +3089,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogAlbedo() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2801,7 +3108,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogDensity(_ density: Double) {
+
+    private func __setVolumetricFogDensity(
+        _ density: Double
+    ) {
         density.withGodotUnsafeRawPointer { __ptr_density in
         withUnsafeArgumentPackPointer(__ptr_density) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2820,6 +3130,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogDensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2838,7 +3149,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogEmissionEnergy(begin: Double) {
+
+    private func __setVolumetricFogEmissionEnergy(
+        begin: Double
+    ) {
         begin.withGodotUnsafeRawPointer { __ptr_begin in
         withUnsafeArgumentPackPointer(__ptr_begin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2857,6 +3171,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogEmissionEnergy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2875,7 +3190,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogAnisotropy(_ anisotropy: Double) {
+
+    private func __setVolumetricFogAnisotropy(
+        _ anisotropy: Double
+    ) {
         anisotropy.withGodotUnsafeRawPointer { __ptr_anisotropy in
         withUnsafeArgumentPackPointer(__ptr_anisotropy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2894,6 +3212,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogAnisotropy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2912,7 +3231,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogLength(_ length: Double) {
+
+    private func __setVolumetricFogLength(
+        _ length: Double
+    ) {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2931,6 +3253,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2949,7 +3272,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogDetailSpread(_ detailSpread: Double) {
+
+    private func __setVolumetricFogDetailSpread(
+        _ detailSpread: Double
+    ) {
         detailSpread.withGodotUnsafeRawPointer { __ptr_detailSpread in
         withUnsafeArgumentPackPointer(__ptr_detailSpread) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2968,6 +3294,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogDetailSpread() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2986,7 +3313,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogGiInject(_ giInject: Double) {
+
+    private func __setVolumetricFogGiInject(
+        _ giInject: Double
+    ) {
         giInject.withGodotUnsafeRawPointer { __ptr_giInject in
         withUnsafeArgumentPackPointer(__ptr_giInject) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3005,6 +3335,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogGiInject() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3023,7 +3354,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogAmbientInject(enabled: Double) {
+
+    private func __setVolumetricFogAmbientInject(
+        enabled: Double
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3042,6 +3376,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogAmbientInject() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3060,7 +3395,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogSkyAffect(_ skyAffect: Double) {
+
+    private func __setVolumetricFogSkyAffect(
+        _ skyAffect: Double
+    ) {
         skyAffect.withGodotUnsafeRawPointer { __ptr_skyAffect in
         withUnsafeArgumentPackPointer(__ptr_skyAffect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3079,6 +3417,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogSkyAffect() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3097,7 +3436,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogTemporalReprojectionEnabled(_ enabled: Bool) {
+
+    private func __setVolumetricFogTemporalReprojectionEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3116,6 +3458,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isVolumetricFogTemporalReprojectionEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3134,7 +3477,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setVolumetricFogTemporalReprojectionAmount(_ temporalReprojectionAmount: Double) {
+
+    private func __setVolumetricFogTemporalReprojectionAmount(
+        _ temporalReprojectionAmount: Double
+    ) {
         temporalReprojectionAmount.withGodotUnsafeRawPointer { __ptr_temporalReprojectionAmount in
         withUnsafeArgumentPackPointer(__ptr_temporalReprojectionAmount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3153,6 +3499,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getVolumetricFogTemporalReprojectionAmount() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3171,7 +3518,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAdjustmentEnabled(_ enabled: Bool) {
+
+    private func __setAdjustmentEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3190,6 +3540,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __isAdjustmentEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3208,7 +3559,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAdjustmentBrightness(_ brightness: Double) {
+
+    private func __setAdjustmentBrightness(
+        _ brightness: Double
+    ) {
         brightness.withGodotUnsafeRawPointer { __ptr_brightness in
         withUnsafeArgumentPackPointer(__ptr_brightness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3227,6 +3581,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAdjustmentBrightness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3245,7 +3600,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAdjustmentContrast(_ contrast: Double) {
+
+    private func __setAdjustmentContrast(
+        _ contrast: Double
+    ) {
         contrast.withGodotUnsafeRawPointer { __ptr_contrast in
         withUnsafeArgumentPackPointer(__ptr_contrast) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3264,6 +3622,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAdjustmentContrast() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3282,7 +3641,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAdjustmentSaturation(_ saturation: Double) {
+
+    private func __setAdjustmentSaturation(
+        _ saturation: Double
+    ) {
         saturation.withGodotUnsafeRawPointer { __ptr_saturation in
         withUnsafeArgumentPackPointer(__ptr_saturation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3301,6 +3663,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAdjustmentSaturation() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3319,7 +3682,10 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setAdjustmentColorCorrection(_ colorCorrection: Godot.Texture?) {
+
+    private func __setAdjustmentColorCorrection(
+        _ colorCorrection: Godot.Texture?
+    ) {
         colorCorrection.withGodotUnsafeRawPointer { __ptr_colorCorrection in
         withUnsafePointer(to: __ptr_colorCorrection) { _ptr___ptr_colorCorrection in
         withUnsafeArgumentPackPointer(_ptr___ptr_colorCorrection) { __accessPtr in
@@ -3339,6 +3705,7 @@ open class Environment: Resource {
         }
         }
     }()
+
     private func __getAdjustmentColorCorrection() -> Godot.Texture? {
         Godot.Texture?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4308,6 +4675,7 @@ open class Environment: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -4320,5 +4688,4 @@ open class Environment: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

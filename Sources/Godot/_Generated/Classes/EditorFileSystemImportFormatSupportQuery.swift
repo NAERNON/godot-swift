@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorFileSystemImportFormatSupportQuery: RefCounted {
     open func _isActive() -> Bool {
@@ -18,6 +19,7 @@ open class EditorFileSystemImportFormatSupportQuery: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -53,5 +55,4 @@ open class EditorFileSystemImportFormatSupportQuery: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

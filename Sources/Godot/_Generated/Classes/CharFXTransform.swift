@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CharFXTransform: RefCounted {
     internal static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,7 +32,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setTransform(_ transform: Godot.Transform2D) {
+
+    private func __setTransform(
+        _ transform: Godot.Transform2D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +54,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getRange() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +73,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setRange(_ range: Godot.Vector2I) {
+
+    private func __setRange(
+        _ range: Godot.Vector2I
+    ) {
         range.withGodotUnsafeRawPointer { __ptr_range in
         withUnsafeArgumentPackPointer(__ptr_range) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,6 +95,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getElapsedTime() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +114,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setElapsedTime(_ time: Double) {
+
+    private func __setElapsedTime(
+        _ time: Double
+    ) {
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,6 +136,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +155,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setVisibility(_ visibility: Bool) {
+
+    private func __setVisibility(
+        _ visibility: Bool
+    ) {
         visibility.withGodotUnsafeRawPointer { __ptr_visibility in
         withUnsafeArgumentPackPointer(__ptr_visibility) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,6 +177,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __isOutline() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +196,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setOutline(_ outline: Bool) {
+
+    private func __setOutline(
+        _ outline: Bool
+    ) {
         outline.withGodotUnsafeRawPointer { __ptr_outline in
         withUnsafeArgumentPackPointer(__ptr_outline) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,6 +218,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +237,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector2) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getEnvironment() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setEnvironment<Value1: VariantStorable, Value2: VariantStorable>(_ environment: Godot.GodotDictionary<Value1, Value2>) {
+
+    private func __setEnvironment<Value1: VariantStorable, Value2: VariantStorable>(
+        _ environment: Godot.GodotDictionary<Value1, Value2>
+    ) {
         environment.withGodotUnsafeRawPointer { __ptr_environment in
         withUnsafeArgumentPackPointer(__ptr_environment) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getGlyphIndex() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +360,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setGlyphIndex(_ glyphIndex: UInt32) {
+
+    private func __setGlyphIndex(
+        _ glyphIndex: UInt32
+    ) {
         glyphIndex.withGodotUnsafeRawPointer { __ptr_glyphIndex in
         withUnsafeArgumentPackPointer(__ptr_glyphIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,6 +382,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getRelativeIndex() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -363,7 +401,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setRelativeIndex(_ relativeIndex: Int32) {
+
+    private func __setRelativeIndex(
+        _ relativeIndex: Int32
+    ) {
         relativeIndex.withGodotUnsafeRawPointer { __ptr_relativeIndex in
         withUnsafeArgumentPackPointer(__ptr_relativeIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,6 +423,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getGlyphCount() -> UInt8 {
         UInt8.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -400,7 +442,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setGlyphCount(_ glyphCount: UInt8) {
+
+    private func __setGlyphCount(
+        _ glyphCount: UInt8
+    ) {
         glyphCount.withGodotUnsafeRawPointer { __ptr_glyphCount in
         withUnsafeArgumentPackPointer(__ptr_glyphCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,6 +464,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getGlyphFlags() -> UInt16 {
         UInt16.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -437,7 +483,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setGlyphFlags(_ glyphFlags: UInt16) {
+
+    private func __setGlyphFlags(
+        _ glyphFlags: UInt16
+    ) {
         glyphFlags.withGodotUnsafeRawPointer { __ptr_glyphFlags in
         withUnsafeArgumentPackPointer(__ptr_glyphFlags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,6 +505,7 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
+
     private func __getFont() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -474,7 +524,10 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __setFont(_ font: Godot.RID) {
+
+    private func __setFont(
+        _ font: Godot.RID
+    ) {
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafeArgumentPackPointer(__ptr_font) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -630,6 +683,7 @@ open class CharFXTransform: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -642,5 +696,4 @@ open class CharFXTransform: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

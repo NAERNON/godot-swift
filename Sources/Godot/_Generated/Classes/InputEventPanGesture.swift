@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventPanGesture: InputEventGesture {
     internal static var __method_binding_set_delta: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventPanGesture: InputEventGesture {
         }
         }
     }()
-    private func __setDelta(_ delta: Godot.Vector2) {
+
+    private func __setDelta(
+        _ delta: Godot.Vector2
+    ) {
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         withUnsafeArgumentPackPointer(__ptr_delta) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class InputEventPanGesture: InputEventGesture {
         }
         }
     }()
+
     private func __getDelta() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class InputEventPanGesture: InputEventGesture {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class InputEventPanGesture: InputEventGesture {
         }
         return _virtualFunctions!
     }
-
-    }
+}

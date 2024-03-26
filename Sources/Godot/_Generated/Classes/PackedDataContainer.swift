@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PackedDataContainer: Resource {
     internal static var __method_binding_pack: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PackedDataContainer: Resource {
         }
         }
     }()
-    public func pack<Value: VariantStorableIn>(value: Value) -> Godot.ErrorType {
+
+    public func pack<Value: VariantStorableIn>(
+        value: Value
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
@@ -32,6 +36,7 @@ open class PackedDataContainer: Resource {
         }
         }
     }()
+
     public func size() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -44,6 +49,7 @@ open class PackedDataContainer: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -56,5 +62,4 @@ open class PackedDataContainer: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

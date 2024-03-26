@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CurveTexture: Texture2D {
     public enum TextureMode: UInt32, GodotEnum {
         case rgb = 0
         case red = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Rgb", 0),
@@ -22,7 +24,10 @@ open class CurveTexture: Texture2D {
         }
         }
     }()
-    public func setWidth(_ width: Int32) {
+
+    public func setWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,7 +46,10 @@ open class CurveTexture: Texture2D {
         }
         }
     }()
-    private func __setCurve(_ curve: Godot.Curve?) {
+
+    private func __setCurve(
+        _ curve: Godot.Curve?
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
         withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
@@ -61,6 +69,7 @@ open class CurveTexture: Texture2D {
         }
         }
     }()
+
     private func __getCurve() -> Godot.Curve? {
         Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -79,7 +88,10 @@ open class CurveTexture: Texture2D {
         }
         }
     }()
-    private func __setTextureMode(_ textureMode: Godot.CurveTexture.TextureMode) {
+
+    private func __setTextureMode(
+        _ textureMode: Godot.CurveTexture.TextureMode
+    ) {
         textureMode.withGodotUnsafeRawPointer { __ptr_textureMode in
         withUnsafeArgumentPackPointer(__ptr_textureMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,6 +110,7 @@ open class CurveTexture: Texture2D {
         }
         }
     }()
+
     private func __getTextureMode() -> Godot.CurveTexture.TextureMode {
         Godot.CurveTexture.TextureMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,6 +145,7 @@ open class CurveTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -144,5 +158,4 @@ open class CurveTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

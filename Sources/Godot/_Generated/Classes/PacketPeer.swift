@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PacketPeer: RefCounted {
     internal static var __method_binding_get_var: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
-    public func `var`(allowObjects: Bool = false) -> Godot.Variant {
+
+    public func `var`(
+        allowObjects: Bool = false
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_allowObjects) { __accessPtr in
@@ -32,7 +36,11 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
-    public func putVar<Value: VariantStorableIn>(_ `var`: Value, fullObjects: Bool = false) -> Godot.ErrorType {
+
+    public func putVar<Value: VariantStorableIn>(
+        _ `var`: Value,
+        fullObjects: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: `var`) { __ptr_var in
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
@@ -53,6 +61,7 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
+
     public func packet() -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,7 +80,10 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
-    public func putPacket(buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+
+    public func putPacket(
+        buffer: Godot.PackedByteArray
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -91,6 +103,7 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
+
     public func packetError() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -109,6 +122,7 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
+
     public func availablePacketCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,6 +141,7 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
+
     private func __getEncodeBufferMaxSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,7 +160,10 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
-    private func __setEncodeBufferMaxSize(_ maxSize: Int32) {
+
+    private func __setEncodeBufferMaxSize(
+        _ maxSize: Int32
+    ) {
         maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
         withUnsafeArgumentPackPointer(__ptr_maxSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -169,6 +187,7 @@ open class PacketPeer: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -181,5 +200,4 @@ open class PacketPeer: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

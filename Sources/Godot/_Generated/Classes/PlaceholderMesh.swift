@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PlaceholderMesh: Mesh {
     internal static var __method_binding_set_aabb: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PlaceholderMesh: Mesh {
         }
         }
     }()
-    public func setAabb(_ aabb: Godot.AABB) {
+
+    public func setAabb(
+        _ aabb: Godot.AABB
+    ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -25,6 +29,7 @@ open class PlaceholderMesh: Mesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -37,5 +42,4 @@ open class PlaceholderMesh: Mesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDPipelineSpecializationConstant: RefCounted {
     internal static var __method_binding_set_value: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
-    private func __setValue<Value: VariantStorableIn>(_ value: Value) {
+
+    private func __setValue<Value: VariantStorableIn>(
+        _ value: Value
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
+
     private func __getValue() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
-    private func __setConstantID(_ constantID: UInt32) {
+
+    private func __setConstantID(
+        _ constantID: UInt32
+    ) {
         constantID.withGodotUnsafeRawPointer { __ptr_constantID in
         withUnsafeArgumentPackPointer(__ptr_constantID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
+
     private func __getConstantID() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

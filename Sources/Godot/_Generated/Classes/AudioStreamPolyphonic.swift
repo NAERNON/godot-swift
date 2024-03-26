@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamPolyphonic: AudioStream {
     internal static var __method_binding_set_polyphony: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioStreamPolyphonic: AudioStream {
         }
         }
     }()
-    private func __setPolyphony(voices: Int32) {
+
+    private func __setPolyphony(
+        voices: Int32
+    ) {
         voices.withGodotUnsafeRawPointer { __ptr_voices in
         withUnsafeArgumentPackPointer(__ptr_voices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioStreamPolyphonic: AudioStream {
         }
         }
     }()
+
     private func __getPolyphony() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class AudioStreamPolyphonic: AudioStream {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class AudioStreamPolyphonic: AudioStream {
         }
         return _virtualFunctions!
     }
-
-    }
+}

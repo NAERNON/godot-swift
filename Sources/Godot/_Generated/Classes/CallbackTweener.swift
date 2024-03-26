@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CallbackTweener: Tweener {
     internal static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CallbackTweener: Tweener {
         }
         }
     }()
-    public func setDelay(_ delay: Double) -> Godot.CallbackTweener? {
+
+    public func setDelay(
+        _ delay: Double
+    ) -> Godot.CallbackTweener? {
         Godot.CallbackTweener?.fromMutatingGodotUnsafePointer { __temporary in
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
@@ -26,6 +30,7 @@ open class CallbackTweener: Tweener {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -38,5 +43,4 @@ open class CallbackTweener: Tweener {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class NoiseTexture3D: Texture3D {
     internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    public func setWidth(_ width: Int32) {
+
+    public func setWidth(
+        _ width: Int32
+    ) {
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_width) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,7 +35,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    public func setHeight(_ height: Int32) {
+
+    public func setHeight(
+        _ height: Int32
+    ) {
         height.withGodotUnsafeRawPointer { __ptr_height in
         withUnsafeArgumentPackPointer(__ptr_height) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +57,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    public func setDepth(_ depth: Int32) {
+
+    public func setDepth(
+        _ depth: Int32
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +79,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setInvert(_ invert: Bool) {
+
+    private func __setInvert(
+        _ invert: Bool
+    ) {
         invert.withGodotUnsafeRawPointer { __ptr_invert in
         withUnsafeArgumentPackPointer(__ptr_invert) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +101,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __getInvert() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +120,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setSeamless(_ seamless: Bool) {
+
+    private func __setSeamless(
+        _ seamless: Bool
+    ) {
         seamless.withGodotUnsafeRawPointer { __ptr_seamless in
         withUnsafeArgumentPackPointer(__ptr_seamless) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +142,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __getSeamless() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,7 +161,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setSeamlessBlendSkirt(_ seamlessBlendSkirt: Double) {
+
+    private func __setSeamlessBlendSkirt(
+        _ seamlessBlendSkirt: Double
+    ) {
         seamlessBlendSkirt.withGodotUnsafeRawPointer { __ptr_seamlessBlendSkirt in
         withUnsafeArgumentPackPointer(__ptr_seamlessBlendSkirt) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,6 +183,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __getSeamlessBlendSkirt() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,7 +202,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setNormalize(_ normalize: Bool) {
+
+    private func __setNormalize(
+        _ normalize: Bool
+    ) {
         normalize.withGodotUnsafeRawPointer { __ptr_normalize in
         withUnsafeArgumentPackPointer(__ptr_normalize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +224,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __isNormalized() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +243,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setColorRamp(gradient: Godot.Gradient?) {
+
+    private func __setColorRamp(
+        gradient: Godot.Gradient?
+    ) {
         gradient.withGodotUnsafeRawPointer { __ptr_gradient in
         withUnsafePointer(to: __ptr_gradient) { _ptr___ptr_gradient in
         withUnsafeArgumentPackPointer(_ptr___ptr_gradient) { __accessPtr in
@@ -237,6 +266,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __getColorRamp() -> Godot.Gradient? {
         Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,7 +285,10 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
-    private func __setNoise(_ noise: Godot.Noise?) {
+
+    private func __setNoise(
+        _ noise: Godot.Noise?
+    ) {
         noise.withGodotUnsafeRawPointer { __ptr_noise in
         withUnsafePointer(to: __ptr_noise) { _ptr___ptr_noise in
         withUnsafeArgumentPackPointer(_ptr___ptr_noise) { __accessPtr in
@@ -275,6 +308,7 @@ open class NoiseTexture3D: Texture3D {
         }
         }
     }()
+
     private func __getNoise() -> Godot.Noise? {
         Godot.Noise?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -353,6 +387,7 @@ open class NoiseTexture3D: Texture3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -365,5 +400,4 @@ open class NoiseTexture3D: Texture3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

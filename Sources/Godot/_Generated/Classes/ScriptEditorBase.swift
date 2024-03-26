@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ScriptEditorBase: VBoxContainer {
+
     public func nameChanged() {
         _ = nameChangedSignal.emit()
     }
+
     public lazy var nameChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "name_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class ScriptEditorBase: VBoxContainer {
     public func editedScriptChanged() {
         _ = editedScriptChangedSignal.emit()
     }
+
     public lazy var editedScriptChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "edited_script_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -43,16 +47,26 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct RequestHelpSignalInput: Godot.SignalInput {
         public let topic: Godot.GodotString
-        fileprivate init(topic: Godot.GodotString) {
+
+        fileprivate init(
+            topic: Godot.GodotString
+        ) {
             self.topic = topic
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.topic)]
         }
     }
-    public func requestHelp(topic: Godot.GodotString) {
+
+    public func requestHelp(
+        topic: Godot.GodotString
+    ) {
         _ = requestHelpSignal.emit(.init(topic: topic))
     }
+
     public lazy var requestHelpSignal: Godot.SignalEmitter<RequestHelpSignalInput> = {
         .init(object: self, signalName: "request_help") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestHelpSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -70,19 +84,32 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct RequestOpenScriptAtLineSignalInput: Godot.SignalInput {
         public let script: Godot.Object?
+
         public let line: Int
-        fileprivate init(script: Godot.Object?, line: Int) {
+
+        fileprivate init(
+            script: Godot.Object?,
+            line: Int
+        ) {
             self.script = script
             self.line = line
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.script), Variant(input.line)]
         }
     }
-    public func requestOpenScriptAtLine(script: Godot.Object?, line: Int) {
+
+    public func requestOpenScriptAtLine(
+        script: Godot.Object?,
+        line: Int
+    ) {
         _ = requestOpenScriptAtLineSignal.emit(.init(script: script,
                 line: line))
     }
+
     public lazy var requestOpenScriptAtLineSignal: Godot.SignalEmitter<RequestOpenScriptAtLineSignalInput> = {
         .init(object: self, signalName: "request_open_script_at_line") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestOpenScriptAtLineSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -102,6 +129,7 @@ open class ScriptEditorBase: VBoxContainer {
     public func requestSaveHistory() {
         _ = requestSaveHistorySignal.emit()
     }
+
     public lazy var requestSaveHistorySignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "request_save_history") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -119,16 +147,26 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct GoToHelpSignalInput: Godot.SignalInput {
         public let what: Godot.GodotString
-        fileprivate init(what: Godot.GodotString) {
+
+        fileprivate init(
+            what: Godot.GodotString
+        ) {
             self.what = what
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.what)]
         }
     }
-    public func goToHelp(what: Godot.GodotString) {
+
+    public func goToHelp(
+        what: Godot.GodotString
+    ) {
         _ = goToHelpSignal.emit(.init(what: what))
     }
+
     public lazy var goToHelpSignal: Godot.SignalEmitter<GoToHelpSignalInput> = {
         .init(object: self, signalName: "go_to_help") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GoToHelpSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -146,16 +184,26 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct SearchInFilesRequestedSignalInput: Godot.SignalInput {
         public let text: Godot.GodotString
-        fileprivate init(text: Godot.GodotString) {
+
+        fileprivate init(
+            text: Godot.GodotString
+        ) {
             self.text = text
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.text)]
         }
     }
-    public func searchInFilesRequested(text: Godot.GodotString) {
+
+    public func searchInFilesRequested(
+        text: Godot.GodotString
+    ) {
         _ = searchInFilesRequestedSignal.emit(.init(text: text))
     }
+
     public lazy var searchInFilesRequestedSignal: Godot.SignalEmitter<SearchInFilesRequestedSignalInput> = {
         .init(object: self, signalName: "search_in_files_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SearchInFilesRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -173,16 +221,26 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct ReplaceInFilesRequestedSignalInput: Godot.SignalInput {
         public let text: Godot.GodotString
-        fileprivate init(text: Godot.GodotString) {
+
+        fileprivate init(
+            text: Godot.GodotString
+        ) {
             self.text = text
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.text)]
         }
     }
-    public func replaceInFilesRequested(text: Godot.GodotString) {
+
+    public func replaceInFilesRequested(
+        text: Godot.GodotString
+    ) {
         _ = replaceInFilesRequestedSignal.emit(.init(text: text))
     }
+
     public lazy var replaceInFilesRequestedSignal: Godot.SignalEmitter<ReplaceInFilesRequestedSignalInput> = {
         .init(object: self, signalName: "replace_in_files_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ReplaceInFilesRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -200,19 +258,32 @@ open class ScriptEditorBase: VBoxContainer {
 
     public struct GoToMethodSignalInput: Godot.SignalInput {
         public let script: Godot.Object?
+
         public let method: Godot.GodotString
-        fileprivate init(script: Godot.Object?, method: Godot.GodotString) {
+
+        fileprivate init(
+            script: Godot.Object?,
+            method: Godot.GodotString
+        ) {
             self.script = script
             self.method = method
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.script), Variant(input.method)]
         }
     }
-    public func goToMethod(script: Godot.Object?, method: Godot.GodotString) {
+
+    public func goToMethod(
+        script: Godot.Object?,
+        method: Godot.GodotString
+    ) {
         _ = goToMethodSignal.emit(.init(script: script,
                 method: method))
     }
+
     public lazy var goToMethodSignal: Godot.SignalEmitter<GoToMethodSignalInput> = {
         .init(object: self, signalName: "go_to_method") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GoToMethodSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -236,6 +307,7 @@ open class ScriptEditorBase: VBoxContainer {
         }
         }
     }()
+
     public func baseEditor() -> Godot.Control? {
         Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,7 +326,10 @@ open class ScriptEditorBase: VBoxContainer {
         }
         }
     }()
-    public func addSyntaxHighlighter(_ highlighter: Godot.EditorSyntaxHighlighter?) {
+
+    public func addSyntaxHighlighter(
+        _ highlighter: Godot.EditorSyntaxHighlighter?
+    ) {
         highlighter.withGodotUnsafeRawPointer { __ptr_highlighter in
         withUnsafePointer(to: __ptr_highlighter) { _ptr___ptr_highlighter in
         withUnsafeArgumentPackPointer(_ptr___ptr_highlighter) { __accessPtr in
@@ -268,6 +343,7 @@ open class ScriptEditorBase: VBoxContainer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -280,5 +356,4 @@ open class ScriptEditorBase: VBoxContainer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

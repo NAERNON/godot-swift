@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
     public enum MagnitudeMode: UInt32, GodotEnum {
         case average = 0
         case max = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Average", 0),
@@ -22,7 +24,12 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
         }
         }
     }()
-    public func magnitudeForFrequencyRange(fromHz: Double, toHz: Double, mode: Godot.AudioEffectSpectrumAnalyzerInstance.MagnitudeMode = AudioEffectSpectrumAnalyzerInstance.MagnitudeMode(rawValue: 1)!) -> Godot.Vector2 {
+
+    public func magnitudeForFrequencyRange(
+        fromHz: Double,
+        toHz: Double,
+        mode: Godot.AudioEffectSpectrumAnalyzerInstance.MagnitudeMode = AudioEffectSpectrumAnalyzerInstance.MagnitudeMode(rawValue: 1)!
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         fromHz.withGodotUnsafeRawPointer { __ptr_fromHz in
         toHz.withGodotUnsafeRawPointer { __ptr_toHz in
@@ -38,6 +45,7 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -50,5 +58,4 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
         }
         return _virtualFunctions!
     }
-
-    }
+}

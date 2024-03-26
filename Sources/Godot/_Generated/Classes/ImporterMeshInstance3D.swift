@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ImporterMeshInstance3D: Node3D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setMesh(_ mesh: Godot.ImporterMesh?) {
+
+    private func __setMesh(
+        _ mesh: Godot.ImporterMesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -32,6 +36,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getMesh() -> Godot.ImporterMesh? {
         Godot.ImporterMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setSkin(_ skin: Godot.Skin?) {
+
+    private func __setSkin(
+        _ skin: Godot.Skin?
+    ) {
         skin.withGodotUnsafeRawPointer { __ptr_skin in
         withUnsafePointer(to: __ptr_skin) { _ptr___ptr_skin in
         withUnsafeArgumentPackPointer(_ptr___ptr_skin) { __accessPtr in
@@ -70,6 +78,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getSkin() -> Godot.Skin? {
         Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +97,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setSkeletonPath(_ skeletonPath: Godot.NodePath) {
+
+    private func __setSkeletonPath(
+        _ skeletonPath: Godot.NodePath
+    ) {
         skeletonPath.withGodotUnsafeRawPointer { __ptr_skeletonPath in
         withUnsafeArgumentPackPointer(__ptr_skeletonPath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,6 +119,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getSkeletonPath() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,7 +138,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setLayerMask(_ layerMask: UInt32) {
+
+    private func __setLayerMask(
+        _ layerMask: UInt32
+    ) {
         layerMask.withGodotUnsafeRawPointer { __ptr_layerMask in
         withUnsafeArgumentPackPointer(__ptr_layerMask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,6 +160,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getLayerMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +179,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setCastShadowsSetting(shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting) {
+
+    private func __setCastShadowsSetting(
+        shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting
+    ) {
         shadowCastingSetting.withGodotUnsafeRawPointer { __ptr_shadowCastingSetting in
         withUnsafeArgumentPackPointer(__ptr_shadowCastingSetting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,6 +201,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getCastShadowsSetting() -> Godot.GeometryInstance3D.ShadowCastingSetting {
         Godot.GeometryInstance3D.ShadowCastingSetting.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,7 +220,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setVisibilityRangeEndMargin(distance: Double) {
+
+    private func __setVisibilityRangeEndMargin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,6 +242,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getVisibilityRangeEndMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,7 +261,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setVisibilityRangeEnd(distance: Double) {
+
+    private func __setVisibilityRangeEnd(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,6 +283,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getVisibilityRangeEnd() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,7 +302,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setVisibilityRangeBeginMargin(distance: Double) {
+
+    private func __setVisibilityRangeBeginMargin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -292,6 +324,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getVisibilityRangeBeginMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -310,7 +343,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setVisibilityRangeBegin(distance: Double) {
+
+    private func __setVisibilityRangeBegin(
+        distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,6 +365,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getVisibilityRangeBegin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -347,7 +384,10 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
-    private func __setVisibilityRangeFadeMode(_ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode) {
+
+    private func __setVisibilityRangeFadeMode(
+        _ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,6 +406,7 @@ open class ImporterMeshInstance3D: Node3D {
         }
         }
     }()
+
     private func __getVisibilityRangeFadeMode() -> Godot.GeometryInstance3D.VisibilityRangeFadeMode {
         Godot.GeometryInstance3D.VisibilityRangeFadeMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,6 +529,7 @@ open class ImporterMeshInstance3D: Node3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -500,5 +542,4 @@ open class ImporterMeshInstance3D: Node3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

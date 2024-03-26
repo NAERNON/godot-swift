@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamGenerator: AudioStream {
     internal static var __method_binding_set_mix_rate: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class AudioStreamGenerator: AudioStream {
         }
         }
     }()
-    private func __setMixRate(hz: Double) {
+
+    private func __setMixRate(
+        hz: Double
+    ) {
         hz.withGodotUnsafeRawPointer { __ptr_hz in
         withUnsafeArgumentPackPointer(__ptr_hz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class AudioStreamGenerator: AudioStream {
         }
         }
     }()
+
     private func __getMixRate() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class AudioStreamGenerator: AudioStream {
         }
         }
     }()
-    private func __setBufferLength(seconds: Double) {
+
+    private func __setBufferLength(
+        seconds: Double
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         withUnsafeArgumentPackPointer(__ptr_seconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class AudioStreamGenerator: AudioStream {
         }
         }
     }()
+
     private func __getBufferLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class AudioStreamGenerator: AudioStream {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class AudioStreamGenerator: AudioStream {
         }
         return _virtualFunctions!
     }
-
-    }
+}

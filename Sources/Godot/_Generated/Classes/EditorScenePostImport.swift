@@ -3,9 +3,12 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorScenePostImport: RefCounted {
-    open func _postImport(scene: Godot.Node?) -> Godot.Object? {
+    open func _postImport(
+        scene: Godot.Node?
+    ) -> Godot.Object? {
         nil
     }
 
@@ -16,6 +19,7 @@ open class EditorScenePostImport: RefCounted {
         }
         }
     }()
+
     public func sourceFile() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -28,6 +32,7 @@ open class EditorScenePostImport: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -49,5 +54,4 @@ open class EditorScenePostImport: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

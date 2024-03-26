@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class StyleBoxLine: StyleBox {
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
-    private func __setColor(_ color: Godot.Color) {
+
+    private func __setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
+
     private func __getColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
-    private func __setThickness(_ thickness: Int32) {
+
+    private func __setThickness(
+        _ thickness: Int32
+    ) {
         thickness.withGodotUnsafeRawPointer { __ptr_thickness in
         withUnsafeArgumentPackPointer(__ptr_thickness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
+
     private func __getThickness() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
-    private func __setGrowBegin(offset: Double) {
+
+    private func __setGrowBegin(
+        offset: Double
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
+
     private func __getGrowBegin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
-    private func __setGrowEnd(offset: Double) {
+
+    private func __setGrowEnd(
+        offset: Double
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
+
     private func __getGrowEnd() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
-    private func __setVertical(_ vertical: Bool) {
+
+    private func __setVertical(
+        _ vertical: Bool
+    ) {
         vertical.withGodotUnsafeRawPointer { __ptr_vertical in
         withUnsafeArgumentPackPointer(__ptr_vertical) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class StyleBoxLine: StyleBox {
         }
         }
     }()
+
     private func __isVertical() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,6 +267,7 @@ open class StyleBoxLine: StyleBox {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -258,5 +280,4 @@ open class StyleBoxLine: StyleBox {
         }
         return _virtualFunctions!
     }
-
-    }
+}

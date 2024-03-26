@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDAttachmentFormat: RefCounted {
     internal static var __method_binding_set_format: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
-    private func __setFormat(pMember: Godot.RenderingDevice.DataFormat) {
+
+    private func __setFormat(
+        pMember: Godot.RenderingDevice.DataFormat
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
+
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
         Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
-    private func __setSamples(pMember: Godot.RenderingDevice.TextureSamples) {
+
+    private func __setSamples(
+        pMember: Godot.RenderingDevice.TextureSamples
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
+
     private func __getSamples() -> Godot.RenderingDevice.TextureSamples {
         Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
-    private func __setUsageFlags(pMember: UInt32) {
+
+    private func __setUsageFlags(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDAttachmentFormat: RefCounted {
         }
         }
     }()
+
     private func __getUsageFlags() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class RDAttachmentFormat: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class RDAttachmentFormat: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

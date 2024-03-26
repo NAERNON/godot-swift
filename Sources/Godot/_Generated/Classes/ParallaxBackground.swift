@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class ParallaxBackground: CanvasLayer {
     internal static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setScrollOffset(_ offset: Godot.Vector2) {
+
+    private func __setScrollOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __getScrollOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setScrollBaseOffset(_ offset: Godot.Vector2) {
+
+    private func __setScrollBaseOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __getScrollBaseOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setScrollBaseScale(_ scale: Godot.Vector2) {
+
+    private func __setScrollBaseScale(
+        _ scale: Godot.Vector2
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __getScrollBaseScale() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setLimitBegin(offset: Godot.Vector2) {
+
+    private func __setLimitBegin(
+        offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __getLimitBegin() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setLimitEnd(offset: Godot.Vector2) {
+
+    private func __setLimitEnd(
+        offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __getLimitEnd() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
-    private func __setIgnoreCameraZoom(ignore: Bool) {
+
+    private func __setIgnoreCameraZoom(
+        ignore: Bool
+    ) {
         ignore.withGodotUnsafeRawPointer { __ptr_ignore in
         withUnsafeArgumentPackPointer(__ptr_ignore) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class ParallaxBackground: CanvasLayer {
         }
         }
     }()
+
     private func __isIgnoreCameraZoom() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,6 +319,7 @@ open class ParallaxBackground: CanvasLayer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -306,5 +332,4 @@ open class ParallaxBackground: CanvasLayer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

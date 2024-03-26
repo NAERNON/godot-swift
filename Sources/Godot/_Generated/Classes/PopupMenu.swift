@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PopupMenu: Popup {
     public struct IDPressedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func idPressed(id: Int) {
+
+    public func idPressed(
+        id: Int
+    ) {
         _ = idPressedSignal.emit(.init(id: id))
     }
+
     public lazy var idPressedSignal: Godot.SignalEmitter<IDPressedSignalInput> = {
         .init(object: self, signalName: "id_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<IDPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class PopupMenu: Popup {
 
     public struct IDFocusedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func idFocused(id: Int) {
+
+    public func idFocused(
+        id: Int
+    ) {
         _ = idFocusedSignal.emit(.init(id: id))
     }
+
     public lazy var idFocusedSignal: Godot.SignalEmitter<IDFocusedSignalInput> = {
         .init(object: self, signalName: "id_focused") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<IDFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,16 +82,26 @@ open class PopupMenu: Popup {
 
     public struct IndexPressedSignalInput: Godot.SignalInput {
         public let index: Int
-        fileprivate init(index: Int) {
+
+        fileprivate init(
+            index: Int
+        ) {
             self.index = index
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.index)]
         }
     }
-    public func indexPressed(index: Int) {
+
+    public func indexPressed(
+        index: Int
+    ) {
         _ = indexPressedSignal.emit(.init(index: index))
     }
+
     public lazy var indexPressedSignal: Godot.SignalEmitter<IndexPressedSignalInput> = {
         .init(object: self, signalName: "index_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<IndexPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -89,6 +120,7 @@ open class PopupMenu: Popup {
     public func menuChanged() {
         _ = menuChangedSignal.emit()
     }
+
     public lazy var menuChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "menu_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -111,7 +143,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func activateItemByEvent(_ event: Godot.InputEvent?, forGlobalOnly globalOnly: Bool = false) -> Bool {
+
+    public func activateItemByEvent(
+        _ event: Godot.InputEvent?,
+        forGlobalOnly globalOnly: Bool = false
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -133,7 +169,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addItem(label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addItem(
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         id.withGodotUnsafeRawPointer { __ptr_id in
         accel.withGodotUnsafeRawPointer { __ptr_accel in
@@ -154,7 +195,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconItem(texture: Godot.Texture2D?, label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addIconItem(
+        texture: Godot.Texture2D?,
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -177,7 +224,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addCheckItem(label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addCheckItem(
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         id.withGodotUnsafeRawPointer { __ptr_id in
         accel.withGodotUnsafeRawPointer { __ptr_accel in
@@ -198,7 +250,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconCheckItem(texture: Godot.Texture2D?, label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addIconCheckItem(
+        texture: Godot.Texture2D?,
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -221,7 +279,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addRadioCheckItem(label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addRadioCheckItem(
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         id.withGodotUnsafeRawPointer { __ptr_id in
         accel.withGodotUnsafeRawPointer { __ptr_accel in
@@ -242,7 +305,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconRadioCheckItem(texture: Godot.Texture2D?, label: Godot.GodotString, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addIconRadioCheckItem(
+        texture: Godot.Texture2D?,
+        label: Godot.GodotString,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         label.withGodotUnsafeRawPointer { __ptr_label in
@@ -265,7 +334,14 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addMultistateItem(label: Godot.GodotString, maxStates: Int32, defaultState: Int32 = 0, id: Int32 = -1, accel: Godot.Key = Key(rawValue: 0)!) {
+
+    public func addMultistateItem(
+        label: Godot.GodotString,
+        maxStates: Int32,
+        defaultState: Int32 = 0,
+        id: Int32 = -1,
+        accel: Godot.Key = Key(rawValue: 0)!
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         maxStates.withGodotUnsafeRawPointer { __ptr_maxStates in
         defaultState.withGodotUnsafeRawPointer { __ptr_defaultState in
@@ -288,7 +364,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addShortcut(_ shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false, allowEcho: Bool = false) {
+
+    public func addShortcut(
+        _ shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false,
+        allowEcho: Bool = false
+    ) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -311,7 +393,14 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconShortcut(texture: Godot.Texture2D?, shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false, allowEcho: Bool = false) {
+
+    public func addIconShortcut(
+        texture: Godot.Texture2D?,
+        shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false,
+        allowEcho: Bool = false
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
@@ -336,7 +425,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addCheckShortcut(_ shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+
+    public func addCheckShortcut(
+        _ shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false
+    ) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -358,7 +452,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconCheckShortcut(texture: Godot.Texture2D?, shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+
+    public func addIconCheckShortcut(
+        texture: Godot.Texture2D?,
+        shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
@@ -382,7 +482,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addRadioCheckShortcut(_ shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+
+    public func addRadioCheckShortcut(
+        _ shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false
+    ) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -404,7 +509,13 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addIconRadioCheckShortcut(texture: Godot.Texture2D?, shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+
+    public func addIconRadioCheckShortcut(
+        texture: Godot.Texture2D?,
+        shortcut: Godot.Shortcut?,
+        id: Int32 = -1,
+        global: Bool = false
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
@@ -428,7 +539,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addSubmenuItem(label: Godot.GodotString, submenu: Godot.GodotString, id: Int32 = -1) {
+
+    public func addSubmenuItem(
+        label: Godot.GodotString,
+        submenu: Godot.GodotString,
+        id: Int32 = -1
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         submenu.withGodotUnsafeRawPointer { __ptr_submenu in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -449,7 +565,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemText(index: Int32, text: Godot.GodotString) {
+
+    public func setItemText(
+        index: Int32,
+        text: Godot.GodotString
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_text) { __accessPtr in
@@ -469,7 +589,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemTextDirection(index: Int32, direction: Godot.Control.TextDirection) {
+
+    public func setItemTextDirection(
+        index: Int32,
+        direction: Godot.Control.TextDirection
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_direction) { __accessPtr in
@@ -489,7 +613,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemLanguage(index: Int32, language: Godot.GodotString) {
+
+    public func setItemLanguage(
+        index: Int32,
+        language: Godot.GodotString
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_language) { __accessPtr in
@@ -509,7 +637,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemIcon(index: Int32, icon: Godot.Texture2D?) {
+
+    public func setItemIcon(
+        index: Int32,
+        icon: Godot.Texture2D?
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -530,7 +662,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemIconMaxWidth(index: Int32, width: Int32) {
+
+    public func setItemIconMaxWidth(
+        index: Int32,
+        width: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         width.withGodotUnsafeRawPointer { __ptr_width in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_width) { __accessPtr in
@@ -550,7 +686,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemIconModulate(index: Int32, modulate: Godot.Color) {
+
+    public func setItemIconModulate(
+        index: Int32,
+        modulate: Godot.Color
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         modulate.withGodotUnsafeRawPointer { __ptr_modulate in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_modulate) { __accessPtr in
@@ -570,7 +710,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemChecked(index: Int32, checked: Bool) {
+
+    public func setItemChecked(
+        index: Int32,
+        checked: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         checked.withGodotUnsafeRawPointer { __ptr_checked in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_checked) { __accessPtr in
@@ -590,7 +734,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemID(index: Int32, id: Int32) {
+
+    public func setItemID(
+        index: Int32,
+        id: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_id) { __accessPtr in
@@ -610,7 +758,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemAccelerator(index: Int32, accel: Godot.Key) {
+
+    public func setItemAccelerator(
+        index: Int32,
+        accel: Godot.Key
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         accel.withGodotUnsafeRawPointer { __ptr_accel in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_accel) { __accessPtr in
@@ -630,7 +782,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemMetadata<Value: VariantStorableIn>(index: Int32, metadata: Value) {
+
+    public func setItemMetadata<Value: VariantStorableIn>(
+        index: Int32,
+        metadata: Value
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { __ptr_metadata in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_metadata) { __accessPtr in
@@ -650,7 +806,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemDisabled(index: Int32, disabled: Bool) {
+
+    public func setItemDisabled(
+        index: Int32,
+        disabled: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_disabled) { __accessPtr in
@@ -670,7 +830,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemSubmenu(index: Int32, submenu: Godot.GodotString) {
+
+    public func setItemSubmenu(
+        index: Int32,
+        submenu: Godot.GodotString
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         submenu.withGodotUnsafeRawPointer { __ptr_submenu in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_submenu) { __accessPtr in
@@ -690,7 +854,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemAsSeparator(index: Int32, enable: Bool) {
+
+    public func setItemAsSeparator(
+        index: Int32,
+        enable: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_enable) { __accessPtr in
@@ -710,7 +878,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemAsCheckable(index: Int32, enable: Bool) {
+
+    public func setItemAsCheckable(
+        index: Int32,
+        enable: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_enable) { __accessPtr in
@@ -730,7 +902,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemAsRadioCheckable(index: Int32, enable: Bool) {
+
+    public func setItemAsRadioCheckable(
+        index: Int32,
+        enable: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_enable) { __accessPtr in
@@ -750,7 +926,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemTooltip(index: Int32, tooltip: Godot.GodotString) {
+
+    public func setItemTooltip(
+        index: Int32,
+        tooltip: Godot.GodotString
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_tooltip) { __accessPtr in
@@ -770,7 +950,12 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemShortcut(index: Int32, shortcut: Godot.Shortcut?, global: Bool = false) {
+
+    public func setItemShortcut(
+        index: Int32,
+        shortcut: Godot.Shortcut?,
+        global: Bool = false
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
@@ -792,7 +977,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemIndent(index: Int32, indent: Int32) {
+
+    public func setItemIndent(
+        index: Int32,
+        indent: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         indent.withGodotUnsafeRawPointer { __ptr_indent in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_indent) { __accessPtr in
@@ -812,7 +1001,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemMultistate(index: Int32, state: Int32) {
+
+    public func setItemMultistate(
+        index: Int32,
+        state: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_state) { __accessPtr in
@@ -832,7 +1025,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemShortcutDisabled(index: Int32, disabled: Bool) {
+
+    public func setItemShortcutDisabled(
+        index: Int32,
+        disabled: Bool
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         disabled.withGodotUnsafeRawPointer { __ptr_disabled in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_disabled) { __accessPtr in
@@ -852,7 +1049,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func toggleItemChecked(index: Int32) {
+
+    public func toggleItemChecked(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,7 +1071,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func toggleItemMultistate(index: Int32) {
+
+    public func toggleItemMultistate(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -890,7 +1093,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemText(index: Int32) -> Godot.GodotString {
+
+    public func itemText(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -910,7 +1116,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemTextDirection(index: Int32) -> Godot.Control.TextDirection {
+
+    public func itemTextDirection(
+        index: Int32
+    ) -> Godot.Control.TextDirection {
         Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -930,7 +1139,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemLanguage(index: Int32) -> Godot.GodotString {
+
+    public func itemLanguage(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -950,7 +1162,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemIcon(index: Int32) -> Godot.Texture2D? {
+
+    public func itemIcon(
+        index: Int32
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -970,7 +1185,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemIconMaxWidth(index: Int32) -> Int32 {
+
+    public func itemIconMaxWidth(
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -990,7 +1208,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemIconModulate(index: Int32) -> Godot.Color {
+
+    public func itemIconModulate(
+        index: Int32
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1010,7 +1231,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemChecked(index: Int32) -> Bool {
+
+    public func isItemChecked(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1030,7 +1254,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemID(index: Int32) -> Int32 {
+
+    public func itemID(
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1050,7 +1277,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemIndex(id: Int32) -> Int32 {
+
+    public func itemIndex(
+        id: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -1070,7 +1300,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemAccelerator(index: Int32) -> Godot.Key {
+
+    public func itemAccelerator(
+        index: Int32
+    ) -> Godot.Key {
         Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1090,7 +1323,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemMetadata(index: Int32) -> Godot.Variant {
+
+    public func itemMetadata(
+        index: Int32
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1110,7 +1346,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemDisabled(index: Int32) -> Bool {
+
+    public func isItemDisabled(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1130,7 +1369,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemSubmenu(index: Int32) -> Godot.GodotString {
+
+    public func itemSubmenu(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1150,7 +1392,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemSeparator(index: Int32) -> Bool {
+
+    public func isItemSeparator(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1170,7 +1415,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemCheckable(index: Int32) -> Bool {
+
+    public func isItemCheckable(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1190,7 +1438,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemRadioCheckable(index: Int32) -> Bool {
+
+    public func isItemRadioCheckable(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1210,7 +1461,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func isItemShortcutDisabled(index: Int32) -> Bool {
+
+    public func isItemShortcutDisabled(
+        index: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1230,7 +1484,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemTooltip(index: Int32) -> Godot.GodotString {
+
+    public func itemTooltip(
+        index: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1250,7 +1507,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemShortcut(index: Int32) -> Godot.Shortcut? {
+
+    public func itemShortcut(
+        index: Int32
+    ) -> Godot.Shortcut? {
         Godot.Shortcut?.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1270,7 +1530,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func itemIndent(index: Int32) -> Int32 {
+
+    public func itemIndent(
+        index: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -1290,7 +1553,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setFocusedItem(index: Int32) {
+
+    public func setFocusedItem(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1309,6 +1575,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     public func focusedItem() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1327,7 +1594,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setItemCount(_ count: Int32) {
+
+    private func __setItemCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1346,6 +1616,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __getItemCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1364,7 +1635,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func scrollToItem(index: Int32) {
+
+    public func scrollToItem(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1383,7 +1657,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func removeItem(index: Int32) {
+
+    public func removeItem(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1402,7 +1679,11 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func addSeparator(label: Godot.GodotString = "", id: Int32 = -1) {
+
+    public func addSeparator(
+        label: Godot.GodotString = "",
+        id: Int32 = -1
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_label, __ptr_id) { __accessPtr in
@@ -1422,7 +1703,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func clear(freeSubmenus: Bool = false) {
+
+    public func clear(
+        freeSubmenus: Bool = false
+    ) {
         freeSubmenus.withGodotUnsafeRawPointer { __ptr_freeSubmenus in
         withUnsafeArgumentPackPointer(__ptr_freeSubmenus) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1441,7 +1725,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setHideOnItemSelection(enable: Bool) {
+
+    private func __setHideOnItemSelection(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1460,6 +1747,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __isHideOnItemSelection() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1478,7 +1766,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setHideOnCheckableItemSelection(enable: Bool) {
+
+    private func __setHideOnCheckableItemSelection(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1497,6 +1788,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __isHideOnCheckableItemSelection() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1515,7 +1807,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setHideOnStateItemSelection(enable: Bool) {
+
+    private func __setHideOnStateItemSelection(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1534,6 +1829,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __isHideOnStateItemSelection() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1552,7 +1848,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setSubmenuPopupDelay(seconds: Double) {
+
+    private func __setSubmenuPopupDelay(
+        seconds: Double
+    ) {
         seconds.withGodotUnsafeRawPointer { __ptr_seconds in
         withUnsafeArgumentPackPointer(__ptr_seconds) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1571,6 +1870,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __getSubmenuPopupDelay() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1589,7 +1889,10 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    private func __setAllowSearch(allow: Bool) {
+
+    private func __setAllowSearch(
+        allow: Bool
+    ) {
         allow.withGodotUnsafeRawPointer { __ptr_allow in
         withUnsafeArgumentPackPointer(__ptr_allow) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1608,6 +1911,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
+
     private func __getAllowSearch() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1686,6 +1990,7 @@ open class PopupMenu: Popup {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1698,5 +2003,4 @@ open class PopupMenu: Popup {
         }
         return _virtualFunctions!
     }
-
-    }
+}

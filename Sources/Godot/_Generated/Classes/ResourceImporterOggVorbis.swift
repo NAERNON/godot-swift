@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ResourceImporterOggVorbis: ResourceImporter {
     internal static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ResourceImporterOggVorbis: ResourceImporter {
         }
         }
     }()
-    static public func loadFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.AudioStreamOggVorbis? {
+
+    static public func loadFromBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) -> Godot.AudioStreamOggVorbis? {
         Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -31,7 +35,10 @@ open class ResourceImporterOggVorbis: ResourceImporter {
         }
         }
     }()
-    static public func loadFromFile(path: Godot.GodotString) -> Godot.AudioStreamOggVorbis? {
+
+    static public func loadFromFile(
+        path: Godot.GodotString
+    ) -> Godot.AudioStreamOggVorbis? {
         Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -44,6 +51,7 @@ open class ResourceImporterOggVorbis: ResourceImporter {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -56,5 +64,4 @@ open class ResourceImporterOggVorbis: ResourceImporter {
         }
         return _virtualFunctions!
     }
-
-    }
+}

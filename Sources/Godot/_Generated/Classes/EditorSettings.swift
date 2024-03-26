@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorSettings: Resource {
+
     public func settingsChanged() {
         _ = settingsChangedSignal.emit()
     }
+
     public lazy var settingsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "settings_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -32,7 +35,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func hasSetting(name: Godot.GodotString) -> Bool {
+
+    public func hasSetting(
+        name: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -52,7 +58,11 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setSetting<Value: VariantStorableIn>(name: Godot.GodotString, value: Value) {
+
+    public func setSetting<Value: VariantStorableIn>(
+        name: Godot.GodotString,
+        value: Value
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
@@ -72,7 +82,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setting(name: Godot.GodotString) -> Godot.Variant {
+
+    public func setting(
+        name: Godot.GodotString
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -92,7 +105,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func erase(property: Godot.GodotString) {
+
+    public func erase(
+        property: Godot.GodotString
+    ) {
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,7 +127,12 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setInitialValue<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value, updateCurrent: Bool) {
+
+    public func setInitialValue<Value: VariantStorableIn>(
+        name: Godot.GodotStringName,
+        value: Value,
+        updateCurrent: Bool
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         updateCurrent.withGodotUnsafeRawPointer { __ptr_updateCurrent in
@@ -132,7 +153,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(_ info: Godot.GodotDictionary<Value1, Value2>) {
+
+    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(
+        _ info: Godot.GodotDictionary<Value1, Value2>
+    ) {
         info.withGodotUnsafeRawPointer { __ptr_info in
         withUnsafeArgumentPackPointer(__ptr_info) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,7 +175,12 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setProjectMetadata<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, data: Value) {
+
+    public func setProjectMetadata<Value: VariantStorableIn>(
+        section: Godot.GodotString,
+        key: Godot.GodotString,
+        data: Value
+    ) {
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
@@ -172,7 +201,12 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func projectMetadata<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, `default`: Value = Variant()) -> Godot.Variant {
+
+    public func projectMetadata<Value: VariantStorableIn>(
+        section: Godot.GodotString,
+        key: Godot.GodotString,
+        `default`: Value = Variant()
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -194,7 +228,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setFavorites(dirs: Godot.PackedStringArray) {
+
+    public func setFavorites(
+        dirs: Godot.PackedStringArray
+    ) {
         dirs.withGodotUnsafeRawPointer { __ptr_dirs in
         withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -213,6 +250,7 @@ open class EditorSettings: Resource {
         }
         }
     }()
+
     public func favorites() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -231,7 +269,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setRecentDirs(_ dirs: Godot.PackedStringArray) {
+
+    public func setRecentDirs(
+        _ dirs: Godot.PackedStringArray
+    ) {
         dirs.withGodotUnsafeRawPointer { __ptr_dirs in
         withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -250,6 +291,7 @@ open class EditorSettings: Resource {
         }
         }
     }()
+
     public func recentDirs() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -268,7 +310,11 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func setBuiltinActionOverride(name: Godot.GodotString, actionsList: Godot.GodotArray<Godot.InputEvent?>) {
+
+    public func setBuiltinActionOverride(
+        name: Godot.GodotString,
+        actionsList: Godot.GodotArray<Godot.InputEvent?>
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         actionsList.withGodotUnsafeRawPointer { __ptr_actionsList in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_actionsList) { __accessPtr in
@@ -288,7 +334,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func checkChangedSettingsInGroup(settingPrefix: Godot.GodotString) -> Bool {
+
+    public func checkChangedSettingsInGroup(
+        settingPrefix: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         settingPrefix.withGodotUnsafeRawPointer { __ptr_settingPrefix in
         withUnsafeArgumentPackPointer(__ptr_settingPrefix) { __accessPtr in
@@ -308,6 +357,7 @@ open class EditorSettings: Resource {
         }
         }
     }()
+
     public func changedSettings() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +376,10 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func markSettingChanged(setting: Godot.GodotString) {
+
+    public func markSettingChanged(
+        setting: Godot.GodotString
+    ) {
         setting.withGodotUnsafeRawPointer { __ptr_setting in
         withUnsafeArgumentPackPointer(__ptr_setting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -339,6 +392,7 @@ open class EditorSettings: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -351,5 +405,4 @@ open class EditorSettings: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

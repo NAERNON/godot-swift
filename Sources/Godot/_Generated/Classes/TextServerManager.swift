@@ -3,20 +3,31 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TextServerManager: Object {
     public struct InterfaceAddedSignalInput: Godot.SignalInput {
         public let interfaceName: Godot.GodotStringName
-        fileprivate init(interfaceName: Godot.GodotStringName) {
+
+        fileprivate init(
+            interfaceName: Godot.GodotStringName
+        ) {
             self.interfaceName = interfaceName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.interfaceName)]
         }
     }
-    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
+
+    public func interfaceAdded(
+        interfaceName: Godot.GodotStringName
+    ) {
         _ = interfaceAddedSignal.emit(.init(interfaceName: interfaceName))
     }
+
     public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
         .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -34,16 +45,26 @@ open class TextServerManager: Object {
 
     public struct InterfaceRemovedSignalInput: Godot.SignalInput {
         public let interfaceName: Godot.GodotStringName
-        fileprivate init(interfaceName: Godot.GodotStringName) {
+
+        fileprivate init(
+            interfaceName: Godot.GodotStringName
+        ) {
             self.interfaceName = interfaceName
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.interfaceName)]
         }
     }
-    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
+
+    public func interfaceRemoved(
+        interfaceName: Godot.GodotStringName
+    ) {
         _ = interfaceRemovedSignal.emit(.init(interfaceName: interfaceName))
     }
+
     public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
         .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,7 +87,10 @@ open class TextServerManager: Object {
         }
         }
     }()
-    public func addInterface(_ interface: Godot.TextServer?) {
+
+    public func addInterface(
+        _ interface: Godot.TextServer?
+    ) {
         interface.withGodotUnsafeRawPointer { __ptr_interface in
         withUnsafePointer(to: __ptr_interface) { _ptr___ptr_interface in
         withUnsafeArgumentPackPointer(_ptr___ptr_interface) { __accessPtr in
@@ -86,6 +110,7 @@ open class TextServerManager: Object {
         }
         }
     }()
+
     public func interfaceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -104,7 +129,10 @@ open class TextServerManager: Object {
         }
         }
     }()
-    public func removeInterface(_ interface: Godot.TextServer?) {
+
+    public func removeInterface(
+        _ interface: Godot.TextServer?
+    ) {
         interface.withGodotUnsafeRawPointer { __ptr_interface in
         withUnsafePointer(to: __ptr_interface) { _ptr___ptr_interface in
         withUnsafeArgumentPackPointer(_ptr___ptr_interface) { __accessPtr in
@@ -124,7 +152,10 @@ open class TextServerManager: Object {
         }
         }
     }()
-    public func interface(idx: Int32) -> Godot.TextServer? {
+
+    public func interface(
+        idx: Int32
+    ) -> Godot.TextServer? {
         Godot.TextServer?.fromMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -144,6 +175,7 @@ open class TextServerManager: Object {
         }
         }
     }()
+
     public func interfaces() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +194,10 @@ open class TextServerManager: Object {
         }
         }
     }()
-    public func findInterface(name: Godot.GodotString) -> Godot.TextServer? {
+
+    public func findInterface(
+        name: Godot.GodotString
+    ) -> Godot.TextServer? {
         Godot.TextServer?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -182,7 +217,10 @@ open class TextServerManager: Object {
         }
         }
     }()
-    public func setPrimaryInterface(index: Godot.TextServer?) {
+
+    public func setPrimaryInterface(
+        index: Godot.TextServer?
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafePointer(to: __ptr_index) { _ptr___ptr_index in
         withUnsafeArgumentPackPointer(_ptr___ptr_index) { __accessPtr in
@@ -202,6 +240,7 @@ open class TextServerManager: Object {
         }
         }
     }()
+
     public func primaryInterface() -> Godot.TextServer? {
         Godot.TextServer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -214,6 +253,7 @@ open class TextServerManager: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -226,5 +266,4 @@ open class TextServerManager: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

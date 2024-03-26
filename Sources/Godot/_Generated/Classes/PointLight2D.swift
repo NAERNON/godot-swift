@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PointLight2D: Light2D {
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PointLight2D: Light2D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -32,6 +36,7 @@ open class PointLight2D: Light2D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,10 @@ open class PointLight2D: Light2D {
         }
         }
     }()
-    private func __setTextureOffset(_ textureOffset: Godot.Vector2) {
+
+    private func __setTextureOffset(
+        _ textureOffset: Godot.Vector2
+    ) {
         textureOffset.withGodotUnsafeRawPointer { __ptr_textureOffset in
         withUnsafeArgumentPackPointer(__ptr_textureOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,6 +77,7 @@ open class PointLight2D: Light2D {
         }
         }
     }()
+
     private func __getTextureOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +96,10 @@ open class PointLight2D: Light2D {
         }
         }
     }()
-    private func __setTextureScale(_ textureScale: Double) {
+
+    private func __setTextureScale(
+        _ textureScale: Double
+    ) {
         textureScale.withGodotUnsafeRawPointer { __ptr_textureScale in
         withUnsafeArgumentPackPointer(__ptr_textureScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +118,7 @@ open class PointLight2D: Light2D {
         }
         }
     }()
+
     private func __getTextureScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,6 +164,7 @@ open class PointLight2D: Light2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -163,5 +177,4 @@ open class PointLight2D: Light2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

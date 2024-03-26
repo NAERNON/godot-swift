@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TextureRect: Control {
     public enum ExpandMode: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class TextureRect: Control {
         case fitWidthProportional = 3
         case fitHeight = 4
         case fitHeightProportional = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Keep Size", 0),
@@ -22,6 +24,7 @@ open class TextureRect: Control {
             ("Fit Height Proportional", 5),]
         }
     }
+
     public enum StretchMode: UInt32, GodotEnum {
         case scale = 0
         case tile = 1
@@ -30,6 +33,7 @@ open class TextureRect: Control {
         case keepAspect = 4
         case keepAspectCentered = 5
         case keepAspectCovered = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scale", 0),
@@ -49,7 +53,10 @@ open class TextureRect: Control {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture2D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture2D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -69,6 +76,7 @@ open class TextureRect: Control {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -87,7 +95,10 @@ open class TextureRect: Control {
         }
         }
     }()
-    private func __setExpandMode(_ expandMode: Godot.TextureRect.ExpandMode) {
+
+    private func __setExpandMode(
+        _ expandMode: Godot.TextureRect.ExpandMode
+    ) {
         expandMode.withGodotUnsafeRawPointer { __ptr_expandMode in
         withUnsafeArgumentPackPointer(__ptr_expandMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +117,7 @@ open class TextureRect: Control {
         }
         }
     }()
+
     private func __getExpandMode() -> Godot.TextureRect.ExpandMode {
         Godot.TextureRect.ExpandMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +136,10 @@ open class TextureRect: Control {
         }
         }
     }()
-    private func __setFlipH(enable: Bool) {
+
+    private func __setFlipH(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +158,7 @@ open class TextureRect: Control {
         }
         }
     }()
+
     private func __isFlippedH() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +177,10 @@ open class TextureRect: Control {
         }
         }
     }()
-    private func __setFlipV(enable: Bool) {
+
+    private func __setFlipV(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -180,6 +199,7 @@ open class TextureRect: Control {
         }
         }
     }()
+
     private func __isFlippedV() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +218,10 @@ open class TextureRect: Control {
         }
         }
     }()
-    private func __setStretchMode(_ stretchMode: Godot.TextureRect.StretchMode) {
+
+    private func __setStretchMode(
+        _ stretchMode: Godot.TextureRect.StretchMode
+    ) {
         stretchMode.withGodotUnsafeRawPointer { __ptr_stretchMode in
         withUnsafeArgumentPackPointer(__ptr_stretchMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +240,7 @@ open class TextureRect: Control {
         }
         }
     }()
+
     private func __getStretchMode() -> Godot.TextureRect.StretchMode {
         Godot.TextureRect.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -284,6 +308,7 @@ open class TextureRect: Control {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -296,5 +321,4 @@ open class TextureRect: Control {
         }
         return _virtualFunctions!
     }
-
-    }
+}

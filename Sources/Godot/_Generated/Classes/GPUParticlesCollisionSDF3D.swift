@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     public enum Resolution: UInt32, GodotEnum {
@@ -13,6 +14,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         case resolution256 = 4
         case resolution512 = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Resolution16", 0),
@@ -32,7 +34,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -51,6 +56,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -69,7 +75,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setResolution(_ resolution: Godot.GPUParticlesCollisionSDF3D.Resolution) {
+
+    private func __setResolution(
+        _ resolution: Godot.GPUParticlesCollisionSDF3D.Resolution
+    ) {
         resolution.withGodotUnsafeRawPointer { __ptr_resolution in
         withUnsafeArgumentPackPointer(__ptr_resolution) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,6 +97,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getResolution() -> Godot.GPUParticlesCollisionSDF3D.Resolution {
         Godot.GPUParticlesCollisionSDF3D.Resolution.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +116,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture3D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture3D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -126,6 +139,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture3D? {
         Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,7 +158,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setThickness(_ thickness: Double) {
+
+    private func __setThickness(
+        _ thickness: Double
+    ) {
         thickness.withGodotUnsafeRawPointer { __ptr_thickness in
         withUnsafeArgumentPackPointer(__ptr_thickness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,6 +180,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getThickness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,7 +199,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    private func __setBakeMask(_ mask: UInt32) {
+
+    private func __setBakeMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,6 +221,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
+
     private func __getBakeMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,7 +240,11 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    public func setBakeMaskValue(layerNumber: Int32, value: Bool) {
+
+    public func setBakeMaskValue(
+        layerNumber: Int32,
+        value: Bool
+    ) {
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
@@ -238,7 +264,10 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         }
     }()
-    public func bakeMaskValue(layerNumber: Int32) -> Bool {
+
+    public func bakeMaskValue(
+        layerNumber: Int32
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
@@ -307,6 +336,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -319,5 +349,4 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

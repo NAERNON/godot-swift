@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PhysicalSkyMaterial: Material {
     internal static var __method_binding_set_rayleigh_coefficient: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setRayleighCoefficient(rayleigh: Double) {
+
+    private func __setRayleighCoefficient(
+        rayleigh: Double
+    ) {
         rayleigh.withGodotUnsafeRawPointer { __ptr_rayleigh in
         withUnsafeArgumentPackPointer(__ptr_rayleigh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getRayleighCoefficient() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setRayleighColor(_ color: Godot.Color) {
+
+    private func __setRayleighColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getRayleighColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setMieCoefficient(mie: Double) {
+
+    private func __setMieCoefficient(
+        mie: Double
+    ) {
         mie.withGodotUnsafeRawPointer { __ptr_mie in
         withUnsafeArgumentPackPointer(__ptr_mie) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getMieCoefficient() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setMieEccentricity(_ eccentricity: Double) {
+
+    private func __setMieEccentricity(
+        _ eccentricity: Double
+    ) {
         eccentricity.withGodotUnsafeRawPointer { __ptr_eccentricity in
         withUnsafeArgumentPackPointer(__ptr_eccentricity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getMieEccentricity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setMieColor(_ color: Godot.Color) {
+
+    private func __setMieColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getMieColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setTurbidity(_ turbidity: Double) {
+
+    private func __setTurbidity(
+        _ turbidity: Double
+    ) {
         turbidity.withGodotUnsafeRawPointer { __ptr_turbidity in
         withUnsafeArgumentPackPointer(__ptr_turbidity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getTurbidity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setSunDiskScale(_ scale: Double) {
+
+    private func __setSunDiskScale(
+        _ scale: Double
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSunDiskScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setGroundColor(_ color: Godot.Color) {
+
+    private func __setGroundColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getGroundColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setEnergyMultiplier(_ multiplier: Double) {
+
+    private func __setEnergyMultiplier(
+        _ multiplier: Double
+    ) {
         multiplier.withGodotUnsafeRawPointer { __ptr_multiplier in
         withUnsafeArgumentPackPointer(__ptr_multiplier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getEnergyMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setUseDebanding(_ useDebanding: Bool) {
+
+    private func __setUseDebanding(
+        _ useDebanding: Bool
+    ) {
         useDebanding.withGodotUnsafeRawPointer { __ptr_useDebanding in
         withUnsafeArgumentPackPointer(__ptr_useDebanding) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getUseDebanding() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +423,10 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
-    private func __setNightSky(_ nightSky: Godot.Texture2D?) {
+
+    private func __setNightSky(
+        _ nightSky: Godot.Texture2D?
+    ) {
         nightSky.withGodotUnsafeRawPointer { __ptr_nightSky in
         withUnsafePointer(to: __ptr_nightSky) { _ptr___ptr_nightSky in
         withUnsafeArgumentPackPointer(_ptr___ptr_nightSky) { __accessPtr in
@@ -402,6 +446,7 @@ open class PhysicalSkyMaterial: Material {
         }
         }
     }()
+
     private func __getNightSky() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -535,6 +580,7 @@ open class PhysicalSkyMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -547,5 +593,4 @@ open class PhysicalSkyMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

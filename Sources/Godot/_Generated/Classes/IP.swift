@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class IP: Object {
     public enum ResolverStatus: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class IP: Object {
         case waiting = 1
         case done = 2
         case error = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -18,11 +20,13 @@ open class IP: Object {
             ("Error", 3),]
         }
     }
+
     public enum GodotType: UInt32, GodotEnum {
         case none = 0
         case ipv4 = 1
         case ipv6 = 2
         case any = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -33,6 +37,7 @@ open class IP: Object {
     }
 
     public static let resolverMaxQueries: Int = 256
+
     public static let resolverInvalidID: Int = -1
 
     internal static var __method_binding_resolve_hostname: GDExtensionMethodBindPtr = {
@@ -42,7 +47,11 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveHostname(host: Godot.GodotString, ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!) -> Godot.GodotString {
+
+    public func resolveHostname(
+        host: Godot.GodotString,
+        ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
@@ -63,7 +72,11 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveHostnameAddresses(host: Godot.GodotString, ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!) -> Godot.PackedStringArray {
+
+    public func resolveHostnameAddresses(
+        host: Godot.GodotString,
+        ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
@@ -84,7 +97,11 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveHostnameQueueItem(host: Godot.GodotString, ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!) -> Int32 {
+
+    public func resolveHostnameQueueItem(
+        host: Godot.GodotString,
+        ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
@@ -105,7 +122,10 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveItemStatus(id: Int32) -> Godot.IP.ResolverStatus {
+
+    public func resolveItemStatus(
+        id: Int32
+    ) -> Godot.IP.ResolverStatus {
         Godot.IP.ResolverStatus.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -125,7 +145,10 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveItemAddress(id: Int32) -> Godot.GodotString {
+
+    public func resolveItemAddress(
+        id: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -145,7 +168,10 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveItemAddresses(id: Int32) -> Godot.AnyGodotArray {
+
+    public func resolveItemAddresses(
+        id: Int32
+    ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -165,7 +191,10 @@ open class IP: Object {
         }
         }
     }()
-    public func eraseResolveItem(id: Int32) {
+
+    public func eraseResolveItem(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,6 +213,7 @@ open class IP: Object {
         }
         }
     }()
+
     public func localAddresses() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -202,6 +232,7 @@ open class IP: Object {
         }
         }
     }()
+
     public func localInterfaces() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
         Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -220,7 +251,10 @@ open class IP: Object {
         }
         }
     }()
-    public func clearCache(hostname: Godot.GodotString = "") {
+
+    public func clearCache(
+        hostname: Godot.GodotString = ""
+    ) {
         hostname.withGodotUnsafeRawPointer { __ptr_hostname in
         withUnsafeArgumentPackPointer(__ptr_hostname) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,6 +267,7 @@ open class IP: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -245,5 +280,4 @@ open class IP: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

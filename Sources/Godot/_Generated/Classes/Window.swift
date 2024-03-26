@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class Window: Viewport {
     public enum Mode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class Window: Viewport {
         case maximized = 2
         case fullscreen = 3
         case exclusiveFullscreen = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Windowed", 0),
@@ -20,6 +22,7 @@ open class Window: Viewport {
             ("Exclusive Fullscreen", 4),]
         }
     }
+
     public enum Flags: UInt32, GodotEnum {
         case resizeDisabled = 0
         case borderless = 1
@@ -30,6 +33,7 @@ open class Window: Viewport {
         case extendToTitle = 6
         case mousePassthrough = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Resize Disabled", 0),
@@ -43,10 +47,12 @@ open class Window: Viewport {
             ("Max", 8),]
         }
     }
+
     public enum ContentScaleMode: UInt32, GodotEnum {
         case disabled = 0
         case canvasItems = 1
         case viewport = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -54,12 +60,14 @@ open class Window: Viewport {
             ("Viewport", 2),]
         }
     }
+
     public enum ContentScaleAspect: UInt32, GodotEnum {
         case ignore = 0
         case keep = 1
         case keepWidth = 2
         case keepHeight = 3
         case expand = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Ignore", 0),
@@ -69,20 +77,24 @@ open class Window: Viewport {
             ("Expand", 4),]
         }
     }
+
     public enum ContentScaleStretch: UInt32, GodotEnum {
         case fractional = 0
         case integer = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Fractional", 0),
             ("Integer", 1),]
         }
     }
+
     public enum LayoutDirection: UInt32, GodotEnum {
         case inherited = 0
         case locale = 1
         case ltr = 2
         case rtl = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Inherited", 0),
@@ -91,6 +103,7 @@ open class Window: Viewport {
             ("Rtl", 3),]
         }
     }
+
     public enum WindowInitialPosition: UInt32, GodotEnum {
         case absolute = 0
         case centerPrimaryScreen = 1
@@ -98,6 +111,7 @@ open class Window: Viewport {
         case centerOtherScreen = 3
         case centerScreenWithMouseFocus = 4
         case centerScreenWithKeyboardFocus = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Absolute", 0),
@@ -111,16 +125,26 @@ open class Window: Viewport {
 
     public struct WindowInputSignalInput: Godot.SignalInput {
         public let event: Godot.InputEvent?
-        fileprivate init(event: Godot.InputEvent?) {
+
+        fileprivate init(
+            event: Godot.InputEvent?
+        ) {
             self.event = event
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.event)]
         }
     }
-    public func windowInput(event: Godot.InputEvent?) {
+
+    public func windowInput(
+        event: Godot.InputEvent?
+    ) {
         _ = windowInputSignal.emit(.init(event: event))
     }
+
     public lazy var windowInputSignal: Godot.SignalEmitter<WindowInputSignalInput> = {
         .init(object: self, signalName: "window_input") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<WindowInputSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -138,16 +162,26 @@ open class Window: Viewport {
 
     public struct FilesDroppedSignalInput: Godot.SignalInput {
         public let files: Godot.PackedStringArray
-        fileprivate init(files: Godot.PackedStringArray) {
+
+        fileprivate init(
+            files: Godot.PackedStringArray
+        ) {
             self.files = files
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.files)]
         }
     }
-    public func filesDropped(files: Godot.PackedStringArray) {
+
+    public func filesDropped(
+        files: Godot.PackedStringArray
+    ) {
         _ = filesDroppedSignal.emit(.init(files: files))
     }
+
     public lazy var filesDroppedSignal: Godot.SignalEmitter<FilesDroppedSignalInput> = {
         .init(object: self, signalName: "files_dropped") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FilesDroppedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -166,6 +200,7 @@ open class Window: Viewport {
     public func mouseEntered() {
         _ = mouseEnteredSignal.emit()
     }
+
     public lazy var mouseEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -184,6 +219,7 @@ open class Window: Viewport {
     public func mouseExited() {
         _ = mouseExitedSignal.emit()
     }
+
     public lazy var mouseExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -202,6 +238,7 @@ open class Window: Viewport {
     public func focusEntered() {
         _ = focusEnteredSignal.emit()
     }
+
     public lazy var focusEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -220,6 +257,7 @@ open class Window: Viewport {
     public func focusExited() {
         _ = focusExitedSignal.emit()
     }
+
     public lazy var focusExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -238,6 +276,7 @@ open class Window: Viewport {
     public func closeRequested() {
         _ = closeRequestedSignal.emit()
     }
+
     public lazy var closeRequestedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "close_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -256,6 +295,7 @@ open class Window: Viewport {
     public func goBackRequested() {
         _ = goBackRequestedSignal.emit()
     }
+
     public lazy var goBackRequestedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "go_back_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -274,6 +314,7 @@ open class Window: Viewport {
     public func visibilityChanged() {
         _ = visibilityChangedSignal.emit()
     }
+
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -292,6 +333,7 @@ open class Window: Viewport {
     public func aboutToPopup() {
         _ = aboutToPopupSignal.emit()
     }
+
     public lazy var aboutToPopupSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "about_to_popup") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -310,6 +352,7 @@ open class Window: Viewport {
     public func themeChanged() {
         _ = themeChangedSignal.emit()
     }
+
     public lazy var themeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "theme_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -328,6 +371,7 @@ open class Window: Viewport {
     public func dpiChanged() {
         _ = dpiChangedSignal.emit()
     }
+
     public lazy var dpiChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "dpi_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -346,6 +390,7 @@ open class Window: Viewport {
     public func titlebarChanged() {
         _ = titlebarChangedSignal.emit()
     }
+
     public lazy var titlebarChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "titlebar_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -362,6 +407,7 @@ open class Window: Viewport {
     }()
 
     public static let notificationVisibilityChanged: Notification = .init(rawValue: 30)
+
     public static let notificationThemeChanged: Notification = .init(rawValue: 32)
 
     open func _getContentsMinimumSize() -> Godot.Vector2 {
@@ -375,7 +421,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setTitle(_ title: Godot.GodotString) {
+
+    private func __setTitle(
+        _ title: Godot.GodotString
+    ) {
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(__ptr_title) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,6 +443,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getTitle() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -412,6 +462,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func windowID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -430,7 +481,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setInitialPosition(_ initialPosition: Godot.Window.WindowInitialPosition) {
+
+    private func __setInitialPosition(
+        _ initialPosition: Godot.Window.WindowInitialPosition
+    ) {
         initialPosition.withGodotUnsafeRawPointer { __ptr_initialPosition in
         withUnsafeArgumentPackPointer(__ptr_initialPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -449,6 +503,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getInitialPosition() -> Godot.Window.WindowInitialPosition {
         Godot.Window.WindowInitialPosition.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -467,7 +522,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setCurrentScreen(index: Int32) {
+
+    private func __setCurrentScreen(
+        index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -486,6 +544,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getCurrentScreen() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -504,7 +563,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setPosition(_ position: Godot.Vector2I) {
+
+    private func __setPosition(
+        _ position: Godot.Vector2I
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -523,6 +585,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getPosition() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -541,6 +604,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func moveToCenter() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -558,7 +622,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector2I) {
+
+    private func __setSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,6 +644,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -595,6 +663,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func resetSize() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -612,6 +681,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func positionWithDecorations() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -630,6 +700,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func sizeWithDecorations() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -648,7 +719,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMaxSize(_ maxSize: Godot.Vector2I) {
+
+    private func __setMaxSize(
+        _ maxSize: Godot.Vector2I
+    ) {
         maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
         withUnsafeArgumentPackPointer(__ptr_maxSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -667,6 +741,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getMaxSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -685,7 +760,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMinSize(_ minSize: Godot.Vector2I) {
+
+    private func __setMinSize(
+        _ minSize: Godot.Vector2I
+    ) {
         minSize.withGodotUnsafeRawPointer { __ptr_minSize in
         withUnsafeArgumentPackPointer(__ptr_minSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -704,6 +782,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getMinSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -722,7 +801,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMode(_ mode: Godot.Window.Mode) {
+
+    private func __setMode(
+        _ mode: Godot.Window.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -741,6 +823,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getMode() -> Godot.Window.Mode {
         Godot.Window.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -759,7 +842,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setFlag(_ flag: Godot.Window.Flags, enabled: Bool) {
+
+    public func setFlag(
+        _ flag: Godot.Window.Flags,
+        enabled: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
@@ -779,7 +866,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __getFlag(_ flag: Godot.Window.Flags) -> Bool {
+
+    private func __getFlag(
+        _ flag: Godot.Window.Flags
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -799,6 +889,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func isMaximizeAllowed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -817,6 +908,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func requestAttention() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -834,6 +926,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func moveToForeground() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -851,7 +944,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setVisible(_ visible: Bool) {
+
+    private func __setVisible(
+        _ visible: Bool
+    ) {
         visible.withGodotUnsafeRawPointer { __ptr_visible in
         withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -870,6 +966,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __isVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -888,6 +985,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func hide() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -905,6 +1003,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func show() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -922,7 +1021,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setTransient(_ transient: Bool) {
+
+    private func __setTransient(
+        _ transient: Bool
+    ) {
         transient.withGodotUnsafeRawPointer { __ptr_transient in
         withUnsafeArgumentPackPointer(__ptr_transient) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -941,6 +1043,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __isTransient() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -959,7 +1062,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setExclusive(_ exclusive: Bool) {
+
+    private func __setExclusive(
+        _ exclusive: Bool
+    ) {
         exclusive.withGodotUnsafeRawPointer { __ptr_exclusive in
         withUnsafeArgumentPackPointer(__ptr_exclusive) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -978,6 +1084,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __isExclusive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -996,7 +1103,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setUnparentWhenInvisible(unparent: Bool) {
+
+    public func setUnparentWhenInvisible(
+        unparent: Bool
+    ) {
         unparent.withGodotUnsafeRawPointer { __ptr_unparent in
         withUnsafeArgumentPackPointer(__ptr_unparent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1015,6 +1125,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func canDraw() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1033,6 +1144,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func hasFocus() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1051,6 +1163,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func grabFocus() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1068,7 +1181,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setImeActive(_ active: Bool) {
+
+    public func setImeActive(
+        _ active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1087,7 +1203,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setImePosition(_ position: Godot.Vector2I) {
+
+    public func setImePosition(
+        _ position: Godot.Vector2I
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1106,6 +1225,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func isEmbedded() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1124,6 +1244,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func contentsMinimumSize() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1142,7 +1263,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleSize(_ size: Godot.Vector2I) {
+
+    private func __setContentScaleSize(
+        _ size: Godot.Vector2I
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1161,6 +1285,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getContentScaleSize() -> Godot.Vector2I {
         Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1179,7 +1304,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleMode(_ mode: Godot.Window.ContentScaleMode) {
+
+    private func __setContentScaleMode(
+        _ mode: Godot.Window.ContentScaleMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1198,6 +1326,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getContentScaleMode() -> Godot.Window.ContentScaleMode {
         Godot.Window.ContentScaleMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1216,7 +1345,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleAspect(_ aspect: Godot.Window.ContentScaleAspect) {
+
+    private func __setContentScaleAspect(
+        _ aspect: Godot.Window.ContentScaleAspect
+    ) {
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
         withUnsafeArgumentPackPointer(__ptr_aspect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1235,6 +1367,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getContentScaleAspect() -> Godot.Window.ContentScaleAspect {
         Godot.Window.ContentScaleAspect.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1253,7 +1386,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleStretch(_ stretch: Godot.Window.ContentScaleStretch) {
+
+    private func __setContentScaleStretch(
+        _ stretch: Godot.Window.ContentScaleStretch
+    ) {
         stretch.withGodotUnsafeRawPointer { __ptr_stretch in
         withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1272,6 +1408,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getContentScaleStretch() -> Godot.Window.ContentScaleStretch {
         Godot.Window.ContentScaleStretch.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1290,7 +1427,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setKeepTitleVisible(_ titleVisible: Bool) {
+
+    private func __setKeepTitleVisible(
+        _ titleVisible: Bool
+    ) {
         titleVisible.withGodotUnsafeRawPointer { __ptr_titleVisible in
         withUnsafeArgumentPackPointer(__ptr_titleVisible) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1309,6 +1449,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getKeepTitleVisible() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1327,7 +1468,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setContentScaleFactor(_ factor: Double) {
+
+    private func __setContentScaleFactor(
+        _ factor: Double
+    ) {
         factor.withGodotUnsafeRawPointer { __ptr_factor in
         withUnsafeArgumentPackPointer(__ptr_factor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1346,6 +1490,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getContentScaleFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1364,7 +1509,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setUseFontOversampling(enable: Bool) {
+
+    public func setUseFontOversampling(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1383,6 +1531,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func isUsingFontOversampling() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1401,7 +1550,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setMousePassthroughPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setMousePassthroughPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1420,6 +1572,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getMousePassthroughPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1438,7 +1591,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setWrapControls(enable: Bool) {
+
+    private func __setWrapControls(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1457,6 +1613,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __isWrappingControls() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1475,6 +1632,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func childControlsChanged() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1492,7 +1650,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setTheme(_ theme: Godot.Theme?) {
+
+    private func __setTheme(
+        _ theme: Godot.Theme?
+    ) {
         theme.withGodotUnsafeRawPointer { __ptr_theme in
         withUnsafePointer(to: __ptr_theme) { _ptr___ptr_theme in
         withUnsafeArgumentPackPointer(_ptr___ptr_theme) { __accessPtr in
@@ -1512,6 +1673,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getTheme() -> Godot.Theme? {
         Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1530,7 +1692,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setThemeTypeVariation(themeType: Godot.GodotStringName) {
+
+    private func __setThemeTypeVariation(
+        themeType: Godot.GodotStringName
+    ) {
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1549,6 +1714,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __getThemeTypeVariation() -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1567,6 +1733,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func beginBulkThemeOverride() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1584,6 +1751,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func endBulkThemeOverride() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1601,7 +1769,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeIconOverride(name: Godot.GodotStringName, texture: Godot.Texture2D?) {
+
+    public func addThemeIconOverride(
+        name: Godot.GodotStringName,
+        texture: Godot.Texture2D?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -1622,7 +1794,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeStyleboxOverride(name: Godot.GodotStringName, stylebox: Godot.StyleBox?) {
+
+    public func addThemeStyleboxOverride(
+        name: Godot.GodotStringName,
+        stylebox: Godot.StyleBox?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         stylebox.withGodotUnsafeRawPointer { __ptr_stylebox in
         withUnsafePointer(to: __ptr_stylebox) { _ptr___ptr_stylebox in
@@ -1643,7 +1819,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeFontOverride(name: Godot.GodotStringName, font: Godot.Font?) {
+
+    public func addThemeFontOverride(
+        name: Godot.GodotStringName,
+        font: Godot.Font?
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
@@ -1664,7 +1844,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeFontSizeOverride(name: Godot.GodotStringName, fontSize: Int32) {
+
+    public func addThemeFontSizeOverride(
+        name: Godot.GodotStringName,
+        fontSize: Int32
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_fontSize) { __accessPtr in
@@ -1684,7 +1868,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeColorOverride(name: Godot.GodotStringName, color: Godot.Color) {
+
+    public func addThemeColorOverride(
+        name: Godot.GodotStringName,
+        color: Godot.Color
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_color) { __accessPtr in
@@ -1704,7 +1892,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func addThemeConstantOverride(name: Godot.GodotStringName, constant: Int32) {
+
+    public func addThemeConstantOverride(
+        name: Godot.GodotStringName,
+        constant: Int32
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         constant.withGodotUnsafeRawPointer { __ptr_constant in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_constant) { __accessPtr in
@@ -1724,7 +1916,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeIconOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeIconOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1743,7 +1938,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeStyleboxOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeStyleboxOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1762,7 +1960,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeFontOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeFontOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1781,7 +1982,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeFontSizeOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeFontSizeOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1800,7 +2004,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeColorOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeColorOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1819,7 +2026,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func removeThemeConstantOverride(name: Godot.GodotStringName) {
+
+    public func removeThemeConstantOverride(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1838,7 +2048,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeIcon(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Godot.Texture2D? {
+
+    public func themeIcon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1859,7 +2073,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeStylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Godot.StyleBox? {
+
+    public func themeStylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Godot.StyleBox? {
         Godot.StyleBox?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1880,7 +2098,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeFont(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Godot.Font? {
+
+    public func themeFont(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1901,7 +2123,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeFontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Int32 {
+
+    public func themeFontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1922,7 +2148,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeColor(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Godot.Color {
+
+    public func themeColor(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1943,7 +2173,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func themeConstant(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Int32 {
+
+    public func themeConstant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1964,7 +2198,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeIconOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeIconOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -1984,7 +2221,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeStyleboxOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeStyleboxOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -2004,7 +2244,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeFontOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeFontOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -2024,7 +2267,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeFontSizeOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeFontSizeOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -2044,7 +2290,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeColorOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeColorOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -2064,7 +2313,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeConstantOverride(name: Godot.GodotStringName) -> Bool {
+
+    public func hasThemeConstantOverride(
+        name: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -2084,7 +2336,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeIcon(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeIcon(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2105,7 +2361,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeStylebox(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeStylebox(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2126,7 +2386,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeFont(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeFont(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2147,7 +2411,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeFontSize(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeFontSize(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2168,7 +2436,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeColor(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeColor(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2189,7 +2461,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func hasThemeConstant(name: Godot.GodotStringName, themeType: Godot.GodotStringName = "") -> Bool {
+
+    public func hasThemeConstant(
+        name: Godot.GodotStringName,
+        themeType: Godot.GodotStringName = ""
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -2210,6 +2486,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func themeDefaultBaseScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2228,6 +2505,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func themeDefaultFont() -> Godot.Font? {
         Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2246,6 +2524,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func themeDefaultFontSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2264,7 +2543,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func setLayoutDirection(_ direction: Godot.Window.LayoutDirection) {
+
+    public func setLayoutDirection(
+        _ direction: Godot.Window.LayoutDirection
+    ) {
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2283,6 +2565,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func layoutDirection() -> Godot.Window.LayoutDirection {
         Godot.Window.LayoutDirection.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2301,6 +2584,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     public func isLayoutRtl() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2319,7 +2603,10 @@ open class Window: Viewport {
         }
         }
     }()
-    private func __setAutoTranslate(enable: Bool) {
+
+    private func __setAutoTranslate(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2338,6 +2625,7 @@ open class Window: Viewport {
         }
         }
     }()
+
     private func __isAutoTranslating() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2356,7 +2644,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popup(rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+
+    public func popup(
+        rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)
+    ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2375,7 +2666,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupOnParent(parentRect: Godot.Rect2I) {
+
+    public func popupOnParent(
+        parentRect: Godot.Rect2I
+    ) {
         parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
         withUnsafeArgumentPackPointer(__ptr_parentRect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2394,7 +2688,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupCentered(minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
+
+    public func popupCentered(
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)
+    ) {
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
         withUnsafeArgumentPackPointer(__ptr_minsize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2413,7 +2710,10 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupCenteredRatio(_ ratio: Double = 0.8) {
+
+    public func popupCenteredRatio(
+        _ ratio: Double = 0.8
+    ) {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2432,7 +2732,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupCenteredClamped(minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+
+    public func popupCenteredClamped(
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0),
+        fallbackRatio: Double = 0.75
+    ) {
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
         fallbackRatio.withGodotUnsafeRawPointer { __ptr_fallbackRatio in
         withUnsafeArgumentPackPointer(__ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
@@ -2452,7 +2756,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusive(fromNode node: Godot.Node?, rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)) {
+
+    public func popupExclusive(
+        fromNode node: Godot.Node?,
+        rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
@@ -2473,7 +2781,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveOnParent(fromNode node: Godot.Node?, parentRect: Godot.Rect2I) {
+
+    public func popupExclusiveOnParent(
+        fromNode node: Godot.Node?,
+        parentRect: Godot.Rect2I
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
@@ -2494,7 +2806,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveCentered(fromNode node: Godot.Node?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)) {
+
+    public func popupExclusiveCentered(
+        fromNode node: Godot.Node?,
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -2515,7 +2831,11 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveCenteredRatio(fromNode node: Godot.Node?, ratio: Double = 0.8) {
+
+    public func popupExclusiveCenteredRatio(
+        fromNode node: Godot.Node?,
+        ratio: Double = 0.8
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
@@ -2536,7 +2856,12 @@ open class Window: Viewport {
         }
         }
     }()
-    public func popupExclusiveCenteredClamped(fromNode node: Godot.Node?, minsize: Godot.Vector2I = Vector2i(x: 0, y: 0), fallbackRatio: Double = 0.75) {
+
+    public func popupExclusiveCenteredClamped(
+        fromNode node: Godot.Node?,
+        minsize: Godot.Vector2I = Vector2i(x: 0, y: 0),
+        fallbackRatio: Double = 0.75
+    ) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         minsize.withGodotUnsafeRawPointer { __ptr_minsize in
@@ -2858,6 +3183,7 @@ open class Window: Viewport {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -2877,5 +3203,4 @@ open class Window: Viewport {
         }
         return _virtualFunctions!
     }
-
-    }
+}

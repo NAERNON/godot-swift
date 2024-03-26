@@ -3,11 +3,13 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OmniLight3D: Light3D {
     public enum ShadowMode: UInt32, GodotEnum {
         case dualParaboloid = 0
         case cube = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Dual Paraboloid", 0),
@@ -22,7 +24,10 @@ open class OmniLight3D: Light3D {
         }
         }
     }()
-    private func __setShadowMode(_ mode: Godot.OmniLight3D.ShadowMode) {
+
+    private func __setShadowMode(
+        _ mode: Godot.OmniLight3D.ShadowMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,6 +46,7 @@ open class OmniLight3D: Light3D {
         }
         }
     }()
+
     private func __getShadowMode() -> Godot.OmniLight3D.ShadowMode {
         Godot.OmniLight3D.ShadowMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -64,6 +70,7 @@ open class OmniLight3D: Light3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -76,5 +83,4 @@ open class OmniLight3D: Light3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

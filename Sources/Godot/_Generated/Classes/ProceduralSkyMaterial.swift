@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ProceduralSkyMaterial: Material {
     internal static var __method_binding_set_sky_top_color: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyTopColor(_ color: Godot.Color) {
+
+    private func __setSkyTopColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyTopColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyHorizonColor(_ color: Godot.Color) {
+
+    private func __setSkyHorizonColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyHorizonColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyCurve(_ curve: Double) {
+
+    private func __setSkyCurve(
+        _ curve: Double
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafeArgumentPackPointer(__ptr_curve) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyCurve() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyEnergyMultiplier(_ multiplier: Double) {
+
+    private func __setSkyEnergyMultiplier(
+        _ multiplier: Double
+    ) {
         multiplier.withGodotUnsafeRawPointer { __ptr_multiplier in
         withUnsafeArgumentPackPointer(__ptr_multiplier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyEnergyMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyCover(_ skyCover: Godot.Texture2D?) {
+
+    private func __setSkyCover(
+        _ skyCover: Godot.Texture2D?
+    ) {
         skyCover.withGodotUnsafeRawPointer { __ptr_skyCover in
         withUnsafePointer(to: __ptr_skyCover) { _ptr___ptr_skyCover in
         withUnsafeArgumentPackPointer(_ptr___ptr_skyCover) { __accessPtr in
@@ -180,6 +200,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyCover() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +219,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSkyCoverModulate(color: Godot.Color) {
+
+    private func __setSkyCoverModulate(
+        color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,6 +241,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSkyCoverModulate() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +260,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setGroundBottomColor(_ color: Godot.Color) {
+
+    private func __setGroundBottomColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -254,6 +282,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getGroundBottomColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -272,7 +301,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setGroundHorizonColor(_ color: Godot.Color) {
+
+    private func __setGroundHorizonColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -291,6 +323,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getGroundHorizonColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -309,7 +342,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setGroundCurve(_ curve: Double) {
+
+    private func __setGroundCurve(
+        _ curve: Double
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafeArgumentPackPointer(__ptr_curve) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,6 +364,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getGroundCurve() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +383,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setGroundEnergyMultiplier(energy: Double) {
+
+    private func __setGroundEnergyMultiplier(
+        energy: Double
+    ) {
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         withUnsafeArgumentPackPointer(__ptr_energy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -365,6 +405,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getGroundEnergyMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -383,7 +424,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSunAngleMax(degrees: Double) {
+
+    private func __setSunAngleMax(
+        degrees: Double
+    ) {
         degrees.withGodotUnsafeRawPointer { __ptr_degrees in
         withUnsafeArgumentPackPointer(__ptr_degrees) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -402,6 +446,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSunAngleMax() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -420,7 +465,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setSunCurve(_ curve: Double) {
+
+    private func __setSunCurve(
+        _ curve: Double
+    ) {
         curve.withGodotUnsafeRawPointer { __ptr_curve in
         withUnsafeArgumentPackPointer(__ptr_curve) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -439,6 +487,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getSunCurve() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -457,7 +506,10 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
-    private func __setUseDebanding(_ useDebanding: Bool) {
+
+    private func __setUseDebanding(
+        _ useDebanding: Bool
+    ) {
         useDebanding.withGodotUnsafeRawPointer { __ptr_useDebanding in
         withUnsafeArgumentPackPointer(__ptr_useDebanding) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -476,6 +528,7 @@ open class ProceduralSkyMaterial: Material {
         }
         }
     }()
+
     private func __getUseDebanding() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -631,6 +684,7 @@ open class ProceduralSkyMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -643,5 +697,4 @@ open class ProceduralSkyMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

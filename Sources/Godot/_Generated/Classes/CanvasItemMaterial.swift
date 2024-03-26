@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CanvasItemMaterial: Material {
     public enum BlendMode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class CanvasItemMaterial: Material {
         case sub = 2
         case mul = 3
         case premultAlpha = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mix", 0),
@@ -20,10 +22,12 @@ open class CanvasItemMaterial: Material {
             ("Premult Alpha", 4),]
         }
     }
+
     public enum LightMode: UInt32, GodotEnum {
         case normal = 0
         case unshaded = 1
         case lightOnly = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Normal", 0),
@@ -39,7 +43,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setBlendMode(_ blendMode: Godot.CanvasItemMaterial.BlendMode) {
+
+    private func __setBlendMode(
+        _ blendMode: Godot.CanvasItemMaterial.BlendMode
+    ) {
         blendMode.withGodotUnsafeRawPointer { __ptr_blendMode in
         withUnsafeArgumentPackPointer(__ptr_blendMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -58,6 +65,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getBlendMode() -> Godot.CanvasItemMaterial.BlendMode {
         Godot.CanvasItemMaterial.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +84,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setLightMode(_ lightMode: Godot.CanvasItemMaterial.LightMode) {
+
+    private func __setLightMode(
+        _ lightMode: Godot.CanvasItemMaterial.LightMode
+    ) {
         lightMode.withGodotUnsafeRawPointer { __ptr_lightMode in
         withUnsafeArgumentPackPointer(__ptr_lightMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -95,6 +106,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getLightMode() -> Godot.CanvasItemMaterial.LightMode {
         Godot.CanvasItemMaterial.LightMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,7 +125,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setParticlesAnimation(particlesAnim: Bool) {
+
+    private func __setParticlesAnimation(
+        particlesAnim: Bool
+    ) {
         particlesAnim.withGodotUnsafeRawPointer { __ptr_particlesAnim in
         withUnsafeArgumentPackPointer(__ptr_particlesAnim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,6 +147,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getParticlesAnimation() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,7 +166,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setParticlesAnimHFrames(_ frames: Int32) {
+
+    private func __setParticlesAnimHFrames(
+        _ frames: Int32
+    ) {
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -169,6 +188,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getParticlesAnimHFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +207,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setParticlesAnimVFrames(_ frames: Int32) {
+
+    private func __setParticlesAnimVFrames(
+        _ frames: Int32
+    ) {
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +229,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getParticlesAnimVFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,7 +248,10 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
-    private func __setParticlesAnimLoop(_ loop: Bool) {
+
+    private func __setParticlesAnimLoop(
+        _ loop: Bool
+    ) {
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -243,6 +270,7 @@ open class CanvasItemMaterial: Material {
         }
         }
     }()
+
     private func __getParticlesAnimLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -321,6 +349,7 @@ open class CanvasItemMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -333,5 +362,4 @@ open class CanvasItemMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

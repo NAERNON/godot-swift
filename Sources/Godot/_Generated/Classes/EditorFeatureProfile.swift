@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorFeatureProfile: RefCounted {
     public enum Feature: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class EditorFeatureProfile: RefCounted {
         case importDock = 6
         case historyDock = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Feature3D", 0),
@@ -36,7 +38,11 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func setDisableClass(className: Godot.GodotStringName, disable: Bool) {
+
+    public func setDisableClass(
+        className: Godot.GodotStringName,
+        disable: Bool
+    ) {
         className.withGodotUnsafeRawPointer { __ptr_className in
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_className, __ptr_disable) { __accessPtr in
@@ -56,7 +62,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func isClassDisabled(className: Godot.GodotStringName) -> Bool {
+
+    public func isClassDisabled(
+        className: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         withUnsafeArgumentPackPointer(__ptr_className) { __accessPtr in
@@ -76,7 +85,11 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func setDisableClassEditor(className: Godot.GodotStringName, disable: Bool) {
+
+    public func setDisableClassEditor(
+        className: Godot.GodotStringName,
+        disable: Bool
+    ) {
         className.withGodotUnsafeRawPointer { __ptr_className in
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_className, __ptr_disable) { __accessPtr in
@@ -96,7 +109,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func isClassEditorDisabled(className: Godot.GodotStringName) -> Bool {
+
+    public func isClassEditorDisabled(
+        className: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         withUnsafeArgumentPackPointer(__ptr_className) { __accessPtr in
@@ -116,7 +132,12 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func setDisableClassProperty(className: Godot.GodotStringName, property: Godot.GodotStringName, disable: Bool) {
+
+    public func setDisableClassProperty(
+        className: Godot.GodotStringName,
+        property: Godot.GodotStringName,
+        disable: Bool
+    ) {
         className.withGodotUnsafeRawPointer { __ptr_className in
         property.withGodotUnsafeRawPointer { __ptr_property in
         disable.withGodotUnsafeRawPointer { __ptr_disable in
@@ -137,7 +158,11 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func isClassPropertyDisabled(className: Godot.GodotStringName, property: Godot.GodotStringName) -> Bool {
+
+    public func isClassPropertyDisabled(
+        className: Godot.GodotStringName,
+        property: Godot.GodotStringName
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -158,7 +183,11 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func setDisableFeature(_ feature: Godot.EditorFeatureProfile.Feature, disable: Bool) {
+
+    public func setDisableFeature(
+        _ feature: Godot.EditorFeatureProfile.Feature,
+        disable: Bool
+    ) {
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         disable.withGodotUnsafeRawPointer { __ptr_disable in
         withUnsafeArgumentPackPointer(__ptr_feature, __ptr_disable) { __accessPtr in
@@ -178,7 +207,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func isFeatureDisabled(feature: Godot.EditorFeatureProfile.Feature) -> Bool {
+
+    public func isFeatureDisabled(
+        feature: Godot.EditorFeatureProfile.Feature
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
@@ -198,7 +230,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func featureName(feature: Godot.EditorFeatureProfile.Feature) -> Godot.GodotString {
+
+    public func featureName(
+        feature: Godot.EditorFeatureProfile.Feature
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
@@ -218,7 +253,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func saveToFile(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func saveToFile(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -238,7 +276,10 @@ open class EditorFeatureProfile: RefCounted {
         }
         }
     }()
-    public func loadFromFile(path: Godot.GodotString) -> Godot.ErrorType {
+
+    public func loadFromFile(
+        path: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -252,6 +293,7 @@ open class EditorFeatureProfile: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -264,5 +306,4 @@ open class EditorFeatureProfile: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

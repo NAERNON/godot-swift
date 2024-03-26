@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
     internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
         }
     }()
-    private func __setTitle(_ title: Godot.GodotString) {
+
+    private func __setTitle(
+        _ title: Godot.GodotString
+    ) {
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(__ptr_title) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     private func __getTitle() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
         }
     }()
-    private func __setDescription(_ description: Godot.GodotString) {
+
+    private func __setDescription(
+        _ description: Godot.GodotString
+    ) {
         description.withGodotUnsafeRawPointer { __ptr_description in
         withUnsafeArgumentPackPointer(__ptr_description) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
         }
     }()
+
     private func __getDescription() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +111,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -114,5 +124,4 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
         return _virtualFunctions!
     }
-
-    }
+}

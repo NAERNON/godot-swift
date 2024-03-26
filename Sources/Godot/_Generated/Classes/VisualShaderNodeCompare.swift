@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeCompare: VisualShaderNode {
     public enum ComparisonType: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case boolean = 6
         case transform = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
@@ -28,6 +30,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             ("Max", 8),]
         }
     }
+
     public enum Function: UInt32, GodotEnum {
         case equal = 0
         case notEqual = 1
@@ -36,6 +39,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case lessThan = 4
         case lessThanEqual = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Equal", 0),
@@ -47,10 +51,12 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             ("Max", 6),]
         }
     }
+
     public enum Condition: UInt32, GodotEnum {
         case all = 0
         case any = 1
         case max = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("All", 0),
@@ -66,7 +72,10 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
-    private func __setComparisonType(_ type: Godot.VisualShaderNodeCompare.ComparisonType) {
+
+    private func __setComparisonType(
+        _ type: Godot.VisualShaderNodeCompare.ComparisonType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,6 +94,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
+
     private func __getComparisonType() -> Godot.VisualShaderNodeCompare.ComparisonType {
         Godot.VisualShaderNodeCompare.ComparisonType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,7 +113,10 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
-    private func __setFunction(`func`: Godot.VisualShaderNodeCompare.Function) {
+
+    private func __setFunction(
+        `func`: Godot.VisualShaderNodeCompare.Function
+    ) {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,6 +135,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
+
     private func __getFunction() -> Godot.VisualShaderNodeCompare.Function {
         Godot.VisualShaderNodeCompare.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +154,10 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
-    private func __setCondition(_ condition: Godot.VisualShaderNodeCompare.Condition) {
+
+    private func __setCondition(
+        _ condition: Godot.VisualShaderNodeCompare.Condition
+    ) {
         condition.withGodotUnsafeRawPointer { __ptr_condition in
         withUnsafeArgumentPackPointer(__ptr_condition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -159,6 +176,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         }
     }()
+
     private func __getCondition() -> Godot.VisualShaderNodeCompare.Condition {
         Godot.VisualShaderNodeCompare.Condition.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,6 +222,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -216,5 +235,4 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

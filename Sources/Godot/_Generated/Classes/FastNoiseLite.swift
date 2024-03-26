@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class FastNoiseLite: Noise {
     public enum NoiseType: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class FastNoiseLite: Noise {
         case cellular = 2
         case simplex = 0
         case simplexSmooth = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Simplex", 0),
@@ -22,11 +24,13 @@ open class FastNoiseLite: Noise {
             ("Value", 5),]
         }
     }
+
     public enum FractalType: UInt32, GodotEnum {
         case none = 0
         case fbm = 1
         case ridged = 2
         case pingPong = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -35,11 +39,13 @@ open class FastNoiseLite: Noise {
             ("Ping Pong", 3),]
         }
     }
+
     public enum CellularDistanceFunction: UInt32, GodotEnum {
         case euclidean = 0
         case euclideanSquared = 1
         case manhattan = 2
         case hybrid = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Euclidean", 0),
@@ -48,6 +54,7 @@ open class FastNoiseLite: Noise {
             ("Hybrid", 3),]
         }
     }
+
     public enum CellularReturnType: UInt32, GodotEnum {
         case cellValue = 0
         case distance = 1
@@ -56,6 +63,7 @@ open class FastNoiseLite: Noise {
         case distance2Sub = 4
         case distance2Mul = 5
         case distance2Div = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Cell Value", 0),
@@ -67,10 +75,12 @@ open class FastNoiseLite: Noise {
             ("Distance2 Div", 6),]
         }
     }
+
     public enum DomainWarpType: UInt32, GodotEnum {
         case simplex = 0
         case simplexReduced = 1
         case basicGrid = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Simplex", 0),
@@ -78,10 +88,12 @@ open class FastNoiseLite: Noise {
             ("Basic Grid", 2),]
         }
     }
+
     public enum DomainWarpFractalType: UInt32, GodotEnum {
         case none = 0
         case progressive = 1
         case independent = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -97,7 +109,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setNoiseType(_ type: Godot.FastNoiseLite.NoiseType) {
+
+    private func __setNoiseType(
+        _ type: Godot.FastNoiseLite.NoiseType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,6 +131,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getNoiseType() -> Godot.FastNoiseLite.NoiseType {
         Godot.FastNoiseLite.NoiseType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -134,7 +150,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setSeed(_ seed: Int32) {
+
+    private func __setSeed(
+        _ seed: Int32
+    ) {
         seed.withGodotUnsafeRawPointer { __ptr_seed in
         withUnsafeArgumentPackPointer(__ptr_seed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,6 +172,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getSeed() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -171,7 +191,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFrequency(freq: Double) {
+
+    private func __setFrequency(
+        freq: Double
+    ) {
         freq.withGodotUnsafeRawPointer { __ptr_freq in
         withUnsafeArgumentPackPointer(__ptr_freq) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -190,6 +213,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFrequency() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,7 +232,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setOffset(_ offset: Godot.Vector3) {
+
+    private func __setOffset(
+        _ offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,6 +254,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getOffset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,7 +273,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalType(_ type: Godot.FastNoiseLite.FractalType) {
+
+    private func __setFractalType(
+        _ type: Godot.FastNoiseLite.FractalType
+    ) {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -264,6 +295,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalType() -> Godot.FastNoiseLite.FractalType {
         Godot.FastNoiseLite.FractalType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,7 +314,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalOctaves(octaveCount: Int32) {
+
+    private func __setFractalOctaves(
+        octaveCount: Int32
+    ) {
         octaveCount.withGodotUnsafeRawPointer { __ptr_octaveCount in
         withUnsafeArgumentPackPointer(__ptr_octaveCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -301,6 +336,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalOctaves() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -319,7 +355,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalLacunarity(_ lacunarity: Double) {
+
+    private func __setFractalLacunarity(
+        _ lacunarity: Double
+    ) {
         lacunarity.withGodotUnsafeRawPointer { __ptr_lacunarity in
         withUnsafeArgumentPackPointer(__ptr_lacunarity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -338,6 +377,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalLacunarity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -356,7 +396,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalGain(_ gain: Double) {
+
+    private func __setFractalGain(
+        _ gain: Double
+    ) {
         gain.withGodotUnsafeRawPointer { __ptr_gain in
         withUnsafeArgumentPackPointer(__ptr_gain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,6 +418,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -393,7 +437,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalWeightedStrength(_ weightedStrength: Double) {
+
+    private func __setFractalWeightedStrength(
+        _ weightedStrength: Double
+    ) {
         weightedStrength.withGodotUnsafeRawPointer { __ptr_weightedStrength in
         withUnsafeArgumentPackPointer(__ptr_weightedStrength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -412,6 +459,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalWeightedStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -430,7 +478,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setFractalPingPongStrength(_ pingPongStrength: Double) {
+
+    private func __setFractalPingPongStrength(
+        _ pingPongStrength: Double
+    ) {
         pingPongStrength.withGodotUnsafeRawPointer { __ptr_pingPongStrength in
         withUnsafeArgumentPackPointer(__ptr_pingPongStrength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -449,6 +500,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getFractalPingPongStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -467,7 +519,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setCellularDistanceFunction(`func`: Godot.FastNoiseLite.CellularDistanceFunction) {
+
+    private func __setCellularDistanceFunction(
+        `func`: Godot.FastNoiseLite.CellularDistanceFunction
+    ) {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -486,6 +541,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getCellularDistanceFunction() -> Godot.FastNoiseLite.CellularDistanceFunction {
         Godot.FastNoiseLite.CellularDistanceFunction.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -504,7 +560,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setCellularJitter(_ jitter: Double) {
+
+    private func __setCellularJitter(
+        _ jitter: Double
+    ) {
         jitter.withGodotUnsafeRawPointer { __ptr_jitter in
         withUnsafeArgumentPackPointer(__ptr_jitter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -523,6 +582,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getCellularJitter() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -541,7 +601,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setCellularReturnType(ret: Godot.FastNoiseLite.CellularReturnType) {
+
+    private func __setCellularReturnType(
+        ret: Godot.FastNoiseLite.CellularReturnType
+    ) {
         ret.withGodotUnsafeRawPointer { __ptr_ret in
         withUnsafeArgumentPackPointer(__ptr_ret) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -560,6 +623,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getCellularReturnType() -> Godot.FastNoiseLite.CellularReturnType {
         Godot.FastNoiseLite.CellularReturnType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -578,7 +642,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpEnabled(_ domainWarpEnabled: Bool) {
+
+    private func __setDomainWarpEnabled(
+        _ domainWarpEnabled: Bool
+    ) {
         domainWarpEnabled.withGodotUnsafeRawPointer { __ptr_domainWarpEnabled in
         withUnsafeArgumentPackPointer(__ptr_domainWarpEnabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -597,6 +664,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __isDomainWarpEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -615,7 +683,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpType(_ domainWarpType: Godot.FastNoiseLite.DomainWarpType) {
+
+    private func __setDomainWarpType(
+        _ domainWarpType: Godot.FastNoiseLite.DomainWarpType
+    ) {
         domainWarpType.withGodotUnsafeRawPointer { __ptr_domainWarpType in
         withUnsafeArgumentPackPointer(__ptr_domainWarpType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -634,6 +705,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpType() -> Godot.FastNoiseLite.DomainWarpType {
         Godot.FastNoiseLite.DomainWarpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -652,7 +724,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpAmplitude(_ domainWarpAmplitude: Double) {
+
+    private func __setDomainWarpAmplitude(
+        _ domainWarpAmplitude: Double
+    ) {
         domainWarpAmplitude.withGodotUnsafeRawPointer { __ptr_domainWarpAmplitude in
         withUnsafeArgumentPackPointer(__ptr_domainWarpAmplitude) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -671,6 +746,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpAmplitude() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -689,7 +765,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpFrequency(_ domainWarpFrequency: Double) {
+
+    private func __setDomainWarpFrequency(
+        _ domainWarpFrequency: Double
+    ) {
         domainWarpFrequency.withGodotUnsafeRawPointer { __ptr_domainWarpFrequency in
         withUnsafeArgumentPackPointer(__ptr_domainWarpFrequency) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -708,6 +787,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpFrequency() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -726,7 +806,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpFractalType(_ domainWarpFractalType: Godot.FastNoiseLite.DomainWarpFractalType) {
+
+    private func __setDomainWarpFractalType(
+        _ domainWarpFractalType: Godot.FastNoiseLite.DomainWarpFractalType
+    ) {
         domainWarpFractalType.withGodotUnsafeRawPointer { __ptr_domainWarpFractalType in
         withUnsafeArgumentPackPointer(__ptr_domainWarpFractalType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -745,6 +828,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpFractalType() -> Godot.FastNoiseLite.DomainWarpFractalType {
         Godot.FastNoiseLite.DomainWarpFractalType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -763,7 +847,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpFractalOctaves(domainWarpOctaveCount: Int32) {
+
+    private func __setDomainWarpFractalOctaves(
+        domainWarpOctaveCount: Int32
+    ) {
         domainWarpOctaveCount.withGodotUnsafeRawPointer { __ptr_domainWarpOctaveCount in
         withUnsafeArgumentPackPointer(__ptr_domainWarpOctaveCount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -782,6 +869,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpFractalOctaves() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -800,7 +888,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpFractalLacunarity(domainWarpLacunarity: Double) {
+
+    private func __setDomainWarpFractalLacunarity(
+        domainWarpLacunarity: Double
+    ) {
         domainWarpLacunarity.withGodotUnsafeRawPointer { __ptr_domainWarpLacunarity in
         withUnsafeArgumentPackPointer(__ptr_domainWarpLacunarity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -819,6 +910,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpFractalLacunarity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -837,7 +929,10 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
-    private func __setDomainWarpFractalGain(domainWarpGain: Double) {
+
+    private func __setDomainWarpFractalGain(
+        domainWarpGain: Double
+    ) {
         domainWarpGain.withGodotUnsafeRawPointer { __ptr_domainWarpGain in
         withUnsafeArgumentPackPointer(__ptr_domainWarpGain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -856,6 +951,7 @@ open class FastNoiseLite: Noise {
         }
         }
     }()
+
     private func __getDomainWarpFractalGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1099,6 +1195,7 @@ open class FastNoiseLite: Noise {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1111,5 +1208,4 @@ open class FastNoiseLite: Noise {
         }
         return _virtualFunctions!
     }
-
-    }
+}

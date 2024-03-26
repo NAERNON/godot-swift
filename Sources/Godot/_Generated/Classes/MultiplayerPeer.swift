@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class MultiplayerPeer: PacketPeer {
     public enum ConnectionStatus: UInt32, GodotEnum {
         case disconnected = 0
         case connecting = 1
         case connected = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disconnected", 0),
@@ -16,10 +18,12 @@ open class MultiplayerPeer: PacketPeer {
             ("Connected", 2),]
         }
     }
+
     public enum TransferMode: UInt32, GodotEnum {
         case unreliable = 0
         case unreliableOrdered = 1
         case reliable = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unreliable", 0),
@@ -30,16 +34,26 @@ open class MultiplayerPeer: PacketPeer {
 
     public struct PeerConnectedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func peerConnected(id: Int) {
+
+    public func peerConnected(
+        id: Int
+    ) {
         _ = peerConnectedSignal.emit(.init(id: id))
     }
+
     public lazy var peerConnectedSignal: Godot.SignalEmitter<PeerConnectedSignalInput> = {
         .init(object: self, signalName: "peer_connected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -57,16 +71,26 @@ open class MultiplayerPeer: PacketPeer {
 
     public struct PeerDisconnectedSignalInput: Godot.SignalInput {
         public let id: Int
-        fileprivate init(id: Int) {
+
+        fileprivate init(
+            id: Int
+        ) {
             self.id = id
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.id)]
         }
     }
-    public func peerDisconnected(id: Int) {
+
+    public func peerDisconnected(
+        id: Int
+    ) {
         _ = peerDisconnectedSignal.emit(.init(id: id))
     }
+
     public lazy var peerDisconnectedSignal: Godot.SignalEmitter<PeerDisconnectedSignalInput> = {
         .init(object: self, signalName: "peer_disconnected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -83,6 +107,7 @@ open class MultiplayerPeer: PacketPeer {
     }()
 
     public static let targetPeerBroadcast: Int = 0
+
     public static let targetPeerServer: Int = 1
 
     internal static var __method_binding_set_transfer_channel: GDExtensionMethodBindPtr = {
@@ -92,7 +117,10 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    private func __setTransferChannel(_ channel: Int32) {
+
+    private func __setTransferChannel(
+        _ channel: Int32
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -111,6 +139,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     private func __getTransferChannel() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -129,7 +158,10 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    private func __setTransferMode(_ mode: Godot.MultiplayerPeer.TransferMode) {
+
+    private func __setTransferMode(
+        _ mode: Godot.MultiplayerPeer.TransferMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -148,6 +180,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     private func __getTransferMode() -> Godot.MultiplayerPeer.TransferMode {
         Godot.MultiplayerPeer.TransferMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -166,7 +199,10 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    public func setTargetPeer(id: Int32) {
+
+    public func setTargetPeer(
+        id: Int32
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -185,6 +221,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func packetPeer() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -203,6 +240,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func packetChannel() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -221,6 +259,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func packetMode() -> Godot.MultiplayerPeer.TransferMode {
         Godot.MultiplayerPeer.TransferMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -239,6 +278,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func poll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -256,6 +296,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -273,7 +314,11 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    public func disconnectPeer(_ peer: Int32, force: Bool = false) {
+
+    public func disconnectPeer(
+        _ peer: Int32,
+        force: Bool = false
+    ) {
         peer.withGodotUnsafeRawPointer { __ptr_peer in
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_peer, __ptr_force) { __accessPtr in
@@ -293,6 +338,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func connectionStatus() -> Godot.MultiplayerPeer.ConnectionStatus {
         Godot.MultiplayerPeer.ConnectionStatus.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -311,6 +357,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func uniqueID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,6 +376,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func generateUniqueID() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -347,7 +395,10 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
-    private func __setRefuseNewConnections(enable: Bool) {
+
+    private func __setRefuseNewConnections(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -366,6 +417,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     private func __isRefusingNewConnections() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,6 +436,7 @@ open class MultiplayerPeer: PacketPeer {
         }
         }
     }()
+
     public func isServerRelaySupported() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,6 +482,7 @@ open class MultiplayerPeer: PacketPeer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -441,5 +495,4 @@ open class MultiplayerPeer: PacketPeer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

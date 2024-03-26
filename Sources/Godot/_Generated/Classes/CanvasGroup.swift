@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class CanvasGroup: Node2D {
     internal static var __method_binding_set_fit_margin: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
-    private func __setFitMargin(_ fitMargin: Double) {
+
+    private func __setFitMargin(
+        _ fitMargin: Double
+    ) {
         fitMargin.withGodotUnsafeRawPointer { __ptr_fitMargin in
         withUnsafeArgumentPackPointer(__ptr_fitMargin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
+
     private func __getFitMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
-    private func __setClearMargin(_ clearMargin: Double) {
+
+    private func __setClearMargin(
+        _ clearMargin: Double
+    ) {
         clearMargin.withGodotUnsafeRawPointer { __ptr_clearMargin in
         withUnsafeArgumentPackPointer(__ptr_clearMargin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
+
     private func __getClearMargin() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
-    private func __setUseMipmaps(_ useMipmaps: Bool) {
+
+    private func __setUseMipmaps(
+        _ useMipmaps: Bool
+    ) {
         useMipmaps.withGodotUnsafeRawPointer { __ptr_useMipmaps in
         withUnsafeArgumentPackPointer(__ptr_useMipmaps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CanvasGroup: Node2D {
         }
         }
     }()
+
     private func __isUsingMipmaps() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class CanvasGroup: Node2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class CanvasGroup: Node2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

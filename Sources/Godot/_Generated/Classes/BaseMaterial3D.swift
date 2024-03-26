@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class BaseMaterial3D: Material {
     public enum TextureParam: UInt32, GodotEnum {
@@ -25,6 +26,7 @@ open class BaseMaterial3D: Material {
         case detailNormal = 16
         case orm = 17
         case max = 18
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Albedo", 0),
@@ -48,6 +50,7 @@ open class BaseMaterial3D: Material {
             ("Max", 18),]
         }
     }
+
     public enum TextureFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
@@ -56,6 +59,7 @@ open class BaseMaterial3D: Material {
         case nearestWithMipmapsAnisotropic = 4
         case linearWithMipmapsAnisotropic = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Nearest", 0),
@@ -67,15 +71,18 @@ open class BaseMaterial3D: Material {
             ("Max", 6),]
         }
     }
+
     public enum DetailUV: UInt32, GodotEnum {
         case detailUv1 = 0
         case detailUv2 = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Detail Uv1", 0),
             ("Detail Uv2", 1),]
         }
     }
+
     public enum Transparency: UInt32, GodotEnum {
         case disabled = 0
         case alpha = 1
@@ -83,6 +90,7 @@ open class BaseMaterial3D: Material {
         case alphaHash = 3
         case alphaDepthPrePass = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -93,11 +101,13 @@ open class BaseMaterial3D: Material {
             ("Max", 5),]
         }
     }
+
     public enum ShadingMode: UInt32, GodotEnum {
         case unshaded = 0
         case perPixel = 1
         case perVertex = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Unshaded", 0),
@@ -106,6 +116,7 @@ open class BaseMaterial3D: Material {
             ("Max", 3),]
         }
     }
+
     public enum Feature: UInt32, GodotEnum {
         case emission = 0
         case normalMapping = 1
@@ -120,6 +131,7 @@ open class BaseMaterial3D: Material {
         case refraction = 10
         case detail = 11
         case max = 12
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Emission", 0),
@@ -137,11 +149,13 @@ open class BaseMaterial3D: Material {
             ("Max", 12),]
         }
     }
+
     public enum BlendMode: UInt32, GodotEnum {
         case mix = 0
         case add = 1
         case sub = 2
         case mul = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Mix", 0),
@@ -150,10 +164,12 @@ open class BaseMaterial3D: Material {
             ("Mul", 3),]
         }
     }
+
     public enum AlphaAntiAliasing: UInt32, GodotEnum {
         case off = 0
         case alphaToCoverage = 1
         case alphaToCoverageAndToOne = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Off", 0),
@@ -161,10 +177,12 @@ open class BaseMaterial3D: Material {
             ("Alpha To Coverage And To One", 2),]
         }
     }
+
     public enum DepthDrawMode: UInt32, GodotEnum {
         case opaqueOnly = 0
         case always = 1
         case disabled = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Opaque Only", 0),
@@ -172,10 +190,12 @@ open class BaseMaterial3D: Material {
             ("Disabled", 2),]
         }
     }
+
     public enum CullMode: UInt32, GodotEnum {
         case back = 0
         case front = 1
         case disabled = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Back", 0),
@@ -183,6 +203,7 @@ open class BaseMaterial3D: Material {
             ("Disabled", 2),]
         }
     }
+
     public enum Flags: UInt32, GodotEnum {
         case disableDepthTest = 0
         case albedoFromVertexColor = 1
@@ -207,6 +228,7 @@ open class BaseMaterial3D: Material {
         case albedoTextureMsdf = 20
         case disableFog = 21
         case max = 22
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disable Depth Test", 0),
@@ -234,11 +256,13 @@ open class BaseMaterial3D: Material {
             ("Max", 22),]
         }
     }
+
     public enum DiffuseMode: UInt32, GodotEnum {
         case burley = 0
         case lambert = 1
         case lambertWrap = 2
         case toon = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Burley", 0),
@@ -247,10 +271,12 @@ open class BaseMaterial3D: Material {
             ("Toon", 3),]
         }
     }
+
     public enum SpecularMode: UInt32, GodotEnum {
         case schlickGgx = 0
         case toon = 1
         case disabled = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Schlick Ggx", 0),
@@ -258,11 +284,13 @@ open class BaseMaterial3D: Material {
             ("Disabled", 2),]
         }
     }
+
     public enum BillboardMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case fixedY = 2
         case particles = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -271,12 +299,14 @@ open class BaseMaterial3D: Material {
             ("Particles", 3),]
         }
     }
+
     public enum TextureChannel: UInt32, GodotEnum {
         case red = 0
         case green = 1
         case blue = 2
         case alpha = 3
         case grayscale = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Red", 0),
@@ -286,20 +316,24 @@ open class BaseMaterial3D: Material {
             ("Grayscale", 4),]
         }
     }
+
     public enum EmissionOperator: UInt32, GodotEnum {
         case add = 0
         case multiply = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Add", 0),
             ("Multiply", 1),]
         }
     }
+
     public enum DistanceFadeMode: UInt32, GodotEnum {
         case disabled = 0
         case pixelAlpha = 1
         case pixelDither = 2
         case objectDither = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -316,7 +350,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAlbedo(_ albedo: Godot.Color) {
+
+    private func __setAlbedo(
+        _ albedo: Godot.Color
+    ) {
         albedo.withGodotUnsafeRawPointer { __ptr_albedo in
         withUnsafeArgumentPackPointer(__ptr_albedo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -335,6 +372,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAlbedo() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -353,7 +391,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setTransparency(_ transparency: Godot.BaseMaterial3D.Transparency) {
+
+    private func __setTransparency(
+        _ transparency: Godot.BaseMaterial3D.Transparency
+    ) {
         transparency.withGodotUnsafeRawPointer { __ptr_transparency in
         withUnsafeArgumentPackPointer(__ptr_transparency) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -372,6 +413,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getTransparency() -> Godot.BaseMaterial3D.Transparency {
         Godot.BaseMaterial3D.Transparency.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -390,7 +432,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAlphaAntialiasing(alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing) {
+
+    private func __setAlphaAntialiasing(
+        alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing
+    ) {
         alphaAa.withGodotUnsafeRawPointer { __ptr_alphaAa in
         withUnsafeArgumentPackPointer(__ptr_alphaAa) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -409,6 +454,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
         Godot.BaseMaterial3D.AlphaAntiAliasing.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -427,7 +473,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAlphaAntialiasingEdge(_ edge: Double) {
+
+    private func __setAlphaAntialiasingEdge(
+        _ edge: Double
+    ) {
         edge.withGodotUnsafeRawPointer { __ptr_edge in
         withUnsafeArgumentPackPointer(__ptr_edge) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -446,6 +495,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAlphaAntialiasingEdge() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -464,7 +514,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setShadingMode(_ shadingMode: Godot.BaseMaterial3D.ShadingMode) {
+
+    private func __setShadingMode(
+        _ shadingMode: Godot.BaseMaterial3D.ShadingMode
+    ) {
         shadingMode.withGodotUnsafeRawPointer { __ptr_shadingMode in
         withUnsafeArgumentPackPointer(__ptr_shadingMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -483,6 +536,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getShadingMode() -> Godot.BaseMaterial3D.ShadingMode {
         Godot.BaseMaterial3D.ShadingMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -501,7 +555,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setSpecular(_ specular: Double) {
+
+    private func __setSpecular(
+        _ specular: Double
+    ) {
         specular.withGodotUnsafeRawPointer { __ptr_specular in
         withUnsafeArgumentPackPointer(__ptr_specular) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -520,6 +577,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getSpecular() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -538,7 +596,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setMetallic(_ metallic: Double) {
+
+    private func __setMetallic(
+        _ metallic: Double
+    ) {
         metallic.withGodotUnsafeRawPointer { __ptr_metallic in
         withUnsafeArgumentPackPointer(__ptr_metallic) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -557,6 +618,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getMetallic() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -575,7 +637,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRoughness(_ roughness: Double) {
+
+    private func __setRoughness(
+        _ roughness: Double
+    ) {
         roughness.withGodotUnsafeRawPointer { __ptr_roughness in
         withUnsafeArgumentPackPointer(__ptr_roughness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -594,6 +659,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRoughness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -612,7 +678,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setEmission(_ emission: Godot.Color) {
+
+    private func __setEmission(
+        _ emission: Godot.Color
+    ) {
         emission.withGodotUnsafeRawPointer { __ptr_emission in
         withUnsafeArgumentPackPointer(__ptr_emission) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -631,6 +700,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getEmission() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -649,7 +719,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setEmissionEnergyMultiplier(_ emissionEnergyMultiplier: Double) {
+
+    private func __setEmissionEnergyMultiplier(
+        _ emissionEnergyMultiplier: Double
+    ) {
         emissionEnergyMultiplier.withGodotUnsafeRawPointer { __ptr_emissionEnergyMultiplier in
         withUnsafeArgumentPackPointer(__ptr_emissionEnergyMultiplier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -668,6 +741,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getEmissionEnergyMultiplier() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -686,7 +760,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setEmissionIntensity(emissionEnergyMultiplier: Double) {
+
+    private func __setEmissionIntensity(
+        emissionEnergyMultiplier: Double
+    ) {
         emissionEnergyMultiplier.withGodotUnsafeRawPointer { __ptr_emissionEnergyMultiplier in
         withUnsafeArgumentPackPointer(__ptr_emissionEnergyMultiplier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -705,6 +782,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getEmissionIntensity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -723,7 +801,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setNormalScale(_ normalScale: Double) {
+
+    private func __setNormalScale(
+        _ normalScale: Double
+    ) {
         normalScale.withGodotUnsafeRawPointer { __ptr_normalScale in
         withUnsafeArgumentPackPointer(__ptr_normalScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -742,6 +823,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getNormalScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -760,7 +842,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRim(_ rim: Double) {
+
+    private func __setRim(
+        _ rim: Double
+    ) {
         rim.withGodotUnsafeRawPointer { __ptr_rim in
         withUnsafeArgumentPackPointer(__ptr_rim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -779,6 +864,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRim() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -797,7 +883,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRimTint(_ rimTint: Double) {
+
+    private func __setRimTint(
+        _ rimTint: Double
+    ) {
         rimTint.withGodotUnsafeRawPointer { __ptr_rimTint in
         withUnsafeArgumentPackPointer(__ptr_rimTint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -816,6 +905,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRimTint() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -834,7 +924,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setClearcoat(_ clearcoat: Double) {
+
+    private func __setClearcoat(
+        _ clearcoat: Double
+    ) {
         clearcoat.withGodotUnsafeRawPointer { __ptr_clearcoat in
         withUnsafeArgumentPackPointer(__ptr_clearcoat) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -853,6 +946,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getClearcoat() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -871,7 +965,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setClearcoatRoughness(_ clearcoatRoughness: Double) {
+
+    private func __setClearcoatRoughness(
+        _ clearcoatRoughness: Double
+    ) {
         clearcoatRoughness.withGodotUnsafeRawPointer { __ptr_clearcoatRoughness in
         withUnsafeArgumentPackPointer(__ptr_clearcoatRoughness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -890,6 +987,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getClearcoatRoughness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -908,7 +1006,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAnisotropy(_ anisotropy: Double) {
+
+    private func __setAnisotropy(
+        _ anisotropy: Double
+    ) {
         anisotropy.withGodotUnsafeRawPointer { __ptr_anisotropy in
         withUnsafeArgumentPackPointer(__ptr_anisotropy) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -927,6 +1028,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAnisotropy() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -945,7 +1047,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapScale(_ heightmapScale: Double) {
+
+    private func __setHeightmapScale(
+        _ heightmapScale: Double
+    ) {
         heightmapScale.withGodotUnsafeRawPointer { __ptr_heightmapScale in
         withUnsafeArgumentPackPointer(__ptr_heightmapScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -964,6 +1069,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getHeightmapScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -982,7 +1088,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setSubsurfaceScatteringStrength(_ strength: Double) {
+
+    private func __setSubsurfaceScatteringStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1001,6 +1110,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getSubsurfaceScatteringStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1019,7 +1129,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setTransmittanceColor(_ color: Godot.Color) {
+
+    private func __setTransmittanceColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1038,6 +1151,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getTransmittanceColor() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1056,7 +1170,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setTransmittanceDepth(_ depth: Double) {
+
+    private func __setTransmittanceDepth(
+        _ depth: Double
+    ) {
         depth.withGodotUnsafeRawPointer { __ptr_depth in
         withUnsafeArgumentPackPointer(__ptr_depth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1075,6 +1192,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getTransmittanceDepth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1093,7 +1211,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setTransmittanceBoost(_ boost: Double) {
+
+    private func __setTransmittanceBoost(
+        _ boost: Double
+    ) {
         boost.withGodotUnsafeRawPointer { __ptr_boost in
         withUnsafeArgumentPackPointer(__ptr_boost) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1112,6 +1233,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getTransmittanceBoost() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1130,7 +1252,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setBacklight(_ backlight: Godot.Color) {
+
+    private func __setBacklight(
+        _ backlight: Godot.Color
+    ) {
         backlight.withGodotUnsafeRawPointer { __ptr_backlight in
         withUnsafeArgumentPackPointer(__ptr_backlight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1149,6 +1274,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getBacklight() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1167,7 +1293,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRefraction(_ refraction: Double) {
+
+    private func __setRefraction(
+        _ refraction: Double
+    ) {
         refraction.withGodotUnsafeRawPointer { __ptr_refraction in
         withUnsafeArgumentPackPointer(__ptr_refraction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1186,6 +1315,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRefraction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1204,7 +1334,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setPointSize(_ pointSize: Double) {
+
+    private func __setPointSize(
+        _ pointSize: Double
+    ) {
         pointSize.withGodotUnsafeRawPointer { __ptr_pointSize in
         withUnsafeArgumentPackPointer(__ptr_pointSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1223,6 +1356,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getPointSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1241,7 +1375,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDetailUv(_ detailUv: Godot.BaseMaterial3D.DetailUV) {
+
+    private func __setDetailUv(
+        _ detailUv: Godot.BaseMaterial3D.DetailUV
+    ) {
         detailUv.withGodotUnsafeRawPointer { __ptr_detailUv in
         withUnsafeArgumentPackPointer(__ptr_detailUv) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1260,6 +1397,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDetailUv() -> Godot.BaseMaterial3D.DetailUV {
         Godot.BaseMaterial3D.DetailUV.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1278,7 +1416,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setBlendMode(_ blendMode: Godot.BaseMaterial3D.BlendMode) {
+
+    private func __setBlendMode(
+        _ blendMode: Godot.BaseMaterial3D.BlendMode
+    ) {
         blendMode.withGodotUnsafeRawPointer { __ptr_blendMode in
         withUnsafeArgumentPackPointer(__ptr_blendMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1297,6 +1438,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getBlendMode() -> Godot.BaseMaterial3D.BlendMode {
         Godot.BaseMaterial3D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1315,7 +1457,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDepthDrawMode(_ depthDrawMode: Godot.BaseMaterial3D.DepthDrawMode) {
+
+    private func __setDepthDrawMode(
+        _ depthDrawMode: Godot.BaseMaterial3D.DepthDrawMode
+    ) {
         depthDrawMode.withGodotUnsafeRawPointer { __ptr_depthDrawMode in
         withUnsafeArgumentPackPointer(__ptr_depthDrawMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1334,6 +1479,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDepthDrawMode() -> Godot.BaseMaterial3D.DepthDrawMode {
         Godot.BaseMaterial3D.DepthDrawMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1352,7 +1498,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setCullMode(_ cullMode: Godot.BaseMaterial3D.CullMode) {
+
+    private func __setCullMode(
+        _ cullMode: Godot.BaseMaterial3D.CullMode
+    ) {
         cullMode.withGodotUnsafeRawPointer { __ptr_cullMode in
         withUnsafeArgumentPackPointer(__ptr_cullMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1371,6 +1520,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getCullMode() -> Godot.BaseMaterial3D.CullMode {
         Godot.BaseMaterial3D.CullMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1389,7 +1539,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDiffuseMode(_ diffuseMode: Godot.BaseMaterial3D.DiffuseMode) {
+
+    private func __setDiffuseMode(
+        _ diffuseMode: Godot.BaseMaterial3D.DiffuseMode
+    ) {
         diffuseMode.withGodotUnsafeRawPointer { __ptr_diffuseMode in
         withUnsafeArgumentPackPointer(__ptr_diffuseMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1408,6 +1561,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDiffuseMode() -> Godot.BaseMaterial3D.DiffuseMode {
         Godot.BaseMaterial3D.DiffuseMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1426,7 +1580,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setSpecularMode(_ specularMode: Godot.BaseMaterial3D.SpecularMode) {
+
+    private func __setSpecularMode(
+        _ specularMode: Godot.BaseMaterial3D.SpecularMode
+    ) {
         specularMode.withGodotUnsafeRawPointer { __ptr_specularMode in
         withUnsafeArgumentPackPointer(__ptr_specularMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1445,6 +1602,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getSpecularMode() -> Godot.BaseMaterial3D.SpecularMode {
         Godot.BaseMaterial3D.SpecularMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1463,7 +1621,11 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    public func setFlag(_ flag: Godot.BaseMaterial3D.Flags, enable: Bool) {
+
+    public func setFlag(
+        _ flag: Godot.BaseMaterial3D.Flags,
+        enable: Bool
+    ) {
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enable) { __accessPtr in
@@ -1483,7 +1645,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __getFlag(_ flag: Godot.BaseMaterial3D.Flags) -> Bool {
+
+    private func __getFlag(
+        _ flag: Godot.BaseMaterial3D.Flags
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
@@ -1503,7 +1668,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setTextureFilter(mode: Godot.BaseMaterial3D.TextureFilter) {
+
+    private func __setTextureFilter(
+        mode: Godot.BaseMaterial3D.TextureFilter
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1522,6 +1690,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
         Godot.BaseMaterial3D.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1540,7 +1709,11 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    public func setFeature(_ feature: Godot.BaseMaterial3D.Feature, enable: Bool) {
+
+    public func setFeature(
+        _ feature: Godot.BaseMaterial3D.Feature,
+        enable: Bool
+    ) {
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_feature, __ptr_enable) { __accessPtr in
@@ -1560,7 +1733,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __getFeature(_ feature: Godot.BaseMaterial3D.Feature) -> Bool {
+
+    private func __getFeature(
+        _ feature: Godot.BaseMaterial3D.Feature
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
@@ -1580,7 +1756,11 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    public func setTexture(param: Godot.BaseMaterial3D.TextureParam, texture: Godot.Texture2D?) {
+
+    public func setTexture(
+        param: Godot.BaseMaterial3D.TextureParam,
+        texture: Godot.Texture2D?
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
@@ -1601,7 +1781,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __getTexture(param: Godot.BaseMaterial3D.TextureParam) -> Godot.Texture2D? {
+
+    private func __getTexture(
+        param: Godot.BaseMaterial3D.TextureParam
+    ) -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -1621,7 +1804,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDetailBlendMode(_ detailBlendMode: Godot.BaseMaterial3D.BlendMode) {
+
+    private func __setDetailBlendMode(
+        _ detailBlendMode: Godot.BaseMaterial3D.BlendMode
+    ) {
         detailBlendMode.withGodotUnsafeRawPointer { __ptr_detailBlendMode in
         withUnsafeArgumentPackPointer(__ptr_detailBlendMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1640,6 +1826,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDetailBlendMode() -> Godot.BaseMaterial3D.BlendMode {
         Godot.BaseMaterial3D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1658,7 +1845,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv1Scale(_ scale: Godot.Vector3) {
+
+    private func __setUv1Scale(
+        _ scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1677,6 +1867,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv1Scale() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1695,7 +1886,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv1Offset(_ offset: Godot.Vector3) {
+
+    private func __setUv1Offset(
+        _ offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1714,6 +1908,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv1Offset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1732,7 +1927,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv1TriplanarBlendSharpness(_ sharpness: Double) {
+
+    private func __setUv1TriplanarBlendSharpness(
+        _ sharpness: Double
+    ) {
         sharpness.withGodotUnsafeRawPointer { __ptr_sharpness in
         withUnsafeArgumentPackPointer(__ptr_sharpness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1751,6 +1949,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv1TriplanarBlendSharpness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1769,7 +1968,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv2Scale(_ scale: Godot.Vector3) {
+
+    private func __setUv2Scale(
+        _ scale: Godot.Vector3
+    ) {
         scale.withGodotUnsafeRawPointer { __ptr_scale in
         withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1788,6 +1990,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv2Scale() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1806,7 +2009,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv2Offset(_ offset: Godot.Vector3) {
+
+    private func __setUv2Offset(
+        _ offset: Godot.Vector3
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1825,6 +2031,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv2Offset() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1843,7 +2050,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setUv2TriplanarBlendSharpness(_ sharpness: Double) {
+
+    private func __setUv2TriplanarBlendSharpness(
+        _ sharpness: Double
+    ) {
         sharpness.withGodotUnsafeRawPointer { __ptr_sharpness in
         withUnsafeArgumentPackPointer(__ptr_sharpness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1862,6 +2072,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getUv2TriplanarBlendSharpness() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1880,7 +2091,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setBillboardMode(_ mode: Godot.BaseMaterial3D.BillboardMode) {
+
+    private func __setBillboardMode(
+        _ mode: Godot.BaseMaterial3D.BillboardMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1899,6 +2113,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
         Godot.BaseMaterial3D.BillboardMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1917,7 +2132,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setParticlesAnimHFrames(_ frames: Int32) {
+
+    private func __setParticlesAnimHFrames(
+        _ frames: Int32
+    ) {
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1936,6 +2154,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getParticlesAnimHFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1954,7 +2173,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setParticlesAnimVFrames(_ frames: Int32) {
+
+    private func __setParticlesAnimVFrames(
+        _ frames: Int32
+    ) {
         frames.withGodotUnsafeRawPointer { __ptr_frames in
         withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1973,6 +2195,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getParticlesAnimVFrames() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1991,7 +2214,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setParticlesAnimLoop(_ loop: Bool) {
+
+    private func __setParticlesAnimLoop(
+        _ loop: Bool
+    ) {
         loop.withGodotUnsafeRawPointer { __ptr_loop in
         withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2010,6 +2236,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getParticlesAnimLoop() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2028,7 +2255,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapDeepParallax(enable: Bool) {
+
+    private func __setHeightmapDeepParallax(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2047,6 +2277,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __isHeightmapDeepParallaxEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2065,7 +2296,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapDeepParallaxMinLayers(layer: Int32) {
+
+    private func __setHeightmapDeepParallaxMinLayers(
+        layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2084,6 +2318,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getHeightmapDeepParallaxMinLayers() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2102,7 +2337,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapDeepParallaxMaxLayers(layer: Int32) {
+
+    private func __setHeightmapDeepParallaxMaxLayers(
+        layer: Int32
+    ) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2121,6 +2359,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getHeightmapDeepParallaxMaxLayers() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2139,7 +2378,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapDeepParallaxFlipTangent(flip: Bool) {
+
+    private func __setHeightmapDeepParallaxFlipTangent(
+        flip: Bool
+    ) {
         flip.withGodotUnsafeRawPointer { __ptr_flip in
         withUnsafeArgumentPackPointer(__ptr_flip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2158,6 +2400,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getHeightmapDeepParallaxFlipTangent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2176,7 +2419,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setHeightmapDeepParallaxFlipBinormal(flip: Bool) {
+
+    private func __setHeightmapDeepParallaxFlipBinormal(
+        flip: Bool
+    ) {
         flip.withGodotUnsafeRawPointer { __ptr_flip in
         withUnsafeArgumentPackPointer(__ptr_flip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2195,6 +2441,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getHeightmapDeepParallaxFlipBinormal() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2213,7 +2460,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setGrow(amount: Double) {
+
+    private func __setGrow(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2232,6 +2482,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getGrow() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2250,7 +2501,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setEmissionOperator(_ `operator`: Godot.BaseMaterial3D.EmissionOperator) {
+
+    private func __setEmissionOperator(
+        _ `operator`: Godot.BaseMaterial3D.EmissionOperator
+    ) {
         `operator`.withGodotUnsafeRawPointer { __ptr_operator in
         withUnsafeArgumentPackPointer(__ptr_operator) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2269,6 +2523,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getEmissionOperator() -> Godot.BaseMaterial3D.EmissionOperator {
         Godot.BaseMaterial3D.EmissionOperator.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2287,7 +2542,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAoLightAffect(amount: Double) {
+
+    private func __setAoLightAffect(
+        amount: Double
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2306,6 +2564,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAoLightAffect() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2324,7 +2583,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAlphaScissorThreshold(_ threshold: Double) {
+
+    private func __setAlphaScissorThreshold(
+        _ threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2343,6 +2605,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAlphaScissorThreshold() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2361,7 +2624,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAlphaHashScale(threshold: Double) {
+
+    private func __setAlphaHashScale(
+        threshold: Double
+    ) {
         threshold.withGodotUnsafeRawPointer { __ptr_threshold in
         withUnsafeArgumentPackPointer(__ptr_threshold) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2380,6 +2646,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAlphaHashScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2398,7 +2665,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setGrowEnabled(enable: Bool) {
+
+    private func __setGrowEnabled(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2417,6 +2687,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __isGrowEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2435,7 +2706,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setMetallicTextureChannel(_ channel: Godot.BaseMaterial3D.TextureChannel) {
+
+    private func __setMetallicTextureChannel(
+        _ channel: Godot.BaseMaterial3D.TextureChannel
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2454,6 +2728,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getMetallicTextureChannel() -> Godot.BaseMaterial3D.TextureChannel {
         Godot.BaseMaterial3D.TextureChannel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2472,7 +2747,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRoughnessTextureChannel(_ channel: Godot.BaseMaterial3D.TextureChannel) {
+
+    private func __setRoughnessTextureChannel(
+        _ channel: Godot.BaseMaterial3D.TextureChannel
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2491,6 +2769,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRoughnessTextureChannel() -> Godot.BaseMaterial3D.TextureChannel {
         Godot.BaseMaterial3D.TextureChannel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2509,7 +2788,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setAoTextureChannel(_ channel: Godot.BaseMaterial3D.TextureChannel) {
+
+    private func __setAoTextureChannel(
+        _ channel: Godot.BaseMaterial3D.TextureChannel
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2528,6 +2810,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getAoTextureChannel() -> Godot.BaseMaterial3D.TextureChannel {
         Godot.BaseMaterial3D.TextureChannel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2546,7 +2829,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setRefractionTextureChannel(_ channel: Godot.BaseMaterial3D.TextureChannel) {
+
+    private func __setRefractionTextureChannel(
+        _ channel: Godot.BaseMaterial3D.TextureChannel
+    ) {
         channel.withGodotUnsafeRawPointer { __ptr_channel in
         withUnsafeArgumentPackPointer(__ptr_channel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2565,6 +2851,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getRefractionTextureChannel() -> Godot.BaseMaterial3D.TextureChannel {
         Godot.BaseMaterial3D.TextureChannel.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2583,7 +2870,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setProximityFadeEnabled(_ enabled: Bool) {
+
+    private func __setProximityFadeEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2602,6 +2892,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __isProximityFadeEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2620,7 +2911,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setProximityFadeDistance(_ distance: Double) {
+
+    private func __setProximityFadeDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2639,6 +2933,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getProximityFadeDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2657,7 +2952,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setMsdfPixelRange(_ range: Double) {
+
+    private func __setMsdfPixelRange(
+        _ range: Double
+    ) {
         range.withGodotUnsafeRawPointer { __ptr_range in
         withUnsafeArgumentPackPointer(__ptr_range) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2676,6 +2974,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getMsdfPixelRange() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2694,7 +2993,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setMsdfOutlineSize(_ size: Double) {
+
+    private func __setMsdfOutlineSize(
+        _ size: Double
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2713,6 +3015,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getMsdfOutlineSize() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2731,7 +3034,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDistanceFade(mode: Godot.BaseMaterial3D.DistanceFadeMode) {
+
+    private func __setDistanceFade(
+        mode: Godot.BaseMaterial3D.DistanceFadeMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2750,6 +3056,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDistanceFade() -> Godot.BaseMaterial3D.DistanceFadeMode {
         Godot.BaseMaterial3D.DistanceFadeMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2768,7 +3075,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDistanceFadeMaxDistance(_ distance: Double) {
+
+    private func __setDistanceFadeMaxDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2787,6 +3097,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDistanceFadeMaxDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2805,7 +3116,10 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
-    private func __setDistanceFadeMinDistance(_ distance: Double) {
+
+    private func __setDistanceFadeMinDistance(
+        _ distance: Double
+    ) {
         distance.withGodotUnsafeRawPointer { __ptr_distance in
         withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2824,6 +3138,7 @@ open class BaseMaterial3D: Material {
         }
         }
     }()
+
     private func __getDistanceFadeMinDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3967,6 +4282,7 @@ open class BaseMaterial3D: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -3979,5 +4295,4 @@ open class BaseMaterial3D: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

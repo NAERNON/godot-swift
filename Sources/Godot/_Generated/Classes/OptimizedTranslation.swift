@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OptimizedTranslation: Translation {
     internal static var __method_binding_generate: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class OptimizedTranslation: Translation {
         }
         }
     }()
-    public func generate(from: Godot.Translation?) {
+
+    public func generate(
+        from: Godot.Translation?
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafePointer(to: __ptr_from) { _ptr___ptr_from in
         withUnsafeArgumentPackPointer(_ptr___ptr_from) { __accessPtr in
@@ -26,6 +30,7 @@ open class OptimizedTranslation: Translation {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -38,5 +43,4 @@ open class OptimizedTranslation: Translation {
         }
         return _virtualFunctions!
     }
-
-    }
+}

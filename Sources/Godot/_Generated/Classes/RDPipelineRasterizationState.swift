@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDPipelineRasterizationState: RefCounted {
     internal static var __method_binding_set_enable_depth_clamp: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setEnableDepthClamp(pMember: Bool) {
+
+    private func __setEnableDepthClamp(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getEnableDepthClamp() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setDiscardPrimitives(pMember: Bool) {
+
+    private func __setDiscardPrimitives(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getDiscardPrimitives() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setWireframe(pMember: Bool) {
+
+    private func __setWireframe(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getWireframe() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setCullMode(pMember: Godot.RenderingDevice.PolygonCullMode) {
+
+    private func __setCullMode(
+        pMember: Godot.RenderingDevice.PolygonCullMode
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getCullMode() -> Godot.RenderingDevice.PolygonCullMode {
         Godot.RenderingDevice.PolygonCullMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setFrontFace(pMember: Godot.RenderingDevice.PolygonFrontFace) {
+
+    private func __setFrontFace(
+        pMember: Godot.RenderingDevice.PolygonFrontFace
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getFrontFace() -> Godot.RenderingDevice.PolygonFrontFace {
         Godot.RenderingDevice.PolygonFrontFace.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setDepthBiasEnabled(pMember: Bool) {
+
+    private func __setDepthBiasEnabled(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getDepthBiasEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setDepthBiasConstantFactor(pMember: Double) {
+
+    private func __setDepthBiasConstantFactor(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getDepthBiasConstantFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setDepthBiasClamp(pMember: Double) {
+
+    private func __setDepthBiasClamp(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getDepthBiasClamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setDepthBiasSlopeFactor(pMember: Double) {
+
+    private func __setDepthBiasSlopeFactor(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getDepthBiasSlopeFactor() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setLineWidth(pMember: Double) {
+
+    private func __setLineWidth(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,6 +404,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getLineWidth() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +423,10 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
-    private func __setPatchControlPoints(pMember: UInt32) {
+
+    private func __setPatchControlPoints(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -401,6 +445,7 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         }
     }()
+
     private func __getPatchControlPoints() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -534,6 +579,7 @@ open class RDPipelineRasterizationState: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -546,5 +592,4 @@ open class RDPipelineRasterizationState: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

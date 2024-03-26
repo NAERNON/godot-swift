@@ -193,6 +193,17 @@ struct GodotBuiltinClass: Decodable {
         !name.syntax().starts(with: "Vector")
     }
     
+    var isCoveredByStandardLibrary: Bool {
+        switch name {
+        case "bool",
+            "float",
+            "int",
+            "Nil":
+            true
+        default: false
+        }
+    }
+    
     var useOpaque: Bool {
         name.isBuiltinGodotClassWithOpaque
     }
@@ -258,6 +269,9 @@ struct GodotBuiltinClass: Decodable {
             private var __indexed_setter: GDExtensionPtrIndexedSetter = {
                 return GodotExtension.Interface.variantGetPtrIndexedSetter(\(raw: name.variantRepresentationType!))!
             }()
+            """
+            
+            """
             private var __indexed_getter: GDExtensionPtrIndexedGetter = {
                 return GodotExtension.Interface.variantGetPtrIndexedGetter(\(raw: name.variantRepresentationType!))!
             }()
@@ -269,9 +283,15 @@ struct GodotBuiltinClass: Decodable {
             private var __keyed_setter: GDExtensionPtrKeyedSetter = {
                 return GodotExtension.Interface.variantGetPtrKeyedSetter(\(raw: name.variantRepresentationType!))!
             }()
+            """
+            
+            """
             private var __keyed_getter: GDExtensionPtrKeyedGetter = {
                 return GodotExtension.Interface.variantGetPtrKeyedGetter(\(raw: name.variantRepresentationType!))!
             }()
+            """
+            
+            """
             private var __keyed_checker: GDExtensionPtrKeyedChecker = {
                 return GodotExtension.Interface.variantGetPtrKeyedChecker(\(raw: name.variantRepresentationType!))!
             }()
@@ -331,7 +351,6 @@ struct GodotBuiltinClass: Decodable {
         
         for constructor in constructors {
             try constructorSyntax(constructor, classSize: classSize)
-                .with(\.trailingTrivia, .newlines(2))
         }
     }
     
@@ -417,7 +436,6 @@ struct GodotBuiltinClass: Decodable {
     func operatorsSyntax() throws -> MemberBlockItemListSyntax {
         for `operator` in operators {
             try operatorSyntax(`operator`)
-                .with(\.trailingTrivia, .newlines(2))
         }
     }
     
@@ -502,7 +520,9 @@ struct GodotBuiltinClass: Decodable {
                 
                 return __returnValue
             }
+            """
             
+            """
             internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
                 
@@ -514,7 +534,9 @@ struct GodotBuiltinClass: Decodable {
                     }
                 }
             }
+            """
             
+            """
             internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
                 
@@ -535,7 +557,6 @@ struct GodotBuiltinClass: Decodable {
         if let methods {
             for method in methods {
                 try methodSyntax(method)
-                    .with(\.trailingTrivia, .newlines(2))
             }
         }
     }
@@ -636,4 +657,36 @@ private struct OperatorFunction: GodotFunction {
     }
     
     var usesVariantGeneric: Bool { true }
+}
+
+extension GodotBuiltinClass: FileSource {
+    var isFileContentAvailable: Bool {
+        !isCoveredByStandardLibrary
+    }
+    
+    func fileCodeContent(
+        for extensionAPI: GodotExtensionAPI,
+        with configuration: BuildConfiguration
+    ) throws -> CodeBlockItemListSyntax {
+        let classSize = extensionAPI.builtinClassSizes.size(ofClass: name, for: configuration)!
+        
+        "import GodotExtensionHeaders"
+        
+        if useOpaque {
+            lazyVariablesSyntax()
+        }
+        
+        try ExtensionDeclSyntax("extension \(raw: identifier)") {
+            constantsSyntax()
+            try enumSyntax()
+            
+            if useOpaque {
+                try constructorsSyntax(classSize: classSize)
+                try operatorsSyntax()
+                try getterSetterSyntax()
+                keyGetterSetterSyntax()
+                try methodsSyntax()
+            }
+        }
+    }
 }

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class NavigationMeshGenerator: Object {
     internal static var __method_binding_bake: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class NavigationMeshGenerator: Object {
         }
         }
     }()
-    public func bake(navigationMesh: Godot.NavigationMesh?, rootNode: Godot.Node?) {
+
+    public func bake(
+        navigationMesh: Godot.NavigationMesh?,
+        rootNode: Godot.Node?
+    ) {
         navigationMesh.withGodotUnsafeRawPointer { __ptr_navigationMesh in
         withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
         rootNode.withGodotUnsafeRawPointer { __ptr_rootNode in
@@ -34,7 +39,10 @@ open class NavigationMeshGenerator: Object {
         }
         }
     }()
-    public func clear(navigationMesh: Godot.NavigationMesh?) {
+
+    public func clear(
+        navigationMesh: Godot.NavigationMesh?
+    ) {
         navigationMesh.withGodotUnsafeRawPointer { __ptr_navigationMesh in
         withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh) { __accessPtr in
@@ -54,7 +62,13 @@ open class NavigationMeshGenerator: Object {
         }
         }
     }()
-    public func parseSourceGeometryData(navigationMesh: Godot.NavigationMesh?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?, rootNode: Godot.Node?, callback: Godot.Callable = Callable()) {
+
+    public func parseSourceGeometryData(
+        navigationMesh: Godot.NavigationMesh?,
+        sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?,
+        rootNode: Godot.Node?,
+        callback: Godot.Callable = Callable()
+    ) {
         navigationMesh.withGodotUnsafeRawPointer { __ptr_navigationMesh in
         withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
         sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
@@ -79,7 +93,12 @@ open class NavigationMeshGenerator: Object {
         }
         }
     }()
-    public func bakeFromSourceGeometryData(navigationMesh: Godot.NavigationMesh?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?, callback: Godot.Callable = Callable()) {
+
+    public func bakeFromSourceGeometryData(
+        navigationMesh: Godot.NavigationMesh?,
+        sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?,
+        callback: Godot.Callable = Callable()
+    ) {
         navigationMesh.withGodotUnsafeRawPointer { __ptr_navigationMesh in
         withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
         sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
@@ -96,6 +115,7 @@ open class NavigationMeshGenerator: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -108,5 +128,4 @@ open class NavigationMeshGenerator: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

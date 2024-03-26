@@ -3,17 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicalBone3D: PhysicsBody3D {
     public enum DampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Combine", 0),
             ("Replace", 1),]
         }
     }
+
     public enum JointType: UInt32, GodotEnum {
         case none = 0
         case pin = 1
@@ -21,6 +24,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         case hinge = 3
         case slider = 4
         case jointType6dof = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
@@ -32,7 +36,9 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
     }
 
-    open func _integrateForces(state: Godot.PhysicsDirectBodyState3D?) {
+    open func _integrateForces(
+        state: Godot.PhysicsDirectBodyState3D?
+    ) {
     }
 
     internal static var __method_binding_apply_central_impulse: GDExtensionMethodBindPtr = {
@@ -42,7 +48,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    public func applyCentralImpulse(_ impulse: Godot.Vector3) {
+
+    public func applyCentralImpulse(
+        _ impulse: Godot.Vector3
+    ) {
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         withUnsafeArgumentPackPointer(__ptr_impulse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +70,11 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    public func applyImpulse(_ impulse: Godot.Vector3, position: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0)) {
+
+    public func applyImpulse(
+        _ impulse: Godot.Vector3,
+        position: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0)
+    ) {
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_impulse, __ptr_position) { __accessPtr in
@@ -81,7 +94,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setJointType(_ jointType: Godot.PhysicalBone3D.JointType) {
+
+    private func __setJointType(
+        _ jointType: Godot.PhysicalBone3D.JointType
+    ) {
         jointType.withGodotUnsafeRawPointer { __ptr_jointType in
         withUnsafeArgumentPackPointer(__ptr_jointType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,6 +116,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getJointType() -> Godot.PhysicalBone3D.JointType {
         Godot.PhysicalBone3D.JointType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,7 +135,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setJointOffset(_ offset: Godot.Transform3D) {
+
+    private func __setJointOffset(
+        _ offset: Godot.Transform3D
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,6 +157,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getJointOffset() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -155,7 +176,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setJointRotation(euler: Godot.Vector3) {
+
+    private func __setJointRotation(
+        euler: Godot.Vector3
+    ) {
         euler.withGodotUnsafeRawPointer { __ptr_euler in
         withUnsafeArgumentPackPointer(__ptr_euler) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,6 +198,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getJointRotation() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -192,7 +217,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setBodyOffset(_ offset: Godot.Transform3D) {
+
+    private func __setBodyOffset(
+        _ offset: Godot.Transform3D
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -211,6 +239,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getBodyOffset() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,6 +258,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     public func simulatePhysics() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,6 +277,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     public func isSimulatingPhysics() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,6 +296,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     public func boneID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -283,7 +315,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setMass(_ mass: Double) {
+
+    private func __setMass(
+        _ mass: Double
+    ) {
         mass.withGodotUnsafeRawPointer { __ptr_mass in
         withUnsafeArgumentPackPointer(__ptr_mass) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,6 +337,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getMass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -320,7 +356,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setFriction(_ friction: Double) {
+
+    private func __setFriction(
+        _ friction: Double
+    ) {
         friction.withGodotUnsafeRawPointer { __ptr_friction in
         withUnsafeArgumentPackPointer(__ptr_friction) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -339,6 +378,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getFriction() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -357,7 +397,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setBounce(_ bounce: Double) {
+
+    private func __setBounce(
+        _ bounce: Double
+    ) {
         bounce.withGodotUnsafeRawPointer { __ptr_bounce in
         withUnsafeArgumentPackPointer(__ptr_bounce) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -376,6 +419,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getBounce() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,7 +438,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setGravityScale(_ gravityScale: Double) {
+
+    private func __setGravityScale(
+        _ gravityScale: Double
+    ) {
         gravityScale.withGodotUnsafeRawPointer { __ptr_gravityScale in
         withUnsafeArgumentPackPointer(__ptr_gravityScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -413,6 +460,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getGravityScale() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -431,7 +479,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setLinearDampMode(_ linearDampMode: Godot.PhysicalBone3D.DampMode) {
+
+    private func __setLinearDampMode(
+        _ linearDampMode: Godot.PhysicalBone3D.DampMode
+    ) {
         linearDampMode.withGodotUnsafeRawPointer { __ptr_linearDampMode in
         withUnsafeArgumentPackPointer(__ptr_linearDampMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -450,6 +501,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getLinearDampMode() -> Godot.PhysicalBone3D.DampMode {
         Godot.PhysicalBone3D.DampMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -468,7 +520,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setAngularDampMode(_ angularDampMode: Godot.PhysicalBone3D.DampMode) {
+
+    private func __setAngularDampMode(
+        _ angularDampMode: Godot.PhysicalBone3D.DampMode
+    ) {
         angularDampMode.withGodotUnsafeRawPointer { __ptr_angularDampMode in
         withUnsafeArgumentPackPointer(__ptr_angularDampMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -487,6 +542,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getAngularDampMode() -> Godot.PhysicalBone3D.DampMode {
         Godot.PhysicalBone3D.DampMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -505,7 +561,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setLinearDamp(_ linearDamp: Double) {
+
+    private func __setLinearDamp(
+        _ linearDamp: Double
+    ) {
         linearDamp.withGodotUnsafeRawPointer { __ptr_linearDamp in
         withUnsafeArgumentPackPointer(__ptr_linearDamp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -524,6 +583,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getLinearDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -542,7 +602,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setAngularDamp(_ angularDamp: Double) {
+
+    private func __setAngularDamp(
+        _ angularDamp: Double
+    ) {
         angularDamp.withGodotUnsafeRawPointer { __ptr_angularDamp in
         withUnsafeArgumentPackPointer(__ptr_angularDamp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -561,6 +624,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getAngularDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -579,7 +643,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setLinearVelocity(_ linearVelocity: Godot.Vector3) {
+
+    private func __setLinearVelocity(
+        _ linearVelocity: Godot.Vector3
+    ) {
         linearVelocity.withGodotUnsafeRawPointer { __ptr_linearVelocity in
         withUnsafeArgumentPackPointer(__ptr_linearVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -598,6 +665,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getLinearVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -616,7 +684,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setAngularVelocity(_ angularVelocity: Godot.Vector3) {
+
+    private func __setAngularVelocity(
+        _ angularVelocity: Godot.Vector3
+    ) {
         angularVelocity.withGodotUnsafeRawPointer { __ptr_angularVelocity in
         withUnsafeArgumentPackPointer(__ptr_angularVelocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -635,6 +706,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __getAngularVelocity() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -653,7 +725,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setUseCustomIntegrator(enable: Bool) {
+
+    private func __setUseCustomIntegrator(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -672,6 +747,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isUsingCustomIntegrator() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -690,7 +766,10 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
-    private func __setCanSleep(ableToSleep: Bool) {
+
+    private func __setCanSleep(
+        ableToSleep: Bool
+    ) {
         ableToSleep.withGodotUnsafeRawPointer { __ptr_ableToSleep in
         withUnsafeArgumentPackPointer(__ptr_ableToSleep) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -709,6 +788,7 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         }
     }()
+
     private func __isAbleToSleep() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -897,6 +977,7 @@ open class PhysicalBone3D: PhysicsBody3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -917,5 +998,4 @@ open class PhysicalBone3D: PhysicsBody3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

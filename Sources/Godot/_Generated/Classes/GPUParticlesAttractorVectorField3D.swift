@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
         }
         }
     }()
-    private func __setSize(_ size: Godot.Vector3) {
+
+    private func __setSize(
+        _ size: Godot.Vector3
+    ) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
         }
         }
     }()
+
     private func __getSize() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
         }
         }
     }()
-    private func __setTexture(_ texture: Godot.Texture3D?) {
+
+    private func __setTexture(
+        _ texture: Godot.Texture3D?
+    ) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         withUnsafeArgumentPackPointer(_ptr___ptr_texture) { __accessPtr in
@@ -69,6 +77,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture3D? {
         Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +112,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -115,5 +125,4 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

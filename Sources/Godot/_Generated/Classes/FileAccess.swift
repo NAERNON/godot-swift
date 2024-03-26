@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class FileAccess: RefCounted {
     public enum ModeFlags: UInt32, GodotEnum {
@@ -10,6 +11,7 @@ open class FileAccess: RefCounted {
         case write = 2
         case readWrite = 3
         case writeRead = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Read", 1),
@@ -18,12 +20,14 @@ open class FileAccess: RefCounted {
             ("Write Read", 7),]
         }
     }
+
     public enum CompressionMode: UInt32, GodotEnum {
         case fastlz = 0
         case deflate = 1
         case zstd = 2
         case gzip = 3
         case brotli = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Fastlz", 0),
@@ -33,25 +37,40 @@ open class FileAccess: RefCounted {
             ("Brotli", 4),]
         }
     }
+
     public struct UnixPermissionFlags: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let readOwner: Self = .init(rawValue: 256)
+
         public static let writeOwner: Self = .init(rawValue: 128)
+
         public static let executeOwner: Self = .init(rawValue: 64)
+
         public static let readGroup: Self = .init(rawValue: 32)
+
         public static let writeGroup: Self = .init(rawValue: 16)
+
         public static let executeGroup: Self = .init(rawValue: 8)
+
         public static let readOther: Self = .init(rawValue: 4)
+
         public static let writeOther: Self = .init(rawValue: 2)
+
         public static let executeOther: Self = .init(rawValue: 1)
+
         public static let setUserID: Self = .init(rawValue: 2048)
+
         public static let setGroupID: Self = .init(rawValue: 1024)
+
         public static let restrictedDelete: Self = .init(rawValue: 512)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Execute Other", 1),
@@ -76,7 +95,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func open(path: Godot.GodotString, flags: Godot.FileAccess.ModeFlags) -> Godot.FileAccess? {
+
+    static public func open(
+        path: Godot.GodotString,
+        flags: Godot.FileAccess.ModeFlags
+    ) -> Godot.FileAccess? {
         Godot.FileAccess?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
@@ -96,7 +119,12 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func openEncrypted(path: Godot.GodotString, modeFlags: Godot.FileAccess.ModeFlags, key: Godot.PackedByteArray) -> Godot.FileAccess? {
+
+    static public func openEncrypted(
+        path: Godot.GodotString,
+        modeFlags: Godot.FileAccess.ModeFlags,
+        key: Godot.PackedByteArray
+    ) -> Godot.FileAccess? {
         Godot.FileAccess?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         modeFlags.withGodotUnsafeRawPointer { __ptr_modeFlags in
@@ -117,7 +145,12 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func openEncryptedWithPass(path: Godot.GodotString, modeFlags: Godot.FileAccess.ModeFlags, pass: Godot.GodotString) -> Godot.FileAccess? {
+
+    static public func openEncryptedWithPass(
+        path: Godot.GodotString,
+        modeFlags: Godot.FileAccess.ModeFlags,
+        pass: Godot.GodotString
+    ) -> Godot.FileAccess? {
         Godot.FileAccess?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         modeFlags.withGodotUnsafeRawPointer { __ptr_modeFlags in
@@ -138,7 +171,12 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func openCompressed(path: Godot.GodotString, modeFlags: Godot.FileAccess.ModeFlags, compressionMode: Godot.FileAccess.CompressionMode = FileAccess.CompressionMode(rawValue: 0)!) -> Godot.FileAccess? {
+
+    static public func openCompressed(
+        path: Godot.GodotString,
+        modeFlags: Godot.FileAccess.ModeFlags,
+        compressionMode: Godot.FileAccess.CompressionMode = FileAccess.CompressionMode(rawValue: 0)!
+    ) -> Godot.FileAccess? {
         Godot.FileAccess?.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         modeFlags.withGodotUnsafeRawPointer { __ptr_modeFlags in
@@ -159,6 +197,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     static public func openError() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -176,7 +215,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func fileAsBytes(path: Godot.GodotString) -> Godot.PackedByteArray {
+
+    static public func fileAsBytes(
+        path: Godot.GodotString
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -195,7 +237,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func fileAsString(path: Godot.GodotString) -> Godot.GodotString {
+
+    static public func fileAsString(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -214,6 +259,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func flush() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -231,6 +277,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func path() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,6 +296,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func pathAbsolute() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -267,6 +315,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func isOpen() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -285,7 +334,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func seek(position: UInt64) {
+
+    public func seek(
+        position: UInt64
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -304,7 +356,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func seekEnd(position: Int64 = 0) {
+
+    public func seekEnd(
+        position: Int64 = 0
+    ) {
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -323,6 +378,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func position() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -341,6 +397,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func length() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,6 +416,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func eofReached() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,6 +435,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func get8() -> UInt8 {
         UInt8.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -395,6 +454,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func get16() -> UInt16 {
         UInt16.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -413,6 +473,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func get32() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -431,6 +492,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func get64() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -449,6 +511,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func float() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -467,6 +530,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func double() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,6 +549,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func real() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -503,7 +568,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func buffer(length: Int64) -> Godot.PackedByteArray {
+
+    public func buffer(
+        length: Int64
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
@@ -523,6 +591,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func line() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -541,7 +610,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func csvLine(delim: Godot.GodotString = ",") -> Godot.PackedStringArray {
+
+    public func csvLine(
+        delim: Godot.GodotString = ","
+    ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         delim.withGodotUnsafeRawPointer { __ptr_delim in
         withUnsafeArgumentPackPointer(__ptr_delim) { __accessPtr in
@@ -561,7 +633,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func asText(skipCr: Bool = false) -> Godot.GodotString {
+
+    public func asText(
+        skipCr: Bool = false
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         skipCr.withGodotUnsafeRawPointer { __ptr_skipCr in
         withUnsafeArgumentPackPointer(__ptr_skipCr) { __accessPtr in
@@ -581,7 +656,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func md5(path: Godot.GodotString) -> Godot.GodotString {
+
+    static public func md5(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -600,7 +678,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func sha256(path: Godot.GodotString) -> Godot.GodotString {
+
+    static public func sha256(
+        path: Godot.GodotString
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -619,6 +700,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     private func __isBigEndian() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -637,7 +719,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    private func __setBigEndian(_ bigEndian: Bool) {
+
+    private func __setBigEndian(
+        _ bigEndian: Bool
+    ) {
         bigEndian.withGodotUnsafeRawPointer { __ptr_bigEndian in
         withUnsafeArgumentPackPointer(__ptr_bigEndian) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -656,6 +741,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func error() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -674,7 +760,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func `var`(allowObjects: Bool = false) -> Godot.Variant {
+
+    public func `var`(
+        allowObjects: Bool = false
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_allowObjects) { __accessPtr in
@@ -694,7 +783,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func store8(value: UInt8) {
+
+    public func store8(
+        value: UInt8
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -713,7 +805,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func store16(value: UInt16) {
+
+    public func store16(
+        value: UInt16
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -732,7 +827,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func store32(value: UInt32) {
+
+    public func store32(
+        value: UInt32
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -751,7 +849,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func store64(value: UInt64) {
+
+    public func store64(
+        value: UInt64
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -770,7 +871,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeFloat(value: Double) {
+
+    public func storeFloat(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -789,7 +893,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeDouble(value: Double) {
+
+    public func storeDouble(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -808,7 +915,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeReal(value: Double) {
+
+    public func storeReal(
+        value: Double
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -827,7 +937,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeBuffer(_ buffer: Godot.PackedByteArray) {
+
+    public func storeBuffer(
+        _ buffer: Godot.PackedByteArray
+    ) {
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -846,7 +959,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeLine(_ line: Godot.GodotString) {
+
+    public func storeLine(
+        _ line: Godot.GodotString
+    ) {
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -865,7 +981,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeCsvLine(values: Godot.PackedStringArray, delim: Godot.GodotString = ",") {
+
+    public func storeCsvLine(
+        values: Godot.PackedStringArray,
+        delim: Godot.GodotString = ","
+    ) {
         values.withGodotUnsafeRawPointer { __ptr_values in
         delim.withGodotUnsafeRawPointer { __ptr_delim in
         withUnsafeArgumentPackPointer(__ptr_values, __ptr_delim) { __accessPtr in
@@ -885,7 +1005,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeString(_ string: Godot.GodotString) {
+
+    public func storeString(
+        _ string: Godot.GodotString
+    ) {
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -904,7 +1027,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeVar<Value: VariantStorableIn>(value: Value, fullObjects: Bool = false) {
+
+    public func storeVar<Value: VariantStorableIn>(
+        value: Value,
+        fullObjects: Bool = false
+    ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
         withUnsafeArgumentPackPointer(__ptr_value, __ptr_fullObjects) { __accessPtr in
@@ -924,7 +1051,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storePascalString(_ string: Godot.GodotString) {
+
+    public func storePascalString(
+        _ string: Godot.GodotString
+    ) {
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -943,6 +1073,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func pascalString() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -961,6 +1092,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
+
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -978,7 +1110,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func fileExists(path: Godot.GodotString) -> Bool {
+
+    static public func fileExists(
+        path: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -997,7 +1132,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func modifiedTime(file: Godot.GodotString) -> UInt64 {
+
+    static public func modifiedTime(
+        file: Godot.GodotString
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
@@ -1016,7 +1154,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func unixPermissions(file: Godot.GodotString) -> Godot.FileAccess.UnixPermissionFlags {
+
+    static public func unixPermissions(
+        file: Godot.GodotString
+    ) -> Godot.FileAccess.UnixPermissionFlags {
         Godot.FileAccess.UnixPermissionFlags.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
@@ -1035,7 +1176,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func setUnixPermissions(file: Godot.GodotString, permissions: Godot.FileAccess.UnixPermissionFlags) -> Godot.ErrorType {
+
+    static public func setUnixPermissions(
+        file: Godot.GodotString,
+        permissions: Godot.FileAccess.UnixPermissionFlags
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         permissions.withGodotUnsafeRawPointer { __ptr_permissions in
@@ -1055,7 +1200,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func hiddenAttribute(file: Godot.GodotString) -> Bool {
+
+    static public func hiddenAttribute(
+        file: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
@@ -1074,7 +1222,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func setHiddenAttribute(file: Godot.GodotString, hidden: Bool) -> Godot.ErrorType {
+
+    static public func setHiddenAttribute(
+        file: Godot.GodotString,
+        hidden: Bool
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         hidden.withGodotUnsafeRawPointer { __ptr_hidden in
@@ -1094,7 +1246,11 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func setReadOnlyAttribute(file: Godot.GodotString, ro: Bool) -> Godot.ErrorType {
+
+    static public func setReadOnlyAttribute(
+        file: Godot.GodotString,
+        ro: Bool
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         ro.withGodotUnsafeRawPointer { __ptr_ro in
@@ -1114,7 +1270,10 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    static public func readOnlyAttribute(file: Godot.GodotString) -> Bool {
+
+    static public func readOnlyAttribute(
+        file: Godot.GodotString
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
@@ -1138,6 +1297,7 @@ open class FileAccess: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -1150,5 +1310,4 @@ open class FileAccess: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

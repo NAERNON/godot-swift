@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorScriptPicker: EditorResourcePicker {
     internal static var __method_binding_set_script_owner: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class EditorScriptPicker: EditorResourcePicker {
         }
         }
     }()
-    private func __setScriptOwner(ownerNode: Godot.Node?) {
+
+    private func __setScriptOwner(
+        ownerNode: Godot.Node?
+    ) {
         ownerNode.withGodotUnsafeRawPointer { __ptr_ownerNode in
         withUnsafePointer(to: __ptr_ownerNode) { _ptr___ptr_ownerNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_ownerNode) { __accessPtr in
@@ -32,6 +36,7 @@ open class EditorScriptPicker: EditorResourcePicker {
         }
         }
     }()
+
     private func __getScriptOwner() -> Godot.Node? {
         Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class EditorScriptPicker: EditorResourcePicker {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class EditorScriptPicker: EditorResourcePicker {
         }
         return _virtualFunctions!
     }
-
-    }
+}

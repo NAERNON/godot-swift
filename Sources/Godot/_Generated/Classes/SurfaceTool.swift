@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SurfaceTool: RefCounted {
     public enum CustomFormat: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class SurfaceTool: RefCounted {
         case rgbFloat = 6
         case rgbaFloat = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Rgba8 Unorm", 0),
@@ -28,9 +30,11 @@ open class SurfaceTool: RefCounted {
             ("Max", 8),]
         }
     }
+
     public enum SkinWeightCount: UInt32, GodotEnum {
         case skin4Weights = 0
         case skin8Weights = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Skin4 Weights", 0),
@@ -45,7 +49,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setSkinWeightCount(_ count: Godot.SurfaceTool.SkinWeightCount) {
+
+    public func setSkinWeightCount(
+        _ count: Godot.SurfaceTool.SkinWeightCount
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -64,6 +71,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func skinWeightCount() -> Godot.SurfaceTool.SkinWeightCount {
         Godot.SurfaceTool.SkinWeightCount.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,7 +90,11 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setCustomFormat(channelIndex: Int32, format: Godot.SurfaceTool.CustomFormat) {
+
+    public func setCustomFormat(
+        channelIndex: Int32,
+        format: Godot.SurfaceTool.CustomFormat
+    ) {
         channelIndex.withGodotUnsafeRawPointer { __ptr_channelIndex in
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_channelIndex, __ptr_format) { __accessPtr in
@@ -102,7 +114,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func customFormat(channelIndex: Int32) -> Godot.SurfaceTool.CustomFormat {
+
+    public func customFormat(
+        channelIndex: Int32
+    ) -> Godot.SurfaceTool.CustomFormat {
         Godot.SurfaceTool.CustomFormat.fromMutatingGodotUnsafePointer { __temporary in
         channelIndex.withGodotUnsafeRawPointer { __ptr_channelIndex in
         withUnsafeArgumentPackPointer(__ptr_channelIndex) { __accessPtr in
@@ -122,7 +137,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func begin(primitive: Godot.Mesh.PrimitiveType) {
+
+    public func begin(
+        primitive: Godot.Mesh.PrimitiveType
+    ) {
         primitive.withGodotUnsafeRawPointer { __ptr_primitive in
         withUnsafeArgumentPackPointer(__ptr_primitive) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +159,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func addVertex(_ vertex: Godot.Vector3) {
+
+    public func addVertex(
+        _ vertex: Godot.Vector3
+    ) {
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_vertex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +181,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setColor(_ color: Godot.Color) {
+
+    public func setColor(
+        _ color: Godot.Color
+    ) {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,7 +203,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setNormal(_ normal: Godot.Vector3) {
+
+    public func setNormal(
+        _ normal: Godot.Vector3
+    ) {
         normal.withGodotUnsafeRawPointer { __ptr_normal in
         withUnsafeArgumentPackPointer(__ptr_normal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +225,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setTangent(_ tangent: Godot.Plane) {
+
+    public func setTangent(
+        _ tangent: Godot.Plane
+    ) {
         tangent.withGodotUnsafeRawPointer { __ptr_tangent in
         withUnsafeArgumentPackPointer(__ptr_tangent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -217,7 +247,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setUv(_ uv: Godot.Vector2) {
+
+    public func setUv(
+        _ uv: Godot.Vector2
+    ) {
         uv.withGodotUnsafeRawPointer { __ptr_uv in
         withUnsafeArgumentPackPointer(__ptr_uv) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -236,7 +269,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setUv2(_ uv2: Godot.Vector2) {
+
+    public func setUv2(
+        _ uv2: Godot.Vector2
+    ) {
         uv2.withGodotUnsafeRawPointer { __ptr_uv2 in
         withUnsafeArgumentPackPointer(__ptr_uv2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -255,7 +291,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setBones(_ bones: Godot.PackedInt32Array) {
+
+    public func setBones(
+        _ bones: Godot.PackedInt32Array
+    ) {
         bones.withGodotUnsafeRawPointer { __ptr_bones in
         withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -274,7 +313,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setWeights(_ weights: Godot.PackedFloat32Array) {
+
+    public func setWeights(
+        _ weights: Godot.PackedFloat32Array
+    ) {
         weights.withGodotUnsafeRawPointer { __ptr_weights in
         withUnsafeArgumentPackPointer(__ptr_weights) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -293,7 +335,11 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setCustom(channelIndex: Int32, customColor: Godot.Color) {
+
+    public func setCustom(
+        channelIndex: Int32,
+        customColor: Godot.Color
+    ) {
         channelIndex.withGodotUnsafeRawPointer { __ptr_channelIndex in
         customColor.withGodotUnsafeRawPointer { __ptr_customColor in
         withUnsafeArgumentPackPointer(__ptr_channelIndex, __ptr_customColor) { __accessPtr in
@@ -313,7 +359,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setSmoothGroup(index: UInt32) {
+
+    public func setSmoothGroup(
+        index: UInt32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -332,7 +381,15 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func addTriangleFan(vertices: Godot.PackedVector3Array, uvs: Godot.PackedVector2Array = PackedVector2Array(), colors: Godot.PackedColorArray = PackedColorArray(), uv2s: Godot.PackedVector2Array = PackedVector2Array(), normals: Godot.PackedVector3Array = PackedVector3Array(), tangents: Godot.GodotArray<Godot.Plane> = []) {
+
+    public func addTriangleFan(
+        vertices: Godot.PackedVector3Array,
+        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        colors: Godot.PackedColorArray = PackedColorArray(),
+        uv2s: Godot.PackedVector2Array = PackedVector2Array(),
+        normals: Godot.PackedVector3Array = PackedVector3Array(),
+        tangents: Godot.GodotArray<Godot.Plane> = []
+    ) {
         vertices.withGodotUnsafeRawPointer { __ptr_vertices in
         uvs.withGodotUnsafeRawPointer { __ptr_uvs in
         colors.withGodotUnsafeRawPointer { __ptr_colors in
@@ -356,7 +413,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func addIndex(_ index: Int32) {
+
+    public func addIndex(
+        _ index: Int32
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,6 +435,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func index() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -392,6 +453,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func deindex() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -409,7 +471,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func generateNormals(flip: Bool = false) {
+
+    public func generateNormals(
+        flip: Bool = false
+    ) {
         flip.withGodotUnsafeRawPointer { __ptr_flip in
         withUnsafeArgumentPackPointer(__ptr_flip) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -428,6 +493,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func generateTangents() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -445,6 +511,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func optimizeIndicesForCache() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -462,6 +529,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func aabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,7 +548,11 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func generateLod(ndThreshold: Double, targetIndexCount: Int32 = 3) -> Godot.PackedInt32Array {
+
+    public func generateLod(
+        ndThreshold: Double,
+        targetIndexCount: Int32 = 3
+    ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
         ndThreshold.withGodotUnsafeRawPointer { __ptr_ndThreshold in
         targetIndexCount.withGodotUnsafeRawPointer { __ptr_targetIndexCount in
@@ -501,7 +573,10 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func setMaterial(_ material: Godot.Material?) {
+
+    public func setMaterial(
+        _ material: Godot.Material?
+    ) {
         material.withGodotUnsafeRawPointer { __ptr_material in
         withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
         withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
@@ -521,6 +596,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func primitiveType() -> Godot.Mesh.PrimitiveType {
         Godot.Mesh.PrimitiveType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -539,6 +615,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func clear() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -556,7 +633,11 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func createFrom(existing: Godot.Mesh?, surface: Int32) {
+
+    public func createFrom(
+        existing: Godot.Mesh?,
+        surface: Int32
+    ) {
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
@@ -577,7 +658,12 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func createFromBlendShape(existing: Godot.Mesh?, surface: Int32, blendShape: Godot.GodotString) {
+
+    public func createFromBlendShape(
+        existing: Godot.Mesh?,
+        surface: Int32,
+        blendShape: Godot.GodotString
+    ) {
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
@@ -599,7 +685,12 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func appendFrom(existing: Godot.Mesh?, surface: Int32, transform: Godot.Transform3D) {
+
+    public func appendFrom(
+        existing: Godot.Mesh?,
+        surface: Int32,
+        transform: Godot.Transform3D
+    ) {
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
@@ -621,7 +712,11 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func commit(existing: Godot.ArrayMesh? = nil, flags: UInt64 = 0) -> Godot.ArrayMesh? {
+
+    public func commit(
+        existing: Godot.ArrayMesh? = nil,
+        flags: UInt64 = 0
+    ) -> Godot.ArrayMesh? {
         Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in
@@ -643,6 +738,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
+
     public func commitToArrays() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -655,6 +751,7 @@ open class SurfaceTool: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -667,5 +764,4 @@ open class SurfaceTool: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

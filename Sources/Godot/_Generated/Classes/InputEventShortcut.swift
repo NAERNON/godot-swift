@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class InputEventShortcut: InputEvent {
     internal static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class InputEventShortcut: InputEvent {
         }
         }
     }()
-    private func __setShortcut(_ shortcut: Godot.Shortcut?) {
+
+    private func __setShortcut(
+        _ shortcut: Godot.Shortcut?
+    ) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         withUnsafeArgumentPackPointer(_ptr___ptr_shortcut) { __accessPtr in
@@ -32,6 +36,7 @@ open class InputEventShortcut: InputEvent {
         }
         }
     }()
+
     private func __getShortcut() -> Godot.Shortcut? {
         Godot.Shortcut?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class InputEventShortcut: InputEvent {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class InputEventShortcut: InputEvent {
         }
         return _virtualFunctions!
     }
-
-    }
+}

@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class OpenXRInteractionProfileMetadata: Object {
     internal static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
@@ -12,7 +13,11 @@ open class OpenXRInteractionProfileMetadata: Object {
         }
         }
     }()
-    public func registerProfileRename(oldName: Godot.GodotString, newName: Godot.GodotString) {
+
+    public func registerProfileRename(
+        oldName: Godot.GodotString,
+        newName: Godot.GodotString
+    ) {
         oldName.withGodotUnsafeRawPointer { __ptr_oldName in
         newName.withGodotUnsafeRawPointer { __ptr_newName in
         withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_newName) { __accessPtr in
@@ -32,7 +37,12 @@ open class OpenXRInteractionProfileMetadata: Object {
         }
         }
     }()
-    public func registerTopLevelPath(displayName: Godot.GodotString, openxrPath: Godot.GodotString, openxrExtensionName: Godot.GodotString) {
+
+    public func registerTopLevelPath(
+        displayName: Godot.GodotString,
+        openxrPath: Godot.GodotString,
+        openxrExtensionName: Godot.GodotString
+    ) {
         displayName.withGodotUnsafeRawPointer { __ptr_displayName in
         openxrPath.withGodotUnsafeRawPointer { __ptr_openxrPath in
         openxrExtensionName.withGodotUnsafeRawPointer { __ptr_openxrExtensionName in
@@ -53,7 +63,12 @@ open class OpenXRInteractionProfileMetadata: Object {
         }
         }
     }()
-    public func registerInteractionProfile(displayName: Godot.GodotString, openxrPath: Godot.GodotString, openxrExtensionName: Godot.GodotString) {
+
+    public func registerInteractionProfile(
+        displayName: Godot.GodotString,
+        openxrPath: Godot.GodotString,
+        openxrExtensionName: Godot.GodotString
+    ) {
         displayName.withGodotUnsafeRawPointer { __ptr_displayName in
         openxrPath.withGodotUnsafeRawPointer { __ptr_openxrPath in
         openxrExtensionName.withGodotUnsafeRawPointer { __ptr_openxrExtensionName in
@@ -74,7 +89,15 @@ open class OpenXRInteractionProfileMetadata: Object {
         }
         }
     }()
-    public func registerIoPath(interactionProfile: Godot.GodotString, displayName: Godot.GodotString, toplevelPath: Godot.GodotString, openxrPath: Godot.GodotString, openxrExtensionName: Godot.GodotString, actionType: Godot.OpenXRAction.ActionType) {
+
+    public func registerIoPath(
+        interactionProfile: Godot.GodotString,
+        displayName: Godot.GodotString,
+        toplevelPath: Godot.GodotString,
+        openxrPath: Godot.GodotString,
+        openxrExtensionName: Godot.GodotString,
+        actionType: Godot.OpenXRAction.ActionType
+    ) {
         interactionProfile.withGodotUnsafeRawPointer { __ptr_interactionProfile in
         displayName.withGodotUnsafeRawPointer { __ptr_displayName in
         toplevelPath.withGodotUnsafeRawPointer { __ptr_toplevelPath in
@@ -92,6 +115,7 @@ open class OpenXRInteractionProfileMetadata: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -104,5 +128,4 @@ open class OpenXRInteractionProfileMetadata: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

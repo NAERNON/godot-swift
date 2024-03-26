@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class PCKPacker: RefCounted {
     internal static var __method_binding_pck_start: GDExtensionMethodBindPtr = {
@@ -12,7 +13,13 @@ open class PCKPacker: RefCounted {
         }
         }
     }()
-    public func pckStart(pckName: Godot.GodotString, alignment: Int32 = 32, key: Godot.GodotString = "0000000000000000000000000000000000000000000000000000000000000000", encryptDirectory: Bool = false) -> Godot.ErrorType {
+
+    public func pckStart(
+        pckName: Godot.GodotString,
+        alignment: Int32 = 32,
+        key: Godot.GodotString = "0000000000000000000000000000000000000000000000000000000000000000",
+        encryptDirectory: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         pckName.withGodotUnsafeRawPointer { __ptr_pckName in
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
@@ -35,7 +42,12 @@ open class PCKPacker: RefCounted {
         }
         }
     }()
-    public func addFile(pckPath: Godot.GodotString, sourcePath: Godot.GodotString, encrypt: Bool = false) -> Godot.ErrorType {
+
+    public func addFile(
+        pckPath: Godot.GodotString,
+        sourcePath: Godot.GodotString,
+        encrypt: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         pckPath.withGodotUnsafeRawPointer { __ptr_pckPath in
         sourcePath.withGodotUnsafeRawPointer { __ptr_sourcePath in
@@ -57,7 +69,10 @@ open class PCKPacker: RefCounted {
         }
         }
     }()
-    public func flush(verbose: Bool = false) -> Godot.ErrorType {
+
+    public func flush(
+        verbose: Bool = false
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         verbose.withGodotUnsafeRawPointer { __ptr_verbose in
         withUnsafeArgumentPackPointer(__ptr_verbose) { __accessPtr in
@@ -71,6 +86,7 @@ open class PCKPacker: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -83,5 +99,4 @@ open class PCKPacker: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

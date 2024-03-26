@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class PhysicsDirectBodyState2D: Object {
     internal static var __method_binding_get_total_gravity: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getTotalGravity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getTotalLinearDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -48,6 +51,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getTotalAngularDamp() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,6 +70,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getCenterOfMass() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +89,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getCenterOfMassLocal() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,6 +108,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getInverseMass() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -120,6 +127,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getInverseInertia() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -138,7 +146,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    private func __setLinearVelocity(_ velocity: Godot.Vector2) {
+
+    private func __setLinearVelocity(
+        _ velocity: Godot.Vector2
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,6 +168,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getLinearVelocity() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,7 +187,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    private func __setAngularVelocity(_ velocity: Double) {
+
+    private func __setAngularVelocity(
+        _ velocity: Double
+    ) {
         velocity.withGodotUnsafeRawPointer { __ptr_velocity in
         withUnsafeArgumentPackPointer(__ptr_velocity) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,6 +209,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getAngularVelocity() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -212,7 +228,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    private func __setTransform(_ transform: Godot.Transform2D) {
+
+    private func __setTransform(
+        _ transform: Godot.Transform2D
+    ) {
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -231,6 +250,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getTransform() -> Godot.Transform2D {
         Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -249,7 +269,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func velocityAtLocalPosition(_ localPosition: Godot.Vector2) -> Godot.Vector2 {
+
+    public func velocityAtLocalPosition(
+        _ localPosition: Godot.Vector2
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         localPosition.withGodotUnsafeRawPointer { __ptr_localPosition in
         withUnsafeArgumentPackPointer(__ptr_localPosition) { __accessPtr in
@@ -269,7 +292,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyCentralImpulse(_ impulse: Godot.Vector2) {
+
+    public func applyCentralImpulse(
+        _ impulse: Godot.Vector2
+    ) {
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         withUnsafeArgumentPackPointer(__ptr_impulse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -288,7 +314,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyTorqueImpulse(_ impulse: Double) {
+
+    public func applyTorqueImpulse(
+        _ impulse: Double
+    ) {
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         withUnsafeArgumentPackPointer(__ptr_impulse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -307,7 +336,11 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyImpulse(_ impulse: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func applyImpulse(
+        _ impulse: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         impulse.withGodotUnsafeRawPointer { __ptr_impulse in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_impulse, __ptr_position) { __accessPtr in
@@ -327,7 +360,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyCentralForce(_ force: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func applyCentralForce(
+        _ force: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_force) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -346,7 +382,11 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyForce(_ force: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func applyForce(
+        _ force: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         force.withGodotUnsafeRawPointer { __ptr_force in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_force, __ptr_position) { __accessPtr in
@@ -366,7 +406,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func applyTorque(_ torque: Double) {
+
+    public func applyTorque(
+        _ torque: Double
+    ) {
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_torque) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,7 +428,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func addConstantCentralForce(_ force: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func addConstantCentralForce(
+        _ force: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_force) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -404,7 +450,11 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func addConstantForce(_ force: Godot.Vector2, position: Godot.Vector2 = Vector2(x: 0, y: 0)) {
+
+    public func addConstantForce(
+        _ force: Godot.Vector2,
+        position: Godot.Vector2 = Vector2(x: 0, y: 0)
+    ) {
         force.withGodotUnsafeRawPointer { __ptr_force in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_force, __ptr_position) { __accessPtr in
@@ -424,7 +474,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func addConstantTorque(_ torque: Double) {
+
+    public func addConstantTorque(
+        _ torque: Double
+    ) {
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_torque) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,7 +496,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func setConstantForce(_ force: Godot.Vector2) {
+
+    public func setConstantForce(
+        _ force: Godot.Vector2
+    ) {
         force.withGodotUnsafeRawPointer { __ptr_force in
         withUnsafeArgumentPackPointer(__ptr_force) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,6 +518,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     public func constantForce() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -480,7 +537,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func setConstantTorque(_ torque: Double) {
+
+    public func setConstantTorque(
+        _ torque: Double
+    ) {
         torque.withGodotUnsafeRawPointer { __ptr_torque in
         withUnsafeArgumentPackPointer(__ptr_torque) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -499,6 +559,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     public func constantTorque() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -517,7 +578,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    private func __setSleepState(enabled: Bool) {
+
+    private func __setSleepState(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,6 +600,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __isSleeping() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -554,6 +619,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     public func contactCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -572,7 +638,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactLocalPosition(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactLocalPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -592,7 +661,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactLocalNormal(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactLocalNormal(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -612,7 +684,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactLocalShape(contactIdx: Int32) -> Int32 {
+
+    public func contactLocalShape(
+        contactIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -632,7 +707,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactLocalVelocityAtPosition(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactLocalVelocityAtPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -652,7 +730,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactCollider(contactIdx: Int32) -> Godot.RID {
+
+    public func contactCollider(
+        contactIdx: Int32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -672,7 +753,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactColliderPosition(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactColliderPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -692,7 +776,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactColliderID(contactIdx: Int32) -> UInt64 {
+
+    public func contactColliderID(
+        contactIdx: Int32
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -712,7 +799,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactColliderObject(contactIdx: Int32) -> Godot.Object? {
+
+    public func contactColliderObject(
+        contactIdx: Int32
+    ) -> Godot.Object? {
         Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -732,7 +822,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactColliderShape(contactIdx: Int32) -> Int32 {
+
+    public func contactColliderShape(
+        contactIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -752,7 +845,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactColliderVelocityAtPosition(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactColliderVelocityAtPosition(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -772,7 +868,10 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
-    public func contactImpulse(contactIdx: Int32) -> Godot.Vector2 {
+
+    public func contactImpulse(
+        contactIdx: Int32
+    ) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         contactIdx.withGodotUnsafeRawPointer { __ptr_contactIdx in
         withUnsafeArgumentPackPointer(__ptr_contactIdx) { __accessPtr in
@@ -792,6 +891,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     private func __getStep() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -810,6 +910,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     public func integrateForces() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -827,6 +928,7 @@ open class PhysicsDirectBodyState2D: Object {
         }
         }
     }()
+
     public func spaceState() -> Godot.PhysicsDirectSpaceState2D? {
         Godot.PhysicsDirectSpaceState2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -931,6 +1033,7 @@ open class PhysicsDirectBodyState2D: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -943,5 +1046,4 @@ open class PhysicsDirectBodyState2D: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}

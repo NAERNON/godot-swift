@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
     open func _getConnectionState() -> Godot.WebRTCPeerConnection.ConnectionState {
@@ -17,11 +18,16 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
         Godot.WebRTCPeerConnection.SignalingState(rawValue: 0)!
     }
 
-    open func _initialize(pConfig: Godot.AnyGodotDictionary) -> Godot.ErrorType {
+    open func _initialize(
+        pConfig: Godot.AnyGodotDictionary
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _createDataChannel(pLabel: Godot.GodotString, pConfig: Godot.AnyGodotDictionary) -> Godot.WebRTCDataChannel? {
+    open func _createDataChannel(
+        pLabel: Godot.GodotString,
+        pConfig: Godot.AnyGodotDictionary
+    ) -> Godot.WebRTCDataChannel? {
         nil
     }
 
@@ -29,15 +35,25 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _setRemoteDescription(pType: Godot.GodotString, pSdp: Godot.GodotString) -> Godot.ErrorType {
+    open func _setRemoteDescription(
+        pType: Godot.GodotString,
+        pSdp: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _setLocalDescription(pType: Godot.GodotString, pSdp: Godot.GodotString) -> Godot.ErrorType {
+    open func _setLocalDescription(
+        pType: Godot.GodotString,
+        pSdp: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _addIceCandidate(pSdpMidName: Godot.GodotString, pSdpMlineIndex: Int32, pSdpName: Godot.GodotString) -> Godot.ErrorType {
+    open func _addIceCandidate(
+        pSdpMidName: Godot.GodotString,
+        pSdpMlineIndex: Int32,
+        pSdpName: Godot.GodotString
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -49,6 +65,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +179,4 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
         }
         return _virtualFunctions!
     }
-
-    }
+}

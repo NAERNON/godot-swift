@@ -3,14 +3,21 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class EditorSceneFormatImporter: RefCounted {
     public static let importScene: Int = 1
+
     public static let importAnimation: Int = 2
+
     public static let importFailOnMissingDependencies: Int = 4
+
     public static let importGenerateTangentArrays: Int = 8
+
     public static let importUseNamedSkinBinds: Int = 16
+
     public static let importDiscardMeshesAndMaterials: Int = 32
+
     public static let importForceDisableMeshCompression: Int = 64
 
     open func _getImportFlags() -> UInt32 {
@@ -21,18 +28,29 @@ open class EditorSceneFormatImporter: RefCounted {
         Godot.PackedStringArray()
     }
 
-    open func _importScene(path: Godot.GodotString, flags: UInt32, options: Godot.AnyGodotDictionary) -> Godot.Object? {
+    open func _importScene(
+        path: Godot.GodotString,
+        flags: UInt32,
+        options: Godot.AnyGodotDictionary
+    ) -> Godot.Object? {
         nil
     }
 
-    open func _getImportOptions(path: Godot.GodotString) {
+    open func _getImportOptions(
+        path: Godot.GodotString
+    ) {
     }
 
-    open func _getOptionVisibility(path: Godot.GodotString, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
+    open func _getOptionVisibility(
+        path: Godot.GodotString,
+        forAnimation animation: Bool,
+        option: Godot.GodotString
+    ) -> Godot.Variant {
         Variant()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -93,5 +111,4 @@ open class EditorSceneFormatImporter: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

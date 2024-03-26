@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CameraTexture: Texture2D {
     internal static var __method_binding_set_camera_feed_id: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
-    private func __setCameraFeedID(_ feedID: Int32) {
+
+    private func __setCameraFeedID(
+        _ feedID: Int32
+    ) {
         feedID.withGodotUnsafeRawPointer { __ptr_feedID in
         withUnsafeArgumentPackPointer(__ptr_feedID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
+
     private func __getCameraFeedID() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
-    private func __setWhichFeed(_ whichFeed: Godot.CameraServer.FeedImage) {
+
+    private func __setWhichFeed(
+        _ whichFeed: Godot.CameraServer.FeedImage
+    ) {
         whichFeed.withGodotUnsafeRawPointer { __ptr_whichFeed in
         withUnsafeArgumentPackPointer(__ptr_whichFeed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
+
     private func __getWhichFeed() -> Godot.CameraServer.FeedImage {
         Godot.CameraServer.FeedImage.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
-    private func __setCameraActive(_ active: Bool) {
+
+    private func __setCameraActive(
+        _ active: Bool
+    ) {
         active.withGodotUnsafeRawPointer { __ptr_active in
         withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CameraTexture: Texture2D {
         }
         }
     }()
+
     private func __getCameraActive() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,6 +163,7 @@ open class CameraTexture: Texture2D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -162,5 +176,4 @@ open class CameraTexture: Texture2D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

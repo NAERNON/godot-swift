@@ -3,12 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class OccluderPolygon2D: Resource {
     public enum CullMode: UInt32, GodotEnum {
         case disabled = 0
         case clockwise = 1
         case counterClockwise = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -24,7 +26,10 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
-    private func __setClosed(_ closed: Bool) {
+
+    private func __setClosed(
+        _ closed: Bool
+    ) {
         closed.withGodotUnsafeRawPointer { __ptr_closed in
         withUnsafeArgumentPackPointer(__ptr_closed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -43,6 +48,7 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
+
     private func __isClosed() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -61,7 +67,10 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
-    private func __setCullMode(_ cullMode: Godot.OccluderPolygon2D.CullMode) {
+
+    private func __setCullMode(
+        _ cullMode: Godot.OccluderPolygon2D.CullMode
+    ) {
         cullMode.withGodotUnsafeRawPointer { __ptr_cullMode in
         withUnsafeArgumentPackPointer(__ptr_cullMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -80,6 +89,7 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
+
     private func __getCullMode() -> Godot.OccluderPolygon2D.CullMode {
         Godot.OccluderPolygon2D.CullMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -98,7 +108,10 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
-    private func __setPolygon(_ polygon: Godot.PackedVector2Array) {
+
+    private func __setPolygon(
+        _ polygon: Godot.PackedVector2Array
+    ) {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,6 +130,7 @@ open class OccluderPolygon2D: Resource {
         }
         }
     }()
+
     private func __getPolygon() -> Godot.PackedVector2Array {
         Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,6 +176,7 @@ open class OccluderPolygon2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -174,5 +189,4 @@ open class OccluderPolygon2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

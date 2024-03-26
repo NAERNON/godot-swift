@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeInput: VisualShaderNode {
+
     public func inputTypeChanged() {
         _ = inputTypeChangedSignal.emit()
     }
+
     public lazy var inputTypeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "input_type_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -30,7 +33,10 @@ open class VisualShaderNodeInput: VisualShaderNode {
         }
         }
     }()
-    private func __setInputName(_ name: Godot.GodotString) {
+
+    private func __setInputName(
+        _ name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,6 +55,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
         }
         }
     }()
+
     private func __getInputName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,6 +74,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
         }
         }
     }()
+
     public func inputRealName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,6 +98,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -102,5 +111,4 @@ open class VisualShaderNodeInput: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

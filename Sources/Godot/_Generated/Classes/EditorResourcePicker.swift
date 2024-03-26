@@ -3,23 +3,37 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorResourcePicker: HBoxContainer {
     public struct ResourceSelectedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
+
         public let inspect: Bool
-        fileprivate init(resource: Godot.Resource?, inspect: Bool) {
+
+        fileprivate init(
+            resource: Godot.Resource?,
+            inspect: Bool
+        ) {
             self.resource = resource
             self.inspect = inspect
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resource), Variant(input.inspect)]
         }
     }
-    public func resourceSelected(resource: Godot.Resource?, inspect: Bool) {
+
+    public func resourceSelected(
+        resource: Godot.Resource?,
+        inspect: Bool
+    ) {
         _ = resourceSelectedSignal.emit(.init(resource: resource,
                 inspect: inspect))
     }
+
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -38,16 +52,26 @@ open class EditorResourcePicker: HBoxContainer {
 
     public struct ResourceChangedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-        fileprivate init(resource: Godot.Resource?) {
+
+        fileprivate init(
+            resource: Godot.Resource?
+        ) {
             self.resource = resource
         }
-        public static func arguments(from input: Self) -> [Variant] {
+
+        public static func arguments(
+            from input: Self
+        ) -> [Variant] {
             [Variant(input.resource)]
         }
     }
-    public func resourceChanged(resource: Godot.Resource?) {
+
+    public func resourceChanged(
+        resource: Godot.Resource?
+    ) {
         _ = resourceChangedSignal.emit(.init(resource: resource))
     }
+
     public lazy var resourceChangedSignal: Godot.SignalEmitter<ResourceChangedSignalInput> = {
         .init(object: self, signalName: "resource_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -63,10 +87,14 @@ open class EditorResourcePicker: HBoxContainer {
         }
     }()
 
-    open func _setCreateOptions(menuNode: Godot.Object?) {
+    open func _setCreateOptions(
+        menuNode: Godot.Object?
+    ) {
     }
 
-    open func _handleMenuSelected(id: Int32) -> Bool {
+    open func _handleMenuSelected(
+        id: Int32
+    ) -> Bool {
         Bool()
     }
 
@@ -77,7 +105,10 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
-    private func __setBaseType(_ baseType: Godot.GodotString) {
+
+    private func __setBaseType(
+        _ baseType: Godot.GodotString
+    ) {
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
         withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -96,6 +127,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
+
     private func __getBaseType() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -114,6 +146,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
+
     public func allowedTypes() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -132,7 +165,10 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
-    private func __setEditedResource(_ resource: Godot.Resource?) {
+
+    private func __setEditedResource(
+        _ resource: Godot.Resource?
+    ) {
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         withUnsafeArgumentPackPointer(_ptr___ptr_resource) { __accessPtr in
@@ -152,6 +188,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
+
     private func __getEditedResource() -> Godot.Resource? {
         Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +207,10 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
-    private func __setToggleMode(enable: Bool) {
+
+    private func __setToggleMode(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,6 +229,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
+
     private func __isToggleMode() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -207,7 +248,10 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
-    public func setTogglePressed(_ pressed: Bool) {
+
+    public func setTogglePressed(
+        _ pressed: Bool
+    ) {
         pressed.withGodotUnsafeRawPointer { __ptr_pressed in
         withUnsafeArgumentPackPointer(__ptr_pressed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -226,7 +270,10 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
-    private func __setEditable(enable: Bool) {
+
+    private func __setEditable(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,6 +292,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
         }
     }()
+
     private func __isEditable() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -301,6 +349,7 @@ open class EditorResourcePicker: HBoxContainer {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -331,5 +380,4 @@ open class EditorResourcePicker: HBoxContainer {
         }
         return _virtualFunctions!
     }
-
-    }
+}

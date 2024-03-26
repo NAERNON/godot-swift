@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class CameraAttributesPhysical: CameraAttributes {
     internal static var __method_binding_set_aperture: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setAperture(_ aperture: Double) {
+
+    private func __setAperture(
+        _ aperture: Double
+    ) {
         aperture.withGodotUnsafeRawPointer { __ptr_aperture in
         withUnsafeArgumentPackPointer(__ptr_aperture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getAperture() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setShutterSpeed(_ shutterSpeed: Double) {
+
+    private func __setShutterSpeed(
+        _ shutterSpeed: Double
+    ) {
         shutterSpeed.withGodotUnsafeRawPointer { __ptr_shutterSpeed in
         withUnsafeArgumentPackPointer(__ptr_shutterSpeed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getShutterSpeed() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setFocalLength(_ focalLength: Double) {
+
+    private func __setFocalLength(
+        _ focalLength: Double
+    ) {
         focalLength.withGodotUnsafeRawPointer { __ptr_focalLength in
         withUnsafeArgumentPackPointer(__ptr_focalLength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getFocalLength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setFocusDistance(_ focusDistance: Double) {
+
+    private func __setFocusDistance(
+        _ focusDistance: Double
+    ) {
         focusDistance.withGodotUnsafeRawPointer { __ptr_focusDistance in
         withUnsafeArgumentPackPointer(__ptr_focusDistance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getFocusDistance() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setNear(_ near: Double) {
+
+    private func __setNear(
+        _ near: Double
+    ) {
         near.withGodotUnsafeRawPointer { __ptr_near in
         withUnsafeArgumentPackPointer(__ptr_near) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getNear() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setFar(_ far: Double) {
+
+    private func __setFar(
+        _ far: Double
+    ) {
         far.withGodotUnsafeRawPointer { __ptr_far in
         withUnsafeArgumentPackPointer(__ptr_far) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getFar() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,6 +259,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     public func fov() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +278,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setAutoExposureMaxExposureValue(exposureValueMax: Double) {
+
+    private func __setAutoExposureMaxExposureValue(
+        exposureValueMax: Double
+    ) {
         exposureValueMax.withGodotUnsafeRawPointer { __ptr_exposureValueMax in
         withUnsafeArgumentPackPointer(__ptr_exposureValueMax) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,6 +300,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getAutoExposureMaxExposureValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +319,10 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
-    private func __setAutoExposureMinExposureValue(exposureValueMin: Double) {
+
+    private func __setAutoExposureMinExposureValue(
+        exposureValueMin: Double
+    ) {
         exposureValueMin.withGodotUnsafeRawPointer { __ptr_exposureValueMin in
         withUnsafeArgumentPackPointer(__ptr_exposureValueMin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,6 +341,7 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         }
     }()
+
     private func __getAutoExposureMinExposureValue() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -408,6 +442,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -420,5 +455,4 @@ open class CameraAttributesPhysical: CameraAttributes {
         }
         return _virtualFunctions!
     }
-
-    }
+}

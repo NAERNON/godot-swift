@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class GPUParticlesCollision3D: VisualInstance3D {
     internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class GPUParticlesCollision3D: VisualInstance3D {
         }
         }
     }()
-    private func __setCullMask(_ mask: UInt32) {
+
+    private func __setCullMask(
+        _ mask: UInt32
+    ) {
         mask.withGodotUnsafeRawPointer { __ptr_mask in
         withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class GPUParticlesCollision3D: VisualInstance3D {
         }
         }
     }()
+
     private func __getCullMask() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -54,6 +59,7 @@ open class GPUParticlesCollision3D: VisualInstance3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -66,5 +72,4 @@ open class GPUParticlesCollision3D: VisualInstance3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

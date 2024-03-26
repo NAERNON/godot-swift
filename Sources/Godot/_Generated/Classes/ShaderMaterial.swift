@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ShaderMaterial: Material {
     internal static var __method_binding_set_shader: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ShaderMaterial: Material {
         }
         }
     }()
-    private func __setShader(_ shader: Godot.Shader?) {
+
+    private func __setShader(
+        _ shader: Godot.Shader?
+    ) {
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafePointer(to: __ptr_shader) { _ptr___ptr_shader in
         withUnsafeArgumentPackPointer(_ptr___ptr_shader) { __accessPtr in
@@ -32,6 +36,7 @@ open class ShaderMaterial: Material {
         }
         }
     }()
+
     private func __getShader() -> Godot.Shader? {
         Godot.Shader?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -50,7 +55,11 @@ open class ShaderMaterial: Material {
         }
         }
     }()
-    public func setShaderParameter<Value: VariantStorableIn>(param: Godot.GodotStringName, value: Value) {
+
+    public func setShaderParameter<Value: VariantStorableIn>(
+        param: Godot.GodotStringName,
+        value: Value
+    ) {
         param.withGodotUnsafeRawPointer { __ptr_param in
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { __accessPtr in
@@ -70,7 +79,10 @@ open class ShaderMaterial: Material {
         }
         }
     }()
-    public func shaderParameter(param: Godot.GodotStringName) -> Godot.Variant {
+
+    public func shaderParameter(
+        param: Godot.GodotStringName
+    ) -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
@@ -95,6 +107,7 @@ open class ShaderMaterial: Material {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -107,5 +120,4 @@ open class ShaderMaterial: Material {
         }
         return _virtualFunctions!
     }
-
-    }
+}

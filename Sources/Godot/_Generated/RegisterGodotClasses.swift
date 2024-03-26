@@ -3,7 +3,9 @@
 //
 
 internal extension ClassRegistrar {
-    func registerGodotClasses(forLevel level: GodotInitializationLevel) {
+    func registerGodotClasses(
+        forLevel level: GodotInitializationLevel
+    ) {
         switch level {
         case .core:
             AESContext._registerClassToGodot()

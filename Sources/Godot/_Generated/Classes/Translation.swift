@@ -3,13 +3,22 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class Translation: Resource {
-    open func _getPluralMessage(srcMessage: Godot.GodotStringName, srcPluralMessage: Godot.GodotStringName, n: Int32, context: Godot.GodotStringName) -> Godot.GodotStringName {
+    open func _getPluralMessage(
+        srcMessage: Godot.GodotStringName,
+        srcPluralMessage: Godot.GodotStringName,
+        n: Int32,
+        context: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName()
     }
 
-    open func _getMessage(srcMessage: Godot.GodotStringName, context: Godot.GodotStringName) -> Godot.GodotStringName {
+    open func _getMessage(
+        srcMessage: Godot.GodotStringName,
+        context: Godot.GodotStringName
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName()
     }
 
@@ -20,7 +29,10 @@ open class Translation: Resource {
         }
         }
     }()
-    private func __setLocale(_ locale: Godot.GodotString) {
+
+    private func __setLocale(
+        _ locale: Godot.GodotString
+    ) {
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -39,6 +51,7 @@ open class Translation: Resource {
         }
         }
     }()
+
     private func __getLocale() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -57,7 +70,12 @@ open class Translation: Resource {
         }
         }
     }()
-    public func addMessage(srcMessage: Godot.GodotStringName, xlatedMessage: Godot.GodotStringName, context: Godot.GodotStringName = "") {
+
+    public func addMessage(
+        srcMessage: Godot.GodotStringName,
+        xlatedMessage: Godot.GodotStringName,
+        context: Godot.GodotStringName = ""
+    ) {
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         xlatedMessage.withGodotUnsafeRawPointer { __ptr_xlatedMessage in
         context.withGodotUnsafeRawPointer { __ptr_context in
@@ -78,7 +96,12 @@ open class Translation: Resource {
         }
         }
     }()
-    public func addPluralMessage(srcMessage: Godot.GodotStringName, xlatedMessages: Godot.PackedStringArray, context: Godot.GodotStringName = "") {
+
+    public func addPluralMessage(
+        srcMessage: Godot.GodotStringName,
+        xlatedMessages: Godot.PackedStringArray,
+        context: Godot.GodotStringName = ""
+    ) {
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         xlatedMessages.withGodotUnsafeRawPointer { __ptr_xlatedMessages in
         context.withGodotUnsafeRawPointer { __ptr_context in
@@ -99,7 +122,11 @@ open class Translation: Resource {
         }
         }
     }()
-    public func message(_ srcMessage: Godot.GodotStringName, context: Godot.GodotStringName = "") -> Godot.GodotStringName {
+
+    public func message(
+        _ srcMessage: Godot.GodotStringName,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         context.withGodotUnsafeRawPointer { __ptr_context in
@@ -120,7 +147,13 @@ open class Translation: Resource {
         }
         }
     }()
-    public func pluralMessage(srcMessage: Godot.GodotStringName, srcPluralMessage: Godot.GodotStringName, n: Int32, context: Godot.GodotStringName = "") -> Godot.GodotStringName {
+
+    public func pluralMessage(
+        srcMessage: Godot.GodotStringName,
+        srcPluralMessage: Godot.GodotStringName,
+        n: Int32,
+        context: Godot.GodotStringName = ""
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         srcPluralMessage.withGodotUnsafeRawPointer { __ptr_srcPluralMessage in
@@ -143,7 +176,11 @@ open class Translation: Resource {
         }
         }
     }()
-    public func eraseMessage(srcMessage: Godot.GodotStringName, context: Godot.GodotStringName = "") {
+
+    public func eraseMessage(
+        srcMessage: Godot.GodotStringName,
+        context: Godot.GodotStringName = ""
+    ) {
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         context.withGodotUnsafeRawPointer { __ptr_context in
         withUnsafeArgumentPackPointer(__ptr_srcMessage, __ptr_context) { __accessPtr in
@@ -163,6 +200,7 @@ open class Translation: Resource {
         }
         }
     }()
+
     public func messageList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -181,6 +219,7 @@ open class Translation: Resource {
         }
         }
     }()
+
     public func translatedMessageList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -199,6 +238,7 @@ open class Translation: Resource {
         }
         }
     }()
+
     public func messageCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,6 +262,7 @@ open class Translation: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -257,5 +298,4 @@ open class Translation: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

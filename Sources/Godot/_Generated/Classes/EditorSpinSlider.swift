@@ -3,11 +3,14 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class EditorSpinSlider: Range {
+
     public func grabbed() {
         _ = grabbedSignal.emit()
     }
+
     public lazy var grabbedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "grabbed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -26,6 +29,7 @@ open class EditorSpinSlider: Range {
     public func ungrabbed() {
         _ = ungrabbedSignal.emit()
     }
+
     public lazy var ungrabbedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "ungrabbed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,6 +48,7 @@ open class EditorSpinSlider: Range {
     public func valueFocusEntered() {
         _ = valueFocusEnteredSignal.emit()
     }
+
     public lazy var valueFocusEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "value_focus_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,6 +67,7 @@ open class EditorSpinSlider: Range {
     public func valueFocusExited() {
         _ = valueFocusExitedSignal.emit()
     }
+
     public lazy var valueFocusExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "value_focus_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
@@ -84,7 +90,10 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
-    private func __setLabel(_ label: Godot.GodotString) {
+
+    private func __setLabel(
+        _ label: Godot.GodotString
+    ) {
         label.withGodotUnsafeRawPointer { __ptr_label in
         withUnsafeArgumentPackPointer(__ptr_label) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -103,6 +112,7 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
+
     private func __getLabel() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,7 +131,10 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
-    private func __setSuffix(_ suffix: Godot.GodotString) {
+
+    private func __setSuffix(
+        _ suffix: Godot.GodotString
+    ) {
         suffix.withGodotUnsafeRawPointer { __ptr_suffix in
         withUnsafeArgumentPackPointer(__ptr_suffix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,6 +153,7 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
+
     private func __getSuffix() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,7 +172,10 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
-    private func __setReadOnly(_ readOnly: Bool) {
+
+    private func __setReadOnly(
+        _ readOnly: Bool
+    ) {
         readOnly.withGodotUnsafeRawPointer { __ptr_readOnly in
         withUnsafeArgumentPackPointer(__ptr_readOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,6 +194,7 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
+
     private func __isReadOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,7 +213,10 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
-    private func __setFlat(_ flat: Bool) {
+
+    private func __setFlat(
+        _ flat: Bool
+    ) {
         flat.withGodotUnsafeRawPointer { __ptr_flat in
         withUnsafeArgumentPackPointer(__ptr_flat) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -214,6 +235,7 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
+
     private func __isFlat() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -232,7 +254,10 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
-    private func __setHideSlider(_ hideSlider: Bool) {
+
+    private func __setHideSlider(
+        _ hideSlider: Bool
+    ) {
         hideSlider.withGodotUnsafeRawPointer { __ptr_hideSlider in
         withUnsafeArgumentPackPointer(__ptr_hideSlider) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -251,6 +276,7 @@ open class EditorSpinSlider: Range {
         }
         }
     }()
+
     private func __isHidingSlider() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -318,6 +344,7 @@ open class EditorSpinSlider: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -330,5 +357,4 @@ open class EditorSpinSlider: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

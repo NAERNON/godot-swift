@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class XRAnchor3D: XRNode3D {
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class XRAnchor3D: XRNode3D {
         }
         }
     }()
+
     public func size() -> Godot.Vector3 {
         Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -30,6 +32,7 @@ open class XRAnchor3D: XRNode3D {
         }
         }
     }()
+
     public func plane() -> Godot.Plane {
         Godot.Plane.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,6 +45,7 @@ open class XRAnchor3D: XRNode3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -54,5 +58,4 @@ open class XRAnchor3D: XRNode3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

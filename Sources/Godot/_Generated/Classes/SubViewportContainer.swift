@@ -3,9 +3,12 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class SubViewportContainer: Container {
-    open func _propagateInputEvent(_ event: Godot.InputEvent?) -> Bool {
+    open func _propagateInputEvent(
+        _ event: Godot.InputEvent?
+    ) -> Bool {
         Bool()
     }
 
@@ -16,7 +19,10 @@ open class SubViewportContainer: Container {
         }
         }
     }()
-    private func __setStretch(enable: Bool) {
+
+    private func __setStretch(
+        enable: Bool
+    ) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -35,6 +41,7 @@ open class SubViewportContainer: Container {
         }
         }
     }()
+
     private func __isStretchEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -53,7 +60,10 @@ open class SubViewportContainer: Container {
         }
         }
     }()
-    private func __setStretchShrink(amount: Int32) {
+
+    private func __setStretchShrink(
+        amount: Int32
+    ) {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -72,6 +82,7 @@ open class SubViewportContainer: Container {
         }
         }
     }()
+
     private func __getStretchShrink() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,6 +117,7 @@ open class SubViewportContainer: Container {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -127,5 +139,4 @@ open class SubViewportContainer: Container {
         }
         return _virtualFunctions!
     }
-
-    }
+}

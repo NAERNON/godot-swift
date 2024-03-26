@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDPipelineMultisampleState: RefCounted {
     internal static var __method_binding_set_sample_count: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setSampleCount(pMember: Godot.RenderingDevice.TextureSamples) {
+
+    private func __setSampleCount(
+        pMember: Godot.RenderingDevice.TextureSamples
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getSampleCount() -> Godot.RenderingDevice.TextureSamples {
         Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setEnableSampleShading(pMember: Bool) {
+
+    private func __setEnableSampleShading(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getEnableSampleShading() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setMinSampleShading(pMember: Double) {
+
+    private func __setMinSampleShading(
+        pMember: Double
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getMinSampleShading() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setEnableAlphaToCoverage(pMember: Bool) {
+
+    private func __setEnableAlphaToCoverage(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getEnableAlphaToCoverage() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setEnableAlphaToOne(pMember: Bool) {
+
+    private func __setEnableAlphaToOne(
+        pMember: Bool
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getEnableAlphaToOne() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setSampleMasks(_ masks: Godot.GodotArray<Int>) {
+
+    private func __setSampleMasks(
+        _ masks: Godot.GodotArray<Int>
+    ) {
         masks.withGodotUnsafeRawPointer { __ptr_masks in
         withUnsafeArgumentPackPointer(__ptr_masks) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
+
     private func __getSampleMasks() -> Godot.GodotArray<Int> {
         Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -294,6 +319,7 @@ open class RDPipelineMultisampleState: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -306,5 +332,4 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

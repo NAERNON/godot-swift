@@ -3,13 +3,20 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class WebRTCDataChannelExtension: WebRTCDataChannel {
-    open func _getPacket(rBuffer: UnsafePointer<UnsafePointer<UInt8>>, rBufferSize: UnsafeMutablePointer<Int32>) -> Godot.ErrorType {
+    open func _getPacket(
+        rBuffer: UnsafePointer<UnsafePointer<UInt8>>,
+        rBufferSize: UnsafeMutablePointer<Int32>
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _putPacket(pBuffer: UnsafePointer<UInt8>, pBufferSize: Int32) -> Godot.ErrorType {
+    open func _putPacket(
+        pBuffer: UnsafePointer<UInt8>,
+        pBufferSize: Int32
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -28,7 +35,9 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
     open func _close() {
     }
 
-    open func _setWriteMode(pWriteMode: Godot.WebRTCDataChannel.WriteMode) {
+    open func _setWriteMode(
+        pWriteMode: Godot.WebRTCDataChannel.WriteMode
+    ) {
     }
 
     open func _getWriteMode() -> Godot.WebRTCDataChannel.WriteMode {
@@ -76,6 +85,7 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -237,5 +247,4 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
         }
         return _virtualFunctions!
     }
-
-    }
+}

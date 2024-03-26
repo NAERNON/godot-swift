@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class SkeletonModificationStack2D: Resource {
     internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
@@ -12,6 +13,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     public func setup() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -29,7 +31,11 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func execute(delta: Double, executionMode: Int32) {
+
+    public func execute(
+        delta: Double,
+        executionMode: Int32
+    ) {
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         executionMode.withGodotUnsafeRawPointer { __ptr_executionMode in
         withUnsafeArgumentPackPointer(__ptr_delta, __ptr_executionMode) { __accessPtr in
@@ -49,7 +55,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func enableAllModifications(enabled: Bool) {
+
+    public func enableAllModifications(
+        enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,7 +77,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func modification(modIdx: Int32) -> Godot.SkeletonModification2D? {
+
+    public func modification(
+        modIdx: Int32
+    ) -> Godot.SkeletonModification2D? {
         Godot.SkeletonModification2D?.fromMutatingGodotUnsafePointer { __temporary in
         modIdx.withGodotUnsafeRawPointer { __ptr_modIdx in
         withUnsafeArgumentPackPointer(__ptr_modIdx) { __accessPtr in
@@ -88,7 +100,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func addModification(_ modification: Godot.SkeletonModification2D?) {
+
+    public func addModification(
+        _ modification: Godot.SkeletonModification2D?
+    ) {
         modification.withGodotUnsafeRawPointer { __ptr_modification in
         withUnsafePointer(to: __ptr_modification) { _ptr___ptr_modification in
         withUnsafeArgumentPackPointer(_ptr___ptr_modification) { __accessPtr in
@@ -108,7 +123,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func deleteModification(modIdx: Int32) {
+
+    public func deleteModification(
+        modIdx: Int32
+    ) {
         modIdx.withGodotUnsafeRawPointer { __ptr_modIdx in
         withUnsafeArgumentPackPointer(__ptr_modIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,7 +145,11 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    public func setModification(modIdx: Int32, modification: Godot.SkeletonModification2D?) {
+
+    public func setModification(
+        modIdx: Int32,
+        modification: Godot.SkeletonModification2D?
+    ) {
         modIdx.withGodotUnsafeRawPointer { __ptr_modIdx in
         modification.withGodotUnsafeRawPointer { __ptr_modification in
         withUnsafePointer(to: __ptr_modification) { _ptr___ptr_modification in
@@ -148,7 +170,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    private func __setModificationCount(_ count: Int32) {
+
+    private func __setModificationCount(
+        _ count: Int32
+    ) {
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -167,6 +192,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     private func __getModificationCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -185,6 +211,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     public func isSetup() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -203,7 +230,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    private func __setEnabled(_ enabled: Bool) {
+
+    private func __setEnabled(
+        _ enabled: Bool
+    ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
         withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,6 +252,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     private func __getEnabled() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -240,7 +271,10 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
-    private func __setStrength(_ strength: Double) {
+
+    private func __setStrength(
+        _ strength: Double
+    ) {
         strength.withGodotUnsafeRawPointer { __ptr_strength in
         withUnsafeArgumentPackPointer(__ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,6 +293,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     private func __getStrength() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -277,6 +312,7 @@ open class SkeletonModificationStack2D: Resource {
         }
         }
     }()
+
     public func skeleton() -> Godot.Skeleton2D? {
         Godot.Skeleton2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,6 +358,7 @@ open class SkeletonModificationStack2D: Resource {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -334,5 +371,4 @@ open class SkeletonModificationStack2D: Resource {
         }
         return _virtualFunctions!
     }
-
-    }
+}

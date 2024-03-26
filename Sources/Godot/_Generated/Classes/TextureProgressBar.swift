@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class TextureProgressBar: Range {
     public enum FillMode: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class TextureProgressBar: Range {
         case bilinearLeftAndRight = 6
         case bilinearTopAndBottom = 7
         case clockwiseAndCounterClockwise = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Left To Right", 0),
@@ -36,7 +38,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setUnderTexture(tex: Godot.Texture2D?) {
+
+    private func __setUnderTexture(
+        tex: Godot.Texture2D?
+    ) {
         tex.withGodotUnsafeRawPointer { __ptr_tex in
         withUnsafePointer(to: __ptr_tex) { _ptr___ptr_tex in
         withUnsafeArgumentPackPointer(_ptr___ptr_tex) { __accessPtr in
@@ -56,6 +61,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getUnderTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +80,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setProgressTexture(tex: Godot.Texture2D?) {
+
+    private func __setProgressTexture(
+        tex: Godot.Texture2D?
+    ) {
         tex.withGodotUnsafeRawPointer { __ptr_tex in
         withUnsafePointer(to: __ptr_tex) { _ptr___ptr_tex in
         withUnsafeArgumentPackPointer(_ptr___ptr_tex) { __accessPtr in
@@ -94,6 +103,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getProgressTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,7 +122,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setOverTexture(tex: Godot.Texture2D?) {
+
+    private func __setOverTexture(
+        tex: Godot.Texture2D?
+    ) {
         tex.withGodotUnsafeRawPointer { __ptr_tex in
         withUnsafePointer(to: __ptr_tex) { _ptr___ptr_tex in
         withUnsafeArgumentPackPointer(_ptr___ptr_tex) { __accessPtr in
@@ -132,6 +145,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getOverTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -150,7 +164,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setFillMode(_ mode: Int32) {
+
+    private func __setFillMode(
+        _ mode: Int32
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -169,6 +186,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getFillMode() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +205,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setTintUnder(tint: Godot.Color) {
+
+    private func __setTintUnder(
+        tint: Godot.Color
+    ) {
         tint.withGodotUnsafeRawPointer { __ptr_tint in
         withUnsafeArgumentPackPointer(__ptr_tint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,6 +227,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getTintUnder() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,7 +246,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setTintProgress(tint: Godot.Color) {
+
+    private func __setTintProgress(
+        tint: Godot.Color
+    ) {
         tint.withGodotUnsafeRawPointer { __ptr_tint in
         withUnsafeArgumentPackPointer(__ptr_tint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -243,6 +268,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getTintProgress() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -261,7 +287,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setTintOver(tint: Godot.Color) {
+
+    private func __setTintOver(
+        tint: Godot.Color
+    ) {
         tint.withGodotUnsafeRawPointer { __ptr_tint in
         withUnsafeArgumentPackPointer(__ptr_tint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -280,6 +309,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getTintOver() -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -298,7 +328,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setTextureProgressOffset(_ offset: Godot.Vector2) {
+
+    private func __setTextureProgressOffset(
+        _ offset: Godot.Vector2
+    ) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -317,6 +350,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getTextureProgressOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -335,7 +369,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setRadialInitialAngle(mode: Double) {
+
+    private func __setRadialInitialAngle(
+        mode: Double
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -354,6 +391,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getRadialInitialAngle() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -372,7 +410,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setRadialCenterOffset(mode: Godot.Vector2) {
+
+    private func __setRadialCenterOffset(
+        mode: Godot.Vector2
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -391,6 +432,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getRadialCenterOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -409,7 +451,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setFillDegrees(mode: Double) {
+
+    private func __setFillDegrees(
+        mode: Double
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -428,6 +473,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getFillDegrees() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -446,7 +492,11 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    public func setStretchMargin(_ margin: Godot.Side, value: Int32) {
+
+    public func setStretchMargin(
+        _ margin: Godot.Side,
+        value: Int32
+    ) {
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_margin, __ptr_value) { __accessPtr in
@@ -466,7 +516,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __getStretchMargin(_ margin: Godot.Side) -> Int32 {
+
+    private func __getStretchMargin(
+        _ margin: Godot.Side
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
@@ -486,7 +539,10 @@ open class TextureProgressBar: Range {
         }
         }
     }()
-    private func __setNinePatchStretch(_ stretch: Bool) {
+
+    private func __setNinePatchStretch(
+        _ stretch: Bool
+    ) {
         stretch.withGodotUnsafeRawPointer { __ptr_stretch in
         withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -505,6 +561,7 @@ open class TextureProgressBar: Range {
         }
         }
     }()
+
     private func __getNinePatchStretch() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -681,6 +738,7 @@ open class TextureProgressBar: Range {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -693,5 +751,4 @@ open class TextureProgressBar: Range {
         }
         return _virtualFunctions!
     }
-
-    }
+}

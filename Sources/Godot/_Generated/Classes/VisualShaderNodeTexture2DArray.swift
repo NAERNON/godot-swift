@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     internal static var __method_binding_set_texture_array: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
         }
         }
     }()
-    private func __setTextureArray(value: Godot.Texture2DArray?) {
+
+    private func __setTextureArray(
+        value: Godot.Texture2DArray?
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafePointer(to: __ptr_value) { _ptr___ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_value) { __accessPtr in
@@ -32,6 +36,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
         }
         }
     }()
+
     private func __getTextureArray() -> Godot.Texture2DArray? {
         Godot.Texture2DArray?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -55,6 +60,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -67,5 +73,4 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
         }
         return _virtualFunctions!
     }
-
-    }
+}

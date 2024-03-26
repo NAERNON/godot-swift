@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ArrayMesh: Mesh {
     internal static var __method_binding_add_blend_shape: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func addBlendShape(name: Godot.GodotStringName) {
+
+    public func addBlendShape(
+        name: Godot.GodotStringName
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     public func blendShapeCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func blendShapeName(index: Int32) -> Godot.GodotStringName {
+
+    public func blendShapeName(
+        index: Int32
+    ) -> Godot.GodotStringName {
         Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -69,7 +77,11 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func setBlendShapeName(index: Int32, name: Godot.GodotStringName) {
+
+    public func setBlendShapeName(
+        index: Int32,
+        name: Godot.GodotStringName
+    ) {
         index.withGodotUnsafeRawPointer { __ptr_index in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_name) { __accessPtr in
@@ -89,6 +101,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     public func clearBlendShapes() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -106,7 +119,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    private func __setBlendShapeMode(_ mode: Godot.Mesh.BlendShapeMode) {
+
+    private func __setBlendShapeMode(
+        _ mode: Godot.Mesh.BlendShapeMode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -125,6 +141,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     private func __getBlendShapeMode() -> Godot.Mesh.BlendShapeMode {
         Godot.Mesh.BlendShapeMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,7 +160,14 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func addSurfaceFromArrays<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.AnyGodotArray> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], flags: Godot.Mesh.ArrayFormat = Mesh.ArrayFormat(rawValue: 0)) {
+
+    public func addSurfaceFromArrays<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(
+        primitive: Godot.Mesh.PrimitiveType,
+        arrays: Godot.GodotArray<Value1>,
+        blendShapes: Godot.GodotArray<Godot.AnyGodotArray> = [],
+        lods: Godot.GodotDictionary<Value2, Value3> = [:],
+        flags: Godot.Mesh.ArrayFormat = Mesh.ArrayFormat(rawValue: 0)
+    ) {
         primitive.withGodotUnsafeRawPointer { __ptr_primitive in
         arrays.withGodotUnsafeRawPointer { __ptr_arrays in
         blendShapes.withGodotUnsafeRawPointer { __ptr_blendShapes in
@@ -166,6 +190,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     public func clearSurfaces() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -183,7 +208,12 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceUpdateVertexRegion(surfIdx: Int32, offset: Int32, data: Godot.PackedByteArray) {
+
+    public func surfaceUpdateVertexRegion(
+        surfIdx: Int32,
+        offset: Int32,
+        data: Godot.PackedByteArray
+    ) {
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -204,7 +234,12 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceUpdateAttributeRegion(surfIdx: Int32, offset: Int32, data: Godot.PackedByteArray) {
+
+    public func surfaceUpdateAttributeRegion(
+        surfIdx: Int32,
+        offset: Int32,
+        data: Godot.PackedByteArray
+    ) {
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -225,7 +260,12 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceUpdateSkinRegion(surfIdx: Int32, offset: Int32, data: Godot.PackedByteArray) {
+
+    public func surfaceUpdateSkinRegion(
+        surfIdx: Int32,
+        offset: Int32,
+        data: Godot.PackedByteArray
+    ) {
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -246,7 +286,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceGetArrayLen(surfIdx: Int32) -> Int32 {
+
+    public func surfaceGetArrayLen(
+        surfIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
@@ -266,7 +309,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceGetArrayIndexLen(surfIdx: Int32) -> Int32 {
+
+    public func surfaceGetArrayIndexLen(
+        surfIdx: Int32
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
@@ -286,7 +332,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceGetFormat(surfIdx: Int32) -> Godot.Mesh.ArrayFormat {
+
+    public func surfaceGetFormat(
+        surfIdx: Int32
+    ) -> Godot.Mesh.ArrayFormat {
         Godot.Mesh.ArrayFormat.fromMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
@@ -306,7 +355,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceGetPrimitiveType(surfIdx: Int32) -> Godot.Mesh.PrimitiveType {
+
+    public func surfaceGetPrimitiveType(
+        surfIdx: Int32
+    ) -> Godot.Mesh.PrimitiveType {
         Godot.Mesh.PrimitiveType.fromMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
@@ -326,7 +378,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceFindByName(_ name: Godot.GodotString) -> Int32 {
+
+    public func surfaceFindByName(
+        _ name: Godot.GodotString
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
@@ -346,7 +401,11 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceSetName(surfIdx: Int32, name: Godot.GodotString) {
+
+    public func surfaceSetName(
+        surfIdx: Int32,
+        name: Godot.GodotString
+    ) {
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_surfIdx, __ptr_name) { __accessPtr in
@@ -366,7 +425,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func surfaceGetName(surfIdx: Int32) -> Godot.GodotString {
+
+    public func surfaceGetName(
+        surfIdx: Int32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
@@ -386,6 +448,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     public func regenNormalMaps() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -403,7 +466,11 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func lightmapUnwrap(transform: Godot.Transform3D, texelSize: Double) -> Godot.ErrorType {
+
+    public func lightmapUnwrap(
+        transform: Godot.Transform3D,
+        texelSize: Double
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         texelSize.withGodotUnsafeRawPointer { __ptr_texelSize in
@@ -424,7 +491,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    private func __setCustomAabb(_ aabb: Godot.AABB) {
+
+    private func __setCustomAabb(
+        _ aabb: Godot.AABB
+    ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -443,6 +513,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     private func __getCustomAabb() -> Godot.AABB {
         Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +532,10 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    private func __setShadowMesh(_ mesh: Godot.ArrayMesh?) {
+
+    private func __setShadowMesh(
+        _ mesh: Godot.ArrayMesh?
+    ) {
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
@@ -481,6 +555,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
+
     private func __getShadowMesh() -> Godot.ArrayMesh? {
         Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -526,6 +601,7 @@ open class ArrayMesh: Mesh {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -538,5 +614,4 @@ open class ArrayMesh: Mesh {
         }
         return _virtualFunctions!
     }
-
-    }
+}

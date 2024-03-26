@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class RDTextureFormat: RefCounted {
     internal static var __method_binding_set_format: GDExtensionMethodBindPtr = {
@@ -12,7 +13,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setFormat(pMember: Godot.RenderingDevice.DataFormat) {
+
+    private func __setFormat(
+        pMember: Godot.RenderingDevice.DataFormat
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -31,6 +35,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
         Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -49,7 +54,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setWidth(pMember: UInt32) {
+
+    private func __setWidth(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +76,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getWidth() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +95,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setHeight(pMember: UInt32) {
+
+    private func __setHeight(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,6 +117,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getHeight() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +136,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setDepth(pMember: UInt32) {
+
+    private func __setDepth(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,6 +158,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getDepth() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +177,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setArrayLayers(pMember: UInt32) {
+
+    private func __setArrayLayers(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -179,6 +199,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getArrayLayers() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -197,7 +218,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setMipmaps(pMember: UInt32) {
+
+    private func __setMipmaps(
+        pMember: UInt32
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -216,6 +240,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getMipmaps() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +259,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setTextureType(pMember: Godot.RenderingDevice.TextureType) {
+
+    private func __setTextureType(
+        pMember: Godot.RenderingDevice.TextureType
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,6 +281,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getTextureType() -> Godot.RenderingDevice.TextureType {
         Godot.RenderingDevice.TextureType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +300,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setSamples(pMember: Godot.RenderingDevice.TextureSamples) {
+
+    private func __setSamples(
+        pMember: Godot.RenderingDevice.TextureSamples
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -290,6 +322,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getSamples() -> Godot.RenderingDevice.TextureSamples {
         Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -308,7 +341,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    private func __setUsageBits(pMember: Godot.RenderingDevice.TextureUsageBits) {
+
+    private func __setUsageBits(
+        pMember: Godot.RenderingDevice.TextureUsageBits
+    ) {
         pMember.withGodotUnsafeRawPointer { __ptr_pMember in
         withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,6 +363,7 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
+
     private func __getUsageBits() -> Godot.RenderingDevice.TextureUsageBits {
         Godot.RenderingDevice.TextureUsageBits.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +382,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    public func addShareableFormat(_ format: Godot.RenderingDevice.DataFormat) {
+
+    public func addShareableFormat(
+        _ format: Godot.RenderingDevice.DataFormat
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,7 +404,10 @@ open class RDTextureFormat: RefCounted {
         }
         }
     }()
-    public func removeShareableFormat(_ format: Godot.RenderingDevice.DataFormat) {
+
+    public func removeShareableFormat(
+        _ format: Godot.RenderingDevice.DataFormat
+    ) {
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafeArgumentPackPointer(__ptr_format) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -476,6 +519,7 @@ open class RDTextureFormat: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -488,5 +532,4 @@ open class RDTextureFormat: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

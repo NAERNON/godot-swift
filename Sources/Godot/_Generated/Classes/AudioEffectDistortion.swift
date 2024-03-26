@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioEffectDistortion: AudioEffect {
     public enum Mode: UInt32, GodotEnum {
@@ -11,6 +12,7 @@ open class AudioEffectDistortion: AudioEffect {
         case lofi = 2
         case overdrive = 3
         case waveshape = 4
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Clip", 0),
@@ -28,7 +30,10 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
-    private func __setMode(_ mode: Godot.AudioEffectDistortion.Mode) {
+
+    private func __setMode(
+        _ mode: Godot.AudioEffectDistortion.Mode
+    ) {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -47,6 +52,7 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
+
     private func __getMode() -> Godot.AudioEffectDistortion.Mode {
         Godot.AudioEffectDistortion.Mode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -65,7 +71,10 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
-    private func __setPreGain(_ preGain: Double) {
+
+    private func __setPreGain(
+        _ preGain: Double
+    ) {
         preGain.withGodotUnsafeRawPointer { __ptr_preGain in
         withUnsafeArgumentPackPointer(__ptr_preGain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,6 +93,7 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
+
     private func __getPreGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -102,7 +112,10 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
-    private func __setKeepHfHz(_ keepHfHz: Double) {
+
+    private func __setKeepHfHz(
+        _ keepHfHz: Double
+    ) {
         keepHfHz.withGodotUnsafeRawPointer { __ptr_keepHfHz in
         withUnsafeArgumentPackPointer(__ptr_keepHfHz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -121,6 +134,7 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
+
     private func __getKeepHfHz() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +153,10 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
-    private func __setDrive(_ drive: Double) {
+
+    private func __setDrive(
+        _ drive: Double
+    ) {
         drive.withGodotUnsafeRawPointer { __ptr_drive in
         withUnsafeArgumentPackPointer(__ptr_drive) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,6 +175,7 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
+
     private func __getDrive() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,7 +194,10 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
-    private func __setPostGain(_ postGain: Double) {
+
+    private func __setPostGain(
+        _ postGain: Double
+    ) {
         postGain.withGodotUnsafeRawPointer { __ptr_postGain in
         withUnsafeArgumentPackPointer(__ptr_postGain) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,6 +216,7 @@ open class AudioEffectDistortion: AudioEffect {
         }
         }
     }()
+
     private func __getPostGain() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -262,6 +284,7 @@ open class AudioEffectDistortion: AudioEffect {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -274,5 +297,4 @@ open class AudioEffectDistortion: AudioEffect {
         }
         return _virtualFunctions!
     }
-
-    }
+}

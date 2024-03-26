@@ -3,9 +3,12 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class AudioStreamPlayback: RefCounted {
-    open func _start(fromPos pos: Double) {
+    open func _start(
+        fromPos pos: Double
+    ) {
     }
 
     open func _stop() {
@@ -23,10 +26,16 @@ open class AudioStreamPlayback: RefCounted {
         Double()
     }
 
-    open func _seek(position: Double) {
+    open func _seek(
+        position: Double
+    ) {
     }
 
-    open func _mix(buffer: UnsafeMutablePointer<AudioFrame>, rateScale: Double, frames: Int32) -> Int32 {
+    open func _mix(
+        buffer: UnsafeMutablePointer<AudioFrame>,
+        rateScale: Double,
+        frames: Int32
+    ) -> Int32 {
         Int32()
     }
 
@@ -34,6 +43,7 @@ open class AudioStreamPlayback: RefCounted {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -113,5 +123,4 @@ open class AudioStreamPlayback: RefCounted {
         }
         return _virtualFunctions!
     }
-
-    }
+}

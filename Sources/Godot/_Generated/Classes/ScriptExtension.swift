@@ -3,13 +3,16 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class ScriptExtension: Script {
     open func _editorCanReloadFromFile() -> Bool {
         Bool()
     }
 
-    open func _placeholderErased(placeholder: UnsafeMutableRawPointer) {
+    open func _placeholderErased(
+        placeholder: UnsafeMutableRawPointer
+    ) {
     }
 
     open func _canInstantiate() -> Bool {
@@ -24,7 +27,9 @@ open class ScriptExtension: Script {
         Godot.GodotStringName()
     }
 
-    open func _inheritsScript(_ script: Godot.Script?) -> Bool {
+    open func _inheritsScript(
+        _ script: Godot.Script?
+    ) -> Bool {
         Bool()
     }
 
@@ -32,15 +37,21 @@ open class ScriptExtension: Script {
         Godot.GodotStringName()
     }
 
-    open func _instanceCreate(forObject object: Godot.Object?) -> UnsafeMutableRawPointer {
+    open func _instanceCreate(
+        forObject object: Godot.Object?
+    ) -> UnsafeMutableRawPointer {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _placeholderInstanceCreate(forObject object: Godot.Object?) -> UnsafeMutableRawPointer {
+    open func _placeholderInstanceCreate(
+        forObject object: Godot.Object?
+    ) -> UnsafeMutableRawPointer {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _instanceHas(object: Godot.Object?) -> Bool {
+    open func _instanceHas(
+        object: Godot.Object?
+    ) -> Bool {
         Bool()
     }
 
@@ -52,10 +63,14 @@ open class ScriptExtension: Script {
         Godot.GodotString()
     }
 
-    open func _setSourceCode(_ code: Godot.GodotString) {
+    open func _setSourceCode(
+        _ code: Godot.GodotString
+    ) {
     }
 
-    open func _reload(keepState: Bool) -> Godot.ErrorType {
+    open func _reload(
+        keepState: Bool
+    ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -67,15 +82,21 @@ open class ScriptExtension: Script {
         Godot.GodotString()
     }
 
-    open func _hasMethod(_ method: Godot.GodotStringName) -> Bool {
+    open func _hasMethod(
+        _ method: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _hasStaticMethod(_ method: Godot.GodotStringName) -> Bool {
+    open func _hasStaticMethod(
+        _ method: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _getMethodInfo(method: Godot.GodotStringName) -> Godot.AnyGodotDictionary {
+    open func _getMethodInfo(
+        method: Godot.GodotStringName
+    ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
 
@@ -95,7 +116,9 @@ open class ScriptExtension: Script {
         nil
     }
 
-    open func _hasScriptSignal(_ signal: Godot.GodotStringName) -> Bool {
+    open func _hasScriptSignal(
+        _ signal: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
@@ -103,11 +126,15 @@ open class ScriptExtension: Script {
         Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
-    open func _hasPropertyDefaultValue(property: Godot.GodotStringName) -> Bool {
+    open func _hasPropertyDefaultValue(
+        property: Godot.GodotStringName
+    ) -> Bool {
         Bool()
     }
 
-    open func _getPropertyDefaultValue(property: Godot.GodotStringName) -> Godot.Variant {
+    open func _getPropertyDefaultValue(
+        property: Godot.GodotStringName
+    ) -> Godot.Variant {
         Variant()
     }
 
@@ -122,7 +149,9 @@ open class ScriptExtension: Script {
         Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
-    open func _getMemberLine(member: Godot.GodotStringName) -> Int32 {
+    open func _getMemberLine(
+        member: Godot.GodotStringName
+    ) -> Int32 {
         Int32()
     }
 
@@ -143,6 +172,7 @@ open class ScriptExtension: Script {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -459,5 +489,4 @@ open class ScriptExtension: Script {
         }
         return _virtualFunctions!
     }
-
-    }
+}

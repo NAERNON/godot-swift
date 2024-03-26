@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotRefCountedClass
 open class VisualShaderNodeTexture: VisualShaderNode {
     public enum Source: UInt32, GodotEnum {
@@ -15,6 +16,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         case source3DNormal = 6
         case roughness = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture", 0),
@@ -28,11 +30,13 @@ open class VisualShaderNodeTexture: VisualShaderNode {
             ("Max", 8),]
         }
     }
+
     public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Data", 0),
@@ -49,7 +53,10 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
-    private func __setSource(value: Godot.VisualShaderNodeTexture.Source) {
+
+    private func __setSource(
+        value: Godot.VisualShaderNodeTexture.Source
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -68,6 +75,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
+
     private func __getSource() -> Godot.VisualShaderNodeTexture.Source {
         Godot.VisualShaderNodeTexture.Source.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +94,10 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
-    private func __setTexture(value: Godot.Texture2D?) {
+
+    private func __setTexture(
+        value: Godot.Texture2D?
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafePointer(to: __ptr_value) { _ptr___ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_value) { __accessPtr in
@@ -106,6 +117,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
+
     private func __getTexture() -> Godot.Texture2D? {
         Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +136,10 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
-    private func __setTextureType(value: Godot.VisualShaderNodeTexture.TextureType) {
+
+    private func __setTextureType(
+        value: Godot.VisualShaderNodeTexture.TextureType
+    ) {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,6 +158,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         }
     }()
+
     private func __getTextureType() -> Godot.VisualShaderNodeTexture.TextureType {
         Godot.VisualShaderNodeTexture.TextureType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,6 +204,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -200,5 +217,4 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         }
         return _virtualFunctions!
     }
-
-    }
+}

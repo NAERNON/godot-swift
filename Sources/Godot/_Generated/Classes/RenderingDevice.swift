@@ -3,6 +3,7 @@
 //
 
 import GodotExtensionHeaders
+
 @GodotClass
 open class RenderingDevice: Object {
     public enum DeviceType: UInt32, GodotEnum {
@@ -12,6 +13,7 @@ open class RenderingDevice: Object {
         case virtualGpu = 3
         case cpu = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Other", 0),
@@ -22,6 +24,7 @@ open class RenderingDevice: Object {
             ("Max", 5),]
         }
     }
+
     public enum DriverResource: UInt32, GodotEnum {
         case device = 0
         case physicalDevice = 1
@@ -36,6 +39,7 @@ open class RenderingDevice: Object {
         case buffer = 10
         case computePipeline = 11
         case renderPipeline = 12
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Device", 0),
@@ -53,6 +57,7 @@ open class RenderingDevice: Object {
             ("Render Pipeline", 12),]
         }
     }
+
     public enum DataFormat: UInt32, GodotEnum {
         case r4g4UnormPack8 = 0
         case r4g4b4a4UnormPack16 = 1
@@ -273,6 +278,7 @@ open class RenderingDevice: Object {
         case g16B16r162plane422Unorm = 216
         case g16B16R163plane444Unorm = 217
         case max = 218
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("R4g4 Unorm Pack8", 0),
@@ -496,20 +502,30 @@ open class RenderingDevice: Object {
             ("Max", 218),]
         }
     }
+
     public struct BarrierMask: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let vertex: Self = .init(rawValue: 1)
+
         public static let fragment: Self = .init(rawValue: 8)
+
         public static let compute: Self = .init(rawValue: 2)
+
         public static let transfer: Self = .init(rawValue: 4)
+
         public static let raster: Self = .init(rawValue: 9)
+
         public static let allBarriers: Self = .init(rawValue: 32767)
+
         public static let noBarrier: Self = .init(rawValue: 32768)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vertex", 1),
@@ -521,6 +537,7 @@ open class RenderingDevice: Object {
             ("No Barrier", 32768),]
         }
     }
+
     public enum TextureType: UInt32, GodotEnum {
         case textureType1d = 0
         case textureType2D = 1
@@ -530,6 +547,7 @@ open class RenderingDevice: Object {
         case textureType2DArray = 5
         case cubeArray = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture Type1d", 0),
@@ -542,6 +560,7 @@ open class RenderingDevice: Object {
             ("Max", 7),]
         }
     }
+
     public enum TextureSamples: UInt32, GodotEnum {
         case textureSamples1 = 0
         case textureSamples2 = 1
@@ -551,6 +570,7 @@ open class RenderingDevice: Object {
         case textureSamples32 = 5
         case textureSamples64 = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture Samples1", 0),
@@ -563,23 +583,36 @@ open class RenderingDevice: Object {
             ("Max", 7),]
         }
     }
+
     public struct TextureUsageBits: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let samplingBit: Self = .init(rawValue: 1)
+
         public static let colorAttachmentBit: Self = .init(rawValue: 2)
+
         public static let depthStencilAttachmentBit: Self = .init(rawValue: 4)
+
         public static let storageBit: Self = .init(rawValue: 8)
+
         public static let storageAtomicBit: Self = .init(rawValue: 16)
+
         public static let cpuReadBit: Self = .init(rawValue: 32)
+
         public static let canUpdateBit: Self = .init(rawValue: 64)
+
         public static let canCopyFromBit: Self = .init(rawValue: 128)
+
         public static let canCopyToBit: Self = .init(rawValue: 256)
+
         public static let inputAttachmentBit: Self = .init(rawValue: 512)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sampling Bit", 1),
@@ -594,6 +627,7 @@ open class RenderingDevice: Object {
             ("Input Attachment Bit", 512),]
         }
     }
+
     public enum TextureSwizzle: UInt32, GodotEnum {
         case identity = 0
         case zero = 1
@@ -603,6 +637,7 @@ open class RenderingDevice: Object {
         case b = 5
         case a = 6
         case max = 7
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Identity", 0),
@@ -615,10 +650,12 @@ open class RenderingDevice: Object {
             ("Max", 7),]
         }
     }
+
     public enum TextureSliceType: UInt32, GodotEnum {
         case textureSlice2D = 0
         case cubemap = 1
         case textureSlice3D = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture Slice2D", 0),
@@ -626,15 +663,18 @@ open class RenderingDevice: Object {
             ("Texture Slice3D", 2),]
         }
     }
+
     public enum SamplerFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Nearest", 0),
             ("Linear", 1),]
         }
     }
+
     public enum SamplerRepeatMode: UInt32, GodotEnum {
         case `repeat` = 0
         case mirroredRepeat = 1
@@ -642,6 +682,7 @@ open class RenderingDevice: Object {
         case clampToBorder = 3
         case mirrorClampToEdge = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Repeat", 0),
@@ -652,6 +693,7 @@ open class RenderingDevice: Object {
             ("Max", 5),]
         }
     }
+
     public enum SamplerBorderColor: UInt32, GodotEnum {
         case floatTransparentBlack = 0
         case intTransparentBlack = 1
@@ -660,6 +702,7 @@ open class RenderingDevice: Object {
         case floatOpaqueWhite = 4
         case intOpaqueWhite = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Float Transparent Black", 0),
@@ -671,37 +714,46 @@ open class RenderingDevice: Object {
             ("Max", 6),]
         }
     }
+
     public enum VertexFrequency: UInt32, GodotEnum {
         case vertex = 0
         case instance = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vertex", 0),
             ("Instance", 1),]
         }
     }
+
     public enum IndexBufferFormat: UInt32, GodotEnum {
         case uint16 = 0
         case uint32 = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Uint16", 0),
             ("Uint32", 1),]
         }
     }
+
     public struct StorageBufferUsage: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let storageBufferUsageDispatchIndirect: Self = .init(rawValue: 1)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Storage Buffer Usage Dispatch Indirect", 1),]
         }
     }
+
     public enum UniformType: UInt32, GodotEnum {
         case sampler = 0
         case samplerWithTexture = 1
@@ -714,6 +766,7 @@ open class RenderingDevice: Object {
         case storageBuffer = 8
         case inputAttachment = 9
         case max = 10
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Sampler", 0),
@@ -729,6 +782,7 @@ open class RenderingDevice: Object {
             ("Max", 10),]
         }
     }
+
     public enum RenderPrimitive: UInt32, GodotEnum {
         case points = 0
         case lines = 1
@@ -742,6 +796,7 @@ open class RenderingDevice: Object {
         case triangleStripsWithRestartIndex = 9
         case tesselationPatch = 10
         case max = 11
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Points", 0),
@@ -758,10 +813,12 @@ open class RenderingDevice: Object {
             ("Max", 11),]
         }
     }
+
     public enum PolygonCullMode: UInt32, GodotEnum {
         case disabled = 0
         case front = 1
         case back = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -769,15 +826,18 @@ open class RenderingDevice: Object {
             ("Back", 2),]
         }
     }
+
     public enum PolygonFrontFace: UInt32, GodotEnum {
         case clockwise = 0
         case counterClockwise = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Clockwise", 0),
             ("Counter Clockwise", 1),]
         }
     }
+
     public enum StencilOperation: UInt32, GodotEnum {
         case keep = 0
         case zero = 1
@@ -788,6 +848,7 @@ open class RenderingDevice: Object {
         case incrementAndWrap = 6
         case decrementAndWrap = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Keep", 0),
@@ -801,6 +862,7 @@ open class RenderingDevice: Object {
             ("Max", 8),]
         }
     }
+
     public enum CompareOperator: UInt32, GodotEnum {
         case never = 0
         case less = 1
@@ -811,6 +873,7 @@ open class RenderingDevice: Object {
         case greaterOrEqual = 6
         case always = 7
         case max = 8
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Never", 0),
@@ -824,6 +887,7 @@ open class RenderingDevice: Object {
             ("Max", 8),]
         }
     }
+
     public enum LogicOperation: UInt32, GodotEnum {
         case clear = 0
         case and = 1
@@ -842,6 +906,7 @@ open class RenderingDevice: Object {
         case nand = 14
         case set = 15
         case max = 16
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Clear", 0),
@@ -863,6 +928,7 @@ open class RenderingDevice: Object {
             ("Max", 16),]
         }
     }
+
     public enum BlendFactor: UInt32, GodotEnum {
         case zero = 0
         case one = 1
@@ -884,6 +950,7 @@ open class RenderingDevice: Object {
         case src1Alpha = 17
         case oneMinusSrc1Alpha = 18
         case max = 19
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Zero", 0),
@@ -908,6 +975,7 @@ open class RenderingDevice: Object {
             ("Max", 19),]
         }
     }
+
     public enum BlendOperation: UInt32, GodotEnum {
         case add = 0
         case subtract = 1
@@ -915,6 +983,7 @@ open class RenderingDevice: Object {
         case minimum = 3
         case maximum = 4
         case max = 5
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Add", 0),
@@ -925,20 +994,30 @@ open class RenderingDevice: Object {
             ("Max", 5),]
         }
     }
+
     public struct PipelineDynamicStateFlags: GodotOptionSet {
         public let rawValue: Int64
 
-        public init(rawValue: Int64) {
+        public init(
+            rawValue: Int64
+        ) {
             self.rawValue = rawValue
         }
 
         public static let lineWidth: Self = .init(rawValue: 1)
+
         public static let depthBias: Self = .init(rawValue: 2)
+
         public static let blendConstants: Self = .init(rawValue: 4)
+
         public static let depthBounds: Self = .init(rawValue: 8)
+
         public static let stencilCompareMask: Self = .init(rawValue: 16)
+
         public static let stencilWriteMask: Self = .init(rawValue: 32)
+
         public static let stencilReference: Self = .init(rawValue: 64)
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Line Width", 1),
@@ -950,6 +1029,7 @@ open class RenderingDevice: Object {
             ("Stencil Reference", 64),]
         }
     }
+
     public enum InitialAction: UInt32, GodotEnum {
         case clear = 0
         case clearRegion = 1
@@ -958,6 +1038,7 @@ open class RenderingDevice: Object {
         case drop = 4
         case `continue` = 5
         case max = 6
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Clear", 0),
@@ -969,11 +1050,13 @@ open class RenderingDevice: Object {
             ("Max", 6),]
         }
     }
+
     public enum FinalAction: UInt32, GodotEnum {
         case read = 0
         case discard = 1
         case `continue` = 2
         case max = 3
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Read", 0),
@@ -982,6 +1065,7 @@ open class RenderingDevice: Object {
             ("Max", 3),]
         }
     }
+
     public enum ShaderStage: UInt32, GodotEnum {
         case vertex = 0
         case fragment = 1
@@ -989,11 +1073,15 @@ open class RenderingDevice: Object {
         case tesselationEvaluation = 3
         case compute = 4
         case max = 5
+
         public static let vertexBit: Self = .fragment
+
         public static let fragmentBit: Self = .tesselationControl
+
         public static let tesselationControlBit: Self = .compute
         case tesselationEvaluationBit = 8
         case computeBit = 16
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vertex", 0),
@@ -1006,19 +1094,23 @@ open class RenderingDevice: Object {
             ("Compute Bit", 16),]
         }
     }
+
     public enum ShaderLanguage: UInt32, GodotEnum {
         case glsl = 0
         case hlsl = 1
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Glsl", 0),
             ("Hlsl", 1),]
         }
     }
+
     public enum PipelineSpecializationConstantType: UInt32, GodotEnum {
         case bool = 0
         case int = 1
         case float = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bool", 0),
@@ -1026,6 +1118,7 @@ open class RenderingDevice: Object {
             ("Float", 2),]
         }
     }
+
     public enum Limit: UInt32, GodotEnum {
         case maxBoundUniformSets = 0
         case maxFramebufferColorAttachments = 1
@@ -1064,6 +1157,7 @@ open class RenderingDevice: Object {
         case maxComputeWorkgroupSizeZ = 34
         case maxViewportDimensionsX = 35
         case maxViewportDimensionsY = 36
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Max Bound Uniform Sets", 0),
@@ -1105,10 +1199,12 @@ open class RenderingDevice: Object {
             ("Max Viewport Dimensions Y", 36),]
         }
     }
+
     public enum MemoryType: UInt32, GodotEnum {
         case textures = 0
         case buffers = 1
         case total = 2
+
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Textures", 0),
@@ -1118,6 +1214,7 @@ open class RenderingDevice: Object {
     }
 
     public static let invalidID: Int = -1
+
     public static let invalidFormatID: Int = -1
 
     internal static var __method_binding_texture_create: GDExtensionMethodBindPtr = {
@@ -1127,7 +1224,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCreate(format: Godot.RDTextureFormat?, view: Godot.RDTextureView?, data: Godot.GodotArray<Godot.PackedByteArray> = []) -> Godot.RID {
+
+    public func textureCreate(
+        format: Godot.RDTextureFormat?,
+        view: Godot.RDTextureView?,
+        data: Godot.GodotArray<Godot.PackedByteArray> = []
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         withUnsafePointer(to: __ptr_format) { _ptr___ptr_format in
@@ -1151,7 +1253,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCreateShared(view: Godot.RDTextureView?, withTexture texture: Godot.RID) -> Godot.RID {
+
+    public func textureCreateShared(
+        view: Godot.RDTextureView?,
+        withTexture texture: Godot.RID
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         withUnsafePointer(to: __ptr_view) { _ptr___ptr_view in
@@ -1173,7 +1279,15 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCreateSharedFromSlice(view: Godot.RDTextureView?, withTexture texture: Godot.RID, layer: UInt32, mipmap: UInt32, mipmaps: UInt32 = 1, sliceType: Godot.RenderingDevice.TextureSliceType = RenderingDevice.TextureSliceType(rawValue: 0)!) -> Godot.RID {
+
+    public func textureCreateSharedFromSlice(
+        view: Godot.RDTextureView?,
+        withTexture texture: Godot.RID,
+        layer: UInt32,
+        mipmap: UInt32,
+        mipmaps: UInt32 = 1,
+        sliceType: Godot.RenderingDevice.TextureSliceType = RenderingDevice.TextureSliceType(rawValue: 0)!
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         withUnsafePointer(to: __ptr_view) { _ptr___ptr_view in
@@ -1199,7 +1313,18 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCreateFromExtension(type: Godot.RenderingDevice.TextureType, format: Godot.RenderingDevice.DataFormat, samples: Godot.RenderingDevice.TextureSamples, usageFlags: Godot.RenderingDevice.TextureUsageBits, image: UInt64, width: UInt64, height: UInt64, depth: UInt64, layers: UInt64) -> Godot.RID {
+
+    public func textureCreateFromExtension(
+        type: Godot.RenderingDevice.TextureType,
+        format: Godot.RenderingDevice.DataFormat,
+        samples: Godot.RenderingDevice.TextureSamples,
+        usageFlags: Godot.RenderingDevice.TextureUsageBits,
+        image: UInt64,
+        width: UInt64,
+        height: UInt64,
+        depth: UInt64,
+        layers: UInt64
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         format.withGodotUnsafeRawPointer { __ptr_format in
@@ -1227,7 +1352,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureUpdate(texture: Godot.RID, layer: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func textureUpdate(
+        texture: Godot.RID,
+        layer: UInt32,
+        data: Godot.PackedByteArray,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -1250,7 +1381,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureGetData(texture: Godot.RID, layer: UInt32) -> Godot.PackedByteArray {
+
+    public func textureGetData(
+        texture: Godot.RID,
+        layer: UInt32
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -1271,7 +1406,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureIsFormatSupportedForUsage(format: Godot.RenderingDevice.DataFormat, usageFlags: Godot.RenderingDevice.TextureUsageBits) -> Bool {
+
+    public func textureIsFormatSupportedForUsage(
+        format: Godot.RenderingDevice.DataFormat,
+        usageFlags: Godot.RenderingDevice.TextureUsageBits
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         usageFlags.withGodotUnsafeRawPointer { __ptr_usageFlags in
@@ -1292,7 +1431,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureIsShared(texture: Godot.RID) -> Bool {
+
+    public func textureIsShared(
+        texture: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
@@ -1312,7 +1454,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureIsValid(texture: Godot.RID) -> Bool {
+
+    public func textureIsValid(
+        texture: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
@@ -1332,7 +1477,19 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCopy(fromTexture: Godot.RID, toTexture: Godot.RID, fromPos: Godot.Vector3, toPos: Godot.Vector3, size: Godot.Vector3, srcMipmap: UInt32, dstMipmap: UInt32, srcLayer: UInt32, dstLayer: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func textureCopy(
+        fromTexture: Godot.RID,
+        toTexture: Godot.RID,
+        fromPos: Godot.Vector3,
+        toPos: Godot.Vector3,
+        size: Godot.Vector3,
+        srcMipmap: UInt32,
+        dstMipmap: UInt32,
+        srcLayer: UInt32,
+        dstLayer: UInt32,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         fromTexture.withGodotUnsafeRawPointer { __ptr_fromTexture in
         toTexture.withGodotUnsafeRawPointer { __ptr_toTexture in
@@ -1361,7 +1518,16 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureClear(texture: Godot.RID, color: Godot.Color, baseMipmap: UInt32, mipmapCount: UInt32, baseLayer: UInt32, layerCount: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func textureClear(
+        texture: Godot.RID,
+        color: Godot.Color,
+        baseMipmap: UInt32,
+        mipmapCount: UInt32,
+        baseLayer: UInt32,
+        layerCount: UInt32,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1387,7 +1553,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureResolveMultisample(fromTexture: Godot.RID, toTexture: Godot.RID, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func textureResolveMultisample(
+        fromTexture: Godot.RID,
+        toTexture: Godot.RID,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         fromTexture.withGodotUnsafeRawPointer { __ptr_fromTexture in
         toTexture.withGodotUnsafeRawPointer { __ptr_toTexture in
@@ -1409,7 +1580,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureGetFormat(texture: Godot.RID) -> Godot.RDTextureFormat? {
+
+    public func textureGetFormat(
+        texture: Godot.RID
+    ) -> Godot.RDTextureFormat? {
         Godot.RDTextureFormat?.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
@@ -1429,7 +1603,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureGetNativeHandle(texture: Godot.RID) -> UInt64 {
+
+    public func textureGetNativeHandle(
+        texture: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
@@ -1449,7 +1626,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatCreate(attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>, viewCount: UInt32 = 1) -> Int64 {
+
+    public func framebufferFormatCreate(
+        attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>,
+        viewCount: UInt32 = 1
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         attachments.withGodotUnsafeRawPointer { __ptr_attachments in
         viewCount.withGodotUnsafeRawPointer { __ptr_viewCount in
@@ -1470,7 +1651,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatCreateMultipass(attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>, passes: Godot.GodotArray<Godot.RDFramebufferPass?>, viewCount: UInt32 = 1) -> Int64 {
+
+    public func framebufferFormatCreateMultipass(
+        attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>,
+        passes: Godot.GodotArray<Godot.RDFramebufferPass?>,
+        viewCount: UInt32 = 1
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         attachments.withGodotUnsafeRawPointer { __ptr_attachments in
         passes.withGodotUnsafeRawPointer { __ptr_passes in
@@ -1492,7 +1678,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatCreateEmpty(samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!) -> Int64 {
+
+    public func framebufferFormatCreateEmpty(
+        samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         samples.withGodotUnsafeRawPointer { __ptr_samples in
         withUnsafeArgumentPackPointer(__ptr_samples) { __accessPtr in
@@ -1512,7 +1701,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatGetTextureSamples(format: Int64, renderPass: UInt32 = 0) -> Godot.RenderingDevice.TextureSamples {
+
+    public func framebufferFormatGetTextureSamples(
+        format: Int64,
+        renderPass: UInt32 = 0
+    ) -> Godot.RenderingDevice.TextureSamples {
         Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         renderPass.withGodotUnsafeRawPointer { __ptr_renderPass in
@@ -1533,7 +1726,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreate(textures: Godot.GodotArray<Godot.RID>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
+
+    public func framebufferCreate(
+        textures: Godot.GodotArray<Godot.RID>,
+        validateWithFormat: Int64 = -1,
+        viewCount: UInt32 = 1
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         textures.withGodotUnsafeRawPointer { __ptr_textures in
         validateWithFormat.withGodotUnsafeRawPointer { __ptr_validateWithFormat in
@@ -1555,7 +1753,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreateMultipass(textures: Godot.GodotArray<Godot.RID>, passes: Godot.GodotArray<Godot.RDFramebufferPass?>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
+
+    public func framebufferCreateMultipass(
+        textures: Godot.GodotArray<Godot.RID>,
+        passes: Godot.GodotArray<Godot.RDFramebufferPass?>,
+        validateWithFormat: Int64 = -1,
+        viewCount: UInt32 = 1
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         textures.withGodotUnsafeRawPointer { __ptr_textures in
         passes.withGodotUnsafeRawPointer { __ptr_passes in
@@ -1578,7 +1782,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreateEmpty(size: Godot.Vector2I, samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!, validateWithFormat: Int64 = -1) -> Godot.RID {
+
+    public func framebufferCreateEmpty(
+        size: Godot.Vector2I,
+        samples: Godot.RenderingDevice.TextureSamples = RenderingDevice.TextureSamples(rawValue: 0)!,
+        validateWithFormat: Int64 = -1
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         samples.withGodotUnsafeRawPointer { __ptr_samples in
@@ -1600,7 +1809,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferGetFormat(framebuffer: Godot.RID) -> Int64 {
+
+    public func framebufferGetFormat(
+        framebuffer: Godot.RID
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         framebuffer.withGodotUnsafeRawPointer { __ptr_framebuffer in
         withUnsafeArgumentPackPointer(__ptr_framebuffer) { __accessPtr in
@@ -1620,7 +1832,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferIsValid(framebuffer: Godot.RID) -> Bool {
+
+    public func framebufferIsValid(
+        framebuffer: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         framebuffer.withGodotUnsafeRawPointer { __ptr_framebuffer in
         withUnsafeArgumentPackPointer(__ptr_framebuffer) { __accessPtr in
@@ -1640,7 +1855,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func samplerCreate(state: Godot.RDSamplerState?) -> Godot.RID {
+
+    public func samplerCreate(
+        state: Godot.RDSamplerState?
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
@@ -1661,7 +1879,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func samplerIsFormatSupportedForFilter(format: Godot.RenderingDevice.DataFormat, samplerFilter: Godot.RenderingDevice.SamplerFilter) -> Bool {
+
+    public func samplerIsFormatSupportedForFilter(
+        format: Godot.RenderingDevice.DataFormat,
+        samplerFilter: Godot.RenderingDevice.SamplerFilter
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         samplerFilter.withGodotUnsafeRawPointer { __ptr_samplerFilter in
@@ -1682,7 +1904,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func vertexBufferCreate(sizeBytes: UInt32, data: Godot.PackedByteArray = PackedByteArray(), useAsStorage: Bool = false) -> Godot.RID {
+
+    public func vertexBufferCreate(
+        sizeBytes: UInt32,
+        data: Godot.PackedByteArray = PackedByteArray(),
+        useAsStorage: Bool = false
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -1704,7 +1931,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func vertexFormatCreate(vertexDescriptions: Godot.GodotArray<Godot.RDVertexAttribute?>) -> Int64 {
+
+    public func vertexFormatCreate(
+        vertexDescriptions: Godot.GodotArray<Godot.RDVertexAttribute?>
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         vertexDescriptions.withGodotUnsafeRawPointer { __ptr_vertexDescriptions in
         withUnsafeArgumentPackPointer(__ptr_vertexDescriptions) { __accessPtr in
@@ -1724,7 +1954,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func vertexArrayCreate(vertexCount: UInt32, vertexFormat: Int64, srcBuffers: Godot.GodotArray<Godot.RID>, offsets: Godot.PackedInt64Array = PackedInt64Array()) -> Godot.RID {
+
+    public func vertexArrayCreate(
+        vertexCount: UInt32,
+        vertexFormat: Int64,
+        srcBuffers: Godot.GodotArray<Godot.RID>,
+        offsets: Godot.PackedInt64Array = PackedInt64Array()
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         vertexFormat.withGodotUnsafeRawPointer { __ptr_vertexFormat in
@@ -1747,7 +1983,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func indexBufferCreate(sizeIndices: UInt32, format: Godot.RenderingDevice.IndexBufferFormat, data: Godot.PackedByteArray = PackedByteArray(), useRestartIndices: Bool = false) -> Godot.RID {
+
+    public func indexBufferCreate(
+        sizeIndices: UInt32,
+        format: Godot.RenderingDevice.IndexBufferFormat,
+        data: Godot.PackedByteArray = PackedByteArray(),
+        useRestartIndices: Bool = false
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         sizeIndices.withGodotUnsafeRawPointer { __ptr_sizeIndices in
         format.withGodotUnsafeRawPointer { __ptr_format in
@@ -1770,7 +2012,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func indexArrayCreate(indexBuffer: Godot.RID, indexOffset: UInt32, indexCount: UInt32) -> Godot.RID {
+
+    public func indexArrayCreate(
+        indexBuffer: Godot.RID,
+        indexOffset: UInt32,
+        indexCount: UInt32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         indexBuffer.withGodotUnsafeRawPointer { __ptr_indexBuffer in
         indexOffset.withGodotUnsafeRawPointer { __ptr_indexOffset in
@@ -1792,7 +2039,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderCompileSpirvFromSource(shaderSource: Godot.RDShaderSource?, allowCache: Bool = true) -> Godot.RDShaderSPIRV? {
+
+    public func shaderCompileSpirvFromSource(
+        shaderSource: Godot.RDShaderSource?,
+        allowCache: Bool = true
+    ) -> Godot.RDShaderSPIRV? {
         Godot.RDShaderSPIRV?.fromMutatingGodotUnsafePointer { __temporary in
         shaderSource.withGodotUnsafeRawPointer { __ptr_shaderSource in
         withUnsafePointer(to: __ptr_shaderSource) { _ptr___ptr_shaderSource in
@@ -1814,7 +2065,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderCompileBinaryFromSpirv(spirvData: Godot.RDShaderSPIRV?, name: Godot.GodotString = "") -> Godot.PackedByteArray {
+
+    public func shaderCompileBinaryFromSpirv(
+        spirvData: Godot.RDShaderSPIRV?,
+        name: Godot.GodotString = ""
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         spirvData.withGodotUnsafeRawPointer { __ptr_spirvData in
         withUnsafePointer(to: __ptr_spirvData) { _ptr___ptr_spirvData in
@@ -1836,7 +2091,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderCreateFromSpirv(spirvData: Godot.RDShaderSPIRV?, name: Godot.GodotString = "") -> Godot.RID {
+
+    public func shaderCreateFromSpirv(
+        spirvData: Godot.RDShaderSPIRV?,
+        name: Godot.GodotString = ""
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         spirvData.withGodotUnsafeRawPointer { __ptr_spirvData in
         withUnsafePointer(to: __ptr_spirvData) { _ptr___ptr_spirvData in
@@ -1858,7 +2117,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderCreateFromBytecode(binaryData: Godot.PackedByteArray, placeholderRid: Godot.RID = RID()) -> Godot.RID {
+
+    public func shaderCreateFromBytecode(
+        binaryData: Godot.PackedByteArray,
+        placeholderRid: Godot.RID = RID()
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         binaryData.withGodotUnsafeRawPointer { __ptr_binaryData in
         placeholderRid.withGodotUnsafeRawPointer { __ptr_placeholderRid in
@@ -1879,6 +2142,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func shaderCreatePlaceholder() -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1897,7 +2161,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderGetVertexInputAttributeMask(shader: Godot.RID) -> UInt64 {
+
+    public func shaderGetVertexInputAttributeMask(
+        shader: Godot.RID
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafeArgumentPackPointer(__ptr_shader) { __accessPtr in
@@ -1917,7 +2184,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func uniformBufferCreate(sizeBytes: UInt32, data: Godot.PackedByteArray = PackedByteArray()) -> Godot.RID {
+
+    public func uniformBufferCreate(
+        sizeBytes: UInt32,
+        data: Godot.PackedByteArray = PackedByteArray()
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -1938,7 +2209,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func storageBufferCreate(sizeBytes: UInt32, data: Godot.PackedByteArray = PackedByteArray(), usage: Godot.RenderingDevice.StorageBufferUsage = RenderingDevice.StorageBufferUsage(rawValue: 0)) -> Godot.RID {
+
+    public func storageBufferCreate(
+        sizeBytes: UInt32,
+        data: Godot.PackedByteArray = PackedByteArray(),
+        usage: Godot.RenderingDevice.StorageBufferUsage = RenderingDevice.StorageBufferUsage(rawValue: 0)
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
         data.withGodotUnsafeRawPointer { __ptr_data in
@@ -1960,7 +2236,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureBufferCreate(sizeBytes: UInt32, format: Godot.RenderingDevice.DataFormat, data: Godot.PackedByteArray = PackedByteArray()) -> Godot.RID {
+
+    public func textureBufferCreate(
+        sizeBytes: UInt32,
+        format: Godot.RenderingDevice.DataFormat,
+        data: Godot.PackedByteArray = PackedByteArray()
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
         format.withGodotUnsafeRawPointer { __ptr_format in
@@ -1982,7 +2263,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func uniformSetCreate(uniforms: Godot.GodotArray<Godot.RDUniform?>, shader: Godot.RID, shaderSet: UInt32) -> Godot.RID {
+
+    public func uniformSetCreate(
+        uniforms: Godot.GodotArray<Godot.RDUniform?>,
+        shader: Godot.RID,
+        shaderSet: UInt32
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         uniforms.withGodotUnsafeRawPointer { __ptr_uniforms in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
@@ -2004,7 +2290,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func uniformSetIsValid(uniformSet: Godot.RID) -> Bool {
+
+    public func uniformSetIsValid(
+        uniformSet: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         uniformSet.withGodotUnsafeRawPointer { __ptr_uniformSet in
         withUnsafeArgumentPackPointer(__ptr_uniformSet) { __accessPtr in
@@ -2024,7 +2313,14 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func bufferUpdate(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func bufferUpdate(
+        buffer: Godot.RID,
+        offset: UInt32,
+        sizeBytes: UInt32,
+        data: Godot.PackedByteArray,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -2048,7 +2344,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func bufferClear(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
+
+    public func bufferClear(
+        buffer: Godot.RID,
+        offset: UInt32,
+        sizeBytes: UInt32,
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -2071,7 +2373,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func bufferGetData(buffer: Godot.RID, offsetBytes: UInt32 = 0, sizeBytes: UInt32 = 0) -> Godot.PackedByteArray {
+
+    public func bufferGetData(
+        buffer: Godot.RID,
+        offsetBytes: UInt32 = 0,
+        sizeBytes: UInt32 = 0
+    ) -> Godot.PackedByteArray {
         Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         offsetBytes.withGodotUnsafeRawPointer { __ptr_offsetBytes in
@@ -2093,7 +2400,20 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func renderPipelineCreate(shader: Godot.RID, framebufferFormat: Int64, vertexFormat: Int64, primitive: Godot.RenderingDevice.RenderPrimitive, rasterizationState: Godot.RDPipelineRasterizationState?, multisampleState: Godot.RDPipelineMultisampleState?, stencilState: Godot.RDPipelineDepthStencilState?, colorBlendState: Godot.RDPipelineColorBlendState?, dynamicStateFlags: Godot.RenderingDevice.PipelineDynamicStateFlags = RenderingDevice.PipelineDynamicStateFlags(rawValue: 0), forRenderPass renderPass: UInt32 = 0, specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
+
+    public func renderPipelineCreate(
+        shader: Godot.RID,
+        framebufferFormat: Int64,
+        vertexFormat: Int64,
+        primitive: Godot.RenderingDevice.RenderPrimitive,
+        rasterizationState: Godot.RDPipelineRasterizationState?,
+        multisampleState: Godot.RDPipelineMultisampleState?,
+        stencilState: Godot.RDPipelineDepthStencilState?,
+        colorBlendState: Godot.RDPipelineColorBlendState?,
+        dynamicStateFlags: Godot.RenderingDevice.PipelineDynamicStateFlags = RenderingDevice.PipelineDynamicStateFlags(rawValue: 0),
+        forRenderPass renderPass: UInt32 = 0,
+        specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         framebufferFormat.withGodotUnsafeRawPointer { __ptr_framebufferFormat in
@@ -2127,7 +2447,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func renderPipelineIsValid(renderPipeline: Godot.RID) -> Bool {
+
+    public func renderPipelineIsValid(
+        renderPipeline: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         renderPipeline.withGodotUnsafeRawPointer { __ptr_renderPipeline in
         withUnsafeArgumentPackPointer(__ptr_renderPipeline) { __accessPtr in
@@ -2147,7 +2470,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computePipelineCreate(shader: Godot.RID, specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
+
+    public func computePipelineCreate(
+        shader: Godot.RID,
+        specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []
+    ) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         specializationConstants.withGodotUnsafeRawPointer { __ptr_specializationConstants in
@@ -2168,7 +2495,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computePipelineIsValid(computePipeline: Godot.RID) -> Bool {
+
+    public func computePipelineIsValid(
+        computePipeline: Godot.RID
+    ) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         computePipeline.withGodotUnsafeRawPointer { __ptr_computePipeline in
         withUnsafeArgumentPackPointer(__ptr_computePipeline) { __accessPtr in
@@ -2188,7 +2518,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func screenGetWidth(screen: Int32 = 0) -> Int32 {
+
+    public func screenGetWidth(
+        screen: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2208,7 +2541,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func screenGetHeight(screen: Int32 = 0) -> Int32 {
+
+    public func screenGetHeight(
+        screen: Int32 = 0
+    ) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
@@ -2228,6 +2564,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func screenGetFramebufferFormat() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2246,7 +2583,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBeginForScreen(_ screen: Int32 = 0, clearColor: Godot.Color = .black) -> Int64 {
+
+    public func drawListBeginForScreen(
+        _ screen: Int32 = 0,
+        clearColor: Godot.Color = .black
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         clearColor.withGodotUnsafeRawPointer { __ptr_clearColor in
@@ -2267,7 +2608,19 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBegin(framebuffer: Godot.RID, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotArray<Godot.RID> = []) -> Int64 {
+
+    public func drawListBegin(
+        framebuffer: Godot.RID,
+        initialColorAction: Godot.RenderingDevice.InitialAction,
+        finalColorAction: Godot.RenderingDevice.FinalAction,
+        initialDepthAction: Godot.RenderingDevice.InitialAction,
+        finalDepthAction: Godot.RenderingDevice.FinalAction,
+        clearColorValues: Godot.PackedColorArray = PackedColorArray(),
+        clearDepth: Double = 1.0,
+        clearStencil: UInt32 = 0,
+        region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
+        storageTextures: Godot.GodotArray<Godot.RID> = []
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         framebuffer.withGodotUnsafeRawPointer { __ptr_framebuffer in
         initialColorAction.withGodotUnsafeRawPointer { __ptr_initialColorAction in
@@ -2296,7 +2649,20 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBeginSplit(framebuffer: Godot.RID, splits: UInt32, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotArray<Godot.RID> = []) -> Godot.PackedInt64Array {
+
+    public func drawListBeginSplit(
+        framebuffer: Godot.RID,
+        splits: UInt32,
+        initialColorAction: Godot.RenderingDevice.InitialAction,
+        finalColorAction: Godot.RenderingDevice.FinalAction,
+        initialDepthAction: Godot.RenderingDevice.InitialAction,
+        finalDepthAction: Godot.RenderingDevice.FinalAction,
+        clearColorValues: Godot.PackedColorArray = PackedColorArray(),
+        clearDepth: Double = 1.0,
+        clearStencil: UInt32 = 0,
+        region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
+        storageTextures: Godot.GodotArray<Godot.RID> = []
+    ) -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         framebuffer.withGodotUnsafeRawPointer { __ptr_framebuffer in
         splits.withGodotUnsafeRawPointer { __ptr_splits in
@@ -2326,7 +2692,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListSetBlendConstants(drawList: Int64, color: Godot.Color) {
+
+    public func drawListSetBlendConstants(
+        drawList: Int64,
+        color: Godot.Color
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_drawList, __ptr_color) { __accessPtr in
@@ -2346,7 +2716,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBindRenderPipeline(drawList: Int64, renderPipeline: Godot.RID) {
+
+    public func drawListBindRenderPipeline(
+        drawList: Int64,
+        renderPipeline: Godot.RID
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         renderPipeline.withGodotUnsafeRawPointer { __ptr_renderPipeline in
         withUnsafeArgumentPackPointer(__ptr_drawList, __ptr_renderPipeline) { __accessPtr in
@@ -2366,7 +2740,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBindUniformSet(drawList: Int64, uniformSet: Godot.RID, setIndex: UInt32) {
+
+    public func drawListBindUniformSet(
+        drawList: Int64,
+        uniformSet: Godot.RID,
+        setIndex: UInt32
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         uniformSet.withGodotUnsafeRawPointer { __ptr_uniformSet in
         setIndex.withGodotUnsafeRawPointer { __ptr_setIndex in
@@ -2387,7 +2766,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBindVertexArray(drawList: Int64, vertexArray: Godot.RID) {
+
+    public func drawListBindVertexArray(
+        drawList: Int64,
+        vertexArray: Godot.RID
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         vertexArray.withGodotUnsafeRawPointer { __ptr_vertexArray in
         withUnsafeArgumentPackPointer(__ptr_drawList, __ptr_vertexArray) { __accessPtr in
@@ -2407,7 +2790,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBindIndexArray(drawList: Int64, indexArray: Godot.RID) {
+
+    public func drawListBindIndexArray(
+        drawList: Int64,
+        indexArray: Godot.RID
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         indexArray.withGodotUnsafeRawPointer { __ptr_indexArray in
         withUnsafeArgumentPackPointer(__ptr_drawList, __ptr_indexArray) { __accessPtr in
@@ -2427,7 +2814,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListSetPushConstant(drawList: Int64, buffer: Godot.PackedByteArray, sizeBytes: UInt32) {
+
+    public func drawListSetPushConstant(
+        drawList: Int64,
+        buffer: Godot.PackedByteArray,
+        sizeBytes: UInt32
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
@@ -2448,7 +2840,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListDraw(drawList: Int64, useIndices: Bool, instances: UInt32, proceduralVertexCount: UInt32 = 0) {
+
+    public func drawListDraw(
+        drawList: Int64,
+        useIndices: Bool,
+        instances: UInt32,
+        proceduralVertexCount: UInt32 = 0
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         useIndices.withGodotUnsafeRawPointer { __ptr_useIndices in
         instances.withGodotUnsafeRawPointer { __ptr_instances in
@@ -2470,7 +2868,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListEnableScissor(drawList: Int64, rect: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0)) {
+
+    public func drawListEnableScissor(
+        drawList: Int64,
+        rect: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0)
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_drawList, __ptr_rect) { __accessPtr in
@@ -2490,7 +2892,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListDisableScissor(drawList: Int64) {
+
+    public func drawListDisableScissor(
+        drawList: Int64
+    ) {
         drawList.withGodotUnsafeRawPointer { __ptr_drawList in
         withUnsafeArgumentPackPointer(__ptr_drawList) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2509,6 +2914,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func drawListSwitchToNextPass() -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2527,7 +2933,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListSwitchToNextPassSplit(splits: UInt32) -> Godot.PackedInt64Array {
+
+    public func drawListSwitchToNextPassSplit(
+        splits: UInt32
+    ) -> Godot.PackedInt64Array {
         Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
         splits.withGodotUnsafeRawPointer { __ptr_splits in
         withUnsafeArgumentPackPointer(__ptr_splits) { __accessPtr in
@@ -2547,7 +2956,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
+
+    public func drawListEnd(
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) {
         postBarrier.withGodotUnsafeRawPointer { __ptr_postBarrier in
         withUnsafeArgumentPackPointer(__ptr_postBarrier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2566,7 +2978,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListBegin(allowDrawOverlap: Bool = false) -> Int64 {
+
+    public func computeListBegin(
+        allowDrawOverlap: Bool = false
+    ) -> Int64 {
         Int64.fromMutatingGodotUnsafePointer { __temporary in
         allowDrawOverlap.withGodotUnsafeRawPointer { __ptr_allowDrawOverlap in
         withUnsafeArgumentPackPointer(__ptr_allowDrawOverlap) { __accessPtr in
@@ -2586,7 +3001,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListBindComputePipeline(computeList: Int64, computePipeline: Godot.RID) {
+
+    public func computeListBindComputePipeline(
+        computeList: Int64,
+        computePipeline: Godot.RID
+    ) {
         computeList.withGodotUnsafeRawPointer { __ptr_computeList in
         computePipeline.withGodotUnsafeRawPointer { __ptr_computePipeline in
         withUnsafeArgumentPackPointer(__ptr_computeList, __ptr_computePipeline) { __accessPtr in
@@ -2606,7 +3025,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListSetPushConstant(computeList: Int64, buffer: Godot.PackedByteArray, sizeBytes: UInt32) {
+
+    public func computeListSetPushConstant(
+        computeList: Int64,
+        buffer: Godot.PackedByteArray,
+        sizeBytes: UInt32
+    ) {
         computeList.withGodotUnsafeRawPointer { __ptr_computeList in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         sizeBytes.withGodotUnsafeRawPointer { __ptr_sizeBytes in
@@ -2627,7 +3051,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListBindUniformSet(computeList: Int64, uniformSet: Godot.RID, setIndex: UInt32) {
+
+    public func computeListBindUniformSet(
+        computeList: Int64,
+        uniformSet: Godot.RID,
+        setIndex: UInt32
+    ) {
         computeList.withGodotUnsafeRawPointer { __ptr_computeList in
         uniformSet.withGodotUnsafeRawPointer { __ptr_uniformSet in
         setIndex.withGodotUnsafeRawPointer { __ptr_setIndex in
@@ -2648,7 +3077,13 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListDispatch(computeList: Int64, xGroups: UInt32, yGroups: UInt32, zGroups: UInt32) {
+
+    public func computeListDispatch(
+        computeList: Int64,
+        xGroups: UInt32,
+        yGroups: UInt32,
+        zGroups: UInt32
+    ) {
         computeList.withGodotUnsafeRawPointer { __ptr_computeList in
         xGroups.withGodotUnsafeRawPointer { __ptr_xGroups in
         yGroups.withGodotUnsafeRawPointer { __ptr_yGroups in
@@ -2670,7 +3105,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListAddBarrier(computeList: Int64) {
+
+    public func computeListAddBarrier(
+        computeList: Int64
+    ) {
         computeList.withGodotUnsafeRawPointer { __ptr_computeList in
         withUnsafeArgumentPackPointer(__ptr_computeList) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2689,7 +3127,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computeListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
+
+    public func computeListEnd(
+        postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) {
         postBarrier.withGodotUnsafeRawPointer { __ptr_postBarrier in
         withUnsafeArgumentPackPointer(__ptr_postBarrier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2708,7 +3149,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func freeRid(_ rid: Godot.RID) {
+
+    public func freeRid(
+        _ rid: Godot.RID
+    ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2727,7 +3171,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func captureTimestamp(name: Godot.GodotString) {
+
+    public func captureTimestamp(
+        name: Godot.GodotString
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2746,6 +3193,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func capturedTimestampsCount() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2764,6 +3212,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func capturedTimestampsFrame() -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2782,7 +3231,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func capturedTimestampGpuTime(index: UInt32) -> UInt64 {
+
+    public func capturedTimestampGpuTime(
+        index: UInt32
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -2802,7 +3254,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func capturedTimestampCpuTime(index: UInt32) -> UInt64 {
+
+    public func capturedTimestampCpuTime(
+        index: UInt32
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -2822,7 +3277,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func capturedTimestampName(index: UInt32) -> Godot.GodotString {
+
+    public func capturedTimestampName(
+        index: UInt32
+    ) -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -2842,7 +3300,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func limitGet(limit: Godot.RenderingDevice.Limit) -> UInt64 {
+
+    public func limitGet(
+        limit: Godot.RenderingDevice.Limit
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         limit.withGodotUnsafeRawPointer { __ptr_limit in
         withUnsafeArgumentPackPointer(__ptr_limit) { __accessPtr in
@@ -2862,6 +3323,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func frameDelay() -> UInt32 {
         UInt32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2880,6 +3342,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func submit() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2897,6 +3360,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func sync() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2914,7 +3378,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func barrier(from: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767), to: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
+
+    public func barrier(
+        from: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767),
+        to: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
+    ) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
@@ -2934,6 +3402,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func fullBarrier() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2951,6 +3420,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func createLocalDevice() -> Godot.RenderingDevice? {
         Godot.RenderingDevice?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2969,7 +3439,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func setResourceName(id: Godot.RID, name: Godot.GodotString) {
+
+    public func setResourceName(
+        id: Godot.RID,
+        name: Godot.GodotString
+    ) {
         id.withGodotUnsafeRawPointer { __ptr_id in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_name) { __accessPtr in
@@ -2989,7 +3463,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawCommandBeginLabel(name: Godot.GodotString, color: Godot.Color) {
+
+    public func drawCommandBeginLabel(
+        name: Godot.GodotString,
+        color: Godot.Color
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_color) { __accessPtr in
@@ -3009,7 +3487,11 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawCommandInsertLabel(name: Godot.GodotString, color: Godot.Color) {
+
+    public func drawCommandInsertLabel(
+        name: Godot.GodotString,
+        color: Godot.Color
+    ) {
         name.withGodotUnsafeRawPointer { __ptr_name in
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_color) { __accessPtr in
@@ -3029,6 +3511,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func drawCommandEndLabel() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3046,6 +3529,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func deviceVendorName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3064,6 +3548,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func deviceName() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3082,6 +3567,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
+
     public func devicePipelineCacheUuid() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3100,7 +3586,10 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func memoryUsage(type: Godot.RenderingDevice.MemoryType) -> UInt64 {
+
+    public func memoryUsage(
+        type: Godot.RenderingDevice.MemoryType
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -3120,7 +3609,12 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func driverResource(_ resource: Godot.RenderingDevice.DriverResource, rid: Godot.RID, index: UInt64) -> UInt64 {
+
+    public func driverResource(
+        _ resource: Godot.RenderingDevice.DriverResource,
+        rid: Godot.RID,
+        index: UInt64
+    ) -> UInt64 {
         UInt64.fromMutatingGodotUnsafePointer { __temporary in
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         rid.withGodotUnsafeRawPointer { __ptr_rid in
@@ -3136,6 +3630,7 @@ open class RenderingDevice: Object {
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
+
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
@@ -3148,5 +3643,4 @@ open class RenderingDevice: Object {
         }
         return _virtualFunctions!
     }
-
-    }
+}
