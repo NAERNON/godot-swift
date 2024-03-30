@@ -13,14 +13,14 @@ open class AcceptDialog: Window {
 
     public lazy var confirmedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "confirmed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -32,14 +32,14 @@ open class AcceptDialog: Window {
 
     public lazy var canceledSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "canceled") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -69,14 +69,14 @@ open class AcceptDialog: Window {
 
     public lazy var customActionSignal: Godot.SignalEmitter<CustomActionSignalInput> = {
         .init(object: self, signalName: "custom_action") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(action: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

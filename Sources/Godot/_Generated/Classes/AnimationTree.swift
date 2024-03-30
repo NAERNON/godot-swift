@@ -25,14 +25,14 @@ open class AnimationTree: AnimationMixer {
 
     public lazy var animationPlayerChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_player_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

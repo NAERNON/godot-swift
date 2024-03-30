@@ -45,14 +45,14 @@ open class CameraServer: Object {
 
     public lazy var cameraFeedAddedSignal: Godot.SignalEmitter<CameraFeedAddedSignalInput> = {
         .init(object: self, signalName: "camera_feed_added") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -82,14 +82,14 @@ open class CameraServer: Object {
 
     public lazy var cameraFeedRemovedSignal: Godot.SignalEmitter<CameraFeedRemovedSignalInput> = {
         .init(object: self, signalName: "camera_feed_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -146,7 +146,7 @@ open class CameraServer: Object {
     }()
 
     public func feeds() -> Godot.GodotArray<Godot.CameraFeed?> {
-        Godot.GodotArray<Godot.CameraFeed?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.CameraFeed?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_feeds,

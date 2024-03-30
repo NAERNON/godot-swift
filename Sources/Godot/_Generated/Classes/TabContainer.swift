@@ -30,14 +30,14 @@ open class TabContainer: Container {
 
     public lazy var activeTabRearrangedSignal: Godot.SignalEmitter<ActiveTabRearrangedSignalInput> = {
         .init(object: self, signalName: "active_tab_rearranged") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(idxTo: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -67,14 +67,14 @@ open class TabContainer: Container {
 
     public lazy var tabChangedSignal: Godot.SignalEmitter<TabChangedSignalInput> = {
         .init(object: self, signalName: "tab_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -104,14 +104,14 @@ open class TabContainer: Container {
 
     public lazy var tabClickedSignal: Godot.SignalEmitter<TabClickedSignalInput> = {
         .init(object: self, signalName: "tab_clicked") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -141,14 +141,14 @@ open class TabContainer: Container {
 
     public lazy var tabHoveredSignal: Godot.SignalEmitter<TabHoveredSignalInput> = {
         .init(object: self, signalName: "tab_hovered") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -178,14 +178,14 @@ open class TabContainer: Container {
 
     public lazy var tabSelectedSignal: Godot.SignalEmitter<TabSelectedSignalInput> = {
         .init(object: self, signalName: "tab_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -215,14 +215,14 @@ open class TabContainer: Container {
 
     public lazy var tabButtonPressedSignal: Godot.SignalEmitter<TabButtonPressedSignalInput> = {
         .init(object: self, signalName: "tab_button_pressed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -234,14 +234,14 @@ open class TabContainer: Container {
 
     public lazy var prePopupPressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pre_popup_pressed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

@@ -154,7 +154,7 @@ open class EditorInterface: Object {
         meshes: Godot.GodotArray<Godot.Mesh?>,
         previewSize: Int32
     ) -> Godot.GodotArray<Godot.Texture2D?> {
-        Godot.GodotArray<Godot.Texture2D?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Texture2D?> .fromMutatingGodotUnsafePointer { __temporary in
         meshes.withGodotUnsafeRawPointer { __ptr_meshes in
         previewSize.withGodotUnsafeRawPointer { __ptr_previewSize in
         withUnsafeArgumentPackPointer(__ptr_meshes, __ptr_previewSize) { __accessPtr in

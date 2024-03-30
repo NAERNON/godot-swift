@@ -159,7 +159,7 @@ open class TileMapPattern: Resource {
     }()
 
     public func usedCells() -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells,

@@ -98,7 +98,7 @@ open class GLTFMesh: Resource {
     }()
 
     private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material?> {
-        Godot.GodotArray<Godot.Material?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Material?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_instance_materials,

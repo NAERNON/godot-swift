@@ -30,14 +30,14 @@ open class GraphNode: GraphElement {
 
     public lazy var slotUpdatedSignal: Godot.SignalEmitter<SlotUpdatedSignalInput> = {
         .init(object: self, signalName: "slot_updated") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(slotIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -765,7 +765,7 @@ open class GraphNode: GraphElement {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawPort(
             slotIndex: Int32.fromGodotUnsafePointer(args[0]!),
             position: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),

@@ -441,7 +441,7 @@ open class ENetConnection: RefCounted {
     }()
 
     public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
-        Godot.GodotArray<Godot.ENetPacketPeer?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.ENetPacketPeer?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peers,

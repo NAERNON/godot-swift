@@ -55,14 +55,14 @@ open class NavigationServer3D: Object {
 
     public lazy var mapChangedSignal: Godot.SignalEmitter<MapChangedSignalInput> = {
         .init(object: self, signalName: "map_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(map: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -74,14 +74,14 @@ open class NavigationServer3D: Object {
 
     public lazy var navigationDebugChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "navigation_debug_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -93,14 +93,14 @@ open class NavigationServer3D: Object {
 
     public lazy var avoidanceDebugChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "avoidance_debug_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -115,7 +115,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func maps() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_maps,
@@ -619,7 +619,7 @@ open class NavigationServer3D: Object {
     public func mapGetLinks(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +642,7 @@ open class NavigationServer3D: Object {
     public func mapGetRegions(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -665,7 +665,7 @@ open class NavigationServer3D: Object {
     public func mapGetAgents(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -688,7 +688,7 @@ open class NavigationServer3D: Object {
     public func mapGetObstacles(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

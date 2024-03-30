@@ -71,14 +71,14 @@ open class EditorFileDialog: ConfirmationDialog {
 
     public lazy var fileSelectedSignal: Godot.SignalEmitter<FileSelectedSignalInput> = {
         .init(object: self, signalName: "file_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -108,14 +108,14 @@ open class EditorFileDialog: ConfirmationDialog {
 
     public lazy var filesSelectedSignal: Godot.SignalEmitter<FilesSelectedSignalInput> = {
         .init(object: self, signalName: "files_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(paths: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -145,14 +145,14 @@ open class EditorFileDialog: ConfirmationDialog {
 
     public lazy var dirSelectedSignal: Godot.SignalEmitter<DirSelectedSignalInput> = {
         .init(object: self, signalName: "dir_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(dir: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

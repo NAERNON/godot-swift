@@ -62,14 +62,14 @@ open class ColorPicker: VBoxContainer {
 
     public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
         .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -99,14 +99,14 @@ open class ColorPicker: VBoxContainer {
 
     public lazy var presetAddedSignal: Godot.SignalEmitter<PresetAddedSignalInput> = {
         .init(object: self, signalName: "preset_added") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -136,14 +136,14 @@ open class ColorPicker: VBoxContainer {
 
     public lazy var presetRemovedSignal: Godot.SignalEmitter<PresetRemovedSignalInput> = {
         .init(object: self, signalName: "preset_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

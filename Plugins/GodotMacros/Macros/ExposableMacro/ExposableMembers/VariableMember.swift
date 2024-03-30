@@ -75,7 +75,7 @@ struct VariableMember: ExposableMember {
         // Check async or throws
         if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
             for accessor in accessors {
-                if let specifiers = accessor.effectSpecifiers?.as(AccessorEffectSpecifiersSyntax.self) {
+                if let specifiers = accessor.effectSpecifiers {
                     if let throwsSpecifier = specifiers.throwsSpecifier {
                         context.diagnose(Diagnostic(
                             node: Syntax(throwsSpecifier),
@@ -256,7 +256,6 @@ struct VariableMember: ExposableMember {
             .arguments?
             .as(LabeledExprListSyntax.self)?
             .first?
-            .as(LabeledExprSyntax.self)?
             .expression {
             return hintContent.trimmedDescription
         } else {

@@ -30,14 +30,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var inheritSignal: Godot.SignalEmitter<InheritSignalInput> = {
         .init(object: self, signalName: "inherit") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<InheritSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<InheritSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<InheritSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -67,14 +67,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var instantiateSignal: Godot.SignalEmitter<InstantiateSignalInput> = {
         .init(object: self, signalName: "instantiate") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(files: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -104,14 +104,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var resourceRemovedSignal: Godot.SignalEmitter<ResourceRemovedSignalInput> = {
         .init(object: self, signalName: "resource_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -141,14 +141,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var fileRemovedSignal: Godot.SignalEmitter<FileRemovedSignalInput> = {
         .init(object: self, signalName: "file_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -178,14 +178,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var folderRemovedSignal: Godot.SignalEmitter<FolderRemovedSignalInput> = {
         .init(object: self, signalName: "folder_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(folder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -221,15 +221,15 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var filesMovedSignal: Godot.SignalEmitter<FilesMovedSignalInput> = {
         .init(object: self, signalName: "files_moved") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(oldFile: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     newFile: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -265,15 +265,15 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var folderMovedSignal: Godot.SignalEmitter<FolderMovedSignalInput> = {
         .init(object: self, signalName: "folder_moved") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(oldFolder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     newFolder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -285,14 +285,14 @@ open class FileSystemDock: VBoxContainer {
 
     public lazy var displayModeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "display_mode_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

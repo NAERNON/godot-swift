@@ -161,14 +161,14 @@ open class TextEdit: Control {
 
     public lazy var textSetSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "text_set") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -180,14 +180,14 @@ open class TextEdit: Control {
 
     public lazy var textChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -223,15 +223,15 @@ open class TextEdit: Control {
 
     public lazy var linesEditedFromSignal: Godot.SignalEmitter<LinesEditedFromSignalInput> = {
         .init(object: self, signalName: "lines_edited_from") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(fromLine: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     toLine: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -243,14 +243,14 @@ open class TextEdit: Control {
 
     public lazy var caretChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "caret_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -286,15 +286,15 @@ open class TextEdit: Control {
 
     public lazy var gutterClickedSignal: Godot.SignalEmitter<GutterClickedSignalInput> = {
         .init(object: self, signalName: "gutter_clicked") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     gutter: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -306,14 +306,14 @@ open class TextEdit: Control {
 
     public lazy var gutterAddedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "gutter_added") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -325,14 +325,14 @@ open class TextEdit: Control {
 
     public lazy var gutterRemovedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "gutter_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -5280,7 +5280,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handleUnicodeInput(
             unicodeChar: Int32.fromGodotUnsafePointer(args[0]!),
             caretIndex: Int32.fromGodotUnsafePointer(args[1]!)
@@ -5289,7 +5289,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._backspace(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -5297,7 +5297,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._cut(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -5305,7 +5305,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._copy(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -5313,7 +5313,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._paste(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -5321,7 +5321,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pastePrimaryClipboard(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}

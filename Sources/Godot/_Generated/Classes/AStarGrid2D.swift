@@ -687,7 +687,7 @@ open class AStarGrid2D: RefCounted {
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
@@ -798,7 +798,7 @@ open class AStarGrid2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
             fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
             toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
@@ -808,7 +808,7 @@ open class AStarGrid2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
             fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
             toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)

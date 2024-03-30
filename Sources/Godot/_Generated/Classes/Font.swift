@@ -37,7 +37,7 @@ open class Font: Resource {
     }()
 
     private func __getFallbacks() -> Godot.GodotArray<Godot.Font?> {
-        Godot.GodotArray<Godot.Font?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Font?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallbacks,
@@ -93,7 +93,7 @@ open class Font: Resource {
     }()
 
     public func rids() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rids,

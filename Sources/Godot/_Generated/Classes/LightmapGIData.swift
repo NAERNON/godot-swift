@@ -37,7 +37,7 @@ open class LightmapGIData: Resource {
     }()
 
     private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered?> {
-        Godot.GodotArray<Godot.TextureLayered?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.TextureLayered?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lightmap_textures,

@@ -1687,7 +1687,7 @@ open class DisplayServer: Object {
     }()
 
     public func ttsGetVoices() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tts_get_voices,
@@ -2138,7 +2138,7 @@ open class DisplayServer: Object {
     }()
 
     public func displayCutouts() -> Godot.GodotArray<Godot.Rect2> {
-        Godot.GodotArray<Godot.Rect2>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Rect2> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_display_cutouts,

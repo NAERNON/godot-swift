@@ -765,7 +765,7 @@ open class FontFile: Font {
     public func sizeCacheList(
         cacheIndex: Int32
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1865,7 +1865,7 @@ open class FontFile: Font {
         cacheIndex: Int32,
         size: Int32
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in

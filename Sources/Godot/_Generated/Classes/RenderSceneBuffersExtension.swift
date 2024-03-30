@@ -36,7 +36,7 @@ open class RenderSceneBuffersExtension: RenderSceneBuffers {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RenderSceneBuffersExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RenderSceneBuffersExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._configure(
             config: Godot.RenderSceneBuffersConfiguration?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -44,7 +44,7 @@ open class RenderSceneBuffersExtension: RenderSceneBuffers {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RenderSceneBuffersExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RenderSceneBuffersExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setFsrSharpness(
             Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -52,7 +52,7 @@ open class RenderSceneBuffersExtension: RenderSceneBuffers {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RenderSceneBuffersExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RenderSceneBuffersExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setTextureMipmapBias(
             Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -60,7 +60,7 @@ open class RenderSceneBuffersExtension: RenderSceneBuffers {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RenderSceneBuffersExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RenderSceneBuffersExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setUseDebanding(
             Bool.fromGodotUnsafePointer(args[0]!)
         )}

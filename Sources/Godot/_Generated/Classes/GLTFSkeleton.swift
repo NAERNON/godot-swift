@@ -116,7 +116,7 @@ open class GLTFSkeleton: Resource {
     }()
 
     private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unique_names,

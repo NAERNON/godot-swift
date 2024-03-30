@@ -36,15 +36,15 @@ open class EditorResourcePicker: HBoxContainer {
 
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     inspect: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -74,14 +74,14 @@ open class EditorResourcePicker: HBoxContainer {
 
     public lazy var resourceChangedSignal: Godot.SignalEmitter<ResourceChangedSignalInput> = {
         .init(object: self, signalName: "resource_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -358,7 +358,7 @@ open class EditorResourcePicker: HBoxContainer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setCreateOptions(
             menuNode: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -366,7 +366,7 @@ open class EditorResourcePicker: HBoxContainer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handleMenuSelected(
             id: Int32.fromGodotUnsafePointer(args[0]!)
         )

@@ -290,7 +290,7 @@ open class BitMap: Resource {
         rect: Godot.Rect2I,
         epsilon: Double = 2.0
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         epsilon.withGodotUnsafeRawPointer { __ptr_epsilon in
         withUnsafeArgumentPackPointer(__ptr_rect, __ptr_epsilon) { __accessPtr in

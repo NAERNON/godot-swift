@@ -269,7 +269,7 @@ open class StyleBox: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<StyleBox>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._draw(
             toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
             rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
@@ -278,7 +278,7 @@ open class StyleBox: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<StyleBox>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDrawRect(
             Godot.Rect2.fromGodotUnsafePointer(args[0]!)
         )
@@ -287,14 +287,14 @@ open class StyleBox: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<StyleBox>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMinimumSize()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _test_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<StyleBox>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._testMask(
             point: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)

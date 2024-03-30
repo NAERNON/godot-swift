@@ -242,7 +242,7 @@ open class RDPipelineMultisampleState: RefCounted {
     }()
 
     private func __getSampleMasks() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sample_masks,

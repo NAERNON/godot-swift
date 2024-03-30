@@ -27,14 +27,14 @@ open class AnimationNode: Resource {
 
     public lazy var treeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -76,16 +76,16 @@ open class AnimationNode: Resource {
 
     public lazy var animationNodeRenamedSignal: Godot.SignalEmitter<AnimationNodeRenamedSignalInput> = {
         .init(object: self, signalName: "animation_node_renamed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     oldName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     newName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -121,15 +121,15 @@ open class AnimationNode: Resource {
 
     public lazy var animationNodeRemovedSignal: Godot.SignalEmitter<AnimationNodeRemovedSignalInput> = {
         .init(object: self, signalName: "animation_node_removed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -580,21 +580,21 @@ open class AnimationNode: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildNodes()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_parameter_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterList()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_child_by_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildByName(
             Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -603,7 +603,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterDefaultValue(
             parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -612,7 +612,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isParameterReadOnly(
             parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -621,7 +621,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             time: Double.fromGodotUnsafePointer(args[0]!),
             seek: Bool.fromGodotUnsafePointer(args[1]!),
@@ -633,14 +633,14 @@ open class AnimationNode: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCaption()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _has_filter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasFilter()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

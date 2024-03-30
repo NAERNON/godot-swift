@@ -926,7 +926,7 @@ open class Camera3D: Node3D {
     }()
 
     public func frustum() -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frustum,

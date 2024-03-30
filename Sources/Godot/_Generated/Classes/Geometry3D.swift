@@ -40,7 +40,7 @@ open class Geometry3D: Object {
     public func buildBoxPlanes(
         extents: Godot.Vector3
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
         extents.withGodotUnsafeRawPointer { __ptr_extents in
         withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +66,7 @@ open class Geometry3D: Object {
         sides: Int32,
         axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in
@@ -96,7 +96,7 @@ open class Geometry3D: Object {
         lats: Int32,
         axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in

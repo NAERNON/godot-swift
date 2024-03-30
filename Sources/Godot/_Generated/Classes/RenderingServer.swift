@@ -1427,14 +1427,14 @@ open class RenderingServer: Object {
 
     public lazy var framePreDrawSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "frame_pre_draw") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -1446,14 +1446,14 @@ open class RenderingServer: Object {
 
     public lazy var framePostDrawSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "frame_post_draw") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -1789,7 +1789,7 @@ open class RenderingServer: Object {
     public func texture3DGet(
         texture: Godot.RID
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2121,7 +2121,7 @@ open class RenderingServer: Object {
     public func shaderParameterList(
         shader: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafeArgumentPackPointer(__ptr_shader) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2765,7 +2765,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32
     ) -> Godot.GodotArray<Godot.AnyGodotArray> {
-        Godot.GodotArray<Godot.AnyGodotArray>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { __accessPtr in
@@ -10021,7 +10021,7 @@ open class RenderingServer: Object {
     public func instanceGeometryGetShaderParameterList(
         instance: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -10123,7 +10123,7 @@ open class RenderingServer: Object {
         materialOverrides: Godot.GodotArray<Godot.RID>,
         imageSize: Godot.Vector2I
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
         base.withGodotUnsafeRawPointer { __ptr_base in
         materialOverrides.withGodotUnsafeRawPointer { __ptr_materialOverrides in
         imageSize.withGodotUnsafeRawPointer { __ptr_imageSize in
@@ -12298,7 +12298,7 @@ open class RenderingServer: Object {
     }()
 
     public func globalShaderParameterGetList() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_global_shader_parameter_get_list,

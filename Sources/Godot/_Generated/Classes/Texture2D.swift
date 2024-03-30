@@ -266,21 +266,21 @@ open class Texture2D: Texture {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWidth()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHeight()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _is_pixel_opaque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPixelOpaque(
             x: Int32.fromGodotUnsafePointer(args[0]!),
             y: Int32.fromGodotUnsafePointer(args[1]!)
@@ -290,14 +290,14 @@ open class Texture2D: Texture {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasAlpha()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._draw(
             toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
             pos: Godot.Vector2.fromGodotUnsafePointer(args[1]!),
@@ -308,7 +308,7 @@ open class Texture2D: Texture {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawRect(
             toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
             rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!),
@@ -320,7 +320,7 @@ open class Texture2D: Texture {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Texture2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawRectRegion(
             toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
             rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!),

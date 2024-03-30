@@ -109,7 +109,7 @@ open class RegEx: RefCounted {
         offset: Int32 = 0,
         end: Int32 = -1
     ) -> Godot.GodotArray<Godot.RegExMatch?> {
-        Godot.GodotArray<Godot.RegExMatch?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RegExMatch?> .fromMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         end.withGodotUnsafeRawPointer { __ptr_end in

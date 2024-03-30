@@ -30,14 +30,14 @@ open class MultiplayerSpawner: Node {
 
     public lazy var despawnedSignal: Godot.SignalEmitter<DespawnedSignalInput> = {
         .init(object: self, signalName: "despawned") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -67,14 +67,14 @@ open class MultiplayerSpawner: Node {
 
     public lazy var spawnedSignal: Godot.SignalEmitter<SpawnedSignalInput> = {
         .init(object: self, signalName: "spawned") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

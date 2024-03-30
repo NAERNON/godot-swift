@@ -13,14 +13,14 @@ open class Container: Control {
 
     public lazy var preSortChildrenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pre_sort_children") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -32,14 +32,14 @@ open class Container: Control {
 
     public lazy var sortChildrenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "sort_children") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -110,14 +110,14 @@ open class Container: Control {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Container>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Container> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAllowedSizeFlagsHorizontal()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_allowed_size_flags_vertical_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Container>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Container> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAllowedSizeFlagsVertical()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

@@ -154,7 +154,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importPreflight(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             extensions: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
@@ -164,14 +164,14 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSupportedExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _parse_node_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseNodeExtensions(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             gltfNode: Godot.GLTFNode?.fromGodotUnsafePointer(args[1]!),
@@ -182,7 +182,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseImageData(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             imageData: Godot.PackedByteArray.fromGodotUnsafePointer(args[1]!),
@@ -194,14 +194,14 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImageFileExtension()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _parse_texture_json_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseTextureJson(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             textureJson: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!),
@@ -212,7 +212,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generateSceneNode(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             gltfNode: Godot.GLTFNode?.fromGodotUnsafePointer(args[1]!),
@@ -223,7 +223,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importPostParse(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!)
         )
@@ -232,7 +232,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importNode(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             gltfNode: Godot.GLTFNode?.fromGodotUnsafePointer(args[1]!),
@@ -244,7 +244,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importPost(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             root: Godot.Node?.fromGodotUnsafePointer(args[1]!)
@@ -254,7 +254,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportPreflight(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             root: Godot.Node?.fromGodotUnsafePointer(args[1]!)
@@ -264,7 +264,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convertSceneNode(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             gltfNode: Godot.GLTFNode?.fromGodotUnsafePointer(args[1]!),
@@ -274,7 +274,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportPreserialize(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!)
         )
@@ -283,14 +283,14 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSaveableImageFormats()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _serialize_image_to_bytes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._serializeImageToBytes(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             image: Godot.Image?.fromGodotUnsafePointer(args[1]!),
@@ -303,7 +303,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._saveImageAtPath(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             image: Godot.Image?.fromGodotUnsafePointer(args[1]!),
@@ -316,7 +316,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._serializeTextureJson(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             textureJson: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!),
@@ -328,7 +328,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportNode(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!),
             gltfNode: Godot.GLTFNode?.fromGodotUnsafePointer(args[1]!),
@@ -340,7 +340,7 @@ open class GLTFDocumentExtension: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GLTFDocumentExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportPost(
             state: Godot.GLTFState?.fromGodotUnsafePointer(args[0]!)
         )

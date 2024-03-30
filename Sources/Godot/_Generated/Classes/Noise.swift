@@ -206,7 +206,7 @@ open class Noise: Resource {
         invert: Bool = false,
         normalize: Bool = true
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         depth.withGodotUnsafeRawPointer { __ptr_depth in
@@ -238,7 +238,7 @@ open class Noise: Resource {
         skirt: Double = 0.1,
         normalize: Bool = true
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         depth.withGodotUnsafeRawPointer { __ptr_depth in

@@ -97,7 +97,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getInverseBinds() -> Godot.GodotArray<Godot.Transform3D> {
-        Godot.GodotArray<Godot.Transform3D>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Transform3D> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inverse_binds,

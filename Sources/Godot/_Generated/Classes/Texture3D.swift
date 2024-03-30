@@ -134,7 +134,7 @@ open class Texture3D: Texture {
     }()
 
     public func data() -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data,
@@ -173,42 +173,42 @@ open class Texture3D: Texture {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFormat()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWidth()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHeight()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_depth_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDepth()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _has_mipmaps_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasMipmaps()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Texture3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getData()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

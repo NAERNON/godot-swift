@@ -133,7 +133,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canHandle(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
@@ -142,7 +142,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseBegin(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -150,7 +150,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseCategory(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             category: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -159,7 +159,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseGroup(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             group: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -168,7 +168,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseProperty(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             type: Godot.Variant.StorageType.fromGodotUnsafePointer(args[1]!),
@@ -183,7 +183,7 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseEnd(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}

@@ -38,7 +38,7 @@ open class InputMap: Object {
     }()
 
     public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_actions,
@@ -250,7 +250,7 @@ open class InputMap: Object {
     public func actionGetEvents(
         action: Godot.GodotStringName
     ) -> Godot.GodotArray<Godot.InputEvent?> {
-        Godot.GodotArray<Godot.InputEvent?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.InputEvent?> .fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

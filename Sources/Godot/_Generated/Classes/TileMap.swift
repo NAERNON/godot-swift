@@ -25,14 +25,14 @@ open class TileMap: Node2D {
 
     public lazy var changedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -1247,7 +1247,7 @@ open class TileMap: Node2D {
     public func surroundingCells(
         coords: Godot.Vector2I
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1270,7 +1270,7 @@ open class TileMap: Node2D {
     public func usedCells(
         layer: Int32
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1296,7 +1296,7 @@ open class TileMap: Node2D {
         atlasCoords: Godot.Vector2I = Vector2i(x: -1, y: -1),
         alternativeTile: Int32 = -1
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         sourceID.withGodotUnsafeRawPointer { __ptr_sourceID in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
@@ -1466,7 +1466,7 @@ open class TileMap: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TileMap> .fromOpaque(instancePtr).takeUnretainedValue()
         ._useTileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
             coords: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
@@ -1476,7 +1476,7 @@ open class TileMap: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TileMap> .fromOpaque(instancePtr).takeUnretainedValue()
         ._tileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
             coords: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),

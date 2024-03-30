@@ -986,7 +986,7 @@ open class PhysicalBone3D: PhysicsBody3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicalBone3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicalBone3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces(
             state: Godot.PhysicsDirectBodyState3D?.fromGodotUnsafePointer(args[0]!)
         )}

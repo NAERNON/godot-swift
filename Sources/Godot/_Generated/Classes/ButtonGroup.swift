@@ -30,14 +30,14 @@ open class ButtonGroup: Resource {
 
     public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(button: Godot.BaseButton?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -71,7 +71,7 @@ open class ButtonGroup: Resource {
     }()
 
     public func buttons() -> Godot.GodotArray<Godot.BaseButton?> {
-        Godot.GodotArray<Godot.BaseButton?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.BaseButton?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buttons,

@@ -72,14 +72,14 @@ open class CodeEdit: TextEdit {
 
     public lazy var breakpointToggledSignal: Godot.SignalEmitter<BreakpointToggledSignalInput> = {
         .init(object: self, signalName: "breakpoint_toggled") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -91,14 +91,14 @@ open class CodeEdit: TextEdit {
 
     public lazy var codeCompletionRequestedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "code_completion_requested") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -140,16 +140,16 @@ open class CodeEdit: TextEdit {
 
     public lazy var symbolLookupSignal: Godot.SignalEmitter<SymbolLookupSignalInput> = {
         .init(object: self, signalName: "symbol_lookup") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -179,14 +179,14 @@ open class CodeEdit: TextEdit {
 
     public lazy var symbolValidateSignal: Godot.SignalEmitter<SymbolValidateSignalInput> = {
         .init(object: self, signalName: "symbol_validate") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -362,7 +362,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getAutoIndentPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_indent_prefixes,
@@ -1362,7 +1362,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func foldedLines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_folded_lines,
@@ -1618,7 +1618,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getStringDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_string_delimiters,
@@ -1773,7 +1773,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getCommentDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_comment_delimiters,
@@ -2055,7 +2055,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func codeCompletionOptions() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_completion_options,
@@ -2241,7 +2241,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getCodeCompletionPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_completion_prefixes,
@@ -2282,7 +2282,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getLineLengthGuidelines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_length_guidelines,
@@ -2647,7 +2647,7 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._confirmCodeCompletion(
             replace: Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2655,7 +2655,7 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._requestCodeCompletion(
             force: Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2663,9 +2663,9 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._filterCodeCompletionCandidates(
-            Godot.GodotArray<Godot.AnyGodotDictionary>.fromGodotUnsafePointer(args[0]!)
+            Godot.GodotArray<Godot.AnyGodotDictionary> .fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

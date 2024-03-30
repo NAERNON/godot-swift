@@ -64,14 +64,14 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._poll()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_multiplayer_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setMultiplayerPeer(
             Godot.MultiplayerPeer?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -79,28 +79,28 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMultiplayerPeer()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_unique_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getUniqueID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_peer_ids_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPeerIds()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _rpc_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._rpc(
             peer: Int32.fromGodotUnsafePointer(args[0]!),
             object: Godot.Object?.fromGodotUnsafePointer(args[1]!),
@@ -112,14 +112,14 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRemoteSenderID()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _object_configuration_add_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._objectConfigurationAdd(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             configuration: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -129,7 +129,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MultiplayerAPIExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._objectConfigurationRemove(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             configuration: Godot.Variant.fromGodotUnsafePointer(args[1]!)

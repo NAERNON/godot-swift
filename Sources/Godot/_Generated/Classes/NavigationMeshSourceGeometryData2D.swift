@@ -74,7 +74,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     private func __getTraversableOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_traversable_outlines,
@@ -115,7 +115,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     private func __getObstructionOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_obstruction_outlines,

@@ -2400,7 +2400,7 @@ open class TreeItem: Object {
     }()
 
     public func children() -> Godot.GodotArray<Godot.TreeItem?> {
-        Godot.GodotArray<Godot.TreeItem?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.TreeItem?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_children,

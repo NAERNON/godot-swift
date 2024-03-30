@@ -241,70 +241,70 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTotalGravity()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_total_linear_damp_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTotalLinearDamp()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_total_angular_damp_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTotalAngularDamp()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_center_of_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCenterOfMass()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_center_of_mass_local_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCenterOfMassLocal()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_principal_inertia_axes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPrincipalInertiaAxes()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_inverse_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInverseMass()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_inverse_inertia_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInverseInertia()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_inverse_inertia_tensor_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInverseInertiaTensor()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_linear_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setLinearVelocity(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -312,14 +312,14 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLinearVelocity()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_angular_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAngularVelocity(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -327,14 +327,14 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAngularVelocity()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setTransform(
             Godot.Transform3D.fromGodotUnsafePointer(args[0]!)
         )}
@@ -342,14 +342,14 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTransform()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_velocity_at_local_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getVelocityAtLocalPosition(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )
@@ -358,7 +358,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyCentralImpulse(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -366,7 +366,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyImpulse(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!),
             position: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
@@ -375,7 +375,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyTorqueImpulse(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -383,7 +383,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyCentralForce(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -391,7 +391,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyForce(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!),
             position: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
@@ -400,7 +400,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._applyTorque(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -408,7 +408,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._addConstantCentralForce(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -416,7 +416,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._addConstantForce(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!),
             position: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
@@ -425,7 +425,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._addConstantTorque(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -433,7 +433,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setConstantForce(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -441,14 +441,14 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConstantForce()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setConstantTorque(
             Godot.Vector3.fromGodotUnsafePointer(args[0]!)
         )}
@@ -456,14 +456,14 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConstantTorque()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_sleep_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSleepState(
             enabled: Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -471,21 +471,21 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isSleeping()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_contact_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_contact_local_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactLocalPosition(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -494,7 +494,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactLocalNormal(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -503,7 +503,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactImpulse(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -512,7 +512,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactLocalShape(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -521,7 +521,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactLocalVelocityAtPosition(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -530,7 +530,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactCollider(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -539,7 +539,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactColliderPosition(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -548,7 +548,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactColliderID(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -557,7 +557,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactColliderObject(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -566,7 +566,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactColliderShape(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -575,7 +575,7 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getContactColliderVelocityAtPosition(
             contactIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -584,20 +584,20 @@ open class PhysicsDirectBodyState3DExtension: PhysicsDirectBodyState3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getStep()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _integrate_forces_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces()}
         let _get_space_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PhysicsDirectBodyState3DExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsDirectBodyState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSpaceState()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

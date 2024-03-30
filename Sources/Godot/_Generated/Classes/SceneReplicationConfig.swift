@@ -28,7 +28,7 @@ open class SceneReplicationConfig: Resource {
     }()
 
     public func properties() -> Godot.GodotArray<Godot.NodePath> {
-        Godot.GodotArray<Godot.NodePath>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.NodePath> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_properties,

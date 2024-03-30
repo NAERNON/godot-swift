@@ -558,7 +558,7 @@ open class AStar2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
             fromID: Int64.fromGodotUnsafePointer(args[0]!),
             toID: Int64.fromGodotUnsafePointer(args[1]!)
@@ -568,7 +568,7 @@ open class AStar2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
             fromID: Int64.fromGodotUnsafePointer(args[0]!),
             toID: Int64.fromGodotUnsafePointer(args[1]!)

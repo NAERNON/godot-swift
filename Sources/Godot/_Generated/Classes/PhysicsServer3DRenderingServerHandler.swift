@@ -103,7 +103,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsServer3DRenderingServerHandler>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setVertex(
             vertexID: Int32.fromGodotUnsafePointer(args[0]!),
             vertex: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
@@ -112,7 +112,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsServer3DRenderingServerHandler>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setNormal(
             vertexID: Int32.fromGodotUnsafePointer(args[0]!),
             normal: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
@@ -121,7 +121,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicsServer3DRenderingServerHandler>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAabb(
             Godot.AABB.fromGodotUnsafePointer(args[0]!)
         )}

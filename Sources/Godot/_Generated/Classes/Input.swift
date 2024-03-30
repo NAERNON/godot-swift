@@ -94,15 +94,15 @@ open class Input: Object {
 
     public lazy var joyConnectionChangedSignal: Godot.SignalEmitter<JoyConnectionChangedSignalInput> = {
         .init(object: self, signalName: "joy_connection_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(device: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     connected: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -622,7 +622,7 @@ open class Input: Object {
     }()
 
     public func connectedJoypads() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_joypads,

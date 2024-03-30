@@ -59,17 +59,17 @@ open class GraphEdit: Control {
 
     public lazy var connectionRequestSignal: Godot.SignalEmitter<ConnectionRequestSignalInput> = {
         .init(object: self, signalName: "connection_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
                     toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ConnectionRequestSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -117,17 +117,17 @@ open class GraphEdit: Control {
 
     public lazy var disconnectionRequestSignal: Godot.SignalEmitter<DisconnectionRequestSignalInput> = {
         .init(object: self, signalName: "disconnection_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
                     toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<DisconnectionRequestSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -169,16 +169,16 @@ open class GraphEdit: Control {
 
     public lazy var connectionToEmptySignal: Godot.SignalEmitter<ConnectionToEmptySignalInput> = {
         .init(object: self, signalName: "connection_to_empty") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     releasePosition: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ConnectionToEmptySignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -220,16 +220,16 @@ open class GraphEdit: Control {
 
     public lazy var connectionFromEmptySignal: Godot.SignalEmitter<ConnectionFromEmptySignalInput> = {
         .init(object: self, signalName: "connection_from_empty") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(toNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     toPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     releasePosition: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ConnectionFromEmptySignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -271,16 +271,16 @@ open class GraphEdit: Control {
 
     public lazy var connectionDragStartedSignal: Godot.SignalEmitter<ConnectionDragStartedSignalInput> = {
         .init(object: self, signalName: "connection_drag_started") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(fromNode: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     fromPort: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     isOutput: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ConnectionDragStartedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -292,14 +292,14 @@ open class GraphEdit: Control {
 
     public lazy var connectionDragEndedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "connection_drag_ended") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -311,14 +311,14 @@ open class GraphEdit: Control {
 
     public lazy var copyNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "copy_nodes_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -330,14 +330,14 @@ open class GraphEdit: Control {
 
     public lazy var pasteNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "paste_nodes_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -349,14 +349,14 @@ open class GraphEdit: Control {
 
     public lazy var duplicateNodesRequestSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "duplicate_nodes_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -386,14 +386,14 @@ open class GraphEdit: Control {
 
     public lazy var deleteNodesRequestSignal: Godot.SignalEmitter<DeleteNodesRequestSignalInput> = {
         .init(object: self, signalName: "delete_nodes_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(nodes: Godot.GodotArray<Godot.GodotStringName>.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+            Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(nodes: Godot.GodotArray<Godot.GodotStringName> .convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<DeleteNodesRequestSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -423,14 +423,14 @@ open class GraphEdit: Control {
 
     public lazy var nodeSelectedSignal: Godot.SignalEmitter<NodeSelectedSignalInput> = {
         .init(object: self, signalName: "node_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -460,14 +460,14 @@ open class GraphEdit: Control {
 
     public lazy var nodeDeselectedSignal: Godot.SignalEmitter<NodeDeselectedSignalInput> = {
         .init(object: self, signalName: "node_deselected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -497,14 +497,14 @@ open class GraphEdit: Control {
 
     public lazy var popupRequestSignal: Godot.SignalEmitter<PopupRequestSignalInput> = {
         .init(object: self, signalName: "popup_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<PopupRequestSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -516,14 +516,14 @@ open class GraphEdit: Control {
 
     public lazy var beginNodeMoveSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "begin_node_move") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -535,14 +535,14 @@ open class GraphEdit: Control {
 
     public lazy var endNodeMoveSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "end_node_move") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -572,14 +572,14 @@ open class GraphEdit: Control {
 
     public lazy var scrollOffsetChangedSignal: Godot.SignalEmitter<ScrollOffsetChangedSignalInput> = {
         .init(object: self, signalName: "scroll_offset_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(offset: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ScrollOffsetChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -742,7 +742,7 @@ open class GraphEdit: Control {
     }()
 
     public func connectionList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connection_list,
@@ -2188,7 +2188,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isInInputHotzone(
             inNode: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             inPort: Int32.fromGodotUnsafePointer(args[1]!),
@@ -2199,7 +2199,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isInOutputHotzone(
             inNode: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             inPort: Int32.fromGodotUnsafePointer(args[1]!),
@@ -2210,7 +2210,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConnectionLine(
             fromPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             toPosition: Godot.Vector2.fromGodotUnsafePointer(args[1]!)
@@ -2220,7 +2220,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isNodeHoverValid(
             fromNode: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
             fromPort: Int32.fromGodotUnsafePointer(args[1]!),

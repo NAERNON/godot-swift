@@ -160,7 +160,7 @@ open class RDPipelineColorBlendState: RefCounted {
     }()
 
     private func __getAttachments() -> Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> {
-        Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_attachments,

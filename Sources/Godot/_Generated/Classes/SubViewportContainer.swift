@@ -126,7 +126,7 @@ open class SubViewportContainer: Container {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<SubViewportContainer>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SubViewportContainer> .fromOpaque(instancePtr).takeUnretainedValue()
         ._propagateInputEvent(
             Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )

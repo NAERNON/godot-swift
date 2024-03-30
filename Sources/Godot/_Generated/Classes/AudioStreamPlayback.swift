@@ -52,7 +52,7 @@ open class AudioStreamPlayback: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._start(
             fromPos: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -60,34 +60,34 @@ open class AudioStreamPlayback: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._stop()}
         let _is_playing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPlaying()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_loop_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLoopCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_playback_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlaybackPosition()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _seek_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._seek(
             position: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -95,9 +95,9 @@ open class AudioStreamPlayback: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mix(
-            buffer: UnsafeMutablePointer<AudioFrame>.fromGodotUnsafePointer(args[0]!),
+            buffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[0]!),
             rateScale: Double.fromGodotUnsafePointer(args[1]!),
             frames: Int32.fromGodotUnsafePointer(args[2]!)
         )
@@ -106,7 +106,7 @@ open class AudioStreamPlayback: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlayback>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._tagUsedStreams()}
         _virtualFunctions = [
             "_start" : ("_start", _start_call),

@@ -13,14 +13,14 @@ open class EditorSelection: Object {
 
     public lazy var selectionChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "selection_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -99,7 +99,7 @@ open class EditorSelection: Object {
     }()
 
     public func selectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_nodes,
@@ -118,7 +118,7 @@ open class EditorSelection: Object {
     }()
 
     public func transformableSelectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transformable_selected_nodes,

@@ -293,7 +293,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getNodes() -> Godot.GodotArray<Godot.GLTFNode?> {
-        Godot.GodotArray<Godot.GLTFNode?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFNode?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_nodes,
@@ -334,7 +334,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getBuffers() -> Godot.GodotArray<Godot.PackedByteArray> {
-        Godot.GodotArray<Godot.PackedByteArray>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedByteArray> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffers,
@@ -375,7 +375,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getBufferViews() -> Godot.GodotArray<Godot.GLTFBufferView?> {
-        Godot.GodotArray<Godot.GLTFBufferView?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFBufferView?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffer_views,
@@ -416,7 +416,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getAccessors() -> Godot.GodotArray<Godot.GLTFAccessor?> {
-        Godot.GodotArray<Godot.GLTFAccessor?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFAccessor?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_accessors,
@@ -457,7 +457,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getMeshes() -> Godot.GodotArray<Godot.GLTFMesh?> {
-        Godot.GodotArray<Godot.GLTFMesh?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFMesh?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_meshes,
@@ -544,7 +544,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getMaterials() -> Godot.GodotArray<Godot.Material?> {
-        Godot.GodotArray<Godot.Material?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Material?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_materials,
@@ -749,7 +749,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getTextures() -> Godot.GodotArray<Godot.GLTFTexture?> {
-        Godot.GodotArray<Godot.GLTFTexture?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFTexture?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_textures,
@@ -790,7 +790,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getTextureSamplers() -> Godot.GodotArray<Godot.GLTFTextureSampler?> {
-        Godot.GodotArray<Godot.GLTFTextureSampler?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFTextureSampler?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_samplers,
@@ -831,7 +831,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getImages() -> Godot.GodotArray<Godot.Texture2D?> {
-        Godot.GodotArray<Godot.Texture2D?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Texture2D?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_images,
@@ -872,7 +872,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getSkins() -> Godot.GodotArray<Godot.GLTFSkin?> {
-        Godot.GodotArray<Godot.GLTFSkin?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFSkin?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skins,
@@ -913,7 +913,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getCameras() -> Godot.GodotArray<Godot.GLTFCamera?> {
-        Godot.GodotArray<Godot.GLTFCamera?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFCamera?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cameras,
@@ -954,7 +954,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getLights() -> Godot.GodotArray<Godot.GLTFLight?> {
-        Godot.GodotArray<Godot.GLTFLight?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFLight?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lights,
@@ -995,7 +995,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unique_names,
@@ -1036,7 +1036,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getUniqueAnimationNames() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unique_animation_names,
@@ -1077,7 +1077,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getSkeletons() -> Godot.GodotArray<Godot.GLTFSkeleton?> {
-        Godot.GodotArray<Godot.GLTFSkeleton?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFSkeleton?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeletons,
@@ -1159,7 +1159,7 @@ open class GLTFState: Resource {
     }()
 
     private func __getAnimations() -> Godot.GodotArray<Godot.GLTFAnimation?> {
-        Godot.GodotArray<Godot.GLTFAnimation?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GLTFAnimation?> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animations,

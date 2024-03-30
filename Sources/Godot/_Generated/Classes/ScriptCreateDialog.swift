@@ -30,14 +30,14 @@ open class ScriptCreateDialog: ConfirmationDialog {
 
     public lazy var scriptCreatedSignal: Godot.SignalEmitter<ScriptCreatedSignalInput> = {
         .init(object: self, signalName: "script_created") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

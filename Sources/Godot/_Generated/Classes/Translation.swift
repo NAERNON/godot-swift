@@ -271,7 +271,7 @@ open class Translation: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Translation>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPluralMessage(
             srcMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
             srcPluralMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!),
@@ -283,7 +283,7 @@ open class Translation: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Translation>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMessage(
             srcMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
             context: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)

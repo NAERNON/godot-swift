@@ -219,14 +219,14 @@ open class Control: CanvasItem {
 
     public lazy var resizedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "resized") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -256,14 +256,14 @@ open class Control: CanvasItem {
 
     public lazy var guiInputSignal: Godot.SignalEmitter<GuiInputSignalInput> = {
         .init(object: self, signalName: "gui_input") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -275,14 +275,14 @@ open class Control: CanvasItem {
 
     public lazy var mouseEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -294,14 +294,14 @@ open class Control: CanvasItem {
 
     public lazy var mouseExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -313,14 +313,14 @@ open class Control: CanvasItem {
 
     public lazy var focusEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_entered") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -332,14 +332,14 @@ open class Control: CanvasItem {
 
     public lazy var focusExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_exited") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -351,14 +351,14 @@ open class Control: CanvasItem {
 
     public lazy var sizeFlagsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "size_flags_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -370,14 +370,14 @@ open class Control: CanvasItem {
 
     public lazy var minimumSizeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "minimum_size_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -389,14 +389,14 @@ open class Control: CanvasItem {
 
     public lazy var themeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "theme_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -3622,7 +3622,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasPoint(
             Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3631,7 +3631,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._structuredTextParser(
             args: Godot.AnyGodotArray.fromGodotUnsafePointer(args[0]!),
             text: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -3641,14 +3641,14 @@ open class Control: CanvasItem {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMinimumSize()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_tooltip_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTooltip(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3657,7 +3657,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDragData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3666,7 +3666,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canDropData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             data: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -3676,7 +3676,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._dropData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             data: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -3685,7 +3685,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._makeCustomTooltip(
             forText: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -3694,7 +3694,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
         ._guiInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}

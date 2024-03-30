@@ -93,14 +93,14 @@ open class Node: Object {
 
     public lazy var readySignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "ready") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -112,14 +112,14 @@ open class Node: Object {
 
     public lazy var renamedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "renamed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -131,14 +131,14 @@ open class Node: Object {
 
     public lazy var treeEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_entered") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -150,14 +150,14 @@ open class Node: Object {
 
     public lazy var treeExitingSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_exiting") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -169,14 +169,14 @@ open class Node: Object {
 
     public lazy var treeExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_exited") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -206,14 +206,14 @@ open class Node: Object {
 
     public lazy var childEnteredTreeSignal: Godot.SignalEmitter<ChildEnteredTreeSignalInput> = {
         .init(object: self, signalName: "child_entered_tree") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -243,14 +243,14 @@ open class Node: Object {
 
     public lazy var childExitingTreeSignal: Godot.SignalEmitter<ChildExitingTreeSignalInput> = {
         .init(object: self, signalName: "child_exiting_tree") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -262,14 +262,14 @@ open class Node: Object {
 
     public lazy var childOrderChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "child_order_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -299,14 +299,14 @@ open class Node: Object {
 
     public lazy var replacingBySignal: Godot.SignalEmitter<ReplacingBySignalInput> = {
         .init(object: self, signalName: "replacing_by") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -631,7 +631,7 @@ open class Node: Object {
     public func children(
         includeInternal: Bool = false
     ) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_includeInternal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -797,7 +797,7 @@ open class Node: Object {
         recursive: Bool = true,
         owned: Bool = true
     ) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         type.withGodotUnsafeRawPointer { __ptr_type in
         recursive.withGodotUnsafeRawPointer { __ptr_recursive in
@@ -1096,7 +1096,7 @@ open class Node: Object {
     }()
 
     public func groups() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_groups,
@@ -2899,7 +2899,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2907,7 +2907,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2915,32 +2915,32 @@ open class Node: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._enterTree()}
         let _exit_tree_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exitTree()}
         let _ready_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._ready()}
         let _get_configuration_warnings_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConfigurationWarnings()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._input(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2948,7 +2948,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shortcutInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2956,7 +2956,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2964,7 +2964,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledKeyInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}

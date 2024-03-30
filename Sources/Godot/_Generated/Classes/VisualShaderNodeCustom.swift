@@ -154,42 +154,42 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_description_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDescription()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_category_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCategory()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_return_icon_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getReturnIconType()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_input_port_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_input_port_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortType(
             port: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -198,7 +198,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortName(
             port: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -207,7 +207,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortDefaultValue(
             port: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -216,7 +216,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDefaultInputPort(
             type: Godot.VisualShaderNode.PortType.fromGodotUnsafePointer(args[0]!)
         )
@@ -225,14 +225,14 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_output_port_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortType(
             port: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -241,7 +241,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortName(
             port: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -250,14 +250,14 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPropertyCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_property_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPropertyName(
             index: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -266,7 +266,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPropertyDefaultIndex(
             Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -275,7 +275,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPropertyOptions(
             index: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -284,10 +284,10 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCode(
-            inputVars: Godot.GodotArray<Godot.GodotString>.fromGodotUnsafePointer(args[0]!),
-            outputVars: Godot.GodotArray<Godot.GodotString>.fromGodotUnsafePointer(args[1]!),
+            inputVars: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[0]!),
+            outputVars: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[1]!),
             mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[2]!),
             type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[3]!)
         )
@@ -296,7 +296,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFuncCode(
             mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!),
             type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[1]!)
@@ -306,7 +306,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getGlobalCode(
             mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!)
         )
@@ -315,14 +315,14 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isHighend()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _is_available_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<VisualShaderNodeCustom>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isAvailable(
             mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!),
             type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[1]!)

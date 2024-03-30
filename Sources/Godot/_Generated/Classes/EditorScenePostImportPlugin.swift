@@ -169,7 +169,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInternalImportOptions(
             category: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -177,7 +177,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInternalOptionVisibility(
             category: Int32.fromGodotUnsafePointer(args[0]!),
             forAnimation: Bool.fromGodotUnsafePointer(args[1]!),
@@ -188,7 +188,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInternalOptionUpdateViewRequired(
             category: Int32.fromGodotUnsafePointer(args[0]!),
             option: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -198,7 +198,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._internalProcess(
             category: Int32.fromGodotUnsafePointer(args[0]!),
             baseNode: Godot.Node?.fromGodotUnsafePointer(args[1]!),
@@ -209,7 +209,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportOptions(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )}
@@ -217,7 +217,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOptionVisibility(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             forAnimation: Bool.fromGodotUnsafePointer(args[1]!),
@@ -228,7 +228,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._preProcess(
             scene: Godot.Node?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -236,7 +236,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._postProcess(
             scene: Godot.Node?.fromGodotUnsafePointer(args[0]!)
         )}

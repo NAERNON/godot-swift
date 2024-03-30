@@ -30,14 +30,14 @@ open class GridMap: Node3D {
 
     public lazy var cellSizeChangedSignal: Godot.SignalEmitter<CellSizeChangedSignalInput> = {
         .init(object: self, signalName: "cell_size_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(cellSize: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -49,14 +49,14 @@ open class GridMap: Node3D {
 
     public lazy var changedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -930,7 +930,7 @@ open class GridMap: Node3D {
     }()
 
     public func usedCells() -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3I> .fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells,
@@ -951,7 +951,7 @@ open class GridMap: Node3D {
     public func usedCellsByItem(
         _ item: Int32
     ) -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I>.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3I> .fromMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafeArgumentPackPointer(__ptr_item) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

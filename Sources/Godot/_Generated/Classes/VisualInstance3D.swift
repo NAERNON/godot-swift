@@ -302,7 +302,7 @@ open class VisualInstance3D: Node3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VisualInstance3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VisualInstance3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAabb()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

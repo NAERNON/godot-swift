@@ -67,18 +67,18 @@ open class CollisionObject3D: Node3D {
 
     public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
         .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(camera: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
                     event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
                     position: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
                     normal: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!)),
                     shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 4).pointee!))))
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -90,14 +90,14 @@ open class CollisionObject3D: Node3D {
 
     public lazy var mouseEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -109,14 +109,14 @@ open class CollisionObject3D: Node3D {
 
     public lazy var mouseExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -921,7 +921,7 @@ open class CollisionObject3D: Node3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CollisionObject3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._inputEvent(
             camera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[1]!),
@@ -933,13 +933,13 @@ open class CollisionObject3D: Node3D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<CollisionObject3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseEnter()}
         let _mouse_exit_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<CollisionObject3D>.fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseExit()}
         _virtualFunctions = [
             "_inputEvent" : ("_input_event", _input_event_call),
