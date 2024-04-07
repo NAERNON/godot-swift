@@ -11,13 +11,13 @@ extension NodePath {
     }
     
     public init(string: GodotString) {
-        self = Self._makeFromGodotString(string)
+        self = Self._make(from: string)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromNodePath(self)
+        Self._make(from: self)
     }
     
     // MARK: Methods & variables

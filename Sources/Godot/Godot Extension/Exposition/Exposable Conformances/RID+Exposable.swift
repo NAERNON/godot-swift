@@ -48,7 +48,7 @@ extension RID: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromRIDPointer(unsafePointer!)
+        Self._makeFromRIDPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

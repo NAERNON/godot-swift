@@ -30,7 +30,7 @@ public extension ExposableRawRepresentable {
         RawValue.convertToStorage(value.rawValue)
     }
     
-    public static func convertToStorageTemporarily<Result>(
+    static func convertToStorageTemporarily<Result>(
         _ value: consuming Self,
         body: (borrowing Variant.Storage) throws -> Result
     ) rethrows -> Result {

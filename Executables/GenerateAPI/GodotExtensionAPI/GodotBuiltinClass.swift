@@ -118,17 +118,7 @@ struct GodotBuiltinClass: Decodable {
         var arguments: [GodotArgument]?
         
         var name: String {
-            var string = "_make"
-            
-            if let arguments {
-                string += "From"
-                
-                for argument in arguments {
-                    string += argument.type.syntax()
-                }
-            }
-            
-            return string
+            "_make"
         }
         
         var returnType: GodotType? {
@@ -140,7 +130,17 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var ptrIdentifier: String {
-            "_" + name
+            var string = "__constructor"
+            
+            if let arguments {
+                string += "From"
+                
+                for argument in arguments {
+                    string += argument.type.syntax()
+                }
+            }
+            
+            return string
         }
         
         var usesVariantGeneric: Bool {
@@ -174,7 +174,17 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var name: String {
-            baseConstructor.name + "Pointer"
+            var string = "_make"
+            
+            if let arguments = baseConstructor.arguments {
+                string += "From"
+                
+                for argument in arguments {
+                    string += argument.type.syntax()
+                }
+            }
+            
+            return string + "Pointer"
         }
         
         var returnType: GodotType? {
@@ -366,7 +376,7 @@ struct GodotBuiltinClass: Decodable {
         _ constructor: Constructor,
         classSize: Int
     ) throws -> MemberBlockItemListSyntax {
-        try constructor.withArgumentLabelsHidden().translatedArguments().declSyntax(
+        try constructor.translatedArguments().declSyntax(
             options: syntaxOptions,
             keywords: .internal
         ) {
@@ -402,7 +412,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         if let constructor = PointerConstructor(constructor) {
-            try constructor.withArgumentLabelsHidden().translatedArguments().declSyntax(
+            try constructor.translatedArguments().declSyntax(
                 options: syntaxOptions,
                 keywords: .internal
             ) {

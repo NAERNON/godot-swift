@@ -96,11 +96,11 @@ extension GodotArray: Variant.Storable {
         // This is performed in O(1).
         if Element.variantStorageType == nil {
             let emptyScript: Object? = nil
-            return Self._makeFromGodotArrayIntGodotStringNameVariant(
-                newValue,
-                0,
-                "",
-                emptyScript
+            return Self._make(
+                base: newValue,
+                type: 0,
+                className: GodotStringName(),
+                script: emptyScript
             )
         } else {
             return newValue
@@ -127,7 +127,7 @@ extension GodotArray: Exposable where Element : Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotArrayPointer(unsafePointer!)
+        Self._makeFromGodotArrayPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

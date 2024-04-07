@@ -48,7 +48,7 @@ extension Callable: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromCallablePointer(unsafePointer!)
+        Self._makeFromCallablePointer(from: unsafePointer!)
     }
     
     // func transferToGodot

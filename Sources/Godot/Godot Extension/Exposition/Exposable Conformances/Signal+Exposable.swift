@@ -48,7 +48,7 @@ extension Signal: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromSignalPointer(unsafePointer!)
+        Self._makeFromSignalPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

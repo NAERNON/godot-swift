@@ -14,7 +14,7 @@ extension PackedStringArray {
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._makeFromGodotArray(array)
+        self = Self._make(from: array)
     }
     
     // MARK: Copy

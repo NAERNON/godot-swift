@@ -4,11 +4,11 @@
 
 import GodotExtensionHeaders
 
-private var __make: GDExtensionPtrConstructor = {
+private var __constructor: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 0)!
 }()
 
-private var __makeFromRID: GDExtensionPtrConstructor = {
+private var __constructorFromRID: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 1)!
 }()
 
@@ -72,30 +72,30 @@ extension RID {
     static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __make(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromRID(
-        _ from: Godot.RID
+    static internal func _make(
+        from: Godot.RID
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromRID(__ptr___temporary, __accessPtr)
+            __constructorFromRID(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromRIDPointer(
-        _ from: UnsafeRawPointer
+        from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromRID(__ptr___temporary, __accessPtr)
+            __constructorFromRID(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }

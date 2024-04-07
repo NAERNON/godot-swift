@@ -13,7 +13,7 @@ extension RID {
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromRID(self)
+        Self._make(from: self)
     }
     
     // MARK: Methods & variables

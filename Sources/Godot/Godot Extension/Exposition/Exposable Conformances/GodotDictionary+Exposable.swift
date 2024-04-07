@@ -58,7 +58,7 @@ where Key == Variant, AssociatedValue == Variant
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotDictionaryPointer(unsafePointer!)
+        Self._makeFromGodotDictionaryPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

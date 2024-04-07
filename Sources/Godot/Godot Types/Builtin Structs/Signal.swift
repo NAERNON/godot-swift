@@ -11,13 +11,13 @@ extension Signal {
     }
     
     internal init(object: Object, signal: GodotStringName) {
-        self = Self._makeFromObjectGodotStringName(object, signal)
+        self = Self._make(object: object, signal: signal)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromSignal(self)
+        Self._make(from: self)
     }
     
     // MARK: Methods & variables

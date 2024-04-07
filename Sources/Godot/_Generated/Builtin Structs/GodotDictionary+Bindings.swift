@@ -8,11 +8,11 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 }()
 
-private var __make: GDExtensionPtrConstructor = {
+private var __constructor: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY, 0)!
 }()
 
-private var __makeFromGodotDictionary: GDExtensionPtrConstructor = {
+private var __constructorFromGodotDictionary: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY, 1)!
 }()
 
@@ -158,30 +158,30 @@ extension GodotDictionary {
     static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __make(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromGodotDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
-        _ from: Godot.GodotDictionary<Value1, Value2>
+    static internal func _make<Value1: Variant.Storable, Value2: Variant.Storable>(
+        from: Godot.GodotDictionary<Value1, Value2>
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromGodotDictionary(__ptr___temporary, __accessPtr)
+            __constructorFromGodotDictionary(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromGodotDictionaryPointer(
-        _ from: UnsafeRawPointer
+        from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromGodotDictionary(__ptr___temporary, __accessPtr)
+            __constructorFromGodotDictionary(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }

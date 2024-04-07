@@ -48,7 +48,7 @@ extension PackedVector2Array: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedVector2ArrayPointer(unsafePointer!)
+        Self._makeFromPackedVector2ArrayPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

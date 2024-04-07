@@ -37,11 +37,11 @@ extension GodotString {
     }
     
     public init(stringName: GodotStringName) {
-        self = Self._makeFromGodotStringName(stringName)
+        self = Self._make(from: stringName)
     }
     
     public init(nodePath: NodePath) {
-        self = Self._makeFromNodePath(nodePath)
+        self = Self._make(from: nodePath)
     }
     
     public init(_ c: Character) {
@@ -51,7 +51,7 @@ extension GodotString {
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromGodotString(self)
+        Self._make(from: self)
     }
     
     // MARK: Operators

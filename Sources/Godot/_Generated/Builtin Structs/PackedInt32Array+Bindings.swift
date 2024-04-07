@@ -8,15 +8,15 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 }()
 
-private var __make: GDExtensionPtrConstructor = {
+private var __constructor: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 0)!
 }()
 
-private var __makeFromPackedInt32Array: GDExtensionPtrConstructor = {
+private var __constructorFromPackedInt32Array: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 1)!
 }()
 
-private var __makeFromGodotArray: GDExtensionPtrConstructor = {
+private var __constructorFromGodotArray: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 2)!
 }()
 
@@ -198,53 +198,53 @@ extension PackedInt32Array {
     static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __make(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedInt32Array(
-        _ from: Godot.PackedInt32Array
+    static internal func _make(
+        from: Godot.PackedInt32Array
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromPackedInt32Array(__ptr___temporary, __accessPtr)
+            __constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromPackedInt32ArrayPointer(
-        _ from: UnsafeRawPointer
+        from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromPackedInt32Array(__ptr___temporary, __accessPtr)
+            __constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromGodotArray<Value: Variant.Storable>(
-        _ from: Godot.GodotArray<Value>
+    static internal func _make<Value: Variant.Storable>(
+        from: Godot.GodotArray<Value>
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromGodotArray(__ptr___temporary, __accessPtr)
+            __constructorFromGodotArray(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromGodotArrayPointer(
-        _ from: UnsafeRawPointer
+        from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromGodotArray(__ptr___temporary, __accessPtr)
+            __constructorFromGodotArray(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }

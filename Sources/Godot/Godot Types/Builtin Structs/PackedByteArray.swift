@@ -14,7 +14,7 @@ extension PackedByteArray {
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._makeFromGodotArray(array)
+        self = Self._make(from: array)
     }
     
     public func withUnsafeBytes<Result>(

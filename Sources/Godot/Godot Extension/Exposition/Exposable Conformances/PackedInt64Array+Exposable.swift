@@ -48,7 +48,7 @@ extension PackedInt64Array: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedInt64ArrayPointer(unsafePointer!)
+        Self._makeFromPackedInt64ArrayPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

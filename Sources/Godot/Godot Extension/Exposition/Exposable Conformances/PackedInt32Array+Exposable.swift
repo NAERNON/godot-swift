@@ -48,7 +48,7 @@ extension PackedInt32Array: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedInt32ArrayPointer(unsafePointer!)
+        Self._makeFromPackedInt32ArrayPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

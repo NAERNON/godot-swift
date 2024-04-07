@@ -11,11 +11,11 @@ extension GodotStringName {
     }
     
     public init(swiftString: String) {
-        self = Self._makeFromGodotString(GodotString(swiftString: swiftString))
+        self = Self._make(from: GodotString(swiftString: swiftString))
     }
     
     public init(swiftStaticString: StaticString) {
-        self = Self._makeFromGodotString(GodotString(swiftStaticString: swiftStaticString))
+        self = Self._make(from: GodotString(swiftStaticString: swiftStaticString))
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -23,7 +23,7 @@ extension GodotStringName {
     }
     
     public init(string: GodotString) {
-        self = Self._makeFromGodotString(string)
+        self = Self._make(from: string)
     }
     
     public static func className(
@@ -44,7 +44,7 @@ extension GodotStringName {
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromGodotStringName(self)
+        Self._make(from: self)
     }
     
     // MARK: Operators

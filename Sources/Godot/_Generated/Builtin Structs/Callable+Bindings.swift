@@ -8,15 +8,15 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 }()
 
-private var __make: GDExtensionPtrConstructor = {
+private var __constructor: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 0)!
 }()
 
-private var __makeFromCallable: GDExtensionPtrConstructor = {
+private var __constructorFromCallable: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 1)!
 }()
 
-private var __makeFromObjectGodotStringName: GDExtensionPtrConstructor = {
+private var __constructorFromObjectGodotStringName: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 2)!
 }()
 
@@ -168,37 +168,37 @@ extension Callable {
     static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __make(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromCallable(
-        _ from: Godot.Callable
+    static internal func _make(
+        from: Godot.Callable
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromCallable(__ptr___temporary, __accessPtr)
+            __constructorFromCallable(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromCallablePointer(
-        _ from: UnsafeRawPointer
+        from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromCallable(__ptr___temporary, __accessPtr)
+            __constructorFromCallable(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromObjectGodotStringName(
-        _ object: Godot.Object?,
-        _ method: Godot.GodotStringName
+    static internal func _make(
+        object: Godot.Object?,
+        method: Godot.GodotStringName
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         object.withGodotUnsafeRawPointer { __ptr_object in
@@ -206,19 +206,19 @@ extension Callable {
         method.withGodotUnsafeRawPointer { __ptr_method in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_method) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromObjectGodotStringName(__ptr___temporary, __accessPtr)
+            __constructorFromObjectGodotStringName(__ptr___temporary, __accessPtr)
         }}}}}
         return Self.init(opaque: __temporary)
     }
 
     static internal func _makeFromObjectGodotStringNamePointer(
-        _ object: UnsafeRawPointer,
-        _ method: UnsafeRawPointer
+        object: UnsafeRawPointer,
+        method: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(object, method) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __makeFromObjectGodotStringName(__ptr___temporary, __accessPtr)
+            __constructorFromObjectGodotStringName(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }

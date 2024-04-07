@@ -11,13 +11,13 @@ extension Callable {
     }
     
     internal init(object: Object, method: GodotStringName) {
-        self = Self._makeFromObjectGodotStringName(object, method)
+        self = Self._make(object: object, method: method)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._makeFromCallable(self)
+        Self._make(from: self)
     }
     
     // MARK: Methods & variables

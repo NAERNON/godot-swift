@@ -48,7 +48,7 @@ extension GodotString: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotStringPointer(unsafePointer!)
+        Self._makeFromGodotStringPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

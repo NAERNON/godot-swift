@@ -48,7 +48,7 @@ extension PackedFloat64Array: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedFloat64ArrayPointer(unsafePointer!)
+        Self._makeFromPackedFloat64ArrayPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

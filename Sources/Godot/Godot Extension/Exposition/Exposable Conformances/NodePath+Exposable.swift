@@ -48,7 +48,7 @@ extension NodePath: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromNodePathPointer(unsafePointer!)
+        Self._makeFromNodePathPointer(from: unsafePointer!)
     }
     
     // func transferToGodot

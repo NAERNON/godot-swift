@@ -45,11 +45,11 @@ extension GodotArray {
     public func eraseToAnyArray() -> AnyGodotArray {
         // This is performed in O(1).
         let emptyScript: Object? = nil
-        return AnyGodotArray._makeFromGodotArrayIntGodotStringNameVariant(
-            self,
-            0,
-            "",
-            emptyScript
+        return AnyGodotArray._make(
+            base: self,
+            type: 0,
+            className: GodotStringName(),
+            script: emptyScript
         )
     }
 }
