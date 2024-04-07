@@ -58,7 +58,7 @@ open class TextureLayered: Texture {
     }()
 
     public func format() -> Godot.Image.Format {
-        Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -77,7 +77,7 @@ open class TextureLayered: Texture {
     }()
 
     public func layeredType() -> Godot.TextureLayered.LayeredType {
-        Godot.TextureLayered.LayeredType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextureLayered.LayeredType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_layered_type,
@@ -96,7 +96,7 @@ open class TextureLayered: Texture {
     }()
 
     public func width() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -115,7 +115,7 @@ open class TextureLayered: Texture {
     }()
 
     public func height() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height,
@@ -134,7 +134,7 @@ open class TextureLayered: Texture {
     }()
 
     public func layers() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_layers,
@@ -153,7 +153,7 @@ open class TextureLayered: Texture {
     }()
 
     public func hasMipmaps() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_mipmaps,
@@ -174,7 +174,7 @@ open class TextureLayered: Texture {
     public func layerData(
         layer: Int32
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,51 +198,51 @@ open class TextureLayered: Texture {
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFormat()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_layered_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLayeredType()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWidth()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHeight()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_layers_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLayers()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _has_mipmaps_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasMipmaps()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_layer_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<TextureLayered> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLayerData(
-            layerIndex: Int32.fromGodotUnsafePointer(args[0]!)
+            layerIndex: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getFormat" : ("_get_format", _get_format_call),
             "_getLayeredType" : ("_get_layered_type", _get_layered_type_call),

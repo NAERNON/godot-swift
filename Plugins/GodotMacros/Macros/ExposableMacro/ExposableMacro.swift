@@ -158,7 +158,7 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
             return []
         }
         
-        return ["@_ExposedMember"]
+        return ["@ExposedMember"]
     }
     
     private static func isMemberExpositionAvailable(

@@ -65,7 +65,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     }()
 
     private func __getSource() -> Godot.VisualShaderNodeCubemap.Source {
-        Godot.VisualShaderNodeCubemap.Source.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeCubemap.Source.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source,
@@ -107,7 +107,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     }()
 
     private func __getCubeMap() -> Godot.Cubemap? {
-        Godot.Cubemap?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Cubemap?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cube_map,
@@ -148,7 +148,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     }()
 
     private func __getTextureType() -> Godot.VisualShaderNodeCubemap.TextureType {
-        Godot.VisualShaderNodeCubemap.TextureType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeCubemap.TextureType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,

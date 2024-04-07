@@ -31,7 +31,7 @@ open class XRNode3D: Node3D {
     public lazy var trackingChangedSignal: Godot.SignalEmitter<TrackingChangedSignalInput> = {
         .init(object: self, signalName: "tracking_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tracking: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tracking: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class XRNode3D: Node3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -74,7 +74,7 @@ open class XRNode3D: Node3D {
     }()
 
     private func __getTracker() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker,
@@ -115,7 +115,7 @@ open class XRNode3D: Node3D {
     }()
 
     private func __getPoseName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pose_name,
@@ -134,7 +134,7 @@ open class XRNode3D: Node3D {
     }()
 
     public func isActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_is_active,
@@ -153,7 +153,7 @@ open class XRNode3D: Node3D {
     }()
 
     public func hasTrackingData() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_has_tracking_data,
@@ -172,7 +172,7 @@ open class XRNode3D: Node3D {
     }()
 
     public func pose() -> Godot.XRPose? {
-        Godot.XRPose?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRPose?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pose,

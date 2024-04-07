@@ -123,7 +123,7 @@ open class LineEdit: Control {
     public lazy var textChangedSignal: Godot.SignalEmitter<TextChangedSignalInput> = {
         .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(newText: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(newText: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -131,7 +131,7 @@ open class LineEdit: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -160,7 +160,7 @@ open class LineEdit: Control {
     public lazy var textChangeRejectedSignal: Godot.SignalEmitter<TextChangeRejectedSignalInput> = {
         .init(object: self, signalName: "text_change_rejected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(rejectedSubstring: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(rejectedSubstring: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -168,7 +168,7 @@ open class LineEdit: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -197,7 +197,7 @@ open class LineEdit: Control {
     public lazy var textSubmittedSignal: Godot.SignalEmitter<TextSubmittedSignalInput> = {
         .init(object: self, signalName: "text_submitted") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(newText: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(newText: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -205,7 +205,7 @@ open class LineEdit: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -240,7 +240,7 @@ open class LineEdit: Control {
     }()
 
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_alignment,
@@ -337,7 +337,7 @@ open class LineEdit: Control {
     }()
 
     public func hasSelection() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_selection,
@@ -356,7 +356,7 @@ open class LineEdit: Control {
     }()
 
     public func selectedText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_text,
@@ -375,7 +375,7 @@ open class LineEdit: Control {
     }()
 
     public func selectionFromColumn() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selection_from_column,
@@ -394,7 +394,7 @@ open class LineEdit: Control {
     }()
 
     public func selectionToColumn() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selection_to_column,
@@ -435,7 +435,7 @@ open class LineEdit: Control {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -454,7 +454,7 @@ open class LineEdit: Control {
     }()
 
     private func __getDrawControlChars() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_draw_control_chars,
@@ -517,7 +517,7 @@ open class LineEdit: Control {
     }()
 
     private func __getTextDirection() -> Godot.Control.TextDirection {
-        Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control.TextDirection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_direction,
@@ -558,7 +558,7 @@ open class LineEdit: Control {
     }()
 
     private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,
@@ -599,7 +599,7 @@ open class LineEdit: Control {
     }()
 
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
-        Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.StructuredTextParser.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override,
@@ -617,7 +617,7 @@ open class LineEdit: Control {
         }
     }()
 
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+    private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
@@ -640,7 +640,7 @@ open class LineEdit: Control {
     }()
 
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override_options,
@@ -681,7 +681,7 @@ open class LineEdit: Control {
     }()
 
     private func __getPlaceholder() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_placeholder,
@@ -722,7 +722,7 @@ open class LineEdit: Control {
     }()
 
     private func __getCaretColumn() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_caret_column,
@@ -741,7 +741,7 @@ open class LineEdit: Control {
     }()
 
     public func scrollOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scroll_offset,
@@ -782,7 +782,7 @@ open class LineEdit: Control {
     }()
 
     private func __isExpandToTextLengthEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_expand_to_text_length_enabled,
@@ -823,7 +823,7 @@ open class LineEdit: Control {
     }()
 
     private func __isCaretBlinkEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_caret_blink_enabled,
@@ -864,7 +864,7 @@ open class LineEdit: Control {
     }()
 
     private func __isCaretMidGraphemeEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_caret_mid_grapheme_enabled,
@@ -905,7 +905,7 @@ open class LineEdit: Control {
     }()
 
     private func __isCaretForceDisplayed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_caret_force_displayed,
@@ -946,7 +946,7 @@ open class LineEdit: Control {
     }()
 
     private func __getCaretBlinkInterval() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_caret_blink_interval,
@@ -987,7 +987,7 @@ open class LineEdit: Control {
     }()
 
     private func __getMaxLength() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_length,
@@ -1092,7 +1092,7 @@ open class LineEdit: Control {
     }()
 
     private func __isEditable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_editable,
@@ -1133,7 +1133,7 @@ open class LineEdit: Control {
     }()
 
     private func __isSecret() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_secret,
@@ -1174,7 +1174,7 @@ open class LineEdit: Control {
     }()
 
     private func __getSecretCharacter() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_secret_character,
@@ -1215,7 +1215,7 @@ open class LineEdit: Control {
     }()
 
     public func menu() -> Godot.PopupMenu? {
-        Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PopupMenu?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_menu,
@@ -1234,7 +1234,7 @@ open class LineEdit: Control {
     }()
 
     public func isMenuVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_menu_visible,
@@ -1275,7 +1275,7 @@ open class LineEdit: Control {
     }()
 
     private func __isContextMenuEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_context_menu_enabled,
@@ -1316,7 +1316,7 @@ open class LineEdit: Control {
     }()
 
     private func __isVirtualKeyboardEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_virtual_keyboard_enabled,
@@ -1357,7 +1357,7 @@ open class LineEdit: Control {
     }()
 
     private func __getVirtualKeyboardType() -> Godot.LineEdit.VirtualKeyboardType {
-        Godot.LineEdit.VirtualKeyboardType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LineEdit.VirtualKeyboardType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_virtual_keyboard_type,
@@ -1398,7 +1398,7 @@ open class LineEdit: Control {
     }()
 
     private func __isClearButtonEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_clear_button_enabled,
@@ -1439,7 +1439,7 @@ open class LineEdit: Control {
     }()
 
     private func __isShortcutKeysEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shortcut_keys_enabled,
@@ -1480,7 +1480,7 @@ open class LineEdit: Control {
     }()
 
     private func __isMiddleMousePasteEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_middle_mouse_paste_enabled,
@@ -1521,7 +1521,7 @@ open class LineEdit: Control {
     }()
 
     private func __isSelectingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_selecting_enabled,
@@ -1562,7 +1562,7 @@ open class LineEdit: Control {
     }()
 
     private func __isDeselectOnFocusLossEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_deselect_on_focus_loss_enabled,
@@ -1603,7 +1603,7 @@ open class LineEdit: Control {
     }()
 
     private func __isDragAndDropSelectionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drag_and_drop_selection_enabled,
@@ -1645,7 +1645,7 @@ open class LineEdit: Control {
     }()
 
     private func __getRightIcon() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_right_icon,
@@ -1686,7 +1686,7 @@ open class LineEdit: Control {
     }()
 
     private func __isFlat() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flat,
@@ -1727,7 +1727,7 @@ open class LineEdit: Control {
     }()
 
     private func __isSelectAllOnFocus() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_select_all_on_focus,

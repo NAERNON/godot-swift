@@ -38,7 +38,7 @@ open class InputEventShortcut: InputEvent {
     }()
 
     private func __getShortcut() -> Godot.Shortcut? {
-        Godot.Shortcut?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shortcut?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shortcut,

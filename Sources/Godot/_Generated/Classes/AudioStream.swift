@@ -39,7 +39,7 @@ open class AudioStream: Resource {
     }()
 
     public func length() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_length,
@@ -58,7 +58,7 @@ open class AudioStream: Resource {
     }()
 
     public func isMonophonic() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_monophonic,
@@ -77,7 +77,7 @@ open class AudioStream: Resource {
     }()
 
     public func instantiatePlayback() -> Godot.AudioStreamPlayback? {
-        Godot.AudioStreamPlayback?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamPlayback?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_instantiate_playback,
@@ -99,42 +99,42 @@ open class AudioStream: Resource {
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiatePlayback()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_stream_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getStreamName()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_length_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLength()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _is_monophonic_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isMonophonic()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_bpm_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBpm()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_beat_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBeatCount()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_instantiatePlayback" : ("_instantiate_playback", _instantiate_playback_call),
             "_getStreamName" : ("_get_stream_name", _get_stream_name_call),

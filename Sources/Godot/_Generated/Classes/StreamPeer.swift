@@ -17,7 +17,7 @@ open class StreamPeer: RefCounted {
     public func putData(
         _ data: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -40,7 +40,7 @@ open class StreamPeer: RefCounted {
     public func putPartialData(
         _ data: Godot.PackedByteArray
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +63,7 @@ open class StreamPeer: RefCounted {
     public func data(
         bytes: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +86,7 @@ open class StreamPeer: RefCounted {
     public func partialData(
         bytes: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -107,7 +107,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func availableBytes() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_available_bytes,
@@ -148,7 +148,7 @@ open class StreamPeer: RefCounted {
     }()
 
     private func __isBigEndianEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_big_endian_enabled,
@@ -430,7 +430,7 @@ open class StreamPeer: RefCounted {
         }
     }()
 
-    public func putVar<Value: VariantStorableIn>(
+    public func putVar<Value: Variant.Storable>(
         value: Value,
         fullObjects: Bool = false
     ) {
@@ -455,7 +455,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func get8() -> Int8 {
-        Int8.fromMutatingGodotUnsafePointer { __temporary in
+        Int8.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_8,
@@ -474,7 +474,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func u8() -> UInt8 {
-        UInt8.fromMutatingGodotUnsafePointer { __temporary in
+        UInt8.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_u8,
@@ -493,7 +493,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func get16() -> Int16 {
-        Int16.fromMutatingGodotUnsafePointer { __temporary in
+        Int16.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_16,
@@ -512,7 +512,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func u16() -> UInt16 {
-        UInt16.fromMutatingGodotUnsafePointer { __temporary in
+        UInt16.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_u16,
@@ -531,7 +531,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func get32() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_32,
@@ -550,7 +550,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func u32() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_u32,
@@ -569,7 +569,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func get64() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_64,
@@ -588,7 +588,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func u64() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_u64,
@@ -607,7 +607,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func float() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_float,
@@ -626,7 +626,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func double() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_double,
@@ -647,7 +647,7 @@ open class StreamPeer: RefCounted {
     public func string(
         bytes: Int32 = -1
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -670,7 +670,7 @@ open class StreamPeer: RefCounted {
     public func utf8String(
         bytes: Int32 = -1
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         withUnsafeArgumentPackPointer(__ptr_bytes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -693,7 +693,7 @@ open class StreamPeer: RefCounted {
     public func `var`(
         allowObjects: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_allowObjects) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

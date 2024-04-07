@@ -37,7 +37,7 @@ open class Joint3D: Node3D {
     }()
 
     private func __getNodeA() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_node_a,
@@ -78,7 +78,7 @@ open class Joint3D: Node3D {
     }()
 
     private func __getNodeB() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_node_b,
@@ -119,7 +119,7 @@ open class Joint3D: Node3D {
     }()
 
     private func __getSolverPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_solver_priority,
@@ -160,7 +160,7 @@ open class Joint3D: Node3D {
     }()
 
     private func __getExcludeNodesFromCollision() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_exclude_nodes_from_collision,
@@ -179,7 +179,7 @@ open class Joint3D: Node3D {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,

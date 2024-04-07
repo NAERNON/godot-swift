@@ -54,7 +54,7 @@ open class Camera3D: Node3D {
     public func projectRayNormal(
         screenPoint: Godot.Vector2
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,7 +77,7 @@ open class Camera3D: Node3D {
     public func projectLocalRayNormal(
         screenPoint: Godot.Vector2
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -100,7 +100,7 @@ open class Camera3D: Node3D {
     public func projectRayOrigin(
         screenPoint: Godot.Vector2
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         withUnsafeArgumentPackPointer(__ptr_screenPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -123,7 +123,7 @@ open class Camera3D: Node3D {
     public func unprojectPosition(
         worldPoint: Godot.Vector3
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -146,7 +146,7 @@ open class Camera3D: Node3D {
     public func isPositionBehind(
         worldPoint: Godot.Vector3
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -170,7 +170,7 @@ open class Camera3D: Node3D {
         screenPoint: Godot.Vector2,
         zDepth: Double
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screenPoint.withGodotUnsafeRawPointer { __ptr_screenPoint in
         zDepth.withGodotUnsafeRawPointer { __ptr_zDepth in
         withUnsafeArgumentPackPointer(__ptr_screenPoint, __ptr_zDepth) { __accessPtr in
@@ -334,7 +334,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __isCurrent() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_current,
@@ -353,7 +353,7 @@ open class Camera3D: Node3D {
     }()
 
     public func cameraTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_transform,
@@ -372,7 +372,7 @@ open class Camera3D: Node3D {
     }()
 
     public func cameraProjection() -> Godot.Projection {
-        Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Projection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_projection,
@@ -391,7 +391,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getFov() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fov,
@@ -410,7 +410,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getFrustumOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frustum_offset,
@@ -429,7 +429,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -448,7 +448,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getFar() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_far,
@@ -467,7 +467,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getNear() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_near,
@@ -596,7 +596,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getProjection() -> Godot.Camera3D.ProjectionType {
-        Godot.Camera3D.ProjectionType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera3D.ProjectionType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_projection,
@@ -659,7 +659,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getHOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_offset,
@@ -700,7 +700,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getVOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_offset,
@@ -741,7 +741,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getCullMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cull_mask,
@@ -783,7 +783,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getEnvironment() -> Godot.Environment? {
-        Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment,
@@ -825,7 +825,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getAttributes() -> Godot.CameraAttributes? {
-        Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraAttributes?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_attributes,
@@ -866,7 +866,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getKeepAspectMode() -> Godot.Camera3D.KeepAspect {
-        Godot.Camera3D.KeepAspect.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera3D.KeepAspect.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keep_aspect_mode,
@@ -907,7 +907,7 @@ open class Camera3D: Node3D {
     }()
 
     private func __getDopplerTracking() -> Godot.Camera3D.DopplerTracking {
-        Godot.Camera3D.DopplerTracking.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera3D.DopplerTracking.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_doppler_tracking,
@@ -926,7 +926,7 @@ open class Camera3D: Node3D {
     }()
 
     public func frustum() -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frustum,
@@ -947,7 +947,7 @@ open class Camera3D: Node3D {
     public func isPositionInFrustum(
         worldPoint: Godot.Vector3
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         worldPoint.withGodotUnsafeRawPointer { __ptr_worldPoint in
         withUnsafeArgumentPackPointer(__ptr_worldPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -968,7 +968,7 @@ open class Camera3D: Node3D {
     }()
 
     public func cameraRid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_rid,
@@ -987,7 +987,7 @@ open class Camera3D: Node3D {
     }()
 
     public func pyramidShapeRid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pyramid_shape_rid,
@@ -1032,7 +1032,7 @@ open class Camera3D: Node3D {
     public func cullMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -38,7 +38,7 @@ open class PanoramaSkyMaterial: Material {
     }()
 
     private func __getPanorama() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_panorama,
@@ -79,7 +79,7 @@ open class PanoramaSkyMaterial: Material {
     }()
 
     private func __isFilteringEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_filtering_enabled,

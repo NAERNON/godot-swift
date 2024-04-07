@@ -15,7 +15,7 @@ open class Curve2D: Resource {
     }()
 
     private func __getPointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_count,
@@ -110,7 +110,7 @@ open class Curve2D: Resource {
     public func pointPosition(
         idx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -157,7 +157,7 @@ open class Curve2D: Resource {
     public func pointIn(
         idx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,7 +204,7 @@ open class Curve2D: Resource {
     public func pointOut(
         idx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -268,7 +268,7 @@ open class Curve2D: Resource {
         idx: Int32,
         t: Double
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         t.withGodotUnsafeRawPointer { __ptr_t in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_t) { __accessPtr in
@@ -292,7 +292,7 @@ open class Curve2D: Resource {
     public func samplef(
         fofs: Double
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fofs.withGodotUnsafeRawPointer { __ptr_fofs in
         withUnsafeArgumentPackPointer(__ptr_fofs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -335,7 +335,7 @@ open class Curve2D: Resource {
     }()
 
     private func __getBakeInterval() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bake_interval,
@@ -354,7 +354,7 @@ open class Curve2D: Resource {
     }()
 
     public func bakedLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_baked_length,
@@ -376,7 +376,7 @@ open class Curve2D: Resource {
         offset: Double = 0.0,
         cubic: Bool = false
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
         withUnsafeArgumentPackPointer(__ptr_offset, __ptr_cubic) { __accessPtr in
@@ -401,7 +401,7 @@ open class Curve2D: Resource {
         offset: Double = 0.0,
         cubic: Bool = false
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         cubic.withGodotUnsafeRawPointer { __ptr_cubic in
         withUnsafeArgumentPackPointer(__ptr_offset, __ptr_cubic) { __accessPtr in
@@ -423,7 +423,7 @@ open class Curve2D: Resource {
     }()
 
     public func bakedPoints() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_baked_points,
@@ -444,7 +444,7 @@ open class Curve2D: Resource {
     public func closestPoint(
         _ point: Godot.Vector2
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -467,7 +467,7 @@ open class Curve2D: Resource {
     public func closestOffset(
         toPoint point: Godot.Vector2
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -491,7 +491,7 @@ open class Curve2D: Resource {
         maxStages: Int32 = 5,
         toleranceDegrees: Double = 4
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceDegrees.withGodotUnsafeRawPointer { __ptr_toleranceDegrees in
         withUnsafeArgumentPackPointer(__ptr_maxStages, __ptr_toleranceDegrees) { __accessPtr in
@@ -516,7 +516,7 @@ open class Curve2D: Resource {
         maxStages: Int32 = 5,
         toleranceLength: Double = 20.0
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         maxStages.withGodotUnsafeRawPointer { __ptr_maxStages in
         toleranceLength.withGodotUnsafeRawPointer { __ptr_toleranceLength in
         withUnsafeArgumentPackPointer(__ptr_maxStages, __ptr_toleranceLength) { __accessPtr in

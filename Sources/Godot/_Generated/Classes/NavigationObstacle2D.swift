@@ -15,7 +15,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,
@@ -56,7 +56,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __getAvoidanceEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_enabled,
@@ -97,7 +97,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     public func navigationMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_map,
@@ -138,7 +138,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -179,7 +179,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __getVelocity() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity,
@@ -220,7 +220,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __getVertices() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertices,
@@ -261,7 +261,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __getAvoidanceLayers() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_layers,
@@ -306,7 +306,7 @@ open class NavigationObstacle2D: Node2D {
     public func avoidanceLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

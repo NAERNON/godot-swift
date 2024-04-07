@@ -37,7 +37,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     }()
 
     private func __getPhysicalBoneChainLength() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physical_bone_chain_length,
@@ -82,7 +82,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     public func physicalBoneNode(
         jointIdx: Int32
     ) -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

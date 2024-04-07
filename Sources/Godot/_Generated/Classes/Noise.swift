@@ -17,7 +17,7 @@ open class Noise: Resource {
     public func noise1d(
         _ x: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,7 +41,7 @@ open class Noise: Resource {
         x: Double,
         y: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         withUnsafeArgumentPackPointer(__ptr_x, __ptr_y) { __accessPtr in
@@ -65,7 +65,7 @@ open class Noise: Resource {
     public func noise2dv(
         _ v: Godot.Vector2
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         v.withGodotUnsafeRawPointer { __ptr_v in
         withUnsafeArgumentPackPointer(__ptr_v) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,7 +90,7 @@ open class Noise: Resource {
         y: Double,
         z: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         z.withGodotUnsafeRawPointer { __ptr_z in
@@ -115,7 +115,7 @@ open class Noise: Resource {
     public func noise3dv(
         _ v: Godot.Vector3
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         v.withGodotUnsafeRawPointer { __ptr_v in
         withUnsafeArgumentPackPointer(__ptr_v) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +142,7 @@ open class Noise: Resource {
         in3DSpace: Bool = false,
         normalize: Bool = true
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         invert.withGodotUnsafeRawPointer { __ptr_invert in
@@ -174,7 +174,7 @@ open class Noise: Resource {
         skirt: Double = 0.1,
         normalize: Bool = true
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         invert.withGodotUnsafeRawPointer { __ptr_invert in
@@ -206,7 +206,7 @@ open class Noise: Resource {
         invert: Bool = false,
         normalize: Bool = true
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         depth.withGodotUnsafeRawPointer { __ptr_depth in
@@ -238,7 +238,7 @@ open class Noise: Resource {
         skirt: Double = 0.1,
         normalize: Bool = true
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
         depth.withGodotUnsafeRawPointer { __ptr_depth in

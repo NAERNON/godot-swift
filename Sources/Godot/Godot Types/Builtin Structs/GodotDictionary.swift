@@ -2,7 +2,7 @@ import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
 public struct GodotDictionary<Key, AssociatedValue>
-where Key : VariantStorable, AssociatedValue : VariantStorable {}
+where Key : Variant.Storable, AssociatedValue : Variant.Storable {}
 
 public typealias AnyGodotDictionary = GodotDictionary<Variant, Variant>
 
@@ -10,7 +10,7 @@ extension GodotDictionary {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     // MARK: Copy
@@ -23,7 +23,7 @@ extension GodotDictionary {
     
     public subscript(key: Key) -> AssociatedValue? {
         get {
-            Key.withValueStorage(key) { keyStorage in
+            Key.convertToStorageTemporarily(key) { keyStorage in
                 guard _has(key: keyStorage) else {
                     return nil
                 }
@@ -32,13 +32,13 @@ extension GodotDictionary {
             }
         }
         set(newValue) {
-            Key.withValueStorage(key) { keyStorage in
+            Key.convertToStorageTemporarily(key) { keyStorage in
                 guard let newValue else {
                     self._erase(key: keyStorage)
                     return
                 }
                 
-                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                AssociatedValue.convertToStorageTemporarily(newValue) { newValueStorage in
                     self._set(value: newValueStorage, forKey: keyStorage)
                 }
             }
@@ -58,7 +58,7 @@ extension GodotDictionary {
                 return
             }
             
-            AssociatedValue.withValueStorage(newValue) { newValueStorage in
+            AssociatedValue.convertToStorageTemporarily(newValue) { newValueStorage in
                 self._set(value: newValueStorage, forKey: keyStorage)
             }
         }
@@ -69,7 +69,7 @@ extension GodotDictionary {
         default defaultValue: @autoclosure () -> AssociatedValue
     ) -> AssociatedValue {
         get {
-            Key.withValueStorage(key) { keyStorage in
+            Key.convertToStorageTemporarily(key) { keyStorage in
                 guard _has(key: keyStorage) else {
                     return defaultValue()
                 }
@@ -79,8 +79,8 @@ extension GodotDictionary {
             }
         }
         set(newValue) {
-            Key.withValueStorage(key) { keyStorage in
-                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+            Key.convertToStorageTemporarily(key) { keyStorage in
+                AssociatedValue.convertToStorageTemporarily(newValue) { newValueStorage in
                     self._set(value: newValueStorage, forKey: keyStorage)
                 }
             }
@@ -95,7 +95,7 @@ extension GodotDictionary {
             
             yield &newValue
             
-            AssociatedValue.withValueStorage(newValue) { newValueStorage in
+            AssociatedValue.convertToStorageTemporarily(newValue) { newValueStorage in
                 self._set(value: newValueStorage, forKey: keyStorage)
             }
         }

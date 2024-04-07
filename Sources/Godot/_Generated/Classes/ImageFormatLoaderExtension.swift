@@ -67,19 +67,19 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
             }
             Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _load_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._loadImage(
-            Godot.Image?.fromGodotUnsafePointer(args[0]!),
-            fileaccess: Godot.FileAccess?.fromGodotUnsafePointer(args[1]!),
-            flags: Godot.ImageFormatLoader.LoaderFlags.fromGodotUnsafePointer(args[2]!),
-            scale: Double.fromGodotUnsafePointer(args[3]!)
+            Godot.Image?.transferFromGodot(unsafePointer: args[0]!),
+            fileaccess: Godot.FileAccess?.transferFromGodot(unsafePointer: args[1]!),
+            flags: Godot.ImageFormatLoader.LoaderFlags.transferFromGodot(unsafePointer: args[2]!),
+            scale: Double.transferFromGodot(unsafePointer: args[3]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getRecognizedExtensions" : ("_get_recognized_extensions", _get_recognized_extensions_call),
             "_loadImage" : ("_load_image", _load_image_call)

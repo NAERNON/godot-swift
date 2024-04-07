@@ -38,7 +38,7 @@ open class VisualShaderNodeTexture3D: VisualShaderNodeSample3D {
     }()
 
     private func __getTexture() -> Godot.Texture3D? {
-        Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,

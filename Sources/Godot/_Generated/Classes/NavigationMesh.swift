@@ -82,7 +82,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getSamplePartitionType() -> Godot.NavigationMesh.SamplePartitionType {
-        Godot.NavigationMesh.SamplePartitionType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationMesh.SamplePartitionType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sample_partition_type,
@@ -123,7 +123,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getParsedGeometryType() -> Godot.NavigationMesh.ParsedGeometryType {
-        Godot.NavigationMesh.ParsedGeometryType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationMesh.ParsedGeometryType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parsed_geometry_type,
@@ -164,7 +164,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mask,
@@ -209,7 +209,7 @@ open class NavigationMesh: Resource {
     public func collisionMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +252,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getSourceGeometryMode() -> Godot.NavigationMesh.SourceGeometryMode {
-        Godot.NavigationMesh.SourceGeometryMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationMesh.SourceGeometryMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source_geometry_mode,
@@ -293,7 +293,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getSourceGroupName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source_group_name,
@@ -334,7 +334,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getCellSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_size,
@@ -375,7 +375,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getCellHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_height,
@@ -416,7 +416,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getAgentHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_agent_height,
@@ -457,7 +457,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getAgentRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_agent_radius,
@@ -498,7 +498,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getAgentMaxClimb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_agent_max_climb,
@@ -539,7 +539,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getAgentMaxSlope() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_agent_max_slope,
@@ -580,7 +580,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getRegionMinSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region_min_size,
@@ -621,7 +621,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getRegionMergeSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region_merge_size,
@@ -662,7 +662,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getEdgeMaxLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edge_max_length,
@@ -703,7 +703,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getEdgeMaxError() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edge_max_error,
@@ -744,7 +744,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getVerticesPerPolygon() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertices_per_polygon,
@@ -785,7 +785,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getDetailSampleDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_detail_sample_distance,
@@ -826,7 +826,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getDetailSampleMaxError() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_detail_sample_max_error,
@@ -867,7 +867,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getFilterLowHangingObstacles() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_filter_low_hanging_obstacles,
@@ -908,7 +908,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getFilterLedgeSpans() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_filter_ledge_spans,
@@ -949,7 +949,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getFilterWalkableLowHeightSpans() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_filter_walkable_low_height_spans,
@@ -990,7 +990,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getFilterBakingAabb() -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_filter_baking_aabb,
@@ -1031,7 +1031,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getFilterBakingAabbOffset() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_filter_baking_aabb_offset,
@@ -1072,7 +1072,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __getVertices() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertices,
@@ -1113,7 +1113,7 @@ open class NavigationMesh: Resource {
     }()
 
     public func polygonCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon_count,
@@ -1134,7 +1134,7 @@ open class NavigationMesh: Resource {
     public func polygon(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

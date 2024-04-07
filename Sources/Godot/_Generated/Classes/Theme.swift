@@ -66,7 +66,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -91,7 +91,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -165,7 +165,7 @@ open class Theme: Resource {
     public func iconList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +186,7 @@ open class Theme: Resource {
     }()
 
     public func iconTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_icon_type_list,
@@ -235,7 +235,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.StyleBox? {
-        Godot.StyleBox?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StyleBox?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -260,7 +260,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -334,7 +334,7 @@ open class Theme: Resource {
     public func styleboxList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -355,7 +355,7 @@ open class Theme: Resource {
     }()
 
     public func styleboxTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stylebox_type_list,
@@ -404,7 +404,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -429,7 +429,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -503,7 +503,7 @@ open class Theme: Resource {
     public func fontList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -524,7 +524,7 @@ open class Theme: Resource {
     }()
 
     public func fontTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_type_list,
@@ -572,7 +572,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -597,7 +597,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -671,7 +671,7 @@ open class Theme: Resource {
     public func fontSizeList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -692,7 +692,7 @@ open class Theme: Resource {
     }()
 
     public func fontSizeTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_size_type_list,
@@ -740,7 +740,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -765,7 +765,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -839,7 +839,7 @@ open class Theme: Resource {
     public func colorList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -860,7 +860,7 @@ open class Theme: Resource {
     }()
 
     public func colorTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_type_list,
@@ -908,7 +908,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -933,7 +933,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
@@ -1007,7 +1007,7 @@ open class Theme: Resource {
     public func constantList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1028,7 +1028,7 @@ open class Theme: Resource {
     }()
 
     public func constantTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_type_list,
@@ -1069,7 +1069,7 @@ open class Theme: Resource {
     }()
 
     private func __getDefaultBaseScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_base_scale,
@@ -1088,7 +1088,7 @@ open class Theme: Resource {
     }()
 
     public func hasDefaultBaseScale() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_default_base_scale,
@@ -1130,7 +1130,7 @@ open class Theme: Resource {
     }()
 
     private func __getDefaultFont() -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_font,
@@ -1149,7 +1149,7 @@ open class Theme: Resource {
     }()
 
     public func hasDefaultFont() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_default_font,
@@ -1190,7 +1190,7 @@ open class Theme: Resource {
     }()
 
     private func __getDefaultFontSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_font_size,
@@ -1209,7 +1209,7 @@ open class Theme: Resource {
     }()
 
     public func hasDefaultFontSize() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_default_font_size,
@@ -1227,7 +1227,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func setThemeItem<Value: VariantStorableIn>(
+    public func setThemeItem<Value: Variant.Storable>(
         dataType: Godot.Theme.DataType,
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName,
@@ -1260,7 +1260,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1287,7 +1287,7 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         name.withGodotUnsafeRawPointer { __ptr_name in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
@@ -1367,7 +1367,7 @@ open class Theme: Resource {
         dataType: Godot.Theme.DataType,
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_themeType) { __accessPtr in
@@ -1391,7 +1391,7 @@ open class Theme: Resource {
     public func themeItemTypeList(
         dataType: Godot.Theme.DataType
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dataType.withGodotUnsafeRawPointer { __ptr_dataType in
         withUnsafeArgumentPackPointer(__ptr_dataType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1439,7 +1439,7 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         baseType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
         withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
@@ -1485,7 +1485,7 @@ open class Theme: Resource {
     public func typeVariationBase(
         themeType: Godot.GodotStringName
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         themeType.withGodotUnsafeRawPointer { __ptr_themeType in
         withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1508,7 +1508,7 @@ open class Theme: Resource {
     public func typeVariationList(
         baseType: Godot.GodotStringName
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         baseType.withGodotUnsafeRawPointer { __ptr_baseType in
         withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1573,7 +1573,7 @@ open class Theme: Resource {
     }()
 
     public func typeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_type_list,

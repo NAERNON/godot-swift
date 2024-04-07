@@ -61,7 +61,7 @@ open class Texture2D: Texture {
     }()
 
     public func width() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -80,7 +80,7 @@ open class Texture2D: Texture {
     }()
 
     public func height() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height,
@@ -99,7 +99,7 @@ open class Texture2D: Texture {
     }()
 
     public func size() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -118,7 +118,7 @@ open class Texture2D: Texture {
     }()
 
     public func hasAlpha() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_alpha,
@@ -227,7 +227,7 @@ open class Texture2D: Texture {
     }()
 
     public func image() -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_image,
@@ -246,7 +246,7 @@ open class Texture2D: Texture {
     }()
 
     public func createPlaceholder() -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_placeholder,
@@ -268,41 +268,41 @@ open class Texture2D: Texture {
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWidth()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHeight()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _is_pixel_opaque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPixelOpaque(
-            x: Int32.fromGodotUnsafePointer(args[0]!),
-            y: Int32.fromGodotUnsafePointer(args[1]!)
+            x: Int32.transferFromGodot(unsafePointer: args[0]!),
+            y: Int32.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _has_alpha_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasAlpha()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._draw(
-            toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            pos: Godot.Vector2.fromGodotUnsafePointer(args[1]!),
-            modulate: Godot.Color.fromGodotUnsafePointer(args[2]!),
-            transpose: Bool.fromGodotUnsafePointer(args[3]!)
+            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!),
+            modulate: Godot.Color.transferFromGodot(unsafePointer: args[2]!),
+            transpose: Bool.transferFromGodot(unsafePointer: args[3]!)
         )}
         let _draw_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -310,11 +310,11 @@ open class Texture2D: Texture {
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawRect(
-            toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!),
-            tile: Bool.fromGodotUnsafePointer(args[2]!),
-            modulate: Godot.Color.fromGodotUnsafePointer(args[3]!),
-            transpose: Bool.fromGodotUnsafePointer(args[4]!)
+            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
+            tile: Bool.transferFromGodot(unsafePointer: args[2]!),
+            modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
+            transpose: Bool.transferFromGodot(unsafePointer: args[4]!)
         )}
         let _draw_rect_region_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -322,12 +322,12 @@ open class Texture2D: Texture {
             }
             Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawRectRegion(
-            toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!),
-            srcRect: Godot.Rect2.fromGodotUnsafePointer(args[2]!),
-            modulate: Godot.Color.fromGodotUnsafePointer(args[3]!),
-            transpose: Bool.fromGodotUnsafePointer(args[4]!),
-            clipUv: Bool.fromGodotUnsafePointer(args[5]!)
+            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
+            srcRect: Godot.Rect2.transferFromGodot(unsafePointer: args[2]!),
+            modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
+            transpose: Bool.transferFromGodot(unsafePointer: args[4]!),
+            clipUv: Bool.transferFromGodot(unsafePointer: args[5]!)
         )}
         _virtualFunctions = [
             "_getWidth" : ("_get_width", _get_width_call),

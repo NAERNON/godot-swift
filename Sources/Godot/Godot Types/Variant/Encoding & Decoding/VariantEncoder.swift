@@ -123,7 +123,7 @@ where Key : CodingKey {
     override func generateVariantStorage() -> Variant.Storage {
         var dictionary = AnyGodotDictionary()
         for (name, container) in containers {
-            String.withValueStorage(name) { nameStorage in
+            String.convertToStorageTemporarily(name) { nameStorage in
                 dictionary._set(
                     value: container.generateVariantStorage(),
                     forKey: nameStorage

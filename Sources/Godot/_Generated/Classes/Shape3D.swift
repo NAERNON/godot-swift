@@ -37,7 +37,7 @@ open class Shape3D: Resource {
     }()
 
     private func __getCustomSolverBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_solver_bias,
@@ -78,7 +78,7 @@ open class Shape3D: Resource {
     }()
 
     private func __getMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_margin,
@@ -97,7 +97,7 @@ open class Shape3D: Resource {
     }()
 
     public func debugMesh() -> Godot.ArrayMesh? {
-        Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ArrayMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_mesh,

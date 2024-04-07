@@ -37,7 +37,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -78,7 +78,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }()
 
     private func __getRadialSegments() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radial_segments,
@@ -119,7 +119,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }()
 
     private func __getRings() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rings,
@@ -160,7 +160,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }()
 
     private func __getSmoothFaces() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_smooth_faces,
@@ -202,7 +202,7 @@ open class CSGSphere3D: CSGPrimitive3D {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,

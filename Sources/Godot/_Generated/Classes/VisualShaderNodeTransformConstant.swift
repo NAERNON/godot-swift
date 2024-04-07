@@ -37,7 +37,7 @@ open class VisualShaderNodeTransformConstant: VisualShaderNodeConstant {
     }()
 
     private func __getConstant() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant,

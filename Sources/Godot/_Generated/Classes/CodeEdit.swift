@@ -73,7 +73,7 @@ open class CodeEdit: TextEdit {
     public lazy var breakpointToggledSignal: Godot.SignalEmitter<BreakpointToggledSignalInput> = {
         .init(object: self, signalName: "breakpoint_toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(line: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -81,7 +81,7 @@ open class CodeEdit: TextEdit {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -100,7 +100,7 @@ open class CodeEdit: TextEdit {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -141,9 +141,9 @@ open class CodeEdit: TextEdit {
     public lazy var symbolLookupSignal: Godot.SignalEmitter<SymbolLookupSignalInput> = {
         .init(object: self, signalName: "symbol_lookup") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(symbol: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    line: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    column: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -151,7 +151,7 @@ open class CodeEdit: TextEdit {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -180,7 +180,7 @@ open class CodeEdit: TextEdit {
     public lazy var symbolValidateSignal: Godot.SignalEmitter<SymbolValidateSignalInput> = {
         .init(object: self, signalName: "symbol_validate") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(symbol: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -188,7 +188,7 @@ open class CodeEdit: TextEdit {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -239,7 +239,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getIndentSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_indent_size,
@@ -280,7 +280,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isIndentUsingSpaces() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_indent_using_spaces,
@@ -321,7 +321,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isAutoIndentEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_auto_indent_enabled,
@@ -362,7 +362,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getAutoIndentPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_indent_prefixes,
@@ -481,7 +481,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isAutoBraceCompletionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_auto_brace_completion_enabled,
@@ -522,7 +522,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isHighlightMatchingBracesEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_highlight_matching_braces_enabled,
@@ -564,7 +564,7 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    private func __setAutoBraceCompletionPairs<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setAutoBraceCompletionPairs<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ pairs: Godot.GodotDictionary<Value1, Value2>
     ) {
         pairs.withGodotUnsafeRawPointer { __ptr_pairs in
@@ -587,7 +587,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getAutoBraceCompletionPairs() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_brace_completion_pairs,
@@ -608,7 +608,7 @@ open class CodeEdit: TextEdit {
     public func hasAutoBraceCompletionOpenKey(
         _ openKey: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         openKey.withGodotUnsafeRawPointer { __ptr_openKey in
         withUnsafeArgumentPackPointer(__ptr_openKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -631,7 +631,7 @@ open class CodeEdit: TextEdit {
     public func hasAutoBraceCompletionCloseKey(
         _ closeKey: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         closeKey.withGodotUnsafeRawPointer { __ptr_closeKey in
         withUnsafeArgumentPackPointer(__ptr_closeKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -654,7 +654,7 @@ open class CodeEdit: TextEdit {
     public func autoBraceCompletionCloseKey(
         openKey: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         openKey.withGodotUnsafeRawPointer { __ptr_openKey in
         withUnsafeArgumentPackPointer(__ptr_openKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -697,7 +697,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isDrawingBreakpointsGutter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drawing_breakpoints_gutter,
@@ -738,7 +738,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isDrawingBookmarksGutter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drawing_bookmarks_gutter,
@@ -779,7 +779,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isDrawingExecutingLinesGutter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drawing_executing_lines_gutter,
@@ -824,7 +824,7 @@ open class CodeEdit: TextEdit {
     public func isLineBreakpointed(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -863,7 +863,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func breakpointedLines() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_breakpointed_lines,
@@ -908,7 +908,7 @@ open class CodeEdit: TextEdit {
     public func isLineBookmarked(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -947,7 +947,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func bookmarkedLines() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bookmarked_lines,
@@ -992,7 +992,7 @@ open class CodeEdit: TextEdit {
     public func isLineExecuting(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1031,7 +1031,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func executingLines() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_executing_lines,
@@ -1072,7 +1072,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isDrawLineNumbersEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_draw_line_numbers_enabled,
@@ -1113,7 +1113,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isLineNumbersZeroPadded() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_line_numbers_zero_padded,
@@ -1154,7 +1154,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isDrawingFoldGutter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drawing_fold_gutter,
@@ -1195,7 +1195,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isLineFoldingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_line_folding_enabled,
@@ -1216,7 +1216,7 @@ open class CodeEdit: TextEdit {
     public func canFoldLine(
         _ line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1341,7 +1341,7 @@ open class CodeEdit: TextEdit {
     public func isLineFolded(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1362,7 +1362,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func foldedLines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_folded_lines,
@@ -1399,7 +1399,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func codeRegionStartTag() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_region_start_tag,
@@ -1418,7 +1418,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func codeRegionEndTag() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_region_end_tag,
@@ -1463,7 +1463,7 @@ open class CodeEdit: TextEdit {
     public func isLineCodeRegionStart(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1486,7 +1486,7 @@ open class CodeEdit: TextEdit {
     public func isLineCodeRegionEnd(
         line: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1557,7 +1557,7 @@ open class CodeEdit: TextEdit {
     public func hasStringDelimiter(
         startKey: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         startKey.withGodotUnsafeRawPointer { __ptr_startKey in
         withUnsafeArgumentPackPointer(__ptr_startKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1618,7 +1618,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getStringDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_string_delimiters,
@@ -1640,7 +1640,7 @@ open class CodeEdit: TextEdit {
         line: Int32,
         column: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1712,7 +1712,7 @@ open class CodeEdit: TextEdit {
     public func hasCommentDelimiter(
         startKey: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         startKey.withGodotUnsafeRawPointer { __ptr_startKey in
         withUnsafeArgumentPackPointer(__ptr_startKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1773,7 +1773,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getCommentDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_comment_delimiters,
@@ -1795,7 +1795,7 @@ open class CodeEdit: TextEdit {
         line: Int32,
         column: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1819,7 +1819,7 @@ open class CodeEdit: TextEdit {
     public func delimiterStartKey(
         delimiterIndex: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiterIndex.withGodotUnsafeRawPointer { __ptr_delimiterIndex in
         withUnsafeArgumentPackPointer(__ptr_delimiterIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1842,7 +1842,7 @@ open class CodeEdit: TextEdit {
     public func delimiterEndKey(
         delimiterIndex: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiterIndex.withGodotUnsafeRawPointer { __ptr_delimiterIndex in
         withUnsafeArgumentPackPointer(__ptr_delimiterIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1866,7 +1866,7 @@ open class CodeEdit: TextEdit {
         line: Int32,
         column: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1891,7 +1891,7 @@ open class CodeEdit: TextEdit {
         line: Int32,
         column: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -1957,7 +1957,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func textForCodeCompletion() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_for_code_completion,
@@ -1997,7 +1997,7 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    public func addCodeCompletionOption<Value: VariantStorableIn>(
+    public func addCodeCompletionOption<Value: Variant.Storable>(
         type: Godot.CodeEdit.CodeCompletionKind,
         displayText: Godot.GodotString,
         insertText: Godot.GodotString,
@@ -2055,7 +2055,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func codeCompletionOptions() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_completion_options,
@@ -2076,7 +2076,7 @@ open class CodeEdit: TextEdit {
     public func codeCompletionOption(
         index: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2097,7 +2097,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func codeCompletionSelectedIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_completion_selected_index,
@@ -2200,7 +2200,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isCodeCompletionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_code_completion_enabled,
@@ -2241,7 +2241,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getCodeCompletionPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code_completion_prefixes,
@@ -2282,7 +2282,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __getLineLengthGuidelines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_length_guidelines,
@@ -2323,7 +2323,7 @@ open class CodeEdit: TextEdit {
     }()
 
     private func __isSymbolLookupOnClickEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_symbol_lookup_on_click_enabled,
@@ -2342,7 +2342,7 @@ open class CodeEdit: TextEdit {
     }()
 
     public func textForSymbolLookup() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_for_symbol_lookup,
@@ -2364,7 +2364,7 @@ open class CodeEdit: TextEdit {
         line: Int32,
         column: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
@@ -2649,7 +2649,7 @@ open class CodeEdit: TextEdit {
             }
             Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._confirmCodeCompletion(
-            replace: Bool.fromGodotUnsafePointer(args[0]!)
+            replace: Bool.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _request_code_completion_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2657,7 +2657,7 @@ open class CodeEdit: TextEdit {
             }
             Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._requestCodeCompletion(
-            force: Bool.fromGodotUnsafePointer(args[0]!)
+            force: Bool.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _filter_code_completion_candidates_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2665,9 +2665,9 @@ open class CodeEdit: TextEdit {
             }
             Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
         ._filterCodeCompletionCandidates(
-            Godot.GodotArray<Godot.AnyGodotDictionary> .fromGodotUnsafePointer(args[0]!)
+            Godot.GodotArray<Godot.AnyGodotDictionary> .transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_confirmCodeCompletion" : ("_confirm_code_completion", _confirm_code_completion_call),
             "_requestCodeCompletion" : ("_request_code_completion", _request_code_completion_call),

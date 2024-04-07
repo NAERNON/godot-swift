@@ -37,7 +37,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __getSoftness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_softness,
@@ -78,7 +78,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __getAngularLimitLower() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_limit_lower,
@@ -119,7 +119,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __getAngularLimitUpper() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_limit_upper,
@@ -160,7 +160,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __getMotorTargetVelocity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_motor_target_velocity,
@@ -201,7 +201,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __isMotorEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_motor_enabled,
@@ -242,7 +242,7 @@ open class PinJoint2D: Joint2D {
     }()
 
     private func __isAngularLimitEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_angular_limit_enabled,

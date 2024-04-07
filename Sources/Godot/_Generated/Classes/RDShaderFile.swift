@@ -42,7 +42,7 @@ open class RDShaderFile: Resource {
     public func spirv(
         version: Godot.GodotStringName = ""
     ) -> Godot.RDShaderSPIRV? {
-        Godot.RDShaderSPIRV?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RDShaderSPIRV?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         version.withGodotUnsafeRawPointer { __ptr_version in
         withUnsafeArgumentPackPointer(__ptr_version) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +63,7 @@ open class RDShaderFile: Resource {
     }()
 
     public func versionList() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_version_list,
@@ -104,7 +104,7 @@ open class RDShaderFile: Resource {
     }()
 
     private func __getBaseError() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_error,

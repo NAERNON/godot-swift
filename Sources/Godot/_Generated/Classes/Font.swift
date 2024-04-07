@@ -37,7 +37,7 @@ open class Font: Resource {
     }()
 
     private func __getFallbacks() -> Godot.GodotArray<Godot.Font?> {
-        Godot.GodotArray<Godot.Font?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Font?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallbacks,
@@ -55,7 +55,7 @@ open class Font: Resource {
         }
     }()
 
-    public func findVariation<Value1: VariantStorable, Value2: VariantStorable>(
+    public func findVariation<Value1: Variant.Storable, Value2: Variant.Storable>(
         variationCoordinates: Godot.GodotDictionary<Value1, Value2>,
         faceIndex: Int32 = 0,
         strength: Double = 0.0,
@@ -65,7 +65,7 @@ open class Font: Resource {
         spacingSpace: Int32 = 0,
         spacingGlyph: Int32 = 0
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         variationCoordinates.withGodotUnsafeRawPointer { __ptr_variationCoordinates in
         faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in
         strength.withGodotUnsafeRawPointer { __ptr_strength in
@@ -93,7 +93,7 @@ open class Font: Resource {
     }()
 
     public func rids() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rids,
@@ -114,7 +114,7 @@ open class Font: Resource {
     public func height(
         fontSize: Int32 = 16
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -137,7 +137,7 @@ open class Font: Resource {
     public func ascent(
         fontSize: Int32 = 16
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -160,7 +160,7 @@ open class Font: Resource {
     public func descent(
         fontSize: Int32 = 16
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -183,7 +183,7 @@ open class Font: Resource {
     public func underlinePosition(
         fontSize: Int32 = 16
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,7 +206,7 @@ open class Font: Resource {
     public func underlineThickness(
         fontSize: Int32 = 16
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -227,7 +227,7 @@ open class Font: Resource {
     }()
 
     public func fontName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_name,
@@ -246,7 +246,7 @@ open class Font: Resource {
     }()
 
     public func fontStyleName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_style_name,
@@ -265,7 +265,7 @@ open class Font: Resource {
     }()
 
     public func otNameStrings() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ot_name_strings,
@@ -284,7 +284,7 @@ open class Font: Resource {
     }()
 
     public func fontStyle() -> Godot.TextServer.FontStyle {
-        Godot.TextServer.FontStyle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.FontStyle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_style,
@@ -303,7 +303,7 @@ open class Font: Resource {
     }()
 
     public func fontWeight() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_weight,
@@ -322,7 +322,7 @@ open class Font: Resource {
     }()
 
     public func fontStretch() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_stretch,
@@ -343,7 +343,7 @@ open class Font: Resource {
     public func spacing(
         _ spacing: Godot.TextServer.SpacingType
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         withUnsafeArgumentPackPointer(__ptr_spacing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,7 +364,7 @@ open class Font: Resource {
     }()
 
     public func opentypeFeatures() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_opentype_features,
@@ -415,7 +415,7 @@ open class Font: Resource {
         direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
         orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -452,7 +452,7 @@ open class Font: Resource {
         direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
         orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         width.withGodotUnsafeRawPointer { __ptr_width in
@@ -656,7 +656,7 @@ open class Font: Resource {
         char: Int,
         fontSize: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         char.withGodotUnsafeRawPointer { __ptr_char in
         fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
         withUnsafeArgumentPackPointer(__ptr_char, __ptr_fontSize) { __accessPtr in
@@ -684,7 +684,7 @@ open class Font: Resource {
         fontSize: Int32,
         modulate: Godot.Color = .white
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         char.withGodotUnsafeRawPointer { __ptr_char in
@@ -716,7 +716,7 @@ open class Font: Resource {
         size: Int32 = -1,
         modulate: Godot.Color = .white
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         char.withGodotUnsafeRawPointer { __ptr_char in
@@ -744,7 +744,7 @@ open class Font: Resource {
     public func hasChar(
         _ char: Int
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         char.withGodotUnsafeRawPointer { __ptr_char in
         withUnsafeArgumentPackPointer(__ptr_char) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -765,7 +765,7 @@ open class Font: Resource {
     }()
 
     public func supportedChars() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_chars,
@@ -786,7 +786,7 @@ open class Font: Resource {
     public func isLanguageSupported(
         language: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -809,7 +809,7 @@ open class Font: Resource {
     public func isScriptSupported(
         script: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -830,7 +830,7 @@ open class Font: Resource {
     }()
 
     public func supportedFeatureList() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_feature_list,
@@ -849,7 +849,7 @@ open class Font: Resource {
     }()
 
     public func supportedVariationList() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_variation_list,
@@ -868,7 +868,7 @@ open class Font: Resource {
     }()
 
     public func faceCount() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_face_count,

@@ -37,7 +37,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getMagFilter() -> Godot.RenderingDevice.SamplerFilter {
-        Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mag_filter,
@@ -78,7 +78,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getMinFilter() -> Godot.RenderingDevice.SamplerFilter {
-        Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_filter,
@@ -119,7 +119,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getMipFilter() -> Godot.RenderingDevice.SamplerFilter {
-        Godot.RenderingDevice.SamplerFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mip_filter,
@@ -160,7 +160,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getRepeatU() -> Godot.RenderingDevice.SamplerRepeatMode {
-        Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerRepeatMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_repeat_u,
@@ -201,7 +201,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getRepeatV() -> Godot.RenderingDevice.SamplerRepeatMode {
-        Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerRepeatMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_repeat_v,
@@ -242,7 +242,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getRepeatW() -> Godot.RenderingDevice.SamplerRepeatMode {
-        Godot.RenderingDevice.SamplerRepeatMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerRepeatMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_repeat_w,
@@ -283,7 +283,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getLodBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lod_bias,
@@ -324,7 +324,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getUseAnisotropy() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_use_anisotropy,
@@ -365,7 +365,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getAnisotropyMax() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_anisotropy_max,
@@ -406,7 +406,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getEnableCompare() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_compare,
@@ -447,7 +447,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getCompareOp() -> Godot.RenderingDevice.CompareOperator {
-        Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.CompareOperator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_compare_op,
@@ -488,7 +488,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getMinLod() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_lod,
@@ -529,7 +529,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getMaxLod() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_lod,
@@ -570,7 +570,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getBorderColor() -> Godot.RenderingDevice.SamplerBorderColor {
-        Godot.RenderingDevice.SamplerBorderColor.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.SamplerBorderColor.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_border_color,
@@ -611,7 +611,7 @@ open class RDSamplerState: RefCounted {
     }()
 
     private func __getUnnormalizedUvw() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unnormalized_uvw,

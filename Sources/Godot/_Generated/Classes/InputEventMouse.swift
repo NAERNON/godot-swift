@@ -37,7 +37,7 @@ open class InputEventMouse: InputEventWithModifiers {
     }()
 
     private func __getButtonMask() -> Godot.MouseButtonMask {
-        Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MouseButtonMask.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_button_mask,
@@ -78,7 +78,7 @@ open class InputEventMouse: InputEventWithModifiers {
     }()
 
     private func __getPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position,
@@ -119,7 +119,7 @@ open class InputEventMouse: InputEventWithModifiers {
     }()
 
     private func __getGlobalPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_position,

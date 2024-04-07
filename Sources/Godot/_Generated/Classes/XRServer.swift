@@ -65,7 +65,7 @@ open class XRServer: Object {
     public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
         .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -73,7 +73,7 @@ open class XRServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -102,7 +102,7 @@ open class XRServer: Object {
     public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
         .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(interfaceName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -110,7 +110,7 @@ open class XRServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -145,8 +145,8 @@ open class XRServer: Object {
     public lazy var trackerAddedSignal: Godot.SignalEmitter<TrackerAddedSignalInput> = {
         .init(object: self, signalName: "tracker_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    type: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -154,7 +154,7 @@ open class XRServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -189,8 +189,8 @@ open class XRServer: Object {
     public lazy var trackerUpdatedSignal: Godot.SignalEmitter<TrackerUpdatedSignalInput> = {
         .init(object: self, signalName: "tracker_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    type: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -198,7 +198,7 @@ open class XRServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -233,8 +233,8 @@ open class XRServer: Object {
     public lazy var trackerRemovedSignal: Godot.SignalEmitter<TrackerRemovedSignalInput> = {
         .init(object: self, signalName: "tracker_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(trackerName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(trackerName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    type: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -242,7 +242,7 @@ open class XRServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -255,7 +255,7 @@ open class XRServer: Object {
     }()
 
     private func __getWorldScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_world_scale,
@@ -296,7 +296,7 @@ open class XRServer: Object {
     }()
 
     private func __getWorldOrigin() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_world_origin,
@@ -337,7 +337,7 @@ open class XRServer: Object {
     }()
 
     public func referenceFrame() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_reference_frame,
@@ -380,7 +380,7 @@ open class XRServer: Object {
     }()
 
     public func hmdTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hmd_transform,
@@ -422,7 +422,7 @@ open class XRServer: Object {
     }()
 
     public func interfaceCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_interface_count,
@@ -466,7 +466,7 @@ open class XRServer: Object {
     public func interface(
         idx: Int32
     ) -> Godot.XRInterface? {
-        Godot.XRInterface?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -487,7 +487,7 @@ open class XRServer: Object {
     }()
 
     public func interfaces() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_interfaces,
@@ -508,7 +508,7 @@ open class XRServer: Object {
     public func findInterface(
         name: Godot.GodotString
     ) -> Godot.XRInterface? {
-        Godot.XRInterface?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -577,7 +577,7 @@ open class XRServer: Object {
     public func trackers(
         trackerTypes: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trackerTypes.withGodotUnsafeRawPointer { __ptr_trackerTypes in
         withUnsafeArgumentPackPointer(__ptr_trackerTypes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -600,7 +600,7 @@ open class XRServer: Object {
     public func tracker(
         trackerName: Godot.GodotStringName
     ) -> Godot.XRPositionalTracker? {
-        Godot.XRPositionalTracker?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRPositionalTracker?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trackerName.withGodotUnsafeRawPointer { __ptr_trackerName in
         withUnsafeArgumentPackPointer(__ptr_trackerName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -621,7 +621,7 @@ open class XRServer: Object {
     }()
 
     private func __getPrimaryInterface() -> Godot.XRInterface? {
-        Godot.XRInterface?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_primary_interface,

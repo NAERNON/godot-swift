@@ -550,7 +550,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
-        "\(raw: prefix)\(raw: syntax(options: options)).fromMutatingGodotUnsafePointer { \(raw: variableName) in"
+        "\(raw: prefix)\(raw: syntax(options: options)).fromInitializingMutatingGodotUnsafePointer { \(raw: variableName) in"
         
         try bodyBuilder(variableName)
         

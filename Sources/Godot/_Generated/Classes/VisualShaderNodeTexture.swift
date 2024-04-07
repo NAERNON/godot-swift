@@ -77,7 +77,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
     }()
 
     private func __getSource() -> Godot.VisualShaderNodeTexture.Source {
-        Godot.VisualShaderNodeTexture.Source.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTexture.Source.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source,
@@ -119,7 +119,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -160,7 +160,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
     }()
 
     private func __getTextureType() -> Godot.VisualShaderNodeTexture.TextureType {
-        Godot.VisualShaderNodeTexture.TextureType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTexture.TextureType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,

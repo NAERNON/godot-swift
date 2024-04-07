@@ -34,7 +34,7 @@ open class MultiplayerSynchronizer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -53,7 +53,7 @@ open class MultiplayerSynchronizer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -82,7 +82,7 @@ open class MultiplayerSynchronizer: Node {
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<VisibilityChangedSignalInput> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(forPeer: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(forPeer: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -90,7 +90,7 @@ open class MultiplayerSynchronizer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -125,7 +125,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __getRootPath() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_path,
@@ -166,7 +166,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __getReplicationInterval() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_replication_interval,
@@ -207,7 +207,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __getDeltaInterval() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_delta_interval,
@@ -249,7 +249,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __getReplicationConfig() -> Godot.SceneReplicationConfig? {
-        Godot.SceneReplicationConfig?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SceneReplicationConfig?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_replication_config,
@@ -290,7 +290,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __getVisibilityUpdateMode() -> Godot.MultiplayerSynchronizer.VisibilityUpdateMode {
-        Godot.MultiplayerSynchronizer.VisibilityUpdateMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiplayerSynchronizer.VisibilityUpdateMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_update_mode,
@@ -353,7 +353,7 @@ open class MultiplayerSynchronizer: Node {
     }()
 
     private func __isVisibilityPublic() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_visibility_public,
@@ -442,7 +442,7 @@ open class MultiplayerSynchronizer: Node {
     public func visibilityFor(
         peer: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peer.withGodotUnsafeRawPointer { __ptr_peer in
         withUnsafeArgumentPackPointer(__ptr_peer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

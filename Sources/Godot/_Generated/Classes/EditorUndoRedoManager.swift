@@ -34,7 +34,7 @@ open class EditorUndoRedoManager: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -53,7 +53,7 @@ open class EditorUndoRedoManager: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -117,7 +117,7 @@ open class EditorUndoRedoManager: Object {
     }()
 
     public func isCommittingAction() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_committing_action,
@@ -135,7 +135,7 @@ open class EditorUndoRedoManager: Object {
         }
     }()
 
-    public func addDoMethod<each VariantRest : VariantStorableIn>(
+    public func addDoMethod<each VariantRest : Variant.Storable>(
         object: Godot.Object?,
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
@@ -180,7 +180,7 @@ open class EditorUndoRedoManager: Object {
         }
     }()
 
-    public func addUndoMethod<each VariantRest : VariantStorableIn>(
+    public func addUndoMethod<each VariantRest : Variant.Storable>(
         object: Godot.Object?,
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
@@ -225,7 +225,7 @@ open class EditorUndoRedoManager: Object {
         }
     }()
 
-    public func addDoProperty<Value: VariantStorableIn>(
+    public func addDoProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
         value: Value
@@ -252,7 +252,7 @@ open class EditorUndoRedoManager: Object {
         }
     }()
 
-    public func addUndoProperty<Value: VariantStorableIn>(
+    public func addUndoProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
         value: Value
@@ -328,7 +328,7 @@ open class EditorUndoRedoManager: Object {
     public func objectHistoryID(
         object: Godot.Object?
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
@@ -352,7 +352,7 @@ open class EditorUndoRedoManager: Object {
     public func historyUndoRedo(
         id: Int32
     ) -> Godot.UndoRedo? {
-        Godot.UndoRedo?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.UndoRedo?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

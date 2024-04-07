@@ -10,17 +10,45 @@ extension PackedByteArray {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._constructor_godotarray(from: array)
+        self = Self._makeFromGodotArray(array)
     }
     
-    public mutating func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
-        self.withGodotUnsafeMutableRawPointer { extensionTypePtr in
-            body(GodotExtension.Interface.packedByteArrayOperatorIndex(extensionTypePtr, 0))
+    public func withUnsafeBytes<Result>(
+        _ body: (UnsafeBufferPointer<UInt8>) throws -> Result
+    ) rethrows -> Result {
+        let startPointer = self.withGodotUnsafeRawPointer { extensionTypePtr in
+            GodotExtension.Interface.packedByteArrayOperatorIndexConst(
+                extensionTypePtr, 0
+            )
         }
+        
+        let buffer = UnsafeBufferPointer(
+            start: startPointer,
+            count: self._size()
+        )
+        
+        return try body(buffer)
+    }
+    
+    public mutating func withUnsafeMutableBytes<Result>(
+        _ body: (UnsafeMutableBufferPointer<UInt8>) throws -> Result
+    ) rethrows -> Result {
+        let startPointer = self.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            GodotExtension.Interface.packedByteArrayOperatorIndex(
+                extensionTypePtr, 0
+            )
+        }
+        
+        let buffer = UnsafeMutableBufferPointer(
+            start: startPointer,
+            count: self._size()
+        )
+        
+        return try body(buffer)
     }
     
     // MARK: Copy
@@ -184,12 +212,12 @@ extension PackedByteArray {
     }
     
     @discardableResult
-    mutating public func encodeVar<Value : VariantStorableIn>(
+    mutating public func encodeValue<Value : Variant.Storable>(
         _ value: Value,
         at byteOffset: Int,
         allowObjects: Bool = false
     ) -> Int {
-        Value.withValueStorage(value) { storage in
+        Value.convertToStorageTemporarily(value) { storage in
             _encodeVar(byteOffset: byteOffset, value: storage, allowObjects: allowObjects)
         }
     }

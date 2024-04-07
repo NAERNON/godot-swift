@@ -67,7 +67,7 @@ open class SubViewport: Viewport {
     }()
 
     private func __getSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -108,7 +108,7 @@ open class SubViewport: Viewport {
     }()
 
     private func __getSize2DOverride() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size_2d_override,
@@ -149,7 +149,7 @@ open class SubViewport: Viewport {
     }()
 
     private func __isSize2DOverrideStretchEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_size_2d_override_stretch_enabled,
@@ -190,7 +190,7 @@ open class SubViewport: Viewport {
     }()
 
     private func __getUpdateMode() -> Godot.SubViewport.UpdateMode {
-        Godot.SubViewport.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SubViewport.UpdateMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_update_mode,
@@ -231,7 +231,7 @@ open class SubViewport: Viewport {
     }()
 
     private func __getClearMode() -> Godot.SubViewport.ClearMode {
-        Godot.SubViewport.ClearMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SubViewport.ClearMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_clear_mode,

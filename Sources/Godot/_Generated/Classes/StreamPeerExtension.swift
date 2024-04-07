@@ -54,51 +54,51 @@ open class StreamPeerExtension: StreamPeer {
             }
             Unmanaged<StreamPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getData(
-            rBuffer: UnsafeMutablePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
-            rBytes: Int32.fromGodotUnsafePointer(args[1]!),
-            rReceived: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[2]!)
+            rBuffer: UnsafeMutablePointer<UInt8> .transferFromGodot(unsafePointer: args[0]!),
+            rBytes: Int32.transferFromGodot(unsafePointer: args[1]!),
+            rReceived: UnsafeMutablePointer<Int32> .transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_partial_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<StreamPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPartialData(
-            rBuffer: UnsafeMutablePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
-            rBytes: Int32.fromGodotUnsafePointer(args[1]!),
-            rReceived: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[2]!)
+            rBuffer: UnsafeMutablePointer<UInt8> .transferFromGodot(unsafePointer: args[0]!),
+            rBytes: Int32.transferFromGodot(unsafePointer: args[1]!),
+            rReceived: UnsafeMutablePointer<Int32> .transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _put_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<StreamPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putData(
-            pData: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
-            pBytes: Int32.fromGodotUnsafePointer(args[1]!),
-            rSent: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[2]!)
+            pData: UnsafePointer<UInt8> .transferFromGodot(unsafePointer: args[0]!),
+            pBytes: Int32.transferFromGodot(unsafePointer: args[1]!),
+            rSent: UnsafeMutablePointer<Int32> .transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _put_partial_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<StreamPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putPartialData(
-            pData: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
-            pBytes: Int32.fromGodotUnsafePointer(args[1]!),
-            rSent: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[2]!)
+            pData: UnsafePointer<UInt8> .transferFromGodot(unsafePointer: args[0]!),
+            pBytes: Int32.transferFromGodot(unsafePointer: args[1]!),
+            rSent: UnsafeMutablePointer<Int32> .transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_available_bytes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<StreamPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAvailableBytes()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getData" : ("_get_data", _get_data_call),
             "_getPartialData" : ("_get_partial_data", _get_partial_data_call),

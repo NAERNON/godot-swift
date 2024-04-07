@@ -37,7 +37,7 @@ open class RDTextureView: RefCounted {
     }()
 
     private func __getFormatOverride() -> Godot.RenderingDevice.DataFormat {
-        Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.DataFormat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format_override,
@@ -78,7 +78,7 @@ open class RDTextureView: RefCounted {
     }()
 
     private func __getSwizzleR() -> Godot.RenderingDevice.TextureSwizzle {
-        Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSwizzle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_swizzle_r,
@@ -119,7 +119,7 @@ open class RDTextureView: RefCounted {
     }()
 
     private func __getSwizzleG() -> Godot.RenderingDevice.TextureSwizzle {
-        Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSwizzle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_swizzle_g,
@@ -160,7 +160,7 @@ open class RDTextureView: RefCounted {
     }()
 
     private func __getSwizzleB() -> Godot.RenderingDevice.TextureSwizzle {
-        Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSwizzle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_swizzle_b,
@@ -201,7 +201,7 @@ open class RDTextureView: RefCounted {
     }()
 
     private func __getSwizzleA() -> Godot.RenderingDevice.TextureSwizzle {
-        Godot.RenderingDevice.TextureSwizzle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSwizzle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_swizzle_a,

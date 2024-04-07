@@ -52,7 +52,7 @@ open class IP: Object {
         host: Godot.GodotString,
         ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_ipType) { __accessPtr in
@@ -77,7 +77,7 @@ open class IP: Object {
         host: Godot.GodotString,
         ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_ipType) { __accessPtr in
@@ -102,7 +102,7 @@ open class IP: Object {
         host: Godot.GodotString,
         ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         ipType.withGodotUnsafeRawPointer { __ptr_ipType in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_ipType) { __accessPtr in
@@ -126,7 +126,7 @@ open class IP: Object {
     public func resolveItemStatus(
         id: Int32
     ) -> Godot.IP.ResolverStatus {
-        Godot.IP.ResolverStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.IP.ResolverStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,7 +149,7 @@ open class IP: Object {
     public func resolveItemAddress(
         id: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,7 +172,7 @@ open class IP: Object {
     public func resolveItemAddresses(
         id: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -215,7 +215,7 @@ open class IP: Object {
     }()
 
     public func localAddresses() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_addresses,
@@ -234,7 +234,7 @@ open class IP: Object {
     }()
 
     public func localInterfaces() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_interfaces,

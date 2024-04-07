@@ -39,7 +39,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __getColorAttachments() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_attachments,
@@ -80,7 +80,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __getInputAttachments() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_attachments,
@@ -121,7 +121,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __getResolveAttachments() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resolve_attachments,
@@ -162,7 +162,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __getPreserveAttachments() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_preserve_attachments,
@@ -203,7 +203,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __getDepthAttachment() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_attachment,

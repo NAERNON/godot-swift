@@ -17,7 +17,7 @@ open class AudioStreamOggVorbis: AudioStream {
     static public func loadFromBuffer(
         _ buffer: Godot.PackedByteArray
     ) -> Godot.AudioStreamOggVorbis? {
-        Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamOggVorbis?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -39,7 +39,7 @@ open class AudioStreamOggVorbis: AudioStream {
     static public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.AudioStreamOggVorbis? {
-        Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamOggVorbis?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -82,7 +82,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __getPacketSequence() -> Godot.OggPacketSequence? {
-        Godot.OggPacketSequence?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OggPacketSequence?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_packet_sequence,
@@ -123,7 +123,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __hasLoop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_loop,
@@ -164,7 +164,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __getLoopOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loop_offset,
@@ -205,7 +205,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __getBpm() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bpm,
@@ -246,7 +246,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __getBeatCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_beat_count,
@@ -287,7 +287,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     private func __getBarBeats() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bar_beats,

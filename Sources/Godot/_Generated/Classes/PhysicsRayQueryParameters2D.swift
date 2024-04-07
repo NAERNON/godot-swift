@@ -20,7 +20,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
         collisionMask: UInt32 = 4294967295,
         exclude: Godot.GodotArray<Godot.RID> = []
     ) -> Godot.PhysicsRayQueryParameters2D? {
-        Godot.PhysicsRayQueryParameters2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsRayQueryParameters2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         collisionMask.withGodotUnsafeRawPointer { __ptr_collisionMask in
@@ -65,7 +65,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __getFrom() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_from,
@@ -106,7 +106,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __getTo() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_to,
@@ -147,7 +147,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __getCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mask,
@@ -188,7 +188,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __getExclude() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_exclude,
@@ -229,7 +229,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __isCollideWithBodiesEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_collide_with_bodies_enabled,
@@ -270,7 +270,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __isCollideWithAreasEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_collide_with_areas_enabled,
@@ -311,7 +311,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
     }()
 
     private func __isHitFromInsideEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_hit_from_inside_enabled,

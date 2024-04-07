@@ -17,7 +17,7 @@ open class Geometry3D: Object {
     public func computeConvexMeshPoints(
         planes: Godot.GodotArray<Godot.Plane>
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         planes.withGodotUnsafeRawPointer { __ptr_planes in
         withUnsafeArgumentPackPointer(__ptr_planes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -40,7 +40,7 @@ open class Geometry3D: Object {
     public func buildBoxPlanes(
         extents: Godot.Vector3
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         extents.withGodotUnsafeRawPointer { __ptr_extents in
         withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +66,7 @@ open class Geometry3D: Object {
         sides: Int32,
         axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in
@@ -96,7 +96,7 @@ open class Geometry3D: Object {
         lats: Int32,
         axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!
     ) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in
@@ -126,7 +126,7 @@ open class Geometry3D: Object {
         q1: Godot.Vector3,
         q2: Godot.Vector3
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         p1.withGodotUnsafeRawPointer { __ptr_p1 in
         p2.withGodotUnsafeRawPointer { __ptr_p2 in
         q1.withGodotUnsafeRawPointer { __ptr_q1 in
@@ -154,7 +154,7 @@ open class Geometry3D: Object {
         s1: Godot.Vector3,
         s2: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
@@ -181,7 +181,7 @@ open class Geometry3D: Object {
         s1: Godot.Vector3,
         s2: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
@@ -209,7 +209,7 @@ open class Geometry3D: Object {
         b: Godot.Vector3,
         c: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         a.withGodotUnsafeRawPointer { __ptr_a in
         b.withGodotUnsafeRawPointer { __ptr_b in
@@ -239,7 +239,7 @@ open class Geometry3D: Object {
         b: Godot.Vector3,
         c: Godot.Vector3
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         dir.withGodotUnsafeRawPointer { __ptr_dir in
         a.withGodotUnsafeRawPointer { __ptr_a in
@@ -270,7 +270,7 @@ open class Geometry3D: Object {
         b: Godot.Vector3,
         c: Godot.Vector3
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         a.withGodotUnsafeRawPointer { __ptr_a in
@@ -300,7 +300,7 @@ open class Geometry3D: Object {
         spherePosition: Godot.Vector3,
         sphereRadius: Double
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         spherePosition.withGodotUnsafeRawPointer { __ptr_spherePosition in
@@ -329,7 +329,7 @@ open class Geometry3D: Object {
         height: Double,
         radius: Double
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -357,7 +357,7 @@ open class Geometry3D: Object {
         to: Godot.Vector3,
         planes: Godot.GodotArray<Godot.Plane>
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         planes.withGodotUnsafeRawPointer { __ptr_planes in
@@ -383,7 +383,7 @@ open class Geometry3D: Object {
         points: Godot.PackedVector3Array,
         plane: Godot.Plane
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         plane.withGodotUnsafeRawPointer { __ptr_plane in
         withUnsafeArgumentPackPointer(__ptr_points, __ptr_plane) { __accessPtr in

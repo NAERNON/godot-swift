@@ -84,10 +84,10 @@ open class HTTPRequest: Node {
     public lazy var requestCompletedSignal: Godot.SignalEmitter<RequestCompletedSignalInput> = {
         .init(object: self, signalName: "request_completed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(result: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    responseCode: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    headers: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    body: Godot.PackedByteArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(result: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    responseCode: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    headers: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    body: Godot.PackedByteArray.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -95,7 +95,7 @@ open class HTTPRequest: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -113,7 +113,7 @@ open class HTTPRequest: Node {
         method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
         requestData: Godot.GodotString = ""
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         customHeaders.withGodotUnsafeRawPointer { __ptr_customHeaders in
         method.withGodotUnsafeRawPointer { __ptr_method in
@@ -142,7 +142,7 @@ open class HTTPRequest: Node {
         method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
         requestDataRaw: Godot.PackedByteArray = PackedByteArray()
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         customHeaders.withGodotUnsafeRawPointer { __ptr_customHeaders in
         method.withGodotUnsafeRawPointer { __ptr_method in
@@ -207,7 +207,7 @@ open class HTTPRequest: Node {
     }()
 
     public func httpClientStatus() -> Godot.HTTPClient.Status {
-        Godot.HTTPClient.Status.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HTTPClient.Status.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_http_client_status,
@@ -248,7 +248,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __isUsingThreads() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_threads,
@@ -289,7 +289,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __isAcceptingGzip() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_accepting_gzip,
@@ -330,7 +330,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __getBodySizeLimit() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_body_size_limit,
@@ -371,7 +371,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __getMaxRedirects() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_redirects,
@@ -412,7 +412,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __getDownloadFile() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_download_file,
@@ -431,7 +431,7 @@ open class HTTPRequest: Node {
     }()
 
     public func downloadedBytes() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_downloaded_bytes,
@@ -450,7 +450,7 @@ open class HTTPRequest: Node {
     }()
 
     public func bodySize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_body_size,
@@ -491,7 +491,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __getTimeout() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_timeout,
@@ -532,7 +532,7 @@ open class HTTPRequest: Node {
     }()
 
     private func __getDownloadChunkSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_download_chunk_size,

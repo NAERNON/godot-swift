@@ -15,7 +15,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func travel() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_travel,
@@ -34,7 +34,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func remainder() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_remainder,
@@ -53,7 +53,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionPoint() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_point,
@@ -72,7 +72,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionNormal() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_normal,
@@ -91,7 +91,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func colliderVelocity() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collider_velocity,
@@ -110,7 +110,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func colliderID() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collider_id,
@@ -129,7 +129,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func colliderRid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collider_rid,
@@ -148,7 +148,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collider() -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collider,
@@ -167,7 +167,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func colliderShape() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collider_shape,
@@ -186,7 +186,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionLocalShape() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_local_shape,
@@ -205,7 +205,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionDepth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_depth,
@@ -224,7 +224,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionSafeFraction() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_safe_fraction,
@@ -243,7 +243,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
     }()
 
     public func collisionUnsafeFraction() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_unsafe_fraction,

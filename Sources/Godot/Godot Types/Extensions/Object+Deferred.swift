@@ -26,7 +26,7 @@ private let deferredToString: GDExtensionCallableCustomToString = { callablePtr,
     Godot.GodotString(describing:
         Unmanaged<DeferredCallable>.fromOpaque(callablePtr!)
             .takeUnretainedValue()
-    ).copyToGodot(unsafePointer: stringResultPtr!)
+    ).transferToGodot(unsafePointer: stringResultPtr!)
 }
 
 private class DeferredCallable {

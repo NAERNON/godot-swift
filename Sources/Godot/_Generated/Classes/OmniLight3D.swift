@@ -48,7 +48,7 @@ open class OmniLight3D: Light3D {
     }()
 
     private func __getShadowMode() -> Godot.OmniLight3D.ShadowMode {
-        Godot.OmniLight3D.ShadowMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OmniLight3D.ShadowMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shadow_mode,

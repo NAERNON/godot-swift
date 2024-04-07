@@ -42,7 +42,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,
@@ -61,7 +61,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     public func meshArrays() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh_arrays,
@@ -102,7 +102,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     private func __getCustomAabb() -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_aabb,
@@ -143,7 +143,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     private func __getFlipFaces() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flip_faces,
@@ -184,7 +184,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     private func __getAddUv2() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_add_uv2,
@@ -225,7 +225,7 @@ open class PrimitiveMesh: Mesh {
     }()
 
     private func __getUv2Padding() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_uv2_padding,
@@ -302,7 +302,7 @@ open class PrimitiveMesh: Mesh {
             }
             Unmanaged<PrimitiveMesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._createMeshArray()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_createMeshArray" : ("_create_mesh_array", _create_mesh_array_call)
         ]

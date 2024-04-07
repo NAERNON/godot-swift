@@ -50,7 +50,7 @@ open class BackBufferCopy: Node2D {
     }()
 
     private func __getRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rect,
@@ -91,7 +91,7 @@ open class BackBufferCopy: Node2D {
     }()
 
     private func __getCopyMode() -> Godot.BackBufferCopy.CopyMode {
-        Godot.BackBufferCopy.CopyMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BackBufferCopy.CopyMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_copy_mode,

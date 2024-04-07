@@ -17,7 +17,7 @@ open class ImageTextureLayered: TextureLayered {
     public func createFromImages(
         _ images: Godot.GodotArray<Godot.Image?>
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         images.withGodotUnsafeRawPointer { __ptr_images in
         withUnsafeArgumentPackPointer(__ptr_images) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -54,7 +54,7 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
     }()
 
     private func __getOpType() -> Godot.VisualShaderNodeMultiplyAdd.OpType {
-        Godot.VisualShaderNodeMultiplyAdd.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeMultiplyAdd.OpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,

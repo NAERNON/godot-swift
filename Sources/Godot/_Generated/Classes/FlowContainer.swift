@@ -28,7 +28,7 @@ open class FlowContainer: Container {
     }()
 
     public func lineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_count,
@@ -69,7 +69,7 @@ open class FlowContainer: Container {
     }()
 
     private func __getAlignment() -> Godot.FlowContainer.AlignmentMode {
-        Godot.FlowContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FlowContainer.AlignmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment,
@@ -110,7 +110,7 @@ open class FlowContainer: Container {
     }()
 
     private func __isVertical() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_vertical,

@@ -52,7 +52,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
     }()
 
     private func __getParameterName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parameter_name,
@@ -93,7 +93,7 @@ open class VisualShaderNodeParameter: VisualShaderNode {
     }()
 
     private func __getQualifier() -> Godot.VisualShaderNodeParameter.Qualifier {
-        Godot.VisualShaderNodeParameter.Qualifier.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeParameter.Qualifier.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_qualifier,

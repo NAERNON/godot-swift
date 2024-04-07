@@ -37,7 +37,7 @@ open class ConvexPolygonShape3D: Shape3D {
     }()
 
     private func __getPoints() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_points,

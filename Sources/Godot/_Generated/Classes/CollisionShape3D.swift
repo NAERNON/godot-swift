@@ -61,7 +61,7 @@ open class CollisionShape3D: Node3D {
     }()
 
     private func __getShape() -> Godot.Shape3D? {
-        Godot.Shape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shape3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape,
@@ -102,7 +102,7 @@ open class CollisionShape3D: Node3D {
     }()
 
     private func __isDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_disabled,

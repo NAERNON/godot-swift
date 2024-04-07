@@ -29,7 +29,7 @@ open class SyntaxHighlighter: Resource {
     public func lineSyntaxHighlighting(
         line: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +86,7 @@ open class SyntaxHighlighter: Resource {
     }()
 
     public func textEdit() -> Godot.TextEdit? {
-        Godot.TextEdit?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextEdit?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_edit,
@@ -108,9 +108,9 @@ open class SyntaxHighlighter: Resource {
             }
             Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLineSyntaxHighlighting(
-            line: Int32.fromGodotUnsafePointer(args[0]!)
+            line: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _clear_highlighting_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return

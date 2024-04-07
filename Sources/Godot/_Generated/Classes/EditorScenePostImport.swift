@@ -21,7 +21,7 @@ open class EditorScenePostImport: RefCounted {
     }()
 
     public func sourceFile() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source_file,
@@ -43,9 +43,9 @@ open class EditorScenePostImport: RefCounted {
             }
             Unmanaged<EditorScenePostImport> .fromOpaque(instancePtr).takeUnretainedValue()
         ._postImport(
-            scene: Godot.Node?.fromGodotUnsafePointer(args[0]!)
+            scene: Godot.Node?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_postImport" : ("_post_import", _post_import_call)
         ]

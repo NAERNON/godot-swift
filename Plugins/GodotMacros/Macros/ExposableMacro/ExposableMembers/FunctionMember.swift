@@ -143,10 +143,6 @@ struct FunctionMember: ExposableMember {
             let parameterList = parameters.dropLast(count)
             
             let call = CodeBlockItemListSyntax {
-                if hasReturnType {
-                    "let returnValue ="
-                }
-                
                 if isStatic {
                     "\(classContext.trimmed)"
                 } else {
@@ -160,7 +156,7 @@ struct FunctionMember: ExposableMember {
                         "\(parameter.firstName.trimmed):"
                     }
                     
-                    "\(parameter.type.trimmed).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
+                    "\(parameter.type.trimmed).convertFromStorage(unsafePointer: args!.advanced(by: \(literal: index)).pointee!)"
                     
                     if index < parameterList.count - 1 {
                         ","
@@ -170,9 +166,7 @@ struct FunctionMember: ExposableMember {
                 
                 if hasReturnType {
                     """
-                    Godot.Variant.withStorage(of: returnValue) { storage in
-                        storage.copyToGodot(unsafePointer: returnPtr!)
-                    }
+                    .transferVariantStorageToGodot(unsafePointer: returnPtr!)
                     """
                 }
             }
@@ -209,7 +203,7 @@ struct FunctionMember: ExposableMember {
                 "\(parameter.firstName.trimmed):"
             }
             
-            "\(parameter.type.trimmed).fromGodotUnsafePointer(args!.advanced(by: \(literal: index)).pointee!)"
+            "\(parameter.type.trimmed).transferFromGodot(unsafePointer: args!.advanced(by: \(literal: index)).pointee!)"
             
             if index < parameters.count - 1 {
                 ","
@@ -219,7 +213,7 @@ struct FunctionMember: ExposableMember {
         
         if hasReturnType {
             """
-            .copyToGodot(unsafePointer: returnPtr!)
+            .transferToGodot(unsafePointer: returnPtr!)
             """
         }
     }

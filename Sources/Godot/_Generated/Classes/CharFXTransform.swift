@@ -15,7 +15,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transform,
@@ -56,7 +56,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getRange() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_range,
@@ -97,7 +97,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getElapsedTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_elapsed_time,
@@ -138,7 +138,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __isVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_visible,
@@ -179,7 +179,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __isOutline() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_outline,
@@ -220,7 +220,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -261,7 +261,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color,
@@ -302,7 +302,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getEnvironment() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment,
@@ -320,7 +320,7 @@ open class CharFXTransform: RefCounted {
         }
     }()
 
-    private func __setEnvironment<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setEnvironment<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ environment: Godot.GodotDictionary<Value1, Value2>
     ) {
         environment.withGodotUnsafeRawPointer { __ptr_environment in
@@ -343,7 +343,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getGlyphIndex() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glyph_index,
@@ -384,7 +384,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getRelativeIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_relative_index,
@@ -425,7 +425,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getGlyphCount() -> UInt8 {
-        UInt8.fromMutatingGodotUnsafePointer { __temporary in
+        UInt8.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glyph_count,
@@ -466,7 +466,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getGlyphFlags() -> UInt16 {
-        UInt16.fromMutatingGodotUnsafePointer { __temporary in
+        UInt16.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glyph_flags,
@@ -507,7 +507,7 @@ open class CharFXTransform: RefCounted {
     }()
 
     private func __getFont() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font,

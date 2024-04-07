@@ -38,7 +38,7 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             self.opaque = self.withCopiedOpaque().opaque
         }
         
-        public consuming func copyToGodot(
+        public consuming func transferToGodot(
             unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
         ) {
             var copy = consume self
@@ -56,13 +56,25 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             }
         }
         
-        public func withGodotUnsafeRawPointer<Result>(
-            _ body: (UnsafeRawPointer) throws -> Result
+        func withUnsafeRawBufferPointer<Result>(
+            _ body: (UnsafeRawBufferPointer) throws -> Result
         ) rethrows -> Result {
-            try opaque.withUnsafeMutableRawPointer { try body($0) }
+            try opaque.withUnsafeRawBufferPointer(body)
         }
         
-        internal mutating func withGodotUnsafeMutableRawPointer<Result>(
+        func withUnsafeMutableRawBufferPointer<Result>(
+            _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawBufferPointer(body)
+        }
+        
+        func withUnsafeRawPointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeRawPointer(body)
+        }
+        
+        func withUnsafeMutableRawPointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)

@@ -22,7 +22,7 @@ open class VideoStreamPlayer: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -58,7 +58,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getStream() -> Godot.VideoStream? {
-        Godot.VideoStream?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VideoStream?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream,
@@ -113,7 +113,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     public func isPlaying() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_playing,
@@ -154,7 +154,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __isPaused() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_paused,
@@ -195,7 +195,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __hasLoop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_loop,
@@ -236,7 +236,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getVolume() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volume,
@@ -277,7 +277,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getVolumeDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volume_db,
@@ -318,7 +318,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getAudioTrack() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_audio_track,
@@ -337,7 +337,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     public func streamName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream_name,
@@ -356,7 +356,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     public func streamLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream_length,
@@ -397,7 +397,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getStreamPosition() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream_position,
@@ -438,7 +438,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __hasAutoplay() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_autoplay,
@@ -479,7 +479,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __hasExpand() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_expand,
@@ -520,7 +520,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getBufferingMsec() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffering_msec,
@@ -561,7 +561,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     private func __getBus() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bus,
@@ -580,7 +580,7 @@ open class VideoStreamPlayer: Control {
     }()
 
     public func videoTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_texture,

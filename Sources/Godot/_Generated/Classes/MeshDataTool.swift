@@ -36,7 +36,7 @@ open class MeshDataTool: RefCounted {
         mesh: Godot.ArrayMesh?,
         surface: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
@@ -62,7 +62,7 @@ open class MeshDataTool: RefCounted {
         mesh: Godot.ArrayMesh?,
         compressionFlags: UInt64 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
         compressionFlags.withGodotUnsafeRawPointer { __ptr_compressionFlags in
@@ -85,7 +85,7 @@ open class MeshDataTool: RefCounted {
     }()
 
     public func format() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -104,7 +104,7 @@ open class MeshDataTool: RefCounted {
     }()
 
     public func vertexCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertex_count,
@@ -123,7 +123,7 @@ open class MeshDataTool: RefCounted {
     }()
 
     public func edgeCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edge_count,
@@ -142,7 +142,7 @@ open class MeshDataTool: RefCounted {
     }()
 
     public func faceCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_face_count,
@@ -187,7 +187,7 @@ open class MeshDataTool: RefCounted {
     public func vertex(
         idx: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +234,7 @@ open class MeshDataTool: RefCounted {
     public func vertexNormal(
         idx: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -281,7 +281,7 @@ open class MeshDataTool: RefCounted {
     public func vertexTangent(
         idx: Int32
     ) -> Godot.Plane {
-        Godot.Plane.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Plane.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,7 +328,7 @@ open class MeshDataTool: RefCounted {
     public func vertexUv(
         idx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -375,7 +375,7 @@ open class MeshDataTool: RefCounted {
     public func vertexUv2(
         idx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -422,7 +422,7 @@ open class MeshDataTool: RefCounted {
     public func vertexColor(
         idx: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -469,7 +469,7 @@ open class MeshDataTool: RefCounted {
     public func vertexBones(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -516,7 +516,7 @@ open class MeshDataTool: RefCounted {
     public func vertexWeights(
         idx: Int32
     ) -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -536,7 +536,7 @@ open class MeshDataTool: RefCounted {
         }
     }()
 
-    public func setVertexMeta<Value: VariantStorableIn>(
+    public func setVertexMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
     ) {
@@ -563,7 +563,7 @@ open class MeshDataTool: RefCounted {
     public func vertexMeta(
         idx: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -586,7 +586,7 @@ open class MeshDataTool: RefCounted {
     public func vertexEdges(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -609,7 +609,7 @@ open class MeshDataTool: RefCounted {
     public func vertexFaces(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -633,7 +633,7 @@ open class MeshDataTool: RefCounted {
         idx: Int32,
         vertex: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_vertex) { __accessPtr in
@@ -657,7 +657,7 @@ open class MeshDataTool: RefCounted {
     public func edgeFaces(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -677,7 +677,7 @@ open class MeshDataTool: RefCounted {
         }
     }()
 
-    public func setEdgeMeta<Value: VariantStorableIn>(
+    public func setEdgeMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
     ) {
@@ -704,7 +704,7 @@ open class MeshDataTool: RefCounted {
     public func edgeMeta(
         idx: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -728,7 +728,7 @@ open class MeshDataTool: RefCounted {
         idx: Int32,
         vertex: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         vertex.withGodotUnsafeRawPointer { __ptr_vertex in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_vertex) { __accessPtr in
@@ -753,7 +753,7 @@ open class MeshDataTool: RefCounted {
         idx: Int32,
         edge: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         edge.withGodotUnsafeRawPointer { __ptr_edge in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_edge) { __accessPtr in
@@ -774,7 +774,7 @@ open class MeshDataTool: RefCounted {
         }
     }()
 
-    public func setFaceMeta<Value: VariantStorableIn>(
+    public func setFaceMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
     ) {
@@ -801,7 +801,7 @@ open class MeshDataTool: RefCounted {
     public func faceMeta(
         idx: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -824,7 +824,7 @@ open class MeshDataTool: RefCounted {
     public func faceNormal(
         idx: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -868,7 +868,7 @@ open class MeshDataTool: RefCounted {
     }()
 
     public func material() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,

@@ -76,6 +76,15 @@ extension GodotFunction {
         GodotModifiedFunction(self, modifiedElement: .arguments(arguments))
     }
     
+    func withArgumentLabelsHidden() -> GodotModifiedFunction<Self> {
+        let newArguments = self.arguments?.map { argument in
+            var argument = argument
+            argument.isLabelHidden = true
+            return argument
+        }
+        return GodotModifiedFunction(self, modifiedElement: .arguments(newArguments))
+    }
+    
     func withReturnType(_ returnType: GodotType?) -> GodotModifiedFunction<Self> {
         GodotModifiedFunction(self, modifiedElement: .returnType(returnType))
     }

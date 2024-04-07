@@ -37,7 +37,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
     }()
 
     private func __getCullMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cull_mask,
@@ -78,7 +78,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
     }()
 
     private func __getStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_strength,
@@ -119,7 +119,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
     }()
 
     private func __getAttenuation() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_attenuation,
@@ -160,7 +160,7 @@ open class GPUParticlesAttractor3D: VisualInstance3D {
     }()
 
     private func __getDirectionality() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_directionality,

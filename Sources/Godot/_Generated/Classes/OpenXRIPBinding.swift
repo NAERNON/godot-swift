@@ -38,7 +38,7 @@ open class OpenXRIPBinding: Resource {
     }()
 
     private func __getAction() -> Godot.OpenXRAction? {
-        Godot.OpenXRAction?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRAction?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_action,
@@ -57,7 +57,7 @@ open class OpenXRIPBinding: Resource {
     }()
 
     public func pathCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_count,
@@ -98,7 +98,7 @@ open class OpenXRIPBinding: Resource {
     }()
 
     private func __getPaths() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_paths,
@@ -119,7 +119,7 @@ open class OpenXRIPBinding: Resource {
     public func hasPath(
         _ path: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

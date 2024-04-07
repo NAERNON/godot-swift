@@ -22,7 +22,7 @@ open class MenuButton: Button {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -35,7 +35,7 @@ open class MenuButton: Button {
     }()
 
     public func popup() -> Godot.PopupMenu? {
-        Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PopupMenu?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_popup,
@@ -94,7 +94,7 @@ open class MenuButton: Button {
     }()
 
     private func __isSwitchOnHover() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_switch_on_hover,
@@ -157,7 +157,7 @@ open class MenuButton: Button {
     }()
 
     private func __getItemCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_item_count,

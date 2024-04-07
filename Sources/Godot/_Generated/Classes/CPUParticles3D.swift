@@ -105,7 +105,7 @@ open class CPUParticles3D: GeometryInstance3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -382,7 +382,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __isEmitting() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_emitting,
@@ -401,7 +401,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getAmount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_amount,
@@ -420,7 +420,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getLifetime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lifetime,
@@ -439,7 +439,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getOneShot() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_one_shot,
@@ -458,7 +458,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getPreProcessTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pre_process_time,
@@ -477,7 +477,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getExplosivenessRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_explosiveness_ratio,
@@ -496,7 +496,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getRandomnessRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_randomness_ratio,
@@ -515,7 +515,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getLifetimeRandomness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lifetime_randomness,
@@ -534,7 +534,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getUseLocalCoordinates() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_use_local_coordinates,
@@ -553,7 +553,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getFixedFps() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fixed_fps,
@@ -572,7 +572,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getFractionalDelta() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractional_delta,
@@ -591,7 +591,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getSpeedScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_speed_scale,
@@ -632,7 +632,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getDrawOrder() -> Godot.CPUParticles3D.DrawOrder {
-        Godot.CPUParticles3D.DrawOrder.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CPUParticles3D.DrawOrder.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_draw_order,
@@ -674,7 +674,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getMesh() -> Godot.Mesh? {
-        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Mesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh,
@@ -733,7 +733,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getDirection() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_direction,
@@ -774,7 +774,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getSpread() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_spread,
@@ -815,7 +815,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getFlatness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flatness,
@@ -860,7 +860,7 @@ open class CPUParticles3D: GeometryInstance3D {
     private func __getParamMin(
         param: Godot.CPUParticles3D.Parameter
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -907,7 +907,7 @@ open class CPUParticles3D: GeometryInstance3D {
     private func __getParamMax(
         param: Godot.CPUParticles3D.Parameter
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -955,7 +955,7 @@ open class CPUParticles3D: GeometryInstance3D {
     private func __getParamCurve(
         param: Godot.CPUParticles3D.Parameter
     ) -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -998,7 +998,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color,
@@ -1040,7 +1040,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getColorRamp() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_ramp,
@@ -1082,7 +1082,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getColorInitialRamp() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_initial_ramp,
@@ -1127,7 +1127,7 @@ open class CPUParticles3D: GeometryInstance3D {
     private func __getParticleFlag(
         _ particleFlag: Godot.CPUParticles3D.ParticleFlags
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         particleFlag.withGodotUnsafeRawPointer { __ptr_particleFlag in
         withUnsafeArgumentPackPointer(__ptr_particleFlag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1170,7 +1170,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionShape() -> Godot.CPUParticles3D.EmissionShape {
-        Godot.CPUParticles3D.EmissionShape.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CPUParticles3D.EmissionShape.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_shape,
@@ -1211,7 +1211,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionSphereRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_sphere_radius,
@@ -1252,7 +1252,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionBoxExtents() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_box_extents,
@@ -1293,7 +1293,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionPoints() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_points,
@@ -1334,7 +1334,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionNormals() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_normals,
@@ -1375,7 +1375,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionColors() -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_colors,
@@ -1416,7 +1416,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionRingAxis() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_axis,
@@ -1457,7 +1457,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionRingHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_height,
@@ -1498,7 +1498,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionRingRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_radius,
@@ -1539,7 +1539,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getEmissionRingInnerRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_inner_radius,
@@ -1558,7 +1558,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getGravity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity,
@@ -1599,7 +1599,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getSplitScale() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_split_scale,
@@ -1640,7 +1640,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getScaleCurveX() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scale_curve_x,
@@ -1682,7 +1682,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getScaleCurveY() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scale_curve_y,
@@ -1724,7 +1724,7 @@ open class CPUParticles3D: GeometryInstance3D {
     }()
 
     private func __getScaleCurveZ() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scale_curve_z,

@@ -39,7 +39,7 @@ open class SpriteFrames: Resource {
     public func hasAnimation(
         anim: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +106,7 @@ open class SpriteFrames: Resource {
     }()
 
     public func animationNames() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animation_names,
@@ -151,7 +151,7 @@ open class SpriteFrames: Resource {
     public func animationSpeed(
         anim: Godot.GodotStringName
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -198,7 +198,7 @@ open class SpriteFrames: Resource {
     public func animationLoop(
         anim: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +303,7 @@ open class SpriteFrames: Resource {
     public func frameCount(
         anim: Godot.GodotStringName
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         withUnsafeArgumentPackPointer(__ptr_anim) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,7 +327,7 @@ open class SpriteFrames: Resource {
         anim: Godot.GodotStringName,
         idx: Int32
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_idx) { __accessPtr in
@@ -352,7 +352,7 @@ open class SpriteFrames: Resource {
         anim: Godot.GodotStringName,
         idx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         anim.withGodotUnsafeRawPointer { __ptr_anim in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_anim, __ptr_idx) { __accessPtr in

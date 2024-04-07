@@ -51,7 +51,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -118,7 +118,7 @@ open class StyleBoxTexture: StyleBox {
     private func __getTextureMargin(
         _ margin: Godot.Side
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +187,7 @@ open class StyleBoxTexture: StyleBox {
     private func __getExpandMargin(
         _ margin: Godot.Side
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -230,7 +230,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __getRegionRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region_rect,
@@ -271,7 +271,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __isDrawCenterEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_draw_center_enabled,
@@ -312,7 +312,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __getModulate() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modulate,
@@ -353,7 +353,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __getHAxisStretchMode() -> Godot.StyleBoxTexture.AxisStretchMode {
-        Godot.StyleBoxTexture.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StyleBoxTexture.AxisStretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_axis_stretch_mode,
@@ -394,7 +394,7 @@ open class StyleBoxTexture: StyleBox {
     }()
 
     private func __getVAxisStretchMode() -> Godot.StyleBoxTexture.AxisStretchMode {
-        Godot.StyleBoxTexture.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StyleBoxTexture.AxisStretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_axis_stretch_mode,

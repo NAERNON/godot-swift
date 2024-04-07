@@ -18,7 +18,7 @@ open class CryptoKey: Resource {
         path: Godot.GodotString,
         publicOnly: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_publicOnly) { __accessPtr in
@@ -43,7 +43,7 @@ open class CryptoKey: Resource {
         path: Godot.GodotString,
         publicOnly: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_publicOnly) { __accessPtr in
@@ -65,7 +65,7 @@ open class CryptoKey: Resource {
     }()
 
     public func isPublicOnly() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_public_only,
@@ -86,7 +86,7 @@ open class CryptoKey: Resource {
     public func saveToString(
         publicOnly: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_publicOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,7 +110,7 @@ open class CryptoKey: Resource {
         stringKey: Godot.GodotString,
         publicOnly: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stringKey.withGodotUnsafeRawPointer { __ptr_stringKey in
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_stringKey, __ptr_publicOnly) { __accessPtr in

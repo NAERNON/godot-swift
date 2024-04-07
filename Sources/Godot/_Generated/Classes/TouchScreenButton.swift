@@ -32,7 +32,7 @@ open class TouchScreenButton: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -51,7 +51,7 @@ open class TouchScreenButton: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -87,7 +87,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getTextureNormal() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_normal,
@@ -129,7 +129,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getTexturePressed() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_pressed,
@@ -171,7 +171,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getBitmask() -> Godot.BitMap? {
-        Godot.BitMap?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BitMap?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bitmask,
@@ -213,7 +213,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getShape() -> Godot.Shape2D? {
-        Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shape2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape,
@@ -254,7 +254,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __isShapeCentered() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shape_centered,
@@ -295,7 +295,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __isShapeVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shape_visible,
@@ -336,7 +336,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getAction() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_action,
@@ -377,7 +377,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __getVisibilityMode() -> Godot.TouchScreenButton.VisibilityMode {
-        Godot.TouchScreenButton.VisibilityMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TouchScreenButton.VisibilityMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_mode,
@@ -418,7 +418,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     private func __isPassbyPressEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_passby_press_enabled,
@@ -437,7 +437,7 @@ open class TouchScreenButton: Node2D {
     }()
 
     public func isPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_pressed,

@@ -48,7 +48,7 @@ open class ResourceLoader: Object {
         useSubThreads: Bool = false,
         cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
         useSubThreads.withGodotUnsafeRawPointer { __ptr_useSubThreads in
@@ -71,11 +71,11 @@ open class ResourceLoader: Object {
         }
     }()
 
-    public func loadThreadedGetStatus<Value: VariantStorable>(
+    public func loadThreadedGetStatus<Value: Variant.Storable>(
         path: Godot.GodotString,
         progress: Godot.GodotArray<Value> = []
     ) -> Godot.ResourceLoader.ThreadLoadStatus {
-        Godot.ResourceLoader.ThreadLoadStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ResourceLoader.ThreadLoadStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_progress) { __accessPtr in
@@ -99,7 +99,7 @@ open class ResourceLoader: Object {
     public func loadThreadedGet(
         path: Godot.GodotString
     ) -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -124,7 +124,7 @@ open class ResourceLoader: Object {
         typeHint: Godot.GodotString = "",
         cacheMode: Godot.ResourceLoader.CacheMode = ResourceLoader.CacheMode(rawValue: 1)!
     ) -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
         cacheMode.withGodotUnsafeRawPointer { __ptr_cacheMode in
@@ -149,7 +149,7 @@ open class ResourceLoader: Object {
     public func recognizedExtensionsForType(
         _ type: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -242,7 +242,7 @@ open class ResourceLoader: Object {
     public func dependencies(
         path: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -265,7 +265,7 @@ open class ResourceLoader: Object {
     public func hasCached(
         path: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -289,7 +289,7 @@ open class ResourceLoader: Object {
         path: Godot.GodotString,
         typeHint: Godot.GodotString = ""
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_typeHint) { __accessPtr in
@@ -313,7 +313,7 @@ open class ResourceLoader: Object {
     public func resourceUid(
         path: Godot.GodotString
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -52,7 +52,7 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
     }()
 
     private func __getMode() -> Godot.VisualShaderNodeParticleAccelerator.Mode {
-        Godot.VisualShaderNodeParticleAccelerator.Mode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeParticleAccelerator.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mode,

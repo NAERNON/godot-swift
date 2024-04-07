@@ -31,7 +31,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     public lazy var nodeChangedSignal: Godot.SignalEmitter<NodeChangedSignalInput> = {
         .init(object: self, signalName: "node_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(nodeName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(nodeName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -93,7 +93,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     public func node(
         name: Godot.GodotStringName
     ) -> Godot.AnimationNode? {
-        Godot.AnimationNode?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNode?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -162,7 +162,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     public func hasNode(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -259,7 +259,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     public func nodePosition(
         name: Godot.GodotStringName
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,7 +302,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
     }()
 
     private func __getGraphOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_graph_offset,

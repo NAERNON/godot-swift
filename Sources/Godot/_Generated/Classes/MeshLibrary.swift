@@ -182,7 +182,7 @@ open class MeshLibrary: Resource {
         }
     }()
 
-    public func setItemShapes<Value: VariantStorable>(
+    public func setItemShapes<Value: Variant.Storable>(
         id: Int32,
         shapes: Godot.GodotArray<Value>
     ) {
@@ -234,7 +234,7 @@ open class MeshLibrary: Resource {
     public func itemName(
         id: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -257,7 +257,7 @@ open class MeshLibrary: Resource {
     public func itemMesh(
         id: Int32
     ) -> Godot.Mesh? {
-        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Mesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -280,7 +280,7 @@ open class MeshLibrary: Resource {
     public func itemMeshTransform(
         id: Int32
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +303,7 @@ open class MeshLibrary: Resource {
     public func itemNavigationMesh(
         id: Int32
     ) -> Godot.NavigationMesh? {
-        Godot.NavigationMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -326,7 +326,7 @@ open class MeshLibrary: Resource {
     public func itemNavigationMeshTransform(
         id: Int32
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -349,7 +349,7 @@ open class MeshLibrary: Resource {
     public func itemNavigationLayers(
         id: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -372,7 +372,7 @@ open class MeshLibrary: Resource {
     public func itemShapes(
         id: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -395,7 +395,7 @@ open class MeshLibrary: Resource {
     public func itemPreview(
         id: Int32
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -440,7 +440,7 @@ open class MeshLibrary: Resource {
     public func findItemByName(
         _ name: Godot.GodotString
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -479,7 +479,7 @@ open class MeshLibrary: Resource {
     }()
 
     public func itemList() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_item_list,
@@ -498,7 +498,7 @@ open class MeshLibrary: Resource {
     }()
 
     public func lastUnusedItemID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_last_unused_item_id,

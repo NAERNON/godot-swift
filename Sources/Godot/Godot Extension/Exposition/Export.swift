@@ -1,8 +1,8 @@
 
-public typealias ExportableValue = ExposableValue & HintableValue
+public typealias Exportable = Exposable & Hintable
 
 @propertyWrapper
-public struct Export<Value> where Value : ExportableValue {
+public struct Export<Value> where Value : Exportable {
     public var wrappedValue: Value
     
     public init(wrappedValue defaultValue: Value) {

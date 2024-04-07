@@ -17,7 +17,7 @@ open class GLTFCamera: Resource {
     static public func fromNode(
         cameraNode: Godot.Camera3D?
     ) -> Godot.GLTFCamera? {
-        Godot.GLTFCamera?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFCamera?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         cameraNode.withGodotUnsafeRawPointer { __ptr_cameraNode in
         withUnsafePointer(to: __ptr_cameraNode) { _ptr___ptr_cameraNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_cameraNode) { __accessPtr in
@@ -38,7 +38,7 @@ open class GLTFCamera: Resource {
     }()
 
     public func toNode() -> Godot.Camera3D? {
-        Godot.Camera3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_node,
@@ -56,10 +56,10 @@ open class GLTFCamera: Resource {
         }
     }()
 
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+    static public func fromDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ dictionary: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GLTFCamera? {
-        Godot.GLTFCamera?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFCamera?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -79,7 +79,7 @@ open class GLTFCamera: Resource {
     }()
 
     public func toDictionary() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_dictionary,
@@ -98,7 +98,7 @@ open class GLTFCamera: Resource {
     }()
 
     private func __getPerspective() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_perspective,
@@ -139,7 +139,7 @@ open class GLTFCamera: Resource {
     }()
 
     private func __getFov() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fov,
@@ -180,7 +180,7 @@ open class GLTFCamera: Resource {
     }()
 
     private func __getSizeMag() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size_mag,
@@ -221,7 +221,7 @@ open class GLTFCamera: Resource {
     }()
 
     private func __getDepthFar() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_far,
@@ -262,7 +262,7 @@ open class GLTFCamera: Resource {
     }()
 
     private func __getDepthNear() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_near,

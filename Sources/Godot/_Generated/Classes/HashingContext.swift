@@ -30,7 +30,7 @@ open class HashingContext: RefCounted {
     public func start(
         type: Godot.HashingContext.HashType
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -53,7 +53,7 @@ open class HashingContext: RefCounted {
     public func update(
         chunk: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         chunk.withGodotUnsafeRawPointer { __ptr_chunk in
         withUnsafeArgumentPackPointer(__ptr_chunk) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -74,7 +74,7 @@ open class HashingContext: RefCounted {
     }()
 
     public func finish() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_finish,

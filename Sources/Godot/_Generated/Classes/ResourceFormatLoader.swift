@@ -101,103 +101,103 @@ open class ResourceFormatLoader: RefCounted {
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _recognize_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._recognizePath(
-            Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            type: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)
+            Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            type: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _handles_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handlesType(
-            Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
+            Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_resource_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceType(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_resource_script_class_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceScriptClass(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_resource_uid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceUid(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_dependencies_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDependencies(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            addTypes: Bool.fromGodotUnsafePointer(args[1]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            addTypes: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _rename_dependencies_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._renameDependencies(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            renames: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            renames: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _exists_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exists(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_classes_used_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getClassesUsed(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _load_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
         ._load(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            originalPath: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
-            useSubThreads: Bool.fromGodotUnsafePointer(args[2]!),
-            cacheMode: Int32.fromGodotUnsafePointer(args[3]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            originalPath: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+            useSubThreads: Bool.transferFromGodot(unsafePointer: args[2]!),
+            cacheMode: Int32.transferFromGodot(unsafePointer: args[3]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getRecognizedExtensions" : ("_get_recognized_extensions", _get_recognized_extensions_call),
             "_recognizePath" : ("_recognize_path", _recognize_path_call),

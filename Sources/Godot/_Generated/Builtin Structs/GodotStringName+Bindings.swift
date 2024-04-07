@@ -8,15 +8,15 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 }()
 
-private var __constructor: GDExtensionPtrConstructor = {
+private var __make: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME, 0)!
 }()
 
-private var __constructor_godotstringname: GDExtensionPtrConstructor = {
+private var __makeFromGodotStringName: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME, 1)!
 }()
 
-private var __constructor_godotstring: GDExtensionPtrConstructor = {
+private var __makeFromGodotString: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME, 2)!
 }()
 
@@ -833,101 +833,93 @@ private var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
 }()
 
 extension GodotStringName {
-    internal static func fromMutatingGodotUnsafePointer(
+    static internal func fromInitializingMutatingGodotUnsafePointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
         let opaque = Opaque(size: 8, destructorPtr: __destructor)
         opaque.withUnsafeMutableRawPointer(body)
-        return Self (opaque: opaque)
+        return Self.init(opaque: opaque)
     }
 
-    static internal func _constructor() -> Self {
+    static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            __make(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor() -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _constructor_godotstringname(
-        from: Godot.GodotStringName
+    static internal func _makeFromGodotStringName(
+        _ from: Godot.GodotStringName
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotstringname(__ptr___temporary, __accessPtr)
+            __makeFromGodotStringName(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_godotstringname(
-        from: UnsafeRawPointer
+    static internal func _makeFromGodotStringNamePointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotstringname(__ptr___temporary, __accessPtr)
+            __makeFromGodotStringName(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _constructor_godotstring(
-        from: Godot.GodotString
+    static internal func _makeFromGodotString(
+        _ from: Godot.GodotString
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotstring(__ptr___temporary, __accessPtr)
+            __makeFromGodotString(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_godotstring(
-        from: UnsafeRawPointer
+    static internal func _makeFromGodotStringPointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotstring(__ptr___temporary, __accessPtr)
+            __makeFromGodotString(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantStorableIn>(
+    static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual<Value: VariantStorableIn>(
+    static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule<Value: VariantStorableIn>(
+    static internal func _operatorModule<Value: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Value
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_module_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -936,7 +928,7 @@ extension GodotStringName {
     static internal func _operatorNot(
         _ lhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
@@ -945,7 +937,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Bool
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_bool(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -955,7 +947,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Int
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -965,7 +957,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Double
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -975,7 +967,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_godotstring(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -985,7 +977,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_godotstring(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -995,7 +987,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotString
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_add_godotstring(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1005,7 +997,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotString
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_godotstring(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1015,7 +1007,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotstring(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1025,7 +1017,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector2
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector2(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1035,7 +1027,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector2I
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1045,7 +1037,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Rect2
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_rect2(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1055,7 +1047,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Rect2I
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_rect2i(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1065,7 +1057,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector3
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector3(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1075,7 +1067,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector3I
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector3i(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1085,7 +1077,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Transform2D
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_transform2d(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1095,7 +1087,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector4
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector4(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1105,7 +1097,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Vector4I
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_vector4i(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1115,7 +1107,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Plane
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_plane(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1125,7 +1117,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Quaternion
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_quaternion(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1135,7 +1127,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.AABB
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_aabb(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1145,7 +1137,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Basis
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_basis(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1155,7 +1147,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Transform3D
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_transform3d(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1165,7 +1157,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Projection
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_projection(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1175,7 +1167,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Color
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1185,7 +1177,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1195,7 +1187,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1205,7 +1197,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1215,7 +1207,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_equal_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1225,7 +1217,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1235,7 +1227,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_equal_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1245,7 +1237,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_add_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1255,7 +1247,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1265,7 +1257,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotstringname(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1275,7 +1267,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.NodePath
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_nodepath(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1285,7 +1277,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Object?
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         withUnsafePointer(to: __ptr_rhs) { _ptr___ptr_rhs in
@@ -1296,7 +1288,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Object?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         withUnsafePointer(to: __ptr_rhs) { _ptr___ptr_rhs in
@@ -1307,7 +1299,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Callable
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_callable(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1317,47 +1309,47 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.Signal
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_signal(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule<Value1: VariantStorable, Value2: VariantStorable>(
+    static internal func _operatorModule<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(
+    static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorModule<Value: VariantStorable>(
+    static internal func _operatorModule<Value: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotArray<Value>
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value: VariantStorable>(
+    static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1367,7 +1359,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedByteArray
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedbytearray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1377,7 +1369,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedInt32Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedint32array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1387,7 +1379,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedInt64Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedint64array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1397,7 +1389,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedFloat32Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedfloat32array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1407,7 +1399,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedFloat64Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedfloat64array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1417,7 +1409,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedStringArray
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedstringarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1427,7 +1419,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedStringArray
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_packedstringarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1437,7 +1429,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedVector2Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedvector2array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1447,7 +1439,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedVector3Array
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedvector3array(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1457,7 +1449,7 @@ extension GodotStringName {
         _ lhs: Godot.GodotStringName,
         _ rhs: Godot.PackedColorArray
     ) -> Godot.GodotString {
-        GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_module_packedcolorarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -1466,7 +1458,7 @@ extension GodotStringName {
     internal func _casecmp(
         to: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1476,7 +1468,7 @@ extension GodotStringName {
     internal func _nocasecmp(
         to: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1486,7 +1478,7 @@ extension GodotStringName {
     internal func _naturalcasecmp(
         to: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1496,7 +1488,7 @@ extension GodotStringName {
     internal func _naturalnocasecmp(
         to: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1504,7 +1496,7 @@ extension GodotStringName {
     }
 
     internal func _length() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_length(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1513,7 +1505,7 @@ extension GodotStringName {
         from: Int,
         len: Int = -1
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         len.withGodotUnsafeRawPointer { __ptr_len in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_len) { __accessPtr in
@@ -1525,7 +1517,7 @@ extension GodotStringName {
         delimiter: Godot.GodotString,
         slice: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         slice.withGodotUnsafeRawPointer { __ptr_slice in
         withUnsafeArgumentPackPointer(__ptr_delimiter, __ptr_slice) { __accessPtr in
@@ -1537,7 +1529,7 @@ extension GodotStringName {
         delimiter: Int,
         slice: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         slice.withGodotUnsafeRawPointer { __ptr_slice in
         withUnsafeArgumentPackPointer(__ptr_delimiter, __ptr_slice) { __accessPtr in
@@ -1548,7 +1540,7 @@ extension GodotStringName {
     internal func _sliceCount(
         delimiter: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         withUnsafeArgumentPackPointer(__ptr_delimiter) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1559,7 +1551,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         from: Int = 0
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
@@ -1572,7 +1564,7 @@ extension GodotStringName {
         from: Int = 0,
         to: Int = 0
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -1586,7 +1578,7 @@ extension GodotStringName {
         from: Int = 0,
         to: Int = 0
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
@@ -1599,7 +1591,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         from: Int = 0
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
@@ -1611,7 +1603,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         from: Int = -1
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
@@ -1623,7 +1615,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         from: Int = -1
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
@@ -1634,7 +1626,7 @@ extension GodotStringName {
     internal func _match(
         expr: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         expr.withGodotUnsafeRawPointer { __ptr_expr in
         withUnsafeArgumentPackPointer(__ptr_expr) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1644,7 +1636,7 @@ extension GodotStringName {
     internal func _matchn(
         expr: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         expr.withGodotUnsafeRawPointer { __ptr_expr in
         withUnsafeArgumentPackPointer(__ptr_expr) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1654,7 +1646,7 @@ extension GodotStringName {
     internal func _beginsWith(
         text: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1664,7 +1656,7 @@ extension GodotStringName {
     internal func _endsWith(
         text: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1674,7 +1666,7 @@ extension GodotStringName {
     internal func _isSubsequenceOf(
         text: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1684,7 +1676,7 @@ extension GodotStringName {
     internal func _isSubsequenceOfn(
         text: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1692,7 +1684,7 @@ extension GodotStringName {
     }
 
     internal func _bigrams() -> Godot.PackedStringArray {
-        return Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_bigrams(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1700,7 +1692,7 @@ extension GodotStringName {
     internal func _similarity(
         text: Godot.GodotString
     ) -> Double {
-        return Double.fromMutatingGodotUnsafePointer { __temporary in
+        return Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_text) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1711,7 +1703,7 @@ extension GodotStringName {
         values: borrowing Godot.Variant.Storage,
         placeholder: Godot.GodotString = "{_}"
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         values.withGodotUnsafeRawPointer { __ptr_values in
         placeholder.withGodotUnsafeRawPointer { __ptr_placeholder in
         withUnsafeArgumentPackPointer(__ptr_values, __ptr_placeholder) { __accessPtr in
@@ -1723,7 +1715,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         forwhat: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         forwhat.withGodotUnsafeRawPointer { __ptr_forwhat in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_forwhat) { __accessPtr in
@@ -1735,7 +1727,7 @@ extension GodotStringName {
         what: Godot.GodotString,
         forwhat: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         forwhat.withGodotUnsafeRawPointer { __ptr_forwhat in
         withUnsafeArgumentPackPointer(__ptr_what, __ptr_forwhat) { __accessPtr in
@@ -1746,7 +1738,7 @@ extension GodotStringName {
     internal func _repeat(
         count: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         count.withGodotUnsafeRawPointer { __ptr_count in
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1754,7 +1746,7 @@ extension GodotStringName {
     }
 
     internal func _reverse() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_reverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1763,7 +1755,7 @@ extension GodotStringName {
         position: Int,
         what: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         what.withGodotUnsafeRawPointer { __ptr_what in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_what) { __accessPtr in
@@ -1775,7 +1767,7 @@ extension GodotStringName {
         position: Int,
         chars: Int = 1
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         chars.withGodotUnsafeRawPointer { __ptr_chars in
         withUnsafeArgumentPackPointer(__ptr_position, __ptr_chars) { __accessPtr in
@@ -1784,25 +1776,25 @@ extension GodotStringName {
     }
 
     internal func _capitalize() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_capitalize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toCamelCase() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_camel_case(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toPascalCase() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_pascal_case(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toSnakeCase() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_snake_case(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1812,7 +1804,7 @@ extension GodotStringName {
         allowEmpty: Bool = true,
         maxsplit: Int = 0
     ) -> Godot.PackedStringArray {
-        return Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         allowEmpty.withGodotUnsafeRawPointer { __ptr_allowEmpty in
         maxsplit.withGodotUnsafeRawPointer { __ptr_maxsplit in
@@ -1826,7 +1818,7 @@ extension GodotStringName {
         allowEmpty: Bool = true,
         maxsplit: Int = 0
     ) -> Godot.PackedStringArray {
-        return Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         allowEmpty.withGodotUnsafeRawPointer { __ptr_allowEmpty in
         maxsplit.withGodotUnsafeRawPointer { __ptr_maxsplit in
@@ -1839,7 +1831,7 @@ extension GodotStringName {
         delimiter: Godot.GodotString,
         allowEmpty: Bool = true
     ) -> Godot.PackedFloat64Array {
-        return Godot.PackedFloat64Array.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedFloat64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delimiter.withGodotUnsafeRawPointer { __ptr_delimiter in
         allowEmpty.withGodotUnsafeRawPointer { __ptr_allowEmpty in
         withUnsafeArgumentPackPointer(__ptr_delimiter, __ptr_allowEmpty) { __accessPtr in
@@ -1850,7 +1842,7 @@ extension GodotStringName {
     internal func _join(
         parts: Godot.PackedStringArray
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         parts.withGodotUnsafeRawPointer { __ptr_parts in
         withUnsafeArgumentPackPointer(__ptr_parts) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1858,13 +1850,13 @@ extension GodotStringName {
     }
 
     internal func _toUpper() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_upper(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toLower() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_lower(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1872,7 +1864,7 @@ extension GodotStringName {
     internal func _left(
         length: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1882,7 +1874,7 @@ extension GodotStringName {
     internal func _right(
         length: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1893,7 +1885,7 @@ extension GodotStringName {
         left: Bool = true,
         right: Bool = true
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         left.withGodotUnsafeRawPointer { __ptr_left in
         right.withGodotUnsafeRawPointer { __ptr_right in
         withUnsafeArgumentPackPointer(__ptr_left, __ptr_right) { __accessPtr in
@@ -1902,7 +1894,7 @@ extension GodotStringName {
     }
 
     internal func _stripEscapes() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_strip_escapes(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1910,7 +1902,7 @@ extension GodotStringName {
     internal func _lstrip(
         chars: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         chars.withGodotUnsafeRawPointer { __ptr_chars in
         withUnsafeArgumentPackPointer(__ptr_chars) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1920,7 +1912,7 @@ extension GodotStringName {
     internal func _rstrip(
         chars: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         chars.withGodotUnsafeRawPointer { __ptr_chars in
         withUnsafeArgumentPackPointer(__ptr_chars) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1928,13 +1920,13 @@ extension GodotStringName {
     }
 
     internal func _extension() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_extension(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _basename() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_basename(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -1942,7 +1934,7 @@ extension GodotStringName {
     internal func _pathJoin(
         file: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1952,7 +1944,7 @@ extension GodotStringName {
     internal func _unicode(
         at: Int
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         at.withGodotUnsafeRawPointer { __ptr_at in
         withUnsafeArgumentPackPointer(__ptr_at) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1962,7 +1954,7 @@ extension GodotStringName {
     internal func _indent(
         prefix: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         prefix.withGodotUnsafeRawPointer { __ptr_prefix in
         withUnsafeArgumentPackPointer(__ptr_prefix) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -1970,49 +1962,49 @@ extension GodotStringName {
     }
 
     internal func _dedent() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_dedent(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _md5Text() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_md5_text(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _sha1Text() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_sha1_text(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _sha256Text() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_sha256_text(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _md5Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_md5_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _sha1Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_sha1_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _sha256Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_sha256_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isEmpty() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -2020,7 +2012,7 @@ extension GodotStringName {
     internal func _contains(
         what: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         what.withGodotUnsafeRawPointer { __ptr_what in
         withUnsafeArgumentPackPointer(__ptr_what) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2028,31 +2020,31 @@ extension GodotStringName {
     }
 
     internal func _isAbsolutePath() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_absolute_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isRelativePath() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_relative_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _simplifyPath() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_simplify_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _baseDir() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_base_dir(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _file() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_file(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -2060,7 +2052,7 @@ extension GodotStringName {
     internal func _xmlEscape(
         escapeQuotes: Bool = false
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         escapeQuotes.withGodotUnsafeRawPointer { __ptr_escapeQuotes in
         withUnsafeArgumentPackPointer(__ptr_escapeQuotes) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2068,67 +2060,67 @@ extension GodotStringName {
     }
 
     internal func _xmlUnescape() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_xml_unescape(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _uriEncode() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_uri_encode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _uriDecode() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_uri_decode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _cEscape() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_c_escape(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _cUnescape() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_c_unescape(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _jsonEscape() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_json_escape(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _validateNodeName() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_validate_node_name(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _validateFilename() -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_validate_filename(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValidIdentifier() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_identifier(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValidInt() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_int(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValidFloat() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_float(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -2136,7 +2128,7 @@ extension GodotStringName {
     internal func _isValidHexNumber(
         withPrefix prefix: Bool = false
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         prefix.withGodotUnsafeRawPointer { __ptr_prefix in
         withUnsafeArgumentPackPointer(__ptr_prefix) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2144,43 +2136,43 @@ extension GodotStringName {
     }
 
     internal func _isValidHtmlColor() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_html_color(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValidIpAddress() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_ip_address(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValidFilename() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid_filename(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toInt() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_int(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toFloat() -> Double {
-        return Double.fromMutatingGodotUnsafePointer { __temporary in
+        return Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_float(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hexToInt() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_hex_to_int(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _binToInt() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_bin_to_int(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -2189,7 +2181,7 @@ extension GodotStringName {
         minLength: Int,
         character: Godot.GodotString = " "
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         minLength.withGodotUnsafeRawPointer { __ptr_minLength in
         character.withGodotUnsafeRawPointer { __ptr_character in
         withUnsafeArgumentPackPointer(__ptr_minLength, __ptr_character) { __accessPtr in
@@ -2201,7 +2193,7 @@ extension GodotStringName {
         minLength: Int,
         character: Godot.GodotString = " "
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         minLength.withGodotUnsafeRawPointer { __ptr_minLength in
         character.withGodotUnsafeRawPointer { __ptr_character in
         withUnsafeArgumentPackPointer(__ptr_minLength, __ptr_character) { __accessPtr in
@@ -2212,7 +2204,7 @@ extension GodotStringName {
     internal func _padDecimals(
         digits: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         digits.withGodotUnsafeRawPointer { __ptr_digits in
         withUnsafeArgumentPackPointer(__ptr_digits) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2222,7 +2214,7 @@ extension GodotStringName {
     internal func _padZeros(
         digits: Int
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         digits.withGodotUnsafeRawPointer { __ptr_digits in
         withUnsafeArgumentPackPointer(__ptr_digits) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2232,7 +2224,7 @@ extension GodotStringName {
     internal func _trimPrefix(
         _ prefix: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         prefix.withGodotUnsafeRawPointer { __ptr_prefix in
         withUnsafeArgumentPackPointer(__ptr_prefix) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2242,7 +2234,7 @@ extension GodotStringName {
     internal func _trimSuffix(
         _ suffix: Godot.GodotString
     ) -> Godot.GodotString {
-        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         suffix.withGodotUnsafeRawPointer { __ptr_suffix in
         withUnsafeArgumentPackPointer(__ptr_suffix) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -2250,43 +2242,43 @@ extension GodotStringName {
     }
 
     internal func _toAsciiBuffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_ascii_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toUtf8Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_utf8_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toUtf16Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_utf16_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toUtf32Buffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_utf32_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hexDecode() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_hex_decode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toWcharBuffer() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_wchar_buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hash() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

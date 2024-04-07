@@ -15,7 +15,7 @@ open class World2D: Resource {
     }()
 
     private func __getCanvas() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_canvas,
@@ -34,7 +34,7 @@ open class World2D: Resource {
     }()
 
     private func __getSpace() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_space,
@@ -53,7 +53,7 @@ open class World2D: Resource {
     }()
 
     private func __getNavigationMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_map,
@@ -72,7 +72,7 @@ open class World2D: Resource {
     }()
 
     private func __getDirectSpaceState() -> Godot.PhysicsDirectSpaceState2D? {
-        Godot.PhysicsDirectSpaceState2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsDirectSpaceState2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_direct_space_state,

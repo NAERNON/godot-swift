@@ -160,7 +160,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     "Trying to instantiate class \\(Self.self) but the class is not registered."
                 )
                 
-                if self is ExposableObject {
+                if self is CustomObject {
                     Self._exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
                         GodotExtension.Interface.objectSetInstance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
@@ -187,10 +187,22 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
             }
             
-            public consuming func copyToGodot(
+            public consuming func transferToGodot(
                 unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
             ) {
                 destinationUnsafePointer.storeBytes(of: extensionObjectPtr, as: UnsafeMutableRawPointer.self)
+            }
+            
+            func withUnsafeRawPointer<Result>(
+                _ body: (UnsafeRawPointer) throws -> Result
+            ) rethrows -> Result {
+                try body(extensionObjectPtr)
+            }
+            
+            func withUnsafeMutableRawPointer<Result>(
+                _ body: (UnsafeMutableRawPointer) throws -> Result
+            ) rethrows -> Result {
+                try body(extensionObjectPtr)
             }
             """
         case .refCountedRoot:
@@ -200,7 +212,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 super.init()
             
-                if !(self is ExposableObject) {
+                if !(self is CustomObject) {
                     _ = __reference()
                 }
             }
@@ -212,7 +224,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             deinit {
-                if self is ExposableObject {
+                if self is CustomObject {
                     if !isPointerFreed {
                         GodotExtension.Interface.memFree(extensionObjectPtr)
                     }
@@ -221,7 +233,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
             }
             
-            public override consuming func copyToGodot(
+            public override consuming func transferToGodot(
                 unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
             ) {
                 GodotExtension.Interface.refSetObject(destinationUnsafePointer, extensionObjectPtr)

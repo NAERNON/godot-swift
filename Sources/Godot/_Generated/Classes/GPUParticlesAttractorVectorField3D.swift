@@ -37,7 +37,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -79,7 +79,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
     }()
 
     private func __getTexture() -> Godot.Texture3D? {
-        Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,

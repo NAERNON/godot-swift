@@ -52,7 +52,7 @@ open class AudioEffectFilter: AudioEffect {
     }()
 
     private func __getCutoff() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cutoff,
@@ -93,7 +93,7 @@ open class AudioEffectFilter: AudioEffect {
     }()
 
     private func __getResonance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resonance,
@@ -134,7 +134,7 @@ open class AudioEffectFilter: AudioEffect {
     }()
 
     private func __getGain() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gain,
@@ -175,7 +175,7 @@ open class AudioEffectFilter: AudioEffect {
     }()
 
     private func __getDb() -> Godot.AudioEffectFilter.FilterDB {
-        Godot.AudioEffectFilter.FilterDB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioEffectFilter.FilterDB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_db,

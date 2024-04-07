@@ -37,7 +37,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
     }()
 
     private func __getPanPullout() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pan_pullout,
@@ -78,7 +78,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
     }()
 
     private func __getTimePullout() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_time_pullout,
@@ -119,7 +119,7 @@ open class AudioEffectStereoEnhance: AudioEffect {
     }()
 
     private func __getSurround() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_surround,

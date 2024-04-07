@@ -15,7 +15,7 @@ open class EngineDebugger: Object {
     }()
 
     public func isActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_active,
@@ -83,7 +83,7 @@ open class EngineDebugger: Object {
     public func isProfiling(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +106,7 @@ open class EngineDebugger: Object {
     public func hasProfiler(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +126,7 @@ open class EngineDebugger: Object {
         }
     }()
 
-    public func profilerAddFrameData<Value: VariantStorable>(
+    public func profilerAddFrameData<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         data: Godot.GodotArray<Value>
     ) {
@@ -150,7 +150,7 @@ open class EngineDebugger: Object {
         }
     }()
 
-    public func profilerEnable<Value: VariantStorable>(
+    public func profilerEnable<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         enable: Bool,
         arguments: Godot.GodotArray<Value> = []
@@ -225,7 +225,7 @@ open class EngineDebugger: Object {
     public func hasCapture(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -245,7 +245,7 @@ open class EngineDebugger: Object {
         }
     }()
 
-    public func sendMessage<Value: VariantStorable>(
+    public func sendMessage<Value: Variant.Storable>(
         _ message: Godot.GodotString,
         data: Godot.GodotArray<Value>
     ) {

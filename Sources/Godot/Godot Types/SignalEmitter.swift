@@ -113,7 +113,7 @@ public extension SignalEmitter where Input == Void {
 // MARK: - Macro
 
 @freestanding(declaration, names: arbitrary)
-public macro signal<each Parameter : ExposableValue>(
+public macro signal<each Parameter : Exposable>(
     _ name: StaticString,
     arguments: repeat (StaticString, (each Parameter).Type)
 ) = #externalMacro(module: "GodotMacros", type: "SignalMacro")

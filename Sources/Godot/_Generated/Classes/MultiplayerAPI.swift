@@ -44,7 +44,7 @@ open class MultiplayerAPI: RefCounted {
     public lazy var peerConnectedSignal: Godot.SignalEmitter<PeerConnectedSignalInput> = {
         .init(object: self, signalName: "peer_connected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -52,7 +52,7 @@ open class MultiplayerAPI: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -81,7 +81,7 @@ open class MultiplayerAPI: RefCounted {
     public lazy var peerDisconnectedSignal: Godot.SignalEmitter<PeerDisconnectedSignalInput> = {
         .init(object: self, signalName: "peer_disconnected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -89,7 +89,7 @@ open class MultiplayerAPI: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -108,7 +108,7 @@ open class MultiplayerAPI: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -127,7 +127,7 @@ open class MultiplayerAPI: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -146,7 +146,7 @@ open class MultiplayerAPI: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -159,7 +159,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func hasMultiplayerPeer() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_multiplayer_peer,
@@ -178,7 +178,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     private func __getMultiplayerPeer() -> Godot.MultiplayerPeer? {
-        Godot.MultiplayerPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiplayerPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_multiplayer_peer,
@@ -220,7 +220,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func uniqueID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unique_id,
@@ -239,7 +239,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func isServer() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_server,
@@ -258,7 +258,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func remoteSenderID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_remote_sender_id,
@@ -277,7 +277,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -295,13 +295,13 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    public func rpc<Value: VariantStorable>(
+    public func rpc<Value: Variant.Storable>(
         peer: Int32,
         object: Godot.Object?,
         method: Godot.GodotStringName,
         arguments: Godot.GodotArray<Value> = []
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peer.withGodotUnsafeRawPointer { __ptr_peer in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
@@ -325,11 +325,11 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    public func objectConfigurationAdd<Value: VariantStorableIn>(
+    public func objectConfigurationAdd<Value: Variant.Storable>(
         object: Godot.Object?,
         configuration: Value
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: configuration) { __ptr_configuration in
@@ -351,11 +351,11 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    public func objectConfigurationRemove<Value: VariantStorableIn>(
+    public func objectConfigurationRemove<Value: Variant.Storable>(
         object: Godot.Object?,
         configuration: Value
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         Godot.Variant.withStorageUnsafeRawPointer(to: configuration) { __ptr_configuration in
@@ -378,7 +378,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     public func peers() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peers,
@@ -418,7 +418,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     static public func defaultInterface() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_interface,
             nil,
@@ -436,7 +436,7 @@ open class MultiplayerAPI: RefCounted {
     }()
 
     static public func createDefaultInterface() -> Godot.MultiplayerAPI? {
-        Godot.MultiplayerAPI?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiplayerAPI?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_default_interface,
             nil,

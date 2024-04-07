@@ -31,7 +31,7 @@ open class ScriptEditor: PanelContainer {
     public lazy var editorScriptChangedSignal: Godot.SignalEmitter<EditorScriptChangedSignalInput> = {
         .init(object: self, signalName: "editor_script_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(script: Godot.Script?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class ScriptEditor: PanelContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -68,7 +68,7 @@ open class ScriptEditor: PanelContainer {
     public lazy var scriptCloseSignal: Godot.SignalEmitter<ScriptCloseSignalInput> = {
         .init(object: self, signalName: "script_close") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(script: Godot.Script?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -76,7 +76,7 @@ open class ScriptEditor: PanelContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -89,7 +89,7 @@ open class ScriptEditor: PanelContainer {
     }()
 
     public func currentEditor() -> Godot.ScriptEditorBase? {
-        Godot.ScriptEditorBase?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ScriptEditorBase?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_editor,
@@ -108,7 +108,7 @@ open class ScriptEditor: PanelContainer {
     }()
 
     public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase?> {
-        Godot.GodotArray<Godot.ScriptEditorBase?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.ScriptEditorBase?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_open_script_editors,
@@ -195,7 +195,7 @@ open class ScriptEditor: PanelContainer {
     }()
 
     public func currentScript() -> Godot.Script? {
-        Godot.Script?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Script?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_script,
@@ -214,7 +214,7 @@ open class ScriptEditor: PanelContainer {
     }()
 
     public func openScripts() -> Godot.GodotArray<Godot.Script?> {
-        Godot.GodotArray<Godot.Script?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Script?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_open_scripts,

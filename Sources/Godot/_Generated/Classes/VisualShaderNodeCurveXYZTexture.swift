@@ -38,7 +38,7 @@ open class VisualShaderNodeCurveXYZTexture: VisualShaderNodeResizableBase {
     }()
 
     private func __getTexture() -> Godot.CurveXYZTexture? {
-        Godot.CurveXYZTexture?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CurveXYZTexture?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,

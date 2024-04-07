@@ -1436,7 +1436,7 @@ open class RenderingServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -1455,7 +1455,7 @@ open class RenderingServer: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -1500,7 +1500,7 @@ open class RenderingServer: Object {
     public func texture2DCreate(
         image: Godot.Image?
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         withUnsafeArgumentPackPointer(_ptr___ptr_image) { __accessPtr in
@@ -1525,7 +1525,7 @@ open class RenderingServer: Object {
         layers: Godot.GodotArray<Godot.Image?>,
         layeredType: Godot.RenderingServer.TextureLayeredType
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layers.withGodotUnsafeRawPointer { __ptr_layers in
         layeredType.withGodotUnsafeRawPointer { __ptr_layeredType in
         withUnsafeArgumentPackPointer(__ptr_layers, __ptr_layeredType) { __accessPtr in
@@ -1554,7 +1554,7 @@ open class RenderingServer: Object {
         mipmaps: Bool,
         data: Godot.GodotArray<Godot.Image?>
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         width.withGodotUnsafeRawPointer { __ptr_width in
         height.withGodotUnsafeRawPointer { __ptr_height in
@@ -1582,7 +1582,7 @@ open class RenderingServer: Object {
     public func textureProxyCreate(
         base: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         base.withGodotUnsafeRawPointer { __ptr_base in
         withUnsafeArgumentPackPointer(__ptr_base) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1678,7 +1678,7 @@ open class RenderingServer: Object {
     }()
 
     public func texture2DPlaceholderCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_texture_2d_placeholder_create,
@@ -1699,7 +1699,7 @@ open class RenderingServer: Object {
     public func texture2DLayeredPlaceholderCreate(
         layeredType: Godot.RenderingServer.TextureLayeredType
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layeredType.withGodotUnsafeRawPointer { __ptr_layeredType in
         withUnsafeArgumentPackPointer(__ptr_layeredType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1720,7 +1720,7 @@ open class RenderingServer: Object {
     }()
 
     public func texture3DPlaceholderCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_texture_3d_placeholder_create,
@@ -1741,7 +1741,7 @@ open class RenderingServer: Object {
     public func texture2DGet(
         texture: Godot.RID
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1765,7 +1765,7 @@ open class RenderingServer: Object {
         texture: Godot.RID,
         layer: Int32
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_texture, __ptr_layer) { __accessPtr in
@@ -1789,7 +1789,7 @@ open class RenderingServer: Object {
     public func texture3DGet(
         texture: Godot.RID
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1886,7 +1886,7 @@ open class RenderingServer: Object {
     public func textureGetPath(
         texture: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1909,7 +1909,7 @@ open class RenderingServer: Object {
     public func textureGetFormat(
         texture: Godot.RID
     ) -> Godot.Image.Format {
-        Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1957,7 +1957,7 @@ open class RenderingServer: Object {
         rdTexture: Godot.RID,
         layerType: Godot.RenderingServer.TextureLayeredType = RenderingServer.TextureLayeredType(rawValue: 0)!
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         rdTexture.withGodotUnsafeRawPointer { __ptr_rdTexture in
         layerType.withGodotUnsafeRawPointer { __ptr_layerType in
         withUnsafeArgumentPackPointer(__ptr_rdTexture, __ptr_layerType) { __accessPtr in
@@ -1982,7 +1982,7 @@ open class RenderingServer: Object {
         _ texture: Godot.RID,
         srgb: Bool = false
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         srgb.withGodotUnsafeRawPointer { __ptr_srgb in
         withUnsafeArgumentPackPointer(__ptr_texture, __ptr_srgb) { __accessPtr in
@@ -2007,7 +2007,7 @@ open class RenderingServer: Object {
         texture: Godot.RID,
         srgb: Bool = false
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         srgb.withGodotUnsafeRawPointer { __ptr_srgb in
         withUnsafeArgumentPackPointer(__ptr_texture, __ptr_srgb) { __accessPtr in
@@ -2029,7 +2029,7 @@ open class RenderingServer: Object {
     }()
 
     public func shaderCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shader_create,
@@ -2098,7 +2098,7 @@ open class RenderingServer: Object {
     public func shaderGetCode(
         shader: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafeArgumentPackPointer(__ptr_shader) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2121,7 +2121,7 @@ open class RenderingServer: Object {
     public func shaderParameterList(
         shader: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafeArgumentPackPointer(__ptr_shader) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2145,7 +2145,7 @@ open class RenderingServer: Object {
         shader: Godot.RID,
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_shader, __ptr_name) { __accessPtr in
@@ -2199,7 +2199,7 @@ open class RenderingServer: Object {
         name: Godot.GodotStringName,
         index: Int32 = 0
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         name.withGodotUnsafeRawPointer { __ptr_name in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -2222,7 +2222,7 @@ open class RenderingServer: Object {
     }()
 
     public func materialCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_material_create,
@@ -2264,7 +2264,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func materialSetParam<Value: VariantStorableIn>(
+    public func materialSetParam<Value: Variant.Storable>(
         material: Godot.RID,
         parameter: Godot.GodotStringName,
         value: Value
@@ -2294,7 +2294,7 @@ open class RenderingServer: Object {
         material: Godot.RID,
         parameter: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         material.withGodotUnsafeRawPointer { __ptr_material in
         parameter.withGodotUnsafeRawPointer { __ptr_parameter in
         withUnsafeArgumentPackPointer(__ptr_material, __ptr_parameter) { __accessPtr in
@@ -2367,7 +2367,7 @@ open class RenderingServer: Object {
         _ surfaces: Godot.GodotArray<Godot.AnyGodotDictionary>,
         blendShapeCount: Int32 = 0
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         surfaces.withGodotUnsafeRawPointer { __ptr_surfaces in
         blendShapeCount.withGodotUnsafeRawPointer { __ptr_blendShapeCount in
         withUnsafeArgumentPackPointer(__ptr_surfaces, __ptr_blendShapeCount) { __accessPtr in
@@ -2389,7 +2389,7 @@ open class RenderingServer: Object {
     }()
 
     public func meshCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_mesh_create,
@@ -2412,7 +2412,7 @@ open class RenderingServer: Object {
         vertexCount: Int32,
         arrayIndex: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         arrayIndex.withGodotUnsafeRawPointer { __ptr_arrayIndex in
@@ -2438,7 +2438,7 @@ open class RenderingServer: Object {
         format: Godot.RenderingServer.ArrayFormat,
         vertexCount: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         withUnsafeArgumentPackPointer(__ptr_format, __ptr_vertexCount) { __accessPtr in
@@ -2463,7 +2463,7 @@ open class RenderingServer: Object {
         format: Godot.RenderingServer.ArrayFormat,
         vertexCount: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         withUnsafeArgumentPackPointer(__ptr_format, __ptr_vertexCount) { __accessPtr in
@@ -2488,7 +2488,7 @@ open class RenderingServer: Object {
         format: Godot.RenderingServer.ArrayFormat,
         vertexCount: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         withUnsafeArgumentPackPointer(__ptr_format, __ptr_vertexCount) { __accessPtr in
@@ -2513,7 +2513,7 @@ open class RenderingServer: Object {
         format: Godot.RenderingServer.ArrayFormat,
         vertexCount: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         format.withGodotUnsafeRawPointer { __ptr_format in
         vertexCount.withGodotUnsafeRawPointer { __ptr_vertexCount in
         withUnsafeArgumentPackPointer(__ptr_format, __ptr_vertexCount) { __accessPtr in
@@ -2534,7 +2534,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func meshAddSurface<Value1: VariantStorable, Value2: VariantStorable>(
+    public func meshAddSurface<Value1: Variant.Storable, Value2: Variant.Storable>(
         mesh: Godot.RID,
         surface: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -2558,7 +2558,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func meshAddSurfaceFromArrays<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable, Value4: VariantStorable>(
+    public func meshAddSurfaceFromArrays<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable, Value4: Variant.Storable>(
         mesh: Godot.RID,
         primitive: Godot.RenderingServer.PrimitiveType,
         arrays: Godot.GodotArray<Value1>,
@@ -2593,7 +2593,7 @@ open class RenderingServer: Object {
     public func meshGetBlendShapeCount(
         mesh: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafeArgumentPackPointer(__ptr_mesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2640,7 +2640,7 @@ open class RenderingServer: Object {
     public func meshGetBlendShapeMode(
         mesh: Godot.RID
     ) -> Godot.RenderingServer.BlendShapeMode {
-        Godot.RenderingServer.BlendShapeMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingServer.BlendShapeMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafeArgumentPackPointer(__ptr_mesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2690,7 +2690,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { __accessPtr in
@@ -2715,7 +2715,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { __accessPtr in
@@ -2740,7 +2740,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { __accessPtr in
@@ -2765,7 +2765,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32
     ) -> Godot.GodotArray<Godot.AnyGodotArray> {
-        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotArray> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         surface.withGodotUnsafeRawPointer { __ptr_surface in
         withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { __accessPtr in
@@ -2789,7 +2789,7 @@ open class RenderingServer: Object {
     public func meshGetSurfaceCount(
         mesh: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafeArgumentPackPointer(__ptr_mesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2836,7 +2836,7 @@ open class RenderingServer: Object {
     public func meshGetCustomAabb(
         mesh: Godot.RID
     ) -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafeArgumentPackPointer(__ptr_mesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2987,7 +2987,7 @@ open class RenderingServer: Object {
     }()
 
     public func multimeshCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_multimesh_create,
@@ -3038,7 +3038,7 @@ open class RenderingServer: Object {
     public func multimeshGetInstanceCount(
         multimesh: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3189,7 +3189,7 @@ open class RenderingServer: Object {
     public func multimeshGetMesh(
         multimesh: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3212,7 +3212,7 @@ open class RenderingServer: Object {
     public func multimeshGetAabb(
         multimesh: Godot.RID
     ) -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3236,7 +3236,7 @@ open class RenderingServer: Object {
         multimesh: Godot.RID,
         index: Int32
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_multimesh, __ptr_index) { __accessPtr in
@@ -3261,7 +3261,7 @@ open class RenderingServer: Object {
         multimesh: Godot.RID,
         index: Int32
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_multimesh, __ptr_index) { __accessPtr in
@@ -3286,7 +3286,7 @@ open class RenderingServer: Object {
         multimesh: Godot.RID,
         index: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_multimesh, __ptr_index) { __accessPtr in
@@ -3311,7 +3311,7 @@ open class RenderingServer: Object {
         multimesh: Godot.RID,
         index: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_multimesh, __ptr_index) { __accessPtr in
@@ -3359,7 +3359,7 @@ open class RenderingServer: Object {
     public func multimeshGetVisibleInstances(
         multimesh: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3406,7 +3406,7 @@ open class RenderingServer: Object {
     public func multimeshGetBuffer(
         multimesh: Godot.RID
     ) -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         multimesh.withGodotUnsafeRawPointer { __ptr_multimesh in
         withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3427,7 +3427,7 @@ open class RenderingServer: Object {
     }()
 
     public func skeletonCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_skeleton_create,
@@ -3474,7 +3474,7 @@ open class RenderingServer: Object {
     public func skeletonGetBoneCount(
         skeleton: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         withUnsafeArgumentPackPointer(__ptr_skeleton) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3524,7 +3524,7 @@ open class RenderingServer: Object {
         skeleton: Godot.RID,
         bone: Int32
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         bone.withGodotUnsafeRawPointer { __ptr_bone in
         withUnsafeArgumentPackPointer(__ptr_skeleton, __ptr_bone) { __accessPtr in
@@ -3575,7 +3575,7 @@ open class RenderingServer: Object {
         skeleton: Godot.RID,
         bone: Int32
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
         bone.withGodotUnsafeRawPointer { __ptr_bone in
         withUnsafeArgumentPackPointer(__ptr_skeleton, __ptr_bone) { __accessPtr in
@@ -3621,7 +3621,7 @@ open class RenderingServer: Object {
     }()
 
     public func directionalLightCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_directional_light_create,
@@ -3640,7 +3640,7 @@ open class RenderingServer: Object {
     }()
 
     public func omniLightCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_omni_light_create,
@@ -3659,7 +3659,7 @@ open class RenderingServer: Object {
     }()
 
     public func spotLightCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_spot_light_create,
@@ -4112,7 +4112,7 @@ open class RenderingServer: Object {
     }()
 
     public func reflectionProbeCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_reflection_probe_create,
@@ -4467,7 +4467,7 @@ open class RenderingServer: Object {
     }()
 
     public func decalCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_decal_create,
@@ -4754,7 +4754,7 @@ open class RenderingServer: Object {
     }()
 
     public func voxelGiCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_voxel_gi_create,
@@ -4811,7 +4811,7 @@ open class RenderingServer: Object {
     public func voxelGiGetOctreeSize(
         voxelGi: Godot.RID
     ) -> Godot.Vector3I {
-        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4834,7 +4834,7 @@ open class RenderingServer: Object {
     public func voxelGiGetOctreeCells(
         voxelGi: Godot.RID
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4857,7 +4857,7 @@ open class RenderingServer: Object {
     public func voxelGiGetDataCells(
         voxelGi: Godot.RID
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4880,7 +4880,7 @@ open class RenderingServer: Object {
     public func voxelGiGetDistanceField(
         voxelGi: Godot.RID
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4903,7 +4903,7 @@ open class RenderingServer: Object {
     public func voxelGiGetLevelCounts(
         voxelGi: Godot.RID
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4926,7 +4926,7 @@ open class RenderingServer: Object {
     public func voxelGiGetToCellXform(
         voxelGi: Godot.RID
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voxelGi.withGodotUnsafeRawPointer { __ptr_voxelGi in
         withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5161,7 +5161,7 @@ open class RenderingServer: Object {
     }()
 
     public func lightmapCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_lightmap_create,
@@ -5286,7 +5286,7 @@ open class RenderingServer: Object {
     public func lightmapGetProbeCapturePoints(
         lightmap: Godot.RID
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lightmap.withGodotUnsafeRawPointer { __ptr_lightmap in
         withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5309,7 +5309,7 @@ open class RenderingServer: Object {
     public func lightmapGetProbeCaptureSh(
         lightmap: Godot.RID
     ) -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lightmap.withGodotUnsafeRawPointer { __ptr_lightmap in
         withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5332,7 +5332,7 @@ open class RenderingServer: Object {
     public func lightmapGetProbeCaptureTetrahedra(
         lightmap: Godot.RID
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lightmap.withGodotUnsafeRawPointer { __ptr_lightmap in
         withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5355,7 +5355,7 @@ open class RenderingServer: Object {
     public func lightmapGetProbeCaptureBspTree(
         lightmap: Godot.RID
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lightmap.withGodotUnsafeRawPointer { __ptr_lightmap in
         withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5422,7 +5422,7 @@ open class RenderingServer: Object {
     }()
 
     public func particlesCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_particles_create,
@@ -5491,7 +5491,7 @@ open class RenderingServer: Object {
     public func particlesGetEmitting(
         particles: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         particles.withGodotUnsafeRawPointer { __ptr_particles in
         withUnsafeArgumentPackPointer(__ptr_particles) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5996,7 +5996,7 @@ open class RenderingServer: Object {
     public func particlesIsInactive(
         particles: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         particles.withGodotUnsafeRawPointer { __ptr_particles in
         withUnsafeArgumentPackPointer(__ptr_particles) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -6193,7 +6193,7 @@ open class RenderingServer: Object {
     public func particlesGetCurrentAabb(
         particles: Godot.RID
     ) -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         particles.withGodotUnsafeRawPointer { __ptr_particles in
         withUnsafeArgumentPackPointer(__ptr_particles) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -6238,7 +6238,7 @@ open class RenderingServer: Object {
     }()
 
     public func particlesCollisionCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_particles_collision_create,
@@ -6495,7 +6495,7 @@ open class RenderingServer: Object {
     }()
 
     public func fogVolumeCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_fog_volume_create,
@@ -6586,7 +6586,7 @@ open class RenderingServer: Object {
     }()
 
     public func visibilityNotifierCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_visibility_notifier_create,
@@ -6655,7 +6655,7 @@ open class RenderingServer: Object {
     }()
 
     public func occluderCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_occluder_create,
@@ -6700,7 +6700,7 @@ open class RenderingServer: Object {
     }()
 
     public func cameraCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_camera_create,
@@ -6925,7 +6925,7 @@ open class RenderingServer: Object {
     }()
 
     public func viewportCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_viewport_create,
@@ -7262,7 +7262,7 @@ open class RenderingServer: Object {
     public func viewportGetRenderTarget(
         viewport: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         withUnsafeArgumentPackPointer(__ptr_viewport) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -7285,7 +7285,7 @@ open class RenderingServer: Object {
     public func viewportGetTexture(
         viewport: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         withUnsafeArgumentPackPointer(__ptr_viewport) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -7966,7 +7966,7 @@ open class RenderingServer: Object {
         type: Godot.RenderingServer.ViewportRenderInfoType,
         info: Godot.RenderingServer.ViewportRenderInfo
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         type.withGodotUnsafeRawPointer { __ptr_type in
         info.withGodotUnsafeRawPointer { __ptr_info in
@@ -8039,7 +8039,7 @@ open class RenderingServer: Object {
     public func viewportGetMeasuredRenderTimeCpu(
         viewport: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         withUnsafeArgumentPackPointer(__ptr_viewport) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -8062,7 +8062,7 @@ open class RenderingServer: Object {
     public func viewportGetMeasuredRenderTimeGpu(
         viewport: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         viewport.withGodotUnsafeRawPointer { __ptr_viewport in
         withUnsafeArgumentPackPointer(__ptr_viewport) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -8131,7 +8131,7 @@ open class RenderingServer: Object {
     }()
 
     public func skyCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_sky_create,
@@ -8227,7 +8227,7 @@ open class RenderingServer: Object {
         bakeIrradiance: Bool,
         size: Godot.Vector2I
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         sky.withGodotUnsafeRawPointer { __ptr_sky in
         energy.withGodotUnsafeRawPointer { __ptr_energy in
         bakeIrradiance.withGodotUnsafeRawPointer { __ptr_bakeIrradiance in
@@ -8251,7 +8251,7 @@ open class RenderingServer: Object {
     }()
 
     public func environmentCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_environment_create,
@@ -9006,7 +9006,7 @@ open class RenderingServer: Object {
         bakeIrradiance: Bool,
         size: Godot.Vector2I
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         environment.withGodotUnsafeRawPointer { __ptr_environment in
         bakeIrradiance.withGodotUnsafeRawPointer { __ptr_bakeIrradiance in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -9101,7 +9101,7 @@ open class RenderingServer: Object {
     }()
 
     public func cameraAttributesCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_camera_attributes_create,
@@ -9260,7 +9260,7 @@ open class RenderingServer: Object {
     }()
 
     public func scenarioCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_scenario_create,
@@ -9354,7 +9354,7 @@ open class RenderingServer: Object {
         base: Godot.RID,
         scenario: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         base.withGodotUnsafeRawPointer { __ptr_base in
         scenario.withGodotUnsafeRawPointer { __ptr_scenario in
         withUnsafeArgumentPackPointer(__ptr_base, __ptr_scenario) { __accessPtr in
@@ -9376,7 +9376,7 @@ open class RenderingServer: Object {
     }()
 
     public func instanceCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_instance_create,
@@ -9942,7 +9942,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func instanceGeometrySetShaderParameter<Value: VariantStorableIn>(
+    public func instanceGeometrySetShaderParameter<Value: Variant.Storable>(
         instance: Godot.RID,
         parameter: Godot.GodotStringName,
         value: Value
@@ -9972,7 +9972,7 @@ open class RenderingServer: Object {
         instance: Godot.RID,
         parameter: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         parameter.withGodotUnsafeRawPointer { __ptr_parameter in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_parameter) { __accessPtr in
@@ -9997,7 +9997,7 @@ open class RenderingServer: Object {
         instance: Godot.RID,
         parameter: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         parameter.withGodotUnsafeRawPointer { __ptr_parameter in
         withUnsafeArgumentPackPointer(__ptr_instance, __ptr_parameter) { __accessPtr in
@@ -10021,7 +10021,7 @@ open class RenderingServer: Object {
     public func instanceGeometryGetShaderParameterList(
         instance: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         withUnsafeArgumentPackPointer(__ptr_instance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -10045,7 +10045,7 @@ open class RenderingServer: Object {
         _ aabb: Godot.AABB,
         scenario: Godot.RID = RID()
     ) -> Godot.PackedInt64Array {
-        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
         scenario.withGodotUnsafeRawPointer { __ptr_scenario in
         withUnsafeArgumentPackPointer(__ptr_aabb, __ptr_scenario) { __accessPtr in
@@ -10071,7 +10071,7 @@ open class RenderingServer: Object {
         to: Godot.Vector3,
         scenario: Godot.RID = RID()
     ) -> Godot.PackedInt64Array {
-        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         scenario.withGodotUnsafeRawPointer { __ptr_scenario in
@@ -10097,7 +10097,7 @@ open class RenderingServer: Object {
         _ convex: Godot.GodotArray<Godot.Plane>,
         scenario: Godot.RID = RID()
     ) -> Godot.PackedInt64Array {
-        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         convex.withGodotUnsafeRawPointer { __ptr_convex in
         scenario.withGodotUnsafeRawPointer { __ptr_scenario in
         withUnsafeArgumentPackPointer(__ptr_convex, __ptr_scenario) { __accessPtr in
@@ -10123,7 +10123,7 @@ open class RenderingServer: Object {
         materialOverrides: Godot.GodotArray<Godot.RID>,
         imageSize: Godot.Vector2I
     ) -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         base.withGodotUnsafeRawPointer { __ptr_base in
         materialOverrides.withGodotUnsafeRawPointer { __ptr_materialOverrides in
         imageSize.withGodotUnsafeRawPointer { __ptr_imageSize in
@@ -10146,7 +10146,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_create,
@@ -10237,7 +10237,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasTextureCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_texture_create,
@@ -10356,7 +10356,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasItemCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_item_create,
@@ -11517,7 +11517,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasLightCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_light_create,
@@ -11996,7 +11996,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasLightOccluderCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_light_occluder_create,
@@ -12159,7 +12159,7 @@ open class RenderingServer: Object {
     }()
 
     public func canvasOccluderPolygonCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_canvas_occluder_polygon_create,
@@ -12249,7 +12249,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func globalShaderParameterAdd<Value: VariantStorableIn>(
+    public func globalShaderParameterAdd<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         type: Godot.RenderingServer.GlobalShaderParameterType,
         defaultValue: Value
@@ -12298,7 +12298,7 @@ open class RenderingServer: Object {
     }()
 
     public func globalShaderParameterGetList() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_global_shader_parameter_get_list,
@@ -12316,7 +12316,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func globalShaderParameterSet<Value: VariantStorableIn>(
+    public func globalShaderParameterSet<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value
     ) {
@@ -12340,7 +12340,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func globalShaderParameterSetOverride<Value: VariantStorableIn>(
+    public func globalShaderParameterSetOverride<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value
     ) {
@@ -12367,7 +12367,7 @@ open class RenderingServer: Object {
     public func globalShaderParameterGet(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -12390,7 +12390,7 @@ open class RenderingServer: Object {
     public func globalShaderParameterGetType(
         name: Godot.GodotStringName
     ) -> Godot.RenderingServer.GlobalShaderParameterType {
-        Godot.RenderingServer.GlobalShaderParameterType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingServer.GlobalShaderParameterType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -12455,7 +12455,7 @@ open class RenderingServer: Object {
     }()
 
     public func hasChanged() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_changed,
@@ -12476,7 +12476,7 @@ open class RenderingServer: Object {
     public func renderingInfo(
         _ info: Godot.RenderingServer.RenderingInfo
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         info.withGodotUnsafeRawPointer { __ptr_info in
         withUnsafeArgumentPackPointer(__ptr_info) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -12497,7 +12497,7 @@ open class RenderingServer: Object {
     }()
 
     public func videoAdapterName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_adapter_name,
@@ -12516,7 +12516,7 @@ open class RenderingServer: Object {
     }()
 
     public func videoAdapterVendor() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_adapter_vendor,
@@ -12535,7 +12535,7 @@ open class RenderingServer: Object {
     }()
 
     public func videoAdapterType() -> Godot.RenderingDevice.DeviceType {
-        Godot.RenderingDevice.DeviceType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.DeviceType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_adapter_type,
@@ -12554,7 +12554,7 @@ open class RenderingServer: Object {
     }()
 
     public func videoAdapterApiVersion() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_adapter_api_version,
@@ -12577,7 +12577,7 @@ open class RenderingServer: Object {
         longitudes: Int32,
         radius: Double
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         latitudes.withGodotUnsafeRawPointer { __ptr_latitudes in
         longitudes.withGodotUnsafeRawPointer { __ptr_longitudes in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
@@ -12600,7 +12600,7 @@ open class RenderingServer: Object {
     }()
 
     public func testCube() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_test_cube,
@@ -12619,7 +12619,7 @@ open class RenderingServer: Object {
     }()
 
     public func testTexture() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_test_texture,
@@ -12638,7 +12638,7 @@ open class RenderingServer: Object {
     }()
 
     public func whiteTexture() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_white_texture,
@@ -12686,7 +12686,7 @@ open class RenderingServer: Object {
     }()
 
     public func defaultClearColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_clear_color,
@@ -12729,7 +12729,7 @@ open class RenderingServer: Object {
     public func hasFeature(
         _ feature: Godot.RenderingServer.Features
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -12752,7 +12752,7 @@ open class RenderingServer: Object {
     public func hasOsFeature(
         _ feature: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -12795,7 +12795,7 @@ open class RenderingServer: Object {
     }()
 
     private func __isRenderLoopEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_render_loop_enabled,
@@ -12836,7 +12836,7 @@ open class RenderingServer: Object {
     }()
 
     public func frameSetupTimeCpu() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frame_setup_time_cpu,
@@ -12897,7 +12897,7 @@ open class RenderingServer: Object {
     }()
 
     public func renderingDevice() -> Godot.RenderingDevice? {
-        Godot.RenderingDevice?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rendering_device,
@@ -12916,7 +12916,7 @@ open class RenderingServer: Object {
     }()
 
     public func createLocalRenderingDevice() -> Godot.RenderingDevice? {
-        Godot.RenderingDevice?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_local_rendering_device,

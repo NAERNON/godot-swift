@@ -4,11 +4,11 @@
 
 import GodotExtensionHeaders
 
-private var __constructor: GDExtensionPtrConstructor = {
+private var __make: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 0)!
 }()
 
-private var __constructor_rid: GDExtensionPtrConstructor = {
+private var __makeFromRID: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 1)!
 }()
 
@@ -61,68 +61,60 @@ private var __method_binding_get_id: GDExtensionPtrBuiltInMethod = {
 }()
 
 extension RID {
-    internal static func fromMutatingGodotUnsafePointer(
+    static internal func fromInitializingMutatingGodotUnsafePointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
         let opaque = Opaque(size: 8, destructorPtr: nil)
         opaque.withUnsafeMutableRawPointer(body)
-        return Self (opaque: opaque)
+        return Self.init(opaque: opaque)
     }
 
-    static internal func _constructor() -> Self {
+    static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            __make(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor() -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _constructor_rid(
-        from: Godot.RID
+    static internal func _makeFromRID(
+        _ from: Godot.RID
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_rid(__ptr___temporary, __accessPtr)
+            __makeFromRID(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_rid(
-        from: UnsafeRawPointer
+    static internal func _makeFromRIDPointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_rid(__ptr___temporary, __accessPtr)
+            __makeFromRID(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantStorableIn>(
+    static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.RID,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual<Value: VariantStorableIn>(
+    static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.RID,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -131,7 +123,7 @@ extension RID {
     static internal func _operatorNot(
         _ lhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
@@ -140,7 +132,7 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -150,7 +142,7 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -160,7 +152,7 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -170,7 +162,7 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_less_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -180,7 +172,7 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -190,20 +182,20 @@ extension RID {
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_greater_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     internal func _isValid() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _id() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_id(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }

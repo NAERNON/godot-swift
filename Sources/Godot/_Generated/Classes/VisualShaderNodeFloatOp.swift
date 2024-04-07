@@ -66,7 +66,7 @@ open class VisualShaderNodeFloatOp: VisualShaderNode {
     }()
 
     private func __getOperator() -> Godot.VisualShaderNodeFloatOp.Operator {
-        Godot.VisualShaderNodeFloatOp.Operator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeFloatOp.Operator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_operator,

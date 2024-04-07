@@ -18,7 +18,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_context, __ptr_name) { __accessPtr in
@@ -50,7 +50,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         mipmaps: UInt32,
         unique: Bool
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         dataFormat.withGodotUnsafeRawPointer { __ptr_dataFormat in
@@ -85,7 +85,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         view: Godot.RDTextureView?,
         unique: Bool
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         format.withGodotUnsafeRawPointer { __ptr_format in
@@ -117,7 +117,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         viewName: Godot.GodotStringName,
         view: Godot.RDTextureView?
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         viewName.withGodotUnsafeRawPointer { __ptr_viewName in
@@ -145,7 +145,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_context, __ptr_name) { __accessPtr in
@@ -170,7 +170,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
     ) -> Godot.RDTextureFormat? {
-        Godot.RDTextureFormat?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RDTextureFormat?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_context, __ptr_name) { __accessPtr in
@@ -199,7 +199,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         layers: UInt32,
         mipmaps: UInt32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -233,7 +233,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         mipmaps: UInt32,
         view: Godot.RDTextureView?
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -265,7 +265,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
         name: Godot.GodotStringName,
         mipmap: UInt32
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         context.withGodotUnsafeRawPointer { __ptr_context in
         name.withGodotUnsafeRawPointer { __ptr_name in
         mipmap.withGodotUnsafeRawPointer { __ptr_mipmap in
@@ -310,7 +310,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func colorTexture() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_texture,
@@ -331,7 +331,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     public func colorLayer(
         _ layer: UInt32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -352,7 +352,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func depthTexture() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_texture,
@@ -373,7 +373,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     public func depthLayer(
         _ layer: UInt32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,7 +394,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func velocityTexture() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity_texture,
@@ -415,7 +415,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     public func velocityLayer(
         _ layer: UInt32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -436,7 +436,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func renderTarget() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_target,
@@ -455,7 +455,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func viewCount() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_view_count,
@@ -474,7 +474,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func internalSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_internal_size,
@@ -493,7 +493,7 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
     }()
 
     public func useTaa() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_use_taa,

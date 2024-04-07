@@ -38,7 +38,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     }()
 
     private func __getTextureArray() -> Godot.Texture2DArray? {
-        Godot.Texture2DArray?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2DArray?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_array,

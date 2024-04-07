@@ -70,6 +70,8 @@ public enum GodotExtension {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = bridge.minimumInitializationLevel.extensionLevel
         
+        Variant.loadConstructors()
+        
         isInitialized = true
     }
     

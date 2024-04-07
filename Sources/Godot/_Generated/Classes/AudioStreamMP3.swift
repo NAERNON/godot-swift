@@ -37,7 +37,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __getData() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data,
@@ -78,7 +78,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __hasLoop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_loop,
@@ -119,7 +119,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __getLoopOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loop_offset,
@@ -160,7 +160,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __getBpm() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bpm,
@@ -201,7 +201,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __getBeatCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_beat_count,
@@ -242,7 +242,7 @@ open class AudioStreamMP3: AudioStream {
     }()
 
     private func __getBarBeats() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bar_beats,

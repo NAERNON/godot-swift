@@ -33,7 +33,7 @@ open class GLTFDocument: Resource {
         flags: UInt32 = 0,
         basePath: Godot.GodotString = ""
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
@@ -63,7 +63,7 @@ open class GLTFDocument: Resource {
         state: Godot.GLTFState?,
         flags: UInt32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         basePath.withGodotUnsafeRawPointer { __ptr_basePath in
         state.withGodotUnsafeRawPointer { __ptr_state in
@@ -92,7 +92,7 @@ open class GLTFDocument: Resource {
         state: Godot.GLTFState?,
         flags: UInt32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         state.withGodotUnsafeRawPointer { __ptr_state in
@@ -122,7 +122,7 @@ open class GLTFDocument: Resource {
         trimming: Bool = false,
         removeImmutableTracks: Bool = true
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
         bakeFps.withGodotUnsafeRawPointer { __ptr_bakeFps in
@@ -149,7 +149,7 @@ open class GLTFDocument: Resource {
     public func generateBuffer(
         state: Godot.GLTFState?
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
         withUnsafeArgumentPackPointer(_ptr___ptr_state) { __accessPtr in
@@ -174,7 +174,7 @@ open class GLTFDocument: Resource {
         state: Godot.GLTFState?,
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         state.withGodotUnsafeRawPointer { __ptr_state in
         withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in
         path.withGodotUnsafeRawPointer { __ptr_path in
@@ -219,7 +219,7 @@ open class GLTFDocument: Resource {
     }()
 
     private func __getImageFormat() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_image_format,
@@ -260,7 +260,7 @@ open class GLTFDocument: Resource {
     }()
 
     private func __getLossyQuality() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lossy_quality,
@@ -301,7 +301,7 @@ open class GLTFDocument: Resource {
     }()
 
     private func __getRootNodeMode() -> Godot.GLTFDocument.RootNodeMode {
-        Godot.GLTFDocument.RootNodeMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFDocument.RootNodeMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_node_mode,

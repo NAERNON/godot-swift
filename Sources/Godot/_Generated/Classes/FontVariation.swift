@@ -38,7 +38,7 @@ open class FontVariation: Font {
     }()
 
     private func __getBaseFont() -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_font,
@@ -56,7 +56,7 @@ open class FontVariation: Font {
         }
     }()
 
-    private func __setVariationOpentype<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setVariationOpentype<Value1: Variant.Storable, Value2: Variant.Storable>(
         coords: Godot.GodotDictionary<Value1, Value2>
     ) {
         coords.withGodotUnsafeRawPointer { __ptr_coords in
@@ -79,7 +79,7 @@ open class FontVariation: Font {
     }()
 
     private func __getVariationOpentype() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_variation_opentype,
@@ -120,7 +120,7 @@ open class FontVariation: Font {
     }()
 
     private func __getVariationEmbolden() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_variation_embolden,
@@ -161,7 +161,7 @@ open class FontVariation: Font {
     }()
 
     private func __getVariationFaceIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_variation_face_index,
@@ -202,7 +202,7 @@ open class FontVariation: Font {
     }()
 
     private func __getVariationTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_variation_transform,
@@ -220,7 +220,7 @@ open class FontVariation: Font {
         }
     }()
 
-    public func setOpentypeFeatures<Value1: VariantStorable, Value2: VariantStorable>(
+    public func setOpentypeFeatures<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ features: Godot.GodotDictionary<Value1, Value2>
     ) {
         features.withGodotUnsafeRawPointer { __ptr_features in

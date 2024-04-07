@@ -75,7 +75,7 @@ open class Sky: Resource {
     }()
 
     private func __getRadianceSize() -> Godot.Sky.RadianceSize {
-        Godot.Sky.RadianceSize.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Sky.RadianceSize.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radiance_size,
@@ -116,7 +116,7 @@ open class Sky: Resource {
     }()
 
     private func __getProcessMode() -> Godot.Sky.ProcessMode {
-        Godot.Sky.ProcessMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Sky.ProcessMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_mode,
@@ -158,7 +158,7 @@ open class Sky: Resource {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,

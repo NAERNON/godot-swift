@@ -34,7 +34,7 @@ open class Curve: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -47,7 +47,7 @@ open class Curve: Resource {
     }()
 
     private func __getPointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_count,
@@ -94,7 +94,7 @@ open class Curve: Resource {
         leftMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!,
         rightMode: Godot.Curve.TangentMode = Curve.TangentMode(rawValue: 0)!
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         leftTangent.withGodotUnsafeRawPointer { __ptr_leftTangent in
         rightTangent.withGodotUnsafeRawPointer { __ptr_rightTangent in
@@ -161,7 +161,7 @@ open class Curve: Resource {
     public func pointPosition(
         index: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -209,7 +209,7 @@ open class Curve: Resource {
         index: Int32,
         offset: Double
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_offset) { __accessPtr in
@@ -233,7 +233,7 @@ open class Curve: Resource {
     public func sample(
         offset: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,7 +256,7 @@ open class Curve: Resource {
     public func sampleBaked(
         offset: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,7 +279,7 @@ open class Curve: Resource {
     public func pointLeftTangent(
         index: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,7 +302,7 @@ open class Curve: Resource {
     public func pointRightTangent(
         index: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -325,7 +325,7 @@ open class Curve: Resource {
     public func pointLeftMode(
         index: Int32
     ) -> Godot.Curve.TangentMode {
-        Godot.Curve.TangentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve.TangentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,7 +348,7 @@ open class Curve: Resource {
     public func pointRightMode(
         index: Int32
     ) -> Godot.Curve.TangentMode {
-        Godot.Curve.TangentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve.TangentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -465,7 +465,7 @@ open class Curve: Resource {
     }()
 
     private func __getMinValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_value,
@@ -506,7 +506,7 @@ open class Curve: Resource {
     }()
 
     private func __getMaxValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_value,
@@ -583,7 +583,7 @@ open class Curve: Resource {
     }()
 
     private func __getBakeResolution() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bake_resolution,

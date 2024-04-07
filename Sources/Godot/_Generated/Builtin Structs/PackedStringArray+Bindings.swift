@@ -8,15 +8,15 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 }()
 
-private var __constructor: GDExtensionPtrConstructor = {
+private var __make: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 0)!
 }()
 
-private var __constructor_packedstringarray: GDExtensionPtrConstructor = {
+private var __makeFromPackedStringArray: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 1)!
 }()
 
-private var __constructor_godotarray: GDExtensionPtrConstructor = {
+private var __makeFromGodotArray: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 2)!
 }()
 
@@ -187,91 +187,83 @@ private var __method_binding_count: GDExtensionPtrBuiltInMethod = {
 }()
 
 extension PackedStringArray {
-    internal static func fromMutatingGodotUnsafePointer(
+    static internal func fromInitializingMutatingGodotUnsafePointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
         let opaque = Opaque(size: 16, destructorPtr: __destructor)
         opaque.withUnsafeMutableRawPointer(body)
-        return Self (opaque: opaque)
+        return Self.init(opaque: opaque)
     }
 
-    static internal func _constructor() -> Self {
+    static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            __make(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor() -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _constructor_packedstringarray(
-        from: Godot.PackedStringArray
+    static internal func _makeFromPackedStringArray(
+        _ from: Godot.PackedStringArray
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_packedstringarray(__ptr___temporary, __accessPtr)
+            __makeFromPackedStringArray(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_packedstringarray(
-        from: UnsafeRawPointer
+    static internal func _makeFromPackedStringArrayPointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_packedstringarray(__ptr___temporary, __accessPtr)
+            __makeFromPackedStringArray(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _constructor_godotarray<Value: VariantStorable>(
-        from: Godot.GodotArray<Value>
+    static internal func _makeFromGodotArray<Value: Variant.Storable>(
+        _ from: Godot.GodotArray<Value>
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotarray(__ptr___temporary, __accessPtr)
+            __makeFromGodotArray(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_godotarray(
-        from: UnsafeRawPointer
+    static internal func _makeFromGodotArrayPointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_godotarray(__ptr___temporary, __accessPtr)
+            __makeFromGodotArray(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantStorableIn>(
+    static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.PackedStringArray,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual<Value: VariantStorableIn>(
+    static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.PackedStringArray,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -280,26 +272,26 @@ extension PackedStringArray {
     static internal func _operatorNot(
         _ lhs: Godot.PackedStringArray
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
 
-    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(
+    static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.PackedStringArray,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value: VariantStorable>(
+    static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.PackedStringArray,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -309,7 +301,7 @@ extension PackedStringArray {
         _ lhs: Godot.PackedStringArray,
         _ rhs: Godot.PackedStringArray
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_packedstringarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -319,7 +311,7 @@ extension PackedStringArray {
         _ lhs: Godot.PackedStringArray,
         _ rhs: Godot.PackedStringArray
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_packedstringarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -329,7 +321,7 @@ extension PackedStringArray {
         _ lhs: Godot.PackedStringArray,
         _ rhs: Godot.PackedStringArray
     ) -> Godot.PackedStringArray {
-        PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_add_packedstringarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -338,7 +330,7 @@ extension PackedStringArray {
     internal func _getValue(
         at index: GDExtensionInt
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __indexed_getter(__ptr_self, index, __temporary)}}
     }
@@ -354,13 +346,13 @@ extension PackedStringArray {
     }
 
     internal func _size() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isEmpty() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -382,7 +374,7 @@ extension PackedStringArray {
         value: Godot.GodotString
     ) -> Bool {
         replaceOpaqueValueIfNecessary()
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -394,7 +386,7 @@ extension PackedStringArray {
         value: Godot.GodotString
     ) -> Bool {
         replaceOpaqueValueIfNecessary()
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -427,7 +419,7 @@ extension PackedStringArray {
         value: Godot.GodotString
     ) -> Int {
         replaceOpaqueValueIfNecessary()
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
@@ -450,7 +442,7 @@ extension PackedStringArray {
         newSize: Int
     ) -> Int {
         replaceOpaqueValueIfNecessary()
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         newSize.withGodotUnsafeRawPointer { __ptr_newSize in
         withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +458,7 @@ extension PackedStringArray {
     internal func _has(
         value: Godot.GodotString
     ) -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -483,7 +475,7 @@ extension PackedStringArray {
         begin: Int,
         end: Int = 2147483647
     ) -> Godot.PackedStringArray {
-        return Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         begin.withGodotUnsafeRawPointer { __ptr_begin in
         end.withGodotUnsafeRawPointer { __ptr_end in
         withUnsafeArgumentPackPointer(__ptr_begin, __ptr_end) { __accessPtr in
@@ -492,7 +484,7 @@ extension PackedStringArray {
     }
 
     internal func _toByteArray() -> Godot.PackedByteArray {
-        return Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_to_byte_array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
@@ -509,7 +501,7 @@ extension PackedStringArray {
         before: Bool = true
     ) -> Int {
         replaceOpaqueValueIfNecessary()
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         before.withGodotUnsafeRawPointer { __ptr_before in
         withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
@@ -519,7 +511,7 @@ extension PackedStringArray {
 
     @discardableResult
     mutating internal func _duplicate() -> Godot.PackedStringArray {
-        return Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         __method_binding_duplicate(__ptr_self, nil, __temporary, 0)}}
     }
@@ -528,7 +520,7 @@ extension PackedStringArray {
         value: Godot.GodotString,
         from: Int = 0
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
@@ -540,7 +532,7 @@ extension PackedStringArray {
         value: Godot.GodotString,
         from: Int = -1
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
@@ -551,7 +543,7 @@ extension PackedStringArray {
     internal func _count(
         value: Godot.GodotString
     ) -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in

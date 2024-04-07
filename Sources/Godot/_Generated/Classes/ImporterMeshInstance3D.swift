@@ -38,7 +38,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getMesh() -> Godot.ImporterMesh? {
-        Godot.ImporterMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ImporterMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh,
@@ -80,7 +80,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getSkin() -> Godot.Skin? {
-        Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Skin?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skin,
@@ -121,7 +121,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getSkeletonPath() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton_path,
@@ -162,7 +162,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getLayerMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_layer_mask,
@@ -203,7 +203,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getCastShadowsSetting() -> Godot.GeometryInstance3D.ShadowCastingSetting {
-        Godot.GeometryInstance3D.ShadowCastingSetting.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GeometryInstance3D.ShadowCastingSetting.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cast_shadows_setting,
@@ -244,7 +244,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getVisibilityRangeEndMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_range_end_margin,
@@ -285,7 +285,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getVisibilityRangeEnd() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_range_end,
@@ -326,7 +326,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getVisibilityRangeBeginMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_range_begin_margin,
@@ -367,7 +367,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getVisibilityRangeBegin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_range_begin,
@@ -408,7 +408,7 @@ open class ImporterMeshInstance3D: Node3D {
     }()
 
     private func __getVisibilityRangeFadeMode() -> Godot.GeometryInstance3D.VisibilityRangeFadeMode {
-        Godot.GeometryInstance3D.VisibilityRangeFadeMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GeometryInstance3D.VisibilityRangeFadeMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_range_fade_mode,

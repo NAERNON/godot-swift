@@ -101,7 +101,7 @@ open class OpenXRExtensionWrapperExtension: Object {
     }()
 
     public func openxrApi() -> Godot.OpenXRAPIExtension? {
-        Godot.OpenXRAPIExtension?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRAPIExtension?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_openxr_api,
@@ -141,43 +141,43 @@ open class OpenXRExtensionWrapperExtension: Object {
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRequestedExtensions()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_system_properties_and_get_next_pointer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSystemPropertiesAndGetNextPointer(
-            UnsafeMutableRawPointer.fromGodotUnsafePointer(args[0]!)
+            UnsafeMutableRawPointer.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_instance_create_info_and_get_next_pointer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setInstanceCreateInfoAndGetNextPointer(
-            UnsafeMutableRawPointer.fromGodotUnsafePointer(args[0]!)
+            UnsafeMutableRawPointer.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_session_create_and_get_next_pointer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSessionCreateAndGetNextPointer(
-            UnsafeMutableRawPointer.fromGodotUnsafePointer(args[0]!)
+            UnsafeMutableRawPointer.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_swapchain_create_info_and_get_next_pointer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSwapchainCreateInfoAndGetNextPointer(
-            UnsafeMutableRawPointer.fromGodotUnsafePointer(args[0]!)
+            UnsafeMutableRawPointer.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _on_register_metadata_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
@@ -196,7 +196,7 @@ open class OpenXRExtensionWrapperExtension: Object {
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._onInstanceCreated(
-            instance: UInt64.fromGodotUnsafePointer(args[0]!)
+            instance: UInt64.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _on_instance_destroyed_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -210,7 +210,7 @@ open class OpenXRExtensionWrapperExtension: Object {
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._onSessionCreated(
-            session: UInt64.fromGodotUnsafePointer(args[0]!)
+            session: UInt64.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _on_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -284,9 +284,9 @@ open class OpenXRExtensionWrapperExtension: Object {
             }
             Unmanaged<OpenXRExtensionWrapperExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._onEventPolled(
-            event: UnsafeRawPointer.fromGodotUnsafePointer(args[0]!)
+            event: UnsafeRawPointer.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getRequestedExtensions" : ("_get_requested_extensions", _get_requested_extensions_call),
             "_setSystemPropertiesAndGetNextPointer" : ("_set_system_properties_and_get_next_pointer", _set_system_properties_and_get_next_pointer_call),

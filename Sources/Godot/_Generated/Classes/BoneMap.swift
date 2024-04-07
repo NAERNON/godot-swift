@@ -22,7 +22,7 @@ open class BoneMap: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class BoneMap: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -54,7 +54,7 @@ open class BoneMap: Resource {
     }()
 
     private func __getProfile() -> Godot.SkeletonProfile? {
-        Godot.SkeletonProfile?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SkeletonProfile?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_profile,
@@ -98,7 +98,7 @@ open class BoneMap: Resource {
     public func skeletonBoneName(
         profileBoneName: Godot.GodotStringName
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         profileBoneName.withGodotUnsafeRawPointer { __ptr_profileBoneName in
         withUnsafeArgumentPackPointer(__ptr_profileBoneName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -145,7 +145,7 @@ open class BoneMap: Resource {
     public func findProfileBoneName(
         skeletonBoneName: Godot.GodotStringName
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         skeletonBoneName.withGodotUnsafeRawPointer { __ptr_skeletonBoneName in
         withUnsafeArgumentPackPointer(__ptr_skeletonBoneName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

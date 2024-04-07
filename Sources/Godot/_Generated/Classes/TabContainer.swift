@@ -31,7 +31,7 @@ open class TabContainer: Container {
     public lazy var activeTabRearrangedSignal: Godot.SignalEmitter<ActiveTabRearrangedSignalInput> = {
         .init(object: self, signalName: "active_tab_rearranged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(idxTo: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(idxTo: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -68,7 +68,7 @@ open class TabContainer: Container {
     public lazy var tabChangedSignal: Godot.SignalEmitter<TabChangedSignalInput> = {
         .init(object: self, signalName: "tab_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tab: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -76,7 +76,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -105,7 +105,7 @@ open class TabContainer: Container {
     public lazy var tabClickedSignal: Godot.SignalEmitter<TabClickedSignalInput> = {
         .init(object: self, signalName: "tab_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tab: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -113,7 +113,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -142,7 +142,7 @@ open class TabContainer: Container {
     public lazy var tabHoveredSignal: Godot.SignalEmitter<TabHoveredSignalInput> = {
         .init(object: self, signalName: "tab_hovered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tab: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -150,7 +150,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -179,7 +179,7 @@ open class TabContainer: Container {
     public lazy var tabSelectedSignal: Godot.SignalEmitter<TabSelectedSignalInput> = {
         .init(object: self, signalName: "tab_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tab: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -187,7 +187,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -216,7 +216,7 @@ open class TabContainer: Container {
     public lazy var tabButtonPressedSignal: Godot.SignalEmitter<TabButtonPressedSignalInput> = {
         .init(object: self, signalName: "tab_button_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(tab: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -224,7 +224,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -243,7 +243,7 @@ open class TabContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -256,7 +256,7 @@ open class TabContainer: Container {
     }()
 
     public func tabCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_count,
@@ -297,7 +297,7 @@ open class TabContainer: Container {
     }()
 
     private func __getCurrentTab() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_tab,
@@ -316,7 +316,7 @@ open class TabContainer: Container {
     }()
 
     public func previousTab() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_previous_tab,
@@ -335,7 +335,7 @@ open class TabContainer: Container {
     }()
 
     public func selectPreviousAvailable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_select_previous_available,
@@ -354,7 +354,7 @@ open class TabContainer: Container {
     }()
 
     public func selectNextAvailable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_select_next_available,
@@ -373,7 +373,7 @@ open class TabContainer: Container {
     }()
 
     public func currentTabControl() -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_tab_control,
@@ -392,7 +392,7 @@ open class TabContainer: Container {
     }()
 
     public func tabBar() -> Godot.TabBar? {
-        Godot.TabBar?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TabBar?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_bar,
@@ -413,7 +413,7 @@ open class TabContainer: Container {
     public func tabControl(
         tabIdx: Int32
     ) -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -456,7 +456,7 @@ open class TabContainer: Container {
     }()
 
     private func __getTabAlignment() -> Godot.TabBar.AlignmentMode {
-        Godot.TabBar.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TabBar.AlignmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_alignment,
@@ -497,7 +497,7 @@ open class TabContainer: Container {
     }()
 
     private func __getClipTabs() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_clip_tabs,
@@ -538,7 +538,7 @@ open class TabContainer: Container {
     }()
 
     private func __areTabsVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_tabs_visible,
@@ -579,7 +579,7 @@ open class TabContainer: Container {
     }()
 
     private func __isAllTabsInFront() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_all_tabs_in_front,
@@ -624,7 +624,7 @@ open class TabContainer: Container {
     public func tabTitle(
         tabIdx: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -672,7 +672,7 @@ open class TabContainer: Container {
     public func tabIcon(
         tabIdx: Int32
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -719,7 +719,7 @@ open class TabContainer: Container {
     public func isTabDisabled(
         tabIdx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -766,7 +766,7 @@ open class TabContainer: Container {
     public func isTabHidden(
         tabIdx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -786,7 +786,7 @@ open class TabContainer: Container {
         }
     }()
 
-    public func setTabMetadata<Value: VariantStorableIn>(
+    public func setTabMetadata<Value: Variant.Storable>(
         tabIdx: Int32,
         metadata: Value
     ) {
@@ -813,7 +813,7 @@ open class TabContainer: Container {
     public func tabMetadata(
         tabIdx: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -861,7 +861,7 @@ open class TabContainer: Container {
     public func tabButtonIcon(
         tabIdx: Int32
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tabIdx.withGodotUnsafeRawPointer { __ptr_tabIdx in
         withUnsafeArgumentPackPointer(__ptr_tabIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -884,7 +884,7 @@ open class TabContainer: Container {
     public func tabIdxAtPoint(
         _ point: Godot.Vector2
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -907,7 +907,7 @@ open class TabContainer: Container {
     public func tabIdxFromControl(
         _ control: Godot.Control?
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
@@ -952,7 +952,7 @@ open class TabContainer: Container {
     }()
 
     public func popup() -> Godot.Popup? {
-        Godot.Popup?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Popup?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_popup,
@@ -993,7 +993,7 @@ open class TabContainer: Container {
     }()
 
     private func __getDragToRearrangeEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drag_to_rearrange_enabled,
@@ -1034,7 +1034,7 @@ open class TabContainer: Container {
     }()
 
     private func __getTabsRearrangeGroup() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tabs_rearrange_group,
@@ -1075,7 +1075,7 @@ open class TabContainer: Container {
     }()
 
     private func __getUseHiddenTabsForMinSize() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_use_hidden_tabs_for_min_size,
@@ -1116,7 +1116,7 @@ open class TabContainer: Container {
     }()
 
     private func __getTabFocusMode() -> Godot.Control.FocusMode {
-        Godot.Control.FocusMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control.FocusMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_focus_mode,

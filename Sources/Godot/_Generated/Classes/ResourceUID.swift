@@ -19,7 +19,7 @@ open class ResourceUID: Object {
     public func idToText(
         id: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -42,7 +42,7 @@ open class ResourceUID: Object {
     public func textToID(
         textID: Godot.GodotString
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         textID.withGodotUnsafeRawPointer { __ptr_textID in
         withUnsafeArgumentPackPointer(__ptr_textID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +63,7 @@ open class ResourceUID: Object {
     }()
 
     public func createID() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_id,
@@ -84,7 +84,7 @@ open class ResourceUID: Object {
     public func hasID(
         _ id: Int64
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -155,7 +155,7 @@ open class ResourceUID: Object {
     public func idPath(
         id: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

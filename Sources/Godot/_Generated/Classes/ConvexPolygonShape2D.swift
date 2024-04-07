@@ -59,7 +59,7 @@ open class ConvexPolygonShape2D: Shape2D {
     }()
 
     private func __getPoints() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_points,

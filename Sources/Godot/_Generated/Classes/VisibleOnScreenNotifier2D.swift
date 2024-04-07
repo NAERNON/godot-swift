@@ -22,7 +22,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -76,7 +76,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
     }()
 
     private func __getRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rect,
@@ -95,7 +95,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
     }()
 
     public func isOnScreen() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_on_screen,

@@ -37,7 +37,7 @@ open class RDPipelineColorBlendState: RefCounted {
     }()
 
     private func __getEnableLogicOp() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_logic_op,
@@ -78,7 +78,7 @@ open class RDPipelineColorBlendState: RefCounted {
     }()
 
     private func __getLogicOp() -> Godot.RenderingDevice.LogicOperation {
-        Godot.RenderingDevice.LogicOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.LogicOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_logic_op,
@@ -119,7 +119,7 @@ open class RDPipelineColorBlendState: RefCounted {
     }()
 
     private func __getBlendConstant() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_blend_constant,
@@ -160,7 +160,7 @@ open class RDPipelineColorBlendState: RefCounted {
     }()
 
     private func __getAttachments() -> Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> {
-        Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_attachments,

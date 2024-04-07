@@ -21,7 +21,7 @@ open class PhysicsBody3D: CollisionObject3D {
         recoveryAsCollision: Bool = false,
         maxCollisions: Int32 = 1
     ) -> Godot.KinematicCollision3D? {
-        Godot.KinematicCollision3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.KinematicCollision3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         testOnly.withGodotUnsafeRawPointer { __ptr_testOnly in
         safeMargin.withGodotUnsafeRawPointer { __ptr_safeMargin in
@@ -53,7 +53,7 @@ open class PhysicsBody3D: CollisionObject3D {
         recoveryAsCollision: Bool = false,
         maxCollisions: Int32 = 1
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         collision.withGodotUnsafeRawPointer { __ptr_collision in
@@ -106,7 +106,7 @@ open class PhysicsBody3D: CollisionObject3D {
     private func __getAxisLock(
         axis: Godot.PhysicsServer3D.BodyAxis
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         withUnsafeArgumentPackPointer(__ptr_axis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -127,7 +127,7 @@ open class PhysicsBody3D: CollisionObject3D {
     }()
 
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody3D?> {
-        Godot.GodotArray<Godot.PhysicsBody3D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PhysicsBody3D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_exceptions,

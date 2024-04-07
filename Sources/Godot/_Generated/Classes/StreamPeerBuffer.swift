@@ -37,7 +37,7 @@ open class StreamPeerBuffer: StreamPeer {
     }()
 
     public func size() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -56,7 +56,7 @@ open class StreamPeerBuffer: StreamPeer {
     }()
 
     public func position() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position,
@@ -119,7 +119,7 @@ open class StreamPeerBuffer: StreamPeer {
     }()
 
     private func __getDataArray() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data_array,
@@ -156,7 +156,7 @@ open class StreamPeerBuffer: StreamPeer {
     }()
 
     public func duplicate() -> Godot.StreamPeerBuffer? {
-        Godot.StreamPeerBuffer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeerBuffer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_duplicate,

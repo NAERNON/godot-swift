@@ -150,21 +150,19 @@ struct VariableMember: ExposableMember {
         let className = className.trimmed
         
         let getterExprSyntax: ExprSyntax = """
-        Godot.Variant.withStorage(of: Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)) { storage in
-            storage.copyToGodot(unsafePointer: returnPtr!)
-        }
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).transferVariantStorageToGodot(unsafePointer: returnPtr!)
         """
         
         let getterPointerExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).copyToGodot(unsafePointer: returnPtr!)
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).transferToGodot(unsafePointer: returnPtr!)
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .convertFromCheckedStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)
         """
         
         let setterPointerExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .fromGodotUnsafePointer(args!.advanced(by: 0).pointee!)
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .transferFromGodot(unsafePointer: args!.advanced(by: 0).pointee!)
         """
         
         let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)

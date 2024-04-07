@@ -21,7 +21,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         inBandwidth bandwidth: Int32 = 0,
         outBandwidth: Int32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         maxClients.withGodotUnsafeRawPointer { __ptr_maxClients in
         maxChannels.withGodotUnsafeRawPointer { __ptr_maxChannels in
@@ -53,7 +53,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         outBandwidth: Int32 = 0,
         localPort: Int32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         address.withGodotUnsafeRawPointer { __ptr_address in
         port.withGodotUnsafeRawPointer { __ptr_port in
         channelCount.withGodotUnsafeRawPointer { __ptr_channelCount in
@@ -81,7 +81,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
     public func createMesh(
         uniqueID: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         uniqueID.withGodotUnsafeRawPointer { __ptr_uniqueID in
         withUnsafeArgumentPackPointer(__ptr_uniqueID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +105,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
         peerID: Int32,
         host: Godot.ENetConnection?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         host.withGodotUnsafeRawPointer { __ptr_host in
         withUnsafePointer(to: __ptr_host) { _ptr___ptr_host in
@@ -150,7 +150,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getHost() -> Godot.ENetConnection? {
-        Godot.ENetConnection?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ENetConnection?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_host,
@@ -171,7 +171,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
     public func peer(
         id: Int32
     ) -> Godot.ENetPacketPeer? {
-        Godot.ENetPacketPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ENetPacketPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

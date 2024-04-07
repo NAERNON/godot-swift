@@ -79,7 +79,7 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
 }
 
 extension GodotFunction {
-    var translated: GodotTranslatedFunction<Self> {
+    func translated() -> GodotTranslatedFunction<Self> {
         GodotTranslatedFunction(self, translateName: true, translateArguments: true)
     }
     
@@ -87,11 +87,11 @@ extension GodotFunction {
         GodotTranslatedFunction(self, translateName: true, translateArguments: true, typeName: typeName)
     }
     
-    var translatedName: GodotTranslatedFunction<Self> {
+    func translatedName() -> GodotTranslatedFunction<Self> {
         GodotTranslatedFunction(self, translateName: true, translateArguments: false)
     }
     
-    var translatedArguments: GodotTranslatedFunction<Self> {
+    func translatedArguments() -> GodotTranslatedFunction<Self> {
         GodotTranslatedFunction(self, translateName: false, translateArguments: true)
     }
 }

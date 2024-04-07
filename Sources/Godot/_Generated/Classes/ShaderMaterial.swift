@@ -38,7 +38,7 @@ open class ShaderMaterial: Material {
     }()
 
     private func __getShader() -> Godot.Shader? {
-        Godot.Shader?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shader?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shader,
@@ -56,7 +56,7 @@ open class ShaderMaterial: Material {
         }
     }()
 
-    public func setShaderParameter<Value: VariantStorableIn>(
+    public func setShaderParameter<Value: Variant.Storable>(
         param: Godot.GodotStringName,
         value: Value
     ) {
@@ -83,7 +83,7 @@ open class ShaderMaterial: Material {
     public func shaderParameter(
         param: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

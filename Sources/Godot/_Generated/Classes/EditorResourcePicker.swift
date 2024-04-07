@@ -37,8 +37,8 @@ open class EditorResourcePicker: HBoxContainer {
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    inspect: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(resource: Godot.Resource?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    inspect: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -46,7 +46,7 @@ open class EditorResourcePicker: HBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -75,7 +75,7 @@ open class EditorResourcePicker: HBoxContainer {
     public lazy var resourceChangedSignal: Godot.SignalEmitter<ResourceChangedSignalInput> = {
         .init(object: self, signalName: "resource_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(resource: Godot.Resource?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -83,7 +83,7 @@ open class EditorResourcePicker: HBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -129,7 +129,7 @@ open class EditorResourcePicker: HBoxContainer {
     }()
 
     private func __getBaseType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_type,
@@ -148,7 +148,7 @@ open class EditorResourcePicker: HBoxContainer {
     }()
 
     public func allowedTypes() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_allowed_types,
@@ -190,7 +190,7 @@ open class EditorResourcePicker: HBoxContainer {
     }()
 
     private func __getEditedResource() -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited_resource,
@@ -231,7 +231,7 @@ open class EditorResourcePicker: HBoxContainer {
     }()
 
     private func __isToggleMode() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_toggle_mode,
@@ -294,7 +294,7 @@ open class EditorResourcePicker: HBoxContainer {
     }()
 
     private func __isEditable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_editable,
@@ -360,7 +360,7 @@ open class EditorResourcePicker: HBoxContainer {
             }
             Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setCreateOptions(
-            menuNode: Godot.Object?.fromGodotUnsafePointer(args[0]!)
+            menuNode: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _handle_menu_selected_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -368,9 +368,9 @@ open class EditorResourcePicker: HBoxContainer {
             }
             Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handleMenuSelected(
-            id: Int32.fromGodotUnsafePointer(args[0]!)
+            id: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_setCreateOptions" : ("_set_create_options", _set_create_options_call),
             "_handleMenuSelected" : ("_handle_menu_selected", _handle_menu_selected_call)

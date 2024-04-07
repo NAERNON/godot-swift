@@ -37,7 +37,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     private func __getTargetNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_node,
@@ -78,7 +78,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     private func __getTargetMinimumDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_minimum_distance,
@@ -119,7 +119,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     private func __getTargetMaximumDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_maximum_distance,
@@ -160,7 +160,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     private func __getFlipBendDirection() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flip_bend_direction,
@@ -201,7 +201,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     public func jointOneBone2dNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_one_bone2d_node,
@@ -242,7 +242,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     public func jointOneBoneIdx() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_one_bone_idx,
@@ -283,7 +283,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     public func jointTwoBone2dNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_two_bone2d_node,
@@ -324,7 +324,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     }()
 
     public func jointTwoBoneIdx() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_two_bone_idx,

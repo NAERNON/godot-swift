@@ -59,7 +59,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -100,7 +100,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getAnchorMode() -> Godot.Camera2D.AnchorMode {
-        Godot.Camera2D.AnchorMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera2D.AnchorMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_anchor_mode,
@@ -141,7 +141,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isIgnoringRotation() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ignoring_rotation,
@@ -182,7 +182,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getProcessCallback() -> Godot.Camera2D.Camera2DProcessCallback {
-        Godot.Camera2D.Camera2DProcessCallback.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera2D.Camera2DProcessCallback.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_callback,
@@ -223,7 +223,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_enabled,
@@ -260,7 +260,7 @@ open class Camera2D: Node2D {
     }()
 
     public func isCurrent() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_current,
@@ -305,7 +305,7 @@ open class Camera2D: Node2D {
     private func __getLimit(
         margin: Godot.Side
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,7 +348,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isLimitSmoothingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_limit_smoothing_enabled,
@@ -389,7 +389,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isDragVerticalEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drag_vertical_enabled,
@@ -430,7 +430,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isDragHorizontalEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drag_horizontal_enabled,
@@ -471,7 +471,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getDragVerticalOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drag_vertical_offset,
@@ -512,7 +512,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getDragHorizontalOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drag_horizontal_offset,
@@ -557,7 +557,7 @@ open class Camera2D: Node2D {
     private func __getDragMargin(
         _ margin: Godot.Side
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -578,7 +578,7 @@ open class Camera2D: Node2D {
     }()
 
     public func targetPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_position,
@@ -597,7 +597,7 @@ open class Camera2D: Node2D {
     }()
 
     public func screenCenterPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_screen_center_position,
@@ -638,7 +638,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getZoom() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_zoom,
@@ -680,7 +680,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getCustomViewport() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_viewport,
@@ -721,7 +721,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getPositionSmoothingSpeed() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position_smoothing_speed,
@@ -762,7 +762,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isPositionSmoothingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_position_smoothing_enabled,
@@ -803,7 +803,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isRotationSmoothingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_rotation_smoothing_enabled,
@@ -844,7 +844,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __getRotationSmoothingSpeed() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation_smoothing_speed,
@@ -939,7 +939,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isScreenDrawingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_screen_drawing_enabled,
@@ -980,7 +980,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isLimitDrawingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_limit_drawing_enabled,
@@ -1021,7 +1021,7 @@ open class Camera2D: Node2D {
     }()
 
     private func __isMarginDrawingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_margin_drawing_enabled,

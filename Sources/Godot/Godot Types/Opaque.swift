@@ -27,10 +27,28 @@ internal final class Opaque: CustomDebugStringConvertible {
         rawData.deallocate()
     }
     
+    func withUnsafeRawBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(UnsafeRawBufferPointer(rawData))
+    }
+    
+    func withUnsafeMutableRawBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(rawData)
+    }
+    
+    func withUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(rawData.baseAddress!)
+    }
+    
     func withUnsafeMutableRawPointer<Result>(
         _ body: (UnsafeMutableRawPointer) throws -> Result
     ) rethrows -> Result {
-        try body(UnsafeMutableRawPointer(rawData.baseAddress!))
+        try body(rawData.baseAddress!)
     }
     
     func isZero() -> Bool {

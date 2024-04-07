@@ -37,7 +37,7 @@ open class AudioEffectPhaser: AudioEffect {
     }()
 
     private func __getRangeMinHz() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_range_min_hz,
@@ -78,7 +78,7 @@ open class AudioEffectPhaser: AudioEffect {
     }()
 
     private func __getRangeMaxHz() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_range_max_hz,
@@ -119,7 +119,7 @@ open class AudioEffectPhaser: AudioEffect {
     }()
 
     private func __getRateHz() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rate_hz,
@@ -160,7 +160,7 @@ open class AudioEffectPhaser: AudioEffect {
     }()
 
     private func __getFeedback() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_feedback,
@@ -201,7 +201,7 @@ open class AudioEffectPhaser: AudioEffect {
     }()
 
     private func __getDepth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,

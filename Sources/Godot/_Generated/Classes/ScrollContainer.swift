@@ -36,7 +36,7 @@ open class ScrollContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -55,7 +55,7 @@ open class ScrollContainer: Container {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -90,7 +90,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getHScroll() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_scroll,
@@ -131,7 +131,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getVScroll() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_scroll,
@@ -172,7 +172,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getHorizontalCustomStep() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_custom_step,
@@ -213,7 +213,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getVerticalCustomStep() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertical_custom_step,
@@ -254,7 +254,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getHorizontalScrollMode() -> Godot.ScrollContainer.ScrollMode {
-        Godot.ScrollContainer.ScrollMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ScrollContainer.ScrollMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_scroll_mode,
@@ -295,7 +295,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getVerticalScrollMode() -> Godot.ScrollContainer.ScrollMode {
-        Godot.ScrollContainer.ScrollMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ScrollContainer.ScrollMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertical_scroll_mode,
@@ -336,7 +336,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __getDeadzone() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_deadzone,
@@ -377,7 +377,7 @@ open class ScrollContainer: Container {
     }()
 
     private func __isFollowingFocus() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_following_focus,
@@ -396,7 +396,7 @@ open class ScrollContainer: Container {
     }()
 
     public func hScrollBar() -> Godot.HScrollBar? {
-        Godot.HScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HScrollBar?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_scroll_bar,
@@ -415,7 +415,7 @@ open class ScrollContainer: Container {
     }()
 
     public func vScrollBar() -> Godot.VScrollBar? {
-        Godot.VScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VScrollBar?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_scroll_bar,

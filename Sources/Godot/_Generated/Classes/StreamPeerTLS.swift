@@ -53,7 +53,7 @@ open class StreamPeerTLS: StreamPeer {
         _ stream: Godot.StreamPeer?,
         serverOptions: Godot.TLSOptions?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         serverOptions.withGodotUnsafeRawPointer { __ptr_serverOptions in
@@ -81,7 +81,7 @@ open class StreamPeerTLS: StreamPeer {
         commonName: Godot.GodotString,
         clientOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         commonName.withGodotUnsafeRawPointer { __ptr_commonName in
@@ -106,7 +106,7 @@ open class StreamPeerTLS: StreamPeer {
     }()
 
     public func status() -> Godot.StreamPeerTLS.Status {
-        Godot.StreamPeerTLS.Status.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeerTLS.Status.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_status,
@@ -125,7 +125,7 @@ open class StreamPeerTLS: StreamPeer {
     }()
 
     public func stream() -> Godot.StreamPeer? {
-        Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream,

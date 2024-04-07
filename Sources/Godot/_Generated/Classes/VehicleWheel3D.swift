@@ -37,7 +37,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -78,7 +78,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getSuspensionRestLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_suspension_rest_length,
@@ -119,7 +119,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getSuspensionTravel() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_suspension_travel,
@@ -160,7 +160,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getSuspensionStiffness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_suspension_stiffness,
@@ -201,7 +201,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getSuspensionMaxForce() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_suspension_max_force,
@@ -242,7 +242,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getDampingCompression() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_damping_compression,
@@ -283,7 +283,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getDampingRelaxation() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_damping_relaxation,
@@ -324,7 +324,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __isUsedAsTraction() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_used_as_traction,
@@ -365,7 +365,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __isUsedAsSteering() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_used_as_steering,
@@ -406,7 +406,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getFrictionSlip() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_friction_slip,
@@ -425,7 +425,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     public func isInContact() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_in_contact,
@@ -444,7 +444,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     public func contactBody() -> Godot.Node3D? {
-        Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_contact_body,
@@ -485,7 +485,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getRollInfluence() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_roll_influence,
@@ -504,7 +504,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     public func skidinfo() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skidinfo,
@@ -523,7 +523,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     public func rpm() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rpm,
@@ -564,7 +564,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getEngineForce() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_engine_force,
@@ -605,7 +605,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getBrake() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_brake,
@@ -646,7 +646,7 @@ open class VehicleWheel3D: Node3D {
     }()
 
     private func __getSteering() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_steering,

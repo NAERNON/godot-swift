@@ -38,7 +38,7 @@ open class GDExtensionManager: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -53,7 +53,7 @@ open class GDExtensionManager: Object {
     public func loadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
-        Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GDExtensionManager.LoadStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -76,7 +76,7 @@ open class GDExtensionManager: Object {
     public func reloadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
-        Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GDExtensionManager.LoadStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -99,7 +99,7 @@ open class GDExtensionManager: Object {
     public func unloadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
-        Godot.GDExtensionManager.LoadStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GDExtensionManager.LoadStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -122,7 +122,7 @@ open class GDExtensionManager: Object {
     public func isExtensionLoaded(
         path: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -143,7 +143,7 @@ open class GDExtensionManager: Object {
     }()
 
     public func loadedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loaded_extensions,
@@ -164,7 +164,7 @@ open class GDExtensionManager: Object {
     public func `extension`(
         path: Godot.GodotString
     ) -> Godot.GDExtension? {
-        Godot.GDExtension?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GDExtension?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

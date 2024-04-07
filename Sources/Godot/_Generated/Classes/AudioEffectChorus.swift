@@ -37,7 +37,7 @@ open class AudioEffectChorus: AudioEffect {
     }()
 
     private func __getVoiceCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_count,
@@ -82,7 +82,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voiceDelayMs(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -129,7 +129,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voiceRateHz(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -176,7 +176,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voiceDepthMs(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -223,7 +223,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voiceLevelDb(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -270,7 +270,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voiceCutoffHz(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -317,7 +317,7 @@ open class AudioEffectChorus: AudioEffect {
     public func voicePan(
         voiceIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -360,7 +360,7 @@ open class AudioEffectChorus: AudioEffect {
     }()
 
     private func __getWet() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_wet,
@@ -401,7 +401,7 @@ open class AudioEffectChorus: AudioEffect {
     }()
 
     private func __getDry() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dry,

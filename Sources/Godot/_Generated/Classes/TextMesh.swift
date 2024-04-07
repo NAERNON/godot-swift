@@ -37,7 +37,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_alignment,
@@ -78,7 +78,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
-        Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VerticalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertical_alignment,
@@ -119,7 +119,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -161,7 +161,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getFont() -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font,
@@ -202,7 +202,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getFontSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_size,
@@ -243,7 +243,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getLineSpacing() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_spacing,
@@ -284,7 +284,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
-        Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.AutowrapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autowrap_mode,
@@ -325,7 +325,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
-        Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.JustificationFlag.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_justification_flags,
@@ -366,7 +366,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getDepth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,
@@ -407,7 +407,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -448,7 +448,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getPixelSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pixel_size,
@@ -489,7 +489,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -530,7 +530,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getCurveStep() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve_step,
@@ -571,7 +571,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getTextDirection() -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_direction,
@@ -612,7 +612,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,
@@ -653,7 +653,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
-        Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.StructuredTextParser.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override,
@@ -671,7 +671,7 @@ open class TextMesh: PrimitiveMesh {
         }
     }()
 
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+    private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
@@ -694,7 +694,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override_options,
@@ -735,7 +735,7 @@ open class TextMesh: PrimitiveMesh {
     }()
 
     private func __isUppercase() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_uppercase,

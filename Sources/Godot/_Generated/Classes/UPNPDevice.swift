@@ -42,7 +42,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     public func isValidGateway() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_valid_gateway,
@@ -61,7 +61,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     public func queryExternalAddress() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_query_external_address,
@@ -86,7 +86,7 @@ open class UPNPDevice: RefCounted {
         proto: Godot.GodotString = "UDP",
         duration: Int32 = 0
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         portInternal.withGodotUnsafeRawPointer { __ptr_portInternal in
         desc.withGodotUnsafeRawPointer { __ptr_desc in
@@ -114,7 +114,7 @@ open class UPNPDevice: RefCounted {
         port: Int32,
         proto: Godot.GodotString = "UDP"
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         proto.withGodotUnsafeRawPointer { __ptr_proto in
         withUnsafeArgumentPackPointer(__ptr_port, __ptr_proto) { __accessPtr in
@@ -158,7 +158,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getDescriptionUrl() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_description_url,
@@ -199,7 +199,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getServiceType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_service_type,
@@ -240,7 +240,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getIgdControlUrl() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_igd_control_url,
@@ -281,7 +281,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getIgdServiceType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_igd_service_type,
@@ -322,7 +322,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getIgdOurAddr() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_igd_our_addr,
@@ -363,7 +363,7 @@ open class UPNPDevice: RefCounted {
     }()
 
     private func __getIgdStatus() -> Godot.UPNPDevice.IGDStatus {
-        Godot.UPNPDevice.IGDStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.UPNPDevice.IGDStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_igd_status,

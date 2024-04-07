@@ -37,7 +37,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getPolygon() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon,
@@ -78,7 +78,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getUv() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_uv,
@@ -119,7 +119,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color,
@@ -137,7 +137,7 @@ open class Polygon2D: Node2D {
         }
     }()
 
-    private func __setPolygons<Value: VariantStorable>(
+    private func __setPolygons<Value: Variant.Storable>(
         _ polygons: Godot.GodotArray<Value>
     ) {
         polygons.withGodotUnsafeRawPointer { __ptr_polygons in
@@ -160,7 +160,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getPolygons() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygons,
@@ -201,7 +201,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getVertexColors() -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertex_colors,
@@ -243,7 +243,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -284,7 +284,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getTextureOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_offset,
@@ -325,7 +325,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getTextureRotation() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_rotation,
@@ -366,7 +366,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getTextureScale() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_scale,
@@ -407,7 +407,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getInvertEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_invert_enabled,
@@ -448,7 +448,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getAntialiased() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_antialiased,
@@ -489,7 +489,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getInvertBorder() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_invert_border,
@@ -530,7 +530,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -573,7 +573,7 @@ open class Polygon2D: Node2D {
     }()
 
     public func boneCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bone_count,
@@ -594,7 +594,7 @@ open class Polygon2D: Node2D {
     public func bonePath(
         index: Int32
     ) -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -617,7 +617,7 @@ open class Polygon2D: Node2D {
     public func boneWeights(
         index: Int32
     ) -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -748,7 +748,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getSkeleton() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton,
@@ -789,7 +789,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __getInternalVertexCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_internal_vertex_count,

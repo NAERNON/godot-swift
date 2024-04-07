@@ -22,7 +22,7 @@ open class EditorSelection: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -99,7 +99,7 @@ open class EditorSelection: Object {
     }()
 
     public func selectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_nodes,
@@ -118,7 +118,7 @@ open class EditorSelection: Object {
     }()
 
     public func transformableSelectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transformable_selected_nodes,

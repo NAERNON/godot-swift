@@ -71,7 +71,7 @@ open class CurveTexture: Texture2D {
     }()
 
     private func __getCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,
@@ -112,7 +112,7 @@ open class CurveTexture: Texture2D {
     }()
 
     private func __getTextureMode() -> Godot.CurveTexture.TextureMode {
-        Godot.CurveTexture.TextureMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CurveTexture.TextureMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_mode,

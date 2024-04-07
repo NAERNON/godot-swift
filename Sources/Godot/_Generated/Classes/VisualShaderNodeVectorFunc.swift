@@ -112,7 +112,7 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeVectorFunc.Function {
-        Godot.VisualShaderNodeVectorFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeVectorFunc.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,

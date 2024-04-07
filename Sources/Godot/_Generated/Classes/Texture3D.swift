@@ -39,7 +39,7 @@ open class Texture3D: Texture {
     }()
 
     public func format() -> Godot.Image.Format {
-        Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -58,7 +58,7 @@ open class Texture3D: Texture {
     }()
 
     public func width() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -77,7 +77,7 @@ open class Texture3D: Texture {
     }()
 
     public func height() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height,
@@ -96,7 +96,7 @@ open class Texture3D: Texture {
     }()
 
     public func depth() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,
@@ -115,7 +115,7 @@ open class Texture3D: Texture {
     }()
 
     public func hasMipmaps() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_mipmaps,
@@ -134,7 +134,7 @@ open class Texture3D: Texture {
     }()
 
     public func data() -> Godot.GodotArray<Godot.Image?> {
-        Godot.GodotArray<Godot.Image?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Image?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data,
@@ -153,7 +153,7 @@ open class Texture3D: Texture {
     }()
 
     public func createPlaceholder() -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_placeholder,
@@ -175,42 +175,42 @@ open class Texture3D: Texture {
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFormat()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWidth()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHeight()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_depth_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDepth()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _has_mipmaps_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasMipmaps()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Texture3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getData()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getFormat" : ("_get_format", _get_format_call),
             "_getWidth" : ("_get_width", _get_width_call),

@@ -37,7 +37,7 @@ open class VisualShaderNodeVec3Constant: VisualShaderNodeConstant {
     }()
 
     private func __getConstant() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant,

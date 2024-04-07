@@ -22,7 +22,7 @@ open class Path3D: Node3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -58,7 +58,7 @@ open class Path3D: Node3D {
     }()
 
     private func __getCurve() -> Godot.Curve3D? {
-        Godot.Curve3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,

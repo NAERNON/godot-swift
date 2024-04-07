@@ -15,7 +15,7 @@ open class ClassDB: Object {
     }()
 
     public func classList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_class_list,
@@ -36,7 +36,7 @@ open class ClassDB: Object {
     public func inheritersFromClass(
         _ `class`: Godot.GodotStringName
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +59,7 @@ open class ClassDB: Object {
     public func parentClass(
         _ `class`: Godot.GodotStringName
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,7 +82,7 @@ open class ClassDB: Object {
     public func classExists(
         `class`: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +106,7 @@ open class ClassDB: Object {
         _ `class`: Godot.GodotStringName,
         inherits: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         inherits.withGodotUnsafeRawPointer { __ptr_inherits in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_inherits) { __accessPtr in
@@ -130,7 +130,7 @@ open class ClassDB: Object {
     public func canInstantiate(
         `class`: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +153,7 @@ open class ClassDB: Object {
     public func instantiate(
         `class`: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +177,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         signal: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_signal) { __accessPtr in
@@ -202,7 +202,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         signal: Godot.GodotStringName
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_signal) { __accessPtr in
@@ -227,7 +227,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -252,7 +252,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -277,7 +277,7 @@ open class ClassDB: Object {
         object: Godot.Object?,
         property: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -299,12 +299,12 @@ open class ClassDB: Object {
         }
     }()
 
-    public func classSetProperty<Value: VariantStorableIn>(
+    public func classSetProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
         value: Value
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -332,7 +332,7 @@ open class ClassDB: Object {
         method: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         method.withGodotUnsafeRawPointer { __ptr_method in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
@@ -358,7 +358,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -383,7 +383,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -408,7 +408,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name) { __accessPtr in
@@ -433,7 +433,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name) { __accessPtr in
@@ -459,7 +459,7 @@ open class ClassDB: Object {
         name: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         name.withGodotUnsafeRawPointer { __ptr_name in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
@@ -485,7 +485,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -511,7 +511,7 @@ open class ClassDB: Object {
         `enum`: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         `enum`.withGodotUnsafeRawPointer { __ptr_enum in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
@@ -538,7 +538,7 @@ open class ClassDB: Object {
         name: Godot.GodotStringName,
         noInheritance: Bool = false
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         name.withGodotUnsafeRawPointer { __ptr_name in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
@@ -563,7 +563,7 @@ open class ClassDB: Object {
     public func isClassEnabled(
         `class`: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

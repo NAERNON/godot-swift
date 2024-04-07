@@ -102,7 +102,7 @@ public struct SignalInspector {
             inputInitSyntax = ".init(" + arguments
                 .enumerated()
                 .map { (index, argument) in
-                    argument.name + ": " + "\(argument.type).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
+                    argument.name + ": " + "\(argument.type).convertFromStorage(unsafePointer: args!.advanced(by: \(index)).pointee!)"
                 }
                 .joined(separator: ",\n") + ")"
         }
@@ -119,7 +119,7 @@ public struct SignalInspector {
                 Godot.GodotString(describing:
                     Unmanaged<\(raw: receiverTypeSyntax)>.fromOpaque(callablePtr!)
                         .takeUnretainedValue()
-                ).copyToGodot(unsafePointer: stringResultPtr!)
+                ).transferToGodot(unsafePointer: stringResultPtr!)
             }
         }()
         """

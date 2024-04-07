@@ -15,7 +15,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getSkinRoot() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skin_root,
@@ -56,7 +56,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getJointsOriginal() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joints_original,
@@ -97,7 +97,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getInverseBinds() -> Godot.GodotArray<Godot.Transform3D> {
-        Godot.GodotArray<Godot.Transform3D> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Transform3D> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inverse_binds,
@@ -138,7 +138,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getJoints() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joints,
@@ -179,7 +179,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getNonJoints() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_non_joints,
@@ -220,7 +220,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getRoots() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_roots,
@@ -261,7 +261,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getSkeleton() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton,
@@ -302,7 +302,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getJointIToBoneI() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_i_to_bone_i,
@@ -320,7 +320,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __setJointIToBoneI<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setJointIToBoneI<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ jointIToBoneI: Godot.GodotDictionary<Value1, Value2>
     ) {
         jointIToBoneI.withGodotUnsafeRawPointer { __ptr_jointIToBoneI in
@@ -343,7 +343,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getJointIToName() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_i_to_name,
@@ -361,7 +361,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __setJointIToName<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setJointIToName<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ jointIToName: Godot.GodotDictionary<Value1, Value2>
     ) {
         jointIToName.withGodotUnsafeRawPointer { __ptr_jointIToName in
@@ -384,7 +384,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __getGodotSkin() -> Godot.Skin? {
-        Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Skin?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_godot_skin,

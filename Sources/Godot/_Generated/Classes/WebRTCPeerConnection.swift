@@ -88,8 +88,8 @@ open class WebRTCPeerConnection: RefCounted {
     public lazy var sessionDescriptionCreatedSignal: Godot.SignalEmitter<SessionDescriptionCreatedSignalInput> = {
         .init(object: self, signalName: "session_description_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(type: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    sdp: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(type: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    sdp: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -97,7 +97,7 @@ open class WebRTCPeerConnection: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -138,9 +138,9 @@ open class WebRTCPeerConnection: RefCounted {
     public lazy var iceCandidateCreatedSignal: Godot.SignalEmitter<IceCandidateCreatedSignalInput> = {
         .init(object: self, signalName: "ice_candidate_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(media: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(media: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    index: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -148,7 +148,7 @@ open class WebRTCPeerConnection: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -177,7 +177,7 @@ open class WebRTCPeerConnection: RefCounted {
     public lazy var dataChannelReceivedSignal: Godot.SignalEmitter<DataChannelReceivedSignalInput> = {
         .init(object: self, signalName: "data_channel_received") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(channel: Godot.WebRTCDataChannel?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(channel: Godot.WebRTCDataChannel?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -185,7 +185,7 @@ open class WebRTCPeerConnection: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -218,10 +218,10 @@ open class WebRTCPeerConnection: RefCounted {
         }
     }()
 
-    public func initialize<Value1: VariantStorable, Value2: VariantStorable>(
+    public func initialize<Value1: Variant.Storable, Value2: Variant.Storable>(
         configuration: Godot.GodotDictionary<Value1, Value2> = [:]
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         configuration.withGodotUnsafeRawPointer { __ptr_configuration in
         withUnsafeArgumentPackPointer(__ptr_configuration) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -241,11 +241,11 @@ open class WebRTCPeerConnection: RefCounted {
         }
     }()
 
-    public func createDataChannel<Value1: VariantStorable, Value2: VariantStorable>(
+    public func createDataChannel<Value1: Variant.Storable, Value2: Variant.Storable>(
         label: Godot.GodotString,
         options: Godot.GodotDictionary<Value1, Value2> = [:]
     ) -> Godot.WebRTCDataChannel? {
-        Godot.WebRTCDataChannel?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCDataChannel?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         label.withGodotUnsafeRawPointer { __ptr_label in
         options.withGodotUnsafeRawPointer { __ptr_options in
         withUnsafeArgumentPackPointer(__ptr_label, __ptr_options) { __accessPtr in
@@ -267,7 +267,7 @@ open class WebRTCPeerConnection: RefCounted {
     }()
 
     public func createOffer() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_offer,
@@ -289,7 +289,7 @@ open class WebRTCPeerConnection: RefCounted {
         type: Godot.GodotString,
         sdp: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_sdp) { __accessPtr in
@@ -314,7 +314,7 @@ open class WebRTCPeerConnection: RefCounted {
         type: Godot.GodotString,
         sdp: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_sdp) { __accessPtr in
@@ -340,7 +340,7 @@ open class WebRTCPeerConnection: RefCounted {
         index: Int32,
         name: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         media.withGodotUnsafeRawPointer { __ptr_media in
         index.withGodotUnsafeRawPointer { __ptr_index in
         name.withGodotUnsafeRawPointer { __ptr_name in
@@ -363,7 +363,7 @@ open class WebRTCPeerConnection: RefCounted {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -400,7 +400,7 @@ open class WebRTCPeerConnection: RefCounted {
     }()
 
     public func connectionState() -> Godot.WebRTCPeerConnection.ConnectionState {
-        Godot.WebRTCPeerConnection.ConnectionState.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCPeerConnection.ConnectionState.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connection_state,
@@ -419,7 +419,7 @@ open class WebRTCPeerConnection: RefCounted {
     }()
 
     public func gatheringState() -> Godot.WebRTCPeerConnection.GatheringState {
-        Godot.WebRTCPeerConnection.GatheringState.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCPeerConnection.GatheringState.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gathering_state,
@@ -438,7 +438,7 @@ open class WebRTCPeerConnection: RefCounted {
     }()
 
     public func signalingState() -> Godot.WebRTCPeerConnection.SignalingState {
-        Godot.WebRTCPeerConnection.SignalingState.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCPeerConnection.SignalingState.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_signaling_state,

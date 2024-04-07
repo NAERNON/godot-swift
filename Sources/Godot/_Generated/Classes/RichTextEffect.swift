@@ -24,9 +24,9 @@ open class RichTextEffect: Resource {
             }
             Unmanaged<RichTextEffect> .fromOpaque(instancePtr).takeUnretainedValue()
         ._processCustomFx(
-            charFx: Godot.CharFXTransform?.fromGodotUnsafePointer(args[0]!)
+            charFx: Godot.CharFXTransform?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_processCustomFx" : ("_process_custom_fx", _process_custom_fx_call)
         ]

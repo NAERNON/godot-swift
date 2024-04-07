@@ -18,7 +18,7 @@ open class StreamPeerGZIP: StreamPeer {
         useDeflate: Bool = false,
         bufferSize: Int32 = 65535
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         useDeflate.withGodotUnsafeRawPointer { __ptr_useDeflate in
         bufferSize.withGodotUnsafeRawPointer { __ptr_bufferSize in
         withUnsafeArgumentPackPointer(__ptr_useDeflate, __ptr_bufferSize) { __accessPtr in
@@ -43,7 +43,7 @@ open class StreamPeerGZIP: StreamPeer {
         useDeflate: Bool = false,
         bufferSize: Int32 = 65535
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         useDeflate.withGodotUnsafeRawPointer { __ptr_useDeflate in
         bufferSize.withGodotUnsafeRawPointer { __ptr_bufferSize in
         withUnsafeArgumentPackPointer(__ptr_useDeflate, __ptr_bufferSize) { __accessPtr in
@@ -65,7 +65,7 @@ open class StreamPeerGZIP: StreamPeer {
     }()
 
     public func finish() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_finish,

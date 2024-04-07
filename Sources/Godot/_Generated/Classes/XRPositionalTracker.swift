@@ -44,7 +44,7 @@ open class XRPositionalTracker: RefCounted {
     public lazy var poseChangedSignal: Godot.SignalEmitter<PoseChangedSignalInput> = {
         .init(object: self, signalName: "pose_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PoseChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(pose: Godot.XRPose?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(pose: Godot.XRPose?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PoseChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -52,7 +52,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PoseChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -81,7 +81,7 @@ open class XRPositionalTracker: RefCounted {
     public lazy var poseLostTrackingSignal: Godot.SignalEmitter<PoseLostTrackingSignalInput> = {
         .init(object: self, signalName: "pose_lost_tracking") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PoseLostTrackingSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(pose: Godot.XRPose?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(pose: Godot.XRPose?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PoseLostTrackingSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -89,7 +89,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PoseLostTrackingSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -118,7 +118,7 @@ open class XRPositionalTracker: RefCounted {
     public lazy var buttonPressedSignal: Godot.SignalEmitter<ButtonPressedSignalInput> = {
         .init(object: self, signalName: "button_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonPressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ButtonPressedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -126,7 +126,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ButtonPressedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -155,7 +155,7 @@ open class XRPositionalTracker: RefCounted {
     public lazy var buttonReleasedSignal: Godot.SignalEmitter<ButtonReleasedSignalInput> = {
         .init(object: self, signalName: "button_released") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonReleasedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ButtonReleasedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -163,7 +163,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ButtonReleasedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -198,8 +198,8 @@ open class XRPositionalTracker: RefCounted {
     public lazy var inputFloatChangedSignal: Godot.SignalEmitter<InputFloatChangedSignalInput> = {
         .init(object: self, signalName: "input_float_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputFloatChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    value: Double.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    value: Double.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InputFloatChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -207,7 +207,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<InputFloatChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -242,8 +242,8 @@ open class XRPositionalTracker: RefCounted {
     public lazy var inputVector2ChangedSignal: Godot.SignalEmitter<InputVector2ChangedSignalInput> = {
         .init(object: self, signalName: "input_vector2_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputVector2ChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    vector: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    vector: Godot.Vector2.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InputVector2ChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -251,7 +251,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<InputVector2ChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -280,7 +280,7 @@ open class XRPositionalTracker: RefCounted {
     public lazy var profileChangedSignal: Godot.SignalEmitter<ProfileChangedSignalInput> = {
         .init(object: self, signalName: "profile_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ProfileChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(role: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(role: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ProfileChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -288,7 +288,7 @@ open class XRPositionalTracker: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ProfileChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -301,7 +301,7 @@ open class XRPositionalTracker: RefCounted {
     }()
 
     private func __getTrackerType() -> Godot.XRServer.TrackerType {
-        Godot.XRServer.TrackerType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRServer.TrackerType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker_type,
@@ -342,7 +342,7 @@ open class XRPositionalTracker: RefCounted {
     }()
 
     private func __getTrackerName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker_name,
@@ -383,7 +383,7 @@ open class XRPositionalTracker: RefCounted {
     }()
 
     private func __getTrackerDesc() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker_desc,
@@ -424,7 +424,7 @@ open class XRPositionalTracker: RefCounted {
     }()
 
     private func __getTrackerProfile() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker_profile,
@@ -465,7 +465,7 @@ open class XRPositionalTracker: RefCounted {
     }()
 
     private func __getTrackerHand() -> Godot.XRPositionalTracker.TrackerHand {
-        Godot.XRPositionalTracker.TrackerHand.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRPositionalTracker.TrackerHand.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracker_hand,
@@ -508,7 +508,7 @@ open class XRPositionalTracker: RefCounted {
     public func hasPose(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +531,7 @@ open class XRPositionalTracker: RefCounted {
     public func pose(
         name: Godot.GodotStringName
     ) -> Godot.XRPose? {
-        Godot.XRPose?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRPose?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -606,7 +606,7 @@ open class XRPositionalTracker: RefCounted {
     public func input(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -626,7 +626,7 @@ open class XRPositionalTracker: RefCounted {
         }
     }()
 
-    public func setInput<Value: VariantStorableIn>(
+    public func setInput<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value
     ) {

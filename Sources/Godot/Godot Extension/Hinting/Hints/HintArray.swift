@@ -1,5 +1,5 @@
 
-extension Hint where Value : Collection, Value.Element : ExportableValue {
+extension Hint where Value : Collection, Value.Element : Exportable {
     public static func elements(
         _ elementHint: Hint<Value.Element.HintingValue>
     ) -> Hint {

@@ -37,7 +37,7 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
     }()
 
     private func __getExpression() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_expression,

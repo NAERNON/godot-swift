@@ -37,7 +37,7 @@ open class VisualShaderNodeVec4Constant: VisualShaderNodeConstant {
     }()
 
     private func __getConstant() -> Godot.Quaternion {
-        Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Quaternion.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant,

@@ -37,7 +37,7 @@ open class InputEventJoypadButton: InputEvent {
     }()
 
     private func __getButtonIndex() -> Godot.JoyButton {
-        Godot.JoyButton.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.JoyButton.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_button_index,
@@ -78,7 +78,7 @@ open class InputEventJoypadButton: InputEvent {
     }()
 
     private func __getPressure() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pressure,

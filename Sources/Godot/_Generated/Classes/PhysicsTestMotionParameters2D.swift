@@ -15,7 +15,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __getFrom() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_from,
@@ -56,7 +56,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __getMotion() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_motion,
@@ -97,7 +97,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __getMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_margin,
@@ -138,7 +138,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __isCollideSeparationRayEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_collide_separation_ray_enabled,
@@ -179,7 +179,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __getExcludeBodies() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_exclude_bodies,
@@ -220,7 +220,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __getExcludeObjects() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_exclude_objects,
@@ -261,7 +261,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
     }()
 
     private func __isRecoveryAsCollisionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_recovery_as_collision_enabled,

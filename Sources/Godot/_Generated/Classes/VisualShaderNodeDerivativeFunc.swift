@@ -84,7 +84,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     }()
 
     private func __getOpType() -> Godot.VisualShaderNodeDerivativeFunc.OpType {
-        Godot.VisualShaderNodeDerivativeFunc.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeDerivativeFunc.OpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,
@@ -125,7 +125,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeDerivativeFunc.Function {
-        Godot.VisualShaderNodeDerivativeFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeDerivativeFunc.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,
@@ -166,7 +166,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     }()
 
     private func __getPrecision() -> Godot.VisualShaderNodeDerivativeFunc.Precision {
-        Godot.VisualShaderNodeDerivativeFunc.Precision.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeDerivativeFunc.Precision.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_precision,

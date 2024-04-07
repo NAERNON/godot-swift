@@ -37,7 +37,7 @@ open class OpenXRInteractionProfile: Resource {
     }()
 
     private func __getInteractionProfilePath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_interaction_profile_path,
@@ -56,7 +56,7 @@ open class OpenXRInteractionProfile: Resource {
     }()
 
     public func bindingCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_binding_count,
@@ -77,7 +77,7 @@ open class OpenXRInteractionProfile: Resource {
     public func binding(
         index: Int32
     ) -> Godot.OpenXRIPBinding? {
-        Godot.OpenXRIPBinding?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRIPBinding?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -97,7 +97,7 @@ open class OpenXRInteractionProfile: Resource {
         }
     }()
 
-    private func __setBindings<Value: VariantStorable>(
+    private func __setBindings<Value: Variant.Storable>(
         _ bindings: Godot.GodotArray<Value>
     ) {
         bindings.withGodotUnsafeRawPointer { __ptr_bindings in
@@ -120,7 +120,7 @@ open class OpenXRInteractionProfile: Resource {
     }()
 
     private func __getBindings() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bindings,

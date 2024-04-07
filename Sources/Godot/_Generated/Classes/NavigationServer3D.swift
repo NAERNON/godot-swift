@@ -56,7 +56,7 @@ open class NavigationServer3D: Object {
     public lazy var mapChangedSignal: Godot.SignalEmitter<MapChangedSignalInput> = {
         .init(object: self, signalName: "map_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(map: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(map: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -64,7 +64,7 @@ open class NavigationServer3D: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -83,7 +83,7 @@ open class NavigationServer3D: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -102,7 +102,7 @@ open class NavigationServer3D: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -115,7 +115,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func maps() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_maps,
@@ -134,7 +134,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func mapCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_map_create,
@@ -179,7 +179,7 @@ open class NavigationServer3D: Object {
     public func mapIsActive(
         map: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -226,7 +226,7 @@ open class NavigationServer3D: Object {
     public func mapGetUp(
         map: Godot.RID
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,7 +273,7 @@ open class NavigationServer3D: Object {
     public func mapGetCellSize(
         map: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -320,7 +320,7 @@ open class NavigationServer3D: Object {
     public func mapGetCellHeight(
         map: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -367,7 +367,7 @@ open class NavigationServer3D: Object {
     public func mapGetUseEdgeConnections(
         map: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -414,7 +414,7 @@ open class NavigationServer3D: Object {
     public func mapGetEdgeConnectionMargin(
         map: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -461,7 +461,7 @@ open class NavigationServer3D: Object {
     public func mapGetLinkConnectionRadius(
         map: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -488,7 +488,7 @@ open class NavigationServer3D: Object {
         optimize: Bool,
         navigationLayers: UInt32 = 1
     ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         origin.withGodotUnsafeRawPointer { __ptr_origin in
         destination.withGodotUnsafeRawPointer { __ptr_destination in
@@ -518,7 +518,7 @@ open class NavigationServer3D: Object {
         end: Godot.Vector3,
         useCollision: Bool = false
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         start.withGodotUnsafeRawPointer { __ptr_start in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -545,7 +545,7 @@ open class NavigationServer3D: Object {
         map: Godot.RID,
         toPoint point: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_point) { __accessPtr in
@@ -570,7 +570,7 @@ open class NavigationServer3D: Object {
         map: Godot.RID,
         toPoint point: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_point) { __accessPtr in
@@ -595,7 +595,7 @@ open class NavigationServer3D: Object {
         map: Godot.RID,
         toPoint point: Godot.Vector3
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_map, __ptr_point) { __accessPtr in
@@ -619,7 +619,7 @@ open class NavigationServer3D: Object {
     public func mapGetLinks(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +642,7 @@ open class NavigationServer3D: Object {
     public func mapGetRegions(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -665,7 +665,7 @@ open class NavigationServer3D: Object {
     public func mapGetAgents(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -688,7 +688,7 @@ open class NavigationServer3D: Object {
     public func mapGetObstacles(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -757,7 +757,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func regionCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_region_create,
@@ -802,7 +802,7 @@ open class NavigationServer3D: Object {
     public func regionGetEnabled(
         region: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -849,7 +849,7 @@ open class NavigationServer3D: Object {
     public func regionGetUseEdgeConnections(
         region: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -896,7 +896,7 @@ open class NavigationServer3D: Object {
     public func regionGetEnterCost(
         region: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -943,7 +943,7 @@ open class NavigationServer3D: Object {
     public func regionGetTravelCost(
         region: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -990,7 +990,7 @@ open class NavigationServer3D: Object {
     public func regionGetOwnerID(
         region: Godot.RID
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1014,7 +1014,7 @@ open class NavigationServer3D: Object {
         region: Godot.RID,
         point: Godot.Vector3
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_point) { __accessPtr in
@@ -1062,7 +1062,7 @@ open class NavigationServer3D: Object {
     public func regionGetMap(
         region: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1109,7 +1109,7 @@ open class NavigationServer3D: Object {
     public func regionGetNavigationLayers(
         region: Godot.RID
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1207,7 +1207,7 @@ open class NavigationServer3D: Object {
     public func regionGetConnectionsCount(
         region: Godot.RID
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1231,7 +1231,7 @@ open class NavigationServer3D: Object {
         region: Godot.RID,
         connection: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         connection.withGodotUnsafeRawPointer { __ptr_connection in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_connection) { __accessPtr in
@@ -1256,7 +1256,7 @@ open class NavigationServer3D: Object {
         region: Godot.RID,
         connection: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         region.withGodotUnsafeRawPointer { __ptr_region in
         connection.withGodotUnsafeRawPointer { __ptr_connection in
         withUnsafeArgumentPackPointer(__ptr_region, __ptr_connection) { __accessPtr in
@@ -1278,7 +1278,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func linkCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_link_create,
@@ -1323,7 +1323,7 @@ open class NavigationServer3D: Object {
     public func linkGetMap(
         link: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1370,7 +1370,7 @@ open class NavigationServer3D: Object {
     public func linkGetEnabled(
         link: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1417,7 +1417,7 @@ open class NavigationServer3D: Object {
     public func linkIsBidirectional(
         link: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1464,7 +1464,7 @@ open class NavigationServer3D: Object {
     public func linkGetNavigationLayers(
         link: Godot.RID
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1511,7 +1511,7 @@ open class NavigationServer3D: Object {
     public func linkGetStartPosition(
         link: Godot.RID
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1558,7 +1558,7 @@ open class NavigationServer3D: Object {
     public func linkGetEndPosition(
         link: Godot.RID
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1605,7 +1605,7 @@ open class NavigationServer3D: Object {
     public func linkGetEnterCost(
         link: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1652,7 +1652,7 @@ open class NavigationServer3D: Object {
     public func linkGetTravelCost(
         link: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1699,7 +1699,7 @@ open class NavigationServer3D: Object {
     public func linkGetOwnerID(
         link: Godot.RID
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         link.withGodotUnsafeRawPointer { __ptr_link in
         withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1720,7 +1720,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func agentCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_agent_create,
@@ -1765,7 +1765,7 @@ open class NavigationServer3D: Object {
     public func agentGetAvoidanceEnabled(
         agent: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1812,7 +1812,7 @@ open class NavigationServer3D: Object {
     public func agentGetUse3DAvoidance(
         agent: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1859,7 +1859,7 @@ open class NavigationServer3D: Object {
     public func agentGetMap(
         agent: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1906,7 +1906,7 @@ open class NavigationServer3D: Object {
     public func agentGetPaused(
         agent: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2169,7 +2169,7 @@ open class NavigationServer3D: Object {
     public func agentIsMapChanged(
         agent: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         agent.withGodotUnsafeRawPointer { __ptr_agent in
         withUnsafeArgumentPackPointer(__ptr_agent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2286,7 +2286,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func obstacleCreate() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_obstacle_create,
@@ -2331,7 +2331,7 @@ open class NavigationServer3D: Object {
     public func obstacleGetAvoidanceEnabled(
         obstacle: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2378,7 +2378,7 @@ open class NavigationServer3D: Object {
     public func obstacleGetUse3DAvoidance(
         obstacle: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2425,7 +2425,7 @@ open class NavigationServer3D: Object {
     public func obstacleGetMap(
         obstacle: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2472,7 +2472,7 @@ open class NavigationServer3D: Object {
     public func obstacleGetPaused(
         obstacle: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         obstacle.withGodotUnsafeRawPointer { __ptr_obstacle in
         withUnsafeArgumentPackPointer(__ptr_obstacle) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2790,7 +2790,7 @@ open class NavigationServer3D: Object {
     }()
 
     public func debugEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_enabled,
@@ -2811,7 +2811,7 @@ open class NavigationServer3D: Object {
     public func processInfo(
         _ processInfo: Godot.NavigationServer3D.ProcessInfo
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         processInfo.withGodotUnsafeRawPointer { __ptr_processInfo in
         withUnsafeArgumentPackPointer(__ptr_processInfo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

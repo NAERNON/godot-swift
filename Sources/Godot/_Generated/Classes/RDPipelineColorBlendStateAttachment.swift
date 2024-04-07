@@ -55,7 +55,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getEnableBlend() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_blend,
@@ -96,7 +96,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getSrcColorBlendFactor() -> Godot.RenderingDevice.BlendFactor {
-        Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendFactor.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_src_color_blend_factor,
@@ -137,7 +137,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getDstColorBlendFactor() -> Godot.RenderingDevice.BlendFactor {
-        Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendFactor.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dst_color_blend_factor,
@@ -178,7 +178,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getColorBlendOp() -> Godot.RenderingDevice.BlendOperation {
-        Godot.RenderingDevice.BlendOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_blend_op,
@@ -219,7 +219,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getSrcAlphaBlendFactor() -> Godot.RenderingDevice.BlendFactor {
-        Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendFactor.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_src_alpha_blend_factor,
@@ -260,7 +260,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getDstAlphaBlendFactor() -> Godot.RenderingDevice.BlendFactor {
-        Godot.RenderingDevice.BlendFactor.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendFactor.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dst_alpha_blend_factor,
@@ -301,7 +301,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getAlphaBlendOp() -> Godot.RenderingDevice.BlendOperation {
-        Godot.RenderingDevice.BlendOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.BlendOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_blend_op,
@@ -342,7 +342,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getWriteR() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_write_r,
@@ -383,7 +383,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getWriteG() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_write_g,
@@ -424,7 +424,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getWriteB() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_write_b,
@@ -465,7 +465,7 @@ open class RDPipelineColorBlendStateAttachment: RefCounted {
     }()
 
     private func __getWriteA() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_write_a,

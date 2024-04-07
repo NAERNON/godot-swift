@@ -22,7 +22,7 @@ open class ThemeDB: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -35,7 +35,7 @@ open class ThemeDB: Object {
     }()
 
     public func defaultTheme() -> Godot.Theme? {
-        Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Theme?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_theme,
@@ -54,7 +54,7 @@ open class ThemeDB: Object {
     }()
 
     public func projectTheme() -> Godot.Theme? {
-        Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Theme?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_project_theme,
@@ -95,7 +95,7 @@ open class ThemeDB: Object {
     }()
 
     private func __getFallbackBaseScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_base_scale,
@@ -137,7 +137,7 @@ open class ThemeDB: Object {
     }()
 
     private func __getFallbackFont() -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_font,
@@ -178,7 +178,7 @@ open class ThemeDB: Object {
     }()
 
     private func __getFallbackFontSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_font_size,
@@ -220,7 +220,7 @@ open class ThemeDB: Object {
     }()
 
     private func __getFallbackIcon() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_icon,
@@ -262,7 +262,7 @@ open class ThemeDB: Object {
     }()
 
     private func __getFallbackStylebox() -> Godot.StyleBox? {
-        Godot.StyleBox?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StyleBox?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_stylebox,

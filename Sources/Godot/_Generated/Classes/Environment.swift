@@ -131,7 +131,7 @@ open class Environment: Resource {
     }()
 
     private func __getBackground() -> Godot.Environment.BGMode {
-        Godot.Environment.BGMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.BGMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_background,
@@ -173,7 +173,7 @@ open class Environment: Resource {
     }()
 
     private func __getSky() -> Godot.Sky? {
-        Godot.Sky?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Sky?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sky,
@@ -214,7 +214,7 @@ open class Environment: Resource {
     }()
 
     private func __getSkyCustomFov() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sky_custom_fov,
@@ -255,7 +255,7 @@ open class Environment: Resource {
     }()
 
     private func __getSkyRotation() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sky_rotation,
@@ -296,7 +296,7 @@ open class Environment: Resource {
     }()
 
     private func __getBgColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bg_color,
@@ -337,7 +337,7 @@ open class Environment: Resource {
     }()
 
     private func __getBgEnergyMultiplier() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bg_energy_multiplier,
@@ -378,7 +378,7 @@ open class Environment: Resource {
     }()
 
     private func __getBgIntensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bg_intensity,
@@ -419,7 +419,7 @@ open class Environment: Resource {
     }()
 
     private func __getCanvasMaxLayer() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_canvas_max_layer,
@@ -460,7 +460,7 @@ open class Environment: Resource {
     }()
 
     private func __getCameraFeedID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_feed_id,
@@ -501,7 +501,7 @@ open class Environment: Resource {
     }()
 
     private func __getAmbientLightColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ambient_light_color,
@@ -542,7 +542,7 @@ open class Environment: Resource {
     }()
 
     private func __getAmbientSource() -> Godot.Environment.AmbientSource {
-        Godot.Environment.AmbientSource.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.AmbientSource.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ambient_source,
@@ -583,7 +583,7 @@ open class Environment: Resource {
     }()
 
     private func __getAmbientLightEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ambient_light_energy,
@@ -624,7 +624,7 @@ open class Environment: Resource {
     }()
 
     private func __getAmbientLightSkyContribution() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ambient_light_sky_contribution,
@@ -665,7 +665,7 @@ open class Environment: Resource {
     }()
 
     private func __getReflectionSource() -> Godot.Environment.ReflectionSource {
-        Godot.Environment.ReflectionSource.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.ReflectionSource.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_reflection_source,
@@ -706,7 +706,7 @@ open class Environment: Resource {
     }()
 
     private func __getTonemapper() -> Godot.Environment.ToneMapper {
-        Godot.Environment.ToneMapper.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.ToneMapper.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tonemapper,
@@ -747,7 +747,7 @@ open class Environment: Resource {
     }()
 
     private func __getTonemapExposure() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tonemap_exposure,
@@ -788,7 +788,7 @@ open class Environment: Resource {
     }()
 
     private func __getTonemapWhite() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tonemap_white,
@@ -829,7 +829,7 @@ open class Environment: Resource {
     }()
 
     private func __isSsrEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ssr_enabled,
@@ -870,7 +870,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsrMaxSteps() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssr_max_steps,
@@ -911,7 +911,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsrFadeIn() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssr_fade_in,
@@ -952,7 +952,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsrFadeOut() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssr_fade_out,
@@ -993,7 +993,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsrDepthTolerance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssr_depth_tolerance,
@@ -1034,7 +1034,7 @@ open class Environment: Resource {
     }()
 
     private func __isSsaoEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ssao_enabled,
@@ -1075,7 +1075,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_radius,
@@ -1116,7 +1116,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoIntensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_intensity,
@@ -1157,7 +1157,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoPower() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_power,
@@ -1198,7 +1198,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoDetail() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_detail,
@@ -1239,7 +1239,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoHorizon() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_horizon,
@@ -1280,7 +1280,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoSharpness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_sharpness,
@@ -1321,7 +1321,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoDirectLightAffect() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_direct_light_affect,
@@ -1362,7 +1362,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsaoAoChannelAffect() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssao_ao_channel_affect,
@@ -1403,7 +1403,7 @@ open class Environment: Resource {
     }()
 
     private func __isSsilEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ssil_enabled,
@@ -1444,7 +1444,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsilRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssil_radius,
@@ -1485,7 +1485,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsilIntensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssil_intensity,
@@ -1526,7 +1526,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsilSharpness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssil_sharpness,
@@ -1567,7 +1567,7 @@ open class Environment: Resource {
     }()
 
     private func __getSsilNormalRejection() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ssil_normal_rejection,
@@ -1608,7 +1608,7 @@ open class Environment: Resource {
     }()
 
     private func __isSdfgiEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sdfgi_enabled,
@@ -1649,7 +1649,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiCascades() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_cascades,
@@ -1690,7 +1690,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiMinCellSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_min_cell_size,
@@ -1731,7 +1731,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiMaxDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_max_distance,
@@ -1772,7 +1772,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiCascade0Distance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_cascade0_distance,
@@ -1813,7 +1813,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiYScale() -> Godot.Environment.SDFGIYScale {
-        Godot.Environment.SDFGIYScale.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.SDFGIYScale.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_y_scale,
@@ -1854,7 +1854,7 @@ open class Environment: Resource {
     }()
 
     private func __isSdfgiUsingOcclusion() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sdfgi_using_occlusion,
@@ -1895,7 +1895,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiBounceFeedback() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_bounce_feedback,
@@ -1936,7 +1936,7 @@ open class Environment: Resource {
     }()
 
     private func __isSdfgiReadingSkyLight() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sdfgi_reading_sky_light,
@@ -1977,7 +1977,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_energy,
@@ -2018,7 +2018,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiNormalBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_normal_bias,
@@ -2059,7 +2059,7 @@ open class Environment: Resource {
     }()
 
     private func __getSdfgiProbeBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdfgi_probe_bias,
@@ -2100,7 +2100,7 @@ open class Environment: Resource {
     }()
 
     private func __isGlowEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_glow_enabled,
@@ -2145,7 +2145,7 @@ open class Environment: Resource {
     public func glowLevel(
         idx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2188,7 +2188,7 @@ open class Environment: Resource {
     }()
 
     private func __isGlowNormalized() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_glow_normalized,
@@ -2229,7 +2229,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowIntensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_intensity,
@@ -2270,7 +2270,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_strength,
@@ -2311,7 +2311,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowMix() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_mix,
@@ -2352,7 +2352,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowBloom() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_bloom,
@@ -2393,7 +2393,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowBlendMode() -> Godot.Environment.GlowBlendMode {
-        Godot.Environment.GlowBlendMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment.GlowBlendMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_blend_mode,
@@ -2434,7 +2434,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowHdrBleedThreshold() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_hdr_bleed_threshold,
@@ -2475,7 +2475,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowHdrBleedScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_hdr_bleed_scale,
@@ -2516,7 +2516,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowHdrLuminanceCap() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_hdr_luminance_cap,
@@ -2557,7 +2557,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowMapStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_map_strength,
@@ -2599,7 +2599,7 @@ open class Environment: Resource {
     }()
 
     private func __getGlowMap() -> Godot.Texture? {
-        Godot.Texture?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_glow_map,
@@ -2640,7 +2640,7 @@ open class Environment: Resource {
     }()
 
     private func __isFogEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_fog_enabled,
@@ -2681,7 +2681,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogLightColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_light_color,
@@ -2722,7 +2722,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogLightEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_light_energy,
@@ -2763,7 +2763,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogSunScatter() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_sun_scatter,
@@ -2804,7 +2804,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogDensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_density,
@@ -2845,7 +2845,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_height,
@@ -2886,7 +2886,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogHeightDensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_height_density,
@@ -2927,7 +2927,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogAerialPerspective() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_aerial_perspective,
@@ -2968,7 +2968,7 @@ open class Environment: Resource {
     }()
 
     private func __getFogSkyAffect() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fog_sky_affect,
@@ -3009,7 +3009,7 @@ open class Environment: Resource {
     }()
 
     private func __isVolumetricFogEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_volumetric_fog_enabled,
@@ -3050,7 +3050,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogEmission() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_emission,
@@ -3091,7 +3091,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogAlbedo() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_albedo,
@@ -3132,7 +3132,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogDensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_density,
@@ -3173,7 +3173,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogEmissionEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_emission_energy,
@@ -3214,7 +3214,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogAnisotropy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_anisotropy,
@@ -3255,7 +3255,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_length,
@@ -3296,7 +3296,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogDetailSpread() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_detail_spread,
@@ -3337,7 +3337,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogGiInject() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_gi_inject,
@@ -3378,7 +3378,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogAmbientInject() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_ambient_inject,
@@ -3419,7 +3419,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogSkyAffect() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_sky_affect,
@@ -3460,7 +3460,7 @@ open class Environment: Resource {
     }()
 
     private func __isVolumetricFogTemporalReprojectionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_volumetric_fog_temporal_reprojection_enabled,
@@ -3501,7 +3501,7 @@ open class Environment: Resource {
     }()
 
     private func __getVolumetricFogTemporalReprojectionAmount() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_volumetric_fog_temporal_reprojection_amount,
@@ -3542,7 +3542,7 @@ open class Environment: Resource {
     }()
 
     private func __isAdjustmentEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_adjustment_enabled,
@@ -3583,7 +3583,7 @@ open class Environment: Resource {
     }()
 
     private func __getAdjustmentBrightness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_adjustment_brightness,
@@ -3624,7 +3624,7 @@ open class Environment: Resource {
     }()
 
     private func __getAdjustmentContrast() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_adjustment_contrast,
@@ -3665,7 +3665,7 @@ open class Environment: Resource {
     }()
 
     private func __getAdjustmentSaturation() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_adjustment_saturation,
@@ -3707,7 +3707,7 @@ open class Environment: Resource {
     }()
 
     private func __getAdjustmentColorCorrection() -> Godot.Texture? {
-        Godot.Texture?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_adjustment_color_correction,

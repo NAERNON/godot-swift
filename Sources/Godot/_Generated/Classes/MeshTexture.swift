@@ -38,7 +38,7 @@ open class MeshTexture: Texture2D {
     }()
 
     private func __getMesh() -> Godot.Mesh? {
-        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Mesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh,
@@ -79,7 +79,7 @@ open class MeshTexture: Texture2D {
     }()
 
     private func __getImageSize() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_image_size,
@@ -121,7 +121,7 @@ open class MeshTexture: Texture2D {
     }()
 
     private func __getBaseTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_texture,

@@ -37,7 +37,7 @@ open class CSGBox3D: CSGPrimitive3D {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -79,7 +79,7 @@ open class CSGBox3D: CSGPrimitive3D {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,

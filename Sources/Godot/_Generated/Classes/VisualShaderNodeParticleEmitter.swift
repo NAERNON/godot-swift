@@ -37,7 +37,7 @@ open class VisualShaderNodeParticleEmitter: VisualShaderNode {
     }()
 
     private func __isMode2D() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_mode_2d,

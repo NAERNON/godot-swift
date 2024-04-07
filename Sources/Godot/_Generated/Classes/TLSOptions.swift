@@ -18,7 +18,7 @@ open class TLSOptions: RefCounted {
         trustedChain: Godot.X509Certificate? = nil,
         commonNameOverride: Godot.GodotString = ""
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
         withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
         commonNameOverride.withGodotUnsafeRawPointer { __ptr_commonNameOverride in
@@ -42,7 +42,7 @@ open class TLSOptions: RefCounted {
     static public func clientUnsafe(
         trustedChain: Godot.X509Certificate? = nil
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
         withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
         withUnsafeArgumentPackPointer(_ptr___ptr_trustedChain) { __accessPtr in
@@ -66,7 +66,7 @@ open class TLSOptions: RefCounted {
         key: Godot.CryptoKey?,
         certificate: Godot.X509Certificate?
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
         certificate.withGodotUnsafeRawPointer { __ptr_certificate in

@@ -14,7 +14,7 @@ open class ConfigFile: RefCounted {
         }
     }()
 
-    public func setValue<Value: VariantStorableIn>(
+    public func setValue<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
         value: Value
@@ -40,12 +40,12 @@ open class ConfigFile: RefCounted {
         }
     }()
 
-    public func value<Value: VariantStorableIn>(
+    public func value<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
         `default`: Value = Variant()
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { __ptr_default in
@@ -70,7 +70,7 @@ open class ConfigFile: RefCounted {
     public func hasSection(
         _ section: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,7 +94,7 @@ open class ConfigFile: RefCounted {
         section: Godot.GodotString,
         key: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_section, __ptr_key) { __accessPtr in
@@ -116,7 +116,7 @@ open class ConfigFile: RefCounted {
     }()
 
     public func sections() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sections,
@@ -137,7 +137,7 @@ open class ConfigFile: RefCounted {
     public func sectionKeys(
         section: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -206,7 +206,7 @@ open class ConfigFile: RefCounted {
     public func load(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -229,7 +229,7 @@ open class ConfigFile: RefCounted {
     public func parse(
         data: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -252,7 +252,7 @@ open class ConfigFile: RefCounted {
     public func save(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -273,7 +273,7 @@ open class ConfigFile: RefCounted {
     }()
 
     public func encodeToText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_encode_to_text,
@@ -295,7 +295,7 @@ open class ConfigFile: RefCounted {
         path: Godot.GodotString,
         key: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_key) { __accessPtr in
@@ -320,7 +320,7 @@ open class ConfigFile: RefCounted {
         path: Godot.GodotString,
         password: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         password.withGodotUnsafeRawPointer { __ptr_password in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_password) { __accessPtr in
@@ -345,7 +345,7 @@ open class ConfigFile: RefCounted {
         path: Godot.GodotString,
         key: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_key) { __accessPtr in
@@ -370,7 +370,7 @@ open class ConfigFile: RefCounted {
         path: Godot.GodotString,
         password: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         password.withGodotUnsafeRawPointer { __ptr_password in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_password) { __accessPtr in

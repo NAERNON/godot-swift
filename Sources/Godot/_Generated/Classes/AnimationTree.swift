@@ -34,7 +34,7 @@ open class AnimationTree: AnimationMixer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class AnimationTree: AnimationMixer {
     }()
 
     private func __getTreeRoot() -> Godot.AnimationRootNode? {
-        Godot.AnimationRootNode?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationRootNode?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tree_root,
@@ -111,7 +111,7 @@ open class AnimationTree: AnimationMixer {
     }()
 
     private func __getAdvanceExpressionBaseNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_advance_expression_base_node,
@@ -152,7 +152,7 @@ open class AnimationTree: AnimationMixer {
     }()
 
     private func __getAnimationPlayer() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animation_player,
@@ -193,7 +193,7 @@ open class AnimationTree: AnimationMixer {
     }()
 
     public func processCallback() -> Godot.AnimationTree.AnimationProcessCallback {
-        Godot.AnimationTree.AnimationProcessCallback.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationTree.AnimationProcessCallback.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_callback,

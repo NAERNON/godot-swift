@@ -34,7 +34,7 @@ open class Node3D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -79,7 +79,7 @@ open class Node3D: Node {
     }()
 
     private func __getTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transform,
@@ -120,7 +120,7 @@ open class Node3D: Node {
     }()
 
     private func __getPosition() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position,
@@ -161,7 +161,7 @@ open class Node3D: Node {
     }()
 
     private func __getRotation() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation,
@@ -202,7 +202,7 @@ open class Node3D: Node {
     }()
 
     private func __getRotationDegrees() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation_degrees,
@@ -243,7 +243,7 @@ open class Node3D: Node {
     }()
 
     private func __getRotationOrder() -> Godot.EulerOrder {
-        Godot.EulerOrder.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EulerOrder.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation_order,
@@ -284,7 +284,7 @@ open class Node3D: Node {
     }()
 
     private func __getRotationEditMode() -> Godot.Node3D.RotationEditMode {
-        Godot.Node3D.RotationEditMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node3D.RotationEditMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation_edit_mode,
@@ -325,7 +325,7 @@ open class Node3D: Node {
     }()
 
     private func __getScale() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scale,
@@ -366,7 +366,7 @@ open class Node3D: Node {
     }()
 
     private func __getQuaternion() -> Godot.Quaternion {
-        Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Quaternion.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_quaternion,
@@ -407,7 +407,7 @@ open class Node3D: Node {
     }()
 
     private func __getBasis() -> Godot.Basis {
-        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Basis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_basis,
@@ -448,7 +448,7 @@ open class Node3D: Node {
     }()
 
     private func __getGlobalTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_transform,
@@ -489,7 +489,7 @@ open class Node3D: Node {
     }()
 
     private func __getGlobalPosition() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_position,
@@ -530,7 +530,7 @@ open class Node3D: Node {
     }()
 
     private func __getGlobalBasis() -> Godot.Basis {
-        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Basis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_basis,
@@ -571,7 +571,7 @@ open class Node3D: Node {
     }()
 
     private func __getGlobalRotation() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_rotation,
@@ -612,7 +612,7 @@ open class Node3D: Node {
     }()
 
     private func __getGlobalRotationDegrees() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_rotation_degrees,
@@ -631,7 +631,7 @@ open class Node3D: Node {
     }()
 
     public func parentNode3D() -> Godot.Node3D? {
-        Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parent_node_3d,
@@ -694,7 +694,7 @@ open class Node3D: Node {
     }()
 
     private func __isSetAsTopLevel() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_set_as_top_level,
@@ -735,7 +735,7 @@ open class Node3D: Node {
     }()
 
     public func isScaleDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_scale_disabled,
@@ -754,7 +754,7 @@ open class Node3D: Node {
     }()
 
     public func world3D() -> Godot.World3D? {
-        Godot.World3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.World3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_world_3d,
@@ -813,7 +813,7 @@ open class Node3D: Node {
     }()
 
     private func __getVisibilityParent() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visibility_parent,
@@ -873,7 +873,7 @@ open class Node3D: Node {
     }()
 
     public func gizmos() -> Godot.GodotArray<Godot.Node3DGizmo?> {
-        Godot.GodotArray<Godot.Node3DGizmo?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node3DGizmo?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gizmos,
@@ -977,7 +977,7 @@ open class Node3D: Node {
     }()
 
     private func __isVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_visible,
@@ -996,7 +996,7 @@ open class Node3D: Node {
     }()
 
     public func isVisibleInTree() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_visible_in_tree,
@@ -1073,7 +1073,7 @@ open class Node3D: Node {
     }()
 
     public func isLocalTransformNotificationEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_local_transform_notification_enabled,
@@ -1114,7 +1114,7 @@ open class Node3D: Node {
     }()
 
     public func isTransformNotificationEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_transform_notification_enabled,
@@ -1473,7 +1473,7 @@ open class Node3D: Node {
     public func toLocal(
         globalPoint: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         globalPoint.withGodotUnsafeRawPointer { __ptr_globalPoint in
         withUnsafeArgumentPackPointer(__ptr_globalPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1496,7 +1496,7 @@ open class Node3D: Node {
     public func toGlobal(
         localPoint: Godot.Vector3
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localPoint.withGodotUnsafeRawPointer { __ptr_localPoint in
         withUnsafeArgumentPackPointer(__ptr_localPoint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -22,7 +22,7 @@ open class ProjectSettings: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -37,7 +37,7 @@ open class ProjectSettings: Object {
     public func hasSetting(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -57,7 +57,7 @@ open class ProjectSettings: Object {
         }
     }()
 
-    public func setSetting<Value: VariantStorableIn>(
+    public func setSetting<Value: Variant.Storable>(
         name: Godot.GodotString,
         value: Value
     ) {
@@ -81,11 +81,11 @@ open class ProjectSettings: Object {
         }
     }()
 
-    public func setting<Value: VariantStorableIn>(
+    public func setting<Value: Variant.Storable>(
         name: Godot.GodotString,
         defaultValue: Value = Variant()
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { __ptr_defaultValue in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_defaultValue) { __accessPtr in
@@ -109,7 +109,7 @@ open class ProjectSettings: Object {
     public func settingWithOverride(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,7 +130,7 @@ open class ProjectSettings: Object {
     }()
 
     public func globalClassList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_class_list,
@@ -175,7 +175,7 @@ open class ProjectSettings: Object {
     public func order(
         name: Godot.GodotString
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -195,7 +195,7 @@ open class ProjectSettings: Object {
         }
     }()
 
-    public func setInitialValue<Value: VariantStorableIn>(
+    public func setInitialValue<Value: Variant.Storable>(
         name: Godot.GodotString,
         value: Value
     ) {
@@ -267,7 +267,7 @@ open class ProjectSettings: Object {
         }
     }()
 
-    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(
+    public func addPropertyInfo<Value1: Variant.Storable, Value2: Variant.Storable>(
         hint: Godot.GodotDictionary<Value1, Value2>
     ) {
         hint.withGodotUnsafeRawPointer { __ptr_hint in
@@ -338,7 +338,7 @@ open class ProjectSettings: Object {
     public func localizePath(
         _ path: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,7 +361,7 @@ open class ProjectSettings: Object {
     public func globalizePath(
         _ path: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +382,7 @@ open class ProjectSettings: Object {
     }()
 
     public func save() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_save,
@@ -405,7 +405,7 @@ open class ProjectSettings: Object {
         replaceFiles: Bool = true,
         offset: Int32 = 0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pack.withGodotUnsafeRawPointer { __ptr_pack in
         replaceFiles.withGodotUnsafeRawPointer { __ptr_replaceFiles in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -430,7 +430,7 @@ open class ProjectSettings: Object {
     public func saveCustom(
         file: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         file.withGodotUnsafeRawPointer { __ptr_file in
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

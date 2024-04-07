@@ -53,7 +53,7 @@ open class Translation: Resource {
     }()
 
     private func __getLocale() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_locale,
@@ -127,7 +127,7 @@ open class Translation: Resource {
         _ srcMessage: Godot.GodotStringName,
         context: Godot.GodotStringName = ""
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         context.withGodotUnsafeRawPointer { __ptr_context in
         withUnsafeArgumentPackPointer(__ptr_srcMessage, __ptr_context) { __accessPtr in
@@ -154,7 +154,7 @@ open class Translation: Resource {
         n: Int32,
         context: Godot.GodotStringName = ""
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         srcMessage.withGodotUnsafeRawPointer { __ptr_srcMessage in
         srcPluralMessage.withGodotUnsafeRawPointer { __ptr_srcPluralMessage in
         n.withGodotUnsafeRawPointer { __ptr_n in
@@ -202,7 +202,7 @@ open class Translation: Resource {
     }()
 
     public func messageList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_message_list,
@@ -221,7 +221,7 @@ open class Translation: Resource {
     }()
 
     public func translatedMessageList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_translated_message_list,
@@ -240,7 +240,7 @@ open class Translation: Resource {
     }()
 
     public func messageCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_message_count,
@@ -273,22 +273,22 @@ open class Translation: Resource {
             }
             Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPluralMessage(
-            srcMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
-            srcPluralMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!),
-            n: Int32.fromGodotUnsafePointer(args[2]!),
-            context: Godot.GodotStringName.fromGodotUnsafePointer(args[3]!)
+            srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
+            srcPluralMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!),
+            n: Int32.transferFromGodot(unsafePointer: args[2]!),
+            context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[3]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_message_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMessage(
-            srcMessage: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
-            context: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)
+            srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
+            context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getPluralMessage" : ("_get_plural_message", _get_plural_message_call),
             "_getMessage" : ("_get_message", _get_message_call)

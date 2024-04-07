@@ -17,7 +17,7 @@ open class GLTFLight: Resource {
     static public func fromNode(
         lightNode: Godot.Light3D?
     ) -> Godot.GLTFLight? {
-        Godot.GLTFLight?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFLight?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lightNode.withGodotUnsafeRawPointer { __ptr_lightNode in
         withUnsafePointer(to: __ptr_lightNode) { _ptr___ptr_lightNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_lightNode) { __accessPtr in
@@ -38,7 +38,7 @@ open class GLTFLight: Resource {
     }()
 
     public func toNode() -> Godot.Light3D? {
-        Godot.Light3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Light3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_node,
@@ -56,10 +56,10 @@ open class GLTFLight: Resource {
         }
     }()
 
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+    static public func fromDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ dictionary: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GLTFLight? {
-        Godot.GLTFLight?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFLight?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -79,7 +79,7 @@ open class GLTFLight: Resource {
     }()
 
     public func toDictionary() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_dictionary,
@@ -98,7 +98,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color,
@@ -139,7 +139,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getIntensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_intensity,
@@ -180,7 +180,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getLightType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_light_type,
@@ -221,7 +221,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getRange() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_range,
@@ -262,7 +262,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getInnerConeAngle() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inner_cone_angle,
@@ -303,7 +303,7 @@ open class GLTFLight: Resource {
     }()
 
     private func __getOuterConeAngle() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outer_cone_angle,

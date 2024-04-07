@@ -34,7 +34,7 @@ open class UndoRedo: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -95,7 +95,7 @@ open class UndoRedo: Object {
     }()
 
     public func isCommittingAction() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_committing_action,
@@ -157,7 +157,7 @@ open class UndoRedo: Object {
         }
     }()
 
-    public func addDoProperty<Value: VariantStorableIn>(
+    public func addDoProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
         value: Value
@@ -184,7 +184,7 @@ open class UndoRedo: Object {
         }
     }()
 
-    public func addUndoProperty<Value: VariantStorableIn>(
+    public func addUndoProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
         value: Value
@@ -294,7 +294,7 @@ open class UndoRedo: Object {
     }()
 
     public func historyCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_history_count,
@@ -313,7 +313,7 @@ open class UndoRedo: Object {
     }()
 
     public func currentAction() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_action,
@@ -334,7 +334,7 @@ open class UndoRedo: Object {
     public func actionName(
         id: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -377,7 +377,7 @@ open class UndoRedo: Object {
     }()
 
     public func currentActionName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_action_name,
@@ -396,7 +396,7 @@ open class UndoRedo: Object {
     }()
 
     public func hasUndo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_undo,
@@ -415,7 +415,7 @@ open class UndoRedo: Object {
     }()
 
     public func hasRedo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_redo,
@@ -434,7 +434,7 @@ open class UndoRedo: Object {
     }()
 
     public func version() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_version,
@@ -453,7 +453,7 @@ open class UndoRedo: Object {
     }()
 
     public func redo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_redo,
@@ -472,7 +472,7 @@ open class UndoRedo: Object {
     }()
 
     public func undo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_undo,

@@ -37,7 +37,7 @@ open class SystemFont: Font {
     }()
 
     private func __getAntialiasing() -> Godot.TextServer.FontAntialiasing {
-        Godot.TextServer.FontAntialiasing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.FontAntialiasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_antialiasing,
@@ -78,7 +78,7 @@ open class SystemFont: Font {
     }()
 
     private func __getGenerateMipmaps() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_generate_mipmaps,
@@ -119,7 +119,7 @@ open class SystemFont: Font {
     }()
 
     private func __isAllowSystemFallback() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_allow_system_fallback,
@@ -160,7 +160,7 @@ open class SystemFont: Font {
     }()
 
     private func __isForceAutohinter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_force_autohinter,
@@ -201,7 +201,7 @@ open class SystemFont: Font {
     }()
 
     private func __getHinting() -> Godot.TextServer.Hinting {
-        Godot.TextServer.Hinting.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Hinting.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hinting,
@@ -242,7 +242,7 @@ open class SystemFont: Font {
     }()
 
     private func __getSubpixelPositioning() -> Godot.TextServer.SubpixelPositioning {
-        Godot.TextServer.SubpixelPositioning.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.SubpixelPositioning.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_subpixel_positioning,
@@ -283,7 +283,7 @@ open class SystemFont: Font {
     }()
 
     private func __isMultichannelSignedDistanceField() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_multichannel_signed_distance_field,
@@ -324,7 +324,7 @@ open class SystemFont: Font {
     }()
 
     private func __getMsdfPixelRange() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_msdf_pixel_range,
@@ -365,7 +365,7 @@ open class SystemFont: Font {
     }()
 
     private func __getMsdfSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_msdf_size,
@@ -406,7 +406,7 @@ open class SystemFont: Font {
     }()
 
     private func __getOversampling() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_oversampling,
@@ -425,7 +425,7 @@ open class SystemFont: Font {
     }()
 
     private func __getFontNames() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_names,
@@ -466,7 +466,7 @@ open class SystemFont: Font {
     }()
 
     private func __getFontItalic() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_italic,

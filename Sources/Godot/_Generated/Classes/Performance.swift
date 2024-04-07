@@ -92,7 +92,7 @@ open class Performance: Object {
     public func monitor(
         _ monitor: Godot.Performance.Monitor
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         monitor.withGodotUnsafeRawPointer { __ptr_monitor in
         withUnsafeArgumentPackPointer(__ptr_monitor) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -112,7 +112,7 @@ open class Performance: Object {
         }
     }()
 
-    public func addCustomMonitor<Value: VariantStorable>(
+    public func addCustomMonitor<Value: Variant.Storable>(
         id: Godot.GodotStringName,
         callable: Godot.Callable,
         arguments: Godot.GodotArray<Value> = []
@@ -163,7 +163,7 @@ open class Performance: Object {
     public func hasCustomMonitor(
         id: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +186,7 @@ open class Performance: Object {
     public func customMonitor(
         id: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -207,7 +207,7 @@ open class Performance: Object {
     }()
 
     public func monitorModificationTime() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_monitor_modification_time,
@@ -226,7 +226,7 @@ open class Performance: Object {
     }()
 
     public func customMonitorNames() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_monitor_names,

@@ -43,7 +43,7 @@ open class SubViewportContainer: Container {
     }()
 
     private func __isStretchEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_stretch_enabled,
@@ -84,7 +84,7 @@ open class SubViewportContainer: Container {
     }()
 
     private func __getStretchShrink() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stretch_shrink,
@@ -128,9 +128,9 @@ open class SubViewportContainer: Container {
             }
             Unmanaged<SubViewportContainer> .fromOpaque(instancePtr).takeUnretainedValue()
         ._propagateInputEvent(
-            Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+            Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_propagateInputEvent" : ("_propagate_input_event", _propagate_input_event_call)
         ]

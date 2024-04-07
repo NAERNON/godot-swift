@@ -37,7 +37,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getEnableDepthTest() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_depth_test,
@@ -78,7 +78,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getEnableDepthWrite() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_depth_write,
@@ -119,7 +119,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getDepthCompareOperator() -> Godot.RenderingDevice.CompareOperator {
-        Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.CompareOperator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_compare_operator,
@@ -160,7 +160,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getEnableDepthRange() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_depth_range,
@@ -201,7 +201,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getDepthRangeMin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_range_min,
@@ -242,7 +242,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getDepthRangeMax() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth_range_max,
@@ -283,7 +283,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getEnableStencil() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_stencil,
@@ -324,7 +324,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpFail() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_fail,
@@ -365,7 +365,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpPass() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_pass,
@@ -406,7 +406,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_depth_fail,
@@ -447,7 +447,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpCompare() -> Godot.RenderingDevice.CompareOperator {
-        Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.CompareOperator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_compare,
@@ -488,7 +488,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpCompareMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_compare_mask,
@@ -529,7 +529,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpWriteMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_write_mask,
@@ -570,7 +570,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getFrontOpReference() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_front_op_reference,
@@ -611,7 +611,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpFail() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_fail,
@@ -652,7 +652,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpPass() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_pass,
@@ -693,7 +693,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
-        Godot.RenderingDevice.StencilOperation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.StencilOperation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_depth_fail,
@@ -734,7 +734,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpCompare() -> Godot.RenderingDevice.CompareOperator {
-        Godot.RenderingDevice.CompareOperator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.CompareOperator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_compare,
@@ -775,7 +775,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpCompareMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_compare_mask,
@@ -816,7 +816,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpWriteMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_write_mask,
@@ -857,7 +857,7 @@ open class RDPipelineDepthStencilState: RefCounted {
     }()
 
     private func __getBackOpReference() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_back_op_reference,

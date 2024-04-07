@@ -20,7 +20,7 @@ open class PhysicsBody2D: CollisionObject2D {
         safeMargin: Double = 0.08,
         recoveryAsCollision: Bool = false
     ) -> Godot.KinematicCollision2D? {
-        Godot.KinematicCollision2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.KinematicCollision2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         testOnly.withGodotUnsafeRawPointer { __ptr_testOnly in
         safeMargin.withGodotUnsafeRawPointer { __ptr_safeMargin in
@@ -50,7 +50,7 @@ open class PhysicsBody2D: CollisionObject2D {
         safeMargin: Double = 0.08,
         recoveryAsCollision: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         motion.withGodotUnsafeRawPointer { __ptr_motion in
         collision.withGodotUnsafeRawPointer { __ptr_collision in
@@ -76,7 +76,7 @@ open class PhysicsBody2D: CollisionObject2D {
     }()
 
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody2D?> {
-        Godot.GodotArray<Godot.PhysicsBody2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PhysicsBody2D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_exceptions,

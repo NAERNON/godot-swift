@@ -50,7 +50,7 @@ open class SkeletonModification2D: Resource {
     }()
 
     private func __getEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enabled,
@@ -69,7 +69,7 @@ open class SkeletonModification2D: Resource {
     }()
 
     public func modificationStack() -> Godot.SkeletonModificationStack2D? {
-        Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SkeletonModificationStack2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modification_stack,
@@ -110,7 +110,7 @@ open class SkeletonModification2D: Resource {
     }()
 
     public func isSetup() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_is_setup,
@@ -151,7 +151,7 @@ open class SkeletonModification2D: Resource {
     }()
 
     private func __getExecutionMode() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_execution_mode,
@@ -175,7 +175,7 @@ open class SkeletonModification2D: Resource {
         max: Double,
         invert: Bool
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         angle.withGodotUnsafeRawPointer { __ptr_angle in
         min.withGodotUnsafeRawPointer { __ptr_min in
         max.withGodotUnsafeRawPointer { __ptr_max in
@@ -221,7 +221,7 @@ open class SkeletonModification2D: Resource {
     }()
 
     public func editorDrawGizmo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_draw_gizmo,
@@ -265,7 +265,7 @@ open class SkeletonModification2D: Resource {
             }
             Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._execute(
-            delta: Double.fromGodotUnsafePointer(args[0]!)
+            delta: Double.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _setup_modification_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -273,7 +273,7 @@ open class SkeletonModification2D: Resource {
             }
             Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setupModification(
-            modificationStack: Godot.SkeletonModificationStack2D?.fromGodotUnsafePointer(args[0]!)
+            modificationStack: Godot.SkeletonModificationStack2D?.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _draw_editor_gizmo_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {

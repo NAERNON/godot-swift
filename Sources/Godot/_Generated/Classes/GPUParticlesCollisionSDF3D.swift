@@ -58,7 +58,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -99,7 +99,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }()
 
     private func __getResolution() -> Godot.GPUParticlesCollisionSDF3D.Resolution {
-        Godot.GPUParticlesCollisionSDF3D.Resolution.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GPUParticlesCollisionSDF3D.Resolution.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resolution,
@@ -141,7 +141,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }()
 
     private func __getTexture() -> Godot.Texture3D? {
-        Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -182,7 +182,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }()
 
     private func __getThickness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_thickness,
@@ -223,7 +223,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     }()
 
     private func __getBakeMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bake_mask,
@@ -268,7 +268,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
     public func bakeMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

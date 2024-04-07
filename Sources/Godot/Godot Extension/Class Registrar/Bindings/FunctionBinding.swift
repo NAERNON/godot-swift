@@ -138,7 +138,11 @@ extension ClassRegistrar {
             finalPointer.deallocate()
         }
         
-        func withLastDefaultArguments(_ body: (UnsafeMutablePointer<GDExtensionVariantPtr?>) -> ()) {
+        func withLastDefaultArguments(
+            _ body: (
+                UnsafeMutablePointer<GDExtensionVariantPtr?>
+            ) -> ()
+        ) {
             let arguments = lastDefaultArguments
             withLastDefaultArguments(arguments) { variantPtrs in
                 let finalPointer = UnsafeMutablePointer<GDExtensionVariantPtr?>.allocate(capacity: arguments.count)
@@ -153,15 +157,17 @@ extension ClassRegistrar {
             }
         }
         
-        private func withLastDefaultArguments(_ arguments: [Variant],
-                                              index: Int = 0,
-                                              _ body: ([GDExtensionVariantPtr]) -> Void) {
+        private func withLastDefaultArguments(
+            _ arguments: [Variant],
+            index: Int = 0,
+            _ body: ([GDExtensionVariantPtr]) -> Void
+        ) {
             guard index < arguments.count else {
                 body([])
                 return
             }
             
-            arguments[index].withGodotUnsafeMutableRawPointer { variantPtr in
+            arguments[index].storage.withUnsafeMutableRawPointer { variantPtr in
                 withLastDefaultArguments(arguments, index: index + 1) { variantPtrs in
                     body([variantPtr] + variantPtrs)
                 }

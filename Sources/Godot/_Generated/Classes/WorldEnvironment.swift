@@ -38,7 +38,7 @@ open class WorldEnvironment: Node {
     }()
 
     private func __getEnvironment() -> Godot.Environment? {
-        Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment,
@@ -80,7 +80,7 @@ open class WorldEnvironment: Node {
     }()
 
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
-        Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraAttributes?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_attributes,

@@ -17,7 +17,7 @@ open class MethodTweener: Tweener {
     public func setDelay(
         _ delay: Double
     ) -> Godot.MethodTweener? {
-        Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MethodTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -40,7 +40,7 @@ open class MethodTweener: Tweener {
     public func setTrans(
         _ trans: Godot.Tween.TransitionType
     ) -> Godot.MethodTweener? {
-        Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MethodTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trans.withGodotUnsafeRawPointer { __ptr_trans in
         withUnsafeArgumentPackPointer(__ptr_trans) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -63,7 +63,7 @@ open class MethodTweener: Tweener {
     public func setEase(
         _ ease: Godot.Tween.EaseType
     ) -> Godot.MethodTweener? {
-        Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MethodTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ease.withGodotUnsafeRawPointer { __ptr_ease in
         withUnsafeArgumentPackPointer(__ptr_ease) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

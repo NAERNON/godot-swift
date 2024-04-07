@@ -128,7 +128,7 @@ open class AudioStreamRandomizer: AudioStream {
     public func stream(
         index: Int32
     ) -> Godot.AudioStream? {
-        Godot.AudioStream?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStream?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,7 +175,7 @@ open class AudioStreamRandomizer: AudioStream {
     public func streamProbabilityWeight(
         index: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -218,7 +218,7 @@ open class AudioStreamRandomizer: AudioStream {
     }()
 
     private func __getStreamsCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_streams_count,
@@ -259,7 +259,7 @@ open class AudioStreamRandomizer: AudioStream {
     }()
 
     private func __getRandomPitch() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_random_pitch,
@@ -300,7 +300,7 @@ open class AudioStreamRandomizer: AudioStream {
     }()
 
     private func __getRandomVolumeOffsetDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_random_volume_offset_db,
@@ -341,7 +341,7 @@ open class AudioStreamRandomizer: AudioStream {
     }()
 
     private func __getPlaybackMode() -> Godot.AudioStreamRandomizer.PlaybackMode {
-        Godot.AudioStreamRandomizer.PlaybackMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamRandomizer.PlaybackMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_playback_mode,

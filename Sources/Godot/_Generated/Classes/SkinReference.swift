@@ -15,7 +15,7 @@ open class SkinReference: RefCounted {
     }()
 
     public func skeleton() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton,
@@ -34,7 +34,7 @@ open class SkinReference: RefCounted {
     }()
 
     public func skin() -> Godot.Skin? {
-        Godot.Skin?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Skin?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skin,

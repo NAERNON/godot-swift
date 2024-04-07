@@ -37,7 +37,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -78,7 +78,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getRadialSteps() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radial_steps,
@@ -119,7 +119,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSections() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sections,
@@ -160,7 +160,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSectionLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_section_length,
@@ -201,7 +201,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSectionRings() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_section_rings,
@@ -242,7 +242,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __isCapTop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_cap_top,
@@ -283,7 +283,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __isCapBottom() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_cap_bottom,
@@ -325,7 +325,7 @@ open class TubeTrailMesh: PrimitiveMesh {
     }()
 
     private func __getCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,

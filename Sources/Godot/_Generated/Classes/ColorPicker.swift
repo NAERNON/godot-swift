@@ -63,7 +63,7 @@ open class ColorPicker: VBoxContainer {
     public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
         .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(color: Godot.Color.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -71,7 +71,7 @@ open class ColorPicker: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -100,7 +100,7 @@ open class ColorPicker: VBoxContainer {
     public lazy var presetAddedSignal: Godot.SignalEmitter<PresetAddedSignalInput> = {
         .init(object: self, signalName: "preset_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(color: Godot.Color.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -108,7 +108,7 @@ open class ColorPicker: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -137,7 +137,7 @@ open class ColorPicker: VBoxContainer {
     public lazy var presetRemovedSignal: Godot.SignalEmitter<PresetRemovedSignalInput> = {
         .init(object: self, signalName: "preset_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(color: Godot.Color.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -145,7 +145,7 @@ open class ColorPicker: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -180,7 +180,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __getPickColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pick_color,
@@ -221,7 +221,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __isDeferredMode() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_deferred_mode,
@@ -262,7 +262,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __getColorMode() -> Godot.ColorPicker.ColorModeType {
-        Godot.ColorPicker.ColorModeType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ColorPicker.ColorModeType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_mode,
@@ -303,7 +303,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __isEditingAlpha() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_editing_alpha,
@@ -344,7 +344,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __areSwatchesEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_swatches_enabled,
@@ -385,7 +385,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __arePresetsVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_presets_visible,
@@ -426,7 +426,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __areModesVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_modes_visible,
@@ -467,7 +467,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __isSamplerVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sampler_visible,
@@ -508,7 +508,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __areSlidersVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_sliders_visible,
@@ -549,7 +549,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __isHexVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_hex_visible,
@@ -612,7 +612,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     public func presets() -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_presets,
@@ -675,7 +675,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     public func recentPresets() -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_recent_presets,
@@ -716,7 +716,7 @@ open class ColorPicker: VBoxContainer {
     }()
 
     private func __getPickerShape() -> Godot.ColorPicker.PickerShapeType {
-        Godot.ColorPicker.PickerShapeType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ColorPicker.PickerShapeType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_picker_shape,

@@ -41,7 +41,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     public func base() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base,
@@ -60,7 +60,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     public func instance() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_instance,
@@ -101,7 +101,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     private func __getLayerMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_layer_mask,
@@ -146,7 +146,7 @@ open class VisualInstance3D: Node3D {
     public func layerMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -189,7 +189,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     private func __getSortingOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sorting_offset,
@@ -230,7 +230,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     private func __isSortingUseAabbCenter() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sorting_use_aabb_center,
@@ -249,7 +249,7 @@ open class VisualInstance3D: Node3D {
     }()
 
     public func aabb() -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_aabb,
@@ -304,7 +304,7 @@ open class VisualInstance3D: Node3D {
             }
             Unmanaged<VisualInstance3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAabb()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getAabb" : ("_get_aabb", _get_aabb_call)
         ]

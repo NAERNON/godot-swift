@@ -38,7 +38,7 @@ open class Path2D: Node2D {
     }()
 
     private func __getCurve() -> Godot.Curve2D? {
-        Godot.Curve2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,

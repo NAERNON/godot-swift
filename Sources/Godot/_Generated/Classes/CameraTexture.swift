@@ -37,7 +37,7 @@ open class CameraTexture: Texture2D {
     }()
 
     private func __getCameraFeedID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_feed_id,
@@ -78,7 +78,7 @@ open class CameraTexture: Texture2D {
     }()
 
     private func __getWhichFeed() -> Godot.CameraServer.FeedImage {
-        Godot.CameraServer.FeedImage.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraServer.FeedImage.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_which_feed,
@@ -119,7 +119,7 @@ open class CameraTexture: Texture2D {
     }()
 
     private func __getCameraActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_active,

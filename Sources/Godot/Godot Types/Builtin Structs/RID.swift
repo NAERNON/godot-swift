@@ -7,13 +7,13 @@ extension RID {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_rid(from: self)
+        Self._makeFromRID(self)
     }
     
     // MARK: Methods & variables

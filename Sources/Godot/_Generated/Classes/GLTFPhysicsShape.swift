@@ -17,7 +17,7 @@ open class GLTFPhysicsShape: Resource {
     static public func fromNode(
         shapeNode: Godot.CollisionShape3D?
     ) -> Godot.GLTFPhysicsShape? {
-        Godot.GLTFPhysicsShape?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFPhysicsShape?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shapeNode.withGodotUnsafeRawPointer { __ptr_shapeNode in
         withUnsafePointer(to: __ptr_shapeNode) { _ptr___ptr_shapeNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_shapeNode) { __accessPtr in
@@ -40,7 +40,7 @@ open class GLTFPhysicsShape: Resource {
     public func toNode(
         cacheShapes: Bool = false
     ) -> Godot.CollisionShape3D? {
-        Godot.CollisionShape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CollisionShape3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         cacheShapes.withGodotUnsafeRawPointer { __ptr_cacheShapes in
         withUnsafeArgumentPackPointer(__ptr_cacheShapes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -60,10 +60,10 @@ open class GLTFPhysicsShape: Resource {
         }
     }()
 
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+    static public func fromDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ dictionary: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GLTFPhysicsShape? {
-        Godot.GLTFPhysicsShape?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFPhysicsShape?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -83,7 +83,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     public func toDictionary() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_dictionary,
@@ -102,7 +102,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getShapeType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape_type,
@@ -143,7 +143,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -184,7 +184,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -225,7 +225,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height,
@@ -266,7 +266,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getIsTrigger() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_is_trigger,
@@ -307,7 +307,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getMeshIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh_index,
@@ -348,7 +348,7 @@ open class GLTFPhysicsShape: Resource {
     }()
 
     private func __getImporterMesh() -> Godot.ImporterMesh? {
-        Godot.ImporterMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ImporterMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_importer_mesh,

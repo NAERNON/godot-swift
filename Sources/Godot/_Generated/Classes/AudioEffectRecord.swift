@@ -37,7 +37,7 @@ open class AudioEffectRecord: AudioEffect {
     }()
 
     public func isRecordingActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_recording_active,
@@ -78,7 +78,7 @@ open class AudioEffectRecord: AudioEffect {
     }()
 
     private func __getFormat() -> Godot.AudioStreamWAV.Format {
-        Godot.AudioStreamWAV.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamWAV.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -97,7 +97,7 @@ open class AudioEffectRecord: AudioEffect {
     }()
 
     public func recording() -> Godot.AudioStreamWAV? {
-        Godot.AudioStreamWAV?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamWAV?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_recording,

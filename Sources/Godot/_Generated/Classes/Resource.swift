@@ -22,7 +22,7 @@ open class Resource: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class Resource: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -101,7 +101,7 @@ open class Resource: RefCounted {
     }()
 
     private func __getPath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path,
@@ -142,7 +142,7 @@ open class Resource: RefCounted {
     }()
 
     private func __getName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -161,7 +161,7 @@ open class Resource: RefCounted {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,
@@ -202,7 +202,7 @@ open class Resource: RefCounted {
     }()
 
     private func __isLocalToScene() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_local_to_scene,
@@ -221,7 +221,7 @@ open class Resource: RefCounted {
     }()
 
     public func localScene() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_scene,
@@ -278,7 +278,7 @@ open class Resource: RefCounted {
     public func duplicate(
         subresources: Bool = false
     ) -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         subresources.withGodotUnsafeRawPointer { __ptr_subresources in
         withUnsafeArgumentPackPointer(__ptr_subresources) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

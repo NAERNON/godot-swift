@@ -110,7 +110,7 @@ open class VisualShaderNodeFloatFunc: VisualShaderNode {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeFloatFunc.Function {
-        Godot.VisualShaderNodeFloatFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeFloatFunc.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,

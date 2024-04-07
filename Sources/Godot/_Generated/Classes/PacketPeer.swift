@@ -17,7 +17,7 @@ open class PacketPeer: RefCounted {
     public func `var`(
         allowObjects: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_allowObjects) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -37,11 +37,11 @@ open class PacketPeer: RefCounted {
         }
     }()
 
-    public func putVar<Value: VariantStorableIn>(
+    public func putVar<Value: Variant.Storable>(
         _ `var`: Value,
         fullObjects: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: `var`) { __ptr_var in
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
         withUnsafeArgumentPackPointer(__ptr_var, __ptr_fullObjects) { __accessPtr in
@@ -63,7 +63,7 @@ open class PacketPeer: RefCounted {
     }()
 
     public func packet() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_packet,
@@ -84,7 +84,7 @@ open class PacketPeer: RefCounted {
     public func putPacket(
         buffer: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,7 +105,7 @@ open class PacketPeer: RefCounted {
     }()
 
     public func packetError() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_packet_error,
@@ -124,7 +124,7 @@ open class PacketPeer: RefCounted {
     }()
 
     public func availablePacketCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_available_packet_count,
@@ -143,7 +143,7 @@ open class PacketPeer: RefCounted {
     }()
 
     private func __getEncodeBufferMaxSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_encode_buffer_max_size,

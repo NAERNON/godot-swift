@@ -38,7 +38,7 @@ open class CollisionShape2D: Node2D {
     }()
 
     private func __getShape() -> Godot.Shape2D? {
-        Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shape2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape,
@@ -79,7 +79,7 @@ open class CollisionShape2D: Node2D {
     }()
 
     private func __isDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_disabled,
@@ -120,7 +120,7 @@ open class CollisionShape2D: Node2D {
     }()
 
     private func __isOneWayCollisionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_one_way_collision_enabled,
@@ -161,7 +161,7 @@ open class CollisionShape2D: Node2D {
     }()
 
     private func __getOneWayCollisionMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_one_way_collision_margin,
@@ -202,7 +202,7 @@ open class CollisionShape2D: Node2D {
     }()
 
     private func __getDebugColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_color,

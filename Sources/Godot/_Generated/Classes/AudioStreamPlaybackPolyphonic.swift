@@ -22,7 +22,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         volumeDb: Double = 0,
         pitchScale: Double = 1.0
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -97,7 +97,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     public func isStreamPlaying(
         stream: Int64
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafeArgumentPackPointer(__ptr_stream) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

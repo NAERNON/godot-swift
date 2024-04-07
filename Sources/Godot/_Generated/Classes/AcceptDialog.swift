@@ -22,7 +22,7 @@ open class AcceptDialog: Window {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class AcceptDialog: Window {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class AcceptDialog: Window {
     public lazy var customActionSignal: Godot.SignalEmitter<CustomActionSignalInput> = {
         .init(object: self, signalName: "custom_action") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(action: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(action: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -78,7 +78,7 @@ open class AcceptDialog: Window {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -91,7 +91,7 @@ open class AcceptDialog: Window {
     }()
 
     public func okButton() -> Godot.Button? {
-        Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Button?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ok_button,
@@ -110,7 +110,7 @@ open class AcceptDialog: Window {
     }()
 
     public func label() -> Godot.Label? {
-        Godot.Label?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Label?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_label,
@@ -151,7 +151,7 @@ open class AcceptDialog: Window {
     }()
 
     private func __getHideOnOk() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hide_on_ok,
@@ -192,7 +192,7 @@ open class AcceptDialog: Window {
     }()
 
     private func __getCloseOnEscape() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_close_on_escape,
@@ -215,7 +215,7 @@ open class AcceptDialog: Window {
         right: Bool = false,
         action: Godot.GodotString = ""
     ) -> Godot.Button? {
-        Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Button?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         right.withGodotUnsafeRawPointer { __ptr_right in
         action.withGodotUnsafeRawPointer { __ptr_action in
@@ -240,7 +240,7 @@ open class AcceptDialog: Window {
     public func addCancelButton(
         name: Godot.GodotString
     ) -> Godot.Button? {
-        Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Button?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -329,7 +329,7 @@ open class AcceptDialog: Window {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -370,7 +370,7 @@ open class AcceptDialog: Window {
     }()
 
     private func __hasAutowrap() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_autowrap,
@@ -411,7 +411,7 @@ open class AcceptDialog: Window {
     }()
 
     private func __getOkButtonText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ok_button_text,

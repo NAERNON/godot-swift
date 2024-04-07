@@ -34,7 +34,7 @@ open class NinePatchRect: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class NinePatchRect: Control {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -115,7 +115,7 @@ open class NinePatchRect: Control {
     private func __getPatchMargin(
         _ margin: Godot.Side
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -158,7 +158,7 @@ open class NinePatchRect: Control {
     }()
 
     private func __getRegionRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region_rect,
@@ -199,7 +199,7 @@ open class NinePatchRect: Control {
     }()
 
     private func __isDrawCenterEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_draw_center_enabled,
@@ -240,7 +240,7 @@ open class NinePatchRect: Control {
     }()
 
     private func __getHAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
-        Godot.NinePatchRect.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NinePatchRect.AxisStretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_axis_stretch_mode,
@@ -281,7 +281,7 @@ open class NinePatchRect: Control {
     }()
 
     private func __getVAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
-        Godot.NinePatchRect.AxisStretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NinePatchRect.AxisStretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_axis_stretch_mode,

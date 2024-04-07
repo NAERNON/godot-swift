@@ -73,7 +73,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func skinWeightCount() -> Godot.SurfaceTool.SkinWeightCount {
-        Godot.SurfaceTool.SkinWeightCount.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SurfaceTool.SkinWeightCount.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skin_weight_count,
@@ -118,7 +118,7 @@ open class SurfaceTool: RefCounted {
     public func customFormat(
         channelIndex: Int32
     ) -> Godot.SurfaceTool.CustomFormat {
-        Godot.SurfaceTool.CustomFormat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SurfaceTool.CustomFormat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         channelIndex.withGodotUnsafeRawPointer { __ptr_channelIndex in
         withUnsafeArgumentPackPointer(__ptr_channelIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +531,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func aabb() -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_aabb,
@@ -553,7 +553,7 @@ open class SurfaceTool: RefCounted {
         ndThreshold: Double,
         targetIndexCount: Int32 = 3
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ndThreshold.withGodotUnsafeRawPointer { __ptr_ndThreshold in
         targetIndexCount.withGodotUnsafeRawPointer { __ptr_targetIndexCount in
         withUnsafeArgumentPackPointer(__ptr_ndThreshold, __ptr_targetIndexCount) { __accessPtr in
@@ -598,7 +598,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func primitiveType() -> Godot.Mesh.PrimitiveType {
-        Godot.Mesh.PrimitiveType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Mesh.PrimitiveType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_primitive_type,
@@ -717,7 +717,7 @@ open class SurfaceTool: RefCounted {
         existing: Godot.ArrayMesh? = nil,
         flags: UInt64 = 0
     ) -> Godot.ArrayMesh? {
-        Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ArrayMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
@@ -740,7 +740,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func commitToArrays() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_commit_to_arrays,

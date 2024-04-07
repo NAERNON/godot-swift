@@ -74,7 +74,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPolygon() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon,
@@ -115,7 +115,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getMode() -> Godot.CSGPolygon3D.Mode {
-        Godot.CSGPolygon3D.Mode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CSGPolygon3D.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mode,
@@ -156,7 +156,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getDepth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,
@@ -197,7 +197,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getSpinDegrees() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_spin_degrees,
@@ -238,7 +238,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getSpinSides() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_spin_sides,
@@ -279,7 +279,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_node,
@@ -320,7 +320,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathIntervalType() -> Godot.CSGPolygon3D.PathIntervalType {
-        Godot.CSGPolygon3D.PathIntervalType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CSGPolygon3D.PathIntervalType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_interval_type,
@@ -361,7 +361,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathInterval() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_interval,
@@ -402,7 +402,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathSimplifyAngle() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_simplify_angle,
@@ -443,7 +443,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathRotation() -> Godot.CSGPolygon3D.PathRotation {
-        Godot.CSGPolygon3D.PathRotation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CSGPolygon3D.PathRotation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_rotation,
@@ -484,7 +484,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __isPathLocal() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_path_local,
@@ -525,7 +525,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __isPathContinuousU() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_path_continuous_u,
@@ -566,7 +566,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getPathUDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_u_distance,
@@ -607,7 +607,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __isPathJoined() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_path_joined,
@@ -649,7 +649,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,
@@ -690,7 +690,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __getSmoothFaces() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_smooth_faces,

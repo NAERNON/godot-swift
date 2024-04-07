@@ -81,7 +81,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     public func blendPointPosition(
         point: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -129,7 +129,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     public func blendPointNode(
         point: Int32
     ) -> Godot.AnimationRootNode? {
-        Godot.AnimationRootNode?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationRootNode?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -172,7 +172,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     public func blendPointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_blend_point_count,
@@ -213,7 +213,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __getMinSpace() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_space,
@@ -254,7 +254,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __getMaxSpace() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_space,
@@ -295,7 +295,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __getSnap() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_snap,
@@ -336,7 +336,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __getValueLabel() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_value_label,
@@ -377,7 +377,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __getBlendMode() -> Godot.AnimationNodeBlendSpace1D.BlendMode {
-        Godot.AnimationNodeBlendSpace1D.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNodeBlendSpace1D.BlendMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_blend_mode,
@@ -418,7 +418,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     }()
 
     private func __isUsingSync() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_sync,

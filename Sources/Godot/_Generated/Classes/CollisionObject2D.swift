@@ -56,9 +56,9 @@ open class CollisionObject2D: Node2D {
     public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
         .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(viewport: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(viewport: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    event: Godot.InputEvent?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    shapeIdx: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -66,7 +66,7 @@ open class CollisionObject2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<InputEventSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -85,7 +85,7 @@ open class CollisionObject2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -104,7 +104,7 @@ open class CollisionObject2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -133,7 +133,7 @@ open class CollisionObject2D: Node2D {
     public lazy var mouseShapeEnteredSignal: Godot.SignalEmitter<MouseShapeEnteredSignalInput> = {
         .init(object: self, signalName: "mouse_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(shapeIdx: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -141,7 +141,7 @@ open class CollisionObject2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -170,7 +170,7 @@ open class CollisionObject2D: Node2D {
     public lazy var mouseShapeExitedSignal: Godot.SignalEmitter<MouseShapeExitedSignalInput> = {
         .init(object: self, signalName: "mouse_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(shapeIdx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(shapeIdx: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -178,7 +178,7 @@ open class CollisionObject2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -214,7 +214,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,
@@ -255,7 +255,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     private func __getCollisionLayer() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_layer,
@@ -296,7 +296,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     private func __getCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mask,
@@ -341,7 +341,7 @@ open class CollisionObject2D: Node2D {
     public func collisionLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -388,7 +388,7 @@ open class CollisionObject2D: Node2D {
     public func collisionMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -431,7 +431,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     private func __getCollisionPriority() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_priority,
@@ -472,7 +472,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     private func __getDisableMode() -> Godot.CollisionObject2D.DisableMode {
-        Godot.CollisionObject2D.DisableMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CollisionObject2D.DisableMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_disable_mode,
@@ -513,7 +513,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     private func __isPickable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_pickable,
@@ -534,7 +534,7 @@ open class CollisionObject2D: Node2D {
     public func createShapeOwner(
         _ owner: Godot.Object?
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         owner.withGodotUnsafeRawPointer { __ptr_owner in
         withUnsafePointer(to: __ptr_owner) { _ptr___ptr_owner in
         withUnsafeArgumentPackPointer(_ptr___ptr_owner) { __accessPtr in
@@ -578,7 +578,7 @@ open class CollisionObject2D: Node2D {
     }()
 
     public func shapeOwners() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape_owners,
@@ -623,7 +623,7 @@ open class CollisionObject2D: Node2D {
     public func shapeOwnerGetTransform(
         ownerID: UInt32
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -646,7 +646,7 @@ open class CollisionObject2D: Node2D {
     public func shapeOwnerGetOwner(
         ownerID: UInt32
     ) -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -693,7 +693,7 @@ open class CollisionObject2D: Node2D {
     public func isShapeOwnerDisabled(
         ownerID: UInt32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -740,7 +740,7 @@ open class CollisionObject2D: Node2D {
     public func isShapeOwnerOneWayCollisionEnabled(
         ownerID: UInt32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -787,7 +787,7 @@ open class CollisionObject2D: Node2D {
     public func shapeOwnerOneWayCollisionMargin(
         ownerID: UInt32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -835,7 +835,7 @@ open class CollisionObject2D: Node2D {
     public func shapeOwnerGetShapeCount(
         ownerID: UInt32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         withUnsafeArgumentPackPointer(__ptr_ownerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -859,7 +859,7 @@ open class CollisionObject2D: Node2D {
         ownerID: UInt32,
         shapeID: Int32
     ) -> Godot.Shape2D? {
-        Godot.Shape2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shape2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
         withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
@@ -884,7 +884,7 @@ open class CollisionObject2D: Node2D {
         ownerID: UInt32,
         shapeID: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ownerID.withGodotUnsafeRawPointer { __ptr_ownerID in
         shapeID.withGodotUnsafeRawPointer { __ptr_shapeID in
         withUnsafeArgumentPackPointer(__ptr_ownerID, __ptr_shapeID) { __accessPtr in
@@ -954,7 +954,7 @@ open class CollisionObject2D: Node2D {
     public func shapeFindOwner(
         shapeIndex: Int32
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shapeIndex.withGodotUnsafeRawPointer { __ptr_shapeIndex in
         withUnsafeArgumentPackPointer(__ptr_shapeIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1033,9 +1033,9 @@ open class CollisionObject2D: Node2D {
             }
             Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._inputEvent(
-            viewport: Godot.Viewport?.fromGodotUnsafePointer(args[0]!),
-            event: Godot.InputEvent?.fromGodotUnsafePointer(args[1]!),
-            shapeIdx: Int32.fromGodotUnsafePointer(args[2]!)
+            viewport: Godot.Viewport?.transferFromGodot(unsafePointer: args[0]!),
+            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[1]!),
+            shapeIdx: Int32.transferFromGodot(unsafePointer: args[2]!)
         )}
         let _mouse_enter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -1055,7 +1055,7 @@ open class CollisionObject2D: Node2D {
             }
             Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseShapeEnter(
-            shapeIdx: Int32.fromGodotUnsafePointer(args[0]!)
+            shapeIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _mouse_shape_exit_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1063,7 +1063,7 @@ open class CollisionObject2D: Node2D {
             }
             Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseShapeExit(
-            shapeIdx: Int32.fromGodotUnsafePointer(args[0]!)
+            shapeIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
         )}
         _virtualFunctions = [
             "_inputEvent" : ("_input_event", _input_event_call),

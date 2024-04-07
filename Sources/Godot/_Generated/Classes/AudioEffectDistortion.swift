@@ -54,7 +54,7 @@ open class AudioEffectDistortion: AudioEffect {
     }()
 
     private func __getMode() -> Godot.AudioEffectDistortion.Mode {
-        Godot.AudioEffectDistortion.Mode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioEffectDistortion.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mode,
@@ -95,7 +95,7 @@ open class AudioEffectDistortion: AudioEffect {
     }()
 
     private func __getPreGain() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pre_gain,
@@ -136,7 +136,7 @@ open class AudioEffectDistortion: AudioEffect {
     }()
 
     private func __getKeepHfHz() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keep_hf_hz,
@@ -177,7 +177,7 @@ open class AudioEffectDistortion: AudioEffect {
     }()
 
     private func __getDrive() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drive,
@@ -218,7 +218,7 @@ open class AudioEffectDistortion: AudioEffect {
     }()
 
     private func __getPostGain() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_post_gain,

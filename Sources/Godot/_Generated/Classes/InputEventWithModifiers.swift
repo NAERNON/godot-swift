@@ -37,7 +37,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     private func __isCommandOrControlAutoremap() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_command_or_control_autoremap,
@@ -56,7 +56,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     public func isCommandOrControlPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_command_or_control_pressed,
@@ -97,7 +97,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     private func __isAltPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_alt_pressed,
@@ -138,7 +138,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     private func __isShiftPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shift_pressed,
@@ -179,7 +179,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     private func __isCtrlPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ctrl_pressed,
@@ -220,7 +220,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     private func __isMetaPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_meta_pressed,
@@ -239,7 +239,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
     }()
 
     public func modifiersMask() -> Godot.KeyModifierMask {
-        Godot.KeyModifierMask.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.KeyModifierMask.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modifiers_mask,

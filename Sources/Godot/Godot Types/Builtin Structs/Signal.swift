@@ -7,17 +7,17 @@ extension Signal {
     // MARK: Constructors
     
     internal init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     internal init(object: Object, signal: GodotStringName) {
-        self = Self._constructor_object_godotstringname(object: object, signal: signal)
+        self = Self._makeFromObjectGodotStringName(object, signal)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_signal(from: self)
+        Self._makeFromSignal(self)
     }
     
     // MARK: Methods & variables
@@ -39,7 +39,10 @@ extension Signal {
     }
     
     @discardableResult
-    internal mutating func connect(_ callable: Callable, flags: Int = 0) -> Int {
+    internal mutating func connect(
+        _ callable: Callable,
+        flags: Int = 0
+    ) -> Int {
         _connect(callable: callable, flags: flags)
     }
     
@@ -55,7 +58,9 @@ extension Signal {
         _connections()
     }
     
-    internal func emit<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
+    internal func emit<each VariantRest : Variant.Storable>(
+        _ rest: repeat each VariantRest
+    ) {
         _emit(repeat each rest)
     }
 }

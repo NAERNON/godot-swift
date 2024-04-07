@@ -36,7 +36,7 @@ open class AnimationNode: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -77,9 +77,9 @@ open class AnimationNode: Resource {
     public lazy var animationNodeRenamedSignal: Godot.SignalEmitter<AnimationNodeRenamedSignalInput> = {
         .init(object: self, signalName: "animation_node_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    oldName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    newName: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(objectID: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    oldName: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    newName: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -87,7 +87,7 @@ open class AnimationNode: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AnimationNodeRenamedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -122,8 +122,8 @@ open class AnimationNode: Resource {
     public lazy var animationNodeRemovedSignal: Godot.SignalEmitter<AnimationNodeRemovedSignalInput> = {
         .init(object: self, signalName: "animation_node_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(objectID: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(objectID: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    name: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -131,7 +131,7 @@ open class AnimationNode: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AnimationNodeRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -189,7 +189,7 @@ open class AnimationNode: Resource {
     public func addInput(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +235,7 @@ open class AnimationNode: Resource {
         input: Int32,
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_input, __ptr_name) { __accessPtr in
@@ -259,7 +259,7 @@ open class AnimationNode: Resource {
     public func inputName(
         input: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -280,7 +280,7 @@ open class AnimationNode: Resource {
     }()
 
     public func inputCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_count,
@@ -301,7 +301,7 @@ open class AnimationNode: Resource {
     public func findInput(
         name: Godot.GodotString
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -348,7 +348,7 @@ open class AnimationNode: Resource {
     public func isPathFiltered(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -391,7 +391,7 @@ open class AnimationNode: Resource {
     }()
 
     private func __isFilterEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_filter_enabled,
@@ -454,7 +454,7 @@ open class AnimationNode: Resource {
         sync: Bool = true,
         testOnly: Bool = false
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -493,7 +493,7 @@ open class AnimationNode: Resource {
         sync: Bool = true,
         testOnly: Bool = false
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         inputIndex.withGodotUnsafeRawPointer { __ptr_inputIndex in
         time.withGodotUnsafeRawPointer { __ptr_time in
         seek.withGodotUnsafeRawPointer { __ptr_seek in
@@ -520,7 +520,7 @@ open class AnimationNode: Resource {
         }
     }()
 
-    public func setParameter<Value: VariantStorableIn>(
+    public func setParameter<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value
     ) {
@@ -547,7 +547,7 @@ open class AnimationNode: Resource {
     public func parameter(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -582,67 +582,67 @@ open class AnimationNode: Resource {
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildNodes()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_parameter_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterList()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_child_by_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildByName(
-            Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
+            Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_parameter_default_value_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterDefaultValue(
-            parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
+            parameter: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _is_parameter_read_only_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isParameterReadOnly(
-            parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
+            parameter: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
-            time: Double.fromGodotUnsafePointer(args[0]!),
-            seek: Bool.fromGodotUnsafePointer(args[1]!),
-            isExternalSeeking: Bool.fromGodotUnsafePointer(args[2]!),
-            testOnly: Bool.fromGodotUnsafePointer(args[3]!)
+            time: Double.transferFromGodot(unsafePointer: args[0]!),
+            seek: Bool.transferFromGodot(unsafePointer: args[1]!),
+            isExternalSeeking: Bool.transferFromGodot(unsafePointer: args[2]!),
+            testOnly: Bool.transferFromGodot(unsafePointer: args[3]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_caption_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCaption()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _has_filter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasFilter()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getChildNodes" : ("_get_child_nodes", _get_child_nodes_call),
             "_getParameterList" : ("_get_parameter_list", _get_parameter_list_call),

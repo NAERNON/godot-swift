@@ -58,7 +58,7 @@ open class VisualShaderNodeClamp: VisualShaderNode {
     }()
 
     private func __getOpType() -> Godot.VisualShaderNodeClamp.OpType {
-        Godot.VisualShaderNodeClamp.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeClamp.OpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,

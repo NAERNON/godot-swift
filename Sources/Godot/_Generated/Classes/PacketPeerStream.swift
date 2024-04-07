@@ -38,7 +38,7 @@ open class PacketPeerStream: PacketPeer {
     }()
 
     private func __getStreamPeer() -> Godot.StreamPeer? {
-        Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream_peer,
@@ -101,7 +101,7 @@ open class PacketPeerStream: PacketPeer {
     }()
 
     private func __getInputBufferMaxSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_buffer_max_size,
@@ -120,7 +120,7 @@ open class PacketPeerStream: PacketPeer {
     }()
 
     private func __getOutputBufferMaxSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_output_buffer_max_size,

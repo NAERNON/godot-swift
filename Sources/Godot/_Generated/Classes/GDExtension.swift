@@ -33,7 +33,7 @@ open class GDExtension: Resource {
         path: Godot.GodotString,
         entrySymbol: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         entrySymbol.withGodotUnsafeRawPointer { __ptr_entrySymbol in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_entrySymbol) { __accessPtr in
@@ -73,7 +73,7 @@ open class GDExtension: Resource {
     }()
 
     public func isLibraryOpen() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_library_open,
@@ -92,7 +92,7 @@ open class GDExtension: Resource {
     }()
 
     public func minimumLibraryInitializationLevel() -> Godot.GDExtension.InitializationLevel {
-        Godot.GDExtension.InitializationLevel.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GDExtension.InitializationLevel.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_minimum_library_initialization_level,

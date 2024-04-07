@@ -37,7 +37,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
     }()
 
     private func __getVaryingName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_varying_name,
@@ -78,7 +78,7 @@ open class VisualShaderNodeVarying: VisualShaderNode {
     }()
 
     private func __getVaryingType() -> Godot.VisualShader.VaryingType {
-        Godot.VisualShader.VaryingType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShader.VaryingType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_varying_type,

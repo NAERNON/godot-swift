@@ -37,7 +37,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getDensity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_density,
@@ -78,7 +78,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getAlbedo() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_albedo,
@@ -119,7 +119,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getEmission() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission,
@@ -160,7 +160,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getHeightFalloff() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height_falloff,
@@ -201,7 +201,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getEdgeFade() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edge_fade,
@@ -243,7 +243,7 @@ open class FogMaterial: Material {
     }()
 
     private func __getDensityTexture() -> Godot.Texture3D? {
-        Godot.Texture3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_density_texture,

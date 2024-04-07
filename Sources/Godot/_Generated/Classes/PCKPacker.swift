@@ -20,7 +20,7 @@ open class PCKPacker: RefCounted {
         key: Godot.GodotString = "0000000000000000000000000000000000000000000000000000000000000000",
         encryptDirectory: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pckName.withGodotUnsafeRawPointer { __ptr_pckName in
         alignment.withGodotUnsafeRawPointer { __ptr_alignment in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -48,7 +48,7 @@ open class PCKPacker: RefCounted {
         sourcePath: Godot.GodotString,
         encrypt: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pckPath.withGodotUnsafeRawPointer { __ptr_pckPath in
         sourcePath.withGodotUnsafeRawPointer { __ptr_sourcePath in
         encrypt.withGodotUnsafeRawPointer { __ptr_encrypt in
@@ -73,7 +73,7 @@ open class PCKPacker: RefCounted {
     public func flush(
         verbose: Bool = false
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         verbose.withGodotUnsafeRawPointer { __ptr_verbose in
         withUnsafeArgumentPackPointer(__ptr_verbose) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

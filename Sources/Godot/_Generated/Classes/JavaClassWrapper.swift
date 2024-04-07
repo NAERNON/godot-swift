@@ -17,7 +17,7 @@ open class JavaClassWrapper: Object {
     public func wrap(
         name: Godot.GodotString
     ) -> Godot.JavaClass? {
-        Godot.JavaClass?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.JavaClass?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -22,7 +22,7 @@ open class TileData: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -57,7 +57,7 @@ open class TileData: Object {
     }()
 
     private func __getFlipH() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flip_h,
@@ -98,7 +98,7 @@ open class TileData: Object {
     }()
 
     private func __getFlipV() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flip_v,
@@ -139,7 +139,7 @@ open class TileData: Object {
     }()
 
     private func __getTranspose() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transpose,
@@ -181,7 +181,7 @@ open class TileData: Object {
     }()
 
     private func __getMaterial() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_material,
@@ -222,7 +222,7 @@ open class TileData: Object {
     }()
 
     private func __getTextureOrigin() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_origin,
@@ -263,7 +263,7 @@ open class TileData: Object {
     }()
 
     private func __getModulate() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modulate,
@@ -304,7 +304,7 @@ open class TileData: Object {
     }()
 
     private func __getZIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_z_index,
@@ -345,7 +345,7 @@ open class TileData: Object {
     }()
 
     private func __getYSortOrigin() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_y_sort_origin,
@@ -391,7 +391,7 @@ open class TileData: Object {
     public func occluder(
         layerID: Int32
     ) -> Godot.OccluderPolygon2D? {
-        Godot.OccluderPolygon2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OccluderPolygon2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -438,7 +438,7 @@ open class TileData: Object {
     public func constantLinearVelocity(
         layerID: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -485,7 +485,7 @@ open class TileData: Object {
     public func constantAngularVelocity(
         layerID: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -532,7 +532,7 @@ open class TileData: Object {
     public func collisionPolygonsCount(
         layerID: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -628,7 +628,7 @@ open class TileData: Object {
         layerID: Int32,
         polygonIndex: Int32
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
@@ -679,7 +679,7 @@ open class TileData: Object {
         layerID: Int32,
         polygonIndex: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
@@ -730,7 +730,7 @@ open class TileData: Object {
         layerID: Int32,
         polygonIndex: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         polygonIndex.withGodotUnsafeRawPointer { __ptr_polygonIndex in
         withUnsafeArgumentPackPointer(__ptr_layerID, __ptr_polygonIndex) { __accessPtr in
@@ -774,7 +774,7 @@ open class TileData: Object {
     }()
 
     private func __getTerrainSet() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_terrain_set,
@@ -815,7 +815,7 @@ open class TileData: Object {
     }()
 
     private func __getTerrain() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_terrain,
@@ -860,7 +860,7 @@ open class TileData: Object {
     public func terrainPeeringBit(
         _ peeringBit: Godot.TileSet.CellNeighbor
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peeringBit.withGodotUnsafeRawPointer { __ptr_peeringBit in
         withUnsafeArgumentPackPointer(__ptr_peeringBit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -908,7 +908,7 @@ open class TileData: Object {
     public func navigationPolygon(
         layerID: Int32
     ) -> Godot.NavigationPolygon? {
-        Godot.NavigationPolygon?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPolygon?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -951,7 +951,7 @@ open class TileData: Object {
     }()
 
     private func __getProbability() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_probability,
@@ -969,7 +969,7 @@ open class TileData: Object {
         }
     }()
 
-    public func setCustomData<Value: VariantStorableIn>(
+    public func setCustomData<Value: Variant.Storable>(
         layerName: Godot.GodotString,
         value: Value
     ) {
@@ -996,7 +996,7 @@ open class TileData: Object {
     public func customData(
         layerName: Godot.GodotString
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerName.withGodotUnsafeRawPointer { __ptr_layerName in
         withUnsafeArgumentPackPointer(__ptr_layerName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1016,7 +1016,7 @@ open class TileData: Object {
         }
     }()
 
-    public func setCustomDataByLayerID<Value: VariantStorableIn>(
+    public func setCustomDataByLayerID<Value: Variant.Storable>(
         _ layerID: Int32,
         value: Value
     ) {
@@ -1043,7 +1043,7 @@ open class TileData: Object {
     public func customDataByLayerID(
         _ layerID: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerID.withGodotUnsafeRawPointer { __ptr_layerID in
         withUnsafeArgumentPackPointer(__ptr_layerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

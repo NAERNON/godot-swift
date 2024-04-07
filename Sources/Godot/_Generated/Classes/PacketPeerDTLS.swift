@@ -54,7 +54,7 @@ open class PacketPeerDTLS: PacketPeer {
         hostname: Godot.GodotString,
         clientOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         packetPeer.withGodotUnsafeRawPointer { __ptr_packetPeer in
         withUnsafePointer(to: __ptr_packetPeer) { _ptr___ptr_packetPeer in
         hostname.withGodotUnsafeRawPointer { __ptr_hostname in
@@ -79,7 +79,7 @@ open class PacketPeerDTLS: PacketPeer {
     }()
 
     public func status() -> Godot.PacketPeerDTLS.Status {
-        Godot.PacketPeerDTLS.Status.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PacketPeerDTLS.Status.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_status,

@@ -18,7 +18,7 @@ open class TCPServer: RefCounted {
         port: UInt16,
         bindAddress: Godot.GodotString = "*"
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
         withUnsafeArgumentPackPointer(__ptr_port, __ptr_bindAddress) { __accessPtr in
@@ -40,7 +40,7 @@ open class TCPServer: RefCounted {
     }()
 
     public func isConnectionAvailable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_connection_available,
@@ -59,7 +59,7 @@ open class TCPServer: RefCounted {
     }()
 
     public func isListening() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_listening,
@@ -78,7 +78,7 @@ open class TCPServer: RefCounted {
     }()
 
     public func localPort() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_port,
@@ -97,7 +97,7 @@ open class TCPServer: RefCounted {
     }()
 
     public func takeConnection() -> Godot.StreamPeerTCP? {
-        Godot.StreamPeerTCP?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeerTCP?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_take_connection,

@@ -37,7 +37,7 @@ open class WorldBoundaryShape3D: Shape3D {
     }()
 
     private func __getPlane() -> Godot.Plane {
-        Godot.Plane.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Plane.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_plane,

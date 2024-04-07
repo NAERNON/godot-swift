@@ -38,7 +38,7 @@ open class MultiMeshInstance3D: GeometryInstance3D {
     }()
 
     private func __getMultimesh() -> Godot.MultiMesh? {
-        Godot.MultiMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_multimesh,

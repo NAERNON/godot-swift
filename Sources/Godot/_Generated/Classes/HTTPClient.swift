@@ -202,7 +202,7 @@ open class HTTPClient: RefCounted {
         port: Int32 = -1,
         tlsOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
         tlsOptions.withGodotUnsafeRawPointer { __ptr_tlsOptions in
@@ -249,7 +249,7 @@ open class HTTPClient: RefCounted {
     }()
 
     private func __getConnection() -> Godot.StreamPeer? {
-        Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connection,
@@ -273,7 +273,7 @@ open class HTTPClient: RefCounted {
         headers: Godot.PackedStringArray,
         body: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         url.withGodotUnsafeRawPointer { __ptr_url in
         headers.withGodotUnsafeRawPointer { __ptr_headers in
@@ -302,7 +302,7 @@ open class HTTPClient: RefCounted {
         headers: Godot.PackedStringArray,
         body: Godot.GodotString = ""
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         url.withGodotUnsafeRawPointer { __ptr_url in
         headers.withGodotUnsafeRawPointer { __ptr_headers in
@@ -344,7 +344,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func hasResponse() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_response,
@@ -363,7 +363,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func isResponseChunked() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_response_chunked,
@@ -382,7 +382,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func responseCode() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_response_code,
@@ -401,7 +401,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func responseHeaders() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_response_headers,
@@ -420,7 +420,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func responseHeadersAsDictionary() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_response_headers_as_dictionary,
@@ -439,7 +439,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func responseBodyLength() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_response_body_length,
@@ -458,7 +458,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func readResponseBodyChunk() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_read_response_body_chunk,
@@ -499,7 +499,7 @@ open class HTTPClient: RefCounted {
     }()
 
     private func __getReadChunkSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_read_chunk_size,
@@ -540,7 +540,7 @@ open class HTTPClient: RefCounted {
     }()
 
     private func __isBlockingModeEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_blocking_mode_enabled,
@@ -559,7 +559,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func status() -> Godot.HTTPClient.Status {
-        Godot.HTTPClient.Status.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HTTPClient.Status.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_status,
@@ -578,7 +578,7 @@ open class HTTPClient: RefCounted {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -644,10 +644,10 @@ open class HTTPClient: RefCounted {
         }
     }()
 
-    public func queryStringFromDict<Value1: VariantStorable, Value2: VariantStorable>(
+    public func queryStringFromDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         fields: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fields.withGodotUnsafeRawPointer { __ptr_fields in
         withUnsafeArgumentPackPointer(__ptr_fields) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

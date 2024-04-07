@@ -17,7 +17,7 @@ open class ZIPReader: RefCounted {
     public func open(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -38,7 +38,7 @@ open class ZIPReader: RefCounted {
     }()
 
     public func close() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_close,
@@ -57,7 +57,7 @@ open class ZIPReader: RefCounted {
     }()
 
     public func files() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_files,
@@ -79,7 +79,7 @@ open class ZIPReader: RefCounted {
         path: Godot.GodotString,
         caseSensitive: Bool = true
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         caseSensitive.withGodotUnsafeRawPointer { __ptr_caseSensitive in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_caseSensitive) { __accessPtr in
@@ -104,7 +104,7 @@ open class ZIPReader: RefCounted {
         path: Godot.GodotString,
         caseSensitive: Bool = true
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         caseSensitive.withGodotUnsafeRawPointer { __ptr_caseSensitive in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_caseSensitive) { __accessPtr in

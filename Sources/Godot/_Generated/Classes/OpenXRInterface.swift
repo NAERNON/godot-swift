@@ -143,7 +143,7 @@ open class OpenXRInterface: XRInterface {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -162,7 +162,7 @@ open class OpenXRInterface: XRInterface {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -181,7 +181,7 @@ open class OpenXRInterface: XRInterface {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -200,7 +200,7 @@ open class OpenXRInterface: XRInterface {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -219,7 +219,7 @@ open class OpenXRInterface: XRInterface {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -232,7 +232,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     private func __getDisplayRefreshRate() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_display_refresh_rate,
@@ -273,7 +273,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     private func __getRenderTargetSizeMultiplier() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_target_size_multiplier,
@@ -314,7 +314,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     public func isFoveationSupported() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_foveation_supported,
@@ -333,7 +333,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     private func __getFoveationLevel() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_foveation_level,
@@ -374,7 +374,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     private func __getFoveationDynamic() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_foveation_dynamic,
@@ -417,7 +417,7 @@ open class OpenXRInterface: XRInterface {
     public func isActionSetActive(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -462,7 +462,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     public func actionSets() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_action_sets,
@@ -481,7 +481,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     public func availableDisplayRefreshRates() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_available_display_refresh_rates,
@@ -526,7 +526,7 @@ open class OpenXRInterface: XRInterface {
     public func motionRange(
         hand: Godot.OpenXRInterface.Hand
     ) -> Godot.OpenXRInterface.HandMotionRange {
-        Godot.OpenXRInterface.HandMotionRange.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRInterface.HandMotionRange.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         withUnsafeArgumentPackPointer(__ptr_hand) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -550,7 +550,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Godot.OpenXRInterface.HandJointFlags {
-        Godot.OpenXRInterface.HandJointFlags.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRInterface.HandJointFlags.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -575,7 +575,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Godot.Quaternion {
-        Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Quaternion.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -600,7 +600,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -625,7 +625,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -650,7 +650,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -675,7 +675,7 @@ open class OpenXRInterface: XRInterface {
         hand: Godot.OpenXRInterface.Hand,
         joint: Godot.OpenXRInterface.HandJoints
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hand.withGodotUnsafeRawPointer { __ptr_hand in
         joint.withGodotUnsafeRawPointer { __ptr_joint in
         withUnsafeArgumentPackPointer(__ptr_hand, __ptr_joint) { __accessPtr in
@@ -697,7 +697,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     public func isHandTrackingSupported() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_hand_tracking_supported,
@@ -716,7 +716,7 @@ open class OpenXRInterface: XRInterface {
     }()
 
     public func isEyeGazeInteractionSupported() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_eye_gaze_interaction_supported,

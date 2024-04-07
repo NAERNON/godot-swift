@@ -14,7 +14,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
     }()
 
-    private func __setValue<Value: VariantStorableIn>(
+    private func __setValue<Value: Variant.Storable>(
         _ value: Value
     ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
@@ -37,7 +37,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
     }()
 
     private func __getValue() -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_value,
@@ -78,7 +78,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
     }()
 
     private func __getConstantID() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_id,

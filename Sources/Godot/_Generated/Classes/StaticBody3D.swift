@@ -59,7 +59,7 @@ open class StaticBody3D: PhysicsBody3D {
     }()
 
     private func __getConstantLinearVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_linear_velocity,
@@ -78,7 +78,7 @@ open class StaticBody3D: PhysicsBody3D {
     }()
 
     private func __getConstantAngularVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_angular_velocity,
@@ -120,7 +120,7 @@ open class StaticBody3D: PhysicsBody3D {
     }()
 
     private func __getPhysicsMaterialOverride() -> Godot.PhysicsMaterial? {
-        Godot.PhysicsMaterial?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsMaterial?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_material_override,

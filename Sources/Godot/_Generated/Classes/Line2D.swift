@@ -76,7 +76,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getPoints() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_points,
@@ -121,7 +121,7 @@ open class Line2D: Node2D {
     public func pointPosition(
         index: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -142,7 +142,7 @@ open class Line2D: Node2D {
     }()
 
     public func pointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_count,
@@ -247,7 +247,7 @@ open class Line2D: Node2D {
     }()
 
     private func __isClosed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_closed,
@@ -288,7 +288,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -330,7 +330,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,
@@ -371,7 +371,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getDefaultColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_color,
@@ -413,7 +413,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getGradient() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gradient,
@@ -455,7 +455,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -496,7 +496,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getTextureMode() -> Godot.Line2D.LineTextureMode {
-        Godot.Line2D.LineTextureMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Line2D.LineTextureMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_mode,
@@ -537,7 +537,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getJointMode() -> Godot.Line2D.LineJointMode {
-        Godot.Line2D.LineJointMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Line2D.LineJointMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_joint_mode,
@@ -578,7 +578,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getBeginCapMode() -> Godot.Line2D.LineCapMode {
-        Godot.Line2D.LineCapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Line2D.LineCapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_begin_cap_mode,
@@ -619,7 +619,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getEndCapMode() -> Godot.Line2D.LineCapMode {
-        Godot.Line2D.LineCapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Line2D.LineCapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_end_cap_mode,
@@ -660,7 +660,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getSharpLimit() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sharp_limit,
@@ -701,7 +701,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getRoundPrecision() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_round_precision,
@@ -742,7 +742,7 @@ open class Line2D: Node2D {
     }()
 
     private func __getAntialiased() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_antialiased,

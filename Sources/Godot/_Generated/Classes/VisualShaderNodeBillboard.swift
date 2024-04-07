@@ -54,7 +54,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
     }()
 
     private func __getBillboardType() -> Godot.VisualShaderNodeBillboard.BillboardType {
-        Godot.VisualShaderNodeBillboard.BillboardType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeBillboard.BillboardType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_billboard_type,
@@ -95,7 +95,7 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
     }()
 
     private func __isKeepScaleEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_keep_scale_enabled,

@@ -50,7 +50,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getHasTrackingData() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_has_tracking_data,
@@ -91,7 +91,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -132,7 +132,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transform,
@@ -151,7 +151,7 @@ open class XRPose: RefCounted {
     }()
 
     public func adjustedTransform() -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_adjusted_transform,
@@ -192,7 +192,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getLinearVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_velocity,
@@ -233,7 +233,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getAngularVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_velocity,
@@ -274,7 +274,7 @@ open class XRPose: RefCounted {
     }()
 
     private func __getTrackingConfidence() -> Godot.XRPose.TrackingConfidence {
-        Godot.XRPose.TrackingConfidence.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRPose.TrackingConfidence.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracking_confidence,

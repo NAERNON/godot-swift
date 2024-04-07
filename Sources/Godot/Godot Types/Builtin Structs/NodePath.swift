@@ -7,17 +7,17 @@ extension NodePath {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     public init(string: GodotString) {
-        self = Self._constructor_godotstring(from: string)
+        self = Self._makeFromGodotString(string)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_nodepath(from: self)
+        Self._makeFromNodePath(self)
     }
     
     // MARK: Methods & variables

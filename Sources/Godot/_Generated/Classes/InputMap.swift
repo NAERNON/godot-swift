@@ -17,7 +17,7 @@ open class InputMap: Object {
     public func hasAction(
         _ action: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -38,7 +38,7 @@ open class InputMap: Object {
     }()
 
     public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_actions,
@@ -129,7 +129,7 @@ open class InputMap: Object {
     public func actionGetDeadzone(
         action: Godot.GodotStringName
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +178,7 @@ open class InputMap: Object {
         action: Godot.GodotStringName,
         event: Godot.InputEvent?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
@@ -250,7 +250,7 @@ open class InputMap: Object {
     public func actionGetEvents(
         action: Godot.GodotStringName
     ) -> Godot.GodotArray<Godot.InputEvent?> {
-        Godot.GodotArray<Godot.InputEvent?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.InputEvent?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,7 +275,7 @@ open class InputMap: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
         action.withGodotUnsafeRawPointer { __ptr_action in

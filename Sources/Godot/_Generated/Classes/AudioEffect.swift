@@ -22,7 +22,7 @@ open class AudioEffect: Resource {
             }
             Unmanaged<AudioEffect> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiate()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_instantiate" : ("_instantiate", _instantiate_call)
         ]

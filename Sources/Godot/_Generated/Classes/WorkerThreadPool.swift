@@ -19,7 +19,7 @@ open class WorkerThreadPool: Object {
         highPriority: Bool = false,
         description: Godot.GodotString = ""
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         highPriority.withGodotUnsafeRawPointer { __ptr_highPriority in
         description.withGodotUnsafeRawPointer { __ptr_description in
@@ -44,7 +44,7 @@ open class WorkerThreadPool: Object {
     public func isTaskCompleted(
         taskID: Int64
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         taskID.withGodotUnsafeRawPointer { __ptr_taskID in
         withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -67,7 +67,7 @@ open class WorkerThreadPool: Object {
     public func waitForTaskCompletion(
         taskID: Int64
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         taskID.withGodotUnsafeRawPointer { __ptr_taskID in
         withUnsafeArgumentPackPointer(__ptr_taskID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,7 +94,7 @@ open class WorkerThreadPool: Object {
         highPriority: Bool = false,
         description: Godot.GodotString = ""
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         elements.withGodotUnsafeRawPointer { __ptr_elements in
         tasksNeeded.withGodotUnsafeRawPointer { __ptr_tasksNeeded in
@@ -121,7 +121,7 @@ open class WorkerThreadPool: Object {
     public func isGroupTaskCompleted(
         groupID: Int64
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         groupID.withGodotUnsafeRawPointer { __ptr_groupID in
         withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -144,7 +144,7 @@ open class WorkerThreadPool: Object {
     public func groupProcessedElementCount(
         groupID: Int64
     ) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         groupID.withGodotUnsafeRawPointer { __ptr_groupID in
         withUnsafeArgumentPackPointer(__ptr_groupID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

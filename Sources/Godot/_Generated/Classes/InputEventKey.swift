@@ -59,7 +59,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     private func __getKeycode() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keycode,
@@ -100,7 +100,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     private func __getPhysicalKeycode() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physical_keycode,
@@ -141,7 +141,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     private func __getKeyLabel() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_key_label,
@@ -182,7 +182,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     private func __getUnicode() -> Int {
-        Int.fromMutatingGodotUnsafePointer { __temporary in
+        Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unicode,
@@ -223,7 +223,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func keycodeWithModifiers() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keycode_with_modifiers,
@@ -242,7 +242,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func physicalKeycodeWithModifiers() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physical_keycode_with_modifiers,
@@ -261,7 +261,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func keyLabelWithModifiers() -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_key_label_with_modifiers,
@@ -280,7 +280,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func asTextKeycode() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_as_text_keycode,
@@ -299,7 +299,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func asTextPhysicalKeycode() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_as_text_physical_keycode,
@@ -318,7 +318,7 @@ open class InputEventKey: InputEventWithModifiers {
     }()
 
     public func asTextKeyLabel() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_as_text_key_label,

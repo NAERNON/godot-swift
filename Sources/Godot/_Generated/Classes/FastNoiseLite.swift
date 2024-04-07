@@ -133,7 +133,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getNoiseType() -> Godot.FastNoiseLite.NoiseType {
-        Godot.FastNoiseLite.NoiseType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.NoiseType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_noise_type,
@@ -174,7 +174,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getSeed() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_seed,
@@ -215,7 +215,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFrequency() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frequency,
@@ -256,7 +256,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getOffset() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -297,7 +297,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalType() -> Godot.FastNoiseLite.FractalType {
-        Godot.FastNoiseLite.FractalType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.FractalType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_type,
@@ -338,7 +338,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalOctaves() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_octaves,
@@ -379,7 +379,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalLacunarity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_lacunarity,
@@ -420,7 +420,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalGain() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_gain,
@@ -461,7 +461,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalWeightedStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_weighted_strength,
@@ -502,7 +502,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getFractalPingPongStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fractal_ping_pong_strength,
@@ -543,7 +543,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getCellularDistanceFunction() -> Godot.FastNoiseLite.CellularDistanceFunction {
-        Godot.FastNoiseLite.CellularDistanceFunction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.CellularDistanceFunction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cellular_distance_function,
@@ -584,7 +584,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getCellularJitter() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cellular_jitter,
@@ -625,7 +625,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getCellularReturnType() -> Godot.FastNoiseLite.CellularReturnType {
-        Godot.FastNoiseLite.CellularReturnType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.CellularReturnType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cellular_return_type,
@@ -666,7 +666,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __isDomainWarpEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_domain_warp_enabled,
@@ -707,7 +707,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpType() -> Godot.FastNoiseLite.DomainWarpType {
-        Godot.FastNoiseLite.DomainWarpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.DomainWarpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_type,
@@ -748,7 +748,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpAmplitude() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_amplitude,
@@ -789,7 +789,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpFrequency() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_frequency,
@@ -830,7 +830,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpFractalType() -> Godot.FastNoiseLite.DomainWarpFractalType {
-        Godot.FastNoiseLite.DomainWarpFractalType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FastNoiseLite.DomainWarpFractalType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_fractal_type,
@@ -871,7 +871,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpFractalOctaves() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_fractal_octaves,
@@ -912,7 +912,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpFractalLacunarity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_fractal_lacunarity,
@@ -953,7 +953,7 @@ open class FastNoiseLite: Noise {
     }()
 
     private func __getDomainWarpFractalGain() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_domain_warp_fractal_gain,

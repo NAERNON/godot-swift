@@ -95,10 +95,10 @@ open class RigidBody2D: PhysicsBody2D {
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    body: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -106,7 +106,7 @@ open class RigidBody2D: PhysicsBody2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -153,10 +153,10 @@ open class RigidBody2D: PhysicsBody2D {
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    body: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -164,7 +164,7 @@ open class RigidBody2D: PhysicsBody2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -193,7 +193,7 @@ open class RigidBody2D: PhysicsBody2D {
     public lazy var bodyEnteredSignal: Godot.SignalEmitter<BodyEnteredSignalInput> = {
         .init(object: self, signalName: "body_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -201,7 +201,7 @@ open class RigidBody2D: PhysicsBody2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -230,7 +230,7 @@ open class RigidBody2D: PhysicsBody2D {
     public lazy var bodyExitedSignal: Godot.SignalEmitter<BodyExitedSignalInput> = {
         .init(object: self, signalName: "body_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -238,7 +238,7 @@ open class RigidBody2D: PhysicsBody2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -257,7 +257,7 @@ open class RigidBody2D: PhysicsBody2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -297,7 +297,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getMass() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mass,
@@ -316,7 +316,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getInertia() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inertia,
@@ -379,7 +379,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getCenterOfMassMode() -> Godot.RigidBody2D.CenterOfMassMode {
-        Godot.RigidBody2D.CenterOfMassMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RigidBody2D.CenterOfMassMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_of_mass_mode,
@@ -420,7 +420,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getCenterOfMass() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_of_mass,
@@ -462,7 +462,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getPhysicsMaterialOverride() -> Godot.PhysicsMaterial? {
-        Godot.PhysicsMaterial?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsMaterial?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_material_override,
@@ -503,7 +503,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getGravityScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity_scale,
@@ -544,7 +544,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getLinearDampMode() -> Godot.RigidBody2D.DampMode {
-        Godot.RigidBody2D.DampMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RigidBody2D.DampMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_damp_mode,
@@ -585,7 +585,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getAngularDampMode() -> Godot.RigidBody2D.DampMode {
-        Godot.RigidBody2D.DampMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RigidBody2D.DampMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_damp_mode,
@@ -626,7 +626,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getLinearDamp() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_damp,
@@ -667,7 +667,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getAngularDamp() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_damp,
@@ -708,7 +708,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getLinearVelocity() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_velocity,
@@ -749,7 +749,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getAngularVelocity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_velocity,
@@ -790,7 +790,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getMaxContactsReported() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_contacts_reported,
@@ -809,7 +809,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     public func contactCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_contact_count,
@@ -850,7 +850,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isUsingCustomIntegrator() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_custom_integrator,
@@ -891,7 +891,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isContactMonitorEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_contact_monitor_enabled,
@@ -932,7 +932,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getContinuousCollisionDetectionMode() -> Godot.RigidBody2D.CCDMode {
-        Godot.RigidBody2D.CCDMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RigidBody2D.CCDMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_continuous_collision_detection_mode,
@@ -1199,7 +1199,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getConstantForce() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_force,
@@ -1240,7 +1240,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getConstantTorque() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_constant_torque,
@@ -1281,7 +1281,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isSleeping() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sleeping,
@@ -1322,7 +1322,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isAbleToSleep() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_able_to_sleep,
@@ -1363,7 +1363,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isLockRotationEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_lock_rotation_enabled,
@@ -1404,7 +1404,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __isFreezeEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_freeze_enabled,
@@ -1445,7 +1445,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     private func __getFreezeMode() -> Godot.RigidBody2D.FreezeMode {
-        Godot.RigidBody2D.FreezeMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RigidBody2D.FreezeMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_freeze_mode,
@@ -1464,7 +1464,7 @@ open class RigidBody2D: PhysicsBody2D {
     }()
 
     public func collidingBodies() -> Godot.GodotArray<Godot.Node2D?> {
-        Godot.GodotArray<Godot.Node2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node2D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_colliding_bodies,
@@ -1739,7 +1739,7 @@ open class RigidBody2D: PhysicsBody2D {
             }
             Unmanaged<RigidBody2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces(
-            state: Godot.PhysicsDirectBodyState2D?.fromGodotUnsafePointer(args[0]!)
+            state: Godot.PhysicsDirectBodyState2D?.transferFromGodot(unsafePointer: args[0]!)
         )}
         _virtualFunctions = [
             "_integrateForces" : ("_integrate_forces", _integrate_forces_call)

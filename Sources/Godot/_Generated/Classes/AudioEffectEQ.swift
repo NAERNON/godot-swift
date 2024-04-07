@@ -41,7 +41,7 @@ open class AudioEffectEQ: AudioEffect {
     public func bandGainDb(
         bandIdx: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bandIdx.withGodotUnsafeRawPointer { __ptr_bandIdx in
         withUnsafeArgumentPackPointer(__ptr_bandIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -62,7 +62,7 @@ open class AudioEffectEQ: AudioEffect {
     }()
 
     public func bandCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_band_count,

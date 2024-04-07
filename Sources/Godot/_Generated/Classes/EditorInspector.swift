@@ -31,7 +31,7 @@ open class EditorInspector: ScrollContainer {
     public lazy var propertySelectedSignal: Godot.SignalEmitter<PropertySelectedSignalInput> = {
         .init(object: self, signalName: "property_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertySelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(property: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(property: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertySelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PropertySelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -80,9 +80,9 @@ open class EditorInspector: ScrollContainer {
     public lazy var propertyKeyedSignal: Godot.SignalEmitter<PropertyKeyedSignalInput> = {
         .init(object: self, signalName: "property_keyed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(property: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    value: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    advance: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(property: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    value: Godot.Variant.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    advance: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -90,7 +90,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -119,7 +119,7 @@ open class EditorInspector: ScrollContainer {
     public lazy var propertyDeletedSignal: Godot.SignalEmitter<PropertyDeletedSignalInput> = {
         .init(object: self, signalName: "property_deleted") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(property: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(property: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -127,7 +127,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -162,8 +162,8 @@ open class EditorInspector: ScrollContainer {
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(resource: Godot.Resource?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    path: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -171,7 +171,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -200,7 +200,7 @@ open class EditorInspector: ScrollContainer {
     public lazy var objectIDSelectedSignal: Godot.SignalEmitter<ObjectIDSelectedSignalInput> = {
         .init(object: self, signalName: "object_id_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -208,7 +208,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ObjectIDSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -237,7 +237,7 @@ open class EditorInspector: ScrollContainer {
     public lazy var propertyEditedSignal: Godot.SignalEmitter<PropertyEditedSignalInput> = {
         .init(object: self, signalName: "property_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyEditedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(property: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(property: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertyEditedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -245,7 +245,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PropertyEditedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -280,8 +280,8 @@ open class EditorInspector: ScrollContainer {
     public lazy var propertyToggledSignal: Godot.SignalEmitter<PropertyToggledSignalInput> = {
         .init(object: self, signalName: "property_toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PropertyToggledSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(property: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    checked: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(property: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    checked: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PropertyToggledSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -289,7 +289,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PropertyToggledSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -308,7 +308,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -327,7 +327,7 @@ open class EditorInspector: ScrollContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -340,7 +340,7 @@ open class EditorInspector: ScrollContainer {
     }()
 
     public func selectedPath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_path,
@@ -359,7 +359,7 @@ open class EditorInspector: ScrollContainer {
     }()
 
     public func editedObject() -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited_object,

@@ -10,11 +10,11 @@ extension PackedFloat64Array {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._constructor_godotarray(from: array)
+        self = Self._makeFromGodotArray(array)
     }
     
     // MARK: Copy

@@ -397,7 +397,7 @@ open class EditorExportPlugin: RefCounted {
     public func option(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -421,9 +421,9 @@ open class EditorExportPlugin: RefCounted {
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportFile(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            type: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
-            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[2]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            type: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[2]!)
         )}
         let _export_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -431,10 +431,10 @@ open class EditorExportPlugin: RefCounted {
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportBegin(
-            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[0]!),
-            isDebug: Bool.fromGodotUnsafePointer(args[1]!),
-            path: Godot.GodotString.fromGodotUnsafePointer(args[2]!),
-            flags: UInt32.fromGodotUnsafePointer(args[3]!)
+            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[0]!),
+            isDebug: Bool.transferFromGodot(unsafePointer: args[1]!),
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
+            flags: UInt32.transferFromGodot(unsafePointer: args[3]!)
         )}
         let _export_end_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -448,47 +448,47 @@ open class EditorExportPlugin: RefCounted {
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeResources(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _customize_resource_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._customizeResource(
-            Godot.Resource?.fromGodotUnsafePointer(args[0]!),
-            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            Godot.Resource?.transferFromGodot(unsafePointer: args[0]!),
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _begin_customize_scenes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeScenes(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _customize_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._customizeScene(
-            Godot.Node?.fromGodotUnsafePointer(args[0]!),
-            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            Godot.Node?.transferFromGodot(unsafePointer: args[0]!),
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_customization_configuration_hash_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCustomizationConfigurationHash()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _end_customize_scenes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
@@ -507,114 +507,114 @@ open class EditorExportPlugin: RefCounted {
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExportOptions(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _should_update_export_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shouldUpdateExportOptions(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_export_option_warning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExportOptionWarning(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            option: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            option: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_export_features_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExportFeatures(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _supports_platform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._supportsPlatform(
-            Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!)
+            Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_dependencies_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidDependencies(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_dependencies_maven_repos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidDependenciesMavenRepos(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_libraries_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidLibraries(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_manifest_activity_element_contents_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidManifestActivityElementContents(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_manifest_application_element_contents_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidManifestApplicationElementContents(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_android_manifest_element_contents_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAndroidManifestElementContents(
-            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
-            debug: Bool.fromGodotUnsafePointer(args[1]!)
+            platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
+            debug: Bool.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_exportFile" : ("_export_file", _export_file_call),
             "_exportBegin" : ("_export_begin", _export_begin_call),

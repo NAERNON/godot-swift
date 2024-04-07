@@ -15,7 +15,7 @@ open class World3D: Resource {
     }()
 
     private func __getSpace() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_space,
@@ -34,7 +34,7 @@ open class World3D: Resource {
     }()
 
     private func __getNavigationMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_map,
@@ -53,7 +53,7 @@ open class World3D: Resource {
     }()
 
     private func __getScenario() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scenario,
@@ -95,7 +95,7 @@ open class World3D: Resource {
     }()
 
     private func __getEnvironment() -> Godot.Environment? {
-        Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment,
@@ -137,7 +137,7 @@ open class World3D: Resource {
     }()
 
     private func __getFallbackEnvironment() -> Godot.Environment? {
-        Godot.Environment?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Environment?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fallback_environment,
@@ -179,7 +179,7 @@ open class World3D: Resource {
     }()
 
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
-        Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraAttributes?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_attributes,
@@ -198,7 +198,7 @@ open class World3D: Resource {
     }()
 
     private func __getDirectSpaceState() -> Godot.PhysicsDirectSpaceState3D? {
-        Godot.PhysicsDirectSpaceState3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsDirectSpaceState3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_direct_space_state,

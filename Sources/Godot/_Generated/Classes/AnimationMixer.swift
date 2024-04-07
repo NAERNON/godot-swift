@@ -45,7 +45,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -64,7 +64,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -83,7 +83,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -112,7 +112,7 @@ open class AnimationMixer: Node {
     public lazy var animationFinishedSignal: Godot.SignalEmitter<AnimationFinishedSignalInput> = {
         .init(object: self, signalName: "animation_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationFinishedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(animName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(animName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationFinishedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -120,7 +120,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AnimationFinishedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -149,7 +149,7 @@ open class AnimationMixer: Node {
     public lazy var animationStartedSignal: Godot.SignalEmitter<AnimationStartedSignalInput> = {
         .init(object: self, signalName: "animation_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationStartedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(animName: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(animName: Godot.GodotStringName.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AnimationStartedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -157,7 +157,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AnimationStartedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -176,7 +176,7 @@ open class AnimationMixer: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -202,7 +202,7 @@ open class AnimationMixer: Node {
         name: Godot.GodotStringName,
         library: Godot.AnimationLibrary?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         library.withGodotUnsafeRawPointer { __ptr_library in
         withUnsafePointer(to: __ptr_library) { _ptr___ptr_library in
@@ -273,7 +273,7 @@ open class AnimationMixer: Node {
     public func hasAnimationLibrary(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -296,7 +296,7 @@ open class AnimationMixer: Node {
     public func animationLibrary(
         name: Godot.GodotStringName
     ) -> Godot.AnimationLibrary? {
-        Godot.AnimationLibrary?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationLibrary?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -317,7 +317,7 @@ open class AnimationMixer: Node {
     }()
 
     public func animationLibraryList() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animation_library_list,
@@ -338,7 +338,7 @@ open class AnimationMixer: Node {
     public func hasAnimation(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -361,7 +361,7 @@ open class AnimationMixer: Node {
     public func animation(
         name: Godot.GodotStringName
     ) -> Godot.Animation? {
-        Godot.Animation?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Animation?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +382,7 @@ open class AnimationMixer: Node {
     }()
 
     public func animationList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animation_list,
@@ -423,7 +423,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __isActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_active,
@@ -464,7 +464,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __isDeterministic() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_deterministic,
@@ -505,7 +505,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __getRootNode() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_node,
@@ -546,7 +546,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __getCallbackModeProcess() -> Godot.AnimationMixer.AnimationCallbackModeProcess {
-        Godot.AnimationMixer.AnimationCallbackModeProcess.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationMixer.AnimationCallbackModeProcess.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_callback_mode_process,
@@ -587,7 +587,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __getCallbackModeMethod() -> Godot.AnimationMixer.AnimationCallbackModeMethod {
-        Godot.AnimationMixer.AnimationCallbackModeMethod.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationMixer.AnimationCallbackModeMethod.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_callback_mode_method,
@@ -628,7 +628,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __getAudioMaxPolyphony() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_audio_max_polyphony,
@@ -669,7 +669,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __getRootMotionTrack() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_track,
@@ -688,7 +688,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionPosition() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_position,
@@ -707,7 +707,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionRotation() -> Godot.Quaternion {
-        Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Quaternion.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_rotation,
@@ -726,7 +726,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionScale() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_scale,
@@ -745,7 +745,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionPositionAccumulator() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_position_accumulator,
@@ -764,7 +764,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionRotationAccumulator() -> Godot.Quaternion {
-        Godot.Quaternion.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Quaternion.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_rotation_accumulator,
@@ -783,7 +783,7 @@ open class AnimationMixer: Node {
     }()
 
     public func rootMotionScaleAccumulator() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_motion_scale_accumulator,
@@ -864,7 +864,7 @@ open class AnimationMixer: Node {
     }()
 
     private func __isResetOnSaveEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_reset_on_save_enabled,
@@ -885,7 +885,7 @@ open class AnimationMixer: Node {
     public func findAnimation(
         _ animation: Godot.Animation?
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafePointer(to: __ptr_animation) { _ptr___ptr_animation in
         withUnsafeArgumentPackPointer(_ptr___ptr_animation) { __accessPtr in
@@ -909,7 +909,7 @@ open class AnimationMixer: Node {
     public func findAnimationLibrary(
         animation: Godot.Animation?
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafePointer(to: __ptr_animation) { _ptr___ptr_animation in
         withUnsafeArgumentPackPointer(_ptr___ptr_animation) { __accessPtr in
@@ -1022,13 +1022,13 @@ open class AnimationMixer: Node {
             }
             Unmanaged<AnimationMixer> .fromOpaque(instancePtr).takeUnretainedValue()
         ._postProcessKeyValue(
-            animation: Godot.Animation?.fromGodotUnsafePointer(args[0]!),
-            track: Int32.fromGodotUnsafePointer(args[1]!),
-            value: Godot.Variant.fromGodotUnsafePointer(args[2]!),
-            object: Godot.Object?.fromGodotUnsafePointer(args[3]!),
-            objectIdx: Int32.fromGodotUnsafePointer(args[4]!)
+            animation: Godot.Animation?.transferFromGodot(unsafePointer: args[0]!),
+            track: Int32.transferFromGodot(unsafePointer: args[1]!),
+            value: Godot.Variant.transferFromGodot(unsafePointer: args[2]!),
+            object: Godot.Object?.transferFromGodot(unsafePointer: args[3]!),
+            objectIdx: Int32.transferFromGodot(unsafePointer: args[4]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_postProcessKeyValue" : ("_post_process_key_value", _post_process_key_value_call)
         ]

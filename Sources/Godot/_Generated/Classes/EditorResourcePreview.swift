@@ -31,7 +31,7 @@ open class EditorResourcePreview: Node {
     public lazy var previewInvalidatedSignal: Godot.SignalEmitter<PreviewInvalidatedSignalInput> = {
         .init(object: self, signalName: "preview_invalidated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(path: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class EditorResourcePreview: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -51,7 +51,7 @@ open class EditorResourcePreview: Node {
         }
     }()
 
-    public func queueResourcePreview<Value: VariantStorableIn>(
+    public func queueResourcePreview<Value: Variant.Storable>(
         path: Godot.GodotString,
         receiver: Godot.Object?,
         receiverFunc: Godot.GodotStringName,
@@ -80,7 +80,7 @@ open class EditorResourcePreview: Node {
         }
     }()
 
-    public func queueEditedResourcePreview<Value: VariantStorableIn>(
+    public func queueEditedResourcePreview<Value: Variant.Storable>(
         resource: Godot.Resource?,
         receiver: Godot.Object?,
         receiverFunc: Godot.GodotStringName,

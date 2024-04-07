@@ -41,7 +41,7 @@ open class EditorScript: RefCounted {
     }()
 
     public func scene() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scene,
@@ -60,7 +60,7 @@ open class EditorScript: RefCounted {
     }()
 
     public func editorInterface() -> Godot.EditorInterface? {
-        Godot.EditorInterface?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorInterface?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_interface,

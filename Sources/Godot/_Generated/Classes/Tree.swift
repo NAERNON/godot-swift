@@ -47,7 +47,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -66,7 +66,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -107,9 +107,9 @@ open class Tree: Control {
     public lazy var multiSelectedSignal: Godot.SignalEmitter<MultiSelectedSignalInput> = {
         .init(object: self, signalName: "multi_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(item: Godot.TreeItem?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    selected: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+                .call(with: .init(item: Godot.TreeItem?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    column: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    selected: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -117,7 +117,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -152,8 +152,8 @@ open class Tree: Control {
     public lazy var itemMouseSelectedSignal: Godot.SignalEmitter<ItemMouseSelectedSignalInput> = {
         .init(object: self, signalName: "item_mouse_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(position: Godot.Vector2.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    mouseButtonIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -161,7 +161,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ItemMouseSelectedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -196,8 +196,8 @@ open class Tree: Control {
     public lazy var emptyClickedSignal: Godot.SignalEmitter<EmptyClickedSignalInput> = {
         .init(object: self, signalName: "empty_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(position: Godot.Vector2.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    mouseButtonIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -205,7 +205,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -224,7 +224,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -253,7 +253,7 @@ open class Tree: Control {
     public lazy var customItemClickedSignal: Godot.SignalEmitter<CustomItemClickedSignalInput> = {
         .init(object: self, signalName: "custom_item_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(mouseButtonIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -261,7 +261,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<CustomItemClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -280,7 +280,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -309,7 +309,7 @@ open class Tree: Control {
     public lazy var itemCollapsedSignal: Godot.SignalEmitter<ItemCollapsedSignalInput> = {
         .init(object: self, signalName: "item_collapsed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ItemCollapsedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(item: Godot.TreeItem?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(item: Godot.TreeItem?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ItemCollapsedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -317,7 +317,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ItemCollapsedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -352,8 +352,8 @@ open class Tree: Control {
     public lazy var checkPropagatedToItemSignal: Godot.SignalEmitter<CheckPropagatedToItemSignalInput> = {
         .init(object: self, signalName: "check_propagated_to_item") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CheckPropagatedToItemSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(item: Godot.TreeItem?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(item: Godot.TreeItem?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    column: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CheckPropagatedToItemSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -361,7 +361,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<CheckPropagatedToItemSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -408,10 +408,10 @@ open class Tree: Control {
     public lazy var buttonClickedSignal: Godot.SignalEmitter<ButtonClickedSignalInput> = {
         .init(object: self, signalName: "button_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ButtonClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(item: Godot.TreeItem?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(item: Godot.TreeItem?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    column: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    mouseButtonIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ButtonClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -419,7 +419,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ButtonClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -448,7 +448,7 @@ open class Tree: Control {
     public lazy var customPopupEditedSignal: Godot.SignalEmitter<CustomPopupEditedSignalInput> = {
         .init(object: self, signalName: "custom_popup_edited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(arrowClicked: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(arrowClicked: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -456,7 +456,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<CustomPopupEditedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -475,7 +475,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -510,8 +510,8 @@ open class Tree: Control {
     public lazy var columnTitleClickedSignal: Godot.SignalEmitter<ColumnTitleClickedSignalInput> = {
         .init(object: self, signalName: "column_title_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    mouseButtonIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(column: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    mouseButtonIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -519,7 +519,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ColumnTitleClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -538,7 +538,7 @@ open class Tree: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -572,7 +572,7 @@ open class Tree: Control {
         parent: Godot.TreeItem? = nil,
         index: Int32 = -1
     ) -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         parent.withGodotUnsafeRawPointer { __ptr_parent in
         withUnsafePointer(to: __ptr_parent) { _ptr___ptr_parent in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -595,7 +595,7 @@ open class Tree: Control {
     }()
 
     public func root() -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root,
@@ -712,7 +712,7 @@ open class Tree: Control {
     public func isColumnExpanding(
         column: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -735,7 +735,7 @@ open class Tree: Control {
     public func isColumnClippingContent(
         column: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -758,7 +758,7 @@ open class Tree: Control {
     public func columnExpandRatio(
         column: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -781,7 +781,7 @@ open class Tree: Control {
     public func columnWidth(
         column: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -824,7 +824,7 @@ open class Tree: Control {
     }()
 
     private func __isRootHidden() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_root_hidden,
@@ -845,7 +845,7 @@ open class Tree: Control {
     public func nextSelected(
         from: Godot.TreeItem?
     ) -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafePointer(to: __ptr_from) { _ptr___ptr_from in
         withUnsafeArgumentPackPointer(_ptr___ptr_from) { __accessPtr in
@@ -867,7 +867,7 @@ open class Tree: Control {
     }()
 
     public func selected() -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected,
@@ -911,7 +911,7 @@ open class Tree: Control {
     }()
 
     public func selectedColumn() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_column,
@@ -930,7 +930,7 @@ open class Tree: Control {
     }()
 
     public func pressedButton() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pressed_button,
@@ -971,7 +971,7 @@ open class Tree: Control {
     }()
 
     private func __getSelectMode() -> Godot.Tree.SelectMode {
-        Godot.Tree.SelectMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tree.SelectMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_select_mode,
@@ -1030,7 +1030,7 @@ open class Tree: Control {
     }()
 
     private func __getColumns() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_columns,
@@ -1049,7 +1049,7 @@ open class Tree: Control {
     }()
 
     public func edited() -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited,
@@ -1068,7 +1068,7 @@ open class Tree: Control {
     }()
 
     public func editedColumn() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited_column,
@@ -1089,7 +1089,7 @@ open class Tree: Control {
     public func editSelected(
         forceEdit: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         forceEdit.withGodotUnsafeRawPointer { __ptr_forceEdit in
         withUnsafeArgumentPackPointer(__ptr_forceEdit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1110,7 +1110,7 @@ open class Tree: Control {
     }()
 
     public func customPopupRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_popup_rect,
@@ -1133,7 +1133,7 @@ open class Tree: Control {
         column: Int32 = -1,
         buttonIndex: Int32 = -1
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         column.withGodotUnsafeRawPointer { __ptr_column in
@@ -1159,7 +1159,7 @@ open class Tree: Control {
     public func itemAtPosition(
         _ position: Godot.Vector2
     ) -> Godot.TreeItem? {
-        Godot.TreeItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TreeItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1182,7 +1182,7 @@ open class Tree: Control {
     public func columnAtPosition(
         _ position: Godot.Vector2
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1205,7 +1205,7 @@ open class Tree: Control {
     public func dropSectionAtPosition(
         _ position: Godot.Vector2
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1228,7 +1228,7 @@ open class Tree: Control {
     public func buttonIDAtPosition(
         _ position: Godot.Vector2
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1289,7 +1289,7 @@ open class Tree: Control {
     }()
 
     private func __areColumnTitlesVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_column_titles_visible,
@@ -1334,7 +1334,7 @@ open class Tree: Control {
     public func columnTitle(
         column: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1381,7 +1381,7 @@ open class Tree: Control {
     public func columnTitleAlignment(
         column: Int32
     ) -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1428,7 +1428,7 @@ open class Tree: Control {
     public func columnTitleDirection(
         column: Int32
     ) -> Godot.Control.TextDirection {
-        Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control.TextDirection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1475,7 +1475,7 @@ open class Tree: Control {
     public func columnTitleLanguage(
         column: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         column.withGodotUnsafeRawPointer { __ptr_column in
         withUnsafeArgumentPackPointer(__ptr_column) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1496,7 +1496,7 @@ open class Tree: Control {
     }()
 
     public func scroll() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scroll,
@@ -1562,7 +1562,7 @@ open class Tree: Control {
     }()
 
     private func __isHScrollEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_h_scroll_enabled,
@@ -1603,7 +1603,7 @@ open class Tree: Control {
     }()
 
     private func __isVScrollEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_v_scroll_enabled,
@@ -1644,7 +1644,7 @@ open class Tree: Control {
     }()
 
     private func __isFoldingHidden() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_folding_hidden,
@@ -1685,7 +1685,7 @@ open class Tree: Control {
     }()
 
     private func __isRecursiveFoldingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_recursive_folding_enabled,
@@ -1726,7 +1726,7 @@ open class Tree: Control {
     }()
 
     private func __getDropModeFlags() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drop_mode_flags,
@@ -1767,7 +1767,7 @@ open class Tree: Control {
     }()
 
     private func __getAllowRmbSelect() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_allow_rmb_select,
@@ -1808,7 +1808,7 @@ open class Tree: Control {
     }()
 
     private func __getAllowReselect() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_allow_reselect,
@@ -1849,7 +1849,7 @@ open class Tree: Control {
     }()
 
     private func __getAllowSearch() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_allow_search,

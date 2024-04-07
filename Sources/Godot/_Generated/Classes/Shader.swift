@@ -32,7 +32,7 @@ open class Shader: Resource {
     }()
 
     public func mode() -> Godot.Shader.Mode {
-        Godot.Shader.Mode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Shader.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mode,
@@ -73,7 +73,7 @@ open class Shader: Resource {
     }()
 
     private func __getCode() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_code,
@@ -122,7 +122,7 @@ open class Shader: Resource {
         name: Godot.GodotStringName,
         index: Int32 = 0
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_index) { __accessPtr in
@@ -146,7 +146,7 @@ open class Shader: Resource {
     public func shaderUniformList(
         getGroups: Bool = false
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         getGroups.withGodotUnsafeRawPointer { __ptr_getGroups in
         withUnsafeArgumentPackPointer(__ptr_getGroups) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

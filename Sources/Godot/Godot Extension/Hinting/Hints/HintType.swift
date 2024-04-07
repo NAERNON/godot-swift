@@ -1,5 +1,5 @@
 
-extension Hint where Value : ExposableValue {
+extension Hint where Value : Exposable {
     /// Hints that an integer property
     /// should be within a given range.
     public static var typed: Hint {

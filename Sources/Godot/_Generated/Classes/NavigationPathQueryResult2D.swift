@@ -48,7 +48,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __getPath() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path,
@@ -89,7 +89,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __getPathTypes() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_types,
@@ -130,7 +130,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __getPathRids() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_rids,
@@ -171,7 +171,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __getPathOwnerIds() -> Godot.PackedInt64Array {
-        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_owner_ids,

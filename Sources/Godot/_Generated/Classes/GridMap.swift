@@ -31,7 +31,7 @@ open class GridMap: Node3D {
     public lazy var cellSizeChangedSignal: Godot.SignalEmitter<CellSizeChangedSignalInput> = {
         .init(object: self, signalName: "cell_size_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(cellSize: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(cellSize: Godot.Vector3.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class GridMap: Node3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<CellSizeChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -58,7 +58,7 @@ open class GridMap: Node3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -95,7 +95,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCollisionLayer() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_layer,
@@ -136,7 +136,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mask,
@@ -181,7 +181,7 @@ open class GridMap: Node3D {
     public func collisionMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -228,7 +228,7 @@ open class GridMap: Node3D {
     public func collisionLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -271,7 +271,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCollisionPriority() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_priority,
@@ -313,7 +313,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getPhysicsMaterial() -> Godot.PhysicsMaterial? {
-        Godot.PhysicsMaterial?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PhysicsMaterial?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_material,
@@ -354,7 +354,7 @@ open class GridMap: Node3D {
     }()
 
     private func __isBakingNavigation() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_baking_navigation,
@@ -395,7 +395,7 @@ open class GridMap: Node3D {
     }()
 
     public func navigationMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_map,
@@ -437,7 +437,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getMeshLibrary() -> Godot.MeshLibrary? {
-        Godot.MeshLibrary?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MeshLibrary?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh_library,
@@ -478,7 +478,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCellSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_size,
@@ -519,7 +519,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCellScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_scale,
@@ -560,7 +560,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getOctantSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_octant_size,
@@ -607,7 +607,7 @@ open class GridMap: Node3D {
     public func cellItem(
         position: Godot.Vector3I
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -630,7 +630,7 @@ open class GridMap: Node3D {
     public func cellItemOrientation(
         position: Godot.Vector3I
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -653,7 +653,7 @@ open class GridMap: Node3D {
     public func cellItemBasis(
         position: Godot.Vector3I
     ) -> Godot.Basis {
-        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Basis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -676,7 +676,7 @@ open class GridMap: Node3D {
     public func basisWithOrthogonalIndex(
         _ index: Int32
     ) -> Godot.Basis {
-        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Basis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -699,7 +699,7 @@ open class GridMap: Node3D {
     public func orthogonalIndexFromBasis(
         _ basis: Godot.Basis
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         basis.withGodotUnsafeRawPointer { __ptr_basis in
         withUnsafeArgumentPackPointer(__ptr_basis) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -722,7 +722,7 @@ open class GridMap: Node3D {
     public func localToMap(
         localPosition: Godot.Vector3
     ) -> Godot.Vector3I {
-        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localPosition.withGodotUnsafeRawPointer { __ptr_localPosition in
         withUnsafeArgumentPackPointer(__ptr_localPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -745,7 +745,7 @@ open class GridMap: Node3D {
     public func mapToLocal(
         mapPosition: Godot.Vector3I
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mapPosition.withGodotUnsafeRawPointer { __ptr_mapPosition in
         withUnsafeArgumentPackPointer(__ptr_mapPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -811,7 +811,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCenterX() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_x,
@@ -852,7 +852,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCenterY() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_y,
@@ -893,7 +893,7 @@ open class GridMap: Node3D {
     }()
 
     private func __getCenterZ() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_z,
@@ -930,7 +930,7 @@ open class GridMap: Node3D {
     }()
 
     public func usedCells() -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_used_cells,
@@ -951,7 +951,7 @@ open class GridMap: Node3D {
     public func usedCellsByItem(
         _ item: Int32
     ) -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafeArgumentPackPointer(__ptr_item) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -972,7 +972,7 @@ open class GridMap: Node3D {
     }()
 
     public func meshes() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_meshes,
@@ -991,7 +991,7 @@ open class GridMap: Node3D {
     }()
 
     public func bakeMeshes() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bake_meshes,
@@ -1012,7 +1012,7 @@ open class GridMap: Node3D {
     public func bakeMeshInstance(
         idx: Int32
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

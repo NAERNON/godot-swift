@@ -81,7 +81,7 @@ open class SkeletonModificationStack2D: Resource {
     public func modification(
         modIdx: Int32
     ) -> Godot.SkeletonModification2D? {
-        Godot.SkeletonModification2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SkeletonModification2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         modIdx.withGodotUnsafeRawPointer { __ptr_modIdx in
         withUnsafeArgumentPackPointer(__ptr_modIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -194,7 +194,7 @@ open class SkeletonModificationStack2D: Resource {
     }()
 
     private func __getModificationCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modification_count,
@@ -213,7 +213,7 @@ open class SkeletonModificationStack2D: Resource {
     }()
 
     public func isSetup() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_is_setup,
@@ -254,7 +254,7 @@ open class SkeletonModificationStack2D: Resource {
     }()
 
     private func __getEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enabled,
@@ -295,7 +295,7 @@ open class SkeletonModificationStack2D: Resource {
     }()
 
     private func __getStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_strength,
@@ -314,7 +314,7 @@ open class SkeletonModificationStack2D: Resource {
     }()
 
     public func skeleton() -> Godot.Skeleton2D? {
-        Godot.Skeleton2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Skeleton2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton,

@@ -63,7 +63,7 @@ open class DirectionalLight3D: Light3D {
     }()
 
     private func __getShadowMode() -> Godot.DirectionalLight3D.ShadowMode {
-        Godot.DirectionalLight3D.ShadowMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DirectionalLight3D.ShadowMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shadow_mode,
@@ -104,7 +104,7 @@ open class DirectionalLight3D: Light3D {
     }()
 
     private func __isBlendSplitsEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_blend_splits_enabled,
@@ -145,7 +145,7 @@ open class DirectionalLight3D: Light3D {
     }()
 
     private func __getSkyMode() -> Godot.DirectionalLight3D.SkyMode {
-        Godot.DirectionalLight3D.SkyMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DirectionalLight3D.SkyMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sky_mode,

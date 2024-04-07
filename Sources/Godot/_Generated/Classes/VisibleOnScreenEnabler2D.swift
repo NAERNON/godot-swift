@@ -50,7 +50,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
     }()
 
     private func __getEnableMode() -> Godot.VisibleOnScreenEnabler2D.EnableMode {
-        Godot.VisibleOnScreenEnabler2D.EnableMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisibleOnScreenEnabler2D.EnableMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_mode,
@@ -91,7 +91,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
     }()
 
     private func __getEnableNodePath() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_enable_node_path,

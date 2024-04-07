@@ -43,7 +43,7 @@ open class CameraFeed: RefCounted {
     }()
 
     public func id() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_id,
@@ -62,7 +62,7 @@ open class CameraFeed: RefCounted {
     }()
 
     private func __isActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_active,
@@ -103,7 +103,7 @@ open class CameraFeed: RefCounted {
     }()
 
     public func name() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -122,7 +122,7 @@ open class CameraFeed: RefCounted {
     }()
 
     public func position() -> Godot.CameraFeed.FeedPosition {
-        Godot.CameraFeed.FeedPosition.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraFeed.FeedPosition.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_position,
@@ -141,7 +141,7 @@ open class CameraFeed: RefCounted {
     }()
 
     private func __getTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transform,
@@ -182,7 +182,7 @@ open class CameraFeed: RefCounted {
     }()
 
     public func datatype() -> Godot.CameraFeed.FeedDataType {
-        Godot.CameraFeed.FeedDataType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraFeed.FeedDataType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_datatype,

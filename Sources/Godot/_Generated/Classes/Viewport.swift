@@ -257,7 +257,7 @@ open class Viewport: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -286,7 +286,7 @@ open class Viewport: Node {
     public lazy var guiFocusChangedSignal: Godot.SignalEmitter<GuiFocusChangedSignalInput> = {
         .init(object: self, signalName: "gui_focus_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Control?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Control?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -294,7 +294,7 @@ open class Viewport: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -330,7 +330,7 @@ open class Viewport: Node {
     }()
 
     private func __getWorld2D() -> Godot.World2D? {
-        Godot.World2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.World2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_world_2d,
@@ -349,7 +349,7 @@ open class Viewport: Node {
     }()
 
     public func findWorld2D() -> Godot.World2D? {
-        Godot.World2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.World2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_find_world_2d,
@@ -390,7 +390,7 @@ open class Viewport: Node {
     }()
 
     private func __getCanvasTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_canvas_transform,
@@ -431,7 +431,7 @@ open class Viewport: Node {
     }()
 
     private func __getGlobalCanvasTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_global_canvas_transform,
@@ -450,7 +450,7 @@ open class Viewport: Node {
     }()
 
     public func finalTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_final_transform,
@@ -469,7 +469,7 @@ open class Viewport: Node {
     }()
 
     public func screenTransform() -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_screen_transform,
@@ -488,7 +488,7 @@ open class Viewport: Node {
     }()
 
     public func visibleRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_rect,
@@ -529,7 +529,7 @@ open class Viewport: Node {
     }()
 
     private func __hasTransparentBackground() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_transparent_background,
@@ -570,7 +570,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingHdr2D() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_hdr_2d,
@@ -611,7 +611,7 @@ open class Viewport: Node {
     }()
 
     private func __getMsaa2D() -> Godot.Viewport.MSAA {
-        Godot.Viewport.MSAA.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.MSAA.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_msaa_2d,
@@ -652,7 +652,7 @@ open class Viewport: Node {
     }()
 
     private func __getMsaa3D() -> Godot.Viewport.MSAA {
-        Godot.Viewport.MSAA.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.MSAA.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_msaa_3d,
@@ -693,7 +693,7 @@ open class Viewport: Node {
     }()
 
     private func __getScreenSpaceAa() -> Godot.Viewport.ScreenSpaceAA {
-        Godot.Viewport.ScreenSpaceAA.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.ScreenSpaceAA.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_screen_space_aa,
@@ -734,7 +734,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingTaa() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_taa,
@@ -775,7 +775,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingDebanding() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_debanding,
@@ -816,7 +816,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingOcclusionCulling() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_occlusion_culling,
@@ -857,7 +857,7 @@ open class Viewport: Node {
     }()
 
     private func __getDebugDraw() -> Godot.Viewport.DebugDraw {
-        Godot.Viewport.DebugDraw.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.DebugDraw.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_draw,
@@ -879,7 +879,7 @@ open class Viewport: Node {
         type: Godot.Viewport.RenderInfoType,
         info: Godot.Viewport.RenderInfo
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         info.withGodotUnsafeRawPointer { __ptr_info in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_info) { __accessPtr in
@@ -901,7 +901,7 @@ open class Viewport: Node {
     }()
 
     public func texture() -> Godot.ViewportTexture? {
-        Godot.ViewportTexture?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ViewportTexture?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -942,7 +942,7 @@ open class Viewport: Node {
     }()
 
     private func __getPhysicsObjectPicking() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_object_picking,
@@ -983,7 +983,7 @@ open class Viewport: Node {
     }()
 
     private func __getPhysicsObjectPickingSort() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_object_picking_sort,
@@ -1002,7 +1002,7 @@ open class Viewport: Node {
     }()
 
     public func viewportRid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_viewport_rid,
@@ -1093,7 +1093,7 @@ open class Viewport: Node {
     }()
 
     public func camera2D() -> Godot.Camera2D? {
-        Godot.Camera2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_2d,
@@ -1134,7 +1134,7 @@ open class Viewport: Node {
     }()
 
     private func __isAudioListener2D() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_audio_listener_2d,
@@ -1153,7 +1153,7 @@ open class Viewport: Node {
     }()
 
     public func mousePosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mouse_position,
@@ -1212,7 +1212,7 @@ open class Viewport: Node {
     }()
 
     public func guiGetDragData() -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_gui_get_drag_data,
@@ -1231,7 +1231,7 @@ open class Viewport: Node {
     }()
 
     public func guiIsDragging() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_gui_is_dragging,
@@ -1250,7 +1250,7 @@ open class Viewport: Node {
     }()
 
     public func guiIsDragSuccessful() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_gui_is_drag_successful,
@@ -1287,7 +1287,7 @@ open class Viewport: Node {
     }()
 
     public func guiGetFocusOwner() -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_gui_get_focus_owner,
@@ -1328,7 +1328,7 @@ open class Viewport: Node {
     }()
 
     private func __isInputDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_input_disabled,
@@ -1369,7 +1369,7 @@ open class Viewport: Node {
     }()
 
     private func __getPositionalShadowAtlasSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_positional_shadow_atlas_size,
@@ -1410,7 +1410,7 @@ open class Viewport: Node {
     }()
 
     private func __getPositionalShadowAtlas16Bits() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_positional_shadow_atlas_16_bits,
@@ -1451,7 +1451,7 @@ open class Viewport: Node {
     }()
 
     private func __isSnapControlsToPixelsEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_snap_controls_to_pixels_enabled,
@@ -1492,7 +1492,7 @@ open class Viewport: Node {
     }()
 
     private func __isSnap2DTransformsToPixelEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_snap_2d_transforms_to_pixel_enabled,
@@ -1533,7 +1533,7 @@ open class Viewport: Node {
     }()
 
     private func __isSnap2DVerticesToPixelEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_snap_2d_vertices_to_pixel_enabled,
@@ -1578,7 +1578,7 @@ open class Viewport: Node {
     private func __getPositionalShadowAtlasQuadrantSubdiv(
         quadrant: Int32
     ) -> Godot.Viewport.PositionalShadowAtlasQuadrantSubdiv {
-        Godot.Viewport.PositionalShadowAtlasQuadrantSubdiv.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.PositionalShadowAtlasQuadrantSubdiv.fromInitializingMutatingGodotUnsafePointer { __temporary in
         quadrant.withGodotUnsafeRawPointer { __ptr_quadrant in
         withUnsafeArgumentPackPointer(__ptr_quadrant) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1617,7 +1617,7 @@ open class Viewport: Node {
     }()
 
     public func isInputHandled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_input_handled,
@@ -1658,7 +1658,7 @@ open class Viewport: Node {
     }()
 
     private func __isHandlingInputLocally() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_handling_input_locally,
@@ -1699,7 +1699,7 @@ open class Viewport: Node {
     }()
 
     private func __getDefaultCanvasItemTextureFilter() -> Godot.Viewport.DefaultCanvasItemTextureFilter {
-        Godot.Viewport.DefaultCanvasItemTextureFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.DefaultCanvasItemTextureFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_canvas_item_texture_filter,
@@ -1740,7 +1740,7 @@ open class Viewport: Node {
     }()
 
     private func __isEmbeddingSubwindows() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_embedding_subwindows,
@@ -1759,7 +1759,7 @@ open class Viewport: Node {
     }()
 
     public func embeddedSubwindows() -> Godot.GodotArray<Godot.Window?> {
-        Godot.GodotArray<Godot.Window?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Window?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_embedded_subwindows,
@@ -1800,7 +1800,7 @@ open class Viewport: Node {
     }()
 
     private func __getCanvasCullMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_canvas_cull_mask,
@@ -1845,7 +1845,7 @@ open class Viewport: Node {
     public func canvasCullMaskBit(
         layer: UInt32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1888,7 +1888,7 @@ open class Viewport: Node {
     }()
 
     private func __getDefaultCanvasItemTextureRepeat() -> Godot.Viewport.DefaultCanvasItemTextureRepeat {
-        Godot.Viewport.DefaultCanvasItemTextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.DefaultCanvasItemTextureRepeat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_canvas_item_texture_repeat,
@@ -1929,7 +1929,7 @@ open class Viewport: Node {
     }()
 
     private func __getSdfOversize() -> Godot.Viewport.SDFOversize {
-        Godot.Viewport.SDFOversize.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.SDFOversize.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdf_oversize,
@@ -1970,7 +1970,7 @@ open class Viewport: Node {
     }()
 
     private func __getSdfScale() -> Godot.Viewport.SDFScale {
-        Godot.Viewport.SDFScale.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.SDFScale.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sdf_scale,
@@ -2011,7 +2011,7 @@ open class Viewport: Node {
     }()
 
     private func __getMeshLodThreshold() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh_lod_threshold,
@@ -2053,7 +2053,7 @@ open class Viewport: Node {
     }()
 
     private func __getWorld3D() -> Godot.World3D? {
-        Godot.World3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.World3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_world_3d,
@@ -2072,7 +2072,7 @@ open class Viewport: Node {
     }()
 
     public func findWorld3D() -> Godot.World3D? {
-        Godot.World3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.World3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_find_world_3d,
@@ -2113,7 +2113,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingOwnWorld3D() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_own_world_3d,
@@ -2132,7 +2132,7 @@ open class Viewport: Node {
     }()
 
     public func camera3D() -> Godot.Camera3D? {
-        Godot.Camera3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Camera3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_3d,
@@ -2173,7 +2173,7 @@ open class Viewport: Node {
     }()
 
     private func __isAudioListener3D() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_audio_listener_3d,
@@ -2214,7 +2214,7 @@ open class Viewport: Node {
     }()
 
     private func __is3DDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_3d_disabled,
@@ -2255,7 +2255,7 @@ open class Viewport: Node {
     }()
 
     private func __isUsingXr() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_xr,
@@ -2296,7 +2296,7 @@ open class Viewport: Node {
     }()
 
     private func __getScaling3DMode() -> Godot.Viewport.Scaling3DMode {
-        Godot.Viewport.Scaling3DMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.Scaling3DMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scaling_3d_mode,
@@ -2337,7 +2337,7 @@ open class Viewport: Node {
     }()
 
     private func __getScaling3DScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scaling_3d_scale,
@@ -2378,7 +2378,7 @@ open class Viewport: Node {
     }()
 
     private func __getFsrSharpness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fsr_sharpness,
@@ -2419,7 +2419,7 @@ open class Viewport: Node {
     }()
 
     private func __getTextureMipmapBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_mipmap_bias,
@@ -2460,7 +2460,7 @@ open class Viewport: Node {
     }()
 
     private func __getVrsMode() -> Godot.Viewport.VRSMode {
-        Godot.Viewport.VRSMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport.VRSMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vrs_mode,
@@ -2502,7 +2502,7 @@ open class Viewport: Node {
     }()
 
     private func __getVrsTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vrs_texture,

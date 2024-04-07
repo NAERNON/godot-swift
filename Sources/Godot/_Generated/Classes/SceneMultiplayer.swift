@@ -31,7 +31,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     public lazy var peerAuthenticatingSignal: Godot.SignalEmitter<PeerAuthenticatingSignalInput> = {
         .init(object: self, signalName: "peer_authenticating") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class SceneMultiplayer: MultiplayerAPI {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -68,7 +68,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     public lazy var peerAuthenticationFailedSignal: Godot.SignalEmitter<PeerAuthenticationFailedSignalInput> = {
         .init(object: self, signalName: "peer_authentication_failed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -76,7 +76,7 @@ open class SceneMultiplayer: MultiplayerAPI {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -111,8 +111,8 @@ open class SceneMultiplayer: MultiplayerAPI {
     public lazy var peerPacketSignal: Godot.SignalEmitter<PeerPacketSignalInput> = {
         .init(object: self, signalName: "peer_packet") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    packet: Godot.PackedByteArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    packet: Godot.PackedByteArray.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -120,7 +120,7 @@ open class SceneMultiplayer: MultiplayerAPI {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -155,7 +155,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __getRootPath() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root_path,
@@ -214,7 +214,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     public func authenticatingPeers() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_authenticating_peers,
@@ -236,7 +236,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         id: Int32,
         data: Godot.PackedByteArray
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_id, __ptr_data) { __accessPtr in
@@ -260,7 +260,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     public func completeAuth(
         id: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -303,7 +303,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __getAuthCallback() -> Godot.Callable {
-        Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auth_callback,
@@ -344,7 +344,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __getAuthTimeout() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auth_timeout,
@@ -385,7 +385,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __isRefusingNewConnections() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_refusing_new_connections,
@@ -426,7 +426,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __isObjectDecodingAllowed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_object_decoding_allowed,
@@ -467,7 +467,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __isServerRelayEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_server_relay_enabled,
@@ -491,7 +491,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         mode: Godot.MultiplayerPeer.TransferMode = MultiplayerPeer.TransferMode(rawValue: 2)!,
         channel: Int32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bytes.withGodotUnsafeRawPointer { __ptr_bytes in
         id.withGodotUnsafeRawPointer { __ptr_id in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
@@ -515,7 +515,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __getMaxSyncPacketSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_sync_packet_size,
@@ -556,7 +556,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     private func __getMaxDeltaPacketSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_delta_packet_size,

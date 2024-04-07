@@ -3,7 +3,7 @@
 ///
 /// Do not declare `GodotEnum` conformances yourself.
 /// Use the ``GodotEnum()`` macro instead.
-public protocol GodotEnum: HintableValue, ExposableRawRepresentableValue
+public protocol GodotEnum: Hintable, ExposableRawRepresentable
 where RawValue : FixedWidthInteger
 {
     /// Returns the name and values used for hinting
@@ -29,18 +29,20 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 
 internal extension GodotEnum {
     func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
+        _ body: (UnsafeRawPointer?) throws -> Result
     ) rethrows -> Result {
         try withUnsafePointer(to: self) { try body($0) }
     }
     
     mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
+        _ body: (UnsafeMutableRawPointer?) throws -> Result
     ) rethrows -> Result {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+    static func fromInitializingMutatingGodotUnsafePointer(
+        _ body: (UnsafeMutableRawPointer) -> Void
+    ) -> Self {
         var value = RawValue()
         withUnsafeMutablePointer(to: &value) { body($0) }
         return .init(rawValue: value)!

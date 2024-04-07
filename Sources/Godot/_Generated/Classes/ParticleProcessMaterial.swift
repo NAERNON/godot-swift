@@ -154,7 +154,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getDirection() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_direction,
@@ -195,7 +195,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getInheritVelocityRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inherit_velocity_ratio,
@@ -236,7 +236,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSpread() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_spread,
@@ -277,7 +277,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getFlatness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flatness,
@@ -322,7 +322,7 @@ open class ParticleProcessMaterial: Material {
     private func __getParamMin(
         param: Godot.ParticleProcessMaterial.Parameter
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -369,7 +369,7 @@ open class ParticleProcessMaterial: Material {
     private func __getParamMax(
         param: Godot.ParticleProcessMaterial.Parameter
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -417,7 +417,7 @@ open class ParticleProcessMaterial: Material {
     private func __getParamTexture(
         param: Godot.ParticleProcessMaterial.Parameter
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         param.withGodotUnsafeRawPointer { __ptr_param in
         withUnsafeArgumentPackPointer(__ptr_param) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -460,7 +460,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color,
@@ -502,7 +502,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getColorRamp() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_ramp,
@@ -544,7 +544,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getAlphaCurve() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_curve,
@@ -586,7 +586,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionCurve() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_curve,
@@ -628,7 +628,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getColorInitialRamp() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_initial_ramp,
@@ -670,7 +670,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getVelocityLimitCurve() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity_limit_curve,
@@ -715,7 +715,7 @@ open class ParticleProcessMaterial: Material {
     private func __getParticleFlag(
         _ particleFlag: Godot.ParticleProcessMaterial.ParticleFlags
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         particleFlag.withGodotUnsafeRawPointer { __ptr_particleFlag in
         withUnsafeArgumentPackPointer(__ptr_particleFlag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -758,7 +758,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getVelocityPivot() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity_pivot,
@@ -799,7 +799,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionShape() -> Godot.ParticleProcessMaterial.EmissionShape {
-        Godot.ParticleProcessMaterial.EmissionShape.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ParticleProcessMaterial.EmissionShape.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_shape,
@@ -840,7 +840,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionSphereRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_sphere_radius,
@@ -881,7 +881,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionBoxExtents() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_box_extents,
@@ -923,7 +923,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionPointTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_point_texture,
@@ -965,7 +965,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionNormalTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_normal_texture,
@@ -1007,7 +1007,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionColorTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_color_texture,
@@ -1048,7 +1048,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionPointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_point_count,
@@ -1089,7 +1089,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionRingAxis() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_axis,
@@ -1130,7 +1130,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionRingHeight() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_height,
@@ -1171,7 +1171,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionRingRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_radius,
@@ -1212,7 +1212,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionRingInnerRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_ring_inner_radius,
@@ -1253,7 +1253,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionShapeOffset() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_shape_offset,
@@ -1294,7 +1294,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getEmissionShapeScale() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_emission_shape_scale,
@@ -1313,7 +1313,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getTurbulenceEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_turbulence_enabled,
@@ -1354,7 +1354,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getTurbulenceNoiseStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_turbulence_noise_strength,
@@ -1395,7 +1395,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getTurbulenceNoiseScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_turbulence_noise_scale,
@@ -1436,7 +1436,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getTurbulenceNoiseSpeedRandom() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_turbulence_noise_speed_random,
@@ -1477,7 +1477,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getTurbulenceNoiseSpeed() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_turbulence_noise_speed,
@@ -1518,7 +1518,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getGravity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity,
@@ -1581,7 +1581,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getLifetimeRandomness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lifetime_randomness,
@@ -1600,7 +1600,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSubEmitterMode() -> Godot.ParticleProcessMaterial.SubEmitterMode {
-        Godot.ParticleProcessMaterial.SubEmitterMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ParticleProcessMaterial.SubEmitterMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sub_emitter_mode,
@@ -1641,7 +1641,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSubEmitterFrequency() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sub_emitter_frequency,
@@ -1682,7 +1682,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSubEmitterAmountAtEnd() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sub_emitter_amount_at_end,
@@ -1723,7 +1723,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSubEmitterAmountAtCollision() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sub_emitter_amount_at_collision,
@@ -1764,7 +1764,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getSubEmitterKeepVelocity() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sub_emitter_keep_velocity,
@@ -1827,7 +1827,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __isAttractorInteractionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_attractor_interaction_enabled,
@@ -1868,7 +1868,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getCollisionMode() -> Godot.ParticleProcessMaterial.CollisionMode {
-        Godot.ParticleProcessMaterial.CollisionMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ParticleProcessMaterial.CollisionMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mode,
@@ -1909,7 +1909,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __isCollisionUsingScale() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_collision_using_scale,
@@ -1950,7 +1950,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getCollisionFriction() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_friction,
@@ -1991,7 +1991,7 @@ open class ParticleProcessMaterial: Material {
     }()
 
     private func __getCollisionBounce() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_bounce,

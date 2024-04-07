@@ -41,7 +41,7 @@ open class VideoStream: Resource {
     }()
 
     private func __getFile() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_file,
@@ -74,7 +74,7 @@ open class VideoStream: Resource {
             }
             Unmanaged<VideoStream> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiatePlayback()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_instantiatePlayback" : ("_instantiate_playback", _instantiate_playback_call)
         ]

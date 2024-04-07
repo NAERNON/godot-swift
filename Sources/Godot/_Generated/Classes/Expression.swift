@@ -18,7 +18,7 @@ open class Expression: RefCounted {
         _ expression: Godot.GodotString,
         inputNames: Godot.PackedStringArray = PackedStringArray()
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         expression.withGodotUnsafeRawPointer { __ptr_expression in
         inputNames.withGodotUnsafeRawPointer { __ptr_inputNames in
         withUnsafeArgumentPackPointer(__ptr_expression, __ptr_inputNames) { __accessPtr in
@@ -39,13 +39,13 @@ open class Expression: RefCounted {
         }
     }()
 
-    public func execute<Value: VariantStorable>(
+    public func execute<Value: Variant.Storable>(
         inputs: Godot.GodotArray<Value> = [],
         baseInstance: Godot.Object? = nil,
         showError: Bool = true,
         constCallsOnly: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         inputs.withGodotUnsafeRawPointer { __ptr_inputs in
         baseInstance.withGodotUnsafeRawPointer { __ptr_baseInstance in
         withUnsafePointer(to: __ptr_baseInstance) { _ptr___ptr_baseInstance in
@@ -70,7 +70,7 @@ open class Expression: RefCounted {
     }()
 
     public func hasExecuteFailed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_execute_failed,
@@ -89,7 +89,7 @@ open class Expression: RefCounted {
     }()
 
     public func errorText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_error_text,

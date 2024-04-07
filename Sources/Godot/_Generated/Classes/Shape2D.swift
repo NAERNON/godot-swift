@@ -37,7 +37,7 @@ open class Shape2D: Resource {
     }()
 
     private func __getCustomSolverBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_solver_bias,
@@ -60,7 +60,7 @@ open class Shape2D: Resource {
         withShape shape: Godot.Shape2D?,
         shapeXform: Godot.Transform2D
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
@@ -90,7 +90,7 @@ open class Shape2D: Resource {
         shapeXform: Godot.Transform2D,
         shapeMotion: Godot.Vector2
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         localMotion.withGodotUnsafeRawPointer { __ptr_localMotion in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -120,7 +120,7 @@ open class Shape2D: Resource {
         withShape shape: Godot.Shape2D?,
         shapeXform: Godot.Transform2D
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
         withUnsafePointer(to: __ptr_shape) { _ptr___ptr_shape in
@@ -150,7 +150,7 @@ open class Shape2D: Resource {
         shapeXform: Godot.Transform2D,
         shapeMotion: Godot.Vector2
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         localXform.withGodotUnsafeRawPointer { __ptr_localXform in
         localMotion.withGodotUnsafeRawPointer { __ptr_localMotion in
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -200,7 +200,7 @@ open class Shape2D: Resource {
     }()
 
     public func rect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rect,

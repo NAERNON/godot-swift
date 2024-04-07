@@ -37,7 +37,7 @@ open class PlaceholderTexture3D: Texture3D {
     }()
 
     private func __getSize() -> Godot.Vector3I {
-        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,

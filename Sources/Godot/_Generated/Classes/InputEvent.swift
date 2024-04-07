@@ -37,7 +37,7 @@ open class InputEvent: Resource {
     }()
 
     private func __getDevice() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_device,
@@ -59,7 +59,7 @@ open class InputEvent: Resource {
         _ action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -85,7 +85,7 @@ open class InputEvent: Resource {
         allowEcho: Bool = false,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         allowEcho.withGodotUnsafeRawPointer { __ptr_allowEcho in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
@@ -111,7 +111,7 @@ open class InputEvent: Resource {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -136,7 +136,7 @@ open class InputEvent: Resource {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -158,7 +158,7 @@ open class InputEvent: Resource {
     }()
 
     public func isCanceled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_canceled,
@@ -177,7 +177,7 @@ open class InputEvent: Resource {
     }()
 
     public func isPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_pressed,
@@ -196,7 +196,7 @@ open class InputEvent: Resource {
     }()
 
     public func isReleased() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_released,
@@ -215,7 +215,7 @@ open class InputEvent: Resource {
     }()
 
     public func isEcho() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_echo,
@@ -234,7 +234,7 @@ open class InputEvent: Resource {
     }()
 
     public func asText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_as_text,
@@ -256,7 +256,7 @@ open class InputEvent: Resource {
         event: Godot.InputEvent?,
         exactMatch: Bool = true
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
@@ -279,7 +279,7 @@ open class InputEvent: Resource {
     }()
 
     public func isActionType() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_action_type,
@@ -300,7 +300,7 @@ open class InputEvent: Resource {
     public func accumulate(
         withEvent event: Godot.InputEvent?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
         withUnsafeArgumentPackPointer(_ptr___ptr_event) { __accessPtr in
@@ -325,7 +325,7 @@ open class InputEvent: Resource {
         xform: Godot.Transform2D,
         localOfs: Godot.Vector2 = Vector2(x: 0, y: 0)
     ) -> Godot.InputEvent? {
-        Godot.InputEvent?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.InputEvent?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         xform.withGodotUnsafeRawPointer { __ptr_xform in
         localOfs.withGodotUnsafeRawPointer { __ptr_localOfs in
         withUnsafeArgumentPackPointer(__ptr_xform, __ptr_localOfs) { __accessPtr in

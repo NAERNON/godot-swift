@@ -33,7 +33,7 @@ open class StreamPeerTCP: StreamPeer {
         port: Int32,
         host: Godot.GodotString = "*"
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         host.withGodotUnsafeRawPointer { __ptr_host in
         withUnsafeArgumentPackPointer(__ptr_port, __ptr_host) { __accessPtr in
@@ -58,7 +58,7 @@ open class StreamPeerTCP: StreamPeer {
         _ host: Godot.GodotString,
         port: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         host.withGodotUnsafeRawPointer { __ptr_host in
         port.withGodotUnsafeRawPointer { __ptr_port in
         withUnsafeArgumentPackPointer(__ptr_host, __ptr_port) { __accessPtr in
@@ -80,7 +80,7 @@ open class StreamPeerTCP: StreamPeer {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -99,7 +99,7 @@ open class StreamPeerTCP: StreamPeer {
     }()
 
     public func status() -> Godot.StreamPeerTCP.Status {
-        Godot.StreamPeerTCP.Status.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.StreamPeerTCP.Status.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_status,
@@ -118,7 +118,7 @@ open class StreamPeerTCP: StreamPeer {
     }()
 
     public func connectedHost() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_host,
@@ -137,7 +137,7 @@ open class StreamPeerTCP: StreamPeer {
     }()
 
     public func connectedPort() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_port,
@@ -156,7 +156,7 @@ open class StreamPeerTCP: StreamPeer {
     }()
 
     public func localPort() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_port,

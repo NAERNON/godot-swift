@@ -48,7 +48,7 @@ open class CollisionPolygon2D: Node2D {
     }()
 
     private func __getPolygon() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon,
@@ -89,7 +89,7 @@ open class CollisionPolygon2D: Node2D {
     }()
 
     private func __getBuildMode() -> Godot.CollisionPolygon2D.BuildMode {
-        Godot.CollisionPolygon2D.BuildMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CollisionPolygon2D.BuildMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_build_mode,
@@ -130,7 +130,7 @@ open class CollisionPolygon2D: Node2D {
     }()
 
     private func __isDisabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_disabled,
@@ -171,7 +171,7 @@ open class CollisionPolygon2D: Node2D {
     }()
 
     private func __isOneWayCollisionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_one_way_collision_enabled,
@@ -212,7 +212,7 @@ open class CollisionPolygon2D: Node2D {
     }()
 
     private func __getOneWayCollisionMargin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_one_way_collision_margin,

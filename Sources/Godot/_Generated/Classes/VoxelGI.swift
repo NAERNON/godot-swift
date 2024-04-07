@@ -55,7 +55,7 @@ open class VoxelGI: VisualInstance3D {
     }()
 
     private func __getProbeData() -> Godot.VoxelGIData? {
-        Godot.VoxelGIData?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VoxelGIData?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_probe_data,
@@ -96,7 +96,7 @@ open class VoxelGI: VisualInstance3D {
     }()
 
     private func __getSubdiv() -> Godot.VoxelGI.Subdiv {
-        Godot.VoxelGI.Subdiv.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VoxelGI.Subdiv.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_subdiv,
@@ -137,7 +137,7 @@ open class VoxelGI: VisualInstance3D {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -179,7 +179,7 @@ open class VoxelGI: VisualInstance3D {
     }()
 
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
-        Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraAttributes?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_attributes,

@@ -32,7 +32,7 @@ open class PackedScene: Resource {
     public func pack(
         path: Godot.Node?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafePointer(to: __ptr_path) { _ptr___ptr_path in
         withUnsafeArgumentPackPointer(_ptr___ptr_path) { __accessPtr in
@@ -56,7 +56,7 @@ open class PackedScene: Resource {
     public func instantiate(
         editState: Godot.PackedScene.GenEditState = PackedScene.GenEditState(rawValue: 0)!
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         editState.withGodotUnsafeRawPointer { __ptr_editState in
         withUnsafeArgumentPackPointer(__ptr_editState) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,7 +77,7 @@ open class PackedScene: Resource {
     }()
 
     public func canInstantiate() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_can_instantiate,
@@ -96,7 +96,7 @@ open class PackedScene: Resource {
     }()
 
     public func state() -> Godot.SceneState? {
-        Godot.SceneState?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SceneState?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_state,

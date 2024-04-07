@@ -37,8 +37,8 @@ open class MainLoop: Object {
     public lazy var onRequestPermissionsResultSignal: Godot.SignalEmitter<OnRequestPermissionsResultSignalInput> = {
         .init(object: self, signalName: "on_request_permissions_result") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(permission: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    granted: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(permission: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    granted: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -46,7 +46,7 @@ open class MainLoop: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -106,18 +106,18 @@ open class MainLoop: Object {
             }
             Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
-            delta: Double.fromGodotUnsafePointer(args[0]!)
+            delta: Double.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
-            delta: Double.fromGodotUnsafePointer(args[0]!)
+            delta: Double.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _finalize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return

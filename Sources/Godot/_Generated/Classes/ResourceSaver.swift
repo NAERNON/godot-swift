@@ -57,7 +57,7 @@ open class ResourceSaver: Object {
         path: Godot.GodotString = "",
         flags: Godot.ResourceSaver.SaverFlags = ResourceSaver.SaverFlags(rawValue: 0)
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         resource.withGodotUnsafeRawPointer { __ptr_resource in
         withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
         path.withGodotUnsafeRawPointer { __ptr_path in
@@ -83,7 +83,7 @@ open class ResourceSaver: Object {
     public func recognizedExtensions(
         type: Godot.Resource?
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafePointer(to: __ptr_type) { _ptr___ptr_type in
         withUnsafeArgumentPackPointer(_ptr___ptr_type) { __accessPtr in

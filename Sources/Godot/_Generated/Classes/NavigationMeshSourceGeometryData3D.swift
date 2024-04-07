@@ -37,7 +37,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     private func __getVertices() -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertices,
@@ -78,7 +78,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     private func __getIndices() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_indices,
@@ -115,7 +115,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     public func hasData() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_data,
@@ -158,7 +158,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
     }()
 
-    public func addMeshArray<Value: VariantStorable>(
+    public func addMeshArray<Value: Variant.Storable>(
         _ meshArray: Godot.GodotArray<Value>,
         xform: Godot.Transform3D
     ) {

@@ -81,7 +81,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getInvert() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_invert,
@@ -122,7 +122,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __isIn3DSpace() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_in_3d_space,
@@ -163,7 +163,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __isGeneratingMipmaps() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_generating_mipmaps,
@@ -204,7 +204,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getSeamless() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_seamless,
@@ -245,7 +245,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getSeamlessBlendSkirt() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_seamless_blend_skirt,
@@ -286,7 +286,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __isNormalMap() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_normal_map,
@@ -327,7 +327,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getBumpStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bump_strength,
@@ -368,7 +368,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __isNormalized() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_normalized,
@@ -410,7 +410,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getColorRamp() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_ramp,
@@ -452,7 +452,7 @@ open class NoiseTexture2D: Texture2D {
     }()
 
     private func __getNoise() -> Godot.Noise? {
-        Godot.Noise?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Noise?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_noise,

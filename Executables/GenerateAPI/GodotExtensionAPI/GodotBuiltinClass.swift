@@ -118,11 +118,14 @@ struct GodotBuiltinClass: Decodable {
         var arguments: [GodotArgument]?
         
         var name: String {
-            var string = "_constructor"
+            var string = "_make"
             
-            for argument in arguments ?? [] {
-                string += "_"
-                string += argument.type.syntax().lowercased()
+            if let arguments {
+                string += "From"
+                
+                for argument in arguments {
+                    string += argument.type.syntax()
+                }
             }
             
             return string
@@ -149,7 +152,11 @@ struct GodotBuiltinClass: Decodable {
     struct PointerConstructor: GodotFunction {
         let baseConstructor: Constructor
         
-        init(_ constructor: Constructor) {
+        init?(_ constructor: Constructor) {
+            guard constructor.arguments != nil else {
+                return nil
+            }
+            
             self.baseConstructor = constructor
         }
         
@@ -167,7 +174,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var name: String {
-            "_ptr" + baseConstructor.name
+            baseConstructor.name + "Pointer"
         }
         
         var returnType: GodotType? {
@@ -341,10 +348,10 @@ struct GodotBuiltinClass: Decodable {
             let destructorPtr = hasDestructor ? "__destructor" : "nil"
             
             """
-            internal static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+            static internal func fromInitializingMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
                 let opaque = Opaque(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))
                 opaque.withUnsafeMutableRawPointer(body)
-                return Self(opaque: opaque)
+                return Self.init(opaque: opaque)
             }
             """
         }
@@ -359,7 +366,7 @@ struct GodotBuiltinClass: Decodable {
         _ constructor: Constructor,
         classSize: Int
     ) throws -> MemberBlockItemListSyntax {
-        try constructor.translatedArguments.declSyntax(
+        try constructor.withArgumentLabelsHidden().translatedArguments().declSyntax(
             options: syntaxOptions,
             keywords: .internal
         ) {
@@ -371,7 +378,7 @@ struct GodotBuiltinClass: Decodable {
                 "var __temporary = \(raw: name.syntax())()"
             }
             
-            try constructor.translatedArguments.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+            try constructor.translatedArguments().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                 if name.isBuiltinGodotClassWithOpaque {
                     """
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -394,40 +401,40 @@ struct GodotBuiltinClass: Decodable {
             }
         }
         
-        let constructor = PointerConstructor(constructor)
-        
-        try constructor.translatedArguments.declSyntax(
-            options: syntaxOptions,
-            keywords: .internal
-        ) {
-            let destructorPtr = hasDestructor ? "__destructor" : "nil"
-            
-            if useOpaque {
-                "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
-            } else {
-                "var __temporary = \(raw: name.syntax())()"
-            }
-            
-            try constructor.translatedArguments.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                if name.isBuiltinGodotClassWithOpaque {
-                    """
-                    __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
-                    }
-                    """
+        if let constructor = PointerConstructor(constructor) {
+            try constructor.withArgumentLabelsHidden().translatedArguments().declSyntax(
+                options: syntaxOptions,
+                keywords: .internal
+            ) {
+                let destructorPtr = hasDestructor ? "__destructor" : "nil"
+                
+                if useOpaque {
+                    "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
                 } else {
-                    """
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
-                    }
-                    """
+                    "var __temporary = \(raw: name.syntax())()"
                 }
-            }
-            
-            if useOpaque {
-                "return Self.init(opaque: __temporary)"
-            } else {
-                "return __temporary"
+                
+                try constructor.translatedArguments().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                    if name.isBuiltinGodotClassWithOpaque {
+                        """
+                        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                            \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        }
+                        """
+                    } else {
+                        """
+                        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+                            \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        }
+                        """
+                    }
+                }
+                
+                if useOpaque {
+                    "return Self.init(opaque: __temporary)"
+                } else {
+                    "return __temporary"
+                }
             }
         }
     }
@@ -443,7 +450,7 @@ struct GodotBuiltinClass: Decodable {
     private func operatorSyntax(_ `operator`: Operator) throws -> MemberBlockItemListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
             .withVariantStorageReturnType()
-            .translated
+            .translated()
         
         try operatorFunction.declSyntax(
             hideAllLabels: true,
@@ -564,7 +571,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let translatedMethod = method.withVariantStorageParameters().translated
+        let translatedMethod = method.withVariantStorageParameters().translated()
         let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
             options: syntaxOptions,
             keywords: .internal

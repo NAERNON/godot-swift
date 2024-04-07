@@ -67,7 +67,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getVertices() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertices,
@@ -108,7 +108,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func polygonCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon_count,
@@ -129,7 +129,7 @@ open class NavigationPolygon: Resource {
     public func polygon(
         idx: Int32
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -168,7 +168,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func navigationMesh() -> Godot.NavigationMesh? {
-        Godot.NavigationMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_mesh,
@@ -233,7 +233,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func outlineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outline_count,
@@ -278,7 +278,7 @@ open class NavigationPolygon: Resource {
     public func outline(
         idx: Int32
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -379,7 +379,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getCellSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_size,
@@ -420,7 +420,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getParsedGeometryType() -> Godot.NavigationPolygon.ParsedGeometryType {
-        Godot.NavigationPolygon.ParsedGeometryType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPolygon.ParsedGeometryType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parsed_geometry_type,
@@ -461,7 +461,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getParsedCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parsed_collision_mask,
@@ -506,7 +506,7 @@ open class NavigationPolygon: Resource {
     public func parsedCollisionMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,7 +549,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getSourceGeometryMode() -> Godot.NavigationPolygon.SourceGeometryMode {
-        Godot.NavigationPolygon.SourceGeometryMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPolygon.SourceGeometryMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source_geometry_mode,
@@ -590,7 +590,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getSourceGeometryGroupName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source_geometry_group_name,
@@ -631,7 +631,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __getAgentRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_agent_radius,

@@ -15,7 +15,7 @@ open class ConfirmationDialog: AcceptDialog {
     }()
 
     public func cancelButton() -> Godot.Button? {
-        Godot.Button?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Button?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cancel_button,
@@ -56,7 +56,7 @@ open class ConfirmationDialog: AcceptDialog {
     }()
 
     private func __getCancelButtonText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cancel_button_text,

@@ -7,7 +7,7 @@ extension GodotString {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     public init(swiftString: String) {
@@ -37,11 +37,11 @@ extension GodotString {
     }
     
     public init(stringName: GodotStringName) {
-        self = Self._constructor_godotstringname(from: stringName)
+        self = Self._makeFromGodotStringName(stringName)
     }
     
     public init(nodePath: NodePath) {
-        self = Self._constructor_nodepath(from: nodePath)
+        self = Self._makeFromNodePath(nodePath)
     }
     
     public init(_ c: Character) {
@@ -51,7 +51,7 @@ extension GodotString {
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_godotstring(from: self)
+        Self._makeFromGodotString(self)
     }
     
     // MARK: Operators
@@ -154,10 +154,10 @@ extension GodotString {
         _similarity(text: other)
     }
     
-    public func formated<Value : VariantStorableIn>(
+    public func formated<Value : Variant.Storable>(
         values: Value, placeholder: GodotString = "{_}"
     ) -> GodotString {
-        Value.withValueStorage(values) { storage in
+        Value.convertToStorageTemporarily(values) { storage in
             _format(values: storage, placeholder: placeholder)
         }
     }

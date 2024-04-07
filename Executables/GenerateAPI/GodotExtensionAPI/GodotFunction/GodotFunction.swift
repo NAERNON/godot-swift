@@ -52,11 +52,11 @@ extension GodotFunction {
     
     private func genericTypeConstraints(for argument: GodotArgument) -> [String] {
         if argument.type == .variant {
-            return ["VariantStorableIn"]
+            return ["Variant.Storable"]
         } else if argument.type == .array {
-            return ["VariantStorable"]
+            return ["Variant.Storable"]
         } else if argument.type == .dictionary {
-            return ["VariantStorable", "VariantStorable"]
+            return ["Variant.Storable", "Variant.Storable"]
         } else {
             return []
         }
@@ -107,7 +107,7 @@ extension GodotFunction {
         }
         
         if isVararg {
-            genericArguments.append("each VariantRest : VariantStorableIn")
+            genericArguments.append("each VariantRest : Variant.Storable")
         }
         
         if genericArguments.isEmpty {

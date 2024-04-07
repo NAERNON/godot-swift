@@ -31,7 +31,7 @@ open class ButtonGroup: Resource {
     public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(button: Godot.BaseButton?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(button: Godot.BaseButton?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class ButtonGroup: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -52,7 +52,7 @@ open class ButtonGroup: Resource {
     }()
 
     public func pressedButton() -> Godot.BaseButton? {
-        Godot.BaseButton?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseButton?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pressed_button,
@@ -71,7 +71,7 @@ open class ButtonGroup: Resource {
     }()
 
     public func buttons() -> Godot.GodotArray<Godot.BaseButton?> {
-        Godot.GodotArray<Godot.BaseButton?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.BaseButton?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buttons,
@@ -112,7 +112,7 @@ open class ButtonGroup: Resource {
     }()
 
     private func __isAllowUnpress() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_allow_unpress,

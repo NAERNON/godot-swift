@@ -37,7 +37,7 @@ open class Skin: Resource {
     }()
 
     public func bindCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bind_count,
@@ -130,7 +130,7 @@ open class Skin: Resource {
     public func bindPose(
         bindIndex: Int32
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bindIndex.withGodotUnsafeRawPointer { __ptr_bindIndex in
         withUnsafeArgumentPackPointer(__ptr_bindIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -177,7 +177,7 @@ open class Skin: Resource {
     public func bindName(
         bindIndex: Int32
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bindIndex.withGodotUnsafeRawPointer { __ptr_bindIndex in
         withUnsafeArgumentPackPointer(__ptr_bindIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -224,7 +224,7 @@ open class Skin: Resource {
     public func bindBone(
         bindIndex: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bindIndex.withGodotUnsafeRawPointer { __ptr_bindIndex in
         withUnsafeArgumentPackPointer(__ptr_bindIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

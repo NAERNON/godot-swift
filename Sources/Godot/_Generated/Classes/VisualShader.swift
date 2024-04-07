@@ -140,7 +140,7 @@ open class VisualShader: Shader {
         type: Godot.VisualShader.GodotType,
         id: Int32
     ) -> Godot.VisualShaderNode? {
-        Godot.VisualShaderNode?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNode?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_id) { __accessPtr in
@@ -191,7 +191,7 @@ open class VisualShader: Shader {
         type: Godot.VisualShader.GodotType,
         id: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_id) { __accessPtr in
@@ -215,7 +215,7 @@ open class VisualShader: Shader {
     public func nodeList(
         type: Godot.VisualShader.GodotType
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -238,7 +238,7 @@ open class VisualShader: Shader {
     public func validNodeID(
         type: Godot.VisualShader.GodotType
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -315,7 +315,7 @@ open class VisualShader: Shader {
         toNode: Int32,
         toPort: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -346,7 +346,7 @@ open class VisualShader: Shader {
         toNode: Int32,
         toPort: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -377,7 +377,7 @@ open class VisualShader: Shader {
         toNode: Int32,
         toPort: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         fromNode.withGodotUnsafeRawPointer { __ptr_fromNode in
         fromPort.withGodotUnsafeRawPointer { __ptr_fromPort in
@@ -464,7 +464,7 @@ open class VisualShader: Shader {
     public func nodeConnections(
         type: Godot.VisualShader.GodotType
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -507,7 +507,7 @@ open class VisualShader: Shader {
     }()
 
     private func __getGraphOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_graph_offset,
@@ -576,7 +576,7 @@ open class VisualShader: Shader {
     public func hasVarying(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -17,7 +17,7 @@ open class Crypto: RefCounted {
     public func generateRandomBytes(
         size: Int32
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -40,7 +40,7 @@ open class Crypto: RefCounted {
     public func generateRsa(
         size: Int32
     ) -> Godot.CryptoKey? {
-        Godot.CryptoKey?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CryptoKey?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -66,7 +66,7 @@ open class Crypto: RefCounted {
         notBefore: Godot.GodotString = "20140101000000",
         notAfter: Godot.GodotString = "20340101000000"
     ) -> Godot.X509Certificate? {
-        Godot.X509Certificate?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.X509Certificate?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
         issuerName.withGodotUnsafeRawPointer { __ptr_issuerName in
@@ -95,7 +95,7 @@ open class Crypto: RefCounted {
         hash: Godot.PackedByteArray,
         key: Godot.CryptoKey?
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hashType.withGodotUnsafeRawPointer { __ptr_hashType in
         hash.withGodotUnsafeRawPointer { __ptr_hash in
         key.withGodotUnsafeRawPointer { __ptr_key in
@@ -124,7 +124,7 @@ open class Crypto: RefCounted {
         signature: Godot.PackedByteArray,
         key: Godot.CryptoKey?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hashType.withGodotUnsafeRawPointer { __ptr_hashType in
         hash.withGodotUnsafeRawPointer { __ptr_hash in
         signature.withGodotUnsafeRawPointer { __ptr_signature in
@@ -152,7 +152,7 @@ open class Crypto: RefCounted {
         key: Godot.CryptoKey?,
         plaintext: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
         plaintext.withGodotUnsafeRawPointer { __ptr_plaintext in
@@ -178,7 +178,7 @@ open class Crypto: RefCounted {
         key: Godot.CryptoKey?,
         ciphertext: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         key.withGodotUnsafeRawPointer { __ptr_key in
         withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
         ciphertext.withGodotUnsafeRawPointer { __ptr_ciphertext in
@@ -205,7 +205,7 @@ open class Crypto: RefCounted {
         key: Godot.PackedByteArray,
         msg: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hashType.withGodotUnsafeRawPointer { __ptr_hashType in
         key.withGodotUnsafeRawPointer { __ptr_key in
         msg.withGodotUnsafeRawPointer { __ptr_msg in
@@ -231,7 +231,7 @@ open class Crypto: RefCounted {
         trusted: Godot.PackedByteArray,
         received: Godot.PackedByteArray
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trusted.withGodotUnsafeRawPointer { __ptr_trusted in
         received.withGodotUnsafeRawPointer { __ptr_received in
         withUnsafeArgumentPackPointer(__ptr_trusted, __ptr_received) { __accessPtr in

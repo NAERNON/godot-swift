@@ -8,15 +8,15 @@ private var __destructor: GDExtensionPtrDestructor = {
     return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 }()
 
-private var __constructor: GDExtensionPtrConstructor = {
+private var __make: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 0)!
 }()
 
-private var __constructor_callable: GDExtensionPtrConstructor = {
+private var __makeFromCallable: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 1)!
 }()
 
-private var __constructor_object_godotstringname: GDExtensionPtrConstructor = {
+private var __makeFromObjectGodotStringName: GDExtensionPtrConstructor = {
     return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 2)!
 }()
 
@@ -157,56 +157,48 @@ private var __method_binding_bind: GDExtensionPtrBuiltInMethod = {
 }()
 
 extension Callable {
-    internal static func fromMutatingGodotUnsafePointer(
+    static internal func fromInitializingMutatingGodotUnsafePointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
         let opaque = Opaque(size: 16, destructorPtr: __destructor)
         opaque.withUnsafeMutableRawPointer(body)
-        return Self (opaque: opaque)
+        return Self.init(opaque: opaque)
     }
 
-    static internal func _constructor() -> Self {
+    static internal func _make() -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            __make(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor() -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _constructor_callable(
-        from: Godot.Callable
+    static internal func _makeFromCallable(
+        _ from: Godot.Callable
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_callable(__ptr___temporary, __accessPtr)
+            __makeFromCallable(__ptr___temporary, __accessPtr)
         }}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_callable(
-        from: UnsafeRawPointer
+    static internal func _makeFromCallablePointer(
+        _ from: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_callable(__ptr___temporary, __accessPtr)
+            __makeFromCallable(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _constructor_object_godotstringname(
-        object: Godot.Object?,
-        method: Godot.GodotStringName
+    static internal func _makeFromObjectGodotStringName(
+        _ object: Godot.Object?,
+        _ method: Godot.GodotStringName
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         object.withGodotUnsafeRawPointer { __ptr_object in
@@ -214,38 +206,38 @@ extension Callable {
         method.withGodotUnsafeRawPointer { __ptr_method in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_method) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_object_godotstringname(__ptr___temporary, __accessPtr)
+            __makeFromObjectGodotStringName(__ptr___temporary, __accessPtr)
         }}}}}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _ptr_constructor_object_godotstringname(
-        object: UnsafeRawPointer,
-        method: UnsafeRawPointer
+    static internal func _makeFromObjectGodotStringNamePointer(
+        _ object: UnsafeRawPointer,
+        _ method: UnsafeRawPointer
     ) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(object, method) { __accessPtr in
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor_object_godotstringname(__ptr___temporary, __accessPtr)
+            __makeFromObjectGodotStringName(__ptr___temporary, __accessPtr)
         }}
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantStorableIn>(
+    static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorNotEqual<Value: VariantStorableIn>(
+    static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
         __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -254,7 +246,7 @@ extension Callable {
     static internal func _operatorNot(
         _ lhs: Godot.Callable
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
@@ -263,7 +255,7 @@ extension Callable {
         _ lhs: Godot.Callable,
         _ rhs: Godot.Callable
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_equal_callable(__ptr_lhs, __ptr_rhs, __temporary)}}}
@@ -273,36 +265,36 @@ extension Callable {
         _ lhs: Godot.Callable,
         _ rhs: Godot.Callable
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_not_equal_callable(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(
+    static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    static internal func _operatorIn<Value: VariantStorable>(
+    static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         lhs.withGodotUnsafeRawPointer { __ptr_lhs in
         rhs.withGodotUnsafeRawPointer { __ptr_rhs in
         __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
-    internal func _callv<Value: VariantStorable>(
+    internal func _callv<Value: Variant.Storable>(
         arguments: Godot.GodotArray<Value>
     ) -> Godot.Variant.Storage {
-        return Godot.Variant.Storage.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Variant.Storage.fromInitializingMutatingGodotUnsafePointer { __temporary in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         withUnsafeArgumentPackPointer(__ptr_arguments) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -310,71 +302,71 @@ extension Callable {
     }
 
     internal func _isNull() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_null(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isCustom() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_custom(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isStandard() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_standard(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isValid() -> Bool {
-        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_is_valid(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _object() -> Godot.Object? {
-        return Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_object(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _objectID() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_object_id(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _method() -> Godot.GodotStringName {
-        return Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_method(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _boundArgumentsCount() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_bound_arguments_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _boundArguments() -> Godot.AnyGodotArray {
-        return Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_get_bound_arguments(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hash() -> Int {
-        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     @discardableResult
-    mutating internal func _bindv<Value: VariantStorable>(
+    mutating internal func _bindv<Value: Variant.Storable>(
         arguments: Godot.GodotArray<Value>
     ) -> Godot.Callable {
         replaceOpaqueValueIfNecessary()
-        return Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         withUnsafeArgumentPackPointer(__ptr_arguments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -384,23 +376,23 @@ extension Callable {
     internal func _unbind(
         argcount: Int
     ) -> Godot.Callable {
-        return Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         argcount.withGodotUnsafeRawPointer { __ptr_argcount in
         withUnsafeArgumentPackPointer(__ptr_argcount) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_unbind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _call<each VariantRest : VariantStorableIn>(
+    internal func _call<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Variant.Storage {
-        return Godot.Variant.Storage.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Variant.Storage.fromInitializingMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_call(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, Int32(packCount))}}}
     }
 
-    internal func _callDeferred<each VariantRest : VariantStorableIn>(
+    internal func _callDeferred<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
@@ -408,7 +400,7 @@ extension Callable {
         __method_binding_call_deferred(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))}}
     }
 
-    internal func _rpc<each VariantRest : VariantStorableIn>(
+    internal func _rpc<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
@@ -416,7 +408,7 @@ extension Callable {
         __method_binding_rpc(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))}}
     }
 
-    internal func _rpcID<each VariantRest : VariantStorableIn>(
+    internal func _rpcID<each VariantRest : Variant.Storable>(
         peerID: Int,
         _ rest: repeat each VariantRest
     ) {
@@ -426,10 +418,10 @@ extension Callable {
         __method_binding_rpc_id(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))}}}
     }
 
-    internal func _bind<each VariantRest : VariantStorableIn>(
+    internal func _bind<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Callable {
-        return Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_bind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, Int32(packCount))}}}

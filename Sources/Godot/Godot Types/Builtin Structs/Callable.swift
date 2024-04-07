@@ -7,23 +7,23 @@ extension Callable {
     // MARK: Constructors
     
     internal init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     internal init(object: Object, method: GodotStringName) {
-        self = Self._constructor_object_godotstringname(object: object, method: method)
+        self = Self._makeFromObjectGodotStringName(object, method)
     }
     
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_callable(from: self)
+        Self._makeFromCallable(self)
     }
     
     // MARK: Methods & variables
     
     internal func callv<Value>(arguments: GodotArray<Value>) -> Variant
-    where Value : VariantStorable {
+    where Value : Variant.Storable {
         Variant(storage: _callv(arguments: arguments))
     }
     
@@ -64,7 +64,7 @@ extension Callable {
     }
     
     internal mutating func bindv<Value>(arguments: GodotArray<Value>) -> Callable
-    where Value : VariantStorable {
+    where Value : Variant.Storable {
         _bindv(arguments: arguments)
     }
     
@@ -72,32 +72,32 @@ extension Callable {
         _unbind(argcount: argcount)
     }
     
-    internal func call<each VariantRest : VariantStorableIn>(
+    internal func call<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Variant {
         Variant(storage: _call(repeat each rest))
     }
     
-    internal func callDeferred<each VariantRest : VariantStorableIn>(
+    internal func callDeferred<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         _callDeferred(repeat each rest)
     }
     
-    public func rpc<each VariantRest : VariantStorableIn>(
+    public func rpc<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         _rpc(repeat each rest)
     }
     
-    public func rpcID<each VariantRest : VariantStorableIn>(
+    public func rpcID<each VariantRest : Variant.Storable>(
         peerID: Int,
         _ rest: repeat each VariantRest
     ) {
         _rpcID(peerID: peerID, repeat each rest)
     }
     
-    internal func bind<each VariantRest : VariantStorableIn>(
+    internal func bind<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Callable {
         _bind(repeat each rest)

@@ -14,11 +14,11 @@ open class Marshalls: Object {
         }
     }()
 
-    public func variantToBase64<Value: VariantStorableIn>(
+    public func variantToBase64<Value: Variant.Storable>(
         variant: Value,
         fullObjects: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: variant) { __ptr_variant in
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
         withUnsafeArgumentPackPointer(__ptr_variant, __ptr_fullObjects) { __accessPtr in
@@ -43,7 +43,7 @@ open class Marshalls: Object {
         base64Str: Godot.GodotString,
         allowObjects: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_base64Str, __ptr_allowObjects) { __accessPtr in
@@ -67,7 +67,7 @@ open class Marshalls: Object {
     public func rawToBase64(
         array: Godot.PackedByteArray
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -90,7 +90,7 @@ open class Marshalls: Object {
     public func base64ToRaw(
         base64Str: Godot.GodotString
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,7 +113,7 @@ open class Marshalls: Object {
     public func utf8ToBase64(
         utf8Str: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utf8Str.withGodotUnsafeRawPointer { __ptr_utf8Str in
         withUnsafeArgumentPackPointer(__ptr_utf8Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -136,7 +136,7 @@ open class Marshalls: Object {
     public func base64ToUtf8(
         base64Str: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

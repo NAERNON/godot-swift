@@ -69,7 +69,7 @@ open class Time: Object {
     public func datetimeDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -92,7 +92,7 @@ open class Time: Object {
     public func dateDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -115,7 +115,7 @@ open class Time: Object {
     public func timeDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +139,7 @@ open class Time: Object {
         unixTimeVal: Int64,
         useSpace: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         useSpace.withGodotUnsafeRawPointer { __ptr_useSpace in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal, __ptr_useSpace) { __accessPtr in
@@ -163,7 +163,7 @@ open class Time: Object {
     public func dateStringFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -186,7 +186,7 @@ open class Time: Object {
     public func timeStringFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         unixTimeVal.withGodotUnsafeRawPointer { __ptr_unixTimeVal in
         withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,7 +210,7 @@ open class Time: Object {
         datetime: Godot.GodotString,
         weekday: Bool
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         datetime.withGodotUnsafeRawPointer { __ptr_datetime in
         weekday.withGodotUnsafeRawPointer { __ptr_weekday in
         withUnsafeArgumentPackPointer(__ptr_datetime, __ptr_weekday) { __accessPtr in
@@ -231,11 +231,11 @@ open class Time: Object {
         }
     }()
 
-    public func datetimeStringFromDatetimeDict<Value1: VariantStorable, Value2: VariantStorable>(
+    public func datetimeStringFromDatetimeDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         datetime: Godot.GodotDictionary<Value1, Value2>,
         useSpace: Bool
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         datetime.withGodotUnsafeRawPointer { __ptr_datetime in
         useSpace.withGodotUnsafeRawPointer { __ptr_useSpace in
         withUnsafeArgumentPackPointer(__ptr_datetime, __ptr_useSpace) { __accessPtr in
@@ -256,10 +256,10 @@ open class Time: Object {
         }
     }()
 
-    public func unixTimeFromDatetimeDict<Value1: VariantStorable, Value2: VariantStorable>(
+    public func unixTimeFromDatetimeDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         datetime: Godot.GodotDictionary<Value1, Value2>
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         datetime.withGodotUnsafeRawPointer { __ptr_datetime in
         withUnsafeArgumentPackPointer(__ptr_datetime) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,7 +282,7 @@ open class Time: Object {
     public func unixTimeFromDatetimeString(
         datetime: Godot.GodotString
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         datetime.withGodotUnsafeRawPointer { __ptr_datetime in
         withUnsafeArgumentPackPointer(__ptr_datetime) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -305,7 +305,7 @@ open class Time: Object {
     public func offsetStringFromOffsetMinutes(
         _ offsetMinutes: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offsetMinutes.withGodotUnsafeRawPointer { __ptr_offsetMinutes in
         withUnsafeArgumentPackPointer(__ptr_offsetMinutes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,7 +328,7 @@ open class Time: Object {
     public func datetimeDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         withUnsafeArgumentPackPointer(__ptr_utc) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -351,7 +351,7 @@ open class Time: Object {
     public func dateDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         withUnsafeArgumentPackPointer(__ptr_utc) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -374,7 +374,7 @@ open class Time: Object {
     public func timeDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         withUnsafeArgumentPackPointer(__ptr_utc) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -398,7 +398,7 @@ open class Time: Object {
         utc: Bool = false,
         useSpace: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         useSpace.withGodotUnsafeRawPointer { __ptr_useSpace in
         withUnsafeArgumentPackPointer(__ptr_utc, __ptr_useSpace) { __accessPtr in
@@ -422,7 +422,7 @@ open class Time: Object {
     public func dateStringFromSystem(
         utc: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         withUnsafeArgumentPackPointer(__ptr_utc) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -445,7 +445,7 @@ open class Time: Object {
     public func timeStringFromSystem(
         utc: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         utc.withGodotUnsafeRawPointer { __ptr_utc in
         withUnsafeArgumentPackPointer(__ptr_utc) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -466,7 +466,7 @@ open class Time: Object {
     }()
 
     public func timeZoneFromSystem() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_time_zone_from_system,
@@ -485,7 +485,7 @@ open class Time: Object {
     }()
 
     public func unixTimeFromSystem() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unix_time_from_system,
@@ -504,7 +504,7 @@ open class Time: Object {
     }()
 
     public func ticksMsec() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ticks_msec,
@@ -523,7 +523,7 @@ open class Time: Object {
     }()
 
     public func ticksUsec() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ticks_usec,

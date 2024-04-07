@@ -66,7 +66,7 @@ open class EditorFeatureProfile: RefCounted {
     public func isClassDisabled(
         className: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         withUnsafeArgumentPackPointer(__ptr_className) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -113,7 +113,7 @@ open class EditorFeatureProfile: RefCounted {
     public func isClassEditorDisabled(
         className: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         withUnsafeArgumentPackPointer(__ptr_className) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +163,7 @@ open class EditorFeatureProfile: RefCounted {
         className: Godot.GodotStringName,
         property: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         className.withGodotUnsafeRawPointer { __ptr_className in
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_className, __ptr_property) { __accessPtr in
@@ -211,7 +211,7 @@ open class EditorFeatureProfile: RefCounted {
     public func isFeatureDisabled(
         feature: Godot.EditorFeatureProfile.Feature
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -234,7 +234,7 @@ open class EditorFeatureProfile: RefCounted {
     public func featureName(
         feature: Godot.EditorFeatureProfile.Feature
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -257,7 +257,7 @@ open class EditorFeatureProfile: RefCounted {
     public func saveToFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -280,7 +280,7 @@ open class EditorFeatureProfile: RefCounted {
     public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

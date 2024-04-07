@@ -56,10 +56,10 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     func syntax() throws -> FunctionDeclSyntax {
         let options: GodotTypeSyntaxOptions = [.optionalClasses, .floatAsDouble]
         
-        return try withNamePrefixed(by: "_").translated.declSyntax(options: options, keywords: .internal) {
+        return try withNamePrefixed(by: "_").translated().declSyntax(options: options, keywords: .internal) {
             if let returnType = returnType {
                 try returnType.instantiationSyntax(options: options) { instancePtr in
-                    try translated.argumentsPackPointerAccessSyntax(options: options) { packName in
+                    try translated().argumentsPackPointerAccessSyntax(options: options) { packName in
                         "\(raw: ptrIdentifier)(\(raw: instancePtr), \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
                     }
                 }

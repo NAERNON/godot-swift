@@ -177,7 +177,7 @@ extension Object {
         _ signal: GodotStringName,
         arguments: [Variant]
     ) -> ErrorType {
-        ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
             Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
                 withUnsafeArgumentPackPointer(
                     __ptr_signal,

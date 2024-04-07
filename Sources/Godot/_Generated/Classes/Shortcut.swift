@@ -14,7 +14,7 @@ open class Shortcut: Resource {
         }
     }()
 
-    private func __setEvents<Value: VariantStorable>(
+    private func __setEvents<Value: Variant.Storable>(
         _ events: Godot.GodotArray<Value>
     ) {
         events.withGodotUnsafeRawPointer { __ptr_events in
@@ -37,7 +37,7 @@ open class Shortcut: Resource {
     }()
 
     private func __getEvents() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_events,
@@ -56,7 +56,7 @@ open class Shortcut: Resource {
     }()
 
     public func hasValidEvent() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_valid_event,
@@ -77,7 +77,7 @@ open class Shortcut: Resource {
     public func matchesEvent(
         _ event: Godot.InputEvent?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         event.withGodotUnsafeRawPointer { __ptr_event in
         withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
         withUnsafeArgumentPackPointer(_ptr___ptr_event) { __accessPtr in
@@ -99,7 +99,7 @@ open class Shortcut: Resource {
     }()
 
     public func asText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_as_text,

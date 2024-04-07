@@ -41,7 +41,7 @@ open class RDShaderSource: RefCounted {
     private func __getStageSource(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -84,7 +84,7 @@ open class RDShaderSource: RefCounted {
     }()
 
     private func __getLanguage() -> Godot.RenderingDevice.ShaderLanguage {
-        Godot.RenderingDevice.ShaderLanguage.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.ShaderLanguage.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,

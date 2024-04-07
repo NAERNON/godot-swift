@@ -7,15 +7,15 @@ extension GodotStringName {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
     }
     
     public init(swiftString: String) {
-        self = Self._constructor_godotstring(from: GodotString(swiftString: swiftString))
+        self = Self._makeFromGodotString(GodotString(swiftString: swiftString))
     }
     
     public init(swiftStaticString: StaticString) {
-        self = Self._constructor_godotstring(from: GodotString(swiftStaticString: swiftStaticString))
+        self = Self._makeFromGodotString(GodotString(swiftStaticString: swiftStaticString))
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -23,11 +23,13 @@ extension GodotStringName {
     }
     
     public init(string: GodotString) {
-        self = Self._constructor_godotstring(from: string)
+        self = Self._makeFromGodotString(string)
     }
     
-    public static func className(forObjectPointer instancePtr: GDExtensionObjectPtr) -> GodotStringName? {
-        var className = Self._constructor()
+    public static func className(
+        forObjectPointer instancePtr: GDExtensionObjectPtr
+    ) -> GodotStringName? {
+        var className = Self._make()
         let classNameRetrieved = className.withGodotUnsafeMutableRawPointer { ptr in
             GodotExtension.Interface.objectGetClassName(instancePtr, GodotExtension.libraryPtr, ptr) != 0
         }
@@ -42,7 +44,7 @@ extension GodotStringName {
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
-        Self._constructor_godotstringname(from: self)
+        Self._makeFromGodotStringName(self)
     }
     
     // MARK: Operators
@@ -133,10 +135,10 @@ extension GodotStringName {
         _similarity(text: other)
     }
     
-    public func formated<Value : VariantStorableIn>(
+    public func formated<Value : Variant.Storable>(
         values: Value, placeholder: GodotString = "{_}"
     ) -> GodotString {
-        Value.withValueStorage(values) { storage in
+        Value.convertToStorageTemporarily(values) { storage in
             _format(values: storage, placeholder: placeholder)
         }
     }

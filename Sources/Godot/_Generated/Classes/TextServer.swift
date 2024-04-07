@@ -438,7 +438,7 @@ open class TextServer: RefCounted {
     public func hasFeature(
         _ feature: Godot.TextServer.Feature
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -459,7 +459,7 @@ open class TextServer: RefCounted {
     }()
 
     public func name() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -478,7 +478,7 @@ open class TextServer: RefCounted {
     }()
 
     public func features() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_features,
@@ -499,7 +499,7 @@ open class TextServer: RefCounted {
     public func loadSupportData(
         filename: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         filename.withGodotUnsafeRawPointer { __ptr_filename in
         withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -520,7 +520,7 @@ open class TextServer: RefCounted {
     }()
 
     public func supportDataFilename() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_support_data_filename,
@@ -539,7 +539,7 @@ open class TextServer: RefCounted {
     }()
 
     public func supportDataInfo() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_support_data_info,
@@ -560,7 +560,7 @@ open class TextServer: RefCounted {
     public func saveSupportData(
         filename: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         filename.withGodotUnsafeRawPointer { __ptr_filename in
         withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -583,7 +583,7 @@ open class TextServer: RefCounted {
     public func isLocaleRightToLeft(
         locale: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         locale.withGodotUnsafeRawPointer { __ptr_locale in
         withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -606,7 +606,7 @@ open class TextServer: RefCounted {
     public func nameToTag(
         name: Godot.GodotString
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -629,7 +629,7 @@ open class TextServer: RefCounted {
     public func tagToName(
         tag: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tag.withGodotUnsafeRawPointer { __ptr_tag in
         withUnsafeArgumentPackPointer(__ptr_tag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -652,7 +652,7 @@ open class TextServer: RefCounted {
     public func has(
         rid: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         rid.withGodotUnsafeRawPointer { __ptr_rid in
         withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -695,7 +695,7 @@ open class TextServer: RefCounted {
     }()
 
     public func createFont() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_font,
@@ -716,7 +716,7 @@ open class TextServer: RefCounted {
     public func createFontLinkedVariation(
         fontRid: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -787,7 +787,7 @@ open class TextServer: RefCounted {
     public func fontGetFaceIndex(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -810,7 +810,7 @@ open class TextServer: RefCounted {
     public func fontGetFaceCount(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -857,7 +857,7 @@ open class TextServer: RefCounted {
     public func fontGetStyle(
         fontRid: Godot.RID
     ) -> Godot.TextServer.FontStyle {
-        Godot.TextServer.FontStyle.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.FontStyle.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -904,7 +904,7 @@ open class TextServer: RefCounted {
     public func fontGetName(
         fontRid: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -927,7 +927,7 @@ open class TextServer: RefCounted {
     public func fontGetOtNameStrings(
         fontRid: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -974,7 +974,7 @@ open class TextServer: RefCounted {
     public func fontGetStyleName(
         fontRid: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1021,7 +1021,7 @@ open class TextServer: RefCounted {
     public func fontGetWeight(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1068,7 +1068,7 @@ open class TextServer: RefCounted {
     public func fontGetStretch(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1115,7 +1115,7 @@ open class TextServer: RefCounted {
     public func fontGetAntialiasing(
         fontRid: Godot.RID
     ) -> Godot.TextServer.FontAntialiasing {
-        Godot.TextServer.FontAntialiasing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.FontAntialiasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1162,7 +1162,7 @@ open class TextServer: RefCounted {
     public func fontGetGenerateMipmaps(
         fontRid: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1209,7 +1209,7 @@ open class TextServer: RefCounted {
     public func fontIsMultichannelSignedDistanceField(
         fontRid: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1256,7 +1256,7 @@ open class TextServer: RefCounted {
     public func fontGetMsdfPixelRange(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1303,7 +1303,7 @@ open class TextServer: RefCounted {
     public func fontGetMsdfSize(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1350,7 +1350,7 @@ open class TextServer: RefCounted {
     public func fontGetFixedSize(
         fontRid: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1397,7 +1397,7 @@ open class TextServer: RefCounted {
     public func fontGetFixedSizeScaleMode(
         fontRid: Godot.RID
     ) -> Godot.TextServer.FixedSizeScaleMode {
-        Godot.TextServer.FixedSizeScaleMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.FixedSizeScaleMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1444,7 +1444,7 @@ open class TextServer: RefCounted {
     public func fontIsAllowSystemFallback(
         fontRid: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1491,7 +1491,7 @@ open class TextServer: RefCounted {
     public func fontIsForceAutohinter(
         fontRid: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1538,7 +1538,7 @@ open class TextServer: RefCounted {
     public func fontGetHinting(
         fontRid: Godot.RID
     ) -> Godot.TextServer.Hinting {
-        Godot.TextServer.Hinting.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Hinting.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1585,7 +1585,7 @@ open class TextServer: RefCounted {
     public func fontGetSubpixelPositioning(
         fontRid: Godot.RID
     ) -> Godot.TextServer.SubpixelPositioning {
-        Godot.TextServer.SubpixelPositioning.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.SubpixelPositioning.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1632,7 +1632,7 @@ open class TextServer: RefCounted {
     public func fontGetEmbolden(
         fontRid: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1682,7 +1682,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_spacing) { __accessPtr in
@@ -1730,7 +1730,7 @@ open class TextServer: RefCounted {
     public func fontGetTransform(
         fontRid: Godot.RID
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1750,7 +1750,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func fontSetVariationCoordinates<Value1: VariantStorable, Value2: VariantStorable>(
+    public func fontSetVariationCoordinates<Value1: Variant.Storable, Value2: Variant.Storable>(
         fontRid: Godot.RID,
         variationCoordinates: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -1777,7 +1777,7 @@ open class TextServer: RefCounted {
     public func fontGetVariationCoordinates(
         fontRid: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1824,7 +1824,7 @@ open class TextServer: RefCounted {
     public func fontGetOversampling(
         fontRid: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1847,7 +1847,7 @@ open class TextServer: RefCounted {
     public func fontGetSizeCacheList(
         fontRid: Godot.RID
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1943,7 +1943,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -1994,7 +1994,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2045,7 +2045,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2096,7 +2096,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2147,7 +2147,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2172,7 +2172,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Godot.Vector2I
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2277,7 +2277,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
@@ -2332,7 +2332,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
@@ -2358,7 +2358,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Godot.Vector2I
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2434,7 +2434,7 @@ open class TextServer: RefCounted {
         size: Int64,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2489,7 +2489,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2544,7 +2544,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2599,7 +2599,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2654,7 +2654,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2709,7 +2709,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2736,7 +2736,7 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
@@ -2763,7 +2763,7 @@ open class TextServer: RefCounted {
         size: Int64,
         index: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         font.withGodotUnsafeRawPointer { __ptr_font in
         size.withGodotUnsafeRawPointer { __ptr_size in
         index.withGodotUnsafeRawPointer { __ptr_index in
@@ -2789,7 +2789,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         size: Int64
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
@@ -2893,7 +2893,7 @@ open class TextServer: RefCounted {
         size: Int64,
         glyphPair: Godot.Vector2I
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
@@ -2921,7 +2921,7 @@ open class TextServer: RefCounted {
         char: Int64,
         variationSelector: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         char.withGodotUnsafeRawPointer { __ptr_char in
@@ -2949,7 +2949,7 @@ open class TextServer: RefCounted {
         size: Int64,
         glyphIndex: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphIndex.withGodotUnsafeRawPointer { __ptr_glyphIndex in
@@ -2975,7 +2975,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         char: Int64
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         char.withGodotUnsafeRawPointer { __ptr_char in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_char) { __accessPtr in
@@ -2999,7 +2999,7 @@ open class TextServer: RefCounted {
     public func fontGetSupportedChars(
         fontRid: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3143,7 +3143,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language) { __accessPtr in
@@ -3194,7 +3194,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language) { __accessPtr in
@@ -3242,7 +3242,7 @@ open class TextServer: RefCounted {
     public func fontGetLanguageSupportOverrides(
         fontRid: Godot.RID
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3266,7 +3266,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script) { __accessPtr in
@@ -3317,7 +3317,7 @@ open class TextServer: RefCounted {
         fontRid: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         script.withGodotUnsafeRawPointer { __ptr_script in
         withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script) { __accessPtr in
@@ -3365,7 +3365,7 @@ open class TextServer: RefCounted {
     public func fontGetScriptSupportOverrides(
         fontRid: Godot.RID
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3385,7 +3385,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func fontSetOpentypeFeatureOverrides<Value1: VariantStorable, Value2: VariantStorable>(
+    public func fontSetOpentypeFeatureOverrides<Value1: Variant.Storable, Value2: Variant.Storable>(
         fontRid: Godot.RID,
         overrides: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -3412,7 +3412,7 @@ open class TextServer: RefCounted {
     public func fontGetOpentypeFeatureOverrides(
         fontRid: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3435,7 +3435,7 @@ open class TextServer: RefCounted {
     public func fontSupportedFeatureList(
         fontRid: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3458,7 +3458,7 @@ open class TextServer: RefCounted {
     public func fontSupportedVariationList(
         fontRid: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
         withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3479,7 +3479,7 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlobalOversampling() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_global_oversampling,
@@ -3523,7 +3523,7 @@ open class TextServer: RefCounted {
         _ size: Int64,
         index: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         size.withGodotUnsafeRawPointer { __ptr_size in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_size, __ptr_index) { __accessPtr in
@@ -3578,7 +3578,7 @@ open class TextServer: RefCounted {
         direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
         orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         direction.withGodotUnsafeRawPointer { __ptr_direction in
         orientation.withGodotUnsafeRawPointer { __ptr_orientation in
         withUnsafeArgumentPackPointer(__ptr_direction, __ptr_orientation) { __accessPtr in
@@ -3648,7 +3648,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3671,7 +3671,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetInferredDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3691,7 +3691,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedTextSetBidiOverride<Value: VariantStorable>(
+    public func shapedTextSetBidiOverride<Value: Variant.Storable>(
         shaped: Godot.RID,
         override: Godot.GodotArray<Value>
     ) {
@@ -3742,7 +3742,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetCustomPunctuation(
         shaped: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3789,7 +3789,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetOrientation(
         shaped: Godot.RID
     ) -> Godot.TextServer.Orientation {
-        Godot.TextServer.Orientation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Orientation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3836,7 +3836,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetPreserveInvalid(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3883,7 +3883,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetPreserveControl(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3933,7 +3933,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_spacing) { __accessPtr in
@@ -3954,7 +3954,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedTextAddString<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(
+    public func shapedTextAddString<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
         shaped: Godot.RID,
         text: Godot.GodotString,
         fonts: Godot.GodotArray<Godot.RID>,
@@ -3963,7 +3963,7 @@ open class TextServer: RefCounted {
         language: Godot.GodotString = "",
         meta: Value3 = Variant()
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         text.withGodotUnsafeRawPointer { __ptr_text in
         fonts.withGodotUnsafeRawPointer { __ptr_fonts in
@@ -3989,7 +3989,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedTextAddObject<Value: VariantStorableIn>(
+    public func shapedTextAddObject<Value: Variant.Storable>(
         shaped: Godot.RID,
         key: Value,
         size: Godot.Vector2,
@@ -3997,7 +3997,7 @@ open class TextServer: RefCounted {
         length: Int64 = 1,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -4022,14 +4022,14 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedTextResizeObject<Value: VariantStorableIn>(
+    public func shapedTextResizeObject<Value: Variant.Storable>(
         shaped: Godot.RID,
         key: Value,
         size: Godot.Vector2,
         inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
@@ -4056,7 +4056,7 @@ open class TextServer: RefCounted {
     public func shapedGetSpanCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4080,7 +4080,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         index: Int64
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_index) { __accessPtr in
@@ -4101,7 +4101,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedSetSpanUpdateFont<Value1: VariantStorable, Value2: VariantStorable>(
+    public func shapedSetSpanUpdateFont<Value1: Variant.Storable, Value2: Variant.Storable>(
         shaped: Godot.RID,
         index: Int64,
         fonts: Godot.GodotArray<Godot.RID>,
@@ -4136,7 +4136,7 @@ open class TextServer: RefCounted {
         start: Int64,
         length: Int64
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         start.withGodotUnsafeRawPointer { __ptr_start in
         length.withGodotUnsafeRawPointer { __ptr_length in
@@ -4161,7 +4161,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetParent(
         shaped: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4186,7 +4186,7 @@ open class TextServer: RefCounted {
         width: Double,
         justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3)
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         width.withGodotUnsafeRawPointer { __ptr_width in
         justificationFlags.withGodotUnsafeRawPointer { __ptr_justificationFlags in
@@ -4212,7 +4212,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         tabStops: Godot.PackedFloat32Array
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         tabStops.withGodotUnsafeRawPointer { __ptr_tabStops in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_tabStops) { __accessPtr in
@@ -4236,7 +4236,7 @@ open class TextServer: RefCounted {
     public func shapedTextShape(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4259,7 +4259,7 @@ open class TextServer: RefCounted {
     public func shapedTextIsReady(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4282,7 +4282,7 @@ open class TextServer: RefCounted {
     public func shapedTextHasVisibleChars(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4305,7 +4305,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetGlyphs(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4328,7 +4328,7 @@ open class TextServer: RefCounted {
     public func shapedTextSortLogical(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4351,7 +4351,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4374,7 +4374,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetRange(
         shaped: Godot.RID
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4401,7 +4401,7 @@ open class TextServer: RefCounted {
         once: Bool = true,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         width.withGodotUnsafeRawPointer { __ptr_width in
         start.withGodotUnsafeRawPointer { __ptr_start in
@@ -4431,7 +4431,7 @@ open class TextServer: RefCounted {
         start: Int64 = 0,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         width.withGodotUnsafeRawPointer { __ptr_width in
         start.withGodotUnsafeRawPointer { __ptr_start in
@@ -4458,7 +4458,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         graphemeFlags: Godot.TextServer.GraphemeFlag = TextServer.GraphemeFlag(rawValue: 264)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         graphemeFlags.withGodotUnsafeRawPointer { __ptr_graphemeFlags in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_graphemeFlags) { __accessPtr in
@@ -4482,7 +4482,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetTrimPos(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4505,7 +4505,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisPos(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4528,7 +4528,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisGlyphs(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4551,7 +4551,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4600,7 +4600,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetObjects(
         shaped: Godot.RID
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4620,11 +4620,11 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func shapedTextGetObjectRect<Value: VariantStorableIn>(
+    public func shapedTextGetObjectRect<Value: Variant.Storable>(
         shaped: Godot.RID,
         key: Value
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key) { __accessPtr in
@@ -4648,7 +4648,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetSize(
         shaped: Godot.RID
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4671,7 +4671,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetAscent(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4694,7 +4694,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetDescent(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4717,7 +4717,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetWidth(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4740,7 +4740,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetUnderlinePosition(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4763,7 +4763,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetUnderlineThickness(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4787,7 +4787,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         position: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_position) { __accessPtr in
@@ -4813,7 +4813,7 @@ open class TextServer: RefCounted {
         start: Int64,
         end: Int64
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         start.withGodotUnsafeRawPointer { __ptr_start in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -4839,7 +4839,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         coords: Double
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
@@ -4864,7 +4864,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         coords: Double
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
@@ -4889,7 +4889,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -4914,7 +4914,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -4939,7 +4939,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -4963,7 +4963,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetCharacterBreaks(
         shaped: Godot.RID
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4987,7 +4987,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -5012,7 +5012,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -5037,7 +5037,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
@@ -5129,7 +5129,7 @@ open class TextServer: RefCounted {
         start: Int64,
         end: Int64
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         shaped.withGodotUnsafeRawPointer { __ptr_shaped in
         start.withGodotUnsafeRawPointer { __ptr_start in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -5155,7 +5155,7 @@ open class TextServer: RefCounted {
         _ number: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         number.withGodotUnsafeRawPointer { __ptr_number in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
@@ -5180,7 +5180,7 @@ open class TextServer: RefCounted {
         _ number: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         number.withGodotUnsafeRawPointer { __ptr_number in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
@@ -5204,7 +5204,7 @@ open class TextServer: RefCounted {
     public func percentSign(
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5229,7 +5229,7 @@ open class TextServer: RefCounted {
         language: Godot.GodotString = "",
         charsPerLine: Int64 = 0
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         language.withGodotUnsafeRawPointer { __ptr_language in
         charsPerLine.withGodotUnsafeRawPointer { __ptr_charsPerLine in
@@ -5255,7 +5255,7 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
@@ -5280,7 +5280,7 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         dict: Godot.PackedStringArray
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         dict.withGodotUnsafeRawPointer { __ptr_dict in
         withUnsafeArgumentPackPointer(__ptr_string, __ptr_dict) { __accessPtr in
@@ -5304,7 +5304,7 @@ open class TextServer: RefCounted {
     public func spoofCheck(
         string: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5327,7 +5327,7 @@ open class TextServer: RefCounted {
     public func stripDiacritics(
         string: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5350,7 +5350,7 @@ open class TextServer: RefCounted {
     public func isValidIdentifier(
         string: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -5374,7 +5374,7 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
@@ -5399,7 +5399,7 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
@@ -5420,12 +5420,12 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func parseStructuredText<Value: VariantStorable>(
+    public func parseStructuredText<Value: Variant.Storable>(
         parserType: Godot.TextServer.StructuredTextParser,
         args: Godot.GodotArray<Value>,
         text: Godot.GodotString
     ) -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         parserType.withGodotUnsafeRawPointer { __ptr_parserType in
         args.withGodotUnsafeRawPointer { __ptr_args in
         text.withGodotUnsafeRawPointer { __ptr_text in

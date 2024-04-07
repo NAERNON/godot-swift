@@ -31,7 +31,7 @@ open class GraphNode: GraphElement {
     public lazy var slotUpdatedSignal: Godot.SignalEmitter<SlotUpdatedSignalInput> = {
         .init(object: self, signalName: "slot_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(slotIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(slotIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -39,7 +39,7 @@ open class GraphNode: GraphElement {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -82,7 +82,7 @@ open class GraphNode: GraphElement {
     }()
 
     private func __getTitle() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_title,
@@ -101,7 +101,7 @@ open class GraphNode: GraphElement {
     }()
 
     public func titlebarHbox() -> Godot.HBoxContainer? {
-        Godot.HBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HBoxContainer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_titlebar_hbox,
@@ -204,7 +204,7 @@ open class GraphNode: GraphElement {
     public func isSlotEnabledLeft(
         slotIndex: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,7 +275,7 @@ open class GraphNode: GraphElement {
     public func slotTypeLeft(
         slotIndex: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -322,7 +322,7 @@ open class GraphNode: GraphElement {
     public func slotColorLeft(
         slotIndex: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -345,7 +345,7 @@ open class GraphNode: GraphElement {
     public func isSlotEnabledRight(
         slotIndex: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -416,7 +416,7 @@ open class GraphNode: GraphElement {
     public func slotTypeRight(
         slotIndex: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -463,7 +463,7 @@ open class GraphNode: GraphElement {
     public func slotColorRight(
         slotIndex: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -486,7 +486,7 @@ open class GraphNode: GraphElement {
     public func isSlotDrawStylebox(
         slotIndex: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
         withUnsafeArgumentPackPointer(__ptr_slotIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +531,7 @@ open class GraphNode: GraphElement {
     }()
 
     public func inputPortCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_input_port_count,
@@ -552,7 +552,7 @@ open class GraphNode: GraphElement {
     public func inputPortPosition(
         portIdx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -575,7 +575,7 @@ open class GraphNode: GraphElement {
     public func inputPortType(
         portIdx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -598,7 +598,7 @@ open class GraphNode: GraphElement {
     public func inputPortColor(
         portIdx: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -621,7 +621,7 @@ open class GraphNode: GraphElement {
     public func inputPortSlot(
         portIdx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -642,7 +642,7 @@ open class GraphNode: GraphElement {
     }()
 
     public func outputPortCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_output_port_count,
@@ -663,7 +663,7 @@ open class GraphNode: GraphElement {
     public func outputPortPosition(
         portIdx: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -686,7 +686,7 @@ open class GraphNode: GraphElement {
     public func outputPortType(
         portIdx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -709,7 +709,7 @@ open class GraphNode: GraphElement {
     public func outputPortColor(
         portIdx: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -732,7 +732,7 @@ open class GraphNode: GraphElement {
     public func outputPortSlot(
         portIdx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
         withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -767,10 +767,10 @@ open class GraphNode: GraphElement {
             }
             Unmanaged<GraphNode> .fromOpaque(instancePtr).takeUnretainedValue()
         ._drawPort(
-            slotIndex: Int32.fromGodotUnsafePointer(args[0]!),
-            position: Godot.Vector2I.fromGodotUnsafePointer(args[1]!),
-            left: Bool.fromGodotUnsafePointer(args[2]!),
-            color: Godot.Color.fromGodotUnsafePointer(args[3]!)
+            slotIndex: Int32.transferFromGodot(unsafePointer: args[0]!),
+            position: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+            left: Bool.transferFromGodot(unsafePointer: args[2]!),
+            color: Godot.Color.transferFromGodot(unsafePointer: args[3]!)
         )}
         _virtualFunctions = [
             "_drawPort" : ("_draw_port", _draw_port_call)

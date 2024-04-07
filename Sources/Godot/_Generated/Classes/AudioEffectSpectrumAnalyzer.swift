@@ -56,7 +56,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
     }()
 
     private func __getBufferLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffer_length,
@@ -97,7 +97,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
     }()
 
     private func __getTapBackPos() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap_back_pos,
@@ -138,7 +138,7 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
     }()
 
     private func __getFftSize() -> Godot.AudioEffectSpectrumAnalyzer.FFTSize {
-        Godot.AudioEffectSpectrumAnalyzer.FFTSize.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioEffectSpectrumAnalyzer.FFTSize.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fft_size,

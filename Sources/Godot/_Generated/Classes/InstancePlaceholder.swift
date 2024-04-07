@@ -17,7 +17,7 @@ open class InstancePlaceholder: Node {
     public func storedValues(
         withOrder order: Bool = false
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         order.withGodotUnsafeRawPointer { __ptr_order in
         withUnsafeArgumentPackPointer(__ptr_order) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -41,7 +41,7 @@ open class InstancePlaceholder: Node {
         replace: Bool = false,
         customScene: Godot.PackedScene? = nil
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         replace.withGodotUnsafeRawPointer { __ptr_replace in
         customScene.withGodotUnsafeRawPointer { __ptr_customScene in
         withUnsafePointer(to: __ptr_customScene) { _ptr___ptr_customScene in
@@ -64,7 +64,7 @@ open class InstancePlaceholder: Node {
     }()
 
     public func instancePath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_instance_path,

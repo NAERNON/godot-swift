@@ -70,7 +70,7 @@ open class VisualShaderNodeUIntOp: VisualShaderNode {
     }()
 
     private func __getOperator() -> Godot.VisualShaderNodeUIntOp.Operator {
-        Godot.VisualShaderNodeUIntOp.Operator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeUIntOp.Operator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_operator,

@@ -37,7 +37,7 @@ open class Label: Control {
     }()
 
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_alignment,
@@ -78,7 +78,7 @@ open class Label: Control {
     }()
 
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
-        Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VerticalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertical_alignment,
@@ -119,7 +119,7 @@ open class Label: Control {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -161,7 +161,7 @@ open class Label: Control {
     }()
 
     private func __getLabelSettings() -> Godot.LabelSettings? {
-        Godot.LabelSettings?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LabelSettings?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_label_settings,
@@ -202,7 +202,7 @@ open class Label: Control {
     }()
 
     private func __getTextDirection() -> Godot.Control.TextDirection {
-        Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control.TextDirection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_direction,
@@ -243,7 +243,7 @@ open class Label: Control {
     }()
 
     private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,
@@ -284,7 +284,7 @@ open class Label: Control {
     }()
 
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
-        Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.AutowrapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autowrap_mode,
@@ -325,7 +325,7 @@ open class Label: Control {
     }()
 
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
-        Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.JustificationFlag.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_justification_flags,
@@ -366,7 +366,7 @@ open class Label: Control {
     }()
 
     private func __isClippingText() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_clipping_text,
@@ -407,7 +407,7 @@ open class Label: Control {
     }()
 
     private func __getTabStops() -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_stops,
@@ -448,7 +448,7 @@ open class Label: Control {
     }()
 
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
-        Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.OverrunBehavior.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_overrun_behavior,
@@ -489,7 +489,7 @@ open class Label: Control {
     }()
 
     private func __isUppercase() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_uppercase,
@@ -510,7 +510,7 @@ open class Label: Control {
     public func lineHeight(
         line: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -531,7 +531,7 @@ open class Label: Control {
     }()
 
     public func lineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_count,
@@ -550,7 +550,7 @@ open class Label: Control {
     }()
 
     public func visibleLineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_line_count,
@@ -569,7 +569,7 @@ open class Label: Control {
     }()
 
     public func totalCharacterCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_total_character_count,
@@ -610,7 +610,7 @@ open class Label: Control {
     }()
 
     private func __getVisibleCharacters() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_characters,
@@ -629,7 +629,7 @@ open class Label: Control {
     }()
 
     private func __getVisibleCharactersBehavior() -> Godot.TextServer.VisibleCharactersBehavior {
-        Godot.TextServer.VisibleCharactersBehavior.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.VisibleCharactersBehavior.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_characters_behavior,
@@ -692,7 +692,7 @@ open class Label: Control {
     }()
 
     private func __getVisibleRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_ratio,
@@ -733,7 +733,7 @@ open class Label: Control {
     }()
 
     private func __getLinesSkipped() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lines_skipped,
@@ -774,7 +774,7 @@ open class Label: Control {
     }()
 
     private func __getMaxLinesVisible() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_lines_visible,
@@ -815,7 +815,7 @@ open class Label: Control {
     }()
 
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
-        Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.StructuredTextParser.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override,
@@ -833,7 +833,7 @@ open class Label: Control {
         }
     }()
 
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+    private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
@@ -856,7 +856,7 @@ open class Label: Control {
     }()
 
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override_options,

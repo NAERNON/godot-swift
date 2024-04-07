@@ -47,17 +47,17 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
             }
             Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mixResampled(
-            dstBuffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[0]!),
-            frameCount: Int32.fromGodotUnsafePointer(args[1]!)
+            dstBuffer: UnsafeMutablePointer<AudioFrame> .transferFromGodot(unsafePointer: args[0]!),
+            frameCount: Int32.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_stream_sampling_rate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getStreamSamplingRate()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_mixResampled" : ("_mix_resampled", _mix_resampled_call),
             "_getStreamSamplingRate" : ("_get_stream_sampling_rate", _get_stream_sampling_rate_call)

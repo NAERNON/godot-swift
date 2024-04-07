@@ -52,7 +52,7 @@ open class OpenXRAction: Resource {
     }()
 
     private func __getLocalizedName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_localized_name,
@@ -93,7 +93,7 @@ open class OpenXRAction: Resource {
     }()
 
     private func __getActionType() -> Godot.OpenXRAction.ActionType {
-        Godot.OpenXRAction.ActionType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRAction.ActionType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_action_type,
@@ -134,7 +134,7 @@ open class OpenXRAction: Resource {
     }()
 
     private func __getToplevelPaths() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_toplevel_paths,

@@ -54,7 +54,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getProgress() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_progress,
@@ -95,7 +95,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getHOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_h_offset,
@@ -136,7 +136,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getVOffset() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_offset,
@@ -177,7 +177,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getProgressRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_progress_ratio,
@@ -218,7 +218,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getRotationMode() -> Godot.PathFollow3D.RotationMode {
-        Godot.PathFollow3D.RotationMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PathFollow3D.RotationMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rotation_mode,
@@ -259,7 +259,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __getCubicInterpolation() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cubic_interpolation,
@@ -300,7 +300,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __isUsingModelFront() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_model_front,
@@ -341,7 +341,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __hasLoop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_loop,
@@ -382,7 +382,7 @@ open class PathFollow3D: Node3D {
     }()
 
     private func __isTiltEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_tilt_enabled,
@@ -404,7 +404,7 @@ open class PathFollow3D: Node3D {
         transform: Godot.Transform3D,
         rotationMode: Godot.PathFollow3D.RotationMode
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
         rotationMode.withGodotUnsafeRawPointer { __ptr_rotationMode in
         withUnsafeArgumentPackPointer(__ptr_transform, __ptr_rotationMode) { __accessPtr in

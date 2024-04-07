@@ -37,7 +37,7 @@ open class OpenXRActionSet: Resource {
     }()
 
     private func __getLocalizedName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_localized_name,
@@ -78,7 +78,7 @@ open class OpenXRActionSet: Resource {
     }()
 
     private func __getPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_priority,
@@ -97,7 +97,7 @@ open class OpenXRActionSet: Resource {
     }()
 
     public func actionCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_action_count,
@@ -115,7 +115,7 @@ open class OpenXRActionSet: Resource {
         }
     }()
 
-    private func __setActions<Value: VariantStorable>(
+    private func __setActions<Value: Variant.Storable>(
         _ actions: Godot.GodotArray<Value>
     ) {
         actions.withGodotUnsafeRawPointer { __ptr_actions in
@@ -138,7 +138,7 @@ open class OpenXRActionSet: Resource {
     }()
 
     private func __getActions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_actions,

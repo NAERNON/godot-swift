@@ -48,7 +48,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -89,7 +89,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSections() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sections,
@@ -130,7 +130,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSectionLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_section_length,
@@ -171,7 +171,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getSectionSegments() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_section_segments,
@@ -213,7 +213,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_curve,
@@ -254,7 +254,7 @@ open class RibbonTrailMesh: PrimitiveMesh {
     }()
 
     private func __getShape() -> Godot.RibbonTrailMesh.Shape {
-        Godot.RibbonTrailMesh.Shape.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RibbonTrailMesh.Shape.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shape,

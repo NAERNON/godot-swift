@@ -29,9 +29,9 @@ open class EditorTranslationParserPlugin: RefCounted {
             }
             Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseFile(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            msgids: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[1]!),
-            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray> .fromGodotUnsafePointer(args[2]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            msgids: Godot.GodotArray<Godot.GodotString> .transferFromGodot(unsafePointer: args[1]!),
+            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray> .transferFromGodot(unsafePointer: args[2]!)
         )}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -39,7 +39,7 @@ open class EditorTranslationParserPlugin: RefCounted {
             }
             Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_parseFile" : ("_parse_file", _parse_file_call),
             "_getRecognizedExtensions" : ("_get_recognized_extensions", _get_recognized_extensions_call)

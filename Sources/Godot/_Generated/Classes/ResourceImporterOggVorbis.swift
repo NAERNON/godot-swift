@@ -17,7 +17,7 @@ open class ResourceImporterOggVorbis: ResourceImporter {
     static public func loadFromBuffer(
         _ buffer: Godot.PackedByteArray
     ) -> Godot.AudioStreamOggVorbis? {
-        Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamOggVorbis?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -39,7 +39,7 @@ open class ResourceImporterOggVorbis: ResourceImporter {
     static public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.AudioStreamOggVorbis? {
-        Godot.AudioStreamOggVorbis?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamOggVorbis?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(

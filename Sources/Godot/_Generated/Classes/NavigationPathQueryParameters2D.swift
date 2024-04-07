@@ -86,7 +86,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getPathfindingAlgorithm() -> Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm {
-        Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pathfinding_algorithm,
@@ -127,7 +127,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getPathPostprocessing() -> Godot.NavigationPathQueryParameters2D.PathPostProcessing {
-        Godot.NavigationPathQueryParameters2D.PathPostProcessing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathPostProcessing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_postprocessing,
@@ -168,7 +168,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_map,
@@ -209,7 +209,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getStartPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_start_position,
@@ -250,7 +250,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getTargetPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_position,
@@ -291,7 +291,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getNavigationLayers() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_layers,
@@ -332,7 +332,7 @@ open class NavigationPathQueryParameters2D: RefCounted {
     }()
 
     private func __getMetadataFlags() -> Godot.NavigationPathQueryParameters2D.PathMetadataFlags {
-        Godot.NavigationPathQueryParameters2D.PathMetadataFlags.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathMetadataFlags.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_metadata_flags,

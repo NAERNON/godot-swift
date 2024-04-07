@@ -99,7 +99,7 @@ open class XRInterface: RefCounted {
     public lazy var playAreaChangedSignal: Godot.SignalEmitter<PlayAreaChangedSignalInput> = {
         .init(object: self, signalName: "play_area_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(mode: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(mode: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -107,7 +107,7 @@ open class XRInterface: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -120,7 +120,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func name() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -139,7 +139,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func capabilities() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_capabilities,
@@ -158,7 +158,7 @@ open class XRInterface: RefCounted {
     }()
 
     private func __isPrimary() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_primary,
@@ -199,7 +199,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func isInitialized() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_initialized,
@@ -218,7 +218,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func initialize() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_initialize,
@@ -255,7 +255,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func systemInfo() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_system_info,
@@ -274,7 +274,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func trackingStatus() -> Godot.XRInterface.TrackingStatus {
-        Godot.XRInterface.TrackingStatus.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface.TrackingStatus.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tracking_status,
@@ -293,7 +293,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func renderTargetSize() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_target_size,
@@ -312,7 +312,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func viewCount() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_view_count,
@@ -365,7 +365,7 @@ open class XRInterface: RefCounted {
     public func supportsPlayAreaMode(
         _ mode: Godot.XRInterface.PlayAreaMode
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -386,7 +386,7 @@ open class XRInterface: RefCounted {
     }()
 
     private func __getPlayAreaMode() -> Godot.XRInterface.PlayAreaMode {
-        Godot.XRInterface.PlayAreaMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface.PlayAreaMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_play_area_mode,
@@ -407,7 +407,7 @@ open class XRInterface: RefCounted {
     public func setPlayAreaMode(
         _ mode: Godot.XRInterface.PlayAreaMode
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -428,7 +428,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func playArea() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_play_area,
@@ -447,7 +447,7 @@ open class XRInterface: RefCounted {
     }()
 
     private func __getAnchorDetectionIsEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_anchor_detection_is_enabled,
@@ -488,7 +488,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func cameraFeedID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_feed_id,
@@ -507,7 +507,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func isPassthroughSupported() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_passthrough_supported,
@@ -526,7 +526,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func isPassthroughEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_passthrough_enabled,
@@ -545,7 +545,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func startPassthrough() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_start_passthrough,
@@ -585,7 +585,7 @@ open class XRInterface: RefCounted {
         _ view: UInt32,
         camTransform: Godot.Transform3D
     ) -> Godot.Transform3D {
-        Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform3D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         camTransform.withGodotUnsafeRawPointer { __ptr_camTransform in
         withUnsafeArgumentPackPointer(__ptr_view, __ptr_camTransform) { __accessPtr in
@@ -612,7 +612,7 @@ open class XRInterface: RefCounted {
         near: Double,
         far: Double
     ) -> Godot.Projection {
-        Godot.Projection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Projection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         view.withGodotUnsafeRawPointer { __ptr_view in
         aspect.withGodotUnsafeRawPointer { __ptr_aspect in
         near.withGodotUnsafeRawPointer { __ptr_near in
@@ -636,7 +636,7 @@ open class XRInterface: RefCounted {
     }()
 
     public func supportedEnvironmentBlendModes() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_environment_blend_modes,
@@ -657,7 +657,7 @@ open class XRInterface: RefCounted {
     public func setEnvironmentBlendMode(
         _ mode: Godot.XRInterface.EnvironmentBlendMode
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -678,7 +678,7 @@ open class XRInterface: RefCounted {
     }()
 
     private func __getEnvironmentBlendMode() -> Godot.XRInterface.EnvironmentBlendMode {
-        Godot.XRInterface.EnvironmentBlendMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.XRInterface.EnvironmentBlendMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment_blend_mode,

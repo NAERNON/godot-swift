@@ -37,7 +37,7 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value?,
             className: GodotStringName
-        ) where Value : ExposableValue {
+        ) where Value : Exposable {
             self.variantRepresentationType = type.variantRepresentationType
             self.name = name
             if let defaultValue {
@@ -62,7 +62,7 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value? = nil
         ) -> FunctionParameter
-        where Value : ExposableValue {
+        where Value : Exposable {
             FunctionParameter(
                 type: type,
                 name: name,
@@ -74,8 +74,10 @@ extension ClassRegistrar {
         /// Creates a new FunctionParameter used as a function return type.
         ///
         /// - Parameter type: The type of the parameter.
-        public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
-        where Value : ExposableValue {
+        public static func returnParameter<Value>(
+            _ type: Value.Type
+        ) -> FunctionParameter
+        where Value : Exposable {
             FunctionParameter(
                 type: type,
                 name: .init(),

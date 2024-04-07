@@ -15,7 +15,7 @@ open class GLTFMesh: Resource {
     }()
 
     private func __getMesh() -> Godot.ImporterMesh? {
-        Godot.ImporterMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ImporterMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mesh,
@@ -57,7 +57,7 @@ open class GLTFMesh: Resource {
     }()
 
     private func __getBlendWeights() -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_blend_weights,
@@ -98,7 +98,7 @@ open class GLTFMesh: Resource {
     }()
 
     private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material?> {
-        Godot.GodotArray<Godot.Material?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Material?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_instance_materials,

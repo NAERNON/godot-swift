@@ -112,7 +112,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getLightData() -> Godot.LightmapGIData? {
-        Godot.LightmapGIData?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LightmapGIData?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_light_data,
@@ -153,7 +153,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getBakeQuality() -> Godot.LightmapGI.BakeQuality {
-        Godot.LightmapGI.BakeQuality.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LightmapGI.BakeQuality.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bake_quality,
@@ -194,7 +194,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getBounces() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bounces,
@@ -235,7 +235,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getBounceIndirectEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bounce_indirect_energy,
@@ -276,7 +276,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getGenerateProbes() -> Godot.LightmapGI.GenerateProbes {
-        Godot.LightmapGI.GenerateProbes.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LightmapGI.GenerateProbes.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_generate_probes,
@@ -317,7 +317,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bias,
@@ -358,7 +358,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getEnvironmentMode() -> Godot.LightmapGI.EnvironmentMode {
-        Godot.LightmapGI.EnvironmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.LightmapGI.EnvironmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment_mode,
@@ -400,7 +400,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getEnvironmentCustomSky() -> Godot.Sky? {
-        Godot.Sky?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Sky?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment_custom_sky,
@@ -441,7 +441,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getEnvironmentCustomColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment_custom_color,
@@ -482,7 +482,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getEnvironmentCustomEnergy() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_environment_custom_energy,
@@ -523,7 +523,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getMaxTextureSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_texture_size,
@@ -564,7 +564,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __isUsingDenoiser() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_denoiser,
@@ -605,7 +605,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getDenoiserStrength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_denoiser_strength,
@@ -646,7 +646,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __isInterior() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_interior,
@@ -687,7 +687,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __isDirectional() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_directional,
@@ -728,7 +728,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __isUsingTextureForBounces() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_texture_for_bounces,
@@ -770,7 +770,7 @@ open class LightmapGI: VisualInstance3D {
     }()
 
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
-        Godot.CameraAttributes?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CameraAttributes?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_camera_attributes,

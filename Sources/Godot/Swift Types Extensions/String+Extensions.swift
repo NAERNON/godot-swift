@@ -2,14 +2,13 @@ import GodotExtensionHeaders
 
 extension String {
     public init(godotString: GodotString) {
-        var string = ""
-        var buffer = godotString._toUtf8Buffer()
-        buffer.withUnsafeBytesArray { bytesPtr in
-            if let bytesPtr {
-                string = .init(cString: bytesPtr)
+        self = godotString._toUtf8Buffer().withUnsafeBytes { bytesPtr in
+            if let baseAddress = bytesPtr.baseAddress {
+                return .init(cString: baseAddress)
+            } else {
+                return ""
             }
         }
-        self = string
     }
     
     public init(godotStringName: GodotStringName) {
@@ -20,33 +19,15 @@ extension String {
         GodotString(swiftString: lhs) == rhs
     }
     
+    public static func == (lhs: GodotString, rhs: String) -> Bool {
+        rhs == lhs
+    }
+    
     public static func == (lhs: String, rhs: GodotStringName) -> Bool {
         GodotString(swiftString: lhs) == rhs
     }
-}
-
-extension String: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .string
     
-    public static func convertToStorage(_ value: consuming String) -> Variant.Storage {
-        GodotString.convertToStorage(GodotString(swiftString: value))
-    }
-    
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> String {
-        String(godotString: GodotString.convertFromCheckedStorage(storage))
-    }
-    
-    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
-        GodotString(swiftString: self).copyToGodot(unsafePointer: destinationUnsafePointer)
-    }
-    
-    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> String {
-        String(godotString: GodotString.fromGodotUnsafePointer(unsafePointer))
+    public static func == (lhs: GodotStringName, rhs: String) -> Bool {
+        rhs == lhs
     }
 }
-
-extension String: HintableValue {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
-}
-

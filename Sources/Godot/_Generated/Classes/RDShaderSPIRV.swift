@@ -41,7 +41,7 @@ open class RDShaderSPIRV: Resource {
     private func __getStageBytecode(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -88,7 +88,7 @@ open class RDShaderSPIRV: Resource {
     private func __getStageCompileError(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

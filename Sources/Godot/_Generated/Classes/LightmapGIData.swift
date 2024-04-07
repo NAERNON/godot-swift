@@ -37,7 +37,7 @@ open class LightmapGIData: Resource {
     }()
 
     private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered?> {
-        Godot.GodotArray<Godot.TextureLayered?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.TextureLayered?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lightmap_textures,
@@ -78,7 +78,7 @@ open class LightmapGIData: Resource {
     }()
 
     private func __isUsingSphericalHarmonics() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_spherical_harmonics,
@@ -125,7 +125,7 @@ open class LightmapGIData: Resource {
     }()
 
     public func userCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_user_count,
@@ -146,7 +146,7 @@ open class LightmapGIData: Resource {
     public func userPath(
         userIdx: Int32
     ) -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         userIdx.withGodotUnsafeRawPointer { __ptr_userIdx in
         withUnsafeArgumentPackPointer(__ptr_userIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -208,7 +208,7 @@ open class LightmapGIData: Resource {
     }()
 
     private func __getLightTexture() -> Godot.TextureLayered? {
-        Godot.TextureLayered?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextureLayered?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_light_texture,

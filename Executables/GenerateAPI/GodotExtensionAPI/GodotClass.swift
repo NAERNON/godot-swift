@@ -345,7 +345,7 @@ struct GodotClass: Decodable {
         ) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instancePtr in
-                    try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                    try method.translated().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                         if method.isStatic {
                             method.bindCall(
                                 selfExpression: "nil",
@@ -368,7 +368,7 @@ struct GodotClass: Decodable {
                     }
                 }
             } else {
-                try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                try method.translated().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                     if method.isStatic {
                         method.bindCall(
                             selfExpression: "nil",
@@ -395,7 +395,7 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     private func virtualMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        try method.translated.declSyntax(options: syntaxOptions, keywords: .open) {
+        try method.translated().declSyntax(options: syntaxOptions, keywords: .open) {
             if let returnType = method.returnType {
                 if returnType.isGodotClass || returnType.isOptional {
                     "nil"
@@ -483,7 +483,7 @@ struct GodotClass: Decodable {
         
         return try VariableDeclSyntax("public var \(raw: propertyName): \(raw: typeSyntax)") {
             let getterSyntax = getter.withNamePrefixed(by: methodPrefixIfPrivate)
-                .translated.callSyntax(withParameters: [getterParameter].compactMap { $0 })
+                .translated().callSyntax(withParameters: [getterParameter].compactMap { $0 })
             
             """
             get {
@@ -493,7 +493,7 @@ struct GodotClass: Decodable {
             
             if let setter {
                 let setterSyntax = setter.withNamePrefixed(by: methodPrefixIfPrivate)
-                    .translated.callSyntax(withParameters: ["newValue"])
+                    .translated().callSyntax(withParameters: ["newValue"])
                 
                 """
                 set {
@@ -533,18 +533,18 @@ struct GodotClass: Decodable {
                     """
                     
                     let parameters: [String] = arguments.enumerated().map { (index, argument) in
-                        "\(argument.type.syntax(options: syntaxOptions)).fromGodotUnsafePointer(args[\(index)]!)"
+                        "\(argument.type.syntax(options: syntaxOptions)).transferFromGodot(unsafePointer: args[\(index)]!)"
                     }
                     
-                    ".\(method.translated.callSyntax(withParameters: parameters))"
+                    ".\(method.translated().callSyntax(withParameters: parameters))"
                     
                     if method.returnValue != nil {
-                        ".copyToGodot(unsafePointer: returnPtr!)"
+                        ".transferToGodot(unsafePointer: returnPtr!)"
                     }
                     
                     "}"
                     
-                    let _ = arrayElements.append("\"\(method.translated.name)\" : (\"\(method.name)\", \(virtualFuncVarName))")
+                    let _ = arrayElements.append("\"\(method.translated().name)\" : (\"\(method.name)\", \(virtualFuncVarName))")
                 }
             }
             

@@ -295,7 +295,7 @@ open class Mesh: Resource {
     }()
 
     private func __getLightmapSizeHint() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_lightmap_size_hint,
@@ -314,7 +314,7 @@ open class Mesh: Resource {
     }()
 
     public func aabb() -> Godot.AABB {
-        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_aabb,
@@ -333,7 +333,7 @@ open class Mesh: Resource {
     }()
 
     public func faces() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector3Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_faces,
@@ -352,7 +352,7 @@ open class Mesh: Resource {
     }()
 
     public func surfaceCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_surface_count,
@@ -373,7 +373,7 @@ open class Mesh: Resource {
     public func surfaceGetArrays(
         surfIdx: Int32
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -396,7 +396,7 @@ open class Mesh: Resource {
     public func surfaceGetBlendShapeArrays(
         surfIdx: Int32
     ) -> Godot.GodotArray<Godot.AnyGodotArray> {
-        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotArray> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -444,7 +444,7 @@ open class Mesh: Resource {
     public func surfaceGetMaterial(
         surfIdx: Int32
     ) -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
         withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -465,7 +465,7 @@ open class Mesh: Resource {
     }()
 
     public func createPlaceholder() -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_placeholder,
@@ -484,7 +484,7 @@ open class Mesh: Resource {
     }()
 
     public func createTrimeshShape() -> Godot.ConcavePolygonShape3D? {
-        Godot.ConcavePolygonShape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ConcavePolygonShape3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_trimesh_shape,
@@ -506,7 +506,7 @@ open class Mesh: Resource {
         clean: Bool = true,
         simplify: Bool = false
     ) -> Godot.ConvexPolygonShape3D? {
-        Godot.ConvexPolygonShape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ConvexPolygonShape3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         clean.withGodotUnsafeRawPointer { __ptr_clean in
         simplify.withGodotUnsafeRawPointer { __ptr_simplify in
         withUnsafeArgumentPackPointer(__ptr_clean, __ptr_simplify) { __accessPtr in
@@ -530,7 +530,7 @@ open class Mesh: Resource {
     public func createOutline(
         margin: Double
     ) -> Godot.Mesh? {
-        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Mesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -551,7 +551,7 @@ open class Mesh: Resource {
     }()
 
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
-        Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TriangleMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_generate_triangle_mesh,
@@ -584,78 +584,78 @@ open class Mesh: Resource {
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSurfaceCount()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_array_len_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrayLen(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_array_index_len_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrayIndexLen(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_arrays_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrays(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_blend_shape_arrays_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetBlendShapeArrays(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_lods_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetLods(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_format_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetFormat(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_get_primitive_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetPrimitiveType(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _surface_set_material_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceSetMaterial(
-            index: Int32.fromGodotUnsafePointer(args[0]!),
-            material: Godot.Material?.fromGodotUnsafePointer(args[1]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!),
+            material: Godot.Material?.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _surface_get_material_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -663,33 +663,33 @@ open class Mesh: Resource {
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetMaterial(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_blend_shape_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBlendShapeCount()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_blend_shape_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBlendShapeName(
-            index: Int32.fromGodotUnsafePointer(args[0]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_blend_shape_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setBlendShapeName(
-            index: Int32.fromGodotUnsafePointer(args[0]!),
-            name: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)
+            index: Int32.transferFromGodot(unsafePointer: args[0]!),
+            name: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _get_aabb_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -697,7 +697,7 @@ open class Mesh: Resource {
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAabb()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getSurfaceCount" : ("_get_surface_count", _get_surface_count_call),
             "_surfaceGetArrayLen" : ("_surface_get_array_len", _surface_get_array_len_call),

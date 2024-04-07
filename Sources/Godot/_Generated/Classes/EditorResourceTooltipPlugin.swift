@@ -57,20 +57,20 @@ open class EditorResourceTooltipPlugin: RefCounted {
             }
             Unmanaged<EditorResourceTooltipPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
-            type: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            type: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _make_tooltip_for_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorResourceTooltipPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._makeTooltipForPath(
-            Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!),
-            base: Godot.Control?.fromGodotUnsafePointer(args[2]!)
+            Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            metadata: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!),
+            base: Godot.Control?.transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_handles" : ("_handles", _handles_call),
             "_makeTooltipForPath" : ("_make_tooltip_for_path", _make_tooltip_for_path_call)

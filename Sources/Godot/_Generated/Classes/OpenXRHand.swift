@@ -63,7 +63,7 @@ open class OpenXRHand: Node3D {
     }()
 
     private func __getHand() -> Godot.OpenXRHand.Hands {
-        Godot.OpenXRHand.Hands.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRHand.Hands.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hand,
@@ -104,7 +104,7 @@ open class OpenXRHand: Node3D {
     }()
 
     private func __getHandSkeleton() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hand_skeleton,
@@ -145,7 +145,7 @@ open class OpenXRHand: Node3D {
     }()
 
     private func __getMotionRange() -> Godot.OpenXRHand.MotionRange {
-        Godot.OpenXRHand.MotionRange.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OpenXRHand.MotionRange.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_motion_range,

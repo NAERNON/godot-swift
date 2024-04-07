@@ -113,7 +113,7 @@ open class Gradient: Resource {
     public func offset(
         point: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -178,7 +178,7 @@ open class Gradient: Resource {
     public func color(
         point: Int32
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -201,7 +201,7 @@ open class Gradient: Resource {
     public func sample(
         offset: Double
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,7 +222,7 @@ open class Gradient: Resource {
     }()
 
     public func pointCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_point_count,
@@ -263,7 +263,7 @@ open class Gradient: Resource {
     }()
 
     private func __getOffsets() -> Godot.PackedFloat32Array {
-        Godot.PackedFloat32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offsets,
@@ -304,7 +304,7 @@ open class Gradient: Resource {
     }()
 
     private func __getColors() -> Godot.PackedColorArray {
-        Godot.PackedColorArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedColorArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_colors,
@@ -345,7 +345,7 @@ open class Gradient: Resource {
     }()
 
     private func __getInterpolationMode() -> Godot.Gradient.InterpolationMode {
-        Godot.Gradient.InterpolationMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient.InterpolationMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_interpolation_mode,
@@ -386,7 +386,7 @@ open class Gradient: Resource {
     }()
 
     private func __getInterpolationColorSpace() -> Godot.Gradient.ColorSpace {
-        Godot.Gradient.ColorSpace.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient.ColorSpace.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_interpolation_color_space,

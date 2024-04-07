@@ -37,7 +37,7 @@ open class EditorInterface: Object {
     }()
 
     public func commandPalette() -> Godot.EditorCommandPalette? {
-        Godot.EditorCommandPalette?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorCommandPalette?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_command_palette,
@@ -56,7 +56,7 @@ open class EditorInterface: Object {
     }()
 
     public func resourceFilesystem() -> Godot.EditorFileSystem? {
-        Godot.EditorFileSystem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorFileSystem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resource_filesystem,
@@ -75,7 +75,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorPaths() -> Godot.EditorPaths? {
-        Godot.EditorPaths?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorPaths?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_paths,
@@ -94,7 +94,7 @@ open class EditorInterface: Object {
     }()
 
     public func resourcePreviewer() -> Godot.EditorResourcePreview? {
-        Godot.EditorResourcePreview?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorResourcePreview?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resource_previewer,
@@ -113,7 +113,7 @@ open class EditorInterface: Object {
     }()
 
     public func selection() -> Godot.EditorSelection? {
-        Godot.EditorSelection?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorSelection?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selection,
@@ -132,7 +132,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorSettings() -> Godot.EditorSettings? {
-        Godot.EditorSettings?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorSettings?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_settings,
@@ -154,7 +154,7 @@ open class EditorInterface: Object {
         meshes: Godot.GodotArray<Godot.Mesh?>,
         previewSize: Int32
     ) -> Godot.GodotArray<Godot.Texture2D?> {
-        Godot.GodotArray<Godot.Texture2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Texture2D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         meshes.withGodotUnsafeRawPointer { __ptr_meshes in
         previewSize.withGodotUnsafeRawPointer { __ptr_previewSize in
         withUnsafeArgumentPackPointer(__ptr_meshes, __ptr_previewSize) { __accessPtr in
@@ -202,7 +202,7 @@ open class EditorInterface: Object {
     public func isPluginEnabled(
         plugin: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         plugin.withGodotUnsafeRawPointer { __ptr_plugin in
         withUnsafeArgumentPackPointer(__ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -223,7 +223,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorTheme() -> Godot.Theme? {
-        Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Theme?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_theme,
@@ -242,7 +242,7 @@ open class EditorInterface: Object {
     }()
 
     public func baseControl() -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_control,
@@ -261,7 +261,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorMainScreen() -> Godot.VBoxContainer? {
-        Godot.VBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VBoxContainer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_main_screen,
@@ -280,7 +280,7 @@ open class EditorInterface: Object {
     }()
 
     public func scriptEditor() -> Godot.ScriptEditor? {
-        Godot.ScriptEditor?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ScriptEditor?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_script_editor,
@@ -299,7 +299,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorViewport2D() -> Godot.SubViewport? {
-        Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SubViewport?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_viewport_2d,
@@ -320,7 +320,7 @@ open class EditorInterface: Object {
     public func editorViewport3D(
         idx: Int32 = 0
     ) -> Godot.SubViewport? {
-        Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SubViewport?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -385,7 +385,7 @@ open class EditorInterface: Object {
     }()
 
     private func __isDistractionFreeModeEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_distraction_free_mode_enabled,
@@ -404,7 +404,7 @@ open class EditorInterface: Object {
     }()
 
     public func editorScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_scale,
@@ -525,7 +525,7 @@ open class EditorInterface: Object {
     }()
 
     public func currentFeatureProfile() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_feature_profile,
@@ -566,7 +566,7 @@ open class EditorInterface: Object {
     }()
 
     public func fileSystemDock() -> Godot.FileSystemDock? {
-        Godot.FileSystemDock?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.FileSystemDock?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_file_system_dock,
@@ -607,7 +607,7 @@ open class EditorInterface: Object {
     }()
 
     public func selectedPaths() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_paths,
@@ -626,7 +626,7 @@ open class EditorInterface: Object {
     }()
 
     public func currentPath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_path,
@@ -645,7 +645,7 @@ open class EditorInterface: Object {
     }()
 
     public func currentDirectory() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_directory,
@@ -664,7 +664,7 @@ open class EditorInterface: Object {
     }()
 
     public func inspector() -> Godot.EditorInspector? {
-        Godot.EditorInspector?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorInspector?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inspector,
@@ -829,7 +829,7 @@ open class EditorInterface: Object {
     }()
 
     public func openScenes() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_open_scenes,
@@ -848,7 +848,7 @@ open class EditorInterface: Object {
     }()
 
     public func editedSceneRoot() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited_scene_root,
@@ -867,7 +867,7 @@ open class EditorInterface: Object {
     }()
 
     public func saveScene() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_save_scene,
@@ -1022,7 +1022,7 @@ open class EditorInterface: Object {
     }()
 
     public func isPlayingScene() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_playing_scene,
@@ -1041,7 +1041,7 @@ open class EditorInterface: Object {
     }()
 
     public func playingScene() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_playing_scene,
@@ -1082,7 +1082,7 @@ open class EditorInterface: Object {
     }()
 
     private func __isMovieMakerEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_movie_maker_enabled,

@@ -15,7 +15,7 @@ open class XRAnchor3D: XRNode3D {
     }()
 
     public func size() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -34,7 +34,7 @@ open class XRAnchor3D: XRNode3D {
     }()
 
     public func plane() -> Godot.Plane {
-        Godot.Plane.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Plane.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_plane,

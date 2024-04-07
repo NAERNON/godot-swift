@@ -36,7 +36,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -55,7 +55,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -84,7 +84,7 @@ open class SceneTree: MainLoop {
     public lazy var nodeAddedSignal: Godot.SignalEmitter<NodeAddedSignalInput> = {
         .init(object: self, signalName: "node_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeAddedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -92,7 +92,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<NodeAddedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -121,7 +121,7 @@ open class SceneTree: MainLoop {
     public lazy var nodeRemovedSignal: Godot.SignalEmitter<NodeRemovedSignalInput> = {
         .init(object: self, signalName: "node_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeRemovedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -129,7 +129,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<NodeRemovedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -158,7 +158,7 @@ open class SceneTree: MainLoop {
     public lazy var nodeRenamedSignal: Godot.SignalEmitter<NodeRenamedSignalInput> = {
         .init(object: self, signalName: "node_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeRenamedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -166,7 +166,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<NodeRenamedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -195,7 +195,7 @@ open class SceneTree: MainLoop {
     public lazy var nodeConfigurationWarningChangedSignal: Godot.SignalEmitter<NodeConfigurationWarningChangedSignalInput> = {
         .init(object: self, signalName: "node_configuration_warning_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeConfigurationWarningChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<NodeConfigurationWarningChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -203,7 +203,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<NodeConfigurationWarningChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -222,7 +222,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -241,7 +241,7 @@ open class SceneTree: MainLoop {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -254,7 +254,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __getRoot() -> Godot.Window? {
-        Godot.Window?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Window?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_root,
@@ -275,7 +275,7 @@ open class SceneTree: MainLoop {
     public func hasGroup(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -296,7 +296,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isAutoAcceptQuit() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_auto_accept_quit,
@@ -337,7 +337,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isQuitOnGoBack() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_quit_on_go_back,
@@ -400,7 +400,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isDebuggingCollisionsHint() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_debugging_collisions_hint,
@@ -441,7 +441,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isDebuggingPathsHint() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_debugging_paths_hint,
@@ -482,7 +482,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isDebuggingNavigationHint() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_debugging_navigation_hint,
@@ -524,7 +524,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __getEditedSceneRoot() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_edited_scene_root,
@@ -565,7 +565,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isPaused() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_paused,
@@ -589,7 +589,7 @@ open class SceneTree: MainLoop {
         processInPhysics: Bool = false,
         ignoreTimeScale: Bool = false
     ) -> Godot.SceneTreeTimer? {
-        Godot.SceneTreeTimer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SceneTreeTimer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         timeSec.withGodotUnsafeRawPointer { __ptr_timeSec in
         processAlways.withGodotUnsafeRawPointer { __ptr_processAlways in
         processInPhysics.withGodotUnsafeRawPointer { __ptr_processInPhysics in
@@ -613,7 +613,7 @@ open class SceneTree: MainLoop {
     }()
 
     public func createTween() -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_tween,
@@ -632,7 +632,7 @@ open class SceneTree: MainLoop {
     }()
 
     public func processedTweens() -> Godot.GodotArray<Godot.Tween?> {
-        Godot.GodotArray<Godot.Tween?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Tween?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_processed_tweens,
@@ -651,7 +651,7 @@ open class SceneTree: MainLoop {
     }()
 
     public func nodeCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_node_count,
@@ -670,7 +670,7 @@ open class SceneTree: MainLoop {
     }()
 
     public func frame() -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frame,
@@ -733,7 +733,7 @@ open class SceneTree: MainLoop {
         }
     }()
 
-    public func callGroupFlags<each VariantRest : VariantStorableIn>(
+    public func callGroupFlags<each VariantRest : Variant.Storable>(
         _ flags: Int,
         group: Godot.GodotStringName,
         method: Godot.GodotStringName,
@@ -808,7 +808,7 @@ open class SceneTree: MainLoop {
         }
     }()
 
-    public func setGroupFlags<Value: VariantStorableIn>(
+    public func setGroupFlags<Value: Variant.Storable>(
         callFlags: UInt32,
         group: Godot.GodotStringName,
         property: Godot.GodotString,
@@ -836,7 +836,7 @@ open class SceneTree: MainLoop {
         }
     }()
 
-    public func callGroup<each VariantRest : VariantStorableIn>(
+    public func callGroup<each VariantRest : Variant.Storable>(
         _ group: Godot.GodotStringName,
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
@@ -905,7 +905,7 @@ open class SceneTree: MainLoop {
         }
     }()
 
-    public func setGroup<Value: VariantStorableIn>(
+    public func setGroup<Value: Variant.Storable>(
         _ group: Godot.GodotStringName,
         property: Godot.GodotString,
         value: Value
@@ -934,7 +934,7 @@ open class SceneTree: MainLoop {
     public func nodesInGroup(
         _ group: Godot.GodotStringName
     ) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         group.withGodotUnsafeRawPointer { __ptr_group in
         withUnsafeArgumentPackPointer(__ptr_group) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -957,7 +957,7 @@ open class SceneTree: MainLoop {
     public func firstNodeInGroup(
         _ group: Godot.GodotStringName
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         group.withGodotUnsafeRawPointer { __ptr_group in
         withUnsafeArgumentPackPointer(__ptr_group) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1001,7 +1001,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __getCurrentScene() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_scene,
@@ -1022,7 +1022,7 @@ open class SceneTree: MainLoop {
     public func changeSceneToFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1045,7 +1045,7 @@ open class SceneTree: MainLoop {
     public func changeSceneToPacked(
         packedScene: Godot.PackedScene?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         packedScene.withGodotUnsafeRawPointer { __ptr_packedScene in
         withUnsafePointer(to: __ptr_packedScene) { _ptr___ptr_packedScene in
         withUnsafeArgumentPackPointer(_ptr___ptr_packedScene) { __accessPtr in
@@ -1067,7 +1067,7 @@ open class SceneTree: MainLoop {
     }()
 
     public func reloadCurrentScene() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_reload_current_scene,
@@ -1131,7 +1131,7 @@ open class SceneTree: MainLoop {
     public func multiplayer(
         forPath path: Godot.NodePath = NodePath(string: "")
     ) -> Godot.MultiplayerAPI? {
-        Godot.MultiplayerAPI?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiplayerAPI?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1174,7 +1174,7 @@ open class SceneTree: MainLoop {
     }()
 
     private func __isMultiplayerPollEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_multiplayer_poll_enabled,

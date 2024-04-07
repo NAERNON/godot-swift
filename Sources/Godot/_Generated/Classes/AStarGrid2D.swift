@@ -85,7 +85,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getRegion() -> Godot.Rect2I {
-        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_region,
@@ -126,7 +126,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -167,7 +167,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -208,7 +208,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getCellSize() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cell_size,
@@ -230,7 +230,7 @@ open class AStarGrid2D: RefCounted {
         x: Int32,
         y: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         x.withGodotUnsafeRawPointer { __ptr_x in
         y.withGodotUnsafeRawPointer { __ptr_y in
         withUnsafeArgumentPackPointer(__ptr_x, __ptr_y) { __accessPtr in
@@ -254,7 +254,7 @@ open class AStarGrid2D: RefCounted {
     public func isInBoundsv(
         id: Godot.Vector2I
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -275,7 +275,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     public func isDirty() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_dirty,
@@ -334,7 +334,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __isJumpingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_jumping_enabled,
@@ -375,7 +375,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getDiagonalMode() -> Godot.AStarGrid2D.DiagonalMode {
-        Godot.AStarGrid2D.DiagonalMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AStarGrid2D.DiagonalMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_diagonal_mode,
@@ -416,7 +416,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getDefaultComputeHeuristic() -> Godot.AStarGrid2D.Heuristic {
-        Godot.AStarGrid2D.Heuristic.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AStarGrid2D.Heuristic.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_compute_heuristic,
@@ -457,7 +457,7 @@ open class AStarGrid2D: RefCounted {
     }()
 
     private func __getDefaultEstimateHeuristic() -> Godot.AStarGrid2D.Heuristic {
-        Godot.AStarGrid2D.Heuristic.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AStarGrid2D.Heuristic.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_estimate_heuristic,
@@ -502,7 +502,7 @@ open class AStarGrid2D: RefCounted {
     public func isPointSolid(
         id: Godot.Vector2I
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -549,7 +549,7 @@ open class AStarGrid2D: RefCounted {
     public func pointWeightScale(
         id: Godot.Vector2I
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -638,7 +638,7 @@ open class AStarGrid2D: RefCounted {
     public func pointPosition(
         id: Godot.Vector2I
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -662,7 +662,7 @@ open class AStarGrid2D: RefCounted {
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
@@ -687,7 +687,7 @@ open class AStarGrid2D: RefCounted {
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         fromID.withGodotUnsafeRawPointer { __ptr_fromID in
         toID.withGodotUnsafeRawPointer { __ptr_toID in
         withUnsafeArgumentPackPointer(__ptr_fromID, __ptr_toID) { __accessPtr in
@@ -800,20 +800,20 @@ open class AStarGrid2D: RefCounted {
             }
             Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
-            fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
-            toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
+            toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
-            fromID: Godot.Vector2I.fromGodotUnsafePointer(args[0]!),
-            toID: Godot.Vector2I.fromGodotUnsafePointer(args[1]!)
+            fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
+            toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_estimateCost" : ("_estimate_cost", _estimate_cost_call),
             "_computeCost" : ("_compute_cost", _compute_cost_call)

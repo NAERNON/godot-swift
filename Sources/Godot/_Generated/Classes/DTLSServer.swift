@@ -17,7 +17,7 @@ open class DTLSServer: RefCounted {
     public func setup(
         serverOptions: Godot.TLSOptions?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         serverOptions.withGodotUnsafeRawPointer { __ptr_serverOptions in
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_serverOptions) { __accessPtr in
@@ -41,7 +41,7 @@ open class DTLSServer: RefCounted {
     public func takeConnection(
         udpPeer: Godot.PacketPeerUDP?
     ) -> Godot.PacketPeerDTLS? {
-        Godot.PacketPeerDTLS?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PacketPeerDTLS?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         udpPeer.withGodotUnsafeRawPointer { __ptr_udpPeer in
         withUnsafePointer(to: __ptr_udpPeer) { _ptr___ptr_udpPeer in
         withUnsafeArgumentPackPointer(_ptr___ptr_udpPeer) { __accessPtr in

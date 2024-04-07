@@ -34,25 +34,25 @@ open class EditorResourceConversionPlugin: RefCounted {
             }
             Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convertsTo()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _convert_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convert(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_convertsTo" : ("_converts_to", _converts_to_call),
             "_handles" : ("_handles", _handles_call),

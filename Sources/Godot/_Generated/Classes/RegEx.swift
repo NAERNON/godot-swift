@@ -17,7 +17,7 @@ open class RegEx: RefCounted {
     static public func createFromString(
         pattern: Godot.GodotString
     ) -> Godot.RegEx? {
-        Godot.RegEx?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RegEx?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -57,7 +57,7 @@ open class RegEx: RefCounted {
     public func compile(
         pattern: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -82,7 +82,7 @@ open class RegEx: RefCounted {
         offset: Int32 = 0,
         end: Int32 = -1
     ) -> Godot.RegExMatch? {
-        Godot.RegExMatch?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RegExMatch?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -109,7 +109,7 @@ open class RegEx: RefCounted {
         offset: Int32 = 0,
         end: Int32 = -1
     ) -> Godot.GodotArray<Godot.RegExMatch?> {
-        Godot.GodotArray<Godot.RegExMatch?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RegExMatch?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -138,7 +138,7 @@ open class RegEx: RefCounted {
         offset: Int32 = 0,
         end: Int32 = -1
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         replacement.withGodotUnsafeRawPointer { __ptr_replacement in
         all.withGodotUnsafeRawPointer { __ptr_all in
@@ -163,7 +163,7 @@ open class RegEx: RefCounted {
     }()
 
     public func isValid() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_valid,
@@ -182,7 +182,7 @@ open class RegEx: RefCounted {
     }()
 
     public func pattern() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pattern,
@@ -201,7 +201,7 @@ open class RegEx: RefCounted {
     }()
 
     public func groupCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_group_count,
@@ -220,7 +220,7 @@ open class RegEx: RefCounted {
     }()
 
     public func names() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_names,

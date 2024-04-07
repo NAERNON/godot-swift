@@ -52,7 +52,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __getHint() -> Godot.VisualShaderNodeFloatParameter.Hint {
-        Godot.VisualShaderNodeFloatParameter.Hint.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeFloatParameter.Hint.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_hint,
@@ -93,7 +93,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __getMin() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min,
@@ -134,7 +134,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __getMax() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max,
@@ -175,7 +175,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __getStep() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_step,
@@ -216,7 +216,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __isDefaultValueEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_default_value_enabled,
@@ -257,7 +257,7 @@ open class VisualShaderNodeFloatParameter: VisualShaderNodeParameter {
     }()
 
     private func __getDefaultValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_value,

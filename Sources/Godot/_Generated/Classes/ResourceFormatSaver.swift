@@ -52,49 +52,49 @@ open class ResourceFormatSaver: RefCounted {
             }
             Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._save(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
-            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
-            flags: UInt32.fromGodotUnsafePointer(args[2]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!),
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+            flags: UInt32.transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_uid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setUid(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            uid: Int64.fromGodotUnsafePointer(args[1]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            uid: Int64.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _recognize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._recognize(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _recognize_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._recognizePath(
-            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
-            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!),
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_save" : ("_save", _save_call),
             "_setUid" : ("_set_uid", _set_uid_call),

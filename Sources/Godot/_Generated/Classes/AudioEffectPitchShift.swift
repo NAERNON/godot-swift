@@ -56,7 +56,7 @@ open class AudioEffectPitchShift: AudioEffect {
     }()
 
     private func __getPitchScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pitch_scale,
@@ -97,7 +97,7 @@ open class AudioEffectPitchShift: AudioEffect {
     }()
 
     private func __getOversampling() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_oversampling,
@@ -138,7 +138,7 @@ open class AudioEffectPitchShift: AudioEffect {
     }()
 
     private func __getFftSize() -> Godot.AudioEffectPitchShift.FFTSize {
-        Godot.AudioEffectPitchShift.FFTSize.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioEffectPitchShift.FFTSize.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fft_size,

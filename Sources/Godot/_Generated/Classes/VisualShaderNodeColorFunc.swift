@@ -54,7 +54,7 @@ open class VisualShaderNodeColorFunc: VisualShaderNode {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeColorFunc.Function {
-        Godot.VisualShaderNodeColorFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeColorFunc.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,

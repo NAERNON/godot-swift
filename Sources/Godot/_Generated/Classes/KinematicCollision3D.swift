@@ -15,7 +15,7 @@ open class KinematicCollision3D: RefCounted {
     }()
 
     public func travel() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_travel,
@@ -34,7 +34,7 @@ open class KinematicCollision3D: RefCounted {
     }()
 
     public func remainder() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_remainder,
@@ -53,7 +53,7 @@ open class KinematicCollision3D: RefCounted {
     }()
 
     public func depth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,
@@ -72,7 +72,7 @@ open class KinematicCollision3D: RefCounted {
     }()
 
     public func collisionCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_count,
@@ -93,7 +93,7 @@ open class KinematicCollision3D: RefCounted {
     public func position(
         collisionIndex: Int32 = 0
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -116,7 +116,7 @@ open class KinematicCollision3D: RefCounted {
     public func normal(
         collisionIndex: Int32 = 0
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -140,7 +140,7 @@ open class KinematicCollision3D: RefCounted {
         collisionIndex: Int32 = 0,
         upDirection: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0)
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         upDirection.withGodotUnsafeRawPointer { __ptr_upDirection in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex, __ptr_upDirection) { __accessPtr in
@@ -164,7 +164,7 @@ open class KinematicCollision3D: RefCounted {
     public func localShape(
         collisionIndex: Int32 = 0
     ) -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -187,7 +187,7 @@ open class KinematicCollision3D: RefCounted {
     public func collider(
         collisionIndex: Int32 = 0
     ) -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -210,7 +210,7 @@ open class KinematicCollision3D: RefCounted {
     public func colliderID(
         collisionIndex: Int32 = 0
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,7 +233,7 @@ open class KinematicCollision3D: RefCounted {
     public func colliderRid(
         collisionIndex: Int32 = 0
     ) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -256,7 +256,7 @@ open class KinematicCollision3D: RefCounted {
     public func colliderShape(
         collisionIndex: Int32 = 0
     ) -> Godot.Object? {
-        Godot.Object?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Object?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -279,7 +279,7 @@ open class KinematicCollision3D: RefCounted {
     public func colliderShapeIndex(
         collisionIndex: Int32 = 0
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -302,7 +302,7 @@ open class KinematicCollision3D: RefCounted {
     public func colliderVelocity(
         collisionIndex: Int32 = 0
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         collisionIndex.withGodotUnsafeRawPointer { __ptr_collisionIndex in
         withUnsafeArgumentPackPointer(__ptr_collisionIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

@@ -64,7 +64,7 @@ open class VisualShaderNodeColorOp: VisualShaderNode {
     }()
 
     private func __getOperator() -> Godot.VisualShaderNodeColorOp.Operator {
-        Godot.VisualShaderNodeColorOp.Operator.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeColorOp.Operator.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_operator,

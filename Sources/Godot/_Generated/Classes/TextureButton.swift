@@ -240,7 +240,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __isFlippedH() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_h,
@@ -281,7 +281,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __isFlippedV() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_v,
@@ -300,7 +300,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getTextureNormal() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_normal,
@@ -319,7 +319,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getTexturePressed() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_pressed,
@@ -338,7 +338,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getTextureHover() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_hover,
@@ -357,7 +357,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getTextureDisabled() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_disabled,
@@ -376,7 +376,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getTextureFocused() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_focused,
@@ -395,7 +395,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getClickMask() -> Godot.BitMap? {
-        Godot.BitMap?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BitMap?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_click_mask,
@@ -414,7 +414,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getIgnoreTextureSize() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ignore_texture_size,
@@ -433,7 +433,7 @@ open class TextureButton: BaseButton {
     }()
 
     private func __getStretchMode() -> Godot.TextureButton.StretchMode {
-        Godot.TextureButton.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextureButton.StretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stretch_mode,

@@ -44,7 +44,7 @@ private class VariantRootDecoder {
     }
     
     func unwrapValue<T>(from variant: Variant, to type: T.Type) throws -> T
-    where T : ExposableValue {
+    where T : Exposable {
         try checkVariantIsNotNil(variant, for: type)
         
         do {

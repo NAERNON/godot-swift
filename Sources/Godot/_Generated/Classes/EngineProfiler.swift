@@ -37,8 +37,8 @@ open class EngineProfiler: RefCounted {
             }
             Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._toggle(
-            enable: Bool.fromGodotUnsafePointer(args[0]!),
-            options: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!)
+            enable: Bool.transferFromGodot(unsafePointer: args[0]!),
+            options: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _add_frame_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -46,7 +46,7 @@ open class EngineProfiler: RefCounted {
             }
             Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._addFrame(
-            data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[0]!)
+            data: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _tick_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -54,10 +54,10 @@ open class EngineProfiler: RefCounted {
             }
             Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._tick(
-            frameTime: Double.fromGodotUnsafePointer(args[0]!),
-            processTime: Double.fromGodotUnsafePointer(args[1]!),
-            physicsTime: Double.fromGodotUnsafePointer(args[2]!),
-            physicsFrameTime: Double.fromGodotUnsafePointer(args[3]!)
+            frameTime: Double.transferFromGodot(unsafePointer: args[0]!),
+            processTime: Double.transferFromGodot(unsafePointer: args[1]!),
+            physicsTime: Double.transferFromGodot(unsafePointer: args[2]!),
+            physicsFrameTime: Double.transferFromGodot(unsafePointer: args[3]!)
         )}
         _virtualFunctions = [
             "_toggle" : ("_toggle", _toggle_call),

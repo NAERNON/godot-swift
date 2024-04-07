@@ -63,7 +63,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }()
 
     public func format() -> Godot.Image.Format {
-        Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -82,7 +82,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }()
 
     public func compressionMode() -> Godot.PortableCompressedTexture2D.CompressionMode {
-        Godot.PortableCompressedTexture2D.CompressionMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PortableCompressedTexture2D.CompressionMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_compression_mode,
@@ -123,7 +123,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }()
 
     private func __getSizeOverride() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size_override,
@@ -164,7 +164,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }()
 
     private func __isKeepingCompressedBuffer() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_keeping_compressed_buffer,
@@ -204,7 +204,7 @@ open class PortableCompressedTexture2D: Texture2D {
     }()
 
     static public func isKeepingAllCompressedBuffers() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_keeping_all_compressed_buffers,
             nil,

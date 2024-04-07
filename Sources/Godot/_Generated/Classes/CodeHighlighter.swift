@@ -63,7 +63,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     public func hasKeywordColor(
         keyword: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keyword.withGodotUnsafeRawPointer { __ptr_keyword in
         withUnsafeArgumentPackPointer(__ptr_keyword) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -86,7 +86,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     public func keywordColor(
         keyword: Godot.GodotString
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keyword.withGodotUnsafeRawPointer { __ptr_keyword in
         withUnsafeArgumentPackPointer(__ptr_keyword) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +106,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }()
 
-    private func __setKeywordColors<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setKeywordColors<Value1: Variant.Storable, Value2: Variant.Storable>(
         keywords: Godot.GodotDictionary<Value1, Value2>
     ) {
         keywords.withGodotUnsafeRawPointer { __ptr_keywords in
@@ -147,7 +147,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getKeywordColors() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keyword_colors,
@@ -214,7 +214,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     public func hasMemberKeywordColor(
         memberKeyword: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         memberKeyword.withGodotUnsafeRawPointer { __ptr_memberKeyword in
         withUnsafeArgumentPackPointer(__ptr_memberKeyword) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -237,7 +237,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     public func memberKeywordColor(
         memberKeyword: Godot.GodotString
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         memberKeyword.withGodotUnsafeRawPointer { __ptr_memberKeyword in
         withUnsafeArgumentPackPointer(__ptr_memberKeyword) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -257,7 +257,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }()
 
-    private func __setMemberKeywordColors<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setMemberKeywordColors<Value1: Variant.Storable, Value2: Variant.Storable>(
         memberKeyword: Godot.GodotDictionary<Value1, Value2>
     ) {
         memberKeyword.withGodotUnsafeRawPointer { __ptr_memberKeyword in
@@ -298,7 +298,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getMemberKeywordColors() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_member_keyword_colors,
@@ -369,7 +369,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     public func hasColorRegion(
         startKey: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         startKey.withGodotUnsafeRawPointer { __ptr_startKey in
         withUnsafeArgumentPackPointer(__ptr_startKey) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -389,7 +389,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }()
 
-    private func __setColorRegions<Value1: VariantStorable, Value2: VariantStorable>(
+    private func __setColorRegions<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ colorRegions: Godot.GodotDictionary<Value1, Value2>
     ) {
         colorRegions.withGodotUnsafeRawPointer { __ptr_colorRegions in
@@ -430,7 +430,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getColorRegions() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_regions,
@@ -471,7 +471,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getFunctionColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function_color,
@@ -512,7 +512,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getNumberColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_number_color,
@@ -553,7 +553,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getSymbolColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_symbol_color,
@@ -594,7 +594,7 @@ open class CodeHighlighter: SyntaxHighlighter {
     }()
 
     private func __getMemberVariableColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_member_variable_color,

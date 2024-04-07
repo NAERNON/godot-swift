@@ -82,7 +82,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func node(
         name: Godot.GodotStringName
     ) -> Godot.AnimationNode? {
-        Godot.AnimationNode?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNode?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -151,7 +151,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func hasNode(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -174,7 +174,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func nodeName(
         node: Godot.AnimationNode?
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -222,7 +222,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func nodePosition(
         name: Godot.GodotStringName
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -246,7 +246,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
         from: Godot.GodotStringName,
         to: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
@@ -297,7 +297,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func transition(
         idx: Int32
     ) -> Godot.AnimationNodeStateMachineTransition? {
-        Godot.AnimationNodeStateMachineTransition?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNodeStateMachineTransition?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -320,7 +320,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func transitionFrom(
         idx: Int32
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -343,7 +343,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     public func transitionTo(
         idx: Int32
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -364,7 +364,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }()
 
     public func transitionCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_transition_count,
@@ -451,7 +451,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }()
 
     public func graphOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_graph_offset,
@@ -492,7 +492,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }()
 
     private func __getStateMachineType() -> Godot.AnimationNodeStateMachine.StateMachineType {
-        Godot.AnimationNodeStateMachine.StateMachineType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNodeStateMachine.StateMachineType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_state_machine_type,
@@ -533,7 +533,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }()
 
     private func __isAllowTransitionToSelf() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_allow_transition_to_self,
@@ -574,7 +574,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
     }()
 
     private func __areEndsReset() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_are_ends_reset,

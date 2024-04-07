@@ -22,7 +22,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class NavigationAgent2D: Node {
     public lazy var waypointReachedSignal: Godot.SignalEmitter<WaypointReachedSignalInput> = {
         .init(object: self, signalName: "waypoint_reached") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -78,7 +78,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -107,7 +107,7 @@ open class NavigationAgent2D: Node {
     public lazy var linkReachedSignal: Godot.SignalEmitter<LinkReachedSignalInput> = {
         .init(object: self, signalName: "link_reached") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -115,7 +115,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -134,7 +134,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -163,7 +163,7 @@ open class NavigationAgent2D: Node {
     public lazy var velocityComputedSignal: Godot.SignalEmitter<VelocityComputedSignalInput> = {
         .init(object: self, signalName: "velocity_computed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(safeVelocity: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(safeVelocity: Godot.Vector2.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -171,7 +171,7 @@ open class NavigationAgent2D: Node {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -184,7 +184,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,
@@ -225,7 +225,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getAvoidanceEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_enabled,
@@ -266,7 +266,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getPathDesiredDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_desired_distance,
@@ -307,7 +307,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getTargetDesiredDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_desired_distance,
@@ -348,7 +348,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getRadius() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_radius,
@@ -389,7 +389,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getNeighborDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_neighbor_distance,
@@ -430,7 +430,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getMaxNeighbors() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_neighbors,
@@ -471,7 +471,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getTimeHorizonAgents() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_time_horizon_agents,
@@ -512,7 +512,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getTimeHorizonObstacles() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_time_horizon_obstacles,
@@ -553,7 +553,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getMaxSpeed() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_speed,
@@ -594,7 +594,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getPathMaxDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_max_distance,
@@ -635,7 +635,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getNavigationLayers() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_layers,
@@ -680,7 +680,7 @@ open class NavigationAgent2D: Node {
     public func navigationLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -723,7 +723,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getPathfindingAlgorithm() -> Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm {
-        Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathfindingAlgorithm.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pathfinding_algorithm,
@@ -764,7 +764,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getPathPostprocessing() -> Godot.NavigationPathQueryParameters2D.PathPostProcessing {
-        Godot.NavigationPathQueryParameters2D.PathPostProcessing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathPostProcessing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_postprocessing,
@@ -805,7 +805,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getPathMetadataFlags() -> Godot.NavigationPathQueryParameters2D.PathMetadataFlags {
-        Godot.NavigationPathQueryParameters2D.PathMetadataFlags.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryParameters2D.PathMetadataFlags.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path_metadata_flags,
@@ -846,7 +846,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func navigationMap() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_navigation_map,
@@ -887,7 +887,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getTargetPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_position,
@@ -906,7 +906,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func nextPathPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_next_path_position,
@@ -969,7 +969,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getVelocity() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity,
@@ -988,7 +988,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func distanceToTarget() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_distance_to_target,
@@ -1007,7 +1007,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func currentNavigationResult() -> Godot.NavigationPathQueryResult2D? {
-        Godot.NavigationPathQueryResult2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NavigationPathQueryResult2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_navigation_result,
@@ -1026,7 +1026,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func currentNavigationPath() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_navigation_path,
@@ -1045,7 +1045,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func currentNavigationPathIndex() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_navigation_path_index,
@@ -1064,7 +1064,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func isTargetReached() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_target_reached,
@@ -1083,7 +1083,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func isTargetReachable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_target_reachable,
@@ -1102,7 +1102,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func isNavigationFinished() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_navigation_finished,
@@ -1121,7 +1121,7 @@ open class NavigationAgent2D: Node {
     }()
 
     public func finalPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_final_position,
@@ -1162,7 +1162,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getAvoidanceLayers() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_layers,
@@ -1203,7 +1203,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getAvoidanceMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_mask,
@@ -1248,7 +1248,7 @@ open class NavigationAgent2D: Node {
     public func avoidanceLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1295,7 +1295,7 @@ open class NavigationAgent2D: Node {
     public func avoidanceMaskValue(
         maskNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         maskNumber.withGodotUnsafeRawPointer { __ptr_maskNumber in
         withUnsafeArgumentPackPointer(__ptr_maskNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1338,7 +1338,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getAvoidancePriority() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_avoidance_priority,
@@ -1379,7 +1379,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getDebugEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_enabled,
@@ -1420,7 +1420,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getDebugUseCustom() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_use_custom,
@@ -1461,7 +1461,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getDebugPathCustomColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_path_custom_color,
@@ -1502,7 +1502,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getDebugPathCustomPointSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_path_custom_point_size,
@@ -1543,7 +1543,7 @@ open class NavigationAgent2D: Node {
     }()
 
     private func __getDebugPathCustomLineWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_debug_path_custom_line_width,

@@ -38,7 +38,7 @@ open class GradientTexture1D: Texture2D {
     }()
 
     private func __getGradient() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gradient,
@@ -101,7 +101,7 @@ open class GradientTexture1D: Texture2D {
     }()
 
     private func __isUsingHdr() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_hdr,

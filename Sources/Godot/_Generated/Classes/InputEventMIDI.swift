@@ -37,7 +37,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getChannel() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_channel,
@@ -78,7 +78,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getMessage() -> Godot.MIDIMessage {
-        Godot.MIDIMessage.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MIDIMessage.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_message,
@@ -119,7 +119,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getPitch() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pitch,
@@ -160,7 +160,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getVelocity() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_velocity,
@@ -201,7 +201,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getInstrument() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_instrument,
@@ -242,7 +242,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getPressure() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pressure,
@@ -283,7 +283,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getControllerNumber() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_controller_number,
@@ -324,7 +324,7 @@ open class InputEventMIDI: InputEvent {
     }()
 
     private func __getControllerValue() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_controller_value,

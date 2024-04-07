@@ -37,7 +37,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getDry() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dry,
@@ -78,7 +78,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __isTap1Active() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_tap1_active,
@@ -119,7 +119,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap1DelayMs() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap1_delay_ms,
@@ -160,7 +160,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap1LevelDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap1_level_db,
@@ -201,7 +201,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap1Pan() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap1_pan,
@@ -242,7 +242,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __isTap2Active() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_tap2_active,
@@ -283,7 +283,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap2DelayMs() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap2_delay_ms,
@@ -324,7 +324,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap2LevelDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap2_level_db,
@@ -365,7 +365,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getTap2Pan() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tap2_pan,
@@ -406,7 +406,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __isFeedbackActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_feedback_active,
@@ -447,7 +447,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getFeedbackDelayMs() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_feedback_delay_ms,
@@ -488,7 +488,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getFeedbackLevelDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_feedback_level_db,
@@ -529,7 +529,7 @@ open class AudioEffectDelay: AudioEffect {
     }()
 
     private func __getFeedbackLowpass() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_feedback_lowpass,

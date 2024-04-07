@@ -63,7 +63,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     public func isInputSetAsAutoAdvance(
         input: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -110,7 +110,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     public func isInputReset(
         input: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         input.withGodotUnsafeRawPointer { __ptr_input in
         withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -153,7 +153,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     }()
 
     private func __getXfadeTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_xfade_time,
@@ -195,7 +195,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     }()
 
     private func __getXfadeCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_xfade_curve,
@@ -236,7 +236,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
     }()
 
     private func __isAllowTransitionToSelf() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_allow_transition_to_self,

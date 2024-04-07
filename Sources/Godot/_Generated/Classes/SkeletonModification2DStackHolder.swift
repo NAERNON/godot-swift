@@ -38,7 +38,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
     }()
 
     public func heldModificationStack() -> Godot.SkeletonModificationStack2D? {
-        Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SkeletonModificationStack2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_held_modification_stack,

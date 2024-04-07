@@ -37,7 +37,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getAperture() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_aperture,
@@ -78,7 +78,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getShutterSpeed() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_shutter_speed,
@@ -119,7 +119,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getFocalLength() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_focal_length,
@@ -160,7 +160,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getFocusDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_focus_distance,
@@ -201,7 +201,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getNear() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_near,
@@ -242,7 +242,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getFar() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_far,
@@ -261,7 +261,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     public func fov() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fov,
@@ -302,7 +302,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getAutoExposureMaxExposureValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_exposure_max_exposure_value,
@@ -343,7 +343,7 @@ open class CameraAttributesPhysical: CameraAttributes {
     }()
 
     private func __getAutoExposureMinExposureValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_exposure_min_exposure_value,

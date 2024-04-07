@@ -48,7 +48,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getMaxConcavity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_concavity,
@@ -89,7 +89,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getSymmetryPlanesClippingBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_symmetry_planes_clipping_bias,
@@ -130,7 +130,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getRevolutionAxesClippingBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_revolution_axes_clipping_bias,
@@ -171,7 +171,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getMinVolumePerConvexHull() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min_volume_per_convex_hull,
@@ -212,7 +212,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getResolution() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resolution,
@@ -253,7 +253,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getMaxNumVerticesPerConvexHull() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_num_vertices_per_convex_hull,
@@ -294,7 +294,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getPlaneDownsampling() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_plane_downsampling,
@@ -335,7 +335,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getConvexHullDownsampling() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_convex_hull_downsampling,
@@ -376,7 +376,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getNormalizeMesh() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_normalize_mesh,
@@ -417,7 +417,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getMode() -> Godot.MeshConvexDecompositionSettings.Mode {
-        Godot.MeshConvexDecompositionSettings.Mode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MeshConvexDecompositionSettings.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mode,
@@ -458,7 +458,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getConvexHullApproximation() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_convex_hull_approximation,
@@ -499,7 +499,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getMaxConvexHulls() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_convex_hulls,
@@ -540,7 +540,7 @@ open class MeshConvexDecompositionSettings: RefCounted {
     }()
 
     private func __getProjectHullVertices() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_project_hull_vertices,

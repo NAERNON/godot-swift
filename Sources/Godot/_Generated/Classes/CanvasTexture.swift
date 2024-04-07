@@ -38,7 +38,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getDiffuseTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_diffuse_texture,
@@ -80,7 +80,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getNormalTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_normal_texture,
@@ -122,7 +122,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getSpecularTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_specular_texture,
@@ -163,7 +163,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getSpecularColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_specular_color,
@@ -204,7 +204,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getSpecularShininess() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_specular_shininess,
@@ -245,7 +245,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getTextureFilter() -> Godot.CanvasItem.TextureFilter {
-        Godot.CanvasItem.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CanvasItem.TextureFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_filter,
@@ -286,7 +286,7 @@ open class CanvasTexture: Texture2D {
     }()
 
     private func __getTextureRepeat() -> Godot.CanvasItem.TextureRepeat {
-        Godot.CanvasItem.TextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CanvasItem.TextureRepeat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_repeat,

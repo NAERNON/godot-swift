@@ -28,7 +28,7 @@ open class SceneReplicationConfig: Resource {
     }()
 
     public func properties() -> Godot.GodotArray<Godot.NodePath> {
-        Godot.GodotArray<Godot.NodePath> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.NodePath> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_properties,
@@ -73,7 +73,7 @@ open class SceneReplicationConfig: Resource {
     public func hasProperty(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -118,7 +118,7 @@ open class SceneReplicationConfig: Resource {
     public func propertyGetIndex(
         path: Godot.NodePath
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -141,7 +141,7 @@ open class SceneReplicationConfig: Resource {
     public func propertyGetSpawn(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -188,7 +188,7 @@ open class SceneReplicationConfig: Resource {
     public func propertyGetReplicationMode(
         path: Godot.NodePath
     ) -> Godot.SceneReplicationConfig.ReplicationMode {
-        Godot.SceneReplicationConfig.ReplicationMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SceneReplicationConfig.ReplicationMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -235,7 +235,7 @@ open class SceneReplicationConfig: Resource {
     public func propertyGetSync(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -282,7 +282,7 @@ open class SceneReplicationConfig: Resource {
     public func propertyGetWatch(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

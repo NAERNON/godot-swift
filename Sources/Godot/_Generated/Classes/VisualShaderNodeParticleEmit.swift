@@ -54,7 +54,7 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
     }()
 
     private func __getFlags() -> Godot.VisualShaderNodeParticleEmit.EmitFlags {
-        Godot.VisualShaderNodeParticleEmit.EmitFlags.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeParticleEmit.EmitFlags.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flags,

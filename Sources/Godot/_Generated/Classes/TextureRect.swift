@@ -78,7 +78,7 @@ open class TextureRect: Control {
     }()
 
     private func __getTexture() -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture,
@@ -119,7 +119,7 @@ open class TextureRect: Control {
     }()
 
     private func __getExpandMode() -> Godot.TextureRect.ExpandMode {
-        Godot.TextureRect.ExpandMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextureRect.ExpandMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_expand_mode,
@@ -160,7 +160,7 @@ open class TextureRect: Control {
     }()
 
     private func __isFlippedH() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_h,
@@ -201,7 +201,7 @@ open class TextureRect: Control {
     }()
 
     private func __isFlippedV() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_v,
@@ -242,7 +242,7 @@ open class TextureRect: Control {
     }()
 
     private func __getStretchMode() -> Godot.TextureRect.StretchMode {
-        Godot.TextureRect.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextureRect.StretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stretch_mode,

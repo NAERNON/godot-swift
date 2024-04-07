@@ -37,7 +37,7 @@ open class AudioEffectLimiter: AudioEffect {
     }()
 
     private func __getCeilingDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ceiling_db,
@@ -78,7 +78,7 @@ open class AudioEffectLimiter: AudioEffect {
     }()
 
     private func __getThresholdDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_threshold_db,
@@ -119,7 +119,7 @@ open class AudioEffectLimiter: AudioEffect {
     }()
 
     private func __getSoftClipDb() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_soft_clip_db,
@@ -160,7 +160,7 @@ open class AudioEffectLimiter: AudioEffect {
     }()
 
     private func __getSoftClipRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_soft_clip_ratio,

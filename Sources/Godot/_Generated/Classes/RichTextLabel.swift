@@ -97,7 +97,7 @@ open class RichTextLabel: Control {
     public lazy var metaClickedSignal: Godot.SignalEmitter<MetaClickedSignalInput> = {
         .init(object: self, signalName: "meta_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(meta: Godot.Variant.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -105,7 +105,7 @@ open class RichTextLabel: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -134,7 +134,7 @@ open class RichTextLabel: Control {
     public lazy var metaHoverStartedSignal: Godot.SignalEmitter<MetaHoverStartedSignalInput> = {
         .init(object: self, signalName: "meta_hover_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(meta: Godot.Variant.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -142,7 +142,7 @@ open class RichTextLabel: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -171,7 +171,7 @@ open class RichTextLabel: Control {
     public lazy var metaHoverEndedSignal: Godot.SignalEmitter<MetaHoverEndedSignalInput> = {
         .init(object: self, signalName: "meta_hover_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(meta: Godot.Variant.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -179,7 +179,7 @@ open class RichTextLabel: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -198,7 +198,7 @@ open class RichTextLabel: Control {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -211,7 +211,7 @@ open class RichTextLabel: Control {
     }()
 
     public func parsedText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parsed_text,
@@ -273,7 +273,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    public func addImage<Value: VariantStorableIn>(
+    public func addImage<Value: Variant.Storable>(
         _ image: Godot.Texture2D?,
         width: Int32 = 0,
         height: Int32 = 0,
@@ -314,7 +314,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    public func updateImage<Value: VariantStorableIn>(
+    public func updateImage<Value: Variant.Storable>(
         key: Value,
         mask: Godot.RichTextLabel.ImageUpdateMask,
         image: Godot.Texture2D?,
@@ -378,7 +378,7 @@ open class RichTextLabel: Control {
     public func removeParagraph(
         _ paragraph: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         paragraph.withGodotUnsafeRawPointer { __ptr_paragraph in
         withUnsafeArgumentPackPointer(__ptr_paragraph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -683,7 +683,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    public func pushMeta<Value: VariantStorableIn>(
+    public func pushMeta<Value: Variant.Storable>(
         data: Value
     ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
@@ -1026,7 +1026,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    public func pushCustomfx<Value1: VariantStorable, Value2: VariantStorable>(
+    public func pushCustomfx<Value1: Variant.Storable, Value2: Variant.Storable>(
         effect: Godot.RichTextEffect?,
         env: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -1164,7 +1164,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
-        Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.StructuredTextParser.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override,
@@ -1182,7 +1182,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+    private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
@@ -1205,7 +1205,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override_options,
@@ -1246,7 +1246,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getTextDirection() -> Godot.Control.TextDirection {
-        Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control.TextDirection.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_direction,
@@ -1287,7 +1287,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,
@@ -1328,7 +1328,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
-        Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.AutowrapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autowrap_mode,
@@ -1369,7 +1369,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isMetaUnderlined() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_meta_underlined,
@@ -1410,7 +1410,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isHintUnderlined() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_hint_underlined,
@@ -1451,7 +1451,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isScrollActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_scroll_active,
@@ -1492,7 +1492,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isScrollFollowing() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_scroll_following,
@@ -1511,7 +1511,7 @@ open class RichTextLabel: Control {
     }()
 
     public func vScrollBar() -> Godot.VScrollBar? {
-        Godot.VScrollBar?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VScrollBar?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_v_scroll_bar,
@@ -1614,7 +1614,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getTabSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tab_size,
@@ -1655,7 +1655,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isFitContentEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_fit_content_enabled,
@@ -1696,7 +1696,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isSelectionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_selection_enabled,
@@ -1737,7 +1737,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isContextMenuEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_context_menu_enabled,
@@ -1778,7 +1778,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isShortcutKeysEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_shortcut_keys_enabled,
@@ -1819,7 +1819,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isDeselectOnFocusLossEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_deselect_on_focus_loss_enabled,
@@ -1860,7 +1860,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isDragAndDropSelectionEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_drag_and_drop_selection_enabled,
@@ -1879,7 +1879,7 @@ open class RichTextLabel: Control {
     }()
 
     public func selectionFrom() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selection_from,
@@ -1898,7 +1898,7 @@ open class RichTextLabel: Control {
     }()
 
     public func selectionTo() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selection_to,
@@ -1935,7 +1935,7 @@ open class RichTextLabel: Control {
     }()
 
     public func selectedText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_text,
@@ -2016,7 +2016,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -2035,7 +2035,7 @@ open class RichTextLabel: Control {
     }()
 
     public func isReady() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ready,
@@ -2076,7 +2076,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isThreaded() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_threaded,
@@ -2117,7 +2117,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getProgressBarDelay() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_progress_bar_delay,
@@ -2158,7 +2158,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getVisibleCharacters() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_characters,
@@ -2177,7 +2177,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getVisibleCharactersBehavior() -> Godot.TextServer.VisibleCharactersBehavior {
-        Godot.TextServer.VisibleCharactersBehavior.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.VisibleCharactersBehavior.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_characters_behavior,
@@ -2240,7 +2240,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getVisibleRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_ratio,
@@ -2261,7 +2261,7 @@ open class RichTextLabel: Control {
     public func characterLine(
         character: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         character.withGodotUnsafeRawPointer { __ptr_character in
         withUnsafeArgumentPackPointer(__ptr_character) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2284,7 +2284,7 @@ open class RichTextLabel: Control {
     public func characterParagraph(
         character: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         character.withGodotUnsafeRawPointer { __ptr_character in
         withUnsafeArgumentPackPointer(__ptr_character) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2305,7 +2305,7 @@ open class RichTextLabel: Control {
     }()
 
     public func totalCharacterCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_total_character_count,
@@ -2346,7 +2346,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __isUsingBbcode() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_bbcode,
@@ -2365,7 +2365,7 @@ open class RichTextLabel: Control {
     }()
 
     public func lineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_count,
@@ -2384,7 +2384,7 @@ open class RichTextLabel: Control {
     }()
 
     public func visibleLineCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_line_count,
@@ -2403,7 +2403,7 @@ open class RichTextLabel: Control {
     }()
 
     public func paragraphCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_paragraph_count,
@@ -2422,7 +2422,7 @@ open class RichTextLabel: Control {
     }()
 
     public func visibleParagraphCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_visible_paragraph_count,
@@ -2441,7 +2441,7 @@ open class RichTextLabel: Control {
     }()
 
     public func contentHeight() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_content_height,
@@ -2460,7 +2460,7 @@ open class RichTextLabel: Control {
     }()
 
     public func contentWidth() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_content_width,
@@ -2481,7 +2481,7 @@ open class RichTextLabel: Control {
     public func lineOffset(
         line: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         line.withGodotUnsafeRawPointer { __ptr_line in
         withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2504,7 +2504,7 @@ open class RichTextLabel: Control {
     public func paragraphOffset(
         paragraph: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         paragraph.withGodotUnsafeRawPointer { __ptr_paragraph in
         withUnsafeArgumentPackPointer(__ptr_paragraph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2527,7 +2527,7 @@ open class RichTextLabel: Control {
     public func parseExpressionsForValues(
         expressions: Godot.PackedStringArray
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         expressions.withGodotUnsafeRawPointer { __ptr_expressions in
         withUnsafeArgumentPackPointer(__ptr_expressions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2547,7 +2547,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    private func __setEffects<Value: VariantStorable>(
+    private func __setEffects<Value: Variant.Storable>(
         _ effects: Godot.GodotArray<Value>
     ) {
         effects.withGodotUnsafeRawPointer { __ptr_effects in
@@ -2570,7 +2570,7 @@ open class RichTextLabel: Control {
     }()
 
     private func __getEffects() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_effects,
@@ -2588,7 +2588,7 @@ open class RichTextLabel: Control {
         }
     }()
 
-    public func installEffect<Value: VariantStorableIn>(
+    public func installEffect<Value: Variant.Storable>(
         _ effect: Value
     ) {
         Godot.Variant.withStorageUnsafeRawPointer(to: effect) { __ptr_effect in
@@ -2611,7 +2611,7 @@ open class RichTextLabel: Control {
     }()
 
     public func menu() -> Godot.PopupMenu? {
-        Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PopupMenu?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_menu,
@@ -2630,7 +2630,7 @@ open class RichTextLabel: Control {
     }()
 
     public func isMenuVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_menu_visible,

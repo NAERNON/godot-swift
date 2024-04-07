@@ -22,7 +22,7 @@ open class EditorDebuggerSession: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class EditorDebuggerSession: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class EditorDebuggerSession: RefCounted {
     public lazy var breakedSignal: Godot.SignalEmitter<BreakedSignalInput> = {
         .init(object: self, signalName: "breaked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BreakedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(canDebug: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(canDebug: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BreakedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -78,7 +78,7 @@ open class EditorDebuggerSession: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BreakedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -97,7 +97,7 @@ open class EditorDebuggerSession: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -109,7 +109,7 @@ open class EditorDebuggerSession: RefCounted {
         }
     }()
 
-    public func sendMessage<Value: VariantStorable>(
+    public func sendMessage<Value: Variant.Storable>(
         _ message: Godot.GodotString,
         data: Godot.GodotArray<Value> = []
     ) {
@@ -133,7 +133,7 @@ open class EditorDebuggerSession: RefCounted {
         }
     }()
 
-    public func toggleProfiler<Value: VariantStorable>(
+    public func toggleProfiler<Value: Variant.Storable>(
         _ profiler: Godot.GodotString,
         enable: Bool,
         data: Godot.GodotArray<Value> = []
@@ -160,7 +160,7 @@ open class EditorDebuggerSession: RefCounted {
     }()
 
     public func isBreaked() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_breaked,
@@ -179,7 +179,7 @@ open class EditorDebuggerSession: RefCounted {
     }()
 
     public func isDebuggable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_debuggable,
@@ -198,7 +198,7 @@ open class EditorDebuggerSession: RefCounted {
     }()
 
     public func isActive() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_active,

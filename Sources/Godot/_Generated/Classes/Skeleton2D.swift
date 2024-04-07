@@ -22,7 +22,7 @@ open class Skeleton2D: Node2D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -35,7 +35,7 @@ open class Skeleton2D: Node2D {
     }()
 
     public func boneCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_bone_count,
@@ -56,7 +56,7 @@ open class Skeleton2D: Node2D {
     public func bone(
         idx: Int32
     ) -> Godot.Bone2D? {
-        Godot.Bone2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Bone2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -77,7 +77,7 @@ open class Skeleton2D: Node2D {
     }()
 
     public func skeleton() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_skeleton,
@@ -119,7 +119,7 @@ open class Skeleton2D: Node2D {
     }()
 
     public func modificationStack() -> Godot.SkeletonModificationStack2D? {
-        Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SkeletonModificationStack2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modification_stack,
@@ -192,7 +192,7 @@ open class Skeleton2D: Node2D {
     public func boneLocalPoseOverride(
         boneIdx: Int32
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

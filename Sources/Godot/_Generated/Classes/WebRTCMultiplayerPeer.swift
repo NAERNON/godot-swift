@@ -14,10 +14,10 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
     }()
 
-    public func createServer<Value: VariantStorable>(
+    public func createServer<Value: Variant.Storable>(
         channelsConfig: Godot.GodotArray<Value> = []
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         channelsConfig.withGodotUnsafeRawPointer { __ptr_channelsConfig in
         withUnsafeArgumentPackPointer(__ptr_channelsConfig) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -37,11 +37,11 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
     }()
 
-    public func createClient<Value: VariantStorable>(
+    public func createClient<Value: Variant.Storable>(
         peerID: Int32,
         channelsConfig: Godot.GodotArray<Value> = []
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         channelsConfig.withGodotUnsafeRawPointer { __ptr_channelsConfig in
         withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_channelsConfig) { __accessPtr in
@@ -62,11 +62,11 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
     }()
 
-    public func createMesh<Value: VariantStorable>(
+    public func createMesh<Value: Variant.Storable>(
         peerID: Int32,
         channelsConfig: Godot.GodotArray<Value> = []
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         channelsConfig.withGodotUnsafeRawPointer { __ptr_channelsConfig in
         withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_channelsConfig) { __accessPtr in
@@ -92,7 +92,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         peerID: Int32,
         unreliableLifetime: Int32 = 1
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peer.withGodotUnsafeRawPointer { __ptr_peer in
         withUnsafePointer(to: __ptr_peer) { _ptr___ptr_peer in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
@@ -140,7 +140,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
     public func hasPeer(
         peerID: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         withUnsafeArgumentPackPointer(__ptr_peerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -163,7 +163,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
     public func peer(
         peerID: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         withUnsafeArgumentPackPointer(__ptr_peerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,7 +184,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
     }()
 
     public func peers() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peers,

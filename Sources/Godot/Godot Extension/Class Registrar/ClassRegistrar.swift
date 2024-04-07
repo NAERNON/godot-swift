@@ -342,7 +342,7 @@ public final class ClassRegistrar {
         }
         
         let classBinding = Unmanaged<CustomClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = GodotStringName.fromGodotUnsafePointer(methodNamePtr)
+        let methodName = GodotStringName.transferFromGodot(unsafePointer: methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
             godotLogError("Class \(classBinding.name) doesn't exist.")
@@ -392,7 +392,7 @@ public final class ClassRegistrar {
         setterPointerCall: GDExtensionClassMethodPtrCall? = nil
     ) -> VariableBinding?
     where Class : Object,
-          Variable : ExportableValue
+          Variable : Exportable
     {
         registerVariable(
             named: variableName,
@@ -441,7 +441,7 @@ public final class ClassRegistrar {
         setterPointerCall: GDExtensionClassMethodPtrCall? = nil
     ) -> VariableBinding?
     where Class : Object,
-          Variable : ExposableValue
+          Variable : Exposable
     {
         registerVariable(
             named: variableName,
@@ -474,7 +474,7 @@ public final class ClassRegistrar {
         setterPointerCall: GDExtensionClassMethodPtrCall?
     ) -> VariableBinding?
     where Class : Object,
-          Variable : ExposableValue
+          Variable : Exposable
     {
         let className = classType._exposedClassName
         
@@ -780,7 +780,7 @@ public final class ClassRegistrar {
             to_string_func: toStringFunc
         )
         
-        return Callable.fromMutatingGodotUnsafePointer { callablePtr in
+        return Callable.fromInitializingMutatingGodotUnsafePointer { callablePtr in
             withUnsafeMutablePointer(to: &callableInfo) { callableInfoPtr in
                 GodotExtension.Interface.callableCustomCreate(
                     callablePtr,

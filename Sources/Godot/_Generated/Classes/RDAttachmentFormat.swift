@@ -37,7 +37,7 @@ open class RDAttachmentFormat: RefCounted {
     }()
 
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
-        Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.DataFormat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -78,7 +78,7 @@ open class RDAttachmentFormat: RefCounted {
     }()
 
     private func __getSamples() -> Godot.RenderingDevice.TextureSamples {
-        Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSamples.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_samples,
@@ -119,7 +119,7 @@ open class RDAttachmentFormat: RefCounted {
     }()
 
     private func __getUsageFlags() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_usage_flags,

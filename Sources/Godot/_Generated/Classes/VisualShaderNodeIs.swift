@@ -50,7 +50,7 @@ open class VisualShaderNodeIs: VisualShaderNode {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeIs.Function {
-        Godot.VisualShaderNodeIs.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeIs.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,

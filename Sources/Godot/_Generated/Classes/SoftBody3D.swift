@@ -26,7 +26,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     public func physicsRid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_rid,
@@ -67,7 +67,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getCollisionMask() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_mask,
@@ -108,7 +108,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getCollisionLayer() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_layer,
@@ -153,7 +153,7 @@ open class SoftBody3D: MeshInstance3D {
     public func collisionMaskValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -200,7 +200,7 @@ open class SoftBody3D: MeshInstance3D {
     public func collisionLayerValue(
         layerNumber: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
         withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -243,7 +243,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getParentCollisionIgnore() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parent_collision_ignore,
@@ -284,7 +284,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getDisableMode() -> Godot.SoftBody3D.DisableMode {
-        Godot.SoftBody3D.DisableMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SoftBody3D.DisableMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_disable_mode,
@@ -303,7 +303,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody3D?> {
-        Godot.GodotArray<Godot.PhysicsBody3D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PhysicsBody3D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_collision_exceptions,
@@ -390,7 +390,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getSimulationPrecision() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_simulation_precision,
@@ -431,7 +431,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getTotalMass() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_total_mass,
@@ -472,7 +472,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getLinearStiffness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_stiffness,
@@ -513,7 +513,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getPressureCoefficient() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pressure_coefficient,
@@ -554,7 +554,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getDampingCoefficient() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_damping_coefficient,
@@ -595,7 +595,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __getDragCoefficient() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_drag_coefficient,
@@ -616,7 +616,7 @@ open class SoftBody3D: MeshInstance3D {
     public func pointTransform(
         pointIndex: Int32
     ) -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pointIndex.withGodotUnsafeRawPointer { __ptr_pointIndex in
         withUnsafeArgumentPackPointer(__ptr_pointIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -665,7 +665,7 @@ open class SoftBody3D: MeshInstance3D {
     public func isPointPinned(
         pointIndex: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pointIndex.withGodotUnsafeRawPointer { __ptr_pointIndex in
         withUnsafeArgumentPackPointer(__ptr_pointIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -708,7 +708,7 @@ open class SoftBody3D: MeshInstance3D {
     }()
 
     private func __isRayPickable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ray_pickable,

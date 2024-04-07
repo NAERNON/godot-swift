@@ -65,7 +65,7 @@ open class AspectRatioContainer: Container {
     }()
 
     private func __getRatio() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ratio,
@@ -106,7 +106,7 @@ open class AspectRatioContainer: Container {
     }()
 
     private func __getStretchMode() -> Godot.AspectRatioContainer.StretchMode {
-        Godot.AspectRatioContainer.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AspectRatioContainer.StretchMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stretch_mode,
@@ -147,7 +147,7 @@ open class AspectRatioContainer: Container {
     }()
 
     private func __getAlignmentHorizontal() -> Godot.AspectRatioContainer.AlignmentMode {
-        Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AspectRatioContainer.AlignmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment_horizontal,
@@ -188,7 +188,7 @@ open class AspectRatioContainer: Container {
     }()
 
     private func __getAlignmentVertical() -> Godot.AspectRatioContainer.AlignmentMode {
-        Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AspectRatioContainer.AlignmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment_vertical,

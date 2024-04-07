@@ -55,7 +55,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getDirection() -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_direction,
@@ -96,7 +96,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getOrientation() -> Godot.TextServer.Orientation {
-        Godot.TextServer.Orientation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Orientation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_orientation,
@@ -137,7 +137,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getPreserveInvalid() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_preserve_invalid,
@@ -178,7 +178,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getPreserveControl() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_preserve_control,
@@ -196,7 +196,7 @@ open class TextLine: RefCounted {
         }
     }()
 
-    public func setBidiOverride<Value: VariantStorable>(
+    public func setBidiOverride<Value: Variant.Storable>(
         _ override: Godot.GodotArray<Value>
     ) {
         override.withGodotUnsafeRawPointer { __ptr_override in
@@ -218,14 +218,14 @@ open class TextLine: RefCounted {
         }
     }()
 
-    public func addString<Value: VariantStorableIn>(
+    public func addString<Value: Variant.Storable>(
         text: Godot.GodotString,
         font: Godot.Font?,
         fontSize: Int32,
         language: Godot.GodotString = "",
         meta: Value = Variant()
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         text.withGodotUnsafeRawPointer { __ptr_text in
         font.withGodotUnsafeRawPointer { __ptr_font in
         withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
@@ -250,14 +250,14 @@ open class TextLine: RefCounted {
         }
     }()
 
-    public func addObject<Value: VariantStorableIn>(
+    public func addObject<Value: Variant.Storable>(
         key: Value,
         size: Godot.Vector2,
         inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
         length: Int32 = 1,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
         inlineAlign.withGodotUnsafeRawPointer { __ptr_inlineAlign in
@@ -281,13 +281,13 @@ open class TextLine: RefCounted {
         }
     }()
 
-    public func resizeObject<Value: VariantStorableIn>(
+    public func resizeObject<Value: Variant.Storable>(
         key: Value,
         size: Godot.Vector2,
         inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         size.withGodotUnsafeRawPointer { __ptr_size in
         inlineAlign.withGodotUnsafeRawPointer { __ptr_inlineAlign in
@@ -333,7 +333,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -374,7 +374,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_alignment,
@@ -437,7 +437,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getFlags() -> Godot.TextServer.JustificationFlag {
-        Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.JustificationFlag.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_flags,
@@ -478,7 +478,7 @@ open class TextLine: RefCounted {
     }()
 
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
-        Godot.TextServer.OverrunBehavior.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.OverrunBehavior.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_overrun_behavior,
@@ -497,7 +497,7 @@ open class TextLine: RefCounted {
     }()
 
     public func objects() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_objects,
@@ -515,10 +515,10 @@ open class TextLine: RefCounted {
         }
     }()
 
-    public func objectRect<Value: VariantStorableIn>(
+    public func objectRect<Value: Variant.Storable>(
         key: Value
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
         withUnsafeArgumentPackPointer(__ptr_key) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -539,7 +539,7 @@ open class TextLine: RefCounted {
     }()
 
     public func size() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -558,7 +558,7 @@ open class TextLine: RefCounted {
     }()
 
     public func rid() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rid,
@@ -577,7 +577,7 @@ open class TextLine: RefCounted {
     }()
 
     public func lineAscent() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_ascent,
@@ -596,7 +596,7 @@ open class TextLine: RefCounted {
     }()
 
     public func lineDescent() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_descent,
@@ -615,7 +615,7 @@ open class TextLine: RefCounted {
     }()
 
     public func lineWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_width,
@@ -634,7 +634,7 @@ open class TextLine: RefCounted {
     }()
 
     public func lineUnderlinePosition() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_underline_position,
@@ -653,7 +653,7 @@ open class TextLine: RefCounted {
     }()
 
     public func lineUnderlineThickness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_underline_thickness,
@@ -728,7 +728,7 @@ open class TextLine: RefCounted {
     public func hitTest(
         coords: Double
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

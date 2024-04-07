@@ -15,7 +15,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getBufferView() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffer_view,
@@ -56,7 +56,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getByteOffset() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_byte_offset,
@@ -97,7 +97,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getComponentType() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_component_type,
@@ -138,7 +138,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getNormalized() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_normalized,
@@ -179,7 +179,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_count,
@@ -220,7 +220,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getType() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_type,
@@ -261,7 +261,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getMin() -> Godot.PackedFloat64Array {
-        Godot.PackedFloat64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_min,
@@ -302,7 +302,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getMax() -> Godot.PackedFloat64Array {
-        Godot.PackedFloat64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedFloat64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max,
@@ -343,7 +343,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_count,
@@ -384,7 +384,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseIndicesBufferView() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_indices_buffer_view,
@@ -425,7 +425,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseIndicesByteOffset() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_indices_byte_offset,
@@ -466,7 +466,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseIndicesComponentType() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_indices_component_type,
@@ -507,7 +507,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseValuesBufferView() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_values_buffer_view,
@@ -548,7 +548,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __getSparseValuesByteOffset() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sparse_values_byte_offset,

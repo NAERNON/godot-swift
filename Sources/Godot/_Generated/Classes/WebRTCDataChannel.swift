@@ -41,7 +41,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -78,7 +78,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func wasStringPacket() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_was_string_packet,
@@ -119,7 +119,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     private func __getWriteMode() -> Godot.WebRTCDataChannel.WriteMode {
-        Godot.WebRTCDataChannel.WriteMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCDataChannel.WriteMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_write_mode,
@@ -138,7 +138,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func readyState() -> Godot.WebRTCDataChannel.ChannelState {
-        Godot.WebRTCDataChannel.ChannelState.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebRTCDataChannel.ChannelState.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ready_state,
@@ -157,7 +157,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func label() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_label,
@@ -176,7 +176,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func isOrdered() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_ordered,
@@ -195,7 +195,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func id() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_id,
@@ -214,7 +214,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func maxPacketLifeTime() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_packet_life_time,
@@ -233,7 +233,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func maxRetransmits() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_retransmits,
@@ -252,7 +252,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func `protocol`() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_protocol,
@@ -271,7 +271,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func isNegotiated() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_negotiated,
@@ -290,7 +290,7 @@ open class WebRTCDataChannel: PacketPeer {
     }()
 
     public func bufferedAmount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_buffered_amount,

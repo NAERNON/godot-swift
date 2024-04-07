@@ -22,7 +22,7 @@ open class EditorSettings: Resource {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -39,7 +39,7 @@ open class EditorSettings: Resource {
     public func hasSetting(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +59,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func setSetting<Value: VariantStorableIn>(
+    public func setSetting<Value: Variant.Storable>(
         name: Godot.GodotString,
         value: Value
     ) {
@@ -86,7 +86,7 @@ open class EditorSettings: Resource {
     public func setting(
         name: Godot.GodotString
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,7 +128,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func setInitialValue<Value: VariantStorableIn>(
+    public func setInitialValue<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value,
         updateCurrent: Bool
@@ -154,7 +154,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(
+    public func addPropertyInfo<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ info: Godot.GodotDictionary<Value1, Value2>
     ) {
         info.withGodotUnsafeRawPointer { __ptr_info in
@@ -176,7 +176,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func setProjectMetadata<Value: VariantStorableIn>(
+    public func setProjectMetadata<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
         data: Value
@@ -202,12 +202,12 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func projectMetadata<Value: VariantStorableIn>(
+    public func projectMetadata<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
         `default`: Value = Variant()
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         section.withGodotUnsafeRawPointer { __ptr_section in
         key.withGodotUnsafeRawPointer { __ptr_key in
         Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { __ptr_default in
@@ -252,7 +252,7 @@ open class EditorSettings: Resource {
     }()
 
     public func favorites() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_favorites,
@@ -293,7 +293,7 @@ open class EditorSettings: Resource {
     }()
 
     public func recentDirs() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_recent_dirs,
@@ -338,7 +338,7 @@ open class EditorSettings: Resource {
     public func checkChangedSettingsInGroup(
         settingPrefix: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         settingPrefix.withGodotUnsafeRawPointer { __ptr_settingPrefix in
         withUnsafeArgumentPackPointer(__ptr_settingPrefix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,7 +359,7 @@ open class EditorSettings: Resource {
     }()
 
     public func changedSettings() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_changed_settings,

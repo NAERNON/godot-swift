@@ -105,8 +105,8 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             }
             Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setVertex(
-            vertexID: Int32.fromGodotUnsafePointer(args[0]!),
-            vertex: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
+            vertexID: Int32.transferFromGodot(unsafePointer: args[0]!),
+            vertex: Godot.Vector3.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _set_normal_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -114,8 +114,8 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             }
             Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setNormal(
-            vertexID: Int32.fromGodotUnsafePointer(args[0]!),
-            normal: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
+            vertexID: Int32.transferFromGodot(unsafePointer: args[0]!),
+            normal: Godot.Vector3.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _set_aabb_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -123,7 +123,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             }
             Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAabb(
-            Godot.AABB.fromGodotUnsafePointer(args[0]!)
+            Godot.AABB.transferFromGodot(unsafePointer: args[0]!)
         )}
         _virtualFunctions = [
             "_setVertex" : ("_set_vertex", _set_vertex_call),

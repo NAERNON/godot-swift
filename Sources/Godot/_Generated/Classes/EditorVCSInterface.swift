@@ -174,7 +174,7 @@ open class EditorVCSInterface: Object {
         content: Godot.GodotString,
         status: Godot.GodotString
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         newLineNo.withGodotUnsafeRawPointer { __ptr_newLineNo in
         oldLineNo.withGodotUnsafeRawPointer { __ptr_oldLineNo in
         content.withGodotUnsafeRawPointer { __ptr_content in
@@ -203,7 +203,7 @@ open class EditorVCSInterface: Object {
         oldLines: Int32,
         newLines: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         oldStart.withGodotUnsafeRawPointer { __ptr_oldStart in
         newStart.withGodotUnsafeRawPointer { __ptr_newStart in
         oldLines.withGodotUnsafeRawPointer { __ptr_oldLines in
@@ -230,7 +230,7 @@ open class EditorVCSInterface: Object {
         newFile: Godot.GodotString,
         oldFile: Godot.GodotString
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         newFile.withGodotUnsafeRawPointer { __ptr_newFile in
         oldFile.withGodotUnsafeRawPointer { __ptr_oldFile in
         withUnsafeArgumentPackPointer(__ptr_newFile, __ptr_oldFile) { __accessPtr in
@@ -258,7 +258,7 @@ open class EditorVCSInterface: Object {
         unixTimestamp: Int64,
         offsetMinutes: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         msg.withGodotUnsafeRawPointer { __ptr_msg in
         author.withGodotUnsafeRawPointer { __ptr_author in
         id.withGodotUnsafeRawPointer { __ptr_id in
@@ -287,7 +287,7 @@ open class EditorVCSInterface: Object {
         changeType: Godot.EditorVCSInterface.ChangeType,
         area: Godot.EditorVCSInterface.TreeArea
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         filePath.withGodotUnsafeRawPointer { __ptr_filePath in
         changeType.withGodotUnsafeRawPointer { __ptr_changeType in
         area.withGodotUnsafeRawPointer { __ptr_area in
@@ -309,11 +309,11 @@ open class EditorVCSInterface: Object {
         }
     }()
 
-    public func addDiffHunksIntoDiffFile<Value1: VariantStorable, Value2: VariantStorable>(
+    public func addDiffHunksIntoDiffFile<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ diffFile: Godot.GodotDictionary<Value1, Value2>,
         diffHunks: Godot.GodotArray<Godot.AnyGodotDictionary>
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         diffFile.withGodotUnsafeRawPointer { __ptr_diffFile in
         diffHunks.withGodotUnsafeRawPointer { __ptr_diffHunks in
         withUnsafeArgumentPackPointer(__ptr_diffFile, __ptr_diffHunks) { __accessPtr in
@@ -334,11 +334,11 @@ open class EditorVCSInterface: Object {
         }
     }()
 
-    public func addLineDiffsIntoDiffHunk<Value1: VariantStorable, Value2: VariantStorable>(
+    public func addLineDiffsIntoDiffHunk<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ diffHunk: Godot.GodotDictionary<Value1, Value2>,
         lineDiffs: Godot.GodotArray<Godot.AnyGodotDictionary>
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         diffHunk.withGodotUnsafeRawPointer { __ptr_diffHunk in
         lineDiffs.withGodotUnsafeRawPointer { __ptr_lineDiffs in
         withUnsafeArgumentPackPointer(__ptr_diffHunk, __ptr_lineDiffs) { __accessPtr in
@@ -385,20 +385,20 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize(
-            projectPath: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            projectPath: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _set_credentials_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setCredentials(
-            username: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            password: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
-            sshPublicKeyPath: Godot.GodotString.fromGodotUnsafePointer(args[2]!),
-            sshPrivateKeyPath: Godot.GodotString.fromGodotUnsafePointer(args[3]!),
-            sshPassphrase: Godot.GodotString.fromGodotUnsafePointer(args[4]!)
+            username: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            password: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+            sshPublicKeyPath: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
+            sshPrivateKeyPath: Godot.GodotString.transferFromGodot(unsafePointer: args[3]!),
+            sshPassphrase: Godot.GodotString.transferFromGodot(unsafePointer: args[4]!)
         )}
         let _get_modified_files_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -406,14 +406,14 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getModifiedFilesData()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _stage_file_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._stageFile(
-            filePath: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            filePath: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _unstage_file_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -421,7 +421,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._unstageFile(
-            filePath: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            filePath: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _discard_file_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -429,7 +429,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._discardFile(
-            filePath: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            filePath: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _commit_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -437,7 +437,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._commit(
-            msg: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            msg: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _get_diff_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -445,54 +445,54 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDiff(
-            identifier: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            area: Int32.fromGodotUnsafePointer(args[1]!)
+            identifier: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            area: Int32.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _shut_down_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shutDown()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_vcs_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getVcsName()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_previous_commits_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPreviousCommits(
-            maxCommits: Int32.fromGodotUnsafePointer(args[0]!)
+            maxCommits: Int32.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_branch_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBranchList()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_remotes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRemotes()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _create_branch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._createBranch(
-            branchName: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            branchName: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _remove_branch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -500,7 +500,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._removeBranch(
-            branchName: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            branchName: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _create_remote_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -508,8 +508,8 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._createRemote(
-            remoteName: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            remoteUrl: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            remoteName: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            remoteUrl: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _remove_remote_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -517,7 +517,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._removeRemote(
-            remoteName: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            remoteName: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _get_current_branch_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -525,23 +525,23 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCurrentBranchName()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _checkout_branch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._checkoutBranch(
-            branchName: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            branchName: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _pull_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pull(
-            remote: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            remote: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _push_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -549,8 +549,8 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._push(
-            remote: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            force: Bool.fromGodotUnsafePointer(args[1]!)
+            remote: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            force: Bool.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _fetch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -558,7 +558,7 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._fetch(
-            remote: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            remote: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _get_line_diff_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -566,10 +566,10 @@ open class EditorVCSInterface: Object {
             }
             Unmanaged<EditorVCSInterface> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLineDiff(
-            filePath: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            text: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+            filePath: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            text: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_initialize" : ("_initialize", _initialize_call),
             "_setCredentials" : ("_set_credentials", _set_credentials_call),

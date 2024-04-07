@@ -101,7 +101,7 @@ open class Tween: RefCounted {
     public lazy var stepFinishedSignal: Godot.SignalEmitter<StepFinishedSignalInput> = {
         .init(object: self, signalName: "step_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(idx: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -109,7 +109,7 @@ open class Tween: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -138,7 +138,7 @@ open class Tween: RefCounted {
     public lazy var loopFinishedSignal: Godot.SignalEmitter<LoopFinishedSignalInput> = {
         .init(object: self, signalName: "loop_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(loopCount: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(loopCount: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -146,7 +146,7 @@ open class Tween: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -165,7 +165,7 @@ open class Tween: RefCounted {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -177,13 +177,13 @@ open class Tween: RefCounted {
         }
     }()
 
-    public func tweenProperty<Value: VariantStorableIn>(
+    public func tweenProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.NodePath,
         finalVal: Value,
         duration: Double
     ) -> Godot.PropertyTweener? {
-        Godot.PropertyTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PropertyTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         object.withGodotUnsafeRawPointer { __ptr_object in
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         property.withGodotUnsafeRawPointer { __ptr_property in
@@ -210,7 +210,7 @@ open class Tween: RefCounted {
     public func tweenInterval(
         time: Double
     ) -> Godot.IntervalTweener? {
-        Godot.IntervalTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.IntervalTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         time.withGodotUnsafeRawPointer { __ptr_time in
         withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -233,7 +233,7 @@ open class Tween: RefCounted {
     public func tweenCallback(
         _ callback: Godot.Callable
     ) -> Godot.CallbackTweener? {
-        Godot.CallbackTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CallbackTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(__ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -253,13 +253,13 @@ open class Tween: RefCounted {
         }
     }()
 
-    public func tweenMethod<Value1: VariantStorableIn, Value2: VariantStorableIn>(
+    public func tweenMethod<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ method: Godot.Callable,
         from: Value1,
         to: Value2,
         duration: Double
     ) -> Godot.MethodTweener? {
-        Godot.MethodTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MethodTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         Godot.Variant.withStorageUnsafeRawPointer(to: from) { __ptr_from in
         Godot.Variant.withStorageUnsafeRawPointer(to: to) { __ptr_to in
@@ -285,7 +285,7 @@ open class Tween: RefCounted {
     public func customStep(
         delta: Double
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         withUnsafeArgumentPackPointer(__ptr_delta) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -378,7 +378,7 @@ open class Tween: RefCounted {
     }()
 
     public func totalElapsedTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_total_elapsed_time,
@@ -397,7 +397,7 @@ open class Tween: RefCounted {
     }()
 
     public func isRunning() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_running,
@@ -416,7 +416,7 @@ open class Tween: RefCounted {
     }()
 
     public func isValid() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_valid,
@@ -437,7 +437,7 @@ open class Tween: RefCounted {
     public func bindNode(
         _ node: Godot.Node?
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -461,7 +461,7 @@ open class Tween: RefCounted {
     public func setProcessMode(
         _ mode: Godot.Tween.TweenProcessMode
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -484,7 +484,7 @@ open class Tween: RefCounted {
     public func setPauseMode(
         _ mode: Godot.Tween.TweenPauseMode
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -507,7 +507,7 @@ open class Tween: RefCounted {
     public func setParallel(
         _ parallel: Bool = true
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         parallel.withGodotUnsafeRawPointer { __ptr_parallel in
         withUnsafeArgumentPackPointer(__ptr_parallel) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -530,7 +530,7 @@ open class Tween: RefCounted {
     public func setLoops(
         _ loops: Int32 = 0
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         loops.withGodotUnsafeRawPointer { __ptr_loops in
         withUnsafeArgumentPackPointer(__ptr_loops) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -551,7 +551,7 @@ open class Tween: RefCounted {
     }()
 
     public func loopsLeft() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loops_left,
@@ -572,7 +572,7 @@ open class Tween: RefCounted {
     public func setSpeedScale(
         speed: Double
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         speed.withGodotUnsafeRawPointer { __ptr_speed in
         withUnsafeArgumentPackPointer(__ptr_speed) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -595,7 +595,7 @@ open class Tween: RefCounted {
     public func setTrans(
         _ trans: Godot.Tween.TransitionType
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         trans.withGodotUnsafeRawPointer { __ptr_trans in
         withUnsafeArgumentPackPointer(__ptr_trans) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -618,7 +618,7 @@ open class Tween: RefCounted {
     public func setEase(
         _ ease: Godot.Tween.EaseType
     ) -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         ease.withGodotUnsafeRawPointer { __ptr_ease in
         withUnsafeArgumentPackPointer(__ptr_ease) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -639,7 +639,7 @@ open class Tween: RefCounted {
     }()
 
     public func parallel() -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_parallel,
@@ -658,7 +658,7 @@ open class Tween: RefCounted {
     }()
 
     public func chain() -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_chain,
@@ -676,7 +676,7 @@ open class Tween: RefCounted {
         }
     }()
 
-    static public func interpolateValue<Value1: VariantStorableIn, Value2: VariantStorableIn>(
+    static public func interpolateValue<Value1: Variant.Storable, Value2: Variant.Storable>(
         initialValue: Value1,
         deltaValue: Value2,
         elapsedTime: Double,
@@ -684,7 +684,7 @@ open class Tween: RefCounted {
         transType: Godot.Tween.TransitionType,
         easeType: Godot.Tween.EaseType
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: initialValue) { __ptr_initialValue in
         Godot.Variant.withStorageUnsafeRawPointer(to: deltaValue) { __ptr_deltaValue in
         elapsedTime.withGodotUnsafeRawPointer { __ptr_elapsedTime in

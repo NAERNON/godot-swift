@@ -37,7 +37,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __isDofBlurFarEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_dof_blur_far_enabled,
@@ -78,7 +78,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getDofBlurFarDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dof_blur_far_distance,
@@ -119,7 +119,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getDofBlurFarTransition() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dof_blur_far_transition,
@@ -160,7 +160,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __isDofBlurNearEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_dof_blur_near_enabled,
@@ -201,7 +201,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getDofBlurNearDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dof_blur_near_distance,
@@ -242,7 +242,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getDofBlurNearTransition() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dof_blur_near_transition,
@@ -283,7 +283,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getDofBlurAmount() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dof_blur_amount,
@@ -324,7 +324,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getAutoExposureMaxSensitivity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_exposure_max_sensitivity,
@@ -365,7 +365,7 @@ open class CameraAttributesPractical: CameraAttributes {
     }()
 
     private func __getAutoExposureMinSensitivity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_auto_exposure_min_sensitivity,

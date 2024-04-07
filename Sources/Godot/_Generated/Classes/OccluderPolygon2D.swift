@@ -50,7 +50,7 @@ open class OccluderPolygon2D: Resource {
     }()
 
     private func __isClosed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_closed,
@@ -91,7 +91,7 @@ open class OccluderPolygon2D: Resource {
     }()
 
     private func __getCullMode() -> Godot.OccluderPolygon2D.CullMode {
-        Godot.OccluderPolygon2D.CullMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OccluderPolygon2D.CullMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cull_mode,
@@ -132,7 +132,7 @@ open class OccluderPolygon2D: Resource {
     }()
 
     private func __getPolygon() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_polygon,

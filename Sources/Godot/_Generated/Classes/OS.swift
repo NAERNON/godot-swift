@@ -49,7 +49,7 @@ open class OS: Object {
     }()
 
     public func connectedMidiInputs() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_midi_inputs,
@@ -172,7 +172,7 @@ open class OS: Object {
     }()
 
     private func __isInLowProcessorUsageMode() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_in_low_processor_usage_mode,
@@ -213,7 +213,7 @@ open class OS: Object {
     }()
 
     private func __getLowProcessorUsageModeSleepUsec() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_low_processor_usage_mode_sleep_usec,
@@ -254,7 +254,7 @@ open class OS: Object {
     }()
 
     private func __isDeltaSmoothingEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_delta_smoothing_enabled,
@@ -273,7 +273,7 @@ open class OS: Object {
     }()
 
     public func processorCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_processor_count,
@@ -292,7 +292,7 @@ open class OS: Object {
     }()
 
     public func processorName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_processor_name,
@@ -311,7 +311,7 @@ open class OS: Object {
     }()
 
     public func systemFonts() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_system_fonts,
@@ -335,7 +335,7 @@ open class OS: Object {
         stretch: Int32 = 100,
         italic: Bool = false
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontName.withGodotUnsafeRawPointer { __ptr_fontName in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
         stretch.withGodotUnsafeRawPointer { __ptr_stretch in
@@ -367,7 +367,7 @@ open class OS: Object {
         stretch: Int32 = 100,
         italic: Bool = false
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fontName.withGodotUnsafeRawPointer { __ptr_fontName in
         text.withGodotUnsafeRawPointer { __ptr_text in
         locale.withGodotUnsafeRawPointer { __ptr_locale in
@@ -394,7 +394,7 @@ open class OS: Object {
     }()
 
     public func executablePath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_executable_path,
@@ -413,7 +413,7 @@ open class OS: Object {
     }()
 
     public func readStringFromStdin() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_read_string_from_stdin,
@@ -431,14 +431,14 @@ open class OS: Object {
         }
     }()
 
-    public func execute<Value: VariantStorable>(
+    public func execute<Value: Variant.Storable>(
         path: Godot.GodotString,
         arguments: Godot.PackedStringArray,
         output: Godot.GodotArray<Value> = [],
         readStderr: Bool = false,
         openConsole: Bool = false
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         output.withGodotUnsafeRawPointer { __ptr_output in
@@ -467,7 +467,7 @@ open class OS: Object {
         arguments: Godot.PackedStringArray,
         openConsole: Bool = false
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         openConsole.withGodotUnsafeRawPointer { __ptr_openConsole in
@@ -492,7 +492,7 @@ open class OS: Object {
     public func createInstance(
         arguments: Godot.PackedStringArray
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         arguments.withGodotUnsafeRawPointer { __ptr_arguments in
         withUnsafeArgumentPackPointer(__ptr_arguments) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -515,7 +515,7 @@ open class OS: Object {
     public func kill(
         pid: Int32
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pid.withGodotUnsafeRawPointer { __ptr_pid in
         withUnsafeArgumentPackPointer(__ptr_pid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -538,7 +538,7 @@ open class OS: Object {
     public func shellOpen(
         uri: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         uri.withGodotUnsafeRawPointer { __ptr_uri in
         withUnsafeArgumentPackPointer(__ptr_uri) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -562,7 +562,7 @@ open class OS: Object {
         fileOrDirPath: Godot.GodotString,
         openFolder: Bool = true
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fileOrDirPath.withGodotUnsafeRawPointer { __ptr_fileOrDirPath in
         openFolder.withGodotUnsafeRawPointer { __ptr_openFolder in
         withUnsafeArgumentPackPointer(__ptr_fileOrDirPath, __ptr_openFolder) { __accessPtr in
@@ -586,7 +586,7 @@ open class OS: Object {
     public func isProcessRunning(
         pid: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pid.withGodotUnsafeRawPointer { __ptr_pid in
         withUnsafeArgumentPackPointer(__ptr_pid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -607,7 +607,7 @@ open class OS: Object {
     }()
 
     public func processID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_id,
@@ -628,7 +628,7 @@ open class OS: Object {
     public func hasEnvironment(
         variable: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         variable.withGodotUnsafeRawPointer { __ptr_variable in
         withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -651,7 +651,7 @@ open class OS: Object {
     public func environment(
         variable: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         variable.withGodotUnsafeRawPointer { __ptr_variable in
         withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -718,7 +718,7 @@ open class OS: Object {
     }()
 
     public func name() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -737,7 +737,7 @@ open class OS: Object {
     }()
 
     public func distributionName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_distribution_name,
@@ -756,7 +756,7 @@ open class OS: Object {
     }()
 
     public func version() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_version,
@@ -775,7 +775,7 @@ open class OS: Object {
     }()
 
     public func cmdlineArgs() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cmdline_args,
@@ -794,7 +794,7 @@ open class OS: Object {
     }()
 
     public func cmdlineUserArgs() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cmdline_user_args,
@@ -813,7 +813,7 @@ open class OS: Object {
     }()
 
     public func videoAdapterDriverInfo() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_video_adapter_driver_info,
@@ -856,7 +856,7 @@ open class OS: Object {
     }()
 
     public func isRestartOnExitSet() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_restart_on_exit_set,
@@ -875,7 +875,7 @@ open class OS: Object {
     }()
 
     public func restartOnExitArguments() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_restart_on_exit_arguments,
@@ -938,7 +938,7 @@ open class OS: Object {
     }()
 
     public func locale() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_locale,
@@ -957,7 +957,7 @@ open class OS: Object {
     }()
 
     public func localeLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_locale_language,
@@ -976,7 +976,7 @@ open class OS: Object {
     }()
 
     public func modelName() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_model_name,
@@ -995,7 +995,7 @@ open class OS: Object {
     }()
 
     public func isUserfsPersistent() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_userfs_persistent,
@@ -1014,7 +1014,7 @@ open class OS: Object {
     }()
 
     public func isStdoutVerbose() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_stdout_verbose,
@@ -1033,7 +1033,7 @@ open class OS: Object {
     }()
 
     public func isDebugBuild() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_debug_build,
@@ -1052,7 +1052,7 @@ open class OS: Object {
     }()
 
     public func staticMemoryUsage() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_static_memory_usage,
@@ -1071,7 +1071,7 @@ open class OS: Object {
     }()
 
     public func staticMemoryPeakUsage() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_static_memory_peak_usage,
@@ -1090,7 +1090,7 @@ open class OS: Object {
     }()
 
     public func memoryInfo() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_memory_info,
@@ -1111,7 +1111,7 @@ open class OS: Object {
     public func moveToTrash(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1132,7 +1132,7 @@ open class OS: Object {
     }()
 
     public func userDataDir() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_user_data_dir,
@@ -1154,7 +1154,7 @@ open class OS: Object {
         _ dir: Godot.OS.SystemDir,
         sharedStorage: Bool = true
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dir.withGodotUnsafeRawPointer { __ptr_dir in
         sharedStorage.withGodotUnsafeRawPointer { __ptr_sharedStorage in
         withUnsafeArgumentPackPointer(__ptr_dir, __ptr_sharedStorage) { __accessPtr in
@@ -1176,7 +1176,7 @@ open class OS: Object {
     }()
 
     public func configDir() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_config_dir,
@@ -1195,7 +1195,7 @@ open class OS: Object {
     }()
 
     public func dataDir() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data_dir,
@@ -1214,7 +1214,7 @@ open class OS: Object {
     }()
 
     public func cacheDir() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cache_dir,
@@ -1233,7 +1233,7 @@ open class OS: Object {
     }()
 
     public func uniqueID() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_unique_id,
@@ -1254,7 +1254,7 @@ open class OS: Object {
     public func keycodeString(
         code: Godot.Key
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         code.withGodotUnsafeRawPointer { __ptr_code in
         withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1277,7 +1277,7 @@ open class OS: Object {
     public func isKeycodeUnicode(
         code: Int
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         code.withGodotUnsafeRawPointer { __ptr_code in
         withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1300,7 +1300,7 @@ open class OS: Object {
     public func findKeycodeFromString(
         _ string: Godot.GodotString
     ) -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         string.withGodotUnsafeRawPointer { __ptr_string in
         withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1345,7 +1345,7 @@ open class OS: Object {
     public func setThreadName(
         _ name: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1366,7 +1366,7 @@ open class OS: Object {
     }()
 
     public func threadCallerID() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_thread_caller_id,
@@ -1385,7 +1385,7 @@ open class OS: Object {
     }()
 
     public func mainThreadID() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_main_thread_id,
@@ -1406,7 +1406,7 @@ open class OS: Object {
     public func hasFeature(
         tagName: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         tagName.withGodotUnsafeRawPointer { __ptr_tagName in
         withUnsafeArgumentPackPointer(__ptr_tagName) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1427,7 +1427,7 @@ open class OS: Object {
     }()
 
     public func isSandboxed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_sandboxed,
@@ -1448,7 +1448,7 @@ open class OS: Object {
     public func requestPermission(
         name: Godot.GodotString
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1469,7 +1469,7 @@ open class OS: Object {
     }()
 
     public func requestPermissions() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_request_permissions,
@@ -1488,7 +1488,7 @@ open class OS: Object {
     }()
 
     public func grantedPermissions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_granted_permissions,

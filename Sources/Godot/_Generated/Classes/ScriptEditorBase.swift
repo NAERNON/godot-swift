@@ -22,7 +22,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -41,7 +41,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -70,7 +70,7 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var requestHelpSignal: Godot.SignalEmitter<RequestHelpSignalInput> = {
         .init(object: self, signalName: "request_help") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestHelpSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(topic: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(topic: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<RequestHelpSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -78,7 +78,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<RequestHelpSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -113,8 +113,8 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var requestOpenScriptAtLineSignal: Godot.SignalEmitter<RequestOpenScriptAtLineSignalInput> = {
         .init(object: self, signalName: "request_open_script_at_line") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<RequestOpenScriptAtLineSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(script: Godot.Object?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(script: Godot.Object?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    line: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<RequestOpenScriptAtLineSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -122,7 +122,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<RequestOpenScriptAtLineSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -141,7 +141,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -170,7 +170,7 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var goToHelpSignal: Godot.SignalEmitter<GoToHelpSignalInput> = {
         .init(object: self, signalName: "go_to_help") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GoToHelpSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(what: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(what: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<GoToHelpSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -178,7 +178,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<GoToHelpSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -207,7 +207,7 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var searchInFilesRequestedSignal: Godot.SignalEmitter<SearchInFilesRequestedSignalInput> = {
         .init(object: self, signalName: "search_in_files_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SearchInFilesRequestedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(text: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<SearchInFilesRequestedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -215,7 +215,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<SearchInFilesRequestedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -244,7 +244,7 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var replaceInFilesRequestedSignal: Godot.SignalEmitter<ReplaceInFilesRequestedSignalInput> = {
         .init(object: self, signalName: "replace_in_files_requested") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ReplaceInFilesRequestedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(text: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ReplaceInFilesRequestedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -252,7 +252,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ReplaceInFilesRequestedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -287,8 +287,8 @@ open class ScriptEditorBase: VBoxContainer {
     public lazy var goToMethodSignal: Godot.SignalEmitter<GoToMethodSignalInput> = {
         .init(object: self, signalName: "go_to_method") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GoToMethodSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(script: Godot.Object?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    method: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(script: Godot.Object?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    method: Godot.GodotString.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<GoToMethodSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -296,7 +296,7 @@ open class ScriptEditorBase: VBoxContainer {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<GoToMethodSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -309,7 +309,7 @@ open class ScriptEditorBase: VBoxContainer {
     }()
 
     public func baseEditor() -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_base_editor,

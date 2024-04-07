@@ -15,7 +15,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     }()
 
     public func sceneTilesCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scene_tiles_count,
@@ -36,7 +36,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     public func sceneTileID(
         index: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -59,7 +59,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     public func hasSceneTileID(
         _ id: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -83,7 +83,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
         packedScene: Godot.PackedScene?,
         idOverride: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         packedScene.withGodotUnsafeRawPointer { __ptr_packedScene in
         withUnsafePointer(to: __ptr_packedScene) { _ptr___ptr_packedScene in
         idOverride.withGodotUnsafeRawPointer { __ptr_idOverride in
@@ -157,7 +157,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     public func sceneTileScene(
         id: Int32
     ) -> Godot.PackedScene? {
-        Godot.PackedScene?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedScene?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -204,7 +204,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     public func sceneTileDisplayPlaceholder(
         id: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -247,7 +247,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     }()
 
     public func nextSceneTileID() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_next_scene_tile_id,

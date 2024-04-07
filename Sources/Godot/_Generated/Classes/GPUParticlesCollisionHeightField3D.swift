@@ -69,7 +69,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     }()
 
     private func __getSize() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -110,7 +110,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     }()
 
     private func __getResolution() -> Godot.GPUParticlesCollisionHeightField3D.Resolution {
-        Godot.GPUParticlesCollisionHeightField3D.Resolution.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GPUParticlesCollisionHeightField3D.Resolution.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resolution,
@@ -151,7 +151,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     }()
 
     private func __getUpdateMode() -> Godot.GPUParticlesCollisionHeightField3D.UpdateMode {
-        Godot.GPUParticlesCollisionHeightField3D.UpdateMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GPUParticlesCollisionHeightField3D.UpdateMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_update_mode,
@@ -192,7 +192,7 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
     }()
 
     private func __isFollowCameraEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_follow_camera_enabled,

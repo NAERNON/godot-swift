@@ -309,7 +309,7 @@ open class DisplayServer: Object {
     public func hasFeature(
         _ feature: Godot.DisplayServer.Feature
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         feature.withGodotUnsafeRawPointer { __ptr_feature in
         withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -330,7 +330,7 @@ open class DisplayServer: Object {
     }()
 
     public func name() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -380,7 +380,7 @@ open class DisplayServer: Object {
         submenu: Godot.GodotString,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
         submenu.withGodotUnsafeRawPointer { __ptr_submenu in
@@ -403,7 +403,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddItem<Value: VariantStorableIn>(
+    public func globalMenuAddItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         label: Godot.GodotString,
         callback: Godot.Callable = Callable(),
@@ -412,7 +412,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
@@ -438,7 +438,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddCheckItem<Value: VariantStorableIn>(
+    public func globalMenuAddCheckItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         label: Godot.GodotString,
         callback: Godot.Callable = Callable(),
@@ -447,7 +447,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
@@ -473,7 +473,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddIconItem<Value: VariantStorableIn>(
+    public func globalMenuAddIconItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         icon: Godot.Texture2D?,
         label: Godot.GodotString,
@@ -483,7 +483,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -511,7 +511,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddIconCheckItem<Value: VariantStorableIn>(
+    public func globalMenuAddIconCheckItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         icon: Godot.Texture2D?,
         label: Godot.GodotString,
@@ -521,7 +521,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -549,7 +549,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddRadioCheckItem<Value: VariantStorableIn>(
+    public func globalMenuAddRadioCheckItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         label: Godot.GodotString,
         callback: Godot.Callable = Callable(),
@@ -558,7 +558,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
         callback.withGodotUnsafeRawPointer { __ptr_callback in
@@ -584,7 +584,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddIconRadioCheckItem<Value: VariantStorableIn>(
+    public func globalMenuAddIconRadioCheckItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         icon: Godot.Texture2D?,
         label: Godot.GodotString,
@@ -594,7 +594,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         icon.withGodotUnsafeRawPointer { __ptr_icon in
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
@@ -622,7 +622,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuAddMultistateItem<Value: VariantStorableIn>(
+    public func globalMenuAddMultistateItem<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         label: Godot.GodotString,
         maxStates: Int32,
@@ -633,7 +633,7 @@ open class DisplayServer: Object {
         accelerator: Godot.Key = Key(rawValue: 0)!,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         label.withGodotUnsafeRawPointer { __ptr_label in
         maxStates.withGodotUnsafeRawPointer { __ptr_maxStates in
@@ -665,7 +665,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         index: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_index) { __accessPtr in
@@ -690,7 +690,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         text: Godot.GodotString
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         text.withGodotUnsafeRawPointer { __ptr_text in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_text) { __accessPtr in
@@ -711,11 +711,11 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuGetItemIndexFromTag<Value: VariantStorableIn>(
+    public func globalMenuGetItemIndexFromTag<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         tag: Value
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         Godot.Variant.withStorageUnsafeRawPointer(to: tag) { __ptr_tag in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_tag) { __accessPtr in
@@ -740,7 +740,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -765,7 +765,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -790,7 +790,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -815,7 +815,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.Callable {
-        Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -840,7 +840,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.Callable {
-        Godot.Callable.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Callable.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -865,7 +865,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -890,7 +890,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -915,7 +915,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -940,7 +940,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -965,7 +965,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -990,7 +990,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1015,7 +1015,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1040,7 +1040,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1065,7 +1065,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1090,7 +1090,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1115,7 +1115,7 @@ open class DisplayServer: Object {
         menuRoot: Godot.GodotString,
         idx: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
@@ -1292,7 +1292,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func globalMenuSetItemTag<Value: VariantStorableIn>(
+    public func globalMenuSetItemTag<Value: Variant.Storable>(
         menuRoot: Godot.GodotString,
         idx: Int32,
         tag: Value
@@ -1582,7 +1582,7 @@ open class DisplayServer: Object {
     public func globalMenuGetItemCount(
         menuRoot: Godot.GodotString
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
         withUnsafeArgumentPackPointer(__ptr_menuRoot) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1649,7 +1649,7 @@ open class DisplayServer: Object {
     }()
 
     public func ttsIsSpeaking() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tts_is_speaking,
@@ -1668,7 +1668,7 @@ open class DisplayServer: Object {
     }()
 
     public func ttsIsPaused() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tts_is_paused,
@@ -1687,7 +1687,7 @@ open class DisplayServer: Object {
     }()
 
     public func ttsGetVoices() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tts_get_voices,
@@ -1708,7 +1708,7 @@ open class DisplayServer: Object {
     public func ttsGetVoicesForLanguage(
         _ language: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         language.withGodotUnsafeRawPointer { __ptr_language in
         withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1841,7 +1841,7 @@ open class DisplayServer: Object {
     }()
 
     public func isDarkModeSupported() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_dark_mode_supported,
@@ -1860,7 +1860,7 @@ open class DisplayServer: Object {
     }()
 
     public func isDarkMode() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_dark_mode,
@@ -1879,7 +1879,7 @@ open class DisplayServer: Object {
     }()
 
     public func accentColor() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_accent_color,
@@ -1920,7 +1920,7 @@ open class DisplayServer: Object {
     }()
 
     public func mouseGetMode() -> Godot.DisplayServer.MouseMode {
-        Godot.DisplayServer.MouseMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DisplayServer.MouseMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_mouse_get_mode,
@@ -1961,7 +1961,7 @@ open class DisplayServer: Object {
     }()
 
     public func mouseGetPosition() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_mouse_get_position,
@@ -1980,7 +1980,7 @@ open class DisplayServer: Object {
     }()
 
     public func mouseGetButtonState() -> Godot.MouseButtonMask {
-        Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MouseButtonMask.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_mouse_get_button_state,
@@ -2021,7 +2021,7 @@ open class DisplayServer: Object {
     }()
 
     public func clipboardGet() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clipboard_get,
@@ -2040,7 +2040,7 @@ open class DisplayServer: Object {
     }()
 
     public func clipboardGetImage() -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clipboard_get_image,
@@ -2059,7 +2059,7 @@ open class DisplayServer: Object {
     }()
 
     public func clipboardHas() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clipboard_has,
@@ -2078,7 +2078,7 @@ open class DisplayServer: Object {
     }()
 
     public func clipboardHasImage() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clipboard_has_image,
@@ -2119,7 +2119,7 @@ open class DisplayServer: Object {
     }()
 
     public func clipboardGetPrimary() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clipboard_get_primary,
@@ -2138,7 +2138,7 @@ open class DisplayServer: Object {
     }()
 
     public func displayCutouts() -> Godot.GodotArray<Godot.Rect2> {
-        Godot.GodotArray<Godot.Rect2> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Rect2> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_display_cutouts,
@@ -2157,7 +2157,7 @@ open class DisplayServer: Object {
     }()
 
     public func displaySafeArea() -> Godot.Rect2I {
-        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_display_safe_area,
@@ -2176,7 +2176,7 @@ open class DisplayServer: Object {
     }()
 
     public func screenCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_screen_count,
@@ -2195,7 +2195,7 @@ open class DisplayServer: Object {
     }()
 
     public func primaryScreen() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_primary_screen,
@@ -2214,7 +2214,7 @@ open class DisplayServer: Object {
     }()
 
     public func keyboardFocusScreen() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_keyboard_focus_screen,
@@ -2235,7 +2235,7 @@ open class DisplayServer: Object {
     public func screenFromRect(
         _ rect: Godot.Rect2
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2258,7 +2258,7 @@ open class DisplayServer: Object {
     public func screenGetPosition(
         screen: Int32 = -1
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2281,7 +2281,7 @@ open class DisplayServer: Object {
     public func screenGetSize(
         screen: Int32 = -1
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2304,7 +2304,7 @@ open class DisplayServer: Object {
     public func screenGetUsableRect(
         screen: Int32 = -1
     ) -> Godot.Rect2I {
-        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2327,7 +2327,7 @@ open class DisplayServer: Object {
     public func screenGetDpi(
         screen: Int32 = -1
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2350,7 +2350,7 @@ open class DisplayServer: Object {
     public func screenGetScale(
         screen: Int32 = -1
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2371,7 +2371,7 @@ open class DisplayServer: Object {
     }()
 
     public func isTouchscreenAvailable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_touchscreen_available,
@@ -2390,7 +2390,7 @@ open class DisplayServer: Object {
     }()
 
     public func screenGetMaxScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_screen_get_max_scale,
@@ -2411,7 +2411,7 @@ open class DisplayServer: Object {
     public func screenGetRefreshRate(
         screen: Int32 = -1
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2434,7 +2434,7 @@ open class DisplayServer: Object {
     public func screenGetPixel(
         position: Godot.Vector2I
     ) -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2457,7 +2457,7 @@ open class DisplayServer: Object {
     public func screenGetImage(
         screen: Int32 = -1
     ) -> Godot.Image? {
-        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2504,7 +2504,7 @@ open class DisplayServer: Object {
     public func screenGetOrientation(
         screen: Int32 = -1
     ) -> Godot.DisplayServer.ScreenOrientation {
-        Godot.DisplayServer.ScreenOrientation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DisplayServer.ScreenOrientation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         screen.withGodotUnsafeRawPointer { __ptr_screen in
         withUnsafeArgumentPackPointer(__ptr_screen) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2547,7 +2547,7 @@ open class DisplayServer: Object {
     }()
 
     public func screenIsKeptOn() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_screen_is_kept_on,
@@ -2566,7 +2566,7 @@ open class DisplayServer: Object {
     }()
 
     public func windowList() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_window_list,
@@ -2587,7 +2587,7 @@ open class DisplayServer: Object {
     public func windowAtScreenPosition(
         _ position: Godot.Vector2I
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         position.withGodotUnsafeRawPointer { __ptr_position in
         withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2611,7 +2611,7 @@ open class DisplayServer: Object {
         handleType: Godot.DisplayServer.HandleType,
         windowID: Int32 = 0
     ) -> Int64 {
-        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         handleType.withGodotUnsafeRawPointer { __ptr_handleType in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_handleType, __ptr_windowID) { __accessPtr in
@@ -2633,7 +2633,7 @@ open class DisplayServer: Object {
     }()
 
     public func windowGetActivePopup() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_get_active_popup,
@@ -2678,7 +2678,7 @@ open class DisplayServer: Object {
     public func windowGetPopupSafeRect(
         window: Int32
     ) -> Godot.Rect2I {
-        Godot.Rect2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         window.withGodotUnsafeRawPointer { __ptr_window in
         withUnsafeArgumentPackPointer(__ptr_window) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2726,7 +2726,7 @@ open class DisplayServer: Object {
         title: Godot.GodotString,
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowID) { __accessPtr in
@@ -2774,7 +2774,7 @@ open class DisplayServer: Object {
     public func windowGetCurrentScreen(
         windowID: Int32 = 0
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2821,7 +2821,7 @@ open class DisplayServer: Object {
     public func windowGetPosition(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2844,7 +2844,7 @@ open class DisplayServer: Object {
     public func windowGetPositionWithDecorations(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2891,7 +2891,7 @@ open class DisplayServer: Object {
     public func windowGetSize(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3058,7 +3058,7 @@ open class DisplayServer: Object {
     public func windowGetAttachedInstanceID(
         windowID: Int32 = 0
     ) -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3081,7 +3081,7 @@ open class DisplayServer: Object {
     public func windowGetMaxSize(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3128,7 +3128,7 @@ open class DisplayServer: Object {
     public func windowGetMinSize(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3175,7 +3175,7 @@ open class DisplayServer: Object {
     public func windowGetSizeWithDecorations(
         windowID: Int32 = 0
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3198,7 +3198,7 @@ open class DisplayServer: Object {
     public func windowGetMode(
         windowID: Int32 = 0
     ) -> Godot.DisplayServer.WindowMode {
-        Godot.DisplayServer.WindowMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DisplayServer.WindowMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3272,7 +3272,7 @@ open class DisplayServer: Object {
         _ flag: Godot.DisplayServer.WindowFlags,
         windowID: Int32 = 0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_flag, __ptr_windowID) { __accessPtr in
@@ -3320,7 +3320,7 @@ open class DisplayServer: Object {
     public func windowGetSafeTitleMargins(
         windowID: Int32 = 0
     ) -> Godot.Vector3I {
-        Godot.Vector3I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3387,7 +3387,7 @@ open class DisplayServer: Object {
     public func windowIsFocused(
         windowID: Int32 = 0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3410,7 +3410,7 @@ open class DisplayServer: Object {
     public func windowCanDraw(
         windowID: Int32 = 0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3553,7 +3553,7 @@ open class DisplayServer: Object {
     public func windowGetVsyncMode(
         windowID: Int32 = 0
     ) -> Godot.DisplayServer.VSyncMode {
-        Godot.DisplayServer.VSyncMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DisplayServer.VSyncMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3576,7 +3576,7 @@ open class DisplayServer: Object {
     public func windowIsMaximizeAllowed(
         windowID: Int32 = 0
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         windowID.withGodotUnsafeRawPointer { __ptr_windowID in
         withUnsafeArgumentPackPointer(__ptr_windowID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3597,7 +3597,7 @@ open class DisplayServer: Object {
     }()
 
     public func windowMaximizeOnTitleDblClick() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_maximize_on_title_dbl_click,
@@ -3616,7 +3616,7 @@ open class DisplayServer: Object {
     }()
 
     public func windowMinimizeOnTitleDblClick() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_window_minimize_on_title_dbl_click,
@@ -3635,7 +3635,7 @@ open class DisplayServer: Object {
     }()
 
     public func imeGetSelection() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_ime_get_selection,
@@ -3654,7 +3654,7 @@ open class DisplayServer: Object {
     }()
 
     public func imeGetText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_ime_get_text,
@@ -3723,7 +3723,7 @@ open class DisplayServer: Object {
     }()
 
     public func virtualKeyboardGetHeight() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_virtual_keyboard_get_height,
@@ -3764,7 +3764,7 @@ open class DisplayServer: Object {
     }()
 
     public func cursorGetShape() -> Godot.DisplayServer.CursorShape {
-        Godot.DisplayServer.CursorShape.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.DisplayServer.CursorShape.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_cursor_get_shape,
@@ -3810,7 +3810,7 @@ open class DisplayServer: Object {
     }()
 
     public func swapCancelOk() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_swap_cancel_ok,
@@ -3856,7 +3856,7 @@ open class DisplayServer: Object {
         buttons: Godot.PackedStringArray,
         callback: Godot.Callable
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         description.withGodotUnsafeRawPointer { __ptr_description in
         buttons.withGodotUnsafeRawPointer { __ptr_buttons in
@@ -3885,7 +3885,7 @@ open class DisplayServer: Object {
         existingText: Godot.GodotString,
         callback: Godot.Callable
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         description.withGodotUnsafeRawPointer { __ptr_description in
         existingText.withGodotUnsafeRawPointer { __ptr_existingText in
@@ -3917,7 +3917,7 @@ open class DisplayServer: Object {
         filters: Godot.PackedStringArray,
         callback: Godot.Callable
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         title.withGodotUnsafeRawPointer { __ptr_title in
         currentDirectory.withGodotUnsafeRawPointer { __ptr_currentDirectory in
         filename.withGodotUnsafeRawPointer { __ptr_filename in
@@ -3944,7 +3944,7 @@ open class DisplayServer: Object {
     }()
 
     public func keyboardGetLayoutCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_keyboard_get_layout_count,
@@ -3963,7 +3963,7 @@ open class DisplayServer: Object {
     }()
 
     public func keyboardGetCurrentLayout() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_keyboard_get_current_layout,
@@ -4006,7 +4006,7 @@ open class DisplayServer: Object {
     public func keyboardGetLayoutLanguage(
         index: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4029,7 +4029,7 @@ open class DisplayServer: Object {
     public func keyboardGetLayoutName(
         index: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         index.withGodotUnsafeRawPointer { __ptr_index in
         withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4052,7 +4052,7 @@ open class DisplayServer: Object {
     public func keyboardGetKeycodeFromPhysical(
         keycode: Godot.Key
     ) -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4075,7 +4075,7 @@ open class DisplayServer: Object {
     public func keyboardGetLabelFromPhysical(
         keycode: Godot.Key
     ) -> Godot.Key {
-        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Key.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4177,7 +4177,7 @@ open class DisplayServer: Object {
     }()
 
     public func tabletGetDriverCount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tablet_get_driver_count,
@@ -4198,7 +4198,7 @@ open class DisplayServer: Object {
     public func tabletGetDriverName(
         idx: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -4219,7 +4219,7 @@ open class DisplayServer: Object {
     }()
 
     public func tabletGetCurrentDriver() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_tablet_get_current_driver,

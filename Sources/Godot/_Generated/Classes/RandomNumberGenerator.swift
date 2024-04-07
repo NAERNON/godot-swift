@@ -37,7 +37,7 @@ open class RandomNumberGenerator: RefCounted {
     }()
 
     private func __getSeed() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_seed,
@@ -78,7 +78,7 @@ open class RandomNumberGenerator: RefCounted {
     }()
 
     private func __getState() -> UInt64 {
-        UInt64.fromMutatingGodotUnsafePointer { __temporary in
+        UInt64.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_state,
@@ -97,7 +97,7 @@ open class RandomNumberGenerator: RefCounted {
     }()
 
     public func randi() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_randi,
@@ -116,7 +116,7 @@ open class RandomNumberGenerator: RefCounted {
     }()
 
     public func randf() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_randf,
@@ -138,7 +138,7 @@ open class RandomNumberGenerator: RefCounted {
         mean: Double = 0.0,
         deviation: Double = 1.0
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         mean.withGodotUnsafeRawPointer { __ptr_mean in
         deviation.withGodotUnsafeRawPointer { __ptr_deviation in
         withUnsafeArgumentPackPointer(__ptr_mean, __ptr_deviation) { __accessPtr in
@@ -163,7 +163,7 @@ open class RandomNumberGenerator: RefCounted {
         from: Double,
         to: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
@@ -188,7 +188,7 @@ open class RandomNumberGenerator: RefCounted {
         from: Int32,
         to: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in

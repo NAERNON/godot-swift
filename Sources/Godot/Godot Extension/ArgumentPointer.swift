@@ -22,7 +22,7 @@ func withUnsafeArgumentPackPointer(
 
 /// Calls the given closure with the number of arguments and a pointer
 /// to the contiguous given pointers and variants.
-func withUnsafeArgumentPackPointer<each VariantRest : VariantStorableIn>(
+func withUnsafeArgumentPackPointer<each VariantRest : Variant.Storable>(
     _ pointers: GDExtensionConstTypePtr?...,
     varargs: repeat each VariantRest,
     body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
@@ -85,7 +85,7 @@ private func withUnsafeVarargArgumentPointers(
         return
     }
     
-    first.withGodotUnsafeMutableRawPointer { ptr in
+    first.storage.withUnsafeMutableRawPointer { ptr in
         withUnsafeVarargArgumentPointers(to: arguments.dropFirst()) { pointers in
             body([ptr] + pointers)
         }

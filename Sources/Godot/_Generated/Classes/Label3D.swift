@@ -69,7 +69,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
-        Godot.HorizontalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.HorizontalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_horizontal_alignment,
@@ -110,7 +110,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
-        Godot.VerticalAlignment.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VerticalAlignment.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_vertical_alignment,
@@ -151,7 +151,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getModulate() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modulate,
@@ -192,7 +192,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getOutlineModulate() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outline_modulate,
@@ -233,7 +233,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getText() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text,
@@ -274,7 +274,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getTextDirection() -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_text_direction,
@@ -315,7 +315,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_language,
@@ -356,7 +356,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
-        Godot.TextServer.StructuredTextParser.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.StructuredTextParser.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override,
@@ -374,7 +374,7 @@ open class Label3D: GeometryInstance3D {
         }
     }()
 
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(
+    private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
         args.withGodotUnsafeRawPointer { __ptr_args in
@@ -397,7 +397,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_structured_text_bidi_override_options,
@@ -438,7 +438,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __isUppercase() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_uppercase,
@@ -479,7 +479,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getRenderPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_priority,
@@ -520,7 +520,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getOutlineRenderPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outline_render_priority,
@@ -562,7 +562,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getFont() -> Godot.Font? {
-        Godot.Font?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font,
@@ -603,7 +603,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getFontSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_font_size,
@@ -644,7 +644,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getOutlineSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outline_size,
@@ -685,7 +685,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getLineSpacing() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_line_spacing,
@@ -726,7 +726,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
-        Godot.TextServer.AutowrapMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.AutowrapMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autowrap_mode,
@@ -767,7 +767,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
-        Godot.TextServer.JustificationFlag.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TextServer.JustificationFlag.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_justification_flags,
@@ -808,7 +808,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getWidth() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -849,7 +849,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getPixelSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pixel_size,
@@ -890,7 +890,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -935,7 +935,7 @@ open class Label3D: GeometryInstance3D {
     private func __getDrawFlag(
         _ flag: Godot.Label3D.DrawFlags
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -978,7 +978,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
-        Godot.BaseMaterial3D.BillboardMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.BillboardMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_billboard_mode,
@@ -1019,7 +1019,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAlphaCutMode() -> Godot.Label3D.AlphaCutMode {
-        Godot.Label3D.AlphaCutMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Label3D.AlphaCutMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_cut_mode,
@@ -1060,7 +1060,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAlphaScissorThreshold() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_scissor_threshold,
@@ -1101,7 +1101,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAlphaHashScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_hash_scale,
@@ -1142,7 +1142,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
-        Godot.BaseMaterial3D.AlphaAntiAliasing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.AlphaAntiAliasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_antialiasing,
@@ -1183,7 +1183,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getAlphaAntialiasingEdge() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_antialiasing_edge,
@@ -1224,7 +1224,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
-        Godot.BaseMaterial3D.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.TextureFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_filter,
@@ -1243,7 +1243,7 @@ open class Label3D: GeometryInstance3D {
     }()
 
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
-        Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TriangleMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_generate_triangle_mesh,

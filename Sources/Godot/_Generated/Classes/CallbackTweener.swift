@@ -17,7 +17,7 @@ open class CallbackTweener: Tweener {
     public func setDelay(
         _ delay: Double
     ) -> Godot.CallbackTweener? {
-        Godot.CallbackTweener?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CallbackTweener?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

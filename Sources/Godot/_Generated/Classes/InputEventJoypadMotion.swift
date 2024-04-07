@@ -37,7 +37,7 @@ open class InputEventJoypadMotion: InputEvent {
     }()
 
     private func __getAxis() -> Godot.JoyAxis {
-        Godot.JoyAxis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.JoyAxis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_axis,
@@ -78,7 +78,7 @@ open class InputEventJoypadMotion: InputEvent {
     }()
 
     private func __getAxisValue() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_axis_value,

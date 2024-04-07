@@ -106,7 +106,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     public func isBodyExcludedFromQuery(
         body: Godot.RID
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -130,110 +130,110 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectRay(
-            from: Godot.Vector3.fromGodotUnsafePointer(args[0]!),
-            to: Godot.Vector3.fromGodotUnsafePointer(args[1]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[2]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[3]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[4]!),
-            hitFromInside: Bool.fromGodotUnsafePointer(args[5]!),
-            hitBackFaces: Bool.fromGodotUnsafePointer(args[6]!),
-            pickRay: Bool.fromGodotUnsafePointer(args[7]!),
-            result: UnsafeMutablePointer<PhysicsServer3DExtensionRayResult> .fromGodotUnsafePointer(args[8]!)
+            from: Godot.Vector3.transferFromGodot(unsafePointer: args[0]!),
+            to: Godot.Vector3.transferFromGodot(unsafePointer: args[1]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[2]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[3]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[4]!),
+            hitFromInside: Bool.transferFromGodot(unsafePointer: args[5]!),
+            hitBackFaces: Bool.transferFromGodot(unsafePointer: args[6]!),
+            pickRay: Bool.transferFromGodot(unsafePointer: args[7]!),
+            result: UnsafeMutablePointer<PhysicsServer3DExtensionRayResult> .transferFromGodot(unsafePointer: args[8]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _intersect_point_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectPoint(
-            position: Godot.Vector3.fromGodotUnsafePointer(args[0]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[1]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[2]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[3]!),
-            results: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult> .fromGodotUnsafePointer(args[4]!),
-            maxResults: Int32.fromGodotUnsafePointer(args[5]!)
+            position: Godot.Vector3.transferFromGodot(unsafePointer: args[0]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[1]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[2]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[3]!),
+            results: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult> .transferFromGodot(unsafePointer: args[4]!),
+            maxResults: Int32.transferFromGodot(unsafePointer: args[5]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _intersect_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectShape(
-            shapeRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!),
-            motion: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
-            margin: Double.fromGodotUnsafePointer(args[3]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[4]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[5]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[6]!),
-            resultCount: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult> .fromGodotUnsafePointer(args[7]!),
-            maxResults: Int32.fromGodotUnsafePointer(args[8]!)
+            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
+            motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
+            margin: Double.transferFromGodot(unsafePointer: args[3]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[4]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[5]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[6]!),
+            resultCount: UnsafeMutablePointer<PhysicsServer3DExtensionShapeResult> .transferFromGodot(unsafePointer: args[7]!),
+            maxResults: Int32.transferFromGodot(unsafePointer: args[8]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _cast_motion_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._castMotion(
-            shapeRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!),
-            motion: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
-            margin: Double.fromGodotUnsafePointer(args[3]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[4]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[5]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[6]!),
-            closestSafe: UnsafeMutablePointer<Double> .fromGodotUnsafePointer(args[7]!),
-            closestUnsafe: UnsafeMutablePointer<Double> .fromGodotUnsafePointer(args[8]!),
-            info: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo> .fromGodotUnsafePointer(args[9]!)
+            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
+            motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
+            margin: Double.transferFromGodot(unsafePointer: args[3]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[4]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[5]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[6]!),
+            closestSafe: UnsafeMutablePointer<Double> .transferFromGodot(unsafePointer: args[7]!),
+            closestUnsafe: UnsafeMutablePointer<Double> .transferFromGodot(unsafePointer: args[8]!),
+            info: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo> .transferFromGodot(unsafePointer: args[9]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _collide_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._collideShape(
-            shapeRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!),
-            motion: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
-            margin: Double.fromGodotUnsafePointer(args[3]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[4]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[5]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[6]!),
-            results: UnsafeMutableRawPointer.fromGodotUnsafePointer(args[7]!),
-            maxResults: Int32.fromGodotUnsafePointer(args[8]!),
-            resultCount: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[9]!)
+            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
+            motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
+            margin: Double.transferFromGodot(unsafePointer: args[3]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[4]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[5]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[6]!),
+            results: UnsafeMutableRawPointer.transferFromGodot(unsafePointer: args[7]!),
+            maxResults: Int32.transferFromGodot(unsafePointer: args[8]!),
+            resultCount: UnsafeMutablePointer<Int32> .transferFromGodot(unsafePointer: args[9]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _rest_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._restInfo(
-            shapeRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!),
-            motion: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
-            margin: Double.fromGodotUnsafePointer(args[3]!),
-            collisionMask: UInt32.fromGodotUnsafePointer(args[4]!),
-            collideWithBodies: Bool.fromGodotUnsafePointer(args[5]!),
-            collideWithAreas: Bool.fromGodotUnsafePointer(args[6]!),
-            restInfo: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo> .fromGodotUnsafePointer(args[7]!)
+            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
+            motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
+            margin: Double.transferFromGodot(unsafePointer: args[3]!),
+            collisionMask: UInt32.transferFromGodot(unsafePointer: args[4]!),
+            collideWithBodies: Bool.transferFromGodot(unsafePointer: args[5]!),
+            collideWithAreas: Bool.transferFromGodot(unsafePointer: args[6]!),
+            restInfo: UnsafeMutablePointer<PhysicsServer3DExtensionShapeRestInfo> .transferFromGodot(unsafePointer: args[7]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_closest_point_to_object_volume_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getClosestPointToObjectVolume(
-            object: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            point: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
+            object: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            point: Godot.Vector3.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_intersectRay" : ("_intersect_ray", _intersect_ray_call),
             "_intersectPoint" : ("_intersect_point", _intersect_point_call),

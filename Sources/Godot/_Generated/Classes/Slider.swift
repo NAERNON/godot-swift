@@ -22,7 +22,7 @@ open class Slider: Range {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -51,7 +51,7 @@ open class Slider: Range {
     public lazy var dragEndedSignal: Godot.SignalEmitter<DragEndedSignalInput> = {
         .init(object: self, signalName: "drag_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(valueChanged: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(valueChanged: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -59,7 +59,7 @@ open class Slider: Range {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -94,7 +94,7 @@ open class Slider: Range {
     }()
 
     private func __getTicks() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ticks,
@@ -113,7 +113,7 @@ open class Slider: Range {
     }()
 
     private func __getTicksOnBorders() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ticks_on_borders,
@@ -176,7 +176,7 @@ open class Slider: Range {
     }()
 
     private func __isEditable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_editable,
@@ -217,7 +217,7 @@ open class Slider: Range {
     }()
 
     private func __isScrollable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_scrollable,

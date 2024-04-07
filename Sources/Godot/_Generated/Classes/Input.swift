@@ -95,8 +95,8 @@ open class Input: Object {
     public lazy var joyConnectionChangedSignal: Godot.SignalEmitter<JoyConnectionChangedSignalInput> = {
         .init(object: self, signalName: "joy_connection_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(device: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    connected: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+                .call(with: .init(device: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    connected: Bool.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -104,7 +104,7 @@ open class Input: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -117,7 +117,7 @@ open class Input: Object {
     }()
 
     public func isAnythingPressed() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_anything_pressed,
@@ -138,7 +138,7 @@ open class Input: Object {
     public func isKeyPressed(
         keycode: Godot.Key
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -161,7 +161,7 @@ open class Input: Object {
     public func isPhysicalKeyPressed(
         keycode: Godot.Key
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -184,7 +184,7 @@ open class Input: Object {
     public func isKeyLabelPressed(
         keycode: Godot.Key
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         keycode.withGodotUnsafeRawPointer { __ptr_keycode in
         withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -207,7 +207,7 @@ open class Input: Object {
     public func isMouseButtonPressed(
         button: Godot.MouseButton
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         button.withGodotUnsafeRawPointer { __ptr_button in
         withUnsafeArgumentPackPointer(__ptr_button) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -231,7 +231,7 @@ open class Input: Object {
         device: Int32,
         button: Godot.JoyButton
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         button.withGodotUnsafeRawPointer { __ptr_button in
         withUnsafeArgumentPackPointer(__ptr_device, __ptr_button) { __accessPtr in
@@ -256,7 +256,7 @@ open class Input: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -281,7 +281,7 @@ open class Input: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -306,7 +306,7 @@ open class Input: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -331,7 +331,7 @@ open class Input: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -356,7 +356,7 @@ open class Input: Object {
         action: Godot.GodotStringName,
         exactMatch: Bool = false
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         exactMatch.withGodotUnsafeRawPointer { __ptr_exactMatch in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_exactMatch) { __accessPtr in
@@ -381,7 +381,7 @@ open class Input: Object {
         negativeAction: Godot.GodotStringName,
         positiveAction: Godot.GodotStringName
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         negativeAction.withGodotUnsafeRawPointer { __ptr_negativeAction in
         positiveAction.withGodotUnsafeRawPointer { __ptr_positiveAction in
         withUnsafeArgumentPackPointer(__ptr_negativeAction, __ptr_positiveAction) { __accessPtr in
@@ -409,7 +409,7 @@ open class Input: Object {
         positiveY: Godot.GodotStringName,
         deadzone: Double = -1.0
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         negativeX.withGodotUnsafeRawPointer { __ptr_negativeX in
         positiveX.withGodotUnsafeRawPointer { __ptr_positiveX in
         negativeY.withGodotUnsafeRawPointer { __ptr_negativeY in
@@ -482,7 +482,7 @@ open class Input: Object {
     public func isJoyKnown(
         device: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -506,7 +506,7 @@ open class Input: Object {
         device: Int32,
         axis: Godot.JoyAxis
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
         withUnsafeArgumentPackPointer(__ptr_device, __ptr_axis) { __accessPtr in
@@ -530,7 +530,7 @@ open class Input: Object {
     public func joyName(
         device: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -553,7 +553,7 @@ open class Input: Object {
     public func joyGuid(
         device: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -576,7 +576,7 @@ open class Input: Object {
     public func joyInfo(
         device: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -600,7 +600,7 @@ open class Input: Object {
         vendorID: Int32,
         productID: Int32
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         vendorID.withGodotUnsafeRawPointer { __ptr_vendorID in
         productID.withGodotUnsafeRawPointer { __ptr_productID in
         withUnsafeArgumentPackPointer(__ptr_vendorID, __ptr_productID) { __accessPtr in
@@ -622,7 +622,7 @@ open class Input: Object {
     }()
 
     public func connectedJoypads() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_joypads,
@@ -643,7 +643,7 @@ open class Input: Object {
     public func joyVibrationStrength(
         device: Int32
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -666,7 +666,7 @@ open class Input: Object {
     public func joyVibrationDuration(
         device: Int32
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         device.withGodotUnsafeRawPointer { __ptr_device in
         withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -759,7 +759,7 @@ open class Input: Object {
     }()
 
     public func gravity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity,
@@ -778,7 +778,7 @@ open class Input: Object {
     }()
 
     public func accelerometer() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_accelerometer,
@@ -797,7 +797,7 @@ open class Input: Object {
     }()
 
     public func magnetometer() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_magnetometer,
@@ -816,7 +816,7 @@ open class Input: Object {
     }()
 
     public func gyroscope() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gyroscope,
@@ -923,7 +923,7 @@ open class Input: Object {
     }()
 
     public func lastMouseVelocity() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_last_mouse_velocity,
@@ -942,7 +942,7 @@ open class Input: Object {
     }()
 
     public func mouseButtonMask() -> Godot.MouseButtonMask {
-        Godot.MouseButtonMask.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MouseButtonMask.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mouse_button_mask,
@@ -983,7 +983,7 @@ open class Input: Object {
     }()
 
     private func __getMouseMode() -> Godot.Input.MouseMode {
-        Godot.Input.MouseMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Input.MouseMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mouse_mode,
@@ -1092,7 +1092,7 @@ open class Input: Object {
     }()
 
     public func currentCursorShape() -> Godot.Input.CursorShape {
-        Godot.Input.CursorShape.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Input.CursorShape.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_cursor_shape,
@@ -1183,7 +1183,7 @@ open class Input: Object {
     }()
 
     private func __isUsingAccumulatedInput() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_accumulated_input,

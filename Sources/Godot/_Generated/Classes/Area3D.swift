@@ -66,10 +66,10 @@ open class Area3D: CollisionObject3D {
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    body: Godot.Node3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    body: Godot.Node3D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -77,7 +77,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -124,10 +124,10 @@ open class Area3D: CollisionObject3D {
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    body: Godot.Node3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    bodyShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    body: Godot.Node3D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -135,7 +135,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -164,7 +164,7 @@ open class Area3D: CollisionObject3D {
     public lazy var bodyEnteredSignal: Godot.SignalEmitter<BodyEnteredSignalInput> = {
         .init(object: self, signalName: "body_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body: Godot.Node3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(body: Godot.Node3D?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -172,7 +172,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -201,7 +201,7 @@ open class Area3D: CollisionObject3D {
     public lazy var bodyExitedSignal: Godot.SignalEmitter<BodyExitedSignalInput> = {
         .init(object: self, signalName: "body_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(body: Godot.Node3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(body: Godot.Node3D?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -209,7 +209,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -256,10 +256,10 @@ open class Area3D: CollisionObject3D {
     public lazy var areaShapeEnteredSignal: Godot.SignalEmitter<AreaShapeEnteredSignalInput> = {
         .init(object: self, signalName: "area_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(areaRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    area: Godot.Area3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    areaShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(areaRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    area: Godot.Area3D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    areaShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -267,7 +267,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -314,10 +314,10 @@ open class Area3D: CollisionObject3D {
     public lazy var areaShapeExitedSignal: Godot.SignalEmitter<AreaShapeExitedSignalInput> = {
         .init(object: self, signalName: "area_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(areaRid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
-                    area: Godot.Area3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
-                    areaShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
-                    localShapeIndex: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+                .call(with: .init(areaRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                    area: Godot.Area3D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
+                    areaShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -325,7 +325,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -354,7 +354,7 @@ open class Area3D: CollisionObject3D {
     public lazy var areaEnteredSignal: Godot.SignalEmitter<AreaEnteredSignalInput> = {
         .init(object: self, signalName: "area_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(area: Godot.Area3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(area: Godot.Area3D?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -362,7 +362,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -391,7 +391,7 @@ open class Area3D: CollisionObject3D {
     public lazy var areaExitedSignal: Godot.SignalEmitter<AreaExitedSignalInput> = {
         .init(object: self, signalName: "area_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(area: Godot.Area3D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(area: Godot.Area3D?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -399,7 +399,7 @@ open class Area3D: CollisionObject3D {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -434,7 +434,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getGravitySpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
-        Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Area3D.SpaceOverride.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity_space_override_mode,
@@ -475,7 +475,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __isGravityAPoint() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_gravity_a_point,
@@ -516,7 +516,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getGravityPointUnitDistance() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity_point_unit_distance,
@@ -557,7 +557,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getGravityPointCenter() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity_point_center,
@@ -598,7 +598,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getGravityDirection() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity_direction,
@@ -639,7 +639,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getGravity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gravity,
@@ -680,7 +680,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getLinearDampSpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
-        Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Area3D.SpaceOverride.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_damp_space_override_mode,
@@ -721,7 +721,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getAngularDampSpaceOverrideMode() -> Godot.Area3D.SpaceOverride {
-        Godot.Area3D.SpaceOverride.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Area3D.SpaceOverride.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_damp_space_override_mode,
@@ -762,7 +762,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getAngularDamp() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_damp,
@@ -803,7 +803,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getLinearDamp() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_damp,
@@ -844,7 +844,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_priority,
@@ -885,7 +885,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getWindForceMagnitude() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_wind_force_magnitude,
@@ -926,7 +926,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getWindAttenuationFactor() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_wind_attenuation_factor,
@@ -967,7 +967,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getWindSourcePath() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_wind_source_path,
@@ -1008,7 +1008,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __isMonitorable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_monitorable,
@@ -1049,7 +1049,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __isMonitoring() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_monitoring,
@@ -1068,7 +1068,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     public func overlappingBodies() -> Godot.GodotArray<Godot.Node3D?> {
-        Godot.GodotArray<Godot.Node3D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node3D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_overlapping_bodies,
@@ -1087,7 +1087,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     public func overlappingAreas() -> Godot.GodotArray<Godot.Area3D?> {
-        Godot.GodotArray<Godot.Area3D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Area3D?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_overlapping_areas,
@@ -1106,7 +1106,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     public func hasOverlappingBodies() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_overlapping_bodies,
@@ -1125,7 +1125,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     public func hasOverlappingAreas() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_overlapping_areas,
@@ -1146,7 +1146,7 @@ open class Area3D: CollisionObject3D {
     public func overlapsBody(
         _ body: Godot.Node?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         body.withGodotUnsafeRawPointer { __ptr_body in
         withUnsafePointer(to: __ptr_body) { _ptr___ptr_body in
         withUnsafeArgumentPackPointer(_ptr___ptr_body) { __accessPtr in
@@ -1170,7 +1170,7 @@ open class Area3D: CollisionObject3D {
     public func overlapsArea(
         _ area: Godot.Node?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         area.withGodotUnsafeRawPointer { __ptr_area in
         withUnsafePointer(to: __ptr_area) { _ptr___ptr_area in
         withUnsafeArgumentPackPointer(_ptr___ptr_area) { __accessPtr in
@@ -1214,7 +1214,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __isOverridingAudioBus() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_overriding_audio_bus,
@@ -1255,7 +1255,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getAudioBusName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_audio_bus_name,
@@ -1296,7 +1296,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __isUsingReverbBus() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_reverb_bus,
@@ -1337,7 +1337,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getReverbBusName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_reverb_bus_name,
@@ -1378,7 +1378,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getReverbAmount() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_reverb_amount,
@@ -1419,7 +1419,7 @@ open class Area3D: CollisionObject3D {
     }()
 
     private func __getReverbUniformity() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_reverb_uniformity,

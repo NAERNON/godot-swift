@@ -102,7 +102,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -121,7 +121,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -140,7 +140,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -159,7 +159,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -178,7 +178,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -207,7 +207,7 @@ open class Node: Object {
     public lazy var childEnteredTreeSignal: Godot.SignalEmitter<ChildEnteredTreeSignalInput> = {
         .init(object: self, signalName: "child_entered_tree") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -215,7 +215,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -244,7 +244,7 @@ open class Node: Object {
     public lazy var childExitingTreeSignal: Godot.SignalEmitter<ChildExitingTreeSignalInput> = {
         .init(object: self, signalName: "child_exiting_tree") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -252,7 +252,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -271,7 +271,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -300,7 +300,7 @@ open class Node: Object {
     public lazy var replacingBySignal: Godot.SignalEmitter<ReplacingBySignalInput> = {
         .init(object: self, signalName: "replacing_by") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+                .call(with: .init(node: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -308,7 +308,7 @@ open class Node: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -512,7 +512,7 @@ open class Node: Object {
     }()
 
     private func __getName() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_name,
@@ -608,7 +608,7 @@ open class Node: Object {
     public func childCount(
         includeInternal: Bool = false
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_includeInternal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -631,7 +631,7 @@ open class Node: Object {
     public func children(
         includeInternal: Bool = false
     ) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_includeInternal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -655,7 +655,7 @@ open class Node: Object {
         idx: Int32,
         includeInternal: Bool = false
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         idx.withGodotUnsafeRawPointer { __ptr_idx in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_idx, __ptr_includeInternal) { __accessPtr in
@@ -679,7 +679,7 @@ open class Node: Object {
     public func hasNode(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -702,7 +702,7 @@ open class Node: Object {
     public func node(
         path: Godot.NodePath
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -725,7 +725,7 @@ open class Node: Object {
     public func nodeOrNull(
         path: Godot.NodePath
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -746,7 +746,7 @@ open class Node: Object {
     }()
 
     public func parent() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parent,
@@ -769,7 +769,7 @@ open class Node: Object {
         recursive: Bool = true,
         owned: Bool = true
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         recursive.withGodotUnsafeRawPointer { __ptr_recursive in
         owned.withGodotUnsafeRawPointer { __ptr_owned in
@@ -797,7 +797,7 @@ open class Node: Object {
         recursive: Bool = true,
         owned: Bool = true
     ) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         type.withGodotUnsafeRawPointer { __ptr_type in
         recursive.withGodotUnsafeRawPointer { __ptr_recursive in
@@ -823,7 +823,7 @@ open class Node: Object {
     public func findParent(
         pattern: Godot.GodotString
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -846,7 +846,7 @@ open class Node: Object {
     public func hasNodeAndResource(
         path: Godot.NodePath
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -869,7 +869,7 @@ open class Node: Object {
     public func nodeAndResource(
         path: Godot.NodePath
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -890,7 +890,7 @@ open class Node: Object {
     }()
 
     public func isInsideTree() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_inside_tree,
@@ -911,7 +911,7 @@ open class Node: Object {
     public func isAncestor(
         of node: Godot.Node?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -935,7 +935,7 @@ open class Node: Object {
     public func isGreaterThan(
         _ node: Godot.Node?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -957,7 +957,7 @@ open class Node: Object {
     }()
 
     public func path() -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_path,
@@ -979,7 +979,7 @@ open class Node: Object {
         to node: Godot.Node?,
         useUniquePath: Bool = false
     ) -> Godot.NodePath {
-        Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         useUniquePath.withGodotUnsafeRawPointer { __ptr_useUniquePath in
@@ -1050,7 +1050,7 @@ open class Node: Object {
     public func isInGroup(
         _ group: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         group.withGodotUnsafeRawPointer { __ptr_group in
         withUnsafeArgumentPackPointer(__ptr_group) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1096,7 +1096,7 @@ open class Node: Object {
     }()
 
     public func groups() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_groups,
@@ -1138,7 +1138,7 @@ open class Node: Object {
     }()
 
     private func __getOwner() -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_owner,
@@ -1159,7 +1159,7 @@ open class Node: Object {
     public func index(
         includeInternal: Bool = false
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_includeInternal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1216,7 +1216,7 @@ open class Node: Object {
     }()
 
     public func treeString() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tree_string,
@@ -1235,7 +1235,7 @@ open class Node: Object {
     }()
 
     public func treeStringPretty() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tree_string_pretty,
@@ -1276,7 +1276,7 @@ open class Node: Object {
     }()
 
     private func __getSceneFilePath() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scene_file_path,
@@ -1316,7 +1316,7 @@ open class Node: Object {
         }
     }()
 
-    public func propagateCall<Value: VariantStorable>(
+    public func propagateCall<Value: Variant.Storable>(
         method: Godot.GodotStringName,
         args: Godot.GodotArray<Value> = [],
         parentFirst: Bool = false
@@ -1365,7 +1365,7 @@ open class Node: Object {
     }()
 
     public func physicsProcessDeltaTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_process_delta_time,
@@ -1384,7 +1384,7 @@ open class Node: Object {
     }()
 
     public func isPhysicsProcessing() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_physics_processing,
@@ -1403,7 +1403,7 @@ open class Node: Object {
     }()
 
     public func processDeltaTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_delta_time,
@@ -1466,7 +1466,7 @@ open class Node: Object {
     }()
 
     private func __getProcessPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_priority,
@@ -1507,7 +1507,7 @@ open class Node: Object {
     }()
 
     private func __getPhysicsProcessPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physics_process_priority,
@@ -1526,7 +1526,7 @@ open class Node: Object {
     }()
 
     public func isProcessing() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing,
@@ -1567,7 +1567,7 @@ open class Node: Object {
     }()
 
     public func isProcessingInput() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing_input,
@@ -1608,7 +1608,7 @@ open class Node: Object {
     }()
 
     public func isProcessingShortcutInput() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing_shortcut_input,
@@ -1649,7 +1649,7 @@ open class Node: Object {
     }()
 
     public func isProcessingUnhandledInput() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing_unhandled_input,
@@ -1690,7 +1690,7 @@ open class Node: Object {
     }()
 
     public func isProcessingUnhandledKeyInput() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing_unhandled_key_input,
@@ -1731,7 +1731,7 @@ open class Node: Object {
     }()
 
     private func __getProcessMode() -> Godot.Node.ProcessMode {
-        Godot.Node.ProcessMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node.ProcessMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_mode,
@@ -1750,7 +1750,7 @@ open class Node: Object {
     }()
 
     public func canProcess() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_can_process,
@@ -1791,7 +1791,7 @@ open class Node: Object {
     }()
 
     private func __getProcessThreadGroup() -> Godot.Node.ProcessThreadGroup {
-        Godot.Node.ProcessThreadGroup.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node.ProcessThreadGroup.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_thread_group,
@@ -1832,7 +1832,7 @@ open class Node: Object {
     }()
 
     private func __getProcessThreadMessages() -> Godot.Node.ProcessThreadMessages {
-        Godot.Node.ProcessThreadMessages.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node.ProcessThreadMessages.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_thread_messages,
@@ -1873,7 +1873,7 @@ open class Node: Object {
     }()
 
     private func __getProcessThreadGroupOrder() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_process_thread_group_order,
@@ -1914,7 +1914,7 @@ open class Node: Object {
     }()
 
     public func isDisplayedFolded() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_displayed_folded,
@@ -1955,7 +1955,7 @@ open class Node: Object {
     }()
 
     public func isProcessingInternal() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_processing_internal,
@@ -1996,7 +1996,7 @@ open class Node: Object {
     }()
 
     public func isPhysicsProcessingInternal() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_physics_processing_internal,
@@ -2015,7 +2015,7 @@ open class Node: Object {
     }()
 
     public func window() -> Godot.Window? {
-        Godot.Window?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Window?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_window,
@@ -2034,7 +2034,7 @@ open class Node: Object {
     }()
 
     public func lastExclusiveWindow() -> Godot.Window? {
-        Godot.Window?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Window?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_last_exclusive_window,
@@ -2053,7 +2053,7 @@ open class Node: Object {
     }()
 
     public func tree() -> Godot.SceneTree? {
-        Godot.SceneTree?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SceneTree?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_tree,
@@ -2072,7 +2072,7 @@ open class Node: Object {
     }()
 
     public func createTween() -> Godot.Tween? {
-        Godot.Tween?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Tween?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_tween,
@@ -2093,7 +2093,7 @@ open class Node: Object {
     public func duplicate(
         flags: Int32 = 15
     ) -> Godot.Node? {
-        Godot.Node?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Node?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2161,7 +2161,7 @@ open class Node: Object {
     }()
 
     public func sceneInstanceLoadPlaceholder() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scene_instance_load_placeholder,
@@ -2207,7 +2207,7 @@ open class Node: Object {
     public func isEditableInstance(
         _ node: Godot.Node?
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -2229,7 +2229,7 @@ open class Node: Object {
     }()
 
     public func viewport() -> Godot.Viewport? {
-        Godot.Viewport?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Viewport?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_viewport,
@@ -2284,7 +2284,7 @@ open class Node: Object {
     }()
 
     public func isNodeReady() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_node_ready,
@@ -2327,7 +2327,7 @@ open class Node: Object {
     }()
 
     public func multiplayerAuthority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_multiplayer_authority,
@@ -2346,7 +2346,7 @@ open class Node: Object {
     }()
 
     public func isMultiplayerAuthority() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_multiplayer_authority,
@@ -2365,7 +2365,7 @@ open class Node: Object {
     }()
 
     private func __getMultiplayer() -> Godot.MultiplayerAPI? {
-        Godot.MultiplayerAPI?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MultiplayerAPI?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_multiplayer,
@@ -2383,7 +2383,7 @@ open class Node: Object {
         }
     }()
 
-    public func rpcConfig<Value: VariantStorableIn>(
+    public func rpcConfig<Value: Variant.Storable>(
         method: Godot.GodotStringName,
         config: Value
     ) {
@@ -2430,7 +2430,7 @@ open class Node: Object {
     }()
 
     private func __getEditorDescription() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_description,
@@ -2471,7 +2471,7 @@ open class Node: Object {
     }()
 
     private func __isUniqueNameInOwner() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_unique_name_in_owner,
@@ -2489,11 +2489,11 @@ open class Node: Object {
         }
     }()
 
-    public func rpc<each VariantRest : VariantStorableIn>(
+    public func rpc<each VariantRest : Variant.Storable>(
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2510,7 +2510,7 @@ open class Node: Object {
     public func rpc(
         method: Godot.GodotStringName
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2532,12 +2532,12 @@ open class Node: Object {
         }
     }()
 
-    public func rpcID<each VariantRest : VariantStorableIn>(
+    public func rpcID<each VariantRest : Variant.Storable>(
         peerID: Int,
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: peerID) { __ptr_peerID in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
@@ -2556,7 +2556,7 @@ open class Node: Object {
         peerID: Int,
         method: Godot.GodotStringName
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: peerID) { __ptr_peerID in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method) { __accessPtr in
@@ -2597,11 +2597,11 @@ open class Node: Object {
         }
     }()
 
-    public func callDeferredThreadGroup<each VariantRest : VariantStorableIn>(
+    public func callDeferredThreadGroup<each VariantRest : Variant.Storable>(
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2618,7 +2618,7 @@ open class Node: Object {
     public func callDeferredThreadGroup(
         method: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2640,7 +2640,7 @@ open class Node: Object {
         }
     }()
 
-    public func setDeferredThreadGroup<Value: VariantStorableIn>(
+    public func setDeferredThreadGroup<Value: Variant.Storable>(
         property: Godot.GodotStringName,
         value: Value
     ) {
@@ -2686,11 +2686,11 @@ open class Node: Object {
         }
     }()
 
-    public func callThreadSafe<each VariantRest : VariantStorableIn>(
+    public func callThreadSafe<each VariantRest : Variant.Storable>(
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2707,7 +2707,7 @@ open class Node: Object {
     public func callThreadSafe(
         method: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2729,7 +2729,7 @@ open class Node: Object {
         }
     }()
 
-    public func setThreadSafe<Value: VariantStorableIn>(
+    public func setThreadSafe<Value: Variant.Storable>(
         property: Godot.GodotStringName,
         value: Value
     ) {
@@ -2901,7 +2901,7 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
-            delta: Double.fromGodotUnsafePointer(args[0]!)
+            delta: Double.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _physics_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2909,7 +2909,7 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
-            delta: Double.fromGodotUnsafePointer(args[0]!)
+            delta: Double.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _enter_tree_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -2935,14 +2935,14 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConfigurationWarnings()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._input(
-            event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _shortcut_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2950,7 +2950,7 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shortcutInput(
-            event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _unhandled_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2958,7 +2958,7 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledInput(
-            event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _unhandled_key_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2966,7 +2966,7 @@ open class Node: Object {
             }
             Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledKeyInput(
-            event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
         )}
         _virtualFunctions = [
             "_process" : ("_process", _process_call),

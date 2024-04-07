@@ -38,7 +38,7 @@ open class StyleBox: Resource {
     }()
 
     public func minimumSize() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_minimum_size,
@@ -105,7 +105,7 @@ open class StyleBox: Resource {
     private func __getContentMargin(
         _ margin: Godot.Side
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -128,7 +128,7 @@ open class StyleBox: Resource {
     public func margin(
         _ margin: Godot.Side
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         margin.withGodotUnsafeRawPointer { __ptr_margin in
         withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -149,7 +149,7 @@ open class StyleBox: Resource {
     }()
 
     public func offset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -192,7 +192,7 @@ open class StyleBox: Resource {
     }()
 
     public func currentItemDrawn() -> Godot.CanvasItem? {
-        Godot.CanvasItem?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CanvasItem?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_item_drawn,
@@ -214,7 +214,7 @@ open class StyleBox: Resource {
         point: Godot.Vector2,
         rect: Godot.Rect2
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_rect) { __accessPtr in
@@ -271,8 +271,8 @@ open class StyleBox: Resource {
             }
             Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._draw(
-            toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
+            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
         )}
         let _get_draw_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -280,26 +280,26 @@ open class StyleBox: Resource {
             }
             Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDrawRect(
-            Godot.Rect2.fromGodotUnsafePointer(args[0]!)
+            Godot.Rect2.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_minimum_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMinimumSize()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _test_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._testMask(
-            point: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
-            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
+            point: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_draw" : ("_draw", _draw_call),
             "_getDrawRect" : ("_get_draw_rect", _get_draw_rect_call),

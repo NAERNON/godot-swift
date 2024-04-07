@@ -1,5 +1,5 @@
 
-public func varToBytes<Value : VariantStorableIn>(_ variable: Value) -> PackedByteArray {
+public func varToBytes<Value : Variant.Storable>(_ variable: Value) -> PackedByteArray {
     _varToBytes(variable: variable)
 }
 
@@ -19,7 +19,7 @@ public func isInstanceIDValid(_ id: Int) -> Bool {
     _isInstanceIDValid(id: id)
 }
 
-public func isInstanceValid<Value : VariantStorableIn>(_ instance: Value) -> Bool {
+public func isInstanceValid<Value : Variant.Storable>(_ instance: Value) -> Bool {
     _isInstanceValid(instance: instance)
 }
 

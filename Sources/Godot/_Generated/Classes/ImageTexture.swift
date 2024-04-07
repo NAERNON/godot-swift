@@ -17,7 +17,7 @@ open class ImageTexture: Texture2D {
     static public func createFromImage(
         _ image: Godot.Image?
     ) -> Godot.ImageTexture? {
-        Godot.ImageTexture?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ImageTexture?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
         withUnsafeArgumentPackPointer(_ptr___ptr_image) { __accessPtr in
@@ -38,7 +38,7 @@ open class ImageTexture: Texture2D {
     }()
 
     public func format() -> Godot.Image.Format {
-        Godot.Image.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Image.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,

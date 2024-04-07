@@ -50,7 +50,7 @@ open class VisualShaderNodeSample3D: VisualShaderNode {
     }()
 
     private func __getSource() -> Godot.VisualShaderNodeSample3D.Source {
-        Godot.VisualShaderNodeSample3D.Source.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeSample3D.Source.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source,

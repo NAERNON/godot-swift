@@ -71,7 +71,7 @@ open class ENetConnection: RefCounted {
         inBandwidth bandwidth: Int32 = 0,
         outBandwidth: Int32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
         bindPort.withGodotUnsafeRawPointer { __ptr_bindPort in
         maxPeers.withGodotUnsafeRawPointer { __ptr_maxPeers in
@@ -102,7 +102,7 @@ open class ENetConnection: RefCounted {
         inBandwidth bandwidth: Int32 = 0,
         outBandwidth: Int32 = 0
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         maxPeers.withGodotUnsafeRawPointer { __ptr_maxPeers in
         maxChannels.withGodotUnsafeRawPointer { __ptr_maxChannels in
         bandwidth.withGodotUnsafeRawPointer { __ptr_bandwidth in
@@ -149,7 +149,7 @@ open class ENetConnection: RefCounted {
         channels: Int32 = 0,
         data: Int32 = 0
     ) -> Godot.ENetPacketPeer? {
-        Godot.ENetPacketPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ENetPacketPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         address.withGodotUnsafeRawPointer { __ptr_address in
         port.withGodotUnsafeRawPointer { __ptr_port in
         channels.withGodotUnsafeRawPointer { __ptr_channels in
@@ -175,7 +175,7 @@ open class ENetConnection: RefCounted {
     public func service(
         timeout: Int32 = 0
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         withUnsafeArgumentPackPointer(__ptr_timeout) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -310,7 +310,7 @@ open class ENetConnection: RefCounted {
     public func dtlsServerSetup(
         serverOptions: Godot.TLSOptions?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         serverOptions.withGodotUnsafeRawPointer { __ptr_serverOptions in
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_serverOptions) { __accessPtr in
@@ -335,7 +335,7 @@ open class ENetConnection: RefCounted {
         hostname: Godot.GodotString,
         clientOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         hostname.withGodotUnsafeRawPointer { __ptr_hostname in
         clientOptions.withGodotUnsafeRawPointer { __ptr_clientOptions in
         withUnsafePointer(to: __ptr_clientOptions) { _ptr___ptr_clientOptions in
@@ -382,7 +382,7 @@ open class ENetConnection: RefCounted {
     public func popStatistic(
         _ statistic: Godot.ENetConnection.HostStatistic
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         statistic.withGodotUnsafeRawPointer { __ptr_statistic in
         withUnsafeArgumentPackPointer(__ptr_statistic) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -403,7 +403,7 @@ open class ENetConnection: RefCounted {
     }()
 
     public func maxChannels() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_channels,
@@ -422,7 +422,7 @@ open class ENetConnection: RefCounted {
     }()
 
     public func localPort() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_port,
@@ -441,7 +441,7 @@ open class ENetConnection: RefCounted {
     }()
 
     public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
-        Godot.GodotArray<Godot.ENetPacketPeer?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.ENetPacketPeer?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peers,

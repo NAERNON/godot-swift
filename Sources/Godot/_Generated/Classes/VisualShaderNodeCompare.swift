@@ -96,7 +96,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
     }()
 
     private func __getComparisonType() -> Godot.VisualShaderNodeCompare.ComparisonType {
-        Godot.VisualShaderNodeCompare.ComparisonType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeCompare.ComparisonType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_comparison_type,
@@ -137,7 +137,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
     }()
 
     private func __getFunction() -> Godot.VisualShaderNodeCompare.Function {
-        Godot.VisualShaderNodeCompare.Function.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeCompare.Function.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,
@@ -178,7 +178,7 @@ open class VisualShaderNodeCompare: VisualShaderNode {
     }()
 
     private func __getCondition() -> Godot.VisualShaderNodeCompare.Condition {
-        Godot.VisualShaderNodeCompare.Condition.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeCompare.Condition.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_condition,

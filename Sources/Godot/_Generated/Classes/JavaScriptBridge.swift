@@ -22,7 +22,7 @@ open class JavaScriptBridge: Object {
             Godot.GodotString(describing:
                 Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!)
                     .takeUnretainedValue()
-            ).copyToGodot(unsafePointer: stringResultPtr!)
+            ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
@@ -38,7 +38,7 @@ open class JavaScriptBridge: Object {
         code: Godot.GodotString,
         useGlobalExecutionContext: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         code.withGodotUnsafeRawPointer { __ptr_code in
         useGlobalExecutionContext.withGodotUnsafeRawPointer { __ptr_useGlobalExecutionContext in
         withUnsafeArgumentPackPointer(__ptr_code, __ptr_useGlobalExecutionContext) { __accessPtr in
@@ -62,7 +62,7 @@ open class JavaScriptBridge: Object {
     public func interface(
         _ interface: Godot.GodotString
     ) -> Godot.JavaScriptObject? {
-        Godot.JavaScriptObject?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.JavaScriptObject?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         interface.withGodotUnsafeRawPointer { __ptr_interface in
         withUnsafeArgumentPackPointer(__ptr_interface) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -85,7 +85,7 @@ open class JavaScriptBridge: Object {
     public func createCallback(
         callable: Godot.Callable
     ) -> Godot.JavaScriptObject? {
-        Godot.JavaScriptObject?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.JavaScriptObject?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -105,11 +105,11 @@ open class JavaScriptBridge: Object {
         }
     }()
 
-    public func createObject<each VariantRest : VariantStorableIn>(
+    public func createObject<each VariantRest : Variant.Storable>(
         _ object: Godot.GodotString,
         _ rest: repeat each VariantRest
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         withUnsafeArgumentPackPointer(__ptr_object, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -126,7 +126,7 @@ open class JavaScriptBridge: Object {
     public func createObject(
         _ object: Godot.GodotString
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
         withUnsafeArgumentPackPointer(__ptr_object) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -175,7 +175,7 @@ open class JavaScriptBridge: Object {
     }()
 
     public func pwaNeedsUpdate() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_pwa_needs_update,
@@ -194,7 +194,7 @@ open class JavaScriptBridge: Object {
     }()
 
     public func pwaUpdate() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_pwa_update,

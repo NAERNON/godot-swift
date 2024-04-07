@@ -71,7 +71,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __isCentered() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_centered,
@@ -112,7 +112,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -153,7 +153,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __isFlippedH() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_h,
@@ -194,7 +194,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __isFlippedV() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_flipped_v,
@@ -235,7 +235,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getModulate() -> Godot.Color {
-        Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_modulate,
@@ -276,7 +276,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getRenderPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_priority,
@@ -317,7 +317,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getPixelSize() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_pixel_size,
@@ -358,7 +358,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAxis() -> Godot.Vector3.Axis {
-        Godot.Vector3.Axis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.Axis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_axis,
@@ -403,7 +403,7 @@ open class SpriteBase3D: GeometryInstance3D {
     private func __getDrawFlag(
         _ flag: Godot.SpriteBase3D.DrawFlags
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         flag.withGodotUnsafeRawPointer { __ptr_flag in
         withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -446,7 +446,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAlphaCutMode() -> Godot.SpriteBase3D.AlphaCutMode {
-        Godot.SpriteBase3D.AlphaCutMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.SpriteBase3D.AlphaCutMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_cut_mode,
@@ -487,7 +487,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAlphaScissorThreshold() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_scissor_threshold,
@@ -528,7 +528,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAlphaHashScale() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_hash_scale,
@@ -569,7 +569,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
-        Godot.BaseMaterial3D.AlphaAntiAliasing.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.AlphaAntiAliasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_antialiasing,
@@ -610,7 +610,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getAlphaAntialiasingEdge() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alpha_antialiasing_edge,
@@ -651,7 +651,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
-        Godot.BaseMaterial3D.BillboardMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.BillboardMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_billboard_mode,
@@ -692,7 +692,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
-        Godot.BaseMaterial3D.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BaseMaterial3D.TextureFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_filter,
@@ -711,7 +711,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     public func itemRect() -> Godot.Rect2 {
-        Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_item_rect,
@@ -730,7 +730,7 @@ open class SpriteBase3D: GeometryInstance3D {
     }()
 
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
-        Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.TriangleMesh?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_generate_triangle_mesh,

@@ -37,7 +37,7 @@ open class InputEventMouseButton: InputEventMouse {
     }()
 
     private func __getFactor() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_factor,
@@ -78,7 +78,7 @@ open class InputEventMouseButton: InputEventMouse {
     }()
 
     private func __getButtonIndex() -> Godot.MouseButton {
-        Godot.MouseButton.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.MouseButton.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_button_index,
@@ -163,7 +163,7 @@ open class InputEventMouseButton: InputEventMouse {
     }()
 
     private func __isDoubleClick() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_double_click,

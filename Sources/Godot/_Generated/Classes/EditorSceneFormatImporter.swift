@@ -61,32 +61,32 @@ open class EditorSceneFormatImporter: RefCounted {
             }
             Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportFlags()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExtensions()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _import_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importScene(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            flags: UInt32.fromGodotUnsafePointer(args[1]!),
-            options: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            flags: UInt32.transferFromGodot(unsafePointer: args[1]!),
+            options: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportOptions(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _get_option_visibility_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -94,11 +94,11 @@ open class EditorSceneFormatImporter: RefCounted {
             }
             Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOptionVisibility(
-            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            forAnimation: Bool.fromGodotUnsafePointer(args[1]!),
-            option: Godot.GodotString.fromGodotUnsafePointer(args[2]!)
+            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            forAnimation: Bool.transferFromGodot(unsafePointer: args[1]!),
+            option: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getImportFlags" : ("_get_import_flags", _get_import_flags_call),
             "_getExtensions" : ("_get_extensions", _get_extensions_call),

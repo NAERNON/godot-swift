@@ -60,7 +60,7 @@ open class VisualShaderNodeSmoothStep: VisualShaderNode {
     }()
 
     private func __getOpType() -> Godot.VisualShaderNodeSmoothStep.OpType {
-        Godot.VisualShaderNodeSmoothStep.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeSmoothStep.OpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,

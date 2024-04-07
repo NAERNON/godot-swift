@@ -15,7 +15,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getRenderTarget() -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_target,
@@ -56,7 +56,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getInternalSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_internal_size,
@@ -97,7 +97,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getTargetSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_size,
@@ -138,7 +138,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getViewCount() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_view_count,
@@ -179,7 +179,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getScaling3DMode() -> Godot.RenderingServer.ViewportScaling3DMode {
-        Godot.RenderingServer.ViewportScaling3DMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingServer.ViewportScaling3DMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_scaling_3d_mode,
@@ -220,7 +220,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getMsaa3D() -> Godot.RenderingServer.ViewportMSAA {
-        Godot.RenderingServer.ViewportMSAA.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingServer.ViewportMSAA.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_msaa_3d,
@@ -261,7 +261,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getScreenSpaceAa() -> Godot.RenderingServer.ViewportScreenSpaceAA {
-        Godot.RenderingServer.ViewportScreenSpaceAA.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingServer.ViewportScreenSpaceAA.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_screen_space_aa,
@@ -302,7 +302,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getFsrSharpness() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fsr_sharpness,
@@ -343,7 +343,7 @@ open class RenderSceneBuffersConfiguration: RefCounted {
     }()
 
     private func __getTextureMipmapBias() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_mipmap_bias,

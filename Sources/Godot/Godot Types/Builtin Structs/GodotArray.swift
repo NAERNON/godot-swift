@@ -2,7 +2,7 @@ import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
 public struct GodotArray<Element>
-where Element : VariantStorable {}
+where Element : Variant.Storable {}
 
 public typealias AnyGodotArray = GodotArray<Variant>
 
@@ -10,7 +10,7 @@ extension GodotArray {
     // MARK: Constructors
     
     public init() {
-        self = Self._constructor()
+        self = Self._make()
         setTypedIfApplicable()
     }
     
@@ -77,7 +77,7 @@ extension GodotArray: RangeReplaceableCollection {
             Element.convertFromCheckedStorage(consuming: self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            Element.withValueStorage(newValue) { storage in
+            Element.convertToStorageTemporarily(newValue) { storage in
                 self._setValue(storage, at: Int64(index))
             }
         }
@@ -87,7 +87,7 @@ extension GodotArray: RangeReplaceableCollection {
             
             yield &newValue
             
-            Element.withValueStorage(newValue) { storage in
+            Element.convertToStorageTemporarily(newValue) { storage in
                 self._setValue(storage, at: index)
             }
         }
@@ -100,7 +100,7 @@ extension GodotArray: RangeReplaceableCollection {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                Element.withValueStorage(element) { elementStorage in
+                Element.convertToStorageTemporarily(element) { elementStorage in
                     _ = self._insert(position: rangeIndex, value: elementStorage)
                 }
             }
@@ -115,19 +115,24 @@ extension GodotArray: RangeReplaceableCollection {
     }
     
     public mutating func append(_ newElement: Element) {
-        Element.withValueStorage(newElement) { storage in
+        Element.convertToStorageTemporarily(newElement) { storage in
             _append(value: storage)
         }
     }
     
     public mutating func insert(_ newElement: Element, at i: Int) {
-        Element.withValueStorage(newElement) { storage in
+        Element.convertToStorageTemporarily(newElement) { storage in
             _ = _insert(position: i, value: storage)
         }
     }
     
     public mutating func popLast() -> Element? {
-        Optional<Element>.convertFromCheckedStorage(consuming: _popBack())
+        let element = _popBack()
+        if element.isNil {
+            return nil
+        } else {
+            return Element.convertFromCheckedStorage(consuming: _popBack())
+        }
     }
     
     @discardableResult

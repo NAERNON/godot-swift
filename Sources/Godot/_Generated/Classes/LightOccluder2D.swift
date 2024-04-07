@@ -38,7 +38,7 @@ open class LightOccluder2D: Node2D {
     }()
 
     private func __getOccluderPolygon() -> Godot.OccluderPolygon2D? {
-        Godot.OccluderPolygon2D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.OccluderPolygon2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_occluder_polygon,
@@ -79,7 +79,7 @@ open class LightOccluder2D: Node2D {
     }()
 
     private func __getOccluderLightMask() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_occluder_light_mask,
@@ -120,7 +120,7 @@ open class LightOccluder2D: Node2D {
     }()
 
     private func __isSetAsSdfCollision() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_set_as_sdf_collision,

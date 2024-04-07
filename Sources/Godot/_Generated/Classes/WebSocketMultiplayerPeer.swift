@@ -18,7 +18,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         url: Godot.GodotString,
         tlsClientOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         tlsClientOptions.withGodotUnsafeRawPointer { __ptr_tlsClientOptions in
         withUnsafePointer(to: __ptr_tlsClientOptions) { _ptr___ptr_tlsClientOptions in
@@ -45,7 +45,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         bindAddress: Godot.GodotString = "*",
         tlsServerOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
         tlsServerOptions.withGodotUnsafeRawPointer { __ptr_tlsServerOptions in
@@ -71,7 +71,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     public func peer(
         peerID: Int32
     ) -> Godot.WebSocketPeer? {
-        Godot.WebSocketPeer?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebSocketPeer?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         peerID.withGodotUnsafeRawPointer { __ptr_peerID in
         withUnsafeArgumentPackPointer(__ptr_peerID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -94,7 +94,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     public func peerAddress(
         id: Int32
     ) -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -117,7 +117,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     public func peerPort(
         id: Int32
     ) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -138,7 +138,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getSupportedProtocols() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_protocols,
@@ -179,7 +179,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getHandshakeHeaders() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_handshake_headers,
@@ -220,7 +220,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getInboundBufferSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inbound_buffer_size,
@@ -261,7 +261,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getOutboundBufferSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outbound_buffer_size,
@@ -302,7 +302,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getHandshakeTimeout() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_handshake_timeout,
@@ -365,7 +365,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __getMaxQueuedPackets() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_queued_packets,

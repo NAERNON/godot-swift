@@ -37,7 +37,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
-        Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.DataFormat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -78,7 +78,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getWidth() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_width,
@@ -119,7 +119,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getHeight() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_height,
@@ -160,7 +160,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getDepth() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_depth,
@@ -201,7 +201,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getArrayLayers() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_array_layers,
@@ -242,7 +242,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getMipmaps() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mipmaps,
@@ -283,7 +283,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getTextureType() -> Godot.RenderingDevice.TextureType {
-        Godot.RenderingDevice.TextureType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,
@@ -324,7 +324,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getSamples() -> Godot.RenderingDevice.TextureSamples {
-        Godot.RenderingDevice.TextureSamples.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureSamples.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_samples,
@@ -365,7 +365,7 @@ open class RDTextureFormat: RefCounted {
     }()
 
     private func __getUsageBits() -> Godot.RenderingDevice.TextureUsageBits {
-        Godot.RenderingDevice.TextureUsageBits.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.TextureUsageBits.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_usage_bits,

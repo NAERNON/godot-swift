@@ -63,7 +63,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getFadeinTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fadein_time,
@@ -105,7 +105,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getFadeinCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fadein_curve,
@@ -146,7 +146,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getFadeoutTime() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fadeout_time,
@@ -188,7 +188,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getFadeoutCurve() -> Godot.Curve? {
-        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Curve?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fadeout_curve,
@@ -229,7 +229,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __hasAutorestart() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_autorestart,
@@ -270,7 +270,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getAutorestartDelay() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autorestart_delay,
@@ -311,7 +311,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getAutorestartRandomDelay() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_autorestart_random_delay,
@@ -352,7 +352,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
     }()
 
     private func __getMixMode() -> Godot.AnimationNodeOneShot.MixMode {
-        Godot.AnimationNodeOneShot.MixMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNodeOneShot.MixMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mix_mode,

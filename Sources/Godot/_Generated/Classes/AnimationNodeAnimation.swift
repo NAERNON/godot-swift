@@ -48,7 +48,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
     }()
 
     private func __getAnimation() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_animation,
@@ -89,7 +89,7 @@ open class AnimationNodeAnimation: AnimationRootNode {
     }()
 
     private func __getPlayMode() -> Godot.AnimationNodeAnimation.PlayMode {
-        Godot.AnimationNodeAnimation.PlayMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnimationNodeAnimation.PlayMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_play_mode,

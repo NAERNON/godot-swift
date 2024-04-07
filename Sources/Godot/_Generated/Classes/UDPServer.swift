@@ -18,7 +18,7 @@ open class UDPServer: RefCounted {
         port: UInt16,
         bindAddress: Godot.GodotString = "*"
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         port.withGodotUnsafeRawPointer { __ptr_port in
         bindAddress.withGodotUnsafeRawPointer { __ptr_bindAddress in
         withUnsafeArgumentPackPointer(__ptr_port, __ptr_bindAddress) { __accessPtr in
@@ -40,7 +40,7 @@ open class UDPServer: RefCounted {
     }()
 
     public func poll() -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
@@ -59,7 +59,7 @@ open class UDPServer: RefCounted {
     }()
 
     public func isConnectionAvailable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_connection_available,
@@ -78,7 +78,7 @@ open class UDPServer: RefCounted {
     }()
 
     public func localPort() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_port,
@@ -97,7 +97,7 @@ open class UDPServer: RefCounted {
     }()
 
     public func isListening() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_listening,
@@ -116,7 +116,7 @@ open class UDPServer: RefCounted {
     }()
 
     public func takeConnection() -> Godot.PacketPeerUDP? {
-        Godot.PacketPeerUDP?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PacketPeerUDP?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_take_connection,
@@ -175,7 +175,7 @@ open class UDPServer: RefCounted {
     }()
 
     private func __getMaxPendingConnections() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_pending_connections,

@@ -65,7 +65,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getData() -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_data,
@@ -106,7 +106,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getFormat() -> Godot.AudioStreamWAV.Format {
-        Godot.AudioStreamWAV.Format.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamWAV.Format.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -147,7 +147,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getLoopMode() -> Godot.AudioStreamWAV.LoopMode {
-        Godot.AudioStreamWAV.LoopMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AudioStreamWAV.LoopMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loop_mode,
@@ -188,7 +188,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getLoopBegin() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loop_begin,
@@ -229,7 +229,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getLoopEnd() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_loop_end,
@@ -270,7 +270,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __getMixRate() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mix_rate,
@@ -311,7 +311,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __isStereo() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_stereo,
@@ -332,7 +332,7 @@ open class AudioStreamWAV: AudioStream {
     public func saveToWav(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

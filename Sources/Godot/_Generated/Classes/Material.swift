@@ -58,7 +58,7 @@ open class Material: Resource {
     }()
 
     private func __getNextPass() -> Godot.Material? {
-        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Material?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_next_pass,
@@ -99,7 +99,7 @@ open class Material: Resource {
     }()
 
     private func __getRenderPriority() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_render_priority,
@@ -136,7 +136,7 @@ open class Material: Resource {
     }()
 
     public func createPlaceholder() -> Godot.Resource? {
-        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_placeholder,
@@ -180,28 +180,28 @@ open class Material: Resource {
             }
             Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getShaderRid()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _get_shader_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getShaderMode()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _can_do_next_pass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canDoNextPass()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _can_use_render_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
             Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canUseRenderPriority()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getShaderRid" : ("_get_shader_rid", _get_shader_rid_call),
             "_getShaderMode" : ("_get_shader_mode", _get_shader_mode_call),

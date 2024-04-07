@@ -29,9 +29,9 @@ open class AudioEffectInstance: RefCounted {
             }
             Unmanaged<AudioEffectInstance> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
-            srcBuffer: UnsafeRawPointer.fromGodotUnsafePointer(args[0]!),
-            dstBuffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[1]!),
-            frameCount: Int32.fromGodotUnsafePointer(args[2]!)
+            srcBuffer: UnsafeRawPointer.transferFromGodot(unsafePointer: args[0]!),
+            dstBuffer: UnsafeMutablePointer<AudioFrame> .transferFromGodot(unsafePointer: args[1]!),
+            frameCount: Int32.transferFromGodot(unsafePointer: args[2]!)
         )}
         let _process_silence_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -39,7 +39,7 @@ open class AudioEffectInstance: RefCounted {
             }
             Unmanaged<AudioEffectInstance> .fromOpaque(instancePtr).takeUnretainedValue()
         ._processSilence()
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_process" : ("_process", _process_call),
             "_processSilence" : ("_process_silence", _process_silence_call)

@@ -60,7 +60,7 @@ open class VisualShaderNodeMix: VisualShaderNode {
     }()
 
     private func __getOpType() -> Godot.VisualShaderNodeMix.OpType {
-        Godot.VisualShaderNodeMix.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeMix.OpType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,

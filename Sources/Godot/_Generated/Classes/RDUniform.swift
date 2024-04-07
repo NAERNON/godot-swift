@@ -37,7 +37,7 @@ open class RDUniform: RefCounted {
     }()
 
     private func __getUniformType() -> Godot.RenderingDevice.UniformType {
-        Godot.RenderingDevice.UniformType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.UniformType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_uniform_type,
@@ -78,7 +78,7 @@ open class RDUniform: RefCounted {
     }()
 
     private func __getBinding() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_binding,
@@ -137,7 +137,7 @@ open class RDUniform: RefCounted {
     }()
 
     public func ids() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ids,

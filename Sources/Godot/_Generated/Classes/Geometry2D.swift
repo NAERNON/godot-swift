@@ -64,7 +64,7 @@ open class Geometry2D: Object {
         circlePosition: Godot.Vector2,
         circleRadius: Double
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         circlePosition.withGodotUnsafeRawPointer { __ptr_circlePosition in
         circleRadius.withGodotUnsafeRawPointer { __ptr_circleRadius in
@@ -92,7 +92,7 @@ open class Geometry2D: Object {
         circlePosition: Godot.Vector2,
         circleRadius: Double
     ) -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         segmentFrom.withGodotUnsafeRawPointer { __ptr_segmentFrom in
         segmentTo.withGodotUnsafeRawPointer { __ptr_segmentTo in
         circlePosition.withGodotUnsafeRawPointer { __ptr_circlePosition in
@@ -121,7 +121,7 @@ open class Geometry2D: Object {
         fromB: Godot.Vector2,
         toB: Godot.Vector2
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fromA.withGodotUnsafeRawPointer { __ptr_fromA in
         toA.withGodotUnsafeRawPointer { __ptr_toA in
         fromB.withGodotUnsafeRawPointer { __ptr_fromB in
@@ -150,7 +150,7 @@ open class Geometry2D: Object {
         fromB b: Godot.Vector2,
         dirB: Godot.Vector2
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         a.withGodotUnsafeRawPointer { __ptr_a in
         dirA.withGodotUnsafeRawPointer { __ptr_dirA in
         b.withGodotUnsafeRawPointer { __ptr_b in
@@ -179,7 +179,7 @@ open class Geometry2D: Object {
         p2: Godot.Vector2,
         q2: Godot.Vector2
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         p1.withGodotUnsafeRawPointer { __ptr_p1 in
         q1.withGodotUnsafeRawPointer { __ptr_q1 in
         p2.withGodotUnsafeRawPointer { __ptr_p2 in
@@ -207,7 +207,7 @@ open class Geometry2D: Object {
         s1: Godot.Vector2,
         s2: Godot.Vector2
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
@@ -234,7 +234,7 @@ open class Geometry2D: Object {
         s1: Godot.Vector2,
         s2: Godot.Vector2
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         s1.withGodotUnsafeRawPointer { __ptr_s1 in
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
@@ -262,7 +262,7 @@ open class Geometry2D: Object {
         b: Godot.Vector2,
         c: Godot.Vector2
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         a.withGodotUnsafeRawPointer { __ptr_a in
         b.withGodotUnsafeRawPointer { __ptr_b in
@@ -288,7 +288,7 @@ open class Geometry2D: Object {
     public func isPolygonClockwise(
         polygon: Godot.PackedVector2Array
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -312,7 +312,7 @@ open class Geometry2D: Object {
         point: Godot.Vector2,
         polygon: Godot.PackedVector2Array
     ) -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         point.withGodotUnsafeRawPointer { __ptr_point in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_polygon) { __accessPtr in
@@ -336,7 +336,7 @@ open class Geometry2D: Object {
     public func triangulatePolygon(
         _ polygon: Godot.PackedVector2Array
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -359,7 +359,7 @@ open class Geometry2D: Object {
     public func triangulateDelaunay(
         points: Godot.PackedVector2Array
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -382,7 +382,7 @@ open class Geometry2D: Object {
     public func convexHull(
         points: Godot.PackedVector2Array
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -405,7 +405,7 @@ open class Geometry2D: Object {
     public func decomposePolygonInConvex(
         polygon: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -429,7 +429,7 @@ open class Geometry2D: Object {
         polygonA: Godot.PackedVector2Array,
         polygonB: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
@@ -454,7 +454,7 @@ open class Geometry2D: Object {
         polygonA: Godot.PackedVector2Array,
         polygonB: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
@@ -479,7 +479,7 @@ open class Geometry2D: Object {
         polygonA: Godot.PackedVector2Array,
         polygonB: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
@@ -504,7 +504,7 @@ open class Geometry2D: Object {
         polygonA: Godot.PackedVector2Array,
         polygonB: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygonA.withGodotUnsafeRawPointer { __ptr_polygonA in
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
@@ -529,7 +529,7 @@ open class Geometry2D: Object {
         polyline: Godot.PackedVector2Array,
         polygon: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { __accessPtr in
@@ -554,7 +554,7 @@ open class Geometry2D: Object {
         polyline: Godot.PackedVector2Array,
         polygon: Godot.PackedVector2Array
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { __accessPtr in
@@ -580,7 +580,7 @@ open class Geometry2D: Object {
         delta: Double,
         joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         joinType.withGodotUnsafeRawPointer { __ptr_joinType in
@@ -608,7 +608,7 @@ open class Geometry2D: Object {
         joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!,
         endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!
     ) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         polyline.withGodotUnsafeRawPointer { __ptr_polyline in
         delta.withGodotUnsafeRawPointer { __ptr_delta in
         joinType.withGodotUnsafeRawPointer { __ptr_joinType in
@@ -634,7 +634,7 @@ open class Geometry2D: Object {
     public func makeAtlas(
         sizes: Godot.PackedVector2Array
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         sizes.withGodotUnsafeRawPointer { __ptr_sizes in
         withUnsafeArgumentPackPointer(__ptr_sizes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

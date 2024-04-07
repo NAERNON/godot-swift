@@ -50,7 +50,7 @@ open class PlaneMesh: PrimitiveMesh {
     }()
 
     private func __getSize() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_size,
@@ -91,7 +91,7 @@ open class PlaneMesh: PrimitiveMesh {
     }()
 
     private func __getSubdivideWidth() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_subdivide_width,
@@ -132,7 +132,7 @@ open class PlaneMesh: PrimitiveMesh {
     }()
 
     private func __getSubdivideDepth() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_subdivide_depth,
@@ -173,7 +173,7 @@ open class PlaneMesh: PrimitiveMesh {
     }()
 
     private func __getCenterOffset() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_offset,
@@ -214,7 +214,7 @@ open class PlaneMesh: PrimitiveMesh {
     }()
 
     private func __getOrientation() -> Godot.PlaneMesh.Orientation {
-        Godot.PlaneMesh.Orientation.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PlaneMesh.Orientation.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_orientation,

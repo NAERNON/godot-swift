@@ -30,7 +30,7 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
         toHz: Double,
         mode: Godot.AudioEffectSpectrumAnalyzerInstance.MagnitudeMode = AudioEffectSpectrumAnalyzerInstance.MagnitudeMode(rawValue: 1)!
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         fromHz.withGodotUnsafeRawPointer { __ptr_fromHz in
         toHz.withGodotUnsafeRawPointer { __ptr_toHz in
         mode.withGodotUnsafeRawPointer { __ptr_mode in

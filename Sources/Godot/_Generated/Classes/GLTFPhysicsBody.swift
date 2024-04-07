@@ -17,7 +17,7 @@ open class GLTFPhysicsBody: Resource {
     static public func fromNode(
         bodyNode: Godot.CollisionObject3D?
     ) -> Godot.GLTFPhysicsBody? {
-        Godot.GLTFPhysicsBody?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFPhysicsBody?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         bodyNode.withGodotUnsafeRawPointer { __ptr_bodyNode in
         withUnsafePointer(to: __ptr_bodyNode) { _ptr___ptr_bodyNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_bodyNode) { __accessPtr in
@@ -38,7 +38,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     public func toNode() -> Godot.CollisionObject3D? {
-        Godot.CollisionObject3D?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CollisionObject3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_node,
@@ -56,10 +56,10 @@ open class GLTFPhysicsBody: Resource {
         }
     }()
 
-    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(
+    static public func fromDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ dictionary: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GLTFPhysicsBody? {
-        Godot.GLTFPhysicsBody?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GLTFPhysicsBody?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         dictionary.withGodotUnsafeRawPointer { __ptr_dictionary in
         withUnsafeArgumentPackPointer(__ptr_dictionary) { __accessPtr in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -79,7 +79,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     public func toDictionary() -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_to_dictionary,
@@ -98,7 +98,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getBodyType() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_body_type,
@@ -139,7 +139,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getMass() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_mass,
@@ -180,7 +180,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getLinearVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_linear_velocity,
@@ -221,7 +221,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getAngularVelocity() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_angular_velocity,
@@ -262,7 +262,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getCenterOfMass() -> Godot.Vector3 {
-        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_center_of_mass,
@@ -303,7 +303,7 @@ open class GLTFPhysicsBody: Resource {
     }()
 
     private func __getInertiaTensor() -> Godot.Basis {
-        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Basis.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inertia_tensor,

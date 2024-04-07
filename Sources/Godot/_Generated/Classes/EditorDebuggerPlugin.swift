@@ -36,7 +36,7 @@ open class EditorDebuggerPlugin: RefCounted {
     public func session(
         id: Int32
     ) -> Godot.EditorDebuggerSession? {
-        Godot.EditorDebuggerSession?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.EditorDebuggerSession?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -57,7 +57,7 @@ open class EditorDebuggerPlugin: RefCounted {
     }()
 
     public func sessions() -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sessions,
@@ -79,7 +79,7 @@ open class EditorDebuggerPlugin: RefCounted {
             }
             Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setupSession(
-            sessionID: Int32.fromGodotUnsafePointer(args[0]!)
+            sessionID: Int32.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _has_capture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -87,20 +87,20 @@ open class EditorDebuggerPlugin: RefCounted {
             }
             Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasCapture(
-            Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+            Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         let _capture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
             Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._capture(
-            message: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!),
-            sessionID: Int32.fromGodotUnsafePointer(args[2]!)
+            message: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+            data: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!),
+            sessionID: Int32.transferFromGodot(unsafePointer: args[2]!)
         )
-        .copyToGodot(unsafePointer: returnPtr!)}
+        .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_setupSession" : ("_setup_session", _setup_session_call),
             "_hasCapture" : ("_has_capture", _has_capture_call),

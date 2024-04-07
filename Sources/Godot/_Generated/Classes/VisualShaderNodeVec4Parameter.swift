@@ -37,7 +37,7 @@ open class VisualShaderNodeVec4Parameter: VisualShaderNodeParameter {
     }()
 
     private func __isDefaultValueEnabled() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_default_value_enabled,
@@ -78,7 +78,7 @@ open class VisualShaderNodeVec4Parameter: VisualShaderNodeParameter {
     }()
 
     private func __getDefaultValue() -> Godot.Vector4 {
-        Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector4.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_default_value,

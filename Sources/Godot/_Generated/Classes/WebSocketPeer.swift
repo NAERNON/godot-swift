@@ -44,7 +44,7 @@ open class WebSocketPeer: PacketPeer {
         _ url: Godot.GodotString,
         tlsClientOptions: Godot.TLSOptions? = nil
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         url.withGodotUnsafeRawPointer { __ptr_url in
         tlsClientOptions.withGodotUnsafeRawPointer { __ptr_tlsClientOptions in
         withUnsafePointer(to: __ptr_tlsClientOptions) { _ptr___ptr_tlsClientOptions in
@@ -69,7 +69,7 @@ open class WebSocketPeer: PacketPeer {
     public func acceptStream(
         _ stream: Godot.StreamPeer?
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafePointer(to: __ptr_stream) { _ptr___ptr_stream in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream) { __accessPtr in
@@ -94,7 +94,7 @@ open class WebSocketPeer: PacketPeer {
         message: Godot.PackedByteArray,
         writeMode: Godot.WebSocketPeer.WriteMode = WebSocketPeer.WriteMode(rawValue: 1)!
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         writeMode.withGodotUnsafeRawPointer { __ptr_writeMode in
         withUnsafeArgumentPackPointer(__ptr_message, __ptr_writeMode) { __accessPtr in
@@ -118,7 +118,7 @@ open class WebSocketPeer: PacketPeer {
     public func sendText(
         message: Godot.GodotString
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         message.withGodotUnsafeRawPointer { __ptr_message in
         withUnsafeArgumentPackPointer(__ptr_message) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -139,7 +139,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func wasStringPacket() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_was_string_packet,
@@ -200,7 +200,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func connectedHost() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_host,
@@ -219,7 +219,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func connectedPort() -> UInt16 {
-        UInt16.fromMutatingGodotUnsafePointer { __temporary in
+        UInt16.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connected_port,
@@ -238,7 +238,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func selectedProtocol() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_selected_protocol,
@@ -257,7 +257,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func requestedUrl() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_requested_url,
@@ -298,7 +298,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func currentOutboundBufferedAmount() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_current_outbound_buffered_amount,
@@ -317,7 +317,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func readyState() -> Godot.WebSocketPeer.State {
-        Godot.WebSocketPeer.State.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.WebSocketPeer.State.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ready_state,
@@ -336,7 +336,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func closeCode() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_close_code,
@@ -355,7 +355,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     public func closeReason() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_close_reason,
@@ -374,7 +374,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     private func __getSupportedProtocols() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_supported_protocols,
@@ -415,7 +415,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     private func __getHandshakeHeaders() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_handshake_headers,
@@ -456,7 +456,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     private func __getInboundBufferSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inbound_buffer_size,
@@ -497,7 +497,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     private func __getOutboundBufferSize() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_outbound_buffer_size,
@@ -560,7 +560,7 @@ open class WebSocketPeer: PacketPeer {
     }()
 
     private func __getMaxQueuedPackets() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_queued_packets,

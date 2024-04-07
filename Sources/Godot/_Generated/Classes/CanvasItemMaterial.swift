@@ -67,7 +67,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getBlendMode() -> Godot.CanvasItemMaterial.BlendMode {
-        Godot.CanvasItemMaterial.BlendMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CanvasItemMaterial.BlendMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_blend_mode,
@@ -108,7 +108,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getLightMode() -> Godot.CanvasItemMaterial.LightMode {
-        Godot.CanvasItemMaterial.LightMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.CanvasItemMaterial.LightMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_light_mode,
@@ -149,7 +149,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getParticlesAnimation() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_particles_animation,
@@ -190,7 +190,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getParticlesAnimHFrames() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_particles_anim_h_frames,
@@ -231,7 +231,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getParticlesAnimVFrames() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_particles_anim_v_frames,
@@ -272,7 +272,7 @@ open class CanvasItemMaterial: Material {
     }()
 
     private func __getParticlesAnimLoop() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_particles_anim_loop,

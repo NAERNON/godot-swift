@@ -37,7 +37,7 @@ open class OggPacketSequence: Resource {
     }()
 
     private func __getPacketData() -> Godot.GodotArray<Godot.AnyGodotArray> {
-        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotArray> .fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_packet_data,
@@ -78,7 +78,7 @@ open class OggPacketSequence: Resource {
     }()
 
     private func __getPacketGranulePositions() -> Godot.PackedInt64Array {
-        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.PackedInt64Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_packet_granule_positions,
@@ -119,7 +119,7 @@ open class OggPacketSequence: Resource {
     }()
 
     private func __getSamplingRate() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_sampling_rate,
@@ -138,7 +138,7 @@ open class OggPacketSequence: Resource {
     }()
 
     public func length() -> Double {
-        Double.fromMutatingGodotUnsafePointer { __temporary in
+        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_length,

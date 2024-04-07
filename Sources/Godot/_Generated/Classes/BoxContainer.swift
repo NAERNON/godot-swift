@@ -30,7 +30,7 @@ open class BoxContainer: Container {
     public func addSpacer(
         begin: Bool
     ) -> Godot.Control? {
-        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Control?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         begin.withGodotUnsafeRawPointer { __ptr_begin in
         withUnsafeArgumentPackPointer(__ptr_begin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -73,7 +73,7 @@ open class BoxContainer: Container {
     }()
 
     private func __getAlignment() -> Godot.BoxContainer.AlignmentMode {
-        Godot.BoxContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.BoxContainer.AlignmentMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment,
@@ -114,7 +114,7 @@ open class BoxContainer: Container {
     }()
 
     private func __isVertical() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_vertical,

@@ -37,7 +37,7 @@ open class RDVertexAttribute: RefCounted {
     }()
 
     private func __getLocation() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_location,
@@ -78,7 +78,7 @@ open class RDVertexAttribute: RefCounted {
     }()
 
     private func __getOffset() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_offset,
@@ -119,7 +119,7 @@ open class RDVertexAttribute: RefCounted {
     }()
 
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
-        Godot.RenderingDevice.DataFormat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.DataFormat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_format,
@@ -160,7 +160,7 @@ open class RDVertexAttribute: RefCounted {
     }()
 
     private func __getStride() -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        UInt32.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stride,
@@ -201,7 +201,7 @@ open class RDVertexAttribute: RefCounted {
     }()
 
     private func __getFrequency() -> Godot.RenderingDevice.VertexFrequency {
-        Godot.RenderingDevice.VertexFrequency.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.RenderingDevice.VertexFrequency.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_frequency,

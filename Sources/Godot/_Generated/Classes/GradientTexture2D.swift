@@ -64,7 +64,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __getGradient() -> Godot.Gradient? {
-        Godot.Gradient?.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Gradient?.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gradient,
@@ -149,7 +149,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __isUsingHdr() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_using_hdr,
@@ -190,7 +190,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __getFill() -> Godot.GradientTexture2D.Fill {
-        Godot.GradientTexture2D.Fill.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GradientTexture2D.Fill.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fill,
@@ -231,7 +231,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __getFillFrom() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fill_from,
@@ -272,7 +272,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __getFillTo() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fill_to,
@@ -313,7 +313,7 @@ open class GradientTexture2D: Texture2D {
     }()
 
     private func __getRepeat() -> Godot.GradientTexture2D.Repeat {
-        Godot.GradientTexture2D.Repeat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GradientTexture2D.Repeat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_repeat,

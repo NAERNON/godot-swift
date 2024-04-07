@@ -124,7 +124,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     }()
 
     private func __getTextureType() -> Godot.VisualShaderNodeTextureParameter.TextureType {
-        Godot.VisualShaderNodeTextureParameter.TextureType.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTextureParameter.TextureType.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,
@@ -165,7 +165,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     }()
 
     private func __getColorDefault() -> Godot.VisualShaderNodeTextureParameter.ColorDefault {
-        Godot.VisualShaderNodeTextureParameter.ColorDefault.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTextureParameter.ColorDefault.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_default,
@@ -206,7 +206,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     }()
 
     private func __getTextureFilter() -> Godot.VisualShaderNodeTextureParameter.TextureFilter {
-        Godot.VisualShaderNodeTextureParameter.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTextureParameter.TextureFilter.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_filter,
@@ -247,7 +247,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     }()
 
     private func __getTextureRepeat() -> Godot.VisualShaderNodeTextureParameter.TextureRepeat {
-        Godot.VisualShaderNodeTextureParameter.TextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTextureParameter.TextureRepeat.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_repeat,
@@ -288,7 +288,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     }()
 
     private func __getTextureSource() -> Godot.VisualShaderNodeTextureParameter.TextureSource {
-        Godot.VisualShaderNodeTextureParameter.TextureSource.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.VisualShaderNodeTextureParameter.TextureSource.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_source,

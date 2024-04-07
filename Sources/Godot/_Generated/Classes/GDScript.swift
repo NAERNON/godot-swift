@@ -14,10 +14,10 @@ open class GDScript: Script {
         }
     }()
 
-    public func new<each VariantRest : VariantStorableIn>(
+    public func new<each VariantRest : Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindCall(
@@ -31,7 +31,7 @@ open class GDScript: Script {
     }
 
     public func new() -> Godot.Variant {
-        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_new,
