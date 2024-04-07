@@ -1118,7 +1118,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
         Bool()
     }
 
-    open func _freeRid(
+    open func _freeRID(
         _ rid: Godot.RID
     ) {
     }
@@ -2861,7 +2861,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
                 return
             }
             Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._freeRid(
+        ._freeRID(
             Godot.RID.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _set_active_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -3105,7 +3105,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
             "_jointGetSolverPriority" : ("_joint_get_solver_priority", _joint_get_solver_priority_call),
             "_jointDisableCollisionsBetweenBodies" : ("_joint_disable_collisions_between_bodies", _joint_disable_collisions_between_bodies_call),
             "_jointIsDisabledCollisionsBetweenBodies" : ("_joint_is_disabled_collisions_between_bodies", _joint_is_disabled_collisions_between_bodies_call),
-            "_freeRid" : ("_free_rid", _free_rid_call),
+            "_freeRID" : ("_free_rid", _free_rid_call),
             "_setActive" : ("_set_active", _set_active_call),
             "_init" : ("_init", _init_call),
             "_step" : ("_step", _step_call),

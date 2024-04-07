@@ -812,7 +812,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
         Godot.PhysicsServer2D.JointType(rawValue: 0)!
     }
 
-    open func _freeRid(
+    open func _freeRID(
         _ rid: Godot.RID
     ) {
     }
@@ -2099,7 +2099,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
                 return
             }
             Unmanaged<PhysicsServer2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._freeRid(
+        ._freeRID(
             Godot.RID.transferFromGodot(unsafePointer: args[0]!)
         )}
         let _set_active_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -2293,7 +2293,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
             "_dampedSpringJointSetParam" : ("_damped_spring_joint_set_param", _damped_spring_joint_set_param_call),
             "_dampedSpringJointGetParam" : ("_damped_spring_joint_get_param", _damped_spring_joint_get_param_call),
             "_jointGetType" : ("_joint_get_type", _joint_get_type_call),
-            "_freeRid" : ("_free_rid", _free_rid_call),
+            "_freeRID" : ("_free_rid", _free_rid_call),
             "_setActive" : ("_set_active", _set_active_call),
             "_init" : ("_init", _init_call),
             "_step" : ("_step", _step_call),

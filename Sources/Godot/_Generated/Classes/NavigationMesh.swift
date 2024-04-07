@@ -967,11 +967,11 @@ open class NavigationMesh: Resource {
         }
     }()
 
-    private func __setFilterBakingAabb(
-        _ bakingAabb: Godot.AABB
+    private func __setFilterBakingAABB(
+        _ bakingAABB: Godot.AABB
     ) {
-        bakingAabb.withGodotUnsafeRawPointer { __ptr_bakingAabb in
-        withUnsafeArgumentPackPointer(__ptr_bakingAabb) { __accessPtr in
+        bakingAABB.withGodotUnsafeRawPointer { __ptr_bakingAABB in
+        withUnsafeArgumentPackPointer(__ptr_bakingAABB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_filter_baking_aabb,
@@ -989,7 +989,7 @@ open class NavigationMesh: Resource {
         }
     }()
 
-    private func __getFilterBakingAabb() -> Godot.AABB {
+    private func __getFilterBakingAABB() -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1008,11 +1008,11 @@ open class NavigationMesh: Resource {
         }
     }()
 
-    private func __setFilterBakingAabbOffset(
-        _ bakingAabbOffset: Godot.Vector3
+    private func __setFilterBakingAABBOffset(
+        _ bakingAABBOffset: Godot.Vector3
     ) {
-        bakingAabbOffset.withGodotUnsafeRawPointer { __ptr_bakingAabbOffset in
-        withUnsafeArgumentPackPointer(__ptr_bakingAabbOffset) { __accessPtr in
+        bakingAABBOffset.withGodotUnsafeRawPointer { __ptr_bakingAABBOffset in
+        withUnsafeArgumentPackPointer(__ptr_bakingAABBOffset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_filter_baking_aabb_offset,
@@ -1030,7 +1030,7 @@ open class NavigationMesh: Resource {
         }
     }()
 
-    private func __getFilterBakingAabbOffset() -> Godot.Vector3 {
+    private func __getFilterBakingAABBOffset() -> Godot.Vector3 {
         Godot.Vector3.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1447,23 +1447,23 @@ open class NavigationMesh: Resource {
         }
     }
 
-    public var filterBakingAabb: Godot.AABB {
+    public var filterBakingAABB: Godot.AABB {
         get {
-            __getFilterBakingAabb()
+            __getFilterBakingAABB()
         }
         set {
-            __setFilterBakingAabb(
+            __setFilterBakingAABB(
                 newValue
             )
         }
     }
 
-    public var filterBakingAabbOffset: Godot.Vector3 {
+    public var filterBakingAABBOffset: Godot.Vector3 {
         get {
-            __getFilterBakingAabbOffset()
+            __getFilterBakingAABBOffset()
         }
         set {
-            __setFilterBakingAabbOffset(
+            __setFilterBakingAABBOffset(
                 newValue
             )
         }

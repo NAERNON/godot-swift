@@ -454,7 +454,7 @@ open class NavigationRegion2D: Node2D {
         }
     }()
 
-    public func regionRid() -> Godot.RID {
+    public func regionRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

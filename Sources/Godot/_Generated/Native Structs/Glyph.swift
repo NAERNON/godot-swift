@@ -19,7 +19,7 @@ public struct Glyph {
 
     public var advance: Double = 0.0
 
-    public var fontRid: RID
+    public var fontRID: RID
 
     public var fontSize: Int = 0
 

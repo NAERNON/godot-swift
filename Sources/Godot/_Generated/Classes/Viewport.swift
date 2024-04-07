@@ -1001,7 +1001,7 @@ open class Viewport: Node {
         }
     }()
 
-    public func viewportRid() -> Godot.RID {
+    public func viewportRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

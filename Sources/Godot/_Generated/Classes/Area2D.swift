@@ -24,7 +24,7 @@ open class Area2D: CollisionObject2D {
     }
 
     public struct BodyShapeEnteredSignalInput: Godot.SignalInput {
-        public let bodyRid: Godot.RID
+        public let bodyRID: Godot.RID
 
         public let body: Godot.Node2D?
 
@@ -33,12 +33,12 @@ open class Area2D: CollisionObject2D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            bodyRid: Godot.RID,
+            bodyRID: Godot.RID,
             body: Godot.Node2D?,
             bodyShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.bodyRid = bodyRid
+            self.bodyRID = bodyRID
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -47,17 +47,17 @@ open class Area2D: CollisionObject2D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.bodyRID), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func bodyShapeEntered(
-        bodyRid: Godot.RID,
+        bodyRID: Godot.RID,
         body: Godot.Node2D?,
         bodyShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = bodyShapeEnteredSignal.emit(.init(bodyRid: bodyRid,
+        _ = bodyShapeEnteredSignal.emit(.init(bodyRID: bodyRID,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -66,7 +66,7 @@ open class Area2D: CollisionObject2D {
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(bodyRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     body: Godot.Node2D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
@@ -82,7 +82,7 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct BodyShapeExitedSignalInput: Godot.SignalInput {
-        public let bodyRid: Godot.RID
+        public let bodyRID: Godot.RID
 
         public let body: Godot.Node2D?
 
@@ -91,12 +91,12 @@ open class Area2D: CollisionObject2D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            bodyRid: Godot.RID,
+            bodyRID: Godot.RID,
             body: Godot.Node2D?,
             bodyShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.bodyRid = bodyRid
+            self.bodyRID = bodyRID
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -105,17 +105,17 @@ open class Area2D: CollisionObject2D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.bodyRID), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func bodyShapeExited(
-        bodyRid: Godot.RID,
+        bodyRID: Godot.RID,
         body: Godot.Node2D?,
         bodyShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = bodyShapeExitedSignal.emit(.init(bodyRid: bodyRid,
+        _ = bodyShapeExitedSignal.emit(.init(bodyRID: bodyRID,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -124,7 +124,7 @@ open class Area2D: CollisionObject2D {
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(bodyRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     body: Godot.Node2D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
@@ -214,7 +214,7 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct AreaShapeEnteredSignalInput: Godot.SignalInput {
-        public let areaRid: Godot.RID
+        public let areaRID: Godot.RID
 
         public let area: Godot.Area2D?
 
@@ -223,12 +223,12 @@ open class Area2D: CollisionObject2D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            areaRid: Godot.RID,
+            areaRID: Godot.RID,
             area: Godot.Area2D?,
             areaShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.areaRid = areaRid
+            self.areaRID = areaRID
             self.area = area
             self.areaShapeIndex = areaShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -237,17 +237,17 @@ open class Area2D: CollisionObject2D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.areaRID), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func areaShapeEntered(
-        areaRid: Godot.RID,
+        areaRID: Godot.RID,
         area: Godot.Area2D?,
         areaShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = areaShapeEnteredSignal.emit(.init(areaRid: areaRid,
+        _ = areaShapeEnteredSignal.emit(.init(areaRID: areaRID,
                 area: area,
                 areaShapeIndex: areaShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -256,7 +256,7 @@ open class Area2D: CollisionObject2D {
     public lazy var areaShapeEnteredSignal: Godot.SignalEmitter<AreaShapeEnteredSignalInput> = {
         .init(object: self, signalName: "area_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(areaRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(areaRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     area: Godot.Area2D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     areaShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
@@ -272,7 +272,7 @@ open class Area2D: CollisionObject2D {
     }()
 
     public struct AreaShapeExitedSignalInput: Godot.SignalInput {
-        public let areaRid: Godot.RID
+        public let areaRID: Godot.RID
 
         public let area: Godot.Area2D?
 
@@ -281,12 +281,12 @@ open class Area2D: CollisionObject2D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            areaRid: Godot.RID,
+            areaRID: Godot.RID,
             area: Godot.Area2D?,
             areaShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.areaRid = areaRid
+            self.areaRID = areaRID
             self.area = area
             self.areaShapeIndex = areaShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -295,17 +295,17 @@ open class Area2D: CollisionObject2D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.areaRid), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.areaRID), Variant(input.area), Variant(input.areaShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func areaShapeExited(
-        areaRid: Godot.RID,
+        areaRID: Godot.RID,
         area: Godot.Area2D?,
         areaShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = areaShapeExitedSignal.emit(.init(areaRid: areaRid,
+        _ = areaShapeExitedSignal.emit(.init(areaRID: areaRID,
                 area: area,
                 areaShapeIndex: areaShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -314,7 +314,7 @@ open class Area2D: CollisionObject2D {
     public lazy var areaShapeExitedSignal: Godot.SignalEmitter<AreaShapeExitedSignalInput> = {
         .init(object: self, signalName: "area_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(areaRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(areaRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     area: Godot.Area2D?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     areaShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))

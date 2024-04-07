@@ -53,7 +53,7 @@ open class VisibleOnScreenNotifier3D: VisualInstance3D {
         }
     }()
 
-    public func setAabb(
+    public func setAABB(
         rect: Godot.AABB
     ) {
         rect.withGodotUnsafeRawPointer { __ptr_rect in

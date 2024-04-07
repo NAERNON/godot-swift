@@ -10,7 +10,7 @@ open class Material: Resource {
 
     public static let renderPriorityMin: Int = -128
 
-    open func _getShaderRid() -> Godot.RID {
+    open func _getShaderRID() -> Godot.RID {
         Godot.RID()
     }
 
@@ -179,7 +179,7 @@ open class Material: Resource {
                 return
             }
             Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getShaderRid()
+        ._getShaderRID()
         .transferToGodot(unsafePointer: returnPtr!)}
         let _get_shader_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -203,7 +203,7 @@ open class Material: Resource {
         ._canUseRenderPriority()
         .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
-            "_getShaderRid" : ("_get_shader_rid", _get_shader_rid_call),
+            "_getShaderRID" : ("_get_shader_rid", _get_shader_rid_call),
             "_getShaderMode" : ("_get_shader_mode", _get_shader_mode_call),
             "_canDoNextPass" : ("_can_do_next_pass", _can_do_next_pass_call),
             "_canUseRenderPriority" : ("_can_use_render_priority", _can_use_render_priority_call)

@@ -960,7 +960,7 @@ open class TileMap: Node2D {
         }
     }()
 
-    public func coordsForBodyRid(
+    public func coordsForBodyRID(
         body: Godot.RID
     ) -> Godot.Vector2I {
         Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -983,7 +983,7 @@ open class TileMap: Node2D {
         }
     }()
 
-    public func layerForBodyRid(
+    public func layerForBodyRID(
         body: Godot.RID
     ) -> Int32 {
         Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in

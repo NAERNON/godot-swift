@@ -260,7 +260,7 @@ open class Mesh: Resource {
     ) {
     }
 
-    open func _getAabb() -> Godot.AABB {
+    open func _getAABB() -> Godot.AABB {
         Godot.AABB()
     }
 
@@ -696,7 +696,7 @@ open class Mesh: Resource {
                 return
             }
             Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getAabb()
+        ._getAABB()
         .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getSurfaceCount" : ("_get_surface_count", _get_surface_count_call),
@@ -712,7 +712,7 @@ open class Mesh: Resource {
             "_getBlendShapeCount" : ("_get_blend_shape_count", _get_blend_shape_count_call),
             "_getBlendShapeName" : ("_get_blend_shape_name", _get_blend_shape_name_call),
             "_setBlendShapeName" : ("_set_blend_shape_name", _set_blend_shape_name_call),
-            "_getAabb" : ("_get_aabb", _get_aabb_call)
+            "_getAABB" : ("_get_aabb", _get_aabb_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value

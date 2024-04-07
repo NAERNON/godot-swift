@@ -32,7 +32,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     open func _intersectShape(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform3D,
         motion: Godot.Vector3,
         margin: Double,
@@ -46,7 +46,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     open func _castMotion(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform3D,
         motion: Godot.Vector3,
         margin: Double,
@@ -61,7 +61,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     open func _collideShape(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform3D,
         motion: Godot.Vector3,
         margin: Double,
@@ -76,7 +76,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     open func _restInfo(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform3D,
         motion: Godot.Vector3,
         margin: Double,
@@ -161,7 +161,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectShape(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -178,7 +178,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._castMotion(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -196,7 +196,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._collideShape(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -214,7 +214,7 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
             }
             Unmanaged<PhysicsDirectSpaceState3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._restInfo(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform3D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector3.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),

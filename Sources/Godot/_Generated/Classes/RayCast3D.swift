@@ -152,7 +152,7 @@ open class RayCast3D: Node3D {
         }
     }()
 
-    public func colliderRid() -> Godot.RID {
+    public func colliderRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -247,7 +247,7 @@ open class RayCast3D: Node3D {
         }
     }()
 
-    public func addExceptionRid(
+    public func addExceptionRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
@@ -292,7 +292,7 @@ open class RayCast3D: Node3D {
         }
     }()
 
-    public func removeExceptionRid(
+    public func removeExceptionRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in

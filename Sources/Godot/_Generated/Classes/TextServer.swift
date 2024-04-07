@@ -672,7 +672,7 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func freeRid(
+    public func freeRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
@@ -714,11 +714,11 @@ open class TextServer: RefCounted {
     }()
 
     public func createFontLinkedVariation(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_font_linked_variation,
@@ -737,12 +737,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetData(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         data: Godot.PackedByteArray
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_data) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_data,
@@ -761,12 +761,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetFaceIndex(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         faceIndex: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_faceIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_faceIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_face_index,
@@ -785,11 +785,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetFaceIndex(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_face_index,
@@ -808,11 +808,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetFaceCount(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_face_count,
@@ -831,12 +831,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetStyle(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         style: Godot.TextServer.FontStyle
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         style.withGodotUnsafeRawPointer { __ptr_style in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_style) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_style) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_style,
@@ -855,11 +855,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetStyle(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.TextServer.FontStyle {
         Godot.TextServer.FontStyle.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_style,
@@ -878,12 +878,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetName(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         name: Godot.GodotString
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_name) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_name,
@@ -902,11 +902,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetName(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_name,
@@ -925,11 +925,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetOtNameStrings(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_ot_name_strings,
@@ -948,12 +948,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetStyleName(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         name: Godot.GodotString
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_name) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_style_name,
@@ -972,11 +972,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetStyleName(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_style_name,
@@ -995,12 +995,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetWeight(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         weight: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_weight) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_weight,
@@ -1019,11 +1019,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetWeight(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_weight,
@@ -1042,12 +1042,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetStretch(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         weight: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         weight.withGodotUnsafeRawPointer { __ptr_weight in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_weight) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_stretch,
@@ -1066,11 +1066,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetStretch(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_stretch,
@@ -1089,12 +1089,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetAntialiasing(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         antialiasing: Godot.TextServer.FontAntialiasing
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         antialiasing.withGodotUnsafeRawPointer { __ptr_antialiasing in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_antialiasing) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_antialiasing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_antialiasing,
@@ -1113,11 +1113,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetAntialiasing(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.TextServer.FontAntialiasing {
         Godot.TextServer.FontAntialiasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_antialiasing,
@@ -1136,12 +1136,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGenerateMipmaps(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         generateMipmaps: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         generateMipmaps.withGodotUnsafeRawPointer { __ptr_generateMipmaps in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_generateMipmaps) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_generateMipmaps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_generate_mipmaps,
@@ -1160,11 +1160,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGenerateMipmaps(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_generate_mipmaps,
@@ -1183,12 +1183,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetMultichannelSignedDistanceField(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         msdf: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         msdf.withGodotUnsafeRawPointer { __ptr_msdf in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_msdf) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdf) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_multichannel_signed_distance_field,
@@ -1207,11 +1207,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontIsMultichannelSignedDistanceField(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_is_multichannel_signed_distance_field,
@@ -1230,12 +1230,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetMsdfPixelRange(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         msdfPixelRange: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         msdfPixelRange.withGodotUnsafeRawPointer { __ptr_msdfPixelRange in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_msdfPixelRange) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfPixelRange) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_msdf_pixel_range,
@@ -1254,11 +1254,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetMsdfPixelRange(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_msdf_pixel_range,
@@ -1277,12 +1277,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetMsdfSize(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         msdfSize: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         msdfSize.withGodotUnsafeRawPointer { __ptr_msdfSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_msdfSize) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_msdf_size,
@@ -1301,11 +1301,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetMsdfSize(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_msdf_size,
@@ -1324,12 +1324,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetFixedSize(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         fixedSize: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         fixedSize.withGodotUnsafeRawPointer { __ptr_fixedSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_fixedSize) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_fixed_size,
@@ -1348,11 +1348,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetFixedSize(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_fixed_size,
@@ -1371,12 +1371,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetFixedSizeScaleMode(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         fixedSizeScaleMode.withGodotUnsafeRawPointer { __ptr_fixedSizeScaleMode in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_fixedSizeScaleMode) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSizeScaleMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_fixed_size_scale_mode,
@@ -1395,11 +1395,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetFixedSizeScaleMode(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.TextServer.FixedSizeScaleMode {
         Godot.TextServer.FixedSizeScaleMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_fixed_size_scale_mode,
@@ -1418,12 +1418,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetAllowSystemFallback(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         allowSystemFallback: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         allowSystemFallback.withGodotUnsafeRawPointer { __ptr_allowSystemFallback in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_allowSystemFallback) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_allowSystemFallback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_allow_system_fallback,
@@ -1442,11 +1442,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontIsAllowSystemFallback(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_is_allow_system_fallback,
@@ -1465,12 +1465,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetForceAutohinter(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         forceAutohinter: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         forceAutohinter.withGodotUnsafeRawPointer { __ptr_forceAutohinter in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_forceAutohinter) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_forceAutohinter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_force_autohinter,
@@ -1489,11 +1489,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontIsForceAutohinter(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_is_force_autohinter,
@@ -1512,12 +1512,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetHinting(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         hinting: Godot.TextServer.Hinting
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         hinting.withGodotUnsafeRawPointer { __ptr_hinting in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_hinting) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_hinting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_hinting,
@@ -1536,11 +1536,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetHinting(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.TextServer.Hinting {
         Godot.TextServer.Hinting.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_hinting,
@@ -1559,12 +1559,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetSubpixelPositioning(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         subpixelPositioning: Godot.TextServer.SubpixelPositioning
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         subpixelPositioning.withGodotUnsafeRawPointer { __ptr_subpixelPositioning in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_subpixelPositioning) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_subpixelPositioning) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_subpixel_positioning,
@@ -1583,11 +1583,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetSubpixelPositioning(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.TextServer.SubpixelPositioning {
         Godot.TextServer.SubpixelPositioning.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_subpixel_positioning,
@@ -1606,12 +1606,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetEmbolden(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         strength: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         strength.withGodotUnsafeRawPointer { __ptr_strength in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_strength) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_strength) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_embolden,
@@ -1630,11 +1630,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetEmbolden(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_embolden,
@@ -1653,14 +1653,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetSpacing(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         spacing: Godot.TextServer.SpacingType,
         value: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
         value.withGodotUnsafeRawPointer { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_spacing, __ptr_value) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_spacing,
@@ -1679,13 +1679,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetSpacing(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         spacing.withGodotUnsafeRawPointer { __ptr_spacing in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_spacing) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_spacing,
@@ -1704,12 +1704,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetTransform(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         transform: Godot.Transform2D
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         transform.withGodotUnsafeRawPointer { __ptr_transform in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_transform) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_transform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_transform,
@@ -1728,11 +1728,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetTransform(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.Transform2D {
         Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_transform,
@@ -1751,12 +1751,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetVariationCoordinates<Value1: Variant.Storable, Value2: Variant.Storable>(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         variationCoordinates: Godot.GodotDictionary<Value1, Value2>
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         variationCoordinates.withGodotUnsafeRawPointer { __ptr_variationCoordinates in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_variationCoordinates) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_variationCoordinates) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_variation_coordinates,
@@ -1775,11 +1775,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetVariationCoordinates(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_variation_coordinates,
@@ -1798,12 +1798,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetOversampling(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         oversampling: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         oversampling.withGodotUnsafeRawPointer { __ptr_oversampling in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_oversampling) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_oversampling) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_oversampling,
@@ -1822,11 +1822,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetOversampling(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_oversampling,
@@ -1845,11 +1845,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetSizeCacheList(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_size_cache_list,
@@ -1868,10 +1868,10 @@ open class TextServer: RefCounted {
     }()
 
     public func fontClearSizeCache(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_clear_size_cache,
@@ -1890,12 +1890,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveSizeCache(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_size_cache,
@@ -1914,14 +1914,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetAscent(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         ascent: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         ascent.withGodotUnsafeRawPointer { __ptr_ascent in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_ascent) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_ascent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_ascent,
@@ -1940,13 +1940,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetAscent(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_ascent,
@@ -1965,14 +1965,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetDescent(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         descent: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         descent.withGodotUnsafeRawPointer { __ptr_descent in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_descent) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_descent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_descent,
@@ -1991,13 +1991,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetDescent(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_descent,
@@ -2016,14 +2016,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetUnderlinePosition(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         underlinePosition: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         underlinePosition.withGodotUnsafeRawPointer { __ptr_underlinePosition in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_underlinePosition) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlinePosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_underline_position,
@@ -2042,13 +2042,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetUnderlinePosition(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_underline_position,
@@ -2067,14 +2067,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetUnderlineThickness(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         underlineThickness: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         underlineThickness.withGodotUnsafeRawPointer { __ptr_underlineThickness in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_underlineThickness) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlineThickness) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_underline_thickness,
@@ -2093,13 +2093,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetUnderlineThickness(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_underline_thickness,
@@ -2118,14 +2118,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetScale(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         scale: Double
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         scale.withGodotUnsafeRawPointer { __ptr_scale in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_scale) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_scale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_scale,
@@ -2144,13 +2144,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetScale(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_scale,
@@ -2169,13 +2169,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetTextureCount(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_texture_count,
@@ -2194,12 +2194,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontClearTextures(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_clear_textures,
@@ -2218,14 +2218,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveTexture(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_textureIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_texture,
@@ -2244,17 +2244,17 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetTextureImage(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
         image: Godot.Image?
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
         image.withGodotUnsafeRawPointer { __ptr_image in
         withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_textureIndex, _ptr___ptr_image) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, _ptr___ptr_image) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_texture_image,
@@ -2273,15 +2273,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetTextureImage(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.Image? {
         Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_textureIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_texture_image,
@@ -2300,16 +2300,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetTextureOffsets(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
         offset: Godot.PackedInt32Array
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_textureIndex, __ptr_offset) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, __ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_texture_offsets,
@@ -2328,15 +2328,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetTextureOffsets(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_textureIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_texture_offsets,
@@ -2355,13 +2355,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphList(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_list,
@@ -2380,12 +2380,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontClearGlyphs(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_clear_glyphs,
@@ -2404,14 +2404,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveGlyph(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_glyph,
@@ -2430,15 +2430,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphAdvance(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyph: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_advance,
@@ -2457,16 +2457,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGlyphAdvance(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyph: Int64,
         advance: Godot.Vector2
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
         advance.withGodotUnsafeRawPointer { __ptr_advance in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph, __ptr_advance) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_advance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_glyph_advance,
@@ -2485,15 +2485,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphOffset(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_offset,
@@ -2512,16 +2512,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGlyphOffset(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         offset: Godot.Vector2
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph, __ptr_offset) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_glyph_offset,
@@ -2540,15 +2540,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphSize(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_size,
@@ -2567,16 +2567,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGlyphSize(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         glSize: Godot.Vector2
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
         glSize.withGodotUnsafeRawPointer { __ptr_glSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph, __ptr_glSize) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_glSize) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_glyph_size,
@@ -2595,15 +2595,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphUvRect(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Rect2 {
         Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_uv_rect,
@@ -2622,16 +2622,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGlyphUvRect(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         uvRect: Godot.Rect2
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
         uvRect.withGodotUnsafeRawPointer { __ptr_uvRect in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph, __ptr_uvRect) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_uvRect) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_glyph_uv_rect,
@@ -2650,15 +2650,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphTextureIdx(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_texture_idx,
@@ -2677,16 +2677,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetGlyphTextureIdx(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         textureIdx: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
         textureIdx.withGodotUnsafeRawPointer { __ptr_textureIdx in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph, __ptr_textureIdx) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_textureIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_glyph_texture_idx,
@@ -2704,16 +2704,16 @@ open class TextServer: RefCounted {
         }
     }()
 
-    public func fontGetGlyphTextureRid(
-        fontRid: Godot.RID,
+    public func fontGetGlyphTextureRID(
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_texture_rid,
@@ -2732,15 +2732,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphTextureSize(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyph) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_texture_size,
@@ -2786,13 +2786,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetKerningList(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_kerning_list,
@@ -2811,12 +2811,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontClearKerningMap(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_clear_kerning_map,
@@ -2835,14 +2835,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveKerning(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyphPair: Godot.Vector2I
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyphPair) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_kerning,
@@ -2861,16 +2861,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetKerning(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyphPair: Godot.Vector2I,
         kerning: Godot.Vector2
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
         kerning.withGodotUnsafeRawPointer { __ptr_kerning in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyphPair, __ptr_kerning) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair, __ptr_kerning) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_kerning,
@@ -2889,15 +2889,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetKerning(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyphPair: Godot.Vector2I
     ) -> Godot.Vector2 {
         Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyphPair) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_kerning,
@@ -2916,17 +2916,17 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetGlyphIndex(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         char: Int64,
         variationSelector: Int64
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         char.withGodotUnsafeRawPointer { __ptr_char in
         variationSelector.withGodotUnsafeRawPointer { __ptr_variationSelector in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_char, __ptr_variationSelector) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_char, __ptr_variationSelector) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_glyph_index,
@@ -2945,15 +2945,15 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetCharFromGlyphIndex(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Int64,
         glyphIndex: Int64
     ) -> Int64 {
         Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         glyphIndex.withGodotUnsafeRawPointer { __ptr_glyphIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_glyphIndex) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_char_from_glyph_index,
@@ -2972,13 +2972,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontHasChar(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         char: Int64
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         char.withGodotUnsafeRawPointer { __ptr_char in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_char) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_char) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_has_char,
@@ -2997,11 +2997,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetSupportedChars(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_supported_chars,
@@ -3020,16 +3020,16 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRenderRange(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         start: Int64,
         end: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         start.withGodotUnsafeRawPointer { __ptr_start in
         end.withGodotUnsafeRawPointer { __ptr_end in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_start, __ptr_end) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_start, __ptr_end) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_render_range,
@@ -3048,14 +3048,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRenderGlyph(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         size: Godot.Vector2I,
         index: Int64
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         size.withGodotUnsafeRawPointer { __ptr_size in
         index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_size, __ptr_index) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_index) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_render_glyph,
@@ -3074,20 +3074,20 @@ open class TextServer: RefCounted {
     }()
 
     public func fontDrawGlyph(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         canvas: Godot.RID,
         size: Int64,
         pos: Godot.Vector2,
         index: Int64,
         color: Godot.Color = .white
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         size.withGodotUnsafeRawPointer { __ptr_size in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         index.withGodotUnsafeRawPointer { __ptr_index in
         color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_draw_glyph,
@@ -3106,7 +3106,7 @@ open class TextServer: RefCounted {
     }()
 
     public func fontDrawGlyphOutline(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         canvas: Godot.RID,
         size: Int64,
         outlineSize: Int64,
@@ -3114,14 +3114,14 @@ open class TextServer: RefCounted {
         index: Int64,
         color: Godot.Color = .white
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         canvas.withGodotUnsafeRawPointer { __ptr_canvas in
         size.withGodotUnsafeRawPointer { __ptr_size in
         outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
         pos.withGodotUnsafeRawPointer { __ptr_pos in
         index.withGodotUnsafeRawPointer { __ptr_index in
         color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_canvas, __ptr_size, __ptr_outlineSize, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_outlineSize, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_draw_glyph_outline,
@@ -3140,13 +3140,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontIsLanguageSupported(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_is_language_supported,
@@ -3165,14 +3165,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetLanguageSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         language: Godot.GodotString,
         supported: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         language.withGodotUnsafeRawPointer { __ptr_language in
         supported.withGodotUnsafeRawPointer { __ptr_supported in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language, __ptr_supported) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language, __ptr_supported) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_language_support_override,
@@ -3191,13 +3191,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetLanguageSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_language_support_override,
@@ -3216,12 +3216,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveLanguageSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         language: Godot.GodotString
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_language) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_language_support_override,
@@ -3240,11 +3240,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetLanguageSupportOverrides(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_language_support_overrides,
@@ -3263,13 +3263,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontIsScriptSupported(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_is_script_supported,
@@ -3288,14 +3288,14 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetScriptSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         script: Godot.GodotString,
         supported: Bool
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         script.withGodotUnsafeRawPointer { __ptr_script in
         supported.withGodotUnsafeRawPointer { __ptr_supported in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script, __ptr_supported) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script, __ptr_supported) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_script_support_override,
@@ -3314,13 +3314,13 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetScriptSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_script_support_override,
@@ -3339,12 +3339,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontRemoveScriptSupportOverride(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         script: Godot.GodotString
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_script) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_remove_script_support_override,
@@ -3363,11 +3363,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetScriptSupportOverrides(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_script_support_overrides,
@@ -3386,12 +3386,12 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSetOpentypeFeatureOverrides<Value1: Variant.Storable, Value2: Variant.Storable>(
-        fontRid: Godot.RID,
+        fontRID: Godot.RID,
         overrides: Godot.GodotDictionary<Value1, Value2>
     ) {
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
         overrides.withGodotUnsafeRawPointer { __ptr_overrides in
-        withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_overrides) { __accessPtr in
+        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_overrides) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_set_opentype_feature_overrides,
@@ -3410,11 +3410,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontGetOpentypeFeatureOverrides(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_get_opentype_feature_overrides,
@@ -3433,11 +3433,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSupportedFeatureList(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_supported_feature_list,
@@ -3456,11 +3456,11 @@ open class TextServer: RefCounted {
     }()
 
     public func fontSupportedVariationList(
-        fontRid: Godot.RID
+        fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRid.withGodotUnsafeRawPointer { __ptr_fontRid in
-        withUnsafeArgumentPackPointer(__ptr_fontRid) { __accessPtr in
+        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
+        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_font_supported_variation_list,

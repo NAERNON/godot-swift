@@ -2120,12 +2120,12 @@ open class RenderingDevice: Object {
 
     public func shaderCreateFromBytecode(
         binaryData: Godot.PackedByteArray,
-        placeholderRid: Godot.RID = RID()
+        placeholderRID: Godot.RID = RID()
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         binaryData.withGodotUnsafeRawPointer { __ptr_binaryData in
-        placeholderRid.withGodotUnsafeRawPointer { __ptr_placeholderRid in
-        withUnsafeArgumentPackPointer(__ptr_binaryData, __ptr_placeholderRid) { __accessPtr in
+        placeholderRID.withGodotUnsafeRawPointer { __ptr_placeholderRID in
+        withUnsafeArgumentPackPointer(__ptr_binaryData, __ptr_placeholderRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_shader_create_from_bytecode,
@@ -3150,7 +3150,7 @@ open class RenderingDevice: Object {
         }
     }()
 
-    public func freeRid(
+    public func freeRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in

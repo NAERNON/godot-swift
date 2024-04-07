@@ -40,7 +40,7 @@ open class RigidBody3D: PhysicsBody3D {
     }
 
     public struct BodyShapeEnteredSignalInput: Godot.SignalInput {
-        public let bodyRid: Godot.RID
+        public let bodyRID: Godot.RID
 
         public let body: Godot.Node?
 
@@ -49,12 +49,12 @@ open class RigidBody3D: PhysicsBody3D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            bodyRid: Godot.RID,
+            bodyRID: Godot.RID,
             body: Godot.Node?,
             bodyShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.bodyRid = bodyRid
+            self.bodyRID = bodyRID
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -63,17 +63,17 @@ open class RigidBody3D: PhysicsBody3D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.bodyRID), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func bodyShapeEntered(
-        bodyRid: Godot.RID,
+        bodyRID: Godot.RID,
         body: Godot.Node?,
         bodyShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = bodyShapeEnteredSignal.emit(.init(bodyRid: bodyRid,
+        _ = bodyShapeEnteredSignal.emit(.init(bodyRID: bodyRID,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -82,7 +82,7 @@ open class RigidBody3D: PhysicsBody3D {
     public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
         .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(bodyRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
@@ -98,7 +98,7 @@ open class RigidBody3D: PhysicsBody3D {
     }()
 
     public struct BodyShapeExitedSignalInput: Godot.SignalInput {
-        public let bodyRid: Godot.RID
+        public let bodyRID: Godot.RID
 
         public let body: Godot.Node?
 
@@ -107,12 +107,12 @@ open class RigidBody3D: PhysicsBody3D {
         public let localShapeIndex: Int
 
         fileprivate init(
-            bodyRid: Godot.RID,
+            bodyRID: Godot.RID,
             body: Godot.Node?,
             bodyShapeIndex: Int,
             localShapeIndex: Int
         ) {
-            self.bodyRid = bodyRid
+            self.bodyRID = bodyRID
             self.body = body
             self.bodyShapeIndex = bodyShapeIndex
             self.localShapeIndex = localShapeIndex
@@ -121,17 +121,17 @@ open class RigidBody3D: PhysicsBody3D {
         public static func arguments(
             from input: Self
         ) -> [Variant] {
-            [Variant(input.bodyRid), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
+            [Variant(input.bodyRID), Variant(input.body), Variant(input.bodyShapeIndex), Variant(input.localShapeIndex)]
         }
     }
 
     public func bodyShapeExited(
-        bodyRid: Godot.RID,
+        bodyRID: Godot.RID,
         body: Godot.Node?,
         bodyShapeIndex: Int,
         localShapeIndex: Int
     ) {
-        _ = bodyShapeExitedSignal.emit(.init(bodyRid: bodyRid,
+        _ = bodyShapeExitedSignal.emit(.init(bodyRID: bodyRID,
                 body: body,
                 bodyShapeIndex: bodyShapeIndex,
                 localShapeIndex: localShapeIndex))
@@ -140,7 +140,7 @@ open class RigidBody3D: PhysicsBody3D {
     public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
         .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(bodyRid: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(bodyRID: Godot.RID.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     body: Godot.Node?.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
                     bodyShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
                     localShapeIndex: Int.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))

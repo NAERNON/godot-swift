@@ -685,7 +685,7 @@ open class TextParagraph: RefCounted {
         }
     }()
 
-    public func lineRid(
+    public func lineRID(
         line: Int32
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -708,7 +708,7 @@ open class TextParagraph: RefCounted {
         }
     }()
 
-    public func dropcapRid() -> Godot.RID {
+    public func dropcapRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

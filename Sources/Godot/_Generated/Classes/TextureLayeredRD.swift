@@ -14,11 +14,11 @@ open class TextureLayeredRD: TextureLayered {
         }
     }()
 
-    private func __setTextureRdRid(
-        _ textureRdRid: Godot.RID
+    private func __setTextureRdRID(
+        _ textureRdRID: Godot.RID
     ) {
-        textureRdRid.withGodotUnsafeRawPointer { __ptr_textureRdRid in
-        withUnsafeArgumentPackPointer(__ptr_textureRdRid) { __accessPtr in
+        textureRdRID.withGodotUnsafeRawPointer { __ptr_textureRdRID in
+        withUnsafeArgumentPackPointer(__ptr_textureRdRID) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_rd_rid,
@@ -36,7 +36,7 @@ open class TextureLayeredRD: TextureLayered {
         }
     }()
 
-    private func __getTextureRdRid() -> Godot.RID {
+    private func __getTextureRdRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -47,12 +47,12 @@ open class TextureLayeredRD: TextureLayered {
         )}}
     }
 
-    public var textureRdRid: Godot.RID {
+    public var textureRdRID: Godot.RID {
         get {
-            __getTextureRdRid()
+            __getTextureRdRID()
         }
         set {
-            __setTextureRdRid(
+            __setTextureRdRID(
                 newValue
             )
         }

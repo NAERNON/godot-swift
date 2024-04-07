@@ -31,7 +31,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
     }
 
     open func _intersectShape(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform2D,
         motion: Godot.Vector2,
         margin: Double,
@@ -45,7 +45,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
     }
 
     open func _castMotion(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform2D,
         motion: Godot.Vector2,
         margin: Double,
@@ -59,7 +59,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
     }
 
     open func _collideShape(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform2D,
         motion: Godot.Vector2,
         margin: Double,
@@ -74,7 +74,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
     }
 
     open func _restInfo(
-        shapeRid: Godot.RID,
+        shapeRID: Godot.RID,
         transform: Godot.Transform2D,
         motion: Godot.Vector2,
         margin: Double,
@@ -151,7 +151,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
             }
             Unmanaged<PhysicsDirectSpaceState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._intersectShape(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -168,7 +168,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
             }
             Unmanaged<PhysicsDirectSpaceState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._castMotion(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -185,7 +185,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
             }
             Unmanaged<PhysicsDirectSpaceState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._collideShape(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),
@@ -203,7 +203,7 @@ open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
             }
             Unmanaged<PhysicsDirectSpaceState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._restInfo(
-            shapeRid: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+            shapeRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!),
             motion: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
             margin: Double.transferFromGodot(unsafePointer: args[3]!),

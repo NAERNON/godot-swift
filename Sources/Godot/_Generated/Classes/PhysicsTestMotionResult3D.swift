@@ -201,7 +201,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
         }
     }()
 
-    public func colliderRid(
+    public func colliderRID(
         collisionIndex: Int32 = 0
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in

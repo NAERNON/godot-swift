@@ -25,7 +25,7 @@ open class SoftBody3D: MeshInstance3D {
         }
     }()
 
-    public func physicsRid() -> Godot.RID {
+    public func physicsRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

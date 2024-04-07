@@ -6,7 +6,7 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class VisualInstance3D: Node3D {
-    open func _getAabb() -> Godot.AABB {
+    open func _getAABB() -> Godot.AABB {
         Godot.AABB()
     }
 
@@ -207,7 +207,7 @@ open class VisualInstance3D: Node3D {
         }
     }()
 
-    private func __setSortingUseAabbCenter(
+    private func __setSortingUseAABBCenter(
         enabled: Bool
     ) {
         enabled.withGodotUnsafeRawPointer { __ptr_enabled in
@@ -229,7 +229,7 @@ open class VisualInstance3D: Node3D {
         }
     }()
 
-    private func __isSortingUseAabbCenter() -> Bool {
+    private func __isSortingUseAABBCenter() -> Bool {
         Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -281,12 +281,12 @@ open class VisualInstance3D: Node3D {
         }
     }
 
-    public var isSortingUseAabbCenter: Bool {
+    public var isSortingUseAABBCenter: Bool {
         get {
-            __isSortingUseAabbCenter()
+            __isSortingUseAABBCenter()
         }
         set {
-            __setSortingUseAabbCenter(
+            __setSortingUseAABBCenter(
                 enabled: newValue
             )
         }
@@ -303,10 +303,10 @@ open class VisualInstance3D: Node3D {
                 return
             }
             Unmanaged<VisualInstance3D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getAabb()
+        ._getAABB()
         .transferToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
-            "_getAabb" : ("_get_aabb", _get_aabb_call)
+            "_getAABB" : ("_get_aabb", _get_aabb_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value

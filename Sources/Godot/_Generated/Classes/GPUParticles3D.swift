@@ -236,7 +236,7 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }()
 
-    private func __setVisibilityAabb(
+    private func __setVisibilityAABB(
         _ aabb: Godot.AABB
     ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
@@ -568,7 +568,7 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }()
 
-    private func __getVisibilityAabb() -> Godot.AABB {
+    private func __getVisibilityAABB() -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -929,7 +929,7 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }()
 
-    public func captureAabb() -> Godot.AABB {
+    public func captureAABB() -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1363,12 +1363,12 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }
 
-    public var visibilityAabb: Godot.AABB {
+    public var visibilityAABB: Godot.AABB {
         get {
-            __getVisibilityAabb()
+            __getVisibilityAABB()
         }
         set {
-            __setVisibilityAabb(
+            __setVisibilityAABB(
                 newValue
             )
         }

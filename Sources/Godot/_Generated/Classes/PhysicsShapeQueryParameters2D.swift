@@ -56,7 +56,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         }
     }()
 
-    private func __setShapeRid(
+    private func __setShapeRID(
         shape: Godot.RID
     ) {
         shape.withGodotUnsafeRawPointer { __ptr_shape in
@@ -78,7 +78,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         }
     }()
 
-    private func __getShapeRid() -> Godot.RID {
+    private func __getShapeRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -431,12 +431,12 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
         }
     }
 
-    public var shapeRid: Godot.RID {
+    public var shapeRID: Godot.RID {
         get {
-            __getShapeRid()
+            __getShapeRID()
         }
         set {
-            __setShapeRid(
+            __setShapeRID(
                 shape: newValue
             )
         }

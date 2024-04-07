@@ -2809,7 +2809,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func meshSetCustomAabb(
+    public func meshSetCustomAABB(
         mesh: Godot.RID,
         aabb: Godot.AABB
     ) {
@@ -2833,7 +2833,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func meshGetCustomAabb(
+    public func meshGetCustomAABB(
         mesh: Godot.RID
     ) -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -3209,7 +3209,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func multimeshGetAabb(
+    public func multimeshGetAABB(
         multimesh: Godot.RID
     ) -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -5727,7 +5727,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func particlesSetCustomAabb(
+    public func particlesSetCustomAABB(
         particles: Godot.RID,
         aabb: Godot.AABB
     ) {
@@ -6190,7 +6190,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func particlesGetCurrentAabb(
+    public func particlesGetCurrentAABB(
         particles: Godot.RID
     ) -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -6604,7 +6604,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func visibilityNotifierSetAabb(
+    public func visibilityNotifierSetAABB(
         notifier: Godot.RID,
         aabb: Godot.AABB
     ) {
@@ -9469,12 +9469,12 @@ open class RenderingServer: Object {
     public func instanceSetPivotData(
         instance: Godot.RID,
         sortingOffset: Double,
-        useAabbCenter: Bool
+        useAABBCenter: Bool
     ) {
         instance.withGodotUnsafeRawPointer { __ptr_instance in
         sortingOffset.withGodotUnsafeRawPointer { __ptr_sortingOffset in
-        useAabbCenter.withGodotUnsafeRawPointer { __ptr_useAabbCenter in
-        withUnsafeArgumentPackPointer(__ptr_instance, __ptr_sortingOffset, __ptr_useAabbCenter) { __accessPtr in
+        useAABBCenter.withGodotUnsafeRawPointer { __ptr_useAABBCenter in
+        withUnsafeArgumentPackPointer(__ptr_instance, __ptr_sortingOffset, __ptr_useAABBCenter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_instance_set_pivot_data,
@@ -9640,7 +9640,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func instanceSetCustomAabb(
+    public func instanceSetCustomAABB(
         instance: Godot.RID,
         aabb: Godot.AABB
     ) {
@@ -10041,7 +10041,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func instancesCullAabb(
+    public func instancesCullAABB(
         _ aabb: Godot.AABB,
         scenario: Godot.RID = RID()
     ) -> Godot.PackedInt64Array {
@@ -12410,7 +12410,7 @@ open class RenderingServer: Object {
         }
     }()
 
-    public func freeRid(
+    public func freeRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in

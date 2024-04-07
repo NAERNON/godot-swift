@@ -967,7 +967,7 @@ open class Camera3D: Node3D {
         }
     }()
 
-    public func cameraRid() -> Godot.RID {
+    public func cameraRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -986,7 +986,7 @@ open class Camera3D: Node3D {
         }
     }()
 
-    public func pyramidShapeRid() -> Godot.RID {
+    public func pyramidShapeRID() -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(

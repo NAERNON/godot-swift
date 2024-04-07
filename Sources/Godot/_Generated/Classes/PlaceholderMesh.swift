@@ -14,7 +14,7 @@ open class PlaceholderMesh: Mesh {
         }
     }()
 
-    public func setAabb(
+    public func setAABB(
         _ aabb: Godot.AABB
     ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in

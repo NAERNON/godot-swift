@@ -3032,7 +3032,7 @@ open class PhysicsServer2D: Object {
         }
     }()
 
-    public func freeRid(
+    public func freeRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in

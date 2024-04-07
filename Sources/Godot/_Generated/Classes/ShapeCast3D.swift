@@ -322,7 +322,7 @@ open class ShapeCast3D: Node3D {
         }
     }()
 
-    public func colliderRid(
+    public func colliderRID(
         index: Int32
     ) -> Godot.RID {
         Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
@@ -452,7 +452,7 @@ open class ShapeCast3D: Node3D {
         }
     }()
 
-    public func addExceptionRid(
+    public func addExceptionRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in
@@ -497,7 +497,7 @@ open class ShapeCast3D: Node3D {
         }
     }()
 
-    public func removeExceptionRid(
+    public func removeExceptionRID(
         _ rid: Godot.RID
     ) {
         rid.withGodotUnsafeRawPointer { __ptr_rid in

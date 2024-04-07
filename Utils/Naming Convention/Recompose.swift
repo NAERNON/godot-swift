@@ -21,7 +21,7 @@ public extension NamingConvention {
             }
             
             let isAllUppercase = component.uppercased() == component
-            || componentsToCapitalizeForCamelOrPascalCase.contains(component)
+            || componentsToCapitalizeForCamelOrPascalCase.contains(component.lowercased())
             
             if isAllUppercase {
                 string.append(component.uppercased())
@@ -58,5 +58,5 @@ public extension NamingConvention {
 
 /// Some components should always be capitalized on camel or pascal case.
 private let componentsToCapitalizeForCamelOrPascalCase: Set<String> = [
-    "2d", "3d", "id"
+    "2d", "3d", "id", "aabb", "rid"
 ]

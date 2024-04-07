@@ -492,7 +492,7 @@ open class ArrayMesh: Mesh {
         }
     }()
 
-    private func __setCustomAabb(
+    private func __setCustomAABB(
         _ aabb: Godot.AABB
     ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
@@ -514,7 +514,7 @@ open class ArrayMesh: Mesh {
         }
     }()
 
-    private func __getCustomAabb() -> Godot.AABB {
+    private func __getCustomAABB() -> Godot.AABB {
         Godot.AABB.fromInitializingMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         GodotExtension.Interface.objectMethodBindPtrcall(
@@ -578,12 +578,12 @@ open class ArrayMesh: Mesh {
         }
     }
 
-    public var customAabb: Godot.AABB {
+    public var customAABB: Godot.AABB {
         get {
-            __getCustomAabb()
+            __getCustomAABB()
         }
         set {
-            __setCustomAabb(
+            __setCustomAABB(
                 newValue
             )
         }

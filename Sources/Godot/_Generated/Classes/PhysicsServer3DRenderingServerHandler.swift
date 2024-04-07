@@ -18,7 +18,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
     ) {
     }
 
-    open func _setAabb(
+    open func _setAABB(
         _ aabb: Godot.AABB
     ) {
     }
@@ -79,7 +79,7 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         }
     }()
 
-    public func setAabb(
+    public func setAABB(
         _ aabb: Godot.AABB
     ) {
         aabb.withGodotUnsafeRawPointer { __ptr_aabb in
@@ -122,13 +122,13 @@ open class PhysicsServer3DRenderingServerHandler: Object {
                 return
             }
             Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setAabb(
+        ._setAABB(
             Godot.AABB.transferFromGodot(unsafePointer: args[0]!)
         )}
         _virtualFunctions = [
             "_setVertex" : ("_set_vertex", _set_vertex_call),
             "_setNormal" : ("_set_normal", _set_normal_call),
-            "_setAabb" : ("_set_aabb", _set_aabb_call)
+            "_setAABB" : ("_set_aabb", _set_aabb_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value
