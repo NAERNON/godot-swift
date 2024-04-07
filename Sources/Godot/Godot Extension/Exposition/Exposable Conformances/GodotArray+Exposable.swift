@@ -91,7 +91,20 @@ extension GodotArray: Variant.Storable {
             }
         }
         
-        return newValue
+        // If no type is known for this array, then we must transform it into
+        // a non typed array.
+        // This is performed in O(1).
+        if Element.variantStorageType == nil {
+            let emptyScript: Object? = nil
+            return Self._makeFromGodotArrayIntGodotStringNameVariant(
+                newValue,
+                0,
+                "",
+                emptyScript
+            )
+        } else {
+            return newValue
+        }
     }
     
     public static func convertFromCheckedStorage(

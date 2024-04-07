@@ -108,6 +108,10 @@ extension GodotDictionary {
     public func values() -> GodotArray<Variant> {
         self._values()
     }
+    
+    public func eraseToAnyDictionary() -> AnyGodotDictionary {
+        AnyGodotDictionary(opaque: opaque)
+    }
 }
 
 extension GodotDictionary: Equatable {
