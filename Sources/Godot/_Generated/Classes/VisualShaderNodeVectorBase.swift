@@ -9,14 +9,14 @@ open class VisualShaderNodeVectorBase: VisualShaderNode {
     public enum OpType: UInt32, GodotEnum {
         case vector2D = 0
         case vector3D = 1
-        case vector4d = 2
+        case vector4D = 2
         case max = 3
 
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Vector2D", 0),
             ("Vector3D", 1),
-            ("Vector4d", 2),
+            ("Vector4D", 2),
             ("Max", 3),]
         }
     }

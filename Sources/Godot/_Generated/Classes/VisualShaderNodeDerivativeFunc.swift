@@ -10,7 +10,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         case scalar = 0
         case vector2D = 1
         case vector3D = 2
-        case vector4d = 3
+        case vector4D = 3
         case max = 4
 
         public static func hintValues() -> [(name: String, value: RawValue)] {
@@ -18,7 +18,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
             ("Scalar", 0),
             ("Vector2D", 1),
             ("Vector3D", 2),
-            ("Vector4d", 3),
+            ("Vector4D", 3),
             ("Max", 4),]
         }
     }

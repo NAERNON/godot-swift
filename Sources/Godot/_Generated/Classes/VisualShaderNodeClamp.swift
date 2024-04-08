@@ -12,7 +12,7 @@ open class VisualShaderNodeClamp: VisualShaderNode {
         case uint = 2
         case vector2D = 3
         case vector3D = 4
-        case vector4d = 5
+        case vector4D = 5
         case max = 6
 
         public static func hintValues() -> [(name: String, value: RawValue)] {
@@ -22,7 +22,7 @@ open class VisualShaderNodeClamp: VisualShaderNode {
             ("Uint", 2),
             ("Vector2D", 3),
             ("Vector3D", 4),
-            ("Vector4d", 5),
+            ("Vector4D", 5),
             ("Max", 6),]
         }
     }

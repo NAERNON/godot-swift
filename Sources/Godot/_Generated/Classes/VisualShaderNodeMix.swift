@@ -12,8 +12,8 @@ open class VisualShaderNodeMix: VisualShaderNode {
         case vector2DScalar = 2
         case vector3D = 3
         case vector3DScalar = 4
-        case vector4d = 5
-        case vector4dScalar = 6
+        case vector4D = 5
+        case vector4DScalar = 6
         case max = 7
 
         public static func hintValues() -> [(name: String, value: RawValue)] {
@@ -23,8 +23,8 @@ open class VisualShaderNodeMix: VisualShaderNode {
             ("Vector2D Scalar", 2),
             ("Vector3D", 3),
             ("Vector3D Scalar", 4),
-            ("Vector4d", 5),
-            ("Vector4d Scalar", 6),
+            ("Vector4D", 5),
+            ("Vector4D Scalar", 6),
             ("Max", 7),]
         }
     }
